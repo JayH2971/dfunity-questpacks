@@ -1,0 +1,171 @@
+-- Fighters Guild quest
+-- Req rep: 75+
+Quest: JHFG008
+DisplayName: Stage of Death
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                   DFU FIGHTERS GUILD QUEST
+<ce>          
+<ce>          Oh man, %pcf, I'm glad you're here. You're
+<ce>          gonna want to see this. I've got this gem in
+<ce>          my hand. Looks like an ordinary _miner_, right?
+<ce>          It's got this enchantment on it that makes it some
+<ce>          kind of murder tool. Just squeeze it for five seconds
+<ce>          and watch as summoned monsters start showing up
+<ce>          to tear you apart. Straight out of Black Marsh, they
+<ce>          told me. Wanna give this thing a shot?
+<--->
+<ce>                   DFU FIGHTERS GUILD QUEST
+<ce>          
+<ce>          Hey %pcf, check this thing out. One of the guild
+<ce>          members picked up this thing for me when she
+<ce>          was out in Black Marsh. Look at this _miner_.
+<ce>          They call it a death gem, she said. I dunno
+<ce>          whether that's an official name or just something
+<ce>          we're going with right now, but I wanted to let
+<ce>          you give it a shot. What you do is you grab it,
+<ce>          squeeze it tight, and then run outside. I made a
+<ce>          bet that you're gonna survive it, and I'll give you
+<ce>          half if you do it. Deal?
+
+RefuseQuest:  [1001]
+<ce>            Aw, don't be such a wimp.
+<ce>          I had good money riding on you.
+
+AcceptQuest:  [1002]
+<ce>             Okay, here it is. Just take it in your
+<ce>             hand. Squeeze it hard, start running,
+<ce>             and don't let go for five seconds.
+<ce>             Then go wild once you're outside.
+<ce>             I wanna see the corpses pile up
+<ce>             out there. You ready? No turning
+<ce>             back now.
+
+QuestFail:  [1003]
+<ce>           
+
+QuestComplete:  [1004]
+<ce>          Hahaha! I can't believe it! You're alive! Those
+<ce>          critters are all just magical apparitions or
+<ce>          something like that, so they're gonna fade
+<ce>          away pretty soon. But I bet they hurt like
+<ce>          the real deal! I'm happy to give you half
+<ce>          my bet for the show you put on. And promise
+<ce>          me you'll do that again, all right? Haven't
+<ce>          seen a fight like that since the War of Betony!
+
+Message: 1016
+<ce>              As you wrap your hand around it,
+<ce>              a dim light within grows brighter.
+<ce>              The _miner_ vibrates strongly
+<ce>              once it starts shining. You pocket
+<ce>              it and wait for the effect.
+<ce>              
+<ce>              "Run! Get outside for some fighting
+<ce>              space! It's gonna last an hour!"
+<ce>              _questgiver_ shouts.
+
+Message:  1020
+<ce>              The _miner_ fades away in a
+<ce>              puff of smoke. The show's
+<ce>              over now, it would seem.
+
+Message:  1030
+%qdt:
+ I have taken up a dare to use
+ a summoning stone which will
+ invoke deadly monsters around me.
+ The effect will last one hour. I
+ should speak to _questgiver_
+ once I survive.
+
+Message:  1099
+<ce>        Get outside! You're gonna
+<ce>          tear up the guild hall!
+
+QBN:
+
+Person _questgiver_ group Questor male
+
+Item _miner_ mineral
+Item _reward_ gold
+
+Clock _failsafe_ 06:00
+Clock _delay_ 00:02
+Clock _survive_ 01:00
+
+Foe _e1_ is Spider
+Foe _e2_ is Sabretooth_tiger
+Foe _e3_ is Werewolf
+Foe _e4_ is Wereboar
+Foe _e5_ is Gargoyle
+Foe _e6_ is Ghost
+Foe _e7_ is Wraith
+Foe _e8_ is Dragonling
+Foe _e9_ is Fire_atronach
+Foe _e10_ is Iron_atronach
+Foe _e11_ is Flesh_atronach
+Foe _e12_ is Ice_atronach
+Foe _e13_ is Grizzley_bear
+Foe _e14_ is Giant_scorpion
+
+--   Quest start-up:
+   start timer _failsafe_
+   log 1030 step 0
+   say 1016
+   start timer _delay_
+
+_delay_ task:
+       start timer _survive_
+
+_spawn_ task:
+       when _delay_ and not _survive_
+       create foe _e1_ every 1 minutes indefinitely with 11% success
+       create foe _e2_ every 1 minutes indefinitely with 11% success
+       create foe _e3_ every 1 minutes indefinitely with 11% success
+       create foe _e4_ every 1 minutes indefinitely with 11% success
+       create foe _e5_ every 1 minutes indefinitely with 11% success
+       create foe _e6_ every 1 minutes indefinitely with 11% success
+       create foe _e7_ every 1 minutes indefinitely with 11% success
+       create foe _e8_ every 1 minutes indefinitely with 11% success
+       create foe _e9_ every 1 minutes indefinitely with 11% success
+       create foe _e10_ every 1 minutes indefinitely with 11% success
+       create foe _e11_ every 1 minutes indefinitely with 11% success
+       create foe _e12_ every 1 minutes indefinitely with 11% success
+       create foe _e13_ every 1 minutes indefinitely with 11% success
+       create foe _e14_ every 1 minutes indefinitely with 11% success
+
+_survive_ task:
+       say 1020
+       remove foe _e1_
+       remove foe _e2_
+       remove foe _e3_
+       remove foe _e4_
+       remove foe _e5_
+       remove foe _e6_
+       remove foe _e7_
+       remove foe _e8_
+       remove foe _e9_
+       remove foe _e10_
+       remove foe _e11_
+       remove foe _e12_
+       remove foe _e13_
+       remove foe _e14_
+
+_victory_ task:
+     when _qgclicked_ and _survive_
+     give pc _reward_
+     end quest
+
+_qgclicked_ task:
+    clicked npc _questgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _survive_
+    say 1099
+    clear _qgclicked_ _clearclick_
+ 
+_failsafe_ task:
+    end quest

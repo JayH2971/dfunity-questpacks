@@ -1,0 +1,151 @@
+-- Mages Guild
+-- Min Rep: 10
+Quest: JHMG004
+DisplayName: Body Harvest
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                     DFU MAGES GUILD QUEST
+<ce>              
+<ce>              %pct, the Mages Guild acts not only
+<ce>              as a repository of knowledge and community of
+<ce>              research, but also as a facilitating organization
+<ce>              to aid wherever possible the accumulation of
+<ce>              magical and scientific prowess, such that the
+<ce>              weak may rely on the strong to perform those
+<ce>              tasks of which they find themselves incapable.
+<ce>              You yourself have asked no help of the guild in
+<ce>              your tribulations, but not all are so self-determined
+<ce>              and capable. For a sum of _reward_ gold pieces,
+<ce>              will you accompany an inexperienced researcher
+<ce>              to slay an atronach in hiding?
+
+RefuseQuest:  [1001]
+<ce>          Truly, you should evaluate your ways. The guild would
+<ce>             crumble if its members did not help each other.
+
+AcceptQuest:  [1002]
+<ce>          Precisely the answer I expected from you. We
+<ce>          need all manner of capable members in our ranks,
+<ce>          each to do the work the other cannot. In this case
+<ce>          we're working on your reputation as something
+<ce>          of a spine breaker. In any case, we entrust to
+<ce>          you _friend_, who positively cannot
+<ce>          harm a fly but is making marvelous progress
+<ce>          regarding elemental research. One prime specimen of
+<ce>          atronach will be in __dung_, from what we
+<ce>          have scried. I will expect you two to return in =timer_ days
+<ce>          or sooner to provide time to prepare the findings for
+<ce>          presentation. Return safely, both of you.
+
+QuestFail:  [1003]
+<ce>       _friend_ groans in frustration as %g1 walks away.
+<ce>          
+<ce>          "I can't take this anymore! I need to get
+<ce>          back to ___questgiver_ right now!"
+<ce>          
+<ce>                      You are left alone.
+
+QuestComplete:  [1004]
+<ce>         Excellent work, both of you! Well, you are alive,
+<ce>         at least. And the samples, _friend_?
+<ce>         Ah, you appear to have some stunning samples
+<ce>         in hand. Truly brilliant work! Your presentation
+<ce>         will be tomorrow evening. Rest well and get your
+<ce>        words in order, for we will not help you this time.
+<ce>        And as for you, %pcf, we thank you once more
+<ce>        for your courageous help toward those less
+<ce>        oriented to bloodshed. Please take your reward.
+
+Message:  1019
+<ce>        _friend_ shakes your hand eagerly.
+<ce>        
+<ce>        "Thank you! Thank you for accepting!
+<ce>       Let us be going then! Good luck to us!"
+
+Message:  1020
+<ce>        "This! This is the atronach they scried!"
+<ce>        _friend_ shouts anxiously.
+
+Message:  1021
+<ce>        Your companion wheezes before
+<ce>        surveying the corpse.
+<ce>        
+<ce>        "Well done, %ra! I can see immediately
+<ce>        what they want from this creature. I'll...
+<ce>        Yes, that's all I need. Let's return
+<ce>        to ___questgiver_, quickly now!"
+
+Message:  1030
+%qdt:
+ I am helping a Mages Guild member,
+ _friend_, to find and
+ slay an atronach inside
+ __dung_. We must
+ return to ___questgiver_ with
+ the deed done in =timer_ days.
+
+Message: 1099
+<ce>       Have you forgotten something,
+<ce>       _friend_? Or are you
+<ce>       merely afraid? Do not worry.
+<ce>       %pcn is as capable
+<ce>       as they come. Trust %pg2 and
+<ce>       bring me those element samples.
+
+QBN:
+Item _reward_ gold range 200 to 350
+
+Person _questgiver_ group Questor male
+Person _friend_ faction The_Mages_Guild
+
+Place _dung_ remote dungeon
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _atr1_ is Fire_atronach
+Foe _atr2_ is Ice_atronach
+
+--	Quest start-up:
+	start timer _timer_ 
+	log 1030 step 0 
+	pick one of _E.01_ _E.02_
+          reveal _dung_
+          add _friend_ face
+          say 1019
+
+ _E.01_ task:
+	place foe _atr1_ at _dung_
+
+ _E.02_ task:
+	place foe _atr2_ at _dung_
+
+ _inj1_ task:
+           injured _atr1_
+           say 1020
+
+ _inj2_ task:
+           injured _atr2_
+           say 1020
+
+_slain_ task:
+	killed 1 _atr1_ saying 1021
+	killed 1 _atr2_ saying 1021 
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _slain_ 
+	give pc _reward_ 
+	end quest 
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_timer_ task:
+          say 1003
+	end quest 

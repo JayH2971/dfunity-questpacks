@@ -1,0 +1,135 @@
+-- Mages Guild
+-- Min Rep: 30
+Quest: JHMG001
+DisplayName: An Illusory Hunt
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                        DFU MAGES GUILD QUEST
+<ce>                
+<ce>                My dear %pcf, do you remember what
+<ce>                you were told when we inducted you
+<ce>                 into the guild? "Too much power in too
+<ce>                  little time has destroyed many." Sadly,
+<ce>                  not all our students take heed of that
+<ce>                  warning, and we currently have a bit of
+<ce>                 a situation on our hands because of it. 
+<ce>                  For a copy of a book, we request
+<ce>                   your help in culling a student too
+<ce>                  well-versed in Illusion magic for
+<ce>                            one's own good.
+
+RefuseQuest:  [1001]
+<ce>                    Very well, but what if
+<ce>                   you are the next target?
+
+AcceptQuest:  [1002]
+<ce>                   An admirable response, my child.
+<ce>                    It seems this student became
+<ce>                     hopped up on power after using
+<ce>                    a chameleon spell for the first time
+<ce>                     and found it just addictive. Then
+<ce>                    came experimentation with the
+<ce>                     shapeshifting spells, and suddenly
+<ce>                     we have reports pouring in of a
+<ce>                    tiger wearing robes that kills people.
+<ce>                     One of our student's friends knew
+<ce>                  that there was this hiding spot of resort,
+<ce>                     __dungeon_ in this same province.
+<ce>                   Go there and find our pupil, in whatever
+<ce>                   state as may be the case, and end this 
+<ce>                   menace for us. You have =timer_ days.
+
+
+QuestFail:  [1003]
+<ce>             The Mages Guild expected you to slay the illusionist by now.
+
+QuestComplete:  [1004]
+<ce>                         A thousand thanks for saving our
+<ce>                        poor pupil from a worse fate. Those
+<ce>                          who fail to control power become
+<ce>                          slaves to it in time. Have your book.
+
+Message:  1020
+<ce>                        As the creature's corpse falls, you hear a
+<ce>                      groan. This must have been the shapeshifter.
+
+Message:  1021
+<ce>                        This rogue student is no more.
+
+Message:  1030
+%qdt:
+ The Mages Guild of
+ ___questgiver_ has asked
+ me to find a rogue student
+ skilled with illusion magic in
+ __dungeon_. I have
+ =timer_ days to end this threat
+ and return.
+
+Message:  1099
+<ce>        Hurry to __dungeon_ and
+<ce>        slay our former student. We
+<ce>        do not know what manner of
+<ce>        enemy you will face this time.
+
+QBN:
+Item _reward_ book
+
+Person _questgiver_ group Questor male
+
+Place _dungeon_ remote dungeon
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _enemy1_ is Sabretooth_tiger
+Foe _enemy2_ is Spider
+Foe _enemy3_ is Giant_scorpion
+Foe _enemy4_ is Grizzley_bear
+Foe _enemy5_ is Mage
+
+--	Quest start-up:
+	start timer _timer_ 
+	pick one of _D.01_ _D.02_ _D.03_ _D.04_ _D.05_
+	log 1030 step 0 
+          reveal _dungeon_
+
+_D.01_ task:
+	place foe _enemy1_ at _dungeon_ 
+
+_D.02_ task:
+	place foe _enemy2_ at _dungeon_ 
+
+_D.03_ task:
+	place foe _enemy3_ at _dungeon_ 
+
+_D.04_ task:
+	place foe _enemy4_ at _dungeon_ 
+
+_D.05_ task:
+	place foe _enemy5_ at _dungeon_ 
+
+_slain_ task:
+	killed 1 _enemy1_ saying 1020
+	killed 1 _enemy2_ saying 1020
+	killed 1 _enemy3_ saying 1020
+	killed 1 _enemy4_ saying 1020
+	killed 1 _enemy5_ saying 1021
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _slain_ 
+	give pc _reward_ 
+	end quest 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_timer_ task:
+          say 1003
+	end quest 

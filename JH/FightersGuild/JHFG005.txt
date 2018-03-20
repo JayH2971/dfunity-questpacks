@@ -1,0 +1,192 @@
+-- Fighters Guild
+-- Min Rep: 5
+Quest: JHFG005
+DisplayName: Pack of Beasts
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                  DFU FIGHTERS GUILD QUEST
+<ce>          
+<ce>          We've got a bit of an unusual request
+<ce>           request that's come in, %pcf,
+<ce>          since it's out in the middle of nowhere.
+<ce>          ___rural_'s been having this
+<ce>           problem with wildlife on their property
+<ce>           trying to eat people at night. During
+<ce>           the day the things are hibernating or
+<ce>           something and they can do their work,
+<ce>            but anyone outside the premises after
+<ce>             dark is in for a big surprise. It's paying
+<ce>            _reward_ gold pieces and you get a
+<ce>             change of scenery. What do you say?
+<--->
+<ce>                  DFU FIGHTERS GUILD QUEST
+<ce>          
+<ce>          It's kind of a sad story, but we end up being
+<ce>          sort of the city guard for those far-off farm
+<ce>          homes when ____rural_ doesn't care
+<ce>          enough to help them out. We charge them 
+<ce>          for it, sure, but otherwise no one would
+<ce>          actually go out there and do it. You wanna
+<ce>          head out to ___rural_ and kill off some
+<ce>          wild beasts that are bothering the place?
+
+RefuseQuest:  [1001]
+<ce>              Someone else is getting paid, then.
+
+AcceptQuest:  [1002]
+<ce>               Good. I hear it's pretty out there, but
+<ce>                I've got no idea since I've never been.
+<ce>               Head out there to ___rural_,
+<ce>               sit down on the dirt or something when
+<ce>                it's night, and you'll probably pick up a
+<ce>                bunch of these beasts fast. Take 'em down
+<ce>                and come back here for your payment. You'll know
+<ce>                when you're done. Be back in =timer_ days or less.
+
+QuestFail:  [1003]
+<ce>               The Fighters Guild sent you to clean
+<ce>               out ___rural_ by now.
+
+QuestComplete:  [1004]
+<ce>                Good money, good trip, good experience.
+<ce>                I hope you enjoy these things, %pcf.
+<ce>                 Stop and smell the roses some time.
+<ce>                  Here's your _reward_ gold pieces.
+
+Message: 1020
+<ce>                    The growling dies down. All
+<ce>                    that's left now is the clean up.
+
+Message:  1024
+<ce>                    A young man cracks the door open
+<ce>                    and hollers in an irritated voice.
+<ce>                    
+<ce>                    "Hey, you dumb Fighters Guild brute! We
+<ce>                    already killed all the animals! Maybe try
+<ce>                    showing up a month ago and we could've
+<ce>                    used some help! Thanks for nothing!"
+<ce>                    
+<ce>                    There was nothing you could have done
+<ce>                    this time. Better head back to the
+<ce>                    Fighters Guild in ___questgiver_ and report.
+
+Message: 1025
+<ce>                    Aw, geez, what a mess. I'm sorry, %pcf,
+<ce>                    this happens every once in a while. It's not
+<ce>                    your fault, believe me. I'm still gonna give
+<ce>                    you credit for going though, even if I
+<ce>                    can't give you the full reward. I'm stretching
+<ce>                    it just paying for your travel expenses. Here,
+<ce>                    have _altrew_ gold. At least it's something. And
+<ce>                    sorry about all this. It won't happen again.
+
+Message:  1030
+%qdt:
+ ___rural_ is
+ under attack each night
+ by some pack of beasts.
+ The Fighters Guild will pay
+ me _reward_ gold if I kill
+ the animals and get back
+ to ___questgiver_ in
+ =timer_ days or less.
+
+Message:  1031
+%qdt:
+ I've shown up way too late
+ to ___rural_ to help.
+ All I can do now is return to
+ ___questgiver_ and talk to
+ _questgiver_ about it.
+
+Message:  1099
+<ce>        Get moving to ___rural_.
+<ce>        People could be dying for all you know.
+
+QBN:
+Item _reward_ gold range 200 to 300
+Item _altrew_ gold range 30 to 40
+
+Person _questgiver_ group Questor male
+
+Place _rural_ remote farmhome
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _bear_ is Grizzley_bear
+Foe _tiger_ is Sabretooth_tiger
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0 
+	pc at _rural_ set _outside_
+	pick one of _B.01_ _B.01_ _B.01_ _T.01_ _T.01_ _T.01_ _dud_
+
+variable _outside_
+_day_ task:
+	daily from 5:30 to 18:30
+
+_B.01_ task:
+	pick one of _bears_
+
+_bears_ task:
+	when _outside_ and not _day_ and not _slain_ and not _T.01_
+	create foe _bear_ every 1 minutes indefinitely with 95% success
+
+_T.01_ task:
+	pick one of _tigers_
+
+_tigers_ task:
+	when _outside_ and not _day_ and not _slain_ and not _B.01_
+	create foe _tiger_ every 1 minutes indefinitely with 95% success
+
+_kill4_ task:
+	killed 4 _bear_
+	killed 4 _tiger_
+	pick one of _continue_ _slain_
+
+_kill5_ task:
+	killed 5 _bear_
+	killed 5 _tiger_
+	pick one of _continue_ _slain_ 
+
+_kill6_ task:
+	killed 6 _bear_
+	killed 6 _tiger_
+	pick one of _slain_
+
+_slain_ task:
+	say 1020
+
+variable _dud_
+_alt_ task:
+          when _outside_ and _dud_
+          start task _alt2_
+
+_alt2_ task:
+          say 1024
+          log 1031 step 1
+
+_altend_ task:
+         when _qgclicked_ and _alt2_
+         give pc _altrew_ notify 1025
+         end quest
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ and not _alt2_
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_pcreward_ task:
+	when _qgclicked_ and _slain_ 
+	give pc _reward_
+	end quest 
+
+_timer_ task:
+          say 1003
+	end quest

@@ -1,0 +1,214 @@
+-- Mages Guild
+-- Min Rep: 95
+Quest: JHMG00X
+DisplayName: Death's Embrace
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                     DFU MAGES GUILD QUEST
+<ce>          
+<ce>          %pcf, I must speak in a low voice
+<ce>           regarding this matter. I do not doubt you
+<ce>           have seen and destroyed your share of
+<ce>           liches in the Iliac Bay. They are usually not a
+<ce>           foe to be deeply feared. Well, this day we do
+<ce>           have a foe to fear. We need someone to
+<ce>           find a lich who has begun to make various
+<ce>           undead appear across %crn,
+<ce>           ask what precisely the motivation for all
+<ce>           this racket is, and see if any solution is
+<ce>           forthcoming. We ask you specifically,
+<ce>           %pct. Will you do this for us?
+
+RefuseQuest:  [1001]
+<ce>           Then we are doomed.
+<ce>          If you will not, who will?
+
+AcceptQuest:  [1002]
+<ce>           Go quickly to __mondung_. The sorceror has
+<ce>           spoken to some who trespass what it considers
+<ce>           its lair. Its demands, desires, plans, anything at
+<ce>           all that you can bring out of it will be of
+<ce>           inestimable worth at this point. Who knows
+<ce>           whether it doesn't want to bring down all of
+<ce>           %crn into a flaming ruin. We must hear from
+<ce>           you in =timer_ days or fewer. And %pcf,
+<ce>           please be prepared to run if things go wrong.
+
+QuestFail:  [1003]
+<ce>               Failure text
+
+QuestComplete:  [1004]
+<ce>            %oth. You are alive, miraculously.
+<ce>           Such overwhelming power! _ancient_
+<ce>           is a name I have only read of, but whether
+<ce>           it was in guild membership records or in
+<ce>           fables of ages past, I cannot remember at
+<ce>           this time. We will send you a letter in several
+<ce>           weeks' time should we determine a course
+<ce>           for future action. In the meantime, please
+<ce>           take this reward. %crn donated it
+<ce>           specifically for this task, to go directly into
+<ce>           your hands. Be ready for our word.
+<ce>            
+<ce>                        TO BE CONTINUED
+
+Message:  1099
+<ce>            No turning back, %pcf. Get to
+<ce>            __mondung_. Find some
+<ce>           way to get this creature to speak to
+<ce>           you and make known its desires. We
+<ce>           will wait day and night for your return. 
+
+Message:  1020
+<ce>              A voice booms from deep within this
+<ce>           place. You can't tell from what direction.
+<ce>           
+<ce>           "And what will you require of me,
+<ce>           %ra? Will I not slay you as I did
+<ce>          the imperial mutton who preceded you?"
+<ce>           
+<ce>          All goes quiet. Now to find the sorceror.
+
+Message:  1021
+<ce>            "How utterly pathetic. %ra, I will
+<ce>            say this now. Your attempts to stop me
+<ce>            will be in vain. Even if you could topple
+<ce>            me, within moments I will return to unlife.
+<ce>            Cease from this foolish errand. Tell
+<ce>            the Mages Guild that _ancient_
+<ce>            has come to take what belongs to %g2.
+<ce>            Then bow down and take death
+<ce>            to be your new master."
+<ce>            
+<ce>             The lich begins chanting. The words
+<ce>              accelerate in intensity and speed.
+<ce>               This is the moment to leave.
+
+Message:  1022
+<ce>                "What audacity. But here I am."
+<ce>               
+<ce>               The lich rises to life once more in a
+<ce>               new shell. Escape is your only option.
+
+Message:  1023
+<ce>               You fight to catch your breath after
+<ce>               racing out of the hole. It appears the
+<ce>               undead will remain inside for now.
+<ce>               After that taste of power, you will
+<ce>               have plenty to tell the Mages Guild.
+
+Message:  1026
+<ce>                "What audacity. But here I am."
+<ce>               
+<ce>               The lich rises to life once more in a
+<ce>               new shell. Escape is your only option.
+
+Message:  1027
+<ce>                "What audacity. But here I am."
+<ce>               
+<ce>               The lich rises to life once more in a
+<ce>               new shell. Escape is your only option.
+
+Message:  1030
+%qdt:
+ The Mages Guild has sent me on
+ some apparently desperate mission
+ to __mondung_ for a
+ lich who has taken up residence there.
+ I am not tasked with slaying it, but
+ with interrogating it regarding
+ its purposes within %crn.
+ I must return to ___questgiver_
+ within =timer_ days.
+
+Message:  1031
+%qdt:
+ This lich has the power to bring
+ revive itself endlessly. I must
+ return to ___questgiver_
+ and escape this menace for now.
+
+QBN:
+Item _reward_ gold range 3000 to 3000
+
+Person _questgiver_ group Questor male
+Person _ancient_ faction The_Cabal
+
+Place _mondung_ remote dungeon
+
+Clock _timer_ 35.00:00
+
+Foe _boss_ is Ancient_lich
+Foe _boss2_ is Ancient_lich
+Foe _boss3_ is Ancient_lich
+Foe _boss4_ is Ancient_lich
+Foe _und1_ is Zombie
+Foe _und2_ is Skeletal_warrior
+Foe _und3_ is Mummy
+Foe _und4_ is Wraith
+
+--	Quest start-up:
+	start timer _timer_ 
+	log 1030 step 0 
+	pc at _mondung_ set _inside_
+	place foe _boss_ at _mondung_
+          reveal _mondung_
+
+_inside_ task:
+         start task _announce_
+
+_announce_ task:
+         say 1020
+
+_injured_ task:
+         injured _boss_
+         start task _announceinj_
+
+_injured2_ task:
+	when _announceinj_ and _inside_
+	create foe _und1_ every 1 minutes indefinitely with 30% success
+	create foe _und2_ every 1 minutes indefinitely with 24% success
+	create foe _und3_ every 1 minutes indefinitely with 22% success
+	create foe _und4_ every 1 minutes indefinitely with 14% success
+          clear task _injured2_
+
+_announceinj_ task:
+          say 1021
+
+_leave_ task:
+        when _announceinj_ and not _inside_
+        say 1023
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_finish_ task:
+	when _announceinj_ and _qgclicked_
+	give pc _reward_
+	end quest 
+
+_timer_ task:
+	end quest 
+
+_clearclick_ task:
+	when _qgclicked_ and not _announceinj_
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_slain_ task:
+	killed _boss_
+          say 1022
+          create foe _boss2_ every 1 minutes 1 times with 100% success
+          log 1031 step 1
+
+_slain2_ task:
+	killed _boss2_
+          say 1026
+          create foe _boss3_ every 1 minutes 1 times with 100% success
+
+_slain3_ task:
+	killed _boss3_
+          say 1027
+          create foe _boss4_ every 1 minutes 1 times with 100% success

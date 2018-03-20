@@ -1,0 +1,197 @@
+-- Knightly Order
+-- Min Rep: 55
+Quest: JHKN007
+DisplayName: Master of Disguise
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                      DFU KNIGHTLY ORDER QUEST
+<ce>          
+<ce>                 We have reports concerning a shop
+<ce>                 in town, _shop_, of a
+<ce>                 tragic kind. For the past several days
+<ce>                 the town guard has hauled corpses of human
+<ce>                 beings out, all slain in the most gruesome
+<ce>                 fashion. They have no evidence as to who
+<ce>                 might be behind the slayings, but we here
+<ce>                 have some suspicions in mind. Will you
+<ce>                 be our agent in resolving these murders?
+
+RefuseQuest:  [1001]
+<ce>                  Of course. ___questgiver_ hasn't had
+<ce>                  enough havoc and chaos yet, after all.
+
+AcceptQuest:  [1002]
+<ce>                 Brave, %pcf, but you will need more than
+<ce>                 bravery alone to match this foe. Each emaciated
+<ce>                 corpse has been slain in a truly horrific manner,
+<ce>                 but we can pick out some details from each one.
+<ce>                 The blood is too profusely spilt for it to be a
+<ce>                 vampire. The kills are done silently, precluding a
+<ce>                 lycanthrope culprit. And merely looking at the
+<ce>                 dead bodies erases any thought of a human
+<ce>                 at work. No, this is a powerful enemy that
+<ce>                 we cannot detect. Do your work to search for the
+<ce>                 guilty party, and then go to _res_
+<ce>                 to find our friend, _priest_. You'll
+<ce>                 find in %g2 a utility mage, not suited for
+<ce>                 combat, but of breaking illusionary magic.
+<ce>                 Confront the suspect together and do your duty.
+<ce>                 I cannot give you more than two days to do this.
+
+QuestFail:  [1003]
+<ce>               No matter what progress you might have made
+<ce>               to solve the murders, _questgiver_
+<ce>               will not accept how long it has taken you.
+
+QuestComplete:  [1004]
+<ce>             To think such a powerful foe can infiltrate
+<ce>             this city and slay according to its will and
+<ce>             pleasure is troubling. But you have proven
+<ce>                yourself a knight of the first class.
+
+Message:  1020
+<ce>                  Do you have need of me, %pcf?
+<ce>                  Find someone you consider suspicious
+<ce>                  and come for me again. I cannot risk
+<ce>                  being seen in public for long.
+
+Message:  1021
+<ce>                  And what do you ask of me, beast? Will
+<ce>                  you not leave me alone? I told those guards
+<ce>                  to give me peace and play out their
+<ce>                  investigation elsewhere. Now leave, lest my
+<ce>                  pocket knife find its way into some part of
+<ce>                  you and your murderer find you at last.
+
+Message:  1022
+<ce>                  Ah, welcome, %pcf. Have you found
+<ce>                  someone to investigate? I can't be outdoors
+<ce>                  for long, as a person like myself has many
+<ce>                  foes. Let us hurry and see this person you
+<ce>                  speak of, and get to the truth of the matter.
+
+Message:  1023
+<ce>                  _culp_'s eyes flash red
+<ce>                  as the two of you draw near.
+<ce>                  
+<ce>                  "I said leave me in peace! Leave
+<ce>                  this instant, I command you!"
+<ce>                  
+<ce>                  _priest_ begins chanting without
+<ce>                  hesitation, bringing into effect an incantation
+<ce>                  to dispel magicka. In moments the air around
+<ce>                  _culp_ begins to waver and
+<ce>                  shimmer, until you find yourself face to face
+<ce>                  with an enraged and inhuman foe.
+
+Message:  1024
+<ce>                  _priest_ nearly collapses from the
+<ce>                  effort expended. Apparently %g1 is just as
+<ce>                  unsuited for powerful magical defenses as
+<ce>                  for combat. Eventually %g1 speaks to you.
+<ce>                  
+<ce>                  "Well, our mystery is solved. The city guard will
+<ce>                  soon be questioning the store's owner to find
+<ce>                  out the connections, history, and so on of this
+<ce>                  entire ordeal. I'll make it out on my own once
+<ce>                  I can walk. Head back to the garrison and
+<ce>                          report on our success."
+
+Message:  1030
+%qdt:
+ I must look for a murderer
+ here in ___questgiver_, based
+ around _shop_. Once I
+ have a reasonable suspicion, I should
+ look for _priest_, hiding inside
+ _res_, for help in
+ unmasking the foe. I have two days.
+
+Message:  1099
+<ce>           Bring me our local murderer's head.
+<ce>           Speak to _priest_ when
+<ce>           you need help. You have 48 hours.
+
+QBN:
+Person _questgiver_ group Questor male
+Person _culp_ group Chemist
+Person _priest_ faction Temple_Missionaries
+
+Place _shop_ local generalstore
+Place _res_ local house2
+
+Clock _timer_ 2.00:00
+
+Foe _dae1_ is Daedra_seducer
+Foe _dae2_ is Frost_daedra
+
+--	Quest start-up:
+	start timer _timer_ 
+	log 1030 step 0 
+	place npc _culp_ at _shop_
+          place npc _priest_ at _res_
+          pick one of _sed_ _frost_
+
+variable _sed_
+variable _frost_
+
+_pclicked_ task:
+	clicked npc _priest_ 
+
+_premature_ task:
+          when _pclicked_ and not _1talk_
+          say 1020
+          clear _pclicked_ _premature_
+
+_cclicked_ task:
+	clicked npc _culp_ 
+
+_step1_ task:
+          when _cclicked_ and not _step2_
+          say 1021
+          start task _1talk_
+          clear _cclicked_
+
+variable _1talk_
+
+_step2_ task:
+         when _pclicked_ and _1talk_
+         say 1022
+         hide npc _priest_
+         add _priest_ face
+
+_step3_ task:
+        when _cclicked_ and _step2_ and not _frost_
+        say 1023
+        hide npc _culp_
+        place foe _dae1_ at _shop_
+
+_step3a_ task:
+        when _cclicked_ and _step2_ and _frost_
+        say 1023
+        hide npc _culp_
+        place foe _dae2_ at _shop_
+
+_slain_ task:
+	killed 1 _dae1_ saying 1024
+	killed 1 _dae2_ saying 1024
+          drop _priest_ face
+
+_timer_ task:
+          say 1003
+	end quest
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_victory_ task:
+	when _qgclicked_ and _slain_
+	give pc nothing
+	end quest 
