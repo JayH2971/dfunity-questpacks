@@ -1,0 +1,257 @@
+-- Mages Guild
+Quest: JHMG002
+DisplayName: Stubborn Scholar
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                             DFU MAGES GUILD QUEST
+<ce>          
+<ce>          A few weeks have passed since _scholar_
+<ce>          disappeared into __dung_ for a research
+<ce>          expedition. We have need for such expertise at
+<ce>          this time, and it's quite likely %g1 has merely
+<ce>          lost track of time and needs to be fished out by one
+<ce>          of our capable members. Will you do so?
+
+RefuseQuest:  [1001]
+<ce>           I suppose you simply do not understand
+<ce>          what we'll be lacking through this absence.
+
+AcceptQuest:  [1002]
+<ce>           A comely answer. Head on into the depths
+<ce>          and find _scholar_, who will likely
+<ce>          need a kindly reminder that the research had
+<ce>          a time limit attached. Tell %g2 to return with
+<ce>          you, and be here in =timer_ or fewer days.
+
+QuestFail:  [1003]
+<ce>          _questgiver_ has made clear how
+<ce>          important the punctual completion of guild
+<ce>          assignments is. This will reflect poorly on you.
+
+QuestComplete:  [1004]
+<ce>          Splendid, %pcf. _scholar_, it is a joy
+<ce>          to see you safe and sound. I will receive your
+<ce>          full report once you have had some rest. And as
+<ce>          for you, %pct, have this book from our
+<ce>          library as a show of our gratitude.
+
+Message:  1029
+<ce>              Hmph. Such arrogance in that voice of yours.
+<ce>              I never have seen you in the guild hall, likely
+<ce>              because creatures of your disposition are too
+<ce>              busy munching on bones to further our
+<ce>              academic purposes. I frankly do not trust
+<ce>              you. Prove your intellect. Your appearance is
+<ce>              not that of a worthy mage, so I need to see
+<ce>              the functioning of your brain instead.
+<ce>              
+<ce>                  Is there a Mages Guild
+<ce>                  hall in ___questgiver_?
+
+Message:  1030
+%qdt:
+ I must descend into
+ __dung_ to bring
+ out an errant scholar. We should
+ then return to the Mages
+ Guild in ___questgiver_
+  in =timer_ days.
+
+Message:  1031
+<ce>              The Open spell belongs to the Thaumaturgy school.
+
+Message:  1032
+<ce>              The next number in this series is 88:
+<ce>              
+<ce>              1, 4, 10, 22, 46.
+
+Message:  1034
+<ce>                  "Atronach" is three.
+<ce>                  "Archmagister" is four.
+<ce>                  "Ambiguity" is five.
+<ce>                  Therefore, "amelioration" must be six.
+
+Message:  1035
+<ce>                  "Research" is eight.
+<ce>                  "Fire" is five.
+<ce>                  "Book" is eleven.
+<ce>                  Therefore, "reward" must be four.
+
+Message:  1037
+<ce>                   The "Ghost Form" spell is sold
+<ce>                    by the Mages Guild and not
+<ce>                    the Temple of Kynareth.
+
+Message:  1038
+<ce>                    "Notorgo's Curse" is a spell sold by both
+<ce>                    the Mages Guild and the Temple of Kynareth.
+
+Message:  1040
+<ce>                   The "Wizard's Fire" spell costs more gold
+<ce>                   at a Mages Guild than the "Invisibility" spell.
+
+Message:  1041
+<ce>                    The "Spell Reflection" spell costs more gold
+<ce>                   at a Mages Guild than the "Spell Absorption" spell.
+
+Message:  1043
+<ce>                    Legends among the Mages Guild say
+<ce>                   summoning Sheogorath is easier when
+<ce>                   there's thunder outside.
+
+Message:  1044
+<ce>                        The Daedric Artifact bestowed by
+<ce>                        Hircine is a powerful black mace.
+
+Message:  1046
+<ce>                     Just as I thought. Go back to the Fighters
+<ce>                   Guild and smash some more rodents for pay.
+<ce>                    I will remain here until I see fit to leave.
+
+Message:  1047
+<ce>                Your appearance has most certainly deceived me,
+<ce>                but only a worthy mage could answer so. Lead
+<ce>                the way. I have much to tell _questgiver_.
+
+Message:  1048
+<ce>                You couldn't convince _scholar_ to
+<ce>                return with you? How hard could it be? This is
+<ce>                truly a disappointment. I will credit you for reminding
+<ce>                %g2 to return here in a timely fashion, but I fear
+<ce>                I can give you no more than that. Better luck next time.
+
+Message:  1050
+%qdt:
+ I have failed to retrieve
+ _scholar_ from the
+ guild's research project.
+ I should return to
+ ___questgiver_ and report
+ on my doings.
+
+Message:  1052
+<ce>                The second rank in the Mages Guild is Journeyman.
+
+Message:  1053
+<ce>                Evokers in the Mages Guild can create magical items.
+
+Message:  1055
+<ce>                The teleportation service in the Mages Guild requires
+<ce>                an amount of gold derived from the distance traveled.
+
+Message:  1056
+<ce>                Daedra summoners in the Mages Guild require a service fee.
+
+QBN:
+Item _reward_ book2
+
+Person _questgiver_ group Questor male
+Person _scholar_ faction The_Academics
+
+Place _dung_ remote dungeon
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0 
+          place npc _scholar_ at _dung_
+
+_begin_ task:
+          clicked npc _scholar_
+          prompt 1029 yes _S.00_ no _fail_
+
+_S.00_ task:
+	pick one of _S.01_ _S.02_
+
+_S.01_ task:
+	prompt 1031 yes _fail_ no _S.03_
+
+_S.02_ task:
+	prompt 1032 yes _fail_ no _S.03_
+
+_S.03_ task:
+	pick one of _S.04_ _S.05_
+
+_S.04_ task:
+	prompt 1034 yes _fail_ no _S.06_
+
+_S.05_ task:
+	prompt 1035 yes _S.06_ no _fail_
+
+_S.06_ task:
+	pick one of _S.07_ _S.08_
+
+_S.07_ task:
+	prompt 1037 yes _fail_ no _S.09_
+
+_S.08_ task:
+	prompt 1038 yes _fail_ no _S.09_
+
+_S.09_ task:
+	pick one of _S.10_ _S.11_
+
+_S.10_ task:
+	prompt 1040 yes _fail_ no _S.12_
+
+_S.11_ task:
+	prompt 1041 yes _S.12_ no _fail_
+
+_S.12_ task:
+	pick one of _S.13_ _S.14_
+
+_S.13_ task:
+	prompt 1043 yes _S.15_ no _fail_
+
+_S.14_ task:
+	prompt 1044 yes _fail_ no _S.15_
+
+_S.15_ task:
+	pick one of _S.16_ _S.17_
+
+_S.16_ task:
+	prompt 1052 yes _S.18_ no _fail_
+
+_S.17_ task:
+	prompt 1053 yes _fail_ no _S.18_
+
+_S.18_ task:
+	pick one of _S.19_ _S.20_
+
+_S.19_ task:
+	prompt 1055 yes _fail_ no _success_
+
+_S.20_ task:
+	prompt 1056 yes _success_ no _fail_
+
+_fail_ task:
+	say 1046
+
+_success_ task:
+          say 1047
+          hide npc _scholar_
+          add _scholar_ face
+
+_pcgetsgold_ task:
+          when _qgclicked_ and _success_
+	give pc _reward_
+	end quest
+
+_badend_ task:
+          when _qgclicked_ and _fail_
+	say 1048
+	end quest
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _success_ and not _fail_
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_timer_ task:
+          say 1003
+	end quest

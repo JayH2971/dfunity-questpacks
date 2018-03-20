@@ -1,0 +1,116 @@
+-- Dark Brotherhood
+-- Req Rep: 0-20
+Quest: JHDB004
+DisplayName: Sanctimonious Wreck
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                     DFU DARK BROTHERHOOD QUEST
+<ce>          
+<ce>          %pct, we have no qualms with the adherents
+<ce>          to religious study and practice. Their gods do
+<ce>          not interfere with our god, and therefore they
+<ce>          live. Nevertheless, a contract has recently arrived
+<ce>          to request the end of a particularly nosy preacher
+<ce>          in ___questgiver_. Will you serve the
+<ce>          Night Mother by doing the Brotherhood's work?
+<--->
+<ce>                     DFU DARK BROTHERHOOD QUEST
+<ce>          
+<ce>          For obvious reasons we rarely send our members
+<ce>          to _temple_. Usually their
+<ce>          practitioners and ours are incompatible, lending
+<ce>          to an uncomfortable friction. Yet even they will
+<ce>          occasionally request our aid as a last resort
+<ce>          when kind words and uncomfortable glances
+<ce>          are not enough. We have on our hands an
+<ce>          errant cleric who requires an accounting.
+
+RefuseQuest:  [1001]
+<ce>           What easier task do you seek, %pct?
+<ce>           Shining someone's boots? Combing some hair?
+
+AcceptQuest:  [1002]
+<ce>       This complaint concerns a priest in
+<ce>       _temple_ who has
+<ce>       shown little of the restraint and etiquette
+<ce>       necessary for a preacher of morality.
+<ce>       Some say this cleric has gone too far.
+<ce>       One is paying us to prove it. Bring balance
+<ce>       to ___questgiver_ and return
+<ce>       within twelve hours.
+
+QuestFail:  [1003]
+<ce>               Failure text
+
+QuestComplete:  [1004]
+<ce>               Very good, %pct. May Mephala
+<ce>               guide you in your future service
+<ce>               to the Dark Brotherhood.
+
+Message:  1022
+<ce>           Look how even the common criminal
+<ce>             passes through the door of our
+<ce>            temple! Have at you and be one
+<ce>               with the dust of the earth!
+
+Message:  1032
+%qdt:
+ The Dark Brotherhood has
+ sent me to slay a priest
+ in _temple_.
+ I have twelve hours to
+ do it and return.
+
+Message:  1042
+<ce>            "May the doors of this temple
+<ce>             be closed to you forever!"
+<ce>             
+<ce>             The priest lets out one final gasp
+<ce>             and collapses. The other members
+<ce>             are not so convinced of this fool's
+<ce>           pronouncement. Your work here is done.
+
+Message:  1099
+<ce>            Do you know what a temple looks
+<ce>            like, %pct? Go there. Kill the priest.
+<ce>            Come here. This is simple.
+
+QBN:
+Person _questgiver_ group Questor male
+
+Place _temple_ local temple
+
+Clock _timer_ 12:00
+
+Foe _priest_ is Healer
+
+--	Quest start-up:
+	start timer _timer_ 
+	place foe _priest_ at _temple_ 
+           restrain foe _priest_
+	log 1032 step 0 
+
+_ipr_ task:
+          injured _priest_
+          say 1022
+
+_slain_ task:
+	killed 1 _priest_ saying 1042
+
+_timer_ task:
+	end quest
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_pcreward_ task:
+	when _qgclicked_ and _slain_ 
+	give pc nothing
+	end quest 

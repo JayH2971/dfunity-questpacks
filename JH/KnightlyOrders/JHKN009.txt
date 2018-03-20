@@ -1,0 +1,117 @@
+-- Knightly Order
+-- Min Rep: 30
+Quest: JHKN009
+DisplayName: The Clumsy Dark Arts
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                   DFU KNIGHTLY ORDER QUEST
+<ce>              
+<ce>        %pct, I have a few questions. Do you hate
+<ce>        giants, the bumbling, violent kidnappers of farm
+<ce>        animals and unaware townspeople? And do you
+<ce>        hate the Necromancers, who raise up our
+<ce>        ancestors in dark slavery? And would you hate a
+<ce>        group of giant Necromancers, who can both
+<ce>        squash their enemies and raise their spirits
+<ce>        to fight for them?
+
+RefuseQuest:  [1001]
+<ce>        The answers to these questions should be obvious.
+<ce>              On what matter do you differ, %pcf?
+
+AcceptQuest:  [1002]
+<ce>        Then go to __dung_. The existence
+<ce>        of such barbarians with some skill in the magical
+<ce>        arts is a great anomaly, one we have no need to
+<ce>        tolerate. The Mages Guild has the duty to wipe
+<ce>        %crn clean of necromancy, and they find
+<ce>        themselves in a state of temporary dereliction.
+<ce>        They informed us that destroying the menaces
+<ce>        to the townsfolk are our responsibility. If you
+<ce>        will wipe out this band of mage giants, I will
+<ce>        inform our lordship of the Mages Guild's failure
+<ce>        to respond. Let us meet here again within =timer_
+<ce>        days with each of our tasks completed.
+
+QuestFail:  [1003]
+<ce>        _questgiver_ needed you to destroy the
+<ce>        giant necromancers by now.
+
+QuestComplete:  [1004]
+<ce>       Stellar work. I have done my part on the diplomatic
+<ce>       side of things. If the Mages Guild wishes to keep its
+<ce>       charter in %crn, they will need to pick up the
+<ce>       pace. Thank you for keeping our citizens safe.
+
+Message:  1020
+<ce>       This giant immediately recognizes you as a serious threat.
+<ce>       It begins chanting, and you feel a dark presence draw near.
+
+Message: 1021
+<ce>       Once this giant falls, you feel the dark presence subside.
+<ce>       The cult of necromantic giants has been slain.
+
+Message:  1030
+%qdt:
+ _questgiver_ has tasked
+ me with slaying a cult of giants in
+ __dung_ who have
+ somehow gained knowledge of
+ necromancy. I have =timer_ days to
+ return to ___questgiver_.
+
+Message:  1099
+<ce>          Slaying giants and ending necromancy are
+<ce>          both worthy acts. How much more worthy
+<ce>          is doing them at the same time, then?
+
+QBN:
+Person _questgiver_ group Questor male
+
+Place _dung_ remote dungeon
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _enemy_ is Giant
+Foe _enemy1_ is Wraith
+
+--	Quest start-up:
+	start timer _timer_ 
+	log 1030 step 0 
+	pc at _dung_ set _inside_
+          reveal _dung_
+
+variable _inside_
+_giants_ task:
+	when _inside_ and not _slain_
+	create foe _enemy_ every 8 minutes indefinitely with 66% success
+
+_injured_ task:
+          injured _enemy_
+          say 1020
+
+_spawn_ task:
+         when _injured_ and _inside_ and not _slain_
+         create foe _enemy1_ every 4 minutes indefinitely with 25% success
+
+_slain_ task:
+	killed 7 _enemy_ saying 1021
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _slain_ 
+	give pc nothing
+	end quest 
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_timer_ task:
+          say 1003
+	end quest

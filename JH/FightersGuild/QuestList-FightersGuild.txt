@@ -1,0 +1,18 @@
+-- Jay_H Fighters Guild quest pack list
+
+-- name:        filename of QRC txt file
+-- group:       guild group from FactionFile.GuildGroups enum
+-- membership:  N=non-member, M=member
+-- minRep:      minimum reputation required to be offered the quest (units can use X wildcard)
+-- notes:
+
+schema: *name, group, membership, minRep, notes
+
+JHFG001, FightersGuild, M, 40, a quest to slay a vampire in another town
+JHFG002, FightersGuild, M, 60, a quest to slay a daedra in a dungeon
+JHFG003, FightersGuild, M, 15, a quest to slay a criminal in a dungeon
+JHFG004, FightersGuild, M, 20, a quest to guard a residence from intruders
+JHFG005, FightersGuild, M, 0, a quest to slay a pack of beasts at a rural farmhome
+JHFG006, FightersGuild, M, 15, a quest to stop an assassination inside a home
+JHFG007, FightersGuild, M, 25, courier work + ambush in a house
+JHFG008, FightersGuild, M, 40, a survival battle for one hour against summoned creatures

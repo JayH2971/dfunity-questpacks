@@ -1,0 +1,157 @@
+-- Knightly Order
+-- Min Rep: 10
+Quest: JHKN002
+DisplayName: Inhospitable Guests
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                    DFU KNIGHTLY ORDER QUEST
+<ce>          
+<ce>          %pcf, the Order has need of your
+<ce>           help once more. Mere days ago
+<ce>          __home_ was overtaken
+<ce>           by a band of thugs who have taken
+<ce>           to robbing, repossessing, and so on.
+<ce>            It's too far for an ordinary patrol
+<ce>           to deal with, and the cry has
+<ce>            therefore come to us. Will you
+<ce>             help these poor people?
+
+RefuseQuest:  [1001]
+<ce>              I suppose I shouldn't be surprised.
+
+AcceptQuest:  [1002]
+<ce>               Go quickly now. The thugs should have
+<ce>             no interest in killing the townspeople.
+<ce>              Ensure you harm no innocents. Arrive
+<ce>               at night if you must. The scoundrels
+<ce>                are most certainly keeping watch, so
+<ce>               once you appear on the property they will
+<ce>                no doubt move to slay you. You have
+<ce>                =timer_ days. %god be with you.
+
+QuestFail:  [1003]
+<ce>               Never forget your duty
+<ce>              to the defenseless, %pcf.
+
+QuestComplete:  [1004]
+<ce>                You should feel proud, %pcf.
+<ce>               You have done a great deed.
+
+Message: 1020
+<ce>             This band of thugs is no more.
+
+Message:  1024
+<ce>             Once you step onto the property,
+<ce>             a youth quickly scampers over
+<ce>             and whispers into your ear.
+<ce>             
+<ce>             "Excuse me %ra, but we can't have
+<ce>             you on this property. We resorted to
+<ce>             the Dark Brotherhood's aid and they
+<ce>             have saved us from our enemies. Please
+<ce>             leave before a misunderstanding arises."
+<ce>             
+<ce>             The youth shuffles away without
+<ce>             further explanation. You should
+<ce>             head back to ___questgiver_ and
+<ce>             explain what has happened.
+
+Message:  1025
+<ce>             _questgiver_ looks deeply upset.
+<ce>             
+<ce>             "The Dark Brotherhood? Protecting
+<ce>             __home_? This is a grievous
+<ce>             report, %pct. We can do nothing
+<ce>             more for now, though I will speak to the
+<ce>             other knight lords in %crn.
+<ce>             We cannot permit the powers of darkness
+<ce>             further foothold in our fair land. I will
+<ce>             credit you nonetheless for making the
+<ce>             journey and ensuring their safety.
+<ce>             Thank you for a good effort, %pcf."
+
+Message:  1030
+%qdt:
+ I have been sent from
+ ___questgiver_ to a farm,
+ __home_, which has
+ been taken captive by a band
+ of criminals. I must free the 
+ captives and return within
+ =timer_ days.
+
+Message:  1031
+ %qdt:
+ __home_ has been
+ liberated by the Dark Brotherhood,
+ one of its residents told me. I
+ should return to ___questgiver_
+ and report on this matter.
+
+Message:  1099
+<ce>        __home_ needs a savior,
+<ce>        and we have put our trust in you.
+<ce>        Go free the captive farmspeople.
+
+QBN:
+Item _reward_ gold
+
+Person _questgiver_ group Questor male
+
+Place _home_ remote farmhome
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _enemy_ is 4 Rogue
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0 
+	pc at _home_ set _there_
+          pick one of _norm_ _norm_ _norm_ _norm_ _norm_ _alt_
+
+variable _norm_
+variable _alt_
+
+_there_ task:
+	pick one of _spawn_
+
+_spawn_ task:
+
+_kill_ task:
+	when _spawn_ and not _alt_
+	create foe _enemy_ every 1 minutes 1 times with 100% success
+
+_slain_ task:
+	killed 4 _enemy_ saying 1020
+
+_altstep_ task:
+          when _alt_ and _there_
+          start task _altfin_
+
+_altfin_ task:
+          say 1024
+          log 1031 step 1
+
+_timer_ task:
+	end quest
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ and not _altfin_
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_pcreward_ task:
+	when _qgclicked_ and _slain_ 
+	give pc nothing
+	end quest 
+
+_altend_ task:
+	when _qgclicked_ and _altfin_ 
+	say 1025
+	end quest 

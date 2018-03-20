@@ -1,0 +1,98 @@
+-- Fighters Guild
+-- Min Rep: 35
+Quest: JHFG001
+DisplayName: Much at Stake
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                      DFU FIGHTERS GUILD QUEST
+<ce>          
+<ce>          We've got a job for someone experienced like you,
+<ce>           %pcf, but I'm not gonna blame you for turning
+<ce>           it down. It involves one vampire and no sunlight.
+<ce>              You think you can fix that kind of problem?
+<ce>                  There's _reward_ gold in it for you.
+<--->
+<ce>                      DFU FIGHTERS GUILD QUEST
+<ce>          
+<ce>          Ever killed a vampire before, %pcf? Not one
+<ce>          of them ancients. Those things give me the
+<ce>          willies, and if they don't for you, you're not human.
+<ce>          No, we've got a request here to floor some simple
+<ce>          vampire in a house over in ___vampres_.
+<ce>          Take this one if you feel ready for it.
+
+RefuseQuest:  [1001]
+<ce>                       I'll look for someone else then.
+
+AcceptQuest:  [1002]
+<ce>          So here's the deal. You're headed to  _vampres_.
+<ce>          That'll be in ___vampres_. Slay the beast
+<ce>          and get back here so I can get you your _reward_ gold.
+<ce>          I'm giving you =timer_ days before I send for backup 
+<ce>          from a temple or something. Good luck, %pcf.
+
+QuestFail:  [1003]
+<ce>               Fail
+
+QuestComplete:  [1004]
+<ce>           Excellent work, %pcf. This is why
+<ce>            we count on you. Have your gold.
+
+RumorsDuringQuest:  [1005]
+Did you hear about the vampire that showed up in __vampres_? I can't sleep anymore.
+
+
+Message:  1020
+<ce>                   "No!" The vampire shrieks
+<ce>                 before crumpling to the floor.
+
+
+Message:  1030
+%qdt:
+ The Fighters Guild of
+ ___questgiver_ has sent me to
+ __vampres_ to slay a vampire
+ in _vampres_.  I've got to
+ to be back in =timer_ days
+ or they'll call for the temple.
+
+Message:  1099
+<ce>                 You need to go kill that vampire
+<ce>                 in __vampres_. Get going.
+
+QBN:
+Item _reward_ gold range 600 to 800
+
+Person _questgiver_ group Questor male
+
+Place _vampres_ remote house1
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _vamp_ is Vampire
+
+--	Quest start-up:
+	start timer _timer_ 
+	log 1030 step 0 
+	place foe _vamp_ at _vampres_ 
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _slain_ 
+	give pc _reward_ 
+	end quest 
+
+_slain_ task:
+	killed 1 _vamp_ saying 1020 
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_timer_ task:
+	end quest 

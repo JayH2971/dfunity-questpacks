@@ -1,0 +1,125 @@
+-- Fighters Guild
+-- Min Rep: 15
+Quest: JHFG003
+DisplayName: Monarch's Request
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                     DFU FIGHTERS GUILD QUEST
+<ce>              
+<ce>              We try to stay out of politics as much as possible, but
+<ce>              sometimes the powers that be in ____questgiver_
+<ce>              force our hand. There's some criminal down in
+<ce>               __dungeon_ that the guards have given
+<ce>              up on who still needs to die. It's paying _reward_ gold.
+<ce>              Is that enough for you?
+<--->
+<ce>                     DFU FIGHTERS GUILD QUEST
+<ce>              
+<ce>           So the Fighters Guild just kills spiders and bears
+<ce>           all day, right? Not quite. ____questgiver_
+<ce>           sometimes tries to get us to pick off some
+<ce>           dangerous criminal that they can't catch
+<ce>           themselves. It still pays though, in this case
+<ce>           _reward_ gold. Does that work for you?
+
+RefuseQuest:  [1001]
+<ce>                       I'm fine with that. What do we
+<ce>                      look like? The Dark Brotherhood?
+
+AcceptQuest:  [1002]
+<ce>                   You just can't resist, can you %pcf?
+<ce>                   Just remember, this isn't murder. We're lawfully
+<ce>                   contracted by the government in this. Get down
+<ce>                   to __dungeon_ and back here in
+<ce>                   =timer_ days, and I'll have your _reward_ gold here.
+<ce>                   
+<ce>                   By the way, this one's a ringleader of some band
+<ce>                   of some kind, so be ready if things go south.
+
+QuestFail:  [1003]
+<ce>               Your contract with the Fighters Guild
+<ce>               in __dungeon_ is overdue.
+
+QuestComplete:  [1004]
+<ce>           Well done. That should keep the guard
+<ce>          off our backs for awhile. Here's your gold.
+
+Message:  1020
+<ce>                   Your foe lets out a blood-curdling
+<ce>                 scream which echoes through the halls.
+
+Message:  1030
+%qdt:
+ I've been contracted by
+ the city guard through
+ the Fighters Guild of
+ ___questgiver_ to hunt
+ down a criminal ringleader
+ in __dungeon_. I need to
+ be back in =timer_ days
+ to get my _reward_ gold.
+
+Message: 1099
+<ce>               %crn is paying us to kill that outlaw
+<ce>                 in __dungeon_. Move.
+
+QBN:
+Item _reward_ gold range 400 to 600
+
+Person _questgiver_ group Questor male
+
+Place _dungeon_ remote dungeon
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _enemy1_ is Nightblade
+Foe _enemy2_ is Assassin
+Foe _enemy3_ is Rogue
+Foe _enemy4_ is Spellsword
+
+--	Quest start-up:
+	start timer _timer_ 
+	log 1030 step 0 
+	pick one of _E.01_ _E.02_ _E.03_ _E.04_
+          reveal _dungeon_
+
+ _E.01_ task:
+	place foe _enemy1_ at _dungeon_
+
+ _E.02_ task:
+	place foe _enemy2_ at _dungeon_
+
+ _E.03_ task:
+	place foe _enemy3_ at _dungeon_
+
+ _E.04_ task:
+	place foe _enemy4_ at _dungeon_
+
+_slain_ task:
+	killed 1 _enemy1_ saying 1020 
+	killed 1 _enemy2_ saying 1020 
+	killed 1 _enemy3_ saying 1020 
+	killed 1 _enemy4_ saying 1020
+	create foe _enemy1_ every 4 minutes 4 times with 4% success
+	create foe _enemy2_ every 4 minutes 4 times with 4% success
+	create foe _enemy3_ every 4 minutes 4 times with 4% success
+	create foe _enemy4_ every 4 minutes 4 times with 4% success
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _slain_ 
+	give pc _reward_ 
+	end quest 
+
+_timer_ task:
+          say 1003
+	end quest 
