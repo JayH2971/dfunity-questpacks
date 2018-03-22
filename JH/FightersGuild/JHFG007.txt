@@ -143,6 +143,7 @@ _slain_ task:
 
 _victory_ task:
   toting _pick_ and _questgiver_ clicked
+  make _pick_ permanent
   give pc _reward_
   end quest
 
