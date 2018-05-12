@@ -1,0 +1,105 @@
+Quest: JHPINIT2
+DisplayName: PERPET INIT2
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>           JHPINIT2 1000
+
+RefuseQuest:  [1001]
+<ce>           JHPINIT2 1001
+
+AcceptQuest:  [1002]
+<ce>           JHPINIT2 1002
+
+QuestFail:  [1003]
+<ce>           JHPINIT2 1003
+
+QuestComplete:  [1004]
+<ce>           JHPINIT2 1004
+
+Message:  1010
+<ce>     A gust of wind blows by you unexpectedly.
+<--->
+<ce>     You feel an itch on your nose.
+<--->
+<ce>     You practice pronouncing "%god."
+<--->
+<ce>     You wonder how to write on your map
+<ce>     more efficiently than you do now.
+<--->
+<ce>     You think about your childhood momentarily.
+<--->
+<ce>     You neatly fold your map and put it away.
+
+QBN:
+
+Clock _countdown_ 9.00:00 35.00:00
+Clock _end_ 36.00:00
+
+--   Quest start-up:
+     start timer _countdown_
+     start timer _end_
+     pick one of _Q1_ _Q2_ _Q3_ _Q4_ _Q5_ _Q6_ _Q7_ _Q8_ _Q9_ _Q10_ _dud_ _dud_ _dud_ _dud_
+
+variable _Q1_
+variable _Q2_
+variable _Q3_
+variable _Q4_
+variable _Q5_
+variable _Q6_
+variable _Q7_
+-variable _Q8_
+-variable _Q9_
+-variable _Q10_
+variable _dud_
+
+_countdown_ task:
+     start quest JHPINIT
+
+_S1_ task:
+     when _countdown_ and _Q1_
+     start quest JHPQ011
+
+_S2_ task:
+     when _countdown_ and _Q2_
+     start quest JHPQ012
+
+_S3_ task:
+     when _countdown_ and _Q3_
+     start quest JHPQ013
+
+_S4_ task:
+     when _countdown_ and _Q4_
+     start quest JHPQ014
+
+_S5_ task:
+     when _countdown_ and _Q5_
+     start quest JHPQ015
+
+_S6_ task:
+     when _countdown_ and _Q6_
+     start quest JHPQ016
+
+_S7_ task:
+     when _countdown_ and _Q7_
+     start quest JHPQ017
+
+_S8_ task:
+     when _countdown_ and _Q8_
+-     start quest JHPQ018
+
+_S9_ task:
+     when _countdown_ and _Q9_
+-     start quest JHPQ019
+
+_S10_ task:
+     when _countdown_ and _Q10_
+-     start quest JHPQ020
+
+_return_ task:
+    when _countdown_ and not _Q1_ and not _Q2_ and not _Q3_ and not _Q4_ and not _Q5_ and not _Q6_ and not _Q7_ and not _Q8_ and not _Q9_ and not _Q10_
+    say 1010
+
+_end_ task:
+    end quest

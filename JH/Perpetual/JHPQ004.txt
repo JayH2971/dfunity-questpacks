@@ -1,0 +1,191 @@
+-- Perpetual Quest
+Quest: JHPQ004
+DisplayName: The Archaeologists
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ002
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ003
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ003
+
+QuestFail:  [1003]
+<ce>   You needed to present _scholar_'s
+<ce>   report to ___pawn_ by now. Your career
+<ce>   with the Archaeologists will be short-lived.
+
+QuestComplete:  [1004]
+<ce>        You have _scholar_'s report? Let me see it.
+ 
+<ce>        What a tremendous waste of time. Are you
+<ce>        certain you actually spoke with %g2? This
+<ce>        does not reflect the kind of work %g1 turns
+<ce>        in. I will give you the benefit of the doubt
+<ce>        this time, but do not expect me to be so
+<ce>        generous in the future. Take your payment.
+<ce>        We will evaluate your performance, and
+<ce>        should we decide to grant you further work,
+<ce>        a field officer will send for you. Please fulfill
+<ce>        every assignment with integrity, if we find
+<ce>        you worth our time. Now leave me alone.
+<ce>        
+<ce>                      TO BE CONTINUED
+
+Message:  1010
+<ce>        An advertisement is written on a heavy piece
+<ce>        of parchment on the ground here. You pick it up.
+
+Message:  1011
+  HELP WANTED
+ 
+    The Archaeologists seek seasonal labor in their
+  work of uncovering, ferrying, and testing ancient
+  artifacts throughout the Iliac Bay. See recruiting
+  officer _qg_ in ___pawn_
+  for requirements and application.
+
+Message:  1012
+<ce>        Good day, %ra. My name is _qg_.
+<ce>        Are you here to apply for work with the Archaeologists?
+<ce>        Very well. Give me a minute to fill out this form.
+<ce>        
+<ce>        Our recruits tend to fill a wide variety of duties. They
+<ce>        generally settle into some area of preferred practice,
+<ce>        but that is something our officers will decide, not you.
+<ce>        Commission is typically a few hundred gold pieces per
+<ce>        assignment. Complete each one punctually. Failure to
+<ce>        respond to the call of duty can result in immediate
+<ce>        dismissal without further warning. Do not fantasize
+<ce>        about digging up something like Chrysamere or
+<ce>        Auriel's Shield and keeping it for yourself. That would
+<ce>        be a gross violation of the trust we put in you.
+<ce>        Do you acknowledge these terms and submit your
+<ce>        petition for employment with the Archaeologists?
+
+Message:  1013
+<ce>     Then I grant you the title of Trainee, %ra.
+<ce>     Or %pcf, rather. As a Trainee you will be
+<ce>     bound to a series of simple tasks that ensure you
+<ce>     understand the concept of perfect obedience.
+<ce>     Do not vary from the instructions we give you
+<ce>     for any reason whatsoever. Period.
+<ce>     
+<ce>     Your first assignment is to find _scholar_
+<ce>     in __dung_, who needs to turn
+<ce>     in a report this month. Go with haste to
+<ce>     find %g2. I grant you no more than three
+<ce>     weeks in order to receive your pay.
+
+Message:  1014
+<ce>     AHH! %oth, what makes you think
+<ce>     you can sneak up on me, %ra? Get to
+<ce>     Oblivion or I'll send you there myself!
+<ce>     
+<ce>     Archaeologists? Oh, they actually sent someone
+<ce>     for me? Well, perhaps this means they're taking
+<ce>     me seriously. Just my luck that it would be on
+<ce>     this case. Let me sign this letter that you can
+<ce>     take back to them. It will show them they were
+<ce>     wrong, just as I told them. I'll have to present my
+<ce>     full findings next month. This was all a waste of
+<ce>     time. Get going, %ra. Don't bother me again.
+
+Message:  1015
+<ce>     Then why are you here? Why do
+<ce>     you waste my time? Go away.
+
+Message:  1030
+%qdt:
+ _qg_ of the Archaeologists
+ has sent me to __dung_
+ to look for _scholar_,
+ who is conducting research
+ in its depths. I must retrieve a report
+ from %g2 and take it back
+ to ___pawn_ within =timer_ days.
+
+Message:  1040
+  _scholar_
+  Initial Survey, __dung_
+ 
+    The rumors were apparently ill-founded. I've spent no
+  fewer than =dummy_ days merely attempting to find any
+  traces of the so-called artifact, but nothing can be said
+  for it.
+ 
+  Request a re-reading of the source.
+  Dramatic change in circumstance needed to continue.
+  Will return in two weeks otherwise.
+ 
+                  Signed %qdt
+
+Message:  1099
+<ce>  Do you seriously need assistance with this task?
+<ce>  Go find _scholar_! I'm already sick of you!
+
+QBN:
+Item _reward_ gold range 200 to 300
+Item _letter_ letter used 1011
+Item _research_ letter used 1040
+
+Place _pawn_ remote pawnshop
+Place _dung_ remote dungeon
+
+Clock _1st_ 30.00:00
+Clock _timer_ 21.00:00
+Clock _dummy_ 8.00:00 14.00:00
+
+Person _qg_ group Chemist male
+Person _scholar_ group Librarian
+
+--	Quest start-up:
+	start timer _1st_
+          give pc _letter_ notify 1010
+          place npc _qg_ at _pawn_
+          place npc _scholar_ at _dung_
+
+_qgclicked_ task:
+	clicked npc _qg_ 
+
+_enroll_ task:
+     when _qgclicked_ and not _begin_ and not _schtalk_
+     prompt 1012 yes _begin_ no _refuse_
+     clear _qgclicked_
+
+_refuse_ task:
+     say 1015
+     clear _qgclicked_ _refuse_ _enroll_
+
+_begin_ task:
+    say 1013
+    log 1030 step 0
+    stop timer _1st_
+    start timer _timer_
+    reveal _dung_
+
+_schtalk_ task:
+    clicked npc _scholar_
+    say 1014
+    get item _research_
+
+_reminder_ task:
+    when _qgclicked_ and _begin_ and not _schtalk_
+    say 1099
+    clear _qgclicked_
+
+_victory_ task:
+    toting _research_ and _qg_ clicked
+    give pc _reward_
+    end quest
+
+_1st_ task:
+         end quest
+
+_timer_ task:
+         say 1003
+         start quest JHARFAIL
+         end quest
