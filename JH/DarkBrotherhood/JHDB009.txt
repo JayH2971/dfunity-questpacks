@@ -1,4 +1,6 @@
+-- Dark Brotherhood quest
 Quest: JHDB009
+DisplayName: Going Home
 -- Message panels
 QRC:
 
@@ -10,7 +12,7 @@ QuestorOffer:  [1000]
 <ce>               competency. A child named _kid_ has
 <ce>               been kept in ___dung_ for several
 <ce>               weeks as part of a ransom plot. After we
-<ce>               lost communication for several days, one of
+<ce>               lost communication for some days, one of
 <ce>               our more magically talented members scried
 <ce>               the place and found the handler dead and
 <ce>               the child scared and alone. Now the ransom
