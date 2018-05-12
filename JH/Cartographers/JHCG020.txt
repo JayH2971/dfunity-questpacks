@@ -1,0 +1,60 @@
+-- Cartographers Quest
+Quest: JHCG020
+DisplayName: Cartographer Rank 2
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCG020
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCG020
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCG020
+
+QuestFail:  [1003]
+<ce>           ERROR 1003 JHCG020
+
+QuestComplete:  [1004]
+<ce>           ERROR 1004 JHCG020
+
+Message:  1010
+<ce>        A beaming courier presents you with a scroll
+<ce>        which he unfurls before you. "A letter from
+<ce>        the Cartographers, %pcf! It's for you!"
+<ce>        He then departs.
+<--->
+<ce>        A beaming courier presents you with a scroll
+<ce>        which she unfurls before you. "A letter from
+<ce>        the Cartographers, %pcf! It's for you!"
+<ce>        She then departs.
+
+Message:  1011
+  %pcn,
+ 
+  In recognition of your efforts on behalf of
+  our association, we wish to promote you to the
+  rank of Pathfinder at this time. You now belong
+  to a select group of skilled travelers who are
+  sent to some of the Iliac Bay's most exotic locales.
+  We hope the pay will match the excitement you
+  feel from the locations you are assigned to.
+ 
+                         Gondystir Greenfield
+                         Master
+                         The Cartographers
+                         Eastbrone, Wayrest
+
+QBN:
+Item _letter_ letter used 1011
+
+Clock _timer_ 16.00:00 25.00:00
+
+--	Quest start-up:
+          start timer _timer_
+          give pc _letter_ notify 1010
+          start quest JHCGENT4
+
+_timer_ task:
+         end quest

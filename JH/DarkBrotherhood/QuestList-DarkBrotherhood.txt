@@ -16,3 +16,4 @@ JHDB005, DarkBrotherHood, M, 0, a quest to slay a barbarian inside the same town
 JHDB006, DarkBrotherHood, M, 10, a quest to kidnap a child for ransom
 JHDB007, DarkBrotherHood, M, 15, a quest to slay a mark over a bodyguard's objection
 JHDB008, DarkBrotherHood, M, 70, a quest to slay a teleported noble
+JHDB009, DarkBrotherHood, M, 10, a quest to retrieve a ransomed child

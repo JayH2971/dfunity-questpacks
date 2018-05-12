@@ -1,0 +1,75 @@
+-- Cartographers Quest, Rank 1 Failsafe
+Quest: JHCGFAIL
+DisplayName: Cartographer Failure Diversion
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCGFAIL
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCGFAIL
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCGFAIL
+
+QuestFail:  [1003]
+<ce>          ERROR 1003 JHCGFAIL
+
+QuestComplete:  [1004]
+<ce>        Ah, this is very good news. I was worried
+<ce>        we had lost you. If you need, take a breather
+<ce>        and get your head sorted out. We want you
+<ce>        to be in top shape for the work we do. I'll send
+<ce>        a letter to our communications officers that you're
+<ce>        still willing to work. Thank you, %pcf.
+
+Message:  1010
+<ce>        A middle-aged, well-dressed courier draws near.
+<ce>        "%pcf, right? I've got some mail for you.
+<ce>        Here, take this. Have a good day."
+
+Message:  1011
+  %pcn,
+ 
+  I am worried regarding your absence. We gave
+  you an assignment last month, but it went
+  unfinished and now we have no knowledge
+  concerning your decision. If you wish to part from
+  working with us, give no response to this letter.
+  We will understand and accept it. If your omission
+  was in error and you wish to continue working with
+  us, please come speak to me. We wish to integrate
+  you into our work cycle once more. I will remain
+  here for =timer_ more days.
+ 
+                         _qg_
+                         Pathfinder
+                         The Cartographers
+                         ___place_, ____place_
+
+QBN:
+Item _letter_ letter used 1011
+
+Place _place_ remote random
+
+Clock _1st_ 5.00:00 10.00:00
+Clock _timer_ 36.00:00 45.00:00
+
+Person _qg_ group Librarian
+
+--	Quest start-up:
+          start timer _1st_
+          start timer _timer_
+
+_1st_ task:
+          give pc _letter_ notify 1010
+          place npc _qg_ at _place_
+
+_qgclicked_ task:
+         clicked npc _qg_ 
+         give pc nothing
+         start quest JHCGENT0
+
+_timer_ task:
+         end quest

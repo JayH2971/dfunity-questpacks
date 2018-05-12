@@ -4,6 +4,8 @@ Take note of the following points:
 
 * Minimal testing for game balance has been made. Bring feedback to the Daggerfall Workshop forums if some quest is ridiculously difficult when it should not be. JHMG00X, "Death's Embrace," is meant to be ridiculously difficult.
 
+* Cartographers, Commoner, and Noble quests are not yet implemented in the game.
+
 * Use Shift-Tab to make the quest information on your screen expand or disappear. This will also toggle the HUD compass.
 
 * Some quests rely on dialogue clues to find a person or place, but right now dialogue resolution is incomplete. Finding people or residences is not always possible through a townsperson. Use the HUD compass to find a quest location in such cases.

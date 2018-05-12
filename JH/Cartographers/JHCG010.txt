@@ -1,0 +1,60 @@
+-- Cartographers Quest
+Quest: JHCG010
+DisplayName: Cartographer Rank 1
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCG010
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCG010
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCG010
+
+QuestFail:  [1003]
+<ce>           ERROR 1003 JHCG010
+
+QuestComplete:  [1004]
+<ce>           ERROR 1004 JHCG010
+
+Message:  1010
+<ce>        A courier, holding a pouch with an embroidered
+<ce>        compass on the front, hands you a scroll and
+<ce>        bows courteously before departing.
+<--->
+<ce>        "Hail, %pcn! The Cartographers
+<ce>        have sent a missive for your noble eyes only!"
+<ce>        A courier unfurls a scroll and kneels before you,
+<ce>        holding it aloft. You take it out of his hands,
+<ce>        and he marches off to continue his duties.
+
+Message:  1011
+  %pcn,
+ 
+  In response to your obvious dedication to our work,
+  we are pleased to grant you the title of Scout.
+  We will soon send you your first ranked assignment.
+  As promised, your pay per mission will increase,
+  as will the skill required for the tasks before you.
+  Consult with us when necessary and carry our
+  banner with honor as you have done thus far.
+ 
+                         Gondystir Greenfield
+                         Master
+                         The Cartographers
+                         Eastbrone, Wayrest
+
+QBN:
+Item _letter_ letter used 1011
+
+Clock _timer_ 16.00:00 25.00:00
+
+--	Quest start-up:
+          start timer _timer_
+          give pc _letter_ notify 1010
+          start quest JHCGENT2
+
+_timer_ task:
+         end quest

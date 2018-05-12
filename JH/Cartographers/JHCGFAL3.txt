@@ -1,0 +1,82 @@
+-- Cartographers Quest, Rank 3 Failsafe
+Quest: JHCGFAL3
+DisplayName: Cartographer Failure Diversion Rank 3
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCGFAL3
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCGFAL3
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCGFAL3
+
+QuestFail:  [1003]
+<ce>          ERROR 1003 JHCGFAL3
+
+QuestComplete:  [1004]
+<ce>        What a relief. Thank you for following up,
+<ce>        Pathfinder. I'll let our coordinators know
+<ce>        this was just a fluke and not a desertion.
+<ce>        If you ever need to move on and end your
+<ce>        service with us, we'll understand. We just
+<ce>        hope to get as much work out of you
+<ce>        as we can until that time comes.
+
+Message:  1010
+<ce>        A courier, not much older than a child, pulls a letter
+<ce>        out of his bag and silently hands it to you.
+<--->
+<ce>        A courier, not much older than a child, pulls a letter
+<ce>        out of her bag and silently hands it to you.
+
+Message:  1011
+  Pathfinder,
+ 
+  I write this hoping that no ill has come upon you.
+  You came up short on your last assignment, and
+  since then we have known nothing of you. If you
+  merely made a mistake and wish to continue in
+  our service, please meet me here before
+  =timer_ days have passed. I sincerely hope you
+  will be able to continue to serve us.
+ 
+                         _qg_
+                         Trailblazer
+                         The Cartographers
+                         ___place_, ____place_
+
+QBN:
+Item _letter_ letter used 1011
+
+Place _place_ remote house2
+
+Clock _1st_ 5.00:00 10.00:00
+Clock _timer_ 36.00:00 45.00:00
+
+Person _qg_ group Librarian
+
+--	Quest start-up:
+          start timer _1st_
+          start timer _timer_
+          pick one of _Q1_ _Q2_ _Q3_
+
+variable _Q1_
+variable _Q2_
+variable _Q3_
+variable _timer_
+
+_1st_ task:
+          give pc _letter_ notify 1010
+          place npc _qg_ at _place_
+
+_qgclicked_ task:
+         clicked npc _qg_ 
+         give pc nothing
+         start quest JHCGENT2
+
+_free_ task:
+       when _timer_ and not _qgclicked_
+       end quest

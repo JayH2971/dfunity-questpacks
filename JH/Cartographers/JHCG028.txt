@@ -1,0 +1,145 @@
+-- Cartographers Quest
+Quest: JHCG028
+DisplayName: Woodborne Hall
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCG028
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCG028
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCG028
+
+QuestFail:  [1003]
+<ce>   Your assignment to chart Woodborne Hall has run out.
+
+QuestComplete:  [1004]
+<ce>        Did you see anyone important inside, %pcf?
+<ce>        I suppose it's none of my business. I consort
+<ce>        with enough important people in Tamriel already.
+<ce>        But perhaps in a few years, one of the Master
+<ce>        Assistant positions may open up and they could
+<ce>        consider you for it! In the meantime, here's your fee.
+
+Message:  1010
+<ce>        A page approaches you and hands you
+<ce>        a scroll with the Cartographers' compass seal.
+<--->
+<ce>        A courier unrolls a scroll from the
+<ce>        Cartographers and gives it to you.
+
+Message:  1011
+  Pathfinder,
+ 
+  We need a chart regarding Woodborne Hall.
+  That's in Wayrest. This assignment will
+  last =timer_ days. Come bring me your report
+  after you've finished. Make sure you begin
+  your chart from within the keep to get an
+  accurate reading for this one.
+ 
+                         _qg_
+                         Master Assistant
+                         The Cartographers
+                         ___place_, ____place_
+
+Message:  1012
+<ce>        Good to see you, Pathfinder. This is likely
+<ce>        the easiest assignment you'll ever get from us.
+<ce>        Start at Tuncart in Wayrest. Go northwest, over
+<ce>        the hill. Lord Woodborne's hall should be staring
+<ce>        right at you once you're on top. It's nearly
+<ce>        impossible to miss, so just look for an open clearing
+<ce>        with a very impressive-looking castle.
+ 
+<ce>        You didn't know Lord Woodborne had a castle, did you?
+<ce>        Tuncart is well known for being one of his major refuges.
+<ce>        He would hire his food, mead, and women there. The
+<ce>        people of Tuncart have grown accustomed to seeing him
+<ce>        in The Rat and Helm when there's no war campaign afoot.
+<ce>        Come see me when you've finished. And as I wrote, make
+<ce>        sure you start your report from within the keep door.
+
+Message:  1013
+<ce>        This very well-maintained keep is Woodborne Hall.
+<--->
+<ce>        You've found Woodborne Hall. Curiosity
+<ce>         concerning its contents gnaws at you.
+
+Message:  1030
+%qdt:
+ The Cartographers have sent me
+ to Woodborne Hall, and then to
+ ___place_ in ____place_.
+ _qg_ can give me
+ any needed orientation.
+
+Message:  1031
+%qdt:
+ Woodborne Hall is right up the hill from
+ Tuncart in Wayrest, to the northwest.
+
+Message:  1099
+<ce>  This is the easiest assignment
+<ce>  of all. We try to spread it
+<ce>  around as much as we can.
+<--->
+<ce>  That Woodborne made a brilliant
+<ce>  pick. A lakeside property on top
+<ce>  of a hill next to a quiet city?
+<ce>  Who could find better than that?
+
+QBN:
+Item _reward_ gold range 600 to 699
+Item _letter_ letter used 1011
+
+Place _dung_ permanent WoodbourneHall4
+Place _place_ remote house2
+
+Clock _timer_ 60.00:00 70.00:00
+
+Person _qg_ group Chemist
+
+--	Quest start-up:
+          start timer _timer_
+          give pc _letter_ notify 1010
+          place npc _qg_ at _place_
+          pc at _dung_ set _inside_
+          log 1030 step 0
+
+_qgclicked_ task:
+	clicked npc _qg_ 
+
+_begin_ task:
+     when _qgclicked_ and not _talked_ and not _found_
+     say 1012
+     reveal _dung_
+     clear _qgclicked_
+     log 1031 step 1
+     start task _talked_
+
+variable _talked_
+_inside_ task:
+     start task _found_
+
+_found_ task:
+    say 1013
+
+_reminder_ task:
+    when _qgclicked_ and _talked_ and not _found_
+    say 1099
+    clear _qgclicked_ _reminder_
+
+_victory_ task:
+    when _qgclicked_ and _found_
+    start quest JHCGENT4
+    give pc _reward_
+    end quest
+
+_timer_ task:
+         say 1003
+         start quest JHCGFAL3
+         end quest

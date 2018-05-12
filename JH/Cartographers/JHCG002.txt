@@ -1,0 +1,140 @@
+-- Cartographers Quest
+Quest: JHCG002
+DisplayName: Dungeon Hunter
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCG002
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCG002
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCG002
+
+QuestFail:  [1003]
+<ce>   The Cartographers needed you to report
+<ce>   on __dung_'s location by now.
+
+QuestComplete:  [1004]
+<ce>        Wonderful work, %pcf. Thank you for
+<ce>        bringing me this report. I promise you lives
+<ce>        will be saved through this simple little trip
+<ce>        you made. We have a bit of money set apart
+<ce>        for you, so please take it. We'll be in touch.
+
+Message:  1010
+<ce>        You hear someone calling your name. Before
+<ce>        you can so much as turn around, a paper is
+<ce>        pushed into your hand, and the young man
+<ce>        who brought it to you is marching away.
+<--->
+<ce>        You hear someone calling your name. Before
+<ce>        you can so much as turn around, a paper is
+<ce>        pushed into your hand, and the young woman
+<ce>        who brought it to you is marching away.
+
+Message:  1011
+  %pcn,
+ 
+  We have an urgent assignment for you.
+  The city guard need help planning an assault.
+  They have decided to squash a nest of criminals
+  operating out of __dung_, but to plan
+  properly, they need exact directions. If you need
+  a general idea of where the hole is, come see me.
+  Please go scout it and inform me of its location.
+  They told me they need this report within =timer_ days.
+ 
+                         _qg_
+                         Wanderer, Field Officer
+                         The Cartographers
+                         ___place_, ____place_
+
+Message:  1012
+<ce>        Welcome, %pcf. Exciting, isn't it?
+<ce>        We get to promote the general welfare with
+<ce>        our exploration skills. We might offer this to
+<ce>        one of our higher-ranking members due to
+<ce>        its time limit, but we want to see how you
+<ce>        perform. Let me mark __dung_
+<ce>        on your map. I will wait here for you. Remember
+<ce>        that they gave us a time limit. Safe travels.
+
+Message:  1013
+<ce>        You're certain this is __dung_. Now
+<ce>        to tell _qg_ of its location so
+<ce>        the guards can begin their assault.
+<--->
+<ce>        This must be __dung_. You take note
+<ce>        of the directions and surroundings so
+<ce>        the town guard will know how to arrive.
+
+Message:  1030
+%qdt:
+ ____place_ needs my help to
+ locate __dung_, where a
+ criminal group is hiding. I can ask
+ _qg_ in ___place_ for a
+ general idea of where it is.
+ I should bring my report to %g2
+ within =timer_ days' time.
+
+Message:  1099
+<ce>  We're counting on you to give
+<ce>  precise instructions on where to
+<ce>  find __dung_. What
+<ce>  a thrill it is to save lives
+<ce>  through our simple work!
+
+QBN:
+Item _reward_ gold range 150 to 200
+Item _letter_ letter used 1011
+
+Place _dung_ remote dungeon
+Place _place_ remote house2
+
+Clock _timer_ 24.00:00 38.00:00
+
+Person _qg_ group Librarian
+
+--	Quest start-up:
+          start timer _timer_
+          give pc _letter_ notify 1010
+          place npc _qg_ at _place_
+          pc at _dung_ set _inside_
+          log 1030 step 0
+
+_qgclicked_ task:
+	clicked npc _qg_ 
+
+_begin_ task:
+     when _qgclicked_ and not _talked_ and not _found_
+     say 1012
+     reveal _dung_
+     clear _qgclicked_
+     start task _talked_
+
+variable _talked_
+_inside_ task:
+     start task _found_
+
+_found_ task:
+    say 1013
+
+_reminder_ task:
+    when _qgclicked_ and _talked_ and not _found_
+    say 1099
+    clear _qgclicked_
+
+_victory_ task:
+    when _qgclicked_ and _found_
+   start quest JHCGENT1
+    give pc _reward_
+    end quest
+
+_timer_ task:
+         say 1003
+         start quest JHCGFAIL
+         end quest
