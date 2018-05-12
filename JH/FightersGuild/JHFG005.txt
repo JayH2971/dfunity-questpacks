@@ -172,6 +172,7 @@ _alt2_ task:
 _altend_ task:
          when _qgclicked_ and _alt2_
          give pc _altrew_ notify 1025
+         change repute with _questgiver_ by +7
          end quest
 
 _qgclicked_ task:
