@@ -1,6 +1,6 @@
 -- Innkeeper and Merchant
 Quest: JHIM011
-DisplayName: Night Watch
+DisplayName: How to Save a Life
 -- Message panels
 QRC:
 
