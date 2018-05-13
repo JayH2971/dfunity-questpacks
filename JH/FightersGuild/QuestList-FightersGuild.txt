@@ -16,3 +16,4 @@ JHFG005, FightersGuild, M, 0, a quest to slay a pack of beasts at a rural farmho
 JHFG006, FightersGuild, M, 15, a quest to stop an assassination inside a home
 JHFG007, FightersGuild, M, 25, courier work + ambush in a house
 JHFG008, FightersGuild, M, 40, a survival battle for one hour against summoned creatures
+JHFG009, FightersGuild, M, 0, expert werewolf hunting
