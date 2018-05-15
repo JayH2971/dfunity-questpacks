@@ -26,7 +26,7 @@ Message:  1010
 
 Message:  1011
 <ce>      Another roaming werewolf. Is this going
-<ce>      to become a habit in %crn?
+<ce>      to become customary in %crn?
 
 Message:  1012
 <ce>      A page bearing a crest of a battle axe and
