@@ -6,16 +6,12 @@ DisplayName: Thief Slayer
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU DARK BROTHERHOOD QUEST
-<ce>          
 <ce>          %pct, this task is elementary to the
 <ce>          point that a child could fulfill it within an hour.
 <ce>          We therefore have confidence that you will not
 <ce>          fail us in this matter. Will you slay a thief with
 <ce>          an overstayed welcome in ___questgiver_?
 <--->
-<ce>                     DFU DARK BROTHERHOOD QUEST
-<ce>          
 <ce>          Not all our work may be precisely termed
 <ce>          lawful, but at least we do it well. We have
 <ce>          a request to reconcile a thief who has failed

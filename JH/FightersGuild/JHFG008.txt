@@ -6,8 +6,6 @@ DisplayName: Stage of Death
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                   DFU FIGHTERS GUILD QUEST
-<ce>          
 <ce>          Oh man, %pcf, I'm glad you're here. You're
 <ce>          gonna want to see this. I've got this gem in
 <ce>          my hand. Looks like an ordinary _miner_, right?
@@ -17,8 +15,6 @@ QuestorOffer:  [1000]
 <ce>          to tear you apart. Straight out of Black Marsh, they
 <ce>          told me. Wanna give this thing a shot?
 <--->
-<ce>                   DFU FIGHTERS GUILD QUEST
-<ce>          
 <ce>          Hey %pcf, check this thing out. One of the guild
 <ce>          members picked up this thing for me when she
 <ce>          was out in Black Marsh. Look at this _miner_.

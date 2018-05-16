@@ -5,8 +5,6 @@ DisplayName: Stubborn Scholar
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                             DFU MAGES GUILD QUEST
-<ce>          
 <ce>          A few weeks have passed since _scholar_
 <ce>          disappeared into __dung_ for a research
 <ce>          expedition. We have need for such expertise at

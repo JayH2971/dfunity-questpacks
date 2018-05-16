@@ -6,8 +6,6 @@ DisplayName: A Journey of a Thousand Miles
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                    DFU KNIGHTLY ORDER QUEST
-<ce>          
 <ce>          %pct, you are but an apprentice to this order. Slaying dragons
 <ce>          and defending nobles are some of our duties, but they are given
 <ce>          to our proven knights, those who have shown themselves

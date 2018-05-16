@@ -1,13 +1,9 @@
--- Mages Guild
--- Req Rep: 25-55
 Quest: JHMG006
 DisplayName: The Manchurian Effect
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                             DFU MAGES GUILD QUEST
-<ce>          
 <ce>          %pcf, we believe we have a simple task for you.
 <ce>          One of our members brought back this _tri_ that
 <ce>          we consider to have magical properties. However, ordinary 

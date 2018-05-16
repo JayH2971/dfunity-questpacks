@@ -5,8 +5,6 @@ DisplayName: Brawl Pals
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU INNKEEPER AND MERCHANT QUEST
-<ce>          
 <ce>          My name is _questgiver_. My fool of a
 <ce>          half-sibling got into a bar fight last night and now
 <ce>          stands to return and maintain our "family honor." I

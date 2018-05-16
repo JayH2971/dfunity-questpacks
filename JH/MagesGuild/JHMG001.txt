@@ -6,8 +6,6 @@ DisplayName: An Illusory Hunt
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                        DFU MAGES GUILD QUEST
-<ce>                
 <ce>                My dear %pcf, do you remember what
 <ce>                you were told when we inducted you
 <ce>                 into the guild? "Too much power in too

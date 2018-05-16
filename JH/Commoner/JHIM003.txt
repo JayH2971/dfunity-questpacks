@@ -5,13 +5,9 @@ DisplayName: An Ordinary Haunting
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                  DFU MERCHANT QUEST
-<ce>          
 <ce>          Please, help me! There's a ghost
 <ce>           in my house! Will you get it out?
 <--->
-<ce>                  DFU MERCHANT QUEST
-<ce>          
 <ce>          _ghostres_ is haunted!
 <ce>          I need someone's help! Please!
 

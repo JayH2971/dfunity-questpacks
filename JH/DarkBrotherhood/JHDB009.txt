@@ -5,8 +5,6 @@ DisplayName: Going Home
 QRC:
 
 QuestorOffer:  [1000]
-<ce>               DFU DARK BROTHERHOOD QUEST
-<ce>               
 <ce>               We have a task that should have been simple,
 <ce>               had it been entrusted to someone of minimal
 <ce>               competency. A child named _kid_ has

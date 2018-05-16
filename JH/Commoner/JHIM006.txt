@@ -5,8 +5,6 @@ DisplayName: Ritual of Sanctification
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU INNKEEPER AND MERCHANT QUEST
-<ce>          
 <ce>          My name is _questgiver_. I recently made
 <ce>          the mistake of desecrating a sorceror's grave
 <ce>          within __dung_, and I must now pay

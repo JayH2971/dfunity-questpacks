@@ -1,13 +1,9 @@
--- Temple
--- Reputation: 0-10
 Quest: JHTP001
 DisplayName: Ecclesiastes, or The Preacher
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                    DFU TEMPLE QUEST
-<ce>          
 <ce>          %pct, regardless of your past accomplishments
 <ce>          and your history, you are still a new member of
 <ce>          this temple. You may build our trust in you by

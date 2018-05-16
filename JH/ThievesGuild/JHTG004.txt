@@ -4,8 +4,6 @@ DisplayName: Spirited Away
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          DFU THIEVES GUILD QUEST
-<ce>          
 <ce>          We've got a complicated matter on our hands.
 <ce>          _dummy_'s been caught. Did you meet
 <ce>          him before they got him? Anyway, he's locked up and

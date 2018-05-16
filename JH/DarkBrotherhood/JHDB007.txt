@@ -6,8 +6,6 @@ DisplayName: General Protection Fault
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                DFU DARK BROTHERHOOD QUEST
-<ce>          
 <ce>          We rarely ask questions concerning why certain
 <ce>          tasks are brought to us, and further still when
 <ce>          they pay well. I will tell you nothing about this
@@ -15,8 +13,6 @@ QuestorOffer:  [1000]
 <ce>          for peace of mind. Show the poor fool in
 <ce>          ___res_ what we think of bodyguards.
 <--->
-<ce>                DFU DARK BROTHERHOOD QUEST
-<ce>          
 <ce>          There are times we find satisfaction in simply
 <ce>          proving our superiority over every other force
 <ce>          moving across ____res_. What name

@@ -6,8 +6,6 @@ DisplayName: Pack of Beasts
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                  DFU FIGHTERS GUILD QUEST
-<ce>          
 <ce>          We've got a bit of an unusual request
 <ce>           request that's come in, %pcf,
 <ce>          since it's out in the middle of nowhere.
@@ -21,8 +19,6 @@ QuestorOffer:  [1000]
 <ce>            _reward_ gold pieces and you get a
 <ce>             change of scenery. What do you say?
 <--->
-<ce>                  DFU FIGHTERS GUILD QUEST
-<ce>          
 <ce>          It's kind of a sad story, but we end up being
 <ce>          sort of the city guard for those far-off farm
 <ce>          homes when ____rural_ doesn't care

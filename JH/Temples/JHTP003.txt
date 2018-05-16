@@ -1,13 +1,9 @@
--- Temple
--- Reputation: 0-10
 Quest: JHTP003
 DisplayName: Mobile Apothecary
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                    DFU TEMPLE QUEST
-<ce>          
 <ce>          %pcf, one of our good members in ___dest_
 <ce>          is suffering under some sort of cruel illness. We usually
 <ce>          employ our healers for our own, but the sickness is

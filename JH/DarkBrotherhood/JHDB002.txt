@@ -6,8 +6,6 @@ DisplayName: Knight Stalker
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU DARK BROTHERHOOD QUEST
-<ce>          
 <ce>          %pct, it is the Brotherhood's prerogative
 <ce>          to maintain a balance in nature when it has been
 <ce>          altered. This time-honored purpose is the anchor to
@@ -18,8 +16,6 @@ QuestorOffer:  [1000]
 <ce>          Will you slay an errant knight and serve your
 <ce>          fellow beings in ___questgiver_?
 <--->
-<ce>                     DFU DARK BROTHERHOOD QUEST
-<ce>          
 <ce>          Tales across Tamriel tell of knights who restore
 <ce>          order, rescue damsels, and protect nobles from
 <ce>          people like us. We feel particular joy when an

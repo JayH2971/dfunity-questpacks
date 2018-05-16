@@ -6,8 +6,6 @@ DisplayName: Sanctimonious Wreck
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU DARK BROTHERHOOD QUEST
-<ce>          
 <ce>          %pct, we have no qualms with the adherents
 <ce>          to religious study and practice. Their gods do
 <ce>          not interfere with our god, and therefore they
@@ -16,8 +14,6 @@ QuestorOffer:  [1000]
 <ce>          in ___questgiver_. Will you serve the
 <ce>          Night Mother by doing the Brotherhood's work?
 <--->
-<ce>                     DFU DARK BROTHERHOOD QUEST
-<ce>          
 <ce>          For obvious reasons we rarely send our members
 <ce>          to _temple_. Usually their
 <ce>          practitioners and ours are incompatible, lending

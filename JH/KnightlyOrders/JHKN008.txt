@@ -6,8 +6,6 @@ DisplayName: An Orcish Incursion
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU KNIGHTLY ORDER QUEST
-<ce>          
 <ce>          A recent raid on an orc encampment
 <ce>          in __dung_ proved timely.
 <ce>          We are informed that the brutes have

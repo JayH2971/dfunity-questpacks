@@ -5,8 +5,6 @@ DisplayName: Here Today, Gone Tomorrow
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU DARK BROTHERHOOD QUEST
-<ce>              
 <ce>              Experts of the culling craft such as
 <ce>              ourselves occasionally must take particular
 <ce>              measures to ensure anonymity, lest we find our
@@ -15,8 +13,6 @@ QuestorOffer:  [1000]
 <ce>              to a novice. You have been given the honor of
 <ce>              carrying out this sensitive task. Accept it.
 <--->
-<ce>                     DFU DARK BROTHERHOOD QUEST
-<ce>              
 <ce>              Every member of the Dark Brotherhood should feel
 <ce>              a deep sense of pride in the work we perform.
 <ce>              All who belong must work continually to become the

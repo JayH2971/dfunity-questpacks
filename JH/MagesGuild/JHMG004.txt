@@ -6,8 +6,6 @@ DisplayName: Body Harvest
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU MAGES GUILD QUEST
-<ce>              
 <ce>              %pct, the Mages Guild acts not only
 <ce>              as a repository of knowledge and community of
 <ce>              research, but also as a facilitating organization

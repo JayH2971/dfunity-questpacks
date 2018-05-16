@@ -4,8 +4,6 @@ DisplayName: A Little Mugging
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                 DFU THIEVES GUILD QUEST
-<ce>                 
 <ce>                 We've got a bit more hands-on action this time.
 <ce>                 Some land deed of some kind to a house over in
 <ce>                 ___dummy_. It's kept by someone staying at

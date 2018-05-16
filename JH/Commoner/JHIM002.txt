@@ -5,8 +5,6 @@ DisplayName: Quiz Time, Survival
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                             DFU MERCHANT QUEST
-<ce>          
 <ce>          Hail, %ra. You look like you've seen some adventures.
 <ce>          I'm retired from all that, but once in a while I still
 <ce>             reminisce about the good old days. What say I

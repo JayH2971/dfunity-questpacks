@@ -1,13 +1,9 @@
--- Thieves Guild
--- Min Rep: 35
 Quest: JHTG002
 DisplayName: Taken
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                      DFU THIEVES GUILD QUEST
-<ce>             
 <ce>             %pcf, we're working out a plan.
 <ce>             We're usually in the business of moving
 <ce>             jewels, powders, and money around, but

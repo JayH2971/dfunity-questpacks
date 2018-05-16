@@ -1,13 +1,9 @@
--- Thieves Guild
--- Min Rep: 30
 Quest: JHTG001
 DisplayName: Sacrificial Lamb
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                    DFU THIEVES GUILD QUEST
-<ce>          
 <ce>          %pcf, I'm gonna level with you. Someone in
 <ce>          the guild screwed up. I've got here a _relic_
 <ce>          that someone dropped off 'cause the heat was

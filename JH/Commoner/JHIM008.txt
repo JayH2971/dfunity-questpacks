@@ -5,8 +5,6 @@ DisplayName: Only a Plank Between One and Perdition
 QRC:
 
 QuestorOffer:  [1000]
-<ce>             DFU INNKEEPER AND MERCHANT QUEST
-<ce>          
 <ce>          %ra, I need help, and quickly. For the past several
 <ce>          nights I have suffered dreams of a terrifying sort, all
 <ce>          related to a coven of witches I believe I offended

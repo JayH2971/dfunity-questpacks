@@ -5,8 +5,6 @@ DisplayName: Siege from Within
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                       DFU NOBLE QUEST
-<ce>          
 <ce>          %pcf, sometimes I don't know why I
 <ce>           continue to sustain some of these
 <ce>           cities. The guards in __captive_

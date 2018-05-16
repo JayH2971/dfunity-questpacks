@@ -6,8 +6,6 @@ DisplayName: City Under Siege
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU KNIGHTLY ORDER QUEST
-<ce>          
 <ce>          %pcn, I do not know if you have heard the rumors.
 <ce>          Allow me to explain the situation. Some outlaw band
 <ce>           of renegade warriors, the Knights of the _gem_, are

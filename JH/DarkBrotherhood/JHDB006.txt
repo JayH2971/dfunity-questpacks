@@ -6,8 +6,6 @@ DisplayName: Fundraising
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                      DFU DARK BROTHERHOOD QUEST
-<ce>             
 <ce>             Our primary craft and means of sustenance
 <ce>             is the resolution of loose ends, where merited.
 <ce>             We occasionally carry out other means of
@@ -18,8 +16,6 @@ QuestorOffer:  [1000]
 <ce>             We wish to have a part of said account.
 <ce>             Does this line of work interest you?
 <--->
-<ce>                      DFU DARK BROTHERHOOD QUEST
-<ce>             
 <ce>             Sometimes the Brotherhood is given an
 <ce>             erroneous reputation as headhunters
 <ce>             and private executioners. That is one

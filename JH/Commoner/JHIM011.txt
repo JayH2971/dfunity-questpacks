@@ -5,8 +5,6 @@ DisplayName: How to Save a Life
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU INNKEEPER AND MERCHANT QUEST
-<ce>          
 <ce>         My dear %ra, I have angered the wrong sort of foe
 <ce>         and find my life in danger. I need a bodyguard, right now.
 <ce>         Will you be my savior?

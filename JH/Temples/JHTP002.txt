@@ -1,13 +1,9 @@
--- Temple
--- Reputation: 0-10
 Quest: JHTP002
 DisplayName: Donation Drive
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                    DFU TEMPLE QUEST
-<ce>          
 <ce>          Ah, it's good that you're here. We need
 <ce>          to send someone trustworthy to
 <ce>          ___res_ to receive a donation and

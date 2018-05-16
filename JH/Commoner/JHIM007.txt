@@ -5,8 +5,6 @@ DisplayName: A Witty Response
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          DFU INNKEEPER AND MERCHANT QUEST
-<ce>          
 <ce>          Forgive my inattentiveness, %ra. I simply could
 <ce>          not sleep last night. Some imbecile started an argument
 <ce>          with me regarding my ancestors and I could not let it go. Our

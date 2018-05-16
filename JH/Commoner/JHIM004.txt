@@ -5,8 +5,6 @@ DisplayName: Civilian Guard Duty
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU MERCHANT QUEST
-<ce>          
 <ce>          %ra, sometimes I trust people in error,
 <ce>          and I pray that today is not that day.
 <ce>          A friend in confidence has warned me

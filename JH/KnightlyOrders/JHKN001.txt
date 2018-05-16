@@ -6,8 +6,6 @@ DisplayName: Dragonling Nest
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                   DFU KNIGHTLY ORDER QUEST
-<ce>              
 <ce>              My name is _questgiver_. This morning
 <ce>             we received a courier on behalf of %crn
 <ce>              requesting aid in __dungeon_.

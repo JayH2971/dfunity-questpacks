@@ -1,13 +1,9 @@
--- Questor: Temple
-Messages: 13
 Quest: JHTP004
 DisplayName: Lost and Found
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>               DFU TEMPLE QUEST
-<ce>               
 <ce>               %pcf, we worry for the well-being of our dear
 <ce>               friend _rescue_, who took leave for a
 <ce>               pilgrimage to ___dung_ a few weeks

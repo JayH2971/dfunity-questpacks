@@ -6,8 +6,6 @@ DisplayName: A Barbarous Deed
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU DARK BROTHERHOOD QUEST
-<ce>          
 <ce>          %pct, tell me concerning yourself. Were
 <ce>          you to spend a night in a tavern after a long day
 <ce>          of merchandising, only to be awakened every six
@@ -17,8 +15,6 @@ QuestorOffer:  [1000]
 <ce>          meted out against the clueless brute? And would
 <ce>          you answer a call to deliver such justice?
 <--->
-<ce>                     DFU DARK BROTHERHOOD QUEST
-<ce>          
 <ce>          %pcf, I will not mince words. You, I, and every
 <ce>          other person in ___questgiver_ hates
 <ce>          barbarians. We have a petition to rid ____tavern_

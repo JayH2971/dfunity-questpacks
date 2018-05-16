@@ -6,8 +6,6 @@ DisplayName: Courier Work
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                   DFU FIGHTERS GUILD QUEST
-<ce>          
 <ce>          We have a job here that doesn't really
 <ce>          fit the bill for what the Fighters Guild
 <ce>          was made for, but it still pays. Do
@@ -15,8 +13,6 @@ QuestorOffer:  [1000]
 <ce>          and bring some _pick_ someone left
 <ce>          over there? Sounds like easy pickin's.
 <--->
-<ce>                   DFU FIGHTERS GUILD QUEST
-<ce>          
 <ce>          We've got a request here to go over to
 <ce>          ___res_ and pick up something
 <ce>          that got left over there by accident.

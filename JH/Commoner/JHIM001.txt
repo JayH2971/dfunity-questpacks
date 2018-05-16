@@ -5,8 +5,6 @@ DisplayName: Quiz Time
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                  DFU MERCHANT QUEST
-<ce>          
 <ce>          Hail, %ra. For several weeks I have
 <ce>           run a contest with my patrons, testing their
 <ce>          knowledge concerning royalty among the

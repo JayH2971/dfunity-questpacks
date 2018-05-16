@@ -5,16 +5,12 @@ DisplayName: Adventurer's Bounty
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                   DFU INNKEEPER AND MERCHANT QUEST
-<ce>          
 <ce>          My name is _qg_. I have come into possession
 <ce>          of a map purporting to lead to some forgotten treasure
 <ce>          in %crn. I consider myself incapable of recovering it,
 <ce>          but I would be willing to sell it for the mere pittance of
 <ce>          _price_ gold pieces. Would this interest you, %ra?
-<--->
-<ce>                   DFU INNKEEPER AND MERCHANT QUEST
-<ce>          
+<--->          
 <ce>          Good day, %ra. I have here a map leading to a
 <ce>          forgotten treasure in %crn, which I would be
 <ce>          willing to part with for _price_ gold pieces.

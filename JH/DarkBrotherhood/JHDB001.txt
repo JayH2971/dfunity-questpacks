@@ -6,8 +6,6 @@ DisplayName: A Natural Order
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU DARK BROTHERHOOD QUEST
-<ce>          
 <ce>          Understand that we have no personal vendetta
 <ce>          against this mark, %pct. For us, all are
 <ce>          free to obey the sky, the trees, the Night Mother, or
@@ -16,8 +14,6 @@ QuestorOffer:  [1000]
 <ce>          by, a request for an accounting quickly follows.
 <ce>          Will you return a nature-crazed hermit to the earth?
 <--->
-<ce>                     DFU DARK BROTHERHOOD QUEST
-<ce>          
 <ce>          On rare occasions, we receive petitions to execute
 <ce>          the law when the town guard refuses to do so.
 <ce>          My reading of the law is rather negligent, but I

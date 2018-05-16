@@ -6,8 +6,6 @@ DisplayName: Evidentiary Proceedings
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                   DFU KNIGHTLY ORDER QUEST
-<ce>          
 <ce>          My %pct, we have a task which would ordinarily
 <ce>           go only to our squires in training. Were there not
 <ce>          some element of danger involved, I would not waste

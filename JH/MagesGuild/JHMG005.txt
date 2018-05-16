@@ -1,5 +1,3 @@
--- Mages Guild
--- Rep Req: 35+
 Quest: JHMG005
 DisplayName: In Case of Emergency
 -- Message panels

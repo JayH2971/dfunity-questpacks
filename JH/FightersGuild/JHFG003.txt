@@ -6,8 +6,6 @@ DisplayName: Monarch's Request
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                     DFU FIGHTERS GUILD QUEST
-<ce>              
 <ce>              We try to stay out of politics as much as possible, but
 <ce>              sometimes the powers that be in ____questgiver_
 <ce>              force our hand. There's some criminal down in
@@ -15,8 +13,6 @@ QuestorOffer:  [1000]
 <ce>              up on who still needs to die. It's paying _reward_ gold.
 <ce>              Is that enough for you?
 <--->
-<ce>                     DFU FIGHTERS GUILD QUEST
-<ce>              
 <ce>           So the Fighters Guild just kills spiders and bears
 <ce>           all day, right? Not quite. ____questgiver_
 <ce>           sometimes tries to get us to pick off some

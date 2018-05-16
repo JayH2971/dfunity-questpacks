@@ -6,16 +6,12 @@ DisplayName: Much at Stake
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                      DFU FIGHTERS GUILD QUEST
-<ce>          
 <ce>          We've got a job for someone experienced like you,
 <ce>           %pcf, but I'm not gonna blame you for turning
 <ce>           it down. It involves one vampire and no sunlight.
 <ce>              You think you can fix that kind of problem?
 <ce>                  There's _reward_ gold in it for you.
 <--->
-<ce>                      DFU FIGHTERS GUILD QUEST
-<ce>          
 <ce>          Ever killed a vampire before, %pcf? Not one
 <ce>          of them ancients. Those things give me the
 <ce>          willies, and if they don't for you, you're not human.
