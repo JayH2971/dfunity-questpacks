@@ -21,11 +21,11 @@ RefuseQuest:  [1001]
 
 AcceptQuest:  [1002]
 <ce>                   And we have our %ra. Get it back here in =queston_ days.
-<ce>                   Make sure you go at night, like after midnight. Less ruckus
-<ce>                   that way. You'll find 'em there, maybe asleep. And
-<ce>                   I'm just gonna say this once: if you kill the carrier,
-<ce>                   there will be no forgiveness for you. At least not on
-<ce>                   my part. I'll have the money here after. Get to it.
+<ce>                   Make sure you go at night, like after ten. Less ruckus
+<ce>                   that way. And I'm just gonna say this once: if you
+<ce>                   kill the carrier, there will be no forgiveness for you.
+<ce>                   At least not on my part. I'll have the money here after.
+<ce>                   Get to it.
 
 QuestComplete:  [1004]
 <ce>              There it is. This kind of thing can make you
@@ -95,7 +95,8 @@ Message:  1041
 Would you like to make =bigmoney_ gold pieces? Bring
 that deed to me. You know _qgiver_ has no
 legitimate claim to it, nor %g3 client. My agent will
- receive it at ___divers_. Look inside _divers_.
+receive it at ___divers_. Look inside
+_divers_.
 
 Message:  1042
 <ce>               Very wise decision. The Thieves Guild is usually
@@ -116,6 +117,9 @@ Message:  1050
 <ce>               You're pathetic. I'll take the deed but you get nothing.
 <ce>               Get lost.
 
+Message:  1055
+<ce>               This was a waste of time. Now to get to _qgiver_.
+
 QBN:
 
 Item _deed_ letter used 1030
@@ -135,7 +139,7 @@ Foe _mark_ is Burglar
 Foe _ambush_ is 3 Barbarian
 
 Clock _queston_ 00:00 0 flag 17 range 1 2
-Clock _cd_ 00:00 00:05
+Clock _cd_ 00:00
 
 --	Quest start-up:
 	start timer _queston_ 
@@ -150,7 +154,7 @@ variable _F.02_
 variable _inside_
 
 _day_ task:
-               daily from 7:00 to 23:30
+               daily from 7:00 to 22:00
 
 _spawn1_ task:
                when not _day_ and _inside_
@@ -171,6 +175,7 @@ _startcd_ task:
 _cd_ task:
                give pc _lett_ notify 1040
                pick one of _F.01_ _F.02_
+               place npc _alt_ at _divers_
 
 _murder_ task:
                 killed _mark_
@@ -198,6 +203,10 @@ _alttalk2_ task:
                 say 1045
                 hide npc _alt_
                 create foe _ambush_ every 1 minutes 1 times with 100% success
+
+_finishalt_ task:
+                killed 3 _ambush_
+                say 1055
 
 _S.13_ task:
                 when _qgclicked_ and _steal_ and not _murder_
