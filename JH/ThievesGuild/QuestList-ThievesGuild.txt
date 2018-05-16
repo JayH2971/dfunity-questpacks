@@ -11,3 +11,4 @@ schema: *name, group, membership, minRep, notes
 JHTG001, GeneralPopulace, M, 30, a quest to avoid pursuers while holding contraband
 JHTG002, GeneralPopulace, M, 15, a quest to kidnap a child for ransom
 JHTG003, GeneralPopulace, M, 15, a quest to take a land deed by force
+JHTG004, GeneralPopulace, M, 40, a quest to steal a criminal confession

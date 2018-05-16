@@ -1,0 +1,118 @@
+Quest: JHTG004
+DisplayName: Spirited Away
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          DFU THIEVES GUILD QUEST
+<ce>          
+<ce>          We've got a complicated matter on our hands.
+<ce>          _dummy_'s been caught. Did you meet
+<ce>          him before they got him? Anyway, he's locked up and
+<ce>          awaiting trial, and it was for a huge hit. That's why the
+<ce>          trial's being postponed. They're gathering evidence and
+<ce>          locking it up in ___pal_. We need someone who
+<ce>          can grab the idiot's confession before the trial
+<ce>          in =2pal_ days. Help us out here.
+
+RefuseQuest:  [1001]
+<ce>          Then I'm not bribing for you anymore. No way.
+<--->
+<ce>          You really think he deserves it? Whatever.
+
+AcceptQuest:  [1002]
+<ce>         Here's the plan. It's in the Palace at ___pal_.
+<ce>         We know the place has some serious defenses about it.
+<ce>         You won't be able to tell 'til the thing's picked up.
+<ce>         Once you have it, use this _trinket_ right away.
+<ce>         It'll send you off outta their hands. Kind of a complicated
+<ce>         getaway, but they'd take your skin if they could for this.
+<ce>         After that you can take your merry time coming back,
+<ce>         but you've gotta pick it up in less than =2pal_ days or
+<ce>         the trial's gonna happen. No time to lose. See you later.
+
+QuestFail:  [1003]
+<ce>          ERROR 1003 JHPQ017
+
+QuestComplete:  [1004]
+<ce>        It hardly feels like you left, doesn't it %pcf?
+<ce>        The things we do for a brother. Well, you proved
+<ce>        your mettle this time. Take your reward. Good work.
+
+Message:  1010
+<ce>        A concealed guard begins to shout the alarm.
+<ce>        
+<ce>        "Stop! A thief! Everyone come quickly!"
+<ce>        
+<ce>        You activate the _trinket_.
+<--->
+<ce>        A concealed guard begins to shout the alarm.
+<ce>        
+<ce>        "Hey! Wait! Someone's stealing the evidence!"
+<ce>        
+<ce>        You activate the _trinket_.
+
+Message:  1015
+<ce>      The _trinket_ has broken apart under the force of the
+<ce>      spell. No one's going to track you here, but you'll have
+<ce>      to find your own way out.
+<ce>       
+<ce>      (Hint: You may be in a location that's impossible to escape from,)
+<ce>      (like inside an enclosed cage or at the bottom of a chute. If so,)
+<ce>      (make a save and try the console command "teleport" to get out.)
+
+Message:  1020
+<ce>      You have failed to steal the evidence for _dummy_'s trial.
+
+Message:  1030
+%qdt:
+ _qgiver_ of the Thieves Guild
+ needs me to filch a confession and
+ evidence statement about a guild
+ member in the palace at ___pal_.
+ I've got an escape plan to teleport
+ using a gem they got me. I have to
+ steal it within =2pal_ days, but after
+ that I can take my time getting back
+ to ___qgiver_.
+
+QBN:
+Item _item_ letter
+Item _trinket_ trinket
+Item _reward_ gold range 500 to 800
+
+Place _dung_ remote dungeon
+Place _pal_ remote palace
+
+Clock _2pal_ 00:00 0 flag 1 range 0 2
+Clock _failsafe_ 180.00:00
+
+Person _qgiver_ group Questor male
+Person _dummy_ group Local_4.0 male
+
+--	Quest start-up:
+         start timer _2pal_
+         start timer _failsafe_
+         log 1030 step 0
+         place item _item_ at _pal_
+         get item _trinket_
+
+_begin_ task:
+         clicked item _item_
+         stop timer _2pal_
+         say 1010
+         teleport pc to _dung_
+         say 1015
+         take _trinket_ from pc
+
+_pcgetsgold_ task:
+        toting _item_ and _qgiver_ clicked
+        give pc _reward_
+        end quest
+
+_2pal_ task:
+        say 1020
+        end quest
+
+_failsafe_ task:
+        end quest
