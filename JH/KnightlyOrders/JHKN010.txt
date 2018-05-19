@@ -1,5 +1,3 @@
--- Knightly Order
--- Reputation: 0-10
 Quest: JHKN010
 DisplayName: A Journey of a Thousand Miles
 -- Message panels
@@ -36,14 +34,14 @@ QuestComplete:  [1004]
 <ce>         And please accept my thanks.
 
 Message:  1020
-<ce>         What is this? Some _weapon_? _questgiver_ never
+<ce>         What is this? Some _weapon_? _qgiver_ never
 <ce>         told me I would be taking one on this expedition. Keep it
 <ce>         for yourself. Oh, come now, just take it. I do not want it.
 <ce>         I said, I do not want it! %oth, then give it to me.
 <ce>         I'll throw it at the first orc I encounter and be done with
 <ce>         it. Are you happy now, %ra? Begone from me.
 <--->
-<ce>         %oth, did _questgiver_ send you? Praise %god.
+<ce>         %oth, did _qgiver_ send you? Praise %god.
 <ce>         I knew %g1 would bury me if I forgot that _weapon_
 <ce>         this time. Here, let me have it. I'm no expert yet, but I'll
 <ce>         give it some practice while I'm in the depths. I'll
@@ -54,11 +52,11 @@ Message:  1020
 <ce>         I had other matters to resolve here in ___knighttown_ before
 <ce>         entering that cave. A terrifying prospect it is to face an atronach
 <ce>         and realize I'm missing a weapon. How good of you to bring it
-<ce>         to me! Give _questgiver_ my regards. Fare thee well.
+<ce>         to me! Give _qgiver_ my regards. Fare thee well.
 
 Message:  1030
 %qdt:
- _questgiver_ of ___questgiver_
+ _qgiver_ of ___qgiver_
  has asked me to take a weapon
  forgotten by _knight_, a
  knight staying in ___knighttown_.
@@ -71,7 +69,7 @@ Message:  1099
 QBN:
 Item _weapon_ weapon
 
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 Person _knight_ group Chemist
 
 Place _knighttown_ remote tavern
@@ -95,7 +93,7 @@ _victory_ task:
 	end quest
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _clearclick_ task:
 	when _qgclicked_ and not _deliver_

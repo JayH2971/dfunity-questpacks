@@ -1,4 +1,3 @@
--- Dark Brotherhood quest
 Quest: JHDB009
 DisplayName: Going Home
 -- Message panels

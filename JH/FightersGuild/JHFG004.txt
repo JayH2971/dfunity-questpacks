@@ -1,5 +1,3 @@
--- Fighters Guild
--- Min Rep: 20
 Quest: JHFG004
 DisplayName: Guard Duty
 -- Message panels
@@ -10,12 +8,12 @@ QuestorOffer:  [1000]
 <ce>          in case you're tired of killing rats and bears.
 <ce>        There's this house here in town that's afraid
 <ce>          of a break-in tonight and they need a guard.
-<ce>        It's paying _reward_ gold. Is that your kind of job?
+<ce>        It's paying =reward_ gold. Is that your kind of job?
 <--->
 <ce>        We got a client who needs _res_
 <ce>        to get watched over tonight. Pretty simple job.
 <ce>        Just get there by 11:00 tonight and stay there 'til
-<ce>        sunlight. It's worth _reward_ gold. Wanna give it a shot?
+<ce>        sunlight. It's worth =reward_ gold. Wanna give it a shot?
 
 RefuseQuest:  [1001]
 <ce>          I hope I find someone quick. I don't

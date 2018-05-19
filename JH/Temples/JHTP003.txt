@@ -24,14 +24,14 @@ AcceptQuest:  [1002]
 <ce>          but such is our work. I will see you within =timer_ days.
 
 QuestFail:  [1003]
-<ce>          You were expected to return to ___questgiver_ by now.
+<ce>          You were expected to return to ___qgiver_ by now.
 
 QuestComplete:  [1004]
-<ce>          _questgiver_ hands you the =reward_ gold pieces
+<ce>          _qgiver_ hands you the =reward_ gold pieces
 <ce>          and thanks you again for your dedication.
 
 Message:  1020
-<ce>         Who are you? %oth, you've come from ___questgiver_?
+<ce>         Who are you? %oth, you've come from ___qgiver_?
 <ce>         I wish I would not worry them so. But I suppose there is
 <ce>         an abundance of work to do. I'll take the _herb_. Thank you.
 <ce>         Tell them I will take up my journey by the end of next week.
@@ -77,7 +77,7 @@ QBN:
 Item _herb_ small_plant
 Item _reward_ gold range 50 to 80
 
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 Person _npc_ group Cleric
 
 Place _dest_ remote house1
@@ -115,7 +115,7 @@ _okayend_ task:
         end quest
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _clearclick_ task:
 	when _qgclicked_ and not _receive_

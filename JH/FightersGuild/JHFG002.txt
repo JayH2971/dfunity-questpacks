@@ -21,7 +21,7 @@ QuestorOffer:  [1000]
 <ce>           summons a daedra and they don't know how
 <ce>           to get rid of it. Bunch of idiots. They gave me
 <ce>           this _reward_, which'll be yours if you go
-<ce>           down into __dungeon_ and kill it.
+<ce>           down into ___dungeon_ and kill it.
 
 RefuseQuest:  [1001]
 <ce>                       Well, maybe this'll make those morons
@@ -30,7 +30,7 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce>                   Fair warning, we already lost some people
 <ce>                    to this abomination. It's crawling around
-<ce>                    in __dungeon_, probably
+<ce>                    in ___dungeon_, probably
 <ce>                     trying to summon more of its kind. Get
 <ce>                     back here within =timer_ days, before I
 <ce>                        start a fight with the Archmagister.
@@ -55,7 +55,7 @@ Message:  1030
 %qdt:
  I've been sent by the Fighters
  Guild of ___questgiver_ to
- __dungeon_ to
+ ___dungeon_ to
  slay a _daedrased_. I have
  =timer_ days.
 
@@ -63,7 +63,7 @@ Message:  1031
 %qdt:
  I've been sent by the Fighters
  Guild of ___questgiver_ to
- __dungeon_ to
+ ___dungeon_ to
  slay a _daedralord_. I have
  =timer_ days.
 
@@ -87,7 +87,7 @@ Foe _daedrased_ is Daedra_seducer
 --	Quest start-up:
 	start timer _timer_ 
 	pick one of _D.01_ _D.02_
-          reveal _dungeon_
+	          reveal _dungeon_
 
 _D.01_ task:
 	place foe _daedralord_ at _dungeon_ 

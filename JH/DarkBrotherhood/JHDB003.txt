@@ -1,6 +1,4 @@
--- Dark Brotherhood
--- Req Rep: 0-20
-Quest: DBDFU003
+Quest: JHDB003
 DisplayName: Thief Slayer
 -- Message panels
 QRC:
@@ -36,7 +34,7 @@ AcceptQuest:  [1002]
 <ce>       this in fewer than twelve hours.
 
 QuestFail:  [1003]
-<ce>               Failure text
+<ce>       
 
 QuestComplete:  [1004]
 <ce>               Well done, %pct. These acts

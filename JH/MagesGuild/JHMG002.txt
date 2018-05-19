@@ -1,4 +1,3 @@
--- Mages Guild
 Quest: JHMG002
 DisplayName: Stubborn Scholar
 -- Message panels
@@ -6,7 +5,7 @@ QRC:
 
 QuestorOffer:  [1000]
 <ce>          A few weeks have passed since _scholar_
-<ce>          disappeared into __dung_ for a research
+<ce>          disappeared into ___dung_ for a research
 <ce>          expedition. We have need for such expertise at
 <ce>          this time, and it's quite likely %g1 has merely
 <ce>          lost track of time and needs to be fished out by one
@@ -24,7 +23,7 @@ AcceptQuest:  [1002]
 <ce>          you, and be here in =timer_ or fewer days.
 
 QuestFail:  [1003]
-<ce>          _questgiver_ has made clear how
+<ce>          _qgiver_ has made clear how
 <ce>          important the punctual completion of guild
 <ce>          assignments is. This will reflect poorly on you.
 
@@ -46,15 +45,15 @@ Message:  1029
 <ce>              the functioning of your brain instead.
 <ce>              
 <ce>                  Is there a Mages Guild
-<ce>                  hall in ___questgiver_?
+<ce>                  hall in ___qgiver_?
 
 Message:  1030
 %qdt:
  I must descend into
- __dung_ to bring
+ ___dung_ to bring
  out an errant scholar. We should
  then return to the Mages
- Guild in ___questgiver_
+ Guild in ___qgiver_
   in =timer_ days.
 
 Message:  1031
@@ -111,7 +110,7 @@ Message:  1046
 Message:  1047
 <ce>                Your appearance has most certainly deceived me,
 <ce>                but only a worthy mage could answer so. Lead
-<ce>                the way. I have much to tell _questgiver_.
+<ce>                the way. I have much to tell _qgiver_.
 
 Message:  1048
 <ce>                You couldn't convince _scholar_ to
@@ -126,7 +125,7 @@ Message:  1050
  _scholar_ from the
  guild's research project.
  I should return to
- ___questgiver_ and report
+ ___qgiver_ and report
  on my doings.
 
 Message:  1052
@@ -145,7 +144,7 @@ Message:  1056
 QBN:
 Item _reward_ book2
 
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 Person _scholar_ faction The_Academics
 
 Place _dung_ remote dungeon
@@ -243,7 +242,7 @@ _badend_ task:
 	end quest
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _clearclick_ task:
 	when _qgclicked_ and not _success_ and not _fail_

@@ -45,7 +45,7 @@ QuestComplete:  [1004]
 <ce>                payment or anything. But look, I'm not
 <ce>                gonna let you walk away empty-handed.
 <ce>                Keep that _pick_ you got from them and
-<ce>                sell it if you want, and I'll give you _reward_ gold
+<ce>                sell it if you want, and I'll give you =reward_ gold
 <ce>                out of my own pocket. It's not that much
 <ce>                but it's literally all I've got left over from
 <ce>                last week. Just know that we appreciate
@@ -63,7 +63,7 @@ Message:  1023
 Message:  1025
 <ce>             You're getting some good results out there,
 <ce>             _culp_. This month we're paying
-<ce>             _sum_ for every dead mercenary and _bigsum_ 
+<ce>             =sum_ for every dead mercenary and =bigsum_ 
 <ce>             for every Fighters Guild bozo. Just bring the
 <ce>             left hands this time. In a few more months
 <ce>             they'll be all thinned out and then

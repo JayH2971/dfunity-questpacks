@@ -1,5 +1,3 @@
--- Knightly Order quest
--- Required reputation: 0 to 25
 Quest: JHKN005
 DisplayName: Evidentiary Proceedings
 -- Message panels
@@ -14,7 +12,7 @@ QuestorOffer:  [1000]
 <ce>          town guard neglected to recover at the time of
 <ce>          the arrest. Since this matter involves a serial killer
 <ce>          and multiple cities, jurisdiction belongs to
-<ce>           %crn, and %crn has asked
+<ce>           %crn, and the %t has asked
 <ce>          for our assistance. Will you recover the evidence?
 
 RefuseQuest:  [1001]
@@ -36,17 +34,22 @@ AcceptQuest:  [1002]
 <ce>                   assistance. %god be with you.
 
 QuestFail:  [1003]
-<ce>           Fail text    
+<ce>           
 
 QuestComplete:  [1004]
 <ce>                Not a moment too late, %pcf, for the trial has
 <ce>                been expedited. This _clothes_ and the testimony
 <ce>                of the witnesses will surely bring justice to
 <ce>                %crn tomorrow. Well done.
+<--->
+<ce>                Reliability on all matters, small and great, is
+<ce>                worthy of a hero. I thank you for making the journey.
 
 Message:  1020
 <ce>                 The guards ignored your entry. Now
 <ce>                    you must find the _clothes_.
+<--->
+<ce>                 Once inside, now you must find the _clothes_.
 
 Message:  1021
 <ce>                     You think you hear footsteps.

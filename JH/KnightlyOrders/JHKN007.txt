@@ -1,5 +1,3 @@
--- Knightly Order
--- Min Rep: 55
 Quest: JHKN007
 DisplayName: Master of Disguise
 -- Message panels

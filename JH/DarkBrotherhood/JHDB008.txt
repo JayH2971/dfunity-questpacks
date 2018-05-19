@@ -1,4 +1,3 @@
--- Dark Brotherhood quest
 Quest: JHDB008
 DisplayName: Here Today, Gone Tomorrow
 -- Message panels

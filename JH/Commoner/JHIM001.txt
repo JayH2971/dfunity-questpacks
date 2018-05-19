@@ -9,7 +9,7 @@ QuestorOffer:  [1000]
 <ce>           run a contest with my patrons, testing their
 <ce>          knowledge concerning royalty among the
 <ce>           Iliac Bay. If you're up for the challenge, I
-<ce>              could offer you _reward_ gold. Might
+<ce>              could offer you =reward_ gold. Might
 <ce>                      you be the first winner?
 
 RefuseQuest:  [1001]
@@ -55,9 +55,9 @@ Message:  1039
 
 Message:  1030
 %qdt:
- I appear to be in the midst of a quiz
+ I appear to be in the middle of a quiz
  by a local merchant. I've been promised
- _reward_ gold if I answer all five
+ =reward_ gold if I answer all five
  questions correctly.
 
 QBN:

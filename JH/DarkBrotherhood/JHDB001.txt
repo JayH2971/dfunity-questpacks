@@ -1,5 +1,3 @@
--- Dark Brotherhood
--- Min Rep: 35
 Quest: JHDB001
 DisplayName: A Natural Order
 -- Message panels
@@ -27,7 +25,7 @@ RefuseQuest:  [1001]
 <ce>             It will be a true joy to someone.
 
 AcceptQuest:  [1002]
-<ce>           The recluse has made of __mondung_
+<ce>           The recluse has made of ___mondung_
 <ce>           a home, completing rituals of kinds that drive
 <ce>           the wildlife into a frenzy. Apparently these
 <ce>           attacks wane during the night hours, as even
@@ -36,7 +34,7 @@ AcceptQuest:  [1002]
 <ce>           nights have passed. Mephala be with you.
 
 QuestFail:  [1003]
-<ce>               Failure text
+<ce>             
 
 QuestComplete:  [1004]
 <ce>            Now you see the dangers of subsisting entirely
@@ -46,7 +44,7 @@ QuestComplete:  [1004]
 
 Message:  1099
 <ce>            No forfeitures, %pcf. Get to
-<ce>            __mondung_.
+<ce>            ___mondung_.
 
 Message:  1020
 <ce>            The priest of nature is now dead. The wild
@@ -60,7 +58,7 @@ Message:  1024
 
 Message:  1030
 %qdt:
- In __mondung_ there's a
+ In ___mondung_ there's a
  religious hermit who has caused
  animal attacks on surrounding cities.
  I must execute the Dark Brotherhood's

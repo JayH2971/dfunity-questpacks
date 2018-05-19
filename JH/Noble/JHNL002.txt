@@ -21,17 +21,16 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce>                   The only proper response. Your
 <ce>                  objectives are in _loc1_
-<ce>                         at __loc1_,
+<ce>                         at ___loc1_,
 <ce>                   and _loc2_, which is in
-<ce>                   __loc2_. Have done with 
+<ce>                   ___loc2_. Have done with 
 <ce>               both of them and I will grant you a magic
 <ce>                    _reward_ from my own personal vault.
 <ce>                   Take no more than =timer_ days.
 <ce>                     Do not fail me as they have.
 
 QuestFail:  [1003]
-<ce>                   Why would I talk to a %ra
-<ce>                  like you? You have failed me.
+<ce>            
 
 QuestComplete:  [1004]
 <ce>                   Smartly played, %pcf. Your work
@@ -49,9 +48,9 @@ Message:  1030
  _questgiver_ has ordered
  me to slay some foes. One is
  hiding in _loc1_ at
- __loc1_, and the other is
+ ___loc1_, and the other is
  in _loc2_, within
- __loc2_. I must
+ ___loc2_. I must
  return to ___questgiver_
  in =timer_ days for my reward,
  an enchanted _reward_.
@@ -69,7 +68,7 @@ Message: 1032
 Message:  1099
 <ce>      I do not know how long
 <ce>      my foes will remain in
-<ce>      __loc1_ and __loc2_.
+<ce>      ___loc1_ and ___loc2_.
 <ce>      Find them and kill them.
 
 QBN:

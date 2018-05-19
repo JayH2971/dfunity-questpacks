@@ -1,4 +1,3 @@
--- Innkeeper and Merchant Quest
 Quest: JHIM010
 DisplayName: Adventurer's Bounty
 -- Message panels
@@ -9,11 +8,11 @@ QuestorOffer:  [1000]
 <ce>          of a map purporting to lead to some forgotten treasure
 <ce>          in %crn. I consider myself incapable of recovering it,
 <ce>          but I would be willing to sell it for the mere pittance of
-<ce>          _price_ gold pieces. Would this interest you, %ra?
+<ce>          =price_ gold pieces. Would this interest you, %ra?
 <--->          
 <ce>          Good day, %ra. I have here a map leading to a
 <ce>          forgotten treasure in %crn, which I would be
-<ce>          willing to part with for _price_ gold pieces.
+<ce>          willing to part with for =price_ gold pieces.
 <ce>          Would you consider that a good deal?
 
 RefuseQuest:  [1001]
@@ -50,7 +49,7 @@ Message:  1020
 <ce>         regarding the matter. Farewell, %ra.
 
 Message:  1021
-<ce>        I see you don't have the _gold_ gold pieces.
+<ce>        I see you don't have the =gold_ gold pieces.
 <ce>        What a pity. I certainly hope to be taken
 <ce>        seriously by the next potential client.
 
@@ -62,7 +61,7 @@ Page _num_
 ... murderous thieves will stop at not ...
 ... if you can r ... no expectati ...
 ... last of my belo ... deep under the ...
-... __dung_ ...
+... ___dung_ ...
 ... lest the assassins get ...
 
 QBN:
@@ -98,17 +97,9 @@ _start_ task:
    place item _sack_ at _dung_
 
 variable _item1_
--   place item _magite_ at _dung_
-
 variable _item2_
--   place item _miner_ at _dung_
-
 variable _item3_
--   place item _sum_ at _dung_
-
 variable _item4_
--   place item _bigsum_ at _dung_
-
 variable _item5_
 
 _found_ task:

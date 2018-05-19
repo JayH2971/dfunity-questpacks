@@ -1,5 +1,3 @@
--- Mages Guild
--- Min Rep: 10
 Quest: JHMG004
 DisplayName: Body Harvest
 -- Message panels
@@ -15,7 +13,7 @@ QuestorOffer:  [1000]
 <ce>              tasks of which they find themselves incapable.
 <ce>              You yourself have asked no help of the guild in
 <ce>              your tribulations, but not all are so self-determined
-<ce>              and capable. For a sum of _reward_ gold pieces,
+<ce>              and capable. For a sum of =reward_ gold pieces,
 <ce>              will you accompany an inexperienced researcher
 <ce>              to slay an atronach in hiding?
 

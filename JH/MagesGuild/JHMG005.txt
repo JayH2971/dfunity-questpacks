@@ -61,7 +61,6 @@ Message:  1030
  which teleported me into some labyrinth.
  I should ask for compensation once I return.
 
-
 QBN:
 Clock _failsafe_ 180.00:00
 

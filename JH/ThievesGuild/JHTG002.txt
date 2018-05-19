@@ -51,6 +51,13 @@ Message:  1021
 <ce>            You gag %g2 and cover %g2 with
 <ce>            a heavy cloak nearby. Now to deliver
 <ce>            %g2 to __dung_.
+<--->
+<ce>           _kid_ stares at you in terror.
+<ce>           "Who are you? No, leave me alone!"
+<ce>            
+<ce>            You gag %g2 and cover %g2 with
+<ce>            a heavy cloak nearby. Now to deliver
+<ce>            %g2 to ___dung_.
 
 Message:  1025
 <ce>     You hear the floorboards creak. Someone shouts,
@@ -66,7 +73,7 @@ Message:  1030
 
 Message:  1099
 <ce>       Take the kid from ___res_ to
-<ce>       __dung_. You'll get paid then.
+<ce>       ___dung_. You'll get paid then.
 
 QBN:
 Person _questgiver_ group Questor male

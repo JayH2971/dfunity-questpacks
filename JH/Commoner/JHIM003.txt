@@ -1,4 +1,3 @@
--- Innkeeper and Merchant
 Quest: JHIM003
 DisplayName: An Ordinary Haunting
 -- Message panels

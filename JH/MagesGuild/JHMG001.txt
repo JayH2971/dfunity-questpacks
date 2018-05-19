@@ -1,5 +1,3 @@
--- Mages Guild
--- Min Rep: 30
 Quest: JHMG001
 DisplayName: An Illusory Hunt
 -- Message panels
@@ -34,7 +32,7 @@ AcceptQuest:  [1002]
 <ce>                    tiger wearing robes that kills people.
 <ce>                     One of our student's friends knew
 <ce>                  that there was this hiding spot of resort,
-<ce>                     __dungeon_ in this same province.
+<ce>                     ___dungeon_ in this same province.
 <ce>                   Go there and find our pupil, in whatever
 <ce>                   state as may be the case, and end this 
 <ce>                   menace for us. You have =timer_ days.
@@ -59,10 +57,10 @@ Message:  1021
 Message:  1030
 %qdt:
  The Mages Guild of
- ___questgiver_ has asked
+ ___qgiver_ has asked
  me to find a rogue student
  skilled with illusion magic in
- __dungeon_. I have
+ ___dungeon_. I have
  =timer_ days to end this threat
  and return.
 
@@ -75,7 +73,7 @@ Message:  1099
 QBN:
 Item _reward_ book
 
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 
 Place _dungeon_ remote dungeon
 
@@ -116,7 +114,7 @@ _slain_ task:
 	killed 1 _enemy5_ saying 1021
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _pcgetsgold_ task:
 	when _qgclicked_ and _slain_ 

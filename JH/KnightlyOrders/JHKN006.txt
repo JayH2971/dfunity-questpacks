@@ -1,5 +1,3 @@
--- Knightly Order
--- Min Rep: 15
 Quest: JHKN006
 DisplayName: Momento Retrieval
 -- Message panels
@@ -21,7 +19,7 @@ RefuseQuest:  [1001]
 
 AcceptQuest:  [1002]
 <ce>                 Then you will descend into the depths of
-<ce>                 __dungeon_ and find the
+<ce>                 ___dungeon_ and find the
 <ce>                  cruel beast who has done this crime. We
 <ce>                  merely hope the _weapon_ is
 <ce>                   still with the fool, such that recovering it
@@ -30,7 +28,7 @@ AcceptQuest:  [1002]
 <ce>                 Honor, virtue, and glory, %pcf.
 
 QuestFail:  [1003]
-<ce>               Fail text
+<ce>               
 
 QuestComplete:  [1004]
 <ce>                Excellent work, %pct. I shall have it
@@ -47,21 +45,21 @@ Message:  1020
 Message:  1030
 %qdt:
  I have been sent from
- ___questgiver_ to a
- foul hole, __dungeon_,
+ ___qgiver_ to a
+ foul hole, ___dungeon_,
  to track down a murdering thief
  who has stolen a family heirloom.
- I must bring it to _questgiver_
+ I must bring it to _qgiver_
  in =timer_ days' time.
 
 Message:  1099
 <ce>                 I gave you =timer_ days to
 <ce>                 find that worthless thief in
-<ce>                 __dungeon_ and bring
+<ce>                 ___dungeon_ and bring
 <ce>                  back the _weapon_. Go.
 
 QBN:
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 
 Place _dungeon_ remote dungeon
 
@@ -84,12 +82,12 @@ _slain_ task:
 	killed 1 _enemy_ saying 1020 
 
 _victory_ task:
-	toting weapon and _questgiver_ clicked 
+	toting weapon and _qgiver_ clicked 
 	give pc nothing
 	end quest 
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 

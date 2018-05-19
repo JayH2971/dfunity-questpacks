@@ -1,5 +1,3 @@
--- Dark Brotherhood
--- Req Rep: 0-45
 Quest: JHDB007
 DisplayName: General Protection Fault
 -- Message panels
@@ -19,7 +17,7 @@ QuestorOffer:  [1000]
 <ce>          inspires so much as half the fear as the Dark
 <ce>          Brotherhood among the citizenry? Yet to ensure
 <ce>          we remain more than a mere name, we must
-<ce>          strike fear among those who wish to thwart us.
+<ce>          overpower those who wish to thwart us.
 <ce>          Go to ___res_ and slay a fool who
 <ce>          has hired a bodyguard.
 
@@ -42,7 +40,7 @@ QuestFail:  [1003]
 
 QuestComplete:  [1004]
 <ce>           Well done, %pct. And what did you
-<ce>           do to the incompetent guardian?.. A fitting
+<ce>           do to the incompetent guardian?... A fitting
 <ce>           resolution. The Night Mother will be pleased.
 
 Message:  1019
@@ -58,9 +56,9 @@ Message:  1030
  The Dark Brotherhood has sent
  me from ___questgiver_ to
  ___res_ to look for an
- acrobat and a bodyguard, who hide
+ fool and a bodyguard, who hide
  in _res_. I must at
- least kill the mage and return within
+ least kill the acrobat and return within
  =timer_ days for recognition.
 
 Message:  1099

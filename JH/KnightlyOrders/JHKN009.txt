@@ -1,5 +1,3 @@
--- Knightly Order
--- Min Rep: 30
 Quest: JHKN009
 DisplayName: The Clumsy Dark Arts
 -- Message panels
@@ -20,7 +18,7 @@ RefuseQuest:  [1001]
 <ce>              On what matter do you differ, %pcf?
 
 AcceptQuest:  [1002]
-<ce>        Then go to __dung_. The existence
+<ce>        Then go to ___dung_. The existence
 <ce>        of such barbarians with some skill in the magical
 <ce>        arts is a great anomaly, one we have no need to
 <ce>        tolerate. The Mages Guild has the duty to wipe
@@ -34,7 +32,7 @@ AcceptQuest:  [1002]
 <ce>        days with each of our tasks completed.
 
 QuestFail:  [1003]
-<ce>        _questgiver_ needed you to destroy the
+<ce>        _qgiver_ needed you to destroy the
 <ce>        giant necromancers by now.
 
 QuestComplete:  [1004]
@@ -53,12 +51,12 @@ Message: 1021
 
 Message:  1030
 %qdt:
- _questgiver_ has tasked
+ _qgiver_ has tasked
  me with slaying a cult of giants in
  __dung_ who have
  somehow gained knowledge of
  necromancy. I have =timer_ days to
- return to ___questgiver_.
+ return to ___qgiver_.
 
 Message:  1099
 <ce>          Slaying giants and ending necromancy are
@@ -66,7 +64,7 @@ Message:  1099
 <ce>          is doing them at the same time, then?
 
 QBN:
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 
 Place _dung_ remote dungeon
 
@@ -103,7 +101,7 @@ _pcgetsgold_ task:
 	end quest 
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 

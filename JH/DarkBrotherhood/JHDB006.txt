@@ -1,5 +1,3 @@
--- Dark Brotherhood
--- Req Rep: 10-35
 Quest: JHDB006
 DisplayName: Fundraising
 -- Message panels

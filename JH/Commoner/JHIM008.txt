@@ -1,4 +1,3 @@
--- Innkeeper and Merchant
 Quest: JHIM008
 DisplayName: Only a Plank Between One and Perdition
 -- Message panels

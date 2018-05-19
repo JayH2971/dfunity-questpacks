@@ -1,4 +1,3 @@
--- Innkeeper and Merchant
 Quest: JHIM006
 DisplayName: Ritual of Sanctification
 -- Message panels
@@ -7,7 +6,7 @@ QRC:
 QuestorOffer:  [1000]
 <ce>          My name is _questgiver_. I recently made
 <ce>          the mistake of desecrating a sorceror's grave
-<ce>          within __dung_, and I must now pay
+<ce>          within ___dung_, and I must now pay
 <ce>          the price. I seek a champion to guide me into its
 <ce>          depths once more, that I might break this curse.
 <ce>          Will you protect me in my journey, %ra?
@@ -90,7 +89,7 @@ Message:  1030
 %qdt:
  _questgiver_ has asked
  me to accompany %g2 into
- __dung_ to retrieve some
+ ___dung_ to retrieve some
  _relig_ which has caused a
  curse to fall on %g2. Skeletons
  will attack him until we solve it.

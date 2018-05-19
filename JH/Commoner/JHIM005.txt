@@ -1,17 +1,16 @@
--- Innkeeper and Merchant
 Quest: JHIM005
 DisplayName: Brawl Pals
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          My name is _questgiver_. My fool of a
+<ce>          My name is _qgiver_. My fool of a
 <ce>          half-sibling got into a bar fight last night and now
 <ce>          stands to return and maintain our "family honor." I
 <ce>          personally don't care at all about how many faces
 <ce>          get beaten in, but I promised my late father on
 <ce>          his deathbed that I'd take care of his family. There
-<ce>          are _reward_ gold pieces in it for you if you head
+<ce>          are =reward_ gold pieces in it for you if you head
 <ce>          over to _tavern_ and help with the fight.
 
 RefuseQuest:  [1001]
@@ -24,7 +23,7 @@ AcceptQuest:  [1002]
 <ce>          as good a time as any to get over to
 <ce>          _tavern_. The lowlifes over
 <ce>          there are probably drunk out of their minds
-<ce>          day and night anyway. Help us out, and you'll
+<ce>          day and night anyhow. Help us out, and you'll
 <ce>          get your payment and I'll speak well of you
 <ce>          any time someone comes asking.
 
@@ -90,7 +89,7 @@ Message: 1025
 
 Message:  1030
 %qdt:
- _questgiver_ has asked
+ _qgiver_ has asked
  me to accompany a half-sibling,
  _family_, to _tavern_
  to settle an overdue bar brawl.
@@ -106,7 +105,7 @@ QBN:
 Item _reward_ gold range 101 to 149
 Item _slay_ gold range 201 to 264
 
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 Person _family_ group Chemist
 
 Place _tavern_ local tavern
@@ -165,10 +164,11 @@ _deadfam_ task:
           killed _fam_
           say 1022
           give pc _slay_
+          change repute with _qgiver_ by -10
           end quest
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _death_ task:
 	say 1025

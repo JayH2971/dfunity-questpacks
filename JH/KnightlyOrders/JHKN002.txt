@@ -1,5 +1,3 @@
--- Knightly Order
--- Min Rep: 10
 Quest: JHKN002
 DisplayName: Inhospitable Guests
 -- Message panels
@@ -8,7 +6,7 @@ QRC:
 QuestorOffer:  [1000]
 <ce>          %pcf, the Order has need of your
 <ce>           help once more. Mere days ago
-<ce>          __home_ was overtaken
+<ce>          ___home_ was overtaken
 <ce>           by a band of thugs who have taken
 <ce>           to robbing, repossessing, and so on.
 <ce>            It's too far for an ordinary patrol
@@ -30,8 +28,7 @@ AcceptQuest:  [1002]
 <ce>                =timer_ days. %god be with you.
 
 QuestFail:  [1003]
-<ce>               Never forget your duty
-<ce>              to the defenseless, %pcf.
+<ce>           
 
 QuestComplete:  [1004]
 <ce>                You should feel proud, %pcf.
@@ -60,10 +57,9 @@ Message:  1025
 <ce>             _questgiver_ looks deeply upset.
 <ce>             
 <ce>             "The Dark Brotherhood? Protecting
-<ce>             __home_? This is a grievous
-<ce>             report, %pct. We can do nothing
-<ce>             more for now, though I will speak to the
-<ce>             other knight lords in %crn.
+<ce>             ___home_? This is a grievous
+<ce>             report, %pct. We can do nothing more
+<ce>             for now, though I will inform the %t.
 <ce>             We cannot permit the powers of darkness
 <ce>             further foothold in our fair land. I will
 <ce>             credit you nonetheless for making the
@@ -74,7 +70,7 @@ Message:  1030
 %qdt:
  I have been sent from
  ___questgiver_ to a farm,
- __home_, which has
+ ___home_, which has
  been taken captive by a band
  of criminals. I must free the 
  captives and return within
@@ -82,14 +78,14 @@ Message:  1030
 
 Message:  1031
  %qdt:
- __home_ has been
+ ___home_ has been
  liberated by the Dark Brotherhood,
  one of its residents told me. I
  should return to ___questgiver_
  and report on this matter.
 
 Message:  1099
-<ce>        __home_ needs a savior,
+<ce>        ___home_ needs a savior,
 <ce>        and we have put our trust in you.
 <ce>        Go free the captive farmspeople.
 

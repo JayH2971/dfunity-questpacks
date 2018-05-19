@@ -1,5 +1,3 @@
--- Dark Brotherhood
--- Req Rep: 0-20
 Quest: JHDB005
 DisplayName: A Barbarous Deed
 -- Message panels
@@ -15,9 +13,9 @@ QuestorOffer:  [1000]
 <ce>          meted out against the clueless brute? And would
 <ce>          you answer a call to deliver such justice?
 <--->
-<ce>          %pcf, I will not mince words. You, I, and every
-<ce>          other person in ___questgiver_ hates
-<ce>          barbarians. We have a petition to rid ____tavern_
+<ce>          %pct, I will not mince words. You, I, and every
+<ce>          other person in ___qgiver_ hates
+<ce>          barbarians. We have a petition to rid %crn
 <ce>          of one of them. Will you take advantage of it?
 
 RefuseQuest:  [1001]
@@ -33,7 +31,7 @@ AcceptQuest:  [1002]
 <ce>       soon-to-be-married, shouting loudly in the morning
 <ce>       hours, and even scratching a beer glass. Apparently
 <ce>       the innkeeper has also grown tired of this beast.
-<ce>       Serve ___questgiver_ by slaying this
+<ce>       Serve ___qgiver_ by slaying this
 <ce>       brute and returning here within twelve hours.
 
 QuestFail:  [1003]
@@ -75,7 +73,7 @@ Message:  1099
 <ce>            them for you. You have twelve hours.
 
 QBN:
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 
 Place _tavern_ local tavern
 
@@ -108,7 +106,7 @@ _timer_ task:
 	end quest
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 

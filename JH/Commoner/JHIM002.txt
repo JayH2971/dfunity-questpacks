@@ -1,4 +1,3 @@
--- Innkeeper and Merchant
 Quest: JHIM002
 DisplayName: Quiz Time, Survival
 -- Message panels
@@ -10,7 +9,7 @@ QuestorOffer:  [1000]
 <ce>             reminisce about the good old days. What say I
 <ce>             test some of your knowledge, see if you know
 <ce>               as much as I do about surviving in the Iliac Bay?
-<ce>           For five questions you can win _reward_ gold pieces.
+<ce>           For five questions you can win =reward_ gold pieces.
 
 RefuseQuest:  [1001]
 <ce>                       No loss for me.
@@ -85,7 +84,7 @@ Message:  1030
  I'm currently answering
  questions posed by a
  local shopkeeper for
- a sum of _reward_ gold.
+ a sum of =reward_ gold.
 
 QBN:
 Item _reward_ gold range 350 to 350

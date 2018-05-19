@@ -1,4 +1,3 @@
--- Innkeeper and Merchant
 Quest: JHIM011
 DisplayName: How to Save a Life
 -- Message panels
@@ -39,7 +38,7 @@ Message:  1018
 <ce>         but how does it come to this? Oh, this is terrible.
 <ce>         I am grateful I did not have to draw blood, but my
 <ce>         reputation will be ruined nonetheless. Perhaps
-<ce>         ___questgiver_ is no place for me after all.
+<ce>         ___qgiver_ is no place for me after all.
 
 Message:  1019
 <ce>         A courier impatiently stomps over to you, puts a letter
@@ -48,7 +47,7 @@ Message:  1019
 <ce>         You open it at once.
 
 Message:  1020
-_questgiver_ of ___questgiver_
+_qgiver_ of ___qgiver_
  
 This is my last warning. Either pay the sum
 of =fakegold_ gold pieces by this date next month
@@ -70,8 +69,8 @@ Message:  1021
 
 Message:  1030
 %qdt:
- _questgiver_, a resident of
- ___questgiver_, has asked to
+ _qgiver_, a resident of
+ ___qgiver_, has asked to
  accompany me in my travels while
  an assassin of some sort looks for
  %g2. I must merely be on the lookout
@@ -82,7 +81,7 @@ Item _reward_ gold
 Item _fakegold_ gold range 3001 to 6999
 Item _letter_ letter
 
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 Person _human_ group Local_3.0
 
 Place _dummy_ remote house1
@@ -97,8 +96,8 @@ Foe _enemy_ is Nightblade
 	start timer _failsafe_ 
 	log 1030 step 0
 	pick one of _E.01_
-                hide npc _questgiver_
-                add _questgiver_ face
+                hide npc _qgiver_
+                add _qgiver_ face
 
 variable _timer_
 variable _E.01_

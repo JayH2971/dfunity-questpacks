@@ -11,7 +11,7 @@ QuestorOffer:  [1000]
 <ce>          like a dangerously absurd proposition, knowing it could
 <ce>          hold any effect in Tamriel. What the Odylic Mages
 <ce>          cannot identify, _npc_ can. Please take it to %g2
-<ce>          in __dung_ so we can proceed.
+<ce>          in ___dung_ so we can proceed.
 
 RefuseQuest:  [1001]
 <ce>          Even so, we refuse to test it in this guild hall.
@@ -77,18 +77,18 @@ Message: 1012
 <ce>          "Oh, my. Oh, dear. I didn't hurt you, did I? What
 <ce>          an awful, awful trap was put on this simple little thing!
 <ce>          One of us could have been killed! Oh, I feel faint.
-<ce>          Tell _questgiver_ we now know everything we
+<ce>          Tell _qgiver_ we now know everything we
 <ce>          need to about that device. And tell %g2 to burn it.
 <ce>          I would do so myself if I weren't convinced it would
 <ce>          arouse the Archmagister's wrath. Go in peace,
 <ce>          %ra, and thank you for sparing my life."
 
 Message: 1013
-<ce>          Do you tell _questgiver_ you slew _npc_?
+<ce>          Do you tell _qgiver_ you slew _npc_?
 
 Message:  1030
 %qdt:
- The Mages Guild of ___questgiver_
+ The Mages Guild of ___qgiver_
  has tasked me with taking some
  _tri_ to _npc_, who is
  in __dung_, for inspection.
@@ -112,7 +112,7 @@ QBN:
 Item _reward_ gold range 601 to 899
 Item _tri_ trinket
 
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 Person _npc_ faction The_Odylic_Mages
 
 Place _dung_ remote dungeon
@@ -163,11 +163,11 @@ _falsegetsgold_ task:
 
 _badend_ task:
 	say 1003
--guild rep -20
+                change repute with _qgiver_ by -20
 	end quest
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _clearclick_ task:
 	when _qgclicked_ and not _talk_

@@ -7,12 +7,12 @@ QRC:
 QuestorOffer:  [1000]
 <ce>          %pcf, in this line of work, people must
 <ce>           be held to account. Once word gets out
-<ce>           that _questgiver_'s a weak-kneed
+<ce>           that _qgiver_'s a weak-kneed
 <ce>           coward, all kinds of filth come through the
 <ce>           door to take advantage of me. I must
 <ce>            make things right before they go more
 <ce>           wrong. Will you avenge me of a foe
-<ce>              of mine for _reward_ gold pieces?
+<ce>              of mine for =reward_ gold pieces?
 
 RefuseQuest:  [1001]
 <ce>                Then leave me, lest you betray me too.
@@ -41,17 +41,17 @@ QuestComplete:  [1004]
 <ce>           This pleases me more than I can
 <ce>            express, %pcf. Feel pride in being
 <ce>           the instrument of justice this day.
-<ce>            Here are the _reward_ gold pieces.
-<ce>            Let no man tell you _questgiver_
+<ce>            Here are the =reward_ gold pieces.
+<ce>            Let no man tell you _qgiver_
 <ce>          does not deal honorably with his own.
 
 Message:  1020
-<ce>               _questgiver_'s adversary is no more. 
+<ce>               _qgiver_'s adversary is no more. 
 <ce>                  Now justice may run its course.
 
 Message:  1030
 %qdt:
- _questgiver_ in ___questgiver_
+ _qgiver_ in ___qgiver_
  needs me to forcibly remove
  from _res_
  its owner who has refused to
@@ -67,7 +67,7 @@ Message:  1099
 QBN:
 Item _reward_ gold range 350 to 400
 
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 
 Place _res_ local house2
 
@@ -90,7 +90,7 @@ _slain_ task:
 	killed 1 _enemy_ saying 1020 
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 

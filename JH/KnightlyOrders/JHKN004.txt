@@ -1,5 +1,3 @@
--- Knightly Order Quest
--- Min Rep: 60
 Quest: JHKN004
 DisplayName: City Under Siege
 -- Message panels
@@ -26,7 +24,7 @@ AcceptQuest:  [1002]
 <ce>                  they bring us word.
 
 QuestFail:  [1003]
-<ce>               Failure text
+<ce>              
 
 QuestComplete:  [1004]
 <ce>           A page bearing the banner of %crn
@@ -57,7 +55,7 @@ Message:  1011
 <ce>            you hear a roaring cry nearby.
 <ce>            
 <ce>            "Kill that %ra! This is the day
-<ce>             we take back __palace_!
+<ce>             we take back ___palace_!
 <ce>           For the Knights of the _gem_!"
 
 Message:  1020
@@ -74,19 +72,19 @@ Message:  1030
  %crn and some renegade
  group of knight pretenders
  called the Knights of the _gem_
- in the city of __palace_.
+ in the city of ___palace_.
  I must defend the town as well
  as I can for my own part.
 
 Message:  1031
 %qdt:
  The guards have told me to hurry
- to the _palace_ in __palace_,
+ to the _palace_ in ___palace_,
  as it appears the invaders
  have entered it.
 
 Message:  1099
-<ce>      Protect __palace_, %pcf!
+<ce>      Protect ___palace_, %pcf!
 <ce>      They are nearly upon us!
 
 QBN:

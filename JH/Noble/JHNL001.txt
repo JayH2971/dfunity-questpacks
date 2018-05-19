@@ -1,4 +1,3 @@
--- Noble
 Quest: JHNL001
 DisplayName: Siege from Within
 -- Message panels
@@ -7,7 +6,7 @@ QRC:
 QuestorOffer:  [1000]
 <ce>          %pcf, sometimes I don't know why I
 <ce>           continue to sustain some of these
-<ce>           cities. The guards in __captive_
+<ce>           cities. The guards in ___captive_
 <ce>           are apparently not competent enough
 <ce>           to stop a criminal uprising. Now I get
 <ce>            reports of nightly assaults in the
@@ -19,7 +18,7 @@ RefuseQuest:  [1001]
 <ce>               then. Let the whole thing burn.
 
 AcceptQuest:  [1002]
-<ce>               Apparently __captive_ is facing some
+<ce>               Apparently ___captive_ is facing some
 <ce>                crisis brought about by some
 <ce>                particularly well-organized criminals.
 <ce>             No one knows how many there are, but
@@ -48,23 +47,23 @@ Message: 1021
 Message:  1030
 %qdt:
  I have been given =timer_ days
- to go to __captive_ and 
+ to go to ___captive_ and 
  end a criminal mob that moves
  about in the night time. I must
  slay as many as necessary to
  stop them, and then return to
- ___questgiver_ for my reward.
+ ___qgiver_ for my reward.
 
 Message:  1099
 <ce>       I need competent assistance,
-<ce>       %pcf. Get to __captive_
+<ce>       %pcf. Get to ___captive_
 <ce>       and kill the night criminals.
 <ce>       I gave you =timer_ days.
 
 QBN:
 Item _reward_ gold range 500 to 700
 
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 
 Place _captive_ remote city
 
@@ -101,7 +100,7 @@ _slain_ task:
 	say 1021
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 

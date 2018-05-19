@@ -1,5 +1,3 @@
--- Mages Guild quest
--- Req rep: 35+
 Quest: JHMG003
 DisplayName: The Dark Artist
 -- Message panels

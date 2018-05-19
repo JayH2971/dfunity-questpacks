@@ -1,5 +1,3 @@
--- Fighters Guild
--- Min Rep: 5
 Quest: JHFG005
 DisplayName: Pack of Beasts
 -- Message panels
@@ -16,12 +14,12 @@ QuestorOffer:  [1000]
 <ce>           something and they can do their work,
 <ce>            but anyone outside the premises after
 <ce>             dark is in for a big surprise. It's paying
-<ce>            _reward_ gold pieces and you get a
+<ce>            =reward_ gold pieces and you get a
 <ce>             change of scenery. What do you say?
 <--->
 <ce>          It's kind of a sad story, but we end up being
 <ce>          sort of the city guard for those far-off farm
-<ce>          homes when ____rural_ doesn't care
+<ce>          homes when the %t doesn't care
 <ce>          enough to help them out. We charge them 
 <ce>          for it, sure, but otherwise no one would
 <ce>          actually go out there and do it. You wanna
@@ -129,14 +127,16 @@ _B.01_ task:
 
 _bears_ task:
 	when _outside_ and not _day_ and not _slain_ and not _T.01_
-	create foe _bear_ every 1 minutes indefinitely with 95% success
+	create foe _bear_ every 3 minutes indefinitely with 95% success
+	create foe _bear_ every 1 minutes indefinitely with 20% success
 
 _T.01_ task:
 	pick one of _tigers_
 
 _tigers_ task:
 	when _outside_ and not _day_ and not _slain_ and not _B.01_
-	create foe _tiger_ every 1 minutes indefinitely with 95% success
+	create foe _tiger_ every 1 minutes indefinitely with 20% success
+	create foe _tiger_ every 3 minutes indefinitely with 95% success
 
 _kill4_ task:
 	killed 4 _bear_

@@ -1,4 +1,3 @@
--- Innkeeper and Merchant
 Quest: JHIM004
 DisplayName: Civilian Guard Duty
 -- Message panels
@@ -13,7 +12,7 @@ QuestorOffer:  [1000]
 <ce>           by some traveling thieves. I can't
 <ce>            handle this myself, and I need help.
 <ce>           The Fighters Guild asked for more
-<ce>           than I could afford. For _reward_ gold,
+<ce>           than I could afford. For =reward_ gold,
 <ce>             will you defend my home this night?
 
 RefuseQuest:  [1001]

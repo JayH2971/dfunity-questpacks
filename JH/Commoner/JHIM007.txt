@@ -1,4 +1,3 @@
--- Innkeeper and Merchant
 Quest: JHIM007
 DisplayName: A Witty Response
 -- Message panels
@@ -104,7 +103,7 @@ _lie_ task:
 
 _bigfail_ task:
           say 1003
--legalrep?
+          change repute with _qgiver_ by -10
           end quest
 
 _timer_ task:

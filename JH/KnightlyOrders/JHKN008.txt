@@ -1,13 +1,11 @@
--- Knightly Order
--- Min Rep: 25
 Quest: JHKN008
-DisplayName: An Orcish Incursion
+DisplayName: Orcish Skirmish
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
 <ce>          A recent raid on an orc encampment
-<ce>          in __dung_ proved timely.
+<ce>          in ___dung_ proved timely.
 <ce>          We are informed that the brutes have
 <ce>          planned an assassination attempt against
 <ce>          _noble_, a noble within the region

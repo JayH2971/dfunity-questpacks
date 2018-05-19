@@ -1,19 +1,17 @@
--- Knightly Order
--- Min Rep: 70
 Quest: JHKN003
 DisplayName: Hemophiliac Hunted
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                My name is _questgiver_. The Order has
+<ce>                My name is _qgiver_. The Order has
 <ce>                recently been made aware of a terror of
 <ce>                 the night, a vampire of no small renown,
 <ce>                lurking in a pitiful hole in %crn.
 <ce>                 We are the protectorate of this land and 
 <ce>                cannot tolerate such a threat to its people.
 <ce>                  Will you answer the call and descend into
-<ce>                  the depths of __dung_
+<ce>                  the depths of ___dung_
 <ce>                  to slay this undead monster?
 
 RefuseQuest:  [1001]
@@ -21,7 +19,7 @@ RefuseQuest:  [1001]
 <ce>                   innocents and grow more powerful, yes.
 
 AcceptQuest:  [1002]
-<ce>                   Then be going to __dung_
+<ce>                   Then be going to ___dung_
 <ce>                   to rid us of this evil. This is our
 <ce>                    duty to %crn, %pcf.
 <ce>                    Let your strikes sink deep, that
@@ -32,8 +30,7 @@ AcceptQuest:  [1002]
 <ce>                       within =timer_ days.
 
 QuestFail:  [1003]
-<ce>                       I hear that vampire is yet skulking about
-<ce>                          in %crn, %pcf. Have you no shame?
+<ce>                   
 
 QuestComplete:  [1004]
 <ce>                         Hail the slayer of vampires! Such a
@@ -48,26 +45,25 @@ Message:  1020
 
 Message:  1030
 %qdt:
- _questgiver_ in the city of
- ___questgiver_ has sent me
- to __dung_
+ _qgiver_ in the city of
+ ___qgiver_ has sent me
+ to ___dung_
  to vanquish a vampire.
  I must return in =timer_ days.
 
 Message:  1099
 <ce>      The vampire is roaming in
-<ce>      __dung_, %pcf. This
+<ce>      ___dung_, %pcf. This
 <ce>      is not as difficult as you make it.
 
 QBN:
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 
 Place _dung_ remote dungeon
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
 
 Foe _vam1_ is Ancient_vampire
-
 Foe _vam2_ is Vampire
 
 --	Quest start-up:
@@ -87,7 +83,7 @@ _slain_ task:
 	killed 1 _vam2_ saying 1020
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _pcgetsgold_ task:
 	when _qgclicked_ and _slain_ 

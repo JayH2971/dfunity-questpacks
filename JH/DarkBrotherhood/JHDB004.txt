@@ -1,5 +1,3 @@
--- Dark Brotherhood
--- Req Rep: 0-20
 Quest: JHDB004
 DisplayName: Sanctimonious Wreck
 -- Message panels
@@ -38,7 +36,7 @@ AcceptQuest:  [1002]
 <ce>       within twelve hours.
 
 QuestFail:  [1003]
-<ce>               Failure text
+<ce>      
 
 QuestComplete:  [1004]
 <ce>               Very good, %pct. May Mephala
