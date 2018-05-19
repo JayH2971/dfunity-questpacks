@@ -30,7 +30,7 @@ AcceptQuest:  [1002]
 <ce>              bay for you, and when they catch up it ain't
 <ce>              gonna be pretty. Just keep moving and
 <ce>              outrunning 'em if you're not into killing.
-<ce>               Come back here after =timer_ days. If you're
+<ce>               Come back here after =goal_ days. If you're
 <ce>              still alive, I swear I'll buy you a round next
 <ce>               time I'm at _tavern_. Once
 <ce>               it's in my hands they'll leave you alone.
@@ -90,7 +90,7 @@ Place _temple_ remote temple
 Place _othercity_ remote city
 Place _tavern_ local tavern
 
-Clock _timer_ 59.00:00 70.00:00
+Clock _timer_ 90.00:00
 Clock _goal_ 18.00:00 28.00:00
 Clock _delay_ 1.00:00
 
