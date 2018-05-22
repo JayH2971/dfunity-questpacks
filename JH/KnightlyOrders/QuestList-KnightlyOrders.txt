@@ -18,4 +18,10 @@ JHKN007, KnightlyOrder, M, 50, a quest to resolve a mysterious murder spree near
 JHKN008, KnightlyOrder, M, 5, a quest to stop an assassination attempt by orcs in a palace
 JHKN009, KnightlyOrder, M, 15, a quest to end a cult of necromancer giants
 JHKN010, KnightlyOrder, M, 0, a quest to take a weapon to a fellow knight
-JHKN011, KnightlyOrder, M, 0, a quest to protect a villager from an onslaught
+-JHKN011, KnightlyOrder, M, 0, a quest to protect a villager from an onslaught
+-JHKN012, KnightlyOrder, M, 0, a quest to protect a graveyard from robbers
+-a quest to slay a group of criminals extorting merchants
+-a quest to slay a local ruffian in the city
+-rescue kidnapped youth, fend off assassins while returning
+-go to city covered by protection ring, slay ringleader, drop rep with TG
+-artifact quest, defend a palace against an entire invasion of daedra. Receive artifact in another city after defense is finished.

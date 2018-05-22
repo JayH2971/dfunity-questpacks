@@ -45,6 +45,9 @@ QuestComplete:  [1004]
 <ce>                Reliability on all matters, small and great, is
 <ce>                worthy of a hero. I thank you for making the journey.
 
+Message:  1019
+<ce>	You creep through the building silently.
+
 Message:  1020
 <ce>                 The guards ignored your entry. Now
 <ce>                    you must find the _clothes_.
@@ -92,15 +95,24 @@ Foe _enemy_ is 2 Assassin
    pc at _res_ set _inside_
 
 variable _inside_
+variable _silent_
+
+_stealth_ task:
+  when skill Stealth is at least 70
+  start task _silent_
 
 _entry_ task:
-   when _inside_ and not _got_
+   when _inside_ and not _silent_
    say 1020
+   start timer _delay_
+
+_entry2_ task:
+   when _inside_ and _silent_
+   say 1019
 
 _got_ task:
    clicked item _clothes_
    say 1022
-   start timer _delay_
 
 _delay_ task:
    say 1021

@@ -1,0 +1,154 @@
+-- Cartographers Quest
+Quest: JHCG013
+DisplayName: Witch Hunt
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCG013
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCG013
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCG013
+
+QuestFail:  [1003]
+<ce>   The Cartographers needed you to report on
+<ce>   the location of the Glenmoril Witches by now.
+
+QuestComplete:  [1004]
+<ce>        Welcome back. Pretty weird people, right?
+<ce>        You're free to go back and see what they
+<ce>        have to offer if you want. Just remember
+<ce>        to keep me and the rest of the association
+<ce>        out of it. If we find you drinking blood and
+<ce>        dancing in a thunderstorm or something,
+<ce>        we're keeping our names far from it.
+
+Message:  1010
+<ce>        A young adult in the employ of a courtier hands
+<ce>        you a letter. "You must be %pcf.
+<ce>        This belongs to you." He then moves on.
+<--->
+<ce>        A young adult in the employ of a courtier hands
+<ce>        you a letter. "You must be %pcf.
+<ce>        This belongs to you." She then moves on.
+
+Message:  1011
+  %pcf,
+ 
+  We wish to assign you to make a chart from the
+  Glenmorial Coven in Ilessan Hills to my current location.
+  You are granted =timer_ days from now. Please see
+  me if you need directions on how to find it.
+ 
+                   _qg_
+                   Explorer, Field Officer
+                   The Cartographers
+                   ___place_, ____place_
+
+Message:  1012
+<ce>        Welcome, Scout. The route before you is not
+<ce>        particularly easy. A friend told me you can reach
+<ce>        the Glenmorial Coven like this.
+ 
+<ce>        First, mount a horse at Old Chrystausa's Place
+<ce>        in Ilessan Hills. Get the horse pressed up
+<ce>        against the house's west wall, and then
+<ce>        ride for between eighty and eighty-five
+<ce>        seconds directly to the west. After that,
+<ce>        continue north until you see it. It looks like
+<ce>        a brick dome with grass on top. If you find
+<ce>        yourself at the same latitude as The
+<ce>        Hearthhart Cemetery, you've gone too
+<ce>        far to the north. It's east of Crossfort and
+<ce>        north of Old Evelona's Place, if that's any help.
+<ce>        I don't know if this is your first time meeting
+<ce>        the witches, but if it is, make sure you've got a
+<ce>        strong stomache before you do them any favors.
+
+Message:  1013
+<ce>        The dome before you must be the
+<ce>        Glenmoril Witches' coven.
+<ce>        You can report this to _qg_.
+<--->
+<ce>        You can see the Glenmoril Witches. Now
+<ce>        You can head to ___place_ to report.
+
+Message:  1030
+%qdt:
+ _qg_ has sent me to
+ find the coven of the
+ Glenmoril Witches in
+ Ilesan Hills. I have =timer_
+ days to present my chart
+ in ___place_.
+
+Message:  1031
+%qdt:
+ To find the Glenmorial Coven,
+ I can mount a horse and head to
+ Old Chrystausa's Place in Ilessan Hills.
+ Starting beside the home, I can ride
+ west for eighty to eighty-five seconds,
+ and then go straight north. If I reach
+ the same latitude as The Hearthhart
+ Cemetery, I need to go further south.
+
+Message:  1099
+<ce>  Some people try to find the witches to curry favor
+<ce>  with them. I stay out of such people's business.
+<ce>  So much can go wrong when working with them.
+
+QBN:
+Item _reward_ gold range 800 to 899
+Item _letter_ letter used 1011
+
+Place _dung_ permanent GlenmorilCoven
+Place _place_ remote house2
+
+Clock _timer_ 70.00:00 76.00:00
+
+Person _qg_ group Questor male
+
+--	Quest start-up:
+          start timer _timer_
+          give pc _letter_ notify 1010
+          place npc _qg_ at _place_
+          pc at _dung_ set _inside_
+          log 1030 step 0
+
+_qgclicked_ task:
+	clicked npc _qg_ 
+
+_begin_ task:
+     when _qgclicked_ and not _talked_ and not _found_
+     say 1012
+     reveal _dung_
+     clear _qgclicked_
+     log 1031 step 1
+     start task _talked_
+
+variable _talked_
+_inside_ task:
+     start task _found_
+
+_found_ task:
+    say 1013
+
+_reminder_ task:
+    when _qgclicked_ and _talked_ and not _found_
+    say 1099
+    clear _qgclicked_ _reminder_
+
+_victory_ task:
+    when _qgclicked_ and _found_
+    start quest JHCGENT3
+    give pc _reward_
+    end quest
+
+_timer_ task:
+         say 1003
+         start quest JHCGFAL2
+         end quest

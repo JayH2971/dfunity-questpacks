@@ -1,0 +1,19 @@
+The Perpetual Quest system is intended to make the Daggerfall Unity world come alive, spontaneously beginning a variety of quests that reach out to the player.
+
+INSTALLATION
+==========
+
+Install the contents of the dfunity-perpetual folder into \DaggerfallUnity_Data\StreamingAssets\Quests. Do not copy the actual folder dfunity-perpetual, only the text files. A new version of _BRISIEN.txt will be replace the ordinary version.
+
+When creating a new character, a prompt will ask whether you wish to begin the Perpetual Quest system. After the system starts, the first quest will arrive in about one month's time.
+
+Occasionally you may get a filler message, such as "You check your bearings momentarily" or "You feel a sudden rush of wind." This means the Perpetual Quest system chose a blank, and will try again in another month's time.
+
+The console command "purgeallquests" will wipe the Perpetual Quest system from the quest list. It will have to be restarted using the console command "startquest JHPINIT".
+
+TO UNINSTALL
+==========
+
+Delete all files from JHCG001.txt to the last JHPQ###.txt.
+Delete _BRISIEN.txt.
+Rename _BRISIEN.OLD to _BRISIEN.txt.

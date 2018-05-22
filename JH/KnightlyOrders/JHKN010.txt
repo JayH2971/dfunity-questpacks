@@ -4,13 +4,11 @@ DisplayName: A Journey of a Thousand Miles
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          %pct, you are but an apprentice to this order. Slaying dragons
-<ce>          and defending nobles are some of our duties, but they are given
-<ce>          to our proven knights, those who have shown themselves
-<ce>          trustworthy under the smallest and greatest of tasks. Begin to show
-<ce>          your worth. Take this _weapon_ to _knight_, who either
-<ce>          forgot or refused to take it. Look for %g2 in ___knighttown_.
-<ce>          Will you do this?
+<ce>          %pct, we must all engage in the humblest of work. Slaying dragons
+<ce>          and defending nobles are some of our duties, but they are only
+<ce>          some forms of the service we provide. Take this _weapon_
+<ce>          to _knight_, who either forgot or refused to take it.
+<ce>          Look for %g2 in ___knighttown_. Will you do this?
 
 RefuseQuest:  [1001]
 <ce>          Is this truly the path you wish to take, %ra?

@@ -17,3 +17,8 @@ JHFG006, FightersGuild, M, 5, a quest to stop an assassination inside a home
 JHFG007, FightersGuild, M, 5, courier work + ambush in a house
 JHFG008, FightersGuild, M, 10, a survival battle for one hour against summoned creatures
 JHFG009, FightersGuild, M, 15, expert werewolf hunting
+-JHFG010, FightersGuild, M, 0, bring an exterminator to resolve an infestation
+-JHFG011, FightersGuild, M, 0, slay a mage who teleports beasts into a palace
+-JHFG012, FightersGuild, M, 0, protect a shop at night from burglars. Commoner?
+-JHFG013, FightersGuild, M, 0, look into a wealthy client's problems and gain legal rep
+-artifact quest, slay a vampire ancient head of cult. Vampires and humans spawn to fight. Artifact is on vampire ancient corpse.

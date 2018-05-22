@@ -1,0 +1,58 @@
+-- Cartographers Quest
+Quest: JHCGENT2
+DisplayName: Cartographers Quest Selection 2
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCGENT2
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCGENT2
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCGENT2
+
+QuestFail:  [1003]
+<ce>           ERROR 1003 JHCGENT2
+
+QuestComplete:  [1004]
+<ce>           ERROR 1004 JHCGENT2
+
+Message: 1010
+<ce>        JHCGENT2: Pick one failure
+
+QBN:
+
+Clock _timer_ 12.00:00 30.00:00
+
+Person _qg_ group Librarian
+
+--	Quest start-up:
+          start timer _timer_
+          pick one of _Q1_ _Q2_ _Q3_
+
+variable _Q1_
+variable _Q2_
+variable _Q3_
+variable _timer_
+
+_S1_ task:
+         when _timer_ and _Q1_
+         start quest JHCG011
+         end quest
+
+_S2_ task:
+         when _timer_ and _Q2_
+         start quest JHCG012
+         end quest
+
+_S3_ task:
+         when _timer_ and _Q3_
+         start quest JHCG013
+         end quest
+
+_SNONE_ task:
+         when _timer_ and not _Q1_ and not _Q2_ and not _Q3_
+         say 1010
+         end quest

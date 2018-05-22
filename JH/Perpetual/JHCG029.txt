@@ -1,0 +1,150 @@
+-- Cartographers Quest
+Quest: JHCG029
+DisplayName: Orsinium
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCG029
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCG029
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCG029
+
+QuestFail:  [1003]
+<ce>   The Cartographers requested your
+<ce>   report regarding Orsinium by now.
+
+QuestComplete:  [1004]
+<ce>        Are you serious? Let me see that chart.
+<ce>        %oth! You're the only one in an
+<ce>        entire year to actually do the Orsinium
+<ce>        chart. This deserves special commendation,
+<ce>        so much as it's in my power to give it.
+<ce>        Take your fee and my admiration. You
+<ce>        have done what very few take seriously.
+
+Message:  1010
+<ce>        An elderly page hands you an
+<ce>        unrolled scroll with a kindly smile.
+<--->
+<ce>        "Letter from the Cartographers, %ra."
+<ce>        A page proffers you a scroll, which you
+<ce>        put in your pack.
+
+Message:  1011
+  Pathfinder,
+ 
+  It's your turn to chart from Orsinium City to here.
+  We've set the time limit at =timer_ days. See
+  me if you want directions on how to arrive.
+ 
+                         _qg_
+                         Master Assistant
+                         The Cartographers
+                         ___place_, ____place_
+
+Message:  1012
+<ce>        So you're actually going to try this one, eh %pcf?
+<ce>        That's admirable. Most people see the phrase "Orsinium City"
+<ce>        and just burn the letter. I know that first-hand. I will tell you
+<ce>        right now, there is no easy route to get there. None. Long
+<ce>        but sure is starting at Old Evelorya's Shack in the Orsinium
+<ce>        region, from whence you go north for Oblivion knows how
+<ce>        many kilometers. It'll be a few dozen paces to the east as
+<ce>        well, so stay alert to it. If people begin welcoming you to
+<ce>        the Wrothgarian Mountains, turn around and look harder.
+<ce>        The older folks say it's easier to arrive from The Buckinging
+<ce>        Farmstead and go east-southeast, but to me that's a load
+<ce>        of bunk. There is nothing to guide you that way. Just
+<ce>        remember that it's almost directly to the north of Old
+<ce>        Evelorya's Shack and a little lower in latitude than Midpath
+<ce>        Hill, and not quite into the Wrothgarian Mountains. If all else
+<ce>        fails, just remember that it's a little civilized-looking village,
+<ce>        so get up on a hill and use your telescope. You'll see buildings
+<ce>        sooner or later if you just look around. %god help you
+<ce>        to find it, %pcf. No one else seems to be able to. I'll have
+<ce>        your money waiting for you here.
+
+Message:  1013
+<ce>        After a very long trek, you see Orsinium before you.
+<--->
+<ce>        The legendary lost city of Orsinium lies before you.
+<ce>        At least, that's what it feels like.
+
+Message:  1030
+%qdt:
+ The Cartographers have tasked me
+ with traveling to Orsinium City and
+ making a chart to ___place_
+ in ____place_. _qg_
+ is also there to give me directions.
+
+Message:  1031
+%qdt:
+ According to _qg_,
+ I'm in way over my head. Orsinium
+ City is far to the north and a little
+ to the east of Old Evelorya's Shack.
+ 
+
+Message:  1099
+<ce>  You're a brave soul to try the
+<ce>  Orsinium chart. If you want, just
+<ce>  let the time limit expire and
+<ce>  reconnect with us afterwards.
+<ce>  No one will blame you for doing it.
+
+QBN:
+Item _reward_ gold range 700 to 799
+Item _letter_ letter used 1011
+
+Place _dung_ permanent OrsiniumCity
+Place _place_ remote tavern
+
+Clock _timer_ 65.00:00 75.00:00
+
+Person _qg_ group Chemist
+
+--	Quest start-up:
+          start timer _timer_
+          give pc _letter_ notify 1010
+          place npc _qg_ at _place_
+          pc at _dung_ set _inside_
+          log 1030 step 0
+
+_qgclicked_ task:
+	clicked npc _qg_ 
+
+_begin_ task:
+     when _qgclicked_ and not _talked_ and not _found_
+     say 1012
+     reveal _dung_
+     clear _qgclicked_
+     log 1031 step 1
+     start task _talked_
+
+variable _talked_
+_inside_ task:
+     start task _found_
+
+_found_ task:
+    say 1013
+
+_reminder_ task:
+    when _qgclicked_ and _talked_ and not _found_
+    say 1099
+    clear _qgclicked_ _reminder_
+
+_victory_ task:
+    when _qgclicked_ and _found_
+    start quest JHCGENT4
+    give pc _reward_
+    end quest
+
+_timer_ task:
+         say 1003
+         start quest JHCGFAL3
+         end quest

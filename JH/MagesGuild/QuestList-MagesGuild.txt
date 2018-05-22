@@ -15,3 +15,6 @@ JHMG004, MagesGuild, M, 0, a quest to assist a researcher in slaying an atronach
 JHMG005, MagesGuild, M, 0, a quest to test a trapped warping trinket
 JHMG006, MagesGuild, M, 5, a quest to take an unidentifiable magical item to a scholar in a dungeon
 JHMG00X, MagesGuild, M, 95, a circular quest regarding an ancient lich
+-get teleported to a dungeon to find a criminal
+-go to various NPCs in cities to pick up needed ingredients
+-artifact quest, join two halves of a document and take it to an expert. Expert will be slain if enough time passes. Artifact is on Daedra Lord's body.

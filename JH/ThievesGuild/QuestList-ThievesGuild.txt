@@ -12,3 +12,6 @@ JHTG001, GeneralPopulace, M, 10, a quest to avoid pursuers while holding contrab
 JHTG002, GeneralPopulace, M, 0, a quest to kidnap a child for ransom
 JHTG003, GeneralPopulace, M, 0, a quest to take a land deed by force
 JHTG004, GeneralPopulace, M, 5, a quest to steal a criminal confession
+-leave a broken finger in a rival's home to send a message
+-bribe a noble with a gem to turn away a sentence
+-exchange a true paper for a false one without injuring the owner (mission failure)
