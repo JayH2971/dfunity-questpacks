@@ -32,6 +32,16 @@ Message:  1010
 <--->
 <ce>     You neatly fold your map and put it away.
 
+Message:  1027
+<ce>	You currently have the Perpetual Quests add-on
+<ce>	installed. Would you like to begin running the
+<ce>	Perpetual Quest system now?
+
+Message:  1028
+<ce>	Perpetual Quests will not begin at this time.
+<ce>	You can start them by opening the console and
+<ce>	entering "startquest JHPINIT".
+
 QBN:
 
 Clock _countdown_ 9.00:00 35.00:00
@@ -41,6 +51,14 @@ Clock _end_ 36.00:00
      start timer _countdown_
      start timer _end_
      pick one of _Q1_ _Q2_ _Q3_ _Q4_ _Q5_ _Q6_ _Q7_ _Q8_ _Q9_ _Q10_ _dud_ _dud_ _dud_ _dud_
+                prompt 1027 yes _pqstart_ no _pqfail_
+
+_pqfail_ task:
+	say 1028
+
+_pqstart_ task:
+	start quest JHPINIT
+
 
 variable _Q1_
 variable _Q2_

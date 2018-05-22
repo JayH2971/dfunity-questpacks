@@ -8,3 +8,5 @@
 
 schema: *name, group, membership, minRep, notes
 
+
+JHPINIT, InitAtGameStart, M, 0, Init JH perpetual stuffJHPINIT
