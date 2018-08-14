@@ -1,0 +1,96 @@
+-- Innkeeper and Merchant
+Quest: JHIMU001
+DisplayName: Quiz Time
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          Hail, %ra. For several weeks I have
+<ce>           run a contest with my patrons, testing their
+<ce>          knowledge concerning royalty among the
+<ce>           Iliac Bay. If you're up for the challenge, I
+<ce>              could offer you =reward_ gold. Might
+<ce>                      you be the first winner?
+
+RefuseQuest:  [1001]
+<ce>                       Your loss.
+
+AcceptQuest:  [1002]
+<ce>                   Splendid! Best of luck to you.
+
+QuestFail:  [1003]
+<ce>               I'm sorry, but that wasn't the correct answer.
+
+QuestComplete:  [1004]
+<ce>           %oth, you've actually done it.
+<ce>           Take this gold and my praise.
+
+Message:  1035
+<ce>                                  Let's get started, then.
+<ce>
+<ce>                    First: Nulfaga is the mother-in-law of Gothryd.        
+
+Message:  1036
+<ce>                                   Very good, %ra!
+<ce>
+<ce>                Second: Helseth is the younger brother of Morgiah.
+
+Message:  1037
+<ce>                                    Impressive!
+<ce>
+<ce>              Third: Aubk-i was married to Gothryd as 
+<ce>                   a result of the War of Betony.
+
+Message:  1038
+<ce>                                    Cleverly done!
+<ce>
+<ce>                  Fourth: Medora ensured Mynisera was locked in her
+<ce>                 tower for her extramarital relationship with Lysandus.
+
+Message:  1039
+<ce>                           Unbelievable! Could you be the winner?
+<ce>
+<ce>                        Final: Of Nulfaga, Medora, and Barenziah, only
+<ce>                       Barenziah is not known as a powerful sorceress.
+
+Message:  1030
+%qdt:
+ I appear to be in the middle of a quiz
+ by a local merchant. I've been promised
+ =reward_ gold if I answer all five
+ questions correctly.
+
+QBN:
+Item _reward_ gold range 200 to 200
+
+Person _questgiver_ group Questor male
+
+Clock _failsafe_ 1.00:00
+
+--	Quest start-up:
+	start timer _failsafe_
+	log 1030 step 0 
+	prompt 1035 yes _fail_ no _S.04_
+
+_S.04_ task:
+	prompt 1036 yes _fail_ no _S.05_
+
+_S.05_ task:
+	prompt 1037 yes _S.06_ no _fail_
+
+_S.06_ task:
+	prompt 1038 yes _fail_ no _S.07_
+
+_S.07_ task:
+	prompt 1039 yes _pcgetsgold_ no _fail_
+
+_fail_ task:
+	say 1003
+	end quest
+
+_pcgetsgold_ task:
+	give pc _reward_
+	end quest 
+
+_failsafe_ task:
+	end quest

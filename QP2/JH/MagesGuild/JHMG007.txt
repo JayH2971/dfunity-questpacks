@@ -1,0 +1,100 @@
+Quest: JHMG007
+DisplayName: Weaponized Teleportation
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>	%pcf, do you like hearing from the %t? I do not.
+<ce>	Most guild members also do not. Our research must
+<ce>	 not be interrupted by petty squabbles such as some
+<ce>	mere murderer holed up in ___dung_, as is
+<ce>	the case at this moment. We received a request this
+<ce>	morning to slay one such criminal that the Fighters Guild
+<ce>	simply could not locate. Knowing of your combat skill,
+<ce>	we wish to bestow this task upon you for the sum
+<ce>	of =reward_ gold pieces. Are you ready to teleport?
+
+RefuseQuest:  [1001]
+<ce>	%oth. No one is, apparently.
+
+AcceptQuest:  [1002]
+<ce>	Then we will send you off immediately. Our good
+<ce>	_dummy_ will do the incantation.
+<ce>	I don't so much care about when you come back,
+<ce>	so long as you come back alive. Let the %t
+<ce>	take responsibility for these things sooner than
+<ce>	 bother us again. Once you're off I can say our work
+<ce>	 is in progress. Well then, I won't hold you any further.
+<ce>	 Go ahead, _dummy_.
+
+QuestFail:  [1003]
+
+QuestComplete:  [1004]
+<ce>	Oh, %pcf, I am overjoyed at your return. The %t
+<ce>	sent a few missives while we waited, and I rejoiced
+<ce>	to reply with certain choice words not fit for this guild hall.
+<ce>	I feel to reject such petitions in the future, had I the
+<ce>	confidence this building would not be closed upon within
+<ce>	the week. You have certainly earned your reward. Thank you.
+
+Message:  1010
+<ce>	Your work is to find an assassin somewhere in this place.
+ 
+<ce>	(Hint: You may be in a location that's impossible to escape from,)
+<ce>	(like inside an enclosed cage or at the bottom of a chute. If so,)
+<ce>	(make a save and try the console command "teleport" to get out.)
+
+Message:  1020
+<ce>	You have slain the assassin. Now to return to ___qgiver_.
+
+Message:  1030
+%qdt:
+ The Mages Guild in ___qgiver_
+ has sent me to slay an assassin
+ in ___dung_.
+
+QBN:
+Clock _failsafe_ 180.00:00
+Clock _battle_ 4:00 1.01:00
+
+Item _reward_ gold range 600 to 900
+
+Place _dung_ remote dungeon
+
+Foe _enemy_ is Assassin
+
+Person _qgiver_ group Questor male
+Person _dummy_ faction The_Mages_Guild
+
+--	Quest start-up:
+	teleport pc to _dung_
+	say 1010
+	start timer _failsafe_
+	start timer _battle_
+	log 1030 step 0
+	pc at _dung_ set _inside_
+
+variable _inside_
+variable _battle_
+_spawn_ task:
+	when _battle_ and _inside_ and not _slain_
+	create foe _enemy_ every 5 minutes indefinitely with 10% success
+
+_slain_ task:
+	killed _enemy_
+	say 1020
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _slain_
+	give pc _reward_
+	end quest
+
+_qgclicked_ task:
+	clicked npc _qgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+	clear _qgclicked_ _clearclick_ 
+
+_failsafe_ task:
+        end quest

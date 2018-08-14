@@ -1,0 +1,109 @@
+Quest: JHFG010
+DisplayName: Eight-Legged Freaks
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ___captive_ is having some problems
+<ce>          with venomous critters in its streets.
+<ce>          Wanna go? It's paying =reward_ gold.
+
+RefuseQuest:  [1001]
+<ce>	You one of those types that's allergic to paralysis?
+<ce>	That'd be a problem, I think.
+
+AcceptQuest:  [1002]
+<ce>	You just have to kill as many as'll stop 'em
+<ce>	from spreading more, maybe like seven or so.
+<ce>	Don't let yourself get frozen up with their poison,
+<ce>	and make sure you don't hit any of the people.
+<ce>	Maybe you wanna do it at night. Get it done in
+<ce>	=2captive_ days, but you can take your time getting
+<ce>	here after that.
+
+QuestFail:  [1003]
+<ce>	___captive_ needed its infestation cleared out by now.
+
+QuestComplete:  [1004]
+<ce>	Pretty easy, %pcf? Or what did you think? A lot of
+<ce>	people hate fighting those critters. The guild couldn't
+<ce>	find anyone over there to do it, so it's a good thing you
+<ce>	stepped up. Here's your money.
+
+Message:  1019
+<ce>	This extermination contract should just be a matter
+<ce>	of walking the streets. You consider waiting until
+<ce>	night time to not injure any bystanders.
+
+Message:  1020
+<ce>	You've fulfilled the Fighters Guild's contract.
+<ce>	 _qgiver_ will have your money in ___qgiver_.
+
+Message:  1030
+%qdt:
+ _qgiver_ has sent me to
+ ___captive_ to clear out
+ some poisonous creatures.
+ I have to do it within =2captive_
+ days, but after that I can return
+ to ___qgiver_ for the money
+ whenever I want.
+
+QBN:
+Item _reward_ gold range 300 to 500
+
+Person _qgiver_ group Questor male
+
+Place _captive_ remote city
+
+Clock _timer_ 90.00:00
+Clock _2captive_ 00:00 0 flag 1 range 0 2
+
+Foe _enemy1_ is Spider
+Foe _enemy2_ is Giant_scorpion
+
+--	Quest start-up:
+	start timer _timer_
+	start timer _2captive_
+	log 1030 step 0 
+	pick one of _spid_ _scorp_
+	pc at _captive_ set _city_
+
+_city_ task:
+	say 1019
+
+variable _spid_
+variable _scorp_
+
+_spawn_ task:
+	when _city_ and _spid_ and not _slain_
+	create foe _enemy1_ every 1 minutes indefinitely with 25% success
+
+_spawn2_ task:
+	when _city_ and _scorp_ and not _slain_
+	create foe _enemy2_ every 1 minutes indefinitely with 25% success
+
+_slain_ task:
+	killed 7 _enemy1_
+	killed 7 _enemy2_
+	say 1020
+	stop timer _2captive_
+
+_qgclicked_ task:
+	clicked npc _qgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+	clear _qgclicked_ _clearclick_ 
+
+_pcreward_ task:
+	when _qgclicked_ and _slain_ 
+	give pc _reward_
+	end quest 
+
+_timer_ task:
+	end quest
+
+_2captive_ task:
+	say 1003
+	end quest

@@ -1,0 +1,132 @@
+Quest: JHDB010
+DisplayName: Kidnap and Ransom
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>	Does the name _kid_ ring a bell,
+<ce>	 %pcf? It belongs to one of the more famous
+<ce>	ransom marks in %crn. We have word
+<ce>	 of a plot being conducted by some ring of
+<ce>	  amateurs, and wish to take possession of it.
+<ce>	  Will you be Mephala's hand in stealing this child away?
+
+RefuseQuest:  [1001]
+<ce>	A trifling matter. We have much to do.
+
+AcceptQuest:  [1002]
+<ce>	We know _kid_ will be taken to ___place_
+<ce>	in =2place_ days. Look in _place_.
+<ce>	The captors intend to spend no more than
+<ce>	twenty-four hours in the building, so you must
+<ce>	not fail in arriving. Once you have completed the
+<ce>	transfer, take %g2 to _ransom_ at
+<ce>	___ransom_. Now go.
+
+QuestFail:  [1003]
+<ce>	You are too late. _kid_ will
+<ce>	 have left ___place_ by now.
+
+QuestComplete:  [1004]
+<ce>	Once you enter the building, a member of
+<ce>	the Brotherhood stops you to speak.
+<ce>	
+<ce>	"Excellent work. We will carry the burden of this
+<ce>	 child's welfare now. Come, _kid_.
+<ce>	 We have much to do."
+<ce>	 
+<ce>	 _kid_ is led out of the building.
+<ce>	  Your work is done.
+
+Message:  1015
+<ce>	_kid_ will now be in _place_.
+
+Message:  1019
+<ce>	You creep into _place_ in
+<ce>	perfect silence. Now for the surprise attack.
+
+Message:  1020
+<ce>	You enter _place_, where
+<ce>	 _kid_ is being kept. 
+
+Message:  1021
+<ce>	You gag _kid_ and pull %g2 with you.
+
+Message:  1030
+%qdt:
+ The Dark Brotherhood has sent
+ me to interrupt another group's
+ ransom plot. I will find and take
+ _kid_ from _place_ in
+ ___place_ to _ransom_
+ of ___ransom_. The child will only
+ be in ___place_ for a single day.
+ I must not fail to arrive.
+
+Message:  1040
+<ce>	How is this possible?!
+<--->
+<ce>	This can't be happening!
+
+QBN:
+Person _questgiver_ group Questor male
+Person _kid_ faction Children
+
+Place _place_ remote house1
+Place _ransom_ remote house1
+
+Clock _2place_ 00:00 0 flag 1 range 0 2
+Clock _steal_ 1.00:00
+Clock _timer_ 90.00:00
+
+Foe _enemy1_ is Assassin
+Foe _enemy2_ is 2 Rogue
+
+--	Quest start-up:
+	start timer _timer_ 
+	start timer _2place_
+	log 1030 step 0 
+	pc at _ransom_ set _igol_
+	pc at _place_ set _ires_
+
+_2place_ task:
+	say 1015
+	start timer _steal_
+	place npc _kid_ at _place_
+	place foe _enemy1_ at _place_
+
+variable _ires_
+_sneak_ task:
+	when skill Stealth is at least 70
+
+_safeentry_ task:
+	when _ires_ and _sneak_ and _2place_
+	say 1019
+
+_nosafe_ task:
+	when _ires_ and not _sneak_ and _2place_
+	say 1020
+	create foe _enemy2_ every 600 minutes indefinitely with 75% success
+
+_dam_ task:
+	injured _enemy1_
+	say 1040
+
+_kclicked_ task:
+	clicked npc _kid_
+	hide npc _kid_
+	say 1021
+	stop timer _steal_
+
+variable _igol_
+_victory_ task:
+	when _kclicked_ and _igol_
+	give pc nothing
+	end quest 
+
+_steal_ task:
+	say 1003
+	end quest
+
+_timer_ task:
+	end quest

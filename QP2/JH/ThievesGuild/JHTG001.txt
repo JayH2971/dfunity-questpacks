@@ -1,0 +1,132 @@
+Quest: JHTG001
+DisplayName: Sacrificial Lamb
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          %pcf, I'm gonna level with you. Someone in
+<ce>          the guild screwed up. I've got here a _relic_
+<ce>          that someone dropped off 'cause the heat was
+<ce>          right behind 'em. The moron thought running
+<ce>          to a Thieves Guild was a smart idea once he
+<ce>          was in trouble. He was new. Anyway, he
+<ce>            stole it as part of a job I gave him, and
+<ce>            now our client doesn't want to touch it
+<ce>          'til it cools down. That means someone's gotta
+<ce>          hold on to it, far away, and come back later.
+<ce>          Like a lot later. You wanna make a scenic trip
+<ce>           to avoid some mercenary thugs for awhile?
+
+RefuseQuest:  [1001]
+<ce>              Then get lost before the heat comes down
+<ce>               on our heads. You'll be the first to squeal.
+
+AcceptQuest:  [1002]
+<ce>               Take it then, and get going. I don't care
+<ce>             where you go, whether it's underground, on
+<ce>             top of a mountain, or in the middle of the
+<ce>              ocean. When they realize our imbecile doesn't
+<ce>              have it, they're gonna search the whole
+<ce>              bay for you, and when they catch up it ain't
+<ce>              gonna be pretty. Just keep moving and
+<ce>              outrunning 'em if you're not into killing.
+<ce>               Come back here after =goal_ days. If you're
+<ce>              still alive, I swear I'll buy you a round next
+<ce>               time I'm at _tavern_. Once
+<ce>               it's in my hands they'll leave you alone.
+<ce>                 We'll have a plan for that. Just don't
+<ce>               take longer than a couple months.
+
+QuestFail:  [1003]
+<ce>             
+
+QuestComplete:  [1004]
+<ce>               So let's remember the lesson, %pcf: if
+<ce>              you're gonna steal, don't steal a relic that
+<ce>            actually belongs to the %t. Just go for one of the nice
+<ce>            ones in a pawn shop. One of our people
+<ce>             saw the rookie's corpse hanging from
+<ce>             a rooftop over in ___othercity_ a
+<ce>             couple weeks ago. So tragic.
+<ce>              
+<ce>              Sorry you had to deal with an actual
+<ce>              army. At least take this gold for travel
+<ce>             expenses and so on. We'll be talking
+<ce>              about this for a long time.
+
+Message: 1020
+<ce>                "They will find and dismember you," the
+<ce>                mercenary gasps before slumping down.
+
+Message:  1030
+%qdt:
+ I hold in my hands
+ a _relic_ that
+ I have to keep safe
+ from headhunters who
+ are trying to return it
+ to its previous owner.
+ I should return to
+ ___questgiver_ after
+ =goal_ days have passed.
+ _questgiver_ needs
+ to give it to the client
+ within =timer_ days.
+
+Message:  1099
+<ce>         You get out of here before a
+<ce>         single day's passed, %pcf.
+<ce>         And don't let me see you for
+<ce>         another =goal_. Bring me the
+<ce>         _relic_ afterwards and I'll pay you.
+
+QBN:
+Item _reward_ gold range 1001 to 1199
+Item _relic_ religious
+
+Person _questgiver_ group Questor male
+
+Place _othercity_ remote city
+Place _tavern_ local tavern
+
+Clock _timer_ 90.00:00
+Clock _goal_ 18.00:00 28.00:00
+Clock _delay_ 1.00:00
+
+Foe _enemy_ is 2 Assassin
+Foe _enemy2_ is 2 Nightblade
+
+--	Quest start-up:
+	start timer _timer_
+	start timer _goal_
+	start timer _delay_
+          get item _relic_
+	log 1030 step 0 
+
+_delay_ task:
+          create foe _enemy_ every 1320 minutes indefinitely with 90% success
+          create foe _enemy2_ every 2320 minutes indefinitely with 90% success
+
+_msg_ task:
+          killed 1 _enemy_
+          killed 1 _enemy2_
+          say 1020
+
+variable _goal_
+
+_qgclicked_ task:
+	toting _relic_ and _questgiver_ clicked
+
+_clearclick_ task:
+	when _qgclicked_ and not _goal_ 
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_victory_ task:
+          when _qgclicked_ and _goal_
+          take _relic_ from pc
+          give pc _reward_
+          end quest          
+
+_timer_ task:
+	end quest

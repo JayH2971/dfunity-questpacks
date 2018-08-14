@@ -1,0 +1,110 @@
+Quest: JHIM007
+DisplayName: A Witty Response
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          Forgive my inattentiveness, %ra. I simply could
+<ce>          not sleep last night. Some imbecile started an argument
+<ce>          with me regarding my ancestors and I could not let it go. Our
+<ce>          shouting led to yelling and then to screaming, and I still carry
+<ce>          the burden with me. Perhaps you could at least bring some
+<ce>          comeuppance on my part? Would you be willing to show this fool 
+<ce>          a little humility through the percussive medium?
+
+RefuseQuest:  [1001]
+<ce>         Then leave me to my headache.
+
+AcceptQuest:  [1002]
+<ce>          Well, I thank you for accepting. I suppose I have
+<ce>          a book I could give you for doing this. Find the fool
+<ce>          in _res_, likely dreaming of who to start
+<ce>          a fight with next. All I ask is that you bring me a word
+<ce>          of remorse on my foe's part. And I will say this now: do
+<ce>          not go beyond that. I will not have blood on my hands
+<ce>          this day. Please return here by tomorrow with good news.
+
+QuestFail:  [1003]
+<ce>         K-killed?! Are you mad? Guards, there's a murderer
+<ce>         in here! %ra, murderer, %pcf! I had nothing to do
+<ce>         with this! Someone help, please!
+
+QuestComplete:  [1004]
+<ce>        Ah, what satisfaction this brings me! To think that a
+<ce>        simple beating could solve my problem! Thank you, %ra.
+<ce>        Here is the book I promised. May it serve you well.
+
+Message:  1020
+<ce>        Now _questgiver_ hires bullies to torture me!
+<ce>        Fine then, I take it back! Leave me alone! Out with you now!
+
+Message:  1021
+<ce>        The body drops pathetically to the floor.
+
+Message:  1022
+<ce>        Do you tell _questgiver_ of the murder?
+
+Message:  1030
+%qdt:
+ _questgiver_ has asked me
+ to teach some humility to a foe
+ who lives in _res_.
+ I should do it in one day.
+
+Message:  1099
+<ce>         Finish this matter and tell me of it afterwards.
+
+QBN:
+Item _reward_ book2
+
+Person _questgiver_ group Questor male
+
+Place _res_ local house2
+
+Clock _timer_ 1.00:00
+
+Foe _enemy_ is Bard
+
+--	Quest start-up:
+	start timer _timer_ 
+	log 1030 step 0 
+	place foe _enemy_ at _res_ 
+          restrain foe _enemy_
+
+_inj_ task:
+          injured _enemy_
+          say 1020
+          restrain foe _enemy_
+
+_slain_ task:
+	killed 1 _enemy_ saying 1021
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ and not _inj_
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _inj_ and not _slain_
+	give pc _reward_ 
+	end quest
+
+_decision_ task:
+	when _qgclicked_ and _slain_
+          prompt 1022 yes _lie_ no _bigfail_
+
+_lie_ task:
+	give pc _reward_ 
+-startquest merchant's revenge
+	end quest
+
+_bigfail_ task:
+          say 1003
+          change repute with _questgiver_ by -10
+          end quest
+
+_timer_ task:
+	end quest 

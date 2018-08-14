@@ -1,0 +1,19 @@
+The Perpetual Quest system is intended to make the Daggerfall Unity world come alive, spontaneously beginning a variety of quests that reach out to the player.
+
+INSTALLATION
+==========
+
+1. Extract the contents of the PQP folder into \DaggerfallUnity_Data\StreamingAssets\Quests. Do not copy the actual folder PQP, only the text files.
+
+2. Move the JHPFIRST file from the \StreamingAssets\QuestPacks\JH\Perpetual folder to the \StreamingAssets\Quests folder.
+
+When creating a new character, a prompt will ask whether you wish to begin the Perpetual Quest system. After the system starts, the first quest will arrive in about one month's time.
+
+Occasionally you may get a filler message, such as "You check your bearings momentarily" or "You feel a sudden rush of wind." This means the Perpetual Quest system chose a blank, and will try again in another month's time.
+
+The console command "purgeallquests" will wipe the Perpetual Quest system from the quest list. It will have to be restarted using the console command "startquest JHPFIRST".
+
+TO UNINSTALL
+==========
+
+Delete all files from JHCG001.txt to the last JHPQ###.txt.

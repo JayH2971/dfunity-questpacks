@@ -1,0 +1,127 @@
+Quest: JHTP003
+DisplayName: Mobile Apothecary
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          %pcf, one of our good members in ___dest_
+<ce>          is suffering under some sort of cruel illness. We usually
+<ce>          employ our healers for our own, but the sickness is
+<ce>          clearly not life-threatening. We merely wish to shorten the
+<ce>          recovery period from weeks to days. With this pack of
+<ce>          _herb_, _npc_ will soon recover in a most
+<ce>          satisfactory manner. Can we rely on you to take it to %g2?
+
+RefuseQuest:  [1001]
+<ce>          That means you'll have to share more responsibilities.
+<ce>          Are you certain that's your decision?
+
+AcceptQuest:  [1002]
+<ce>          Our most sincere gratitude to you. _npc_ is resting
+<ce>          in _dest_, which is in ___dest_. The delivery
+<ce>          should be sufficient, I believe, as %g1 will know how to
+<ce>          make use of it. We can't afford to pay you much for this,
+<ce>          but such is our work. I will see you within =timer_ days.
+
+QuestFail:  [1003]
+<ce>          You were expected to return to ___qgiver_ by now.
+
+QuestComplete:  [1004]
+<ce>          _qgiver_ hands you the =reward_ gold pieces
+<ce>          and thanks you again for your dedication.
+
+Message:  1020
+<ce>         Who are you? %oth, you've come from ___qgiver_?
+<ce>         I wish I would not worry them so. But I suppose there is
+<ce>         an abundance of work to do. I'll take the _herb_. Thank you.
+<ce>         Tell them I will take up my journey by the end of next week.
+
+Message:  1021
+<ce>         How was _npc_ looking? This is something that happens
+<ce>         every few months with %g2. Someone told me we should
+<ce>         just invest in some house where %g1 can live here, but
+<ce>         that's the same money problem. Speaking of money, it isn't
+<ce>         a lot, but it's what we can offer. Please understand that
+<ce>         even in small things the divine feels pleasure. Slaying daedra
+<ce>         on assignment and delivering herbs on assignment mean
+<ce>         all the same to the gods above.
+
+Message:  1025
+<ce>         What is this? The temple sent you? Oh, dear. I fear your
+<ce>         journey was a bit of a miscalculation. I have overcome the
+<ce>         illness in a most stellar fashion over the last couple of days,
+<ce>         and feel ready even now to resume my services. But now
+<ce>         that you're here, why not go together? Let me just get
+<ce>         my things and I am more than happy to take you for a guide.
+
+Message:  1026
+<ce>         Ah, how wonderful to see you, _npc_! I'm sorry we
+<ce>         had to send our good friend %pcf out to fetch you, but
+<ce>         all is well that ends well. How good that you could travel
+<ce>         together for safety's sake. Here's your reward all the
+<ce>         same, %pcf. I'll take the _herb_ back if you still have it.
+
+Message:  1030
+%qdt:
+ I must deliver a quantity
+ of _herb_ to _npc_,
+ who is sick in _dest_ 
+ at ___dest_. I must then
+ return in =timer_ days.
+
+Message:  1099
+<ce>         Please see what has become of _npc_
+<ce>         and deliver the _herb_. I will see you in =timer_ days.
+
+QBN:
+Item _herb_ small_plant
+Item _reward_ gold range 50 to 80
+
+Person _qgiver_ group Questor male
+Person _npc_ group Cleric
+
+Place _dest_ remote house1
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+          get item _herb_
+          place npc _npc_ at _dest_
+
+_receive_ task:
+	clicked npc _npc_
+          pick one of _sick_ _okay_
+
+_sick_ task:
+          say 1020
+          take _herb_ from pc
+
+_sickend_ task:
+         when _qgclicked_ and _sick_
+         say 1021
+         give pc _reward_
+         end quest
+
+_okay_ task:
+         add _npc_ face saying 1025
+         hide npc _npc_
+
+_okayend_ task:
+        when _qgclicked_ and _okay_
+        say 1026
+        give pc _reward_
+        end quest
+
+_qgclicked_ task:
+	clicked npc _qgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _receive_
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_timer_ task:
+          say 1003
+	end quest

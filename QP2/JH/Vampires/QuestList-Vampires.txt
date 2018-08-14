@@ -1,0 +1,11 @@
+-- Jay_H Thieves Guild quest pack list
+
+-- name:        filename of QRC txt file
+-- group:       guild group from FactionFile.GuildGroups enum
+-- membership:  N=non-member, M=member
+-- minRep:      minimum reputation required to be offered the quest (units can use X wildcard)
+-- notes:
+
+schema: *name, group, membership, minRep, notes
+
+-, Vampires, M, 0,

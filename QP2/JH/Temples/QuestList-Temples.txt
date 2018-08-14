@@ -1,0 +1,14 @@
+-- Jay_H Temples quest pack list
+
+-- name:        filename of QRC txt file
+-- group:       guild group from FactionFile.GuildGroups enum
+-- membership:  N=non-member, M=member, T=Akatosh, A=Arkay, D=Dibella, J=Julianos, K=Kynareth, R=Mara, S=Stendarr, Z=Zenithar
+-- minRep:      minimum reputation required to be offered the quest (units can use X wildcard)
+-- notes:
+
+schema: *name, group, membership, minRep, notes
+
+JHTP001, HolyOrder, M, 0, a quest to take a religious tract to a potential convert
+JHTP002, HolyOrder, M, 0, a quest to deliver a donation to the temple
+JHTP003, HolyOrder, M, 0, a quest to deliver herbs to a sick member
+JHTP004, HolyOrder, M, 5, a quest to find a pilgrim lost in a dungeon

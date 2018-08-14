@@ -1,0 +1,116 @@
+Quest: JHNL001
+DisplayName: Siege from Within
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          %pcf, sometimes I don't know why I
+<ce>           continue to sustain some of these
+<ce>           cities. The guards in ___captive_
+<ce>           are apparently not competent enough
+<ce>           to stop a criminal uprising. Now I get
+<ce>            reports of nightly assaults in the
+<ce>             streets. Go there and do what the
+<ce>             town guard refuses to.
+
+RefuseQuest:  [1001]
+<ce>              Might as well order some mead
+<ce>               then. Let the whole thing burn.
+
+AcceptQuest:  [1002]
+<ce>               Apparently ___captive_ is facing some
+<ce>                crisis brought about by some
+<ce>                particularly well-organized criminals.
+<ce>             No one knows how many there are, but
+<ce>              don't expect to slay less than a dozen
+<ce>                of them before they get the point.
+<ce>                 They only appear at night, so find
+<ce>                 a tavern to stay in until that point.
+<ce>             I'll hear of your success within =timer_ days.
+
+QuestFail:  [1003]
+<ce>               You, the town guard, everyone.
+<ce>                   Sheer incompetence.
+
+QuestComplete:  [1004]
+<ce>                Hail %pcn, the Devourer of Souls.
+<ce>                 This is one for the record books.
+<ce>                   Have your gold.
+
+Message: 1020
+<ce>             A fierce scream pierces the night air.
+
+Message: 1021
+<ce>                The band leader lies dead at your
+<ce>                  feet. Your work here is done.
+
+Message:  1030
+%qdt:
+ I have been given =timer_ days
+ to go to ___captive_ and 
+ end a criminal mob that moves
+ about in the night time. I must
+ slay as many as necessary to
+ stop them, and then return to
+ ___qgiver_ for my reward.
+
+Message:  1099
+<ce>       I need competent assistance,
+<ce>       %pcf. Get to ___captive_
+<ce>       and kill the night criminals.
+<ce>       I gave you =timer_ days.
+
+QBN:
+Item _reward_ gold range 500 to 700
+
+Person _qgiver_ group Questor male
+
+Place _captive_ remote city
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _enemy1_ is Burglar
+Foe _enemy2_ is Thief
+Foe _enemy3_ is Bard
+Foe _enemy4_ is Nightblade
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0 
+	pc at _captive_ set _city_
+
+variable _city_
+_day_ task:
+	daily from 6:00 to 18:00
+
+_spawn_ task:
+	when _city_ and not _day_ and not _first_
+	create foe _enemy1_ every 1 minutes indefinitely with 20% success
+	create foe _enemy2_ every 2 minutes indefinitely with 45% success
+	create foe _enemy3_ every 3 minutes indefinitely with 33% success
+
+_first_ task:
+	killed 6 _enemy1_ saying 1020
+	killed 7 _enemy2_ saying 1020
+	killed 7 _enemy3_ saying 1020
+	create foe _enemy4_ every 1 minutes 1 times with 100% success
+
+_slain_ task:
+	killed _enemy4_
+	say 1021
+
+_qgclicked_ task:
+	clicked npc _qgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_pcreward_ task:
+	when _qgclicked_ and _slain_ 
+	give pc _reward_
+	end quest 
+
+_timer_ task:
+	end quest

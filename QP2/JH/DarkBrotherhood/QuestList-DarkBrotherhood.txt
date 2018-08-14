@@ -1,0 +1,26 @@
+-- Jay_H Dark Brotherhood quest pack list
+
+-- name:        filename of QRC txt file
+-- group:       guild group from FactionFile.GuildGroups enum
+-- membership:  N=non-member, M=member
+-- minRep:      minimum reputation required to be offered the quest (units can use X wildcard)
+-- notes:
+
+schema: *name, group, membership, minRep, notes
+
+JHDB001, DarkBrotherHood, M, 10, a quest to slay a hermit causing animal attacks
+JHDB002, DarkBrotherHood, M, 0, a quest to slay a knight inside the same town
+JHDB003, DarkBrotherHood, M, 0, a quest to slay a thief inside the same town
+JHDB004, DarkBrotherHood, M, 0, a quest to slay a priest inside the same town
+JHDB005, DarkBrotherHood, M, 0, a quest to slay a barbarian inside the same town
+JHDB006, DarkBrotherHood, M, 0, a quest to kidnap a child for ransom
+JHDB007, DarkBrotherHood, M, 0, a quest to slay a mark over a bodyguard's objection
+JHDB008, DarkBrotherHood, M, 30, a quest to slay a teleported noble
+JHDB009, DarkBrotherHood, M, 0, a quest to retrieve a ransomed child
+JHDB010, DarkBrotherHood, M, 5, a quest to hijack a ransom plot
+-a quest to stop a disgruntled former member
+-artifact quest, a diplomat from another region must be slain. Follow paper trail, slaying enemies. Progressively larger groups begin following PC. Diplomat must be slain within 10 seconds of first hit to prevent recall.
+-interfere with Mages Guild researcher notes quest. MG rep drop.
+-slay a runaway debtor. Can be human, vampire, or werewolf.
+-find a person in hiding. Interrogate a family member by attack.
+-a quest to slay a member of the city guard who interferes with the Brotherhood. Injury leads to failure timer

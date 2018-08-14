@@ -1,0 +1,99 @@
+Quest: JHKN003
+DisplayName: Hemophiliac Hunted
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                My name is _qgiver_. The Order has
+<ce>                recently been made aware of a terror of
+<ce>                 the night, a vampire of no small renown,
+<ce>                lurking in a pitiful hole in %crn.
+<ce>                 We are the protectorate of this land and 
+<ce>                cannot tolerate such a threat to its people.
+<ce>                  Will you answer the call and descend into
+<ce>                  the depths of ___dung_
+<ce>                  to slay this undead monster?
+
+RefuseQuest:  [1001]
+<ce>                We could certainly let it consume a few more 
+<ce>                   innocents and grow more powerful, yes.
+
+AcceptQuest:  [1002]
+<ce>                   Then be going to ___dung_
+<ce>                   to rid us of this evil. This is our
+<ce>                    duty to %crn, %pcf.
+<ce>                    Let your strikes sink deep, that
+<ce>                    this creature may know forever
+<ce>                     that knights such as ourselves
+<ce>                     will not tolerate it here.
+<ce>                     The crown expects our report
+<ce>                       within =timer_ days.
+
+QuestFail:  [1003]
+<ce>                   
+
+QuestComplete:  [1004]
+<ce>                         Hail the slayer of vampires! Such a
+<ce>                          crusade should always merit the
+<ce>                          attention of knights. We will
+<ce>                          speak of your deeds to inspire
+<ce>                          the younger generation to rise
+<ce>                            above their own selves.
+
+Message:  1020
+<ce>                        You have defeated the vampire.
+
+Message:  1030
+%qdt:
+ _qgiver_ in the city of
+ ___qgiver_ has sent me
+ to ___dung_
+ to vanquish a vampire.
+ I must return in =timer_ days.
+
+Message:  1099
+<ce>      The vampire is roaming in
+<ce>      ___dung_, %pcf. This
+<ce>      is not as difficult as you make it.
+
+QBN:
+Person _qgiver_ group Questor male
+
+Place _dung_ remote dungeon
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _vam1_ is Ancient_vampire
+Foe _vam2_ is Vampire
+
+--	Quest start-up:
+	start timer _timer_ 
+	pick one of _D.01_ _D.02_
+	log 1030 step 0 
+          reveal _dung_
+
+_D.01_ task:
+	place foe _vam1_ at _dung_ 
+
+_D.02_ task:
+	place foe _vam2_ at _dung_ 
+
+_slain_ task:
+	killed 1 _vam1_ saying 1020 
+	killed 1 _vam2_ saying 1020
+
+_qgclicked_ task:
+	clicked npc _qgiver_ 
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _slain_ 
+	give pc nothing
+	end quest 
+
+_timer_ task:
+	end quest 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+          say 1099
+	clear _qgclicked_ _clearclick_ 

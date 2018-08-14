@@ -1,0 +1,117 @@
+-- Cartographers Quest
+Quest: JHCG003
+DisplayName: Middle Management
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCG003
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCG003
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCG003
+
+QuestFail:  [1003]
+<ce>   _qg_ sighs uncomfortably.
+<ce>   "I believe you had the best intentions, but
+<ce>   this was a real task we needed to fulfill. I have
+<ce>   to return to ___place_. We'll send you
+<ce>   a letter when we can about what follows."
+
+QuestComplete:  [1004]
+<ce>        Yes indeed, this is the right place. Good work,
+<ce>        %pcf. Let me give you your payment. This
+<ce>        may have been training, but we don't want
+<ce>        you to feel like we've been wasting your time.
+<ce>        I promise you that once you've risen in rank,
+<ce>        you won't have to deal with our meddling any longer.
+<ce>        I'll head back to ___place_ now. Take care.
+
+Message:  1010
+<ce>        A courier loudly shouts, "Hey! You, %ra!
+<ce>        I need to give this to you! Take it!"
+<ce>        He then huffs off quickly.
+<--->
+<ce>        A courier loudly shouts, "Hey! You, %ra!
+<ce>        I need to give this to you! Take it!"
+<ce>        She then huffs off quickly.
+
+Message:  1011
+  %pcf,
+ 
+  The Cartographers have assigned me to accompany
+  you on a pathfinding exercise in ____place_.
+  Please meet me in ___place_ so we can go
+  together. The destination will be __home_,
+  and the exercise must be completed in =timer_ days
+  to maintain your standing with the association.
+ 
+                              _qg_
+                              Explorer, Trainer
+                              The Cartographers
+                              ___place_, ____place_
+
+Message:  1012
+<ce>        Ah, %pcf, I'm glad you made it.
+<ce>        We need to go to __home_. It's
+<ce>        a bit of a walk, so I'll have plenty of
+<ce>        time to observe your exploration technique.
+<ce>        I'm ready to go when you are.
+
+Message:  1020
+<ce>        Your training exercise with the Cartographers
+<ce>        needed to be done by today.
+
+Message:  1030
+%qdt:
+ _qg_ of ___place_ needs
+ to supervise me in an exploration
+ exercise for the Cartographers.
+ We have to go together to
+ __home_ in fewer than =timer_ days.
+
+QBN:
+Item _reward_ gold range 150 to 200
+Item _letter_ letter used 1011
+
+Place _home_ remote farmhome
+Place _place_ remote house2
+
+Clock _timer_ 24.00:00 38.00:00
+
+Person _qg_ group Chemist
+
+--	Quest start-up:
+          start timer _timer_
+          give pc _letter_ notify 1010
+          place npc _qg_ at _place_
+          pc at _home_ set _inside_
+          log 1030 step 0
+
+_qgclicked_ task:
+     clicked npc _qg_ 
+     say 1012
+     hide npc _qg_
+     add _qg_ face
+
+variable _inside_
+_victory_ task:
+    when _qgclicked_ and _inside_
+    start quest JHCGENT1
+    give pc _reward_
+    end quest
+
+variable _timer_
+_failwithout_ task:
+        when _timer_ and not _qgclicked_
+         say 1020
+         start quest JHCGFAIL
+         end quest                 
+
+_failwith_ task:
+         when _timer_ and _qgclicked_
+         say 1003
+         start quest JHCGFAIL
+         end quest

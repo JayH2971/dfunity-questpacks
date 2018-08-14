@@ -1,0 +1,20 @@
+-- Jay_H Mages Guild quest pack list
+
+-- name:        filename of QRC txt file
+-- group:       guild group from FactionFile.GuildGroups enum
+-- membership:  N=non-member, M=member
+-- minRep:      minimum reputation required to be offered the quest (units can use X wildcard)
+-- notes:
+
+schema: *name, group, membership, minRep, notes
+
+JHMG001, MagesGuild, M, 0, a quest to slay a shapeshifting mage in a dungeon
+JHMG002, MagesGuild, M, 5, a quest to convince a scholar to leave a dungeon via quiz
+JHMG003, MagesGuild, M, 10, a quest to slay a necromancer in a residence
+JHMG004, MagesGuild, M, 0, a quest to assist a researcher in slaying an atronach
+JHMG005, MagesGuild, M, 0, a quest to test a trapped warping trinket
+JHMG006, MagesGuild, M, 5, a quest to take an unidentifiable magical item to a scholar in a dungeon
+JHMG007, MagesGuild, M, 10, a quest to get teleported to a dungeon to find a criminal
+JHMG00X, MagesGuild, M, 95, a circular quest regarding an ancient lich
+-go to various NPCs in cities to pick up needed ingredients
+-artifact quest, join two halves of a document and take it to an expert. Expert will be slain if enough time passes. Artifact is on Daedra Lord's body.

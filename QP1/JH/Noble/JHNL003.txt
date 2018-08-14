@@ -1,0 +1,101 @@
+-- Noble
+Quest: JHNL003
+DisplayName: Failed Negotiations
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          %pcf, in this line of work, people must
+<ce>           be held to account. Once word gets out
+<ce>           that _qgiver_'s a weak-kneed
+<ce>           coward, all kinds of filth come through the
+<ce>           door to take advantage of me. I must
+<ce>            make things right before they go more
+<ce>           wrong. Will you avenge me of a foe
+<ce>              of mine for =reward_ gold pieces?
+
+RefuseQuest:  [1001]
+<ce>                Then leave me, lest you betray me too.
+
+AcceptQuest:  [1002]
+<ce>             According to a prior arrangement, I bought
+<ce>             _res_ from the bank and gave
+<ce>              it to someone who at the time was destitute
+<ce>           and without hope. Three years have passed, I am
+<ce>           informed of several prosperous businesses run by
+<ce>           the formerly hopeless scoundrel, and yet I receive
+<ce>            no payments for the house. My previous couriers
+<ce>            have been turned away with no response, which
+<ce>             means I no longer have need of couriers. The
+<ce>              cretin will most certainly attempt to remove you
+<ce>            from the property by force. Respond in kind,
+<ce>              %ra, and relieve me of this enemy. The bank
+<ce>               will buy the home back within 72 hours. I
+<ce>                        need to hear from you by then.
+
+QuestFail:  [1003]
+<ce>               What, are you also begging for
+<ce>                 a house after failing me?
+
+QuestComplete:  [1004]
+<ce>           This pleases me more than I can
+<ce>            express, %pcf. Feel pride in being
+<ce>           the instrument of justice this day.
+<ce>            Here are the =reward_ gold pieces.
+<ce>            Let no man tell you _qgiver_
+<ce>          does not deal honorably with his own.
+
+Message:  1020
+<ce>               _qgiver_'s adversary is no more. 
+<ce>                  Now justice may run its course.
+
+Message:  1030
+%qdt:
+ _qgiver_ in ___qgiver_
+ needs me to forcibly remove
+ from _res_
+ its owner who has refused to
+ honor a property agreement.
+ I must return within 72 hours.
+
+Message:  1099
+<ce>         I'm not giving _res_ to
+<ce>         you, %pcf, and certainly not if you're
+<ce>         unwilling to dispose of its squatting owner.
+<ce>         I gave you three days to finish this.
+
+QBN:
+Item _reward_ gold range 350 to 400
+
+Person _qgiver_ group Questor male
+
+Place _res_ local house2
+
+Clock _timer_ 3.00:00
+
+Foe _enemy_ is Barbarian
+
+--	Quest start-up:
+	start timer _timer_ 
+	log 1030 step 0 
+	place foe _enemy_ at _res_ 
+          restrain foe _enemy_
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _slain_ 
+	give pc _reward_ 
+	end quest 
+
+_slain_ task:
+	killed 1 _enemy_ saying 1020 
+
+_qgclicked_ task:
+	clicked npc _qgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+          say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_timer_ task:
+	end quest 

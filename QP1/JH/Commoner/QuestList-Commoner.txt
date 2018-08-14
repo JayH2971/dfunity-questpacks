@@ -1,0 +1,20 @@
+-- Jay_H Dark Brotherhood quest pack list
+
+-- name:        filename of QRC txt file
+-- group:       guild group from FactionFile.GuildGroups enum
+-- membership:  N=non-member, M=member
+-- minRep:      minimum reputation required to be offered the quest (units can use X wildcard)
+-- notes:
+
+schema: *name, group, membership, minRep, notes
+
+JHIM001, Commoners, N, 0, a simple quiz for money
+JHIM002, Commoners, N, 0, a simple quiz for money
+JHIM003, Commoners, N, 0, a quest to end a haunting
+JHIM004, Commoners, N, 0, a quest to guard a house
+JHIM005, Commoners, N, 0, a quest to solve a bar fight
+JHIM006, Commoners, N, 0, a quest to break a grave curse
+JHIM007, Commoners, N, 0, a quest for vengeance in a tavern
+JHIM008, Commoners, N, 0, a quest for reconciliation with witches
+JHIM010, Commoners, N, 0, a quest buying a treasure map
+JHIM011, Commoners, N, 0, a quest as a bodyguard

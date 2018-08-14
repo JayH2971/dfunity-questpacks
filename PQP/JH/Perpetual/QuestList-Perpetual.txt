@@ -1,0 +1,13 @@
+-- Jay_H Perpetual quest pack list
+
+-- name:        filename of QRC txt file
+-- group:       guild group from FactionFile.GuildGroups enum
+-- membership:  N=non-member, M=member
+-- minRep:      minimum reputation required to be offered the quest (units can use X wildcard)
+-- notes:
+
+schema: *name, group, membership, minRep, notes
+
+
+JHPFIRST, InitAtGameStart, M, 0, Init JH perpetual stuffJHPINIT
+-quest to join a vampire slayer. Open vampire killer questline
