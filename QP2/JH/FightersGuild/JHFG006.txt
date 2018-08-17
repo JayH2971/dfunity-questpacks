@@ -29,9 +29,9 @@ RefuseQuest:  [1001]
 
 AcceptQuest:  [1002]
 <ce>          All right, but I'll warn you, this stuff's serious.
-<ce>           I don't know what Dark Brotherhood in-law
-<ce>          he insulted or who he cheated, but I read the
-<ce>           letter he got and it ain't pretty. What they'd
+<ce>           I don't know whose in-law he insulted
+<ce>           or who he cheated, but I read the letter
+<ce>           he got and it ain't pretty. What they'd
 <ce>           do to him gives me nightmares. Anyway, let me
 <ce>          call him. He didn't even want to leave the guild
 <ce>           hall without someone watching his back.
