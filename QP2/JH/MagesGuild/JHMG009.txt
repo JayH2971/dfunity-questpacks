@@ -1,0 +1,102 @@
+Quest: JHMG009
+DisplayName: Keep Away
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> If you will hear it, we have a bit
+<ce> of a difficulty, so to speak. The famed
+<ce> researcher _dummy_ has left
+<ce> us a manuscript of very valuable research,
+<ce> which needs to get to ___res_
+<ce> after =2res_ days' time. Our colleague
+<ce> _client_ won't arrive until
+<ce> then, so the documents must be kept safe.
+<ce> We have good reason to believe the
+<ce> Thieves Guild will pursue their carrier.
+<ce> Will you escort these papers, knowing of
+<ce> the danger surrounding them?
+
+RefuseQuest:  [1001]
+<ce> I certainly hope our guild hall can
+<ce> withstand the Thieves Guild's intrusions.
+
+AcceptQuest:  [1002]
+<ce> How wonderful! _client_ will
+<ce> have a sum of money for you once you arrive.
+<ce> I don't know what you'll do to keep the
+<ce> papers safe, but you'll use your best thinking
+<ce> to accomplish it. Be cautious around the
+<ce> Thieves Guild. They are not accustomed to
+<ce> fighting so much as stealing, and I worry
+<ce> that offending them will not be easily
+<ce> forgotten. But whatever you do, do not
+<ce> give up that manuscript. May %god
+<ce> watch over you these next =2res_ days.
+
+QuestFail:  [1003]
+<ce>             
+
+QuestComplete:  [1004]
+<ce> Good day. What have we here? Ah, a
+<ce> sample of _dummy_'s fine work.
+<ce> Let me check whether it has %g3 seal.
+<ce> Well, it appears to be in proper order
+<ce> and condition. Send my regards to
+<ce> _questgiver_. Here is your
+<ce> payment. A pleasure speaking to you.
+
+Message: 1020
+<ce> Don't toy with us here. We're Thieves Guild.
+<ce> Just give us the papers and get lost.
+
+Message:  1030
+%qdt:
+ _questgiver_ of the
+ Mages Guild has tasked me with
+ protecting a manuscript that needs
+ to get to ___res_ after =2res_
+ days. I need to deliver it to
+ _client_ to receive my payment.
+
+QBN:
+Item _reward_ gold
+Item _manuscript_ letter
+
+Person _questgiver_ group Questor male
+Person _dummy_ group Local_3.1
+Person _client_ faction The_Mages_Guild
+Person _dummytg_ faction The_Thieves_Guild
+
+Place _res_ remote house1
+
+Clock _2res_ 6.00:00 10.00:00
+Clock _failsafe_ 90.00:00
+
+Foe _enemy_ is 2 Burglar
+
+--	Quest start-up:
+	start timer _2res_
+    start timer _failsafe_
+    get item _manuscript_
+	log 1030 step 0 
+    create foe _enemy_ every 200 minutes indefinitely with 60% success
+
+_2res_ task:
+    place npc _client_ at _res_
+    add dialog for location _res_ person _client_
+
+_msg_ task:
+    injured _enemy_ saying 1020
+
+_anger_ task:
+    killed _enemy_
+    change repute with _dummytg_ by -15
+
+_qgclicked_ task:
+	toting _manuscript_ and _client_ clicked
+    give pc _reward_
+    end quest
+
+_failsafe_ task:
+	end quest
