@@ -30,7 +30,7 @@ AcceptQuest:  [1002]
 <ce>         the trial's gonna happen. No time to lose. See you later.
 
 QuestFail:  [1003]
-<ce>          ERROR 1003 JHPQ017
+<ce>          ERROR 1003 JHTG004
 
 QuestComplete:  [1004]
 <ce>        It hardly feels like you left, doesn't it %pcf?
@@ -38,17 +38,16 @@ QuestComplete:  [1004]
 <ce>        your mettle this time. Take your reward. Good work.
 
 Message:  1010
-<ce>        A concealed guard begins to shout the alarm.
+<ce>        You activate the _trinket_.
+
+Message: 1011
+<ce>        A guard spots you and begins to shout the alarm.
 <ce>        
 <ce>        "Stop! A thief! Everyone come quickly!"
-<ce>        
-<ce>        You activate the _trinket_.
 <--->
 <ce>        A concealed guard begins to shout the alarm.
 <ce>        
 <ce>        "Hey! Wait! Someone's stealing the evidence!"
-<ce>        
-<ce>        You activate the _trinket_.
 
 Message:  1015
 <ce>      The _trinket_ has broken apart under the force of the
@@ -74,6 +73,9 @@ Message:  1030
  that I can take my time getting back
  to ___qgiver_.
 
+Message: 1050
+<ce> This must be the confession letter.
+
 QBN:
 Item _item_ letter
 Item _trinket_ trinket
@@ -84,9 +86,13 @@ Place _pal_ remote palace
 
 Clock _2pal_ 00:00 0 flag 1 range 0 2
 Clock _failsafe_ 180.00:00
+Clock _danger_ 00:01
 
 Person _qgiver_ group Questor male
 Person _dummy_ group Local_4.0 male
+Person _dummytg_ faction The_Thieves_Guild
+
+Foe _knight_ is 2 Knight
 
 --	Quest start-up:
          start timer _2pal_
@@ -94,10 +100,26 @@ Person _dummy_ group Local_4.0 male
          log 1030 step 0
          place item _item_ at _pal_
          get item _trinket_
+         pc at _pal_ do _inside_
 
 _begin_ task:
          clicked item _item_
+         _trinket_ used do _send_
+         start timer _danger_
+         say 1050
+
+_danger_ task:
+        say 1011
+        change repute with _dummytg_ by -15
+
+variable _inside_
+_spawn_ task:
+        when _danger_ and not _send_
+        create foe _knight_ every 1 minutes indefinitely with 100% success
+
+_send_ task:
          stop timer _2pal_
+         stop timer _danger_
          say 1010
          teleport pc to _dung_
          say 1015

@@ -25,8 +25,8 @@ QuestorOffer:  [1000]
 
 RefuseQuest:  [1001]
 <ce>             Fear not, %pct. We have plenty
-<ce>             of opportunities to shed blood, which
-<ce>             clearly is where your heart belongs.
+<ce>             of opportunities to shed blood,
+<ce>             where clearly your heart belongs.
 
 AcceptQuest:  [1002]
 <ce>             Very well. The child's name is _kid_.
