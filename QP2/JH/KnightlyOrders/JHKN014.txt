@@ -1,0 +1,132 @@
+Quest: JHKN014
+DisplayName: Wartime Negotiations
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> We have<ce> here a missive on behalf of
+<ce> the %t that is intended to resolve a rather
+<ce> violent dispute between %crn and
+<ce> a very dangerous group of criminals.
+<ce> Will you escort the letter, in the
+<ce> name of the %t?
+
+RefuseQuest:  [1001]
+<ce> Well, it would have required tact anyway.
+
+AcceptQuest:  [1002]
+<ce> You will take the message to ___res_,
+<ce> where negotiations are being held in a
+<ce> private location, _res_.
+<ce> All you will need to do is present
+<ce> the document and return. We hope it
+<ce> will accelerate the end of their conflict.
+
+QuestFail:  [1003]
+<ce> Their suspicions get the best of them.
+<ce> One side assumes you are reinforcements
+<ce> for the other and draws weapons. The other
+<ce> side reciprocates, and before you speak a single
+<ce> word, both sides have begun to fight. This
+<ce> is not what _qgiver_ intended.
+
+QuestComplete:  [1004]
+<ce> How did it go? Ah, a step in the right
+<ce> direction. I certainly hope they
+<ce> continue in that way. Well done, %pct.
+<ce> Remember that to avert war is the work
+<ce> of the gods. Save lives, don't take them.
+
+Message: 1020
+<ce> You enter amidst a fierce argument between
+<ce> two very loud people. Their yelling seems
+<ce> to test the strength of the nearby windows.
+<ce> You are entirely ignored until the door shuts
+<ce> behind you, at which point the air grows tense.
+<ce> Neither side expected you. They watch with
+<ce> furious eyes to see what you will do.
+
+Message: 1021
+<ce> Seeing the letter, one of the closest cronies
+<ce> tears it from your hands and rips the seal open.
+<ce> After %g1 gives it a cursory look, %g1
+<ce> sends it to the two loudest participants.
+<ce> One takes a minute to read it before giving it
+<ce> to the other. They set it on the table and
+<ce> think for a moment. The silence hangs heavily.
+<ce> 
+<ce> "We have yet to see how this grants restitution
+<ce> for our fallen brethren. How can you not..."
+<ce> 
+<ce> The letter appears to have arrived exactly
+<ce> on time to prevent a brawl and the loss
+<ce> of life. They have begun to speak civilly
+<ce> to one another. _qgiver_ will
+<ce> want a report on the matter.
+
+Message:  1030
+%qdt:
+ _qgiver_ has assigned me a missive
+ from the %t to help with some sort of
+ dispute resolution taking place in
+ ___res_ at _res_.
+ I must deliver the letter and
+ return to ___qgiver_.
+
+QBN:
+Item _lett_ letter
+
+Person _qgiver_ group Questor male
+
+Place _res_ remote house1
+
+Clock _delay_ 00:03
+Clock _quick_ 00:01
+Clock _failsafe_ 120.00:00
+
+Foe _enemy1_ is 6 Nightblade
+Foe _enemy2_ is 6 Knight
+
+--	Quest start-up:
+    pc at _res_ set _inside_
+	log 1030 step 0
+    get item _lett_
+    start timer _failsafe_
+
+_inside_ task:
+    _lett_ used do _pers_
+    say 1020
+    start timer _quick_
+
+_quick_ task:
+    say 1003
+    take _lett_ from pc
+    start timer _delay_
+
+_spawn_ task:
+    when _inside_ and _quick_
+    create foe _enemy1_ every 1 minutes 1 times with 100% success
+    create foe _enemy2_ every 1 minutes 1 times with 100% success
+
+_delay_ task:
+    end quest
+
+_pers_ task:
+	stop timer _quick_
+    take _lett_ from pc
+    say 1021
+
+_qgclicked_ task:
+	clicked npc _qgiver_ 
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _pers_ 
+	give pc nothing
+	end quest
+
+_clearclick_ task:
+	when _qgclicked_ and not _pers_ 
+	clear _qgclicked_ _clearclick_ 
+
+_failsafe_ task:
+    end quest
