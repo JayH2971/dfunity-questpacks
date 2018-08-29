@@ -166,10 +166,10 @@ _injured_ task:
 
 _injured2_ task:
 	when _announceinj_ and _inside_
-	create foe _und1_ every 1 minutes indefinitely with 30% success
-	create foe _und2_ every 1 minutes indefinitely with 24% success
-	create foe _und3_ every 1 minutes indefinitely with 22% success
-	create foe _und4_ every 1 minutes indefinitely with 14% success
+	create foe _und1_ every 0 minutes indefinitely with 30% success
+	create foe _und2_ every 0 minutes indefinitely with 24% success
+	create foe _und3_ every 0 minutes indefinitely with 22% success
+	create foe _und4_ every 0 minutes indefinitely with 14% success
           clear _injured2_
 
 _announceinj_ task:

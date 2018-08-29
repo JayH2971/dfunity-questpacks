@@ -1,0 +1,152 @@
+Quest: JHKN015
+DisplayName: Nature's Wrath
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> Sparse regions of %crn complain of
+<ce> spriggans attacking their homesteads.
+<ce> Evidence suggests the cause may be
+<ce> within ___dung_. Can
+<ce> we rely on you to stop this problem?
+
+RefuseQuest:  [1001]
+<ce> Now you're looking for a simple
+<ce> problem to solve, I suppose?
+
+AcceptQuest:  [1002]
+<ce> Every time this happens, it's always
+<ce> some fool who's let power get to his
+<ce> head and starts trying to display
+<ce> that power to the world. We wish
+<ce> such could enlist to a noble cause
+<ce> and put their zeal toward good
+<ce> purposes, but some are simply
+<ce> too obstinate. Do your best to
+<ce> defend against the spriggans.
+<ce> Perhaps if you speak their language
+<ce> you'll make some headway in some manner
+<ce> or another. Resolve the cause within
+<ce> =2dung_ days, and then return to
+<ce> report at your leisure. %god
+<ce> go with you into ___dung_.
+
+QuestFail:  [1003]
+<ce> You were to resolve the cause of
+<ce> the attacking spriggans by now.
+
+QuestComplete:  [1004]
+<ce> Resourceful, skilled, and diligent.
+<ce> A model for knights of this order.
+
+Message: 1020
+<ce> A spriggan shambles its way toward
+<ce> you, only half conscious of its own
+<ce> actions. Before it reaches you,
+<ce> you attempt conversation. Your
+<ce> best efforts are ignored, and the
+<ce> creature advances in a rage.
+
+Message: 1021
+<ce> A spriggan shambles its way toward
+<ce> you, only half conscious of its own
+<ce> actions. Before it reaches you,
+<ce> you attempt conversation, which
+<ce> swiftly grabs its attention.
+<ce> 
+<ce> The creature begins to slow its actions
+<ce> until it stands perfectly still. It is
+<ce> clearly bothered by some effect you can't
+<ce> easily discern. It begs you to hurry
+<ce> in the direction of ___dung_
+<ce> so its kin can return to a life of peace.
+<ce> It then emits a vibrant humming sound
+<ce> which reverberates across the earth.
+
+Message: 1022
+<ce> Your inexplicable aggression is poorly
+<ce> received. The spriggan moans angrily,
+<ce> sending small shock waves through the ground.
+
+Message: 1023
+<ce> This sorceror, reeking of green herbs,
+<ce> appears to have been the cause of
+<ce> the spriggans' madness.
+
+Message:  1030
+%qdt:
+ _qgiver_ tasked me
+with slaying some disturbance in
+ ___dung_ which is causing
+ spriggans to appear throughout %crn.
+ The foe must be downed within =2dung_ days.
+ I can report to ___qgiver_ thereafter.
+
+QBN:
+Person _qgiver_ group Questor male
+
+Place _dung_ remote dungeon
+
+Clock _2dung_ 00:00 0 flag 1 range 0 2
+Clock _spawn_ 1:00 6:00
+Clock _failsafe_ 120.00:00
+
+Foe _mage_ is Sorceror
+Foe _sprig1_ is Spriggan
+Foe _sprig2_ is Spriggan
+
+--	Quest start-up:
+	log 1030 step 0 
+    start timer _spawn_
+    start timer _2dung_
+    start timer _failsafe_
+    reveal _dung_
+    place foe _mage_ at _dung_
+
+_spawn_ task:
+    create foe _sprig1_ every 0 minutes 1 times with 100% success
+
+_skilled_ task:
+    when skill Spriggan is at least 20
+
+_peaceful_ task:
+    when _spawn_ and _skilled_
+    restrain foe _sprig1_
+    say 1021
+
+_hurt_ task:
+    injured _sprig1_
+
+_betray_ task:
+    when _peaceful_ and _hurt_ and not _slain_
+    say 1022
+    create foe _sprig2_ every 60 minutes indefinitely with 20% success
+
+_norm_ task:
+    when _spawn_ and not _skilled_ and not _slain_
+    create foe _sprig2_ every 60 minutes indefinitely with 20% success
+    say 1020
+
+_slain_ task:
+    killed _mage_
+    say 1023
+    stop timer _2dung_
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
+
+_victory_ task:
+	when _qgclicked_ and _slain_
+	give pc nothing
+	end quest
+ 
+_2dung_ task:
+    say 1003
+    end quest
+
+_failsafe_ task:
+    end quest

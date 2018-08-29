@@ -19,12 +19,9 @@ RefuseQuest:  [1001]
 
 AcceptQuest:  [1002]
 <ce> "Well then, I'll go call for him now. Just
-<ce> remember: all people are kind in front of
-<ce> strangers. It's with their family that
-<ce> the true self emerges, I believe. Just tell
-<ce> them whatever will keep them together as
-<ce> a couple and trying, agreed? Whatever your
-<ce> own thoughts are, do our work."
+<ce> tell them whatever will keep them together
+<ce> as a couple and trying, agreed? Whatever
+<ce> your own thoughts are, do our work."
 <ce> 
 <ce> _qgiver_ calls out to _husb_.
 <ce> The man enters after a moment.
@@ -93,9 +90,8 @@ Message:  1028
 
 Message:  1029
 <ce> Several minutes pass by in bickering before you
-<ce> can so much as say a word. As you open your
-<ce> mouth, _wife_ turns to you
-<ce> and asks a terse question.
+<ce> can so much as say a word. As you open your mouth,
+<ce> _wife_ turns to you and asks,
 <ce> 
 <ce> "Well, why don't we have a discussion then? If
 <ce> we're going to take up your valuable time with
@@ -165,7 +161,8 @@ Message:  1040
 <ce> they would be happier trying to improve individually
 <ce> instead of dwelling on the defects of the other.
 <ce> They both listen thoughtfully, but as soon as their
-<ce> gazes meet, they return to baser thoughts.
+<ce> gazes meet, they return to baser thoughts. The
+<ce> argument goes back and forth for a few minutes.
 <ce> 
 <ce> _husb_ says, "If I promise to
 <ce> give up mead today and return to my father's
@@ -228,7 +225,7 @@ Place _tavern_ local tavern
 
 Clock _timer_ 1.00:00
 
-Item _int_ gold range 3 to 11
+Item _int_ gold range 3 to 7
 Item _reward_ gold
 
 --	Quest start-up:

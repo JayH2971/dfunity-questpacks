@@ -65,6 +65,11 @@ _surrender_ task:
          say 1020
          teleport pc to _dung_
          say 1021
+         pick one of _pcsick_ _pcnotsick_
+
+variable _pcnotsick_
+_pcsick_ task:
+        make pc ill with Stomach_Rot
 
 variable _inside_
 _escape_ task:
