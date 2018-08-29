@@ -101,7 +101,7 @@ QBN:
 Item _reward_ gold range 300 to 450
 
 Person _questgiver_ group Questor male
-Person _escort_ group Merchants male
+Person _escort_ group Local_3.1 male
 
 Place _res_ remote house1
 

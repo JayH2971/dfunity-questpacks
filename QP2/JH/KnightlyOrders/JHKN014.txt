@@ -4,7 +4,7 @@ DisplayName: Wartime Negotiations
 QRC:
 
 QuestorOffer:  [1000]
-<ce> We have<ce> here a missive on behalf of
+<ce> We have here a missive on behalf of
 <ce> the %t that is intended to resolve a rather
 <ce> violent dispute between %crn and
 <ce> a very dangerous group of criminals.
@@ -40,19 +40,19 @@ QuestComplete:  [1004]
 Message: 1020
 <ce> You enter amidst a fierce argument between
 <ce> two very loud people. Their yelling seems
-<ce> to test the strength of the nearby windows.
+<ce> to test the strength of the nearby walls.
 <ce> You are entirely ignored until the door shuts
 <ce> behind you, at which point the air grows tense.
-<ce> Neither side expected you. They watch with
-<ce> furious eyes to see what you will do.
+<ce> Neither side expected you. Someone close to you
+<ce> pounds you with a mailed hand, apparently
+<ce> expecting something.
 
 Message: 1021
-<ce> Seeing the letter, one of the closest cronies
-<ce> tears it from your hands and rips the seal open.
-<ce> After %g1 gives it a cursory look, %g1
-<ce> sends it to the two loudest participants.
-<ce> One takes a minute to read it before giving it
-<ce> to the other. They set it on the table and
+<ce> Seeing the letter, the crony tears it from your
+<ce> hands and rips the seal open. After %g1 gives
+<ce> it a cursory look, %g1 sends it to the two loudest
+<ce> participants. One takes a minute to read it before
+<ce> giving it to the other. They set it on the table and
 <ce> think for a moment. The silence hangs heavily.
 <ce> 
 <ce> "We have yet to see how this grants restitution
@@ -61,15 +61,15 @@ Message: 1021
 <ce> The letter appears to have arrived exactly
 <ce> on time to prevent a brawl and the loss
 <ce> of life. They have begun to speak civilly
-<ce> to one another. _qgiver_ will
-<ce> want a report on the matter.
+<ce> to one another. _qgiver_
+<ce> will want a report on the matter.
 
 Message:  1030
 %qdt:
  _qgiver_ has assigned me a missive
  from the %t to help with some sort of
  dispute resolution taking place in
- ___res_ at _res_.
+ _res_ at ___res_.
  I must deliver the letter and
  return to ___qgiver_.
 
@@ -80,7 +80,7 @@ Person _qgiver_ group Questor male
 
 Place _res_ remote house1
 
-Clock _delay_ 00:03
+Clock _delay_ 00:01
 Clock _quick_ 00:01
 Clock _failsafe_ 120.00:00
 
@@ -95,18 +95,20 @@ Foe _enemy2_ is 6 Knight
 
 _inside_ task:
     _lett_ used do _pers_
+    play sound door_slam every 0 minutes 1 times
     say 1020
     start timer _quick_
 
 _quick_ task:
+    play sound sword_ready every 0 minutes 1 times
     say 1003
     take _lett_ from pc
     start timer _delay_
 
 _spawn_ task:
     when _inside_ and _quick_
-    create foe _enemy1_ every 1 minutes 1 times with 100% success
-    create foe _enemy2_ every 1 minutes 1 times with 100% success
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
 
 _delay_ task:
     end quest
@@ -114,6 +116,7 @@ _delay_ task:
 _pers_ task:
 	stop timer _quick_
     take _lett_ from pc
+    play sound talking_medium every 0 minutes 1 times
     say 1021
 
 _qgclicked_ task:

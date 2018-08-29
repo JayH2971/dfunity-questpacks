@@ -109,6 +109,7 @@ _begin_ task:
          say 1050
 
 _danger_ task:
+        play sound halt every 0 minutes 1 times
         say 1011
         change repute with _dummytg_ by -15
 

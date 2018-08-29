@@ -145,6 +145,7 @@ _attack_ task:
 variable _wicked_
 _fail1_ task:
     when _wicked_ and not _inside_ and not _fight_
+    play sound pounding every 0 minutes 1 times
     say 1025
     end quest
 

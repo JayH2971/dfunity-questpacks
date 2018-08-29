@@ -38,7 +38,7 @@ QuestComplete:  [1004]
 RumorsDuringQuest:  [1005]
 I think a zombie or a mummy started walking around _res_ in ___res_.
 
-RumorsPostFailure:  [1006]
+RumorsPostfailure:  [1006]
 They say Lysandus showed up over in ___res_ and fought someone from a temple.
 
 QuestorPostfailure:  [1009]
