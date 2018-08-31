@@ -86,12 +86,10 @@ Message:  1038
 <ce>                    the Mages Guild and the Temple of Kynareth.
 
 Message:  1040
-<ce>                   The "Wizard's Fire" spell costs more gold
-<ce>                   at a Mages Guild than the "Invisibility" spell.
+<ce>                   Diamonds can be mixed into spell absorption potions.
 
 Message:  1041
-<ce>                    The "Spell Reflection" spell costs more gold
-<ce>                   at a Mages Guild than the "Spell Absorption" spell.
+<ce>                  Aloe is used in potions that restore stamina.
 
 Message:  1043
 <ce>                    Legends among the Mages Guild say

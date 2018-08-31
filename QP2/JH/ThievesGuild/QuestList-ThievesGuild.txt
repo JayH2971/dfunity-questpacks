@@ -15,5 +15,6 @@ JHTG004, GeneralPopulace, M, 5, a quest to steal a criminal confession
 JHTG005, GeneralPopulace, M, 0, a quest to lift a guarded gem
 JHTG006, GeneralPopulace, M, 0, a quest to steal research notes
 JHTG007, GeneralPopulace, M, 0, a quest to persuade a ransom target
+JHTG008, GeneralPopulace, M, 0, a quest to steal a gem belonging to the ruling family
 -bribe a noble with a gem to turn away a sentence
 -exchange a true paper for a false one without injuring the owner (mission failure)

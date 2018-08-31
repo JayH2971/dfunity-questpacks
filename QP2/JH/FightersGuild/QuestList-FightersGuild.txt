@@ -20,5 +20,6 @@ JHFG010, FightersGuild, M, 5, a quest to rid a city's streets of poisonous critt
 JHFG011, FightersGuild, M, 95, a quest to fight a vampire cult for an artifact
 JHFG012, FightersGuild, M, 5, a quest to slay a wizard in a city
 JHFG013, FightersGuild, M, 0, a quest to get a giant out of a house
+JHFG014, FightersGuild, M, 0, a quest to free the town of a gargoyle siege
 -protect a shop at night from burglars. Commoner?
 -look into a wealthy client's problems and gain legal rep

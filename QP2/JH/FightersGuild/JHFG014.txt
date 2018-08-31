@@ -1,0 +1,106 @@
+Quest: JHFG014
+DisplayName: Perimeter Walk
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> Hey %pcf, kind of a crisis on our hands right now.
+<ce> Don't know if you noticed it on the way in. Someone
+<ce> managed to attract a horde of gargoyles around the city,
+<ce> and now they're all around the perimeter. The guards
+<ce> are keeping the actual city safe, but once you step outside,
+<ce> they'll spring up outta the woodwork and try to hunt you down.
+<ce> We need a real fighter for this one. Is it gonna be you?
+
+RefuseQuest:  [1001]
+<ce> Why do I even ask sometimes? We need you!
+
+AcceptQuest:  [1002]
+<ce> Okay, well, I think I said everything. Head on outside.
+<ce> The critters are afraid of the guards so they won't
+<ce> be coming in close, but just go on out there and you'll
+<ce> see 'em show up. Just keep whackin' gargoyles 'til they
+<ce> leave you alone. No idea how many that's gonna be.
+<ce> I've got =reward_ gold here when you're done. Just don't
+<ce> go traveling off somewhere else, all right? I'll know.
+
+QuestFail:  [1003]
+<ce> ___qgiver_ was relying on you to slay the gargoyles.
+
+QuestComplete:  [1004]
+<ce> Well, we've got ourselves a hero. Pretty slick work.
+<ce> Go ahead, take the money. Great work.
+
+Message:  1019
+<ce> _qgiver_ told you to get outside the city
+<ce> and wait for the gargoyles. This should be good enough.
+
+Message:  1020
+<ce> Things seem to have calmed down, stragglers notwithstanding.
+<ce> Maybe ___qgiver_ is going to be safe now.
+
+Message:  1030
+%qdt:
+ The Fighters Guild has asked me
+ to fight a horde of gargoyles waiting
+ outside ___qgiver_. As soon as I leave
+ the city they should try to find me.
+ Once their numbers thin out I can
+ get a reward from _qgiver_.
+
+QBN:
+Item _reward_ gold
+
+Person _qgiver_ group Questor male
+
+Clock _timer_ 1.00:00
+Clock _failsafe_ 30.00:00
+
+Foe _gar_ is Gargoyle
+Foe _gar2_ is Gargoyle
+Foe _gar3_ is 5 Gargoyle
+
+--	Quest start-up:
+	start timer _timer_
+    start timer _failsafe_
+	log 1030 step 0 
+
+_spawn_ task:
+    when pc exits anywhere
+    clear _nospawn_
+    say 1019
+
+_send_ task:
+    when _spawn_ and not _slain_
+    create foe _gar_ every 1 minutes indefinitely with 80% success
+    create foe _gar2_ every 1 minutes indefinitely with 70% success
+	create foe _gar3_ every 0 minutes 1 times with 100% success
+
+_nospawn_ task:
+	when pc enters anywhere
+	clear _spawn_
+
+_slain_ task:
+	killed 7 _gar_
+    killed 4 _gar2_
+	stop timer _timer_
+    say 1020
+
+_qgclicked_ task:
+	clicked npc _qgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+	clear _qgclicked_ _clearclick_ 
+
+_pcreward_ task:
+	when _qgclicked_ and _slain_ 
+	give pc _reward_
+	end quest 
+
+_timer_ task:
+	say 1003
+    end quest
+
+_failsafe_ task:
+    end quest

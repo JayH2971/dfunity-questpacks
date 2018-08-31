@@ -14,4 +14,4 @@ JHTP003, HolyOrder, M, 0, a quest to deliver herbs to a sick member
 JHTP004, HolyOrder, M, 5, a quest to find a pilgrim lost in a dungeon
 JHTP005, HolyOrder, M, 0, a quest to pacify a ghost in a home
 JHTP006, HolyOrder, M, 5, a quest to help a couple resolve their differences
--a quest to enter a disease-ridden tomb with the help of a curing artifact
+JHTP007, HolyOrder, M, 15, a quest to cleanse an infected dungeon

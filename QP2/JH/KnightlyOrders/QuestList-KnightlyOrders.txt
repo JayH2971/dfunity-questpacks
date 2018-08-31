@@ -22,6 +22,9 @@ JHKN011, KnightlyOrder, M, 0, a quest to find a missing knight
 JHKN012, KnightlyOrder, M, 0, a quest to execute a local criminal
 JHKN013, KnightlyOrder, M, 0, a quest to defend a townsperson from atronachs
 JHKN014, KnightlyOrder, M, 0, a quest to aid negotiations with a letter
+JHKN015, KnightlyOrder, M, 0, a quest to stop the cause of attacking spriggans
+JHKN016, KnightlyOrder, M, 5, a quest to negotiate peace with an orc
+
 -a quest to protect a graveyard from robbers
 -a quest to slay a group of criminals extorting merchants
 -rescue kidnapped youth, fend off assassins while returning
