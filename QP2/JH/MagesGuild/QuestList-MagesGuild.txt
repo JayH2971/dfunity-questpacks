@@ -20,6 +20,7 @@ JHMG009, MagesGuild, M, 0, a quest to deliver a manuscript after certain days
 JHMG010, MagesGuild, M, 60, a quest to slay a necromantic colleague
 JHMG011, MagesGuild, M, 0, a quest to guide students to locations
 JHMG012, MagesGuild, M, 60, a quest to stop a powerful former member
+JHMG013, MagesGuild, M, 0, a quest to bring a wandering atronach home
 JHMG00X, MagesGuild, M, 95, a circular quest regarding an ancient lich
 -defeat a traitor. Use an enchanted ward to prevent teleport + disease.
 -go to various NPCs in cities to pick up needed ingredients

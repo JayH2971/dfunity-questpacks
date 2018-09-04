@@ -1,0 +1,148 @@
+Quest: JHMG013
+DisplayName: Misguided Creature
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> One of our experiments is off wandering around
+<ce> another city, apparently not doing any harm,
+<ce> but still in need of someone to lead it back
+<ce> here. If it's not too much of a bother, would
+<ce> you be willing to go find it?
+
+RefuseQuest:  [1001]
+<ce> This was a simple task, you know.
+
+AcceptQuest:  [1002]
+<ce> Lovely. The atronach is in ___city_.
+<ce> It actually flees from most living beings, so it
+<ce> will need some degree of attraction to come close.
+<ce> Take this bit of _elem_. That should provide
+<ce> a familiar sensation to lead it towards you. From
+<ce> there just give it a good, hard blow across the body,
+<ce> and it should be stunned back into submission. It may
+<ce> freeze up in place, but trust me, it is created to obey.
+<ce> It will follow after some time. Bring it here in =timer_
+<ce> days so we can recycle its material. You will
+<ce> be paid =reward_ gold. Good day.
+
+QuestFail:  [1003]
+<ce> Your task to take the atronach back to
+<ce> ___qgiver_ has run out of time.
+
+QuestComplete:  [1004]
+<ce> The atronach, still a little addled,
+<ce> trundles in after you.
+<ce> 
+<ce> "Well, the proof is right here with you. Thank you,
+<ce> %pcf. It looks like it isn't seriously
+<ce> damaged. We know precisely what to do from
+<ce> here. _stud_, if you please?"
+<ce> 
+<ce> A student uses a magic tool of some kind to lead
+<ce> the atronach into a separate room, slight
+<ce> agonized wailing notwithstanding. Then
+<ce> follows a flash of light and the sound
+<ce> of something sizzling. _qgiver_
+<ce> hands you your reward with a kindly smile
+<ce> and turns to other business.
+
+RumorsDuringQuest:  [1005]
+Some atronach's been wandering the streets of ___city_.
+<--->
+You hear about that atronach the Mages Guild lost?
+
+Message: 1010
+<ce> Somewhere in these streets, an atronach wanders.
+<ce> You'll have to find it somehow.
+
+Message:  1012
+<ce> Inhuman wailing hails the presence of the
+<ce> missing atronach. It stumbles toward you,
+<ce> recognizing the familiar _elem_.
+<ce> 
+<ce> "Leave me," it moans.
+<--->
+<ce> Inhuman wailing hails the presence of the
+<ce> missing atronach. It stumbles toward you,
+<ce> recognizing the familiar _elem_.
+<ce> 
+<ce> "Don't take me back," it moans.
+
+Message:  1013
+<ce> With a single strike the atronach
+<ce> seems to have its mind wiped.
+<ce> If what _qgiver_ told
+<ce> you is true, it should follow
+<ce> you once it recovers. Now to
+<ce> return to ___qgiver_.
+
+Message:  1020
+<ce> The atronach is dead, and you have failed.
+
+Message:  1030
+%qdt:
+ _qgiver_ of The Mages Guild
+ has assigned me to lead an
+ atronach wandering around
+ ___city_ back to
+ ___qgiver_. I will be
+ paid =reward_ gold if I
+ do so within =timer_ days.
+
+QBN:
+Item _elem_ element
+Item _reward_ gold
+
+Person _qgiver_ group Questor male
+Person _stud_ faction The_Mages_Guild
+
+Place _city_ remote city
+
+Foe _atr_ is Ice_atronach
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _find_ 00:06 00:22
+
+--	Quest start-up:
+	start timer _timer_
+    pc at _city_ set _arrival_
+    log 1030 step 0
+
+_arrival_ task:
+    say 1010
+    start timer _find_
+
+_stop_ task:
+    when not _arrival_
+    stop timer _find_
+
+_find_ task:
+    say 1012
+    create foe _atr_ every 0 minutes 1 times with 100% success
+
+_fail_ task:
+    killed _atr_
+    say 1020
+    end quest
+
+_stun_ task:
+    injured _atr_
+    say 1013
+    restrain foe _atr_
+
+_qgclicked_ task:
+	clicked npc _qgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _stun_ 
+	clear _qgclicked_ _clearclick_ 
+
+_pcreward_ task:
+	when _qgclicked_ and _stun_ 
+    give pc _reward_
+	end quest 
+
+_timer_ task:
+    say 1003
+	end quest
