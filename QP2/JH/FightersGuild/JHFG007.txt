@@ -6,36 +6,36 @@ DisplayName: Courier Work
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          We have a job here that doesn't really
-<ce>          fit the bill for what the Fighters Guild
-<ce>          was made for, but it still pays. Do
-<ce>          ya wanna go over to ___res_
-<ce>          and bring some _pick_ someone left
-<ce>          over there? Sounds like easy pickin's.
+<ce> We have a job here that doesn't really
+<ce> fit the bill for what the Fighters Guild
+<ce> was made for, but it still pays. Do
+<ce> ya wanna go over to ___res_
+<ce> and bring some _pick_ someone left
+<ce> over there? Sounds like easy pickin's.
 <--->
-<ce>          We've got a request here to go over to
-<ce>          ___res_ and pick up something
-<ce>          that got left over there by accident.
-<ce>          Sounds simple enough. Wanna take
-<ce>          this one, %pcf?
+<ce> We've got a request here to go over to
+<ce> ___res_ and pick up something
+<ce> that got left over there by accident.
+<ce> Sounds simple enough. Wanna take
+<ce> this one, %pcf?
 
 RefuseQuest:  [1001]
-<ce>         Man, are you just here to smash skulls or what?
+<ce> Man, are you just here to smash skulls or what?
 
 AcceptQuest:  [1002]
-<ce>             All right, get going then. It's gonna be in
-<ce>             _res_. You're looking
-<ce>             for some _pick_ that they said is
-<ce>             gonna be on the floor. Just grab it and
-<ce>             there should be some instructions on
-<ce>             where you take it. That's what they
-<ce>             told me, at least. _culp_
-<ce>             should give you your reward after that.
-<ce>             I'm giving you =timer_ days to do this.
+<ce> All right, get going then. It's gonna be in
+<ce> _res_. You're looking
+<ce> for some _pick_ that they said is
+<ce> gonna be on the floor. Just grab it and
+<ce> there should be some instructions on
+<ce> where you take it. That's what they
+<ce> told me, at least. _culp_
+<ce> should give you your reward after that.
+<ce> I'm giving you =timer_ days to do this.
 
 QuestFail:  [1003]
-<ce>           _questgiver_ expected you to return to
-<ce>           ___questgiver_ with the _pick_ by now.
+<ce> _questgiver_ expected you to return to
+<ce> ___questgiver_ with the _pick_ by now.
 
 QuestComplete:  [1004]
 <ce> This again? %oth. Hey, I'm really sorry
@@ -59,16 +59,12 @@ Message:  1023
 <ce> The ringleader collapses.
 
 Message:  1025
-<ce>             You're getting some good results out there,
-<ce>             _culp_. This month we're paying
-<ce>             =sum_ for every dead mercenary and =bigsum_ 
-<ce>             for every Fighters Guild bozo. Just bring the
-<ce>             left hands this time. In a few more months
-<ce>             they'll be all thinned out and then
-<ce>             ___res_'ll be ours for the taking. Let
-<ce>             that motivate you the next time some filthy
-<ce>             %ra is trying to tackle you to the ground.
-<ce>             
+<ce> This month we're paying =bigsum_ for
+<ce> every Fighters Guild bozo. Just bring the
+<ce> left hands this time. And don't wait until
+<ce> month's end like you always do. That's
+<ce> not fair to me. Get your pay regularly.
+<ce> 
                                     K.
 
 Message:  1030
@@ -94,11 +90,11 @@ Message:  1031
  tell _questgiver_ about it.
 
 Message:  1099
-<ce>        Getting cold feet, %pcf? It
-<ce>        happens to everyone, I guess.
-<ce>        But don't take too long. Get to
-<ce>        ___res_ and back
-<ce>        here before =timer_ days are up.
+<ce> Getting cold feet, %pcf? It
+<ce> happens to everyone, I guess.
+<ce> But don't take too long. Get to
+<ce> ___res_ and back
+<ce> here before =timer_ days are up.
 
 QBN:
 
@@ -107,8 +103,7 @@ Person _culp_ group Local_3.0
 
 Item _pick_ mineral
 Item _reward_ gold range 60 to 140
-Item _sum_ gold range 521 to 679
-Item _bigsum_ gold range 835 to 999
+Item _bigsum_ gold range 1835 to 1999
 Item _letter_ letter used 1025
 
 Place _res_ remote house1

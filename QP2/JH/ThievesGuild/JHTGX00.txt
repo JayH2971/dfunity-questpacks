@@ -1,0 +1,43 @@
+Quest: JHTGX00
+DisplayName: 
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> There's a letter here for you with a
+<ce> drawing of a bird on it. If it's what
+<ce> I think it is, I don't want anything to
+<ce> do with it. Do you want it anyway?
+
+RefuseQuest:  [1001]
+<ce> Fine. I'll get someone to cut it up.
+
+AcceptQuest:  [1002]
+<ce> Have at it. And don't tell me what's inside.
+
+QuestFail:  [1003]
+<ce> You discard the crow-adorned letter,
+<ce> having never read its contents.
+
+QBN:
+Item _letter_ letter
+
+Person _qgiver_ group Questor male
+Person _tg_ faction The_Thieves_Guild
+
+Clock _timer_ 15.00:00
+
+--	Quest start-up:
+	start timer _timer_ 
+	get item _letter_
+	_letter_ used do _advance_
+
+_advance_ task:
+	start quest JHTGX01
+	change repute with _tg_ by +2
+	end quest
+
+_timer_ task:
+    say 1003
+	change repute with _tg_ by +2
+	end quest 

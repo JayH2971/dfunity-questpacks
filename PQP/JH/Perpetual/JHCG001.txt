@@ -91,7 +91,7 @@ QBN:
 Item _reward_ gold range 150 to 200
 Item _letter_ letter used 1011
 
-Place _grav_ remote ancientgraveyard
+Place _grav_ remote graveyard
 Place _place_ remote tavern
 
 Clock _timer_ 24.00:00 38.00:00

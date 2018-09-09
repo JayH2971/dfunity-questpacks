@@ -1,0 +1,152 @@
+Quest: JHTGX02
+DisplayName: A Trial
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> ERROR 1000 JHTG02X
+
+RefuseQuest:  [1001]
+<ce> ERROR 1001 JHTG02X
+
+AcceptQuest:  [1002]
+<ce> ERROR 1002 JHTG02X
+
+QuestFail:  [1003]
+<ce> What is this? You fool! You moron!
+<ce> Incompetent halfwit! What did I say?
+<ce> Do not, do not ever, open the bag!
+<ce> What's wrong with you?!
+<ce> Get out of my sight! Now!
+
+QuestComplete:  [1004]
+<ce> I told you it'd be simple, didn't I?
+<ce> Here's your money. I always do what
+<ce> I say. You'll see. But take the
+<ce> money and we'll keep talking.
+
+RumorsDuringQuest:   [1005]
+They say The Crow's showing up in the Bay again. I think it's an impostor.
+<--->
+Y'hear about The Crow showing up in some town? Probably lies.
+<--->
+They say The Crow's around, but I thought he died awhile ago.
+
+Message:  1010
+<ce> First of all, I'm giving you a _lode_.
+<ce> It'll let me find you in case things go awry.
+<ce> We both know anything can happen in this business.
+<ce> If you ever lose it somewhere I won't be able
+<ce> to track you any more, so unless you're gonna
+<ce> give up on me, keep it safe.
+<ce> 
+<ce> So here's your test. One of my former friends
+<ce> wimped out on the job you're going to do.
+<ce> Long story short, there's a bag of merchandise
+<ce> waiting for pick-up. Just go on over to
+<ce> _apoc_ in ___apoc_.
+<ce> You'll see the bag there. Don't open it,
+<ce> no matter how eager you are. It's going to
+<ce> be properly treated so as long as it doesn't
+<ce> touch the open air, it'll stay good for months.
+<ce> I'm gonna stay in ___res_.
+<ce> Look for me in _res_.
+<ce> For this one I'm paying =reward_ gold.
+<ce> Couldn't ask for anything easier, right?
+<ce> Now go get it, champ.
+
+Message:  1030
+%qdt:
+ "The Crow," a supposedly legendary
+ thief, has recruited me in some
+ scheme for his employers.
+ He wants me to get a bag of
+ merchandise from _apoc_
+ at ___apoc_ and take
+ it to his meeting spot,
+ _res_ of ___res_.
+
+Message:  1070
+<ce> This is the bag _crow_ told you
+<ce> about. Do you wish to open it?
+
+Message:  1071
+<ce> You open the bag. The preserving agents
+<ce> begin to expire due to their contact
+<ce> with the open air, and you are greeted
+<ce> with the sight and smell of various
+<ce> internal organs, none of which you
+<ce> are particularly familiar with.
+
+Message:  1072
+<ce> You keep the bag sealed and
+<ce> add it to your belongings.
+<ce> The little you can sense from it
+<ce> is that something moist is inside.
+<ce> Multiple layers of fabric prevent
+<ce> anything from spilling out.
+
+Message:  1080
+<ce> Do you wish to leave behind the _lode_
+<ce> and give up your ties to _crow_?
+
+Message:  1081
+<ce> You discard the small piece of metal.
+<ce> Whatever schemes he has are his alone now.
+
+Message:  1082
+<ce> You return the _lode_ to your
+<ce> belongings, at least for now.
+
+QBN:
+
+Person _crow_ named The_Crow faction The_Crow male
+
+Place _res_ remote house4
+Place _apoc_ remote apothecary
+
+Item _reward_ gold range 1801 to 2199
+Item _lode_ lodestone
+Item _bag_ large_sack
+
+--	Quest start-up:
+    say 1010
+    log 1030 step 0
+    get item _lode_
+    place item _bag_ at _apoc_
+    _lode_ used do _prompt_
+
+_prompt_ task:
+    prompt 1080 yes _quit_ no _stay_
+
+_quit_ task:
+    say 1081
+    end quest
+
+_stay_ task:
+    say 1082
+
+_grab_ task:
+    clicked item _bag_
+    prompt 1070 yes _open_ no _close_
+    place npc _crow_ at _res_
+
+_open_ task:
+    say 1071
+
+_close_ task:
+    say 1072
+
+_talk_ task:
+    toting _bag_ and _crow_ clicked
+
+_fail_ task:
+    when _open_ and _talk_
+    say 1003
+    end quest
+
+_victory_ task:
+    when _close_ and _talk_
+    give pc _reward_
+    start quest JHTGX03
+    end quest

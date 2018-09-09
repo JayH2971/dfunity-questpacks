@@ -16,6 +16,13 @@ JHTG005, GeneralPopulace, M, 0, a quest to lift a guarded gem
 JHTG006, GeneralPopulace, M, 0, a quest to steal research notes
 JHTG007, GeneralPopulace, M, 0, a quest to persuade a ransom target
 JHTG008, GeneralPopulace, M, 0, a quest to steal a gem belonging to the ruling family
+JHTG00X, GeneralPopulace, M, 40, a quest invitation from a guild member
+JHTGX01, GeneralPopulace, P, 0, offered via JHTG00X
+JHTGX02, GeneralPopulace, P, 0, offered via JHTG01X
+JHTGX03, GeneralPopulace, P, 0, offered via JHTG02X
+JHTGX04, GeneralPopulace, P, 0, offered via JHTG03X
+JHTGX05, GeneralPopulace, P, 0, offered via JHTG04X
+JHTGX06, GeneralPopulace, P, 0, offered via JHTG05X
+JHTGX07, GeneralPopulace, P, 0, offered via JHTG06X
 -bribe a noble with a gem to turn away a sentence
 -exchange a true paper for a false one without injuring the owner (mission failure)
--questline for K, JHFG007

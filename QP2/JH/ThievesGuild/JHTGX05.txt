@@ -1,0 +1,168 @@
+Quest: JHTG05X
+DisplayName: Little Lamb
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> ERROR 1000 JHTG05X
+
+RefuseQuest:  [1001]
+<ce> ERROR 1001 JHTG05X
+
+AcceptQuest:  [1002]
+<ce> ERROR 1002 JHTG05X
+
+QuestFail:  [1003]
+<ce> ERROR 1003 JHTG05X
+
+QuestComplete:  [1004]
+<ce> Oh yeah, this is exactly what we're looking for.
+<ce> Not bad at all. Your next one's gonna pay even more,
+<ce> trust me. Let's keep this going.
+
+RumorsDuringQuest:   [1005]
+They say The Crow's showing up in the Bay again. I think it's an impostor.
+<--->
+Y'hear about The Crow showing up in some town? Probably lies.
+<--->
+They say The Crow's around, but I thought he died awhile ago.
+
+RumorsPostSuccess:   [1007]
+If the Fighters Guild ever gets its hands on that %ra, they are gonna tear %pg2 apart.
+
+Message:  1010
+<ce> "I'm gonna give you a little background this time.
+<ce> Figure you've proven your worth and you're already
+<ce> knee-deep in this anyway. If I can read your mind
+<ce> for a minute, no, I'm not a cannibal, and no, the
+<ce> money I'm paying you with isn't mine. I'm paid
+<ce> just like you by our good employers. They're running
+<ce> a series of businesses over in the Imperial Province.
+<ce> Some place called Bruna or Brunner or something.
+<ce> I can never remember since I've never gone. I don't
+<ce> ask them what the parts are for and they don't tell
+<ce> me. What I do know is that they pay like the %t.
+<ce> Some people would look down on what we're doing and
+<ce> I guess that's their point of view, but to me we're
+<ce> supplying a legitimate demand for needy customers.
+<ce> And if we don't do it, someone else will.
+<ce> 
+<ce> "And that's that. One thing they told me is that they
+<ce> prefer 'well-exercised' bodies. I've sent them
+<ce> samples from mages, from knights, from thieves,
+<ce> and they keep telling me the best ones are from
+<ce> the Fighters Guild. Dunno why."
+
+Message:  1011
+<ce> "So your next job is simple. You'll be doing the killing
+<ce> and the looting. There's another of those Fighters Guild
+<ce> morons living over in ___res_, in a house
+<ce> called _res_. Find the creep at
+<ce> night so you don't attract as much attention. This
+<ce> time you'll be bringing me the lungs and the brain.
+<ce> Take this bag and do the normal thing. If I have to
+<ce> explain it at this point, you're fired. Come see me
+<ce> at _crowhome_ in ___crowhome_
+<ce> when you're done. This one pays =reward_ gold."
+<ce> 
+<ce> The Crow waves you off and walks out.
+
+Message:  1030
+%qdt:
+ My next target for The Crow
+ is in _res_
+ at ___res_, a
+ member of the Fighters Guild.
+ I should approach at night.
+ The Crow will pay me
+ in _crowhome_
+ at ___crowhome_ afterward.
+
+Message:  1060
+<ce> Your entry was not unnoticed. Soon your
+<ce> target begins shuffling toward you.
+
+Message:  1070
+<ce> If the killing is this fresh, hopefully the
+<ce> people in the Imperial Province will send
+<ce> more money down the road. Now you need
+<ce> to use the bag to gather the materials.
+
+Message:  1071
+<ce> You gather up the lungs and brain and seal the bag.
+
+Message:  1080
+<ce> Do you wish to leave behind the _lode_
+<ce> and give up your ties to _crow_?
+
+Message:  1081
+<ce> You discard the small piece of metal.
+<ce> Whatever schemes he has are his alone now.
+
+Message:  1082
+<ce> You return the _lode_ to your
+<ce> belongings, at least for now.
+
+QBN:
+
+Person _crow_ named The_Crow faction The_Crow male
+Person _fg_ faction The_Fighters_Guild
+
+Place _crowhome_ remote house4
+Place _res_ remote house1
+
+Item _reward_ gold range 2201 to 2600
+Item _lode_ lodestone
+Item _bag_ small_sack
+Item _bag2_ small_sack
+
+Foe _warr_ is Warrior
+
+--	Quest start-up:
+    say 1010
+    say 1011
+    log 1030 step 0
+    get item _lode_
+    get item _bag_
+    _lode_ used do _prompt_
+    pc at _res_ do _inside_
+
+variable _inside_
+
+_day_ task:
+    daily from 6:00 to 18:00
+
+_spawn_ task:
+    when _inside_ and not _day_
+    say 1060
+    create foe _warr_ every 0 minutes 1 times with 100% success
+
+_prompt_ task:
+    prompt 1080 yes _quit_ no _stay_
+
+_quit_ task:
+    say 1081
+    end quest
+
+_stay_ task:
+    say 1082
+
+_slain_ task:
+    killed 1 _warr_
+    say 1070
+    change repute with _fg_ by -15
+    _bag_ used do _take_
+    place npc _crow_ at _crowhome_
+
+variable _take_
+_take2_ task:
+    when _inside_ and _take_
+    take _bag_ from pc
+    get item _bag2_
+    say 1071
+
+_talk_ task:
+    toting _bag2_ and _crow_ clicked
+    give pc _reward_
+    start quest JHTG06X
+    end quest

@@ -1,0 +1,195 @@
+Quest: JHTGX07
+DisplayName: As the Crow Flies
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> ERROR 1000 JHTG07
+
+RefuseQuest:  [1001]
+<ce> ERROR 1001 JHTG07
+
+AcceptQuest:  [1002]
+<ce> ERROR 1002 JHTG07
+
+QuestFail:  [1003]
+<ce> ERROR 1003 JHTG07
+
+QuestComplete:  [1004]
+<ce> Maybe hard for others, but not for you. Have your gold.
+<--->
+<ce> You're gonna make us both rich. Here's your pay.
+<--->
+<ce> How'd it go? Pretty ordinary for you, I guess. =reward_ gold for you.
+<--->
+<ce> Glad to see you back with a full bag. Here you go.
+
+RumorsDuringQuest:   [1005]
+You and The Crow are gonna die together, they say.
+<--->
+Happy with the name you've earned yourself? The Fighters Guild hates you.
+<--->
+Aren't you ever worried about The Crow stabbing you in the back?
+<--->
+What do you have against the Fighters Guild anyway?
+
+Message:  1010
+<ce> All right, here's what I've got.
+<ce> A bunch of the regular targets off
+<ce> in ___place_. Name's _fg_.
+<ce> I need one brain, three hands, and five feet. Meet me in
+<ce> ___crowhome_ when you're done.
+<ce> I'll be at _crowhome_.
+<ce> =reward_ gold this time.
+<--->
+<ce> This time you're gonna look for _fg_
+<ce> in ___place_. From %g2 and friends
+<ce> bring me six lungs and two right feet.
+<ce> I'll be at ___crowhome_ after, at
+<ce> _crowhome_. This is worth =reward_ gold.
+<--->
+<ce> This one's pretty simple. Six ears and six eyes.
+<ce> Look for _fg_ at ___place_.
+<ce> I'll be at ___crowhome_ when you're done.
+<ce> Look for me in _crowhome_
+<ce> for your =reward_ gold pieces.
+<--->
+<ce> I'm sending you to ___place_ to look
+<ce> for someone named _fg_. Kill %g2 and %g3
+<ce> friends and take two hearts and six thumbs. I'll be
+<ce> at ___crowhome_, staying in _crowhome_.
+
+Message:  1030
+%qdt:
+ The Crow's sending me to
+ ___place_ to look for
+ someone named _fg_.
+ Filling the order means =reward_
+ gold for me. I can find
+ him in ___crowhome_,
+ at _crowhome_.
+
+Message:  1060
+<ce> "Someone help! %pcf's here!"
+<--->
+<ce> "Help! Help! I'm gonna die!"
+<--->
+<ce> "The killer's here! Stop %pg2!"
+<--->
+<ce> "I don't want to die! Help me!"
+
+Message:  1070
+<ce> That looks like it's all of them. Time to gather the organs.
+<--->
+<ce> No more left. These three have enough for The Crow.
+<--->
+<ce> With all three dead, it's time to pick what The Crow needs.
+<--->
+<ce> With the killing done, the harvesting remains.
+
+Message:  1071
+<ce> You put the organs into the bag according to The Crow's instructions.
+<--->
+<ce> You take out the parts The Crow requested and seal the bag.
+<--->
+<ce> You fill the bag as The Crow requested and close it.
+<--->
+<ce> You take what you need from the bodies and close the bag.
+
+Message:  1080
+<ce> Do you wish to leave behind the _lode_
+<ce> and give up your ties to _crow_?
+
+Message:  1081
+<ce> You discard the small piece of metal.
+<ce> Whatever schemes he has are his alone now.
+
+Message:  1082
+<ce> You return the _lode_ to your
+<ce> belongings, at least for now.
+
+QBN:
+
+Person _crow_ named The_Crow faction The_Crow male
+Person _fg_ faction The_Fighters_Guild
+
+Place _crowhome_ remote house4
+Place _place_ remote random
+
+Item _reward_ gold range 1501 to 1999
+Item _lode_ lodestone
+Item _bag_ small_sack
+Item _bag2_ small_sack
+
+Foe _warr_ is Warrior
+Foe _rog_ is Rogue
+Foe _barb_ is Barbarian
+Foe _kni_ is Knight
+
+--	Quest start-up:
+    say 1010
+    log 1030 step 0
+    get item _lode_
+    get item _bag_
+    place npc _fg_ at _place_
+    _lode_ used do _prompt_
+    pc at _place_ do _inside_
+    pick one of _a1_ _a2_ _a3_ _a4_
+
+variable _a1_
+variable _a2_
+variable _a3_
+variable _a4_
+
+_inside_ task:
+    hide npc _fg_
+    say 1060
+
+_s1_ task:
+    when _inside_ and _a1_
+    create foe _warr_ every 0 minutes 3 times with 100% success
+
+_s2_ task:
+    when _inside_ and _a2_
+    create foe _rog_ every 0 minutes 3 times with 100% success
+
+_s3_ task:
+    when _inside_ and _a3_
+    create foe _barb_ every 0 minutes 3 times with 100% success
+
+_s4_ task:
+    when _inside_ and _a4_
+    create foe _kni_ every 0 minutes 3 times with 100% success
+
+_prompt_ task:
+    prompt 1080 yes _quit_ no _stay_
+
+_quit_ task:
+    say 1081
+    end quest
+
+_stay_ task:
+    say 1082
+
+_slain_ task:
+    killed 3 _warr_
+    killed 3 _rog_
+    killed 3 _barb_
+    killed 3 _kni_
+    say 1070
+    change repute with _fg_ by -30
+    _bag_ used do _take_
+    place npc _crow_ at _crowhome_
+
+variable _take_
+_take2_ task:
+    when _inside_ and _take_
+    take _bag_ from pc
+    get item _bag2_
+    say 1071
+
+_talk_ task:
+    toting _bag2_ and _crow_ clicked
+    give pc _reward_
+    start quest JHTGX07
+    end quest

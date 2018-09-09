@@ -1,0 +1,138 @@
+Quest: JHTGX04
+DisplayName: The Lone Wolf
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> ERROR 1000 JHTG04X
+
+RefuseQuest:  [1001]
+<ce> ERROR 1001 JHTG04X
+
+AcceptQuest:  [1002]
+<ce> ERROR 1002 JHTG04X
+
+QuestFail:  [1003]
+<ce> The Crow definitely wouldn't have
+<ce> wanted you to take this much time.
+
+QuestComplete:  [1004]
+<ce> The Crow saunters in pleasantly.
+<ce> 
+<ce> "Well, nice work, my friend. I'm not
+<ce> going to spare a lot for this job since
+<ce> I'm splitting my pay three ways, but
+<ce> the next one's gonna be worth a lot more,
+<ce> I promise. Hopefully this teaches
+<ce> the Fighters Guild not to come after
+<ce> us anymore, right kid?"
+<ce> 
+<ce> He hands you a sack of coins.
+
+RumorsDuringQuest:   [1005]
+They say The Crow's showing up in the Bay again. I think it's an impostor.
+<--->
+Y'hear about The Crow showing up in some town? Probably lies.
+<--->
+They say The Crow's around, but I thought he died awhile ago.
+
+RumorsPostSuccess:   [1007]
+Someone named %pcf hates the Fighters Guild.
+<--->
+They say %pcf and The Crow are murderers.
+
+Message:  1010
+<ce> I've got a change of pace for you here.
+<ce> I'm about to head over to _tavern_
+<ce> here in town. The job's already done and I'm
+<ce> gonna go pick up the parts myself. Problem is,
+<ce> someone's tipped off a bunch of Fighters Guild
+<ce> wimps and they're all headed in there like they
+<ce> own the place. Dunno who pays them to go back
+<ce> for a dead body. Anyway, first check the body,
+<ce> and then stay and make sure no one touches it.
+<ce> Kill everyone who goes in there. I'll be there after
+<ce> the fracas is over. Don't waste time.
+
+Message:  1030
+%qdt:
+ "The Crow" told me to get to
+ _tavern_ here in ___tavern_
+ and stave off a bunch of Fighters
+ Guild people who are coming to take
+ away one of his merchandise bodies.
+ He told me to get there as soon as
+ I can. Once I check the body myself
+ I should stand watch near it until
+ he shows up.
+
+Message:  1070
+<ce> This looks like the body. You
+<ce> move it out of the way, and it only
+<ce> takes a few seconds for heavy
+<ce> footsteps to come plodding around.
+
+Message:  1080
+<ce> Do you wish to leave behind the _lode_
+<ce> and give up your ties to The Crow?
+
+Message:  1081
+<ce> You discard the small piece of metal.
+<ce> Whatever schemes he has are his alone now.
+
+Message:  1082
+<ce> You return the _lode_ to your
+<ce> belongings, at least for now.
+
+QBN:
+
+Person _fg_ faction The_Fighters_Guild
+
+Place _tavern_ local tavern
+
+Item _reward_ gold range 601 to 899
+Item _lode_ lodestone
+Item _body_ dead_body
+
+Clock _delay_ 00:01
+Clock _timer_ 8:00
+
+Foe _warr_ is Warrior
+
+--	Quest start-up:
+    say 1010
+    log 1030 step 0
+    get item _lode_
+    place item _body_ at _tavern_
+    _lode_ used do _prompt_
+    start timer _timer_
+
+_prompt_ task:
+    prompt 1080 yes _quit_ no _stay_
+
+_quit_ task:
+    say 1081
+    end quest
+
+_stay_ task:
+    say 1082
+
+_grab_ task:
+    clicked item _body_
+    take _body_ from pc
+    say 1070
+    create foe _warr_ every 0 minutes 3 times with 100% success
+
+_slain_ task:
+    killed 3 _warr_
+    start timer _delay_
+    change repute with _fg_ by -15
+
+_delay_ task:
+    give pc _reward_
+    start quest JHTGX05
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest

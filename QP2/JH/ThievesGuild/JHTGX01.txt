@@ -1,0 +1,161 @@
+Quest: JHTGX01
+DisplayName: Hook, Line, and Sinker
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> ERROR 1000 JHTG01X
+
+RefuseQuest:  [1001]
+<ce> ERROR 1001 JHTG01X
+
+AcceptQuest:  [1002]
+<ce> ERROR 1002 JHTG01X
+
+QuestFail:  [1003]
+<ce> ERROR 1003 JHTG01X
+
+QuestComplete:  [1004]
+<ce> Well, what do you know. I know you. You're
+<ce> %pcn. You decided to come.
+<ce> How about that? I'm quite thrilled. Welcome.
+<ce> I'd offer you some tea if I had any. A shame
+<ce> I don't. What I do have is =reward_ gold pieces
+<ce> instead. I hope that'll make up the difference.
+<ce> Why don't I just hand this to you and we can
+<ce> sit down to talk? I'm a man of my word, after all.
+
+Message:  1010
+%pcn the %ra,
+ 
+  Finest salutations to a fine thief.
+  I am a man in need of very good
+  talent: a burglar and a blackguard
+  put together. Why don't you swing
+  by so we can discuss my offer
+  under more pleasant terms?
+  Look for me in ___res_.
+  I'll be at _res_.
+  You'll get =reward_ gold pieces just
+  for making the trip, no commitment
+  necessary. See you soon.
+ 
+                          K.
+
+Message:  1011
+<ce> Well, if you don't mind my getting down to
+<ce> brass tacks, why don't we have a little talk?
+<ce> I'm something of a member of the Thieves Guild
+<ce> myself. That's how I know about you.
+<ce> Spymaster's awfully useful sometimes. I look
+<ce> for folks who have a strong stomach and the
+<ce> ability to follow orders and defend themselves.
+<ce> In return, my employers pay out several thousands
+<ce> of gold per job. That's quite a bit better
+<ce> than what they're offering over at the guild,
+<ce> don't you think? And don't worry, this isn't
+<ce> a competing interest. I promise you your
+<ce> reputation with the Thieves Guild will
+<ce> be immaculate if you take me up on this.
+<ce> Want in on this neat opportunity?
+
+Message:  1012
+<ce> Now that's a good answer. You've put a
+<ce> smile on this face, %pcf. I'm putting
+<ce> my good name on the line for you, and
+<ce> I know you won't let me down. This'll
+<ce> be a very mutually beneficial arrangement.
+<ce> Oh, my name. I didn't even tell you.
+<ce> I am known as "The Crow," but I send
+<ce> letters as "K." It's simpler that way.
+<ce> I'm known as one of the oldest and most
+<ce> skilled thieves in the entire Iliac Bay.
+<ce> Age leads a man to teach others to do
+<ce> his work for him and share in the profits,
+<ce> you see? That's why I'm not hoarding all
+<ce> this gold for myself.
+<ce> 
+<ce> Now, to see whether you're sincere, I'm going
+<ce> to have to prove whether you can handle it.
+
+Message:  1030
+%qdt:
+ Someone named "K." has sent
+ me a letter offering me =reward_ gold
+ pieces if I just listen to a job offer.
+ I can find him at _res_,
+ in ___res_ in ____res_.
+
+Message:  1080
+<ce> Will you instead slay _crow_?
+ 
+Message:  1081
+<ce> The old man titters as you ready for combat.
+<ce>
+<ce> "Oh, my, what a fool I've made of myself.
+<ce> How do I find such hotheads? I'll
+<ce> have to let our mutual friends
+<ce> over at the Thieves Guild know about
+<ce> this uncomfortable little encounter."
+<ce>
+<ce> He pulls a cloak over his head
+<ce> which renders him completely invisible.
+<ce> Your attempts to touch him are futile.
+<ce> Within seconds you hear the door open and close.
+ 
+Message:  1082
+<ce> "How kind of you. Thank you for
+<ce> turning me down in person. I'll
+<ce> move down the list then."
+<ce>
+<ce> _crow_ pulls a cloak over
+<ce> his head as he smiles pleasantly.
+<ce> Some enchantment on the garment
+<ce> renders him completely invisible.
+<ce> The door opens and closes, and
+<ce> he is suddenly gone.
+
+QBN:
+
+Person _crow_ named The_Crow faction The_Crow male
+Person _tg_ faction The_Thieves_Guild
+
+Place _res_ remote house4
+
+Clock _initial_ 60.00:00
+
+Item _reward_ gold range 1001 to 1499
+
+--	Quest start-up:
+	start timer _initial_
+    say 1010
+    place npc _crow_ at _res_
+    log 1030 step 0
+
+_initial_ task:
+    end quest
+
+_begin_ task:
+    clicked npc _crow_
+    give pc _reward_
+    prompt 1011 yes _join_ no _refuse_
+    stop timer _initial_
+
+_join_ task:
+    say 1012
+    start quest JHTGX02
+    end quest
+
+_refuse_ task:
+    prompt 1080 yes _murder_ no _fullrefuse_
+
+_murder_ task:
+    say 1081
+    hide npc _crow_
+    change repute with _tg_ by -10
+    end quest
+
+_fullrefuse_ task:
+    say 1082
+    hide npc _crow_
+    end quest

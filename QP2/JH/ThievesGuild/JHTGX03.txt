@@ -1,0 +1,132 @@
+Quest: JHTGX03
+DisplayName: The Sampler
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> ERROR 1000 JHTG03X
+
+RefuseQuest:  [1001]
+<ce> ERROR 1001 JHTG03X
+
+AcceptQuest:  [1002]
+<ce> ERROR 1002 JHTG03X
+
+QuestFail:  [1003]
+<ce> 
+
+QuestComplete:  [1004]
+<ce> Isn't this the easiest money you've ever made?
+<ce> One of my more squeamish associates over in
+<ce> ___res_ knew you were going. Poor fool only got
+<ce> about 200 gold to do the killing. The real
+<ce> money comes from doing real work. Take it.
+
+RumorsDuringQuest:   [1005]
+They say The Crow's showing up in the Bay again. I think it's an impostor.
+<--->
+Y'hear about The Crow showing up in some town? Probably lies.
+<--->
+They say The Crow's around, but I thought he died awhile ago.
+
+Message:  1010
+<ce> Well, since you passed the test, it's time to get you
+<ce> involved in the real meat of this business. Can't
+<ce> keep babying you around forever, you know. You've had
+<ce> help so far, but now you've got to stand on your
+<ce> own two feet. Take this bag. Get to ___res_.
+<ce> Right before you get there, someone's gonna kill
+<ce> another person in _res_. When you
+<ce> get there, hurry up and pick out the heart, the
+<ce> liver, and the eyes. Put 'em in the bag and
+<ce> dump the white powder that's inside one of its
+<ce> pouches onto the organs. That's the preserving agent.
+<ce> Then you've got about 5 seconds to get it closed before
+<ce> it'll start reacting badly to the open air.
+<ce> Do all that fast and it'll stay good for months.
+<ce> I'll be at ___crowhome_ after. Find me in
+<ce> _crowhome_. I'll have =reward_ gold there.
+
+Message:  1030
+%qdt:
+ "The Crow" has taught me how
+ to take apart a corpse in
+ _res_ at ___res_
+ and extract the vital parts
+ his employers have asked for.
+ I'll be getting =reward_ gold
+ from him at ___crowhome_, where he's
+ staying in _crowhome_.
+
+Message:  1031
+%qdt:
+ I have taken the parts from the
+ body and put them into the bag.
+
+Message:  1070
+<ce> Just as _crow_ promised, this
+<ce> corpse is very recent, probably
+<ce> no older than a few hours.
+<ce> You follow his instructions and
+<ce> take out the eyes, liver, and heart,
+<ce> putting them into the bag and
+<ce> sprinkling the powder on top.
+<ce> You then seal it closed.
+
+Message:  1080
+<ce> Do you wish to leave behind the _lode_
+<ce> and give up your ties to _crow_?
+
+Message:  1081
+<ce> You discard the small piece of metal.
+<ce> Whatever schemes he has are his alone now.
+
+Message:  1082
+<ce> You return the _lode_ to your
+<ce> belongings, at least for now.
+
+QBN:
+
+Person _crow_ named The_Crow faction The_Crow male
+
+Place _res_ remote house1
+Place _crowhome_ remote house4
+
+Item _reward_ gold range 1801 to 2199
+Item _lode_ lodestone
+Item _body_ dead_body
+Item _bag_ small_sack
+Item _bag2_ large_sack
+
+--	Quest start-up:
+    say 1010
+    log 1030 step 0
+    get item _lode_
+    get item _bag_
+    place item _body_ at _res_
+    _lode_ used do _prompt_
+
+_prompt_ task:
+    prompt 1080 yes _quit_ no _stay_
+
+_quit_ task:
+    say 1081
+    end quest
+
+_stay_ task:
+    say 1082
+
+_grab_ task:
+    clicked item _body_
+    take _body_ from pc
+    take _bag_ from pc
+    get item _bag2_
+    say 1070
+    log 1031 step 1
+    place npc _crow_ at _crowhome_
+
+_talk_ task:
+    toting _bag2_ and _crow_ clicked
+    give pc _reward_
+    start quest JHTGX04
+    end quest
