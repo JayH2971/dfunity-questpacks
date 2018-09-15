@@ -209,7 +209,7 @@ _begin_ task:
         start task _f_
 
 _f_ task:
-       create foe _rat_ every 1 minutes 1 times with 100% success
+       create foe _rat_ every 0 minutes 1 times with 100% success
 -        place foe _rat_ at _res_
 
 _f1_ task:

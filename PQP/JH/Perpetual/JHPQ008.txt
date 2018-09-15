@@ -111,7 +111,7 @@ _refuse_ task:
 
 _accept_ task:
     say 1011
-    create foe _enemy_ every 1 minutes 1 times with 100% success
+    create foe _enemy_ every 0 minutes 1 times with 100% success
 
 _decis_ task:
     killed 3 _enemy_

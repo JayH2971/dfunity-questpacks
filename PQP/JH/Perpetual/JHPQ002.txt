@@ -59,13 +59,12 @@ Clock _timer_ 45.00:00
 
 Foe _skirm_ is 2 Orc_sergeant
 Foe _const_ is Orc
-Foe _const2_ is Orc_sergeant
 Foe _enemy_ is Orc_warlord
 
 --	Quest start-up:
 	start timer _timer_
           say 1010
-          create foe _skirm_ every 1 minutes 1 times with 100% success
+          create foe _skirm_ every 0 minutes 1 times with 100% success
           pc at _dung_ set _spawn_
           place foe _enemy_ at _dung_
 

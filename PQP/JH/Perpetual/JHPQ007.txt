@@ -65,7 +65,6 @@ Place _place_ remote house1
 Clock _failsafe_ 180.00:00
 
 Person _qg_ faction The_Thieves_Guild
-Person _name_ faction The_Thieves_Guild
 
 --	Quest start-up:
 	start timer _failsafe_

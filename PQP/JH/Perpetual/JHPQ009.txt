@@ -7,8 +7,8 @@ QRC:
 QuestorOffer:  [1000]
 <ce>          ERROR 1000 JHPQ009
 
-RefuseQuest:  [1009]
-<ce>          ERROR 1009 JHPQ009
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ009
 
 AcceptQuest:  [1002]
 <ce>           ERROR 1002 JHPQ009

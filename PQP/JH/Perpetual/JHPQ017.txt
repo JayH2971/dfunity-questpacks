@@ -79,8 +79,8 @@ _escape_ task:
 
 _flee_ task:
         say 1011
-        create foe _orc1_ every 1 minutes 1 times with 100% success
-        create foe _orc2_ every 1 minutes 1 times with 100% success
+        create foe _orc1_ every 0 minutes 1 times with 100% success
+        create foe _orc2_ every 0 minutes 1 times with 100% success
         start timer _failsafe_
 
 _slay1_ task:

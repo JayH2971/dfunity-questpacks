@@ -268,7 +268,7 @@ _accept_ task:
           say 1022
           hide npc _dummy_
           add _dummy_ face
-          create foe _nme_ every 6000 minutes indefinitely with 40% success
+          create foe _nme_ every 2000 minutes indefinitely with 40% success
           log 1030 step 0
 
 _event1_ task:

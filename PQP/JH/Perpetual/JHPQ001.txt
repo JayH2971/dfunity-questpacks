@@ -186,7 +186,7 @@ _arrival_ task:
 
 _find_ task:
          say 1015
-         create foe _enemy_ every 1 minutes 1 times with 100% success
+         create foe _enemy_ every 0 minutes 1 times with 100% success
          restrain foe _enemy_
 
 _steal_ task:
