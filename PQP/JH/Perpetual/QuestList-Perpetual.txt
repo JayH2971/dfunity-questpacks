@@ -3,4 +3,47 @@
 schema: *name, group, membership, minRep, notes
 
 
-JHPFIRST, InitAtGameStart, M, 0, Init JH perpetual stuff
+JHPFIRST, InitAtGameStart, M, 0, Initializes the perpetual quest system
+JHCG001, Commoner, P, 0, a Cartographer quest component
+JHCG002, Commoner, P, 0, a Cartographer quest component
+JHCG003, Commoner, P, 0, a Cartographer quest component
+JHCG010, Commoner, P, 0, a Cartographer quest component
+JHCG011, Commoner, P, 0, a Cartographer quest component
+JHCG012, Commoner, P, 0, a Cartographer quest component
+JHCG013, Commoner, P, 0, a Cartographer quest component
+JHCG020, Commoner, P, 0, a Cartographer quest component
+JHCG021, Commoner, P, 0, a Cartographer quest component
+JHCG022, Commoner, P, 0, a Cartographer quest component
+JHCG023, Commoner, P, 0, a Cartographer quest component
+JHCG024, Commoner, P, 0, a Cartographer quest component
+JHCG025, Commoner, P, 0, a Cartographer quest component
+JHCG026, Commoner, P, 0, a Cartographer quest component
+JHCG027, Commoner, P, 0, a Cartographer quest component
+JHCG028, Commoner, P, 0, a Cartographer quest component
+JHCG029, Commoner, P, 0, a Cartographer quest component
+JHCGENT0, Commoner, P, 0, a Cartographer quest component
+JHCGENT1, Commoner, P, 0, a Cartographer quest component
+JHCGENT2, Commoner, P, 0, a Cartographer quest component
+JHCGENT3, Commoner, P, 0, a Cartographer quest component
+JHCGENT4, Commoner, P, 0, a Cartographer quest component
+JHCGFAIL, Commoner, P, 0, a Cartographer quest component
+JHCGFAL2, Commoner, P, 0, a Cartographer quest component
+JHCGFAL3, Commoner, P, 0, a Cartographer quest component
+JHPINIT, Commoner, P, 0, Perpetual Quest selection
+JHPINIT2, Commoner, P, 0, Perpetual Quest selection
+JHPQ001, Commoner, P, 0, a Perpetual Quest
+JHPQ002, Commoner, P, 0, a Perpetual Quest
+JHPQ003, Commoner, P, 0, a Perpetual Quest
+JHPQ005, Commoner, P, 0, a Perpetual Quest
+JHPQ006, Commoner, P, 0, a Perpetual Quest
+JHPQ007, Commoner, P, 0, a Perpetual Quest
+JHPQ008, Commoner, P, 0, a Perpetual Quest
+JHPQ009, Commoner, P, 0, a Perpetual Quest
+JHPQ010, Commoner, P, 0, a Perpetual Quest
+JHPQ011, Commoner, P, 0, a Perpetual Quest
+JHPQ012, Commoner, P, 0, a Perpetual Quest
+JHPQ013, Commoner, P, 0, a Perpetual Quest
+JHPQ014, Commoner, P, 0, a Perpetual Quest
+JHPQ015, Commoner, P, 0, a Perpetual Quest
+JHPQ016, Commoner, P, 0, a Perpetual Quest
+JHPQ017, Commoner, P, 0, a Perpetual Quest

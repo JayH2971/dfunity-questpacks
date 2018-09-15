@@ -56,7 +56,7 @@ variable _begin_
 _fight_ task:
     when _hard_ and _begin_
     say 1011
-    create foe _enemy_ every 1 minutes 1 times with 100% success
+    create foe _enemy_ every 0 minutes 1 times with 100% success
 
 _slain_ task:
    killed _enemy_
