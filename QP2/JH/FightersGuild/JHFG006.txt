@@ -127,7 +127,7 @@ _inside_ task:
 _begin_ task:
 	say 1020
 	drop _escort_ face
-	create foe _enemy_ every 1 minutes 1 times with 100% success
+	create foe _enemy_ every 0 minutes 1 times with 100% success
 	start timer _death_
 
 _success_ task:

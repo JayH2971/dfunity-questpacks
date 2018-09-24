@@ -58,9 +58,7 @@ Message:  1041
 <ce>                      "What?! How--"
 <ce>            
 <ce>            The thief crumples into a heap on
-<ce>             the floor. Neither foot nor blade
-<ce>              could keep justice at bay.
-<ce>              Your work here is done.
+<ce>             the floor. Your work here is done.
 
 Message:  1099
 <ce>           Do you need help, %pct?

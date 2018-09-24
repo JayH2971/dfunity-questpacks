@@ -110,7 +110,7 @@ Message:  1082
 
 QBN:
 
-Person _crow_ named The_Crow faction The_Crow male
+Person _crow_ named The_Crow
 Person _fg_ faction The_Fighters_Guild
 
 Place _crowhome_ remote house4

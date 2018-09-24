@@ -88,7 +88,7 @@ Message:  1030
 
 Message:  1080
 <ce> Will you instead slay _crow_?
- 
+
 Message:  1081
 <ce> The old man titters as you ready for combat.
 <ce>
@@ -102,7 +102,7 @@ Message:  1081
 <ce> which renders him completely invisible.
 <ce> Your attempts to touch him are futile.
 <ce> Within seconds you hear the door open and close.
- 
+
 Message:  1082
 <ce> "How kind of you. Thank you for
 <ce> turning me down in person. I'll
@@ -117,7 +117,7 @@ Message:  1082
 
 QBN:
 
-Person _crow_ named The_Crow faction The_Crow male
+Person _crow_ named The_Crow
 Person _tg_ faction The_Thieves_Guild
 
 Place _res_ remote house4

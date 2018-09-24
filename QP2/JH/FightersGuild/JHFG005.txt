@@ -50,8 +50,8 @@ QuestComplete:  [1004]
 <ce>                  Here's your _reward_ gold pieces.
 
 Message: 1020
-<ce>                    The growling dies down. All
-<ce>                    that's left now is the clean up.
+<ce>                    The growling dies down. You trust the
+<ce>                    property owners will take care of the clean-up.
 
 Message:  1024
 <ce>                    A young man cracks the door open

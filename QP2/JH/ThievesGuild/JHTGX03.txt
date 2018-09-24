@@ -87,7 +87,7 @@ Message:  1082
 
 QBN:
 
-Person _crow_ named The_Crow faction The_Crow male
+Person _crow_ named The_Crow
 
 Place _res_ remote house1
 Place _crowhome_ remote house4
