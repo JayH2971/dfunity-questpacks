@@ -25,8 +25,8 @@ Message:  1027
 
 Message:  1028
 <ce>	Perpetual Quests will not begin at this time.
-<ce>	You can start them by opening the console and
-<ce>	entering "startquest JHPINIT".
+<ce>	Please see the readme for instructions on how
+<ce>	to begin Perpetual Quests on an existing character.
 
 QBN:
 

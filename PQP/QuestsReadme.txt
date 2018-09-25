@@ -9,6 +9,11 @@ TO UNINSTALL:
 Delete the folder JH from the \DaggerfallUnity_Data\StreamingAssets\QuestPacks folder of your Daggerfall Unity installation.
 
 
+*PLEASE NOTE:*
+
+If you decide to use Perpetual Quests with an existing character, or start a new character and do not activate it then, you will need to copy the file "JHPFIRST.txt" to the \DaggerfallUnity_Data\StreamingAssets\Quests folder and then use the console command "startquest JHPFIRST" in the game. Otherwise the Perpetual Quests will not run.
+
+
 Take note of the following points:
 
 * Minimal testing for game balance has been made. Bring feedback to the Daggerfall Workshop forums if some quest is ridiculously difficult when it should not be. JHMG00X, "Death's Embrace," is meant to be ridiculously difficult.
