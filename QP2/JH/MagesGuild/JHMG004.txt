@@ -6,9 +6,7 @@ QRC:
 QuestorOffer:  [1000]
 <ce>              %pct, the Mages Guild acts not only
 <ce>              as a repository of knowledge and community of
-<ce>              research, but also as a facilitating organization
-<ce>              to aid wherever possible the accumulation of
-<ce>              magical and scientific prowess, such that the
+<ce>              research, but also as a facilitator, such that the
 <ce>              weak may rely on the strong to perform those
 <ce>              tasks of which they find themselves incapable.
 <ce>              You yourself have asked no help of the guild in
@@ -24,9 +22,7 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce>          Precisely the answer I expected from you. We
 <ce>          need all manner of capable members in our ranks,
-<ce>          each to do the work the other cannot. In this case
-<ce>          we're working on your reputation as something
-<ce>          of a spine breaker. In any case, we entrust to
+<ce>          each to do the work the other cannot. We entrust to
 <ce>          you _friend_, who positively cannot
 <ce>          harm a fly but is making marvelous progress
 <ce>          regarding elemental research. One prime specimen of
@@ -52,7 +48,7 @@ QuestComplete:  [1004]
 <ce>        words in order, for we will not help you this time.
 <ce>        And as for you, %pcf, we thank you once more
 <ce>        for your courageous help toward those less
-<ce>        oriented to bloodshed. Please take your reward.
+<ce>        inclined to bloodshed. Please take your reward.
 
 Message:  1019
 <ce>        _friend_ shakes your hand eagerly.
