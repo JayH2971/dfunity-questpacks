@@ -58,7 +58,7 @@ Clock _failsafe_ 30.00:00
 
 Foe _gar_ is Gargoyle
 Foe _gar2_ is Gargoyle
-Foe _gar3_ is 5 Gargoyle
+Foe _gar3_ is 2 Gargoyle
 
 --	Quest start-up:
 	start timer _timer_
@@ -81,7 +81,7 @@ _nospawn_ task:
 	clear _spawn_
 
 _slain_ task:
-	killed 7 _gar_
+	killed 5 _gar_
     killed 4 _gar2_
 	stop timer _timer_
     say 1020
