@@ -9,22 +9,15 @@ TO UNINSTALL:
 Delete the folder JH from the \DaggerfallUnity_Data\StreamingAssets\QuestPacks folder of your Daggerfall Unity installation.
 
 
-*PLEASE NOTE:*
-
-If you decide to use Perpetual Quests with an existing character, or start a new character and do not activate it then, you will need to copy the file "JHPFIRST.txt" to the \DaggerfallUnity_Data\StreamingAssets\Quests folder and then use the console command "startquest JHPFIRST" in the game. Otherwise the Perpetual Quests will not run.
-
-
 Take note of the following points:
 
 * Minimal testing for game balance has been made. Bring feedback to the Daggerfall Workshop forums if some quest is ridiculously difficult when it should not be. JHMG00X, "Death's Embrace," is meant to be ridiculously difficult.
 
 * Use Shift-Tab to make the quest information on your screen expand or disappear. This will also toggle the HUD compass.
 
-* Some quests rely on dialogue clues to find a person or place, but right now dialogue resolution is incomplete. Finding people or residences is not always possible through a townsperson. Use the HUD compass to find a quest location in such cases.
-
 * If the HUD compass points you towards some location that you have no obvious use for, ignore it. Every quest will tell you about any location that actually matters. One example is the Thieves Guild quest to run away with a stolen object.
 
-* Quests that teleport you into a dungeon can land you in an inescapable situation, such as inside a cage or a closed pit. Use the console command "teleport" when necessary to come free.
+* Quests that teleport you into a dungeon can land you in an inescapable situation, such as inside a closed pit. Use the console command "teleport" when necessary to come free.
 
 * Sometimes, a friendly NPC is meant to disappear but does not. This occurs most frequently when an enemy is spawned at the same time. Just pretend how it's supposed to happen.
 

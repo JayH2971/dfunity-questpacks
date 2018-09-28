@@ -17,7 +17,7 @@ Take note of the following points:
 
 * If the HUD compass points you towards some location that you have no obvious use for, ignore it. Every quest will tell you about any location that actually matters. One example is the Thieves Guild quest to run away with a stolen object.
 
-* Quests that teleport you into a dungeon can land you in an inescapable situation, such as inside a cage or a closed pit. Use the console command "teleport" when necessary to come free.
+* Quests that teleport you into a dungeon can land you in an inescapable situation, such as inside a closed pit. Use the console command "teleport" when necessary to come free.
 
 * Sometimes, a friendly NPC is meant to disappear but does not. This occurs most frequently when an enemy is spawned at the same time. Just pretend how it's supposed to happen.
 
