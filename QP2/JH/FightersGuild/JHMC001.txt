@@ -437,6 +437,8 @@ _peaceful_ task:
 _strike_ task:
     say 1087
     create foe _helpdb1_ every 0 minutes 1 times with 100% success
+    give item _tri_ to _helpdb1_
+    make _tri_ permanent
 
 _thieftalk_ task:
     clicked npc _thief_
@@ -484,6 +486,7 @@ _allin_ task:
     say 1024
     change repute with _gendb_ by +5
     hide npc _db_
+    make _tri_ permanent
     end quest
 
 _poorly_ task:

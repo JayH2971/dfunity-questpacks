@@ -39,8 +39,6 @@ QuestComplete:  [1004]
 <ce>        The ghostly presence departs from
 <ce>        you, and _necr_ silently
 <ce>        hands you your reward.
-<ce>        
-<ce>        TO BE CONTINUED
 
 Message:  1010
 <ce>       A shiver goes down your spine.
@@ -165,6 +163,7 @@ Foe _enemy_ is Mage
           get item _inv_
           pc at _graveyard_ set _grave_
           pc at _city_ set _arrival_
+          have _research_ set _steal_
 
 _initial_ task:
          end quest
@@ -188,17 +187,16 @@ _find_ task:
          say 1015
          create foe _enemy_ every 0 minutes 1 times with 100% success
          restrain foe _enemy_
+         give item _research_ to _enemy_
 
 _steal_ task:
-          killed _enemy_
           say 1016
           log 1031 step 1
-          get item _research_
 
 _victory_ task:
-          toting _research_ and _necr_ clicked
+  toting _research_ and _necr_ clicked
 	give pc _reward_
--         start quest ???
+- start quest ???
 	end quest
 
 _timer_ task:

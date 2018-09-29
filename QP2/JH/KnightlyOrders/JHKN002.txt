@@ -73,8 +73,8 @@ Message:  1030
  ___home_, which has
  been taken captive by a band
  of criminals. I must free the 
- captives and return within
- =timer_ days.
+ captives and return to
+ _questgiver_ within =timer_ days.
 
 Message:  1031
  %qdt:

@@ -16,7 +16,7 @@ AcceptQuest:  [1002]
 <ce> I'll give you two days. Report your success to me
 <ce> by then. I should mention the odd fact that none
 <ce> of the stolen items carries any real worth. One was
-<ce> a _flam_ stolen from _hum1_.
+<ce> some _flam_ stolen from _hum1_.
 <ce> Another was a very worn piece of clothing
 <ce> taken from _hum2_. An imperceptible
 <ce> thief should be spending his or her time searching for

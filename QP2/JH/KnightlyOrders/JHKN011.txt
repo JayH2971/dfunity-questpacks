@@ -110,7 +110,7 @@ Message:  1051
 QBN:
 Person _qgiver_ group Questor male
 Person _family_ group Resident1
-Person _kni_ group Resident2 male rumors 1011
+Person _kni_ group Resident2 male rumors 1005
 
 Place _famtown_ remote random
 Place _dung_ remote dungeon
