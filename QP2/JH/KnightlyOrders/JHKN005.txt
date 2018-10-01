@@ -44,6 +44,9 @@ QuestComplete:  [1004]
 <--->
 <ce>                Reliability on all matters, small and great, is
 <ce>                worthy of a hero. I thank you for making the journey.
+<--->
+<ce> Excellent, %pct. We can now expedite
+<ce> the trial. Superb work on all counts.
 
 Message:  1019
 <ce>	You creep through the building silently.
@@ -67,8 +70,7 @@ Message:  1030
  ___res_ to look for one
  _clothes_ inside _res_,
  which I need to return to
- ___questgiver_ within =timer_
- days for a court of law.
+ ___questgiver_ within =timer_ days.
 
 Message:  1099
 <ce>        We need the _clothes_
@@ -117,6 +119,7 @@ _got_ task:
 _delay_ task:
    say 1021
    create foe _enemy_ every 60 minutes 2 times with 80% success
+   create foe _enemy_ every 0 minutes 1 times with 80% success
 
 _victory_ task:
   toting _clothes_ and _questgiver_ clicked

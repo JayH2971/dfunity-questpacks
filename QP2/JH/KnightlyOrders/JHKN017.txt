@@ -51,7 +51,7 @@ Message:  1040
  to merit my standing watch.
  I am authorized to fight off any
  who enter it until I have made it
- clear that the ground are to be left
+ clear that the grounds are to be left
  alone. I may then return to
  _questgiver_ in ___questgiver_
  to report my deed.
@@ -80,7 +80,7 @@ _timeLimit_ task:
 
 _onsite_ task:
 	say 1019
-	create foe _en1_ every 20 minutes indefinitely with 3% success
+	create foe _en1_ every 20 minutes indefinitely with 9% success
 
 _slain_ task:
 	killed 6 _en1_

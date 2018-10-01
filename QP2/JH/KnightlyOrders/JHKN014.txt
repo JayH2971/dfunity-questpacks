@@ -42,18 +42,16 @@ Message: 1020
 <ce> two very loud people. Their yelling seems
 <ce> to test the strength of the nearby walls.
 <ce> You are entirely ignored until the door shuts
-<ce> behind you, at which point the air grows tense.
-<ce> Neither side expected you. Someone close to you
+<ce> behind you, at which point the building falls
+<ce> silent. The air is heavy. Someone close to you
 <ce> pounds you with a mailed hand, apparently
 <ce> expecting something.
 
 Message: 1021
 <ce> Seeing the letter, the crony tears it from your
 <ce> hands and rips the seal open. After %g1 gives
-<ce> it a cursory look, %g1 sends it to the two loudest
-<ce> participants. One takes a minute to read it before
-<ce> giving it to the other. They set it on the table and
-<ce> think for a moment. The silence hangs heavily.
+<ce> it a cursory look, %g1 sends it to the arguing
+<ce> people. You hear nothing. And then,
 <ce> 
 <ce> "We have yet to see how this grants restitution
 <ce> for our fallen brethren. How can you not..."

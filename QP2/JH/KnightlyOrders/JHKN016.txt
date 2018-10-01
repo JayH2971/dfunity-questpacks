@@ -47,7 +47,8 @@ QuestComplete:  [1004]
 <ce> war is nobler than to wage it.
 
 Message: 1019
-<ce> You hear orcish chuckling.
+<ce> You hear deep, throaty chuckling.
+<ce> The orc is inside and waiting for you.
 
 Message: 1021
 <ce> You present the _trink_ to the
@@ -102,7 +103,8 @@ Message:  1030
  as a sign of my authority.
  I must find a peaceful resolution
  and not slay the orc. I have
- =2res_ days to finish the task.
+ =2res_ days to finish the task
+ and return to ___qgiver_.
 
 QBN:
 Item _trink_ trinket

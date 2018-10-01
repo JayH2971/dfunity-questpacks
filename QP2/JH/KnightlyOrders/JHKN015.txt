@@ -15,8 +15,8 @@ RefuseQuest:  [1001]
 <ce> problem to solve, I suppose?
 
 AcceptQuest:  [1002]
-<ce> Every time this happens, it's always
-<ce> some fool who's let power get to his
+<ce> Every time this happens, it is always
+<ce> some fool who has let power get to his
 <ce> head and starts trying to display
 <ce> that power to the world. We wish
 <ce> such could enlist to a noble cause

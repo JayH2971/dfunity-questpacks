@@ -97,6 +97,7 @@ Place _palace_ local palace
 Clock _timer_ 01:33
 Clock _delay_ 00:01
 Clock _delay2_ 00:02
+Clock _delay3_ 00:01
 Clock _outdoors_ 00:20
 
 Foe _warr_ is Warrior
@@ -146,7 +147,10 @@ _spawnin_ task:
 	create foe _kni_ every 2 minutes 4 times with 100% success
 
 _victory_ task:
-	killed 9 _kni_
+	killed 8 _kni_
+	start timer _delay3_
+
+_delay3_ task:
 	give pc nothing
 	end quest 
 

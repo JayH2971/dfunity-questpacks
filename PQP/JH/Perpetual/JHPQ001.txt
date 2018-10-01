@@ -164,6 +164,7 @@ Foe _enemy_ is Mage
           pc at _graveyard_ set _grave_
           pc at _city_ set _arrival_
           have _research_ set _steal_
+          reveal _graveyard_
 
 _initial_ task:
          end quest

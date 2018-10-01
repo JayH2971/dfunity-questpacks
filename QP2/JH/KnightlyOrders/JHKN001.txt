@@ -29,9 +29,8 @@ AcceptQuest:  [1002]
 <ce>                         Go now, %pcf.
 
 QuestFail:  [1003]
-<ce>               And what will I tell the next
-<ce>                courier to arrive, %pcf? To
-<ce>              save their dragonlings themselves?
+<ce> _qgiver_ expected your report
+<ce> regarding the dragonlings by now.
 
 QuestComplete:  [1004]
 <ce>                 Excellent work. Let no one
@@ -50,7 +49,7 @@ Message: 1021
 
 Message:  1030
 %qdt:
- _qgiver_ in
+ _qgiver_ of
  ___qgiver_ has requested
  my aid in protecting a nest of
  dragonlings somewhere in
@@ -87,15 +86,15 @@ Foe _enemy2_ is Warrior
 variable _inside_
 _quest_ task:
 	when _inside_ and not _slain_
-	create foe _enemy1_ every 15 minutes indefinitely with 26% success
-	create foe _enemy2_ every 20 minutes indefinitely with 20% success
+	create foe _enemy1_ every 15 minutes indefinitely with 10% success
+	create foe _enemy2_ every 20 minutes indefinitely with 7% success
 
 _timer_ task:
 	end quest
 
 _slain_ task:
-	killed 3 _enemy1_ saying 1020 
-	killed 3 _enemy2_ saying 1020 
+	killed 4 _enemy1_ saying 1020 
+	killed 4 _enemy2_ saying 1020 
 
 _fail_ task:
 	killed 1 _drag_ saying 1021

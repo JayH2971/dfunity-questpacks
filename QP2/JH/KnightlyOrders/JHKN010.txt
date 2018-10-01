@@ -68,7 +68,7 @@ QBN:
 Item _weapon_ weapon
 
 Person _qgiver_ group Questor male
-Person _knight_ group Chemist
+Person _knight_ faction Generic_Knightly_Order
 
 Place _knighttown_ remote tavern
 

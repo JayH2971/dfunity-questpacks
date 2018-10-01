@@ -63,9 +63,8 @@ Message:  1012
 Message:  1013
 <ce>	Who are you? _qgiver_ sent you? %god
 <ce>	be thanked. Yes, I need to leave but my injuries
-<ce>	won't allow me. What has happened to
-<ce>	___dung_? This is not the same cave I
-<ce>	once knew. Please, lead the way. I will follow.
+<ce>	are very serious. ___dung_ has
+<ce>	changed so much. Please, lead the way.
 <--->
 <ce>	Yes, I am _kni_. Thank %god that
 <ce>	_qgiver_ sent someone to look for me.
@@ -83,7 +82,8 @@ Message:  1030
  to look for _kni_,
  a veteran member who is lost
  somewhere in ____qgiver_.
- I have two months to return.
+ I have two months to return
+ to ___qgiver_.
 
 Message:  1031
 %qdt:
@@ -110,7 +110,7 @@ Message:  1051
 QBN:
 Person _qgiver_ group Questor male
 Person _family_ group Resident1
-Person _kni_ group Resident2 male rumors 1005
+Person _kni_ faction Generic_Knightly_Order male anyInfo 1005
 
 Place _famtown_ remote random
 Place _dung_ remote dungeon
