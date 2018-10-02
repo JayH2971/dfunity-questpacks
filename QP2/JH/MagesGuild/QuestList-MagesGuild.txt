@@ -22,6 +22,7 @@ JHMG011, MagesGuild, M, 0, a quest to guide students to locations
 JHMG012, MagesGuild, M, 60, a quest to stop a powerful former member
 JHMG013, MagesGuild, M, 0, a quest to bring a wandering atronach home
 JHMG014, MagesGuild, M, 50, a quest to obtain a report on vampirism
+JHMG015, MagesGuild, M, 10, a quest to defend a shapeshifted member
 -JHMGX00, MagesGuild, M, 95, a quest to investigate an ancient lich
 -JHMGX01, MagesGuild, P, 0, offered via JHMGX00
 -go to various NPCs in cities to pick up needed ingredients

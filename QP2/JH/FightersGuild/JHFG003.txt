@@ -95,10 +95,10 @@ _slain_ task:
 	killed 1 _enemy2_ saying 1020 
 	killed 1 _enemy3_ saying 1020 
 	killed 1 _enemy4_ saying 1020
-	create foe _enemy1_ every 4 minutes 4 times with 4% success
-	create foe _enemy2_ every 4 minutes 4 times with 4% success
-	create foe _enemy3_ every 4 minutes 4 times with 4% success
-	create foe _enemy4_ every 4 minutes 4 times with 4% success
+	create foe _enemy1_ every 4 minutes 2 times with 4% success
+	create foe _enemy2_ every 4 minutes 2 times with 4% success
+	create foe _enemy3_ every 4 minutes 2 times with 4% success
+	create foe _enemy4_ every 4 minutes 2 times with 4% success
 
 _qgclicked_ task:
 	clicked npc _qgiver_ 
