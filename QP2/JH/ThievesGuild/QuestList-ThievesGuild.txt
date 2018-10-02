@@ -11,11 +11,12 @@ schema: *name, group, membership, minRep, notes
 JHTG001, GeneralPopulace, M, 10, a quest to avoid pursuers while holding contraband
 JHTG002, GeneralPopulace, M, 0, a quest to kidnap a child for ransom
 JHTG003, GeneralPopulace, M, 0, a quest to take a land deed by force
-JHTG004, GeneralPopulace, M, 5, a quest to steal a criminal confession
+JHTG004, GeneralPopulace, M, 10, a quest to steal a criminal confession
 JHTG005, GeneralPopulace, M, 0, a quest to lift a guarded gem
 JHTG006, GeneralPopulace, M, 0, a quest to steal research notes
-JHTG007, GeneralPopulace, M, 0, a quest to persuade a ransom target
-JHTG008, GeneralPopulace, M, 0, a quest to steal a gem belonging to the ruling family
+JHTG007, GeneralPopulace, M, 5, a quest to persuade a ransom target
+JHTG008, GeneralPopulace, M, 20, a quest to steal a gem belonging to the ruling family
+JHTG009, GeneralPopulace, M, 90, an artifact quest to take a bag to a client
 JHTG00X, GeneralPopulace, M, 40, a quest invitation from a guild member
 JHTGX01, GeneralPopulace, P, 0, offered via JHTG00X
 JHTGX02, GeneralPopulace, P, 0, offered via JHTG01X
