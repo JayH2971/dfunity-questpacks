@@ -19,6 +19,7 @@ JHDB008, DarkBrotherHood, M, 30, a quest to slay a teleported noble
 JHDB009, DarkBrotherHood, M, 0, a quest to retrieve a ransomed child
 JHDB010, DarkBrotherHood, M, 5, a quest to hijack a ransom plot
 JHDB011, DarkBrotherHood, M, 0, a quest to slay a Thieves Guild interloper
+JHDB012, DarkBrotherHood, M, 10, a quest to end a rival assassination organization
 -a quest to take a victim of a failed ransom to a dungeon to be eaten
 -artifact quest, a diplomat from another region must be slain. Follow paper trail, slaying enemies. Progressively larger groups begin following PC. Diplomat must be slain within 10 seconds of first hit to prevent recall.
 -interfere with Mages Guild researcher notes quest. MG rep drop.

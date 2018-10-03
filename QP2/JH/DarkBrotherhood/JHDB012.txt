@@ -1,0 +1,180 @@
+Quest: JHDB012
+DisplayName: Pulling Weeds
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> Surprising as it may be, some of our more
+<ce> weak-willed members have expressed discontent
+<ce> with Mephala's rule and tried to organize
+<ce> themselves as a rival assassination
+<ce> guild. It's really more pathetic than
+<ce> threatening, and I do not expect we
+<ce> will need more than one person to flatten
+<ce> it to the ground. I extend this opportunity
+<ce> to you due to your loyalty.
+
+RefuseQuest:  [1001]
+<ce> So soon as our other associates know of this,
+<ce> we will have swarms begging to take care of it.
+
+AcceptQuest:  [1002]
+<ce> The riffraff are operating out of ___res_.
+<ce> They are far more skilled at fleeing than at
+<ce> combat, which says much of why they have little
+<ce> to do with us. In other words, you'll need to earn
+<ce> their trust and lower their guard before you
+<ce> make the killing blow. The Spymaster tells us
+<ce> the very center of it all is _th_.
+<ce> Find %g2 in _res_ and breach %g3
+<ce> distrust. Strike when you see the proper moment.
+<ce> Then return. You are granted =timer_ days.
+<ce> 
+<ce> First, take this basilisk's eye. That's their sad
+<ce> attempt at secrecy. _th_ will not
+<ce> speak to anyone who will not show it first.
+<ce> Second, this letter. It will open up
+<ce> a discussion on a supposed accounting
+<ce> that %g1 doesn't know actually failed.
+<ce> Third, this _gem_. Once it leaves your hands
+<ce> it will dissipate the magicka of the holder.
+<ce> Such tricks as invisibility and teleportation
+<ce> will remain out the question. The rest is up to you.
+
+QuestFail:  [1003]
+<ce> You were to report on _th_'s death by now.
+
+QuestComplete:  [1004]
+<ce> Ah, well done. This is why the Dark Brotherhood
+<ce> continues to be feared. I need not brag. Our actions
+<ce> speak far louder than I ever could.
+
+Message:  1010
+<ce> _th_ stares at you with cold eyes.
+<ce> Radiating fear and tension, %g1 says
+<ce> nothing at all.
+
+Message:  1011
+<ce> Your mark relaxes a little upon seeing
+<ce> the basilisk's eye.
+<ce> 
+<ce> "I have never seen you before, which
+<ce> is a poor omen. Who are you and
+<ce> why have you sought me out?"
+
+Message:  1012
+<ce> _th_ tears the paper from your
+<ce> hands and starts to read, never fully
+<ce> taking %g3 attention from you. After
+<ce> reading it twice through, %g1
+<ce> starts to think.
+<ce> 
+<ce> "Fine then. %pcf, I guess I have no reason
+<ce> to doubt you. Where's the pay for this job?
+<ce> This wasn't a simple murder."
+
+Message:  1013
+<ce> You offer the _gem_, which %g1 eyes greedily.
+<ce> The instant it touches %g3 hand, %g3 eyes grow
+<ce> wide. Magical power seems to waft away from %g2.
+<ce> _th_ unsheathes %g3 weapon and shouts,
+<ce> "What?! No! No, I'll kill you! Die, filthy pig!"
+
+Message:  1020
+<ce> _th_'s suspicions win %g2 over.
+<ce> "I knew it!" %g1 shouts before casting a
+<ce> spell, conveying %g2 out of the building entirely.
+<ce> You have lost your opportunity.
+
+Message:  1030
+%qdt:
+ _questgiver_ of the Dark Brotherhood,
+ ___questgiver_, has offered me the privilege
+ of stamping out a small rival organization.
+ The leader, _th_, hides in
+ ___res_ and needs to be deceived
+ into trusting me before I can strike.
+ I have a basilisk's eye to prove my loyalty,
+ a letter detailing a current job, and a
+ _gem_ that needs to get into %g3 hands.
+ I have =timer_ days to kill %g2 and return.
+
+QBN:
+Person _questgiver_ group Questor male
+Person _th_ factiontype Thieves_Den
+
+Item _letter_ letter
+Item _gem_ gem
+Item _eye_ basilisk_eye
+
+Place _res_ remote house1
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _conv_ 00:02
+
+Foe _enemy_ is Assassin
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0 
+    get item _letter_
+    get item _gem_
+    get item _eye_
+    place npc _th_ at _res_
+
+_step1_ task:
+    clicked npc _th_
+    start timer _conv_
+    say 1010
+    _eye_ used do _step2_
+    _letter_ used do _conv_
+    _gem_ used do _conv_
+
+_step2_ task:
+    take _eye_ from pc
+    clear _step1_
+    say 1011
+    _letter_ used do _step3_
+    _gem_ used do _conv_
+
+_step3_ task:
+    take _letter_ from pc
+    clear _step2_
+    say 1012
+    _gem_ used do _step4_
+
+_step4_ task:
+    take _gem_ from pc
+    say 1013
+    hide npc _th_
+    place foe _enemy_ at _res_
+    stop timer _conv_
+    give item _gem_ to _enemy_
+    give item _letter_ to _enemy_
+    give item _eye_ to _enemy_
+    make _gem_ permanent
+    make _letter_ permanent
+    make _eye_ permanent
+
+_conv_ task:
+    say 1020
+    hide npc _th_
+    end quest
+
+_slain_ task:
+	killed 1 _enemy_
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+	clear _qgclicked_ _clearclick_ 
+
+_pcreward_ task:
+	when _qgclicked_ and _slain_ 
+	give pc nothing
+	end quest 
+
+_timer_ task:
+	end quest
