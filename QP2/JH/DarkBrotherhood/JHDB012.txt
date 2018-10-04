@@ -38,8 +38,8 @@ AcceptQuest:  [1002]
 <ce> that %g1 doesn't know actually failed.
 <ce> Third, this _gem_. Once it leaves your hands
 <ce> it will dissipate the magicka of the holder.
-<ce> Such tricks as invisibility and teleportation
-<ce> will remain out the question. The rest is up to you.
+<ce> Such tricks as invisibility and teleportation will
+<ce> remain out the question. The rest is up to you.
 
 QuestFail:  [1003]
 <ce> You were to report on _th_'s death by now.
@@ -79,6 +79,9 @@ Message:  1013
 <ce> wide. Magical power seems to waft away from %g2.
 <ce> _th_ unsheathes %g3 weapon and shouts,
 <ce> "What?! No! No, I'll kill you! Die, filthy pig!"
+
+Message:  1014
+<ce> Without %g3 leadership, _th_'s guild will dissolve.
 
 Message:  1020
 <ce> _th_'s suspicions win %g2 over.
@@ -163,6 +166,7 @@ _conv_ task:
 
 _slain_ task:
 	killed 1 _enemy_
+    say 1014
 
 _qgclicked_ task:
 	clicked npc _questgiver_ 

@@ -14,7 +14,7 @@ RefuseQuest:  [1001]
 
 AcceptQuest:  [1002]
 <ce>	You just have to kill as many as'll stop 'em
-<ce>	from spreading more, maybe like seven or so.
+<ce>	from spreading more, however many that is.
 <ce>	Don't let yourself get frozen up with their poison,
 <ce>	and make sure you don't hit any of the people.
 <ce>	Maybe you wanna do it at night. Get it done in
@@ -50,7 +50,7 @@ Message:  1030
  whenever I want.
 
 QBN:
-Item _reward_ gold range 300 to 500
+Item _reward_ gold range 400 to 699
 
 Person _qgiver_ group Questor male
 
@@ -77,15 +77,15 @@ variable _scorp_
 
 _spawn_ task:
 	when _city_ and _spid_ and not _slain_
-	create foe _enemy1_ every 1 minutes indefinitely with 25% success
+	create foe _enemy1_ every 12 minutes indefinitely with 50% success
 
 _spawn2_ task:
 	when _city_ and _scorp_ and not _slain_
-	create foe _enemy2_ every 1 minutes indefinitely with 25% success
+	create foe _enemy2_ every 12 minutes indefinitely with 50% success
 
 _slain_ task:
-	killed 7 _enemy1_
-	killed 7 _enemy2_
+	killed 5 _enemy1_
+	killed 5 _enemy2_
 	say 1020
 	stop timer _2captive_
 
