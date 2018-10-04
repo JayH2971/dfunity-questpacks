@@ -58,7 +58,7 @@ Clock _failsafe_ 30.00:00
 
 Foe _gar_ is Gargoyle
 Foe _gar2_ is Gargoyle
-Foe _gar3_ is 2 Gargoyle
+Foe _gar3_ is Gargoyle
 
 --	Quest start-up:
 	start timer _timer_
@@ -72,8 +72,8 @@ _spawn_ task:
 
 _send_ task:
     when _spawn_ and not _slain_
-    create foe _gar_ every 1 minutes indefinitely with 80% success
-    create foe _gar2_ every 1 minutes indefinitely with 70% success
+    create foe _gar_ every 4 minutes indefinitely with 80% success
+    create foe _gar2_ every 6 minutes indefinitely with 70% success
 	create foe _gar3_ every 0 minutes 1 times with 100% success
 
 _nospawn_ task:
@@ -81,8 +81,8 @@ _nospawn_ task:
 	clear _spawn_
 
 _slain_ task:
-	killed 5 _gar_
-    killed 4 _gar2_
+	killed 3 _gar_
+    killed 2 _gar2_
 	stop timer _timer_
     say 1020
 
