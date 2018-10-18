@@ -54,7 +54,7 @@ Message:  1012
 <ce>        separated several days ago, and I've been pursued
 <ce>        ever since. Without you, I truly doubt I would be
 <ce>        able to make the journey. But now, I am ready.
-<ce>        Let us hurry to _temple_ in ___temple_.
+<ce>        Let us hurry to _temple_.
 <ce>        I'll be pleased if it takes us no more than =timer_ days."
 
 Message:  1013

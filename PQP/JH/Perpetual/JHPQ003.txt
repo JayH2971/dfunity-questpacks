@@ -134,13 +134,6 @@ Message:  1026
 <ce>       _qg_ appears once again.
 <ce>       Now you can get to the bottom of the matter.
 
-Message:  1030
-%qdt:
- I have received a request from
- someone named _qg_
- to meet %g2 in ___res_
- for a duel of some kind.
-
 Message:  1040
  To "%pcf," the wandering %ra in ____res_,
  
@@ -187,7 +180,6 @@ Foe _vamp_ is Ancient_vampire
 	start timer _timer_
           give pc _letter_ notify 1010
           place npc _qg_ at _res_
-          log 1030 step 0
           pc at _res_ set _inside_
 
 variable _inside_

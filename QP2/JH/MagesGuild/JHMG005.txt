@@ -49,7 +49,7 @@ Message:  1010
 <ce>        do now is to get out alive and report back to the Mages Guild.
 <ce>      
 <ce>      (Hint: You may be in a location that's impossible to escape from,)
-<ce>      (like inside an enclosed cage or at the bottom of a chute. If so,)
+<ce>      (like at the bottom of a chute. If so,)
 <ce>      (make a save and try the console command "teleport" to get out.)
 
 Message:  1030

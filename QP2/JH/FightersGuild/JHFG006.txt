@@ -1,5 +1,3 @@
--- Fighters Guild
--- Min Rep: 25
 Quest: JHFG006
 DisplayName: The Bodyguard
 -- Message panels
@@ -13,14 +11,13 @@ QuestorOffer:  [1000]
 <ce>           week. He thinks if he's got someone from the
 <ce>           guild with him, he can at least go back and pick
 <ce>            up his stuff. You wanna play bodyguard and take
-<ce>           him to ___res_ for _reward_ gold?
+<ce>           him to ___res_ for =reward_ gold?
 <--->
 <ce>          %pcf, I'm glad you're here. We've
 <ce>          got this guy who needs help getting back home.
-<ce>          Apparently he's been getting death threats
-<ce>          like Oblivion's never seen before, and it's
-<ce>          pretty heavy stuff. He won't go there without
-<ce>          someone watching his back. He's paying _reward_ gold
+<ce>          Apparently he's been getting death threats like
+<ce>          Oblivion's never seen before. He won't go there without
+<ce>          someone watching his back. He's paying =reward_ gold
 <ce>          to get to ___res_. You in?
 
 RefuseQuest:  [1001]
@@ -31,8 +28,7 @@ AcceptQuest:  [1002]
 <ce>          All right, but I'll warn you, this stuff's serious.
 <ce>           I don't know whose in-law he insulted
 <ce>           or who he cheated, but I read the letter
-<ce>           he got and it ain't pretty. What they'd
-<ce>           do to him gives me nightmares. Anyway, let me
+<ce>           he got and it ain't pretty. Anyway, let me
 <ce>          call him. He didn't even want to leave the guild
 <ce>           hall without someone watching his back.
  

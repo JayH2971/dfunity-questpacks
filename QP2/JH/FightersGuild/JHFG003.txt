@@ -5,7 +5,7 @@ QRC:
 
 QuestorOffer:  [1000]
 <ce>              We try to stay out of politics as much as possible, but
-<ce>              sometimes the %t force our hand. There's some
+<ce>              sometimes the %t forces our hand. There's some
 <ce>              criminal down in __dungeon_ that the
 <ce>              guards have given up on who needs to die. It's
 <ce>              paying =reward_ gold. Is that enough for you?

@@ -46,7 +46,7 @@ Message:  1010
 <ce>       belongings that wasn't there before.
 
 Message:  1011
-    %pcn, %ra
+    %ra of ____graveyard_:
  
      We greet you in the name of the King of Worms.
    We take upon ourselves the title of the Necromancers,
@@ -143,7 +143,7 @@ Item _num_ gold range 1 to 4
 Item _reward_ gold range 200 to 400
 
 Person _dummy_ faction The_Mages_Guild
-Person _necr_ faction The_Cabal
+Person _necr_ faction The_Necromancers
 Person _appa_ group Chemist
 
 Place _city_ remote city
@@ -158,13 +158,13 @@ Foe _enemy_ is Mage
 
 --	Quest start-up:
 	start timer _initial_
-          say 1010
-          place npc _necr_ at _res_
-          get item _inv_
-          pc at _graveyard_ set _grave_
-          pc at _city_ set _arrival_
-          have _research_ set _steal_
-          reveal _graveyard_
+  say 1010
+  place npc _necr_ at _res_
+  get item _inv_
+  pc at _graveyard_ set _grave_
+  pc at _city_ set _arrival_
+  have _research_ set _steal_
+  reveal _graveyard_
 
 _initial_ task:
          end quest
@@ -197,9 +197,10 @@ _steal_ task:
 _victory_ task:
   toting _research_ and _necr_ clicked
 	give pc _reward_
+  change repute with _necr_ by +5
 - start quest ???
 	end quest
 
 _timer_ task:
-          say 1003
+  say 1003
 	end quest

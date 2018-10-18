@@ -19,7 +19,7 @@ AcceptQuest:  [1002]
 <ce>	and make sure you don't hit any of the people.
 <ce>	Maybe you wanna do it at night. Get it done in
 <ce>	=2captive_ days, but you can take your time getting
-<ce>	here after that.
+<ce>	here after that. That's ___captive_, remember.
 
 QuestFail:  [1003]
 <ce>	___captive_ needed its infestation cleared out by now.
