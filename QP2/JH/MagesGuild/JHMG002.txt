@@ -153,6 +153,7 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 	start timer _timer_
 	log 1030 step 0 
           place npc _scholar_ at _dung_
+		  reveal _dung_
 
 _begin_ task:
           clicked npc _scholar_
