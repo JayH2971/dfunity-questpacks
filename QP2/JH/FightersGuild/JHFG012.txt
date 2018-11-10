@@ -43,7 +43,8 @@ Message:  1032
  named _dummy_ in ___res_
  on behalf of the city. I have
  =2res_ days to do it, and can
- get my reward any time after that.
+ get my reward in ___questgiver_
+ any time after that.
 
 QBN:
 Person _questgiver_ group Questor male
