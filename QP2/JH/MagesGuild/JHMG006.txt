@@ -130,10 +130,9 @@ Foe _nme_ is Spellsword
           get item _tri_
 
 _talk_ task:
-         toting _tri_ and _npc_ clicked
+         clicked npc _npc_
          say 1010
          hide npc _npc_
--         create foe _nme_ every 1 minutes 1 times with 100% success
          place foe _nme_ at _dung_
          start timer _battle_
 
