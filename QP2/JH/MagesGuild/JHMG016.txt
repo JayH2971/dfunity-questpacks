@@ -68,10 +68,10 @@ Message:  1015
 <ce> 
 <ce> "That... carried an infectious enchantment.
 <ce> I've been diseased and my magicka has departed
-<ce> from me. Please, I need to be cured. Help me!"
+<ce> from me. Please, I need to be cured. Help me!
+<ce> Cast a spell! A temple will do me no good!"
 <ce> 
 <ce> %g1 begins sweating and breathing heavily.
-<ce> You grab %g2, hoping the effect is not contagious.
 
 Message:  1016
 <ce> _mage_ moans, %g3 footsteps faltering.
@@ -84,14 +84,10 @@ Message:  1016
 
 Message:  1017
 <ce> _mage_ speaks with %g3 eyes closed.
-<ce> 
-<ce> "Is there a temple nearby? Please take me
-<ce> there if you can't cure me. I need help, now."
+<ce> You understand very little of it.
 <--->
 <ce> _mage_ speaks with %g3 eyes closed.
-<ce> 
-<ce> "Do you know how to cure disease? Or can you
-<ce> take me to a temple? Please help me."
+<ce> The words are merely whispers.
 
 Message:  1018
 <ce> _mage_'s breathing is shallow.
@@ -101,15 +97,6 @@ Message:  1018
 <--->
 <ce> _mage_ falls to %g3 feet and vomits profusely.
 <ce> You help %g2 back up and continue on.
-
-Message:  1019
-<ce> _mage_ rushes to have %g3 disease cured.
-<ce> Within moments color returns to %g3 face,
-<ce> and %g1 walks with ordinary vigor.
-<ce> 
-<ce> "%oth! Never could I have imagined my research
-<ce> ending so! Take me to ___qgiver_. I have
-<ce> much to say to _qgiver_. Thank you."
 
 Message:  1020
 <ce> A flash of light begins to consume _mage_'s body.
@@ -121,12 +108,23 @@ Message:  1020
 <ce> scribbles show ___dung_'s location.
 
 Message:  1021
-<ce> Oh, my, thank you for coming here to find me.
-<ce> The daft artifact left me without
-<ce> magicka, and this is no place for me to
-<ce> recover it. Please take me to ___qgiver_.
-<ce> I suppose a word with _qgiver_
-<ce> would do me well at this point.
+<ce> _mage_ comes into view, apparently
+<ce> searching for the exit. With great
+<ce> relief %g1 waves to you.
+<ce> 
+<ce> "Oh, my, thank you for coming here to find me.
+<ce> The daft artifact left me without magicka, leaving
+<ce> flight as my only option in this cave. Please take
+<ce> me to ___qgiver_. I suppose a word with
+<ce> _qgiver_ would do me well at this point."
+
+Message:  1022
+<ce> Color returns to _mage_'s face, and
+<ce> %g1 walks with ordinary vigor.
+<ce> 
+<ce> "%oth! Never could I have imagined my research
+<ce> ending so! Take me to ___qgiver_. I have
+<ce> much to say to _qgiver_. Thank you."
 
 Message:  1030
 %qdt:
@@ -149,6 +147,7 @@ Clock _bad1_ 0:06 0:12
 Clock _bad2_ 00:05 00:08
 Clock _bad3_ 00:10 00:12
 Clock _death_ 1:00
+Clock _wander_ 8:00 1.01:00
 
 Place _res_ remote house2
 Place _dung_ remote dungeon
@@ -164,14 +163,6 @@ Item _reward_ magic_item
     place npc _mage_ at _res_
     pc at _res_ set _inside_
     pc at _dung_ set _idun_
-
-_temp_ task:
-    when pc enters temple
-    clear _tempout_
-
-_tempout_ task:
-    when pc exits temple
-    clear _temp_
 
 variable _inside_
 
@@ -192,6 +183,7 @@ _dis_ task:
     say 1015
     hide npc _mage_
     add _mage_ face
+    cast Cure_Disease spell do _cure_
 
 _bad1_ task:
     start timer _bad2_
@@ -209,25 +201,26 @@ _death_ task:
     say 1003
     end quest
 
-_cure1_ task:
-    when _dis_ and _temp_
-    say 1019
+_cure_ task:
+    say 1022
     stop timer _bad1_
     stop timer _bad2_
     stop timer _bad3_
     stop timer _death_
     start task _vict_
 
--_cure2_ task:
--requires cure disease spell trigger
-
 _tel_ task:
     say 1020
     hide npc _mage_
-    place npc _mage_ at _dung_
     log 1031 step 1
+    reveal _dung_
 
-variable _idun_
+_idun_ task:
+    start timer _wander_
+
+_notidun_ task:
+    when not _idun_
+    stop timer _wander_
 
 _conv2_ task:
     when _conv_ and _idun_
@@ -235,8 +228,13 @@ _conv2_ task:
     add _mage_ face
     setvar _vict_
 
-variable _vict_
+_wander_ task:
+    when _idun_ and _wander_
+    say 1021
+    add _mage_ face
+    setvar _vict_
 
+variable _vict_
 _pcreward_ task:	
 	when _qgclicked_ and _vict_ 
     give pc _reward_

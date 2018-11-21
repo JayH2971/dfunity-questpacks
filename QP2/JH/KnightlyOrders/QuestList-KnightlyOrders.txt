@@ -15,7 +15,7 @@ JHKN004, KnightlyOrder, M, 20, a quest to defend a city from an invasion of knig
 JHKN005, KnightlyOrder, M, 0, a quest to retrieve and deliver evidence of a murder
 JHKN006, KnightlyOrder, M, 0, a quest to retrieve a weapon from a murderer in a dungeon
 JHKN007, KnightlyOrder, M, 60, a quest to resolve a mysterious murder spree near a local shop
-JHKN008, KnightlyOrder, M, 5, a quest to stop an assassination attempt by orcs in a palace
+JHKN008, KnightlyOrder, M, 15, a quest to stop an assassination attempt by orcs in a palace
 JHKN009, KnightlyOrder, M, 15, a quest to end a cult of necromancer giants
 JHKN010, KnightlyOrder, M, 0, a quest to take a weapon to a fellow knight
 JHKN011, KnightlyOrder, M, 0, a quest to find a missing knight

@@ -4,9 +4,8 @@ DisplayName: An Illusory Hunt
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                My dear %pcf, do you remember what
-<ce>                you were told when we inducted you
-<ce>                 into the guild? "Too much power in too
+<ce>                My dear %pcf, we often tell our newest
+<ce>                inductees to the guild, "Too much power in too
 <ce>                  little time has destroyed many." Sadly,
 <ce>                  not all our students take heed of that
 <ce>                  warning, and we currently have a bit of
