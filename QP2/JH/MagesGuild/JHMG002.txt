@@ -196,7 +196,7 @@ _S.11_ task:
 	prompt 1041 yes _S.12_ no _fail_
 
 _S.12_ task:
-	pick one of _S.13_ _S.14_
+	pick one of _S.13_ _S.14_ _success_
 
 _S.13_ task:
 	prompt 1043 yes _S.15_ no _fail_
@@ -205,7 +205,7 @@ _S.14_ task:
 	prompt 1044 yes _fail_ no _S.15_
 
 _S.15_ task:
-	pick one of _S.16_ _S.17_
+	pick one of _S.16_ _S.17_ _success_
 
 _S.16_ task:
 	prompt 1052 yes _S.18_ no _fail_
@@ -214,7 +214,7 @@ _S.17_ task:
 	prompt 1053 yes _fail_ no _S.18_
 
 _S.18_ task:
-	pick one of _S.19_ _S.20_
+	pick one of _S.19_ _S.20_ _success_
 
 _S.19_ task:
 	prompt 1055 yes _fail_ no _success_

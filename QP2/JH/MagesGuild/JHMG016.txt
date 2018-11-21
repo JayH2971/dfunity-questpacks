@@ -19,7 +19,7 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce> Our beloved colleague spends %g3 time in
 <ce> _res_ of ___res_. I know of the
-<ce> subject matter, but I do not voice it aloud, for I know
+<ce> subject matter, but I do not speak it aloud, for I know
 <ce> some will not recover from the shame of having their
 <ce> acts voiced abroad. I merely say %g1 needs to stop, now.
 <ce> Please make haste. You will be held responsible for

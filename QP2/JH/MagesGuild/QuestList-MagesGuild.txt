@@ -8,7 +8,7 @@
 
 schema: *name, group, membership, minRep, notes
 
-JHMG001, MagesGuild, M, 0, a quest to slay a shapeshifting mage in a dungeon
+JHMG001, MagesGuild, M, 5, a quest to slay a shapeshifting mage in a dungeon
 JHMG002, MagesGuild, M, 5, a quest to convince a scholar to leave a dungeon via quiz
 JHMG003, MagesGuild, M, 10, a quest to slay a necromancer in a residence
 JHMG004, MagesGuild, M, 5, a quest to assist a researcher in slaying an atronach
@@ -23,7 +23,9 @@ JHMG012, MagesGuild, M, 60, a quest to stop a powerful former member
 JHMG013, MagesGuild, M, 0, a quest to bring a wandering atronach home
 JHMG014, MagesGuild, M, 50, a quest to obtain a report on vampirism
 JHMG015, MagesGuild, M, 10, a quest to defend a shapeshifted member
-JHMG016, MagesGuild, M, 30, a quest to rescue an ambitious experimenter
+JHMG016, MagesGuild, M, 20, a quest to rescue an ambitious experimenter
+-JHMG017, MagesGuild, M, 0, a quest to identify a document
+JHMG018, MagesGuild, M, 10, a quest to purify and deliver a poisoned liquid
 -JHMGX00, MagesGuild, M, 95, a quest to investigate an ancient lich
 -JHMGX01, MagesGuild, P, 0, offered via JHMGX00
 -go to various NPCs in cities to pick up needed ingredients
