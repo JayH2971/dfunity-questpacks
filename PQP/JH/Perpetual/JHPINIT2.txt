@@ -40,7 +40,7 @@ Clock _end_ 36.00:00
 --   Quest start-up:
      start timer _countdown_
      start timer _end_
-     pick one of _Q1_ _Q2_ _Q3_ _Q4_ _Q5_ _Q6_ _Q7_ _Q8_ _Q9_ _Q10_ _dud_
+     pick one of _Q1_ _Q2_ _Q3_ _Q4_ _Q5_ _Q6_ _Q7_ _Q8_ _Q9_ _Q9_ _Q10_ _dud_
 
 variable _Q1_
 variable _Q2_
@@ -87,11 +87,11 @@ _S7_ task:
 
 _S8_ task:
      when _countdown_ and _Q8_
--     start quest JHPQ018
+     start quest JHPQ018
 
 _S9_ task:
      when _countdown_ and _Q9_
--     start quest JHPQ019
+     start quest JHPQ019
 
 _S10_ task:
      when _countdown_ and _Q10_

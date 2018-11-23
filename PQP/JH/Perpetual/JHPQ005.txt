@@ -85,9 +85,10 @@ Message:  1013
 <ce>       With that out of the way, allow me to present you
 <ce>       your first assignment. This is indeed menial, but
 <ce>       we must ascertain the skill level of each member
-<ce>       by the work they do. Your first assignment is to find 
-<ce>       _target_ in ___target_, a simple test.
-<ce>       I'll give you  =timer_ days to do that and return here.
+<ce>       by the work they do. Your first assignment is
+<ce>       to find  _target_ in ___target_,
+<ce>       a simple test. I'll give you  =timer_ days to do that
+ <ce>      and return here.
 
 Message:  1015
 <ce>     Well, I hope you change your mind. You appear

@@ -15,15 +15,39 @@ RefuseQuest:  [1001]
 <ce> This will be easy money for some other guild member.
 
 AcceptQuest:  [1002]
-<ce> Very well then, here it is. The student, who I will not name,
-<ce> decided to mix a poisonous ingredient into water without boiling
+<ce> Very well then, here it is. The student, who will go unnamed,
+<ce> decided to mix some spider venom into water without boiling
 <ce> it beforehand. As you and I well know, that permits the venom to
 <ce> spread, and now the entire decanter is full of the filthy matter.
 <ce> Thankfully, a simple spell to cure a poison will do the trick.
 <ce> Once you have purified it, take it to _client_, who
 <ce> tends to work in ___res_. You will be paid for the delivery.
 <ce> The reclaimed liquid will actually be useful in certain lesser
-<ce> trials, which we wish to record in an isolated environment.
+<ce> trials which we wish to record in an isolated environment.
+<ce> Quite convenient. And please have this done within
+<ce> =2res_ days for your reward of =reward_ gold pieces.
+<--->
+<ce> Very well then, here it is. The student, who will go unnamed,
+<ce> decided to mix a scorpion stinger into water without boiling
+<ce> it beforehand. As you and I well know, that permits the venom to
+<ce> spread, and now the entire decanter is full of the filthy matter.
+<ce> Thankfully, a simple spell to cure a poison will do the trick.
+<ce> Once you have purified it, take it to _client_, who
+<ce> tends to work in ___res_. You will be paid for the delivery.
+<ce> The reclaimed liquid will actually be useful in certain lesser
+<ce> trials which we wish to record in an isolated environment.
+<ce> Quite convenient. And please have this done within
+<ce> =2res_ days for your reward of =reward_ gold pieces.
+<--->
+<ce> Very well then, here it is. The student, who will go unnamed,
+<ce> decided to mix some snake venom into water without boiling
+<ce> it beforehand. As you and I well know, that permits the venom to
+<ce> spread, and now the entire decanter is full of the filthy matter.
+<ce> Thankfully, a simple spell to cure a poison will do the trick.
+<ce> Once you have purified it, take it to _client_, who
+<ce> tends to work in ___res_. You will be paid for the delivery.
+<ce> The reclaimed liquid will actually be useful in certain lesser
+<ce> trials which we wish to record in an isolated environment.
 <ce> Quite convenient. And please have this done within
 <ce> =2res_ days for your reward of =reward_ gold pieces.
 
