@@ -21,8 +21,8 @@ QuestComplete:  [1004]
 <ce> There are so few of us these days. Let me
 <ce> give you this because of your good example!"
 <ce> 
-<ce> Your sudden friend reaches into a bag and hands you
-<ce> an object before waving farewell.
+<ce> Your sudden friend reaches into a bag and
+<ce> hands you an object before waving farewell.
 
 Message:  1010
 <ce> You become aware of someone waving at you,
@@ -46,17 +46,17 @@ Message:  1012
 <ce> "What a waste of time! Has that ever accomplished anything
 <ce> for you? Let me tell you about something better."
 <ce> 
-<ce> A prolonged conversation about some extremely complex
-<ce> merchandising system takes place. Whatever effort
+<ce> A prolonged conversation about some extremely
+<ce> complex sales system takes place. Whatever effort
 <ce> you put into understanding it is insufficient. Your
 <ce> conversation partner soon gives up and walks away.
 
 Message:  1013
-<ce> "Oh really? Then die!"
+<ce> "Then die!"
 <ce> 
 <ce> A closer look at this person shows bright
 <ce> red eyes under her hood. People of her
-<ce> type have good reason to be weary of deity.
+<ce> type have good reason to be wary of deity.
 
 Message:  1020
 <ce> "Well, it was worth asking."

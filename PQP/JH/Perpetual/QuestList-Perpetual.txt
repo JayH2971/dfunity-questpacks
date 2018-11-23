@@ -31,6 +31,7 @@ JHCGFAL2, Commoner, P, 0, a Cartographer quest component
 JHCGFAL3, Commoner, P, 0, a Cartographer quest component
 JHPINIT, Commoner, P, 0, Perpetual Quest selection
 JHPINIT2, Commoner, P, 0, Perpetual Quest selection
+JHPINIT3, Commoner, P, 0, Perpetual Quest selection
 JHPQ001, Commoner, P, 0, a Perpetual Quest
 JHPQ002, Commoner, P, 0, a Perpetual Quest
 JHPQ003, Commoner, P, 0, a Perpetual Quest
@@ -49,3 +50,4 @@ JHPQ016, Commoner, P, 0, a Perpetual Quest
 JHPQ017, Commoner, P, 0, a Perpetual Quest
 JHPQ018, Commoner, P, 0, a Perpetual Quest
 JHPQ019, Commoner, P, 0, a Perpetual Quest
+JHPQ020, Commoner, P, 0, a Perpetual Quest
