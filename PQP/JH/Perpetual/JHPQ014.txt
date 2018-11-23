@@ -18,7 +18,7 @@ QuestFail:  [1003]
 
 QuestComplete:  [1004]
 <ce>        You may have been falsely accused, but
-<ce>        such a simple matter would have been quickly forgotten.
+<ce>        such a simple matter will quickly be forgotten.
 <ce>        Killing your accuser would have made things worse.
 
 Message:  1010

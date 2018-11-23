@@ -40,47 +40,33 @@ Clock _end_ 20.00:00
 --   Quest start-up:
      start timer _countdown_
      start timer _end_
-     pick one of _Q1_ _Q2_ _Q3_ _Q4_ _Q5_ _Q6_ _Q7_ _dud_
 
-variable _Q1_
-variable _Q2_
-variable _Q3_
-variable _Q4_
-variable _Q5_
-variable _Q6_
-variable _Q7_
 variable _dud_
 
 _countdown_ task:
-     start quest JHPINIT
+    pick one of _Q1_ _Q2_ _Q3_ _Q4_ _Q5_ _Q6_ _Q7_ _dud_
+    start quest JHPINIT
 
-_S1_ task:
-     when _countdown_ and _Q1_
+_Q1_ task:
      start quest JHPQ015
 
-_S2_ task:
-     when _countdown_ and _Q2_
+_Q2_ task:
      start quest JHPQ016
 
-_S3_ task:
-     when _countdown_ and _Q3_
+_Q3_ task:
      start quest JHPQ017
 
-_S4_ task:
-     when _countdown_ and _Q4_
+_Q4_ task:
      start quest JHPQ018
 
-_S5_ task:
-     when _countdown_ and _Q5_
+_Q5_ task:
      start quest JHPQ019
 
-_S6_ task:
-     when _countdown_ and _Q6_
+_Q6_ task:
      start quest JHPQ020
 
-_S7_ task:
-     when _countdown_ and _Q7_
--     start quest JHPQ021
+_Q7_ task:
+     start quest JHPQ021
 
 _return_ task:
     when _countdown_ and not _Q1_ and not _Q2_ and not _Q3_ and not _Q4_ and not _Q5_ and not _Q6_ and not _Q7_
