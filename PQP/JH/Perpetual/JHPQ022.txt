@@ -1,0 +1,40 @@
+-- Perpetual Quest
+Quest: JHPQ022
+DisplayName: Send for the Priest
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ022
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ022
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ022
+
+QuestFail:  [1003]
+<ce>          ERROR 1003 JHPQ022
+
+QuestComplete:  [1004]
+<ce>          ERROR 1004 JHPQ022
+
+Message:  1010
+<ce> You recall some recent talk concerning an outbreak of
+<ce> Swamp Rot in %crn. You wonder whether you have come
+<ce> into contact with some of the infected.
+
+QBN:
+Clock _timer_ 0:05
+
+--	Quest start-up:
+	start timer _timer_
+    say 1010
+    pick one of _dis_ _dud_
+
+variable _dud_
+_dis_ task:
+    make pc ill with Swamp_Rot
+
+_timer_ task:
+   end quest

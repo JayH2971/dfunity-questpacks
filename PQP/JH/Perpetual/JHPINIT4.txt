@@ -1,22 +1,22 @@
-Quest: JHPINIT3
-DisplayName: PERPET INIT3
+Quest: JHPINIT4
+DisplayName: PERPET INIT4
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>           JHPINIT3 1000
+<ce>           JHPINIT4 1000
 
 RefuseQuest:  [1001]
-<ce>           JHPINIT3 1001
+<ce>           JHPINIT4 1001
 
 AcceptQuest:  [1002]
-<ce>           JHPINIT3 1002
+<ce>           JHPINIT4 1002
 
 QuestFail:  [1003]
-<ce>           JHPINIT3 1003
+<ce>           JHPINIT4 1003
 
 QuestComplete:  [1004]
-<ce>           JHPINIT3 1004
+<ce>           JHPINIT4 1004
 
 Message:  1010
 <ce>     A gust of wind blows by you unexpectedly.
@@ -45,25 +45,25 @@ variable _dud_
 
 _countdown_ task:
     pick one of _Q1_ _Q2_ _Q3_ _Q4_ _Q5_ _Q6_ _dud_
-    start quest JHPINIT4
+    start quest JHPINIT
 
 _Q1_ task:
-     start quest JHPQ015
+     start quest JHPQ021
 
 _Q2_ task:
-     start quest JHPQ016
+     start quest JHPQ022
 
 _Q3_ task:
-     start quest JHPQ017
+     start quest JHPQ023
 
 _Q4_ task:
-     start quest JHPQ018
+     start quest JHPQ024
 
 _Q5_ task:
-     start quest JHPQ019
+     start quest JHPQ025
 
 _Q6_ task:
-     start quest JHPQ020
+     start quest JHPQ026
 
 _return_ task:
     when _countdown_ and not _Q1_ and not _Q2_ and not _Q3_ and not _Q4_ and not _Q5_ and not _Q6_

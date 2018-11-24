@@ -126,7 +126,9 @@ Clock _timer_ 30.00:00 35.00:00
 Foe _enemy_ is Mummy
 
 --	Quest start-up:
-	start timer _initial_
+_begin_ task:
+        when pc enters city
+        start timer _initial_
           say 1010
           place npc _fey_ at _place_
           log 1030 step 0
@@ -184,5 +186,4 @@ _victory_ task:
 
 _timer_ task:
           say 1003
-          start quest JHFYFAIL
 	end quest

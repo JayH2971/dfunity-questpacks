@@ -1,0 +1,54 @@
+-- Perpetual Quest
+Quest: JHPQ024
+DisplayName: A Filthy Stinking Lich
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ024
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ024
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ024
+
+QuestFail:  [1003]
+<ce>           ERROR 1003 JHPQ024
+
+QuestComplete:  [1004]
+<ce>           ERROR 1004 JHPQ024
+
+Message:  1010
+<ce> Something is very wrong in this graveyard.
+<ce> A lich has gotten the jump on you.
+<ce> 
+<ce> In all likelihood, if you just come
+<ce> back later it'll probably be gone.
+<ce> You notice it holding a magic item
+<ce> among its few possessions.
+
+QBN:
+Clock _failsafe_ 90.00:00
+Clock _timer_ 0:05
+
+Foe _enemy_ is Ancient_lich
+
+Item _reward_ magic_item
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_begin_ task:
+    when pc enters graveyard
+    say 1010
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+    give item _reward_ to _enemy_
+    make _reward_ permanent
+    start timer _timer_
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest

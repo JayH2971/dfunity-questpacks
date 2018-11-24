@@ -34,8 +34,8 @@ Message:  1010
 
 QBN:
 
-Clock _countdown_ 7.00:00 15.00:00
-Clock _end_ 20.00:00
+Clock _countdown_ 7.00:00 9.00:00
+Clock _end_ 10.00:00
 
 --   Quest start-up:
      start timer _countdown_

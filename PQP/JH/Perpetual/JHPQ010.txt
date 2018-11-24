@@ -203,7 +203,7 @@ variable _dud_
 variable _norm_
 
 _wolves_ task:
-         create foe _enemy_ every 5000 minutes 2 times with 100% success
+         create foe _enemy_ every 0 minutes 1 times with 100% success
 
 _slay1_ task:
           killed _enemy_

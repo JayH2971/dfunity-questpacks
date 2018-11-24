@@ -24,7 +24,7 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce>                   You just can't resist, can you %pcf?
 <ce>                   Just remember, this isn't murder. We're lawfully
-<ce>                   contracted by the %t in this. Get down
+<ce>                   contracted by the %t for this. Get down
 <ce>                   to __dungeon_ and back here in
 <ce>                   =timer_ days, and I'll have your _reward_ gold here.
 <ce>                   

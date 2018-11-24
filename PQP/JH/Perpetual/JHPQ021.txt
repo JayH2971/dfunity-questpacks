@@ -1,6 +1,6 @@
 -- Perpetual Quest
 Quest: JHPQ021
-DisplayName: 
+DisplayName: Boisterous Bellow
 -- Message panels
 QRC:
 
@@ -26,14 +26,14 @@ Message:  1010
 <ce> 
 <ce> "Ha ha ha! Now for my next target! Go, my pets!"
 <ce> 
-<ce> Two skeletons arise and move to attack you.
+<ce> Two skeletons rise up and move to attack you.
 <--->
 <ce> You hear the sound of magic working nearby.
 <ce> A mage appears out of thin air.
 <ce> 
 <ce> "Look, my pets! See the %ra! Kill!"
 <ce> 
-<ce> Two skeletons arise and move to attack you.
+<ce> Two skeletons rise up and move to attack you.
 
 QBN:
 Clock _timer_ 0:30

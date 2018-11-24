@@ -40,12 +40,12 @@ QuestComplete:  [1004]
 <ce>           what they said belonged to you.
 
 Message:  1018
-<ce>           Ah, our guard for the night! Please
-<ce>       move about freely. We're under your care.
+<ce>           "Ah, our guard for the night! Please
+<ce>       move about freely. We're under your care."
 <--->
-<ce>           Is that our guard for the night?
+<ce>           "Is that our guard for the night?
 <ce>            Make yourself comfortable,
-<ce>             wherever you please.
+<ce>             wherever you please."
 
 Message:  1020
 <ce>                 We would have been killed

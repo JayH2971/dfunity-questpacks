@@ -1,0 +1,47 @@
+-- Perpetual Quest
+Quest: JHPQ025
+DisplayName: Fresh Graves
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ025
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ025
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ025
+
+QuestFail:  [1003]
+<ce>           ERROR 1003 JHPQ025
+
+QuestComplete:  [1004]
+<ce>           ERROR 1004 JHPQ025
+
+Message:  1010
+<ce> It seems as though several bodies were recently
+<ce> buried in shallow graves. A miasma rises from the
+<ce> earth, hinting at disease.
+
+QBN:
+Clock _failsafe_ 90.00:00
+Clock _timer_ 0:05
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_begin_ task:
+    when pc enters graveyard
+    say 1010
+    pick one of _dis_ _dud_
+
+variable _dud_
+_dis_ task:
+    make pc ill with Brain_Fever
+
+_timer_ task:
+   end quest
+
+_failsafe_ task:
+    end quest
