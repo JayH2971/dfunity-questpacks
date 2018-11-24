@@ -23,7 +23,7 @@ QuestComplete:  [1004]
 <ce>        members on such trips to calculate distances
 <ce>        and so on. Cartography is a science that
 <ce>        must undergo continual development.
- 
+<ce>
 <ce>        As I said, your early fees will be low.
 <ce>        This time we only have _reward_ gold pieces
 <ce>        allotted for you. But please be patient with
@@ -81,14 +81,14 @@ Message:  1013
 <ce>       and depends on the generosity of our donors.
 <ce>       We hope to improve on it, but at the start you
 <ce>       may only be earning your own travel expenses.
- 
+<ce>
 <ce>       With that out of the way, allow me to present you
 <ce>       your first assignment. This is indeed menial, but
 <ce>       we must ascertain the skill level of each member
 <ce>       by the work they do. Your first assignment is
 <ce>       to find  _target_ in ___target_,
 <ce>       a simple test. I'll give you  =timer_ days to do that
- <ce>      and return here.
+<ce>      and return here.
 
 Message:  1015
 <ce>     Well, I hope you change your mind. You appear

@@ -28,10 +28,10 @@ QuestComplete:  [1004]
 Message:  1010
 <ce>        You hear a desperate cry nearby. Turning,
 <ce>        you see a man fleeing a few soldiers.
- 
+<ce>
 <ce>        "Please! Someone help! Helseth's
 <ce>        out to kill me! Quickly!"
- 
+<ce>
 <ce>        The others arm their bows and motion
 <ce>        to you to stay out of it. Do you intervene?
 
@@ -42,9 +42,9 @@ Message:  1011
 
 Message:  1012
 <ce>        "You've saved my life! My savior! My champion!"
- 
+<ce>
 <ce>        After catching his breath, he continues.
- 
+<ce>
 <ce>        "My name is _qg_. I need to make
 <ce>        the people aware of what Helseth has been doing
 <ce>        outside of his father's court. Please lead me to

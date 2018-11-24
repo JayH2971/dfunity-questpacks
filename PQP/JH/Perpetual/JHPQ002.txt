@@ -40,8 +40,8 @@ Message:  1012
 
 Message:  1013
 <ce>        This unlearned warlord shouts bitterly in
-<ce>        its crudely learned language. Some of
-<ce>        the few words you understand are
+<ce>        its crude version of Orcish language. Some
+<ce>        of the few words you understand are
 <ce>        "%ra," "kill," and "now."
 
 Message:  1030
