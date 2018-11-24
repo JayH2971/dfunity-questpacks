@@ -42,6 +42,22 @@ Message:  1012
 <ce> Once it falls they burn it and spread its ashes, and
 <ce> then return to their business.
 
+Message:  1020
+<ce> Curiously, you see a spriggan rooting up
+<ce> some of the crops. People look around with fear,
+<ce> and some prepare torches and gardening tools
+<ce> in an attempt to defend the property. The creature
+<ce> ignores their stance, offended at the cruel
+<ce> captivity of the surrounding plants.
+<ce> 
+<ce> Before a fight can break out, you speak to the spriggan
+<ce> in its croaking, dissonant language. It stands up straight
+<ce> and pauses to listen. You tell it that the people nearby
+<ce> will use fire to defend their property if they must.
+<ce> Looking around, the spriggan decides that the moral
+<ce> victory is not worth death, and tramples off into
+<ce> the great outdoors.
+
 QBN:
 Clock _timer_ 1.00:00
 Clock _failsafe_ 60.00:00
@@ -53,8 +69,20 @@ Item _reward1_ gold range 151 to 349
 --	Quest start-up:
     start timer _failsafe_
 
+_adv_ task:
+    when skill Spriggan is at least 40
+
 _begin_ task:
     when pc enters farmhome
+
+_paci_ task:
+    when _begin_ and _adv_
+    say 1020
+    give pc _reward1_
+    end quest
+
+_tro_ task:
+    when _begin_ and not _adv_
     prompt 1010 yes _try_ no _quit_
     start timer _timer_
 
