@@ -64,6 +64,7 @@ Message:  1020
 <ce> You are left alone.
 
 QBN:
+Clock _failsafe_ 10.00:00
 Clock _timer_ 0:30
 
 Foe _barb_ is Barbarian
@@ -72,7 +73,11 @@ Foe _vamp_ is Vampire
 Item _reward_ magic_item
 
 --	Quest start-up:
-	start timer _timer_
+    start timer _failsafe_
+
+_enter_ task:
+    when pc enters city
+    start timer _timer_
     prompt 1010 yes _begin_ no _quit_
 
 _quit_ task:
@@ -100,3 +105,6 @@ _4_ task:
 
 _timer_ task:
    end quest
+
+_failsafe_ task:
+    end quest

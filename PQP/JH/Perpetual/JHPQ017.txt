@@ -101,3 +101,6 @@ _fleewin_ task:
 
 _timer_ task:
         end quest
+
+_failsafe_ task:
+    end quest

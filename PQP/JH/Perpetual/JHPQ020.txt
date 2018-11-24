@@ -61,6 +61,7 @@ Message:  1020
 <ce> An awkward silence follows, and your pursuer turns away.
 
 QBN:
+Clock _failsafe_ 10.00:00
 Clock _timer_ 0:30
 
 Foe _ran_ is Ranger
@@ -68,7 +69,11 @@ Foe _ran_ is Ranger
 Item _reward_ gold range 100 to 850
 
 --	Quest start-up:
-	start timer _timer_
+    start timer _failsafe_
+
+_enter_ task:
+    when pc enters city
+    start timer _timer_
     prompt 1010 yes _quit_ no _begin_
 
 _quit_ task:
@@ -92,3 +97,6 @@ _3_ task:
 
 _timer_ task:
    end quest
+
+_failsafe_ task:
+    end quest
