@@ -1,0 +1,64 @@
+-- Perpetual Quest
+Quest: JHPQ030
+DisplayName: Bumbling Duo
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ030
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ030
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ030
+
+QuestFail:  [1003]
+<ce>           ERROR 1003 JHPQ030
+
+QuestComplete:  [1004]
+<ce> ERROR 1004 JHPQ030
+
+Message:  1010
+<ce> A city of this size will attract some criminal elements.
+<ce> You find a pair of novice burglars looking to score
+<ce> some easy money tonight.
+
+QBN:
+Clock _timer_ 1.00:00
+Clock _failsafe_ 20.00:00
+
+Foe _enemy_ is Burglar
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_level_ task:
+    level 2 completed
+
+_time_ task:
+    daily from 2:00 to 2:30
+
+_enter_ task:
+    when pc enters city
+    clear _exit_
+
+_exit_ task:
+    when pc exits city
+    clear _enter_
+
+_meet_ task:
+    when _time_ and _enter_ and _level_
+    say 1010
+    create foe _enemy_ every 0 minutes 2 times with 100% success
+    start timer _timer_
+
+_slain_ task:
+    killed 2 _enemy_
+    end quest
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest

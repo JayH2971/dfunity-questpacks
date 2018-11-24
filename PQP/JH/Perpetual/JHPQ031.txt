@@ -1,0 +1,53 @@
+-- Perpetual Quest
+Quest: JHPQ031
+DisplayName: A Giant Problem
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ031
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ031
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ031
+
+QuestFail:  [1003]
+<ce>           ERROR 1003 JHPQ031
+
+QuestComplete:  [1004]
+<ce> With the giant felled, no one comes out to thank you.
+<ce> You are left alone with your satisfaction.
+
+Message:  1010
+<ce> A giant wanders this property, pounding various things with
+<ce> its wooden club. The house walls has already suffered some
+<ce> minor dents. Likely looking for something to eat,
+<ce> the creature's beady eyes settle on you.
+
+QBN:
+Clock _timer_ 1.00:00
+Clock _failsafe_ 60.00:00
+
+Foe _enemy_ is Giant
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_begin_ task:
+    when pc enters poorhome
+    start timer _timer_
+    say 1010
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_slain_ task:
+    killed _enemy_
+    give pc nothing
+    end quest
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest

@@ -39,13 +39,28 @@ Item _reward_ magic_item
 --	Quest start-up:
     start timer _failsafe_
 
-_begin_ task:
+_level_ task:
+    level 6 completed
+
+_enter_ task:
     when pc enters graveyard
+    clear _exit_
+
+_exit_ task:
+    when pc exits graveyard
+    clear _enter_
+
+_meet_ task:
+    when _level_ and _enter_
     say 1010
     create foe _enemy_ every 0 minutes 1 times with 100% success
     give item _reward_ to _enemy_
     make _reward_ permanent
     start timer _timer_
+
+_slain_ task:
+    killed _enemy_
+    end quest
 
 _timer_ task:
     end quest

@@ -1,0 +1,73 @@
+Quest: JHPINIT5
+DisplayName: PERPET INIT5
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>           JHPINIT5 1000
+
+RefuseQuest:  [1001]
+<ce>           JHPINIT5 1001
+
+AcceptQuest:  [1002]
+<ce>           JHPINIT5 1002
+
+QuestFail:  [1003]
+<ce>           JHPINIT5 1003
+
+QuestComplete:  [1004]
+<ce>           JHPINIT5 1004
+
+Message:  1010
+<ce>     A gust of wind blows by you unexpectedly.
+<--->
+<ce>     You feel an itch on your nose.
+<--->
+<ce>     You practice pronouncing "%god."
+<--->
+<ce>     You wonder how to write on your map
+<ce>     more efficiently than you do now.
+<--->
+<ce>     You think about your childhood momentarily.
+<--->
+<ce>     You neatly fold your map and put it away.
+
+QBN:
+
+Clock _countdown_ 7.00:00 9.00:00
+Clock _end_ 10.00:00
+
+--   Quest start-up:
+     start timer _countdown_
+     start timer _end_
+
+variable _dud_
+
+_countdown_ task:
+    pick one of _Q1_ _Q2_ _Q3_ _Q4_ _Q5_ _Q6_ _dud_
+    start quest JHPINIT
+
+_Q1_ task:
+     start quest JHPQ027
+
+_Q2_ task:
+     start quest JHPQ028
+
+_Q3_ task:
+     start quest JHPQ029
+
+_Q4_ task:
+     start quest JHPQ030
+
+_Q5_ task:
+     start quest JHPQ031
+
+_Q6_ task:
+-start quest JHPQ032
+
+_return_ task:
+    when _countdown_ and not _Q1_ and not _Q2_ and not _Q3_ and not _Q4_ and not _Q5_ and not _Q6_
+    say 1010
+
+_end_ task:
+    end quest

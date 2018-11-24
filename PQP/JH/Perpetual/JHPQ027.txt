@@ -35,7 +35,7 @@ Message:  1010
 <ce> "Another guard down!" "Someone help!"
 <ce> 
 <ce> If you try to stop this murderer, there may
-<ce> be a reward in it for you. Do you try it?
+<ce> be a reward in it for you. Do you make the attempt?
 <--->
 <ce> You're made aware of some roaring among the
 <ce> townsfolk. A figure runs among the people.
@@ -44,7 +44,7 @@ Message:  1010
 <ce> "The guards are dying!" "We need help!"
 <ce> 
 <ce> If you try to stop this murderer, there may
-<ce> be a reward in it for you. Do you try it?
+<ce> be a reward in it for you. Do you make the attempt?
 
 Message:  1011
 <ce> You draw the foe's attention and begin the duel.
@@ -58,7 +58,7 @@ Message:  1012
 
 QBN:
 Clock _timer_ 1.00:00
-Clock _failsafe_ 90.00:00
+Clock _failsafe_ 30.00:00
 
 Foe _enemy_ is Nightblade
 

@@ -27,7 +27,7 @@ Message:  1010
 <ce>        Do you quickly reach in and take the gold?
 <--->
 <ce>        You notice someone left a wagon unattended here.
-<ce>        It's mostly filled with clothes, folded and tied
+<ce>        It's mostly filled with clothes, folded and marked
 <ce>        for sale. There's also a bag of coins tucked inside.
 <ce>        Do you quickly reach in and take the gold?
 
@@ -45,8 +45,11 @@ Item _reward_ gold
 Foe _enemy_ is Acrobat
 
 --	Quest start-up:
-	start timer _timer_
-          pick one of _hard_ _easy_
+	
+ _enter_ task:
+   when pc enters city
+   start timer _timer_
+   pick one of _hard_ _easy_
 	prompt 1010 yes _begin_ no _quit_
 
 variable _hard_

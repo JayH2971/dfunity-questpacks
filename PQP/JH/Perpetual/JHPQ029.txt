@@ -1,0 +1,67 @@
+-- Perpetual Quest
+Quest: JHPQ029
+DisplayName: Midnight Snack
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ029
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ029
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ029
+
+QuestFail:  [1003]
+<ce>           ERROR 1003 JHPQ029
+
+QuestComplete:  [1004]
+<ce> ERROR 1004 JHPQ029
+
+Message:  1010
+<ce> You become aware of a malicious presence nearby.
+<ce> Anyone daring to feed so openly must be desperate for blood.
+<ce> A quick glance reveals a magical item in its possession.
+
+QBN:
+Clock _timer_ 1.00:00
+Clock _failsafe_ 20.00:00
+
+Foe _enemy_ is Vampire
+Item _reward_ magic_item
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_level_ task:
+    level 5 completed
+
+_time_ task:
+    daily from 3:00 to 3:30
+
+_enter_ task:
+    when pc enters village
+    clear _exit_
+
+_exit_ task:
+    when pc exits village
+    clear _enter_
+
+_meet_ task:
+    when _time_ and _enter_ and _level_
+    say 1010
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+    give item _reward_ to _enemy_
+    make _reward_ permanent
+    start timer _timer_
+
+_slain_ task:
+    killed _enemy_
+    end quest
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest

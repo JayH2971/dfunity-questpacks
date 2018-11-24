@@ -27,7 +27,7 @@ Message:  1010
 <ce> "Leave me! Do not interfere!"
 <ce> 
 <ce> A dark presence hovers over the graveyard.
-<ce> Even one who knew little of magic would know
+<ce> Even one who knew little of magic could tell
 <ce> that this one deals in necromancy.
 <--->
 <ce> A hooded magician stands nearby, chanting loudly.
@@ -37,7 +37,7 @@ Message:  1010
 <ce> "Not a word! Begone!"
 <ce> 
 <ce> A dark presence hovers over the graveyard.
-<ce> Even one who knew little of magic would know
+<ce> Even one who knew little of magic could tell
 <ce> that this one deals in necromancy.
 
 Message:  1011
@@ -53,7 +53,7 @@ Message:  1011
 <ce> rise up from the earth.
 
 QBN:
-Clock _failsafe_ 90.00:00
+Clock _failsafe_ 60.00:00
 Clock _timer_ 1.00:00
 
 Foe _enemy_ is Mage

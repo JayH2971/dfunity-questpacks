@@ -44,7 +44,7 @@ Message:  1012
 
 QBN:
 Clock _timer_ 1.00:00
-Clock _failsafe_ 90.00:00
+Clock _failsafe_ 60.00:00
 
 Foe _enemy_ is Spriggan
 
