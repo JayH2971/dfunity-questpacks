@@ -35,6 +35,11 @@ Message:  1010
 <ce> 
 <ce> Two skeletons rise up and move to attack you.
 
+Message:  1011
+<ce> You know enough about Mysticism to dissipate the
+<ce> skeleton's frail bindings with a quick spell.
+<ce> They crumple back onto the ground, leaving the mage to fight alone.
+
 QBN:
 Clock _timer_ 0:30
 
@@ -47,9 +52,21 @@ Item _reward_ gold range 800 to 1500
 	start timer _timer_
     say 1010
     create foe _enemy_ every 0 minutes 1 times with 100% success
-    create foe _skeleton_ every 0 minutes 2 times with 100% success
     give item _reward_ to _enemy_
     make _reward_ permanent
+    start task _question_
+
+variable _question_
+_unskilled_ task:
+    when _question_ and not _myst_
+    create foe _skeleton_ every 0 minutes 2 times with 100% success
+
+_myst_ task:
+    when skill Mysticism is at least 40
+
+_skilled_ task:
+    when _question_ and _myst_
+    say 1011
 
 _slain1_ task:
     killed 2 _skeleton_

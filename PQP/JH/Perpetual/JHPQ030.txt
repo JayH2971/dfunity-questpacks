@@ -24,6 +24,10 @@ Message:  1010
 <ce> You find a pair of novice burglars looking to score
 <ce> some easy money tonight.
 
+Message:  1011
+<ce> Your considerable weapon skill instills some fear into
+<ce> this pair. One of them begins to doubt this encounter.
+
 QBN:
 Clock _timer_ 1.00:00
 Clock _failsafe_ 20.00:00
@@ -33,6 +37,31 @@ Foe _enemy_ is Burglar
 --	Quest start-up:
     start timer _failsafe_
 
+_skill1_ task:
+    when skill Hand-to-Hand is at least 50
+    start task _adv_
+
+_skill2_ task:
+    when skill Axes is at least 50
+    start task _adv_
+
+_skill3_ task:
+    when skill Archery is at least 50
+    start task _adv_
+
+_skill4_ task:
+    when skill Long_Blade is at least 50
+    start task _adv_
+
+_skill5_ task:
+    when skill Short_Blade is at least 50
+    start task _adv_
+
+_skill6_ task:
+    when skill Blunt_Weapon is at least 50
+    start task _adv_
+
+variable _adv_
 _level_ task:
     level 2 completed
 
@@ -52,6 +81,13 @@ _meet_ task:
     say 1010
     create foe _enemy_ every 0 minutes 2 times with 100% success
     start timer _timer_
+    start task _ready_
+
+variable _ready_
+_ready2_ task:
+    when _ready_ and _adv_
+    say 1011
+    restrain foe _enemy_
 
 _slain_ task:
     killed 2 _enemy_

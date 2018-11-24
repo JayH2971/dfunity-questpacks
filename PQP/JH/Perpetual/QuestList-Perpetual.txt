@@ -62,3 +62,4 @@ JHPQ028, Commoner, P, 0, a Perpetual Quest
 JHPQ029, Commoner, P, 0, a Perpetual Quest
 JHPQ030, Commoner, P, 0, a Perpetual Quest
 JHPQ031, Commoner, P, 0, a Perpetual Quest
+JHPQ032, Commoner, P, 0, a Perpetual Quest

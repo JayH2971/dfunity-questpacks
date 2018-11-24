@@ -63,7 +63,7 @@ _Q5_ task:
      start quest JHPQ031
 
 _Q6_ task:
--start quest JHPQ032
+    start quest JHPQ032
 
 _return_ task:
     when _countdown_ and not _Q1_ and not _Q2_ and not _Q3_ and not _Q4_ and not _Q5_ and not _Q6_

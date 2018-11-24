@@ -23,7 +23,7 @@ QuestComplete:  [1004]
 Message:  1010
 <ce>        You take a note hanging from your enemy's pocket.
 <--->
-<ce>        Your attacker had a loose note in hanging from
+<ce>        Your attacker had a loose note hanging from
 <ce>        a pocket, which you put into your pack.
 
 Message:  1011
@@ -81,7 +81,7 @@ Person _name3_ group Resident3
 Person _name4_ group Resident3
 
 Foe _enemy_ is Acrobat
-Foe _boss_ is Nightblade
+Foe _boss_ is Assassin
 Foe _chief_ is Nightblade
 Foe _lord_ is Nightblade
 
@@ -91,6 +91,9 @@ Place _place3_ remote house2
 
 --	Quest start-up:
   start timer _timer_
+
+   _enter_ task:
+   when pc enters templehome
 	create foe _enemy_ every 0 minutes 1 times with 100% success
 
 _slain1_ task:

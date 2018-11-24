@@ -22,13 +22,12 @@ QuestComplete:  [1004]
 <ce>        to. Now you know what drove them mad.
 
 Message:  1010
-<ce>        You sense a hostile presence nearby, one that
-<ce>        disturbs you to an uncommon degree. The sound
+<ce>        You sense a hostile presence nearby. The sound
 <ce>        of gnashing teeth and frothing mouths fills the air.
 
 Message:  1011
 <ce>        This enemy's eyes are blood red. Incoherent
-<ce>        word fragments flow into the air meaninglessly.
+<ce>        word fragments flow into the air without meaning.
 
 QBN:
 Clock _failsafe_ 20.00:00

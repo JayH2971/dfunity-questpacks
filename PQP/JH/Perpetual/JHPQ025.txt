@@ -24,6 +24,10 @@ Message:  1010
 <ce> buried in shallow graves. A miasma rises from the
 <ce> earth, hinting at disease.
 
+Message:  1011
+<ce> Your Medical skill grants you knowledge sufficient
+<ce> to avoid the malignant gas. You suffer no infection.
+
 QBN:
 Clock _failsafe_ 60.00:00
 
@@ -36,8 +40,20 @@ _begin_ task:
     pick one of _dis_ _dud_
 
 variable _dud_
-_dis_ task:
+variable _dis_
+
+_skilled_ task:
+    when _dis_ and _medical_
+    say 1011
+    end quest
+
+_unskilled_ task:
+    when _dis_ and not _medical_
     make pc ill with Brain_Fever
+    end quest
+
+_medical_ task:
+    when skill Medical is at least 50
 
 _failsafe_ task:
     end quest

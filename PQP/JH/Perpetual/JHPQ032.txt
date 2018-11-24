@@ -25,6 +25,15 @@ Message:  1010
 <ce> you see here could be preparing the way for others
 <ce> or working alone. All the same, he begins to move.
 
+Message:  1011
+<ce> Your knowledge of Thaumaturgy allows you to get out a
+<ce> quick cantrip to pacify the vampire. It won't hold forever,
+<ce> but it gives you the advantage.
+
+Message:  1012
+<ce> Your expert level of stealth lets you evade the vampire's
+<ce> tracking. He stops, trying to get his bearings on you.
+
 QBN:
 Clock _timer_ 1.00:00
 Clock _failsafe_ 60.00:00
@@ -36,6 +45,12 @@ Foe _enemy_ is Ancient_vampire
 
 _level_ task:
     level 6 completed
+
+_thau_ task:
+    when skill Thaumaturgy is at least 80
+
+_stealth_ task:
+    when skill Stealth is at least 95
 
 _time_ task:
     daily from 0:01 to 3:00
@@ -53,6 +68,18 @@ _meet_ task:
     say 1010
     create foe _enemy_ every 0 minutes 1 times with 100% success
     start timer _timer_
+    start task _spawn_
+
+variable _spawn_
+_safe1_ task:
+    when _spawn_ and _thau_
+    say 1011
+    restrain foe _enemy_
+
+_safe2_ task:
+    when _spawn_ and _stealth_
+    say 1012
+    restrain foe _enemy_
 
 _slain_ task:
     killed _enemy_

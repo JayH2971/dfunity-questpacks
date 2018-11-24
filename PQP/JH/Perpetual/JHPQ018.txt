@@ -43,6 +43,11 @@ Message:  1012
 Message:  1013
 <ce> You have survived the ambush.
 
+Message:  1021
+<ce> You quickly speak a cantrip of Thaumaturgy,
+<ce> assuming the worst. The vampire's mind turns blank
+<ce> and she ceases the attack.
+
 Message:  1030
 %qdt:
  I am escorting a woman to
@@ -87,11 +92,21 @@ _fight_ task:
     say 1012
     create foe _enemy_ every 0 minutes 1 times with 100% success
     start timer _timer_
+    start task _ambu_
 
+variable _ambu_
 _slain_ task:
    killed _enemy_
    say 1013
    end quest
+
+_thaum_ task:
+    when skill Thaumaturgy is at least 50
+
+_adv_ task:
+    when _thaum_ and _ambu_
+    say 1021
+    restrain foe _enemy_
 
 _victory_ task:
     when _safe_ and _arrive_

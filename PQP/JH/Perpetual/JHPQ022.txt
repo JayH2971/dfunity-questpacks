@@ -24,6 +24,13 @@ Message:  1010
 <ce> Swamp Rot in %crn. You wonder whether you have come
 <ce> into contact with some of the infected.
 
+Message:  1011
+<ce> Out of an abundance of caution you gather
+<ce> some nearby ingredients using your Medical
+<ce> skill and mix them into a bitter liquid which
+<ce> you then drink. If you were at risk for getting
+<ce> infected, this should be sufficient to ward it off.
+
 QBN:
 Clock _timer_ 0:05
 
@@ -33,8 +40,21 @@ Clock _timer_ 0:05
     pick one of _dis_ _dud_
 
 variable _dud_
-_dis_ task:
+    pick one of _dis_ _dud_
+
+variable _dis_
+_skilled_ task:
+    when _dis_ and _medical_
+    say 1011
+    end quest
+
+_unskilled_ task:
+    when _dis_ and not _medical_
     make pc ill with Swamp_Rot
+    end quest
+
+_medical_ task:
+    when skill Medical is at least 50
 
 _timer_ task:
    end quest

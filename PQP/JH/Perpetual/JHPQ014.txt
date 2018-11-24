@@ -42,6 +42,14 @@ Message:  1012
 <ce>        out of hand. This bodes poorly for you once
 <ce>        word of it gets around.
 
+Message:  1020
+<ce> For some this might have been a difficult situation,
+<ce> but for one of your speaking ability it is child's play.
+<ce> You concisely and simply explain where you have been
+<ce> for the last few hours, which is enough to convince
+<ce> your accuser of your innocence. After some sincere
+<ce> apologies you are left alone.
+
 QBN:
 Clock _timer_ 0:30
 
@@ -51,8 +59,21 @@ Item _gem_ gem
 
 --	Quest start-up:
 	start timer _timer_
-          say 1010
-          create foe _enemy_ every 0 minutes 1 times with 100% success
+   say 1010
+   start task _question_
+
+variable _question_
+_etiq_ task:
+   when skill Etiquette is at least 40
+
+_avoid_ task:
+   when _question_ and _etiq_
+   say 1020
+   end quest
+
+_noavoid_ task:
+   when _question_ and not _etiq_
+   create foe _enemy_ every 0 minutes 1 times with 100% success
 
 _inj_ task:
    injured _enemy_

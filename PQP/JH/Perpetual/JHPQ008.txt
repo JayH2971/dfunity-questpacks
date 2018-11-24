@@ -18,7 +18,7 @@ QuestFail:  [1003]
 <ce>   I'll make it on my own from here."
  
 <ce>   Though addled, the woman is determined to get
-<ce>   to __farm_ as quickly as possible.
+<ce>   to ___farm_ as quickly as possible.
 
 QuestComplete:  [1004]
 <ce>        You pocket the money and prepare to move on.
@@ -40,11 +40,11 @@ Message:  1012
 <ce>        With her pursuers dead, the woman starts sobbing,
 <ce>        kneeling on the ground. She takes several minutes
 <ce>        to regain her composure before speaking.
- 
+<ce>
 <ce>        "I don't feel safe in my own house now. Please
-<ce>        take me to __farm_. No one knows
+<ce>        take me to ___farm_. No one knows
 <ce>        about it. I'll be okay there. Please, let's go."
- 
+<ce>
 <ce>        With no apparent witnesses, you have a choice.
 <ce>        You could escort her to the farm house, or
 <ce>        you could take her life for whatever money she's
@@ -54,7 +54,7 @@ Message:  1013
 <ce>        She still shakes as you help her off the ground.
 <ce>        It's likely she'll be affected by this for quite
 <ce>        awhile. She gets behind you silently, and
-<ce>        you move together for __farm_.
+<ce>        you move together for ___farm_.
 
 Message:  1014
 <ce>       The woman's pursuers quickly grab her and heave her
@@ -64,7 +64,7 @@ Message:  1014
 Message:  1015
 <ce>       Before she can so much as react, your blow leaves
 <ce>       her slumping on the ground, dead. In her pockets
-<ce>       you find _steal_ gold, likely for her travel expenses.
+<ce>       you find =steal_ gold, likely for her travel expenses.
 <ce>       You hope people assume she died of the wounds
 <ce>       previously inflicted on her.
 
@@ -72,7 +72,7 @@ Message:  1016
 <ce>        The woman can't restrain herself from giving you
 <ce>        a heartfelt hug. She then hurries into the house.
 <ce>        After a few minutes, a man steps out to speak to you.
- 
+<ce>
 <ce>        "Thank you, from the bottom of my heart, for
 <ce>        bringing my cousin here. ____farm_ is
 <ce>        rapidly turning into the cesspool of the Iliac Bay.
@@ -84,7 +84,7 @@ Message:  1016
 Message:  1030
 %qdt:
  I am leading a woman to a safe place,
- __farm_, away from her pursuers.
+ ___farm_, away from her pursuers.
  I don't want to take longer than
  =timer_ days to get her there.
 

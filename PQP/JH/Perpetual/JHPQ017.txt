@@ -49,6 +49,14 @@ Message:  1021
 <ce>      (like inside an enclosed cage or at the bottom of a chute. If so,)
 <ce>      (make a save and try the console command "teleport" to get out.)
 
+Message:  1040
+<ce> You refuse their demand and state that the %rt
+<ce> will not tolerate such incursions on civilized land.
+<ce> The orcs are surprised at your mastery of their language
+<ce> and assume you are a person of unusual importance.
+<ce> Before you can turn around, they have already stalked
+<ce> off to search for someone else to abduct.
+
 QBN:
 Clock _timer_ 1.00:00
 Clock _failsafe_ 90.00:00
@@ -82,11 +90,21 @@ _escape_ task:
          give pc nothing
          end quest
 
-_flee_ task:
+variable _flee_
+_orc_ task:
+        when skill Orcish is at least 40
+
+_branch1_ task:
+        when _flee_ and not _orc_
         say 1011
         create foe _orc1_ every 0 minutes 1 times with 100% success
         create foe _orc2_ every 0 minutes 1 times with 100% success
         start timer _timer_
+
+_branch2_ task:
+        when _flee_ and _orc_
+        say 1040
+        end quest
 
 _slay1_ task:
         killed _orc1_

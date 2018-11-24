@@ -26,9 +26,9 @@ Message:  1010
 <ce>        figure presses a small bag into your hands
 <ce>        while passing by, only managing to say
 <ce>        in a harsh whisper,
- 
+<ce>
 <ce>        "_qg_ in ___place_. Hurry."
- 
+<ce>
 <ce>        Do you put the object into your bag?
 
 Message:  1011
@@ -43,10 +43,10 @@ Message:  1013
 <ce>       You let the item slip out of your hands and drop
 <ce>       to the ground. One of the armed pursuers stops
 <ce>       to pick it up and speak to you.
- 
+<ce>
 <ce>       "Thank you for not helping %g2. We'll catch that
 <ce>       pond scum within the hour. Leave it to us."
- 
+<ce>
 <ce>       The warrior rushes off to catch up to
 <ce>       the others, and you are left alone.
 

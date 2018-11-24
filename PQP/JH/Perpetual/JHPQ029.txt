@@ -24,6 +24,15 @@ Message:  1010
 <ce> Anyone daring to feed so openly must be desperate for blood.
 <ce> A quick glance reveals a magical item in its possession.
 
+Message:  1011
+<ce> Your knowledge of Thaumaturgy allows you to get out a
+<ce> quick cantrip to pacify the vampire. It won't hold forever,
+<ce> but it gives you the advantage.
+
+Message:  1012
+<ce> Vampires can be stealthy, but you can do better.
+<ce> Your enemy fails to track, giving you the upper hand.
+
 QBN:
 Clock _timer_ 1.00:00
 Clock _failsafe_ 20.00:00
@@ -33,6 +42,12 @@ Item _reward_ magic_item
 
 --	Quest start-up:
     start timer _failsafe_
+
+_stealth_ task:
+    when skill Stealth is at least 70
+
+_thau_ task:
+    when skill Thaumaturgy is at least 50
 
 _level_ task:
     level 5 completed
@@ -55,6 +70,18 @@ _meet_ task:
     give item _reward_ to _enemy_
     make _reward_ permanent
     start timer _timer_
+    start task _spawn_
+
+variable _spawn_
+_safe1_ task:
+    when _spawn_ and _thau_
+    say 1011
+    restrain foe _enemy_
+
+_safe2_ task:
+    when _spawn_ and _stealth_
+    say 1012
+    restrain foe _enemy_
 
 _slain_ task:
     killed _enemy_

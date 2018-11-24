@@ -37,6 +37,10 @@ Message:  1011
 <ce>        
 <ce>        "Thief! Thief, get away from my cart!"
 
+Message:  1012
+<ce> Someone of lesser skill might have been caught,
+<ce> but a pickpocket of your level can easily reach inside.
+
 QBN:
 Clock _timer_ 1:00
 
@@ -56,14 +60,23 @@ variable _hard_
 variable _easy_
 variable _begin_
 
+_pick_ task:
+   when skill Pickpocket is at least 20
+
 _fight_ task:
-    when _hard_ and _begin_
+    when _hard_ and _begin_ and not _pick_
     say 1011
     create foe _enemy_ every 0 minutes 1 times with 100% success
 
+_nofight_ task:
+    when _hard_ and _begin_ and _pick_
+    say 1012
+    give pc _reward_
+    end quest
+
 _slain_ task:
    killed _enemy_
--legalrep?
+-legalrep -20
    give pc _reward_
    end quest
 
