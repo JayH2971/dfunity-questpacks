@@ -45,25 +45,25 @@ variable _dud_
 
 _countdown_ task:
     pick one of _Q1_ _Q2_ _Q3_ _Q4_ _Q5_ _Q6_ _dud_
-    start quest JHPINIT6
+    start quest JHPINIT
 
 _Q1_ task:
-     start quest JHPQ027
+     start quest JHPQ033
 
 _Q2_ task:
-     start quest JHPQ028
+     start quest JHPQ034
 
 _Q3_ task:
-     start quest JHPQ029
+     start quest JHPQ035
 
 _Q4_ task:
-     start quest JHPQ030
+     start quest JHPQ036
 
 _Q5_ task:
-     start quest JHPQ031
+     start quest JHPQ037
 
 _Q6_ task:
-    start quest JHPQ032
+     start quest JHPQ038
 
 _return_ task:
     when _countdown_ and not _Q1_ and not _Q2_ and not _Q3_ and not _Q4_ and not _Q5_ and not _Q6_

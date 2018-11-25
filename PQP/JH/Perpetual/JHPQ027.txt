@@ -56,6 +56,12 @@ Message:  1012
 <ce>  This doesn't concern you. The city guard corner
 <ce>  the criminal and deliver a swift execution.
 
+Message:  1013
+<ce>  You have more than enough experience with this kind
+<ce>  to know what to say. You discreetly call the criminal's
+<ce>  attention to yourself, pretending to be a friend who
+<ce>  can help in this time of need.
+
 QBN:
 Clock _timer_ 1.00:00
 Clock _failsafe_ 30.00:00
@@ -77,9 +83,20 @@ _quit_ task:
     say 1012
     end quest
 
-_try_ task:
+variable _try_
+_adv_ task:
+    when skill Streetwise is at least 40
+
+_tro_ task:
+    when _try_ and not _adv_
     say 1011
     create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_nottro_ task:
+    when _try_ and _adv_
+    say 1013
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+    restrain foe _enemy_
 
 _slain_ task:
     killed _enemy_
@@ -87,10 +104,12 @@ _slain_ task:
 
 _rew1_ task:
     give pc _reward1_
+    -legalrep +20
     end quest
 
 _rew2_ task:
     give pc _reward2_
+    -legalrep +20
     end quest
 
 _timer_ task:

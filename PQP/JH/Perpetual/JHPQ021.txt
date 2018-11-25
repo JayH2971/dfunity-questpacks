@@ -37,8 +37,8 @@ Message:  1010
 
 Message:  1011
 <ce> You know enough about Mysticism to dissipate the
-<ce> skeleton's frail bindings with a quick spell.
-<ce> They crumple back onto the ground, leaving the mage to fight alone.
+<ce> skeletons' frail bindings with a quick spell. They crumple
+<ce> back onto the ground, leaving the mage to fight alone.
 
 QBN:
 Clock _timer_ 0:30

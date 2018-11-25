@@ -17,16 +17,13 @@ QuestFail:  [1003]
 <ce>           ERROR 1003 JHPQ025
 
 QuestComplete:  [1004]
-<ce>           ERROR 1004 JHPQ025
+<ce> Your Medical skill grants you knowledge sufficient
+<ce> to avoid the malignant gas. You suffer no infection.
 
 Message:  1010
 <ce> It seems as though several bodies were recently
 <ce> buried in shallow graves. A miasma rises from the
 <ce> earth, hinting at disease.
-
-Message:  1011
-<ce> Your Medical skill grants you knowledge sufficient
-<ce> to avoid the malignant gas. You suffer no infection.
 
 QBN:
 Clock _failsafe_ 60.00:00
@@ -44,7 +41,7 @@ variable _dis_
 
 _skilled_ task:
     when _dis_ and _medical_
-    say 1011
+    give pc nothing
     end quest
 
 _unskilled_ task:

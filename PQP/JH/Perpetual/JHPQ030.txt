@@ -38,11 +38,11 @@ Foe _enemy_ is Burglar
     start timer _failsafe_
 
 _skill1_ task:
-    when skill Hand-to-Hand is at least 50
+    when skill HandToHand is at least 50
     start task _adv_
 
 _skill2_ task:
-    when skill Axes is at least 50
+    when skill Axe is at least 50
     start task _adv_
 
 _skill3_ task:
@@ -50,15 +50,15 @@ _skill3_ task:
     start task _adv_
 
 _skill4_ task:
-    when skill Long_Blade is at least 50
+    when skill LongBlade is at least 50
     start task _adv_
 
 _skill5_ task:
-    when skill Short_Blade is at least 50
+    when skill ShortBlade is at least 50
     start task _adv_
 
 _skill6_ task:
-    when skill Blunt_Weapon is at least 50
+    when skill BluntWeapon is at least 50
     start task _adv_
 
 variable _adv_
