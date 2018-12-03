@@ -68,8 +68,11 @@ Person _qg_ faction The_Thieves_Guild
 
 --	Quest start-up:
 	start timer _failsafe_
-          prompt 1010 yes _accept_ no _refuse_
-          place npc _qg_ at _place_
+
+_enter_ task:
+    when pc enters city
+    prompt 1010 yes _accept_ no _refuse_
+    place npc _qg_ at _place_
 
 _refuse_ task:
      say 1013

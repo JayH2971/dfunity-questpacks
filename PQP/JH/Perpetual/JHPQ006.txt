@@ -83,6 +83,7 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _failsafe_ 1.00:00
 
 Person _qg_ group Questor male
+Person _helseth_ faction Prince_Helseth
 
 Foe _enemy_ is 2 Barbarian
 
@@ -100,7 +101,6 @@ _accept_ task:
     add _qg_ face
     create foe _enemy_ every 0 minutes 1 times with 100% success
     
-
 _begin_ task:
     killed 2 _enemy_
     say 1012
@@ -111,6 +111,7 @@ _begin_ task:
 
 _victory_ task:
     give pc _reward_
+    change repute with _helseth_ by -3
     end quest
 
 _timer_ task:
