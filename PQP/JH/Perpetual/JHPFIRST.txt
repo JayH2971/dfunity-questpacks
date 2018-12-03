@@ -43,6 +43,7 @@ _pqfail_ task:
     end quest
 
 _pqstart_ task:
-	start quest JHPINIT
+	start quest JHPINIT2
     start quest JHPQA00
+    start quest JHPQ005
     end quest
