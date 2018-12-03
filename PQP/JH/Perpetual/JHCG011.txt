@@ -122,7 +122,6 @@ _begin_ task:
     say 1012
     reveal _dung_
     clear _qgclicked_
-    log 1030 step 0
     log 1031 step 1
     start task _talked_
 
