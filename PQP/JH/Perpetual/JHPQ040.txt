@@ -1,0 +1,141 @@
+-- Perpetual Quest
+Quest: JHPQ040
+DisplayName: Crazy Taxi II
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ040
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ040
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ040
+
+QuestFail:  [1003]
+<ce>          ERROR 1003 JHPQ040
+
+QuestComplete:  [1004]
+<ce> "%god bless you! Take my money and my thanks."
+<ce> 
+<ce> _esc_ gives you a small bag of
+<ce> money and departs with a wave.
+<--->
+<ce> "How wonderful! Perhaps you should do such business regularly."
+<ce> 
+<ce> _esc_ gives you a small bag of
+<ce> money and departs with a smile.
+<--->
+<ce> "You certainly know your way around %crn,
+<ce> don't you %pcf? Thank you for helping me."
+<ce> 
+<ce> _esc_ gives you a small bag of
+<ce> money and departs.
+
+Message:  1010
+<ce> _esc_ prompts you for your answer.
+<ce> 
+<ce> "Will you be able to take me to ___vill_?"
+
+Message:  1011
+<ce> "Very well! Lead the way. I am yours to guide."
+
+Message:  1020
+<ce> Someone in flowing robes is trying to attract
+<ce> the attention of passersby. You are caught in range.
+<ce> 
+<ce> "Excuse me! I need an escort to get to
+<ce> ___vill_ quickly. I only
+<ce> have =2vill_ days to get there in time.
+<ce> Would =reward_ gold be enough incentive for you?"
+<ce> 
+<ce> You take a moment to check your map
+<ce> and journal before answering.
+<--->
+<ce> You see someone in priestly robes soliciting
+<ce> help, who soon notices your gaze.
+<ce> 
+<ce> "Hello! I'm headed to ___vill_
+<ce> in a hurry and can pay =reward_ gold for an escort.
+<ce> Would you be able to take me there?"
+<ce> 
+<ce> Before answering, you take a moment
+<ce> to check your map and journal.
+
+Message:  1025
+<ce> _esc_ interrupts you.
+<ce> 
+<ce> "I needed to get to ___vill_
+<ce> by now. Where in Tamriel are we? %oth!"
+<ce> 
+<ce> Without further hesitation %g1 leaves.
+
+Message:  1030
+%qdt:
+ _esc_ has asked for my help
+ in getting to ___vill_
+ within =2vill_ days.
+
+Message:  1080
+<ce> "Could I really do it alone?"
+<--->
+<ce> "I pray another traveler appears soon."
+<--->
+<ce> "Tell your tavern friends about me."
+
+QBN:
+Clock _2vill_ 00:00 0 flag 1 range 0 2
+Clock _failsafe_ 15.00:00
+Clock _conv_ 00:02
+
+Item _reward_ gold
+
+Person _esc_ group Local_3.0
+
+Place _vill_ remote templehome
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_enter_ task:
+    when pc enters city
+    stop timer _failsafe_
+	say 1020
+    pc at _vill_ do _arrive_
+    start timer _conv_
+    log 1030 step 0
+
+_exit_ task:
+    when pc exits city
+    clear _enter_
+
+_fail_ task:
+    when _exit_ and not _begin_
+    end quest
+
+variable _conv_
+_conv1_ task:
+    when _conv_ and _enter_
+    prompt 1010 yes _begin_ no _quit_
+
+_arrive_ task:
+    give pc _reward_
+    end quest
+
+_begin_ task:
+    say 1011
+    add _esc_ face
+    start timer _2vill_
+
+_2vill_ task:
+    drop _esc_ face
+    say 1025
+    end quest
+
+_quit_ task:
+  say 1080
+  end quest
+
+_failsafe_ task:
+    end quest

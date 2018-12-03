@@ -19,24 +19,30 @@ QuestComplete:  [1004]
 <ce>           JHPINIT 1004
 
 Message:  1027
-<ce>	You currently have the Perpetual Quests add-on
-<ce>	installed. Would you like to begin running the
-<ce>	Perpetual Quest system now?
+<ce> You currently have the Perpetual Quests add-on
+<ce> installed. Would you like to begin running the
+<ce> Perpetual Quest system now?
 
 Message:  1028
-<ce>	Perpetual Quests will not begin at this time.
-<ce>	Please see the readme for instructions on how
-<ce>	to begin Perpetual Quests on an existing character.
+<ce> Perpetual Quests will not begin at this time.
+<ce> Please see the readme for instructions on how
+<ce> to begin Perpetual Quests on an existing character.
+
+Message:  1029
+<ce> This character will now run Perpetual Quests.
+<ce> Please see the readme for instructions on how
+<ce> to stop or restart for this character.
 
 QBN:
 
 --   Quest start-up:
-                prompt 1027 yes _pqstart_ no _pqfail_
+    prompt 1027 yes _pqstart_ no _pqfail_
 
 _pqfail_ task:
 	say 1028
-                end quest
+    end quest
 
 _pqstart_ task:
 	start quest JHPINIT
-                end quest
+    start quest JHPQA00
+    end quest

@@ -109,7 +109,6 @@ Person _qg_ group Chemist
           give pc _letter_ notify 1010
           place npc _qg_ at _place_
           pc at _dung_ set _inside_
-          log 1030 step 0
 
 _qgclicked_ task:
 	clicked npc _qg_ 
@@ -119,6 +118,7 @@ _begin_ task:
      say 1012
      reveal _dung_
      clear _qgclicked_
+     log 1030 step 0
      log 1031 step 1
      start task _talked_
 
