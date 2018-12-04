@@ -40,7 +40,7 @@ Foe _e4_ is 2 Rogue
 
  _enter_ task:
    when pc exits anywhere
-   pick one of _dud_ _dud_ _dud_ _dud_ _fight_
+   pick one of _dud_ _dud_ _fight_
 
 variable _dud_
 _fight_ task:
