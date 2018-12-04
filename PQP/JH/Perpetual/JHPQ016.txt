@@ -413,7 +413,7 @@ Person _kid_ faction Children male
 Person _smith_ group Smith male
 Person _poor_ group Local_3.0
 Person _db_ faction Dark_Slayers
-Person _banker_ group Librarian
+Person _banker_ faction Random_Noble
 Person _fg_ faction The_Fighters_Guild
 
 Place _start_ remote library
@@ -424,12 +424,12 @@ Place _bank_ remote bank
 Place _fguild_ remote random
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
-Clock _duration_ 120.00:00
-Clock _tim1_ 3.00:00 12.00:00
-Clock _tim2_ 3.00:00 12.00:00
-Clock _tim3_ 3.00:00 12.00:00
-Clock _tim4_ 3.00:00 12.00:00
-Clock _tim5_ 3.00:00 12.00:00
+Clock _duration_ 30.00:00
+Clock _tim1_ 1.00:00 3.00:00
+Clock _tim2_ 1.00:00 4.00:00
+Clock _tim3_ 3.00:00 5.00:00
+Clock _tim4_ 3.00:00 6.00:00
+Clock _tim5_ 3.00:00 7.00:00
 
 Item _letter_ letter used 1011
 Item _nlet1_ letter used 1042
@@ -444,12 +444,16 @@ Item _bankrew_ gold range 551 to 799
 Item _fgrew_ gold range 301 to 599
 
 --	Quest start-up:
-	start timer _timer_ 
-	place npc _kid_ at _start_
-          give pc _letter_ notify 1010
+       place npc _kid_ at _start_
+       give pc _letter_ notify 1010
+       have _letter_ set _begin_
+
+_begin_ task:
+       start timer _timer_ 
 
 _prompt_ task:
 	clicked npc _kid_
+       take _letter_ from pc
           prompt 1012 yes _accept_ no _refuse_
 
 _refuse_ task:

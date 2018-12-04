@@ -20,7 +20,7 @@ JHFG010, FightersGuild, M, 5, a quest to rid a city's streets of poisonous critt
 JHFG011, FightersGuild, M, 95, an artifact quest to invade a vampire cult
 JHFG012, FightersGuild, M, 5, a quest to slay a wizard in a city
 JHFG013, FightersGuild, M, 0, a quest to get a giant out of a house
-JHFG014, FightersGuild, M, 30, a quest to free the town of a gargoyle siege
+JHFG014, FightersGuild, M, 70, a quest to free the town of a gargoyle siege
 JHFG015, FightersGuild, M, 5, a quest to fight in a dungeon with a partner
 JHFGA00, FightersGuild, M, 40, entry into JHMC001
 JHMC001, FightersGuild, P, 0, a quest to help someone fleeing the Dark Brotherhood

@@ -109,7 +109,8 @@ Message:  1031
  The fantasy creature in
  ___place_ has asked me to rid
  __dung_ of an undead
- creature someone has raised in it.
+ creature someone has raised in it
+ within =timer_ days.
 
 Message:  1099
 <ce>   The creature says nothing more.
@@ -126,16 +127,22 @@ Clock _timer_ 30.00:00 35.00:00
 Foe _enemy_ is Mummy
 
 --	Quest start-up:
+        hide npc _fey_
+
 _begin_ task:
         when pc enters city
         start timer _initial_
-          say 1010
-          place npc _fey_ at _place_
-          log 1030 step 0
-          pc at _dung_ set _there_
+        say 1010
+        log 1030 step 0
+        pc at _dung_ set _there_
+        pc at _place_ set _res_
+
+_res_ task:
+        place npc _fey_ at _place_
+        restore npc _fey_
 
 _initial_ task:
-         end quest
+        end quest
 
 _qgclicked_ task:
 	clicked npc _fey_
@@ -181,6 +188,7 @@ _victory_ task:
           when _qgclicked_ and _slain_
           hide npc _fey_
 	give pc nothing
+        change repute with _fey_ by +5
 -         start quest ???
 	end quest
 

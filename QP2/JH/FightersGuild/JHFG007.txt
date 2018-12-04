@@ -76,7 +76,7 @@ Message:  1030
  in =timer_ or fewer days.
 
 Message:  1031
- %qdt:
+%qdt:
  I was set up and violently ambushed.
  I should head back to ___questgiver_ and
  tell _questgiver_ about it.
@@ -95,7 +95,7 @@ Person _culp_ group Local_3.0
 
 Item _pick_ mineral
 Item _reward_ gold range 60 to 140
-Item _bigsum_ gold range 1835 to 1999
+Item _bigsum_ gold range 1235 to 1399
 Item _letter_ letter used 1025
 
 Place _res_ remote house1
@@ -115,7 +115,7 @@ _got_ task:
    clicked item _pick_
    say 1020
    create foe _enemy_ every 0 minutes 1 times with 100% success
-   create foe _perp_ every 0 minutes 1 times with 100% success
+   create foe _perp_ every 0 minutes 1 times with 20% success
 
 _slain_ task:
    killed _perp_
