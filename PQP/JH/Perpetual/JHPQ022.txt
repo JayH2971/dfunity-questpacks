@@ -45,14 +45,14 @@ Message:  1012
 <ce> Welcome. Let's not talk names. I'd prefer to stay
 <ce> anonymous just like you. This is a hit the Dark Brotherhood
 <ce> refused to take, so I've got to resort to talking to strangers.
-<ce> But this matters to me. Can you kill a kid?
+<ce> But this matters to me. Can you kill a lady?
 
 Message:  1013
 <ce> Thanks for being honest. Now get out of here.
 <ce> You and me never met, got it?
 
 Message:  1014
-<ce> Okay. I need _kid_ dead. Find %g2 in a house called
+<ce> Okay. I need _nob_ dead. Find %g2 in a house called
 <ce> _res_ at ___res_. Don't go dragging
 <ce> your knuckles or nothing. Do it fast.
 <ce> Get back here in =timer_ days. I'll give you
@@ -63,17 +63,17 @@ Message:  1030
 %qdt:
  A proprietor who will remain nameless
  will give me an enchanted _reward_ if I kill
- a child named _kid_, who lives in
+ a lady named _nob_, who lives in
  _res_ of ___res_. I have =timer_ days
  to then return to ___start_.
 
 Message:  1041
-<ce> _kid_ is petrified at the sight of you.
+<ce> _nob_ is petrified at the sight of you.
 <ce> Your eyes lock for a long moment,
 <ce> just enough time for %g1 to begin trembling
 <ce> uncontrollably. Will you kill %g2?
 <--->
-<ce> _kid_ first gasps at the sight of you,
+<ce> _nob_ first gasps at the sight of you,
 <ce> and then starts crying frantically,
 <ce> hiding %g3 head in fear. %g1 knows %g3
 <ce> end is here. Will you kill %g2?
@@ -83,7 +83,7 @@ Message:  1042
 <ce> Once you are certain of %g3 death,
 <ce> you take one of %g3 fingers as proof.
 <--->
-<ce> The difference of size and strength between
+<ce> The difference of strength between
 <ce> the two of you yields a very simple task.
 <ce> Once you are certain of %g3 death,
 <ce> you take one of %g3 fingers as proof.
@@ -91,13 +91,13 @@ Message:  1042
 Message:  1043
 <ce> Your lingering humanity makes you yield.
 <ce> The atmosphere gradually softens as
-<ce> _kid_ realizes you have not
+<ce> _nob_ realizes you have not
 <ce> come to kill %g2. Scarcely holding back
 <ce> the tears of gratitude, %g1 rushes out
 <ce> the door to find some safety elsewhere.
 
 QBN:
-Person _kid_ faction Children
+Person _nob_ faction Random_Noble female
 Person _client_ faction The_Thieves_Guild
 Person _dummydb_ faction The_Dark_Brotherhood
 
@@ -136,7 +136,7 @@ _refuse_ task:
     end quest
 
 _accept_ task:
-    place npc _kid_ at _res_
+    place npc _nob_ at _res_
     say 1014
     log 1030 step 0
     start timer _timer_
@@ -151,19 +151,19 @@ _sp3_ task:
     place foe _kni2_ at _res_
 
 _dec_ task:
-    clicked npc _kid_
+    clicked npc _nob_
     prompt 1041 yes _kill_ no _mercy_
 
 _kill_ task:
     say 1042
     get item _finger_
-    hide npc _kid_
+    hide npc _nob_
     change repute with _dummydb_ by -5
     -legalrep
 
 _mercy_ task:
     say 1043
-    hide npc _kid_
+    hide npc _nob_
     end quest
 
 _pcgetsgold_ task:
