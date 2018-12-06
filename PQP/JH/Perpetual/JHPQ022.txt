@@ -52,7 +52,7 @@ Message:  1013
 <ce> You and me never met, got it?
 
 Message:  1014
-<ce> Okay. I need _nob_ dead. Find %g2 in a house called
+<ce> Okay. I need _nob_ dead. Find her in a house called
 <ce> _res_ at ___res_. Don't go dragging
 <ce> your knuckles or nothing. Do it fast.
 <ce> Get back here in =timer_ days. I'll give you
@@ -70,30 +70,30 @@ Message:  1030
 Message:  1041
 <ce> _nob_ is petrified at the sight of you.
 <ce> Your eyes lock for a long moment,
-<ce> just enough time for %g1 to begin trembling
-<ce> uncontrollably. Will you kill %g2?
+<ce> just enough time for her to begin trembling
+<ce> uncontrollably. Will you kill her?
 <--->
 <ce> _nob_ first gasps at the sight of you,
 <ce> and then starts crying frantically,
-<ce> hiding %g3 head in fear. %g1 knows %g3
-<ce> end is here. Will you kill %g2?
+<ce> hiding her head in fear. She knows her
+<ce> end is here. Will you kill her?
 
 Message:  1042
 <ce> As expected, the task takes little effort.
-<ce> Once you are certain of %g3 death,
-<ce> you take one of %g3 fingers as proof.
+<ce> Once you are certain of her death,
+<ce> you take one of her fingers as proof.
 <--->
 <ce> The difference of strength between
 <ce> the two of you yields a very simple task.
-<ce> Once you are certain of %g3 death,
-<ce> you take one of %g3 fingers as proof.
+<ce> Once you are certain of her death,
+<ce> you take one of her fingers as proof.
 
 Message:  1043
 <ce> Your lingering humanity makes you yield.
 <ce> The atmosphere gradually softens as
 <ce> _nob_ realizes you have not
-<ce> come to kill %g2. Scarcely holding back
-<ce> the tears of gratitude, %g1 rushes out
+<ce> come to kill her. Scarcely holding back
+<ce> the tears of gratitude, she rushes out
 <ce> the door to find some safety elsewhere.
 
 QBN:
