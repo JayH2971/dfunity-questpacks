@@ -1,6 +1,6 @@
 -- Perpetual Quest
 Quest: JHPQ022
-DisplayName: Send for the Priest
+DisplayName: Blood Money
 -- Message panels
 QRC:
 
@@ -14,43 +14,167 @@ AcceptQuest:  [1002]
 <ce>           ERROR 1002 JHPQ022
 
 QuestFail:  [1003]
-<ce>          ERROR 1003 JHPQ022
+<ce> ERROR 1003 JHPQ022
 
 QuestComplete:  [1004]
-<ce> Out of an abundance of caution you gather
-<ce> some nearby ingredients using your Medical
-<ce> skill and mix them into a bitter liquid which
-<ce> you then drink. If you were at risk for getting
-<ce> infected, this should be sufficient to ward it off.
+<ce> You got proof? Let me see.
+<ce> 
+<ce> All right, I believe you. Have this and
+<ce> get lost. We never, ever spoke today.
 
 Message:  1010
-<ce> You recall some recent talk concerning an outbreak of
-<ce> Swamp Rot in %crn. You wonder whether you have come
-<ce> into contact with some of the infected.
+<ce> Though visible, the approaching courier is deadly
+<ce> silent. You accept the proffered note, and he
+<ce> stalks away without making a sound.
+<--->
+<ce> Though visible, the approaching courier is deadly
+<ce> silent. You accept the proffered note, and she
+<ce> stalks away without making a sound.
+
+Message:  1011
+ %ra,
+
+ I need a killer. I have an enchanted _reward_ to give
+ you if you're competent. Come to me in =2start_ days or
+ I'll disappear. Be smart.
+ 
+                _start_
+                ___start_
+
+Message:  1012
+<ce> Welcome. Let's not talk names. I'd prefer to stay
+<ce> anonymous just like you. This is a hit the Dark Brotherhood
+<ce> refused to take, so I've got to resort to talking to strangers.
+<ce> But this matters to me. Can you kill a kid?
+
+Message:  1013
+<ce> Thanks for being honest. Now get out of here.
+<ce> You and me never met, got it?
+
+Message:  1014
+<ce> Okay. I need _kid_ dead. Find %g2 in a house called
+<ce> _res_ at ___res_. Don't go dragging
+<ce> your knuckles or nothing. Do it fast.
+<ce> Get back here in =timer_ days. I'll give you
+<ce> that magic _reward_ I was telling you about.
+<ce> And don't ever tell anyone about this.
+
+Message:  1030
+%qdt:
+ A proprietor who will remain nameless
+ will give me an enchanted _reward_ if I kill
+ a child named _kid_, who lives in
+ _res_ of ___res_. I have =timer_ days
+ to then return to ___start_.
+
+Message:  1041
+<ce> _kid_ is petrified at the sight of you.
+<ce> Your eyes lock for a long moment,
+<ce> just enough time for %g1 to begin trembling
+<ce> uncontrollably. Will you kill %g2?
+<--->
+<ce> _kid_ first gasps at the sight of you,
+<ce> and then starts crying frantically,
+<ce> hiding %g3 head in fear. %g1 knows %g3
+<ce> end is here. Will you kill %g2?
+
+Message:  1042
+<ce> As expected, the task takes little effort.
+<ce> Once you are certain of %g3 death,
+<ce> you take one of %g3 fingers as proof.
+<--->
+<ce> The difference of size and strength between
+<ce> the two of you yields a very simple task.
+<ce> Once you are certain of %g3 death,
+<ce> you take one of %g3 fingers as proof.
+
+Message:  1043
+<ce> Your lingering humanity makes you yield.
+<ce> The atmosphere gradually softens as
+<ce> _kid_ realizes you have not
+<ce> come to kill %g2. Scarcely holding back
+<ce> the tears of gratitude, %g1 rushes out
+<ce> the door to find some safety elsewhere.
 
 QBN:
-Clock _timer_ 0:05
+Person _kid_ faction Children
+Person _client_ faction The_Thieves_Guild
+Person _dummydb_ faction The_Dark_Brotherhood
+
+Place _start_ remote house1
+Place _res_ remote house2
+
+Foe _kni1_ is Knight
+Foe _kni2_ is Knight
+
+Clock _2start_ 00:00 0 flag 2 range 0 2
+Clock _timer_ 6.00:00 8.00:00
+
+Item _letter_ letter used 1011
+Item _reward_ magic_item
+Item _finger_ finger
 
 --	Quest start-up:
-	start timer _timer_
-    say 1010
-    pick one of _dis_ _dud_
+       give pc _letter_ notify 1010
+       have _letter_ set _begin_
+       pc at _start_ do _spawn_
 
-variable _dud_
-variable _dis_
+_begin_ task:
+       start timer _2start_
 
-_medical_ task:
-    when skill Medical is at least 50
+_spawn_ task:
+    place npc _client_ at _start_
 
-_skilled_ task:
-    when _dis_ and _medical_
-    give pc nothing
+_prompt_ task:
+	clicked npc _client_
+    stop timer _2start_
+    take _letter_ from pc
+    prompt 1012 yes _accept_ no _refuse_
+
+_refuse_ task:
+    say 1013
     end quest
 
-_unskilled_ task:
-    when _dis_ and not _medical_
-    make pc ill with Swamp_Rot
+_accept_ task:
+    place npc _kid_ at _res_
+    say 1014
+    log 1030 step 0
+    start timer _timer_
+    pick one of _sp1_ _sp2_ _sp3_
+
+variable _sp1_
+_sp2_ task:
+    place foe _kni1_ at _res_
+
+_sp3_ task:
+    place foe _kni1_ at _res_
+    place foe _kni2_ at _res_
+
+_dec_ task:
+    clicked npc _kid_
+    prompt 1041 yes _kill_ no _mercy_
+
+_kill_ task:
+    say 1042
+    get item _finger_
+    hide npc _kid_
+    change repute with _dummydb_ by -5
+    -legalrep
+
+_mercy_ task:
+    say 1043
+    hide npc _kid_
+    end quest
+
+_pcgetsgold_ task:
+    toting _finger_ and _client_ clicked
+    give pc _reward_
+    hide npc _client_
     end quest
 
 _timer_ task:
-   end quest
+    say 1003
+    end quest
+
+_2start_ task:
+    end quest
