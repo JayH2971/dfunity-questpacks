@@ -33,8 +33,8 @@ Message:  1011
 Citizens of ____start_:
 
  Several days ago a _jewel_ belonging to
- _client_, noble of ____start_, was stolen
- from the Palace of ___start_. A reward
+ _client_, noble of ____start_, was
+ stolen from the Palace of ___start_. A reward
  of =reward_ gold pieces is offered in exchange
  for its prompt return. Please deliver it
  to %g2 at the Palace. The reward will
@@ -97,7 +97,7 @@ Item _reward_ gold
     place npc _perp_ at _thiefh_
 
 _streetw_ task:
-    when skill Streetwise is at least 98
+    when skill Streetwise is at least 40
 
 _begin_ task:
     start timer _timer_
