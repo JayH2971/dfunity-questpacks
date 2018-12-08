@@ -1,0 +1,95 @@
+-- Perpetual Quest
+Quest: JHPQ025
+DisplayName: Logsplitter
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ025
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ025
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ025
+
+QuestFail:  [1003]
+<ce> The task is simple enough, but your feeble attempts
+<ce> at splitting the wood do not win your patron over.
+<ce> You spend several minutes at work but achieve little.
+<ce> 
+<ce> "You know what? It's all right. Thank you for trying,
+<ce> but I should really find an expert. I'm sorry to have
+<ce> taken up your time like this. %god go with thee."
+
+QuestComplete:  [1004]
+<ce> No sooner than the axe enters your hand, the wood begins
+<ce> forming into two neat piles on either side. The peasant
+<ce> smiles, admiring your obvious experience with the task.
+<ce> 
+<ce> "%god be praised! I'll be home in a jiffy! Thank you,
+<ce> good %ra! Take your money! What a boon to have found you."
+
+Message:  1010
+<ce> A peasant, clearly of humble means, ambles toward you.
+<ce> You notice one of his hands is bandaged.
+<ce> 
+<ce> "Hello there %ra! Would you be willing to make
+<ce> a bit of gold? I injured my hand recently in the field
+<ce> and I need to get this wood chopped before it gets too
+<ce> cold, but that's a problem for me. I have =reward_ gold
+<ce> here if you can do it instead. Would you be willing
+<ce> to share your skill at the axe?"
+<--->
+<ce> A peasant, clearly of humble means, ambles toward you.
+<ce> You notice one of her hands is bandaged.
+<ce> 
+<ce> "Hello there %ra! Would you be willing to make
+<ce> a bit of gold? I injured my hand recently in the field
+<ce> and I need to get this wood chopped before it gets too
+<ce> cold, but that's a problem for me. I have =reward_ gold
+<ce> here if you can do it instead. Would you be willing
+<ce> to share your skill at the axe?"
+
+Message:  1012
+<ce> "Well, that's disappointing, but I'm sure you've got
+<ce> better things to do. I just hope I can find someone soon."
+
+QBN:
+Clock _failsafe_ 7.00:00
+Clock _timer_ 1:00
+
+Item _reward_ gold range 101 to 149
+
+--	Quest start-up:
+    start timer _failsafe_
+
+ _enter_ task:
+    when pc enters city
+    stop timer _failsafe_
+    start timer _timer_
+    prompt 1010 yes _begin_ no _quit_
+
+variable _begin_
+_check1_ task:
+   when skill Axe is at least 15
+
+_victory_ task:
+    when _check1_ and _begin_
+    give pc _reward_
+    end quest
+
+_fail_ task:
+    when _begin_ and not _check1_
+    say 1003
+    end quest
+
+_timer_ task:
+   end quest
+
+_failsafe_ task:
+   end quest
+
+_quit_ task:
+  say 1012
+  end quest

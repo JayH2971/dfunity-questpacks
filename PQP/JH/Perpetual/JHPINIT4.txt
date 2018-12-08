@@ -45,7 +45,7 @@ variable _dud_
 
 _countdown_ task:
     pick one of _Q1_ _Q2_ _Q3_ _Q4_ _Q5_ _Q6_ _dud_
-    start quest JHPINIT
+    start quest JHPINIT5
 
 _Q1_ task:
      start quest JHPQ021

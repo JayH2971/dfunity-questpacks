@@ -51,7 +51,8 @@ Item _reward_ gold range 201 to 349
 
  _enter_ task:
    when pc enters city
-   start timer _timer_
+   stop timer _failsafe_
+    start timer _timer_
     prompt 1010 yes _begin_ no _quit_
 
 _begin_ task:

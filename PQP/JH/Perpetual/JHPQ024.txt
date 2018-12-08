@@ -29,7 +29,7 @@ Message:  1010
 <ce> You pick it up and take it.
 
 Message:  1011
-%qdt:
+%qdt
 Citizens of ____start_:
 
  Several days ago a _jewel_ belonging to
