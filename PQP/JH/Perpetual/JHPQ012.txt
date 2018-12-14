@@ -14,7 +14,8 @@ AcceptQuest:  [1002]
 <ce>           ERROR 1002 JHPQ012
 
 QuestFail:  [1003]
-<ce>          ERROR 1003 JHPQ012
+<ce>         Surely such a distraction could appeal to
+<ce>         someone of lesser priorities than yourself.
 
 QuestComplete:  [1004]
 <ce>        It looks like the money is yours now.
@@ -89,4 +90,5 @@ _timer_ task:
    end quest
 
 _quit_ task:
+  say 1003
   end quest

@@ -94,7 +94,7 @@ Message:  1099
 <ce>      He looks like he hasn't slept for months.
 
 QBN:
-Item _reward_ gold range 300 to 450
+Item _reward_ gold
 
 Person _questgiver_ group Questor male
 Person _escort_ group Local_3.1 male

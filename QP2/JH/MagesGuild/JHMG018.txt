@@ -135,3 +135,7 @@ _pcgetsgold_ task:
 
 _humor_ task:
     say 1012
+
+_2res_ task:
+    say 1003
+    end quest

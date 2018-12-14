@@ -93,7 +93,7 @@ Message:  1099
 <ce>        People could be dying for all you know.
 
 QBN:
-Item _reward_ gold range 200 to 300
+Item _reward_ gold
 Item _altrew_ gold range 30 to 40
 
 Person _questgiver_ group Questor male

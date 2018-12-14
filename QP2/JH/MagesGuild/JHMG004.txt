@@ -87,7 +87,7 @@ Message: 1099
 <ce>       bring me those element samples.
 
 QBN:
-Item _reward_ gold range 200 to 350
+Item _reward_ gold
 
 Person _questgiver_ group Questor male
 Person _friend_ faction The_Mages_Guild

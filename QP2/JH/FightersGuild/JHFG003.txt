@@ -59,7 +59,7 @@ Message: 1099
 <ce>                 in ___dungeon_. Move.
 
 QBN:
-Item _reward_ gold range 400 to 600
+Item _reward_ gold
 
 Person _qgiver_ group Questor male
 

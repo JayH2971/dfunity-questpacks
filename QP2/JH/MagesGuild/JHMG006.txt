@@ -109,7 +109,7 @@ Message:  1032
  report back to the Mages Guild.
 
 QBN:
-Item _reward_ gold range 601 to 899
+Item _reward_ gold
 Item _tri_ trinket
 
 Person _qgiver_ group Questor male

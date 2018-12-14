@@ -55,7 +55,7 @@ Message:  1099
 <ce>                 in ___vampres_. Get going.
 
 QBN:
-Item _reward_ gold range 600 to 800
+Item _reward_ gold
 
 Person _qgiver_ group Questor male
 

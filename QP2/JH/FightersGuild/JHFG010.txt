@@ -50,7 +50,7 @@ Message:  1030
  whenever I want.
 
 QBN:
-Item _reward_ gold range 400 to 699
+Item _reward_ gold
 
 Person _qgiver_ group Questor male
 

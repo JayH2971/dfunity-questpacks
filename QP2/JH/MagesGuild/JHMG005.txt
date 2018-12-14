@@ -63,7 +63,7 @@ QBN:
 Clock _failsafe_ 180.00:00
 
 Item _item_ trinket
-Item _reward_ gold range 300 to 500
+Item _reward_ gold
 
 Place _dung_ remote dungeon
 
