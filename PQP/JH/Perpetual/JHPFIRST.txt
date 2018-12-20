@@ -35,6 +35,8 @@ Message:  1029
 
 QBN:
 
+Clock _timer_ 0:02
+
 --   Quest start-up:
     prompt 1027 yes _pqstart_ no _pqfail_
 
@@ -43,7 +45,29 @@ _pqfail_ task:
     end quest
 
 _pqstart_ task:
-	start quest JHPINIT2
+	start timer _timer_
+    start quest JHPINIT2
     start quest JHPQA00
     start quest JHPQ005
+    pick one of _q1_ _q2_ _q3_
+
+_level_ task:
+    level 3 completed
+
+variable _q1_
+variable _q2_
+variable _q3_
+_p1_ task:
+    when _q1_ and not _level_
+    start quest JHPQB01
+
+_p2_ task:
+    when _q2_ and not _level_
+    start quest JHPQB02
+
+_p3_ task:
+    when _q3_ and not _level_
+    start quest JHPQB03
+
+_timer_ task:
     end quest

@@ -35,6 +35,10 @@ JHPINIT3, Commoner, P, 0, Perpetual Quest selection
 JHPINIT4, Commoner, P, 0, Perpetual Quest selection
 JHPINIT5, Commoner, P, 0, Perpetual Quest selection
 JHPINIT6, Commoner, P, 0, Perpetual Quest selection
+JHPQA00, Commoner, P, 0, random outdoors enemy appearance
+JHPQB01, Commoner, P, 0, beginner's challenge quest
+JHPQB02, Commoner, P, 0, beginner's challenge quest
+JHPQB03, Commoner, P, 0, beginner's challenge quest
 JHPQ001, Commoner, P, 0, a Perpetual Quest
 JHPQ002, Commoner, P, 0, a Perpetual Quest
 JHPQ003, Commoner, P, 0, a Perpetual Quest

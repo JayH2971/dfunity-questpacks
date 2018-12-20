@@ -421,7 +421,7 @@ Place _wshop_ remote weaponstore
 Place _phouse_ remote tavern
 Place _dbhome_ remote house1
 Place _bank_ remote bank
-Place _fguild_ remote random
+Place _fguild_ remote fighters
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _duration_ 30.00:00

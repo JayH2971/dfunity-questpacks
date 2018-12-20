@@ -1,0 +1,98 @@
+Quest: JHKN006
+DisplayName: Momento Retrieval
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> %pct, it falls upon the knights of this
+<ce> order to restore honor when it has been stolen.
+<ce> A complaint has come to our door concerning
+<ce>  a knave who murdered an honest citizen and
+<ce> then stole his weapon, a family heirloom.
+<ce> We can hardly resist and still consider ourselves
+<ce> defenders of %crn. Will you
+<ce> answer the call and retrieve the weapon?
+
+RefuseQuest:  [1001]
+<ce>  Then occupy yourself in something you value
+<ce>  more, %pcf. We have work to do here.
+
+AcceptQuest:  [1002]
+<ce> Then you will descend into the depths of
+<ce> ___dungeon_ and find the
+<ce>  cruel beast who has done this crime. We
+<ce>  merely hope the _weapon_ is
+<ce>   still with the fool, such that recovering it
+<ce>  will be no great chore. Have done with this
+<ce> and bring it to me in fewer than =timer_ days.
+<ce> Honor, virtue, and glory, %pcf.
+
+QuestFail:  [1003]
+<ce>       
+
+QuestComplete:  [1004]
+<ce>        Excellent work, %pct. I shall have it
+<ce> delivered to _res_ this
+<ce>  very day, so soon as one of our squires
+<ce> returns from an errand. The family will
+<ce> remember your name for generations.
+<ce> I assure you of it, honorable knight.
+
+Message:  1020
+<ce>  You notice a conspicuous bag
+<ce>   among this foe's belongings.
+
+Message:  1030
+%qdt:
+ I have been sent from
+ ___qgiver_ to a
+ foul hole, ___dungeon_,
+ to track down a murdering thief
+ who has stolen a family heirloom.
+ I must bring it to _qgiver_
+ in =timer_ days' time.
+
+Message:  1099
+<ce> I gave you =timer_ days to
+<ce> find that worthless thief in
+<ce> ___dungeon_ and bring
+<ce>  back the _weapon_. Go.
+
+QBN:
+Person _qgiver_ group Questor male
+
+Place _dungeon_ remote dungeon
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Place _res_ remote house2
+
+Foe _enemy_ is Nightblade
+
+Item _weapon_ weapon
+
+--	Quest start-up:
+	start timer _timer_ 
+	log 1030 step 0 
+	place foe _enemy_ at _dungeon_
+  give item _weapon_ to _enemy_
+  reveal _dungeon_
+
+_slain_ task:
+	killed 1 _enemy_ saying 1020 
+
+_victory_ task:
+	toting _weapon_ and _qgiver_ clicked 
+	give pc nothing
+	end quest 
+
+_qgclicked_ task:
+	clicked npc _qgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+  say 1099
+	clear _qgclicked_ _clearclick_ 
+
+_timer_ task:
+	end quest

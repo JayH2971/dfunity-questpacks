@@ -46,8 +46,16 @@ Message:  1021
 <ce>      It's time to find your way out.
 <ce>      
 <ce>      (Hint: You may be in a location that's impossible to escape from,)
-<ce>      (like inside an enclosed cage or at the bottom of a chute. If so,)
+<ce>      (like at the bottom of a chute. If so,)
 <ce>      (make a save and try the console command "teleport" to get out.)
+
+Message:  1022
+<ce>      The filthy orcs apparently carried a disease of some kind.
+<ce>      Your stomach churns from within.
+
+Message:  1023
+<ce> Your captors unsurprisingly carried some manner of disease,
+<ce> but your medical knowledge is sufficient to prevent contagion.
 
 Message:  1040
 <ce> You refuse their demand and state that the %rt
@@ -80,9 +88,19 @@ _surrender_ task:
          say 1021
          pick one of _pcsick_ _pcnotsick_
 
+_medi_ task:
+        when skill Medical is at least 30
+
 variable _pcnotsick_
-_pcsick_ task:
+variable _pcsick_
+_si1_ task:
+        when _pcsick_ and not _medi_
+        say 1022
         make pc ill with Stomach_Rot
+
+_si2_ task:
+        when _pcsick_ and _medi_
+        say 1023
 
 variable _inside_
 _escape_ task:

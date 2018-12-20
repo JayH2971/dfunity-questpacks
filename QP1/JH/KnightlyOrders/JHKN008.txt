@@ -1,0 +1,183 @@
+Quest: JHKN008
+DisplayName: Orcish Skirmish
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  A recent raid on an orc encampment
+<ce>  in ___dung_ proved timely.
+<ce>  We are informed that the brutes have
+<ce>  planned an assassination attempt against
+<ce>  _noble_, a noble within the region
+<ce>  of %crn. We must prevent this work
+<ce>  of destabilization, and the time is far
+<ce>  too short to rally the host of knights
+<ce>  this matter deserves. Will you go and
+<ce>  do the work of an army, %pct?
+
+RefuseQuest:  [1001]
+<ce>  If you hear of _noble_'s death
+<ce>  in the next few weeks, you'll be able to
+<ce>  tell your friends you knew of it beforehand.
+
+AcceptQuest:  [1002]
+<ce>  Move quickly. _noble_ will be at the
+<ce>  palace in ___palace_. We expect the
+<ce>  attack to occur in the night hours in
+<ce>  =2palace_ days. Tell me the tale when you return.
+
+QuestFail:  [1003]
+<ce>  Loud screams emanate from within the
+<ce>  palace, followed by a joyful roar. You need
+<ce>  not look to know what has happened.
+
+QuestComplete:  [1004]
+<ce>  _noble_ is led out of the palace
+<ce>  by two servants, waving to you as
+<ce>  %g1 goes. A page returns to speak
+<ce>  to you once time seems to resume.
+<ce>  
+<ce>  "%pcn, if all knights in %crn are like
+<ce>  yourself, we have no need for fear any longer.
+<ce>  Perhaps next they will send you to capture
+<ce>  Gortwog himself and bring an end to these
+<ce>  hostilities. _noble_ wishes to offer you a
+<ce>  simple _miner_ in gratitude for the service you
+<ce>  have rendered this day. We will greet you with
+<ce>  open arms when you return to ___palace_."
+
+Message:  1010
+<ce>  Two palace servants spy you from across
+<ce>  the hall and duck out of view. No doubt they
+<ce>  will have some well-planned escape route
+<ce>  in case their fears are brought to pass.
+
+Message:  1015
+<ce>     You hear savage roaring from within
+<ce>  the palace. The attack has already begun.
+
+Message:  1018
+<ce>  This is the night the orcs plan to attack
+<ce>  the palace in ___palace_.
+
+Message:  1029
+<ce>     As the sun rises above %crn, it
+<ce>  becomes clear that there was no need for
+<ce>  concern. A page comes to speak with you
+<ce>  as _noble_ is escorted outside.
+<ce>  
+<ce>  "Good %pct, we thank you for your
+<ce>  service and willingness to exercise the
+<ce>  duties of a knight. This time the orcs were
+<ce>  thwarted in their plans, but it may not always
+<ce>  be so. _noble_ sends you sincere
+<ce>  thanks for your watchful eye."
+<ce>  
+<ce>  The page salutes and leaves, and you are left alone.
+
+Message:  1030
+%qdt:
+ I must hurry to ___palace_
+ to thwart an orcish attack to
+ occur in =2palace_ days. I should wait
+ in the palace during the night hours
+ to prevent an attack on
+ _noble_, who waits inside.
+
+Message:  1035
+<ce>   Abdicating _noble_ when %g1
+<ce>   most needed you will reflect very poorly
+<ce>   on yourself and the other knights.
+
+Message:  1099
+<ce>      _noble_'s life depends on you.
+<ce>      Get to ___palace_ in =2palace_ days.
+
+QBN:
+Item _miner_ mineral
+
+Person _questgiver_ group Questor male
+Person _noble_ group Noble
+
+Place _palace_ remote palace
+
+Clock _2palace_ 00:00 0 flag 17 range 0 2
+Clock _death_ 00:35
+Clock _delay_ 00:01
+Clock _failsafe_ 60.00:00
+
+Place _dung_ remote dungeon
+
+Foe _orc1_ is 3 Orc_sergeant
+
+--	Quest start-up:
+	start timer _2palace_
+	start timer _failsafe_
+	log 1030 step 0 
+  pc at _palace_ set _inside_
+  pick one of _real_ _false_
+
+variable _real_
+variable _false_
+_night_ task:
+  daily from 2:00 to 5:00
+
+_inside_ task:
+	start task _notice_
+
+_notice_ task:
+  say 1010
+
+_2palace_ task:
+  say 1018
+
+_spawn_ task:
+  when _timeup_ and _inside_ and not _false_
+	create foe _orc1_ every 2 minutes 2 times with 100% success
+	start timer _death_
+	say 1015
+
+_final_ task:
+ when _2palace_ and _night_
+ start task _timeup_
+
+variable _timeup_
+_failout_ task:
+ when _timeup_ and not _inside_ and not _night_ and not _false_
+ say 1035
+ end quest
+
+_success_ task:
+	killed 6 _orc1_
+	stop timer _death_
+	start timer _delay_
+
+_delay_ task:
+	give pc _miner_ 
+	end quest 
+
+variable _death_
+
+_death2_ task:
+ when _death_ and _inside_
+ say 1003
+ end quest
+
+_death3_ task:
+ when _death_ and not _inside_
+ say 1035
+ end quest
+
+_goodend_ task:
+ when _timeup_ and _inside_ and not _real_ and not _night_
+ say 1029
+ end quest
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+  say 1099
+	clear _qgclicked_
+
+
+_failsafe_ task:
+ end quest

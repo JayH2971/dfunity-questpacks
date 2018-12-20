@@ -28,6 +28,8 @@ JHKN017, KnightlyOrder, M, 5, a quest to defend a graveyard from intruders
 JHKN018, KnightlyOrder, M, 10, a quest to find a local thief
 JHKN019, KnightlyOrder, M, 80, an artifact quest to slay a daedric army
 JHKN020, KnightlyOrder, M, 5, a quest to draw out an attacking band
+JHKN021, KnightlyOrder, M, 50, a quest to apprehend a witch
+JHKN022, KnightlyOrder, M, 50, a quest to free a sealed dungeon
 -take a mage to defeat a vampire. Paralyze vs vampire
 -a quest to slay a group of criminals extorting merchants
 -rescue kidnapped youth, fend off assassins while returning

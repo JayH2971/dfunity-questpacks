@@ -69,7 +69,6 @@ Message:  1040
 <ce>	This can't be happening!
 
 QBN:
-Person _questgiver_ group Questor male
 Person _kid_ faction Children
 
 Place _place_ remote house1

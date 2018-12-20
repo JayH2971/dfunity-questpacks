@@ -22,6 +22,7 @@ JHFG012, FightersGuild, M, 5, a quest to slay a wizard in a city
 JHFG013, FightersGuild, M, 0, a quest to get a giant out of a house
 JHFG014, FightersGuild, M, 70, a quest to free the town of a gargoyle siege
 JHFG015, FightersGuild, M, 5, a quest to fight in a dungeon with a partner
+JHFG016, FightersGuild, M, 40, a quest to get rid of a bad guild member
 JHFGA00, FightersGuild, M, 40, entry into JHMC001
 JHMC001, FightersGuild, P, 0, a quest to help someone fleeing the Dark Brotherhood
 -protect a shop at night from burglars. Commoner?
