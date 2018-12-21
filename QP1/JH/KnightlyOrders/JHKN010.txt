@@ -4,53 +4,53 @@ DisplayName: A Journey of a Thousand Miles
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          %pct, we must all engage in the humblest of work. Slaying dragons
-<ce>          and defending nobles are some of our duties, but they are only
-<ce>          some forms of the service we provide. Take this _weapon_
-<ce>          to _knight_, who either forgot or refused to take it.
-<ce>          Look for %g2 in ___knighttown_. Will you do this?
+<ce>  %pct, we must all engage in the humblest of work. Slaying dragons
+<ce>  and defending nobles are some of our duties, but they are only
+<ce>  some forms of the service we provide. Take this _weapon_
+<ce>  to _knight_, who either forgot or refused to take it.
+<ce>  Look for %g2 in ___knighttown_. Will you do this?
 
 RefuseQuest:  [1001]
-<ce>          Is this truly the path you wish to take, %ra?
+<ce>  Is this truly the path you wish to take, %ra?
 
 AcceptQuest:  [1002]
-<ce>          Good. I will give you =timer_ days to have done
-<ce>          with it and return. And if %g1 is merely stubborn,
-<ce>          do not accept another refusal. I have told %g2 too
-<ce>          many times that our knights must be practiced in
-<ce>          all manner of weaponry.
+<ce>  Good. I will give you =timer_ days to have done
+<ce>  with it and return. And if %g1 is merely stubborn,
+<ce>  do not accept another refusal. I have told %g2 too
+<ce>  many times that our knights must be practiced in
+<ce>  all manner of weaponry.
 
 QuestFail:  [1003]
-<ce>         You needed to report your success in delivering the _weapon_
-<ce>         to _knight_ by now. This is not a good start.
+<ce> You needed to report your success in delivering the _weapon_
+<ce> to _knight_ by now. This is not a good start.
 
 QuestComplete:  [1004]
-<ce>         Why did %g1 neglect to take it, %pcf? %oth.
-<ce>         May I make a comment, %pct? We send our knights
-<ce>         to wage war between life and death every day.
-<ce>         Carelessness leads to the grave. Always remember that.
-<ce>         And please accept my thanks.
+<ce> Why did %g1 neglect to take it, %pcf? %oth.
+<ce> May I make a comment, %pct? We send our knights
+<ce> to wage war between life and death every day.
+<ce> Carelessness leads to the grave. Always remember that.
+<ce> And please accept my thanks.
 
 Message:  1020
-<ce>         What is this? Some _weapon_? _qgiver_ never
-<ce>         told me I would be taking one on this expedition. Keep it
-<ce>         for yourself. Oh, come now, just take it. I do not want it.
-<ce>         I said, I do not want it! %oth, then give it to me.
-<ce>         I'll throw it at the first orc I encounter and be done with
-<ce>         it. Are you happy now, %ra? Begone from me.
+<ce> What is this? Some _weapon_? _qgiver_ never
+<ce> told me I would be taking one on this expedition. Keep it
+<ce> for yourself. Oh, come now, just take it. I do not want it.
+<ce> I said, I do not want it! %oth, then give it to me.
+<ce> I'll throw it at the first orc I encounter and be done with
+<ce> it. Are you happy now, %ra? Begone from me.
 <--->
-<ce>         %oth, did _qgiver_ send you? Praise %god.
-<ce>         I knew %g1 would bury me if I forgot that _weapon_
-<ce>         this time. Here, let me have it. I'm no expert yet, but I'll
-<ce>         give it some practice while I'm in the depths. I'll
-<ce>         be a Keeper before %g1 knows it! Farewell, %ra.
+<ce> %oth, did _qgiver_ send you? Praise %god.
+<ce> I knew %g1 would bury me if I forgot that _weapon_
+<ce> this time. Here, let me have it. I'm no expert yet, but I'll
+<ce> give it some practice while I'm in the depths. I'll
+<ce> be a Keeper before %g1 knows it! Farewell, %ra.
 <--->
-<ce>         Hold, %ra! Silence! What is that? My _weapon_?
-<ce>         %oth, I hadn't realized I had left it. How good it is that
-<ce>         I had other matters to resolve here in ___knighttown_ before
-<ce>         entering that cave. A terrifying prospect it is to face an atronach
-<ce>         and realize I'm missing a weapon. How good of you to bring it
-<ce>         to me! Give _qgiver_ my regards. Fare thee well.
+<ce> Hold, %ra! Silence! What is that? My _weapon_?
+<ce> %oth, I hadn't realized I had left it. How good it is that
+<ce> I had other matters to resolve here in ___knighttown_ before
+<ce> entering that cave. A terrifying prospect it is to face an atronach
+<ce> and realize I'm missing a weapon. How good of you to bring it
+<ce> to me! Give _qgiver_ my regards. Fare thee well.
 
 Message:  1030
 %qdt:
@@ -77,16 +77,16 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 --	Quest start-up:
 	start timer _timer_
 	log 1030 step 0 
-          place npc _knight_ at _knighttown_
-          get item _weapon_
+  place npc _knight_ at _knighttown_
+  get item _weapon_
 
 _deliver_ task:
-          toting _weapon_ and _knight_ clicked
-          say 1020
-          take _weapon_ from pc
+  toting _weapon_ and _knight_ clicked
+  say 1020
+  take _weapon_ from pc
 
 _victory_ task:
-          when _qgclicked_ and _deliver_
+  when _qgclicked_ and _deliver_
 	give pc nothing
 	end quest
 
@@ -95,9 +95,9 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _deliver_
-          say 1099
+  say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _timer_ task:
-          say 1003
+  say 1003
 	end quest

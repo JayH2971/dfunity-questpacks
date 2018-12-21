@@ -109,58 +109,58 @@ Foe _e3_ is Burglar
 	log 1030 step 0 
 	place npc _witch_ at _dung_
 	pc at _dung_ set _inside_
-    reveal _dung_
+  reveal _dung_
 
 _inside_ task:
-    start task _trap_
-    start timer _spawn_
-    start timer _failsafe_
-    say 1013
+  start task _trap_
+  start timer _spawn_
+  start timer _failsafe_
+  say 1013
 
 _spawn_ task:
-    say 1014
-    create foe _e3_ every 0 minutes 1 times with 100% success
+  say 1014
+  create foe _e3_ every 0 minutes 1 times with 100% success
 
 variable _trap_
 _tele_ task:
-    when _trap_ and not _slain_ and not _inside_
-    teleport pc to _dung_
-    say 1015
+  when _trap_ and not _slain_ and not _inside_
+  teleport pc to _dung_
+  say 1015
 
 _quest_ task:
 	when _inside_ and not _slain_
 	create foe _e1_ every 15 minutes indefinitely with 10% success
 	create foe _e2_ every 20 minutes indefinitely with 7% success
-    create foe _e3_ every 25 minutes indefinitely with 4% success
+  create foe _e3_ every 25 minutes indefinitely with 4% success
 
 _failsafe_ task:
 	hide npc _witch_
-    say 1012
-    end quest
+  say 1012
+  end quest
 
 _talk_ task:
-    clicked npc _witch_
+  clicked npc _witch_
 
 _daed_ task:
-    when skill Daedric is at least 40
+  when skill Daedric is at least 40
 
 _ww_ task:
-    when _talk_ and _daed_
-    say 1011
-    hide npc _witch_
-    place foe _w1_ at _dung_
-    restrain foe _w1_
+  when _talk_ and _daed_
+  say 1011
+  hide npc _witch_
+  place foe _w1_ at _dung_
+  restrain foe _w1_
 
 _wf_ task:
-    when _talk_ and not _daed_
-    say 1010
-    hide npc _witch_
-    place foe _w1_ at _dung_
+  when _talk_ and not _daed_
+  say 1010
+  hide npc _witch_
+  place foe _w1_ at _dung_
 
 _slain_ task:
 	killed _w1_
-    say 1016
-    stop timer _spawn_
+  say 1016
+  stop timer _spawn_
 
 _pcgetsgold_ task:
 	when _qgclicked_ and _slain_ 
@@ -175,5 +175,5 @@ _clearclick_ task:
 	clear _qgclicked_ _clearclick_ 
 
 _2dung_ task:
-    say 1003
-    end quest
+  say 1003
+  end quest

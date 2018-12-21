@@ -20,14 +20,14 @@ QuestComplete:  [1004]
 <ce> Not bad at all. Your next one's gonna pay even more,
 <ce> trust me. Let's keep this going.
 
-RumorsDuringQuest:   [1005]
+RumorsDuringQuest: [1005]
 They say The Crow's showing up in the Bay again. I think it's an impostor.
 <--->
 Y'hear about The Crow showing up in some town? Probably lies.
 <--->
 They say The Crow's around, but I thought he died awhile ago.
 
-RumorsPostSuccess:   [1007]
+RumorsPostSuccess: [1007]
 If the Fighters Guild ever gets its hands on that %ra, they are gonna tear %pg2 apart.
 
 Message:  1010
@@ -119,50 +119,50 @@ Item _bag2_ small_sack
 Foe _warr_ is Warrior
 
 --	Quest start-up:
-    say 1010
-    say 1011
-    log 1030 step 0
-    get item _lode_
-    get item _bag_
-    _lode_ used do _prompt_
-    pc at _res_ do _inside_
+  say 1010
+  say 1011
+  log 1030 step 0
+  get item _lode_
+  get item _bag_
+  _lode_ used do _prompt_
+  pc at _res_ do _inside_
 
 variable _inside_
 
 _day_ task:
-    daily from 6:00 to 18:00
+  daily from 6:00 to 18:00
 
 _spawn_ task:
-    when _inside_ and not _day_
-    say 1060
-    create foe _warr_ every 0 minutes 1 times with 100% success
+  when _inside_ and not _day_
+  say 1060
+  create foe _warr_ every 0 minutes 1 times with 100% success
 
 _prompt_ task:
-    prompt 1080 yes _quit_ no _stay_
+  prompt 1080 yes _quit_ no _stay_
 
 _quit_ task:
-    say 1081
-    end quest
+  say 1081
+  end quest
 
 _stay_ task:
-    say 1082
+  say 1082
 
 _slain_ task:
-    killed 1 _warr_
-    say 1070
-    change repute with _fg_ by -15
-    _bag_ used do _take_
-    place npc _crow_ at _crowhome_
+  killed 1 _warr_
+  say 1070
+  change repute with _fg_ by -15
+  _bag_ used do _take_
+  place npc _crow_ at _crowhome_
 
 variable _take_
 _take2_ task:
-    when _inside_ and _take_
-    take _bag_ from pc
-    get item _bag2_
-    say 1071
+  when _inside_ and _take_
+  take _bag_ from pc
+  get item _bag2_
+  say 1071
 
 _talk_ task:
-    toting _bag2_ and _crow_ clicked
-    give pc _reward_
-    start quest JHTG06X
-    end quest
+  toting _bag2_ and _crow_ clicked
+  give pc _reward_
+  start quest JHTG06X
+  end quest

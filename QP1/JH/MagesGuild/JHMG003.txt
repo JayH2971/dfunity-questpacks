@@ -77,12 +77,6 @@ Message:  1030
  I have =timer_ days to report
  in ___questgiver_.
 
-Message:  1099
-<ce>        I recognize that the occult inspires
-<ce>        a little fear in everyone, %pct.
-<ce>        But I cannot help you slay
-<ce>        =enemy_. You have =timer_ days.
-
 QBN:
 
 Person _questgiver_ group Questor male
@@ -137,7 +131,6 @@ _qgclicked_ task:
 
 _clearclick_ task:
     when _qgclicked_ and not _slain_
-    say 1099
     clear _qgclicked_ _clearclick_
  
 _timer_ task:

@@ -74,29 +74,29 @@ Foe _zombie_ is Zombie
 
 --	Quest start-up:
 	log 1030 step 0 
-    pc at _dung_ do _infect_
-    reveal _dung_
-    start timer _timer_
-    place foe _zombie_ at _dung_
+  pc at _dung_ do _infect_
+  reveal _dung_
+  start timer _timer_
+  place foe _zombie_ at _dung_
 
 _infect_ task:
-    say 1020
+  say 1020
 
 _sick_ task:
-    when _infect_ and not _slain_
-    make pc ill with Typhoid_Fever
-    clear _sick_
+  when _infect_ and not _slain_
+  make pc ill with Typhoid_Fever
+  clear _sick_
 
 _slain_ task:
-    killed _zombie_
-    say 1021
+  killed _zombie_
+  say 1021
 
 _qgclicked_ task:
-    clicked npc _qgiver_
+  clicked npc _qgiver_
 
 _clearclick_ task:
-    when _qgclicked_ and not _slain_
-    clear _qgclicked_ _clearclick_
+  when _qgclicked_ and not _slain_
+  clear _qgclicked_ _clearclick_
 
 _pcgetsgold_ task:
 	when _qgclicked_ and _slain_
@@ -104,5 +104,5 @@ _pcgetsgold_ task:
 	end quest
  
 _timer_ task:
-    say 1003
-    end quest
+  say 1003
+  end quest

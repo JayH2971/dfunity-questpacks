@@ -88,10 +88,6 @@ Message:  1031
  ___questgiver_ and talk to
  _questgiver_ about it.
 
-Message:  1099
-<ce>        Get moving to ___rural_.
-<ce>        People could be dying for all you know.
-
 QBN:
 Item _reward_ gold
 Item _altrew_ gold range 30 to 40
@@ -172,7 +168,6 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ and not _alt2_
-          say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _pcreward_ task:

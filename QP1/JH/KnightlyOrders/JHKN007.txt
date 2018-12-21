@@ -37,15 +37,15 @@ AcceptQuest:  [1002]
 <ce> I cannot give you more than two days to do this.
 
 QuestFail:  [1003]
-<ce>       No matter what progress you might have made
-<ce>       to solve the murders, _questgiver_
-<ce>       will not accept how long it has taken you.
+<ce> No matter what progress you might have made
+<ce> to solve the murders, _questgiver_
+<ce> will not accept how long it has taken you.
 
 QuestComplete:  [1004]
-<ce>     To think such a powerful foe can infiltrate
-<ce>     this city and slay according to its will and
-<ce>     pleasure is troubling. But you have proven
-<ce>        yourself a knight of the first class.
+<ce> To think such a powerful foe can infiltrate
+<ce> this city and slay according to its will and
+<ce> pleasure is troubling. But you have proven
+<ce>  yourself a knight of the first class.
 
 Message:  1020
 <ce>  Do you have need of me, %pcf?
@@ -106,9 +106,9 @@ Message:  1030
  unmasking the foe. I have two days.
 
 Message:  1099
-<ce>   Bring me our local murderer's head.
-<ce>   Speak to _priest_ when
-<ce>   you need help. You have 48 hours.
+<ce> Bring me our local murderer's head.
+<ce> Speak to _priest_ when
+<ce> you need help. You have 48 hours.
 
 QBN:
 Person _questgiver_ group Questor male
@@ -159,16 +159,16 @@ _step2_ task:
  add _priest_ face
 
 _step3_ task:
-        when _cclicked_ and _step2_ and not _frost_
-        say 1023
-        hide npc _culp_
-        place foe _dae1_ at _shop_
+  when _cclicked_ and _step2_ and not _frost_
+  say 1023
+  hide npc _culp_
+  place foe _dae1_ at _shop_
 
 _step3a_ task:
-        when _cclicked_ and _step2_ and _frost_
-        say 1023
-        hide npc _culp_
-        place foe _dae2_ at _shop_
+  when _cclicked_ and _step2_ and _frost_
+  say 1023
+  hide npc _culp_
+  place foe _dae2_ at _shop_
 
 _slain_ task:
 	killed 1 _dae1_ saying 1024

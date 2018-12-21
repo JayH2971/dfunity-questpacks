@@ -231,25 +231,25 @@ Item _reward_ gold
 --	Quest start-up:
 	start timer _timer_
 	log 1080 step 0
-    place npc _wife_ at _res_
-    add _husb_ face
+  place npc _wife_ at _res_
+  add _husb_ face
 
 _begin_ task:
-    clicked npc _wife_
-    say 1028
-    prompt 1029 yes _fail_ no _Q1_
+  clicked npc _wife_
+  say 1028
+  prompt 1029 yes _fail_ no _Q1_
 
 _Q1_ task:
 	prompt 1031 yes _junction1_ no _fail_
 
 variable _junction1_
 _pick1_ task:
-    when _junction1_ and not _skill1_
+  when _junction1_ and not _skill1_
 	pick one of _Q2A_ _Q2B_
 
 _shortcut1_ task:
-    when _junction1_ and _skill1_
-    start task _success_
+  when _junction1_ and _skill1_
+  start task _success_
 
 _Q2A_ task:
 	prompt 1034 yes _junction2_ no _fail_
@@ -259,12 +259,12 @@ _Q2B_ task:
 
 variable _junction2_
 _pick2_ task:
-    when _junction2_ and not _skill2_
+  when _junction2_ and not _skill2_
 	pick one of _Q3A_ _Q3B_
 
 _shortcut2_ task:
-    when _junction2_ and _skill2_
-    start task _success_
+  when _junction2_ and _skill2_
+  start task _success_
 
 _Q3A_ task:
 	prompt 1037 yes _Q4_ no _fail_
@@ -277,8 +277,8 @@ _Q4_ task:
 
 variable _junction3_
 _pick3_ task:
-    when _junction3_ and not _skill3_
-    pick one of _Q5A_ _Q5B_
+  when _junction3_ and not _skill3_
+  pick one of _Q5A_ _Q5B_
 
 _Q5A_ task:
 	prompt 1043 yes _success_ no _fail_
@@ -287,30 +287,30 @@ _Q5B_ task:
 	prompt 1044 yes _fail_ no _success_
 
 _shortcut3_ task:
-    when _junction3_ and _skill3_
-    start task _success_
+  when _junction3_ and _skill3_
+  start task _success_
 
 _skill1_ task:
-    when skill Etiquette is at least 60
+  when skill Etiquette is at least 60
 
 _skill2_ task:
-    when skill Etiquette is at least 40
+  when skill Etiquette is at least 40
 
 _skill3_ task:
-    when skill Etiquette is at least 20
+  when skill Etiquette is at least 20
 
 _fail_ task:
 	say 1099
-    hide npc _wife_
-    drop _husb_ face
+  hide npc _wife_
+  drop _husb_ face
 	end quest
 
 _success_ task:
 	give pc _reward_
-    hide npc _wife_
-    drop _husb_ face
+  hide npc _wife_
+  drop _husb_ face
 	end quest
 
 _timer_ task:
-    say 1003
+  say 1003
 	end quest

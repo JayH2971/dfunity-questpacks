@@ -89,10 +89,6 @@ Message:  1030
  _res_ and ensure no
  one's inside. I have =timer_ days.
 
-Message:  1099
-<ce>      Get him to ___res_.
-<ce>      He looks like he hasn't slept for months.
-
 QBN:
 Item _reward_ gold
 
@@ -148,5 +144,4 @@ _timer_ task:
 
 _clearclick_ task:
 	when _qgclicked_
-          say 1099
 	clear _qgclicked_ _clearclick_ 

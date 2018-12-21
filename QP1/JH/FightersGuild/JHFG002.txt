@@ -67,10 +67,6 @@ Message:  1031
  slay a _daedralord_. I have
  =timer_ days.
 
-Message:  1099
-<ce>                 You haven't killed the daedra.
-<ce>               I gave you =timer_ days to do it.
-
 QBN:
 Item _reward_ diamond
 
@@ -111,7 +107,6 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 
-          say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _timer_ task:

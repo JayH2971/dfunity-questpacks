@@ -100,40 +100,40 @@ Foe _meet_ is Thief
 	start timer _timer_
 	log 1030 step 0 
 	pc at _captive_ set _city_
-    pc at _dung_ set _pres_
-    _letter_ used do _read_
-    get item _letter_
+  pc at _dung_ set _pres_
+  _letter_ used do _read_
+  get item _letter_
 
 _city_ task:
-    _letter_ used do _read_
+  _letter_ used do _read_
 
 _read_ task:
-    say 1021
-    create foe _meet_ every 0 minutes 1 times with 100% success
-    restrain foe _meet_
+  say 1021
+  create foe _meet_ every 0 minutes 1 times with 100% success
+  restrain foe _meet_
 
 variable _safe_
 _found_ task:
-    when _safe_ and _read_
-    say 1021
-    create foe _meet_ every 0 minutes 1 times with 100% success
-    restrain foe _meet_
+  when _safe_ and _read_
+  say 1021
+  create foe _meet_ every 0 minutes 1 times with 100% success
+  restrain foe _meet_
 
 _inj_ task:
-    injured _meet_
-    say 1022
-    give item _magic_ to _meet_
-    make _magic_ permanent
-    restrain foe _meet_
-    log 1031 step 1
+  injured _meet_
+  say 1022
+  give item _magic_ to _meet_
+  make _magic_ permanent
+  restrain foe _meet_
+  log 1031 step 1
 
 variable _pres_
 _spawn_ task:
-    when _pres_ and not _first_
-    say 1026
-    create foe _enemy2_ every 0 minutes 1 times with 100% success
-    create foe _enemy1_ every 1 minutes indefinitely with 30% success
-    create foe _enemy2_ every 1 minutes indefinitely with 45% success
+  when _pres_ and not _first_
+  say 1026
+  create foe _enemy2_ every 0 minutes 1 times with 100% success
+  create foe _enemy1_ every 1 minutes indefinitely with 30% success
+  create foe _enemy2_ every 1 minutes indefinitely with 45% success
 
 _first_ task:
 	killed 3 _enemy1_
@@ -158,4 +158,4 @@ _pcreward_ task:
 
 _timer_ task:
 	say 1003
-    end quest
+  end quest

@@ -4,9 +4,9 @@ DisplayName: Eight-Legged Freaks
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ___captive_ is having some problems
-<ce>          with venomous critters in its streets.
-<ce>          Wanna go? It's paying =reward_ gold.
+<ce>  ___captive_ is having some problems
+<ce>  with venomous critters in its streets.
+<ce>  Wanna go? It's paying =reward_ gold.
 
 RefuseQuest:  [1001]
 <ce>	You one of those types that's allergic to paralysis?

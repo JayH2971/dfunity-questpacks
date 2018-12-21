@@ -97,47 +97,47 @@ Foe _sprig2_ is Spriggan
 
 --	Quest start-up:
 	log 1030 step 0 
-    start timer _spawn_
-    start timer _2dung_
-    start timer _failsafe_
-    reveal _dung_
-    place foe _mage_ at _dung_
+  start timer _spawn_
+  start timer _2dung_
+  start timer _failsafe_
+  reveal _dung_
+  place foe _mage_ at _dung_
 
 _spawn_ task:
-    create foe _sprig1_ every 0 minutes 1 times with 100% success
+  create foe _sprig1_ every 0 minutes 1 times with 100% success
 
 _skilled_ task:
-    when skill Spriggan is at least 20
+  when skill Spriggan is at least 20
 
 _peaceful_ task:
-    when _spawn_ and _skilled_
-    restrain foe _sprig1_
-    say 1021
+  when _spawn_ and _skilled_
+  restrain foe _sprig1_
+  say 1021
 
 _hurt_ task:
-    injured _sprig1_
+  injured _sprig1_
 
 _betray_ task:
-    when _peaceful_ and _hurt_ and not _slain_
-    say 1022
-    create foe _sprig2_ every 60 minutes indefinitely with 20% success
+  when _peaceful_ and _hurt_ and not _slain_
+  say 1022
+  create foe _sprig2_ every 60 minutes indefinitely with 20% success
 
 _norm_ task:
-    when _spawn_ and not _skilled_ and not _slain_
-    create foe _sprig2_ every 60 minutes indefinitely with 20% success
-    say 1020
+  when _spawn_ and not _skilled_ and not _slain_
+  create foe _sprig2_ every 60 minutes indefinitely with 20% success
+  say 1020
 
 _slain_ task:
-    killed _mage_
-    say 1023
-    stop timer _2dung_
+  killed _mage_
+  say 1023
+  stop timer _2dung_
 
 _qgclicked_ task:
-    clicked npc _qgiver_
+  clicked npc _qgiver_
 
 _clearclick_ task:
-    when _qgclicked_ and not _slain_
-    clear _qgclicked_ _clearclick_
+  when _qgclicked_ and not _slain_
+  clear _qgclicked_ _clearclick_
 
 _victory_ task:
 	when _qgclicked_ and _slain_
@@ -145,8 +145,8 @@ _victory_ task:
 	end quest
  
 _2dung_ task:
-    say 1003
-    end quest
+  say 1003
+  end quest
 
 _failsafe_ task:
-    end quest
+  end quest

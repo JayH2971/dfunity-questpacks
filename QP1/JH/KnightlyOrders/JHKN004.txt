@@ -6,64 +6,64 @@ QRC:
 QuestorOffer:  [1000]
 <ce>  %pcn, I do not know if you have heard the rumors.
 <ce>  Allow me to explain the situation. Some outlaw band
-<ce>   of renegade warriors, the Knights of the _gem_, are
+<ce> of renegade warriors, the Knights of the _gem_, are
 <ce>  attempting to gain legitimacy for themselves by taking
 <ce>  an entire city by force, that is, ___questgiver_.
-<ce>   The forces of %crn have stomped out a few
+<ce> The forces of %crn have stomped out a few
 <ce>  their encampments, but they have escaped us, and now
-<ce>   word has come that a full assault will soon be upon us.
-<ce>   Will you stand watch with me to see whether these
-<ce>   things are so, knight of the order?
+<ce> word has come that a full assault will soon be upon us.
+<ce> Will you stand watch with me to see whether these
+<ce> things are so, knight of the order?
 
 RefuseQuest:  [1001]
 <ce>  Then go quickly, %pcf. I don't want a
-<ce>    coward to die in the impending bloodshed.
+<ce>  coward to die in the impending bloodshed.
 
 AcceptQuest:  [1002]
-<ce>        Very good. Stand here until
+<ce>  Very good. Stand here until
 <ce>  they bring us word.
 
 QuestFail:  [1003]
-<ce>      
+<ce>  
 
 QuestComplete:  [1004]
-<ce>   A page bearing the banner of %crn
-<ce>    draws near and bows before you
-<ce>      before reading from a scroll.
-<ce>   
-<ce>   "%pcn, Knight Protectorate of %crn,
-<ce>   we salute the service you have performed
-<ce>   this day, bringing swift justice to renegades
-<ce>   and outlaws who put this city into peril. May
-<ce>   %god be with you in your endeavors
-<ce>    to preserve justice and civilization."
-<ce>   
-<ce>     Others begin to move and clean up the bodies.
-<ce>   The assault is over, and life can resume once more.
+<ce> A page bearing the banner of %crn
+<ce>  draws near and bows before you
+<ce>  before reading from a scroll.
+<ce> 
+<ce> "%pcn, Knight Protectorate of %crn,
+<ce> we salute the service you have performed
+<ce> this day, bringing swift justice to renegades
+<ce> and outlaws who put this city into peril. May
+<ce> %god be with you in your endeavors
+<ce>  to preserve justice and civilization."
+<ce> 
+<ce> Others begin to move and clean up the bodies.
+<ce> The assault is over, and life can resume once more.
 
 Message:  1010
-<ce>   A page bearing the crest of %crn
-<ce>    swiftly approaches _questgiver_
-<ce>        and presents %g2 with a sealed letter, which
+<ce> A page bearing the crest of %crn
+<ce>  swiftly approaches _questgiver_
+<ce>  and presents %g2 with a sealed letter, which
 <ce> %g1 hastily opens, after which %g1 signals to you.
-<ce>   
-<ce>     "It's begun! They will soon be upon us!
-<ce>    Go out there and fight off what you can!"
+<ce> 
+<ce> "It's begun! They will soon be upon us!
+<ce>  Go out there and fight off what you can!"
 
 Message:  1011
-<ce>   As you fell the first of the outlaws,
-<ce>    you hear a roaring cry nearby.
-<ce>    
-<ce>    "Kill that %ra! This is the day
-<ce>     we take back ___palace_!
-<ce>   For the Knights of the _gem_!"
+<ce> As you fell the first of the outlaws,
+<ce>  you hear a roaring cry nearby.
+<ce>  
+<ce>  "Kill that %ra! This is the day
+<ce> we take back ___palace_!
+<ce> For the Knights of the _gem_!"
 
 Message:  1020
-<ce>   A guard signals to you and shouts,
-<ce>     "They're in the Palace! Go, quickly! Stop them!"
+<ce> A guard signals to you and shouts,
+<ce> "They're in the Palace! Go, quickly! Stop them!"
 
 Message:  1024
-<ce>       Hiding away will not help ___questgiver_, %pct.
+<ce> Hiding away will not help ___questgiver_, %pct.
 
 Message:  1030
 %qdt:
@@ -84,8 +84,8 @@ Message:  1031
  have entered it.
 
 Message:  1099
-<ce>      Protect ___palace_, %pcf!
-<ce>      They are nearly upon us!
+<ce>  Protect ___palace_, %pcf!
+<ce>  They are nearly upon us!
 
 QBN:
 Item _gem_ gem

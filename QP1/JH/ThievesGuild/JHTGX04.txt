@@ -29,14 +29,14 @@ QuestComplete:  [1004]
 <ce> 
 <ce> He hands you a sack of coins.
 
-RumorsDuringQuest:   [1005]
+RumorsDuringQuest: [1005]
 They say The Crow's showing up in the Bay again. I think it's an impostor.
 <--->
 Y'hear about The Crow showing up in some town? Probably lies.
 <--->
 They say The Crow's around, but I thought he died awhile ago.
 
-RumorsPostSuccess:   [1007]
+RumorsPostSuccess: [1007]
 Someone named %pcf hates the Fighters Guild.
 <--->
 They say %pcf and The Crow are murderers.
@@ -100,39 +100,39 @@ Clock _timer_ 8:00
 Foe _warr_ is Warrior
 
 --	Quest start-up:
-    say 1010
-    log 1030 step 0
-    get item _lode_
-    place item _body_ at _tavern_
-    _lode_ used do _prompt_
-    start timer _timer_
+  say 1010
+  log 1030 step 0
+  get item _lode_
+  place item _body_ at _tavern_
+  _lode_ used do _prompt_
+  start timer _timer_
 
 _prompt_ task:
-    prompt 1080 yes _quit_ no _stay_
+  prompt 1080 yes _quit_ no _stay_
 
 _quit_ task:
-    say 1081
-    end quest
+  say 1081
+  end quest
 
 _stay_ task:
-    say 1082
+  say 1082
 
 _grab_ task:
-    clicked item _body_
-    take _body_ from pc
-    say 1070
-    create foe _warr_ every 0 minutes 3 times with 100% success
+  clicked item _body_
+  take _body_ from pc
+  say 1070
+  create foe _warr_ every 0 minutes 3 times with 100% success
 
 _slain_ task:
-    killed 3 _warr_
-    start timer _delay_
-    change repute with _fg_ by -15
+  killed 3 _warr_
+  start timer _delay_
+  change repute with _fg_ by -15
 
 _delay_ task:
-    give pc _reward_
-    start quest JHTGX05
-    end quest
+  give pc _reward_
+  start quest JHTGX05
+  end quest
 
 _timer_ task:
-    say 1003
-    end quest
+  say 1003
+  end quest

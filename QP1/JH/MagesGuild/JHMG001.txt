@@ -63,12 +63,6 @@ Message:  1030
  =timer_ days to end this threat
  and return.
 
-Message:  1099
-<ce>        Hurry to __dungeon_ and
-<ce>        slay our former student. We
-<ce>        do not know what manner of
-<ce>        enemy you will face this time.
-
 QBN:
 Item _reward_ book
 
@@ -122,7 +116,6 @@ _pcgetsgold_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 
-          say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _timer_ task:

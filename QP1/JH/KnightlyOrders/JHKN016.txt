@@ -121,54 +121,54 @@ Clock _failsafe_ 120.00:00
 
 --	Quest start-up:
 	log 1030 step 0 
-    start timer _2res_
-    start timer _failsafe_
-    get item _trink_
-    pc at _res_ set _inside_
+  start timer _2res_
+  start timer _failsafe_
+  get item _trink_
+  pc at _res_ set _inside_
 
 _inside_ task:
-    say 1019
-    take _trink_ from pc
-    create foe _orc_ every 0 minutes 1 times with 100% success
+  say 1019
+  take _trink_ from pc
+  create foe _orc_ every 0 minutes 1 times with 100% success
 
 _easy_ task:
-    when _inside_ and _skilled_
-    restrain foe _orc_
-    say 1021
-    start task _easywin_
+  when _inside_ and _skilled_
+  restrain foe _orc_
+  say 1021
+  start task _easywin_
 
 variable _easywin_
 _attack_ task:
-    when _inside_ and not _skilled_
-    say 1023
-    start timer _fight_
-    start task _wicked_
+  when _inside_ and not _skilled_
+  say 1023
+  start timer _fight_
+  start task _wicked_
 
 variable _wicked_
 _fail1_ task:
-    when _wicked_ and not _inside_ and not _fight_
-    play sound pounding every 0 minutes 1 times
-    say 1025
-    end quest
+  when _wicked_ and not _inside_ and not _fight_
+  play sound pounding every 0 minutes 1 times
+  say 1025
+  end quest
 
 _fight_ task:
-    restrain foe _orc_
-    say 1024
+  restrain foe _orc_
+  say 1024
 
 _fail2_ task:
-    killed _orc_
-    say 1003
-    end quest
+  killed _orc_
+  say 1003
+  end quest
 
 _skilled_ task:
-    when skill Orcish is at least 20
+  when skill Orcish is at least 20
 
 _qgclicked_ task:
-    clicked npc _qgiver_
+  clicked npc _qgiver_
 
 _clearclick_ task:
-    when _qgclicked_ and not _fight_ and not _easywin_
-    clear _qgclicked_ _clearclick_
+  when _qgclicked_ and not _fight_ and not _easywin_
+  clear _qgclicked_ _clearclick_
 
 _victory1_ task:
 	when _qgclicked_ and _fight_
@@ -176,15 +176,15 @@ _victory1_ task:
 
 _victory2_ task:
 	when _qgclicked_ and _easywin_
-    start task _final_
+  start task _final_
 
 _final_ task:
 	give pc nothing
 	end quest
  
 _2res_ task:
-    say 1003
-    end quest
+  say 1003
+  end quest
 
 _failsafe_ task:
-    end quest
+  end quest

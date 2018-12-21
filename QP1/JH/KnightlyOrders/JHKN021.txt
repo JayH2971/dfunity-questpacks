@@ -22,7 +22,7 @@ AcceptQuest:  [1002]
 <ce> you must return here within =timer_ days with news of
 <ce> your success. Safest travels, %pct.
 
-QuestFail:   [1003]
+QuestFail: [1003]
 <ce> You are too late for the trial. Whatever cause you had
 <ce> to hold _witch_ has expired.
 
@@ -131,63 +131,63 @@ Clock _surprise_ 1:00 8.00:00
 	start timer _timer_ 
 	log 1010 step 0 
 	place npc _witch_ at _res_ 
-    pick one of _E.01_ _E.02_
-    pick one of _map_ _nomap_ _nomap_ _nomap_ _nomap_
+  pick one of _E.01_ _E.02_
+  pick one of _map_ _nomap_ _nomap_ _nomap_ _nomap_
 
 variable _E.01_
 variable _E.02_
 _timer_ task:
-    say 1003
-    end quest
+  say 1003
+  end quest
 
 _conv_ task:
 	clicked npc _witch_ 
 
 _pac_ task:
-    when _E.01_ and _conv_
-    start task _pac2_
-    say 1011
-    hide npc _witch_
-    add _witch_ face
-    start timer _surprise_
+  when _E.01_ and _conv_
+  start task _pac2_
+  say 1011
+  hide npc _witch_
+  add _witch_ face
+  start timer _surprise_
 
 _surprise_ task:
-    say 1016
-    drop _witch_ face
-    create foe _w1_ every 0 minutes 1 times with 100% success
-    pick one of _K01_ _K02_ _K03_
-    clear _pac2_
+  say 1016
+  drop _witch_ face
+  create foe _w1_ every 0 minutes 1 times with 100% success
+  pick one of _K01_ _K02_ _K03_
+  clear _pac2_
 
 variable _pac2_
 _fi_ task:
-    when _E.02_ and _conv_
-    say 1015
-    hide npc _witch_
-    place foe _w1_ at _res_
-    pick one of _K01_ _K02_ _K03_
+  when _E.02_ and _conv_
+  say 1015
+  hide npc _witch_
+  place foe _w1_ at _res_
+  pick one of _K01_ _K02_ _K03_
 
 variable _K01_
 _K02_ task:
-    create foe _d1_ every 0 minutes 1 times with 100% success
+  create foe _d1_ every 0 minutes 1 times with 100% success
 
 _K03_ task:
-    create foe _d1_ every 0 minutes 1 times with 100% success
-    create foe _d2_ every 0 minutes 1 times with 100% success
+  create foe _d1_ every 0 minutes 1 times with 100% success
+  create foe _d2_ every 0 minutes 1 times with 100% success
 
 _S1_ task:
-    killed _w1_
-    say 1017
+  killed _w1_
+  say 1017
 
 variable _nomap_
 
 _map_ task:
-    give item _map_ to _w1_
-    have _map_ set _mark_
+  give item _map_ to _w1_
+  have _map_ set _mark_
 
 _mark_ task:
-    take _map_ from pc
-    say 1021
-    reveal _coven_
+  take _map_ from pc
+  say 1021
+  reveal _coven_
 
 _qgclicked_ task:
 	clicked npc _qgiver_
@@ -198,12 +198,12 @@ _clearclick_ task:
 
 _rew1_ task:
 	when _qgclicked_ and _S1_
-    say 1020
+  say 1020
 	give pc nothing
 	end quest
 
 _rew2_ task:
-    when _qgclicked_ and _pac2_
-    say 1018
+  when _qgclicked_ and _pac2_
+  say 1018
 	give pc nothing
 	end quest

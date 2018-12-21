@@ -4,52 +4,52 @@ DisplayName: General Protection Fault
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          We rarely ask questions concerning why certain
-<ce>          tasks are brought to us, and further still when
-<ce>          they pay well. I will tell you nothing about this
-<ce>          mark except that a bodyguard had to be hired
-<ce>          for peace of mind. Show the poor fool in
-<ce>          ___res_ what we think of bodyguards.
+<ce>  We rarely ask questions concerning why certain
+<ce>  tasks are brought to us, and further still when
+<ce>  they pay well. I will tell you nothing about this
+<ce>  mark except that a bodyguard had to be hired
+<ce>  for peace of mind. Show the poor fool in
+<ce>  ___res_ what we think of bodyguards.
 <--->
-<ce>          There are times we find satisfaction in simply
-<ce>          proving our superiority over every other force
-<ce>          moving across ____res_. What name
-<ce>          inspires so much as half the fear as the Dark
-<ce>          Brotherhood among the citizenry? Yet to ensure
-<ce>          we remain more than a mere name, we must
-<ce>          overpower those who wish to thwart us.
-<ce>          Go to ___res_ and slay a fool who
-<ce>          has hired a bodyguard.
+<ce>  There are times we find satisfaction in simply
+<ce>  proving our superiority over every other force
+<ce>  moving across ____res_. What name
+<ce>  inspires so much as half the fear as the Dark
+<ce>  Brotherhood among the citizenry? Yet to ensure
+<ce>  we remain more than a mere name, we must
+<ce>  overpower those who wish to thwart us.
+<ce>  Go to ___res_ and slay a fool who
+<ce>  has hired a bodyguard.
 
 RefuseQuest:  [1001]
-<ce>      Perhaps you should work for the Fighters Guild
-<ce>           if you dislike dirtying your hands.
+<ce>  Perhaps you should work for the Fighters Guild
+<ce> if you dislike dirtying your hands.
 
 AcceptQuest:  [1002]
-<ce>             The bodyguard is of little concern to us.
-<ce>             Perhaps shattering its ego would provide
-<ce>             you more satisfaction than killing it. The
-<ce>             accounting is for the mark only. This
-<ce>             tragic duo will stay at _res_
-<ce>             in ___res_. Return here in
-<ce>             =timer_ days. Go with Mephala, %pct.
+<ce> The bodyguard is of little concern to us.
+<ce> Perhaps shattering its ego would provide
+<ce> you more satisfaction than killing it. The
+<ce> accounting is for the mark only. This
+<ce> tragic duo will stay at _res_
+<ce> in ___res_. Return here in
+<ce> =timer_ days. Go with Mephala, %pct.
 
 QuestFail:  [1003]
-<ce>            The Dark Brotherhood expected you
-<ce>             in ___questgiver_ by now.
+<ce>  The Dark Brotherhood expected you
+<ce> in ___questgiver_ by now.
 
 QuestComplete:  [1004]
-<ce>           Well done, %pct. And what did you
-<ce>           do to the incompetent guardian?... A fitting
-<ce>           resolution. The Night Mother will be pleased.
+<ce> Well done, %pct. And what did you
+<ce> do to the incompetent guardian?... A fitting
+<ce> resolution. The Night Mother will be pleased.
 
 Message:  1019
-<ce>          You step into _res_,
-<ce>          watching for this so-called bodyguard.
+<ce>  You step into _res_,
+<ce>  watching for this so-called bodyguard.
 
 Message:  1020
-<ce>          The acrobat collapses in defeat.
-<ce>             The contract is fulfilled.
+<ce>  The acrobat collapses in defeat.
+<ce> The contract is fulfilled.
 
 Message:  1030
 %qdt:
@@ -62,9 +62,9 @@ Message:  1030
  =timer_ days for recognition.
 
 Message:  1099
-<ce>         ___res_. _res_.
-<ce>         Cowering mark. Fearful bodyguard.
-<ce>         =timer_ days. Go now.
+<ce> ___res_. _res_.
+<ce> Cowering mark. Fearful bodyguard.
+<ce> =timer_ days. Go now.
 
 QBN:
 
@@ -81,14 +81,14 @@ Foe _bguard_ is Barbarian
 	start timer _timer_ 
 	log 1030 step 0 
 	place foe _acro_ at _res_ 
-          pc at _res_ set _inside_
+  pc at _res_ set _inside_
 
 _inside_ task:
-         start task _spawn_
+ start task _spawn_
 
 _spawn_ task:
-         say 1019
-         create foe _bguard_ every 1 minutes 1 times with 100% success
+ say 1019
+ create foe _bguard_ every 1 minutes 1 times with 100% success
 
 _slain_ task:
 	killed 1 _acro_ saying 1020 
@@ -102,10 +102,10 @@ _pcgetsgold_ task:
 	end quest 
 
 _timer_ task:
-          say 1003
+  say 1003
 	end quest 
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 
-          say 1099
+  say 1099
 	clear _qgclicked_ _clearclick_ 

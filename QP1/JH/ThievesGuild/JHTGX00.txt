@@ -1,5 +1,5 @@
 Quest: JHTGX00
-DisplayName: 
+DisplayName: On a Wing and a Prayer
 -- Message panels
 QRC:
 
@@ -38,6 +38,6 @@ _advance_ task:
 	end quest
 
 _timer_ task:
-    say 1003
+  say 1003
 	change repute with _tg_ by +2
 	end quest 

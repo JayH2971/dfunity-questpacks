@@ -40,7 +40,7 @@ Message:  1010
   for making the trip, no commitment
   necessary. See you soon.
  
-                          K.
+          K.
 
 Message:  1011
 <ce> Well, if you don't mind my getting down to
@@ -128,34 +128,34 @@ Item _reward_ gold range 1001 to 1499
 
 --	Quest start-up:
 	start timer _initial_
-    say 1010
-    place npc _crow_ at _res_
-    log 1030 step 0
+  say 1010
+  place npc _crow_ at _res_
+  log 1030 step 0
 
 _initial_ task:
-    end quest
+  end quest
 
 _begin_ task:
-    clicked npc _crow_
-    give pc _reward_
-    prompt 1011 yes _join_ no _refuse_
-    stop timer _initial_
+  clicked npc _crow_
+  give pc _reward_
+  prompt 1011 yes _join_ no _refuse_
+  stop timer _initial_
 
 _join_ task:
-    say 1012
-    start quest JHTGX02
-    end quest
+  say 1012
+  start quest JHTGX02
+  end quest
 
 _refuse_ task:
-    prompt 1080 yes _murder_ no _fullrefuse_
+  prompt 1080 yes _murder_ no _fullrefuse_
 
 _murder_ task:
-    say 1081
-    hide npc _crow_
-    change repute with _tg_ by -10
-    end quest
+  say 1081
+  hide npc _crow_
+  change repute with _tg_ by -10
+  end quest
 
 _fullrefuse_ task:
-    say 1082
-    hide npc _crow_
-    end quest
+  say 1082
+  hide npc _crow_
+  end quest

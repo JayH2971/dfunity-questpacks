@@ -54,10 +54,6 @@ Message:  1030
  be back in =timer_ days
  to get my _reward_ gold.
 
-Message: 1099
-<ce>               The %t is paying us to kill that outlaw
-<ce>                 in ___dungeon_. Move.
-
 QBN:
 Item _reward_ gold
 
@@ -105,7 +101,6 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 
-          say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _pcgetsgold_ task:

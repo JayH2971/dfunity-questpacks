@@ -126,11 +126,11 @@ Item _art7_ artifact Warlocks_Ring
 Item _bell_ bell
 
 --	Quest start-up:
-    start timer _failsafe_
-    log 1030 step 0
-    pick one of _a1_ _a2_ _a3_ _a4_ _a5_ _a6_ _a7_
-    pc at _pal_ set _inside_
-    get item _bell_
+  start timer _failsafe_
+  log 1030 step 0
+  pick one of _a1_ _a2_ _a3_ _a4_ _a5_ _a6_ _a7_
+  pc at _pal_ set _inside_
+  get item _bell_
 
 variable _a1_
 variable _a2_
@@ -141,58 +141,58 @@ variable _a6_
 variable _a7_
 
 _inside_ task:
-    _bell_ used do _invoke_
-    say 1010
+  _bell_ used do _invoke_
+  say 1010
 
 _invoke_ task:
-    take _bell_ from pc
-    play sound belltower every 0 minutes 1 times
-    stop timer _failsafe_
-    start timer _trick_
-    start timer _battle_
-    say 1011
+  take _bell_ from pc
+  play sound belltower every 0 minutes 1 times
+  stop timer _failsafe_
+  start timer _trick_
+  start timer _battle_
+  say 1011
 
 _war_ task:
-    when _invoke_ and not _victory_
-    play sound whisting_wind_4 every 1 minutes 30 times
-    create foe _dlord_ every 0 minutes 1 times with 100% success
-    create foe _dsed_ every 0 minutes 1 times with 75% success
-    create foe _daedroth_ every 0 minutes 1 times with 100% success
-    create foe _daedroth_ every 0 minutes 1 times with 100% success
-    create foe _dlord_ every 1 minutes indefinitely with 85% success
-    create foe _dsed_ every 1 minutes indefinitely with 75% success
-    create foe _daedroth_ every 1 minutes indefinitely with 95% success
+  when _invoke_ and not _victory_
+  play sound whisting_wind_4 every 1 minutes 30 times
+  create foe _dlord_ every 0 minutes 1 times with 100% success
+  create foe _dsed_ every 0 minutes 1 times with 75% success
+  create foe _daedroth_ every 0 minutes 1 times with 100% success
+  create foe _daedroth_ every 0 minutes 1 times with 100% success
+  create foe _dlord_ every 1 minutes indefinitely with 85% success
+  create foe _dsed_ every 1 minutes indefinitely with 75% success
+  create foe _daedroth_ every 1 minutes indefinitely with 95% success
 
 _minustrick_ task:
-    killed 2 _dlord_
-    killed 2 _dsed_
-    killed 3 _daedroth_
+  killed 2 _dlord_
+  killed 2 _dsed_
+  killed 3 _daedroth_
 
 variable _trick_
 _epicfail_ task:
-    when _trick_ and not _minustrick_
-    say 1020
-    change repute with _qgiver_ by -22
-    make pc ill with Plague
-    teleport pc to _faildung_
-    say 1021
-    end quest
+  when _trick_ and not _minustrick_
+  say 1020
+  change repute with _qgiver_ by -22
+  make pc ill with Plague
+  teleport pc to _faildung_
+  say 1021
+  end quest
 
 _bigfail_ task:
-    when _invoke_ and not _inside_ and not _trick_ and not _victory_
-    say 1025
-    change repute with _qgiver_ by -22
-    end quest
+  when _invoke_ and not _inside_ and not _trick_ and not _victory_
+  say 1025
+  change repute with _qgiver_ by -22
+  end quest
 
 _slain_ task:
-    killed 8 _dlord_
-    killed 10 _dsed_
-    killed 12 _daedroth_
+  killed 8 _dlord_
+  killed 10 _dsed_
+  killed 12 _daedroth_
 
 variable _battle_
 _victory_ task:
-    when _slain_ and _battle_
-    say 1029
+  when _slain_ and _battle_
+  say 1029
 
 _qgclicked_ task:
 	clicked npc _qgiver_ 
@@ -205,40 +205,40 @@ _pcgetsgold_ task:
 	when _qgclicked_ and _victory_
 
 _v1_ task:
-    when _a1_ and _pcgetsgold_
-    give pc _art1_
-    end quest
+  when _a1_ and _pcgetsgold_
+  give pc _art1_
+  end quest
 
 _v2_ task:
-    when _a2_ and _pcgetsgold_
-    give pc _art2_
-    end quest
+  when _a2_ and _pcgetsgold_
+  give pc _art2_
+  end quest
 
 _v3_ task:
-    when _a3_ and _pcgetsgold_
-    give pc _art3_
-    end quest
+  when _a3_ and _pcgetsgold_
+  give pc _art3_
+  end quest
 
 _v4_ task:
-    when _a4_ and _pcgetsgold_
-    give pc _art4_
-    end quest
+  when _a4_ and _pcgetsgold_
+  give pc _art4_
+  end quest
 
 _v5_ task:
-    when _a5_ and _pcgetsgold_
-    give pc _art5_
-    end quest
+  when _a5_ and _pcgetsgold_
+  give pc _art5_
+  end quest
 
 _v6_ task:
-    when _a6_ and _pcgetsgold_
-    give pc _art6_
-    end quest
+  when _a6_ and _pcgetsgold_
+  give pc _art6_
+  end quest
 
 _v7_ task:
-    when _a7_ and _pcgetsgold_
-    give pc _art7_
-    end quest
+  when _a7_ and _pcgetsgold_
+  give pc _art7_
+  end quest
 
 _failsafe_ task:
-    say 1003
+  say 1003
 	end quest 

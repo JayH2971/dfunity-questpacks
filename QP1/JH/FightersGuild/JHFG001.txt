@@ -50,10 +50,6 @@ Message:  1030
  to be back in =timer_ days
  or they'll call for the temple.
 
-Message:  1099
-<ce>                 You need to go kill that vampire
-<ce>                 in ___vampres_. Get going.
-
 QBN:
 Item _reward_ gold
 
@@ -83,7 +79,6 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 
-          say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _timer_ task:

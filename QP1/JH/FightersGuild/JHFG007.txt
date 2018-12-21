@@ -81,13 +81,6 @@ Message:  1031
  I should head back to ___questgiver_ and
  tell _questgiver_ about it.
 
-Message:  1099
-<ce> Getting cold feet, %pcf? It
-<ce> happens to everyone, I guess.
-<ce> But don't take too long. Get to
-<ce> ___res_ and back
-<ce> here before =timer_ days are up.
-
 QBN:
 
 Person _questgiver_ group Questor male
@@ -133,7 +126,6 @@ _qgclicked_ task:
 
 _clearclick_ task:
     when _qgclicked_ and not _got_
-    say 1099
     clear _qgclicked_ _clearclick_
  
 _timer_ task:

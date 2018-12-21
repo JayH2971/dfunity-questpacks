@@ -97,4 +97,4 @@ _clearclick_ task:
 	clear _qgclicked_ _clearclick_ 
 
 _failsafe_ task:
-        end quest
+    end quest

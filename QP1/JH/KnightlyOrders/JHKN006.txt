@@ -22,16 +22,16 @@ AcceptQuest:  [1002]
 <ce> ___dungeon_ and find the
 <ce>  cruel beast who has done this crime. We
 <ce>  merely hope the _weapon_ is
-<ce>   still with the fool, such that recovering it
+<ce> still with the fool, such that recovering it
 <ce>  will be no great chore. Have done with this
 <ce> and bring it to me in fewer than =timer_ days.
 <ce> Honor, virtue, and glory, %pcf.
 
 QuestFail:  [1003]
-<ce>       
+<ce> 
 
 QuestComplete:  [1004]
-<ce>        Excellent work, %pct. I shall have it
+<ce>  Excellent work, %pct. I shall have it
 <ce> delivered to _res_ this
 <ce>  very day, so soon as one of our squires
 <ce> returns from an errand. The family will
@@ -40,7 +40,7 @@ QuestComplete:  [1004]
 
 Message:  1020
 <ce>  You notice a conspicuous bag
-<ce>   among this foe's belongings.
+<ce> among this foe's belongings.
 
 Message:  1030
 %qdt:
@@ -91,7 +91,6 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 
-  say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _timer_ task:

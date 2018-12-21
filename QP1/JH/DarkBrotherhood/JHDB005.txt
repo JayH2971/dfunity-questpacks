@@ -4,53 +4,53 @@ DisplayName: A Barbarous Deed
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          %pct, tell me concerning yourself. Were
-<ce>          you to spend a night in a tavern after a long day
-<ce>          of merchandising, only to be awakened every six
-<ce>          minutes by a loud and drunk barbarian in the main
-<ce>          hall, would you feel it proper to approach the
-<ce>          Brotherhood and request some natural justice be
-<ce>          meted out against the clueless brute? And would
-<ce>          you answer a call to deliver such justice?
+<ce>  %pct, tell me concerning yourself. Were
+<ce>  you to spend a night in a tavern after a long day
+<ce>  of merchandising, only to be awakened every six
+<ce>  minutes by a loud and drunk barbarian in the main
+<ce>  hall, would you feel it proper to approach the
+<ce>  Brotherhood and request some natural justice be
+<ce>  meted out against the clueless brute? And would
+<ce>  you answer a call to deliver such justice?
 <--->
-<ce>          %pct, I will not mince words. You, I, and every
-<ce>          other person in ___qgiver_ hates
-<ce>          barbarians. We have a petition to rid %crn
-<ce>          of one of them. Will you take advantage of it?
+<ce>  %pct, I will not mince words. You, I, and every
+<ce>  other person in ___qgiver_ hates
+<ce>  barbarians. We have a petition to rid %crn
+<ce>  of one of them. Will you take advantage of it?
 
 RefuseQuest:  [1001]
-<ce>           The Brotherhood rarely makes mistakes, and we
-<ce>              hope for your sake you are not one of them.
+<ce> The Brotherhood rarely makes mistakes, and we
+<ce>  hope for your sake you are not one of them.
 
 AcceptQuest:  [1002]
-<ce>       The only correct answer. This barbarian, staying
-<ce>       in _tavern_, is actually the target of multiple
-<ce>       contracts. If only every day were as lucrative as
-<ce>       this. The motives include ceaselessly bragging
-<ce>       about romantic conquests, debauching the
-<ce>       soon-to-be-married, shouting loudly in the morning
-<ce>       hours, and even scratching a beer glass. Apparently
-<ce>       the innkeeper has also grown tired of this beast.
-<ce>       Serve ___qgiver_ by slaying this
-<ce>       brute and returning here within twelve hours.
+<ce> The only correct answer. This barbarian, staying
+<ce> in _tavern_, is actually the target of multiple
+<ce> contracts. If only every day were as lucrative as
+<ce> this. The motives include ceaselessly bragging
+<ce> about romantic conquests, debauching the
+<ce> soon-to-be-married, shouting loudly in the morning
+<ce> hours, and even scratching a beer glass. Apparently
+<ce> the innkeeper has also grown tired of this beast.
+<ce> Serve ___qgiver_ by slaying this
+<ce> brute and returning here within twelve hours.
 
 QuestFail:  [1003]
-<ce>               Failure text
+<ce> Failure text
 
 QuestComplete:  [1004]
-<ce>              Good, %pct. But let this task cause
-<ce>             you no pride. You have yet to do
-<ce>            meaningful service in Mephala's favor.
+<ce>  Good, %pct. But let this task cause
+<ce> you no pride. You have yet to do
+<ce>  meaningful service in Mephala's favor.
 
 Message:  1023
-<ce>            Ha ha ha! Sorry %ra, I'm havin' too
-<ce>            much fun 'ere! Maybe a good thrashing
-<ce>               will get some o' the beer outta me!
+<ce>  Ha ha ha! Sorry %ra, I'm havin' too
+<ce>  much fun 'ere! Maybe a good thrashing
+<ce> will get some o' the beer outta me!
 
 Message:  1024
-<ce>            Ha ha ha! This's rich! This %ra
-<ce>            is tryin' ta start a fight! Hey fellas,
-<ce>            get on over here an' even tha odds!
+<ce>  Ha ha ha! This's rich! This %ra
+<ce>  is tryin' ta start a fight! Hey fellas,
+<ce>  get on over here an' even tha odds!
 
 Message:  1033
 %qdt:
@@ -61,16 +61,16 @@ Message:  1033
  do it and return.
 
 Message:  1043
-<ce>            "But how many more... could I have..."
-<ce>          
-<ce>              The fool's mouth shuts before
-<ce>                more stupidity can flow out.
-<ce>                  Your work here is done.
+<ce>  "But how many more... could I have..."
+<ce>  
+<ce>  The fool's mouth shuts before
+<ce>  more stupidity can flow out.
+<ce>  Your work here is done.
 
 Message:  1099
-<ce>            Go to _tavern_. I'm
-<ce>            here to offer you contracts, not do
-<ce>            them for you. You have twelve hours.
+<ce>  Go to _tavern_. I'm
+<ce>  here to offer you contracts, not do
+<ce>  them for you. You have twelve hours.
 
 QBN:
 Person _qgiver_ group Questor male
@@ -85,19 +85,19 @@ Foe _barb2_ is 2 Barbarian
 --	Quest start-up:
 	start timer _timer_ 
 	place foe _barb_ at _tavern_
-          restrain foe _barb_
+  restrain foe _barb_
 	log 1033 step 0 
 
 _iba_ task:
-          injured _barb_
-          pick one of _iba2_ _iba3_
+  injured _barb_
+  pick one of _iba2_ _iba3_
 
 _iba2_ task:
-          say 1023
+  say 1023
 
 _iba3_ task:
-          say 1024
-          create foe _barb2_ every 1 minutes 1 times with 100% success
+  say 1024
+  create foe _barb2_ every 1 minutes 1 times with 100% success
 
 _slain_ task:
 	killed 1 _barb_ saying 1043
@@ -110,7 +110,7 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 
-          say 1099
+  say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _pcreward_ task:

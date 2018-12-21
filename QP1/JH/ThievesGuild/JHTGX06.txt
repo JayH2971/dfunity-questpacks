@@ -18,7 +18,7 @@ QuestFail:  [1003]
 QuestComplete:  [1004]
 <ce> Talk about reliable. Did you even break a sweat?
 
-RumorsDuringQuest:   [1005]
+RumorsDuringQuest: [1005]
 They say The Crow's showing up in the Bay again. I think it's an impostor.
 <--->
 Y'hear about The Crow showing up in some town? Probably lies.
@@ -99,46 +99,46 @@ Item _bag2_ small_sack
 Foe _warr_ is Barbarian
 
 --	Quest start-up:
-    say 1010
-    log 1030 step 0
-    get item _lode_
-    get item _bag_
-    place npc _fg_ at _weap_
-    _lode_ used do _prompt_
-    pc at _weap_ do _inside_
+  say 1010
+  log 1030 step 0
+  get item _lode_
+  get item _bag_
+  place npc _fg_ at _weap_
+  _lode_ used do _prompt_
+  pc at _weap_ do _inside_
 
 _inside_ task:
-    hide npc _fg_
-    say 1060
-    create foe _warr_ every 0 minutes 3 times with 100% success
+  hide npc _fg_
+  say 1060
+  create foe _warr_ every 0 minutes 3 times with 100% success
 
 _prompt_ task:
-    prompt 1080 yes _quit_ no _stay_
+  prompt 1080 yes _quit_ no _stay_
 
 _quit_ task:
-    say 1081
-    end quest
+  say 1081
+  end quest
 
 _stay_ task:
-    say 1082
+  say 1082
 
 _slain_ task:
-    killed 3 _warr_
-    say 1070
-    change repute with _fg_ by -45
-    _bag_ used do _take_
-    place npc _crow_ at _crowhome_
+  killed 3 _warr_
+  say 1070
+  change repute with _fg_ by -45
+  _bag_ used do _take_
+  place npc _crow_ at _crowhome_
 
 variable _take_
 _take2_ task:
-    when _inside_ and _take_
-    take _bag_ from pc
-    get item _bag2_
-    say 1071
+  when _inside_ and _take_
+  take _bag_ from pc
+  get item _bag2_
+  say 1071
 
 _talk_ task:
-    toting _bag2_ and _crow_ clicked
-    give pc _reward_
-    say 1099
-    start quest JHTGX07
-    end quest
+  toting _bag2_ and _crow_ clicked
+  give pc _reward_
+  say 1099
+  start quest JHTGX07
+  end quest

@@ -4,16 +4,16 @@ DisplayName: As the Crow Flies
 QRC:
 
 QuestorOffer:  [1000]
-<ce> ERROR 1000 JHTG07
+<ce> ERROR 1000 JHTGX07
 
 RefuseQuest:  [1001]
-<ce> ERROR 1001 JHTG07
+<ce> ERROR 1001 JHTGX07
 
 AcceptQuest:  [1002]
-<ce> ERROR 1002 JHTG07
+<ce> ERROR 1002 JHTGX07
 
 QuestFail:  [1003]
-<ce> ERROR 1003 JHTG07
+<ce> ERROR 1003 JHTGX07
 
 QuestComplete:  [1004]
 <ce> Maybe hard for others, but not for you. Have your gold.
@@ -24,7 +24,7 @@ QuestComplete:  [1004]
 <--->
 <ce> Glad to see you back with a full bag. Here you go.
 
-RumorsDuringQuest:   [1005]
+RumorsDuringQuest: [1005]
 You and The Crow are gonna die together, they say.
 <--->
 Happy with the name you've earned yourself? The Fighters Guild hates you.
@@ -127,14 +127,14 @@ Foe _barb_ is Barbarian
 Foe _kni_ is Knight
 
 --	Quest start-up:
-    say 1010
-    log 1030 step 0
-    get item _lode_
-    get item _bag_
-    place npc _fg_ at _place_
-    _lode_ used do _prompt_
-    pc at _place_ do _inside_
-    pick one of _a1_ _a2_ _a3_ _a4_
+  say 1010
+  log 1030 step 0
+  get item _lode_
+  get item _bag_
+  place npc _fg_ at _place_
+  _lode_ used do _prompt_
+  pc at _place_ do _inside_
+  pick one of _a1_ _a2_ _a3_ _a4_
 
 variable _a1_
 variable _a2_
@@ -142,54 +142,54 @@ variable _a3_
 variable _a4_
 
 _inside_ task:
-    hide npc _fg_
-    say 1060
+  hide npc _fg_
+  say 1060
 
 _s1_ task:
-    when _inside_ and _a1_
-    create foe _warr_ every 0 minutes 3 times with 100% success
+  when _inside_ and _a1_
+  create foe _warr_ every 0 minutes 3 times with 100% success
 
 _s2_ task:
-    when _inside_ and _a2_
-    create foe _rog_ every 0 minutes 3 times with 100% success
+  when _inside_ and _a2_
+  create foe _rog_ every 0 minutes 3 times with 100% success
 
 _s3_ task:
-    when _inside_ and _a3_
-    create foe _barb_ every 0 minutes 3 times with 100% success
+  when _inside_ and _a3_
+  create foe _barb_ every 0 minutes 3 times with 100% success
 
 _s4_ task:
-    when _inside_ and _a4_
-    create foe _kni_ every 0 minutes 3 times with 100% success
+  when _inside_ and _a4_
+  create foe _kni_ every 0 minutes 3 times with 100% success
 
 _prompt_ task:
-    prompt 1080 yes _quit_ no _stay_
+  prompt 1080 yes _quit_ no _stay_
 
 _quit_ task:
-    say 1081
-    end quest
+  say 1081
+  end quest
 
 _stay_ task:
-    say 1082
+  say 1082
 
 _slain_ task:
-    killed 3 _warr_
-    killed 3 _rog_
-    killed 3 _barb_
-    killed 3 _kni_
-    say 1070
-    change repute with _fg_ by -30
-    _bag_ used do _take_
-    place npc _crow_ at _crowhome_
+  killed 3 _warr_
+  killed 3 _rog_
+  killed 3 _barb_
+  killed 3 _kni_
+  say 1070
+  change repute with _fg_ by -30
+  _bag_ used do _take_
+  place npc _crow_ at _crowhome_
 
 variable _take_
 _take2_ task:
-    when _inside_ and _take_
-    take _bag_ from pc
-    get item _bag2_
-    say 1071
+  when _inside_ and _take_
+  take _bag_ from pc
+  get item _bag2_
+  say 1071
 
 _talk_ task:
-    toting _bag2_ and _crow_ clicked
-    give pc _reward_
-    start quest JHTGX07
-    end quest
+  toting _bag2_ and _crow_ clicked
+  give pc _reward_
+  start quest JHTGX07
+  end quest

@@ -92,34 +92,34 @@ Foe _dae5_ is Daedra_lord
 Clock _delay_ 0:03
 Clock _days_ 4.00:00 6.00:00
 
---   Quest start-up:
-   log 1030 step 0
-   prompt 1010 yes _begin_ no _quit_
+-- Quest start-up:
+ log 1030 step 0
+ prompt 1010 yes _begin_ no _quit_
 
 _quit_ task:
-    say 1012
-    change repute with _tg_ by +2
-    end quest
+  say 1012
+  change repute with _tg_ by +2
+  end quest
 
 _begin_ task:
-    say 1011
-    pick one of _a1_ _a2_ _a3_ _a4_ _a5_ _a6_ _a7_
-    get item _bag_
-    _bag_ used do _endprompt_
-    have _bag_ set _sick_
-    start timer _delay_
-    start timer _days_
+  say 1011
+  pick one of _a1_ _a2_ _a3_ _a4_ _a5_ _a6_ _a7_
+  get item _bag_
+  _bag_ used do _endprompt_
+  have _bag_ set _sick_
+  start timer _delay_
+  start timer _days_
 
 _days_ task:
-    place npc _gpers_ at _tav_
+  place npc _gpers_ at _tav_
 
 _delay_ task:
-    say 1020
-    send _dae1_ every 15 minutes with 40% success
-    send _dae2_ every 15 minutes with 40% success
-    send _dae3_ every 15 minutes with 40% success
-    send _dae4_ every 15 minutes with 40% success
-    send _dae5_ every 15 minutes with 40% success
+  say 1020
+  send _dae1_ every 15 minutes with 40% success
+  send _dae2_ every 15 minutes with 40% success
+  send _dae3_ every 15 minutes with 40% success
+  send _dae4_ every 15 minutes with 40% success
+  send _dae5_ every 15 minutes with 40% success
 
 variable _a1_
 variable _a2_
@@ -129,54 +129,54 @@ variable _a5_
 variable _a6_
 variable _a7_
 _sick_ task:
-    daily from 00:01 to 23:59
-    make pc ill with Leprosy
-    clear _sick_
+  daily from 00:01 to 23:59
+  make pc ill with Leprosy
+  clear _sick_
 
 _endprompt_ task:
-    prompt 1015 yes _fail_ no _continue_
+  prompt 1015 yes _fail_ no _continue_
 
 _fail_ task:
-    say 1016
-    change repute with _tg_ by -13
-    take _bag_ from pc
-    end quest
+  say 1016
+  change repute with _tg_ by -13
+  take _bag_ from pc
+  end quest
 
 variable _continue_
 _victory_ task:
   toting _bag_ and _gpers_ clicked
 
 _v1_ task:
-    when _victory_ and _a1_
-    give pc _art1_
-    end quest
+  when _victory_ and _a1_
+  give pc _art1_
+  end quest
 
 _v2_ task:
-    when _victory_ and _a2_
-    give pc _art2_
-    end quest
+  when _victory_ and _a2_
+  give pc _art2_
+  end quest
 
 _v3_ task:
-    when _victory_ and _a3_
-    give pc _art3_
-    end quest
+  when _victory_ and _a3_
+  give pc _art3_
+  end quest
 
 _v4_ task:
-    when _victory_ and _a4_
-    give pc _art4_
-    end quest
+  when _victory_ and _a4_
+  give pc _art4_
+  end quest
 
 _v5_ task:
-    when _victory_ and _a5_
-    give pc _art5_
-    end quest
+  when _victory_ and _a5_
+  give pc _art5_
+  end quest
 
 _v6_ task:
-    when _victory_ and _a6_
-    give pc _art6_
-    end quest
+  when _victory_ and _a6_
+  give pc _art6_
+  end quest
 
 _v7_ task:
-    when _victory_ and _a7_
-    give pc _art7_
-    end quest
+  when _victory_ and _a7_
+  give pc _art7_
+  end quest

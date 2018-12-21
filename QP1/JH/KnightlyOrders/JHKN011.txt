@@ -57,7 +57,7 @@ Message:  1012
 <ce>	  thought is that he found something in ___dung_
 <ce>	 that interested him enough to make him stay. He's cleansed
 <ce>	  it several times over the last few years, so I know
-<ce>	   he's not in any danger. If _qgiver_
+<ce>	 he's not in any danger. If _qgiver_
 <ce>	 wants to look for him, I say go there first.
 
 Message:  1013
@@ -124,8 +124,8 @@ Item _bag_ large_sack
 	start timer _timer_
 	start timer _death_
 	log 1030 step 0 
-	          place npc _family_ at _famtown_
-                place npc _kni_ at _dung_
+	  place npc _family_ at _famtown_
+  place npc _kni_ at _dung_
 	add dialog for person _kni_
 
 _talkfam_ task:

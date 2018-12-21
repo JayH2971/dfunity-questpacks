@@ -61,10 +61,6 @@ Message:  1030
  11:00 at night until they say
  otherwise, probably at dawn.
 
-Message: 1099
-<ce>       _res_, 23:00, tonight.
-<ce>       Don't screw this one up.
-
 QBN:
 Item _reward_ gold
 
@@ -119,7 +115,6 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_
-          say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _timer_ task:

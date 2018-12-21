@@ -62,20 +62,20 @@ Foe _mage_ is Spellsword
 
 --	Quest start-up:
 	start timer _2res_ 
-    start timer _failsafe_ 
+  start timer _failsafe_ 
 	place foe _mage_ at _res_ 
-    place npc _dummy_ at _res_
-    hide npc _dummy_
+  place npc _dummy_ at _res_
+  hide npc _dummy_
 	log 1032 step 0 
 
 _ipr_ task:
-          injured _mage_
-          say 1022
+  injured _mage_
+  say 1022
 
 _slain_ task:
 	killed 1 _mage_
-    change repute with _dummy_ by -10
-    stop timer _2res_
+  change repute with _dummy_ by -10
+  stop timer _2res_
 
 _qgclicked_ task:
 	clicked npc _questgiver_ 
@@ -89,9 +89,9 @@ _pcreward_ task:
 	give pc _gold_
 	end quest 
 
-    _2res_ task:
+  _2res_ task:
 	say 1003
-    end quest
+  end quest
 
 _failsafe_ task:
-    end quest
+  end quest

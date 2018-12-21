@@ -1,4 +1,4 @@
-Quest: JHFG015
+Quest: JHMG015
 DisplayName: To Free the Shackled
 -- Message panels
 QRC:
@@ -15,7 +15,8 @@ QuestorOffer:  [1000]
 <ce> defend our poor friend?
 
 RefuseQuest:  [1001]
-<ce> 
+<ce> Then %g3 life will be on your conscience should
+<ce> %g1 not survive the attempt!
 
 AcceptQuest:  [1002]
 <ce> Well, I gave you the short version, and now the long

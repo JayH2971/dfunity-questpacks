@@ -53,7 +53,7 @@ Message:  1010
 <ce>  in case their fears are brought to pass.
 
 Message:  1015
-<ce>     You hear savage roaring from within
+<ce> You hear savage roaring from within
 <ce>  the palace. The attack has already begun.
 
 Message:  1018
@@ -61,7 +61,7 @@ Message:  1018
 <ce>  the palace in ___palace_.
 
 Message:  1029
-<ce>     As the sun rises above %crn, it
+<ce> As the sun rises above %crn, it
 <ce>  becomes clear that there was no need for
 <ce>  concern. A page comes to speak with you
 <ce>  as _noble_ is escorted outside.
@@ -85,13 +85,13 @@ Message:  1030
  _noble_, who waits inside.
 
 Message:  1035
-<ce>   Abdicating _noble_ when %g1
-<ce>   most needed you will reflect very poorly
-<ce>   on yourself and the other knights.
+<ce> Abdicating _noble_ when %g1
+<ce> most needed you will reflect very poorly
+<ce> on yourself and the other knights.
 
 Message:  1099
-<ce>      _noble_'s life depends on you.
-<ce>      Get to ___palace_ in =2palace_ days.
+<ce>  _noble_'s life depends on you.
+<ce>  Get to ___palace_ in =2palace_ days.
 
 QBN:
 Item _miner_ mineral
