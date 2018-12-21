@@ -32,17 +32,26 @@ QuestComplete:  [1004]
 <ce>  I do not doubt they will hold your name in honor.
 
 Message:  1010
-<ce>  Good day, %pcf. Such troubling times we live in, are they not?
+<ce>  Good day, %pct. Such troubling times we live in, are they not?
 <ce>  Take this _tri_. It will have power to suspend the enchantment
 <ce>  on these women for a few moments. Ask your questions quickly
 <ce>  at the time you use it. With any luck they will despise
 <ce>  being controlled and give you the information you desire.
 <ce>  Well met, %ra, and I wish you luck on your quest.
+<--->
+<ce>  Well met. Take this _tri_, which will suspend the enchantment
+<ce>  on these women for a few moments. Ask your questions quickly
+<ce>  at the time you use it. With any luck they will despise
+<ce>  being controlled and give you the information you desire.
+<ce>  Please do %crn justive, good %ra. Farewell.
 
 Message:  1011
 <ce>  _maid_ shrieks and trembles at thin air.
 <ce>  She stares at you with maddened eyes, wanting to say
 <ce>  something but restrained by magical forces from doing so.
+<--->
+<ce>  _maid_ struggles to speak but is kept in silence.
+<ce>  She looks around, clearly afraid of something you can't see.
 
 Message:  1012
 <ce>  A wave of magical power disperses from the _tri_,
@@ -50,15 +59,25 @@ Message:  1012
 <ce>  need to ask the question, as the maiden is quite forthcoming.
 <ce>  
 <ce>  "_capt_! Kill h-him! Pleeease!
-<ce>  In, in ___farm_! Help me! I--"
+<ce>  In, in ___farm_! Help me! I..."
+<ce>  
+<ce>  Within moments her eyes glaze over and the ability to speak
+<ce>  departs. You now have the name and location of the enchanter.
+<--->
+<ce>  A wave of magical power disperses from the _tri_,
+<ce>  providing a momentary schism in the enchantment. You scarcely
+<ce>  need to ask the question, as the maiden is quite forthcoming.
+<ce>  
+<ce>  "He's in ___farm_! His name is _capt_!
+<ce>  Please, if you can do any..."
 <ce>  
 <ce>  Within moments her eyes glaze over and the ability to speak
 <ce>  departs. You now have the name and location of the enchanter.
 
 Message:  1013
 <ce>  You immediately spot _capt_, whose
-<ce>  appearance gives him away. He discards the illusion
-<ce>  spell he maintained and readies himself for battle.
+<ce>  appearance gives him away. He casts a brief
+<ce>  incantation to teleport and disappears from view.
 
 Message:  1014
 <ce>  You have defeated a powerful magician. Hopefully that
@@ -66,7 +85,7 @@ Message:  1014
 <ce>  back to _qgiver_ on your proceedings.
 
 Message:  1020
-<ce>  Your knowledge of thauicism is enough to give you the edge.
+<ce>  Your knowledge of Thaumaturgy is enough to give you the edge.
 <ce>  You cast a quick cantrip which causes the vampire temporary immobility.
 
 Message:  1021
