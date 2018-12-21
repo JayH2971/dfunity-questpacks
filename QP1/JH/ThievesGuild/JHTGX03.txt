@@ -4,13 +4,13 @@ DisplayName: The Sampler
 QRC:
 
 QuestorOffer:  [1000]
-<ce> ERROR 1000 JHTG03X
+<ce> ERROR 1000 JHTGX03
 
 RefuseQuest:  [1001]
-<ce> ERROR 1001 JHTG03X
+<ce> ERROR 1001 JHTGX03
 
 AcceptQuest:  [1002]
-<ce> ERROR 1002 JHTG03X
+<ce> ERROR 1002 JHTGX03
 
 QuestFail:  [1003]
 <ce> 

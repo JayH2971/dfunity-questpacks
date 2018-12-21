@@ -4,13 +4,13 @@ DisplayName: The Lone Wolf
 QRC:
 
 QuestorOffer:  [1000]
-<ce> ERROR 1000 JHTG04X
+<ce> ERROR 1000 JHTGX04
 
 RefuseQuest:  [1001]
-<ce> ERROR 1001 JHTG04X
+<ce> ERROR 1001 JHTGX04
 
 AcceptQuest:  [1002]
-<ce> ERROR 1002 JHTG04X
+<ce> ERROR 1002 JHTGX04
 
 QuestFail:  [1003]
 <ce> The Crow definitely wouldn't have

@@ -1,19 +1,19 @@
-Quest: JHTG05X
+Quest: JHTGX05
 DisplayName: Little Lamb
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce> ERROR 1000 JHTG05X
+<ce> ERROR 1000 JHTGX05
 
 RefuseQuest:  [1001]
-<ce> ERROR 1001 JHTG05X
+<ce> ERROR 1001 JHTGX05
 
 AcceptQuest:  [1002]
-<ce> ERROR 1002 JHTG05X
+<ce> ERROR 1002 JHTGX05
 
 QuestFail:  [1003]
-<ce> ERROR 1003 JHTG05X
+<ce> ERROR 1003 JHTGX05
 
 QuestComplete:  [1004]
 <ce> Oh yeah, this is exactly what we're looking for.

@@ -4,13 +4,13 @@ DisplayName: A Trial
 QRC:
 
 QuestorOffer:  [1000]
-<ce> ERROR 1000 JHTG02X
+<ce> ERROR 1000 JHTGX02
 
 RefuseQuest:  [1001]
-<ce> ERROR 1001 JHTG02X
+<ce> ERROR 1001 JHTGX02
 
 AcceptQuest:  [1002]
-<ce> ERROR 1002 JHTG02X
+<ce> ERROR 1002 JHTGX02
 
 QuestFail:  [1003]
 <ce> What is this? You fool! You moron!

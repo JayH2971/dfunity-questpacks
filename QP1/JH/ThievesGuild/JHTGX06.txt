@@ -4,16 +4,16 @@ DisplayName: Party Crasher
 QRC:
 
 QuestorOffer:  [1000]
-<ce> ERROR 1000 JHTG06X
+<ce> ERROR 1000 JHTGX06
 
 RefuseQuest:  [1001]
-<ce> ERROR 1001 JHTG06X
+<ce> ERROR 1001 JHTGX06
 
 AcceptQuest:  [1002]
-<ce> ERROR 1002 JHTG06X
+<ce> ERROR 1002 JHTGX06
 
 QuestFail:  [1003]
-<ce> ERROR 1003 JHTG06X
+<ce> ERROR 1003 JHTGX06
 
 QuestComplete:  [1004]
 <ce> Talk about reliable. Did you even break a sweat?

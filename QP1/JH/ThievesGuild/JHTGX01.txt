@@ -4,16 +4,16 @@ DisplayName: Hook, Line, and Sinker
 QRC:
 
 QuestorOffer:  [1000]
-<ce> ERROR 1000 JHTG01X
+<ce> ERROR 1000 JHTGX01
 
 RefuseQuest:  [1001]
-<ce> ERROR 1001 JHTG01X
+<ce> ERROR 1001 JHTGX01
 
 AcceptQuest:  [1002]
-<ce> ERROR 1002 JHTG01X
+<ce> ERROR 1002 JHTGX01
 
 QuestFail:  [1003]
-<ce> ERROR 1003 JHTG01X
+<ce> ERROR 1003 JHTGX01
 
 QuestComplete:  [1004]
 <ce> Well, what do you know. I know you. You're
