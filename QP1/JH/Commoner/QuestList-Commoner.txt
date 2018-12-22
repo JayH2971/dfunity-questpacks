@@ -1,20 +1,21 @@
--- Jay_H Dark Brotherhood quest pack list
+-- Jay_H Commoner quest pack list
 
 -- name:        filename of QRC txt file
--- group:       guild group from FactionFile.GuildGroups enum
--- membership:  N=non-member, M=member
--- minRep:      minimum reputation required to be offered the quest (units can use X wildcard)
+-- group:       guild group from FactionFile.GuildGroups enum, or social group from FactionFile.SocialGroups enum
+-- membership:  N=non-member, M=member, P=prospect, T=Akatosh, A=Arkay, D=Dibella, J=Julianos, K=Kynareth, R=Mara, S=Stendarr, Z=Zenithar
+-- minReq:      minimum requirement to be offered the quest: (val < 10) = guild rank / player level, or (val >= 10) = min reputation
+-- flag:        0 = nothing, X = adult/nudity, 1 = one time quest
 -- notes:
 
-schema: *name, group, membership, minRep, notes
+schema: *name, group, membership, minReq, flag, notes
 
-JHIM001, Commoners, N, 0, a simple quiz for money
-JHIM002, Commoners, N, 0, a simple quiz for money
-JHIM003, Commoners, N, 0, a quest to end a haunting
-JHIM004, Commoners, N, 0, a quest to guard a house
-JHIM005, Commoners, N, 0, a quest to solve a bar fight
-JHIM006, Commoners, N, 0, a quest to break a grave curse
-JHIM007, Commoners, N, 0, a quest for vengeance in a tavern
-JHIM008, Commoners, N, 0, a quest for reconciliation with witches
-JHIM010, Commoners, N, 0, a quest buying a treasure map
-JHIM011, Commoners, N, 0, a quest as a bodyguard
+JHIM001, Commoners, N, 0, 0, a simple quiz for money
+JHIM002, Commoners, N, 0, 0, a simple quiz for money
+JHIM003, Commoners, N, 0, 0, a quest to end a haunting
+JHIM004, Commoners, N, 0, 0, a quest to guard a house
+JHIM005, Commoners, N, 0, 0, a quest to solve a bar fight
+JHIM006, Commoners, N, 0, 0, a quest to break a grave curse
+JHIM007, Commoners, N, 0, 0, a quest for vengeance in a tavern
+JHIM008, Commoners, N, 0, 0, a quest for reconciliation with witches
+JHIM010, Commoners, N, 0, 0, a quest buying a treasure map
+JHIM011, Commoners, N, 0, 0, a quest as a bodyguard

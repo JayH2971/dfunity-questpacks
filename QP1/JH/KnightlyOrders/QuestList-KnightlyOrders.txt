@@ -1,37 +1,38 @@
 -- Jay_H Knightly Orders quest pack list
 
 -- name:        filename of QRC txt file
--- group:       guild group from FactionFile.GuildGroups enum
--- membership:  N=non-member, M=member
--- minRep:      minimum reputation required to be offered the quest (units can use X wildcard)
+-- group:       guild group from FactionFile.GuildGroups enum, or social group from FactionFile.SocialGroups enum
+-- membership:  N=non-member, M=member, P=prospect, T=Akatosh, A=Arkay, D=Dibella, J=Julianos, K=Kynareth, R=Mara, S=Stendarr, Z=Zenithar
+-- minReq:      minimum requirement to be offered the quest: (val < 10) = guild rank / player level, or (val >= 10) = min reputation
+-- flag:        0 = nothing, X = adult/nudity, 1 = one time quest
 -- notes:
 
-schema: *name, group, membership, minRep, notes
+schema: *name, group, membership, minReq, flag, notes
 
-JHKN001, KnightlyOrder, M, 0, a quest to protect a dragonling in a dungeon
-JHKN002, KnightlyOrder, M, 0, a quest to slay criminals who have taken a farm captive
-JHKN003, KnightlyOrder, M, 60, a quest to slay a vampire or vampire ancient in a dungeon
-JHKN004, KnightlyOrder, M, 20, a quest to defend a city from an invasion of knights
-JHKN005, KnightlyOrder, M, 0, a quest to retrieve and deliver evidence of a murder
-JHKN006, KnightlyOrder, M, 0, a quest to retrieve a weapon from a murderer in a dungeon
-JHKN007, KnightlyOrder, M, 60, a quest to resolve a mysterious murder spree near a local shop
-JHKN008, KnightlyOrder, M, 15, a quest to stop an assassination attempt by orcs in a palace
-JHKN009, KnightlyOrder, M, 15, a quest to end a cult of necromancer giants
-JHKN010, KnightlyOrder, M, 0, a quest to take a weapon to a fellow knight
-JHKN011, KnightlyOrder, M, 0, a quest to find a missing knight
-JHKN012, KnightlyOrder, M, 0, a quest to execute a local criminal
-JHKN013, KnightlyOrder, M, 0, a quest to defend a townsperson from atronachs
-JHKN014, KnightlyOrder, M, 10, a quest to aid negotiations with a letter
-JHKN015, KnightlyOrder, M, 5, a quest to stop the cause of attacking spriggans
-JHKN016, KnightlyOrder, M, 5, a quest to negotiate peace with an orc
-JHKN017, KnightlyOrder, M, 5, a quest to defend a graveyard from intruders
-JHKN018, KnightlyOrder, M, 10, a quest to find a local thief
-JHKN019, KnightlyOrder, M, 80, an artifact quest to slay a daedric army
-JHKN020, KnightlyOrder, M, 5, a quest to draw out an attacking band
-JHKN021, KnightlyOrder, M, 50, a quest to apprehend a witch
-JHKN022, KnightlyOrder, M, 70, a quest to free a sealed dungeon
-JHKN023, KnightlyOrder, M, 70, a quest to arrest the Crow
-JHKN024, KnightlyOrder, M, 70, a quest to stop a brainwasher
+JHKN001, KnightlyOrder, M, 0, 0, a quest to protect a dragonling in a dungeon
+JHKN002, KnightlyOrder, M, 0, 0, a quest to slay criminals who have taken a farm captive
+JHKN003, KnightlyOrder, M, 60, 0, a quest to slay a vampire or vampire ancient in a dungeon
+JHKN004, KnightlyOrder, M, 20, 0, a quest to defend a city from an invasion of knights
+JHKN005, KnightlyOrder, M, 0, 0, a quest to retrieve and deliver evidence of a murder
+JHKN006, KnightlyOrder, M, 0, 0, a quest to retrieve a weapon from a murderer in a dungeon
+JHKN007, KnightlyOrder, M, 60, 0, a quest to resolve a mysterious murder spree near a local shop
+JHKN008, KnightlyOrder, M, 15, 0, a quest to stop an assassination attempt by orcs in a palace
+JHKN009, KnightlyOrder, M, 15, 0, a quest to end a cult of necromancer giants
+JHKN010, KnightlyOrder, M, 0, 0, a quest to take a weapon to a fellow knight
+JHKN011, KnightlyOrder, M, 0, 0, a quest to find a missing knight
+JHKN012, KnightlyOrder, M, 0, 0, a quest to execute a local criminal
+JHKN013, KnightlyOrder, M, 0, 0, a quest to defend a townsperson from atronachs
+JHKN014, KnightlyOrder, M, 10, 0, a quest to aid negotiations with a letter
+JHKN015, KnightlyOrder, M, 1, 0, a quest to stop the cause of attacking spriggans
+JHKN016, KnightlyOrder, M, 1, 0, a quest to negotiate peace with an orc
+JHKN017, KnightlyOrder, M, 1, 0, a quest to defend a graveyard from intruders
+JHKN018, KnightlyOrder, M, 10, 0, a quest to find a local thief
+JHKN019, KnightlyOrder, M, 80, 0, an artifact quest to slay a daedric army
+JHKN020, KnightlyOrder, M, 1, 0, a quest to draw out an attacking band
+JHKN021, KnightlyOrder, M, 50, 0, a quest to apprehend a witch
+JHKN022, KnightlyOrder, M, 70, 0, a quest to free a sealed dungeon
+JHKN023, KnightlyOrder, M, 70, 0, a quest to arrest the Crow
+JHKN024, KnightlyOrder, M, 70, 0, a quest to stop a brainwasher
 -take a mage to defeat a vampire. Paralyze vs vampire
 -a quest to slay a group of criminals extorting merchants
 -rescue kidnapped youth, fend off assassins while returning

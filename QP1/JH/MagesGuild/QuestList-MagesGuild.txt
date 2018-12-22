@@ -1,32 +1,33 @@
 -- Jay_H Mages Guild quest pack list
 
 -- name:        filename of QRC txt file
--- group:       guild group from FactionFile.GuildGroups enum
--- membership:  N=non-member, M=member
--- minRep:      minimum reputation required to be offered the quest (units can use X wildcard)
+-- group:       guild group from FactionFile.GuildGroups enum, or social group from FactionFile.SocialGroups enum
+-- membership:  N=non-member, M=member, P=prospect, T=Akatosh, A=Arkay, D=Dibella, J=Julianos, K=Kynareth, R=Mara, S=Stendarr, Z=Zenithar
+-- minReq:      minimum requirement to be offered the quest: (val < 10) = guild rank / player level, or (val >= 10) = min reputation
+-- flag:        0 = nothing, X = adult/nudity, 1 = one time quest
 -- notes:
 
-schema: *name, group, membership, minRep, notes
+schema: *name, group, membership, minReq, flag, notes
 
-JHMG001, MagesGuild, M, 5, a quest to slay a shapeshifting mage in a dungeon
-JHMG002, MagesGuild, M, 5, a quest to convince a scholar to leave a dungeon via quiz
-JHMG003, MagesGuild, M, 10, a quest to slay a necromancer in a residence
-JHMG004, MagesGuild, M, 5, a quest to assist a researcher in slaying an atronach
-JHMG005, MagesGuild, M, 5, a quest to test a trapped warping trinket
-JHMG006, MagesGuild, M, 5, a quest to take an unidentifiable magical item to a scholar in a dungeon
-JHMG007, MagesGuild, M, 10, a quest to get teleported to a dungeon to find a criminal
-JHMG008, MagesGuild, M, 0, a quest to retrieve a scholar's stolen notes
-JHMG009, MagesGuild, M, 0, a quest to deliver a manuscript after certain days
-JHMG010, MagesGuild, M, 60, a quest to slay a necromantic colleague
-JHMG011, MagesGuild, M, 0, a quest to guide students to locations
-JHMG012, MagesGuild, M, 60, a quest to stop a powerful former member
-JHMG013, MagesGuild, M, 0, a quest to bring a wandering atronach home
-JHMG014, MagesGuild, M, 50, a quest to obtain a report on vampirism
-JHMG015, MagesGuild, M, 10, a quest to defend a shapeshifted member
-JHMG016, MagesGuild, M, 20, a quest to rescue an ambitious experimenter
-JHMG017, MagesGuild, M, 0, a quest to identify a document
-JHMG018, MagesGuild, M, 10, a quest to purify and deliver a poisoned liquid
--JHMGX00, MagesGuild, M, 95, a quest to investigate an ancient lich
--JHMGX01, MagesGuild, P, 0, offered via JHMGX00
+JHMG001, MagesGuild, M, 1, 0, a quest to slay a shapeshifting mage in a dungeon
+JHMG002, MagesGuild, M, 1, 0, a quest to convince a scholar to leave a dungeon via quiz
+JHMG003, MagesGuild, M, 10, 0, a quest to slay a necromancer in a residence
+JHMG004, MagesGuild, M, 1, 0, a quest to assist a researcher in slaying an atronach
+JHMG005, MagesGuild, M, 1, 0, a quest to test a trapped warping trinket
+JHMG006, MagesGuild, M, 1, 0, a quest to take an unidentifiable magical item to a scholar in a dungeon
+JHMG007, MagesGuild, M, 10, 0, a quest to get teleported to a dungeon to find a criminal
+JHMG008, MagesGuild, M, 0, 0, a quest to retrieve a scholar's stolen notes
+JHMG009, MagesGuild, M, 0, 0, a quest to deliver a manuscript after certain days
+JHMG010, MagesGuild, M, 60, 0, a quest to slay a necromantic colleague
+JHMG011, MagesGuild, M, 0, 0, a quest to guide students to locations
+JHMG012, MagesGuild, M, 60, 0, a quest to stop a powerful former member
+JHMG013, MagesGuild, M, 0, 0, a quest to bring a wandering atronach home
+JHMG014, MagesGuild, M, 50, 0, a quest to obtain a report on vampirism
+JHMG015, MagesGuild, M, 10, 0, a quest to defend a shapeshifted member
+JHMG016, MagesGuild, M, 20, 0, a quest to rescue an ambitious experimenter
+JHMG017, MagesGuild, M, 0, 0, a quest to identify a document
+JHMG018, MagesGuild, M, 10, 0, a quest to purify and deliver a poisoned liquid
+-JHMGX00, MagesGuild, M, 95, 0, a quest to investigate an ancient lich
+-JHMGX01, MagesGuild, P, 0, 0, offered via JHMGX00
 -go to various NPCs in cities to pick up needed ingredients
 -artifact quest, join two halves of a document and take it to an expert. Expert will be slain if enough time passes. Artifact is on Daedra Lord's body.

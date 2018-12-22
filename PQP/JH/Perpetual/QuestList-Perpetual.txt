@@ -1,80 +1,79 @@
 -- Jay_H Perpetual quest pack list
 
-schema: *name, group, membership, minRep, notes
+schema: *name, group, membership, minReq, flag, notes
 
-
-JHPFIRST, InitAtGameStart, M, 0, Initializes the perpetual quest system
-JHCG001, Commoner, P, 0, a Cartographer quest component
-JHCG002, Commoner, P, 0, a Cartographer quest component
-JHCG003, Commoner, P, 0, a Cartographer quest component
-JHCG010, Commoner, P, 0, a Cartographer quest component
-JHCG011, Commoner, P, 0, a Cartographer quest component
-JHCG012, Commoner, P, 0, a Cartographer quest component
-JHCG013, Commoner, P, 0, a Cartographer quest component
-JHCG020, Commoner, P, 0, a Cartographer quest component
-JHCG021, Commoner, P, 0, a Cartographer quest component
-JHCG022, Commoner, P, 0, a Cartographer quest component
-JHCG023, Commoner, P, 0, a Cartographer quest component
-JHCG024, Commoner, P, 0, a Cartographer quest component
-JHCG025, Commoner, P, 0, a Cartographer quest component
-JHCG026, Commoner, P, 0, a Cartographer quest component
-JHCG027, Commoner, P, 0, a Cartographer quest component
-JHCG028, Commoner, P, 0, a Cartographer quest component
-JHCG029, Commoner, P, 0, a Cartographer quest component
-JHCGENT0, Commoner, P, 0, a Cartographer quest component
-JHCGENT1, Commoner, P, 0, a Cartographer quest component
-JHCGENT2, Commoner, P, 0, a Cartographer quest component
-JHCGENT3, Commoner, P, 0, a Cartographer quest component
-JHCGENT4, Commoner, P, 0, a Cartographer quest component
-JHCGFAIL, Commoner, P, 0, a Cartographer quest component
-JHCGFAL2, Commoner, P, 0, a Cartographer quest component
-JHCGFAL3, Commoner, P, 0, a Cartographer quest component
-JHPINIT, Commoner, P, 0, Perpetual Quest selection
-JHPINIT2, Commoner, P, 0, Perpetual Quest selection
-JHPINIT3, Commoner, P, 0, Perpetual Quest selection
-JHPINIT4, Commoner, P, 0, Perpetual Quest selection
-JHPINIT5, Commoner, P, 0, Perpetual Quest selection
-JHPINIT6, Commoner, P, 0, Perpetual Quest selection
-JHPQA00, Commoner, P, 0, random outdoors enemy appearance
-JHPQB01, Commoner, P, 0, beginner's challenge quest
-JHPQB02, Commoner, P, 0, beginner's challenge quest
-JHPQB03, Commoner, P, 0, beginner's challenge quest
-JHPQ001, Commoner, P, 0, a Perpetual Quest
-JHPQ002, Commoner, P, 0, a Perpetual Quest
-JHPQ003, Commoner, P, 0, a Perpetual Quest
-JHPQ005, Commoner, P, 0, a Perpetual Quest
-JHPQ006, Commoner, P, 0, a Perpetual Quest
-JHPQ007, Commoner, P, 0, a Perpetual Quest
-JHPQ008, Commoner, P, 0, a Perpetual Quest
-JHPQ009, Commoner, P, 0, a Perpetual Quest
-JHPQ010, Commoner, P, 0, a Perpetual Quest
-JHPQ011, Commoner, P, 0, a Perpetual Quest
-JHPQ012, Commoner, P, 0, a Perpetual Quest
-JHPQ013, Commoner, P, 0, a Perpetual Quest
-JHPQ014, Commoner, P, 0, a Perpetual Quest
-JHPQ015, Commoner, P, 0, a Perpetual Quest
-JHPQ016, Commoner, P, 0, a Perpetual Quest
-JHPQ017, Commoner, P, 0, a Perpetual Quest
-JHPQ018, Commoner, P, 0, a Perpetual Quest
-JHPQ019, Commoner, P, 0, a Perpetual Quest
-JHPQ020, Commoner, P, 0, a Perpetual Quest
-JHPQ021, Commoner, P, 0, a Perpetual Quest
-JHPQ022, Commoner, P, 0, a Perpetual Quest
-JHPQ023, Commoner, P, 0, a Perpetual Quest
-JHPQ024, Commoner, P, 0, a Perpetual Quest
-JHPQ025, Commoner, P, 0, a Perpetual Quest
-JHPQ026, Commoner, P, 0, a Perpetual Quest
-JHPQ027, Commoner, P, 0, a Perpetual Quest
-JHPQ028, Commoner, P, 0, a Perpetual Quest
--JHPQ029, Commoner, P, 0, a Perpetual Quest
--JHPQ030, Commoner, P, 0, a Perpetual Quest
--JHPQ031, Commoner, P, 0, a Perpetual Quest
--JHPQ032, Commoner, P, 0, a Perpetual Quest
--JHPQ033, Commoner, P, 0, a Perpetual Quest
-JHPQ034, Commoner, P, 0, a Perpetual Quest
-JHPQ035, Commoner, P, 0, a Perpetual Quest
-JHPQ036, Commoner, P, 0, a Perpetual Quest
-JHPQ037, Commoner, P, 0, a Perpetual Quest
-JHPQ038, Commoner, P, 0, a Perpetual Quest
--JHPQ039, Commoner, P, 0, a Perpetual Quest
--JHPQ040, Commoner, P, 0, a Perpetual Quest
+JHPFIRST, InitAtGameStart, M, 0, 0, Initializes the perpetual quest system
+JHCG001, na, P, 0, 0, a Cartographer quest component
+JHCG002, na, P, 0, 0, a Cartographer quest component
+JHCG003, na, P, 0, 0, a Cartographer quest component
+JHCG010, na, P, 0, 0, a Cartographer quest component
+JHCG011, na, P, 0, 0, a Cartographer quest component
+JHCG012, na, P, 0, 0, a Cartographer quest component
+JHCG013, na, P, 0, 0, a Cartographer quest component
+JHCG020, na, P, 0, 0, a Cartographer quest component
+JHCG021, na, P, 0, 0, a Cartographer quest component
+JHCG022, na, P, 0, 0, a Cartographer quest component
+JHCG023, na, P, 0, 0, a Cartographer quest component
+JHCG024, na, P, 0, 0, a Cartographer quest component
+JHCG025, na, P, 0, 0, a Cartographer quest component
+JHCG026, na, P, 0, 0, a Cartographer quest component
+JHCG027, na, P, 0, 0, a Cartographer quest component
+JHCG028, na, P, 0, 0, a Cartographer quest component
+JHCG029, na, P, 0, 0, a Cartographer quest component
+JHCGENT0, na, P, 0, 0, a Cartographer quest component
+JHCGENT1, na, P, 0, 0, a Cartographer quest component
+JHCGENT2, na, P, 0, 0, a Cartographer quest component
+JHCGENT3, na, P, 0, 0, a Cartographer quest component
+JHCGENT4, na, P, 0, 0, a Cartographer quest component
+JHCGFAIL, na, P, 0, 0, a Cartographer quest component
+JHCGFAL2, na, P, 0, 0, a Cartographer quest component
+JHCGFAL3, na, P, 0, 0, a Cartographer quest component
+JHPINIT, na, P, 0, 0, Perpetual Quest selection
+JHPINIT2, na, P, 0, 0, Perpetual Quest selection
+JHPINIT3, na, P, 0, 0, Perpetual Quest selection
+JHPINIT4, na, P, 0, 0, Perpetual Quest selection
+JHPINIT5, na, P, 0, 0, Perpetual Quest selection
+JHPINIT6, na, P, 0, 0, Perpetual Quest selection
+JHPQA00, na, P, 0, 0, random outdoors enemy appearance
+JHPQB01, na, P, 0, 0, beginner's challenge quest
+JHPQB02, na, P, 0, 0, beginner's challenge quest
+JHPQB03, na, P, 0, 0, beginner's challenge quest
+JHPQ001, na, P, 0, 0, a Perpetual Quest
+JHPQ002, na, P, 0, 0, a Perpetual Quest
+JHPQ003, na, P, 0, 0, a Perpetual Quest
+JHPQ005, na, P, 0, 0, a Perpetual Quest
+JHPQ006, na, P, 0, 0, a Perpetual Quest
+JHPQ007, na, P, 0, 0, a Perpetual Quest
+JHPQ008, na, P, 0, 0, a Perpetual Quest
+JHPQ009, na, P, 0, 0, a Perpetual Quest
+JHPQ010, na, P, 0, 0, a Perpetual Quest
+JHPQ011, na, P, 0, 0, a Perpetual Quest
+JHPQ012, na, P, 0, 0, a Perpetual Quest
+JHPQ013, na, P, 0, 0, a Perpetual Quest
+JHPQ014, na, P, 0, 0, a Perpetual Quest
+JHPQ015, na, P, 0, 0, a Perpetual Quest
+JHPQ016, na, P, 0, 0, a Perpetual Quest
+JHPQ017, na, P, 0, 0, a Perpetual Quest
+JHPQ018, na, P, 0, 0, a Perpetual Quest
+JHPQ019, na, P, 0, 0, a Perpetual Quest
+JHPQ020, na, P, 0, 0, a Perpetual Quest
+JHPQ021, na, P, 0, 0, a Perpetual Quest
+JHPQ022, na, P, 0, 0, a Perpetual Quest
+JHPQ023, na, P, 0, 0, a Perpetual Quest
+JHPQ024, na, P, 0, 0, a Perpetual Quest
+JHPQ025, na, P, 0, 0, a Perpetual Quest
+JHPQ026, na, P, 0, 0, a Perpetual Quest
+JHPQ027, na, P, 0, 0, a Perpetual Quest
+JHPQ028, na, P, 0, 0, a Perpetual Quest
+-JHPQ029, na, P, 0, 0, a Perpetual Quest
+-JHPQ030, na, P, 0, 0, a Perpetual Quest
+-JHPQ031, na, P, 0, 0, a Perpetual Quest
+-JHPQ032, na, P, 0, 0, a Perpetual Quest
+-JHPQ033, na, P, 0, 0, a Perpetual Quest
+JHPQ034, na, P, 0, 0, a Perpetual Quest
+JHPQ035, na, P, 0, 0, a Perpetual Quest
+JHPQ036, na, P, 0, 0, a Perpetual Quest
+JHPQ037, na, P, 0, 0, a Perpetual Quest
+JHPQ038, na, P, 0, 0, a Perpetual Quest
+-JHPQ039, na, P, 0, 0, a Perpetual Quest
+-JHPQ040, na, P, 0, 0, a Perpetual Quest

@@ -1,30 +1,31 @@
 -- Jay_H Fighters Guild quest pack list
 
 -- name:        filename of QRC txt file
--- group:       guild group from FactionFile.GuildGroups enum
--- membership:  N=non-member, M=member
--- minRep:      minimum reputation required to be offered the quest (units can use X wildcard)
+-- group:       guild group from FactionFile.GuildGroups enum, or social group from FactionFile.SocialGroups enum
+-- membership:  N=non-member, M=member, P=prospect, T=Akatosh, A=Arkay, D=Dibella, J=Julianos, K=Kynareth, R=Mara, S=Stendarr, Z=Zenithar
+-- minReq:      minimum requirement to be offered the quest: (val < 10) = guild rank / player level, or (val >= 10) = min reputation
+-- flag:        0 = nothing, X = adult/nudity, 1 = one time quest
 -- notes:
 
-schema: *name, group, membership, minRep, notes
+schema: *name, group, membership, minReq, flag, notes
 
-JHFG001, FightersGuild, M, 30, a quest to slay a vampire in another town
-JHFG002, FightersGuild, M, 60, a quest to slay a daedra in a dungeon
-JHFG003, FightersGuild, M, 5, a quest to slay a criminal in a dungeon
-JHFG004, FightersGuild, M, 5, a quest to guard a residence from intruders
-JHFG005, FightersGuild, M, 0, a quest to slay a pack of beasts at a rural farmhome
-JHFG006, FightersGuild, M, 5, a quest to stop an assassination inside a home
-JHFG007, FightersGuild, M, 5, courier work + ambush in a house
-JHFG009, FightersGuild, M, 15, expert werewolf hunting
-JHFG010, FightersGuild, M, 5, a quest to rid a city's streets of poisonous critters
-JHFG011, FightersGuild, M, 95, an artifact quest to invade a vampire cult
-JHFG012, FightersGuild, M, 5, a quest to slay a wizard in a city
-JHFG013, FightersGuild, M, 0, a quest to get a giant out of a house
-JHFG014, FightersGuild, M, 70, a quest to free the town of a gargoyle siege
-JHFG015, FightersGuild, M, 5, a quest to fight in a dungeon with a partner
-JHFG016, FightersGuild, M, 40, a quest to get rid of a bad guild member
-JHFGA00, FightersGuild, M, 40, entry into JHMC001
-JHMC001, FightersGuild, P, 0, a quest to help someone fleeing the Dark Brotherhood
+JHFG001, FightersGuild, M, 30, 0, a quest to slay a vampire in another town
+JHFG002, FightersGuild, M, 60, 0, a quest to slay a daedra in a dungeon
+JHFG003, FightersGuild, M, 1, 0, a quest to slay a criminal in a dungeon
+JHFG004, FightersGuild, M, 1, 0, a quest to guard a residence from intruders
+JHFG005, FightersGuild, M, 0, 0, a quest to slay a pack of beasts at a rural farmhome
+JHFG006, FightersGuild, M, 1, 0, a quest to stop an assassination inside a home
+JHFG007, FightersGuild, M, 1, 0, courier work + ambush in a house
+JHFG009, FightersGuild, M, 15, 0, expert werewolf hunting
+JHFG010, FightersGuild, M, 1, 0, a quest to rid a city's streets of poisonous critters
+JHFG011, FightersGuild, M, 95, 0, an artifact quest to invade a vampire cult
+JHFG012, FightersGuild, M, 1, 0, a quest to slay a wizard in a city
+JHFG013, FightersGuild, M, 0, 0, a quest to get a giant out of a house
+JHFG014, FightersGuild, M, 70, 0, a quest to free the town of a gargoyle siege
+JHFG015, FightersGuild, M, 1, 0, a quest to fight in a dungeon with a partner
+JHFG016, FightersGuild, M, 40, 0, a quest to get rid of a bad guild member
+JHFGA00, FightersGuild, M, 40, 0, entry into JHMC001
+JHMC001, FightersGuild, P, 0, 0, a quest to help someone fleeing the Dark Brotherhood
 -protect a shop at night from burglars. Commoner?
 -look into a wealthy client's problems and gain legal rep
 -IK questline for DB family member
