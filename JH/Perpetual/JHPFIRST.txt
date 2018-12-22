@@ -1,0 +1,42 @@
+Quest: JHPFIRST
+DisplayName: PERPET FIRST
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>           JHPFIRST 1000
+
+RefuseQuest:  [1001]
+<ce>           JHPFIRST 1001
+
+AcceptQuest:  [1002]
+<ce>           JHPFIRST 1002
+
+QuestFail:  [1003]
+<ce>           JHPFIRST 1003
+
+QuestComplete:  [1004]
+<ce>           JHPFIRST 1004
+
+Message:  1027
+<ce>	You currently have the Perpetual Quests add-on
+<ce>	installed. Would you like to begin running the
+<ce>	Perpetual Quest system now?
+
+Message:  1028
+<ce>	Perpetual Quests will not begin at this time.
+<ce>	You can start them by opening the console and
+<ce>	entering "startquest JHPINIT".
+
+QBN:
+
+--   Quest start-up:
+                prompt 1027 yes _pqstart_ no _pqfail_
+
+_pqfail_ task:
+	say 1028
+                end quest
+
+_pqstart_ task:
+	start quest JHPINIT
+                end quest
