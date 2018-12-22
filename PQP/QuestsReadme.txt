@@ -1,4 +1,4 @@
-Daggerfall Quest Pack 1 (Jay_H), Daggerfall Unity #116
+Daggerfall Quest Pack 1 (Jay_H)
 
 TO INSTALL:
 

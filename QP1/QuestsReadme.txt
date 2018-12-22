@@ -1,4 +1,4 @@
-Daggerfall Quest Pack 1 (Jay_H), Daggerfall Unity #116
+Daggerfall Quest Pack 1 (Jay_H)
 
 TO INSTALL:
 
@@ -21,10 +21,4 @@ Take note of the following points:
 
 * Sometimes, a friendly NPC is meant to disappear but does not. This occurs most frequently when an enemy is spawned at the same time. Just pretend how it's supposed to happen.
 
-* Quest branches such as the Cartographers will get buggy if you accept more than one quest from them at a time. Either let your current quest with the Cartographers drop completely and start over, or continue in the quest line they have given you.
-
-* Some Cartographer quests require you to actually step inside a dungeon for the location to register. Do not leave the location until you get a verification message of some sort.
-
 * When you hear the "telltale snarl of a werewolf," killing it will begin a quest with lots of werewolves. If you want to avoid that, flee it and the next werewolf that spawns. That will prevent the quest from initializing.
-
-* In general, do not undertake a Perpetual Quest while the same quest is running. Some Perpetual Quests only last a few days, but others can span months. If a quest that you're already doing arrives again, ignore it.
