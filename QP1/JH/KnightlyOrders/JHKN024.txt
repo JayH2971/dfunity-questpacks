@@ -118,7 +118,7 @@ Foe _q1_ is Ancient_vampire
 Person _qgiver_ group Questor male
 Person _maid_ faction Dancers female
 Person _mage_ faction The_Mages_Guild
-Person _capt_ group local_4.0 male
+Person _capt_ group Local_4.1 male
 
 Place _maidh_ remote house1
 Place _farm_ remote poorhome

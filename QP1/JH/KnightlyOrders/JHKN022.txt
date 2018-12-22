@@ -10,6 +10,12 @@ QuestorOffer:  [1000]
 <ce> our order's aid to free a miserable hole from
 <ce> a witch's curse, one that will trap within
 <ce> any who enter. Will you be the needed hero?
+<--->
+<ce> A forlorn labyrinth in the wilderness has become
+<ce> the home of a witch who will trap within all
+<ce> who enters its halls. We need a champion
+<ce> capable of slaying her to release the curse.
+<ce> Will you volunteer for this heroic act?
 
 RefuseQuest:  [1001]
 <ce> What manner of knight do you intend to be, %pct?
@@ -129,9 +135,9 @@ _tele_ task:
 
 _quest_ task:
 	when _inside_ and not _slain_
-	create foe _e1_ every 15 minutes indefinitely with 10% success
-	create foe _e2_ every 20 minutes indefinitely with 7% success
-  create foe _e3_ every 25 minutes indefinitely with 4% success
+	create foe _e1_ every 15 minutes indefinitely with 4% success
+	create foe _e2_ every 20 minutes indefinitely with 5% success
+  create foe _e3_ every 25 minutes indefinitely with 6% success
 
 _failsafe_ task:
 	hide npc _witch_
