@@ -9,21 +9,22 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHDB001, DarkBrotherHood, M, 10, 0, a quest to slay a hermit causing animal attacks
+JHDB001, DarkBrotherHood, M, 1, 0, a quest to slay a hermit causing animal attacks
 JHDB002, DarkBrotherHood, M, 0, 0, a quest to slay a knight inside the same town
 JHDB003, DarkBrotherHood, M, 0, 0, a quest to slay a thief inside the same town
 JHDB004, DarkBrotherHood, M, 0, 0, a quest to slay a priest inside the same town
 JHDB005, DarkBrotherHood, M, 0, 0, a quest to slay a barbarian inside the same town
 JHDB006, DarkBrotherHood, M, 0, 0, a quest to kidnap a child for ransom
 JHDB007, DarkBrotherHood, M, 0, 0, a quest to slay a mark over a bodyguard's objection
-JHDB008, DarkBrotherHood, M, 30, 0, a quest to slay a teleported noble
+JHDB008, DarkBrotherHood, M, 3, 0, a quest to slay a teleported noble
 JHDB009, DarkBrotherHood, M, 0, 0, a quest to retrieve a ransomed child
 JHDB010, DarkBrotherHood, M, 1, 0, a quest to hijack a ransom plot
 JHDB011, DarkBrotherHood, M, 0, 0, a quest to slay a Thieves Guild interloper
-JHDB012, DarkBrotherHood, M, 10, 0, a quest to end a rival assassination organization
--a quest to take a victim of a failed ransom to a dungeon to be eaten
+JHDB012, DarkBrotherHood, M, 2, 0, a quest to end a rival assassination organization
+JHDB013, DarkBrotherHood, M, 2, 0, a quest to feed a mark to beasts
+-help necromancer quest. Slay for money and deliver corpse. Do not enter city.
 -artifact quest, a diplomat from another region must be slain. Follow paper trail, slaying enemies. Progressively larger groups begin following PC. Diplomat must be slain within 10 seconds of first hit to prevent recall.
--interfere with Mages Guild researcher notes quest. MG rep drop.
+-interfere with Mages Guild researcher notes quest. MG rep drop. Necromancer add-in
 -slay a runaway debtor. Can be human, vampire, or werewolf.
 -find a person in hiding. Interrogate a family member by attack.
 -a quest to slay a member of the city guard who interferes with the Brotherhood. Injury leads to failure timer
