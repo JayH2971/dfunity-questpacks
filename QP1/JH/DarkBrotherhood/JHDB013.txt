@@ -1,0 +1,122 @@
+Quest: JHDB013
+DisplayName: To the Wolves
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  One of our regular clients has a peculiar
+<ce>  desire to dispose of one of %crn's
+<ce>  more infamous scoundrels in a rather dramatic fashion.
+<ce>  We need someone to take a hostage to a remote
+<ce>  cave to be eaten alive. Are you capable of this?
+
+RefuseQuest:  [1001]
+<ce>  Ah, you're trying to avoid the gruesome work. I see.
+
+AcceptQuest:  [1002]
+<ce>  In ___res_ an aristocrat named _hos_
+<ce>  lives in _res_. Take %g2 from there to a
+<ce>  hole called ___dung_. Once inside,
+<ce>  ring this _bell_ and step back. The matter
+<ce>  will resolve itself in summary fashion.
+<ce>  I merely ask that you bring back some proof
+<ce>  of the fool's death to provide to our client.
+<ce>  Have this done in =timer_ days.
+
+QuestFail:  [1003]
+<ce> _qgiver_ asked you to finish
+<ce> the feeding contract by now.
+
+QuestComplete:  [1004]
+<ce>  Rather efficient, isn't it %pct? It almost
+<ce>  makes me want to forget what it feels like
+<ce>  to push a blade into human flesh and dig inward
+<ce>  until the mark stops moving. Ah, the joys
+<ce>  of our work. The client specifically stipulated
+<ce>  that our agent be given a payment. Take this.
+
+Message:  1010
+<ce>  _hos_ is unable to so much as speak a word
+<ce>  before you have ensured %g3 silence. You begin to
+<ce>  lead your semi-cooperative hostage out of the building.
+
+Message:  1011
+<ce>  You ring the bell and step back, pushing _hos_
+<ce>  to the ground. With %g3 hands tied %g1 can only watch
+<ce>  the pair of tigers approach. The act of disposal takes
+<ce>  less than a minute. You are careful to snatch one of
+<ce>  the mark's fingers before the beasts devour it. Soon the
+<ce>  corpse is entirely consumed and they slink away into the
+<ce>  depths of the cave.
+<--->
+<ce>  You ring the bell and step back, pushing _hos_
+<ce>  to the ground. With %g3 hands tied %g1 can only watch
+<ce>  the pair of bears approach. The act of disposal takes
+<ce>  less than a minute. You are careful to snatch one of
+<ce>  the mark's fingers before the beasts devour it. Soon the
+<ce>  corpse is entirely consumed and they slink away into the
+<ce>  depths of the cave.
+
+Message:  1030
+%qdt:
+ The Dark Brotherhood of ___qgiver_
+ has assigned me with taking one
+ _hos_ of ___res_, living
+ in _res_, to a cave called
+ ___dung_ where trained animals will
+ dispose of %g2 once I ring a bell.
+ I must bring proof of the death before
+ =timer_ have passed.
+
+QBN:
+Person _qgiver_ group Questor male
+Person _hos_ faction Dancers
+
+Place _res_ remote house1
+Place _dung_ remote dungeon
+
+Item _bell_ bell
+Item _reward_ gold
+Item _finger_ finger
+
+Clock _timer_ 00:00 0 flag 1 range 0 2
+
+--	Quest start-up:
+	start timer _timer_ 
+	pc at _dung_ do _inside_
+	log 1030 step 0 
+    reveal _dung_
+    place npc _hos_ at _res_
+    get item _bell_
+
+variable _inside_
+_take_ task:
+  clicked npc _hos_
+  say 1010
+  hide npc _hos_
+  add _hos_ face
+
+_enable_ task:
+    when _inside_ and _take_
+    _bell_ used do _slain_
+
+_slain_ task:
+    drop _hos_ face
+    say 1011
+    get item _finger_
+
+_qgclicked_ task:
+	clicked npc _qgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+	clear _qgclicked_ _clearclick_ 
+
+_pcreward_ task:
+	toting _finger_ and _qgiver_ clicked
+    give pc _reward_
+	end quest 
+
+_timer_ task:
+	say 1003
+  end quest
