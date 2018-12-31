@@ -43,9 +43,12 @@ Message:  1010
 <ce>  A blinding light obliges you to close your eyes.
 
 Message:  1011
-<ce>  The gem has shattered under the magical force.
-<ce>  The band of Brotherhood hunters will appear
-<ce>  somewhere in this pit.
+<ce>  The gem has shattered under the magical force. The band of
+<ce>  Brotherhood hunters will be somewhere in this pit.
+<ce>
+<ce>	(Hint: You may be in a location that's impossible to escape from,)
+<ce>	(like the bottom of a chute. If so,)
+<ce>	(make a save and try the console command "teleport" to get out.)
 
 Message:  1012
 <ce>  Your lying in wait has paid off.

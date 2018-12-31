@@ -72,7 +72,7 @@ QBN:
 Person _qgiver_ group Questor male
 Person _hos_ faction Dancers
 
-Place _res_ remote house1
+Place _res_ remote house
 Place _dung_ remote dungeon
 
 Item _bell_ bell

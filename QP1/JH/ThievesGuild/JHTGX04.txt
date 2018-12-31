@@ -85,7 +85,6 @@ Message:  1082
 <ce> belongings, at least for now.
 
 QBN:
-
 Person _fg_ faction The_Fighters_Guild
 
 Place _tavern_ local tavern

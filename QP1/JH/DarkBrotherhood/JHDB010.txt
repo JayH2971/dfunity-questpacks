@@ -71,8 +71,8 @@ Message:  1040
 QBN:
 Person _kid_ faction Children
 
-Place _place_ remote house1
-Place _ransom_ remote house1
+Place _place_ remote house
+Place _ransom_ remote house
 
 Clock _2place_ 00:00 0 flag 1 range 0 2
 Clock _steal_ 1.00:00

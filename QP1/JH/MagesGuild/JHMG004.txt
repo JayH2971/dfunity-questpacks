@@ -35,7 +35,7 @@ QuestFail:  [1003]
 <ce>   _friend_ groans in frustration as %g1 walks away.
 <ce>  
 <ce>  "I can't take this anymore! I need to get
-<ce>  back to ___questgiver_ right now!"
+<ce>  back to ___qgiver_ right now!"
 <ce>  
 <ce>  You are left alone.
 
@@ -67,7 +67,7 @@ Message:  1021
 <ce>    "Well done, %ra! I can see immediately
 <ce>    what they want from this creature. I'll...
 <ce>    Yes, that's all I need. Let's return
-<ce>    to ___questgiver_, quickly now!"
+<ce>    to ___qgiver_, quickly now!"
 
 Message:  1030
 %qdt:
@@ -75,13 +75,13 @@ Message:  1030
  _friend_, to find and
  slay an atronach inside
  __dung_. We must
- return to ___questgiver_ with
+ return to ___qgiver_ with
  the deed done in =timer_ days.
 
 QBN:
 Item _reward_ gold
 
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 Person _friend_ faction The_Mages_Guild
 
 Place _dung_ remote dungeon
@@ -123,7 +123,7 @@ _pcgetsgold_ task:
 	end quest 
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 

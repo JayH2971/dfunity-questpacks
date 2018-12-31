@@ -89,8 +89,8 @@ QBN:
 
 Person _crow_ named The_Crow
 
-Place _res_ remote house1
-Place _crowhome_ remote house4
+Place _res_ remote house
+Place _crowhome_ remote house
 
 Item _reward_ gold range 1801 to 2199
 Item _lode_ lodestone

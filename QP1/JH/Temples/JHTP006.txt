@@ -220,7 +220,7 @@ Person _qgiver_ group Questor male
 Person _husb_ group Local_3.1 male
 Person _wife_ group Local_4.0 female
 
-Place _res_ local house2
+Place _res_ local house
 Place _tavern_ local tavern
 
 Clock _timer_ 1.00:00

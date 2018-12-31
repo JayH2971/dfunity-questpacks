@@ -83,8 +83,8 @@ QBN:
 Person _questgiver_ group Questor male
 Person _kid_ faction Children
 
-Place _res_ remote house2
-Place _goal_ remote house1
+Place _res_ remote house
+Place _goal_ remote house
 
 Clock _timer_ 30.00:00
 

@@ -91,8 +91,8 @@ Message:  1020
 
 Message:  1030
 %qdt:
- _questgiver_ of the Dark Brotherhood,
- ___questgiver_, has offered me the privilege
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has offered me the privilege
  of stamping out a small rival organization.
  The leader, _th_, hides in
  ___res_ and needs to be deceived
@@ -103,14 +103,14 @@ Message:  1030
  I have =timer_ days to kill %g2 and return.
 
 QBN:
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 Person _th_ factiontype Thieves_Den
 
 Item _letter_ letter
 Item _gem_ gem
 Item _eye_ basilisk_eye
 
-Place _res_ remote house1
+Place _res_ remote house
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _conv_ 00:02
@@ -169,7 +169,7 @@ _slain_ task:
     say 1014
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 

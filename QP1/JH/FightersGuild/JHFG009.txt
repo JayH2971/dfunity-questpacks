@@ -76,17 +76,17 @@ Foe _enemy1_ is Werewolf
 --	Quest start-up:
 	start timer _failsafe_ 
 	log 1030 step 0 
- reveal _dungeon_
- pc at _dungeon_ set _starthunt_
- place foe _enemy1_ at _dungeon_
+	reveal _dungeon_
+ 	pc at _dungeon_ set _starthunt_
+ 	place foe _enemy1_ at _dungeon_
 
 _starthunt_ task:
- say 1015
- start timer _hunt_
+ 	say 1015
+ 	start timer _hunt_
 
 _slain_ task:
 	killed 1 _enemy1_ saying 1020
- stop timer _hunt_
+ 	stop timer _hunt_
 	get item _blood_
 
 _qgclicked_ task:
@@ -105,3 +105,6 @@ _hunt_ task:
  say 1003
  change repute with _qgiver_ by +3
 	end quest 
+
+_failsafe_ task:
+	end quest

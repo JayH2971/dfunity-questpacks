@@ -109,11 +109,10 @@ Message:  1082
 <ce> belongings, at least for now.
 
 QBN:
-
 Person _crow_ named The_Crow
 Person _fg_ faction The_Fighters_Guild
 
-Place _crowhome_ remote house4
+Place _crowhome_ remote house
 Place _place_ remote random
 
 Item _reward_ gold range 1501 to 1999

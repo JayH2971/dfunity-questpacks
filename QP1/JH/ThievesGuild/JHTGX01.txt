@@ -120,7 +120,7 @@ QBN:
 Person _crow_ named The_Crow
 Person _tg_ faction The_Thieves_Guild
 
-Place _res_ remote house4
+Place _res_ remote house
 
 Clock _initial_ 60.00:00
 

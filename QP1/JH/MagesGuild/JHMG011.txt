@@ -103,7 +103,6 @@ Message: 1030
  a farmstead within =goal_ days.
 
 QBN:
-
 Item _reward_ gold
 
 Person _qgiver_ group Questor male

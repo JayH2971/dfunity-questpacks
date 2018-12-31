@@ -37,10 +37,6 @@ QuestComplete:  [1004]
 RumorsDuringQuest:  [1005]
 There's a cult down in ___dung_. Don't bother no one, though.
 
-RumorsPostfailure:  [1006]
-
-RumorsPostsuccess:  [1007]
-
 QuestorPostsuccess:  [1008]
 So you actually beat the cult. You're a legend.
 

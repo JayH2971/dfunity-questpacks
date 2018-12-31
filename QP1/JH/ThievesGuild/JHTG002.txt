@@ -80,7 +80,7 @@ Person _questgiver_ group Questor male
 Person _kid_ faction Children
 
 Place _dung_ remote dungeon
-Place _res_ remote house2
+Place _res_ remote house
 
 Clock _timer_ 30.00:00
 Clock _found_ 00:06 00:14

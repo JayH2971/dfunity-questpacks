@@ -52,7 +52,7 @@ QBN:
 Person _questgiver_ group Questor male
 Person _dummytg_ faction The_Thieves_Guild
 
-Place _res_ remote house1
+Place _res_ remote house
 
 Clock _2res_ 00:00 0 flag 1 range 0 2
 Clock _failsafe_ 180.00:00

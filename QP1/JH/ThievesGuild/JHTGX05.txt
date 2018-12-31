@@ -108,8 +108,8 @@ QBN:
 Person _crow_ named The_Crow
 Person _fg_ faction The_Fighters_Guild
 
-Place _crowhome_ remote house4
-Place _res_ remote house1
+Place _crowhome_ remote house
+Place _res_ remote house
 
 Item _reward_ gold range 2201 to 2600
 Item _lode_ lodestone

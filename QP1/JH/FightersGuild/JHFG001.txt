@@ -4,42 +4,40 @@ DisplayName: Much at Stake
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          We've got a job for someone experienced like you,
-<ce>           %pcf, but I'm not gonna blame you for turning
-<ce>           it down. It involves one vampire and no sunlight.
-<ce>              You think you can fix that kind of problem?
-<ce>                  There's =reward_ gold in it for you.
+<ce>  We've got a job for someone experienced like you,
+<ce> %pcf, but I'm not gonna blame you for turning
+<ce> it down. It involves one vampire and no sunlight.
+<ce>  You think you can fix that kind of problem?
+<ce>  There's =reward_ gold in it for you.
 <--->
-<ce>          Ever killed a vampire before, %pcf? Not one
-<ce>          of them ancients. Those things give me the
-<ce>          willies, and if they don't for you, you're not human.
-<ce>          No, we've got a request here to floor some simple
-<ce>          vampire in a house over in ___vampres_.
-<ce>          Take this one if you feel ready for it.
+<ce>  Ever killed a vampire before, %pcf? Not one of them
+<ce>  ancients. We've got a request here to floor some simple
+<ce>  vampire in a house over in ___vampres_.
+<ce>  Take this one if you feel ready for it.
 
 RefuseQuest:  [1001]
-<ce>                       I'll look for someone else then.
+<ce> I'll look for someone else then.
 
 AcceptQuest:  [1002]
-<ce>          So here's the deal. You're headed to  _vampres_.
-<ce>          That'll be in ___vampres_. Slay the beast
-<ce>          and get back here so I can get you your =reward_ gold.
-<ce>          I'm giving you =timer_ days before I send for backup 
-<ce>          from a temple or something. Good luck, %pcf.
+<ce>  So here's the deal. You're headed to  _vampres_.
+<ce>  That'll be in ___vampres_. Slay the beast
+<ce>  and get back here so I can get you your =reward_ gold.
+<ce>  I'm giving you =timer_ days before I send for backup 
+<ce>  from a temple or something. Good luck, %pcf.
 
 QuestFail:  [1003]
-<ce>           You needed to slay the vampire in ___vampres_ by now.
+<ce> You needed to slay the vampire in ___vampres_ by now.
 
 QuestComplete:  [1004]
-<ce>           Excellent work, %pcf. This is why
-<ce>            we count on you. Have your gold.
+<ce> Excellent work, %pcf. This is why
+<ce>  we count on you. Have your gold.
 
 RumorsDuringQuest:  [1005]
 Did you hear about the vampire that showed up in ___vampres_? I can't sleep anymore.
 
 Message:  1020
-<ce>                   "No!" The vampire shrieks
-<ce>                 before crumpling to the floor.
+<ce> "No!" The vampire shrieks
+<ce> before crumpling to the floor.
 
 Message:  1030
 %qdt:

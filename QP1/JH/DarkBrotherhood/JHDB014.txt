@@ -68,7 +68,7 @@ Person _qgiver_ group Questor male
 Person _mark_ faction Generic_Temple
 Person _dummynec_ faction The_Necromancers
 
-Place _mhome_ remote house1
+Place _mhome_ remote house
 Place _nhome_ remote poorhome
 
 Item _reward_ gold

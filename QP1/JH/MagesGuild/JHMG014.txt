@@ -188,9 +188,9 @@ Person _qgiver_ group Questor male
 Person _schol_ faction The_Mages_Guild
 Person _hunt_ faction Generic_Knightly_Order
 
-Place _res_ local house1
+Place _res_ local house
 Place _hide_ local magery
-Place _vampres_ remote house2
+Place _vampres_ remote house
 
 Clock _failsafe_ 60.00:00
 Clock _scholdead_ 00:03

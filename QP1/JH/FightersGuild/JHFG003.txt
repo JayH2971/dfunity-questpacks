@@ -4,44 +4,44 @@ DisplayName: Civil Duty
 QRC:
 
 QuestorOffer:  [1000]
-<ce>              We try to stay out of politics as much as possible, but
-<ce>              sometimes the %t forces our hand. There's some
-<ce>              criminal down in __dungeon_ that the
-<ce>              guards have given up on who needs to die. It's
-<ce>              paying =reward_ gold. Is that enough for you?
+<ce>  We try to stay out of politics as much as possible, but
+<ce>  sometimes the %t forces our hand. There's some
+<ce>  criminal down in __dungeon_ that the
+<ce>  guards have given up on who needs to die. It's
+<ce>  paying =reward_ gold. Is that enough for you?
 <--->
-<ce>           So the Fighters Guild just kills spiders and
-<ce>           bears all day, right? Not quite. The %t
-<ce>           sometimes tries to get us to pick off some
-<ce>           dangerous criminal that they can't catch
-<ce>           themselves. It still pays though, in this case
-<ce>           =reward_ gold. Does that work for you?
+<ce> So the Fighters Guild just kills spiders and
+<ce> bears all day, right? Not quite. The %t
+<ce> sometimes tries to get us to pick off some
+<ce> dangerous criminal that they can't catch
+<ce> themselves. It still pays though, in this case
+<ce> =reward_ gold. Does that work for you?
 
 RefuseQuest:  [1001]
-<ce>                       I'm fine with that. What do we
-<ce>                      look like? The Dark Brotherhood?
+<ce> I'm fine with that. What do we
+<ce>  look like? The Dark Brotherhood?
 
 AcceptQuest:  [1002]
-<ce>                   You just can't resist, can you %pcf?
-<ce>                   Just remember, this isn't murder. We're lawfully
-<ce>                   contracted by the %t for this. Get down
-<ce>                   to __dungeon_ and back here in
-<ce>                   =timer_ days, and I'll have your _reward_ gold here.
-<ce>                   
-<ce>                   By the way, this one's a ringleader of some band
-<ce>                   of some kind, so be ready if things go south.
+<ce> You just can't resist, can you %pcf?
+<ce> Just remember, this isn't murder. We're lawfully
+<ce> contracted by the %t for this. Get down
+<ce> to __dungeon_ and back here in
+<ce> =timer_ days, and I'll have your _reward_ gold here.
+<ce> 
+<ce> By the way, this one's a ringleader of some band
+<ce> of some kind, so be ready if things go south.
 
 QuestFail:  [1003]
-<ce>               Your contract with the Fighters Guild
-<ce>               in ___dungeon_ is overdue.
+<ce> Your contract with the Fighters Guild
+<ce> in ___dungeon_ is overdue.
 
 QuestComplete:  [1004]
-<ce>           Well done. That should keep the %t
-<ce>          off our backs for awhile. Here's your gold.
+<ce> Well done. That should keep the %t
+<ce>  off our backs for awhile. Here's your gold.
 
 Message:  1020
-<ce>                   Your foe lets out a blood-curdling
-<ce>                 scream which echoes through the halls.
+<ce> Your foe lets out a blood-curdling
+<ce> scream which echoes through the halls.
 
 Message:  1030
 %qdt:
@@ -72,7 +72,7 @@ Foe _enemy4_ is Spellsword
 	start timer _timer_ 
 	log 1030 step 0 
 	pick one of _E.01_ _E.02_ _E.03_ _E.04_
-        	  reveal _dungeon_
+  	  reveal _dungeon_
 
  _E.01_ task:
 	place foe _enemy1_ at _dungeon_
@@ -109,5 +109,5 @@ _pcgetsgold_ task:
 	end quest 
 
 _timer_ task:
-          say 1003
+  say 1003
 	end quest 

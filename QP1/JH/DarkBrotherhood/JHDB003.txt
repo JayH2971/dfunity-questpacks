@@ -69,7 +69,7 @@ Message:  1099
 QBN:
 Person _questgiver_ group Questor male
 
-Place _thieves_ local house2
+Place _thieves_ local house
 
 Clock _timer_ 12:00
 

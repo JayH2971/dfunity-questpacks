@@ -131,7 +131,7 @@ Person _dummy_ group Local_3.0
 Person _alt_ group Local_4.1
 
 Place _dest_ remote tavern
-Place _divers_ remote house1
+Place _divers_ remote house
 
 Foe _mark_ is Burglar
 Foe _ambush_ is 3 Barbarian

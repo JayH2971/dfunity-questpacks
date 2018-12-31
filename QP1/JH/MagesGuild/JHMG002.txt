@@ -4,48 +4,48 @@ DisplayName: Stubborn Scholar
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          A few weeks have passed since _scholar_
-<ce>          disappeared into ___dung_ for a research
-<ce>          expedition. We have need for such expertise at
-<ce>          this time, and it's quite likely %g1 has merely
-<ce>          lost track of time and needs to be fished out by one
-<ce>          of our capable members. Will you do so?
+<ce>  A few weeks have passed since _scholar_
+<ce>  disappeared into ___dung_ for a research
+<ce>  expedition. We have need for such expertise at
+<ce>  this time, and it's quite likely %g1 has merely
+<ce>  lost track of time and needs to be fished out by one
+<ce>  of our capable members. Will you do so?
 
 RefuseQuest:  [1001]
-<ce>           I suppose you simply do not understand
-<ce>          what we'll be lacking through this absence.
+<ce> I suppose you simply do not understand
+<ce>  what we'll be lacking through this absence.
 
 AcceptQuest:  [1002]
-<ce>           A comely answer. Head on into the depths
-<ce>          and find _scholar_, who will likely
-<ce>          need a kindly reminder that the research had
-<ce>          a time limit attached. Tell %g2 to return with
-<ce>          you, and be here in =timer_ or fewer days.
+<ce> A comely answer. Head on into the depths
+<ce>  and find _scholar_, who will likely
+<ce>  need a kindly reminder that the research had
+<ce>  a time limit attached. Tell %g2 to return with
+<ce>  you, and be here in =timer_ or fewer days.
 
 QuestFail:  [1003]
-<ce>          _qgiver_ has made clear how
-<ce>          important the punctual completion of guild
-<ce>          assignments is. This will reflect poorly on you.
+<ce>  _qgiver_ has made clear how
+<ce>  important the punctual completion of guild
+<ce>  assignments is. This will reflect poorly on you.
 
 QuestComplete:  [1004]
-<ce>          Splendid, %pcf. _scholar_, it is a joy
-<ce>          to see you safe and sound. I will receive your
-<ce>          full report once you have had some rest. And as
-<ce>          for you, %pct, have this book from our
-<ce>          library as a show of our gratitude.
+<ce>  Splendid, %pcf. _scholar_, it is a joy
+<ce>  to see you safe and sound. I will receive your
+<ce>  full report once you have had some rest. And as
+<ce>  for you, %pct, have this book from our
+<ce>  library as a show of our gratitude.
 
 Message:  1029
-<ce>              Hmph. Such arrogance in that voice of yours.
-<ce>              I never have seen you in the guild hall, likely
-<ce>              because creatures of your disposition are too
-<ce>              busy munching on bones to further our
-<ce>              academic purposes. I frankly do not trust
-<ce>              you. Prove your intellect. Your appearance is
-<ce>              not that of a worthy mage, so I need to see
-<ce>              the functioning of your brain instead.
-<ce>              
-<ce>                  Is there a Mages Guild
-<ce>                  hall in ___qgiver_?
+<ce>  Hmph. Such arrogance in that voice of yours.
+<ce>  I never have seen you in the guild hall, likely
+<ce>  because creatures of your disposition are too
+<ce>  busy munching on bones to further our
+<ce>  academic purposes. I frankly do not trust
+<ce>  you. Prove your intellect. Your appearance is
+<ce>  not that of a worthy mage, so I need to see
+<ce>  the functioning of your brain instead.
+<ce>  
+<ce>  Is there a Mages Guild
+<ce>  hall in ___qgiver_?
 
 Message:  1030
 %qdt:
@@ -57,65 +57,65 @@ Message:  1030
   in =timer_ days.
 
 Message:  1031
-<ce>              The Open spell belongs to the Thaumaturgy school.
+<ce>  The Open spell belongs to the Thaumaturgy school.
 
 Message:  1032
-<ce>              The next number in this series is 88:
-<ce>              
-<ce>              1, 4, 10, 22, 46.
+<ce>  The next number in this series is 88:
+<ce>  
+<ce>  1, 4, 10, 22, 46.
 
 Message:  1034
-<ce>                  "Atronach" is three.
-<ce>                  "Archmagister" is four.
-<ce>                  "Ambiguity" is five.
-<ce>                  Therefore, "amelioration" must be six.
+<ce>  "Atronach" is three.
+<ce>  "Archmagister" is four.
+<ce>  "Ambiguity" is five.
+<ce>  Therefore, "amelioration" must be six.
 
 Message:  1035
-<ce>                  "Research" is eight.
-<ce>                  "Fire" is five.
-<ce>                  "Book" is eleven.
-<ce>                  Therefore, "reward" must be four.
+<ce>  "Research" is eight.
+<ce>  "Fire" is five.
+<ce>  "Book" is eleven.
+<ce>  Therefore, "reward" must be four.
 
 Message:  1037
-<ce>                   The "Ghost Form" spell is sold
-<ce>                    by the Mages Guild and not
-<ce>                    the Temple of Kynareth.
+<ce> The "Ghost Form" spell is sold
+<ce>  by the Mages Guild and not
+<ce>  the Temple of Kynareth.
 
 Message:  1038
-<ce>                    "Notorgo's Curse" is a spell sold by both
-<ce>                    the Mages Guild and the Temple of Kynareth.
+<ce>  "Notorgo's Curse" is a spell sold by both
+<ce>  the Mages Guild and the Temple of Kynareth.
 
 Message:  1040
-<ce>                   Diamonds can be mixed into spell absorption potions.
+<ce> Diamonds can be mixed into spell absorption potions.
 
 Message:  1041
-<ce>                  Aloe is used in potions that restore stamina.
+<ce>  Aloe is used in potions that restore stamina.
 
 Message:  1043
-<ce>                    Legends among the Mages Guild say
-<ce>                   summoning Sheogorath is easier when
-<ce>                   there's thunder outside.
+<ce>  Legends among the Mages Guild say
+<ce> summoning Sheogorath is easier when
+<ce> there's thunder outside.
 
 Message:  1044
-<ce>                        The Daedric Artifact bestowed by
-<ce>                        Hircine is a powerful black mace.
+<ce>  The Daedric Artifact bestowed by
+<ce>  Hircine is a powerful black mace.
 
 Message:  1046
-<ce>                     Just as I thought. Go back to the Fighters
-<ce>                   Guild and smash some more rodents for pay.
-<ce>                    I will remain here until I see fit to leave.
+<ce> Just as I thought. Go back to the Fighters
+<ce> Guild and smash some more rodents for pay.
+<ce>  I will remain here until I see fit to leave.
 
 Message:  1047
-<ce>                Your appearance has most certainly deceived me,
-<ce>                but only a worthy mage could answer so. Lead
-<ce>                the way. I have much to tell _qgiver_.
+<ce>  Your appearance has most certainly deceived me,
+<ce>  but only a worthy mage could answer so. Lead
+<ce>  the way. I have much to tell _qgiver_.
 
 Message:  1048
-<ce>                You couldn't convince _scholar_ to
-<ce>                return with you? How hard could it be? This is
-<ce>                truly a disappointment. I will credit you for reminding
-<ce>                %g2 to return here in a timely fashion, but I fear
-<ce>                I can give you no more than that. Better luck next time.
+<ce>  You couldn't convince _scholar_ to
+<ce>  return with you? How hard could it be? This is
+<ce>  truly a disappointment. I will credit you for reminding
+<ce>  %g2 to return here in a timely fashion, but I fear
+<ce>  I can give you no more than that. Better luck next time.
 
 Message:  1050
 %qdt:
@@ -127,17 +127,17 @@ Message:  1050
  on my doings.
 
 Message:  1052
-<ce>                The second rank in the Mages Guild is Journeyman.
+<ce>  The second rank in the Mages Guild is Journeyman.
 
 Message:  1053
-<ce>                Evokers in the Mages Guild can create magical items.
+<ce>  Evokers in the Mages Guild can create magical items.
 
 Message:  1055
-<ce>                The teleportation service in the Mages Guild requires
-<ce>                an amount of gold derived from the distance traveled.
+<ce>  The teleportation service in the Mages Guild requires
+<ce>  an amount of gold derived from the distance traveled.
 
 Message:  1056
-<ce>                Daedra summoners in the Mages Guild require a service fee.
+<ce>  Daedra summoners in the Mages Guild require a service fee.
 
 QBN:
 Item _reward_ book2
@@ -152,12 +152,12 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 --	Quest start-up:
 	start timer _timer_
 	log 1030 step 0 
-          place npc _scholar_ at _dung_
+  place npc _scholar_ at _dung_
 		  reveal _dung_
 
 _begin_ task:
-          clicked npc _scholar_
-          prompt 1029 yes _S.00_ no _fail_
+  clicked npc _scholar_
+  prompt 1029 yes _S.00_ no _fail_
 
 _S.00_ task:
 	pick one of _S.01_ _S.02_
@@ -227,17 +227,17 @@ _fail_ task:
 	log 1050 step 1
 
 _success_ task:
-          say 1047
-          hide npc _scholar_
-          add _scholar_ face
+  say 1047
+  hide npc _scholar_
+  add _scholar_ face
 
 _pcgetsgold_ task:
-          when _qgclicked_ and _success_
+  when _qgclicked_ and _success_
 	give pc _reward_
 	end quest
 
 _badend_ task:
-          when _qgclicked_ and _fail_
+  when _qgclicked_ and _fail_
 	say 1048
 	end quest
 
@@ -249,5 +249,5 @@ _clearclick_ task:
 	clear _qgclicked_ _clearclick_ 
 
 _timer_ task:
-          say 1003
+  say 1003
 	end quest

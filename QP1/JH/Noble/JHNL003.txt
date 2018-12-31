@@ -69,7 +69,7 @@ Item _reward_ gold range 350 to 400
 
 Person _qgiver_ group Questor male
 
-Place _res_ local house2
+Place _res_ local house
 
 Clock _timer_ 3.00:00
 

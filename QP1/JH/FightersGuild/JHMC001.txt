@@ -355,8 +355,8 @@ Person _gendb_ faction The_Dark_Brotherhood
 Place _res_ remote library
 Place _temp_ remote temple
 Place _th_ remote random
-Place _dbtown_ remote house1
-Place _leave_ remote house2
+Place _dbtown_ remote house
+Place _leave_ remote house
 
 Clock _initial_ 60.00:00
 Clock _killhelp_ 01:00

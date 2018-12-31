@@ -43,7 +43,7 @@ QuestComplete:  [1004]
 <ce> Let me check whether it has %g3 seal.
 <ce> Well, it appears to be in proper order
 <ce> and condition. Send my regards to
-<ce> _questgiver_. Here is your
+<ce> _qgiver_. Here is your
 <ce> payment. A pleasure speaking to you.
 
 Message: 1020
@@ -52,7 +52,7 @@ Message: 1020
 
 Message:  1030
 %qdt:
- _questgiver_ of the
+ _qgiver_ of the
  Mages Guild has tasked me with
  protecting a manuscript that needs
  to get to ___res_ after =2res_
@@ -63,12 +63,12 @@ QBN:
 Item _reward_ gold
 Item _manuscript_ letter
 
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 Person _dummy_ group Local_3.1
 Person _client_ faction The_Mages_Guild
 Person _dummytg_ faction The_Thieves_Guild
 
-Place _res_ remote house1
+Place _res_ remote house
 
 Clock _2res_ 6.00:00 10.00:00
 Clock _failsafe_ 90.00:00

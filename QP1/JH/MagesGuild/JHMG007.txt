@@ -39,9 +39,9 @@ QuestComplete:  [1004]
 
 Message:  1010
 <ce>	Your work is to find an assassin somewhere in this place.
- 
+<ce>
 <ce>	(Hint: You may be in a location that's impossible to escape from,)
-<ce>	(like inside at the bottom of a chute. If so,)
+<ce>	(like the bottom of a chute. If so,)
 <ce>	(make a save and try the console command "teleport" to get out.)
 
 Message:  1020

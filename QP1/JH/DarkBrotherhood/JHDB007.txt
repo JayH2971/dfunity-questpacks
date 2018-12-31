@@ -70,7 +70,7 @@ QBN:
 
 Person _questgiver_ group Questor male
 
-Place _res_ remote house2
+Place _res_ remote house
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
 

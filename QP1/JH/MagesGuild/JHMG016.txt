@@ -149,7 +149,7 @@ Clock _bad3_ 00:10 00:12
 Clock _death_ 1:00
 Clock _wander_ 8:00 1.01:00
 
-Place _res_ remote house2
+Place _res_ remote house
 Place _dung_ remote dungeon
 
 Foe _imp_ is Imp

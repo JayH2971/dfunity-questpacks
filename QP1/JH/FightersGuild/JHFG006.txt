@@ -4,80 +4,80 @@ DisplayName: The Bodyguard
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          Hey %pcf, maybe you can help us out.
-<ce>          We've got this fellow who's marked up and down with
-<ce>           death threats. Can't even bear going to his house,
-<ce>           so he's been sleeping out in taverns for the last
-<ce>           week. He thinks if he's got someone from the
-<ce>           guild with him, he can at least go back and pick
-<ce>            up his stuff. You wanna play bodyguard and take
-<ce>           him to ___res_ for =reward_ gold?
+<ce>  Hey %pcf, maybe you can help us out.
+<ce>  We've got this fellow who's marked up and down with
+<ce> death threats. Can't even bear going to his house,
+<ce> so he's been sleeping out in taverns for the last
+<ce> week. He thinks if he's got someone from the
+<ce> guild with him, he can at least go back and pick
+<ce>  up his stuff. You wanna play bodyguard and take
+<ce> him to ___res_ for =reward_ gold?
 <--->
-<ce>          %pcf, I'm glad you're here. We've
-<ce>          got this guy who needs help getting back home.
-<ce>          Apparently he's been getting death threats like
-<ce>          Oblivion's never seen before. He won't go there without
-<ce>          someone watching his back. He's paying =reward_ gold
-<ce>          to get to ___res_. You in?
+<ce>  %pcf, I'm glad you're here. We've
+<ce>  got this guy who needs help getting back home.
+<ce>  Apparently he's been getting death threats like
+<ce>  Oblivion's never seen before. He won't go there without
+<ce>  someone watching his back. He's paying =reward_ gold
+<ce>  to get to ___res_. You in?
 
 RefuseQuest:  [1001]
-<ce>           He's off shivering in a corner,
-<ce>             %pcf. Have a heart.
+<ce> He's off shivering in a corner,
+<ce> %pcf. Have a heart.
 
 AcceptQuest:  [1002]
-<ce>          All right, but I'll warn you, this stuff's serious.
-<ce>           I don't know whose in-law he insulted
-<ce>           or who he cheated, but I read the letter
-<ce>           he got and it ain't pretty. Anyway, let me
-<ce>          call him. He didn't even want to leave the guild
-<ce>           hall without someone watching his back.
+<ce>  All right, but I'll warn you, this stuff's serious.
+<ce> I don't know whose in-law he insulted
+<ce> or who he cheated, but I read the letter
+<ce> he got and it ain't pretty. Anyway, let me
+<ce>  call him. He didn't even want to leave the guild
+<ce> hall without someone watching his back.
  
-<ce>          Hey! We got someone for ya, come down now! 
-<ce>          This %ra's gonna get you home! Name's
-<ce>            %pcn. You can trust %g2.
+<ce>  Hey! We got someone for ya, come down now! 
+<ce>  This %ra's gonna get you home! Name's
+<ce>  %pcn. You can trust %g2.
 
 QuestFail:  [1003]
-<ce>               You hear an awful groaning sound
-<ce>                 and a heavy thump on the floor.
-<ce>                   It appears you have failed.  
+<ce> You hear an awful groaning sound
+<ce> and a heavy thump on the floor.
+<ce> It appears you have failed.  
 
 QuestComplete:  [1004]
-<ce>           "My word! %pcn, you have provided me
-<ce>            proof that all my fears were just, and
-<ce>             saved my life in the process! I must flee
-<ce>             to ___escape_ quickly, now
-<ce>             that I have my belongings. Thank you for
-<ce>             extending your incredible skill on my behalf!"
-<ce>             
-<ce>               He hands you the payment
-<ce>             before returning to pack his things.
+<ce> "My word! %pcn, you have provided me
+<ce>  proof that all my fears were just, and
+<ce> saved my life in the process! I must flee
+<ce> to ___escape_ quickly, now
+<ce> that I have my belongings. Thank you for
+<ce> extending your incredible skill on my behalf!"
+<ce> 
+<ce> He hands you the payment
+<ce> before returning to pack his things.
 
 Message:  1010
-<ce>          Your client cautiously creeps down the stairs.
-<ce>           
-<ce>           "Please forgive me, %pcn. You cannot
-<ce>            imagine the horrors I've lived for the
-<ce>            last few days. Please, take me to
-<ce>            ___res_. I was living in
-<ce>            _res_. I'll pay you
-<ce>            once we're there."
+<ce>  Your client cautiously creeps down the stairs.
+<ce> 
+<ce> "Please forgive me, %pcn. You cannot
+<ce>  imagine the horrors I've lived for the
+<ce>  last few days. Please, take me to
+<ce>  ___res_. I was living in
+<ce>  _res_. I'll pay you
+<ce>  once we're there."
 
 Message:  1020
-<ce>            You hear rustling inside the home.
-<ce>            Your client trembles visibly.
-<ce>            
-<ce>             "No! They're here! And they'll be
-<ce>                outside! I knew it all along!
-<ce>               Kill them before they kill me!"
-<ce>            
-<ce>                Before you can react, he flees in
-<ce>               terror to another area of the house.
+<ce>  You hear rustling inside the home.
+<ce>  Your client trembles visibly.
+<ce>  
+<ce> "No! They're here! And they'll be
+<ce>  outside! I knew it all along!
+<ce> Kill them before they kill me!"
+<ce>  
+<ce>  Before you can react, he flees in
+<ce> terror to another area of the house.
 
 Message:  1028
-<ce>                   Your client cautiously peeks around
-<ce>                     to ensure you are still standing
-<ce>                   and not the assassins. When he
-<ce>                      is satisfied, he sighs deeply.
+<ce> Your client cautiously peeks around
+<ce> to ensure you are still standing
+<ce> and not the assassins. When he
+<ce>  is satisfied, he sighs deeply.
 
 Message:  1030
 %qdt:
@@ -95,12 +95,10 @@ Item _reward_ gold
 Person _questgiver_ group Questor male
 Person _escort_ group Local_3.1 male
 
-Place _res_ remote house1
-
-Clock _timer_ 00:00 0 flag 17 range 0 2
-
+Place _res_ remote house
 Place _escape_ remote poorhome
 
+Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _death_ 00:07 00:10
 Clock _delay_ 00:01
 
