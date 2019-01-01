@@ -134,12 +134,14 @@ _bigsuccess_ task:
     say 1021
     take _ing_ from pc
     get item _reward_
+    make _reward_ permanent
 
 _fail_ task:
     when _persuade_ and not _skilled_
 	say 1023
     restrain foe _giant_
     take _ing_ from pc
+    give item _ing_ to _giant_
 
 _qgclicked_ task:
     clicked npc _qgiver_

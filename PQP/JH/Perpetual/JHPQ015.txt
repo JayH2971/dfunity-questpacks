@@ -59,12 +59,10 @@ _fight_ task:
 
 _inj_ task:
    injured _enemy_
--legalrep -5
    say 1011
 
 _slain_ task:
    killed 3 _enemy_
--legalrep -15
    give pc _reward_
    end quest
 

@@ -118,7 +118,7 @@ Message:  1099
 QBN:
 Person _fey_ faction The_Fey
 
-Place _place_ remote house2
+Place _place_ remote house
 Place _dung_ remote dungeon
 
 Clock _initial_ 60.00:00

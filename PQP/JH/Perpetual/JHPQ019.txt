@@ -40,7 +40,7 @@ Message:  1011
 <ce> I've got a better god for you."
 <ce> 
 <ce> Your conversation partner brings out weaponry.
-<ce> You have no interest in seeing what this new deity is.
+<ce> You have no interest in knowing what this new deity is.
 
 Message:  1012
 <ce> "What a waste of time! Has that ever accomplished anything

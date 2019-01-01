@@ -86,8 +86,8 @@ Foe _chief_ is Nightblade
 Foe _lord_ is Nightblade
 
 Place _place1_ remote tavern
-Place _place2_ remote house1
-Place _place3_ remote house2
+Place _place2_ remote house
+Place _place3_ remote house
 
 --	Quest start-up:
   start timer _timer_

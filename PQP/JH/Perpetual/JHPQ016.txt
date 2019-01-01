@@ -419,7 +419,7 @@ Person _fg_ faction The_Fighters_Guild
 Place _start_ remote library
 Place _wshop_ remote weaponstore
 Place _phouse_ remote tavern
-Place _dbhome_ remote house1
+Place _dbhome_ remote house
 Place _bank_ remote bank
 Place _fguild_ remote fighters
 

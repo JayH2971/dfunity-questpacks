@@ -60,7 +60,7 @@ QBN:
 Item _reward_ gold range 120 to 250
 Item _subs_ drug
 
-Place _place_ remote house1
+Place _place_ remote house
 
 Clock _failsafe_ 180.00:00
 

@@ -24,7 +24,8 @@ JHDB012, DarkBrotherHood, M, 2, X, a quest to end a rival assassination organiza
 JHDB013, DarkBrotherHood, M, 2, X, a quest to feed a mark to beasts
 JHDB014, DarkBrotherHood, M, 2, X, a quest to slay and deliver the body
 JHDB015, DarkBrotherHood, M, 1, X, a quest to teleport to slay headhunters
--get teleported to slay a gang
+JHDB016, DarkBrotherHood, M, 0, 0, a quest to poison with a plant
+JHDB017, DarkBrotherHood, M, 1, X, a quest to steal Mages Guild research notes
 -artifact quest, a diplomat from another region must be slain. Follow paper trail, slaying enemies. Progressively larger groups begin following PC. Diplomat must be slain within 10 seconds of first hit to prevent recall.
 -interfere with Mages Guild researcher notes quest. MG rep drop. Necromancer add-in
 -slay a runaway debtor. Can be human, vampire, or werewolf.

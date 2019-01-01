@@ -44,6 +44,7 @@ Message:  1012
 
 QBN:
 Clock _timer_ 1:00
+Clock _delay_ 0:01 0:04
 
 Item _reward_ gold
 
@@ -53,6 +54,9 @@ Foe _enemy_ is Acrobat
 	
  _enter_ task:
    when pc enters city
+   start timer _delay_
+
+_delay_ task:
    start timer _timer_
    pick one of _hard_ _easy_
 	prompt 1010 yes _begin_ no _quit_
