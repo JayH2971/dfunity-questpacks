@@ -66,6 +66,7 @@ Message:  1020
 QBN:
 Clock _failsafe_ 10.00:00
 Clock _timer_ 0:30
+Clock _delay_ 0:01 0:04
 
 Foe _barb_ is Barbarian
 Foe _vamp_ is Vampire
@@ -77,7 +78,10 @@ Item _reward_ magic_item
 
 _enter_ task:
     when pc enters city
+    start timer _delay_
     start timer _timer_
+
+_delay_ task:
     prompt 1010 yes _begin_ no _quit_
 
 _quit_ task:

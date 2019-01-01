@@ -71,9 +71,15 @@ Place _cem_ remote graveyard
 
 --	Quest start-up:
     start timer _failsafe_
+    pc at _cem_ do _arrive_
+
+_day_ task:
+    daily from 5:30 to 18:30
+
+_one_ task:
+    when not _day_
     pick one of _attack_ _safe_
 	prompt 1010 yes _begin_ no _quit_
-    pc at _cem_ do _arrive_
 
 variable _begin_
 variable _attack_

@@ -156,7 +156,7 @@ QBN:
 Item _reward_ gold range 1000 to 1000
 Item _letter_ letter used 1040
 
-Place _res_ remote house2
+Place _res_ remote house
 
 Clock _timer_ 7.00:00
 

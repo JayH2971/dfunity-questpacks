@@ -51,6 +51,7 @@ Message:  1012
 QBN:
 Clock _failsafe_ 7.00:00
 Clock _timer_ 1:00
+Clock _delay_ 0:01 0:04
 
 Item _reward_ gold range 151 to 199
 
@@ -60,7 +61,10 @@ Item _reward_ gold range 151 to 199
  _enter_ task:
     when pc enters city
     stop timer _failsafe_
+    start timer _delay_
     start timer _timer_
+
+_delay_ task:
     prompt 1010 yes _begin_ no _quit_
 
 variable _begin_
