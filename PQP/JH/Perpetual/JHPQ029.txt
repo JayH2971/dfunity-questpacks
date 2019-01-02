@@ -82,7 +82,7 @@ Message:  1022
 QBN:
 Clock _timer_ 0:30
 Clock _failsafe_ 7.00:00
-Clock _delay_ 0:01 0:04
+Clock _delay_ 0:01 0:02
 
 Foe _enemy_ is Rogue
 

@@ -1,99 +1,95 @@
 Quest: JHFG017
-DisplayName: 
+DisplayName: Wickedness in High Places
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  
+<ce>  The %t's commissioned us to knock off a Necromancer
+<ce>  who also happens to be a high-ranking member of
+<ce>  the Mages Guild. Wanna get this one off our backs?
 
 RefuseQuest:  [1001]
-<ce>  Well, I suppose I can enlist someone more valiant.
+<ce>  %oth. Well, someone's gotta do it.
 
 AcceptQuest:  [1002]
-<ce>  His hideout is _res_ of ___res_.
-<ce>  The man is wanted in several provinces for indescribable
-<ce>  crimes against civilization. Use any means available to
-<ce>  subdue him. I wish you could avoid the lethal method,
-<ce>  but ultimate resistance calls for the ultimate prybar.
-<ce>  However you do it, return here within =timer_ days
-<ce>  for his trial. %god watch over you.
+<ce>  Cool, cool. Well, not much else to say. Necromancers
+<ce>  are usually the Mages Guild's responsibility but they're
+<ce>  denying this one outright. Probably a matter of utility
+<ce>  than loyalty, knowing them. But I'll stop talking.
+<ce>  Head out to ___poorhome_. Get ready
+<ce>  to fight some undead while you're there. They told us
+<ce>  to have this done in =timer_ days, so get back here
+<ce>  by then for your money.
 
 QuestFail:  [1003]
-<ce>  _qgiver_ needed your report on the Crow before the trial.
+<ce>  The %t needed to know that the Necromancer of
+<ce>  ___poorhome_ had been slain by now.
 
 QuestComplete:  [1004]
-<ce>  A body double? What a shame. This tends to be his
-<ce>  manner of evasion, but we hoped this would be the
-<ce>  time we succeeded. Your work will be counted as
-<ce>  a victory, my good %pct, though he has escaped us.
-<ce>  Thank you for doing a knight's work.
+<ce>  Hey, glad to see you back. Necromancers can
+<ce>  be tough, but the Fighters Guild is tougher.
+<ce>  Thanks for being such a great example of
+<ce>  what we do. Take this.
 
 Message:  1010
-<ce>  The Crow grins at you inhumanly, his face stretching
-<ce>  beyond ordinary proportions. His head begins to pull out
-<ce>  toward both sides, and his eyes turn bright red.
-<ce>  Once his skin turns a different color it is well
-<ce>  apparent that this is not the Crow, but a well-placed
-<ce>  diversion. Your task will no doubt require slaying this
-<ce>  foe before reporting the matter to _qgiver_.
+<ce>  Your instrusion to the property is noted.
+<ce>  The tenant, meditating outside, stands up and
+<ce>  begins to chant in a discordant tongue.
 
 Message:  1011
-<ce>  The Crow has escaped but this grants him one fewer place
-<ce>  to hide. _qgiver_ will want to know this.
+<ce>  The Necromancer has been slain.
+<ce>  _qgiver_ needs to report the act to the %t.
 
 Message:  1030
 %qdt:
- _qgiver_ of ___qgiver_
- has given me orders to arrest the Crow,
- an infamous villain in ____qgiver_
- and other provinces who is hiding in
- ___res_ at _res_.
- I am permitted to use any means necessary and
- return before =timer_ days have passed.
+ The Fighters Guild of ___qgiver_
+ assigned me to slay a Necromancer,
+ member of the Mages Guild, living in
+ ___poorhome_. I have =timer_
+ days to report on it.
 
 QBN:
-Foe _q1_ is Gargoyle
-Foe _q2_ is Ancient_vampire
+Foe _q1_ is Skeletal_warrior
+Foe _q2_ is Zombie
+Foe _mage_ is Mage
+
+Item _reward_ gold
 
 Person _qgiver_ group Questor male
-Person _crow_ named The_Crow
+Person _dummymg_ faction The_Mages_Guild
 
-Place _res_ remote house1
+Place _poorhome_ remote poorhome
 
 Clock _timer_ 00:00 0 flag 1 range 0 2
 
 --	Quest start-up:
 	start timer _timer_
 	log 1030 step 0 
-  place npc _crow_ at _res_
+  pc at _poorhome_ do _inside_
 
-_deliver_ task:
-  clicked npc _crow_
+variable _inside_
+_spawn_ task:
+  when _inside_ and not _slain_
   say 1010
-  hide npc _crow_
-  pick one of _g1_ _g2_
-
-_g1_ task:
-    place foe _q1_ at _res_
-
-_g2_ task:
-    place foe _q2_ at _res_
+  create foe _mage_ every 0 minutes 1 times with 100% success
+  create foe _q1_ every 1 minutes indefinitely with 75% success
+  create foe _q2_ every 1 minutes indefinitely with 50% success
 
 _slain_ task:
-    killed _q1_
-    killed _q2_
+    killed _mage_
     say 1011
+    change repute with _dummymg_ by -10
 
 _victory_ task:
   when _qgclicked_ and _slain_
-	give pc nothing
+	give pc _reward_
 	end quest
 
 _qgclicked_ task:
 	clicked npc _qgiver_ 
 
 _clearclick_ task:
-	when _qgclicked_ and not _deliver_
+	when _qgclicked_ and not _slain_
 	clear _qgclicked_ _clearclick_ 
 
 _timer_ task:

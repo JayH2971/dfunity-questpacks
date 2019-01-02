@@ -15,10 +15,11 @@ AcceptQuest:  [1002]
 
 QuestFail:  [1003]
 <ce> What seemed like a simple game becomes complex once the
-<ce> club touches your hand. The gamesman tosses the ball five times,
-<ce> but its odd weight and shape make a solid hit very difficult.
-<ce> While you fail to earn the prize, the only penalty you suffer
-<ce> is the mockery of the small crowd that stopped to watch you.
+<ce> club touches your hand. Its odd weight and shape make a
+<ce> solid hit very difficult. The gamesman tosses the ball five
+<ce> times, eliciting five misses. While you fail to earn the
+<ce> prize, the only penalty you suffer is the mockery of the
+<ce> small crowd that stopped to watch you.
 
 QuestComplete:  [1004]
 <ce> Your experience with blunt weaponry serves you well.

@@ -27,6 +27,7 @@ JHMG015, MagesGuild, M, 1, 0, a quest to defend a shapeshifted member
 JHMG016, MagesGuild, M, 2, 0, a quest to rescue an ambitious experimenter
 JHMG017, MagesGuild, M, 0, 0, a quest to identify a document
 JHMG018, MagesGuild, M, 0, 0, a quest to purify and deliver a poisoned liquid
+JHMG019, MagesGuild, M, 2, 0, a quest to root out a necromancer
 -JHMGX00, MagesGuild, M, 95, 0, a quest to investigate an ancient lich
 -JHMGX01, MagesGuild, P, 0, 0, offered via JHMGX00
 -go to various NPCs in cities to pick up needed ingredients

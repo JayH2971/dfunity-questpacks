@@ -42,7 +42,7 @@ Message:  1011
 QBN:
 Clock _failsafe_ 7.00:00
 Clock _timer_ 1:00
-Clock _delay_ 0:01 0:04
+Clock _delay_ 0:01 0:02
 
 --	Quest start-up:
     start timer _failsafe_

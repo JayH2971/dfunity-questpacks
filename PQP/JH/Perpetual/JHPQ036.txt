@@ -33,7 +33,7 @@ QuestComplete:  [1004]
 Message:  1010
 <ce> A crowd has gathered to watch fisticuff matches
 <ce> among the local citizenry. The organizer carries
-<ce> several sacks of money, which are destined for
+<ce> several sacks of money which are destined for
 <ce> the winners of each match. It looks like the
 <ce> next round is about to start and an opponent has
 <ce> volunteered. Do you want to try your hand?
@@ -45,7 +45,7 @@ Message:  1012
 QBN:
 Clock _failsafe_ 7.00:00
 Clock _timer_ 1:00
-Clock _delay_ 0:01 0:04
+Clock _delay_ 0:01 0:02
 
 Item _reward_ gold range 251 to 399
 

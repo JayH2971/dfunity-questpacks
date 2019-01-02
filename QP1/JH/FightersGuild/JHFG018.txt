@@ -1,0 +1,95 @@
+Quest: JHFG018
+DisplayName: Rights of Commerce
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  A shop in another town keeps getting robbed
+<ce>  by the Thieves Guild and they need a guard.
+<ce>  Wanna take this up?
+
+RefuseQuest:  [1001]
+<ce>  A bit too boring for you?
+
+AcceptQuest:  [1002]
+<ce>  The place is called _shop_.
+<ce>  It's in ___shop_. The job's nighttime guard duty.
+<ce>  Hopefully you won't have to wait too long for them
+<ce>  to show up. Your payment's going to be =reward_ gold
+<ce>  pieces, and I'll have them if you're back in
+<ce>  =timer_ days. Good luck, %pcf.
+
+QuestFail:  [1003]
+<ce>  The Fighters Guild wanted you back from protecting
+<ce>  _shop_ by now.
+
+QuestComplete:  [1004]
+<ce>  Welcome back! Easy stuff? Well, I'm glad you
+<ce>  made it. Take your money. Good job.
+
+Message:  1010
+<ce>  There's no more movement in the store.
+<ce>  Looks like this job is finished.
+
+Message:  1030
+%qdt:
+ The Fighters Guild of ___qgiver_
+ is paying me to go to ___shop_
+ and protect _shop_ from
+ night burglars. I have to fend them
+ off and return in =timer_ days.
+
+QBN:
+Foe _q1_ is Thief
+Foe _q2_ is Nightblade
+
+Item _reward_ gold
+
+Person _qgiver_ group Questor male
+Person _dummytg_ faction The_Thieves_Guild
+
+Place _shop_ remote weaponstore
+
+Clock _timer_ 00:00 0 flag 1 range 0 2
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0 
+    pc at _shop_ do _inside_
+
+_day_ task:
+    daily from 4:30 to 23:30
+
+variable _inside_
+_spawn_ task:
+  when _inside_ and not _day_ and not _slain_
+  create foe _q1_ every 0 minutes 2 times with 100% success
+  create foe _q2_ every 0 minutes 1 times with 100% success
+
+_s1_ task:
+    killed 2 _q1_
+    change repute with _dummytg_ by -5
+
+_s2_ task:
+    killed _q2_
+    change repute with _dummytg_ by -5
+
+_slain_ task:
+    when _s1_ and _s2_
+    say 1010
+
+_victory_ task:
+  when _qgclicked_ and _slain_
+	give pc _reward_
+	end quest
+
+_qgclicked_ task:
+	clicked npc _qgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_ 
+
+_timer_ task:
+  say 1003
+	end quest

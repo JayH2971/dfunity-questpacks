@@ -14,7 +14,7 @@ AcceptQuest:  [1002]
 <ce>           ERROR 1002 JHPQ031
 
 QuestFail:  [1003]
-<ce> 
+<ce>           ERROR 1003 JHPQ031
 
 QuestComplete:  [1004]
 <ce> Goodness me, you say you've brought my money bag?
@@ -61,7 +61,7 @@ Message:  1030
 QBN:
 Clock _failsafe_ 30.00:00
 Clock _timer_ 60.00:00
-Clock _delay_ 0:01 0:04
+Clock _delay_ 0:00 0:02
 
 Person _noble_ faction Random_Noble
 
