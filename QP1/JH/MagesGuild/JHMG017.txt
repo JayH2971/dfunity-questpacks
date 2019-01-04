@@ -13,7 +13,7 @@ QuestorOffer:  [1000]
 <ce> Are you able and willing to cast the spell?
 
 RefuseQuest:  [1001]
-<ce> Well, it's certainly not urgent.
+<ce> Well, it's certainly not a matter of life and death.
 
 AcceptQuest:  [1002]
 <ce> Delightful, %pcf. Poor _client_ has

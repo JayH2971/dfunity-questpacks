@@ -4,8 +4,11 @@ DisplayName: Interview with a Necromancer
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  The Mages Guild takes upon itself the duty
-<ce>  to seek out and purge any influence of the
+<ce>  %pcf, you have earned the Archmage's trust,
+<ce>  and therefore are privvy to some rather
+<ce>  sensitive matters. By regiment of the law,
+<ce>  the Mages Guild bears the duty of seeking
+<ce>  out and purging any influence of the
 <ce>  Necromancers in the Iliac Bay, especially
 <ce>  among our own members. Nevertheless the
 <ce>  task is not always so simple, and we require
@@ -15,7 +18,7 @@ QuestorOffer:  [1000]
 <ce>  and willing to uncover a possible Necromancer?
 
 RefuseQuest:  [1001]
-<ce>  A trifling matter. We have many who can do this.
+<ce>  Hmph. Does trust mean nothing to you?
 
 AcceptQuest:  [1002]
 <ce>  Well then, your task will take you to _nhome_.
@@ -63,6 +66,13 @@ Message:  1031
 <ce>  past. Surely there is more magicka in the world than
 <ce>  that found in the six schools taught
 <ce>  by the Guild, wouldn't you agree?
+<--->
+<ce>  I believe so myself. I myself have come to
+<ce>  think that there is more magicka out there than
+<ce>  in merely six schools alone, those regulated
+<ce>  by imperial rule. At least, it makes sense
+<ce>  to me. Wouldn't you agree that there is more
+<ce>  to learn than what is being formally taught?
 
 Message:  1032
 <ce>  Indeed, censorship of the magicka is something
@@ -73,16 +83,31 @@ Message:  1032
 <ce>  against society, not merely crimes of mentality
 <ce>  determined by a council of elder wizards.
 <ce>  Does that sound so unreasonable?
+<--->
+<ce>  To be sure, there is a reason for such order as it stands,
+<ce>  and it should not be flaunted at every user's whim. But
+<ce>  we must agree that some orders are based not on
+<ce>  practicality or experience, but the outdated and flawed
+<ce>  perceptions of certain elder wizards on a council.
+<ce>  Is that such a disagreeable thought?
 
 Message:  1033
 <ce>  I see that you are serious. Will you keep our
 <ce>  conversation here private, taking it down
 <ce>  with you to the grave?
+<--->
+<ce>  Hmm. I wish to trust you, but I cannot do so without
+<ce>  an oath. Do you swear to keep our conversation here
+<ce>  private, taking it down with you to the grave?
 
 Message:  1034
 <ce>  I accept your word of honor. Now, to speak plainly.
 <ce>  Would you have qualms discussing a particular branch of
 <ce>  Restoration magic involving the resurrection of the dead?
+<--->
+<ce>  I accept your oath. Now then, to the point. Do you find offense
+<ce>  in a branch of restorative magic that is capable of returning
+<ce>  life to the dead?
 
 Message:  1035
 <ce>  Well, that is precisely the kind of magic that is outlawed
@@ -91,6 +116,11 @@ Message:  1035
 <ce>  of attempting to whisper to his ghost! Can you see what
 <ce>  value there is in occasionally straying from the
 <ce>  constricting bounds determined by the Council?
+<--->
+<ce>  And that is precisely the problem with the imperial Mages Guild.
+<ce>  Take the Lysandus crisis. Why should we go waste time questioning
+<ce>  who slew whom on what day, if we could merely return his spirit to
+<ce>  his body? Is that not an obviously legitimate use of magicka?
 
 Message:  1036
 <ce>  Then perhaps we have more in common than I previously detected.

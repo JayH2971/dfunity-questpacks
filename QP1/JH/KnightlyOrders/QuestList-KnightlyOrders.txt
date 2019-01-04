@@ -36,8 +36,9 @@ JHKN024, KnightlyOrder, M, 7, 0, a quest to stop a brainwasher
 JHKN025, KnightlyOrder, M, 1, 0, a quest to protect a rural shrine
 JHKN026, KnightlyOrder, M, 0, 0, a quest to rescue a child from a dungeon
 JHKN027, KnightlyOrder, M, 1, 0, a quest to slay countryside thieves
+JHKN028, KnightlyOrder, M, 3, 0, entry into JHKNA00
+JHKNA00, KnightlyOrder, P, 0, 0, a quest to find a necromancer in a city
 -take a mage to defeat a vampire. Paralyze vs vampire
 -go to city covered by protection ring, slay ringleader, drop rep with TG
--a group of thieves is plaguing the region. Ask around to find its victims, who say where they are headquartered.
 -bring an exterminator to resolve an infestation
 -slay a mage who teleports beasts into a palace

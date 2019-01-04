@@ -1,0 +1,375 @@
+Quest: JHKNA00
+DisplayName: To Liberate a City
+-- Message panels
+QRC:
+
+QuestFail:   [1003]
+<ce>  You gave your word of honor that you
+<ce>  would not leave ___store_
+<ce>  before slaying the necromancer.
+<ce>  That word is now null and void.
+
+QuestComplete:  [1004]
+<ce>  The necromancer is now dead. ___store_ will
+<ce>  be overjoyed at its newfound freedom from evil.
+
+RumorsDuringQuest:   [1005]
+You wanna help with the necromancer? Look for _help_.
+<--->
+I saw the necromancer once at night! I was terrified!
+<--->
+Gonna kill that necromancer? Good job!
+<--->
+Sorry high-and-mighty knight, but if we can't find him, how could you?
+<--->
+Don't tell no one, but I've heard weird things in _random_.
+<--->
+Looking for that necromancer? How's about you try in _random2_?
+<--->
+Have you been in _random3_? Necromancer's gotta be in there.
+
+RumorsPostSuccess:   [1007]
+Wait, you're %pcn? The one who saved ___store_?
+<--->
+Apparently taxes in ____store_ work.
+
+Message:  1010
+<ce>  You are informed that a local resident named
+<ce>  _help_ claims to know of the necromancer's
+<ce>  whereabouts but is too afraid to tell. Otherwise
+<ce>  you are free to roam the city and look for the culprit.
+
+Message:  1011
+<ce>  "Y-yes? No, I'm sorry, I don't know what you're
+<ce>  talking about. I can't help with no necromancer.
+<ce>  You've got me there. G-good luck to you with
+<ce>  your investigation there. I hope you win."
+<ce>  
+<ce>  Someone with a more fluid tongue perhaps could
+<ce>  have persuaded %g2, but that someone is not
+<ce>  you. You'll have to look for the villain
+<ce>  without this particular source of help.
+<--->
+<ce>  "H-hello? No, I'm sorry, you've got wrong
+<ce>  information. I don't know nothing about the
+<ce>  necromancer. Can't help with a thing. Sorry
+<ce>  to w-waste your time, but I hope you win."
+<ce>  
+<ce>  Someone with a more fluid tongue perhaps could
+<ce>  have persuaded %g2, but that someone is not
+<ce>  you. You'll have to look for the villain
+<ce>  without this particular source of help.
+
+Message:  1012
+<ce>  "Y-yes? No, I'm sorry, I don't know what you're
+<ce>  talking about. I can't help with no necromancer.
+<ce>  You've got me there. G-good luck to you with
+<ce>  your investigation there. I hope you win."
+<ce>  
+<ce>  You are not so easily misled. You patiently
+<ce>  explain who you are and promise that, no matter
+<ce>  what happens, you will keep the city safe.
+<ce>  _help_ seems to believe you momentarily.
+<--->
+<ce>  "H-hello? No, I'm sorry, you've got wrong
+<ce>  information. I don't know nothing about the
+<ce>  necromancer. Can't help with a thing. Sorry
+<ce>  to w-waste your time, but I hope you win."
+<ce>  
+<ce>  You are not so easily misled. You patiently
+<ce>  explain who you are and promise that, no matter
+<ce>  what happens, you will keep the city safe.
+<ce>  _help_ seems to believe you momentarily.
+
+Message:  1013
+<ce>  "N-no, to be honest, you can't keep me safe.
+<ce>  I know it. I saw the necromancer myself and
+<ce>  know where the hideout is. But to keep my
+<ce>  mouth shut, I got a curse. I can't say where
+<ce>  it is or else I'm gonna die, right on the spot.
+<ce>  I can feel it on me, I'm bewitched!
+<ce>  So I can't tell you!"
+<ce>  
+<ce>  Do you try to pry further or let the matter be?
+
+Message:  1014
+<ce>  "No! I'm serious! I'll drop dead if I say it!
+<ce>  I can't do this, so just leave me alone!"
+<ce>  
+<ce>  Were you more practiced in magic, you could
+<ce>  perhaps undo the curse yourself. Sadly,
+<ce>  that is not your lot. Nevertheless, a matter
+<ce>  of this urgency could justify some corporal
+<ce>  mistreatment if it gets the information
+<ce>  out of %g2. Do you force _help_
+<ce>  to tell you where the necromancer's hideout is?
+
+Message:  1015
+<ce>  Sometimes the ends justify the means, you reason,
+<ce>  and %g1 could die from this curse either way.
+<ce>  You begin to employ various percussive methods
+<ce>  to get the truth out of _help_,
+<ce>  promising that it'll stop when you have your answer.
+<ce>  A few minutes pass by, and though you avoid drawing
+<ce>  blood, the bruises are many and pronounced.
+<ce>  
+<ce>  "Fine! Fine, I'll tell you, you daedraspawn!
+<ce>  Go to _random_! Look there! Are you ha--"
+<ce>  
+<ce>  Suddenly %g1 drops to the ground without
+<ce>  any warning. All movement ceases. You begin to
+<ce>  pack up your belongings when the corpse
+<ce>  jumps up just as suddenly as it fell.
+<ce>  With an unholy cackling it looks at you,
+<ce>  its pretended protector, and strikes.
+
+Message:  1016
+<ce>  Sometimes the ends justify the means, you reason,
+<ce>  and %g1 could die from this curse either way.
+<ce>  You begin to employ various percussive methods
+<ce>  to get the truth out of _help_,
+<ce>  promising that it'll stop when you have your answer.
+<ce>  A few minutes pass by, and though you avoid drawing
+<ce>  blood, the bruises are many and pronounced.
+<ce>  
+<ce>  "Fine! Fine, I'll tell you, you daedraspawn!
+<ce>  Go to _random_! Look there! Are you ha--"
+<ce>  
+<ce>  Suddenly %g1 drops to the ground without
+<ce>  any warning. All movement ceases. You begin to
+<ce>  pack up your belongings when the corpse
+<ce>  jumps up just as suddenly as it fell.
+<ce>  With an unholy cackling it looks at you,
+<ce>  its pretended protector, and strikes.
+
+Message:  1017
+<ce>  Sometimes the ends justify the means, you reason,
+<ce>  and %g1 could die from this curse either way.
+<ce>  You begin to employ various percussive methods
+<ce>  to get the truth out of _help_,
+<ce>  promising that it'll stop when you have your answer.
+<ce>  A few minutes pass by, and though you avoid drawing
+<ce>  blood, the bruises are many and pronounced.
+<ce>  
+<ce>  "Fine! Fine, I'll tell you, you daedraspawn!
+<ce>  Go to _random_! Look there! Are you ha--"
+<ce>  
+<ce>  Suddenly %g1 drops to the ground without
+<ce>  any warning. All movement ceases. You begin to
+<ce>  pack up your belongings when the corpse
+<ce>  jumps up just as suddenly as it fell.
+<ce>  With an unholy cackling it looks at you,
+<ce>  its pretended protector, and strikes.
+
+Message:  1026
+<ce>  "No! I'm serious! I'll drop dead if I say it!
+<ce>  I can't do this, so just leave me alone!"
+<ce>  
+<ce>  You know enough about magic to identify the
+<ce>  nature of this curse. Better still, you believe
+<ce>  yourself capable of undoing its effects.
+<ce>  Do you wish to attempt it?
+
+Message:  1027
+<ce>  You piece together what you need from your
+<ce>  knowledge of the relevant magical schools.
+<ce>  It takes some experimenting and effort, but
+<ce>  you finally accomplish the feat. The invisible
+<ce>  magical bands surrounding _help_
+<ce>  fly to pieces, leaving %g2 free of the curse.
+<ce>  
+<ce>  "Oh %god! Oh %god! Praise be to them and to you!
+<ce>  Thank you, thank you, thank you! Go quickly
+<ce>  to _random_! Find the cretin there
+<ce>  and end this plague on ___store_! Please!"
+
+Message:  1028
+<ce>  You piece together what you need from your
+<ce>  knowledge of the relevant magical schools.
+<ce>  It takes some experimenting and effort, but
+<ce>  you finally accomplish the feat. The invisible
+<ce>  magical bands surrounding _help_
+<ce>  fly to pieces, leaving %g2 free of the curse.
+<ce>  
+<ce>  "Oh %god! Oh %god! Praise be to them and to you!
+<ce>  Thank you, thank you, thank you! Go quickly
+<ce>  to _random_! Find the cretin there
+<ce>  and end this plague on ___store_! Please!"
+
+Message:  1029
+<ce>  You piece together what you need from your
+<ce>  knowledge of the relevant magical schools.
+<ce>  It takes some experimenting and effort, but
+<ce>  you finally accomplish the feat. The invisible
+<ce>  magical bands surrounding _help_
+<ce>  fly to pieces, leaving %g2 free of the curse.
+<ce>  
+<ce>  "Oh %god! Oh %god! Praise be to them and to you!
+<ce>  Thank you, thank you, thank you! Go quickly
+<ce>  to _random_! Find the cretin there
+<ce>  and end this plague on ___store_! Please!"
+
+Message:  1030
+%qdt:
+ I have been sent to
+ ___store_ to look for a
+ necromancer hiding somewhere
+ in the city. I have given my word
+ of honor not to leave until
+ the villain is slain.
+
+Message:  1031
+%qdt:
+ A credible contact within ___store_
+ has told me that the necromancer is
+ hiding in _random_.
+
+Message:  1032
+%qdt:
+ A credible contact within ___store_
+ has told me that the necromancer is
+ hiding in _random2_.
+
+Message:  1033
+%qdt:
+ A credible contact within ___store_
+ has told me that the necromancer is
+ hiding in _random3_.
+
+Message:  1034
+<ce> No! Only a little more time and this
+<ce> city would have been mine!
+<--->
+<ce> No! Not now! Why?!
+
+Message:  1040
+<ce>  You end the conversation here. It's probably
+<ce>  better not to trifle with things this serious.
+<ce>  You'll look for the necromancer on your own.
+
+QBN:
+Person _help_ group Pawnbroker
+Person _dummynec_ faction The_Necromancers
+
+Place _store_ local generalstore
+Place _random_ local random
+Place _random2_ local random
+Place _random3_ local random
+
+Foe _e1_ is Zombie
+Foe _e2_ is Wraith
+Foe _e3_ is Zombie
+Foe _e4_ is Zombie
+Foe _nec_ is Mage
+
+--	Quest start-up:
+    say 1010
+    log 1030 step 0
+    place npc _help_ at _store_
+    pick one of _f1_ _f2_ _f3_
+    create foe _e1_ every 28 minutes indefinitely with 10% success
+    create foe _e2_ every 45 minutes indefinitely with 15% success
+    create foe _e4_ every 1 minutes 1 times with 25% success
+
+_f1_ task:
+    place foe _nec_ at _random_
+
+_f2_ task:
+    place foe _nec_ at _random2_
+
+_f3_ task:
+    place foe _nec_ at _random3_
+
+_fail_ task:
+    when pc exits anywhere
+    say 1003
+    end quest
+
+_conv1_ task:
+    clicked npc _help_
+
+_conv1a_ task:
+    when _conv1_ and not _etiq_
+    say 1011
+
+_conv1b_ task:
+    when _conv1_ and _etiq_
+    say 1012
+    prompt 1013 yes _conv2_ no _quit_
+
+variable _conv2_
+_conv2a_ task:
+    when _conv2_ and _magic_
+    prompt 1026 yes _unlock_ no _quit_
+
+variable _unlock_
+_unl1_ task:
+    when _unlock_ and _f1_
+    say 1027
+    log 1031 step 1
+
+_unl2_ task:
+    when _unlock_ and _f2_
+    say 1028
+    log 1031 step 1
+
+_unl3_ task:
+    when _unlock_ and _f3_
+    say 1029
+    log 1031 step 1
+
+_conv2b_ task:
+    when _conv2_ and not _magic_
+    prompt 1014 yes _force_ no _quit_
+
+variable _force_
+_force1_ task:
+    when _force_ and _f1_
+    say 1015
+    hide npc _help_
+    place foe _e3_ at _store_
+    log 1031 step 1
+
+_force2_ task:
+    when _force_ and _f2_
+    say 1016
+    hide npc _help_
+    place foe _e3_ at _store_
+    log 1032 step 1
+
+_force3_ task:
+    when _force_ and _f3_
+    say 1017
+    hide npc _help_
+    place foe _e3_ at _store_
+    log 1033 step 1
+
+_quit_ task:
+    say 1040
+
+_etiq_ task:
+    when skill Etiquette is at least 20
+
+_myst_ task:
+    when skill Mysticism is at least 35
+    start task _magic_
+
+_rest_ task:
+    when skill Restoration is at least 45
+    start task _magic_
+
+_thau_ task:
+    when skill Thaumaturgy is at least 60
+    start task _magic_
+
+_inj_ task:
+    injured _nec_
+    say 1034
+    create foe _e2_ every 0 minutes 1 times with 100% success
+
+variable _magic_
+_slain_ task:
+    killed _nec_
+    give pc nothing
+    change repute with _dummynec_ by -20
+    end quest

@@ -20,44 +20,76 @@ RefuseQuest:  [1001]
 
 AcceptQuest:  [1002]
 <ce> Then be going to ___dung_
-<ce> to rid us of this evil. This is our
-<ce>  duty to %crn, %pcf.
-<ce>  Let your strikes sink deep, that
-<ce>  this creature may know forever
-<ce> that knights such as ourselves
-<ce> will not tolerate it here.
-<ce> The crown expects our report
-<ce> within =timer_ days.
+<ce> to rid us of this evil. You will be
+<ce> accompanied by _mage_
+<ce> of the Mages Guild, whose main
+<ce> purpose will be ensuring the body
+<ce> is incapable of rising once more.
+<ce> Nevertheless, %g1 could have something
+<ce> meaningful to offer in combat.
+<ce> The two of you will return here in =timer_
+<ce> days with a report of your success. Farewell.
 
 QuestFail:  [1003]
-<ce> 
+<ce>  Your deadline to slay the vampire and report to
+<ce>  _qgiver_ has passed.
+<ce>  _mage_ excuses %g2self and departs.
 
 QuestComplete:  [1004]
-<ce> Hail the slayer of vampires! Such a
+<ce> Hail our vampire slayers of vampires! Such a
 <ce>  crusade should always merit the
 <ce>  attention of knights. We will
 <ce>  speak of your deeds to inspire
 <ce>  the younger generation to rise
 <ce>  above their own selves.
 
+Message:  1010
+<ce>  _mage_ recognizes this vampire at once.
+<ce>  
+<ce>  "Ho! =vam1_, your end has at hand!"
+<ce>  
+<ce>  A binding spell follows, which slows
+<ce>  the abomination momentarily. This must
+<ce>  be preparation for the corpse disposal.
+
+Message:  1011
+<ce>  _mage_ recognizes this vampire at once.
+<ce>  
+<ce>  "Ho! =vam2_, your end has at hand!"
+<ce>  
+<ce>  A binding spell follows, which slows
+<ce>  the abomination momentarily. This must
+<ce>  be preparation for the corpse disposal.
+
 Message:  1020
 <ce>  You have defeated the vampire.
+<ce>  _mage_ spends some time with fairly
+<ce>  elaborate pyrotechnics and sharp instruments,
+<ce>  the likes of which do not logically lead
+<ce>  to a permanent end to vampirism but against
+<ce>  which you hold no qualm. Soon you are both
+<ce>  ready to leave.
+<--->
+<ce>  You have defeated the vampire.
+<ce>  _mage_ casts several arcane spells
+<ce>  around the corpse which appear to hold
+<ce>  it in place. Whether it will serve the
+<ce>  purpose or not is beyond your knowledge
+<ce>  and responsibility. Soon you are both
+<ce>  ready to leave.
 
 Message:  1030
 %qdt:
  _qgiver_ in the city of
  ___qgiver_ has sent me
  to ___dung_
- to vanquish a vampire.
+ to vanquish a vampire with
+ a member of the Mages Guild.
  I must return in =timer_ days.
-
-Message:  1099
-<ce>  The vampire is roaming in
-<ce>  ___dung_, %pcf. This
-<ce>  is not as difficult as you make it.
 
 QBN:
 Person _qgiver_ group Questor male
+Person _mage_ faction The_Mages_Guild
 
 Place _dung_ remote dungeon
 
@@ -70,7 +102,7 @@ Foe _vam2_ is Vampire
 	start timer _timer_ 
 	pick one of _D.01_ _D.02_
 	log 1030 step 0 
-  reveal _dung_
+  	reveal _dung_
 
 _D.01_ task:
 	place foe _vam1_ at _dung_ 
@@ -78,9 +110,18 @@ _D.01_ task:
 _D.02_ task:
 	place foe _vam2_ at _dung_ 
 
+_inj1_ task:
+	injured _vam1_ saying 1010
+	restrain foe _vam1_
+
+_inj2_ task:
+	injured _vam2_ saying 1011
+	restrain foe _vam2_
+
 _slain_ task:
-	killed 1 _vam1_ saying 1020 
-	killed 1 _vam2_ saying 1020
+	killed 1 _vam1_
+	killed 1 _vam2_
+	say 1020
 
 _qgclicked_ task:
 	clicked npc _qgiver_ 
@@ -91,9 +132,9 @@ _pcgetsgold_ task:
 	end quest 
 
 _timer_ task:
+	say 1003
 	end quest 
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 
-  say 1099
 	clear _qgclicked_ _clearclick_ 

@@ -73,9 +73,9 @@ Message:  1013
 <ce> With a single strike the atronach
 <ce> seems to have its mind wiped.
 <ce> If what _qgiver_ told
-<ce> you is true, it should follow
-<ce> you once it recovers. Now to
-<ce> return to ___qgiver_.
+<ce> you is true, it should follow the
+<ce> _elem_ you were given once it recovers.
+<ce> Now is the time to return to ___qgiver_.
 
 Message:  1020
 <ce> The atronach is dead, and you have failed.
