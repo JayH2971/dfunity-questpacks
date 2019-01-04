@@ -34,10 +34,9 @@ JHKN022, KnightlyOrder, M, 7, 0, a quest to free a sealed dungeon
 JHKN023, KnightlyOrder, M, 7, 0, a quest to arrest the Crow
 JHKN024, KnightlyOrder, M, 7, 0, a quest to stop a brainwasher
 JHKN025, KnightlyOrder, M, 1, 0, a quest to protect a rural shrine
-
+JHKN026, KnightlyOrder, M, 0, 0, a quest to rescue a child from a dungeon
+JHKN027, KnightlyOrder, M, 1, 0, a quest to slay countryside thieves
 -take a mage to defeat a vampire. Paralyze vs vampire
--a quest to slay a group of criminals extorting merchants
--rescue kidnapped youth, fend off assassins while returning
 -go to city covered by protection ring, slay ringleader, drop rep with TG
 -a group of thieves is plaguing the region. Ask around to find its victims, who say where they are headquartered.
 -bring an exterminator to resolve an infestation

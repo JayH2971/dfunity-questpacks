@@ -1,6 +1,6 @@
 -- Perpetual Quest
 Quest: JHPQ032
-DisplayName: Hope and Change
+DisplayName: Hope and Spare Change
 -- Message panels
 QRC:
 
