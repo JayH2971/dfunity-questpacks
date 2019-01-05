@@ -46,10 +46,29 @@ _pqfail_ task:
 
 _pqstart_ task:
 	start timer _timer_
-    start quest JHPINIT2
+    pick one of _e2_ _e3_ _e4_ _e5_ _e6_ _e7_
     start quest JHPQA00
     start quest JHPQ005
     pick one of _q1_ _q2_ _q3_
+    say 1029
+
+_e2_ task:
+    start quest JHPINIT2
+
+_e3_ task:
+    start quest JHPINIT3
+    
+_e4_ task:
+    start quest JHPINIT4
+    
+_e5_ task:
+    start quest JHPINIT5
+    
+_e6_ task:
+    start quest JHPINIT6
+    
+_e7_ task:
+    start quest JHPINIT7
 
 _level_ task:
     level 3 completed
