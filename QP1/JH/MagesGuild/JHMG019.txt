@@ -197,7 +197,7 @@ Person _qgiver_ group Questor male
 Person _nec_ faction The_Mages_Guild male
 Person _dummyn_ faction The_Necromancers
 
-Place _nhome_ local house2
+Place _nhome_ local house
 
 Clock _timer_ 1.06:00
 
@@ -211,6 +211,7 @@ Item _bigreward_ magic_item
 --	Quest start-up:
 	start timer _timer_
 	log 1030 step 0
+    place npc _nec_ at _nhome_
 
 _day_ task:
     daily from 5:30 to 20:00
@@ -218,7 +219,7 @@ _day_ task:
 
 _night_ task:
     when not _day_
-    place npc _nec_ at _nhome_
+    restore npc _nec_
 
 _begin_ task:
     clicked npc _nec_
@@ -296,7 +297,7 @@ _fail_ task:
 
 _secret_ task:
     when _timer_ and _refrain_
-    -start quest necromancer
+    start quest JHNCA00
 
 _timer_ task:
     say 1003

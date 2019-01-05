@@ -220,8 +220,8 @@ Message:  1085
 <ce>       This foe just hisses menacingly.
 
 QBN:
-Person _knight_ faction Generic_Knightly_Order
-Person _dummy_ faction Generic_Knightly_Order
+Person _knight_ faction Generic_Knightly_Order male
+Person _dummy_ faction Generic_Knightly_Order male
 Person _npc1_ group Resident1
 Person _npc2_ group Resident2
 Person _npc3_ group Bookseller
