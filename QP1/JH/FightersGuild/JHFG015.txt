@@ -121,6 +121,7 @@ Foe _frenemy_ is Warrior
     reveal _dung_
     add _friend_ face
     pc at _dung_ do _inside_
+    pick one of _e1_ _e2_
 
 _inside_ task:
     say 1019
@@ -130,15 +131,18 @@ _inside_ task:
 _slain_ task:
 	killed 4 _enemy1_
 	killed 4 _enemy2_
-    pick one of _e1_ _e2_
 
-_e1_ task:
+variable _e1_
+_true_ task:
+    when _slain_ and _e1_
     say 1020
     drop _friend_ face
     give pc _reward_
     end quest
 
-_e2_ task:
+variable _e2_
+_trick_ task:
+    when _slain_ and _e2_
     prompt 1021 yes _mercy_ no _kill_
 
 _mercy_ task:
