@@ -14,7 +14,7 @@ RefuseQuest:  [1001]
 
 AcceptQuest:  [1002]
 <ce> Perhaps I should interject that I do not know whether
-<ce> the client is actually a servant of Mannimarco.
+<ce> the client is actually a servant of the dark lord.
 <ce> That is merely the sense this petition gives me.
 <ce> The corpse must be delivered with all vital organs
 <ce> intact to ___nhome_. The body must not decompose
