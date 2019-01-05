@@ -72,12 +72,12 @@ Message:  1013
 <ce>  Go there! Don't do this to me, I swear they're there!"
 
 Message:  1014
-<ce>  There are no hostiles here. Was the brigand lying?
-<ce>  Has the band's leader stepped out? Or is there something
-<ce>  more to find inside?
+<ce>  There are no hostiles here. Perhaps the brigand was lying.
+<ce>  Or the band's leader could have stepped out momentarily.
+<ce>  Or is there something more to find?
 
 Message:  1015
-<ce>  A group of assassins was somehow hiding within these walls.
+<ce>  A group of headhunters was somehow hiding in this building.
 <ce>  They waste no time attempting to butcher you.
 
 Message:  1016
@@ -207,7 +207,7 @@ QBN:
 
 Person _lady_ group Banker female
 
-Place _res_ local random
+Place _res_ local house
 Place _dung_ remote dungeon
 Place _goal_ local random
 Place _tr_ local random

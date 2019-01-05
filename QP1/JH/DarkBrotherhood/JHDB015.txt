@@ -7,7 +7,8 @@ QuestorOffer:  [1000]
 <ce>  A small herd of so-called Brotherhood "hunters"
 <ce>  has taken up to hiding in a remote cave in
 <ce>  %crn. We need someone skilled to teleport
-<ce>  in to their den and wipe them all out. Will you?
+<ce>  in to their den and wipe them all out.
+<ce>  Can you handle that?
 
 RefuseQuest:  [1001]
 <ce>  Perhaps you're looking for one of those non-violent contracts.

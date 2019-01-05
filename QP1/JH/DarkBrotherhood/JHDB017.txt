@@ -4,13 +4,13 @@ DisplayName: Researching Notes
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  For some reason there is an incessant demand for
+<ce>  For some reason there's an incessant demand for
 <ce>  research notes related to the mundane sciences.
 <ce>  Our client demands that these notes be gathered for
 <ce>  an undisclosed purpose, and the Brotherhood is to
 <ce>  obtain them by any means necessary. Where bribery
-<ce>  fails, we send one such as yourself. Will you
-<ce>  kill for some research notes from the Mages Guild?
+<ce>  fails, we send one such as yourself. Your task will
+<ce>  be to kill the courier and take the Mages Guild's notes.
 
 RefuseQuest:  [1001]
 <ce>  What a surprise.
