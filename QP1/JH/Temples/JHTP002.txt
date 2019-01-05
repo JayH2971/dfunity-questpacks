@@ -67,10 +67,6 @@ Message:  1030
  guard it safely and return to
  ___questgiver_ in =timer_ days.
 
-Message:  1099
-<ce> We will await your delivery from
-<ce> _donor_. Return within =timer_ days.
-
 QBN:
 Item _money_ large_sack
 Item _pw_ small_plant
@@ -126,7 +122,6 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _receive_
-  say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _timer_ task:

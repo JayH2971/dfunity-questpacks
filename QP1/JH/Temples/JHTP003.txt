@@ -67,7 +67,8 @@ Message:  1030
  of _herb_ to _npc_,
  who is sick in _dest_ 
  at ___dest_. I must then
- return in =timer_ days.
+ return to ___qgiver_
+ in =timer_ days.
 
 Message:  1099
 <ce> Please see what has become of _npc_
