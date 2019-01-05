@@ -5,97 +5,97 @@ DisplayName: Necromantic Intervention
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ERROR 1000 JHPQ001
+<ce>  ERROR 1000 JHPQ001
 
 RefuseQuest:  [1001]
-<ce>          ERROR 1001 JHPQ001
+<ce>  ERROR 1001 JHPQ001
 
 AcceptQuest:  [1002]
-<ce>           ERROR 1002 JHPQ001
+<ce> ERROR 1002 JHPQ001
 
 QuestFail:  [1003]
-<ce>          You feel the ghostly presence depart
-<ce>          from you. Perhaps you took too long.
+<ce>  You feel the ghostly presence depart
+<ce>  from you. Perhaps you took too long.
 
 QuestComplete:  [1004]
-<ce>        "Ah, I see you're working well with
-<ce>        _appa_. Isn't death a remarkable
-<ce>        power? You can practically close your eyes
-<ce>        and let %g2 do all the work. Let me see the
-<ce>        papers you took from the Mages Guild.
-<ce>        
-<ce>        "Yes, this statement is of superb quality.
-<ce>        I may have to invoke the scholar later
-<ce>        to follow up on some of it. For now,
-<ce>        I will let you go. As a show of good
-<ce>        will, take these _reward_ gold pieces. Never
-<ce>        let it be said that the Necromancers
-<ce>        do not take care of their own. Now,
-<ce>        allow me to free you from my messenger. 
-<ce>        
-<ce>        "Come away from the %ra, _appa_!
-<ce>        I must return you to __graveyard_!"
-<ce>        
-<ce>        The ghostly presence departs from
-<ce>        you, and _necr_ silently
-<ce>        hands you your reward.
+<ce>  "Ah, I see you're working well with
+<ce>  _appa_. Isn't death a remarkable
+<ce>  power? You can practically close your eyes
+<ce>  and let %g2 do all the work. Let me see the
+<ce>  papers you took from the Mages Guild.
+<ce>  
+<ce>  "Yes, this statement is of superb quality.
+<ce>  I may have to invoke the scholar later
+<ce>  to follow up on some of it. For now,
+<ce>  I will let you go. As a show of good
+<ce>  will, take these _reward_ gold pieces. Never
+<ce>  let it be said that the Necromancers
+<ce>  do not take care of their own. Now,
+<ce>  allow me to free you from my messenger. 
+<ce>  
+<ce>  "Come away from the %ra, _appa_!
+<ce>  I must return you to __graveyard_!"
+<ce>  
+<ce>  The ghostly presence departs from
+<ce>  you, and _necr_ silently
+<ce>  hands you your reward.
 
 Message:  1010
-<ce>       A shiver goes down your spine.
-<ce>       You notice a letter among your
-<ce>       belongings that wasn't there before.
+<ce> You notice a letter among your
+<ce> belongings that wasn't there before,
+<ce>  written on very tattered parchment.
 
 Message:  1011
-    %ra of ____graveyard_:
+  %ra of ____graveyard_:
  
-     We greet you in the name of the King of Worms.
-   We take upon ourselves the title of the Necromancers,
-   partakers of undying power. We have need of a servant
-   capable of moving about the civilized world undetected.
-   If you wish to know power beyond that found on this
-   mortal coil, turn to __graveyard_ and wait
-   for our message there.
+ We greet you in the name of the King of Worms.
+ We take upon ourselves the title of the Necromancers,
+ partakers of undying power. We have need of a servant
+ capable of moving about the civilized world undetected.
+ If you wish to know power beyond that found on this
+ mortal coil, turn to __graveyard_ and wait
+ for our message there.
 
 Message:  1012
-<ce>        Stepping into the graveyard, you feel the
-<ce>        wind suddenly whip up in intensity. Dead
-<ce>        leaves swirl to lead you to a specific point
-<ce>        in the earth. You look toward it and wait.
-<ce>        
-<ce>        Sensing your presence, some force begins
-<ce>        spiralling up and down on the ground,
-<ce>        spitting a current of cold air in every direction.
-<ce>        A translucent form begins to take shape
-<ce>        above the designated point and draws near.
-<ce>        A faint voice croaks all around you.
-<ce>        
-<ce>        "__city_, quickly. A researcher
-<ce>        for the Mages Guild. Vital.
-<ce>        Slay and obtain letter.
-<ce>        I will aid you. With haste."
+<ce>  Stepping into the graveyard, you feel the
+<ce>  wind suddenly whip up in intensity. Dead
+<ce>  leaves swirl to lead you to a specific point
+<ce>  in the earth. You look toward it and wait.
+<ce>  
+<ce>  Sensing your presence, some force begins
+<ce>  spiralling up and down on the ground,
+<ce>  spitting a current of cold air in every direction.
+<ce>  A translucent form begins to take shape
+<ce>  above the designated point and draws near.
+<ce>  A faint voice croaks all around you.
+<ce>  
+<ce>  "__city_, quickly. A researcher
+<ce>  for the Mages Guild. Vital.
+<ce>  Slay and obtain letter.
+<ce>  I will aid you. With haste."
 
 Message:  1013
-<ce>        The apparition hovers closer until it
-<ce>        seems to overshadow your head,
-<ce>        and then disappears altogether.
-<ce>        Somehow you feel it close to you still.
+<ce>  The apparition hovers closer until it
+<ce>  seems to overshadow your head,
+<ce>  and then disappears altogether.
+<ce>  Somehow you feel it close to you still.
 
 Message:  1014
-<ce>        A whisper surrounds your head.
-<ce>        
-<ce>        "Watch. Mage is near.
-<ce>        Search area."
+<ce>  A whisper surrounds your head.
+<ce>  
+<ce>  "Watch. Mage is near.
+<ce>  Search area."
 
 Message:  1015
-<ce>        The apparition hisses in your ear.
+<ce>  The apparition hisses in your ear.
 
 Message:  1016
-<ce>        "Take papers. ___res_.
-<ce>        _necr_ awaits."
-<ce>        
-<ce>        The presence ceases speaking.
-<ce>        You take the paperwork from
-<ce>        the researcher's corpse.
+<ce>  "Take papers. ___res_.
+<ce>  _necr_ awaits."
+<ce>  
+<ce>  The presence ceases speaking.
+<ce>  You take the paperwork from
+<ce>  the researcher's corpse.
 
 Message:  1030
 %qdt:
@@ -167,32 +167,32 @@ Foe _enemy_ is Mage
   reveal _graveyard_
 
 _initial_ task:
-         end quest
+ end quest
 
 _grave_ task:
-         start task _begin_
-         stop timer _initial_
-         start timer _timer_
+ start task _begin_
+ stop timer _initial_
+ start timer _timer_
 
 _begin_ task:
-         say 1012
-         say 1013
-         log 1030 step 0
--        play sound ???
+ say 1012
+ say 1013
+ log 1030 step 0
+-  play sound ???
 
 _arrival_ task:
-         say 1014
-         start timer _find_
+ say 1014
+ start timer _find_
 
 _find_ task:
-         say 1015
-         create foe _enemy_ every 0 minutes 1 times with 100% success
-         restrain foe _enemy_
-         give item _research_ to _enemy_
+ say 1015
+ create foe _enemy_ every 0 minutes 1 times with 100% success
+ restrain foe _enemy_
+ give item _research_ to _enemy_
 
 _steal_ task:
-          say 1016
-          log 1031 step 1
+  say 1016
+  log 1031 step 1
 
 _victory_ task:
   toting _research_ and _necr_ clicked
