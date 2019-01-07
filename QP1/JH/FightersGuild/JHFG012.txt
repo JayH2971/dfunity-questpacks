@@ -36,6 +36,10 @@ Message:  1022
 <ce> Fool! How dare you attack
 <ce> a member of the Mages Guild!
 
+Message:  1023
+<ce> Your task complete, you may return to
+<ce> _questgiver_ with your head held high.
+
 Message:  1032
 %qdt:
  _questgiver_ of the Fighters Guild
@@ -76,6 +80,7 @@ _slain_ task:
 	killed 1 _mage_
   change repute with _dummy_ by -10
   stop timer _2res_
+	say 1023
 
 _qgclicked_ task:
 	clicked npc _questgiver_ 

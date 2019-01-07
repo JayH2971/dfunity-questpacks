@@ -19,7 +19,7 @@ JHFG007, FightersGuild, M, 1, 1, courier work + ambush in a house
 JHFG009, FightersGuild, M, 2, 0, expert werewolf hunting
 JHFG010, FightersGuild, M, 1, 0, a quest to rid a city's streets of poisonous critters
 JHFG011, FightersGuild, M, 9, 0, an artifact quest to invade a vampire cult
-JHFG012, FightersGuild, M, 1, 0, a quest to slay a wizard in a city
+JHFG012, FightersGuild, M, 1, 0, a quest to slay a Mages Guild member in a city
 JHFG013, FightersGuild, M, 0, 0, a quest to get a giant out of a house
 JHFG014, FightersGuild, M, 7, 0, a quest to free the town of a gargoyle siege
 JHFG015, FightersGuild, M, 1, 0, a quest to fight in a dungeon with a partner
