@@ -39,6 +39,9 @@ QuestComplete:  [1004]
 <ce> well worth the payment, %ra. This is
 <ce> what they said belonged to you.
 
+QuestorPostFailure:   [1009]
+Here to give us a worse reputation than we've already got, %pcf?
+
 Message:  1018
 <ce> "Ah, our guard for the night! Please
 <ce> move about freely. We're under your care."
@@ -52,6 +55,47 @@ Message:  1020
 <ce>  tonight if it weren't for you!
 <ce>  Thank you! Thank you!
 
+Message:  1021
+<ce>  Curiously, you notice nearby a bag of gold
+<ce>  which appears to be out of everyone else's
+<ce>  sight. The adrenaline rush of today's
+<ce>  events may have worn them out too much,
+<ce>  lending to momentary distraction. Will you
+<ce>  attempt to take it for yourself?
+
+Message:  1022
+<ce>  This is all too easy for one of your skill set.
+<ce>  The bag of money is now yours, adding an
+<ce>  additional =stealg_ gold pieces to your count.
+
+Message:  1023
+<ce>  Your movement while grabbing the coin bag is too
+<ce>  obvious. Someone peering over sees that you have
+<ce>  your hand on property which is clearly not yours.
+<ce>  The quiet morning hours are shattered by a
+<ce>  shrill yell.
+<ce>  
+<ce>  "THIEF! The Fighters Guild sent us a thief!
+<ce>  Someone help!"
+<ce>  
+<ce>  Something tells you they will not be paying
+<ce>  for your guard service. Perhaps you should
+<ce>  work on your thieving skills before trying
+<ce>  to rip off your clients.
+<--->
+<ce>  Your movement while grabbing the coin bag is too
+<ce>  obvious. Someone peering over sees that you have
+<ce>  your hand on property which is clearly not yours.
+<ce>  The quiet morning hours are shattered by a
+<ce>  shrill yell.
+<ce>  
+<ce>  "Help! We have a thief in the house! Help us!"
+<ce>  
+<ce>  Something tells you they will not be paying
+<ce>  for your guard service. Perhaps you should
+<ce>  work on your thieving skills before trying
+<ce>  to rip off your clients.
+
 Message:  1030
 %qdt:
  The Fighters Guild in
@@ -63,14 +107,15 @@ Message:  1030
 
 QBN:
 Item _reward_ gold
+Item _stealg_ gold
 
 Person _questgiver_ group Questor male
 
-Place _res_ local house
+Place _res_ local house2
 
 Clock _timer_ 1.06:00 0
 
-Foe _enemy_ is 2 Burglar
+Foe _enemy_ is Burglar
 
 --	Quest start-up:
 	start timer _timer_ 
@@ -90,9 +135,42 @@ _say_ task:
 _spawntime_ task:
 	daily from 2:00 to 4:00
 
+_stealtime_ task:
+	daily from 4:00 to 5:00
+
+_steal_ task:
+	when _inside_ and _stealtime_
+	pick one of _eye_ _noeye_
+
+variable _noeye_
+_eye_ task:
+	prompt 1021 yes _st1_ no _avoid_
+
+variable _st1_
+_st2_ task:
+	when _st1_ and _skill_
+	say 1022
+	get item _stealg_
+
+_stfail_ task:
+	when _st1_ and not _skill_
+	say 1023
+	get item _stealg_
+	end quest
+
+_stealth_ task:
+	when skill Stealth is at least 60
+	start task _skill_
+
+_pickpocket_ task:
+	when skill Pickpocket is at least 25
+	start task _skill_
+
+variable _skill_
+variable _avoid_
 _spawn_ task:
 	when _E.01_ and _inside_ and _spawntime_
-	create foe _enemy_ every 3 minutes 2 times with 100% success
+	create foe _enemy_ every 3 minutes 4 times with 100% success
 
 _win_ task:
 	killed 4 _enemy_
