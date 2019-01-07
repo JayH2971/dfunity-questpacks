@@ -62,8 +62,8 @@ Message:  1021
 <ce> this whole deal. Thanks for your help."
 <ce> 
 <ce> It appears %g1 is about to leave. If you wanted,
-<ce> you could slay %g2 to get %g3 item. Will
-<ce> you let %g2 go?
+<ce> you could slay %g2 to get %g3 item.
+<ce> Will you let %g2 go free?
 
 Message:  1022
 <ce> As %g1 disappears, you know you've at least

@@ -119,7 +119,7 @@ Message:  1050
 
 QBN:
 
-Person _qgiver_ group Questor male
+Person _qgiver_ group Questor
 Person _rescue_ group Local_4.0
 
 Place _dung_ remote dungeon

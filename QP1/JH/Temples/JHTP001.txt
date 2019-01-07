@@ -52,7 +52,7 @@ Message:  1030
 QBN:
 Item _tract_ letter
 
-Person _qgiver_ group Questor male
+Person _qgiver_ group Questor
 Person _convert_ group Local_4.0
 
 Place _res_ remote house

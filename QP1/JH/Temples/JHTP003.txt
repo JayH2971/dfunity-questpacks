@@ -58,8 +58,8 @@ Message:  1026
 <ce> Ah, how wonderful to see you, _npc_! I'm sorry we
 <ce> had to send our good friend %pcf out to fetch you, but
 <ce> all is well that ends well. How good that you could travel
-<ce> together for safety's sake. Here's your reward all the
-<ce> same, %pcf. I'll take the _herb_ back if you still have it.
+<ce> together for safety's sake. Here's your reward all the same,
+<ce> %pcf. I'll take the _herb_ back if you still have it.
 
 Message:  1030
 %qdt:
@@ -78,7 +78,7 @@ QBN:
 Item _herb_ small_plant
 Item _reward_ gold range 50 to 80
 
-Person _qgiver_ group Questor male
+Person _qgiver_ group Questor
 Person _npc_ group Cleric
 
 Place _dest_ remote house

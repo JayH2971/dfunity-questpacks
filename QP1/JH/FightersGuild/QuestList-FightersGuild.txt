@@ -28,5 +28,7 @@ JHFG017, FightersGuild, M, 4, 0, a quest to slay a high-ranking Mages Guild Necr
 JHFG018, FightersGuild, M, 4, 0, a quest to guard a weapons shop at night
 JHFGA00, FightersGuild, M, 4, 0, entry into JHMC001
 JHMC001, FightersGuild, P, 0, 0, a quest to help someone fleeing the Dark Brotherhood
+-go to fellow fighter's hometown, find discouraged, talk to persuade
+-tavern guard quest
 -punishment for lacking skill checks (magic schools, weapon types)
 -non-violent ways through quests for TG, MG, DB

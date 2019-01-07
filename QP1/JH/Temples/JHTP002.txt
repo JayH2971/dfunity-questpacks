@@ -18,8 +18,8 @@ AcceptQuest:  [1002]
 <ce> quickly. A few of our couriers over the
 <ce> years have told tales of armed assault once
 <ce> the money is in their hands. Escape or
-<ce> defend yourself as you choose. Find our
-<ce> donor, _donor_, in _res_.
+<ce> defend yourself as you choose. Find our donor,
+<ce> _donor_, in _res_.
 <ce> Give %g2 this code phrase: "_pw_."
 <ce> We will need the money here in =timer_ days.
 
@@ -72,7 +72,7 @@ Item _money_ large_sack
 Item _pw_ small_plant
 Item _reward_ gold range 40 to 60
 
-Person _questgiver_ group Questor male
+Person _questgiver_ group Questor
 Person _donor_ group Noble
 
 Place _res_ remote random

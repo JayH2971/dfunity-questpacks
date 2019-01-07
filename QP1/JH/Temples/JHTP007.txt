@@ -64,7 +64,7 @@ QBN:
 Item _reward_ magic_item
 Item _dummy_ gold range 3 to 5
 
-Person _qgiver_ group Questor male
+Person _qgiver_ group Questor
 
 Place _dung_ remote dungeon
 

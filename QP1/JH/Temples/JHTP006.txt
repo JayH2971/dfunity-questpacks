@@ -216,7 +216,7 @@ Message:  1099
 
 QBN:
 
-Person _qgiver_ group Questor male
+Person _qgiver_ group Questor
 Person _husb_ group Local_3.1 male
 Person _wife_ group Local_4.0 female
 

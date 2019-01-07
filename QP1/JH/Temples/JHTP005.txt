@@ -75,7 +75,7 @@ Message:  1030
 QBN:
 Item _holy_ Holy_relic
 
-Person _qgiver_ group Questor male
+Person _qgiver_ group Questor
 
 Place _res_ remote house
 

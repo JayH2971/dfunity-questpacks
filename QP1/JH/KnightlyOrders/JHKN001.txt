@@ -86,15 +86,15 @@ Foe _enemy2_ is Warrior
 variable _inside_
 _quest_ task:
 	when _inside_ and not _slain_
-	create foe _enemy1_ every 15 minutes indefinitely with 10% success
-	create foe _enemy2_ every 20 minutes indefinitely with 7% success
+	create foe _enemy1_ every 25 minutes indefinitely with 10% success
+	create foe _enemy2_ every 30 minutes indefinitely with 7% success
 
 _timer_ task:
 	end quest
 
 _slain_ task:
-	killed 4 _enemy1_ saying 1020 
-	killed 4 _enemy2_ saying 1020 
+	killed 3 _enemy1_ saying 1020 
+	killed 3 _enemy2_ saying 1020 
 
 _fail_ task:
 	killed 1 _drag_ saying 1021
