@@ -43,9 +43,8 @@ Message: 1020
 <ce> to test the strength of the nearby walls.
 <ce> You are entirely ignored until the door shuts
 <ce> behind you, at which point the building falls
-<ce> silent. The air is heavy. Someone close to you
-<ce> pounds you with a mailed hand, apparently
-<ce> expecting something.
+<ce> silent. The air is heavy. They want something
+<ce> from you.
 
 Message: 1021
 <ce> Seeing the letter, the crony tears it from your
@@ -55,6 +54,20 @@ Message: 1021
 <ce> 
 <ce> "We have yet to see how this grants restitution
 <ce> for our fallen brethren. How can you not..."
+<ce> 
+<ce> The letter appears to have arrived exactly
+<ce> on time to prevent a brawl and the loss
+<ce> of life. They have begun to speak civilly
+<ce> to one another. _qgiver_
+<ce> will want a report on the matter.
+<--->
+<ce> Seeing the letter, the crony tears it from your
+<ce> hands and rips the seal open. After %g1 gives
+<ce> it a cursory look, %g1 sends it to the arguing
+<ce> people. You hear nothing. And then,
+<ce> 
+<ce> "And this is all? The %t must consider
+<ce> what we've lost over months of battle."
 <ce> 
 <ce> The letter appears to have arrived exactly
 <ce> on time to prevent a brawl and the loss

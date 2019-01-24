@@ -85,7 +85,7 @@ Place _res_ remote house2
 Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _delay_ 00:02
 
-Foe _enemy_ is 2 Assassin
+Foe _enemy_ is 2 Rogue
 
 -- Quest start-up:
  start timer _timer_
@@ -115,7 +115,7 @@ _got_ task:
 
 _delay_ task:
  say 1021
- create foe _enemy_ every 60 minutes 2 times with 80% success
+ create foe _enemy_ every 600 minutes 2 times with 80% success
  create foe _enemy_ every 1 minutes 1 times with 80% success
 
 _victory_ task:

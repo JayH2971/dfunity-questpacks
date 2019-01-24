@@ -56,24 +56,23 @@ Message:  1021
 <ce> And please accept my thanks.
 
 Message:  1022
-<ce>  Stepping into the tavern, you can tell that something
-<ce>  is wrong right away. Loud shouting greets your ears.
+<ce>  As you step into the tavern, loud shouting greets your ears.
 <ce>  
-<ce>  "Yeah?! See how you like that, moron!"
+<ce>  "Yeah?! Not the first knight I've killed! I'll do
+<ce>  a dozen of 'em before the month's out!"
 <--->
-<ce>  Stepping into the tavern, you can tell that something
-<ce>  is wrong right away. Loud shouting greets your ears.
+<ce>  As you step into the tavern, loud shouting greets your ears.
 <ce>  
-<ce>  "You didn't even have the money?!
-<ce>  Then why are you playing cards, stupid knight?!"
+<ce>  "Moron knight! Who plays cards without carrying money?
+<ce>  Good riddance, I say."
 <--->
-<ce>  Stepping into the tavern, you can tell that something
-<ce>  is wrong right away. Loud shouting greets your ears.
+<ce>  As you step into the tavern, loud shouting greets your ears.
 <ce>  
-<ce>  "You bet wrong today, idiot! See what it gets you!"
+<ce>  "Stupid knights who bet wrong, that's who.
+<ce>  ==qgiver_ aren't going to miss 'em."
 
 Message:  1023
-<ce>  It is easy to tell this is _knight_'s body.
+<ce>  This is _knight_'s body.
 <ce>  Something has gone terribly wrong here.
 
 Message:  1024
@@ -82,8 +81,8 @@ Message:  1024
 
 Message:  1025
 <ce>  You mean to say _knight_ was murdered
-<ce>  in a tavern? %oth. How do members of our order let
-<ce>  these things happen? How will we vanquish the Dark
+<ce>  in a tavern? %oth. How do members of our order
+<ce>  let these things happen? How will we vanquish the Dark
 <ce>  Brotherhood, the Thieves Guild, the Necromancers,
 <ce>  the vampires, and all that plague Tamriel if this is
 <ce>  the quality we offer? Forgive my bitterness.
@@ -115,10 +114,9 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 	log 1030 step 0 
   get item _weapon_
   pick one of _e1_ _e2_
-
-_e1_ task:
   place npc _knight_ at _knighttown_
 
+variable _e1_
 _deliver_ task:
   toting _weapon_ and _knight_ clicked
   say 1020
@@ -137,6 +135,8 @@ _e2_ task:
 
 _inside_ task:
   say 1022
+  hide npc _knight_
+  restrain foe _enemy_
 
 _takebody_ task:
   clicked item _body_

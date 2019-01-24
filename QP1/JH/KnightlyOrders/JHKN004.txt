@@ -128,7 +128,6 @@ _msg_ task:
 	say 1011
 
 variable _outdoors_
-
 _slain1_ task:
 	killed 6 _warr_
 	killed 5 _barb_
@@ -152,6 +151,7 @@ _victory_ task:
 
 _delay3_ task:
 	give pc nothing
+	legal repute 6
 	end quest 
 
 _qgclicked_ task:
