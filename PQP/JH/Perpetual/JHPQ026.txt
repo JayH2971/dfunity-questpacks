@@ -33,11 +33,10 @@ QuestComplete:  [1004]
 
 Message:  1010
 <ce> You notice a crowd gathered up nearby. Someone has apparently
-<ce> fallen, injured by one of the sundry tasks common to peasants.
-<ce> Specifically, a gaping wound bleeds profusely onto the floor.
+<ce> fallen with a gaping wound that bleed profusely onto the ground.
 <ce> Various townsfolk nearby attempt to cover it with cloths
-<ce> which merely turn red and damp. Will you try
-<ce> to intervene with your array of medical knowledge?
+<ce> which turn red and damp. Will you try to intervene with
+<ce> your medical knowledge?
 
 Message:  1012
 <ce> Finding no hope in sight, they pick up the peasant and
