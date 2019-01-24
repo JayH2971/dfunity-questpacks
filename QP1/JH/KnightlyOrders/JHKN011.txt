@@ -145,6 +145,7 @@ _victory1_ task:
 	when _qgclicked_ and _talkkni_
 	say 1050
 	give pc nothing
+	legal repute 3
 	end quest
 
 _death_ task:

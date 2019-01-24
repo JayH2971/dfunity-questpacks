@@ -60,7 +60,6 @@ Foe _enemy_ is Thief
 --	Quest start-up:
 	start timer _timer_
 	log 1030 step 0 
-	
 
 _there_ task:
 	when pc enters cult
@@ -100,4 +99,5 @@ _clearclick_ task:
 _pcreward_ task:
 	when _qgclicked_ and _slain_ 
 	give pc nothing
+	legal repute 4
 	end quest

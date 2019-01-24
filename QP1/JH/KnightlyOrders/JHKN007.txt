@@ -105,11 +105,6 @@ Message:  1030
  _res_, for help in
  unmasking the foe. I have two days.
 
-Message:  1099
-<ce> Bring me our local murderer's head.
-<ce> Speak to _priest_ when
-<ce> you need help. You have 48 hours.
-
 QBN:
 Person _questgiver_ group Questor male
 Person _culp_ group Chemist
@@ -184,10 +179,10 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 
-  say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _victory_ task:
 	when _qgclicked_ and _slain_
 	give pc nothing
+  legal repute 3
 	end quest 

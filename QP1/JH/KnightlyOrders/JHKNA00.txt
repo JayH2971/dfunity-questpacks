@@ -372,4 +372,5 @@ _slain_ task:
     killed _nec_
     give pc nothing
     change repute with _dummynec_ by -20
+    legal repute 6
     end quest

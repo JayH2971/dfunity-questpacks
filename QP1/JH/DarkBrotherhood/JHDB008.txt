@@ -148,6 +148,9 @@ _mercy_ task:
 	restrain foe _enemy1_
 	restrain foe _enemy2_
 	restrain foe _enemy3_
+	remove foe _enemy1_
+	remove foe _enemy2_
+	remove foe _enemy3_
 
 variable _normal_
 _slain_ task:
@@ -171,11 +174,11 @@ _pcgetsgold_ task:
 
 _gainrep_ task:
 	when _killtimer_ and _mercy_ and not _slain_
-	-legal repute +20
+	legal repute 20
 
 _killtimer_ task:
   say 1003
-  change repute with _questgiver_ by -12
+  change repute with _questgiver_ by -13
 	end quest 
 
 _return_ task:

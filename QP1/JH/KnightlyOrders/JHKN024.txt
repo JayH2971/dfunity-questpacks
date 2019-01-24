@@ -77,7 +77,7 @@ Message:  1012
 Message:  1013
 <ce>  You immediately spot _capt_, whose
 <ce>  appearance gives him away. He casts a brief
-<ce>  incantation to teleport and disappears from view.
+<ce>  incantation to teleport for the advantage.
 
 Message:  1014
 <ce>  You have defeated a powerful magician. Hopefully that
@@ -196,6 +196,7 @@ _qgclicked_ task:
 _victory_ task:
   when _qgclicked_ and _slain_
 	give pc nothing
+  legal repute 8
 	end quest
 
 _clearclick_ task:

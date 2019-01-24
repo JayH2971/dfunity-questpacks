@@ -138,7 +138,7 @@ _fail_ task:
 _pcgetsgold_ task:
 	when _qgclicked_ and _slain_ 
 	give pc nothing
-	legal repute +3
+	legal repute 3
 	end quest 
 
 _qgclicked_ task:

@@ -4,7 +4,7 @@ DisplayName: No Trespassing
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  The Brotherhood has grown tired of a  nosy
+<ce>  The Brotherhood has grown tired of a nosy
 <ce>  member of the Thieves Guild. The fool has taken
 <ce>  a needless curiosity to our guild halls.
 <ce>  This task will be simple, should you accept it.

@@ -89,6 +89,7 @@ _slain_ task:
 _victory_ task:
   when _qgclicked_ and _slain_
 	give pc nothing
+  legal repute 4
 	end quest
 
 _qgclicked_ task:

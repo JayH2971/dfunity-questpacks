@@ -203,6 +203,7 @@ _clearclick_ task:
 
 _pcgetsgold_ task:
 	when _qgclicked_ and _victory_
+  legal repute 30
 
 _v1_ task:
   when _a1_ and _pcgetsgold_

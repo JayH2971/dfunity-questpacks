@@ -180,6 +180,7 @@ _victory2_ task:
 
 _final_ task:
 	give pc nothing
+  legalrepute 3
 	end quest
  
 _2res_ task:

@@ -100,6 +100,7 @@ _pcgetsgold_ task:
 	when _qgclicked_ and _found_ 
 	give pc nothing
     change repute with _dummydb_ by -10
+    legal repute 4
 	end quest 
 
 _2dung_ task:

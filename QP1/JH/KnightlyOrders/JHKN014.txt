@@ -123,6 +123,7 @@ _qgclicked_ task:
 _pcgetsgold_ task:
 	when _qgclicked_ and _pers_ 
 	give pc nothing
+  legal repute 3
 	end quest
 
 _clearclick_ task:
