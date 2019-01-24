@@ -8,11 +8,11 @@ QuestorOffer:  [1000]
 <ce>          of a map purporting to lead to some forgotten treasure
 <ce>          in %crn. I consider myself incapable of recovering it,
 <ce>          but I would be willing to sell it for the mere pittance of
-<ce>          =price_ gold pieces. Would this interest you, %ra?
+<ce>          200 gold pieces. Would this interest you, %ra?
 <--->          
 <ce>          Good day, %ra. I have here a map leading to a
 <ce>          forgotten treasure in %crn, which I would be
-<ce>          willing to part with for =price_ gold pieces.
+<ce>          willing to part with for 200 gold pieces.
 <ce>          Would you consider that a good deal?
 
 RefuseQuest:  [1001]
@@ -36,7 +36,7 @@ QuestComplete:  [1004]
 
 Message:  1020
 <ce>         Very good, thank you for waiting. I'll take
-<ce>         your _price_ gold. That's good.
+<ce>         your 200 gold. That's good.
 <ce>         
 <ce>         No refunds, I should state, but that's an
 <ce>         obvious assumption by all parties in
@@ -48,10 +48,10 @@ Message:  1020
 <ce>         My curiosity will itch at me until I hear
 <ce>         regarding the matter. Farewell, %ra.
 
--Message:  1021
--<ce>        I see you don't have the =gold_ gold pieces.
--<ce>        What a pity. I certainly hope to be taken
--<ce>        seriously by the next potential client.
+Message:  1021
+<ce>        I see you don't have 200 gold pieces.
+<ce>        What a pity. I certainly hope to be taken
+<ce>        seriously by the next potential client.
 
 Message:  1025
 Diary of _dummy_
@@ -69,7 +69,6 @@ QBN:
 Person _qg_ group Questor male
 Person _dummy_ group Local_3.0
 
-Item _price_ gold range 151 to 349
 Item _letter_ letter used 1025
 Item _num_ gold range 14 to 49
 Item _sack_ large_sack
@@ -87,8 +86,7 @@ Clock _timer_ 90.00:00
    start timer _timer_
 
 _start_ task:
--   clicked _qg_ and at least _price_ gold otherwise do _fail_
-   clicked npc _qg_
+   clicked _qg_ and at least 200 gold otherwise do _fail_
    say 1020
    get item _letter_
    pick one of _item1_ _item2_ _item3_ _item4_ _item5_ _item5_
@@ -132,3 +130,6 @@ _vict5_ task:
 _timer_ task:
     say 1003
     end quest
+  
+_fail_ task:
+  say 1021
