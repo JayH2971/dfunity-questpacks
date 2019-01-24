@@ -42,9 +42,8 @@ QuestFail:  [1003]
 <ce> It appears you have failed.  
 
 QuestComplete:  [1004]
-<ce> Looking back on this matter with _escort_,
-<ce> you are glad you were assigned it. Someone less capable
-<ce> could have tarnished the Fighters Guild's reputation.
+<ce> You are glad you were assigned this matter. Someone less
+<ce> capable could have tarnished the guild's reputation.
 
 RumorsPostFailure:   [1006]
 The Fighters Guild runs a pretty poor bodyguard service, they say.
