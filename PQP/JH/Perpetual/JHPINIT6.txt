@@ -29,7 +29,7 @@ Clock _end_ 10.00:00
 
 variable _dud_
 _countdown_ task:
-    pick one of _Q1_ _Q2_ _Q3_ _Q4_ _Q5_ _Q6_ _dud_
+    pick one of _Q1_ _Q2_ _Q3_ _Q4_ _Q5_ _Q6_
     start quest JHPINIT7
 
 _Q1_ task:
