@@ -15,7 +15,7 @@ JHFG003, FightersGuild, M, 1, 0, a quest to slay a criminal in a dungeon
 JHFG004, FightersGuild, M, 1, 0, a quest to guard a residence from intruders
 JHFG005, FightersGuild, M, 0, 0, a quest to slay a pack of beasts at a rural farmhome
 JHFG006, FightersGuild, M, 1, 0, a quest to stop an assassination inside a home
-JHFG007, FightersGuild, M, 1, 1, courier work + ambush in a house
+JHFG007, FightersGuild, M, 1, 0, courier work + ambush in a house
 JHFG009, FightersGuild, M, 2, 0, expert werewolf hunting
 JHFG010, FightersGuild, M, 1, 0, a quest to rid a city's streets of poisonous critters
 JHFG011, FightersGuild, M, 9, 0, an artifact quest to invade a vampire cult
@@ -32,3 +32,5 @@ JHMC001, FightersGuild, P, 0, 0, a quest to help someone fleeing the Dark Brothe
 -tavern guard quest
 -punishment for lacking skill checks (magic schools, weapon types)
 -non-violent ways through quests for TG, MG, DB
+-lie to get out of some consequences. Streetwise check vs rep drop
+-JHFG007 had 1
