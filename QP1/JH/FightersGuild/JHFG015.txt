@@ -47,8 +47,8 @@ Message:  1020
 <ce> much richer than we expected. Take your _reward_.
 <ce> Maybe I'll see you again in ___questgiver_."
 <ce> 
-<ce> _friend_ tosses you the money
-<ce> and disappears from your view.
+<ce> _friend_ tosses you the item
+<ce> and disappears from view.
 
 Message:  1021
 <ce> _friend_ bends down to
@@ -125,12 +125,12 @@ Foe _frenemy_ is Warrior
 
 _inside_ task:
     say 1019
-    create foe _enemy1_ every 41 minutes indefinitely with 17% success
-    create foe _enemy2_ every 32 minutes indefinitely with 12% success
+    create foe _enemy1_ every 101 minutes indefinitely with 10% success
+    create foe _enemy2_ every 32 minutes indefinitely with 2% success
 
 _slain_ task:
-	killed 4 _enemy1_
-	killed 4 _enemy2_
+	killed 3 _enemy1_
+	killed 3 _enemy2_
 
 variable _e1_
 _true_ task:
