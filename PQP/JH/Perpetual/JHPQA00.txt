@@ -28,7 +28,7 @@ Message:  1010
 <ce> You are waylaid by thieves.
 
 QBN:
-Clock _failsafe_ 2.00:00
+Clock _failsafe_ 7.00:00
 
 Foe _e1_ is 2 Thief
 Foe _e2_ is 2 Burglar
