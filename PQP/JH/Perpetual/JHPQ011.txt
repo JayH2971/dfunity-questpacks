@@ -218,6 +218,8 @@ Message:  1083
 <ce> your payment within thirty days."
 <ce> 
 <ce> Your companion thanks %g2 and puts the maps away.
+<ce> You doubt any of this information matters to you, but
+<ce> _dummy_ appears pleased to remember it.
 
 Message:  1085
 <ce> This foe just hisses menacingly.
