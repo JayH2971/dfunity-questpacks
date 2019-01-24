@@ -4,10 +4,11 @@ DisplayName: Daedric Prey
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  I'm just gonna say it. I hate the Mages Guild.
-<ce> It's nothing personal, they just do stupid
-<ce>  things. Like summoning a daedra and
-<ce>  losing control of it. Then they come crying
+<ce> Gotta love some poetic justice. The Mages Guild,
+<ce> right? All high-and-mighty? They have no idea
+<ce> what they're doing sometimes. Just got a request
+<ce> about how they summoned a daedra and just
+<ce> lost control of it. They came crying
 <ce> to us to fix their problem. All I've got to
 <ce> offer you is this _reward_, which I'll
 <ce> admit isn't a lot. You in, %pcf?
@@ -19,7 +20,7 @@ QuestorOffer:  [1000]
 <ce> summons a daedra and they don't know how
 <ce> to get rid of it. Bunch of idiots. They gave me
 <ce> this _reward_, which'll be yours if you go
-<ce> down into ___dungeon_ and kill it.
+<ce> down into a cave and kill it.
 
 RefuseQuest:  [1001]
 <ce> Well, maybe this'll make those morons

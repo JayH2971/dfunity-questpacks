@@ -76,6 +76,7 @@ _enter_ task:
 
 _refuse_ task:
      say 1013
+     legal repute +5
      end quest
 
 _accept_ task:

@@ -17,3 +17,4 @@ JHTP005, HolyOrder, M, 0, 0, a quest to pacify a ghost in a home
 JHTP006, HolyOrder, M, 1, 0, a quest to help a couple resolve their differences
 JHTP007, HolyOrder, M, 2, 0, a quest to cleanse an infected dungeon
 -seek out and slay necromancer
+-find lost person in cave, cannot leave due to vampire burning

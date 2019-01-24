@@ -4,13 +4,13 @@ DisplayName: No Trespassing
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  The Brotherhood has grown tired of a 
-<ce>  nosy member of the Thieves Guild who has
-<ce>  taken a curiosity to our guild halls. This
-<ce>  task will be simple, should you accept it.
+<ce>  The Brotherhood has grown tired of a  nosy
+<ce>  member of the Thieves Guild. The fool has taken
+<ce>  a needless curiosity to our guild halls.
+<ce>  This task will be simple, should you accept it.
 
 RefuseQuest:  [1001]
-<ce>  I see where your loyalties lie.
+<ce>  Afraid of the Thieves Guild. I see.
 
 AcceptQuest:  [1002]
 <ce>  The buffoon's hiding place is in ___res_.

@@ -40,7 +40,7 @@ QuestFail:  [1003]
 
 QuestComplete:  [1004]
 <ce> Well done, %pct. And what did you
-<ce> do to the incompetent guardian?... A fitting
+<ce> do to the incompetent guardian? A fitting
 <ce> resolution. The Night Mother will be pleased.
 
 Message:  1019
@@ -49,7 +49,35 @@ Message:  1019
 
 Message:  1020
 <ce>  The acrobat collapses in defeat.
-<ce> The contract is fulfilled.
+<ce>  The contract is fulfilled.
+
+Message:  1025
+<ce>  You step into _res_ and are
+<ce>  accosted by a voice coming from thin air.
+<ce>  
+<ce>  "%ra, cease. I can see your doings.
+<ce>  The one you seek is under my protection.
+<ce>  Continuing your fruitless mission will
+<ce>  engender my wrath. Do not understimate me."
+<--->
+<ce>  You step into _res_ and are
+<ce>  accosted by a voice coming from thin air.
+<ce>  
+<ce>  "Stop. The one you seek is my ward and
+<ce>  I will avenge thirtyfold any injury
+<ce>  you produce. Turn and leave now,
+<ce>  lest you face my wrath."
+
+Message:  1026
+<ce>  The voice you previously heard returns.
+<ce>  
+<ce>  "You cannot comprehend what you have done.
+<ce>  Your life is forfeit. Suffer for your deed."
+<--->
+<ce>  The voice you previously heard returns.
+<ce>  
+<ce>  "Your end is come. Nothing can repay the
+<ce>  crime you have committed. You will die, worm."
 
 Message:  1030
 %qdt:
@@ -61,11 +89,6 @@ Message:  1030
  least kill the acrobat and return within
  =timer_ days for recognition.
 
-Message:  1099
-<ce> ___res_. _res_.
-<ce> Cowering mark. Fearful bodyguard.
-<ce> =timer_ days. Go now.
-
 QBN:
 
 Person _questgiver_ group Questor male
@@ -73,6 +96,7 @@ Person _questgiver_ group Questor male
 Place _res_ remote house
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _delay_ 00:01 00:05
 
 Foe _acro_ is Acrobat
 Foe _bguard_ is Barbarian
@@ -81,17 +105,32 @@ Foe _bguard_ is Barbarian
 	start timer _timer_ 
 	log 1030 step 0 
 	place foe _acro_ at _res_ 
-  pc at _res_ set _inside_
+  	pc at _res_ set _inside_
+  	pick one of _e1_ _e2_
 
-_inside_ task:
- start task _spawn_
-
+variable _e1_
+variable _e2_
+variable _inside_
 _spawn_ task:
- say 1019
- create foe _bguard_ every 1 minutes 1 times with 100% success
+ 	when _inside_ and _e1_
+	say 1019
+ 	create foe _bguard_ every 1 minutes 1 times with 100% success
+
+_extend_ task:
+	when _inside_ and _e2_
+	say 1025
+	create foe _bguard_ every 1 minutes 1 times with 100% success
 
 _slain_ task:
 	killed 1 _acro_ saying 1020 
+
+_extend2_ task:
+	when _e2_ and _slain_
+	start timer _delay_
+
+_delay_ task:
+	say 1026
+	start quest JHDBA00
 
 _qgclicked_ task:
 	clicked npc _questgiver_ 
@@ -107,5 +146,4 @@ _timer_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 
-  say 1099
 	clear _qgclicked_ _clearclick_ 

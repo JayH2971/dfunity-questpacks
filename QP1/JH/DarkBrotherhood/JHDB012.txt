@@ -51,8 +51,12 @@ QuestComplete:  [1004]
 
 Message:  1010
 <ce> _th_ stares at you with cold eyes.
-<ce> Radiating fear and tension, %g1 says
-<ce> nothing at all.
+<ce> Radiating fear and tension, %g1 says nothing at all.
+<ce>
+<ce>  In all likelihood you could probably get a reward
+<ce>  from this group by alerting them to the Brotherhood's
+<ce>  plot. No one would know of the deal you strike.
+<ce>  Do you attempt to make a deal with %g2?
 
 Message:  1011
 <ce> Your mark relaxes a little upon seeing
@@ -83,6 +87,41 @@ Message:  1013
 Message:  1014
 <ce> Without %g3 leadership, _th_'s guild will dissolve.
 
+Message:  1015
+<ce> You show _th_ the basilisk's eye
+<ce> and explain what the Dark Brotherhood has sent you
+<ce> to do. At first %g1 is far too suspicious and
+<ce> intends to escape, but you quickly show the letter
+<ce> and payment that were meant to deceive %g2.
+<ce> 
+<ce> "Can this be so? _qgiver_ has actually
+<ce> found us? This cannot be. And who are you to trick
+<ce> the Dark Brotherhood? What do you want?"
+<ce> 
+<ce> You insinuate that a payment would probably be
+<ce> appropriate for the service you've rendered.
+<ce> Grumbling a little, %g1 nevertheless sees the
+<ce> sense of paying you off. You accept =reward_ gold
+<ce> pieces in a small pouch, and _th_
+<ce> mutters a spell to disappear.
+<--->
+<ce> You show _th_ the basilisk's eye
+<ce> and explain what the Dark Brotherhood has sent you
+<ce> to do. At first %g1 is far too suspicious and
+<ce> intends to escape, but you quickly show the letter
+<ce> and payment that were meant to deceive %g2.
+<ce> 
+<ce> "I should believe this but it is hard. How could
+<ce> they have found us and studied us so? And who are
+<ce> you? Why have you told us this?"
+<ce> 
+<ce> You insinuate that a payment would probably be
+<ce> appropriate for the service you've rendered.
+<ce> Grumbling a little, %g1 nevertheless sees the
+<ce> sense of paying you off. You accept =reward_ gold
+<ce> pieces in a small pouch, and _th_
+<ce> mutters a spell to disappear.
+
 Message:  1020
 <ce> _th_'s suspicions win %g2 over.
 <ce> "I knew it!" %g1 shouts before casting a
@@ -109,6 +148,7 @@ Person _th_ factiontype Thieves_Den
 Item _letter_ letter
 Item _gem_ gem
 Item _eye_ basilisk_eye
+Item _reward_ gold
 
 Place _res_ remote house
 
@@ -128,11 +168,18 @@ Foe _enemy_ is Assassin
 _step1_ task:
     clicked npc _th_
     start timer _conv_
-    say 1010
+    prompt 1010 yes _trick_ no _step1a_
     _eye_ used do _step2_
     _letter_ used do _conv_
     _gem_ used do _conv_
 
+_trick_ task:
+    say 1015
+    get item _reward_
+    hide npc _th_
+    end quest
+
+variable _step1a_
 _step2_ task:
     take _eye_ from pc
     clear _step1_

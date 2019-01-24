@@ -21,8 +21,7 @@ QuestorOffer:  [1000]
 <ce>  slay a weakling knight in ___qgiver_?
 
 RefuseQuest:  [1001]
-<ce> Keep turning away our offers. Soon the
-<ce>  Brotherhood will close its doors to you.
+<ce> Keep turning away our offers. I dare you.
 
 AcceptQuest:  [1002]
 <ce> This complaint is against some warrior over

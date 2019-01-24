@@ -27,7 +27,6 @@ QuestFail:  [1003]
 QBN:
 Item _letter_ letter
 
-Person _qgiver_ group Questor male
 Person _fg_ faction The_Fighters_Guild
 
 Clock _timer_ 15.00:00

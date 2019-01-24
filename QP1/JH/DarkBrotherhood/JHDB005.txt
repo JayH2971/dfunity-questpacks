@@ -67,11 +67,6 @@ Message:  1043
 <ce>  more stupidity can flow out.
 <ce>  Your work here is done.
 
-Message:  1099
-<ce>  Go to _tavern_. I'm
-<ce>  here to offer you contracts, not do
-<ce>  them for you. You have twelve hours.
-
 QBN:
 Person _qgiver_ group Questor male
 
@@ -110,7 +105,6 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ 
-  say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _pcreward_ task:

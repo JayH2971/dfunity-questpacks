@@ -39,8 +39,31 @@ QuestComplete:  [1004]
 <ce> I assure you of it, honorable knight.
 
 Message:  1020
-<ce>  You notice a conspicuous bag
-<ce> among this foe's belongings.
+<ce>  The thief has been slain. You see
+<ce>  the _weapon_ among the goods.
+
+Message:  1021
+<ce>  Wait! Stop! Why are you after me?!
+<ce>  Is it because of this _weapon_?
+<ce>  They told me to hold on to it! I didn't
+<ce>  do anything, by %god! Please, I'll
+<ce>  give you the weapon, but just let me go!
+<--->
+<ce>  Someone help! This %ra's going to
+<ce>  kill me! Please, stop! I promise,
+<ce>  I didn't do anything! I'm just holding
+<ce>  onto this _weapon_ for someone else!
+<ce>  I'll give it to you, but let me go, please!
+
+Message:  1022
+<ce>  Your foe begins to sob bitterly
+<ce>  as you press the attack.
+
+Message:  1023
+<ce>  Your foe throws the weapon at your feet
+<ce>  and races away from you. By the time
+<ce>  you pick it up, you have lost all
+<ce>  trace of its previous holder.
 
 Message:  1030
 %qdt:
@@ -52,12 +75,6 @@ Message:  1030
  I must bring it to _qgiver_
  in =timer_ days' time.
 
-Message:  1099
-<ce> I gave you =timer_ days to
-<ce> find that worthless thief in
-<ce> ___dungeon_ and bring
-<ce>  back the _weapon_. Go.
-
 QBN:
 Person _qgiver_ group Questor male
 
@@ -65,7 +82,7 @@ Place _dungeon_ remote dungeon
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
 
-Place _res_ remote house2
+Place _res_ remote house
 
 Foe _enemy_ is Nightblade
 
@@ -75,8 +92,26 @@ Item _weapon_ weapon
 	start timer _timer_ 
 	log 1030 step 0 
 	place foe _enemy_ at _dungeon_
-  give item _weapon_ to _enemy_
   reveal _dungeon_
+  pick one of _e1_ _e2_
+
+variable _e1_
+variable _e2_
+_inj_ task:
+	injured _enemy_
+	give item _weapon_ to _enemy_
+
+_ask_ task:
+	when _inj_ and _e2_
+	prompt 1021 yes _mercy_ no _kill_
+
+_mercy_ task:
+	get item _weapon_
+	say 1023
+	remove foe _enemy_
+
+_kill_ task:
+	say 1022
 
 _slain_ task:
 	killed 1 _enemy_ saying 1020 

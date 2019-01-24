@@ -34,7 +34,8 @@ AcceptQuest:  [1002]
 <ce> nights have passed. Mephala be with you.
 
 QuestFail:  [1003]
-<ce> 
+<ce> You were to report to _questgiver_
+<ce> concerning the wild hermit's death by now.
 
 QuestComplete:  [1004]
 <ce>  Now you see the dangers of subsisting entirely
@@ -116,6 +117,7 @@ _qgclicked_ task:
 	clicked npc _questgiver_ 
 
 _timer_ task:
+	say 1003
 	end quest 
 
 _clearclick_ task:

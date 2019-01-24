@@ -33,15 +33,9 @@ AcceptQuest:  [1002]
 QuestFail:  [1003]
 <ce>  Your deadline to slay the vampire and report to
 <ce>  _qgiver_ has passed.
-<ce>  _mage_ excuses %g2self and departs.
 
 QuestComplete:  [1004]
-<ce> Hail our vampire slayers of vampires! Such a
-<ce>  crusade should always merit the
-<ce>  attention of knights. We will
-<ce>  speak of your deeds to inspire
-<ce>  the younger generation to rise
-<ce>  above their own selves.
+<ce>  You are a credit to %crn, %pcf.
 
 Message:  1010
 <ce>  _mage_ recognizes this vampire at once.
@@ -78,6 +72,38 @@ Message:  1020
 <ce>  and responsibility. Soon you are both
 <ce>  ready to leave.
 
+Message:  1021
+<ce>  This vampire has knowledge of powerful magicks.
+<ce>  A shocking bolt lances out in your general
+<ce>  direction, and _mage_ falls.
+
+Message:  1022
+<ce>  You have defeated the vampire. You offer
+<ce>  _mage_ as proper a burial you
+<ce>  can under the circumstances. Surely %g3
+<ce>  sacrifice will be honored.
+
+Message:  1023
+<ce>  Hail our slayers of vampires! Such a
+<ce>  crusade should always merit the
+<ce>  attention of knights. We will
+<ce>  speak of your deeds to inspire
+<ce>  the younger generation to rise
+<ce>  above their own selves. Surely
+<ce>  you will tell the Mages Guild of
+<ce>  %pcf's great service and utility,
+<ce>  _mage_? I am certain %pg1
+<ce>  preserved your life quite skillfully.
+
+Message:  1024
+<ce> Hail %pcn, slayer of vampires!
+<ce> What is that? _mage_ was
+<ce> slain in the battle? This is truly grave
+<ce> news, though we are pleased that we must
+<ce> no longer fear the vampire's encroaches on
+<ce> our land. I thank you for braving the
+<ce> depths on such a perilous mission.
+
 Message:  1030
 %qdt:
  _qgiver_ in the city of
@@ -94,6 +120,7 @@ Person _mage_ faction The_Mages_Guild
 Place _dung_ remote dungeon
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _delay_ 00:03 00:05
 
 Foe _vam1_ is Ancient_vampire
 Foe _vam2_ is Vampire
@@ -103,6 +130,10 @@ Foe _vam2_ is Vampire
 	pick one of _D.01_ _D.02_
 	log 1030 step 0 
   	reveal _dung_
+	pick one of _e1_ _e2_
+
+variable _e1_
+variable _e2_
 
 _D.01_ task:
 	place foe _vam1_ at _dung_ 
@@ -113,23 +144,47 @@ _D.02_ task:
 _inj1_ task:
 	injured _vam1_ saying 1010
 	restrain foe _vam1_
+	start timer _delay_
 
 _inj2_ task:
 	injured _vam2_ saying 1011
 	restrain foe _vam2_
+	start timer _delay_
+
+_delay_ task:
+	drop _mage_ face
+	say 1021
 
 _slain_ task:
 	killed 1 _vam1_
 	killed 1 _vam2_
+	stop timer _delay_
+
+_livemage_ task:
+	when _slain_ and not _delay_
 	say 1020
+
+_deadmage_ task:
+	when _slain_ and _delay_
+	say 1022
 
 _qgclicked_ task:
 	clicked npc _qgiver_ 
 
 _pcgetsgold_ task:
-	when _qgclicked_ and _slain_ 
+	when _qgclicked_ and _livemage_ 
+	say 1023
+	change repute with _mage_ by +5
+	legal repute +3
 	give pc nothing
 	end quest 
+
+_pcgetsnothing_ task:
+	when _qgclicked_ and _deadmage_
+	say 1024
+	legal repute +3
+	give pc nothing
+	end quest
 
 _timer_ task:
 	say 1003

@@ -41,9 +41,8 @@ QuestFail:  [1003]
 <ce>  will be held responsible for your failure.
 
 QuestComplete:  [1004]
-<ce>  Well now, did you have fun, %pcf? I certainly
-<ce>  hope so. We'll set this kind of work apart for you
-<ce>  in the future. Take your reward.
+<ce>  Well now, did you enjoy yourself, %pcf? I certainly
+<ce>  hope so. Take your reward.
 
 Message:  1020
 <ce>  You have committed the perfect crime.
@@ -54,6 +53,31 @@ Message:  1021
 <ce>  The Dark Brotherhood's mark will have arrived
 <ce>  in ___dungeon_ by now. There
 <ce>  is no time to lose.
+
+Message:  1022
+<ce>  Knowing the end is at hand, your mark enters
+<ce>  into the hysterics of end-of-life negotiations.
+<ce>  
+<ce>  "Please! Please! Stop, I know the %t! If you will
+<ce>  only let me live, I will exalt your name in %crn!
+<ce>  I can help you reverse whatever damaged reputation
+<ce>  you may have here! Please, just grant me my life!"
+<--->
+<ce>  Knowing the end is at hand, your mark enters
+<ce>  into the hysterics of end-of-life negotiations.
+<ce>  
+<ce>  "No! No, I beg you, stop! Listen, I can help you!
+<ce>  A hired murderer must have a tarnished reputation
+<ce>  in %crn, and I can help you repair it! Just let me
+<ce>  live and I swear on the life of the %t that I will
+<ce>  give you influence you have not known before!"
+
+Message:  1023
+<ce>  You appear to have reached an agreement. Your new
+<ce>  friend thanks you for your kindness and vows to
+<ce>  work ceaselessly to give you a new name in %crn.
+<ce>  You presume that the promise will be fulfilled,
+<ce>  as it will not be hard to repeat this scenario.
 
 Message:  1030
 %qdt:
@@ -86,10 +110,13 @@ Foe _enemy3_ is Knight
 	log 1030 step 0 
 	pick one of _E.01_ _E.02_ _E.03_
   reveal _dungeon_
+	pick one of _m1_ _m2_
 
 variable _E.01_
 variable _E.02_
 variable _E.03_
+variable _m1_
+variable _m2_
 
 _2dungeon_ task:
   say 1021
@@ -107,6 +134,22 @@ _spawn3_ task:
   when _E.03_ and _2dungeon_
 	place foe _enemy3_ at _dungeon_
 
+_inj_ task:
+	injured _enemy1_
+	injured _enemy2_
+	injured _enemy3_
+
+_prom_ task:
+	when _inj_ and _m2_
+	prompt 1022 yes _mercy_ no _normal_
+
+_mercy_ task:
+	say 1023
+	restrain foe _enemy1_
+	restrain foe _enemy2_
+	restrain foe _enemy3_
+
+variable _normal_
 _slain_ task:
 	killed 1 _enemy1_ saying 1020 
 	killed 1 _enemy2_ saying 1020 
@@ -125,6 +168,10 @@ _pcgetsgold_ task:
 	when _qgclicked_ and _slain_ 
 	give pc _reward_ 
 	end quest 
+
+_gainrep_ task:
+	when _killtimer_ and _mercy_ and not _slain_
+	-legal repute +20
 
 _killtimer_ task:
   say 1003

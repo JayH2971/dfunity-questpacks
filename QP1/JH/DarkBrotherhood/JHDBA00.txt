@@ -1,0 +1,62 @@
+Quest: JHDBA00
+DisplayName: A Touch of Wrath
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  A rush of magical power envelopes you. No sooner than
+<ce>  you are able to gather your thoughts, you find yourself
+<ce>  surrounded by a multitude of vicious foes. As they draw
+<ce>  close, a familiar voice returns to you.
+<ce>  
+<ce>  "See how you die for mocking my power."
+
+Message:  1011
+<ce>  You are again surrounded by a wave of magical power.
+<ce>  More creatures appear to slay you.
+
+Message:  1012
+<ce>  Another wave of foes appears to attack you.
+
+Message:  1013
+<ce>  You hear the voice of your vengeful foe.
+<ce>  
+<ce>  "Don't think this is over. Someday I will
+<ce>  have my revenge. Mark my words."
+
+QBN:
+
+Clock _d1_ 1.00:00 1.12:00
+Clock _d2_ 1.00:00 1.12:00
+Clock _d3_ 1.00:00 1.12:00
+Clock _d4_ 1.00:00 1.12:00
+
+Foe _m1_ is Spriggan
+Foe _m2_ is Giant_scorpion
+Foe _m3_ is Dragonling
+
+--	Quest start-up:
+	start timer _d1_ 
+
+_d1_ task:
+    say 1010
+    create foe _m1_ every 0 minutes 3 times with 100% success
+    create foe _m2_ every 0 minutes 1 times with 100% success
+    start timer _d2_
+
+_d2_ task:
+    say 1011
+    create foe _m2_ every 0 minutes 3 times with 100% success
+    create foe _m3_ every 0 minutes 2 times with 100% success
+    start timer _d3_
+
+_d3_ task:
+    say 1012
+    create foe _m1_ every 0 minutes 2 times with 100% success
+    create foe _m2_ every 0 minutes 2 times with 100% success
+    create foe _m3_ every 0 minutes 2 times with 100% success
+    start timer _d4_
+
+_d4_ task:
+    say 1013
+    end quest

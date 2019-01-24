@@ -45,17 +45,13 @@ Message:  1011
 <ce>  to the ground. With %g3 hands tied %g1 can only watch
 <ce>  the pair of tigers approach. The act of disposal takes
 <ce>  less than a minute. You are careful to snatch one of
-<ce>  the mark's fingers before the beasts devour it. Soon the
-<ce>  corpse is entirely consumed and they slink away into the
-<ce>  depths of the cave.
-<--->
-<ce>  You ring the bell and step back, pushing _hos_
-<ce>  to the ground. With %g3 hands tied %g1 can only watch
-<ce>  the pair of bears approach. The act of disposal takes
-<ce>  less than a minute. You are careful to snatch one of
-<ce>  the mark's fingers before the beasts devour it. Soon the
-<ce>  corpse is entirely consumed and they slink away into the
-<ce>  depths of the cave.
+<ce>  the mark's fingers before the animals devour it.
+
+Message:  1012
+<ce>  As luck would have it, the beasts' hunger is not sated.
+<ce>  Perhaps it's been some time since their masters have
+<ce>  brought a free meal. They appear to have no qualms
+<ce>  taking advantage of your visit.
 
 Message:  1030
 %qdt:
@@ -79,6 +75,8 @@ Item _bell_ bell
 Item _reward_ gold
 Item _finger_ finger
 
+Foe _tig_ is Sabretooth_tiger
+
 Clock _timer_ 00:00 0 flag 1 range 0 2
 
 --	Quest start-up:
@@ -88,7 +86,10 @@ Clock _timer_ 00:00 0 flag 1 range 0 2
     reveal _dung_
     place npc _hos_ at _res_
     get item _bell_
+    pick one of _e1_ _e2_
 
+variable _e1_
+variable _e2_
 variable _inside_
 _take_ task:
   clicked npc _hos_
@@ -104,6 +105,11 @@ _slain_ task:
     drop _hos_ face
     say 1011
     get item _finger_
+
+_attack_ task:
+    when _slain_ and _e2_
+    say 1012
+    create foe _tig_ every 0 minutes 2 times with 100% success
 
 _qgclicked_ task:
 	clicked npc _qgiver_ 

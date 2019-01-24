@@ -25,11 +25,7 @@ QuestFail:  [1003]
 <ce> to _knight_ by now. This is not a good start.
 
 QuestComplete:  [1004]
-<ce> Why did %g1 neglect to take it, %pcf? %oth.
-<ce> May I make a comment, %pct? We send our knights
-<ce> to wage war between life and death every day.
-<ce> Carelessness leads to the grave. Always remember that.
-<ce> And please accept my thanks.
+<ce>  Thank you for going, %pcf.
 
 Message:  1020
 <ce> What is this? Some _weapon_? _qgiver_ never
@@ -52,6 +48,47 @@ Message:  1020
 <ce> and realize I'm missing a weapon. How good of you to bring it
 <ce> to me! Give _qgiver_ my regards. Fare thee well.
 
+Message:  1021
+<ce> Why did _knight_ neglect to take it, %pcf?
+<ce> %oth. May I make a comment, %pct? We send our
+<ce> knights to wage war between life and death every day.
+<ce> Carelessness leads to the grave. Always remember that.
+<ce> And please accept my thanks.
+
+Message:  1022
+<ce>  Stepping into the tavern, you can tell that something
+<ce>  is wrong right away. Loud shouting greets your ears.
+<ce>  
+<ce>  "Yeah?! See how you like that, moron!"
+<--->
+<ce>  Stepping into the tavern, you can tell that something
+<ce>  is wrong right away. Loud shouting greets your ears.
+<ce>  
+<ce>  "You didn't even have the money?!
+<ce>  Then why are you playing cards, stupid knight?!"
+<--->
+<ce>  Stepping into the tavern, you can tell that something
+<ce>  is wrong right away. Loud shouting greets your ears.
+<ce>  
+<ce>  "You bet wrong today, idiot! See what it gets you!"
+
+Message:  1023
+<ce>  It is easy to tell this is _knight_'s body.
+<ce>  Something has gone terribly wrong here.
+
+Message:  1024
+<ce>  You have slain _knight_'s murderer.
+<ce>  At the very least, honor has been restored.
+
+Message:  1025
+<ce>  You mean to say _knight_ was murdered
+<ce>  in a tavern? %oth. How do members of our order let
+<ce>  these things happen? How will we vanquish the Dark
+<ce>  Brotherhood, the Thieves Guild, the Necromancers,
+<ce>  the vampires, and all that plague Tamriel if this is
+<ce>  the quality we offer? Forgive my bitterness.
+<ce>  You have done us a favor in slaying the knave.
+
 Message:  1030
 %qdt:
  _qgiver_ of ___qgiver_
@@ -60,42 +97,66 @@ Message:  1030
  knight staying in ___knighttown_.
  I have =timer_ days to return.
 
-Message:  1099
-<ce>  I see you still have that _weapon_.
-<ce>  Come see me when you no longer have it.
-
 QBN:
 Item _weapon_ weapon
+Item _body_ dead_body
 
 Person _qgiver_ group Questor male
 Person _knight_ faction Generic_Knightly_Order
 
 Place _knighttown_ remote tavern
 
+Foe _enemy_ is Barbarian
+
 Clock _timer_ 00:00 0 flag 17 range 0 2
 
 --	Quest start-up:
 	start timer _timer_
 	log 1030 step 0 
-  place npc _knight_ at _knighttown_
   get item _weapon_
+  pick one of _e1_ _e2_
+
+_e1_ task:
+  place npc _knight_ at _knighttown_
 
 _deliver_ task:
   toting _weapon_ and _knight_ clicked
   say 1020
   take _weapon_ from pc
 
-_victory_ task:
+_victory1_ task:
   when _qgclicked_ and _deliver_
-	give pc nothing
+	say 1021
+  give pc nothing
+	end quest
+
+_e2_ task:
+  place item _body_ at _knighttown_
+  place foe _enemy_ at _knighttown_
+  pc at _knighttown_ do _inside_
+
+_inside_ task:
+  say 1022
+
+_takebody_ task:
+  clicked item _body_
+  say 1023
+
+_slain_ task:
+  killed _enemy_
+  say 1024
+
+_victory2_ task:
+  when _qgclicked_ and _slain_
+	say 1025
+  give pc nothing
 	end quest
 
 _qgclicked_ task:
 	clicked npc _qgiver_ 
 
 _clearclick_ task:
-	when _qgclicked_ and not _deliver_
-  say 1099
+	when _qgclicked_ and not _deliver_ and not _slain_
 	clear _qgclicked_ _clearclick_ 
 
 _timer_ task:

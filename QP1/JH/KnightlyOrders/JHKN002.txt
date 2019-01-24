@@ -25,7 +25,8 @@ AcceptQuest:  [1002]
 <ce>    are most certainly keeping watch, so
 <ce>   once you appear on the property they will
 <ce>    no doubt move to slay you. You have
-<ce>    =timer_ days. %god be with you.
+<ce>    =timer_ days. %god be with you. The fate
+<ce>  of ___home_ is in your hands.
 
 QuestFail:  [1003]
 <ce>   
@@ -84,11 +85,6 @@ Message:  1031
  should return to ___questgiver_
  and report on this matter.
 
-Message:  1099
-<ce>        ___home_ needs a savior,
-<ce>        and we have put our trust in you.
-<ce>        Go free the captive farmspeople.
-
 QBN:
 Person _questgiver_ group Questor male
 
@@ -135,12 +131,12 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ and not _altfin_
-  say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _pcreward_ task:
 	when _qgclicked_ and _slain_ 
 	give pc nothing
+	legal repute +3
 	end quest 
 
 _altend_ task:

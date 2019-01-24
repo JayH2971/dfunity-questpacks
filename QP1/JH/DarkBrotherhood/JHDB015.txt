@@ -63,6 +63,23 @@ Message:  1014
 <ce>  Leaving ___dung_ has tripped the wards placed
 <ce>  by the hunting band. Any chance of finding them is now long gone.
 
+Message:  1015
+<ce>  You become aware of a hulking, magical construct as it approaches.
+<ce>  Through heavy, metallic breathing, it states its intention.
+<ce>  
+<ce>  "Death to trespassers. Masters must survive."
+<ce>  
+<ce>  This band seems to have a defense system inside
+<ce>  ___dung_ to hunt down intruders.
+<--->
+<ce>  You become aware of a hulking, magical construct as it approaches.
+<ce>  Through heavy, metallic breathing, it states its intention.
+<ce>  
+<ce>  "Interloper. Die for your treachery."
+<ce>  
+<ce>  This band seems to have a defense system inside
+<ce>  ___dung_ to hunt down intruders.
+
 Message:  1030
 %qdt:
  The Dark Brotherhood of ___qgiver_
@@ -80,9 +97,12 @@ Item _gem_ gem
 Place _dung_ remote dungeon
 
 Clock _gtimer_ 6:00 7:00
-Clock _spawn_ 8:00 2.00:00
+Clock _spawn_ 8:00 1.00:00
+Clock _defense_ 1:00 2:00
 
 Foe _e1_ is Knight
+Foe _e2_ is Iron_atronach
+Foe _e3_ is Iron_atronach
 
 --	Quest start-up:
 	start timer _gtimer_ 
@@ -90,7 +110,10 @@ Foe _e1_ is Knight
     get item _gem_
     _gem_ used do _tele_
 	pc at _dung_ set _inside_
+    pick one of _e1_ _e2_
 
+variable _e1_
+variable _e2_
 _gtimer_ task:
     say 1003
     end quest
@@ -104,6 +127,17 @@ _tele_ task:
     start timer _spawn_
 
 variable _inside_
+_dspawn_ task:
+    when _inside_ and _e2_
+    start timer _defense_
+
+variable _defense_
+_atr_ task:
+    when _defense_ and _inside_
+    say 1015
+    create foe _e2_ every 0 minutes 1 times with 100% success
+    create foe _e3_ every 60 minutes indefinitely with 50% success
+
 _fail_ task:
     when _tele_ and not _inside_ and not _slain_
     say 1014

@@ -49,7 +49,9 @@ QuestComplete:  [1004]
 <ce> the trial. Superb work on all counts.
 
 Message:  1019
-<ce>	You creep through the building silently.
+<ce>	Someone less skilled would not have noticed the
+<ce>	sigils written about the doorpost. You stealthily
+<ce>	step in, avoiding detection.
 
 Message:  1020
 <ce> The guards ignored your entry. Now
@@ -71,11 +73,6 @@ Message:  1030
  _clothes_ inside _res_,
  which I need to return to
  ___questgiver_ within =timer_ days.
-
-Message:  1099
-<ce>  We need the _clothes_
-<ce>  the town guard left in
-<ce>  ___res_. Go quickly.
 
 QBN:
 
@@ -119,11 +116,12 @@ _got_ task:
 _delay_ task:
  say 1021
  create foe _enemy_ every 60 minutes 2 times with 80% success
- create foe _enemy_ every 0 minutes 1 times with 80% success
+ create foe _enemy_ every 1 minutes 1 times with 80% success
 
 _victory_ task:
   toting _clothes_ and _questgiver_ clicked
   give pc nothing
+  legal repute +3
   end quest
 
 _qgclicked_ task:
@@ -131,7 +129,6 @@ _qgclicked_ task:
  
 _clearclick_ task:
   when _qgclicked_ and not _delay_
-  say 1099
   clear _qgclicked_ _clearclick_
 
 _timer_ task:

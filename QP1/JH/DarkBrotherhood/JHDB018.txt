@@ -32,6 +32,29 @@ QuestComplete:  [1004]
 Message:  1010
 <ce>  This must be the well-armed debtor.
 
+Message:  1011
+<ce>  "No! Wait! Please, don't! I'm begging you! I'll give you
+<ce>  anything! Here! In this box is the last bit of money
+<ce>  I have, =reward_ gold! Take it and please just let me live!"
+
+Message:  1012
+<ce>  "Thank you! Oh, please, just give me a second. Let me put in
+<ce>  the combination. It'll only take so long. You can watch me,
+<ce>  see? I'm not going anywhere."
+<ce>  
+<ce>  The debtor turns several dials on a complex box nearby.
+<ce>  Soon a satisfying click bounces against the walls.
+<ce>  
+<ce>  "Okay! It's done. It'll open in sixty seconds, okay?
+<ce>  I'm out of here! Thank you! Goodbye!"
+<ce>  
+<ce>  You are left alone. One whole minute passes and the
+<ce>  box's door springs open, revealing your bribe money.
+
+Message:  1013
+<ce>  Hopefully %crn's delinquents will learn
+<ce>  to do better than this fool did. The accounting is complete.
+
 Message:  1030
 %qdt:
  The Dark Brotherhood of ___qgiver_
@@ -41,8 +64,9 @@ Message:  1030
 
 QBN:
 Person _qgiver_ group Questor male
+Person _debtor_ faction The_Merchants
 
-Place _res_ remote house2
+Place _res_ remote house
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
 
@@ -50,13 +74,16 @@ Foe _m1_ is Nightblade
 Foe _m2_ is Vampire
 Foe _m3_ is Werewolf
 
+Item _reward_ gold range 2501 to 2799
+
 --	Quest start-up:
 	start timer _timer_ 
 	log 1030 step 0
     pick one of _e1_ _e2_ _e3_
+    pick one of _f1_ _f2_
 
 _e1_ task:
-    place foe _m1_ at _res_
+    place npc _debtor_ at _res_
 
 _e2_ task:
     place foe _m2_ at _res_
@@ -64,16 +91,39 @@ _e2_ task:
 _e3_ task:
     place foe _m3_ at _res_
 
+variable _f1_
+variable _f2_
 _ipr_ task:
   injured _m1_
   injured _m2_
   injured _m3_
   say 1010
 
+_click_ task:
+    clicked npc _debtor_
+
+_norm_ task:
+  when _click_ and _f1_
+  say 1010
+  hide npc _debtor_
+  place foe _m1_ at _res_
+
+_choice_ task:
+    when _click_ and _f2_
+    prompt 1011 yes _bribe_ no _dud_
+
+_bribe_ task:
+    say 1012
+    hide npc _debtor_
+    get item _reward_
+    end quest
+
+variable _dud_
 _slain_ task:
 	killed _m1_
     killed _m2_
     killed _m3_
+    say 1013
 
 _timer_ task:
 	end quest

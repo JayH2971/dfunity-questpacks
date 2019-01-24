@@ -42,15 +42,18 @@ QuestFail:  [1003]
 <ce> It appears you have failed.  
 
 QuestComplete:  [1004]
-<ce> "My word! %pcn, you have provided me
-<ce>  proof that all my fears were just, and
-<ce> saved my life in the process! I must flee
-<ce> to ___escape_ quickly, now
-<ce> that I have my belongings. Thank you for
-<ce> extending your incredible skill on my behalf!"
-<ce> 
-<ce> He hands you the payment
-<ce> before returning to pack his things.
+<ce> Looking back on this matter with _escort_,
+<ce> you are glad you were assigned it. Someone less capable
+<ce> could have tarnished the Fighters Guild's reputation.
+
+RumorsPostFailure:   [1006]
+The Fighters Guild runs a pretty poor bodyguard service, they say.
+
+RumorsPostSuccess:   [1007]
+The Fighters Guild, protecting stuff? Doesn't sound like them.
+
+QuestorPostFailure:   [1009]
+If our clients keep dying under your watch, I'm just gonna stop giving you bodyguard jobs.
 
 Message:  1010
 <ce>  Your client cautiously creeps down the stairs.
@@ -79,20 +82,70 @@ Message:  1028
 <ce> and not the assassins. When he
 <ce>  is satisfied, he sighs deeply.
 
+Message:  1029
+<ce> "My word! %pcn, you have provided me
+<ce>  proof that all my fears were just, and
+<ce> saved my life in the process! I must flee
+<ce> to ___escape_ quickly, now
+<ce> that I have my belongings. Thank you for
+<ce> extending your incredible skill on my behalf!"
+<ce> 
+<ce> He hands you the payment
+<ce> before returning to pack his things.
+
 Message:  1030
 %qdt:
  I've been assigned by
  The Fighters Guild in
- ___questgiver_ as a bodyguard
+ ___qgiver_ as a bodyguard
  to a fellow who lives in
  ___res_. I have to escort him to
  _res_ and ensure no
  one's inside. I have =timer_ days.
 
+Message:  1040
+<ce>  Silence pervades the house. A moment's wait
+<ce>  makes it clear no one is inside. Perhaps
+<ce>  the threats were in vain.
+<ce>  
+<ce>  "No! It must be you then! This is a trap, an awful
+<ce>  trap! I never should have trusted the Fighters
+<ce>  Guild! Of course it would be some %ra that slays me!"
+<ce>  
+<ce>  Paranoia floods _escort_'s mind.
+<ce>  Feeling trapped, %g1 draws a weapon to defend %g2self.
+
+Message:  1041
+<ce>  Your restraint speaks volumes. _escort_'s
+<ce>  madness begins to subside, and %g1 speaks to you plainly.
+<ce>  
+<ce>  "I... am so sorry. You truly are here to protect me,
+<ce>  aren't you? %oth. %god forgive me. Please,
+<ce>  just take the money and go. I need to leave and go far,
+<ce>  far away. %crn is no home for me. Thank you for
+<ce>  preserving my life, %pcf."
+<--->
+<ce>  Your restraint speaks volumes. _escort_'s
+<ce>  madness begins to subside, and %g1 speaks to you plainly.
+<ce>  
+<ce>  "Please, please forgive me. I am so ashamed. My mind is
+<ce>  wracked with the events of past weeks. Take the money
+<ce>  and go. I am in no condition to deal with other people now.
+<ce>  You are truly a credit to your order, %pcf."
+
+Message:  1042
+<ce>  Surely you are justified in defending yourself.
+<ce>  This cannot be called a crime, though the Fighters Guild's
+<ce>  reputation may not come out of this stainless.
+
+Message:  1043
+<ce>  You have slain your client in cold blood.
+<ce>  Word of this will reach _qgiver_.
+
 QBN:
 Item _reward_ gold
 
-Person _questgiver_ group Questor male
+Person _qgiver_ group Questor male
 Person _escort_ group Local_3.1 male
 
 Place _res_ remote house
@@ -101,8 +154,11 @@ Place _escape_ remote poorhome
 Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _death_ 00:07 00:10
 Clock _delay_ 00:01
+Clock _mtimer_ 00:05
+Clock _final_ 12:00
 
-Foe _enemy_ is 2 Nightblade
+Foe _enemy_ is 2 Rogue
+Foe _client_ is Bard
 
 --	Quest start-up:
 	start timer _timer_ 
@@ -110,11 +166,12 @@ Foe _enemy_ is 2 Nightblade
 	pc at _res_ set _inside_
 	say 1010
 	add _escort_ face
+	pick one of _true_ _dud_
 
-_inside_ task:
-	pick one of _begin_
-
+variable _inside_
+variable _true_
 _begin_ task:
+	when _inside_ and _true_
 	say 1020
 	drop _escort_ face
 	create foe _enemy_ every 0 minutes 1 times with 100% success
@@ -127,14 +184,46 @@ _success_ task:
 
 _delay_ task:
 	say 1028
+	say 1029
 	give pc _reward_ 
 	end quest 
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _qgiver_ 
 
 _death_ task:
 	say 1003
+	end quest
+
+_dud_ task:
+	when _inside_ and _dud_
+	say 1040
+	drop _escort_ face
+	create foe _client_ every 0 minutes 1 times with 100% success
+	start timer _mtimer_
+
+_kc_ task:
+	killed _client_
+
+_kc1_ task:
+	when _kc_ and not _mtimer_
+	say 1042
+	get item _reward_
+	end quest
+
+_mtimer_ task:
+	restrain foe _client_
+	say 1041
+	give pc _reward_
+	start timer _final_
+
+_final_ task:
+	end quest
+
+_kc2_ task:
+	when _kc_ and _mtimer_
+	say 1043
+	change repute with _qgiver_ by -10
 	end quest
 
 _timer_ task:

@@ -39,6 +39,23 @@ QuestComplete:  [1004]
 <ce> Well done. That should keep the %t
 <ce>  off our backs for awhile. Here's your gold.
 
+Message:  1010
+<ce>  "Wait! Wait, stop! I'm a member of the Thieves Guild!
+<ce>  Don't kill me! If you let me go, I promise I'll tell my
+<ce>  people good things about you! Please, won't you let me live?"
+
+Message:  1011
+<ce>  "There is honor among thieves, %ra. Leave
+<ce>  this place and pretend you never found me.
+<ce>  I will honor my word and spread your
+<ce>  good fame among the underworld as if my
+<ce>  life depended on it."
+
+Message:  1012
+<ce>  Thieves Guild or not, you accepted this task
+<ce>  and intend to follow through with it.
+<ce>  You extend your foe no mercy.
+
 Message:  1020
 <ce> Your foe lets out a blood-curdling
 <ce> scream which echoes through the halls.
@@ -58,6 +75,7 @@ QBN:
 Item _reward_ gold
 
 Person _qgiver_ group Questor male
+Person _dummytg_ faction The_Thieves_Guild
 
 Place _dungeon_ remote dungeon
 
@@ -86,6 +104,28 @@ Foe _enemy4_ is Spellsword
  _E.04_ task:
 	place foe _enemy4_ at _dungeon_
 
+_inj_ task:
+	injured _enemy1_
+	injured _enemy2_
+	injured _enemy3_
+	injured _enemy4_
+	pick one of _choice_ _nochoice_
+
+_choice_ task:
+	prompt 1010 yes _mercy_ no _quit_
+
+_mercy_ task:
+	say 1011
+	restrain foe _enemy1_
+	restrain foe _enemy2_
+	restrain foe _enemy3_
+	restrain foe _enemy4_
+
+_quit_ task:
+	say 1012
+	change repute with _dummytg_ by -5
+
+variable _nochoice_
 _slain_ task:
 	killed 1 _enemy1_ saying 1020 
 	killed 1 _enemy2_ saying 1020 
@@ -107,6 +147,10 @@ _pcgetsgold_ task:
 	when _qgclicked_ and _slain_ 
 	give pc _reward_ 
 	end quest 
+
+_tgup_ task:
+	when _timer_ and _mercy_
+	change repute with _dummytg_ by +5
 
 _timer_ task:
   say 1003

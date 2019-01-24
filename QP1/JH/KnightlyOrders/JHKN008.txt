@@ -32,19 +32,15 @@ QuestFail:  [1003]
 <ce>  not look to know what has happened.
 
 QuestComplete:  [1004]
-<ce>  _noble_ is led out of the palace
-<ce>  by two servants, waving to you as
-<ce>  %g1 goes. A page returns to speak
-<ce>  to you once time seems to resume.
+<ce>  _noble_ is led away by
+<ce>  armed guards. A page speaks to you.
 <ce>  
 <ce>  "%pcn, if all knights in %crn are like
 <ce>  yourself, we have no need for fear any longer.
 <ce>  Perhaps next they will send you to capture
 <ce>  Gortwog himself and bring an end to these
-<ce>  hostilities. _noble_ wishes to offer you a
-<ce>  simple _miner_ in gratitude for the service you
-<ce>  have rendered this day. We will greet you with
-<ce>  open arms when you return to ___palace_."
+<ce>  hostilities. Your name will be had in open renown
+<ce>  across the land if you remain faithful to the %t."
 
 Message:  1010
 <ce>  Two palace servants spy you from across
@@ -60,20 +56,35 @@ Message:  1018
 <ce>  This is the night the orcs plan to attack
 <ce>  the palace in ___palace_.
 
-Message:  1029
-<ce> As the sun rises above %crn, it
-<ce>  becomes clear that there was no need for
-<ce>  concern. A page comes to speak with you
-<ce>  as _noble_ is escorted outside.
+Message:  1020
+<ce>  You step into the palace and are met by a
+<ce>  frightful servant. The air is tense.
 <ce>  
-<ce>  "Good %pct, we thank you for your
-<ce>  service and willingness to exercise the
-<ce>  duties of a knight. This time the orcs were
-<ce>  thwarted in their plans, but it may not always
-<ce>  be so. _noble_ sends you sincere
-<ce>  thanks for your watchful eye."
+<ce>  "The report was false! We are deceived!
+<ce>  They have taken my master _noble_!
+<ce>  The court magician says they are headed
+<ce>  for _dung2_. Please help %g2!"
+
+Message:  1021
+<ce>  Please! Save me from these horrible creatures!
+<ce>  %oth, how I hate orcs!
+<--->
+<ce>  %god be praised! Free me from this place, please!
+
+Message:  1022
+<ce>  _noble_ suddenly bends over and
+<ce>  retches. Out of respect you look away until it's over.
 <ce>  
-<ce>  The page salutes and leaves, and you are left alone.
+<ce>  "%oth, forgive me. This hole is doing
+<ce>  worse things unto me by the minute. Please, get me
+<ce>  out of here. I don't think I can last a couple more
+<ce>  hours before my condition will become life-threatening."
+
+Message:  1023
+<ce>  _noble_ suddenly drops to the ground.
+<ce>  Your best attempts to resuscitate %g2 are in vain.
+<ce>  The filthiness within ___dung2_ has
+<ce>  overcome %g2.
 
 Message:  1030
 %qdt:
@@ -84,56 +95,67 @@ Message:  1030
  to prevent an attack on
  _noble_, who waits inside.
 
+ Message:  1031
+%qdt:
+ The servants of the palace at
+ ___palace_ informed me that
+ _noble_ has been taken
+ away to ___dung2_ by the orcs.
+ I should find %g2 and return %g2
+ to the palace.
+
 Message:  1035
 <ce> Abdicating _noble_ when %g1
 <ce> most needed you will reflect very poorly
 <ce> on yourself and the other knights.
 
-Message:  1099
-<ce>  _noble_'s life depends on you.
-<ce>  Get to ___palace_ in =2palace_ days.
-
 QBN:
-Item _miner_ mineral
-
-Person _questgiver_ group Questor male
-Person _noble_ group Noble
+Person _noble_ faction Random_Noble
 
 Place _palace_ remote palace
 
 Clock _2palace_ 00:00 0 flag 17 range 0 2
-Clock _death_ 00:35
-Clock _delay_ 00:01
+Clock _death_ 00:20
+Clock _victory_ 00:01
 Clock _failsafe_ 60.00:00
+Clock _sickdelay_ 0:02
+Clock _sickdeath_ 2:00 4:00 
 
 Place _dung_ remote dungeon
+Place _dung2_ remote dungeon
 
-Foe _orc1_ is 3 Orc_sergeant
+Foe _orc1_ is 2 Orc_sergeant
+Foe _orc2_ is Orc
+Foe _orc3_ is Orc_sergeant
+Foe _orc4_ is Orc_warlord
+Foe _orc5_ is Orc_shaman
 
 --	Quest start-up:
 	start timer _2palace_
 	start timer _failsafe_
 	log 1030 step 0 
   pc at _palace_ set _inside_
+  pc at _dung2_ set _orcs_
   pick one of _real_ _false_
 
 variable _real_
-variable _false_
+_false_ task:
+	pick one of _sick_ _ok_
+
 _night_ task:
   daily from 2:00 to 5:00
 
-_inside_ task:
-	start task _notice_
-
+variable _inside_
 _notice_ task:
+  when _inside_ and _real_
   say 1010
 
 _2palace_ task:
   say 1018
 
 _spawn_ task:
-  when _timeup_ and _inside_ and not _false_
-	create foe _orc1_ every 2 minutes 2 times with 100% success
+  when _timeup_ and _inside_ and _real_
+	create foe _orc1_ every 3 minutes 3 times with 100% success
 	start timer _death_
 	say 1015
 
@@ -143,21 +165,21 @@ _final_ task:
 
 variable _timeup_
 _failout_ task:
- when _timeup_ and not _inside_ and not _night_ and not _false_
+ when _timeup_ and not _inside_ and not _night_ and _real_
  say 1035
  end quest
 
 _success_ task:
 	killed 6 _orc1_
 	stop timer _death_
-	start timer _delay_
+	start timer _victory_
 
-_delay_ task:
-	give pc _miner_ 
+_victory_ task:
+	give pc nothing
+	legal repute +8
 	end quest 
 
 variable _death_
-
 _death2_ task:
  when _death_ and _inside_
  say 1003
@@ -168,16 +190,47 @@ _death3_ task:
  say 1035
  end quest
 
-_goodend_ task:
- when _timeup_ and _inside_ and not _real_ and not _night_
- say 1029
- end quest
+_capture_ task:
+	when _inside_ and _false_
+	stop timer _2palace_
+	say 1020
+	reveal _dung2_
+	place npc _noble_ at _dung2_
+	log 1031 step 1
 
-_qgclicked_ task:
-	clicked npc _questgiver_ 
-  say 1099
-	clear _qgclicked_
+_orcs_ task:
+	create foe _orc2_ every 16 minutes indefinitely with 11% success
+	create foe _orc3_ every 22 minutes indefinitely with 4% success
+	create foe _orc4_ every 45 minutes indefinitely with 3% success
+	create foe _orc5_ every 29 minutes indefinitely with 3% success
 
+_rescue_ task:
+	clicked npc _noble_
+	say 1021
+	add _noble_ face
+	hide npc _noble_
+
+variable _ok_
+variable _sick_
+_dis_ task:
+	when _rescue_ and _sick_
+	start timer _sickdelay_
+
+variable _sickdelay_
+_getsick_ task:
+	when _orcs_ and _sickdelay_
+	say 1022
+	start timer _sickdeath_
+
+variable _sickdeath_
+_nobledie_ task:
+	when _orcs_ and _sickdeath_
+	say 1023
+	end quest
+
+_win_ task:
+	when _inside_ and _rescue_
+	start task _victory_
 
 _failsafe_ task:
  end quest
