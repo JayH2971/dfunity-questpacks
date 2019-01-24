@@ -81,3 +81,4 @@ JHPQ041, na, P, 0, 0, a Perpetual Quest
 -various infestations in the region via rumor. Find dungeon and wipe out nest
 -reputation-based quests, depending on minimum (maximum?) rep with factions
 -request to deliver drug to graveyard. avoid cities. if refuse, could alert guard
+-haunted house
