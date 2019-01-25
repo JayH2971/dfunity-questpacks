@@ -1,0 +1,217 @@
+Quest: JHDB019
+DisplayName: Headscratcher
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> Where the art of killing excels, the art of
+<ce> defense must also rise in potency. We have
+<ce> received an accounting that will involve
+<ce> a studious mind as well as a lethal strike.
+<ce> I have confidence that you will solve the
+<ce> puzzle and slay the mark.
+
+RefuseQuest:  [1001]
+<ce> I do misplace my confidence occasionally.
+
+AcceptQuest:  [1002]
+<ce> Your task will take you to _res_
+<ce> of ___res_. To be short in words,
+<ce> you must undo a spell cast by a magician
+<ce> which keeps your mark from all kinds of
+<ce> detection, a sort of stasis effect
+<ce> touching both time and space. Our attempts
+<ce> to extract the magician ended his life, and
+<ce> now we only have his belongings left.
+<ce> One of these three enchanted objects will
+<ce> undo the stasis effect, and the other two
+<ce> will unleash curses on you: a decanter,
+<ce> a bell, and a wand. The mage left behind
+<ce> a code of sorts for his apprentices in case
+<ce> they would need to undo the spell. I will now
+<ce> copy it into your journal. Study it and ensure
+<ce> that you understand which of the three objects
+<ce> is the key to the puzzle. With that explanation
+<ce> given, you will have =timer_ days to slay
+<ce> your target and return.
+
+QuestFail:  [1003]
+<ce> You needed to resolve the puzzle
+<ce> and the accounting by now.
+
+QuestComplete:  [1004]
+<ce> The Brotherhood prides itself in the quality of
+<ce> its members. Your activities are proof that our work
+<ce> cannot be hindered. The Night Mother prevails once more.
+
+Message:  1010
+<ce> 
+
+Message:  1011
+<ce> Your mark relaxes a little upon seeing
+<ce> the basilisk's eye.
+<ce> 
+<ce> "I have never seen you before, which
+<ce> is a poor omen. Who are you and
+<ce> why have you sought me out?"
+
+Message:  1012
+<ce> _th_ tears the paper from your
+<ce> hands and starts to read, never fully
+<ce> taking %g3 attention from you. After
+<ce> reading it twice through, %g1
+<ce> starts to think.
+<ce> 
+<ce> "Fine then. %pcf, I guess I have no reason
+<ce> to doubt you. Where's the pay for this job?
+<ce> This wasn't a simple murder."
+
+Message:  1013
+<ce> You offer the _gem_, which %g1 eyes greedily.
+<ce> The instant it touches %g3 hand, %g3 eyes grow
+<ce> wide. Magical power seems to waft away from %g2.
+<ce> _th_ unsheathes %g3 weapon and shouts,
+<ce> "What?! No! No, I'll kill you! Die, filthy pig!"
+
+Message:  1014
+<ce> Without %g3 leadership, _th_'s guild will dissolve.
+
+Message:  1015
+<ce> You show _th_ the basilisk's eye
+<ce> and explain what the Dark Brotherhood has sent you
+<ce> to do. At first %g1 is far too suspicious and
+<ce> intends to escape, but you quickly show the letter
+<ce> and payment that were meant to deceive %g2.
+<ce> 
+<ce> "Can this be so? _qgiver_ has actually
+<ce> found us? This cannot be. And who are you to trick
+<ce> the Dark Brotherhood? What do you want?"
+<ce> 
+<ce> You insinuate that a payment would probably be
+<ce> appropriate for the service you've rendered.
+<ce> Grumbling a little, %g1 nevertheless sees the
+<ce> sense of paying you off. You accept =reward_ gold
+<ce> pieces in a small pouch, and _th_
+<ce> mutters a spell to disappear.
+<--->
+<ce> You show _th_ the basilisk's eye
+<ce> and explain what the Dark Brotherhood has sent you
+<ce> to do. At first %g1 is far too suspicious and
+<ce> intends to escape, but you quickly show the letter
+<ce> and payment that were meant to deceive %g2.
+<ce> 
+<ce> "I should believe this but it is hard. How could
+<ce> they have found us and studied us so? And who are
+<ce> you? Why have you told us this?"
+<ce> 
+<ce> You insinuate that a payment would probably be
+<ce> appropriate for the service you've rendered.
+<ce> Grumbling a little, %g1 nevertheless sees the
+<ce> sense of paying you off. You accept =reward_ gold
+<ce> pieces in a small pouch, and _th_
+<ce> mutters a spell to disappear.
+
+Message:  1020
+<ce> _th_'s suspicions win %g2 over.
+<ce> "I knew it!" %g1 shouts before casting a
+<ce> spell, conveying %g2 out of the building entirely.
+<ce> You have lost your opportunity.
+
+Message:  1030
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a decanter, and
+ a wand, only one of which will undo the spell
+ and make the mark vulnerable.
+
+QBN:
+Person _qgiver_ group Questor male
+Person _th_ factiontype Thieves_Den
+
+Item _letter_ letter
+Item _gem_ gem
+Item _eye_ basilisk_eye
+Item _reward_ gold
+
+Place _res_ remote house
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _conv_ 00:02
+
+Foe _enemy_ is Assassin
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0 
+    get item _letter_
+    get item _gem_
+    get item _eye_
+    place npc _th_ at _res_
+
+_step1_ task:
+    clicked npc _th_
+    start timer _conv_
+    prompt 1010 yes _trick_ no _step1a_
+    _eye_ used do _step2_
+    _letter_ used do _conv_
+    _gem_ used do _conv_
+
+_trick_ task:
+    say 1015
+    get item _reward_
+    hide npc _th_
+    end quest
+
+variable _step1a_
+_step2_ task:
+    take _eye_ from pc
+    clear _step1_
+    say 1011
+    _letter_ used do _step3_
+    _gem_ used do _conv_
+
+_step3_ task:
+    take _letter_ from pc
+    clear _step2_
+    say 1012
+    _gem_ used do _step4_
+
+_step4_ task:
+    take _gem_ from pc
+    say 1013
+    hide npc _th_
+    place foe _enemy_ at _res_
+    stop timer _conv_
+    give item _gem_ to _enemy_
+    give item _letter_ to _enemy_
+    give item _eye_ to _enemy_
+    make _gem_ permanent
+    make _letter_ permanent
+    make _eye_ permanent
+
+_conv_ task:
+    say 1020
+    hide npc _th_
+    end quest
+
+_slain_ task:
+	killed 1 _enemy_
+    say 1014
+
+_qgclicked_ task:
+	clicked npc _qgiver_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_ 
+	clear _qgclicked_ _clearclick_ 
+
+_pcreward_ task:
+	when _qgclicked_ and _slain_ 
+	give pc nothing
+	end quest 
+
+_timer_ task:
+	end quest
