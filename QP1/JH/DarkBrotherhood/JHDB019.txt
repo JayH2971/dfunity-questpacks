@@ -358,6 +358,7 @@ _act3_ task:
 _trapa_ task:
     say 1011
     teleport pc to _dung_
+    make pc ill with Plague
 
 _trapb_ task:
     say 1012
@@ -370,6 +371,7 @@ _wina_ task:
 _trapc_ task:
     say 1015
     teleport pc to _dung_
+    make pc ill with Plague
 
 _trapd_ task:
     say 1016
@@ -382,6 +384,7 @@ _winb_ task:
 _trape_ task:
     say 1019
     teleport pc to _dung_
+    make pc ill with Plague
 
 _trapf_ task:
     say 1020
