@@ -44,3 +44,4 @@ JHKNA01, KnightlyOrder, P, 2, 0, a quest to wipe out vigilantes in a city
 -go to city covered by protection ring, slay ringleader, drop rep with TG
 -bring an exterminator to resolve an infestation
 -slay a mage who teleports beasts into a palace
+-go into dungeon to look for someone, start sprawling quest

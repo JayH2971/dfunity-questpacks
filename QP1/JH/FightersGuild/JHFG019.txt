@@ -1,0 +1,345 @@
+Quest: FGDFU00A
+DisplayName: Scattered Fiends
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  Hey %pcf, glad you're around. Just
+<ce>  being straight with ya, but something
+<ce>  weird's going on in the city. I dunno
+<ce>  what's causing it. We've got a rash
+<ce>  of summoned monsters showing up in
+<ce>  shops, wreaking havoc. You'll probably
+<ce>  hear about it if you stick around for
+<ce>  a few minutes. Want to give us a hand
+<ce>  going around for a few exterminations?
+
+RefuseQuest:  [1001]
+<ce>  Fine then. Go find something else to do.
+
+AcceptQuest:  [1002]
+<ce> You hear a scream coming from outside.
+<ce>  
+<ce> "It's in _place1_! Someone help!"
+<ce>  
+<ce>  _questgiver_ says, "Well, that's your cue.
+<ce> We'll talk about your reward when they're dead.
+<ce> Just don't let up 'til it's over, all right?
+<ce> There are innocent people in this city that need help."
+<--->
+<ce> You hear a scream coming from outside.
+<ce>  
+<ce> "A monster's gotten into _place1_!
+<ce> There are innocent people in there! Someone, please help them!"
+<ce>  
+<ce>  _questgiver_ says, "Well, get going.
+<ce> I'll gather up some kinda reward when it's over.
+<ce> Don't go dragging your feet, either. People could
+<ce> die if you're too slow."
+
+QuestFail:  [1003]
+<ce> The town guard's not going to keep this
+<ce>  city safe, and neither will you apparently.
+
+QuestComplete:  [1004]
+<ce>  You have fun, %pcf? What a rush. It's a good
+<ce>  thing we've got people like you around here.
+<ce>  Hopefully we'll find out who's behind this
+<ce>  and put a longsword between his ribs.
+<ce>  But that's neither here nor there.
+<ce>  Take this, enjoy it. And don't be surprised
+<ce>  if the %t finds out about your good deed.
+<--->
+<ce>  Wowie! You can haul like the best of 'em,
+<ce>  huh %pcf? Great job. I'm sure the %t's
+<ce>  gonna want to know who kept the city safe
+<ce>  today. Sure wasn't the town guard. We had
+<ce>  some of our other people fighting off imps
+<ce>  while you were busy, but they're just gonna
+<ce>  get some gold. The real treasure's for you.
+<ce>  All yours, buddy.
+
+QuestorPostFailure: [1009]
+Thankfully other people kept the city safe in your absence.
+
+Message:  1020
+<ce>  A cry comes from outside.
+<ce>  
+<ce>  "It's in _place2_! Run!"
+<--->
+<ce>  A cry comes from outside.
+<ce>  
+<ce>  "A monster's in _place2_!
+<ce>  Somebody come quick!"
+
+Message:  1021
+<ce> You hear a cry outside.
+<ce>  
+<ce>  "Something's in _place3_!
+<ce>  Help! Anyone!"
+<--->
+<ce> You hear a cry outside.
+<ce>  
+<ce>  "Kill it! It's in _place3_!
+<ce> Anyone, help!"
+
+Message:  1022
+<ce> You hear someone shout in distress.
+<ce>  
+<ce>  "A monster's in _place4_!
+<ce> Someone kill it!"
+<--->
+<ce> You hear someone shout in distress.
+<ce>  
+<ce>  "It's horrible! It's in _place4_!
+<ce>  Call for the mages!"
+
+Message:  1023
+<ce>  You hear a wail of despair.
+<ce>  
+<ce>  "Get it out! Kill it! It's
+<ce>  in _place5_!"
+<--->
+<ce>  You hear a wail of despair.
+<ce>  
+<ce>  "It's in _place5_!
+<ce>  Someone, anyone, help!"
+
+Message:  1024
+<ce>  The city has fallen silent.
+
+Message:  1030
+%qdt:
+ The Fighters Guild in
+ ___questgiver_ needs me to
+ dispatch monsters that are
+ appearing in buildings throughout
+ the city. I have to hurry.
+ The first is _place1_.
+
+Message:  1031
+%qdt:
+ I need to hurry to _place2_.
+
+Message:  1032
+%qdt:
+ A monster is in _place3_.
+
+Message:  1033
+%qdt:
+ An enemy is in _place4_.
+
+Message:  1034
+%qdt:
+ I heard a cry to help _place5_.
+
+Message:  1035
+%qdt:
+ Everything has gone quiet.
+
+QBN:
+Item _reward_ magic_item
+
+Person _questgiver_ group Questor male
+
+Place _place1_ local random
+Place _place2_ local random
+Place _place3_ local random
+Place _place4_ local random
+Place _place5_ local random
+
+Clock _timer1_ 00:20
+Clock _delay1_ 00:00 00:01
+Clock _timer2_ 00:20
+Clock _delay2_ 00:00 00:01
+Clock _timer3_ 00:20
+Clock _delay3_ 00:00 00:01
+Clock _timer4_ 00:20
+Clock _delay4_ 00:00 00:01
+Clock _timer5_ 00:20
+Clock _delay5_ 00:00 00:01
+Clock _failsafe_ 6:00
+
+Foe _mon1a_ is Gargoyle
+Foe _mon1b_ is Dragonling
+Foe _mon2a_ is Frost_daedra
+Foe _mon2b_ is Fire_daedra
+Foe _mon3a_ is Mummy
+Foe _mon3b_ is Wraith
+Foe _mon4a_ is Flesh_atronach
+Foe _mon4b_ is Daedroth
+Foe _mon5a_ is Daedra_seducer
+Foe _mon5b_ is Lich
+Foe _im_ is Imp
+Foe _ha_ is Harpy
+Foe _sp_ is Spriggan
+
+--	Quest start-up:
+	start timer _timer1_ 
+  start timer _failsafe_
+	log 1030 step 0 
+	pick one of _spawn1a_ _spawn1b_
+
+_misc_ task:
+  when not _delay5_
+  create foe _im_ every 4 minutes indefinitely with 80% success
+  create foe _ha_ every 11 minutes indefinitely with 60% success
+  create foe _sp_ every 5 minutes indefinitely with 40% success
+
+_spawn1a_ task:
+	pc at _place1_ do _mon11_
+
+_mon11_ task:
+  create foe _mon1a_ every 0 minutes 1 times with 100% success
+  stop timer _timer1_
+
+_spawn1b_ task:
+	pc at _place1_ do _mon12_
+
+_mon12_ task:
+  create foe _mon1b_ every 0 minutes 1 times with 100% success
+  stop timer _timer1_
+
+_killed1_ task:
+	killed _mon1a_
+	killed _mon1b_
+  start timer _delay1_
+
+_delay1_ task:
+  say 1020
+	log 1031 step 1
+	pick one of _spawn2a_ _spawn2b_
+  start timer _timer2_
+
+_spawn2a_ task:
+	pc at _place2_ do _mon21_
+
+_mon21_ task:
+  create foe _mon2a_ every 0 minutes 1 times with 100% success
+  stop timer _timer2_
+
+_spawn2b_ task:
+	pc at _place2_ do _mon22_
+
+_mon22_ task:
+  create foe _mon2b_ every 0 minutes 1 times with 100% success
+  stop timer _timer2_
+
+_killed2_ task:
+	killed _mon2a_
+	killed _mon2b_
+  start timer _delay2_
+
+_delay2_ task:
+	say 1021
+	log 1032 step 2
+  pick one of _spawn3a_ _spawn3b_
+  start timer _timer3_
+
+_spawn3a_ task:
+	pc at _place3_ do _mon31_
+
+_mon31_ task:
+  create foe _mon3a_ every 0 minutes 1 times with 100% success
+  stop timer _timer3_
+
+_spawn3b_ task:
+	pc at _place3_ do _mon32_
+
+_mon32_ task:
+  create foe _mon3b_ every 0 minutes 1 times with 100% success
+  stop timer _timer3_
+
+_killed3_ task:
+	killed _mon3a_
+	killed _mon3b_
+  start timer _delay3_
+
+_delay3_ task:
+	say 1022
+	log 1033 step 3
+  pick one of _spawn4a_ _spawn4b_
+  start timer _timer4_
+
+_spawn4a_ task:
+	pc at _place2_ do _mon41_
+
+_mon41_ task:
+  create foe _mon4a_ every 0 minutes 1 times with 100% success
+  stop timer _timer4_
+
+_spawn4b_ task:
+	pc at _place4_ do _mon42_
+
+_mon42_ task:
+  create foe _mon4b_ every 0 minutes 1 times with 100% success
+  stop timer _timer4_
+
+_killed4_ task:
+	killed _mon4a_
+	killed _mon4b_
+  start timer _delay4_
+
+_delay4_ task:
+	say 1023
+	log 1034 step 4
+  pick one of _spawn5a_ _spawn5b_
+  start timer _timer5_
+
+_spawn5a_ task:
+	pc at _place5_ do _mon51_
+
+_mon51_ task:
+  create foe _mon5a_ every 0 minutes 1 times with 100% success
+  stop timer _timer5_
+
+_spawn5b_ task:
+	pc at _place5_ do _mon52_
+
+_mon52_ task:
+  create foe _mon5b_ every 0 minutes 1 times with 100% success
+  stop timer _timer5_
+
+_killed5_ task:
+	killed _mon5a_
+	killed _mon5b_
+  start timer _delay5_
+
+_delay5_ task:
+	log 1035 step 5
+	say 1024
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _killed5_ 
+	give pc _reward_ 
+  legal repute 5
+	end quest 
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_timer1_ task:
+	start task _fail_
+
+_timer2_ task:
+	start task _fail_
+
+_timer3_ task:
+	start task _fail_
+
+_timer4_ task:
+	start task _fail_
+
+_timer5_ task:
+	start task _fail_
+
+_failsafe_ task:
+	start task _fail_
+
+_fail_ task:
+  say 1003
+  end quest 
+
+_clearclick_ task:
+	when _qgclicked_ and not _killed5_ 
+	clear _qgclicked_ _clearclick_

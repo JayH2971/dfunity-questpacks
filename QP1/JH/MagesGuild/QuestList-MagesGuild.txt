@@ -36,3 +36,4 @@ JHNCA01, Necromancers, P, 0, 0, build reputation with Necromancers
 -go to various NPCs in cities to pick up needed ingredients
 -artifact quest, join two halves of a document and take it to an expert. Expert will be slain if enough time passes. Artifact is on Daedra Lord's body.
 -JHMG020 had 1
+-shifting paper log: changing messages
