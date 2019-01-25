@@ -1,4 +1,4 @@
-Quest: FGDFU00A
+Quest: JHFG019
 DisplayName: Scattered Fiends
 -- Message panels
 QRC:
@@ -13,9 +13,18 @@ QuestorOffer:  [1000]
 <ce>  hear about it if you stick around for
 <ce>  a few minutes. Want to give us a hand
 <ce>  going around for a few exterminations?
+<--->
+<ce>  %pcf, could you stick around for awhile?
+<ce>  ___questgiver_'s not looking all that hot
+<ce>  right now. Some problem with randomly appearing
+<ce>  monsters has everyone spooked, and it's just a
+<ce>  matter of time before we hear another call
+<ce>  for help. You wanna play the hero?
 
 RefuseQuest:  [1001]
 <ce>  Fine then. Go find something else to do.
+<--->
+<ce>  No big deal. The Fighters Guild has plenty of heroes.
 
 AcceptQuest:  [1002]
 <ce> You hear a scream coming from outside.
@@ -53,11 +62,14 @@ QuestComplete:  [1004]
 <ce>  Wowie! You can haul like the best of 'em,
 <ce>  huh %pcf? Great job. I'm sure the %t's
 <ce>  gonna want to know who kept the city safe
-<ce>  today. Sure wasn't the town guard. We had
-<ce>  some of our other people fighting off imps
+<ce>  today. Sure wasn't the town guard. We sent out
+<ce>  some of our other people to fight off imps
 <ce>  while you were busy, but they're just gonna
-<ce>  get some gold. The real treasure's for you.
+<ce>  get some gold. The real reward's for you.
 <ce>  All yours, buddy.
+
+QuestorPostSuccess:   [1008]
+___questgiver_ owes you big-time, buddy.
 
 QuestorPostFailure: [1009]
 Thankfully other people kept the city safe in your absence.
@@ -159,6 +171,7 @@ Clock _delay4_ 00:00 00:01
 Clock _timer5_ 00:20
 Clock _delay5_ 00:00 00:01
 Clock _failsafe_ 6:00
+Clock _failsafe2_ 3.00:00
 
 Foe _mon1a_ is Gargoyle
 Foe _mon1b_ is Dragonling
@@ -181,7 +194,7 @@ Foe _sp_ is Spriggan
 	pick one of _spawn1a_ _spawn1b_
 
 _misc_ task:
-  when not _delay5_
+  when not _killed5_
   create foe _im_ every 4 minutes indefinitely with 80% success
   create foe _ha_ every 11 minutes indefinitely with 60% success
   create foe _sp_ every 5 minutes indefinitely with 40% success
@@ -304,10 +317,15 @@ _killed5_ task:
 	killed _mon5a_
 	killed _mon5b_
   start timer _delay5_
+  stop timer _failsafe_
+  start timer _failsafe2_
 
 _delay5_ task:
 	log 1035 step 5
 	say 1024
+    remove foe _im_
+    remove foe _ha_
+    remove foe _sp_
 
 _pcgetsgold_ task:
 	when _qgclicked_ and _killed5_ 
@@ -343,3 +361,6 @@ _fail_ task:
 _clearclick_ task:
 	when _qgclicked_ and not _killed5_ 
 	clear _qgclicked_ _clearclick_
+
+_failsafe2_ task:
+    end quest
