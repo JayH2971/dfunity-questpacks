@@ -68,6 +68,7 @@ Message:  1040
 QBN:
 Clock _timer_ 1.00:00
 Clock _failsafe_ 90.00:00
+Clock _tele_ 0:00
 
 Foe _orc1_ is Orc_warlord
 Foe _orc2_ is Orc_shaman
@@ -84,6 +85,9 @@ _begin_ task:
 
 _surrender_ task:
          say 1020
+         start timer _tele_
+
+_tele_ task:
          teleport pc to _dung_
          say 1021
          pick one of _pcsick_ _pcnotsick_
@@ -102,9 +106,12 @@ _si2_ task:
         when _pcsick_ and _medi_
         say 1023
 
-variable _inside_
+_inside_ task:
+        start task _needesc_
+
+variable _needesc_
 _escape_ task:
-         when _surrender_ and not _inside_
+         when _needesc_ and not _inside_
          give pc nothing
          end quest
 

@@ -96,7 +96,7 @@ Person _questgiver_ group Questor male
 Place _res_ remote house
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
-Clock _delay_ 00:01 00:05
+Clock _delay_ 00:01 00:02
 
 Foe _acro_ is Acrobat
 Foe _bguard_ is Barbarian
@@ -114,12 +114,11 @@ variable _inside_
 _spawn_ task:
  	when _inside_ and _e1_
 	say 1019
- 	create foe _bguard_ every 1 minutes 1 times with 100% success
+ 	create foe _bguard_ every 0 minutes 1 times with 100% success
 
 _extend_ task:
 	when _inside_ and _e2_
 	say 1025
-	create foe _bguard_ every 1 minutes 1 times with 100% success
 
 _slain_ task:
 	killed 1 _acro_ saying 1020 

@@ -4,7 +4,7 @@ DisplayName: Inhospitable Guests
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  %pcf, __qgiver_ has need of your
+<ce>  %pcf, ==questgiver_ has need of your
 <ce>   help once more. Mere days ago
 <ce>  ___home_ was overtaken
 <ce>   by a band of thugs who have taken

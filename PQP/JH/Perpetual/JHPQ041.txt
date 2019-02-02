@@ -24,7 +24,7 @@ QuestComplete:  [1004]
 <ce>  "That will do, now won't it %pcf?
 <ce>  Thank you for coming to my aid. I forgot to
 <ce>  station a Recall spell far from here and these
-<ce>  cretins would have had my number in a few days' time.
+<ce>  cretins would have had my head in a few days' time.
 <ce>  Please take this. I hope it compensates your trouble."
 <ce>  
 <ce>  He offers you a reward before casting an invisibility
@@ -75,6 +75,7 @@ Item _reward_ gem
 Place _res_ remote house2
 
 -Clock _2res_ 00:00 0 flag 2 range 0 2
+Clock _begin_ 00:02
 Clock _2res_ 2.00:00 4.00:00
 Clock _failsafe_ 00:10
 Clock _timer_ 12:00
@@ -89,7 +90,7 @@ Foe _e5_ is Mage
 
 --	Quest start-up:
 -    start timer _failsafe_
-    start task _begin_
+    start timer _begin_
 
 _failsafe_ task:
     end quest

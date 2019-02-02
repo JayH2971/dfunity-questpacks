@@ -47,13 +47,22 @@ Message:  1011
 <ce>  The cause of its curse must be within.
 
 Message:  1012
-<ce>  This place is starting to play games with you.
+<ce>  This place has a peculiar effect on you.
 
 Message:  1013
-<ce>  HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA
-
-Message:  1014
-<ce> master will be pleased
+ screams of the tortured fill my ears
+<--->
+ this is my home now
+ i will be happy here
+<--->
+ why will they not leave
+<--->
+ hope is the canker of the soul
+<--->
+ a slave to dear =e1_
+ joyous future let it be
+<--->
+ master will be pleased
 
 Message:  1015
 <ce> pantheon of chaos
@@ -92,7 +101,7 @@ Message:  1033
  a slave to dear =e1_
  joyous future let it be
 <--->
-<ce> 
+ master will be pleased
 <--->
  five hundred years ago in mournhold city of gems there lived a
  blind widow woman and her only child a strapping young man he was
@@ -110,31 +119,9 @@ Message:  1033
  short symmachus was a typical young dark elf man remarkable only for his
  size it was rumored that he had a bit of nord blood in him
 <--->
-         _,.-------.,_
-     ,;~'             '~;,
-   ,;                     ;,
-  ;                         ;
- ,'                         ',
-,;                           ;,
-; ;      .           .      ; ;
-| ;   ______       ______   ; |
-|  `/~"     ~" . "~     "~\'  |
-|  ~  ,-~~~^~, | ,~^~~~-,  ~  |
- |   |        }:{        |   |
- |   l       / | \       !   |
- .~  (__,.--" .^. "--.,__)  ~.
- |     ---;' / | \ `;---     |
-  \__.       \/^\/       .__/
-   V| \                 / |V
-    | |T~\___!___!___/~T| |
-    | |`IIII_I_I_I_IIII'| |
-    |  \,III I I I III,/  |
-     \   `~~~~~~~~~~'    /
-       \   .       .   / 
-         \.    ^    ./
+close your eyes
 <--->
-skull skull skull skull skull skull skull skull skull skull skull skull skull skull skull 
-
+behind you
 
 QBN:
 Item _stat_ finger
@@ -154,13 +141,14 @@ Place _crypt_ remote dungeon
 Clock _delay_ 00:00 00:02
 Clock _timer_ 14.00:00
 Clock _t1_ 2:00
-Clock _t2_ 2:00 4:00
+-Clock _t2_ 2:00 4:00
 Clock _t3_ 2:00 4:00
 Clock _t4_ 2:00 4:00
-Clock _trip_ 00:02
+Clock _trip_ 00:03
 Clock _failsafe_ 14.00:00
+Clock _scream_ 00:02
 
-Foe _garg_ is 6 Gargoyle
+Foe _garg_ is 2 Gargoyle
 Foe _e1_ is Ghost
 Foe _e2_ is Wraith
 Foe _e3_ is Mummy
@@ -190,9 +178,9 @@ _inside_ task:
     say 1011
 
 _trapped_ task:
-    create foe _e1_ every 6 minutes indefinitely with 3% success
-    create foe _e2_ every 5 minutes indefinitely with 3% success
-    create foe _e3_ every 7 minutes indefinitely with 4% success
+    create foe _e1_ every 10 minutes indefinitely with 2% success
+    create foe _e2_ every 9 minutes indefinitely with 2% success
+    create foe _e3_ every 11 minutes indefinitely with 3% success
 
 _tele_ task:
     when _trapped_ and not _inside_
@@ -201,16 +189,22 @@ _tele_ task:
 
 _t1_ task:
     log 1032 step 0
-    start timer _t2_
     say 1012
 
 _t2_ task:
-    create foe _garg_ every 0 minutes 5 times with 100% success
+    injured _e1_
+    injured _e2_
+    injured _e3_
+    injured _e4_
+    start task _g1_
+
+_g1_ task_:
+    create foe _garg_ every 0 minutes indefinitely with 50% success
     start timer _trip_
 
 _trip_ task:
     remove foe _garg_
-    say 1014
+    clear _g1_
     start timer _t3_
     place item _stat_ at _crypt_
 
@@ -239,6 +233,17 @@ _t3_ task:
     make _fake10_ permanent
     start timer _t4_
     say 1013
+
+_inj_ task:
+    injured _e4_
+    start task _sc1_
+
+_sc1_ task:
+    play sound scream_female_2 every 0 minutes 1 times
+    start timer _scream_
+
+_scream_ task:
+    clear _sc1_
 
 _t4_ task:
     say 1015
