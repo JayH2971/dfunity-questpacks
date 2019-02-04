@@ -116,7 +116,7 @@ _B.01_ task:
 
 _bears_ task:
 	when _outside_ and not _day_ and not _slain_ and not _T.01_
-	create foe _bear_ every 3 minutes indefinitely with 95% success
+	create foe _bear_ every 3 minutes indefinitely with 65% success
 	create foe _bear_ every 1 minutes indefinitely with 20% success
 
 _T.01_ task:
@@ -125,25 +125,19 @@ _T.01_ task:
 _tigers_ task:
 	when _outside_ and not _day_ and not _slain_ and not _B.01_
 	create foe _tiger_ every 1 minutes indefinitely with 20% success
-	create foe _tiger_ every 3 minutes indefinitely with 95% success
+	create foe _tiger_ every 3 minutes indefinitely with 65% success
 
 _kill4_ task:
-	killed 4 _bear_
-	killed 4 _tiger_
+	killed 3 _bear_
+	killed 3 _tiger_
 	pick one of _continue_ _slain_
 
 _kill5_ task:
-	killed 5 _bear_
-	killed 5 _tiger_
-	pick one of _continue_ _slain_ 
-
-_kill6_ task:
-	killed 6 _bear_
-	killed 6 _tiger_
-	pick one of _slain_
+	killed 4 _bear_
+	killed 4 _tiger_
+	start task _slain_ 
 
 variable _continue_
-
 _slain_ task:
 	say 1020
 
