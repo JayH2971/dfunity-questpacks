@@ -35,9 +35,13 @@ Message:  1029
 
 QBN:
 
+Clock _init_ 0:00
 Clock _timer_ 0:02
 
 --   Quest start-up:
+    start timer _init_
+
+_init_ task:
     prompt 1027 yes _pqstart_ no _pqfail_
 
 _pqfail_ task:
