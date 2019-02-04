@@ -29,7 +29,7 @@ JHMG017, MagesGuild, M, 0, 0, a quest to identify a document
 JHMG018, MagesGuild, M, 0, 0, a quest to purify and deliver a poisoned liquid
 JHMG019, MagesGuild, M, 2, 0, a quest to root out a necromancer
 JHMG020, MagesGuild, M, 9, 1, an attempt on your life
-JHMGX00, MagesGuild, M, 95, 0, a quest to investigate an ancient lich
+JHMGX00, MagesGuild, M, 95, 1, a quest to investigate an ancient lich
 JHNCA00, Necromancers, P, 0, 0, entry into JHNCA01
 JHNCA01, Necromancers, P, 0, 0, build reputation with Necromancers
 -go to various NPCs in cities to pick up needed ingredients
