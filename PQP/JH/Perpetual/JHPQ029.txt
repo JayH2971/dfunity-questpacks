@@ -17,9 +17,9 @@ QuestFail:  [1003]
 <ce>  ERROR 1003 JHPQ029
 
 QuestComplete:  [1004]
-<ce>  The aggressor is dead. The Argonian can barely speak but 
-<ce>  beckons for you to come closer. Nearby spectators begin to
-<ce>  apply bandages to his wounds. He speaks to you in a croaking voice.
+<ce>  The adversary is dead. The Argonian can barely speak but 
+<ce>  beckons for you to come closer. Nearby spectators begin to apply
+<ce>  bandages to his wounds. He croaks to you with labored breaths.
 <ce>  
 <ce>  "Our people are not welcome here. Why must we suffer
 <ce>  this violence? I beg you, take this before the guard comes.
@@ -28,9 +28,9 @@ QuestComplete:  [1004]
 <ce>  He hands you a small bag before relenting to the villagers' grasp,
 <ce>  carrying him away to an inn to recuperate from his wounds.
 <--->
-<ce>  The aggressor is dead. The Argonian can barely speak but
-<ce>  beckons for you to come closer. Nearby spectators begin to
-<ce>  apply bandages to her wounds. She speaks to you in a croaking voice.
+<ce>  The adversary is dead. The Argonian can barely speak but
+<ce>  beckons for you to come closer. Nearby spectators begin to apply
+<ce>  bandages to her wounds. She croaks to you with labored breaths.
 <ce>  
 <ce>  "Our people are not welcome here. Why must we suffer
 <ce>  this violence? I beg you, take this before the guard comes.

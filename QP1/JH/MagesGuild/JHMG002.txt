@@ -46,15 +46,27 @@ Message:  1029
 <ce>  
 <ce>  Is there a Mages Guild
 <ce>  hall in ___qgiver_?
+<--->
+<ce>  Hmph. As if I would listen to a cave creature
+<ce>  with your appearance. Yes, yes, I hear you, that
+<ce>  _qgiver_ wants me back, but who are
+<ce>  you to tell me? A worthy mage would have a worthy
+<ce>  appearance, and you have failed in that respect.
+<ce>  I should sooner silence and slay you, but I must
+<ce>  entertain the outlandish possibility that you
+<ce>  are actually here on %g3 errand.
+<ce>  So indulge me in my questions, mageling.
+<ce>  
+<ce>  Is there a Mages Guild
+<ce>  hall in ___qgiver_?
 
 Message:  1030
 %qdt:
  I must descend into
  ___dung_ to bring
  out an errant scholar. We should
- then return to the Mages
- Guild in ___qgiver_
-  in =timer_ days.
+ then return to the Mages Guild
+ in ___qgiver_ in =timer_ days.
 
 Message:  1031
 <ce>  The Open spell belongs to the Thaumaturgy school.
@@ -239,6 +251,7 @@ _pcgetsgold_ task:
 _badend_ task:
   when _qgclicked_ and _fail_
 	say 1048
+	change repute with _scholar_ by +5
 	end quest
 
 _qgclicked_ task:

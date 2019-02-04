@@ -108,6 +108,7 @@ Item _reward_ gold
 Person _qgiver_ group Questor male
 Person _guide_ faction The_Mages_Guild
 
+Clock _vict_ 0:00
 Clock _goal_ 6.00:00 12.00:00
 
 ---- Quest startup
@@ -129,6 +130,9 @@ _findgrave_ task:
 
 _victory_ task:
 	when _findcult_ and _findfarm_ and _findgrave_
+	start timer _vict_
+
+_vict_ task:
 	give pc _reward_
 	end quest
 

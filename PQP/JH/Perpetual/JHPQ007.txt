@@ -34,7 +34,7 @@ Message:  1010
 Message:  1011
 <ce>        With one swift movement you sink it into the 
 <ce>        bottom of your pack and watch as %g1 runs
-<ce>        in fear. The shortening distance suggests
+<ce>        away. The shortening distance suggests
 <ce>        the chase is about to end. Once you're left 
 <ce>        alone, you notice the bag contains a small
 <ce>        amount of _subs_.

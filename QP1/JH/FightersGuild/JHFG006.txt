@@ -66,11 +66,21 @@ Message:  1010
 
 Message:  1020
 <ce>  You hear rustling inside the home.
-<ce>  Your client trembles visibly.
+<ce>  Your client trembles.
 <ce>  
 <ce> "No! They're here! And they'll be
 <ce>  outside! I knew it all along!
 <ce> Kill them before they kill me!"
+<ce>  
+<ce>  Before you can react, he flees in
+<ce> terror to another area of the house.
+<--->
+<ce>  You hear rustling inside the home.
+<ce>  Your client trembles.
+<ce>  
+<ce> "No! I'm not ready to die! Please,
+<ce> please, do something!
+<ce> They're coming for me!"
 <ce>  
 <ce>  Before you can react, he flees in
 <ce> terror to another area of the house.
