@@ -34,3 +34,4 @@ JHMC001, FightersGuild, P, 0, 0, a quest to help someone fleeing the Dark Brothe
 -punishment for lacking skill checks (magic schools, weapon types)
 -non-violent ways through quests for TG, MG, DB
 -lie to get out of some consequences. Streetwise check vs rep drop
+-protect an extreme debtor. simple/injury/kill rewards
