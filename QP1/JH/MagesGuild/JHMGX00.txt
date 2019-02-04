@@ -1,6 +1,6 @@
 -- Mages Guild
 -- Min Rep: 95
-Quest: JHMG00X
+Quest: JHMGX00
 DisplayName: Death's Embrace
 -- Message panels
 QRC:
@@ -46,18 +46,9 @@ QuestComplete:  [1004]
 <ce>           this time. We will send you a letter in several
 <ce>           weeks' time should we determine a course
 <ce>           for future action. In the meantime, please
-<ce>           take this reward. %crn donated it
-<ce>           specifically for this task, to go directly into
-<ce>           your hands. Be ready for our word.
-<ce>            
-<ce>                        TO BE CONTINUED
-
-Message:  1099
-<ce>            No turning back, %pcf. Get to
-<ce>            ___mondung_. Find some
-<ce>           way to get this creature to speak to
-<ce>           you and make known its desires. We
-<ce>           will wait day and night for your return. 
+<ce>           take this reward. The %t donated it
+<ce>           specifically for this task, to go
+<ce>           directly into your hands.
 
 Message:  1020
 <ce>              A voice booms from deep within this
