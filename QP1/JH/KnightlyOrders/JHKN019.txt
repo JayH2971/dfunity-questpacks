@@ -86,10 +86,9 @@ Message:  1029
 <ce> But I consider our bargain fulfilled. You have proven
 <ce> yourself one with power among Daedra."
 <ce> 
-<ce> The voice ceases. As a parting gift, the surrounding
-<ce> daedra remain. Now that your part is over, the knights
-<ce> can arrive soon to put down the remaining forces.
-<ce> You are free to leave the building.
+<ce> The voice ceases. The great sound of rushing air
+<ce> returns, pulling all the daedra to their point of origin.
+<ce> Soon you are left alone. You are free to leave the building.
 
 Message:  1030
 %qdt:
@@ -106,6 +105,7 @@ QBN:
 Clock _failsafe_ 7.00:00
 Clock _trick_ 00:10
 Clock _battle_ 00:01
+Clock _bellt2_ 00:00
 
 Person _qgiver_ group Questor male
 
@@ -146,11 +146,18 @@ _inside_ task:
 
 _invoke_ task:
   take _bell_ from pc
-  play sound belltower every 0 minutes 1 times
   stop timer _failsafe_
   start timer _trick_
   start timer _battle_
+  start task _bellt_
   say 1011
+
+_bellt_ task:
+  play sound belltower every 0 minutes 1 times
+  start timer _bellt2_
+
+_bellt2_ task:
+  clear _bellt_
 
 _war_ task:
   when _invoke_ and not _victory_
@@ -159,9 +166,9 @@ _war_ task:
   create foe _dsed_ every 0 minutes 1 times with 75% success
   create foe _daedroth_ every 0 minutes 1 times with 100% success
   create foe _daedroth_ every 0 minutes 1 times with 100% success
-  create foe _dlord_ every 1 minutes indefinitely with 85% success
-  create foe _dsed_ every 1 minutes indefinitely with 75% success
-  create foe _daedroth_ every 1 minutes indefinitely with 95% success
+  create foe _dlord_ every 2 minutes indefinitely with 85% success
+  create foe _dsed_ every 1 minutes indefinitely with 45% success
+  create foe _daedroth_ every 2 minutes indefinitely with 95% success
 
 _minustrick_ task:
   killed 2 _dlord_
@@ -172,7 +179,7 @@ variable _trick_
 _epicfail_ task:
   when _trick_ and not _minustrick_
   say 1020
-  change repute with _qgiver_ by -22
+  change repute with _qgiver_ by -23
   make pc ill with Plague
   teleport pc to _faildung_
   say 1021
@@ -181,7 +188,7 @@ _epicfail_ task:
 _bigfail_ task:
   when _invoke_ and not _inside_ and not _trick_ and not _victory_
   say 1025
-  change repute with _qgiver_ by -22
+  change repute with _qgiver_ by -23
   end quest
 
 _slain_ task:
@@ -193,6 +200,9 @@ variable _battle_
 _victory_ task:
   when _slain_ and _battle_
   say 1029
+  remove foe _dlord_
+  remove foe _dsed_
+  remove foe _daedroth_
 
 _qgclicked_ task:
 	clicked npc _qgiver_ 
