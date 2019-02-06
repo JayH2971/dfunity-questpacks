@@ -7,12 +7,24 @@ QuestorOffer:  [1000]
 <ce>	%pcf, do you like hearing from the %t? I do not.
 <ce>	Most guild members also do not. Our research must
 <ce>	 not be interrupted by petty squabbles such as some
-<ce>	mere murderer holed up in ___dung_, as is
+<ce>	mere murderer holed up in some ruins, as is
 <ce>	the case at this moment. We received a request this
 <ce>	morning to slay one such criminal that the Fighters Guild
 <ce>	simply could not locate. Knowing of your combat skill,
 <ce>	we wish to bestow this task upon you for the sum
 <ce>	of =reward_ gold pieces. Are you ready to teleport?
+<--->
+<ce>	Surely, it must be said that the %t takes
+<ce>	advantage of us at times. It's not as though there aren't
+<ce>	plenty of dashing, youthful adventurers across %crn
+<ce>	willing to slay a criminal in a hole for money.
+<ce>	Nevertheless, their incompetence lays the task
+<ce>	instead at our feet. We have been given the order
+<ce>	of disposing of an outlaw in some ruins,
+<ce>	who must be surprised by the use of teleportation.
+<ce>	Apparently all other means have failed to find
+<ce>	the knave. If you are willing and ready, we should
+<ce>	like to teleport you this instant to get this over with.
 
 RefuseQuest:  [1001]
 <ce>	%oth. No one is, apparently.
@@ -55,7 +67,7 @@ Message:  1030
 
 QBN:
 Clock _failsafe_ 180.00:00
-Clock _battle_ 4:00 1.01:00
+Clock _battle_ 2:00 4:00
 
 Item _reward_ gold
 
@@ -78,7 +90,7 @@ variable _inside_
 variable _battle_
 _spawn_ task:
 	when _battle_ and _inside_ and not _slain_
-	create foe _enemy_ every 5 minutes indefinitely with 10% success
+	create foe _enemy_ every 5 minutes indefinitely with 5% success
 
 _slain_ task:
 	killed _enemy_

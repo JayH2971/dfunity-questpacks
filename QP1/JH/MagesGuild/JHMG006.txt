@@ -10,8 +10,21 @@ QuestorOffer:  [1000]
 <ce>  identification spells fail us, and testing it directly seems
 <ce>  like a dangerously absurd proposition, knowing it could
 <ce>  hold any effect in Tamriel. What the Odylic Mages
-<ce>  cannot identify, _npc_ can. Please take it to %g2
-<ce>  in ___dung_ so we can proceed.
+<ce>  cannot identify, one of our greater experts can.
+<ce>  Please deliver it for identification.
+<--->
+<ce>  One of the grandiose mysteries of Tamriel is
+<ce>  that there are simply forms of magic and power
+<ce>  we do not yet understand. My sincerest desire
+<ce>  is that the empire will last another 1500 years
+<ce>  so we may have time to unravel every enigma
+<ce>  across the world itself in peace. But to
+<ce>  get to the point, a very strange _tri_ was
+<ce>  delivered to us recently with a latent enchantment
+<ce>  we cannot draw out. The regular identification
+<ce>  spells avail us nothing. This requires the help of
+<ce>  a true expert. Will you take it into the ruins
+<ce>  to obtain that manner of help?
 
 RefuseQuest:  [1001]
 <ce>  Even so, we refuse to test it in this guild hall.
@@ -20,11 +33,12 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce>  Very well, here it is. I would ask you not to tamper with
 <ce>  it, but I doubt you could in any case. If our specialists
-<ce>  could not unleash its power, so much less will you. And
-<ce>  please treat _npc_ with respect, being a former
-<ce>  member of the Guild. We do not want some controversy
-<ce>  to arise merely because someone cannot control %pg3 tongue.
-<ce>  I will see you here within =timer_ days to hear
+<ce>  could not unleash its power, so much less will you. You
+<ce>  will most likely find _npc_ in a hole
+<ce>  called ___dung_. Please treat %g2 with respect,
+<ce>  for %g1 is a former member of the Guild. We do not want some
+<ce>  controversy to arise merely because someone cannot control %pg3
+<ce>  tongue. I will see you here within =timer_ days to hear
 <ce>  _npc_'s report. %god watch over you.
 
 QuestFail:  [1003]
@@ -163,7 +177,7 @@ _falsegetsgold_ task:
 
 _badend_ task:
 	say 1003
-    change repute with _qgiver_ by -20
+    change repute with _qgiver_ by -23
 	end quest
 
 _qgclicked_ task:

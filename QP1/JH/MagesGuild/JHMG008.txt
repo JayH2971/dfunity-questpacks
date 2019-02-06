@@ -15,6 +15,16 @@ QuestorOffer:  [1000]
 <ce> the Dark Brotherhood knave absconded
 <ce> to. In the face of danger, will you
 <ce> stand firm to retrieve the research?
+<--->
+<ce> Oh! How I hate to think upon this.
+<ce> Please, %pct, help me find an answer
+<ce> to this. Some filthy scoundrel from
+<ce> the Dark Brotherhood slew one of
+<ce> our couriers and took some research
+<ce> papers off for %god knows why.
+<ce> We need those notes, and we need
+<ce> someone capable of getting them back
+<ce> by any means necessary. Help us, please.
 
 RefuseQuest:  [1001]
 <ce> Ah, one of those brave ones when

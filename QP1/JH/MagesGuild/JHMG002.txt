@@ -10,13 +10,20 @@ QuestorOffer:  [1000]
 <ce>  this time, and it's quite likely %g1 has merely
 <ce>  lost track of time and needs to be fished out by one
 <ce>  of our capable members. Will you do so?
+<--->
+<ce>  _scholar_, one of our more
+<ce>  talented experts, has taken a temporary
+<ce>  leave to conduct research out in some
+<ce>  ruins. Nevertheless, we need %g2 back here
+<ce>  to help with some tasks and no one is able to
+<ce>  go fetch %g2. Are you willing and capable?
 
 RefuseQuest:  [1001]
 <ce> I suppose you simply do not understand
 <ce>  what we'll be lacking through this absence.
 
 AcceptQuest:  [1002]
-<ce> A comely answer. Head on into the depths
+<ce> A comely answer. Head on into ___dung_
 <ce>  and find _scholar_, who will likely
 <ce>  need a kindly reminder that the research had
 <ce>  a time limit attached. Tell %g2 to return with

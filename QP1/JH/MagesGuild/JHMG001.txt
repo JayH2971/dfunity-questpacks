@@ -14,10 +14,22 @@ QuestorOffer:  [1000]
 <ce> your help in culling a student too
 <ce>  well-versed in Illusion magic for
 <ce>  one's own good.
+<--->
+<ce>  I regret to speak of this matter, but it
+<ce>  is a necessary task. The Mages Guild,
+<ce>  wielding all the power that it does,
+<ce>  assumes responsibility for any misuse that
+<ce>  arises out of its teachings. On occasion
+<ce>  there is no solution to a problematic
+<ce>  pupil except a mercy killing. The %t
+<ce>  insists that we do away with this
+<ce>  shapeshifting villain. Will you help us?
 
 RefuseQuest:  [1001]
 <ce>  Very well, but what if
 <ce> you are the next target?
+<--->
+<ce> Loyalty, %pct. Prove your loyalty.
 
 AcceptQuest:  [1002]
 <ce> An admirable response, my child.
@@ -35,7 +47,6 @@ AcceptQuest:  [1002]
 <ce> Go there and find our pupil, in whatever
 <ce> state as may be the case, and end this 
 <ce> menace for us. You have =timer_ days.
-
 
 QuestFail:  [1003]
 <ce> The Mages Guild expected you to slay the illusionist by now.

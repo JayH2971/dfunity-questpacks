@@ -14,6 +14,14 @@ QuestorOffer:  [1000]
 <ce>  and capable. For a sum of =reward_ gold pieces,
 <ce>  will you accompany an inexperienced researcher
 <ce>  to slay an atronach in hiding?
+<--->
+<ce>  I do hope you'll accept this request. One of our
+<ce>  members has been waiting several days for a
+<ce>  traveling companion, hoping to conduct some
+<ce>  research in some ruins in %crn
+<ce>  but too fearful of death to attempt it alone.
+<ce>  Will you please accompany our good colleague
+<ce>  to further our purposes?
 
 RefuseQuest:  [1001]
 <ce>  Truly, you should evaluate your ways. The guild would

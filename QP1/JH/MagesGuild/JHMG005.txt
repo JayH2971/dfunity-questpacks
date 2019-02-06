@@ -14,6 +14,16 @@ QuestorOffer:  [1000]
 <ce>  we wish to risk damaging an ancient artifact
 <ce>  for the sake of scientific advancement. Are you
 <ce>  brave enough to shatter it and show its effect?
+<--->
+<ce>  Oh! I had almost forgotten about this one.
+<ce>  Do you see this _item_? Clever thing, but
+<ce>  entirely beyond our comprehension. We figured
+<ce>  we would have to ask for some of the greater wizards
+<ce>  in %crn for help, but perhaps you can do in a pinch.
+<ce>  What we need is someone willing to test any magical
+<ce>  effects it has, and see if it is harmful or beneficial
+<ce>  to the user. Please understand the degree of risk this
+<ce>  request entails. Will you attempt it for us?
 
 RefuseQuest:  [1001]
 <ce>  Oh, come now, my child. I'm too old to do it myself.
