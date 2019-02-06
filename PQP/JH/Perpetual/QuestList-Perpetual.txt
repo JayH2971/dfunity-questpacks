@@ -78,6 +78,8 @@ JHPQ038, na, P, 0, 0, a Perpetual Quest
 JHPQ039, na, P, 0, 0, a Perpetual Quest
 JHPQ040, na, P, 0, 0, a Perpetual Quest
 JHPQ041, na, P, 0, 0, a Perpetual Quest
+JHPQ042, na, P, 0, 0, a Perpetual Quest
+JHPQ043, na, P, 0, 0, a Perpetual Quest
 -various infestations in the region via rumor. Find dungeon and wipe out nest
 -reputation-based quests, depending on minimum (maximum?) rep with factions
 -request to deliver drug to graveyard. avoid cities. if refuse, could alert guard
