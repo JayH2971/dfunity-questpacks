@@ -9,6 +9,14 @@ QuestorOffer:  [1000]
 <ce> but still in need of someone to lead it back
 <ce> here. If it's not too much of a bother, would
 <ce> you be willing to go find it?
+<--->
+<ce> A dolt of a student led an atronach off on
+<ce> a sight-seeing trip and forgot to cast the
+<ce> proper binding spell. This is made worse
+<ce> by the fact that he forgot about its
+<ce> existence until returning here. If you'll
+<ce> be heading out, perhaps you can go fetch
+<ce> it for us and save us some embarrassment.
 
 RefuseQuest:  [1001]
 <ce> This was a simple task, you know.

@@ -16,6 +16,15 @@ QuestorOffer:  [1000]
 <ce> Thieves Guild will pursue their carrier.
 <ce> Will you escort these papers, knowing of
 <ce> the danger surrounding them?
+<--->
+<ce> We have need of a delivery, but only after
+<ce> certain days have passed. We have here
+<ce> papers from the great _dummy_
+<ce> that need to get to ___res_
+<ce> after =2res_ days have passed. Meanwhile,
+<ce> it's quite likely the Thieves Guild will
+<ce> attempt to waylay whoever carries them.
+<ce> Can you provide them a safe delivery?
 
 RefuseQuest:  [1001]
 <ce> I certainly hope our guild hall can

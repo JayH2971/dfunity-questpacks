@@ -16,6 +16,15 @@ QuestorOffer:  [1000]
 <ce> to face %g2, but we have no other
 <ce> choice. Are you brave enough to face
 <ce> this dangerous foe?
+<--->
+<ce> A %pct of great skill has become too
+<ce> great a danger for %crn. Though sharing
+<ce> your rank, _enmage_ has
+<ce> dabbled too much in dangerous works
+<ce> for too long and must be put down.
+<ce> You will face great danger, but we
+<ce> have a help available for you if you
+<ce> choose to accept our request. Will you?
 
 RefuseQuest:  [1001]
 <ce> At this point the Archmagister himself

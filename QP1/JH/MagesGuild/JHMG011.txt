@@ -12,13 +12,23 @@ QuestorOffer:  [1000]
 <ce> of students safe during the =goal_
 <ce> days the trip will take, you will be
 <ce> paid =reward_ gold. Feeling up to it?
+<--->
+<ce> %pcf, how was your walk here? And
+<ce> more to the point, do you like the outdoors?
+<ce> Occasionally we send out our more feeble
+<ce> members to gain some real world experience,
+<ce> requiring some danger and some dust between
+<ce> the toes. All in the name of building character,
+<ce> of course. But while one instructor teaches them
+<ce> the way, another keeps the group safe. Will you
+<ce> do the protecting this time?
 
 RefuseQuest:  [1001]
 <ce> Oh, drat. Why is this so difficult?
 
 AcceptQuest:  [1002]
-<ce> "Splendid! Let me call out for %g2
-<ce> now. I'm sure they'll be ready to
+<ce> "Splendid! _guide_ is around here.
+<ce> I'm sure the group will be ready to
 <ce> go immediately. Wait here."
 <ce> 
 <ce> _qgiver_ calls out, and

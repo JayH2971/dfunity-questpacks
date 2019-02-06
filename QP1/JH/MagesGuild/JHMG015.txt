@@ -13,6 +13,17 @@ QuestorOffer:  [1000]
 <ce> Fighters Guild are now poised to kill %g2,
 <ce> unaware that %g1 is innocent. Will you
 <ce> defend our poor friend?
+<--->
+<ce> We have something of a rescue mission that needs
+<ce> an immediate counterpart. A good friend and
+<ce> member of the Mages Guild, someone named
+<ce> _dummy_, has been cursed to take
+<ce> the form of an animal by shapeshifters and
+<ce> no one has been able to cast off the spell.
+<ce> Long story short, the Fighters Guild is now
+<ce> on its way to slay our poor friend, believing
+<ce> %g2 to be a legitimate animal in a house.
+<ce> Someone must go defend %g2. Is it you?
 
 RefuseQuest:  [1001]
 <ce> Then %g3 life will be on your conscience
