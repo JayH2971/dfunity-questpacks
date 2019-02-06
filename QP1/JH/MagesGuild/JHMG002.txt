@@ -253,6 +253,7 @@ _badend_ task:
 	say 1048
 	change repute with _scholar_ by +5
 	end quest
+--plus5 is intentional, not meant to be full reward
 
 _qgclicked_ task:
 	clicked npc _qgiver_ 
