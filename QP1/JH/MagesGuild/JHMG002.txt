@@ -13,7 +13,7 @@ QuestorOffer:  [1000]
 <--->
 <ce>  _scholar_, one of our more
 <ce>  talented experts, has taken a temporary
-<ce>  leave to conduct research out in some
+<ce>  leave to conduct research in some
 <ce>  ruins. Nevertheless, we need %g2 back here
 <ce>  to help with some tasks and no one is able to
 <ce>  go fetch %g2. Are you willing and capable?

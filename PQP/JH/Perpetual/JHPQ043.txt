@@ -46,16 +46,16 @@ Message:  1011
 
 Message:  1012
 <ce> A tripwire snaps behind the door as you
-<ce> pull it open. A bell sounds. Deeper within the
+<ce> push it open. A bell sounds. Deeper within the
 <ce> house you hear a shout.
 <ce> 
 <ce> "It worked, boys! Come on!"
 <--->
 <ce> A tripwire snaps behind the door as you
-<ce> pull it open. A bell sounds. Deeper within the
+<ce> push it open. A bell sounds. Deeper within the
 <ce> house you hear a shout.
 <ce> 
-<ce> "That's gotta be %pg2! Move!"
+<ce> "Hurry! Move! Go!"
 
 QBN:
 Person _client_ group Local_3.0

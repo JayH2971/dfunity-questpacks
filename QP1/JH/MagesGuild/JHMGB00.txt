@@ -1,0 +1,253 @@
+Quest: JHMGB00
+DisplayName: The Price of Freedom
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  ERROR JHMGB00 1000
+
+RefuseQuest:  [1001]
+<<ce>  ERROR JHMGB00 1001
+
+AcceptQuest:  [1002]
+<ce>  ERROR JHMGB00 1002
+
+QuestFail:  [1003]
+<ce>  "Too slow. Deal's off."
+<ce>  
+<ce>  You turn around to look for _person_,
+<ce>  and find yourself completely alone. This
+<ce>  escape artist has gotten away.
+
+QuestComplete:  [1004]
+<ce>  You enter _tavern_ and turn around
+<ce>  to settle this matter with "_person_,"
+<ce>  only to find yourself alone. The instructions
+<ce>  to enter the tavern distracted you for %g3 getaway.
+<ce>  Presumably %g1 will uphold %g3 end of the bargain and
+<ce>  not frame you.
+
+RumorsPostFailure:   [1006]
+You're %pcf? HAHAHAHA!
+<--->
+%pcf? As in, THE %pcf? Wow, the %t's gotta hate you.
+
+Message:  1010
+<ce>  "What a joy! Thank you, %pcn!
+<ce>  My name is _person_.
+<ce>  Let us be going off to ___dummydung_.
+<ce>  That is what you were told, right? We're going
+<ce>  to hunt scorpions for their stingers and sell
+<ce>  them for gold. Those combat skills of yours won't
+<ce>  go to waste, I tell you!"
+<ce>  
+<ce>  _person_ bows before
+<ce>  you and awaits your departure.
+<--->
+<ce>  "Oh, thank you, thank you, %pcn!
+<ce>  I'm _person_, and we're going
+<ce>  to be the best of friends! Please lead the
+<ce>  way to ___dummydung_. My poor friend
+<ce>  has been lost there for days and I don't know
+<ce>  what to do! His research is going to be
+<ce>  invaluable for the guild! So let us be going
+<ce>  quickly, don't ya know?"
+
+Message:  1011
+<ce>  Now outside the guild hall, _person_'s
+<ce>  demeanor changes, and %g1 speaks in a very
+<ce>  different tone.
+<ce>  
+<ce>  "So %pcf, right? Here's the deal.
+<ce>  I've got a friend with evidence that'll prove
+<ce>  you stole some _tri_ belonging to the %t.
+<ce>  If you don't want to be known as one of %crn's
+<ce>  stupidest and most incompetent criminals, you're
+<ce>  gonna do what I say.
+<ce>  
+<ce>  "I know a shop over in ___shop_ that's
+<ce>  gonna have a good sum of gold in it. How much
+<ce>  isn't important to you. You're gonna go with
+<ce>  me over there and pick it up, probably fighting
+<ce>  off some lackeys they left to keep the place
+<ce>  guarded. Then you're gonna take me somewhere
+<ce>  else and we'll forget we ever knew each other.
+<ce>  If you're smart, you'll agree to it."
+
+Message:  1012
+<ce>  See? I knew the Mages Guild could bring out
+<ce>  some semi-intelligent folks. Let's get this
+<ce>  over with so we can go back to our ordinary
+<ce>  lives. The place is called _shop_,
+<ce>  in ___shop_. Don't take longer
+<ce>  than =2shop_ days. Hurry it up.
+
+Message:  1013
+<ce>  "_person_" takes the bag from your hands.
+<ce>  
+<ce>  "Nice work. Get me over to ___tavern_.
+<ce>  We'll settle this in _tavern_.
+<ce>  You've got =2tavern_ days."
+
+Message:  1020
+<ce>  "Really? Too bad."
+<ce>  
+<ce>  Without a moment's hesitation _person_,
+<ce>  or whatever %g3 real name is, casts an illusion
+<ce>  spell and disappears from sight. Your best efforts
+<ce>  to find %g2 are in vain.
+
+Message:  1021
+<ce>  "Really? Too bad."
+<ce>  
+<ce>  Without a moment's hesitation _person_,
+<ce>  or whatever %g3 real name is, casts an illusion
+<ce>  spell. Luckily, your skill with stealth lets you
+<ce>  see what the ordinary eye would not. If you
+<ce>  slew this scoundrel now, you could save your
+<ce>  reputation before it gets impacted by %g3 plot.
+
+Message:  1022
+<ce>  "Really? Too bad."
+<ce>  
+<ce>  Without a moment's hesitation _person_,
+<ce>  or whatever %g3 real name is, casts an illusion
+<ce>  spell. Luckily, your knowledge of illusion magic
+<ce>  grants you the ability to counter the effect. If
+<ce>  you slew this scoundrel now, you could save your
+<ce>  reputation before it gets impacted by %g3 plot.
+
+Message:  1023
+<ce>  "%oth! I..."
+<ce>  
+<ce>  With "_person_" dead, you hope
+<ce>  the plot to sully your reputation also dies.
+
+Message:  1030
+%qdt:
+ _person_, a fellow member
+ of the Mages Guild, has asked for my
+ help in _dummydung_.
+
+Message:  1031
+%qdt:
+ "_person_," who pretended to
+ be a member of the Mages Guild in good
+ standing, is blackmailing me with false
+ evidence to help %g2 steal money from
+ a store called _shop_
+ in ___shop_. I have to do
+ this within =2shop_ days.
+
+Message:  1032
+%qdt:
+ I have given the money to "_person_"
+ and must now lead %g2 to a tavern called
+ _tavern_, in ___tavern_.
+
+QBN:
+Person _person_ group Local_3.0
+
+Item _bag_ small_sack
+Item _tri_ trinket
+
+Place _dummydung_ remote dungeon
+Place _shop_ remote weaponstore
+Place _mhall_ local magery
+Place _tavern_ remote tavern
+
+Clock _2shop_ 00:00 0 flag 1 range 0 2
+Clock _2tavern_ 00:00 0 flag 1 range 0 2
+Clock _repfail_ 3:00
+
+Foe _nme_ is Nightblade
+Foe _guard_ is Warrior
+
+--	Quest start-up:
+	say 1010
+    add _person_ face
+    pc at _mhall_ do _inside_
+    log 1030 step 0
+
+variable _inside_
+_reveal_ task:
+    when not _inside_
+    prompt 1011 yes _begin_ no _flee_    
+
+_flee_ task:
+    start timer _repfail_
+    remove log step 0
+    drop _person_ face
+
+_stealth_ task:
+    when skill Stealth is at least 60
+
+_illu_ task:
+    when skill Illusion is at least 40
+
+_flee1_ task:
+    when _flee_ and not _stealth_ and not _illu_
+    say 1020
+
+_flee2_ task:
+    when _flee_ and _stealth_ and not _illu_
+    say 1021
+    create foe _nme_ every 0 minutes 1 times with 100% success
+    restrain foe _nme_
+
+_flee3_ task:
+    when _flee_ and not _stealth_ and _illu_
+    say 1022
+    create foe _nme_ every 0 minutes 1 times with 100% success
+    restrain foe _nme_
+
+_flee4_ task:
+    when _flee_ and _stealth_ and _illu_
+    say 1023
+    create foe _nme_ every 0 minutes 1 times with 100% success
+    restrain foe _nme_
+
+_kill_ task:
+    killed _nme_
+    say 1023
+    stop timer _repfail_
+    end quest
+
+_repfail_ task:
+    remove foe _nme_
+    legal repute -20
+    end quest
+
+_begin_ task:
+    say 1012
+    start timer _2shop_
+    log 1031 step 0
+    place item _bag_ at _shop_
+    pc at _shop_ do _spawn_
+
+_spawn_ task:
+    create foe _guard_ every 0 minutes 3 times with 100% success
+
+_2shop_ task:
+    say 1003
+	start timer _repfail_
+    drop _person_ face
+
+_steal_ task:
+    clicked item _bag_
+    say 1013
+    take _bag_ from pc
+    pc at _tavern_ do _victory_
+    log 1032 step 1
+    stop timer _2shop_
+    start timer _2tavern_
+
+_victory_ task:
+    drop _person_ face
+    give pc nothing
+    end quest
+
+_2tavern_ task:
+    say 1003
+	start timer _repfail_
+    drop _person_ face

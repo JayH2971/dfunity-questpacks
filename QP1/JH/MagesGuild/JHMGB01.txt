@@ -1,0 +1,190 @@
+Quest: JHMGB01
+DisplayName: Hunter of the Dark
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  ERROR JHMGB01 1000
+
+RefuseQuest:  [1001]
+<<ce>  ERROR JHMGB01 1001
+
+AcceptQuest:  [1002]
+<ce>  ERROR JHMGB01 1002
+
+QuestFail:  [1003]
+<ce>  _person_ slumps onto the ground,
+<ce>  having suffered too much from the strains of travel.
+<ce>  As %g1 gurgles, you have little more option than to
+<ce>  carry on. The vampires should be satisfied with %g3 death.
+
+QuestComplete:  [1004]
+<ce>  You take the _tri_ and break it in half with a
+<ce>  satisfying crunch, and then crush it under foot.
+<ce>  The vampires will no longer have any reason to pursue you.
+
+Message:  1010
+<ce>  "Oh, good! Thank you for coming to help.
+<ce>  You are a master at combat, yes? I know
+<ce>  that will be a great help, for we're
+<ce>  going to rescue the famed researcher
+<ce>  _dummy_. You lead the way to
+<ce>  ___dung_ and I'll help with the rest.
+<ce>  I'll just mark it on your map."
+<ce>  
+<ce>  _person_ shakes your hand eagerly.
+
+Message:  1011
+<ce>  I've gotta come clean with you, %pcf.
+<ce>  Everything I told them in there, that's all
+<ce>  a lie. I just joined this place 'cause I need
+<ce>  help, really bad. I've got vampires coming after
+<ce>  me. They wanna kill me. I left some holy relic as
+<ce>  a prank down in ___dung_. Went down
+<ce>  with some friends and we all had a good laugh,
+<ce>  said we'd really stirred up some trouble now.
+<ce>  I'm the only one left alive. Please, you gotta
+<ce>  help me. I can't go down there myself with them
+<ce>  bloodsuckers coming on me. I'll die. They've
+<ce>  got my scent, and now it's on you too. We're
+<ce>  gonna go smash that relic together, right?
+
+Message:  1012
+<ce>  %oth. Really, you know, you have no idea
+<ce>  what this means to me. Some day I'll pay you back,
+<ce>  I promise. Lead the way to ___dung_.
+
+Message:  1013
+<ce>  This vampire hisses at you hatefully.
+<ce>  No doubt there will be many more to follow.
+
+Message:  1014
+<ce>  _person_ jumps for joy.
+<ce>  
+<ce>  "Finally! Oh, %god, how I've waited for this!
+<ce>  Here, let me sift some of that dust through
+<ce>  my fingers. I can't believe I survived!
+<ce>  You really are a hero! Wow, what a story!
+<ce>  I'll tell it to all my posterity!"
+<ce>  
+<ce>  After moving %g3 fingers through the _tri_'s
+<ce>  remains, %g1 absent-mindedly wanders off toward the
+<ce>  dungeon entrance. Perhaps a simple expression of
+<ce>  gratitude is too much to ask.
+
+Message:  1020
+<ce>  "What? No, it doesn't matter! They know my
+<ce>  scent! It's on you! You're gonna have to destroy
+<ce>  the thing anyway!"
+<ce>  
+<ce>  You push _person_ hard, putting as much
+<ce>  distance between %g2 and you as possible.
+
+Message:  1021
+<ce>  A hooded figure approaches you.
+<ce>  
+<ce>  "The transgressor has been slain.
+<ce>  Our vendetta is satisfied.
+<ce>  Go in peace."
+<ce>  
+<ce>  You catch a glimpse of red eyes glancing
+<ce>  at you. Your messenger then dashes away
+<ce>  with superhuman speed.
+
+Message:  1030
+%qdt:
+ _person_, a fellow member
+ of the Mages Guild, has asked for my
+ help in ___dung_.
+
+Message:  1031
+%qdt:
+ _person_ told me the truth:
+ he and several friends went into
+ ___dung_ and planted a holy
+ relic as a joke to disturb a clan of vampires,
+ who have taken their vengeance on everyone else.
+ They are tracking his scent and it is now on me.
+ The only way to appease their wrath is to
+ destroy the relic in the depths.
+
+QBN:
+Person _person_ group Local_3.0
+Person _dummy_ group Local_3.1
+
+Item _tri_ Holy_relic
+
+Place _dung_ remote dungeon
+Place _mhall_ local magery
+
+Clock _timer_ 60.00:00 75.00:00
+Clock _delay_ 00:00
+Clock _delay2_ 00:01
+
+Foe _n1_ is Vampire
+Foe _n2_ is Vampire
+Foe _n3_ is Vampire
+Foe _n4_ is Ancient_vampire
+
+--	Quest start-up:
+	say 1010
+    add _person_ face
+    pc at _mhall_ do _inside_
+    log 1030 step 0
+    place item _tri_ at _dung_
+    reveal _dung_
+
+variable _inside_
+_reveal_ task:
+    when not _inside_
+    prompt 1011 yes _begin_ no _flee_    
+    start task _spawn_
+    log 1031 step 1
+    start timer _timer_
+
+_spawn_ task:
+    create foe _n1_ every 0 minutes 1 times with 100% success
+    create foe _n2_ every 120 minutes indefinitely with 35% success
+    create foe _n3_ every 800 minutes indefinitely with 100% success
+    create foe _n4_ every 400 minutes indefinitely with 10% success
+
+_flee_ task:
+    drop _person_ face
+    say 1020
+
+_begin_ task:
+    say 1012
+
+_kill_ task:
+    killed _n1_
+    killed _n2_
+    killed _n3_
+    killed _n4_
+    say 1013
+
+_victory_ task:
+    clicked item _tri_
+    give pc nothing
+    start timer _delay_
+    start timer _delay2_
+    clear _spawn_
+
+variable _delay_
+_vic2_ task:
+    when _delay_ and _begin_
+    drop _person_ face
+    say 1014
+
+_delay2_ task:
+    end quest
+
+variable _timer_
+_onefail_ task:
+    when _timer_ and _begin_
+    say 1003
+    end quest
+
+_twofail_ task:
+    when _timer_ and _flee_
+    say 1021
+    end quest
