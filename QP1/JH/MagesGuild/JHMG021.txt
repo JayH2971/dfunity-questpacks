@@ -5,9 +5,9 @@ QRC:
 
 QuestorOffer:  [1000]
 <ce>  One of our newer members came to me earlier
-<ce>  with a convoluted request involving bear
+<ce>  with a convoluted request involving gargoyle
 <ce>  skins, debt, thaumaturgy, and a bookstore
-<ce>  belonging to a friend. After a good five minutes
+<ce>  belonging to a friend. After a good ten minutes
 <ce>  I still could not grasp the slightest idea
 <ce>  behind the proposition, except that a partner
 <ce>  was urgently needed, one with a degree of combat
@@ -19,9 +19,9 @@ QuestorOffer:  [1000]
 <ce>  fewer hours in the guild hall than I years,
 <ce>  has battered me with repeated requests involving
 <ce>  some extremely complicated scheme promising
-<ce>  results of a magical kind. I doubt much of the
+<ce>  results of a paradisiacal kind. I doubt much of the
 <ce>  plot's coherence or logic but I need to get back
-<ce>  to my work, Would you be kind enough to get
+<ce>  to my work, Would you be kind enough to pull
 <ce>  this insistent child off my back for a time?
 
 RefuseQuest:  [1001]
@@ -52,7 +52,7 @@ QuestComplete:  [1004]
 QBN:
 Person _qgiver_ group Questor male
 
-Clock _delay_ 00:01
+Clock _delay_ 6:00
 
 ---- Quest startup
     give pc nothing

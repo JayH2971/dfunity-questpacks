@@ -33,4 +33,4 @@ JHDBA00, DarkBrotherHood, M, P, 0, branch of JHDB007
 -find a person in hiding. Interrogate a family member by attack.
 -a quest to slay a member of the city guard who interferes with the Brotherhood. Injury leads to failure timer
 -present item to get ransom money or confession
--wizard threatens to teleport enemies against you if slay mark
+-blackguards questline

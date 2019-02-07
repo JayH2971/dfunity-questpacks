@@ -4,8 +4,8 @@ DisplayName: Inhospitable Guests
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  %pcf, ==questgiver_ has need of your
-<ce>   help once more. Mere days ago
+<ce>  %pcf, ==questgiver_ has
+<ce>   need of your help once more. Mere days ago
 <ce>  ___home_ was overtaken
 <ce>   by a band of thugs who have taken
 <ce>   to robbing, repossessing, and so on.
@@ -29,16 +29,20 @@ AcceptQuest:  [1002]
 <ce>  of ___home_ is in your hands.
 
 QuestFail:  [1003]
-<ce>   
+<ce>   _questgiver_ 
 
 QuestComplete:  [1004]
-<ce>    You should feel proud, %pcf.
-<ce>   You have done a great deed.
+<ce>    You should feel proud, %pcf,
+<ce>   for you have done a great deed.
+<ce>   Such sacrifices are not forgotten.
 
-Message: 1020
+Message:  1010
+<ce>   Your entrance is noted, and the ruffians gather.
+
+Message: 1011
 <ce> This band of thugs is no more.
 
-Message:  1024
+Message:  1020
 <ce> Once you step onto the property,
 <ce> a youth quickly scampers over
 <ce> and whispers into your ear.
@@ -49,23 +53,67 @@ Message:  1024
 <ce> have saved us from our enemies. Please
 <ce> leave before a misunderstanding arises."
 <ce> 
-<ce> The youth shuffles away without
-<ce> further explanation. You should
-<ce> head back to ___questgiver_ and
-<ce> explain what has happened.
+<ce> This is clearly not how ==questgiver_
+<ce> would allow things to stand. Do you attempt
+<ce> to get the whereabouts of these
+<ce> members of the Dark Brotherhood?
 
-Message:  1025
-<ce> _questgiver_ looks deeply upset.
-<ce> 
-<ce> "The Dark Brotherhood? Protecting
-<ce> ___home_? This is a grievous
-<ce> report, %pct. We can do nothing more
-<ce> for now, though I will inform the %t.
-<ce> We cannot permit the powers of darkness
-<ce> further foothold in our fair land. I will
-<ce> credit you nonetheless for making the
-<ce> journey and ensuring their safety.
-<ce> Thank you for a good effort, %pcf."
+Message:  1021
+<ce>  Your speaking ability leaves much to be desired.
+<ce>  The child looks more and more agitated with each
+<ce>  question. Finally the interrogation ends,
+<ce>  and you are left empty-handed.
+
+Message:  1022
+<ce>  Your speech skill delivers. The child's confidence
+<ce>  in you rises as you explain what you have come to do and
+<ce>  why the Dark Brotherhood will not bother this family
+<ce>  any more if they trust you to help.
+<ce>  
+<ce>  "Fine, but you'll do it quickly, right? My parents are
+<ce>  miserable with those hooligans taking their stock as
+<ce>  payment. I know they are staying at a nearby shrine,
+<ce>  pretending to be pilgrims while they work a protection
+<ce>  scheme. I can't remember which one it's called, but
+<ce>  it's one of those Shrines of something or Altar to
+<ce>  something. You know, the little domed places.
+<ce>  They won't be far. I'm sure of it."
+<ce>  
+<ce>  Fearing to be seen by someone more important, the
+<ce>  youth wishes you luck and returns to the house.
+
+Message:  1023
+<ce>  It seems you have found the proper shrine.
+<ce>  Rustling nearby indicates someone unhappy with your arrival.
+
+-Message:  1024
+-<ce>  "Wait, wait. It's you? %pcf? What are you
+-<ce>  doing here? This is an official job, They're gonna run
+-<ce>  you through the ringer if you try to stop us.
+-<ce>  Go back and pretend you never saw us."
+-<ce>  
+-<ce>  Will you ignore and fight them?
+-
+-Message:  1025
+-<ce>  You have chosen ==questgiver_
+-<ce>  over the Dark Brotherhood.
+-
+-Message:  1026
+-<ce>  "That's smart, %pcf. We'll forgive you
+-<ce>  this time. Now go tell whatever people you're
+-<ce>  working with that there's no hope here.
+-<ce>  The Dark Brotherhood's got this one under control."
+-<ce>  
+-<ce>  The two assassins vacate the area.
+-
+Message:  1027
+<ce>  You decide not to interfere further.
+<ce>  Perhaps this is what the family wants.
+<ce>  You should inform _questgiver_.
+
+Message:  1028
+<ce>  This matter is definitely settled.
+<ce>  Now to inform _questgiver_ that ___home_ is free.
 
 Message:  1030
 %qdt:
@@ -78,53 +126,137 @@ Message:  1030
  _questgiver_ within =timer_ days.
 
 Message:  1031
- %qdt:
+%qdt:
  ___home_ has been
  liberated by the Dark Brotherhood,
  one of its residents told me. I
  should return to ___questgiver_
  and report on this matter.
 
+Message:  1032
+%qdt:
+ ___home_ has been
+ liberated by the Dark Brotherhood,
+ one of its residents told me. The
+ assassins are staying at a nearby
+ domed shrine, should I choose to
+ hunt them down.
+
+Message:  1040
+<ce> _questgiver_ looks deeply upset.
+<ce> 
+<ce> "The Dark Brotherhood? Protecting
+<ce> ___home_? This is a grievous
+<ce> report, %pct. We can do nothing more
+<ce> for now, though I will inform the %t.
+<ce> We cannot permit the powers of darkness
+<ce> further foothold in our fair land. I will
+<ce> credit you nonetheless for making the
+<ce> journey and ensuring their safety.
+<ce> Thank you for a good effort, %pcf."
+
 QBN:
 Person _questgiver_ group Questor male
+Person _dbdummy_ faction The_Dark_Brotherhood
+-Person _nm_ named The_Night_Mother
 
 Place _home_ remote farmhome
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _delay_ 00:00
 
 Foe _enemy_ is 4 Rogue
+Foe _dbenemy1_ is Nightblade
+Foe _dbenemy2_ is Assassin
 
 --	Quest start-up:
 	start timer _timer_
 	log 1030 step 0 
-	pc at _home_ set _there_
-  pick one of _norm_ _norm_ _norm_ _norm_ _norm_ _alt_
+	pc at _home_ set _housearrive_
+  	pick one of _norm_ _norm_ _alt_
 
 variable _norm_
 variable _alt_
+_housearrive_ task:
+	start task _spawn_
 
-_there_ task:
-	pick one of _spawn_
+variable _spawn_
 
-_spawn_ task:
-
+--normal quest section. spawn task is used to ensure no duplicate spawn by stepping on and off property.
 _kill_ task:
 	when _spawn_ and not _alt_
 	create foe _enemy_ every 1 minutes 1 times with 100% success
+	say 1010
 
 _slain_ task:
-	killed 4 _enemy_ saying 1020
+	killed 4 _enemy_ saying 1011
 
+--end of normal quest section. alternate begins
 _altstep_ task:
-  when _alt_ and _there_
+  when _alt_ and _housearrive_
   start task _altfin_
-
-_altfin_ task:
-  say 1024
   log 1031 step 1
+  
+_altfin_ task:
+    prompt 1020 yes _begin_ no _quit_
 
-_timer_ task:
-	end quest
+_quit_ task:
+	say 1027
+
+_begin_ task:
+    pick one of _go1_ _go2_ _go3_
+	start timer _delay_
+
+_check1_ task:
+   when skill Etiquette is at least 20
+
+_check2_ task:
+    when skill Etiquette is at least 25
+
+_check3_ task:
+    when skill Etiquette is at least 30
+
+variable _go1_
+variable _go2_
+variable _go3_
+_c1_ task:
+    when _check1_ and _go1_
+    start task _victory_
+
+_c2_ task:
+    when _check2_ and _go2_
+    start task _victory_
+
+_c3_ task:
+    when _check3_ and _go3_
+    start task _victory_
+
+_d1_ task:
+    when not _check1_ and _go1_
+
+_d2_ task:
+    when not _check2_ and _go2_
+
+_d3_ task:
+    when not _check3_ and _go3_
+
+_victory_ task:
+	say 1022
+	log 1032 step 1
+
+variable _delay_
+_persuadefail_ task:
+	when _begin_ and _delay_ and not _victory_
+	say 1021    
+
+_cultent_ task:
+	when pc enters cult
+
+_combat_ task:
+	when _victory_ and _cultent_
+	say 1023
+	create foe _dbenemy1_ every 0 minutes 1 times with 100% success
+	create foe _dbenemy2_ every 0 minutes 1 times with 100% success
 
 _qgclicked_ task:
 	clicked npc _questgiver_ 
@@ -139,7 +271,47 @@ _pcreward_ task:
 	legal repute 3
 	end quest 
 
+_inj_ task:
+	injured _dbenemy1_
+	injured _dbenemy2_
+-	repute with _nm_ exceeds 1 do _repnm_
+-intended for db conflict but not yet working
+-
+-variable _repnm_
+-_spareprompt_ task:
+-	when _inj_ and _repnm_
+-	prompt 1024 yes _fightdb_ no _avoid_
+-
+-_fightdb_ task:
+-	say 1025
+-
+-_avoid_ task:
+-	say 1026
+-	remove foe _dbenemy1_
+-	remove foe _dbenemy2_
+
+_kill1_ task:
+	killed _dbenemy1_
+
+_kill2_ task:
+	killed _dbenemy2_
+
+_dbend_ task:
+	when _kill1_ and _kill2_
+	say 1028
+	change repute with _dbdummy_ by -20
+
 _altend_ task:
-	when _qgclicked_ and _altfin_ 
-	say 1025
-	end quest 
+	when _qgclicked_ and _altfin_ and not _dbend_
+	say 1040
+	end quest
+
+_altvict_ task:
+	when _qgclicked_ and _dbend_
+	give pc nothing
+	legal repute 6
+	end quest
+
+_timer_ task:
+	say 1003
+	end quest
