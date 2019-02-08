@@ -56,7 +56,7 @@ Clock _delay_ 6:00
 
 ---- Quest startup
     give pc nothing
-    pick one of _e1_ _e2_
+    pick one of _e1_ _e2_ _e3_
     start timer _delay_
 
 _e1_ task:
@@ -64,6 +64,9 @@ _e1_ task:
 
 _e2_ task:
     start quest JHMGB01
+
+_e3_ task:
+    start quest JHMGB02
 
 _delay_ task:
     end quest

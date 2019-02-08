@@ -1,0 +1,228 @@
+Quest: JHMGB02
+DisplayName: The Emperor's Champion
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  ERROR JHMGB02 1000
+
+RefuseQuest:  [1001]
+<<ce>  ERROR JHMGB02 1001
+
+AcceptQuest:  [1002]
+<ce>  ERROR JHMGB02 1002
+
+QuestFail:  [1003]
+<ce>  
+
+QuestComplete:  [1004]
+<ce>  A letter from the Emperor? Let me see.
+<ce>  
+<ce>  Hmph. No, that won't happen. Apparently the Emperor
+<ce>  thinks me nothing more than a disciple of my father.
+<ce>  If you see him this month, messenger, respond that I
+<ce>  will never bow the kingdom of Daggerfall to his heel.
+<ce>  I will make it thrice as prosperous and ten times
+<ce>  great as any Imperial lackey ever could. Farewell.
+
+Message:  1010
+<ce>  "Ah, it's %pcf! So I finally get to meet you!
+<ce>  How pleased I am to have such a companion
+<ce>  on my task. Please, let us go to ___tav_.
+<ce>  I have someone at _tav_ who can
+<ce>  get us started on our work together."
+<ce>  
+<ce>  You are introduced to a well-spoken member
+<ce>  who apparently recognizes you, though you have
+<ce>  not the same pleasure. Your traveling companion
+<ce>  hands you a name card: "_person_."
+
+Message:  1011
+<ce>  _person_ stops you once you're outside.
+<ce>  
+<ce>  "Forgive me for my methods, %pcf. I come in the
+<ce>  name of the Emperor. It has been many days since he has heard
+<ce>  from you. Tell me about your doings in the Iliac Bay.
+<ce>  What progress have you made and what have you learned?"
+<ce>  
+<ce>  Do you trust this person and talk about your activities?
+
+Message:  1012
+<ce>  "I see. Well, your growth in power and knowledge is admirable.
+<ce>  No one can doubt your exploits in the Mages Guild will
+<ce>  increase your capacity in the Emperor's service. I congratulate
+<ce>  you for your dedication. Nevertheless, your work is of a--"
+<ce>  
+<ce>  The conversation is interrupted by a sound of teleportation.
+<ce>  You are surrounded by a group of assassins.
+<ce>  _person_ whispers to you hastily.
+<ce>  
+<ce>  "See what presses upon us. They are here to stop me.
+<ce>  Help me slay them, or worse things will come to be."
+
+Message:  1014
+<ce>  With the last foe dead, _person_
+<ce>  pats you on the shoulder and thanks you.
+<ce>  
+<ce>  "As is customary, the Emperor has made no mistake.
+<ce>  I see you are fit for the tasks he has given you.
+<ce>  
+<ce>  "Now, no more games. I was sent by the Great Knight,
+<ce>  leader of the Blades. You will understand his reticence
+<ce>  for public appearances, else he would be here himself
+<ce>  to hear from you. Your mission perturbs the Emperor day
+<ce>  and night. Truly, the fate of a large swath of Tamriel
+<ce>  depends on it. You may not consider yourself a person of
+<ce>  great import when compared to this massive region, and
+<ce>  your name may be forgotten as the years pass, but I
+<ce>  guarantee that your actions will alter the course of
+<ce>  history. Mark my words, for they are the Emperor's.
+
+Message:  1015
+<ce>  "I trust you are making good progress on your search
+<ce>  concerning Lysandus's calls for vengeance.
+<ce>  We Blades recall the old king with great fondness.
+<ce>  He was always a welcome sight in the Imperial Court.
+<ce>  His son is another story, a wild horse brimming
+<ce>  with passion. We wish to win ourselves over to his
+<ce>  good graces. If you are headed to Castle Daggerfall
+<ce>  within the next few weeks, would you be willing to
+<ce>  offer him this letter? I should deliver it myself,
+<ce>  but this band we have just slain has greater numbers
+<ce>  waiting in the wings, and they must be stopped.
+<ce>  I will take upon myself that matter if you will do this."
+
+Message:  1016
+<ce>  "A hundred thanks to you, %pcf. Your loyalty to
+<ce>  the Emperor is a ray of light in this dark land.
+<ce>  Remember that only he can bring peace to Tamriel.
+<ce>  May the Septim line live forever!"
+<ce>  
+<ce>  Having given you the missive to Gothryd,
+<ce>  _person_ departs.
+
+Message:  1020
+<ce>  No amount of cajoling can pull the truth out of you.
+<ce>  A person cannot simply approach in the name of the Emperor
+<ce>  and demand to know your secrets. You resist all questions.
+<ce>  
+<ce>  "Fine then! I assure you, everyone from Brisienna to
+<ce>  Uriel Septim himself will know of this incident!
+<ce>  No one wastes my time with impunity, I tell you!"
+<ce>  
+<ce>  _person_ huffs off in a tantrum.
+
+Message:  1021
+<ce>  "That is an answer unbecoming one of your level
+<ce>  of responsibility. I trust it is merely because
+<ce>  you have an urgent lead concerning the Emperor's task,
+<ce>  lest I presently write him concerning insubordination.
+<ce>  But I forbear. Go in peace, %pcf. Uriel Septim
+<ce>  puts his trust in you."
+
+Message:  1022
+<ce>  This letter is far too well-sealed for your attempts.
+
+Message:  1023
+<ce>  _person_ has followed you to this point
+<ce>  but now refuses to continue. He turns to you.
+<ce>  
+<ce>  "I gave you a direct order and you refused it. Why
+<ce>  would you do this? I must return and wipe them
+<ce>  out, lest they continue with their plot. You and I
+<ce>  were merely the beginning of their list of
+<ce>  assassination targets. Eventually they will be headed
+<ce>  for the %t. Do not waste my time again, %pcf."
+<ce>  
+<ce>  He then hurries away.
+
+Message:  1024
+<ce>  You discard the letter for Gothryd.
+<ce>  Surely it can't be that important.
+
+Message:  1030
+%qdt:
+ _person_, a fellow member
+ of the Mages Guild, has asked for my
+ help in ___tav_.
+
+Message:  1031
+%qdt:
+ _person_ is in reality a
+ member of the Blades, a group working
+ on behalf of the Emperor. I have been
+ given a letter to deliver to Gothryd
+ in the hopes of consolidating the
+ Empire's power in the region.
+ If I pass by Daggerfall Castle within
+ the next few weeks I could deliver it.
+
+QBN:
+Person _person_ group Local_3.0 male
+Person Gothryd1 named King_Gothryd atHome
+Person _blades_ faction The_Blades
+Person _port_ named Lord_Coulder
+
+Item _let_ letter used 1022
+
+Place _tav_ remote tavern
+Place _mhall_ local magery
+
+Clock _timer_ 30.00:00
+Clock _battle_ 1:30
+
+Foe _n1_ is Assassin
+
+--	Quest start-up:
+	say 1010
+    add _port_ face
+    pc at _mhall_ do _inside_
+    log 1030 step 0
+
+variable _inside_
+_reveal_ task:
+    when not _inside_
+    prompt 1011 yes _begin_ no _flee_    
+    start timer _timer_
+
+_flee_ task:
+    drop _port_ face
+    say 1020
+    end quest
+
+_begin_ task:
+    say 1012
+    create foe _n1_ every 0 minutes 3 times with 100% success
+    start timer _battle_
+
+_battle_ task:
+    say 1023
+    remove foe _n1_
+    drop _port_ face
+    end quest
+
+_kill_ task:
+    killed 3 _n1_
+    stop timer _battle_
+    say 1014
+    prompt 1015 yes _courier_ no _avoid_
+    log 1031 step 0
+
+_courier_ task:
+    get item _let_
+    say 1016
+    drop _port_ face
+
+_victory_ task:
+    toting _let_ and Gothryd1 clicked
+    give pc nothing
+    change repute with _blades_ by 10
+    end quest
+
+_avoid_ task:
+    say 1021
+    end quest
+
+_timer_ task:
+    say 1024
+    end quest
