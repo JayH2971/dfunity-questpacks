@@ -15,8 +15,8 @@ AcceptQuest:  [1002]
 QuestFail:  [1003]
 <ce>  _person_ slumps onto the ground,
 <ce>  having suffered too much from the strains of travel.
-<ce>  As %g1 gurgles, you have little more option than to
-<ce>  carry on. The vampires should be satisfied with %g3 death.
+<ce>  The vampires should be satisfied with %g3 death
+<ce>  once they find the corpse.
 
 QuestComplete:  [1004]
 <ce>  You take the _tri_ and break it in half with a

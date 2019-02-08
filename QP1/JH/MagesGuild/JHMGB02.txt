@@ -26,9 +26,10 @@ QuestComplete:  [1004]
 <ce>  great as any Imperial lackey ever could. Farewell.
 
 Message:  1010
-<ce>  "Ah, it's %pcf! So I finally get to meet you!
+<ce>  "Ah, it's %pcf! Yes, I'm certain this will
+<ce>  work splendidly. Thank you, my good man.
 <ce>  How pleased I am to have such a companion
-<ce>  on my task. Please, let us go to ___tav_.
+<ce>  with me. Please, let us go to ___tav_.
 <ce>  I have someone at _tav_ who can
 <ce>  get us started on our work together."
 <ce>  
@@ -41,9 +42,9 @@ Message:  1011
 <ce>  _person_ stops you once you're outside.
 <ce>  
 <ce>  "Forgive me for my methods, %pcf. I come in the
-<ce>  name of the Emperor. It has been many days since he has heard
-<ce>  from you. Tell me about your doings in the Iliac Bay.
-<ce>  What progress have you made and what have you learned?"
+<ce>  service of the Emperor. Others and I are exceedingly curious
+<ce>  concerning your progress. Tell me about your doings in the
+<ce>  Iliac Bay. Where have you gona and what have you learned?"
 <ce>  
 <ce>  Do you trust this person and talk about your activities?
 
@@ -70,27 +71,25 @@ Message:  1014
 <ce>  "Now, no more games. I was sent by the Great Knight,
 <ce>  leader of the Blades. You will understand his reticence
 <ce>  for public appearances, else he would be here himself
-<ce>  to hear from you. Your mission perturbs the Emperor day
-<ce>  and night. Truly, the fate of a large swath of Tamriel
-<ce>  depends on it. You may not consider yourself a person of
-<ce>  great import when compared to this massive region, and
-<ce>  your name may be forgotten as the years pass, but I
-<ce>  guarantee that your actions will alter the course of
-<ce>  history. Mark my words, for they are the Emperor's.
+<ce>  to hear from you. I must emphasize time and again
+<ce>  the importance of the mission given to you. The fate
+<ce>  of a large swath of Tamriel depends on it.
 
 Message:  1015
 <ce>  "I trust you are making good progress on your search
 <ce>  concerning Lysandus's calls for vengeance.
 <ce>  We Blades recall the old king with great fondness.
 <ce>  He was always a welcome sight in the Imperial Court.
-<ce>  His son is another story, a wild horse brimming
+<ce>  His son is different story, a wild horse brimming
 <ce>  with passion. We wish to win ourselves over to his
-<ce>  good graces. If you are headed to Castle Daggerfall
-<ce>  within the next few weeks, would you be willing to
-<ce>  offer him this letter? I should deliver it myself,
-<ce>  but this band we have just slain has greater numbers
-<ce>  waiting in the wings, and they must be stopped.
-<ce>  I will take upon myself that matter if you will do this."
+<ce>  good graces, for having no active contacts within
+<ce>  his court stymies much of our work. If you are
+<ce>  headed to Castle Daggerfall within the next few
+<ce>  weeks, would you be willing to offer him this letter?
+<ce>  I should deliver it myself, but this band we have just
+<ce>  slain has greater numbers waiting in the wings, and
+<ce>  they must be stopped. I will take upon myself that
+<ce>  matter if you will do this."
 
 Message:  1016
 <ce>  "A hundred thanks to you, %pcf. Your loyalty to
