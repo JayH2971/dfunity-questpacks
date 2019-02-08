@@ -97,16 +97,6 @@ Message:  1020
 <ce>  spell and disappears from sight. Your best efforts
 <ce>  to find %g2 are in vain.
 
-Message:  1021
-<ce>  "Really? Too bad."
-<ce>  
-<ce>  Without a moment's hesitation _person_,
-<ce>  or whatever %g3 real name is, casts an illusion
-<ce>  spell. Luckily, your skill with stealth lets you
-<ce>  see what the ordinary eye would not. If you
-<ce>  slew this scoundrel now, you could save your
-<ce>  reputation before it gets impacted by %g3 plot.
-
 Message:  1022
 <ce>  "Really? Too bad."
 <ce>  
@@ -179,31 +169,16 @@ _flee_ task:
     remove log step 0
     drop _person_ face
 
-_stealth_ task:
-    when skill Stealth is at least 60
-
 _illu_ task:
     when skill Illusion is at least 40
 
 _flee1_ task:
-    when _flee_ and not _stealth_ and not _illu_
+    when _flee_ and not _illu_
     say 1020
 
 _flee2_ task:
-    when _flee_ and _stealth_ and not _illu_
-    say 1021
-    create foe _nme_ every 0 minutes 1 times with 100% success
-    restrain foe _nme_
-
-_flee3_ task:
-    when _flee_ and not _stealth_ and _illu_
+    when _flee_ and _illu_
     say 1022
-    create foe _nme_ every 0 minutes 1 times with 100% success
-    restrain foe _nme_
-
-_flee4_ task:
-    when _flee_ and _stealth_ and _illu_
-    say 1023
     create foe _nme_ every 0 minutes 1 times with 100% success
     restrain foe _nme_
 
@@ -211,11 +186,6 @@ _kill_ task:
     killed _nme_
     say 1023
     stop timer _repfail_
-    end quest
-
-_repfail_ task:
-    remove foe _nme_
-    legal repute -20
     end quest
 
 _begin_ task:
@@ -251,3 +221,8 @@ _2tavern_ task:
     say 1003
 	start timer _repfail_
     drop _person_ face
+
+_repfail_ task:
+    remove foe _nme_
+    legal repute -20
+    end quest
