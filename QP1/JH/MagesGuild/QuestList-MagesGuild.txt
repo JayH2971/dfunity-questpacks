@@ -32,7 +32,7 @@ JHMG020, MagesGuild, M, 9, 1, an attempt on your life
 JHMG021, MagesGuild, M, 5, 0, entry into JHMGB??
 JHMGX00, MagesGuild, M, 95, 1, a quest to investigate an ancient lich
 JHNCA00, MagesGuild, P, 0, 0, entry into JHNCA01
-JHNCA01, MagesGuild, P, 0, 0, build reputation with Necromancers
+-JHNCA01, MagesGuild, P, 0, 0, build reputation with Necromancers
 JHMGB00, MagesGuild, P, 0, 0, a trick to rob a shop
 JHMGB01, MagesGuild, P, 0, 0, a destroy an offending relic
 JHMGB02, MagesGuild, P, 0, 0, intervention from the Blades
