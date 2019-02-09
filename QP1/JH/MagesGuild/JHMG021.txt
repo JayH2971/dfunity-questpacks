@@ -47,6 +47,16 @@ QuestComplete:  [1004]
 <ce>  credit you for a success. That is
 <ce>  worth the service you now render me."
 
+Message:  1010
+<ce>  Ah, %pcf, how are you getting along?
+<ce>  My sincerest apologies, but I'm rather
+<ce>  wrapped up in administrative duties at
+<ce>  this time. All the tasks I hand out and
+<ce>  receive carry serious responsibilities,
+<ce>  you see. Could you give me a few hours?
+<ce>  I will be happy to attend to you when
+<ce>  I've finished, dear friend.
+
 QBN:
 Person _qgiver_ group Questor male
 
@@ -65,6 +75,10 @@ _e2_ task:
 
 _e3_ task:
     start quest JHMGB02
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+    say 1010
 
 _delay_ task:
     end quest

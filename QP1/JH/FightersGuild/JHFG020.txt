@@ -33,6 +33,10 @@ QuestComplete:  [1004]
 <ce>  points just for signing up for this. You're
 <ce>  really reaching your neck out for me.
 
+Message:  1010
+<ce>  Hey, sorry I'm gonna be busy for awhile.
+<ce>  Come back in a few hours, all right?
+
 QBN:
 Person _qgiver_ group Questor male
 
@@ -51,6 +55,10 @@ _e1_ task:
 -
 -_e3_ task:
 -    start quest JHFGB02
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+    say 1010
 
 _delay_ task:
     end quest
