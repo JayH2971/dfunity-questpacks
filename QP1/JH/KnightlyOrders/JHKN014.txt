@@ -43,34 +43,40 @@ Message: 1020
 <ce> to test the strength of the nearby walls.
 <ce> You are entirely ignored until the door shuts
 <ce> behind you, at which point the building falls
-<ce> silent. The air is heavy. They want something
-<ce> from you.
+<ce> silent. The air is heavy.
+<ce>
+<ce> Oddly, you can't see anyone but you can sense
+<ce> some breathing nearby. Someone must be close,
+<ce> and whoever it is forbears to see what purpose
+<ce> you have here.
 
 Message: 1021
-<ce> Seeing the letter, the crony tears it from your
-<ce> hands and rips the seal open. After %g1 gives
-<ce> it a cursory look, %g1 sends it to the arguing
-<ce> people. You hear nothing. And then,
+<ce> A terse hand tears the letter from your hand. 
+<ce> The invisibility enchantment on its owner, and
+<ce> presumably the others in the house, wavers
+<ce> from the sudden movement. You see the letter
+<ce> get carried off to another room.
 <ce> 
 <ce> "We have yet to see how this grants restitution
 <ce> for our fallen brethren. How can you not..."
 <ce> 
-<ce> The letter appears to have arrived exactly
-<ce> on time to prevent a brawl and the loss
+<ce> The letter appears to have arrived at a
+<ce> time to prevent a brawl and the loss
 <ce> of life. They have begun to speak civilly
 <ce> to one another. _qgiver_
 <ce> will want a report on the matter.
 <--->
-<ce> Seeing the letter, the crony tears it from your
-<ce> hands and rips the seal open. After %g1 gives
-<ce> it a cursory look, %g1 sends it to the arguing
-<ce> people. You hear nothing. And then,
+<ce> A terse hand tears the letter from your hand. 
+<ce> The invisibility enchantment on its owner, and
+<ce> presumably the others in the house, wavers
+<ce> from the sudden movement. You see the letter
+<ce> get carried off to another room.
 <ce> 
 <ce> "And this is all? The %t must consider
 <ce> what we've lost over months of battle."
 <ce> 
-<ce> The letter appears to have arrived exactly
-<ce> on time to prevent a brawl and the loss
+<ce> The letter appears to have arrived at a
+<ce> time to prevent a brawl and the loss
 <ce> of life. They have begun to speak civilly
 <ce> to one another. _qgiver_
 <ce> will want a report on the matter.
