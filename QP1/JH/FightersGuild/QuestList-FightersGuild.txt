@@ -28,7 +28,7 @@ JHFG017, FightersGuild, M, 4, 0, a quest to slay a high-ranking Mages Guild Necr
 JHFG018, FightersGuild, M, 4, 0, a quest to guard a weapons shop at night
 JHFG019, FightersGuild, M, 6, 0, a quest to defend the city against appearing monsters
 JHFG020, FightersGuild, M, 6, 0, entry into JHMFB??
-JHFGA00, FightersGuild, M, 4, 0, entry into JHMC001
+JHFGA00, FightersGuild, M, 4, 1, entry into JHMC001
 JHMC001, FightersGuild, P, 0, 0, a quest to help someone fleeing the Dark Brotherhood
 JHFGB00, FightersGuild, P, 0, 0, a quest to fight daedra
 JHFGB01, FightersGuild, P, 0, 0, a duel with a shapeshifter
@@ -43,3 +43,5 @@ JHFGB01, FightersGuild, P, 0, 0, a duel with a shapeshifter
 -variety quest, fighting tournament at a shrine. Quill Circus
 -variety quest, treasure hunt
 -variety quest, Underking
+-archaeologists, negotiate guild hall
+-archaeologists, accompany other guild member on sundry duties

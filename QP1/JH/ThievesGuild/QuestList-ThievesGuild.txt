@@ -18,7 +18,7 @@ JHTG006, GeneralPopulace, M, 0, 0, a quest to steal research notes
 JHTG007, GeneralPopulace, M, 1, X, a quest to persuade a ransom target
 JHTG008, GeneralPopulace, M, 2, 0, a quest to steal a gem belonging to the ruling family
 JHTG009, GeneralPopulace, M, 8, 0, an artifact quest to take a bag to a client
-JHTG00X, GeneralPopulace, M, 4, X, a quest invitation from a guild member
+JHTG00X, GeneralPopulace, M, 4, 1, a quest invitation from a guild member
 JHTGX01, GeneralPopulace, P, 0, X, offered via JHTG00X
 JHTGX02, GeneralPopulace, P, 0, X, offered via JHTG01X
 JHTGX03, GeneralPopulace, P, 0, X, offered via JHTG02X
