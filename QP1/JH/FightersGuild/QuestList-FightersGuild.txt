@@ -32,6 +32,7 @@ JHFGA00, FightersGuild, M, 4, 1, entry into JHMC001
 JHMC001, FightersGuild, P, 0, 0, a quest to help someone fleeing the Dark Brotherhood
 JHFGB00, FightersGuild, P, 0, 0, a quest to fight daedra
 JHFGB01, FightersGuild, P, 0, 0, a duel with a shapeshifter
+JHFG021, FightersGuild, M, 1, 0, a quest to escort a debtor
 -go to fellow fighter's hometown, find discouraged, talk to persuade
 -tavern guard quest
 -punishment for lacking skill checks (magic schools, weapon types)
@@ -43,5 +44,4 @@ JHFGB01, FightersGuild, P, 0, 0, a duel with a shapeshifter
 -variety quest, fighting tournament at a shrine. Quill Circus
 -variety quest, treasure hunt
 -variety quest, Underking
--archaeologists, negotiate guild hall
 -archaeologists, accompany other guild member on sundry duties
