@@ -44,7 +44,7 @@ AcceptQuest:  [1002]
 <ce> watch over you these next =2res_ days.
 
 QuestFail:  [1003]
-<ce>             
+<ce> Good. We're outta here.
 
 QuestComplete:  [1004]
 <ce> Good day. What have we here? Ah, a
@@ -55,9 +55,60 @@ QuestComplete:  [1004]
 <ce> _qgiver_. Here is your
 <ce> payment. A pleasure speaking to you.
 
-Message: 1020
+Message:  1010
+<ce> You hear voices nearby.
+<ce> 
+<ce> "There %pg1 is. Go."
+
+Message: 1011
 <ce> Don't toy with us here. We're Thieves Guild.
 <ce> Just give us the papers and get lost.
+<ce> We'll put in a good word for you, squid.
+
+Message:  1012
+<ce> You wanna do this the hard way?
+<ce> We'll do it the hard way.
+
+Message:  1013
+<ce> If _qgiver_ spoke correctly, by now
+<ce> _client_ should have arrived
+<ce> at _res_ by now.
+
+Message:  1020
+<ce> A youth attempts to be sneaky while putting
+<ce> a piece of paper into your hands. Some
+<ce> must still be learning the craft.
+
+Message:  1021
+%ra named %pcf
+<ce>
+  Some of us think trying to kill you is going to be easy.
+Others think they can persuade those notes away from
+you. I say they're fools and I have a better solution.
+<ce>
+  Come over to _near_ and pay me
+400 gold. I'll get the Thieves Guild to think you're
+carrying some other papers. Otherwise you're gonna
+have some trouble on the way to ___res_.
+
+                _dummytg_
+
+Message:  1022
+<ce>  Yeah? Oh, it's you.
+<ce>  
+<ce>  Well, I see your sincere intentions, but what
+<ce>  I don't see is 400 gold. Try paying me that and
+<ce>  I'll do what I can for you.
+
+Message:  1023
+<ce>  Yeah? You got the money?
+<ce>  
+<ce>  Yep, 400 straight. All right. So I'm gonna
+<ce>  tell the folks setting up the ambushes that
+<ce>  it's actually gonna be the next %ra
+<ce>  that comes out of the Mages Guild instead
+<ce>  of you. I'll make it convincing. Don't worry.
+<ce>  Your money is well spent.
 
 Message:  1030
 %qdt:
@@ -71,6 +122,7 @@ Message:  1030
 QBN:
 Item _reward_ gold
 Item _manuscript_ letter
+Item _letter_ letter used 1021
 
 Person _qgiver_ group Questor male
 Person _dummy_ group Local_3.1
@@ -78,29 +130,73 @@ Person _client_ faction The_Mages_Guild
 Person _dummytg_ faction The_Thieves_Guild
 
 Place _res_ remote house
+Place _near_ local random
 
-Clock _2res_ 6.00:00 10.00:00
+Clock _2res_ 5.00:00 8.00:00
 Clock _failsafe_ 90.00:00
+Clock _first_ 2.00:00 3.00:00
+Clock _second_ 2.00:00 3.00:00
 
-Foe _enemy_ is 2 Burglar
+Foe _enemy_ is 3 Warrior
+Foe _enemy2_ is 3 Warrior
 
 --	Quest start-up:
 	start timer _2res_
     start timer _failsafe_
+    start timer _first_
     get item _manuscript_
 	log 1030 step 0 
-    create foe _enemy_ every 200 minutes indefinitely with 60% success
+    pick one of _dud_ _friend_ _friend_
 
-_2res_ task:
-    place npc _client_ at _res_
-    add dialog for location _res_ person _client_
+variable _dud_
+_friend_ task:
+    give pc _letter_ notify 1020
+    place npc _dummytg_ at _near_
+
+_ftalk_ task:
+    clicked _dummytg_ and at least 400 gold otherwise do _bribefail_
+    say 1023
+    stop timer _first_
+    stop timer _second_
+
+_bribefail_ task:
+    say 1022
+
+_first_ task:
+    say 1010
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+    start timer _second_
+    take _letter_ from pc
+    hide npc _dummytg_
 
 _msg_ task:
-    injured _enemy_ saying 1020
+    injured _enemy_
+    prompt 1011 yes _deliver_ no _ignore_
 
+_deliver_ task:
+    take _manuscript_ from pc
+    change repute with _dummytg_ by +5
+    say 1003
+    remove foe _enemy_
+    end quest
+
+variable _ignore_
 _anger_ task:
     killed _enemy_
     change repute with _dummytg_ by -15
+
+variable _second_
+_secamb_ task:
+    when _second_ and _friend_
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+
+_inj2_ task:
+    injured _enemy2_
+    say 1012
+
+_2res_ task:
+    place npc _client_ at _res_
+    say 1013
 
 _qgclicked_ task:
 	toting _manuscript_ and _client_ clicked
