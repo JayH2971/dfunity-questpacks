@@ -1,0 +1,282 @@
+-- Perpetual Quest
+Quest: JHPQ003
+DisplayName: Mirage
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ003
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ003
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ003
+
+QuestFail:  [1003]
+<ce>          ERROR 1003 JHPQ003
+
+QuestComplete:  [1004]
+<ce>        %oth, you can be lethal.
+<ce>        
+<ce>        Please don't misunderstand. I can be a bit
+<ce>        overly dramatic at times, I understand. My
+<ce>        siblings tell me as much when they come
+<ce>        around. Well, I suppose some explanation is due.
+<ce>        
+<ce>        We belong to a clan who identify with a gift
+<ce>        for illusion magic. It's not so much a clan in that
+<ce>        we all trace to a common ancestor. We all
+<ce>        adopt ourselves, you could say. In any case, we
+<ce>        have an interest in expanding our sphere of
+<ce>        influence. We are indeed shapeshifters, but
+<ce>        we often find ourselves disadvantaged in other
+<ce>        fields. Combat in general is something of a weak
+<ce>        spot for us. We would enjoy counting you among
+<ce>        our allies. If that sounds agreeable, we'll be sending
+<ce>        you occasional missives according to our needs.
+<ce>        We assure you we will compensate you for
+<ce>        the work we do together. Oh, the things we could
+<ce>        accomplish with your skill! But for now, farewell.
+<ce>        Thank you for listening to me with such respect.
+<ce>        
+<ce>                      TO BE CONTINUED
+
+Message:  1010
+<ce>  Head on over to _res_. You'll find
+<ce>  a bloke there raring for someone to arrive. Wouldn't
+<ce>  stop pestering me day and night about it. Something
+<ce>  to do with a duel, but not to the death and with
+<ce>  some weird other stuff about it. I guess you'll have
+<ce>  to find out on your own. Take care.
+
+Message:  1011
+<ce>     Thank you for coming. Please, tell me your full name.
+<ce>     
+<ce>     Very well then, %pcn. I wish to test
+<ce>     my skills and see if I emerge the victor. I ask that
+<ce>     you hold nothing back. I have a small reward available
+<ce>     for you if you succeed. Before we begin, however,
+<ce>     I insist that you use weaponry capable of damaging
+<ce>     the toughest foe, for my defenses are formidable.
+<ce>      And if you leave this building, you forfeit our duel.
+<ce>     
+<ce>     Are you ready to begin?
+
+Message:  1012
+<ce>        I will wait then. But do not take long.
+
+Message:  1013
+<ce>        "Then let our duel begin!"
+<ce>     
+<ce>     _shape_ shouts a cantrip
+<ce>     dramatically before disappearing. You
+<ce>     brace yourself for the battle before you.
+
+Message:  1014
+<ce>       The rat keels over. _shape_'s
+<ce>       voice breaks your puzzled thought process.
+<ce>       
+<ce>       "Well, you can kill a rat! So what? Take this!"
+
+Message:  1015
+<ce>       The bat drops to the ground pathetically.
+<ce>       From its mouth you hear _shape_ say,
+<ce>       
+<ce>       "Warm-ups are over! Now we get serious!"
+
+Message:  1016
+<ce>       "No arachnophobe out of you! Get ready!"
+
+Message:  1017
+<ce>       From the giant fish's mouth you hear,
+<ce>       
+<ce>       "Come on, I want a real fight! Show
+<ce>       me what the Fighters Guild can do!"
+
+Message:  1018
+<ce>       The scorpion's body heaves and finally drops.
+<ce>       
+<ce>       "Well, so be it! Let's see you handle this!"
+
+Message:  1019
+<ce>       "Not the first wereboar you've seen, eh?
+<ce>       But I'm just getting started!"
+
+Message:  1020
+<ce>       "Hmph! Then watch this!"
+
+Message:  1021
+<ce>       "No more ghosts! See if you can beat this!"
+
+Message:  1022
+<ce>       "A strength that can even break iron!
+<ce>       But what about this?!"
+
+Message:  1023
+<ce>       The levitating dreugh drops to the ground.
+<ce>       
+<ce>       "Pretty impressive, right? But playtime is now over!"
+
+Message:  1024
+<ce>       "Breathing fire, even! But no more.
+<ce>       Here's something else!"
+
+Message:  1025
+<ce>       "Stone skin cracked. All my tricks are shot!
+<ce>       You leave me with no choice. See my true form!"
+
+Message:  1026
+<ce>       The vampire tumbles to the ground. As with
+<ce>       the other creatures, a voice comes from its mouth.
+<ce>       
+<ce>       "It's been a long time since someone made
+<ce>       it to the vampire. Your skill truly is memorable.
+<ce>       Come, see me once more."
+<ce>       
+<ce>       _shape_ appears once again.
+<ce>       Now you can get to the bottom of the matter.
+
+Message:  1030
+%qdt:
+ I've taken up a request for some sort
+ of oddball duel at _res_
+ in ___res_.
+
+Message: 1050
+<ce>       _shape_'s voice booms in your ears.
+<ce>       
+<ce>       "HA! I've proven my victory! Leave
+<ce>       %crn before my siblings and I
+<ce>       leave your carcass nailed to a wall!"
+
+QBN:
+Item _reward_ gold range 1000 to 1000
+
+Place _res_ local house
+
+Clock _timer_ 30.00:00
+
+Person _shape_ group Local_3.1 male
+
+Foe _rat_ is Giant_rat
+Foe _bat_ is Giant_bat
+Foe _spid_ is Spider
+Foe _fish_ is Slaughterfish
+Foe _scorp_ is Giant_scorpion
+Foe _were_ is Wereboar
+Foe _gho_ is Ghost
+Foe _wra_ is Wraith
+Foe _atr_ is Iron_atronach
+Foe _dreu_ is Dreugh
+Foe _dra_ is Dragonling
+Foe _garg_ is Gargoyle
+Foe _vamp_ is Ancient_vampire
+
+--	Quest start-up:
+	start timer _timer_
+       say 1010
+       place npc _shape_ at _res_
+       pc at _res_ set _inside_
+
+variable _inside_
+_qgclicked_ task:
+	clicked npc _shape_ 
+
+_clearclick_ task:
+	when _qgclicked_ and not _f12_ 
+          prompt 1011 yes _begin_ no _refuse_
+	clear _qgclicked_ _clearclick_ 
+
+_refuse_ task:
+         say 1012
+         clear _refuse_
+
+_begin_ task:
+        say 1013
+        hide npc _shape_
+        start task _f_
+
+_f_ task:
+       create foe _rat_ every 0 minutes 1 times with 100% success
+-        place foe _rat_ at _res_
+
+_f1_ task:
+       killed _rat_
+       say 1014
+        place foe _bat_ at _res_
+
+_f2_ task:
+       killed _bat_
+       say 1015
+        place foe _spid_ at _res_
+
+_f3_ task:
+       killed _spid_
+       say 1016
+        place foe _fish_ at _res_
+
+_f4_ task:
+       killed _fish_
+       say 1017
+        place foe _scorp_ at _res_
+
+_f5_ task:
+       killed _scorp_
+       say 1018
+        place foe _were_ at _res_
+
+_f6_ task:
+       killed _were_
+       say 1019
+        place foe _gho_ at _res_
+
+_f7_ task:
+       killed _gho_
+       say 1020
+        place foe _wra_ at _res_
+
+_f8_ task:
+       killed _wra_
+       say 1021
+        place foe _atr_ at _res_
+
+_f9_ task:
+       killed _atr_
+       say 1022
+        place foe _dreu_ at _res_
+
+_f10_ task:
+       killed _dreu_
+       say 1023
+        place foe _dra_ at _res_
+
+_f11_ task:
+       killed _dra_
+       say 1024
+        place foe _garg_ at _res_
+
+_f12_ task:
+       killed _garg_
+       say 1025
+        place foe _vamp_ at _res_
+
+_f13_ task:
+       killed _vamp_
+       say 1026
+       restore npc _shape_
+
+_victory_ task:
+        when _qgclicked_ and _f13_
+        give pc _reward_
+        end quest
+
+_fail_ task:
+        when _f_ and not _inside_
+        say 1050
+        end quest
+
+variable _timer_
+_timeup_ task:
+         when _timer_ and not _inside_
+         end quest
