@@ -39,7 +39,7 @@ Ancient named =enemy_. This on its own does not merit so
 much attention were it not that the foe possesses an
 artifact of great power called the Necromancer's Amulet.
 Our little information suggested that the foe will spend
-six more months in the cave, and once it leaves, it intends
+three more months in the cave, and once it leaves, it intends
 to take the amulet with it.
 
   My involvement in this matter is to inform you concerning
@@ -68,7 +68,7 @@ Item _letter_ letter used 1011
 Place _dung_ remote dungeon
 
 Clock _timer_ 7.00:00
-Clock _fail_ 180.00:00
+Clock _fail_ 90.00:00
 Clock _offer_ 9.00:00 22.00:00
 
 Foe _enemy_ is Ancient_vampire

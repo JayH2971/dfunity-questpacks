@@ -40,7 +40,7 @@ merit so much attention were it not that another agent
 in the region reported to us that the foe possesses an
 artifact of great power called the Oghma Infinium.
 The short conversation the two eked out suggested that
-the foe will spend six more months in the cave, and once
+the foe will spend three more months in the cave, and once
 it leaves, it intends to take the Oghma Infinium with it.
 
   My involvement in this matter is to inform you concerning
@@ -69,7 +69,7 @@ Item _letter_ letter used 1011
 Place _dung_ remote dungeon
 
 Clock _timer_ 7.00:00
-Clock _fail_ 180.00:00
+Clock _fail_ 90.00:00
 Clock _offer_ 9.00:00 22.00:00
 
 Foe _enemy_ is Daedra_lord
