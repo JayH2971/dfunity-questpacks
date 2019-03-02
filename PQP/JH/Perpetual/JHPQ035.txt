@@ -18,7 +18,7 @@ QuestFail:  [1003]
 <ce> carrying a good pace, but right when you feel you're
 <ce> getting the hang of it, another contestant stands up
 <ce> and shows the peeled apple, receiving the prize money.
-<ce> Perhaps you can't win them all.
+<ce> If only you were more expert working a knife.
 
 QuestComplete:  [1004]
 <ce> So soon as the contest begins, you wrap the knife blade

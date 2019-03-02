@@ -19,7 +19,9 @@ QuestFail:  [1003]
 <ce> solid hit very difficult. The gamesman tosses the ball five
 <ce> times, eliciting five misses. While you fail to earn the
 <ce> prize, the only penalty you suffer is the mockery of the
-<ce> small crowd that stopped to watch you.
+<ce> small crowd that stopped to watch you. Surely some more
+<ce> practice with clubs and hammers will prepare you
+<ce> for a rematch.
 
 QuestComplete:  [1004]
 <ce> Your experience with blunt weaponry serves you well.

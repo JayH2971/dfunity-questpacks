@@ -19,7 +19,8 @@ QuestFail:  [1003]
 <ce> you look at the other competitors and notice
 <ce> one in particular has much more split wood
 <ce> than any other, including yourself.
-<ce> You leave without the prize.
+<ce> You leave without the prize. Perhaps your
+<ce> axe skills leave something to be desired.
 
 QuestComplete:  [1004]
 <ce> You cleave log after log, splitting them with
