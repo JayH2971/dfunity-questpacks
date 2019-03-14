@@ -29,3 +29,4 @@ JHTGX07, GeneralPopulace, P, 0, X, offered via JHTG06X
 -bribe a noble with a gem to turn away a sentence
 -exchange a true paper for a false one without injuring the owner (mission failure)
 -retrieve document for necromancer
+-revamp 001: hide chance vs mob, recurring

@@ -13,7 +13,7 @@ QuestorOffer:  [1000]
 <ce>  satisfactory manner. Can we rely on you to take it to %g2?
 
 RefuseQuest:  [1001]
-<ce>  That means you'll have to share more responsibilities.
+<ce>  The workload in this temple will increase without %g2.
 <ce>  Are you certain that's your decision?
 
 AcceptQuest:  [1002]
@@ -70,10 +70,6 @@ Message:  1030
  return to ___qgiver_
  in =timer_ days.
 
-Message:  1099
-<ce> Please see what has become of _npc_
-<ce> and deliver the _herb_. I will see you in =timer_ days.
-
 QBN:
 Item _herb_ small_plant
 Item _reward_ gold range 50 to 80
@@ -120,7 +116,6 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _receive_
-  say 1099
 	clear _qgclicked_ _clearclick_ 
 
 _timer_ task:
