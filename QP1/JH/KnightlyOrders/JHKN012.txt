@@ -67,5 +67,5 @@ _clearclick_ task:
 _pcreward_ task:
 	when _qgclicked_ and _slain_ 
 	give pc nothing
-	legal repute 3
-	end quest 
+	legal repute +3
+	end quest

@@ -121,7 +121,7 @@ _delay_ task:
 _victory_ task:
   toting _clothes_ and _questgiver_ clicked
   give pc nothing
-  legal repute 3
+  legal repute +3
   end quest
 
 _qgclicked_ task:

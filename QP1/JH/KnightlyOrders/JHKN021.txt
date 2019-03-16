@@ -199,12 +199,12 @@ _rew1_ task:
 	when _qgclicked_ and _S1_
   say 1020
 	give pc nothing
-  legal repute 3
+  legal repute +3
 	end quest
 
 _rew2_ task:
   when _qgclicked_ and _pac2_
   say 1018
 	give pc nothing
-  legal repute 3
+  legal repute +3
 	end quest

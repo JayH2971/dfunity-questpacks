@@ -176,7 +176,7 @@ _success_ task:
 
 _victory_ task:
 	give pc nothing
-	legal repute 8
+	legal repute +8
 	end quest 
 
 variable _death_

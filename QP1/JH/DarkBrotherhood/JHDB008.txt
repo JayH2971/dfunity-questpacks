@@ -174,7 +174,7 @@ _pcgetsgold_ task:
 
 _gainrep_ task:
 	when _killtimer_ and _mercy_ and not _slain_
-	legal repute 20
+	legal repute +20
 
 _killtimer_ task:
   say 1003

@@ -96,5 +96,5 @@ _clearclick_ task:
 _rewardPlayer_ task:
 	when _questorClicked_ and _slain_
 	give pc _reward_
-	legal repute 5
+	legal repute +5
 	end quest

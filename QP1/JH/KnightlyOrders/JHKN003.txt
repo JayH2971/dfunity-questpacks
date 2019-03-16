@@ -175,14 +175,14 @@ _pcgetsgold_ task:
 	when _qgclicked_ and _livemage_ 
 	say 1023
 	change repute with _mage_ by +5
-	legal repute 3
+	legal repute +3
 	give pc nothing
 	end quest 
 
 _pcgetsnothing_ task:
 	when _qgclicked_ and _deadmage_
 	say 1024
-	legal repute 3
+	legal repute +3
 	give pc nothing
 	end quest
 

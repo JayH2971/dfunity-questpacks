@@ -142,7 +142,7 @@ _clearclick_ task:
 _victory_ task:
 	when _qgclicked_ and _slain_
 	give pc nothing
-  legal repute 3
+  legal repute +3
 	end quest
  
 _2dung_ task:

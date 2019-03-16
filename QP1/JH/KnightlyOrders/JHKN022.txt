@@ -171,7 +171,7 @@ _slain_ task:
 _pcgetsgold_ task:
 	when _qgclicked_ and _slain_ 
 	give pc nothing
-  legal repute 8
+  legal repute +8
 	end quest 
 
 _qgclicked_ task:

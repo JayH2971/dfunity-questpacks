@@ -268,7 +268,7 @@ _clearclick_ task:
 _pcreward_ task:
 	when _qgclicked_ and _slain_ 
 	give pc nothing
-	legal repute 3
+	legal repute +3
 	end quest 
 
 _inj_ task:
@@ -309,7 +309,7 @@ _altend_ task:
 _altvict_ task:
 	when _qgclicked_ and _dbend_
 	give pc nothing
-	legal repute 6
+	legal repute +6
 	end quest
 
 _timer_ task:

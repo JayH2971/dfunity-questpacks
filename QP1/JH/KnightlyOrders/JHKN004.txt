@@ -151,7 +151,7 @@ _victory_ task:
 
 _delay3_ task:
 	give pc nothing
-	legal repute 6
+	legal repute +6
 	end quest 
 
 _qgclicked_ task:

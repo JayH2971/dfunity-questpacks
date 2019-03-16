@@ -311,7 +311,7 @@ _clearclick_ task:
 
 _pcgetsgold_ task:
   when _qgclicked_ and _find_
-  legal repute 8
+  legal repute +8
   give pc nothing
   end quest
 

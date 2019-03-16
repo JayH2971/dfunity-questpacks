@@ -99,7 +99,7 @@ _victory_ task:
     killed 3 _enemy3_
     killed 3 _enemy4_
 	give pc nothing
-	legal repute 3
+	legal repute +3
 	end quest 
 
 _qgclicked_ task:

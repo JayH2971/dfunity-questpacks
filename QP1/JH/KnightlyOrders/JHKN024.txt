@@ -196,7 +196,7 @@ _qgclicked_ task:
 _victory_ task:
   when _qgclicked_ and _slain_
 	give pc nothing
-  legal repute 8
+  legal repute +8
 	end quest
 
 _clearclick_ task:

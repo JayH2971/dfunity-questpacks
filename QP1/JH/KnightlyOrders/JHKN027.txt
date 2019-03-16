@@ -222,14 +222,14 @@ _pcgetsgold1_ task:
     say 1022
     change repute with _qgiver_ by -2
 	give pc nothing
-    legal repute 3
+    legal repute +3
 	end quest 
 
 _pcgetsgold2_ task:
 	when _qgclicked_ and _slain_ and not _battle_
     say 1023
 	give pc nothing
-    legal repute 3
+    legal repute +3
 	end quest 
 
 _goal_ task:
