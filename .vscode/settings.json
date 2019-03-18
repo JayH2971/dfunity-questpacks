@@ -1,0 +1,11 @@
+{
+    // Run DFTemplate extension for quest files
+    "files.associations": {
+        "{JH,QuestList-}*.txt": "dftemplate"
+    },
+    // Settings for DFTemplate extension
+    "[dftemplate]": {
+        "editor.formatOnSave": true,
+        "editor.formatOnType": true
+    },
+}
