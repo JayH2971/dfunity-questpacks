@@ -5,71 +5,71 @@ DisplayName: Where Are You Going, My Little One
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ERROR 1000 JHPQ030
+<ce>                          ERROR 1000 JHPQ030
 
 RefuseQuest:  [1001]
-<ce>          ERROR 1001 JHPQ030
+<ce>                          ERROR 1001 JHPQ030
 
 AcceptQuest:  [1002]
-<ce>           ERROR 1002 JHPQ030
+<ce>                          ERROR 1002 JHPQ030
 
 QuestFail:  [1003]
-<ce> No matter what you say, the child feels more afraid
-<ce> of you every passing second. Eventually he runs away.
+<ce>         No matter what you say, the child feels more afraid
+<ce>        of you every passing second. Eventually he runs away.
 
 QuestComplete:  [1004]
-<ce> The boy quickly identifies his home and summons his
-<ce> mother from within. She comes out, shocked at the
-<ce> awful treatment her brother provided, and thanks you
-<ce> profusely for your kindness in leading her son home.
-<ce> 
-<ce> "Please, at least take this. We're not the kind to have
-<ce> so much jewelry and riches but I simply cannot let you
-<ce> go without a reward. Take it, dear %ra."
-<--->
-<ce> The boy quickly identifies his home and summons his
-<ce> father from within. He comes out, shocked at the
-<ce> awful treatment his brother-in-law provided, and thanks you
-<ce> profusely for your kindness in leading his son home.
-<ce> 
-<ce> "Please, at least take this. We're not the kind to have
-<ce> so much jewelry and riches but I simply cannot let you
-<ce> go without a reward. Take it, dear %ra."
+<ce>         The boy quickly identifies his home and summons his
+<ce>          mother from within. She comes out, shocked at the
+<ce>         awful treatment her brother provided, and thanks you
+<ce>         profusely for your kindness in leading her son home.
+<ce>
+<ce>       "Please, at least take this. We're not the kind to have
+<ce>        so much jewelry and riches but I simply cannot let you
+<ce>               go without a reward. Take it, dear %ra."
+                                     <--->
+<ce>         The boy quickly identifies his home and summons his
+<ce>           father from within. He comes out, shocked at the
+<ce>     awful treatment his brother-in-law provided, and thanks you
+<ce>         profusely for your kindness in leading his son home.
+<ce>
+<ce>       "Please, at least take this. We're not the kind to have
+<ce>        so much jewelry and riches but I simply cannot let you
+<ce>               go without a reward. Take it, dear %ra."
 
 Message:  1010
-<ce> A shrill cry breaks out, unmistakably belonging to
-<ce> one of %crn's younger citizens. As the moments pass,
-<ce> however, no one comes to claim him. He appears to be
-<ce> lost and unsure of what to do. Will you try to speak to him?
+<ce>          A shrill cry breaks out, unmistakably belonging to
+<ce>         one of %crn's younger citizens. As the moments pass,
+<ce>         however, no one comes to claim him. He appears to be
+<ce>     lost and unsure of what to do. Will you try to speak to him?
 
 Message:  1011
-<ce> Your skill with educated conversation works to soothe
-<ce> his nerves. You calmly start up a simple conversation,
-<ce> working to get his mind off his current situation.
-<ce> As the moments pass, he eventually confides that he
-<ce> was staying here with his uncle who disappeared last night
-<ce> and left no money for his upkeep. He asks if you can take him
-<ce> to his parents in ___tav_.
+<ce>        Your skill with educated conversation works to soothe
+<ce>        his nerves. You calmly start up a simple conversation,
+<ce>          working to get his mind off his current situation.
+<ce>         As the moments pass, he eventually confides that he
+<ce>      was staying here with his uncle who disappeared last night
+<ce>    and left no money for his upkeep. He asks if you can take him
+<ce>                      to his parents in ___tav_.
 
 Message:  1012
-<ce> You move on. The child is someone's responsibility,
-<ce> and that someone is not you.
+<ce>         You move on. The child is someone's responsibility,
+<ce>                     and that someone is not you.
 
 Message:  1013
-<ce> You decline, making an excuse about various tasks
-<ce> others have conferred on you. The child thanks you
-<ce> for listening and begins to seek out someone else
-<ce> to help him find his way.
+<ce>          You decline, making an excuse about various tasks
+<ce>          others have conferred on you. The child thanks you
+<ce>          for listening and begins to seek out someone else
+<ce>                      to help him find his way.
 
 Message:  1014
-<ce> You accept and tell the child to bring his belongings.
-<ce> He asks to arrive to ___tav_ within =timer_ days' time.
+<ce>        You accept and tell the child to bring his belongings.
+<ce>       He asks to arrive to ___tav_ within =timer_ days' time.
 
 Message:  1016
-<ce> The boy you have escorted breaks away from you.
-<ce> Suspicion has gotten the best of him, and he assures
-<ce> you he can find his way back to ___tav_
-<ce> on his own terms.
+<ce>           The boy you have escorted breaks away from you.
+<ce>         Suspicion has gotten the best of him, and he assures
+<ce>               you he can find his way back to ___tav_
+<ce>                          on his own terms.
 
 Message:  1030
 %qdt:
@@ -90,10 +90,10 @@ Item _reward_ trinket
 --	Quest start-up:
     start timer _failsafe_
 
- _enter_ task:
-   when pc enters city
-   stop timer _failsafe_
-   start timer _delay_
+_enter_ task:
+    when pc enters city
+    stop timer _failsafe_
+    start timer _delay_
     start timer _timer_
     pc at _tav_ do _inside_
 
@@ -104,7 +104,7 @@ _begin_ task:
     pick one of _go1_ _go2_ _go3_
 
 _check1_ task:
-   when skill Etiquette is at least 30
+    when skill Etiquette is at least 30
 
 _check2_ task:
     when skill Etiquette is at least 40
@@ -151,6 +151,7 @@ _take_ task:
 _pcgetsreward_ task:
     when _take_ and _inside_
     give pc _reward_
+    legal repute +2
     end quest
 
 _avoid_ task:
@@ -163,11 +164,11 @@ _fail_ task:
 
 _timer_ task:
     say 1016
-   end quest
+    end quest
 
 _failsafe_ task:
-   end quest
+    end quest
 
 _quit_ task:
-  say 1012
-  end quest
+    say 1012
+    end quest
