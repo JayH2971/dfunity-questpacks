@@ -5,27 +5,27 @@ DisplayName:
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ERROR 1000 JHPQA00
+<ce>                          ERROR 1000 JHPQA00
 
 RefuseQuest:  [1001]
-<ce>          ERROR 1001 JHPQA00
+<ce>                          ERROR 1001 JHPQA00
 
 AcceptQuest:  [1002]
-<ce>           ERROR 1002 JHPQA00
+<ce>                          ERROR 1002 JHPQA00
 
 QuestFail:  [1003]
-<ce>           ERROR 1003 JHPQA00
+<ce>                          ERROR 1003 JHPQA00
 
 QuestComplete:  [1004]
-<ce>           ERROR 1004 JHPQA00
+<ce>                          ERROR 1004 JHPQA00
 
 Message:  1010
-<ce> You meet thieves intent on taking
-<ce> your belongings and leaving no witnesses.
-<--->
-<ce> Some criminals crawl out to ambush you.
-<--->
-<ce> You are waylaid by thieves.
+<ce>                  You meet thieves intent on taking
+<ce>              your belongings and leaving no witnesses.
+                                     <--->
+<ce>               Some criminals crawl out to ambush you.
+                                     <--->
+<ce>                     You are waylaid by thieves.
 
 QBN:
 Clock _failsafe_ 12.00:00
@@ -38,9 +38,12 @@ Foe _e4_ is 2 Rogue
 --	Quest start-up:
     start timer _failsafe_
 
- _enter_ task:
-   when pc exits anywhere
-   pick one of _dud_ _dud_ _fight_ _dud_ _dud_
+_enter_ task:
+    when pc exits anywhere
+    start task _pick_
+
+_pick_ task:
+    pick one of _dud_ _dud_ _fight_ _dud_ _dud_
 
 variable _dud_
 _fight_ task:
@@ -61,4 +64,4 @@ _f4_ task:
 
 _failsafe_ task:
     start quest JHPQA00
-   end quest
+    end quest
