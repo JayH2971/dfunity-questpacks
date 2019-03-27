@@ -26,9 +26,11 @@ Message:  1010
 <ce>               Some criminals crawl out to ambush you.
                                      <--->
 <ce>                     You are waylaid by thieves.
+                                     <--->
+<ce>         Someone whispers nearby, "I bet that %ra has money."
 
 QBN:
-Clock _failsafe_ 12.00:00
+Clock _failsafe_ 6.00:00
 
 Foe _e1_ is 2 Thief
 Foe _e2_ is 2 Burglar
