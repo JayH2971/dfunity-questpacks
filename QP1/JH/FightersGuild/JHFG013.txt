@@ -53,6 +53,8 @@ Message:  1019
 
 Message:  1020
 <ce>        The giant shouts up a storm, preparing to fight back.
+                                     <--->
+<ce>            This once-peaceful giant now throws a tantrum.
 
 Message:  1021
 <ce>              You toss the _ing_ to the giant. He takes
@@ -63,6 +65,23 @@ Message:  1021
 <ce>                home due to his dislike of combat and
 <ce>                 difficulty living with his kin. You
 <ce>               explain that his life is in danger here,
+<ce>              and that he should move on to a different
+<ce>               region. He thanks you for your good will
+<ce>                     and promises to leave soon.
+<ce>
+<ce>            As you prepare to go, he pulls a bearhide bag
+<ce>               from a nearby floorboard. Finding no use
+<ce>             for them himself, he gives you the contents,
+<ce>                which amount to =reward_ gold pieces.
+                                     <--->
+<ce>              You toss the _ing_ to the giant. He takes
+<ce>              it kindly and puts it into a pouch on his
+<ce>            animal skin. You then make a short and simple
+<ce>               conversation with him. He explains that
+<ce>               he has taken for himself the hospitality
+<ce>           of this dwelling, hoping to form an arrangement
+<ce>           of some kind once he understands their language.
+<ce>           You explain that the family will not accept it,
 <ce>              and that he should move on to a different
 <ce>               region. He thanks you for your good will
 <ce>                     and promises to leave soon.
@@ -115,7 +134,7 @@ Foe _giant_ is Giant
     place foe _giant_ at _res_
     restrain foe _giant_
 
-_talk_ task:
+_injur_ task:
     injured _giant_
     say 1020
 
@@ -134,12 +153,12 @@ _skilled_ task:
     when skill Giantish is at least 20
 
 _bigsuccess_ task:
-    when _persuade_ and _skilled_ and not _slain_
-    restrain foe _giant_
+    when _persuade_ and _skilled_ and not _injur_
     say 1021
     take _ing_ from pc
     get item _reward_
     make _reward_ permanent
+    remove foe _giant_
 
 _fail_ task:
     when _persuade_ and not _skilled_
