@@ -45,3 +45,4 @@ JHFG021, FightersGuild, M, 1, 0, a quest to escort a debtor
 -variety quest, treasure hunt
 -variety quest, Underking
 -archaeologists, accompany other guild member on sundry duties
+-courier quest, actually illicit subs

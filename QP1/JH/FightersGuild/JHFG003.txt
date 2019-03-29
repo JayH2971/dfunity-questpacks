@@ -4,61 +4,61 @@ DisplayName: Civil Duty
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  We try to stay out of politics as much as possible, but
-<ce>  sometimes the %t forces our hand. There's some
-<ce>  criminal down in __dungeon_ that the
-<ce>  guards have given up on who needs to die. It's
-<ce>  paying =reward_ gold. Is that enough for you?
-<--->
-<ce> So the Fighters Guild just kills spiders and
-<ce> bears all day, right? Not quite. The %t
-<ce> sometimes tries to get us to pick off some
-<ce> dangerous criminal that they can't catch
-<ce> themselves. It still pays though, in this case
-<ce> =reward_ gold. Does that work for you?
+<ce>       We try to stay out of politics as much as possible, but
+<ce>            sometimes the %t forces our hand. There's some
+<ce>                 criminal down in __dungeon_ that the
+<ce>            guards have given up on who needs to die. It's
+<ce>            paying =reward_ gold. Is that enough for you?
+                                     <--->
+<ce>             So the Fighters Guild just kills spiders and
+<ce>               bears all day, right? Not quite. The %t
+<ce>              sometimes tries to get us to pick off some
+<ce>               dangerous criminal that they can't catch
+<ce>            themselves. It still pays though, in this case
+<ce>                =reward_ gold. Does that work for you?
 
 RefuseQuest:  [1001]
-<ce> I'm fine with that. What do we
-<ce>  look like? The Dark Brotherhood?
+<ce>                    I'm fine with that. What do we
+<ce>                   look like? The Dark Brotherhood?
 
 AcceptQuest:  [1002]
-<ce> You just can't resist, can you %pcf?
-<ce> Just remember, this isn't murder. We're lawfully
-<ce> contracted by the %t for this. Get down
-<ce> to __dungeon_ and back here in
-<ce> =timer_ days, and I'll have your _reward_ gold here.
-<ce> 
-<ce> By the way, this one's a ringleader of some band
-<ce> of some kind, so be ready if things go south.
+<ce>                 You just can't resist, can you %pcf?
+<ce>           Just remember, this isn't murder. We're lawfully
+<ce>               contracted by the %t for this. Get down
+<ce>                    to __dungeon_ and back here in
+<ce>         =timer_ days, and I'll have your _reward_ gold here.
+<ce>
+<ce>           By the way, this one's a ringleader of some band
+<ce>            of some kind, so be ready if things go south.
 
 QuestFail:  [1003]
-<ce> Your contract with the Fighters Guild
-<ce> in ___dungeon_ is overdue.
+<ce>                Your contract with the Fighters Guild
+<ce>                      in ___dungeon_ is overdue.
 
 QuestComplete:  [1004]
-<ce> Well done. That should keep the %t
-<ce>  off our backs for awhile. Here's your gold.
+<ce>                  Good work. That should keep the %t
+<ce>             off our backs for awhile. Here's your gold.
 
 Message:  1010
-<ce>  "Wait! Wait, stop! I'm a member of the Thieves Guild!
-<ce>  Don't kill me! If you let me go, I promise I'll tell my
-<ce>  people good things about you! Please, won't you let me live?"
+<ce>        "Wait! Wait, stop! I'm a member of the Thieves Guild!
+<ce>       Don't kill me! If you let me go, I promise I'll tell my
+<ce>    people good things about you! Please, won't you let me live?"
 
 Message:  1011
-<ce>  "There is honor among thieves, %ra. Leave
-<ce>  this place and pretend you never found me.
-<ce>  I will honor my word and spread your
-<ce>  good fame among the underworld as if my
-<ce>  life depended on it."
+<ce>              "There is honor among thieves, %ra. Leave
+<ce>              this place and pretend you never found me.
+<ce>                 I will honor my word and spread your
+<ce>               good fame among the underworld as if my
+<ce>                        life depended on it."
 
 Message:  1012
-<ce>  Thieves Guild or not, you accepted this task
-<ce>  and intend to follow through with it.
-<ce>  You extend your foe no mercy.
+<ce>             Thieves Guild or not, you accepted this task
+<ce>                and intend to follow through with it.
+<ce>                   You extend your enemy no mercy.
 
 Message:  1020
-<ce> Your foe lets out a blood-curdling
-<ce> scream which echoes through the halls.
+<ce>                  Your foe lets out a blood-curdling
+<ce>                scream which echoes through the halls.
 
 Message:  1030
 %qdt:
@@ -87,21 +87,21 @@ Foe _enemy3_ is Rogue
 Foe _enemy4_ is Spellsword
 
 --	Quest start-up:
-	start timer _timer_ 
-	log 1030 step 0 
+	start timer _timer_
+	log 1030 step 0
 	pick one of _E.01_ _E.02_ _E.03_ _E.04_
-  	  reveal _dungeon_
+	reveal _dungeon_
 
- _E.01_ task:
+_E.01_ task:
 	place foe _enemy1_ at _dungeon_
 
- _E.02_ task:
+_E.02_ task:
 	place foe _enemy2_ at _dungeon_
 
- _E.03_ task:
+_E.03_ task:
 	place foe _enemy3_ at _dungeon_
 
- _E.04_ task:
+_E.04_ task:
 	place foe _enemy4_ at _dungeon_
 
 _inj_ task:
@@ -127,9 +127,9 @@ _quit_ task:
 
 variable _nochoice_
 _slain_ task:
-	killed 1 _enemy1_ saying 1020 
-	killed 1 _enemy2_ saying 1020 
-	killed 1 _enemy3_ saying 1020 
+	killed 1 _enemy1_ saying 1020
+	killed 1 _enemy2_ saying 1020
+	killed 1 _enemy3_ saying 1020
 	killed 1 _enemy4_ saying 1020
 	create foe _enemy1_ every 4 minutes 2 times with 4% success
 	create foe _enemy2_ every 4 minutes 2 times with 4% success
@@ -137,21 +137,21 @@ _slain_ task:
 	create foe _enemy4_ every 4 minutes 2 times with 4% success
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+	clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_
 
 _pcgetsgold_ task:
-	when _qgclicked_ and _slain_ 
-	give pc _reward_ 
-	end quest 
+	when _qgclicked_ and _slain_
+	give pc _reward_
+	end quest
 
 _tgup_ task:
 	when _timer_ and _mercy_
 	change repute with _dummytg_ by +5
 
 _timer_ task:
-  say 1003
-	end quest 
+	say 1003
+	end quest

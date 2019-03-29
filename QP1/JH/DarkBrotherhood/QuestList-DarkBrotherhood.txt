@@ -34,3 +34,4 @@ JHDBA00, DarkBrotherHood, M, P, 0, branch of JHDB007
 -a quest to slay a member of the city guard who interferes with the Brotherhood. Injury leads to failure timer
 -present item to get ransom money or confession
 -blackguards questline
+-DB014: disintegrate is failure
