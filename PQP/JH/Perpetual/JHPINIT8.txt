@@ -1,22 +1,22 @@
-Quest: JHPINIT7
-DisplayName: PERPET INIT7
+Quest: JHPINIT8
+DisplayName: PERPET INIT8
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                            JHPINIT7 1000
+<ce>                            JHPINIT8 1000
 
 RefuseQuest:  [1001]
-<ce>                            JHPINIT7 1001
+<ce>                            JHPINIT8 1001
 
 AcceptQuest:  [1002]
-<ce>                            JHPINIT7 1002
+<ce>                            JHPINIT8 1002
 
 QuestFail:  [1003]
-<ce>                            JHPINIT7 1003
+<ce>                            JHPINIT8 1003
 
 QuestComplete:  [1004]
-<ce>                            JHPINIT7 1004
+<ce>                            JHPINIT8 1004
 
 QBN:
 
@@ -30,25 +30,25 @@ Clock _end_ 10.00:00
 variable _dud_
 _countdown_ task:
     pick one of _Q1_ _Q2_ _Q3_ _Q4_ _Q5_ _Q6_
-    start quest JHPINIT8
+    start quest JHPINIT
 
 _Q1_ task:
-    start quest JHPQ039
+    start quest JHPQ045
 
 _Q2_ task:
-    start quest JHPQ040
+    start quest JHPQ046
 
 _Q3_ task:
-    start quest JHPQ041
+    start quest JHPQ047
 
 _Q4_ task:
-    start quest JHPQ042
+    start quest JHPQ048
 
 _Q5_ task:
-    start quest JHPQ043
+    start quest JHPQ049
 
 _Q6_ task:
-    start quest JHPQ044
+    start quest JHPQ050
 
 _end_ task:
     end quest

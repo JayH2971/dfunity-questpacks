@@ -34,6 +34,8 @@ JHPINIT3, na, P, 0, 0, Perpetual Quest selection
 JHPINIT4, na, P, 0, 0, Perpetual Quest selection
 JHPINIT5, na, P, 0, 0, Perpetual Quest selection
 JHPINIT6, na, P, 0, 0, Perpetual Quest selection
+JHPINIT7, na, P, 0, 0, Perpetual Quest selection
+JHPINIT8, na, P, 0, 0, Perpetual Quest selection
 JHPQA00, na, P, 0, 0, random outdoors enemy appearance
 JHPQB01, na, P, 0, 0, beginner's challenge quest
 JHPQB02, na, P, 0, 0, beginner's challenge quest
@@ -81,8 +83,8 @@ JHPQ041, na, P, 0, 0, a Perpetual Quest
 JHPQ042, na, P, 0, 0, a Perpetual Quest
 JHPQ043, na, P, 0, 0, a Perpetual Quest
 JHPQ044, na, P, 0, 0, a Perpetual Quest
+JHPQ045, na, P, 0, 0, a Perpetual Quest
 -various infestations in the region via rumor. Find dungeon and wipe out nest
 -reputation-based quests, depending on minimum (maximum?) rep with factions
 -request to deliver drug to graveyard. avoid cities. if refuse, could alert guard
 -haunted house
--taxes vs reputation
