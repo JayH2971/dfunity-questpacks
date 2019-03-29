@@ -59,7 +59,10 @@ Item _gem_ gem
 
 --	Quest start-up:
     give pc _letter_ notify 1010
+    have _letter_ set _begin_
     pc at _start_ do _inside_
+
+_begin_ task:
     place npc _client_ at _start_
     start timer _2start_
 
