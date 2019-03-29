@@ -28,6 +28,8 @@ RumorsDuringQuest:  [1005]
 That Nightblade's gotta be in a house. The guard's 've looked in all the businesses.
 <--->
 A bounty hunt in ___res_! How exciting!
+<--->
+People in ___res_ say _res_ looks suspicious.
 
 Message:  1010
 <ce>             You pick up a leaflet from under your feet,

@@ -4,28 +4,28 @@ DisplayName: PERPET INIT6
 QRC:
 
 QuestorOffer:  [1000]
-<ce>           JHPINIT6 1000
+<ce>                            JHPINIT6 1000
 
 RefuseQuest:  [1001]
-<ce>           JHPINIT6 1001
+<ce>                            JHPINIT6 1001
 
 AcceptQuest:  [1002]
-<ce>           JHPINIT6 1002
+<ce>                            JHPINIT6 1002
 
 QuestFail:  [1003]
-<ce>           JHPINIT6 1003
+<ce>                            JHPINIT6 1003
 
 QuestComplete:  [1004]
-<ce>           JHPINIT6 1004
+<ce>                            JHPINIT6 1004
 
 QBN:
 
-Clock _countdown_ 7.00:00 9.00:00
-Clock _end_ 10.00:00
+Clock _countdown_ 7.00:00 12.00:00
+Clock _end_ 13.00:00
 
 --   Quest start-up:
-     start timer _countdown_
-     start timer _end_
+    start timer _countdown_
+    start timer _end_
 
 variable _dud_
 _countdown_ task:
@@ -33,22 +33,22 @@ _countdown_ task:
     start quest JHPINIT7
 
 _Q1_ task:
-     start quest JHPQ033
+    start quest JHPQ033
 
 _Q2_ task:
-     start quest JHPQ034
+    start quest JHPQ034
 
 _Q3_ task:
-     start quest JHPQ035
+    start quest JHPQ035
 
 _Q4_ task:
-     start quest JHPQ036
+    start quest JHPQ036
 
 _Q5_ task:
-     start quest JHPQ037
+    start quest JHPQ037
 
 _Q6_ task:
-     start quest JHPQ038
-     
+    start quest JHPQ038
+
 _end_ task:
     end quest
