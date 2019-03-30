@@ -115,7 +115,7 @@ _reject_ task:
 
 _pay_ task:
     clicked _banker_ and at least 1267 gold otherwise do _nopay_
-    give pc nothing
+    say 1004
     legal repute +10
     end quest
 

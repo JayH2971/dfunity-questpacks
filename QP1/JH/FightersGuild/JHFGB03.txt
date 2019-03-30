@@ -94,7 +94,7 @@ _inj_ task:
 
 _victory_ task:
     make _item_ permanent
-    give pc nothing
+    say 1004
     end quest
 
 _nopay_ task:

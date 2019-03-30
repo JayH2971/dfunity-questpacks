@@ -39,6 +39,7 @@ QuestComplete:  [1004]
 <ce>           the work we do together. Oh, the things we could
 <ce>          accomplish with your skill! But for now, farewell.
 <ce>           Thank you for listening to me with such respect.
+<ce>             I hope these gold pieces lighten your mood.
 <ce>
 <ce>                           TO BE CONTINUED
 
@@ -262,7 +263,8 @@ _f13_ task:
 
 _victory_ task:
        when _qgclicked_ and _f13_
-       give pc _reward_
+       get item _reward_
+       say 1004
        end quest
 
 _fail_ task:

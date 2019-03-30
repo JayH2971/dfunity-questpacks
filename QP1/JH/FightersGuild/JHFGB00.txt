@@ -167,7 +167,7 @@ _slain3_ task:
 
 _victory_ task:
     when _slain1_ and _slain2_ and _slain3_
-    give pc nothing
+    say 1004
     end quest
 
 variable _inside_
