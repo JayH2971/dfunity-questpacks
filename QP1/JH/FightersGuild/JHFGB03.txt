@@ -1,0 +1,107 @@
+-- Perpetual Quest
+Quest: JHFGB03
+DisplayName: Enchanted
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                             JHFGB03 1000
+
+RefuseQuest:  [1001]
+<ce>                             JHFGB03 1001
+
+AcceptQuest:  [1002]
+<ce>                             JHFGB03 1002
+
+QuestFail:  [1003]
+<ce>                             JHFGB03 1003
+
+QuestComplete:  [1004]
+<ce>                  This must be the enchanted _item_
+<ce>                       you paid to know about.
+
+Message:  1010
+<ce>                 Let me actually read the note I got.
+<ce>                I haven't had time until now. Hold on.
+<ce>
+<ce>                  "Need 250 gold. Will give location
+<ce>                   of enchanted _item_ in exchange.
+<ce>                       Meet me in _house_ today
+<ce>                          or don't bother."
+<ce>
+<ce>           Well, I guess that's what's on the menu for ya.
+
+Message:  1011
+<ce>                         My 250 gold, please?
+<ce>
+<ce>           Thank you. That'll buy me a cart so I can get my
+<ce>                  family out of this blighted city.
+<ce>       Nothing but bad luck since we came here. Anyway, here's
+<ce>               the deal. Look for a mummy in ___dung_.
+<ce>              It's gonna have the _item_ on it. This is
+<ce>      an old family secret I'm telling you, and I've got plenty
+<ce>        of people who've sworn on their lives that it's true.
+<ce>              Now it's up to you to find it. Thanks for
+<ce>                 coming through for me on this, %ra.
+
+Message:  1012
+<ce>         My 250 gold, please? I'm not talking 'til I see it.
+
+Message:  1030
+ %qdt: 
+_qg_, a local, is willing to tell me
+the location of some enchanted _item_
+in exchange for 250 gold. I can find
+%g2 today in _house_.
+
+Message:  1031
+ %qdt:
+_qg_ told me I can find the _item_
+on a mummy in ___dung_.
+
+QBN:
+Place _house_ local house
+Place _dung_ remote dungeon
+
+Foe _mummy_ is Mummy
+
+Clock _timer_ 1.00:00
+Clock _failsafe_ 90.00:00
+
+Person _qg_ faction The_Merchants
+
+Item _item_ magic_item
+
+--	Quest start-up:
+    say 1010
+    place npc _qg_ at _house_
+    start timer _failsafe_
+    start timer _timer_
+    log 1030 step 0
+
+_begin_ task:
+    clicked _qg_ and at least 250 gold otherwise do _nopay_
+    say 1011
+    reveal _dung_
+    place foe _mummy_ at _dung_
+    have _item_ set _victory_
+    log 1031 step 1
+    stop timer _timer_
+
+_inj_ task:
+    injured _mummy_
+    give item _item_ to _mummy_
+
+_victory_ task:
+    make _item_ permanent
+    give pc nothing
+    end quest
+
+_nopay_ task:
+    say 1012
+
+_failsafe_ task:
+    end quest
+
+_timer_ task:
+    end quest

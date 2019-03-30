@@ -4,95 +4,95 @@ DisplayName: Rights of Commerce
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  A shop in another town keeps getting robbed
-<ce>  by the Thieves Guild and they need a guard.
-<ce>  Wanna take this up?
+<ce>             A shop in another town keeps getting robbed
+<ce>             by the Thieves Guild and they need a guard.
+<ce>                         Wanna take this up?
 
 RefuseQuest:  [1001]
-<ce>  A bit too boring for you?
+<ce>                      A bit too boring for you?
 
 AcceptQuest:  [1002]
-<ce>  The place is called _shop_.
-<ce>  It's in ___shop_. The job's nighttime guard duty.
-<ce>  Hopefully you won't have to wait too long for them
-<ce>  to show up. Your payment's going to be =reward_ gold
-<ce>  pieces, and I'll have them if you're back in
-<ce>  =timer_ days. Good luck, %pcf.
+<ce>                     The place is called _shop_.
+<ce>          It's in ___shop_. The job's nighttime guard duty.
+<ce>          Hopefully you won't have to wait too long for them
+<ce>         to show up. Your payment's going to be =reward_ gold
+<ce>             pieces, and I'll have them if you're back in
+<ce>                    =timer_ days. Good luck, %pcf.
 
 QuestFail:  [1003]
-<ce>  The Fighters Guild wanted you back from protecting
-<ce>  _shop_ by now.
+<ce>          The Fighters Guild wanted you back from protecting
+<ce>                            _shop_ by now.
 
 QuestComplete:  [1004]
-<ce>  Welcome back! Easy stuff? Well, I'm glad you
-<ce>  made it. Take your money. Good job.
-<--->
-<ce>  Three fewer thieves ____qgiver_ has to
-<ce>  worry about. Nice work. Here's your pay.
+<ce>             Welcome back! Easy stuff? Well, I'm glad you
+<ce>                 made it. Take your money. Good job.
+                                     <--->
+<ce>                Three fewer thieves ____qgiver_ has to
+<ce>               worry about. Nice work. Here's your pay.
 
 Message:  1010
-<ce>  There's no more movement in the store.
-<ce>  Looks like this job is finished.
+<ce>                There's no more movement in the store.
+<ce>                   Looks like this job is finished.
 
 Message:  1011
-<ce>  Hey, hold on! This one knows how to fight, here!
-<ce>  
-<ce>  Let's be smart about this. Help us out, 'cause you don't
-<ce>  wanna get on the wrong side of the Thieves Guild.
-<ce>  How's about you go wait outside and make sure nobody
-<ce>  shows up? We'll pay you =bribe_ gold.
-<ce>  Everyone leaves alive, and we put in a good word
-<ce>  with the guild for you. Sound good?
+<ce>           Hey, hold on! This one knows how to fight, here!
+<ce>
+<ce>       Let's be smart about this. Help us out, 'cause you don't
+<ce>          wanna get on the wrong side of the Thieves Guild.
+<ce>         How's about you go wait outside and make sure nobody
+<ce>                shows up? We'll pay you =bribe_ gold.
+<ce>           Everyone leaves alive, and we put in a good word
+<ce>                 with the guild for you. Sound good?
 
 Message:  1012
-<ce>  That's smart of ya. Okay, head on out and we'll get
-<ce>  started. You made the right choice, %ra.
+<ce>         That's smart of ya. Okay, head on out and we'll get
+<ce>               started. You made the right choice, %ra.
 
 Message:  1013
-<ce>  One of the thieves whispers to you.
-<ce>  
-<ce>  "Nobody come by? Nice work. The guild's gonna hear
-<ce>  about this. They're always lookin' for smart
-<ce>  people. Take this gold."
-<ce>  
-<ce>  The troupe leaves, carrying several valuable
-<ce>  pieces of equipment.
+<ce>                 One of the thieves whispers to you.
+<ce>
+<ce>          "Nobody come by? Nice work. The guild's gonna hear
+<ce>             about this. They're always lookin' for smart
+<ce>                       people. Take this gold."
+<ce>
+<ce>             The troupe leaves, carrying several valuable
+<ce>                         pieces of equipment.
 
 Message:  1014
-<ce>  You're surprised by a member of the town guard.
-<ce>  The fellow appears to have thrown on his equipment
-<ce>  at this hour of the night.
-<ce>  
-<ce>  "Excuse me! I heard some noise around here and
-<ce>  thought I'd see if there was a problem. Is there
-<ce>  something happening inside _shop_?"
+<ce>           You're surprised by a member of the town guard.
+<ce>          The fellow appears to have thrown on his equipment
+<ce>                      at this hour of the night.
+<ce>
+<ce>            "Excuse me! I heard some noise around here and
+<ce>           thought I'd see if there was a problem. Is there
+<ce>                 something happening inside _shop_?"
 
 Message:  1015
-<ce>  The guard's eyes widen at the news. He shouts loudly
-<ce>  and rouses a few others to surround the building.
-<ce>  In a matter of moments they burst through the entrance
-<ce>  and haul the thieves out one by one, their mouths
-<ce>  and hands bound. One of the criminals gives
-<ce>  you a dirty look while being hauled away. The city watch
-<ce>  thanks you for your help, leading their captives off.
-<ce>  
-<ce>  This may not have been exactly what _qgiver_
-<ce>  assigned you to do, but if the shoe fits...
+<ce>         The guard's eyes widen at the news. He shouts loudly
+<ce>          and rouses a few others to surround the building.
+<ce>        In a matter of moments they burst through the entrance
+<ce>          and haul the thieves out one by one, their mouths
+<ce>             and hands bound. One of the criminals gives
+<ce>       you a dirty look while being hauled away. The city watch
+<ce>        thanks you for your help, leading their captives off.
+<ce>
+<ce>             This may not have been exactly what _qgiver_
+<ce>             assigned you to do, but if the shoe fits...
 
 Message:  1016
-<ce>  "Really? That's odd. Well, thank you for helping,
-<ce>  but you should really be in a tavern this time of
-<ce>  night. It can get dangerous out here."
-<ce>  
-<ce>  The guard waves and heads for the warmth of home.
+<ce>          "Really? That's odd. Well, thank you for helping,
+<ce>          but you should really be in a tavern this time of
+<ce>                night. It can get dangerous out here."
+<ce>
+<ce>          The guard waves and heads for the warmth of home.
 
 Message:  1017
-<ce>  Upon seeing one of their number dead, the other thieves
-<ce>  change their mind. This will only end one way.
+<ce>       Upon seeing one of their number dead, the other thieves
+<ce>            change their mind. This will only end one way.
 
 Message:  1018
-<ce>  You set yourself outside the store and watch for
-<ce>  any risk to the thieves' work.
+<ce>           You set yourself outside the store and watch for
+<ce>                    any risk to the thieves' work.
 
 Message:  1030
 %qdt:
@@ -119,12 +119,12 @@ Clock _rob1_ 00:03
 Clock _rob2_ 00:03
 
 --	Quest start-up:
-	start timer _timer_
-	log 1030 step 0 
-    pc at _shop_ do _inside_
+  start timer _timer_
+  log 1030 step 0
+  pc at _shop_ do _inside_
 
 _day_ task:
-    daily from 4:30 to 23:30
+  daily from 4:30 to 23:30
 
 _inside_ task:
   stop timer _rob1_
@@ -216,33 +216,33 @@ _thiefwin_ task:
 
 _sa_ task:
   killed 1 _q1_
-    change repute with _dummytg_ by -5
+  change repute with _dummytg_ by -5
 
 _s1_ task:
-    killed 2 _q1_
+  killed 2 _q1_
 
 _s2_ task:
-    killed _q2_
-    change repute with _dummytg_ by -5
+  killed _q2_
+  change repute with _dummytg_ by -5
 
 _slain_ task:
-    when _s1_ and _s2_
-    say 1010
-    start task _win_
+  when _s1_ and _s2_
+  say 1010
+  start task _win_
 
 variable _win_
 _victory_ task:
   when _qgclicked_ and _win_
-	give pc _reward_
-	end quest
+  give pc _reward_
+  end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+  clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _win_
-	clear _qgclicked_ _clearclick_ 
+  when _qgclicked_ and not _win_
+  clear _qgclicked_ _clearclick_
 
 _timer_ task:
   say 1003
-	end quest
+  end quest

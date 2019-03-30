@@ -54,7 +54,7 @@ Message:  1019
 Message:  1020
 <ce>        The giant shouts up a storm, preparing to fight back.
                                      <--->
-<ce>            This once-peaceful giant now throws a tantrum.
+<ce>            This once peaceful giant now throws a tantrum.
 
 Message:  1021
 <ce>              You toss the _ing_ to the giant. He takes

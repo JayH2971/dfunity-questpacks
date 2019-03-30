@@ -4,38 +4,38 @@ DisplayName: Variety Mode
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  So, like, I've got a problem. Maybe not a
-<ce>  problem, but an issue. Got someone coming
-<ce>  into the guild hall asking for help with
-<ce>  some weird request every few hours, and
-<ce>  it's been going on for days now. Problem
-<ce>  is, I can't wrap my head around what I'm
-<ce>  being asked. All I get is that it's gonna
-<ce>  take someone with skill like yours.
-<ce>  I really don't know what it's offering
-<ce>  or nothing but I think it'd lead to some
-<ce>  adventure like we don't see around here.
-<ce>  Wanna get this off my back?
+<ce>              So, like, I've got a problem. Maybe not a
+<ce>              problem, but an issue. Got someone coming
+<ce>               into the guild hall asking for help with
+<ce>               some weird request every few hours, and
+<ce>               it's been going on for days now. Problem
+<ce>               is, I can't wrap my head around what I'm
+<ce>              being asked. All I get is that it's gonna
+<ce>                 take someone with skill like yours.
+<ce>                I really don't know what it's offering
+<ce>               or nothing but I think it'd lead to some
+<ce>               adventure like we don't see around here.
+<ce>                     Wanna get this off my back?
 
 RefuseQuest:  [1001]
-<ce>  Aw, all right. I should know better
-<ce>  than to offer a job without a reward.
+<ce>                 Aw, all right. I should know better
+<ce>                than to offer a job without a reward.
 
 AcceptQuest:  [1002]
-<ce>  Hey, I wasn't expecting that. Hold on a sec,
-<ce>  lemme get out what I wrote about the thing.
+<ce>             Hey, I wasn't expecting that. Hold on a sec,
+<ce>             lemme get out what I wrote about the thing.
 
 QuestFail:  [1003]
-<ce>  
+<ce>
 
 QuestComplete:  [1004]
-<ce>  By the way, just so you know, I'm giving you
-<ce>  points just for signing up for this. You're
-<ce>  really reaching your neck out for me.
+<ce>             By the way, just so you know, I'm giving you
+<ce>             points just for signing up for this. You're
+<ce>                really reaching your neck out for me.
 
 Message:  1010
-<ce>  Hey, sorry I'm gonna be busy for awhile.
-<ce>  Come back in a few hours, all right?
+<ce>               Hey, sorry I'm gonna be busy for awhile.
+<ce>                 Come back in a few hours, all right?
 
 QBN:
 Person _qgiver_ group Questor male
@@ -44,17 +44,20 @@ Clock _delay_ 6:00
 
 ---- Quest startup
     give pc nothing
-    pick one of _e1_
+    pick one of _e1_ _e2_ _e3_ _e4_
     start timer _delay_
 
 _e1_ task:
     start quest JHFGB00
 
--_e2_ task:
--    start quest JHFGB01
--
--_e3_ task:
--    start quest JHFGB02
+_e2_ task:
+    start quest JHFGB01
+
+_e3_ task:
+    start quest JHFGB02
+
+_e4_ task:
+    start quest JHFGB02
 
 _qgclicked_ task:
     clicked npc _qgiver_

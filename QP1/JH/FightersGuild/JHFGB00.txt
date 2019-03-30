@@ -4,100 +4,100 @@ DisplayName:
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  ERROR JHMFB00 1000
+<ce>                          ERROR JHMFB00 1000
 
 RefuseQuest:  [1001]
 <<ce>  ERROR JHMFB00 1001
 
 AcceptQuest:  [1002]
-<ce>  ERROR JHMFB00 1002
+<ce>                          ERROR JHMFB00 1002
 
 QuestFail:  [1003]
-<ce>  
+<ce>
 
 QuestComplete:  [1004]
-<ce>  While you battled these daedra, _person_
-<ce>  has most likely run far from ___home_.
-<ce>  You wonder whether %g3 account with Oblivion has
-<ce>  been settled by now. At least these foes
-<ce>  should carry reward enough for you.
+<ce>               While you battled these daedra, _person_
+<ce>                has most likely run far from ___home_.
+<ce>           You wonder whether %g3 account with Oblivion has
+<ce>               been settled by now. At least these foes
+<ce>                 should carry reward enough for you.
 
 Message:  1010
-<ce>  Okay, you're gonna go find _person_
-<ce>  here in town, in _place_.
-<ce>  That's the client's name, anyway.
-<ce>  Nice enough person while I was talking
-<ce>  with %g2. Just a little nervous, but I
-<ce>  dunno what about. Maybe that's how some
-<ce>  people are. Anyway, I'll let you go.
-<ce>  You'll have to tell me all about it when
-<ce>  it's over. Good luck, %pcf.
+<ce>                 Okay, you're gonna go find _person_
+<ce>                      here in town, in _place_.
+<ce>                  That's the client's name, anyway.
+<ce>                Nice enough person while I was talking
+<ce>                with %g2. Just a little nervous, but I
+<ce>               dunno what about. Maybe that's how some
+<ce>                 people are. Anyway, I'll let you go.
+<ce>               You'll have to tell me all about it when
+<ce>                     it's over. Good luck, %pcf.
 
 Message:  1011
-<ce>  Oh! Are you from the Fighters Guild?
-<ce>  H-hello, I'm _person_. Thank
-<ce>  you for coming. I need help getting home.
-<ce>  I live in ___home_, I'm afraid
-<ce>  of traveling that far and I want someone
-<ce>  to keep me safe as I go. Can you take
-<ce>  me there? I have a friend who'll pay
-<ce>  you =reward_ gold when we get there.
+<ce>                 Oh! Are you from the Fighters Guild?
+<ce>                     H-hello, I'm _person_. Thank
+<ce>              you for coming. I need help getting home.
+<ce>                    I live in ___home_, I'm afraid
+<ce>               of traveling that far and I want someone
+<ce>                to keep me safe as I go. Can you take
+<ce>                 me there? I have a friend who'll pay
+<ce>                 you =reward_ gold when we get there.
 
 Message:  1012
-<ce>  Yes! Yes! Thank you! Oh, joyous day! Please,
-<ce>  get me to ___home_ as soon
-<ce>  as possible. My friend will be at my home,
-<ce>  _home_. I'm ready to go. Lead on!
+<ce>             Yes! Yes! Thank you! Oh, joyous day! Please,
+<ce>                      get me to ___home_ as soon
+<ce>              as possible. My friend will be at my home,
+<ce>                  _home_. I'm ready to go. Lead on!
 
 Message:  1013
-<ce>  "This is my friend! Won't you offer
-<ce>  that payment we agreed on, dear sir?"
-<ce>  
-<ce>  _person_'s odd behavior nearly
-<ce>  distracts you as this cloaked figure reaches
-<ce>  out to touch you with its finger. You see
-<ce>  a grin cross its face as it grazes you. Your
-<ce>  surroundings begin to shimmer. Something
-<ce>  is happening. _person_ flees.
-<ce>  
-<ce>  "I'm sorry! I'm so sorry! They demanded
-<ce>  a sacrifice and I couldn't bear to do it
-<ce>  myself! Please forgive me!"
-<ce>  
-<ce>  The hooded figure silently warps away,
-<ce>  and other beings take its place.
+<ce>                 "This is my friend! Won't you offer
+<ce>                that payment we agreed on, dear sir?"
+<ce>
+<ce>                    _person_'s odd behavior nearly
+<ce>             distracts you as this cloaked figure reaches
+<ce>              out to touch you with its finger. You see
+<ce>             a grin cross its face as it grazes you. Your
+<ce>               surroundings begin to shimmer. Something
+<ce>                    is happening. _person_ flees.
+<ce>
+<ce>               "I'm sorry! I'm so sorry! They demanded
+<ce>               a sacrifice and I couldn't bear to do it
+<ce>                     myself! Please forgive me!"
+<ce>
+<ce>                The hooded figure silently warps away,
+<ce>                   and other beings take its place.
 
 Message:  1014
-<ce>  Rather than remain in this deathtrap, you flee
-<ce>  the building. The daedra appear to have no interest in
-<ce>  pursuing you. Meanwhile, you hear _person_'s
-<ce>  voice from afar.
-<ce>  
-<ce>  "No! Leave me alone! You want the %ra, not me!
-<ce>  Someone help, they're taking me--"
-<ce>  
-<ce>  Then %g3 voice trails away.
+<ce>            Rather than remain in this deathtrap, you flee
+<ce>        the building. The daedra appear to have no interest in
+<ce>             pursuing you. Meanwhile, you hear _person_'s
+<ce>                           voice from afar.
+<ce>
+<ce>            "No! Leave me alone! You want the %ra, not me!
+<ce>                  Someone help, they're taking me--"
+<ce>
+<ce>                     Then %g3 voice trails away.
 
 Message:  1020
-<ce>  "You can't be serious! I can't make it on my own!
-<ce>  No, really, I insist! You have to go with me!
-<ce>  I mean it! You can't refuse!"
-<ce>  
-<ce>  _person_ fights with you quite
-<ce>  vigorously, but you can handle yourself.
-<ce>  The struggle lasts more than a minute,
-<ce>  in which you prevail. Eventually %g1
-<ce>  huffs out of the building, perhaps to
-<ce>  the Fighters Guild to make another request.
+<ce>          "You can't be serious! I can't make it on my own!
+<ce>            No, really, I insist! You have to go with me!
+<ce>                    I mean it! You can't refuse!"
+<ce>
+<ce>                    _person_ fights with you quite
+<ce>               vigorously, but you can handle yourself.
+<ce>                The struggle lasts more than a minute,
+<ce>                 in which you prevail. Eventually %g1
+<ce>                huffs out of the building, perhaps to
+<ce>             the Fighters Guild to make another request.
 
 Message:  1021
-<ce>  A warping effect surrounds _person_,
-<ce>  and space itself appears to distort. The effect
-<ce>  rapidly builds until it seems as though the air
-<ce>  itself is about to hemorrhage magical power.
-<ce>  Once %g1 notices %g3 eyes grow wide but
-<ce>  there is nothing you can do. You watch as %g1
-<ce>  is sucked in with an otherworldly silence.
+<ce>                 A warping effect surrounds _person_,
+<ce>           and space itself appears to distort. The effect
+<ce>           rapidly builds until it seems as though the air
+<ce>             itself is about to hemorrhage magical power.
+<ce>               Once %g1 notices %g3 eyes grow wide but
+<ce>            there is nothing you can do. You watch as %g1
+<ce>              is sucked in with an otherworldly silence.
 
 Message:  1030
 %qdt:
@@ -130,7 +130,7 @@ Foe _n2_ is Fire_daedra
 Foe _n3_ is Frost_daedra
 
 --	Quest start-up:
-	say 1010
+    say 1010
     place npc _person_ at _place_
     log 1030 step 0
 

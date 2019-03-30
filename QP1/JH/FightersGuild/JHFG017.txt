@@ -4,41 +4,41 @@ DisplayName: Wickedness in High Places
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  The %t's commissioned us to knock off a Necromancer
-<ce>  who also happens to be a high-ranking member of
-<ce>  the Mages Guild. Wanna get this one off our backs?
+<ce>         The %t's commissioned us to knock off a Necromancer
+<ce>           who also happens to be a high-ranking member of
+<ce>          the Mages Guild. Wanna get this one off our backs?
 
 RefuseQuest:  [1001]
-<ce>  %oth. Well, someone's gotta do it.
+<ce>                  %oth. Well, someone's gotta do it.
 
 AcceptQuest:  [1002]
-<ce>  Cool, cool. Well, not much else to say. Necromancers
-<ce>  are usually the Mages Guild's responsibility but they're
-<ce>  denying this one outright. Probably a matter of utility
-<ce>  than loyalty, knowing them. But I'll stop talking.
-<ce>  Head out to ___poorhome_. Get ready
-<ce>  to fight some undead while you're there. They told us
-<ce>  to have this done in =timer_ days, so get back here
-<ce>  by then for your money.
+<ce>         Cool, cool. Well, not much else to say. Necromancers
+<ce>       are usually the Mages Guild's responsibility but they're
+<ce>       denying this one outright. Probably a matter of utility
+<ce>          than loyalty, knowing them. But I'll stop talking.
+<ce>                 Head out to ___poorhome_. Get ready
+<ce>        to fight some undead while you're there. They told us
+<ce>         to have this done in =timer_ days, so get back here
+<ce>                       by then for your money.
 
 QuestFail:  [1003]
-<ce>  The %t needed to know that the Necromancer of
-<ce>  ___poorhome_ had been slain by now.
+<ce>            The %t needed to know that the Necromancer of
+<ce>                 ___poorhome_ had been slain by now.
 
 QuestComplete:  [1004]
-<ce>  Hey, glad to see you back. Necromancers can
-<ce>  be tough, but the Fighters Guild is tougher.
-<ce>  Thanks for being such a great example of
-<ce>  what we do. Take this.
+<ce>             Hey, glad to see you back. Necromancers can
+<ce>             be tough, but the Fighters Guild is tougher.
+<ce>               Thanks for being such a great example of
+<ce>                        what we do. Take this.
 
 Message:  1010
-<ce>  Your instrusion to the property is noted.
-<ce>  The tenant, meditating outside, stands up and
-<ce>  begins to chant in a discordant tongue.
+<ce>              Your instrusion to the property is noted.
+<ce>            The tenant, meditating outside, stands up and
+<ce>               begins to chant in a discordant tongue.
 
 Message:  1011
-<ce>  The Necromancer has been slain.
-<ce>  _qgiver_ needs to report the act to the %t.
+<ce>                   The Necromancer has been slain.
+<ce>             _qgiver_ needs to report the act to the %t.
 
 Message:  1030
 %qdt:
@@ -63,8 +63,8 @@ Place _poorhome_ remote poorhome
 Clock _timer_ 00:00 0 flag 1 range 0 2
 
 --	Quest start-up:
-	start timer _timer_
-	log 1030 step 0 
+  start timer _timer_
+  log 1030 step 0
   pc at _poorhome_ do _inside_
 
 variable _inside_
@@ -76,22 +76,22 @@ _spawn_ task:
   create foe _q2_ every 1 minutes indefinitely with 50% success
 
 _slain_ task:
-    killed _mage_
-    say 1011
-    change repute with _dummymg_ by -10
+  killed _mage_
+  say 1011
+  change repute with _dummymg_ by -10
 
 _victory_ task:
   when _qgclicked_ and _slain_
-	give pc _reward_
-	end quest
+  give pc _reward_
+  end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+  clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_
-	clear _qgclicked_ _clearclick_ 
+  when _qgclicked_ and not _slain_
+  clear _qgclicked_ _clearclick_
 
 _timer_ task:
   say 1003
-	end quest
+  end quest

@@ -4,92 +4,92 @@ DisplayName: Third Wheel
 QRC:
 
 QuestorOffer:  [1000]
-<ce> We've got someone looking for a fighting partner,
-<ce> wanting to go down into some cave, smash up some
-<ce> bandits, and split the loot. Talks about offering
-<ce> some enchanted item for it. Wanna take it up?
+<ce>          We've got someone looking for a fighting partner,
+<ce>           wanting to go down into some cave, smash up some
+<ce>          bandits, and split the loot. Talks about offering
+<ce>            some enchanted item for it. Wanna take it up?
 
 RefuseQuest:  [1001]
-<ce> Prefer working alone?
+<ce>                        Prefer working alone?
 
 AcceptQuest:  [1002]
-<ce> "Well then, I'll introduce you two. Hold on."
-<ce> 
-<ce> _questgiver_ hollers at the door.
-<ce> Soon your client enters to meet you.
-<ce> 
-<ce> "Hello there! %pcn, you say?
-<ce> My name is _friend_.
-<ce> A pleasure. Let us go to ___dung_.
-<ce> I know a band of criminals is taking up refuge
-<ce> there, and we would spend our time well clearing
-<ce> it out. I'll give you this magic _reward_ once
-<ce> we're all finished. Let's be off, then!"
+<ce>            "Well then, I'll introduce you two. Hold on."
+<ce>
+<ce>                  _questgiver_ hollers at the door.
+<ce>                 Soon your client enters to meet you.
+<ce>
+<ce>                     "Hello there! %pcn, you say?
+<ce>                         My name is _friend_.
+<ce>                  A pleasure. Let us go to ___dung_.
+<ce>            I know a band of criminals is taking up refuge
+<ce>           there, and we would spend our time well clearing
+<ce>            it out. I'll give you this magic _reward_ once
+<ce>               we're all finished. Let's be off, then!"
 
 QuestFail:  [1003]
-<ce> 
+<ce>
 
 QuestComplete:  [1004]
-<ce> You consider your job done.
+<ce>                     You consider your job done.
 
 Message:  1019
-<ce> _friend_ speaks up.
-<ce> 
-<ce> "So my _reward_ for your fighting, right?
-<ce> This place should be lucrative enough
-<ce> to pay for that, I assume. We'll split
-<ce> the items we find on the criminals."
-<ce> 
-<ce> The words leave some doubt for %g3 sincerity.
+<ce>                         _friend_ speaks up.
+<ce>
+<ce>              "So my _reward_ for your fighting, right?
+<ce>                This place should be lucrative enough
+<ce>                to pay for that, I assume. We'll split
+<ce>                 the items we find on the criminals."
+<ce>
+<ce>            The words leave some doubt for %g3 sincerity.
 
 Message:  1020
-<ce> "Well, I'm satisfied. I think we both came out
-<ce> much richer than we expected. Take your _reward_.
-<ce> Maybe I'll see you again in ___questgiver_."
-<ce> 
-<ce> _friend_ tosses you the item
-<ce> and disappears from view.
+<ce>            "Well, I'm satisfied. I think we both came out
+<ce>          much richer than we expected. Take your _reward_.
+<ce>             Maybe I'll see you again in ___questgiver_."
+<ce>
+<ce>                     _friend_ tosses you the item
+<ce>                      and disappears from view.
 
 Message:  1021
-<ce> _friend_ bends down to
-<ce> take a few objects from this corpse.
-<ce> 
-<ce> "Listen, I know we agreed on this,
-<ce> but you've been taking way too much here!
-<ce> I'm not even sure I can turn a profit today.
-<ce> To me it's fair that we both just walk away
-<ce> with what we have on hand and forget about
-<ce> this whole deal. Thanks for your help."
-<ce> 
-<ce> It appears %g1 is about to leave. If you wanted,
-<ce> you could slay %g2 to get %g3 item.
-<ce> Will you let %g2 go free?
+<ce>                        _friend_ bends down to
+<ce>                 take a few objects from this corpse.
+<ce>
+<ce>                  "Listen, I know we agreed on this,
+<ce>              but you've been taking way too much here!
+<ce>             I'm not even sure I can turn a profit today.
+<ce>             To me it's fair that we both just walk away
+<ce>              with what we have on hand and forget about
+<ce>               this whole deal. Thanks for your help."
+<ce>
+<ce>           It appears %g1 is about to leave. If you wanted,
+<ce>                 you could slay %g2 to get %g3 item.
+<ce>                      Will you let %g2 go free?
 
 Message:  1022
-<ce> As %g1 disappears, you know you've at least
-<ce> held on to your honor, to say nothing of the
-<ce> Fighters Guild's reputation. Someone else will
-<ce> have to teach %g2 not to break %g3 word.
+<ce>             As %g1 disappears, you know you've at least
+<ce>             held on to your honor, to say nothing of the
+<ce>            Fighters Guild's reputation. Someone else will
+<ce>               have to teach %g2 not to break %g3 word.
 
 Message:  1023
-<ce> "Wait, what?"
-<ce> 
-<ce> Your attack comes as a complete surprise.
+<ce>                            "Wait, what?"
+<ce>
+<ce>              Your attack comes as a complete surprise.
 
 Message:  1025
-<ce> Hey %pcf, have you seen _friend_?
-<ce> 'Cause %g1 was headed right here after your
-<ce> romp down in ___dung_.
-<ce> 
-<ce> Dead? Oh, come on, that's not right.
-<ce> That's not what the guild works for.
-<ce> Listen, do me a favor and keep it a secret.
-<ce> ___questgiver_ needs the Fighters Guild,
-<ce> and if word starts to spread that some
-<ce> moron takes people to their deaths
-<ce> in random caves the %t's gonna
-<ce> run us out of here. Let's pretend
-<ce> this never happened, all right?
+<ce>                  Hey %pcf, have you seen _friend_?
+<ce>             'Cause %g1 was headed right here after your
+<ce>                        romp down in ___dung_.
+<ce>
+<ce>                 Dead? Oh, come on, that's not right.
+<ce>                 That's not what the guild works for.
+<ce>             Listen, do me a favor and keep it a secret.
+<ce>               ___questgiver_ needs the Fighters Guild,
+<ce>                and if word starts to spread that some
+<ce>                  moron takes people to their deaths
+<ce>                    in random caves the %t's gonna
+<ce>                  run us out of here. Let's pretend
+<ce>                   this never happened, all right?
 
 Message:  1030
 %qdt:
@@ -116,8 +116,8 @@ Foe _enemy2_ is Thief
 Foe _frenemy_ is Warrior
 
 --	Quest start-up:
-	start timer _timer_ 
-	log 1030 step 0 
+    start timer _timer_
+    log 1030 step 0
     reveal _dung_
     add _friend_ face
     pc at _dung_ do _inside_
@@ -129,8 +129,8 @@ _inside_ task:
     create foe _enemy2_ every 32 minutes indefinitely with 2% success
 
 _slain_ task:
-	killed 3 _enemy1_
-	killed 3 _enemy2_
+    killed 3 _enemy1_
+    killed 3 _enemy2_
 
 variable _e1_
 _true_ task:
@@ -161,11 +161,11 @@ _kill2_ task:
     make _reward_ permanent
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+    clicked npc _questgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _kill2_ 
-	clear _qgclicked_ _clearclick_ 
+    when _qgclicked_ and not _kill2_
+    clear _qgclicked_ _clearclick_
 
 _question_ task:
     when _qgclicked_ and _kill2_
@@ -175,4 +175,4 @@ _question_ task:
 -+3 is intentional, not +2.
 
 _timer_ task:
-	end quest 
+    end quest
