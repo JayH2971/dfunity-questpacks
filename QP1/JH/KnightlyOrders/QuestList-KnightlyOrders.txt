@@ -27,7 +27,7 @@ JHKN015, KnightlyOrder, M, 1, 0, a quest to stop the cause of attacking spriggan
 JHKN016, KnightlyOrder, M, 1, 0, a quest to negotiate peace with an orc
 JHKN017, KnightlyOrder, M, 1, 0, a quest to defend a graveyard from intruders
 -JHKN018, KnightlyOrder, M, 1, 0, a quest to find a local thief
-JHKN019, KnightlyOrder, M, 9, 0, an artifact quest to slay a daedric army
+-JHKN019, KnightlyOrder, M, 9, 0, an artifact quest to slay a daedric army
 JHKN020, KnightlyOrder, M, 1, 0, a quest to draw out an attacking band
 JHKN021, KnightlyOrder, M, 5, 0, a quest to apprehend a witch
 JHKN022, KnightlyOrder, M, 7, 0, a quest to free a sealed dungeon
