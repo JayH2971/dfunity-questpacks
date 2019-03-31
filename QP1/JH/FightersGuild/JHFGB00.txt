@@ -86,7 +86,7 @@ Message:  1020
 <ce>                    _person_ fights with you quite
 <ce>               vigorously, but you can handle yourself.
 <ce>                The struggle lasts more than a minute,
-<ce>                 in which you prevail. Eventually %g1
+<ce>               after which you prevail. Eventually %g1
 <ce>                huffs out of the building, perhaps to
 <ce>             the Fighters Guild to make another request.
 

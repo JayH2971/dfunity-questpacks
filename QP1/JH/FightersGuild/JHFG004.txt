@@ -4,97 +4,97 @@ DisplayName: Guard Duty
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  I've got another kind of job here, %pcf,
-<ce>  in case you're tired of killing rats and bears.
-<ce>  There's this house here in town that's afraid
-<ce>  of a break-in tonight and they need a guard.
-<ce>  It's paying =reward_ gold. Is that your kind of job?
-<--->
-<ce>  We got a client who needs _res_
-<ce>  to get watched over tonight. Pretty simple job.
-<ce>  Just get there by 11:00 tonight and stay there 'til
-<ce>  sunlight. It's worth =reward_ gold. Wanna give it a shot?
+<ce>               I've got another kind of job here, %pcf,
+<ce>           in case you're tired of killing rats and bears.
+<ce>            There's this house here in town that's afraid
+<ce>             of a break-in tonight and they need a guard.
+<ce>         It's paying =reward_ gold. Is that your kind of job?
+                                     <--->
+<ce>                   We got a client who needs _res_
+<ce>           to get watched over tonight. Pretty simple job.
+<ce>         Just get there by 11:00 tonight and stay there 'til
+<ce>      sunlight. It's worth =reward_ gold. Wanna give it a shot?
 
 RefuseQuest:  [1001]
-<ce>  I hope I find someone quick. I don't
-<ce>  want to have to cover this one.
+<ce>                 I hope I find someone quick. I don't
+<ce>                   want to have to cover this one.
 
 AcceptQuest:  [1002]
-<ce>  All right, good. Head over in town to
-<ce>  _res_. Stay there from 
-<ce>  11:00 at night to sunup. These people 
-<ce>  weren't too specific about what threats
-<ce>  they were expecting, but it's not gonna be
-<ce>  vampires or werewolves or something, just
-<ce> some local low-life and his friends. Stay
-<ce>  inside until they say they don't need you
-<ce>  any longer. You're contracted for one night.
-<ce> They'll give you the gold when you're done.
+<ce>                All right, good. Head over in town to
+<ce>                        _res_. Stay there from
+<ce>                11:00 at night to sunup. These people
+<ce>               weren't too specific about what threats
+<ce>              they were expecting, but it's not gonna be
+<ce>              vampires or werewolves or something, just
+<ce>              some local low-life and his friends. Stay
+<ce>              inside until they say they don't need you
+<ce>             any longer. You're contracted for one night.
+<ce>             They'll give you the gold when you're done.
 
 QuestFail:  [1003]
-<ce> ERROR 1003 JHFG004
+<ce>                          ERROR 1003 JHFG004
 
 QuestComplete:  [1004]
-<ce> The sense of safety you brought was
-<ce> well worth the payment, %ra. This is
-<ce> what they said belonged to you.
+<ce>                 The sense of safety you brought was
+<ce>                 well worth the payment, %ra. This is
+<ce>                   what they said belonged to you.
 
-QuestorPostFailure:   [1009]
+QuestorPostFailure:  [1009]
 Here to give us a worse reputation than we've already got, %pcf?
 
 Message:  1018
-<ce> "Ah, our guard for the night! Please
-<ce> move about freely. We're under your care."
-<--->
-<ce> "Is that our guard for the night?
-<ce>  Make yourself comfortable,
-<ce> wherever you please."
+<ce>                 "Ah, our guard for the night! Please
+<ce>              move about freely. We're under your care."
+                                     <--->
+<ce>                  "Is that our guard for the night?
+<ce>                      Make yourself comfortable,
+<ce>                        wherever you please."
 
 Message:  1020
-<ce> We would have been killed
-<ce>  tonight if it weren't for you!
-<ce>  Thank you! Thank you!
+<ce>                      We would have been killed
+<ce>                    tonight if it weren't for you!
+<ce>                        Thank you! Thank you!
 
 Message:  1021
-<ce>  Curiously, you notice nearby a bag of gold
-<ce>  which appears to be out of everyone else's
-<ce>  sight. The adrenaline rush of today's
-<ce>  events may have worn them out too much,
-<ce>  lending to momentary distraction. Will you
-<ce>  attempt to take it for yourself?
+<ce>              Curiously, you notice nearby a bag of gold
+<ce>              which appears to be out of everyone else's
+<ce>                sight. The adrenaline rush of today's
+<ce>               events may have worn them out too much,
+<ce>              lending to momentary distraction. Will you
+<ce>                   attempt to take it for yourself?
 
 Message:  1022
-<ce>  This is all too easy for one of your skill set.
-<ce>  The bag of money is now yours, adding an
-<ce>  additional =stealg_ gold pieces to your count.
+<ce>           This is all too easy for one of your skill set.
+<ce>               The bag of money is now yours, adding an
+<ce>            additional =stealg_ gold pieces to your count.
 
 Message:  1023
-<ce>  Your movement while grabbing the coin bag is too
-<ce>  obvious. Someone peering over sees that you have
-<ce>  your hand on property which is clearly not yours.
-<ce>  The quiet morning hours are shattered by a
-<ce>  shrill yell.
-<ce>  
-<ce>  "THIEF! The Fighters Guild sent us a thief!
-<ce>  Someone help!"
-<ce>  
-<ce>  Something tells you they will not be paying
-<ce>  for your guard service. Perhaps you should
-<ce>  work on your thieving skills before trying
-<ce>  to rip off your clients.
-<--->
-<ce>  Your movement while grabbing the coin bag is too
-<ce>  obvious. Someone peering over sees that you have
-<ce>  your hand on property which is clearly not yours.
-<ce>  The quiet morning hours are shattered by a
-<ce>  shrill yell.
-<ce>  
-<ce>  "Help! We have a thief in the house! Help us!"
-<ce>  
-<ce>  Something tells you they will not be paying
-<ce>  for your guard service. Perhaps you should
-<ce>  work on your thieving skills before trying
-<ce>  to rip off your clients.
+<ce>           Your movement while grabbing the coin bag is too
+<ce>           obvious. Someone peering over sees that you have
+<ce>          your hand on property which is clearly not yours.
+<ce>              The quiet morning hours are shattered by a
+<ce>                             shrill yell.
+<ce>
+<ce>             "THIEF! The Fighters Guild sent us a thief!
+<ce>                            Someone help!"
+<ce>
+<ce>             Something tells you they will not be paying
+<ce>              for your guard service. Perhaps you should
+<ce>              work on your thieving skills before trying
+<ce>                       to rip off your clients.
+                                     <--->
+<ce>           Your movement while grabbing the coin bag is too
+<ce>           obvious. Someone peering over sees that you have
+<ce>          your hand on property which is clearly not yours.
+<ce>              The quiet morning hours are shattered by a
+<ce>                             shrill yell.
+<ce>
+<ce>            "Help! We have a thief in the house! Help us!"
+<ce>
+<ce>             Something tells you they will not be paying
+<ce>              for your guard service. Perhaps you should
+<ce>              work on your thieving skills before trying
+<ce>                       to rip off your clients.
 
 Message:  1030
 %qdt:
@@ -118,8 +118,8 @@ Clock _timer_ 1.06:00 0
 Foe _enemy_ is Burglar
 
 --	Quest start-up:
-	start timer _timer_ 
-	log 1030 step 0 
+	start timer _timer_
+	log 1030 step 0
 	pick one of _E.01_ _E.02_
 	pc at _res_ set _inside_
 
@@ -127,9 +127,6 @@ variable _E.01_
 variable _E.02_
 
 _inside_ task:
-  start task _say_
-
-_say_ task:
 	say 1018
 
 _spawntime_ task:
@@ -174,7 +171,7 @@ _spawn_ task:
 
 _win_ task:
 	killed 4 _enemy_
-  start task _E.02_
+	start task _E.02_
 
 _goaltime_ task:
 	daily from 5:00 to 6:30
@@ -185,15 +182,15 @@ _notice_ task:
 
 _pcgetsgold_ task:
 	when _E.02_ and _inside_ and _goaltime_
-	give pc _reward_ 
-	end quest 
+	give pc _reward_
+	end quest
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _questgiver_
 
 _clearclick_ task:
 	when _qgclicked_
-	clear _qgclicked_ _clearclick_ 
+	clear _qgclicked_ _clearclick_
 
 _timer_ task:
-	end quest 
+	end quest

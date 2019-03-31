@@ -44,7 +44,7 @@ Clock _delay_ 6:00
 
 ---- Quest startup
     give pc nothing
-    pick one of _e1_ _e2_ _e3_ _e4_
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_
     start timer _delay_
 
 _e1_ task:
@@ -57,7 +57,10 @@ _e3_ task:
     start quest JHFGB02
 
 _e4_ task:
-    start quest JHFGB02
+    start quest JHFGB03
+
+_e5_ task:
+    start quest JHFGB04
 
 _qgclicked_ task:
     clicked npc _qgiver_

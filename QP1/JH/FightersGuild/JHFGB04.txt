@@ -1,0 +1,349 @@
+-- Perpetual Quest
+Quest: JHFGB04
+DisplayName: Quill Circus
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                             JHFGB04 1000
+
+RefuseQuest:  [1001]
+<ce>                             JHFGB04 1001
+
+AcceptQuest:  [1002]
+<ce>                             JHFGB04 1002
+
+QuestFail:  [1003]
+<ce>       You have stepped outside the bounds of the battlefield.
+<ce>             _chul_'s nauseating laughter fills the air.
+<ce>                You are declared the loser by default.
+<ce>
+<ce>            "Such cowardice deserves a fitting punishment,
+<ce>            doesn't it boys? Perhaps a dose of the Plague
+<ce>              will teach %pg2 not to get our hopes up!"
+<ce>
+<ce>        The crystal ball disappears. You smell something foul.
+
+QuestComplete:  [1004]
+<ce>           Foes cease to appear. Finally, the crystal ball
+<ce>                       begins to smoke lightly.
+<ce>
+<ce>          "Quite a show you've put on for us! Clever child.
+<ce>      You have served our purposes, and we will now serve yours.
+<ce>                         Claim your reward."
+<ce>
+<ce>               The ball shatters with a flash of light,
+<ce>                 and in its place you find the gold.
+
+Message:  1010
+<ce>                 This guy's name is _chul_. He seemed
+<ce>            familiar for some reason. You'll find him over
+<ce>                       in _place_ here in town.
+
+Message:  1011
+<ce>                Ho ho! The Fighters Guild has sent me
+<ce>          a new inductee for the circus! That is what you're
+<ce>       here for, I presume? We don't have any other outstanding
+<ce>          business, you and I. But I do have a treat for you
+<ce>           if you wish to play along. How would you like to
+<ce>                earn for yourself 10,000 gold pieces?
+<ce>                    All you have to do is survive.
+<ce>                    Doesn't that sound agreeable?
+
+Message:  1012
+<ce>             Ooh, a delightsome response. You must think
+<ce>          you're very brave, don't you? Well, we shall see.
+<ce>        My friends and I wish to see you survive against a few
+<ce>            ordinary pets we will put against you. Race to
+<ce>                 ___cult_ before =2cult_ days are up.
+<ce>      If you make it, we'll accept your offer of entertainment.
+<ce>                   We hope you do not let us down.
+
+Message:  1013
+<ce>           Oh, then you must be one of the wimps they keep
+<ce>              rescuing over there at the guild. Too bad.
+<ce>               One day I'll meet my champion, I'm sure!
+
+Message:  1014
+<ce>           You approach the shrine but find no one. Perhaps
+<ce>                  Chulmore's people aren't here yet.
+<ce>
+<ce>            "Ah, our toy has arrived! Welcome, plaything!
+<ce>           The Quill Circus needs entertainment of its own,
+<ce>                    and you are today's program!"
+<ce>
+<ce>           The entertainer's voice rings out from a crystal
+<ce>       ball you see on the ground nearby. The shrine attendant
+<ce>                    grins, clearly in on the deal.
+<ce>
+<ce>        "You didn't think we'd be present, did you? But we can
+<ce>          see the whole show through this clever apparatus.
+<ce>          Now, our deal applies: fight to win, and don't you
+<ce>             dare think of fleeing! Let the games begin!"
+
+Message:  1015
+<ce>              _chul_'s shrill laughter pierces the air.
+<ce>
+<ce>          "Why don't we start with something easy? We always
+<ce>                  get a good show from the undead."
+<ce>
+<ce>          The ball then emits a projection of three zombies
+<ce>                     which materialize properly.
+
+Message:  1016
+<ce>              _chul_'s shrill laughter pierces the air.
+<ce>
+<ce>          "Why don't we start with something easy? We always
+<ce>                  get a good show from the undead."
+<ce>
+<ce>           The ball then emits a projection of three ghosts
+<ce>                     which materialize properly.
+
+Message:  1017
+<ce>              _chul_'s shrill laughter pierces the air.
+<ce>
+<ce>          "Why don't we start with something easy? We always
+<ce>                  get a good show from the undead."
+<ce>
+<ce>          The ball then emits a projection of three wraiths
+<ce>                     which materialize properly.
+
+Message:  1018
+<ce>               "Well, that was a bit cruel, wasn't it?
+<ce>                Let's go for a breather round. I hear
+<ce>           atronachs are quite in style this time of year."
+
+Message:  1019
+<ce>        "My comrades here are telling me to pick up the pace.
+<ce>         You and I wouldn't want to let them down, would we?
+<ce>           Let's go for something a bit quicker this time."
+
+Message:  1020
+<ce>                "My friends are telling me to send out
+<ce>             some more undead. Who am I to tell them no?"
+
+Message:  1021
+<ce>         "This is for my friends in particular. Have you ever
+<ce>         wondered what it would be like to fight forty bats?"
+
+Message:  1022
+<ce>               "Most people wouldn't expect us to have
+<ce>            vampires at the ready. But I guess that's what
+<ce>              makes Quill Circus world famous, isn't it?
+<ce>                      The element of surprise."
+
+Message:  1023
+<ce>      "I'm surprised we waited this long to bring out the daedra
+<ce>      projections. But the suspense is starting to wear me out."
+
+Message:  1024
+<ce>         "I figured I'd go for something simple to end this.
+<ce>             How about one last undead foe? He'll go easy
+<ce>                          on you, I swear."
+
+Message:  1030
+ %qdt: 
+I am to meet _chul_ at _place_
+in ___place_ to hear the task I will undertake.
+
+Message:  1031
+ %qdt:
+_chul_ has invited me to go to ___cult_
+to survive in exchange for 10,000 gold pieces.
+I have to arrive there within =2cult_ days.
+
+Message:  1032
+<ce>               By now _chul_'s invitation has expired.
+<ce>           Certainly it couldn't have been that important.
+
+QBN:
+Place _place_ local house
+Place _cult_ remote cult
+
+Clock _2cult_ 00:00 0 flag 2 range 0 2
+Clock _failsafe_ 90.00:00
+Clock _delay_ 00:01
+Clock _delay2_ 00:00
+
+Person _chul_ named Chulmore_Quill
+
+Item _reward_ gold range 10000 to 10000
+
+Foe _z3_ is Zombie
+Foe _g3_ is Ghost
+Foe _w3_ is Wraith
+Foe _2fatr_ is Fire_atronach
+Foe _2iatr_ is Ice_atronach
+Foe _2satr_ is Flesh_atronach
+Foe _2natr_ is Iron_atronach
+Foe _3ww_ is Werewolf
+Foe _2dr_ is Dragonling_souless
+Foe _1gi_ is Giant
+Foe _3skel_ is Skeletal_warrior
+Foe _3mumm_ is Mummy
+Foe _1ghos_ is Ghost
+Foe _40bats_ is Giant_bat
+Foe _4vamp_ is Vampire
+Foe _1avamp_ is Ancient_vampire
+Foe _4daedroth_ is Daedroth
+Foe _2seducer_ is Daedra_seducer
+Foe _alich_ is Ancient_lich
+
+--	Quest start-up:
+    say 1010
+    place npc _chul_ at _place_
+    log 1030 step 0
+    start timer _failsafe_
+
+_begin_ task:
+    clicked npc _chul_
+    prompt 1011 yes _accept_ no _reject_
+
+_accept_ task:
+    start timer _2cult_
+    say 1012
+    log 1031 step 1
+
+_reject_ task:
+    say 1013
+    hide npc _chul_
+    end quest
+
+_there_ task:
+    when pc enters cult
+    start task _inside_
+
+_flee_ task:
+    when pc exits cult
+    clear _inside_
+
+_arrive_ task:
+    when _inside_ and _accept_
+    start timer _delay_
+
+variable _inside_
+_delay_ task:
+    say 1014
+    start timer _delay2_
+
+_wimp_ task:
+    when _delay_ and not _inside_
+    say 1003
+    make pc ill with Plague
+    end quest
+
+_delay2_ task:
+    pick one of _a1_ _a2_ _a3_
+
+_a1_ task:
+    say 1015
+    create foe _z3_ every 0 minutes 3 times with 100% success
+
+_a2_ task:
+    say 1016
+    create foe _g3_ every 0 minutes 3 times with 100% success
+
+_a3_ task:
+    say 1017
+    create foe _w3_ every 0 minutes 3 times with 100% success
+
+_round1_ task:
+    killed 3 _z3_
+    killed 3 _g3_
+    killed 3 _w3_
+    say 1018
+    create foe _2fatr_ every 0 minutes 2 times with 100% success
+    create foe _2iatr_ every 0 minutes 2 times with 100% success
+    create foe _2satr_ every 0 minutes 2 times with 100% success
+    create foe _2natr_ every 0 minutes 2 times with 100% success
+
+_atr1_ task:
+    killed 2 _2fatr_
+
+_atr2_ task:
+    killed 2 _2iatr_
+
+_atr3_ task:
+    killed 2 _2satr_
+
+_atr4_ task:
+    killed 2 _2natr_
+
+_round2_ task:
+    when _atr1_ and _atr2_ and _atr3_ and _atr4_
+    say 1019
+    create foe _3ww_ every 0 minutes 3 times with 100% success
+    create foe _2dr_ every 0 minutes 2 times with 100% success
+    create foe _1gi_ every 0 minutes 1 times with 100% success
+
+_were_ task:
+    killed 3 _3ww_
+
+_drag_ task:
+    killed 2 _2dr_
+
+_gian_ task:
+    killed _1gi_
+
+_round3_ task:
+    when _were_ and _drag_ and _gian_
+    say 1020
+    create foe _3skel_ every 0 minutes 3 times with 100% success
+    create foe _3mumm_ every 0 minutes 3 times with 100% success
+    create foe _1ghos_ every 0 minutes 1 times with 100% success
+
+_skels_ task:
+    killed 3 _3skel_
+
+_mummies_ task:
+    killed 3 _3mumm_
+
+_ghost_ task:
+    killed _1ghos_
+
+_round4_ task:
+    when _skels_ and _mummies_ and _ghost_
+    say 1021
+    create foe _40bats_ every 0 minutes 40 times with 100% success
+
+_round5_ task:
+    killed 40 _40bats_
+    say 1022
+    create foe _4vamp_ every 0 minutes 4 times with 100% success
+    create foe _1avamp_ every 0 minutes 4 times with 100% success
+
+_vampires_ task:
+    killed 4 _4vamp_
+
+_avampire_ task:
+    killed 1 _1avamp_
+
+_round6_ task:
+    when _vampires_ and _avampire_
+    say 1023
+    create foe _4daedroth_ every 0 minutes 4 times with 100% success
+    create foe _2seducer_ every 0 minutes 2 times with 100% success
+
+_daedroth_ task:
+    killed 4 _4daedroth_
+
+_seducer_ task:
+    killed 2 _2seducer_
+
+_round7_ task:
+    when _daedroth_ and _seducer_
+    say 1024
+    create foe _alich_ every 0 minutes 1 times with 100% success
+
+_victory_ task:
+    killed _alich_
+    say 1004
+    get item _reward_
+    end quest
+
+_2cult_ task:
+    say 1032
+    end quest
+
+_failsafe_ task:
+    end quest
