@@ -30,3 +30,8 @@ JHTGX07, GeneralPopulace, P, 0, X, offered via JHTG06X
 -exchange a true paper for a false one without injuring the owner (mission failure)
 -retrieve document for necromancer
 -revamp 001: hide chance vs mob, recurring
+-The PC must take an illicit substance to a person under contract to receive it. Law enforcement mercenaries may ambush the PC during the quest. If the PC injures one of the mercenaries, his/her regional reputation will drop by 5 points, and if he/she kills one of them, the drop will become 25 points. (AVAILABLE)
+-Thieves Guild quest: 40+ reputation required. A member's robbed a chest containing some valuables, but it's magically sealed, and only the circinate "Open" spell will unlock it. The PC must go and open the chest for half its treasure.
+-Thieves Guild quest: 5+ reputation required. The guild has figured out a way to bring justice to a snitch on their operations. The PC must enter the person's home and change one piece of paper for another, without injuring the owner who will most likely be present. If the owner is injured the PC is revealed and the mission fails.
+-Thieves Guild quest: A captured informant is being held hostage but is belligerent and unwilling to give vital information for a robbery. A Charm spell is needed to turn him/her into the Guild's temporary informant.
+-Thieves Guild quest: Grab a bag of money from a residence in another town, but don't fight the guards inside. They'll identify you and drop your legal rep.

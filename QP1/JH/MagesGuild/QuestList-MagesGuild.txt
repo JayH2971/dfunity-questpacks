@@ -13,7 +13,7 @@ JHMG001, MagesGuild, M, 0, 0, a quest to slay a shapeshifting mage in a dungeon
 JHMG002, MagesGuild, M, 3, 0, a quest to convince a scholar to leave a dungeon via quiz
 JHMG003, MagesGuild, M, 4, 0, a quest to slay a necromancer in a residence
 JHMG004, MagesGuild, M, 0, 0, a quest to assist a researcher in slaying an atronach
-JHMG005, MagesGuild, M, 1, 0, a quest to test a trapped warping trinket
+-JHMG005, MagesGuild, M, 1, 0, a quest to test a trapped warping trinket (to go to commoner)
 JHMG006, MagesGuild, M, 1, 0, a quest to take an unidentifiable magical item to a scholar in a dungeon
 JHMG007, MagesGuild, M, 2, 0, a quest to get teleported to a dungeon to find a criminal
 JHMG008, MagesGuild, M, 0, 0, a quest to retrieve a scholar's stolen notes
@@ -38,4 +38,10 @@ JHMGB01, MagesGuild, P, 0, 0, a destroy an offending relic
 JHMGB02, MagesGuild, P, 0, 0, intervention from the Blades
 -go to various NPCs in cities to pick up needed ingredients
 -artifact quest, join two halves of a document and take it to an expert. Expert will be slain if enough time passes. Artifact is on Daedra Lord's body.
--shifting paper log: changing messages
+-an enchanter has been commissioned to enchant [weapon or armour] but has found themselves 1 short and needs you to buy one in town, an alternate version of this quest could see you have to fetch multiple items
+-Mages Guild quest: 55+ reputation required. A house has been haunted for a period of several weeks by a mummy/zombie/lich who keeps reappearing after defeat. The PC must use the Holy Word spell in the residence to end its influence. (AVAILABLE)
+-??? quest: An enchanted heavy object of some kind is in a Mages Guild/temple/residence, and while it's present, monsters continue to appear within. The PC must find the mage who constructed it and slay him/her to end the curse. (AVAILABLE)
+-Mages Guild quest: 55+ reputation required. Some student has created a flesh atronach with overwhelming regenerative properties, contrary to guild rules. For a gold reward the PC must go to a dungeon and cast Hand of Decay on the creature to end its immortality.
+-Mages Guild quest: 45+ reputation required. A spellblade is suffering from a curse by another mage which prevents magicka regeneration. The PC must go to the spellblade's home and cast the Null Magicka spell on him/her to release the curse for a gold reward.
+-Mages Guild quest: A renowned scholar is staying at a tavern in the area but selfishly keeps his/her research away from the guild. The PC is asked to take the scholar's writings from the tavern. It may be enchanted to summon monsters upon theft.
+-Mages Guild quest: Reverse teleport effect. Use an enchanted item to pull a person back from a Recall spell.

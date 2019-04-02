@@ -90,3 +90,4 @@ JHPQ045, na, P, 0, 0, a Perpetual Quest
 -haunted house
 -level-based, someone has paid to kill you
 -level-based, someone blackmails you vs legal rep. stolen gem
+-Perpetual quest: A dark elf or some other exotic race asks for your help getting oriented with the region. Small road trip to visit a tavern, a shop, and a temple.

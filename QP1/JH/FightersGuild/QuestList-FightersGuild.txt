@@ -28,15 +28,15 @@ JHFG017, FightersGuild, M, 4, 0, a quest to slay a high-ranking Mages Guild Necr
 JHFG018, FightersGuild, M, 4, 0, a quest to guard a weapons shop at night
 JHFG019, FightersGuild, M, 6, 0, a quest to defend the city against appearing monsters
 JHFG020, FightersGuild, M, 75, 0, entry into JHMFB??
+JHFG022, FightersGuild, M, 1, 0, a quest to guard a tavern
 JHFGA00, FightersGuild, M, 4, 1, entry into JHMC001
-JHMC001, FightersGuild, P, 0, 0, a quest to help someone fleeing the Dark Brotherhood
 JHFGB00, FightersGuild, P, 0, 0, a quest to fight daedra
 JHFGB01, FightersGuild, P, 0, 0, a duel with a shapeshifter
 JHFGB02, FightersGuild, P, 0, 0, a quest to pay off a debt
 JHFGB03, FightersGuild, P, 0, 0, a quest to seek an enchanted item
 JHFGB04, FightersGuild, P, 0, 0, a quest for Quill Circus
 JHFG021, FightersGuild, M, 1, 0, a quest to escort a debtor
-JHFG022, FightersGuild, M, 1, 0, a quest to guard a tavern
+JHMC001, FightersGuild, P, 0, 0, a quest to help someone fleeing the Dark Brotherhood
 -go to fellow fighter's hometown, find discouraged, talk to persuade
 -punishment for lacking skill checks (magic schools, weapon types)
 -non-violent ways through quests for TG, MG, DB
@@ -44,3 +44,6 @@ JHFG022, FightersGuild, M, 1, 0, a quest to guard a tavern
 -variety quest, Underking
 -variety quest, courier, actually illicit subs
 -archaeologists, accompany other guild member on sundry duties
+-5. A Fighters Guild quest to capture a Dark Brotherhood assassin hiding in another city. +5 FG, -10 DB. (AVAILABLE)
+-JHFG001: Maybe have a chance for the the "vampire" not actually being a vampire and the client just trying to use the fighters guild as would-be Dark Brotherhood (for whatever reason) the player could decide go with it and kill the innocent or spare the innocent (and maybe that would lead to dealing with the guy who hired the fighters guild) As for skills not sure (maybe Illusion or intelligence or medical skill) depending on what the scenario is with the client.
+-JHFG002: Have a chance to have the daedra offer you a really powerful reward/buff (that has a chance with some king of a down side in the future they wouldn't tell you that) not sure what it would be (from being ambushed by a bunch of dremora lords or being randomly teleported to a new dungeon etc)maybe it would lead to a whole new quest dealing with the results? for letting them go

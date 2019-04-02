@@ -35,3 +35,5 @@ JHDBA00, DarkBrotherHood, M, P, 0, branch of JHDB007
 -present item to get ransom money or confession
 -blackguards questline
 -DB014: disintegrate is failure
+-Dark Brotherhood quest: 70+ reputation required. There's a high price to kidnap a certain wizard for ransom, but they fear he/she may teleport away or die in the struggle. The PC must cast the Wizard Rend spell on the enemy to incapacitate him/her. Dark Brotherhood operatives waiting nearby will then do the rest and provide the PC's reward.
+-Dark Brotherhood quest: 80+ reputation required. The Brotherhood is being paid particularly well to not only take the life of a mark but obliterate the body as well. The PC must use Hand of Decay or Sphere of Negation on the enemy to ensure the body disappears entirely. If the enemy is killed the quest fails.

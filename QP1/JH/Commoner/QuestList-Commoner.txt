@@ -19,3 +19,13 @@ JHIM007, Commoners, N, 0, 0, a quest for vengeance in a tavern
 JHIM008, Commoners, N, 0, 0, a quest for reconciliation with witches
 JHIM010, Commoners, N, 0, 0, a quest buying a treasure map
 JHIM011, Commoners, N, 0, 0, a quest as a bodyguard
+-The shopkeeper informs you that after years of mediocre performance, this shop must shortly close unless there's a major financial reversal. The PC is asked to steal a bag of merchandise from another store in exchange for the shopkeeper's last heirloom. (AVAILABLE)
+-Innkeeper quest: The NPC is far too busy, but feels the need to place some flowers on a loved one's grave. He/she bought a particular bouquet of flowers from a shady salesperson who claimed they were proper for the month. 50/50 chance of the flowers causing a zombie to rise from the graveyard or a message coming from the departed loved one. Mischevious salesperson, motive not yet decided. [needs "when dropped anitem"]
+-Innkeeper quest: Loan some money to an NPC to keep their shop. 80% chance of a good return, 20% chance of little or no reward.
+-Innkeeper/temple quest: Someone in the city has been poisoned/diseased and needs to be cured immediately. The PC must go and cast a curing spell within thirty minutes.
+-Innkeeper quest: A particular relic with disease-curing properties is losing its power. The NPC asks you to take it to a rural shrine/dungeon which recharged it the previous time through no obvious means, then bring it back when it's powered up.
+-Innkeeper quest: The merchant excitedly tells you he/she has met a member of the Necromancers and asks you if you want to join the cult. 75% chance of being some fledgling nobody, 25% chance of being an undead in disguise, and in either case the PC must defend him/herself from attack.
+-Innkeeper quest: The innkeeper's residence in another city has been taken over by armed foes, but it's due to a shady deal that went badly, so he/she doesn't want the guards involved. Go with the innkeeper to the residence and slay the foes for a reward.
+-Innkeeper quest: A simple betting game. Bet 200 gold and choose from two options to either lose it or double it.
+-Innkeeper quest: Entirely dialogue-based, where you can talk the shopkeeper through some problem via yes or no prompts. Receive some payment for granting peace of mind.
+-2) For a temple-related Commoner quest, guarding someone infected with Lycanthropy to a temple, with a one-to-three-day failure limit (after which, well... ), and the possibility of interference from the clan of lycanthropes who infected them?

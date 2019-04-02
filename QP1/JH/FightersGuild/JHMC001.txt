@@ -25,7 +25,7 @@ QuestComplete:  [1004]
 <ce> and bows deeply, taking the _tri_ back.
 <ce> 
 <ce> "_tele_, before you send me off,
-<ce> could you please send this trinket off
+<ce> could you please warp this trinket
 <ce> into some pit in the Wrothgarian Mountains?
 <ce> It needs to never see the light of day again."
 <ce> 
@@ -187,7 +187,7 @@ Message:  1023
 <ce> "Now this is interesting. The famed %ra
 <ce> who has been escorting my momentarily confused
 <ce> child, now in my very presence. The Night Mother
-<ce> has dealt kindly with me, I see."
+<ce> has dealt kindly with me, I see.
 <ce> 
 <ce> "Here is the simplest way for everyone to win.
 <ce> I have no material reward, but in exchange for bringing
@@ -214,7 +214,7 @@ Message:  1024
 <ce> both from the tremendous pain and
 <ce> your pitiless betrayal. The blows
 <ce> continue, smashing an arm and some ribs
-<ce> and other sundry parts of the body.
+<ce> and various other parts of the body.
 <ce> In mere moments your former client
 <ce> is gasping for breath, inches
 <ce> from death's door. _db_
