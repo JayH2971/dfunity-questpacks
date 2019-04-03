@@ -1,0 +1,106 @@
+Quest: JHTG012
+DisplayName: No Honor Among Thieves
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>        Got word of some treasure down in the inner depths of
+<ce>           %crn that could use some plundering. Wanna bring
+<ce>                it back here so we can split the loot?
+
+RefuseQuest:  [1001]
+<ce>         See, that's why I don't give all the details first.
+
+AcceptQuest:  [1002]
+<ce>           Deal. It's in ___dungeon_. You're gonna have to
+<ce>         look for a bag somewhere down there. The thing's got
+<ce>      a really good locking mechanism, so those hands are gonna
+<ce>      be useless for it. Just bring it back here and we'll give
+<ce>               you a share of the money we find inside.
+
+QuestFail:  [1003]
+<ce>                             JHTG012 1003
+
+QuestComplete:  [1004]
+<ce>          Good work. Keep doing this and we'll all get rich.
+
+Message:  1010
+<ce>             Just as _qgiver_ said, this bag is magically
+<ce>        sealed. No amount of lockpicking will get through it.
+
+Message:  1011
+<ce>       Your spell unseals the bag. There are several documents
+<ce>      of historical and political value inside, which the guild
+<ce>      could probably use to blackmail a few important people in
+<ce>      the area. What matters to you is the =bigreward_ gold you
+<ce>               find rustling around all the parchment.
+
+Message:  1012
+<ce>         Couldn't get through it, huh? Don't worry. It's easy
+<ce>       for some of the guys we've got here. Just wait a minute.
+<ce>
+<ce>           Yep, let's see what's inside... Ooh, nice stuff.
+<ce>         I bet most of this would be useless to someone like
+<ce>       you, but the Spymaster's gonna have a field day with it.
+<ce>                   The fence, too. Take your share.
+
+Message:  1013
+<ce>           The bag's open? That's odd. Spymaster said there
+<ce>               was gonna be a really tough lock on it.
+<ce>
+<ce>       Let's see... No money. Too bad, but that's what happens
+<ce>    sometimes. It's got a bunch of documents I think we'd be able
+<ce>     to use. Maybe sell 'em to some aristocrat. Sorry you've got
+<ce>   the short end of the stick here, but we said you'd get a share,
+<ce>  and your share is zero. We'll still count this as a favor, though.
+
+Message:  1030
+%qdt:
+ There's a sealed bag in ___dungeon_
+ that the Thieves Guild in ___qgiver_
+ wants to open. They'll help me open it
+ and give me a share of any money inside.
+
+QBN:
+Item _reward_ gold range 150 to 350
+Item _bigreward_ gold range 1350 to 1800
+Item _bag_ small_sack
+
+Person _qgiver_ group Questor male
+
+Place _dungeon_ remote dungeon
+
+Clock _timer_ 90.00:00
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    reveal _dungeon_
+    place item _bag_ at _dungeon_
+
+_found_ task:
+    clicked item _bag_
+    say 1010
+    cast Open effect do _win_
+
+_win_ task:
+    say 1011
+    get item _bigreward_
+
+_victory_ task:
+    toting _bag_ and _qgiver_ clicked
+
+_winner_ task:
+    when _victory_ and _win_
+    say 1013
+    give pc nothing
+    end quest
+
+_notwinner_ task:
+    when _victory_ and not _win_
+    say 1012
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    end quest

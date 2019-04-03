@@ -18,8 +18,9 @@ JHTG006, GeneralPopulace, M, 0, 0, a quest to steal research notes
 JHTG007, GeneralPopulace, M, 1, X, a quest to persuade a ransom target
 JHTG008, GeneralPopulace, M, 2, 0, a quest to steal a gem belonging to the ruling family
 JHTG009, GeneralPopulace, M, 8, 0, an artifact quest to take a bag to a client
-JHTG010, GeneralPopulace, M, 7, 0, a quest to get a sealed bag from a trapped dungeon
+JHTG010, GeneralPopulace, M, 4, 0, a quest to get a sealed bag from a trapped dungeon
 JHTG011, GeneralPopulace, M, 2, 1, a quest to bribe a knight to free a guild member
+JHTG012, GeneralPopulace, M, 1, 0, a quest to find a sealed bag in a dungeon
 JHTG00X, GeneralPopulace, M, 4, 1, a quest invitation from a guild member
 JHTGX01, GeneralPopulace, P, 0, X, offered via JHTG00X
 JHTGX02, GeneralPopulace, P, 0, X, offered via JHTG01X
@@ -28,8 +29,6 @@ JHTGX04, GeneralPopulace, P, 0, X, offered via JHTG03X
 JHTGX05, GeneralPopulace, P, 0, X, offered via JHTG04X
 JHTGX06, GeneralPopulace, P, 0, X, offered via JHTG05X
 JHTGX07, GeneralPopulace, P, 0, X, offered via JHTG06X
--bribe a noble with a gem to turn away a sentence
--exchange a true paper for a false one without injuring the owner (mission failure)
 -retrieve document for necromancer
 -revamp 001: hide chance vs mob, recurring
 -The PC must take an illicit substance to a person under contract to receive it. Law enforcement mercenaries may ambush the PC during the quest. If the PC injures one of the mercenaries, his/her regional reputation will drop by 5 points, and if he/she kills one of them, the drop will become 25 points. (AVAILABLE)
