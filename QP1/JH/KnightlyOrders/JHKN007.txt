@@ -4,96 +4,95 @@ DisplayName: Master of Disguise
 QRC:
 
 QuestorOffer:  [1000]
-<ce> We have reports concerning a shop
-<ce> in town, _shop_, of a
-<ce> tragic kind. For the past several days
-<ce> the town guard has hauled corpses of human
-<ce> beings out, all slain in the most gruesome
-<ce> fashion. They have no evidence as to who
-<ce> might be behind the slayings, but we here
-<ce> have some suspicions in mind. Will you
-<ce> be our agent in resolving these murders?
+<ce>                  We have reports concerning a shop
+<ce>                        in town, _shop_, of a
+<ce>                tragic kind. For the past several days
+<ce>              the town guard has hauled corpses of human
+<ce>              beings out, all slain in the most gruesome
+<ce>               fashion. They have no evidence as to who
+<ce>              might be behind the slayings, but we here
+<ce>                have some suspicions in mind. Will you
+<ce>               be our agent in resolving these murders?
 
 RefuseQuest:  [1001]
-<ce>  Of course. ___questgiver_ hasn't had
-<ce>  enough havoc and chaos yet, after all.
+<ce>                 Of course. ___questgiver_ hasn't had
+<ce>                enough havoc and chaos yet, after all.
 
 AcceptQuest:  [1002]
-<ce> Brave, %pcf, but you will need more than
-<ce> bravery alone to match this foe. Each emaciated
-<ce> corpse has been slain in a truly horrific manner,
-<ce> but we can pick out some details from each one.
-<ce> The blood is too profusely spilt for it to be a
-<ce> vampire. The kills are done silently, precluding a
-<ce> lycanthrope culprit. And merely looking at the
-<ce> dead bodies erases any thought of a human
-<ce> at work. No, this is a powerful enemy that
-<ce> we cannot detect. Do your work to search for the
-<ce> guilty party, and then go to _res_
-<ce> to find our friend, _priest_. You'll
-<ce> find in %g2 a utility mage, not suited for
-<ce> combat, but of breaking illusionary magic.
-<ce> Confront the suspect together and do your duty.
-<ce> I cannot give you more than two days to do this.
+<ce>               Brave, %pcf, but you will need more than
+<ce>           bravery alone to match this foe. Each emaciated
+<ce>          corpse has been slain in a truly horrific manner,
+<ce>           but we can pick out some details from each one.
+<ce>           The blood is too profusely spilt for it to be a
+<ce>          vampire. The kills are done silently, precluding a
+<ce>            lycanthrope culprit. And merely looking at the
+<ce>              dead bodies erases any thought of a human
+<ce>              at work. No, this is a powerful enemy that
+<ce>           we cannot detect. Do your work to search for the
+<ce>                  guilty party, and then go to _res_
+<ce>                   to find _priest_, a utility mage
+<ce>                renowned for breaking illusion spells.
+<ce>           Confront the suspect together and do your duty.
+<ce>           I cannot give you more than two days to do this.
 
 QuestFail:  [1003]
-<ce> No matter what progress you might have made
-<ce> to solve the murders, _questgiver_
-<ce> will not accept how long it has taken you.
+<ce>             No matter what progress you might have made
+<ce>                  to solve the murders, _questgiver_
+<ce>              will not accept how long it has taken you.
 
 QuestComplete:  [1004]
-<ce> To think such a powerful foe can infiltrate
-<ce> this city and slay according to its will and
-<ce> pleasure is troubling. But you have proven
-<ce>  yourself a knight of the first class.
+<ce>             To think such a powerful foe can infiltrate
+<ce>             this city and slay according to its will and
+<ce>              pleasure is troubling. But you have proven
+<ce>                yourself a knight of the first class.
 
 Message:  1020
-<ce>  Do you have need of me, %pcf?
-<ce>  Find someone you consider suspicious
-<ce>  and come for me again. I cannot risk
-<ce>  being seen in public for long.
+<ce>                    Do you have need of me, %pcf?
+<ce>                 Find someone you consider suspicious
+<ce>                 and come for me again. I cannot risk
+<ce>                    being seen in public for long.
 
 Message:  1021
-<ce>  And what do you ask of me, beast? Will
-<ce>  you not leave me alone? I told those guards
-<ce>  to give me peace and play out their
-<ce>  investigation elsewhere. Now leave, lest my
-<ce>  pocket knife find its way into some part of
-<ce>  you and your murderer find you at last.
+<ce>                And what do you ask of me, beast? Will
+<ce>             you not leave me alone? I told those guards
+<ce>                 to give me peace and play out their
+<ce>             investigation elsewhere. Now leave, lest my
+<ce>             pocket knife find its way into some part of
+<ce>               you and your murderer find you at last.
 
 Message:  1022
-<ce>  Ah, welcome, %pcf. Have you found
-<ce>  someone to investigate? I can't be outdoors
-<ce>  for long, as a person like myself has many
-<ce>  foes. Let us hurry and see this person you
-<ce>  speak of, and get to the truth of the matter.
+<ce>                  Ah, welcome, %pcf. Have you found
+<ce>             someone to investigate? I can't be outdoors
+<ce>              for long, as a person like myself has many
+<ce>              foes. Let us hurry and see this person you
+<ce>            speak of, and get to the truth of the matter.
 
 Message:  1023
-<ce>  _culp_'s eyes flash red
-<ce>  as the two of you draw near.
-<ce>  
-<ce>  "I said leave me in peace! Leave
-<ce>  this instant, I command you!"
-<ce>  
-<ce>  _priest_ begins chanting without
-<ce>  hesitation, bringing into effect an incantation
-<ce>  to dispel magicka. In moments the air around
-<ce>  _culp_ begins to waver and
-<ce>  shimmer, until you find yourself face to face
-<ce>  with an enraged and inhuman foe.
+<ce>                       _culp_'s eyes flash red
+<ce>                     as the two of you draw near.
+<ce>
+<ce>                   "I said leave me in peace! Leave
+<ce>                    this instant, I command you!"
+<ce>
+<ce>                   _priest_ begins chanting without
+<ce>           hesitation, bringing into effect an incantation
+<ce>             to dispel magicka. In moments the air around
+<ce>                      _culp_ begins to waver and
+<ce>            shimmer, until you find yourself face to face
+<ce>                   with an enraged and inhuman foe.
 
 Message:  1024
-<ce>  _priest_ nearly collapses from the
-<ce>  effort expended. Apparently %g1 is just as
-<ce>  unsuited for powerful magical defenses as
-<ce>  for combat. Eventually %g1 speaks to you.
-<ce>  
-<ce>  "Well, our mystery is solved. The city guard will
-<ce>  soon be questioning the store's owner to find
-<ce>  out the connections, history, and so on of this
-<ce>  entire ordeal. I'll make it out on my own once
-<ce>  I can walk. Head back to the garrison and
-<ce>  report on our success."
+<ce>                  _priest_ nearly collapses from the
+<ce>              effort expended. Apparently %g1 is just as
+<ce>              unsuited for powerful magical defenses as
+<ce>              for combat. Eventually %g1 speaks to you.
+<ce>
+<ce>          "Well, our mystery is solved. The city guard will
+<ce>            soon be questioning the store's owner to find
+<ce>           out the connections, history, and so on of this
+<ce>            entire ordeal. I'll make it out on my own once
+<ce>              I can walk. Head back to the garrison and
+<ce>                       report on our success."
 
 Message:  1030
 %qdt:
@@ -104,6 +103,42 @@ Message:  1030
  look for _priest_, hiding inside
  _res_, for help in
  unmasking the foe. I have two days.
+
+Message:  1040
+<ce>            _culp_'s eyes fill with terror at the sight of
+<ce>           _priest_, who grins victoriously. After pushing
+<ce>          you aside, %g1 shouts an incantation and exclaims,
+<ce>
+<ce>            "Lo, the mighty =dae1_ is mine! See now, %ra!
+<ce>             My patience with those childish knights has
+<ce>              been well rewarded. My new pet and I shall
+<ce>                      become the lords of %crn!"
+<ce>
+<ce>               _culp_'s illusion fades away and reveals
+<ce>                 the daedra who used to maintain it.
+<ce>              Now you must fight it and its new master.
+
+Message:  1041
+<ce>             Without your intervention, _priest_ is free
+<ce>               to attempt spells of greater magnitude.
+<ce>        You hear a teleportation spell, and the inside of the
+<ce>        building goes quiet. You have failed to bring justice
+<ce>                      to ___res_'s foe this day.
+
+Message:  1042
+<ce>           Whatever _priest_'s reasons for turning against
+<ce>          you, the problem has been solved. Both the daedra
+<ce>               and the would-be master have been slain.
+<ce>                It is time to report to _questgiver_.
+
+Message:  1043
+<ce>                          Your report, %pct.
+<ce>
+<ce>             My word, to think that _priest_ would betray
+<ce>       us for the chance to enslave a daedra. Could the monster
+<ce>       have tempted %g2 in some ethereal way to help it escape?
+<ce>           Or was this something %g1 had planned time ago?
+<ce>             In either case, your work has been stellar.
 
 QBN:
 Person _questgiver_ group Questor male
@@ -117,19 +152,23 @@ Clock _timer_ 2.00:00
 
 Foe _dae1_ is Daedra_seducer
 Foe _dae2_ is Frost_daedra
+Foe _mage_ is Mage
 
 --	Quest start-up:
-	start timer _timer_ 
-	log 1030 step 0 
-	place npc _culp_ at _shop_
+  start timer _timer_
+  log 1030 step 0
+  place npc _culp_ at _shop_
   place npc _priest_ at _res_
-  pick one of _sed_ _frost_
+  pick one of _sed_ _frost_ _team_
+  pc at _shop_ do _inside_
 
 variable _sed_
 variable _frost_
+variable _team_
+variable _inside_
 
 _pclicked_ task:
-	clicked npc _priest_ 
+  clicked npc _priest_
 
 _premature_ task:
   when _pclicked_ and not _1talk_
@@ -137,7 +176,7 @@ _premature_ task:
   clear _pclicked_ _premature_
 
 _cclicked_ task:
-	clicked npc _culp_ 
+  clicked npc _culp_
 
 _step1_ task:
   when _cclicked_ and not _step2_
@@ -146,15 +185,14 @@ _step1_ task:
   clear _cclicked_
 
 variable _1talk_
-
 _step2_ task:
- when _pclicked_ and _1talk_
- say 1022
- hide npc _priest_
- add _priest_ face
+  when _pclicked_ and _1talk_
+  say 1022
+  hide npc _priest_
+  add _priest_ face
 
 _step3_ task:
-  when _cclicked_ and _step2_ and not _frost_
+  when _cclicked_ and _step2_ and _sed_
   say 1023
   hide npc _culp_
   place foe _dae1_ at _shop_
@@ -165,24 +203,63 @@ _step3a_ task:
   hide npc _culp_
   place foe _dae2_ at _shop_
 
+_trick_ task:
+  when _cclicked_ and _step2_ and _team_
+  say 1040
+  hide npc _culp_
+  place foe _dae2_ at _shop_
+  create foe _mage_ every 0 minutes 1 times with 100% success
+
 _slain_ task:
-	killed 1 _dae1_ saying 1024
-	killed 1 _dae2_ saying 1024
+  killed _dae1_
+  killed _dae2_
   drop _priest_ face
+
+_vict1_ task:
+  when _slain_ and _sed_
+  say 1024
+  start task _simp_
+
+_vict2_ task:
+  when _slain_ and _frost_
+  say 1024
+  start task _simp_
+
+variable _simp_
+_bigfail_ task:
+  when _trick_ and not _inside_ and not _teamkill_
+  say 1041
+  remove foe _mage_
+  remove foe _dae2_
+  end quest
+
+_teamkill_ task:
+  killed _mage_
+
+_vict3_ task:
+  when _slain_ and _teamkill_
+  say 1042
 
 _timer_ task:
   say 1003
-	end quest
+  end quest
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+  clicked npc _questgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
+  when _qgclicked_ and not _slain_
+  clear _qgclicked_ _clearclick_
 
 _victory_ task:
-	when _qgclicked_ and _slain_
-	give pc nothing
+  when _qgclicked_ and _simp_
+  give pc nothing
   legal repute +3
-	end quest 
+  end quest
+
+_hard_ task:
+  when _qgclicked_ and _vict3_
+  say 1043
+  give pc nothing
+  legal repute +3
+  end quest

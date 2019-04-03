@@ -1,4 +1,4 @@
-Quest: JHFG020
+Quest: JHFGB0X
 DisplayName: Variety Mode
 
 QRC:

@@ -37,7 +37,7 @@ Clock _timer_ 15.00:00
 	_letter_ used do _advance_
 
 _advance_ task:
-	start quest JHMC001
+	start quest JHFGA01
 	change repute with _fg_ by +2
 	end quest
 
