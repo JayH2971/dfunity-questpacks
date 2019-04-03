@@ -68,11 +68,11 @@ Message:  1013
 Message:  1030
 %qdt:
  In exchange for some enchanted _item_,
- I'm off to ___dungeon_ to get a bag of incriminating
- evidence against a member of the Thieves Guild.
- I can only be inside for four hours before an alarm
- starts sounding. I need to have it and get back
- to ___qgiver_ in =timer_ days.
+ I'm off to ___dungeon_ to get a bag
+ of incriminating evidence against a member of the
+ Thieves Guild. I can only be inside for four hours
+ before an alarm starts sounding. I need to have it
+ and get back to ___qgiver_ in =timer_ days.
 
 QBN:
 Item _item_ magic_item

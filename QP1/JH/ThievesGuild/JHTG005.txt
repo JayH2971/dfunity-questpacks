@@ -4,44 +4,44 @@ DisplayName: Like a Dream
 QRC:
 
 QuestorOffer:  [1000]
-<ce> There's a hot _gem_ being stored over
-<ce> in ___res_, guarded by someone
-<ce> from the Fighters Guild. We need someone
-<ce> smart enough to avoid fighting to
-<ce> get it here in =timer_ days.
-<ce> Think you can do that?
+<ce>                There's a hot _gem_ being stored over
+<ce>                    in ___res_, guarded by someone
+<ce>               from the Fighters Guild. We need someone
+<ce>                  smart enough to avoid fighting to
+<ce>                     get it here in =timer_ days.
+<ce>                        Think you can do that?
 
 RefuseQuest:  [1001]
-<ce> You just wanna be our errand kid forever?
-<ce> We won't always have easy stuff to do.
+<ce>              You just wanna be our errand kid forever?
+<ce>                We won't always have easy stuff to do.
 
 AcceptQuest:  [1002]
-<ce> I said avoid fighting, but to be honest,
-<ce> I don't really care. It's more for your
-<ce> benefit. If the Fighters Guild sends people
-<ce> after you, we're just gonna call it an independent
-<ce> action. If you'd just get in, steal it, and
-<ce> get out, they probably won't even recognize
-<ce> you. Go look in _res_,
-<ce> ___res_. I'll have =reward_ gold for
-<ce> you here if you're back in =timer_ days.
+<ce>               I said avoid fighting, but to be honest,
+<ce>               I don't really care. It's more for your
+<ce>             benefit. If the Fighters Guild sends people
+<ce>          after you, we're just gonna call it an independent
+<ce>             action. If you'd just get in, steal it, and
+<ce>             get out, they probably won't even recognize
+<ce>                        you. Go look in _res_,
+<ce>                 ___res_. I'll have =reward_ gold for
+<ce>               you here if you're back in =timer_ days.
 
 QuestFail:  [1003]
-<ce> _questgiver_ told you to be in
-<ce> ___questgiver_ with the _gem_ by now.
+<ce>                    _questgiver_ told you to be in
+<ce>                ___questgiver_ with the _gem_ by now.
 
 QuestComplete:  [1004]
-<ce> All right then. How'd you do it, by running
-<ce> fast or staying out of sight? Good work.
-<ce> Here's your reward.
+<ce>             All right then. How'd you do it, by running
+<ce>               fast or staying out of sight? Good work.
+<ce>                         Here's your reward.
 
-Message: 1020
-<ce> No! Someone help!
-<--->
-<ce> The Thieves Guild is here!
+Message:  1020
+<ce>                          No! Someone help!
+                                     <--->
+<ce>                      The Thieves Guild is here!
 
-Message: 1021
-<ce> This must be the guarded _gem_.
+Message:  1021
+<ce>                   This must be the guarded _gem_.
 
 Message:  1030
 %qdt:
@@ -67,14 +67,14 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 Foe _perp_ is Warrior
 
 -- Quest start-up:
- start timer _timer_
- log 1030 step 0
- place item _gem_ at _res_
- place foe _perp_ at _res_
+  start timer _timer_
+  log 1030 step 0
+  place item _gem_ at _res_
+  place foe _perp_ at _res_
 
 _got_ task:
- clicked item _gem_
- say 1021
+  clicked item _gem_
+  say 1021
 
 _inj_ task:
   injured _perp_ saying 1020
@@ -91,7 +91,7 @@ _qgclicked_ task:
 _clearclick_ task:
   when _qgclicked_ and not _got_
   clear _qgclicked_ _clearclick_
- 
+
 _timer_ task:
   say 1003
   end quest
