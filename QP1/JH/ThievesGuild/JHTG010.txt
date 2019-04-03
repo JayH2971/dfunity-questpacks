@@ -1,0 +1,127 @@
+Quest: JHTG010
+DisplayName: Walking on Eggshells
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>      We've got a request here for someone of your skill level.
+<ce>           A sealed bag with some really important contents
+<ce>         was stolen from one of our highest-ranking members.
+<ce>    It's gonna be used for blackmail unless someone gets it back.
+<ce>         We need someone quick, smart, and tough enough to go
+<ce>            down into the cave and retrieve it before its
+<ce>               alarm starts sounding. You in the mood?
+
+RefuseQuest:  [1001]
+<ce>     Well, I guess the enchanted _item_ will go to someone else.
+
+AcceptQuest:  [1002]
+<ce>        All right. No backing out now, 'cause I'm only sending
+<ce>           in one person for it, and that's you. Look for a
+<ce>               little tan bag somewhere in ___dungeon_.
+<ce>        I expect it'll be well hidden but I really don't know.
+<ce>          The big problem you have is the alarm system they
+<ce>       rigged the place up with. If it knows a stranger's been
+<ce>    inside for 4 hours, it'll start sounding and bad stuff's gonna
+<ce>    start to happen. No idea what, but you'd better not find out.
+<ce>    Take a step outside if you need to rest. Don't do it indoors.
+<ce>       You'll only get four hours total, so use your time well.
+<ce>          Come back here in =timer_ days' time and I'll have
+<ce>              this enchanted _item_ for you as a reward.
+
+QuestFail:  [1003]
+<ce>     _qgiver_ expected you to return with the sealed bag by now.
+
+QuestComplete:  [1004]
+<ce>    Well I'll be. Blackmail's tough business, but you're tougher.
+<ce>      We'll find the slimy runt who set up our brother this way,
+<ce>          don't worry. All that matters to you is the _item_
+<ce>                     I promised you. Here it is.
+
+Message:  1010
+<ce>                    You remember _qgiver_'s words:
+<ce>
+<ce>              "If it knows a stranger's been inside for
+<ce>         4 hours, it'll start sounding and bad stuff's gonna
+<ce>    start to happen. No idea what, but you'd better not find out.
+<ce>    Take a step outside if you need to rest. Don't do it indoors.
+<ce>                  You'll only get four hours total."
+<ce>
+<ce>                      It's time to get started.
+
+Message:  1011
+<ce>        You've found the bag. However, you don't find anything
+<ce>         related to the alarm on it. Looks like you'll still
+<ce>                      need to hurry out of here.
+
+Message:  1012
+<ce>         A slight whistling noise begins to sound in the air.
+<ce>     If you weren't listening for it, you probably wouldn't even
+<ce>   notice it. In response, the walls around you begin to shift and
+<ce>   take human form. Though you've faced greater danger in the past,
+<ce>       this is going to be a major impediment to your mission.
+
+Message:  1013
+<ce>          Not even your best magicks can pry this bag open.
+<ce>                 Its contents must be very sensitive.
+
+Message:  1030
+%qdt:
+ In exchange for some enchanted _item_,
+ I'm off to ___dungeon_ to get a bag of incriminating
+ evidence against a member of the Thieves Guild.
+ I can only be inside for four hours before an alarm
+ starts sounding. I need to have it and get back
+ to ___qgiver_ in =timer_ days.
+
+QBN:
+Item _item_ magic_item
+Item _bag_ small_sack
+
+Person _qgiver_ group Questor male
+
+Place _dungeon_ remote dungeon
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _hunt_ 4:00
+
+Foe _enemy1_ is Iron_atronach
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    reveal _dungeon_
+    pc at _dungeon_ set _inside_
+    place item _bag_ at _dungeon_
+
+_inside_ task:
+    say 1010
+    start timer _hunt_
+
+_stop_ task:
+    when not _inside_
+    stop timer _hunt_
+
+_found_ task:
+    clicked item _bag_
+    say 1011
+    cast Open effect do _fail_
+
+_fail_ task:
+    say 1013
+
+_clearclick_ task:
+    toting _bag_ and _qgiver_ clicked
+    give pc _item_
+    end quest
+
+_hunt_ task:
+    say 1012
+
+_spawn_ task:
+    when _hunt_ and _inside_
+    create foe _enemy1_ every 1 minutes indefinitely with 50% success
+
+_timer_ task:
+    say 1003
+    end quest
