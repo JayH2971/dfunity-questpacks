@@ -1,185 +1,195 @@
---WIP
-
 Quest: JHTP008
-DisplayName: Sunburn
+DisplayName: Battery Charge
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  A fellow member has gone into a cave, rambling
-<ce>  something about vampires. I don't know much
-<ce>  more than that but we need our friend to come
-<ce>  back out. Will you go looking?
+<ce>     Not all diseases are made equal. Most require a few earnest
+<ce>         castings of Cure Disease before they are purged, but
+<ce>          we must be prepared for certain special cases that
+<ce>        enter our door. We need someone to recharge one of the
+<ce>        relics we use for such rarer diseases. Will you do so?
 
 RefuseQuest:  [1001]
-<ce>  Typical.
+<ce>               Hmm. This isn't particularly difficult.
 
 AcceptQuest:  [1002]
-<ce>  The place is called _dung_.
-<ce>  Our friend, _rescue_, is
-<ce>  capable of handling %g2self on %g3 own but
-<ce>  we believe this is worth sending out some support.
-<ce>  Find %g2 and bring %g2 back here.
-<ce>  Please have this done within =timer_
-<ce>  days, lest the family and I presume that
-<ce>  all hope has been lost.
+<ce>         Here it is then. You'll find it useless to cure the
+<ce>         regular illnesses of the Iliac Bay, so don't expect
+<ce>       any miracles if you're in need. Your task is to take it
+<ce>                down into ___dung_ for about two days.
+<ce>           You must stay underground as long as it takes to
+<ce>           recharge its power. You'll know when it's ready.
+<ce>            It gives off a distinct glow for a few minutes
+<ce>        before subsiding, which is all the signal you'll need.
+<ce>       If I can see you here within one months' time, you will
+<ce>       have mended our gap and ensured the people of ___qgiver_
+<ce>           remain free of the exotic illnesses of Tamriel.
+<ce>                        Safe spelunking, %pct.
+
+QuestFail:  [1003]
+<ce>              One month has passed since you were given
+<ce>             the curing _tri_ and you have not returned.
 
 QuestComplete:  [1004]
-<ce>  _rescue_, a joy to see you above
-<ce>  ground after all. I see %pcf has taken
-<ce>  good care of you. Fine work, both of you.
+<ce>               Ah, there it is. You may not be able to
+<ce>         tell anymore, but I can. Thank you for preparing it.
+<ce>        Perhaps this clothing will suit your liking in return,
+<ce>                        for you and your kin.
 
-RumorsDuringQuest:  [1005]
-They told me ___qgiver_'s a good place to live. What do you think?
-<--->
-Have you been to ___qgiver_ recently? I like it.
-
-QuestorPostsuccess:  [1008]
-Welcome, %pcf. ___dung_ will soon fear your name.
-<--->
-Your skill and reputation are welcome here, %pcf.
-
-QuestLogEntry:  [1010]
-%qdt:
- _qgiver_ in ___qgiver_
- has sent me to find _rescue_
- in ___dung_. I have
- =timer_ days to return.
+Message:  1010
+<ce>          It appears you are free to roam ___dung_ until the
+<ce>        _tri_ regains its magical energy from the environment.
 
 Message:  1011
-<ce> A loud shout nearly startles you.
-<ce> 
-<ce> "You there! _qgiver_ sent you, didn't %g1? Take
-<ce> me away from here! I need to get to ___qgiver_!"
-<ce> 
-<ce> _rescue_ happily joins you.
-<--->
-<ce> Someone comes into view, startled to see you.
-<ce> 
-<ce> "Excuse me! I need to get back to ___qgiver_.
-<ce> Can you help me? My name is _rescue_."
-<ce> 
-<ce> You tell %g2 to follow you.
+<ce>        You become aware of a rapidly accumulating light among
+<ce>      your belongings. The _tri_ starts to glow in a crescendo,
+<ce>    holding a distinct shine for about a minute. It then subsides
+<ce>       and returns to its normal appearance. It must be ready.
 
 Message:  1012
-<ce> Ah, _rescue_, what a joy it is to see you again.
-<ce> Was the pilgrimage worth it? Most people never again
-<ce> venture under the earth after an experience like that,
-<ce> hence why we granted your request. Now then, we have
-<ce> much work for you to do. No time for nightmares.
-<ce> And have you thanked %pcn? You would be
-<ce> dead now if it weren't for %g2. Our sincerest thanks once
-<ce> more, good %pct.
+<ce>           A fellow traveler greets you from afar and then
+<ce>          starts to continue on. However, the _tri_ in your
+<ce>          possession is unusual enough to garner attention.
+<ce>
+<ce>      "Hey! That's one of those things they use in the temples,
+<ce>       right? For the tough diseases? That's worth a mint! I've
+<ce>       got =pay_ gold for you if you give it to me, right now!"
 
-Message:  1020
-<ce> You hear shambling steps nearby. A voice croaks,
-<ce> 
-<ce> "The King of Worms has given me a better form.
-<ce> He wishes to bestow the gift on you."
-<ce> 
-<ce> You notice the form's mouth does not move.
-<ce> Clearly powerful magicks are in effect.
-<ce> You prepare to put _rescue_
-<ce> out of %g3 misery.
-<--->
-<ce> You hear halting steps nearby, and then a voice.
-<ce> 
-<ce> "My best regards to _qgiver_. Soon I will see %g2."
-<ce> 
-<ce> It appears the curse was more than fiction.
-<ce> _rescue_'s only salvation is death now.
+Message:  1013
+<ce>                             "Your loss."
+<ce>
+<ce>                         You are left alone.
 
-Message:  1021
-<ce> You wish it weren't necessary, but this was all that
-<ce> you could do. Time to inform _qgiver_.
+Message:  1014
+<ce>   "Oh, good! Thank you, %ra. I don't know how you got one of them,
+<ce>     but it'll make a big splash back home. What a clever gift!"
+<ce>
+<ce>   Your new friend hands you the money and departs with the _tri_.
 
-Message:  1022
-<ce> Tell me, what happened? Where is _rescue_?
-<ce> 
-<ce> Oh, I think I'm going to be sick. Only the Necromancers
-<ce> could do such a thing. Oh, this is perilous. Could I have
-<ce> changed something if I did not grant %g3 request?
-<ce> Could we have cured %g2? Oh, my. No, I refuse to think
-<ce> about this more today. Not today. Tomorrow, perhaps.
-<ce> No more. Thank you for doing your duty. That is all.
-<--->
-<ce> Welcome back, %pcf, but where is _rescue_?
-<ce> 
-<ce> That is horrifying. Now I wonder whether %g1 brought
-<ce> the curse on by %g3 own actions or whether it was
-<ce> involuntary. Oh, if only we could know. Let us hope
-<ce> never to hear something like this again. Thank you,
-<ce> %pcf. You have done your duty.
+Message:  1015
+<ce>      A hooded figure emerges from some nearby shadows and takes
+<ce>       the _tri_ from among your possessions. You see the thief
+<ce>                hurry further down the dark passages.
 
-Message:  1050
-<ce> _qgiver_ told you to be in ___qgiver_ by now.
+Message:  1016
+<ce>      "Hey, I'm sorry! Those things are really valuable, is all!
+<ce>                Here, take it back. Just let me live."
+
+Message:  1017
+<ce>      A hooded figure emerges from some nearby shadows to steal
+<ce>           the _tri_ from you. Your foe underestimates your
+<ce>        strength and slips awkwardly while trying to wrench it
+<ce>      from you. Rather than try again, the would-be thief flees
+<ce>                from any retribution you might extend.
+
+Message:  1018
+<ce>                  Power shoots forth from the _tri_.
+<ce>    Whatever illness this is intended to cure, you don't have it.
+
+Message:  1030
+%qdt:
+ _qgiver_ of __qgiver_
+ has sent me to ___dung_
+ to recharge a magical _tri_ capable
+ of alleviating rare illnesses.
+ I should return it to ___qgiver_
+ within one month.
 
 QBN:
+Item _tri_ trinket
+Item _pay_ gold range 1100 to 1700
+Item _mclo_ mens_clothing
+Item _fclo_ womens_robe
 
 Person _qgiver_ group Questor
-Person _rescue_ group Local_4.0
+
+Foe _thief_ is Thief
 
 Place _dung_ remote dungeon
 
-Clock _timer_ 00:00 0 flag 17 range 0 2
-Clock _begin_ 1:00 2.00:00
-
-Foe _enemy_ is Zombie
+Clock _timer_ 30.00:00
+Clock _recharge_ 1.12:00 2.08:00
+Clock _event_ 8:00 1.00:00
 
 --	Quest start-up:
-	start timer _timer_ 
-	reveal _dung_ 
-	log 1010 step 0 
-	place npc _rescue_ at _dung_ 
-  pc at _dung_ set _inside_
-  pick one of _E.01_ _E.02_
-
-variable _E.01_
-variable _E.02_
-_begin_ task:
- start timer _timer_
+    start timer _timer_
+    log 1030 step 0
+    get item _tri_
+    pc at _dung_ set _inside_
+    have _tri_ set _holding_
+    reveal _dung_
 
 _inside_ task:
- start timer _begin_
- stop timer _timer_
+    say 1010
+    start timer _recharge_
+    start timer _event_
 
-_timer_ task:
-  say 1050
-	end quest 
+_stop_ task:
+    when not _inside_
+    stop timer _recharge_
+    stop timer _event_
 
-_S.01_ task:
-  when _E.01_ and _begin_ and _inside_
-  start task _S.01b_
+variable _recharge_
+variable _holding_
+_strength_ task:
+    when attribute Strength is at least 80
 
-_S.01b_ task:
-	say 1011 
-	add _rescue_ face 
+_event_ task:
+    pick one of _e1_ _e2_ _e3_
 
-_reward1_ task:
-	when _qgclicked_ and _S.01b_ 
-	say 1012
-	give pc nothing 
-	end quest 
+_e1_ task:
+    prompt 1012 yes _sell_ no _refuse_
 
-_S.02_ task:
-	when _E.02_ and _begin_ and _inside_
-  say 1020
-	create foe _enemy_ every 1 minutes 1 times with 100% success
+_sell_ task:
+    say 1014
+    get item _pay_
+    take _tri_ from pc
+    end quest
 
-_step2_ task:
-	killed _enemy_
-  say 1021
+_refuse_ task:
+    say 1013
 
-_reward2_ task:
-	when _qgclicked_ and _step2_ 
-	say 1022
-	give pc nothing
-	end quest
+variable _e2_
+_lose_ task:
+    when _e2_ and not _strength_
+    say 1015
+    take _tri_ from pc
+    place foe _thief_ at _dung_
+    clear _holding_
+
+_inj_ task:
+    injured _thief_
+    say 1016
+    get item _tri_
+    restrain foe _thief_
+
+_defend_ task:
+    when _e2_ and _strength_
+    say 1017
+
+variable _e3_
+_finish_ task:
+    when _recharge_ and _holding_
+    say 1011
+    _tri_ used do _use_
+
+_use_ task:
+    say 1018
+
+_victory_ task:
+    when _qgclicked_ and _finish_
+    give pc _mclo_
+    give pc _fclo_
+    end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+    clicked npc _qgiver_
 
+_clearclick_ task:
+    when _qgclicked_ and not _finish_
+    clear _qgclicked_ _clearclick_
 
-_S.04_ task:
-	when _qgclicked_ and not _begin_ 
-	clear _qgclicked_ _S.04_ 
+_timer_ task:
+    say 1003
+    end quest
