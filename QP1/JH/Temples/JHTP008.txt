@@ -65,7 +65,9 @@ Message:  1014
 <ce>   "Oh, good! Thank you, %ra. I don't know how you got one of them,
 <ce>     but it'll make a big splash back home. What a clever gift!"
 <ce>
-<ce>   Your new friend hands you the money and departs with the _tri_.
+<ce>       Your new friend hands you the money and takes the _tri_.
+<ce>                 You see a good opportunity so that,
+<ce>           if you wanted, you could take it back by force.
 
 Message:  1015
 <ce>      A hooded figure emerges from some nearby shadows and takes
@@ -87,6 +89,15 @@ Message:  1018
 <ce>                  Power shoots forth from the _tri_.
 <ce>    Whatever illness this is intended to cure, you don't have it.
 
+Message:  1019
+<ce>              "Hey, what's with that look in your eyes?"
+
+Message:  1020
+<ce>     You obtain the _tri_ from your unexpected customer's corpse.
+
+Message:  1021
+<ce>                Your customer escapes with the _tri_.
+
 Message:  1030
 %qdt:
  _qgiver_ of __qgiver_
@@ -105,12 +116,14 @@ Item _fclo_ womens_robe
 Person _qgiver_ group Questor
 
 Foe _thief_ is Thief
+Foe _cust_ is Knight
 
 Place _dung_ remote dungeon
 
 Clock _timer_ 30.00:00
 Clock _recharge_ 1.12:00 2.08:00
 Clock _event_ 8:00 1.00:00
+Clock _escape_ 0:05
 
 --	Quest start-up:
     start timer _timer_
@@ -142,10 +155,25 @@ _e1_ task:
     prompt 1012 yes _sell_ no _refuse_
 
 _sell_ task:
-    say 1014
+    prompt 1014 yes _betray_ no _escape_
     get item _pay_
     take _tri_ from pc
+
+_betray_ task:
+    say 1019
+    create foe _cust_ every 0 minutes 1 times with 100% success
+    restrain foe _cust_
+    start timer _escape_
+
+_escape_ task:
+    say 1021
+    remove foe _cust_
     end quest
+
+_murder_ task:
+    killed _cust_
+    say 1020
+    get item _tri_
 
 _refuse_ task:
     say 1013

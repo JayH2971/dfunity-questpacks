@@ -29,3 +29,5 @@ JHTP008, HolyOrder, M, 1, 0, a quest to recharge a curing trinket
 -6) Related to previous quest, a vampire has been peacefully staying under the protection of a temple for (years, decades, centuries). However, (someone they love/a living descendent/a close friend and confidant) has been kidnapped to force them out of that protection. However, having heard of your fame, they are willing to wait X days for you to rescue $Name before going themselves. (This quest and the previous one would be for characters with a high reputation, naturally. :) )
 -7) The PC themselves are given a pilgrimage to a shrine, and an item to give to the shrine-keeper. Forces may attempt to steal it. (Not much there, but it could turn into a plot about keeping an important item out of the wrong hands; or just be a quest to visit a shrine).
 -9) As it turns out, one of the members of $Guild is actually a (necromancer, lich, vampire). It's quite embarrassing for them, and also very dangerous, so they came to us for help. (Could turn into #4 or #5).
+-purge necromancer influence from home. wait in home for day, resist undead interference
+-add betrayal to e1 TP008
