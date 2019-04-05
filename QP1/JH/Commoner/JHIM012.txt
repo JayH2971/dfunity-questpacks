@@ -1,0 +1,72 @@
+Quest: JHIM012
+DisplayName: In Case of Emergency
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                   Hail, %ra. Do you have a minute?
+<ce>             I was cleaning house recently and found this
+<ce>             _item_ with some fairly old runes etched on
+<ce>              the side. I'm not brave enough to test it
+<ce>                  myself. I was wondering, are you?
+
+RefuseQuest:  [1001]
+<ce>              Someone's gotta come around and try this.
+
+AcceptQuest:  [1002]
+<ce>             "Oh good! Thank you. Take it in your hands.
+<ce>          I think that if you put your hands underneath and
+<ce>           twist it to the right you should be able to..."
+<ce>
+<ce>            Before _qgiver_ can finish speaking, the frail
+<ce>                 artifact breaks apart in your hands.
+
+QuestFail:  [1003]
+<ce>
+
+QuestComplete:  [1004]
+<ce>           My word, %ra, I've been worried sick since I saw
+<ce>          you warp off into the great unknown. Where did it
+<ce>            send you? How did you get out? Oh, how awful.
+<ce>        Thank you for setting my mind at ease on both counts.
+<ce>          If it helps, I have this money set aside for you.
+<ce>                 I hope it compensates your trouble.
+
+Message:  1010
+<ce>        The _item_ has already crumbled to pieces. All you can
+<ce>          do now is to get out alive and return to _qgiver_.
+<ce>
+<ce>  (Hint: You may be in a location that's impossible to escape from,)
+<ce>               (like at the bottom of a chute. If so,)
+<ce>   (make a save and try the console command "teleport" to get out.)
+
+Message:  1030
+%qdt:
+ _qgiver_ of ___qgiver_
+ asked me to test a runed _item_,
+ which teleported me into some labyrinth.
+ I should ask for compensation once I return.
+
+QBN:
+Clock _failsafe_ 180.00:00
+
+Item _item_ trinket
+Item _reward_ gold
+
+Place _dung_ remote dungeon
+
+Person _qgiver_ group Questor male
+
+--	Quest start-up:
+    teleport pc to _dung_
+    say 1010
+    start timer _failsafe_
+    log 1030 step 0
+
+_pcgetsgold_ task:
+    clicked npc _qgiver_
+    give pc _reward_
+    end quest
+
+_failsafe_ task:
+    end quest
