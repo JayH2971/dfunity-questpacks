@@ -76,8 +76,8 @@ _initial_ task:
 
 _spawn_ task:
     start task _entered_
-    create foe _const_ every 30 minutes indefinitely with 45% success
-    create foe _const_ every 60 minutes indefinitely with 35% success
+    create foe _const_ every 27 minutes indefinitely with 15% success
+    create foe _const_ every 56 minutes indefinitely with 6% success
 
 _entered_ task:
     say 1012
