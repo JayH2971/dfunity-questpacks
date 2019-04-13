@@ -125,8 +125,8 @@ Foe _frenemy_ is Warrior
 
 _inside_ task:
     say 1019
-    create foe _enemy1_ every 101 minutes indefinitely with 10% success
-    create foe _enemy2_ every 32 minutes indefinitely with 2% success
+    create foe _enemy1_ every 71 minutes indefinitely with 23% success
+    create foe _enemy2_ every 32 minutes indefinitely with 11% success
 
 _slain_ task:
     killed 3 _enemy1_

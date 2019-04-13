@@ -121,7 +121,7 @@ Foe _cust_ is Knight
 Place _dung_ remote dungeon
 
 Clock _timer_ 30.00:00
-Clock _recharge_ 1.12:00 2.08:00
+Clock _recharge_ 1.16:00 1.23:00
 Clock _event_ 8:00 1.00:00
 Clock _escape_ 0:05
 

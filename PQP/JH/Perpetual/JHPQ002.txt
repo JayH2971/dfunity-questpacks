@@ -56,6 +56,7 @@ Item _reward_ magic_item
 Place _dung_ remote dungeon
 
 Clock _timer_ 45.00:00
+Clock _final_ 12:00
 
 Foe _skirm_ is 2 Orc_sergeant
 Foe _const_ is Orc
@@ -89,6 +90,10 @@ _inj_ task:
 _victory_ task:
     killed _enemy_
     give pc _reward_
+    start timer _final_
+    remove log step 0
+
+_final_ task:
     end quest
 
 _timer_ task:
