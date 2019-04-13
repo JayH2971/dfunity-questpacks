@@ -4,75 +4,75 @@ DisplayName: To Free the Shackled
 QRC:
 
 QuestorOffer:  [1000]
-<ce> Actually, we have a matter of immediate import.
-<ce> I do hope you'll accept this. It's a bit of a long
-<ce> story, but the short version is that one of our
-<ce> local members, _dummy_, has been
-<ce> cursed by some band of shapeshifters to assume
-<ce> the form of a beast. Mercenaries from the
-<ce> Fighters Guild are now poised to kill %g2,
-<ce> unaware that %g1 is innocent. Will you
-<ce> defend our poor friend?
-<--->
-<ce> We have something of a rescue mission that needs
-<ce> an immediate counterpart. A good friend and
-<ce> member of the Mages Guild, someone named
-<ce> _dummy_, has been cursed to take
-<ce> the form of an animal by shapeshifters and
-<ce> no one has been able to cast off the spell.
-<ce> Long story short, the Fighters Guild is now
-<ce> on its way to slay our poor friend, believing
-<ce> %g2 to be a legitimate animal in a house.
-<ce> Someone must go defend %g2. Is it you?
+<ce>           Actually, we have a matter of immediate import.
+<ce>          I do hope you'll accept this. It's a bit of a long
+<ce>           story, but the short version is that one of our
+<ce>                   local members, _dummy_, has been
+<ce>            cursed by some band of shapeshifters to assume
+<ce>              the form of a beast. Mercenaries from the
+<ce>              Fighters Guild are now poised to kill %g2,
+<ce>                unaware that %g1 is innocent. Will you
+<ce>                       defend our poor friend?
+                                     <--->
+<ce>           We have something of a rescue mission that needs
+<ce>             an immediate counterpart. A good friend and
+<ce>               member of the Mages Guild, someone named
+<ce>                   _dummy_, has been cursed to take
+<ce>              the form of an animal by shapeshifters and
+<ce>             no one has been able to cast off the spell.
+<ce>             Long story short, the Fighters Guild is now
+<ce>            on its way to slay our poor friend, believing
+<ce>              %g2 to be a legitimate animal in a house.
+<ce>                Someone must go defend %g2. Is it you?
 
 RefuseQuest:  [1001]
-<ce> Then %g3 life will be on your conscience
-<ce> should %g1 not survive the attempt!
+<ce>               Then %g3 life will be on your conscience
+<ce>                 should %g1 not survive the attempt!
 
 AcceptQuest:  [1002]
-<ce> Well, I gave you the short version, and now the long
-<ce> one. The shapeshifting spell is advanced, to the point
-<ce> that _dummy_ actually thinks %g1 is an animal.
-<ce> I feel certain %g1 will attack you on sight. No matter
-<ce> what else happens in _res_, you must not
-<ce> slay %g2. That is an inviolable directive. Fight off
-<ce> the mercenaries who arrive and report to me when you
-<ce> are finished. I have here a book I think you
-<ce> will relish as a reward. And did I forget to mention
-<ce> you must get there immediately? The Fighters Guild
-<ce> will already be on the move by now.
+<ce>         Well, I gave you the short version, and now the long
+<ce>        one. The shapeshifting spell is advanced, to the point
+<ce>            that _dummy_ actually thinks %g1 is an animal.
+<ce>        I feel certain %g1 will attack you on sight. No matter
+<ce>               what else happens in _res_, you must not
+<ce>         slay %g2. That is an inviolable directive. Fight off
+<ce>         the mercenaries who arrive and report to me when you
+<ce>             are finished. I have here a book I think you
+<ce>         will relish as a reward. And did I forget to mention
+<ce>          you must get there immediately? The Fighters Guild
+<ce>                 will already be on the move by now.
 
 QuestFail:  [1003]
-<ce> There is no doubt by now the Fighters Guild
-<ce> will have slain _dummy_.
+<ce>             There is no doubt by now the Fighters Guild
+<ce>                       will have slain _dummy_.
 
 QuestComplete:  [1004]
-<ce> Oh, what a hero! The spell will wear off by the
-<ce> latter part of a day, or perhaps even now it has,
-<ce> but that will be too soon for more mercenaries
-<ce> to get word of it. _dummy_ will know
-<ce> about your work and praise your name. You have
-<ce> truly saved a life this day. Take this
-<ce> magnificent book, =reward_,
-<ce> as my heartfelt thanks for protecting the innocent.
+<ce>           Oh, what a hero! The spell will wear off by the
+<ce>          latter part of a day, or perhaps even now it has,
+<ce>            but that will be too soon for more mercenaries
+<ce>                 to get word of it. _dummy_ will know
+<ce>            about your work and praise your name. You have
+<ce>                truly saved a life this day. Take this
+<ce>                     magnificent book, =reward_,
+<ce>         as my heartfelt thanks for protecting the innocent.
 
-RumorsDuringQuest:   [1005]
+RumorsDuringQuest:  [1005]
 Them Shapeshifters are awful people, I says.
 <--->
 You heard about that fellow cursed by the Shapeshifters? Wonder if he deserved it.
 
 Message:  1010
-<ce> It appears you have arrived in the nick of
-<ce> time. You can already hear multiple voices
-<ce> engaged in raucous discussion outside.
+<ce>              It appears you have arrived in the nick of
+<ce>              time. You can already hear multiple voices
+<ce>                engaged in raucous discussion outside.
 
 Message:  1011
-<ce> You hear no more shouting. Hopefully these are the last
-<ce> mercenaries sent to slay _dummy_.
+<ce>       You hear no more shouting. Hopefully these are the last
+<ce>                  mercenaries sent to slay _dummy_.
 
 Message:  1020
-<ce> _dummy_ has been slain by your hand,
-<ce> and the Mages Guild will not forget it.
+<ce>                 _dummy_ has been slain by your hand,
+<ce>               and the Mages Guild will not forget it.
 
 Message:  1030
 %qdt:
@@ -103,11 +103,11 @@ Foe _bk1_ is 2 Barbarian
 Foe _bk2_ is 2 Knight
 
 --	Quest start-up:
-	start timer _failsafe_
-	log 1030 step 0 
-	pick one of _d1_ _d2_ _d3_ _d4_
+    start timer _failsafe_
+    log 1030 step 0
+    pick one of _d1_ _d2_ _d3_ _d4_
     pick one of _b1_ _b2_
-	pc at _res_ set _inside_
+    pc at _res_ set _inside_
 
 variable _d1_
 variable _d2_
@@ -149,36 +149,36 @@ _bk2_ task:
     create foe _bk2_ every 1 minutes 1 times with 75% success
 
 _slain_ task:
-	killed 2 _bk1_
-	killed 2 _bk2_
-	say 1011
-	stop timer _failsafe_
-    change repute with _fg_ by -15
+    killed 2 _bk1_
+    killed 2 _bk2_
+    say 1011
+    stop timer _failsafe_
+    change repute with _fg_ by -10
 
 _fail_ task:
-    killed 1 _dk1_
-    killed 2 _dk1_
-    killed 3 _dk1_
-    killed 4 _dk1_
+    killed _dk1_
+    killed _dk2_
+    killed _dk3_
+    killed _dk4_
     say 1020
     change repute with _dummy_ by -18
     end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+    clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
 
 _pcreward_ task:
-	when _qgclicked_ and _slain_ 
-	give pc _reward_
-	end quest
+    when _qgclicked_ and _slain_
+    give pc _reward_
+    end quest
 
 _failsafe_ task:
-	end quest
+    end quest
 
 _timer_ task:
-	say 1003
-	end quest
+    say 1003
+    end quest
