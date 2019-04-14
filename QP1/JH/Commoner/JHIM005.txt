@@ -158,7 +158,7 @@ _escape_ task:
 
 _murder_ task:
     say 1021
-    create foe _fam_ every 1 minutes 1 times with 100% success
+    create foe _fam_ every 0 minutes 1 times with 100% success
 
 _deadfam_ task:
     killed _fam_
