@@ -64,10 +64,6 @@ Message:  1020
 Message:  1021
 <ce>                     "%oth! What are you doing?!"
 
-Message:  1022
-<ce>                  The payment will be on your former
-<ce>             partner's corpse, and a little more to boot.
-
 Message:  1023
 <ce>              "That's right! I knew you'd agree with me.
 <ce>                Maybe you can talk the bartender into
@@ -103,7 +99,6 @@ Message:  1099
 
 QBN:
 Item _reward_ gold range 101 to 149
-Item _slay_ gold range 201 to 264
 
 Person _qgiver_ group Questor male
 Person _family_ group Chemist
@@ -162,8 +157,7 @@ _murder_ task:
 
 _deadfam_ task:
     killed _fam_
-    say 1022
-    give pc _slay_
+    give pc _reward_
     change repute with _qgiver_ by -10
     end quest
 
