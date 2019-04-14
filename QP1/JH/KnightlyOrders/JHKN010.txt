@@ -5,88 +5,88 @@ QRC:
 
 QuestorOffer:  [1000]
 <ce>  %pct, we must all engage in the humblest of work. Slaying dragons
-<ce>  and defending nobles are some of our duties, but they are only
-<ce>  some forms of the service we provide. Take this _weapon_
-<ce>  to _knight_, who either forgot or refused to take it.
-<ce>  Look for %g2 in ___knighttown_. Will you do this?
+<ce>    and defending nobles are some of our duties, but they are only
+<ce>       some forms of the service we provide. Take this _weapon_
+<ce>        to _knight_, who either forgot or refused to take it.
+<ce>          Look for %g2 in ___knighttown_. Will you do this?
 
 RefuseQuest:  [1001]
-<ce>  Is this truly the path you wish to take, %ra?
+<ce>            Is this truly the path you wish to take, %ra?
 
 AcceptQuest:  [1002]
-<ce>  Good. I will give you =timer_ days to have done
-<ce>  with it and return. And if %g1 is merely stubborn,
-<ce>  do not accept another refusal. I have told %g2 too
-<ce>  many times that our knights must be practiced in
-<ce>  all manner of weaponry.
+<ce>           Good. I will give you =timer_ days to have done
+<ce>          with it and return. And if %g1 is merely stubborn,
+<ce>          do not accept another refusal. I have told %g2 too
+<ce>           many times that our knights must be practiced in
+<ce>                       all manner of weaponry.
 
 QuestFail:  [1003]
-<ce> You needed to report your success in delivering the _weapon_
-<ce> to _knight_ by now. This is not a good start.
+<ce>     You needed to report your success in delivering the _weapon_
+<ce>            to _knight_ by now. This is not a good start.
 
 QuestComplete:  [1004]
-<ce>  Thank you for going, %pcf.
+<ce>                      Thank you for going, %pcf.
 
 Message:  1020
-<ce> What is this? Some _weapon_? _qgiver_ never
-<ce> told me I would be taking one on this expedition. Keep it
-<ce> for yourself. Oh, come now, just take it. I do not want it.
-<ce> I said, I do not want it! %oth, then give it to me.
-<ce> I'll throw it at the first orc I encounter and be done with
-<ce> it. Are you happy now, %ra? Begone from me.
-<--->
-<ce> %oth, did _qgiver_ send you? Praise %god.
-<ce> I knew %g1 would bury me if I forgot that _weapon_
-<ce> this time. Here, let me have it. I'm no expert yet, but I'll
-<ce> give it some practice while I'm in the depths. I'll
-<ce> be a Keeper before %g1 knows it! Farewell, %ra.
-<--->
-<ce> Hold, %ra! Silence! What is that? My _weapon_?
-<ce> %oth, I hadn't realized I had left it. How good it is that
-<ce> I had other matters to resolve here in ___knighttown_ before
+<ce>             What is this? Some _weapon_? _qgiver_ never
+<ce>      told me I would be taking one on this expedition. Keep it
+<ce>     for yourself. Oh, come now, just take it. I do not want it.
+<ce>         I said, I do not want it! %oth, then give it to me.
+<ce>     I'll throw it at the first orc I encounter and be done with
+<ce>             it. Are you happy now, %ra? Begone from me.
+                                     <--->
+<ce>              %oth, did _qgiver_ send you? Praise %god.
+<ce>          I knew %g1 would bury me if I forgot that _weapon_
+<ce>     this time. Here, let me have it. I'm no expert yet, but I'll
+<ce>         give it some practice while I'm in the depths. I'll
+<ce>           be a Keeper before %g1 knows it! Farewell, %ra.
+                                     <--->
+<ce>            Hold, %ra! Silence! What is that? My _weapon_?
+<ce>      %oth, I hadn't realized I had left it. How good it is that
+<ce>     I had other matters to resolve here in ___knighttown_ before
 <ce> entering that cave. A terrifying prospect it is to face an atronach
-<ce> and realize I'm missing a weapon. How good of you to bring it
-<ce> to me! Give _qgiver_ my regards. Fare thee well.
+<ce>    and realize I'm missing a weapon. How good of you to bring it
+<ce>           to me! Give _qgiver_ my regards. Fare thee well.
 
 Message:  1021
-<ce> Why did _knight_ neglect to take it, %pcf?
-<ce> %oth. May I make a comment, %pct? We send our
-<ce> knights to wage war between life and death every day.
-<ce> Carelessness leads to the grave. Always remember that.
-<ce> And please accept my thanks.
+<ce>              Why did _knight_ neglect to take it, %pcf?
+<ce>            %oth. May I make a comment, %pct? We send our
+<ce>        knights to wage war between life and death every day.
+<ce>        Carelessness leads to the grave. Always remember that.
+<ce>                     And please accept my thanks.
 
 Message:  1022
-<ce>  As you step into the tavern, loud shouting greets your ears.
-<ce>  
-<ce>  "Yeah?! Not the first knight I've killed! I'll do
-<ce>  a dozen of 'em before the month's out!"
-<--->
-<ce>  As you step into the tavern, loud shouting greets your ears.
-<ce>  
-<ce>  "Moron knight! Who plays cards without carrying money?
-<ce>  Good riddance, I say."
-<--->
-<ce>  As you step into the tavern, loud shouting greets your ears.
-<ce>  
-<ce>  "Stupid knights who bet wrong, that's who.
-<ce>  ==qgiver_ aren't going to miss 'em."
+<ce>     As you step into the tavern, loud shouting greets your ears.
+<ce>
+<ce>          "Yeah?! Not the first knight I've killed! I'll do
+<ce>               a dozen of 'em before the month's out!"
+                                     <--->
+<ce>     As you step into the tavern, loud shouting greets your ears.
+<ce>
+<ce>        "Moron knight! Who plays cards without carrying money?
+<ce>                        Good riddance, I say."
+                                     <--->
+<ce>     As you step into the tavern, loud shouting greets your ears.
+<ce>
+<ce>              "Stupid knights who bet wrong, that's who.
+<ce>                 ==qgiver_ aren't going to miss 'em."
 
 Message:  1023
-<ce>  This is _knight_'s body.
-<ce>  Something has gone terribly wrong here.
+<ce>                       This is _knight_'s body.
+<ce>               Something has gone terribly wrong here.
 
 Message:  1024
-<ce>  You have slain _knight_'s murderer.
-<ce>  At the very least, honor has been restored.
+<ce>                 You have slain _knight_'s murderer.
+<ce>             At the very least, honor has been restored.
 
 Message:  1025
-<ce>  You mean to say _knight_ was murdered
-<ce>  in a tavern? %oth. How do members of our order
-<ce>  let these things happen? How will we vanquish the Dark
-<ce>  Brotherhood, the Thieves Guild, the Necromancers,
-<ce>  the vampires, and all that plague Tamriel if this is
-<ce>  the quality we offer? Forgive my bitterness.
-<ce>  You have done us a favor in slaying the knave.
+<ce>                You mean to say _knight_ was murdered
+<ce>            in a tavern? %oth. How do members of our order
+<ce>        let these things happen? How will we vanquish the Dark
+<ce>          Brotherhood, the Thieves Guild, the Necromancers,
+<ce>         the vampires, and all that plague Tamriel if this is
+<ce>             the quality we offer? Forgive my bitterness.
+<ce>            You have done us a favor in slaying the knave.
 
 Message:  1030
 %qdt:
@@ -110,8 +110,8 @@ Foe _enemy_ is Barbarian
 Clock _timer_ 00:00 0 flag 17 range 0 2
 
 --	Quest start-up:
-	start timer _timer_
-	log 1030 step 0 
+  start timer _timer_
+  log 1030 step 0
   get item _weapon_
   pick one of _e1_ _e2_
   place npc _knight_ at _knighttown_
@@ -124,9 +124,9 @@ _deliver_ task:
 
 _victory1_ task:
   when _qgclicked_ and _deliver_
-	say 1021
+  say 1021
   give pc nothing
-	end quest
+  end quest
 
 _e2_ task:
   place item _body_ at _knighttown_
@@ -141,6 +141,7 @@ _inside_ task:
 _takebody_ task:
   clicked item _body_
   say 1023
+  take _body_ from pc
 
 _slain_ task:
   killed _enemy_
@@ -148,17 +149,17 @@ _slain_ task:
 
 _victory2_ task:
   when _qgclicked_ and _slain_
-	say 1025
+  say 1025
   give pc nothing
-	end quest
+  end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+  clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _deliver_ and not _slain_
-	clear _qgclicked_ _clearclick_ 
+  when _qgclicked_ and not _deliver_ and not _slain_
+  clear _qgclicked_ _clearclick_
 
 _timer_ task:
   say 1003
-	end quest
+  end quest
