@@ -4,59 +4,59 @@ DisplayName: Adventurer's Bounty
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          My name is _qg_. I have come into possession
-<ce>          of a map purporting to lead to some forgotten treasure
-<ce>          in %crn. I consider myself incapable of recovering it,
-<ce>          but I would be willing to sell it for the mere pittance of
-<ce>          200 gold pieces. Would this interest you, %ra?
-<--->          
-<ce>          Good day, %ra. I have here a map leading to a
-<ce>          forgotten treasure in %crn, which I would be
-<ce>          willing to part with for 200 gold pieces.
-<ce>          Would you consider that a good deal?
+<ce>             My name is _qg_. I have come into possession
+<ce>        of a map purporting to lead to some forgotten treasure
+<ce>        in %crn. I consider myself incapable of recovering it,
+<ce>      but I would be willing to sell it for the mere pittance of
+<ce>            200 gold pieces. Would this interest you, %ra?
+                                     <--->
+<ce>            Good day, %ra. I have here a map leading to a
+<ce>             forgotten treasure in %crn, which I would be
+<ce>              willing to part with for 200 gold pieces.
+<ce>                 Would you consider that a good deal?
 
 RefuseQuest:  [1001]
-<ce>         %oth. Tell your friends about me.
-<--->
-<ce>         What a pity, for I will not go lower.
-<--->
-<ce>         I suppose I should look for an
-<ce>         adventurer. Forgive the mistake.
+<ce>                  %oth. Tell your friends about me.
+                                     <--->
+<ce>                What a pity, for I will not go lower.
+                                     <--->
+<ce>                    I suppose I should look for an
+<ce>                   adventurer. Forgive the mistake.
 
 AcceptQuest:  [1002]
-<ce>         Good, very good. Just give me a moment
-<ce>         and we'll make the transaction.
+<ce>               Good, very good. Talk to me in a moment
+<ce>                   and we'll make the transaction.
 
 QuestFail:  [1003]
-<ce>         As authentic as the treasure map may be,
-<ce>         someone is likely to have found its bounty by now.
+<ce>               As authentic as the treasure map may be,
+<ce>          someone is likely to have found its bounty by now.
 
 QuestComplete:  [1004]
-<ce>         This appears to be the fabled treasure.
+<ce>               This appears to be the fabled treasure.
 
 Message:  1020
-<ce>         Very good, thank you for waiting. I'll take
-<ce>         your 200 gold. That's good.
-<ce>         
-<ce>         No refunds, I should state, but that's an
-<ce>         obvious assumption by all parties in
-<ce>         transactions such as these. There is no
-<ce>         hope of restoring it beyond its current
-<ce>         condition. Take it, see if it makes you
-<ce>         rich beyond your wildest dreams, and
-<ce>         come tell me about it some time.
-<ce>         My curiosity will itch at me until I hear
-<ce>         regarding the matter. Farewell, %ra.
+<ce>             Very good, thank you for waiting. I'll take
+<ce>                     your 200 gold. That's good.
+<ce>
+<ce>              No refunds, I should state, but that's an
+<ce>                 obvious assumption by all parties in
+<ce>               transactions such as these. There is no
+<ce>               hope of restoring it beyond its current
+<ce>               condition. Take it, see if it makes you
+<ce>                 rich beyond your wildest dreams, and
+<ce>                   come tell me about it some time.
+<ce>              My curiosity will itch at me until I hear
+<ce>                 regarding the matter. Farewell, %ra.
 
 Message:  1021
-<ce>        I see you don't have 200 gold pieces.
-<ce>        What a pity. I certainly hope to be taken
-<ce>        seriously by the next potential client.
+<ce>                I see you don't have 200 gold pieces.
+<ce>              What a pity. I certainly hope to be taken
+<ce>               seriously by the next potential client.
 
 Message:  1025
 Diary of _dummy_
 Page _num_
-
+ 
 ... last remaining ... hope of relie ...
 ... murderous thieves will stop at not ...
 ... if you can r ... no expectati ...
@@ -83,15 +83,15 @@ Place _dung_ remote dungeon
 Clock _timer_ 90.00:00
 
 --   Quest start-up:
-   start timer _timer_
+  start timer _timer_
 
 _start_ task:
-   clicked _qg_ and at least 200 gold otherwise do _fail_
-   say 1020
-   get item _letter_
-   pick one of _item1_ _item2_ _item3_ _item4_ _item5_ _item5_
-   reveal _dung_
-   place item _sack_ at _dung_
+  clicked _qg_ and at least 200 gold otherwise do _fail_
+  say 1020
+  get item _letter_
+  pick one of _item1_ _item2_ _item3_ _item4_ _item5_ _item5_
+  reveal _dung_
+  place item _sack_ at _dung_
 
 variable _item1_
 variable _item2_
@@ -103,33 +103,33 @@ _found_ task:
   clicked item _sack_
 
 _vict1_ task:
- when _found_ and _item1_
- give pc _reward1_
- end quest
+  when _found_ and _item1_
+  give pc _reward1_
+  end quest
 
 _vict2_ task:
- when _found_ and _item2_
- give pc _reward2_
- end quest
+  when _found_ and _item2_
+  give pc _reward2_
+  end quest
 
 _vict3_ task:
- when _found_ and _item3_
- give pc _reward3_
- end quest
+  when _found_ and _item3_
+  give pc _reward3_
+  end quest
 
 _vict4_ task:
- when _found_ and _item4_
- give pc _reward4_
- end quest
+  when _found_ and _item4_
+  give pc _reward4_
+  end quest
 
 _vict5_ task:
- when _found_ and _item5_
- give pc _reward5_
- end quest
+  when _found_ and _item5_
+  give pc _reward5_
+  end quest
 
 _timer_ task:
-    say 1003
-    end quest
-  
+  say 1003
+  end quest
+
 _fail_ task:
   say 1021
