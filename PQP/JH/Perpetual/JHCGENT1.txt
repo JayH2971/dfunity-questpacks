@@ -5,32 +5,32 @@ DisplayName: Cartographers Quest Selection 1
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ERROR 1000 JHCGENT1
+<ce>                         ERROR 1000 JHCGENT1
 
 RefuseQuest:  [1001]
-<ce>          ERROR 1001 JHCGENT1
+<ce>                         ERROR 1001 JHCGENT1
 
 AcceptQuest:  [1002]
-<ce>           ERROR 1002 JHCGENT1
+<ce>                         ERROR 1002 JHCGENT1
 
 QuestFail:  [1003]
-<ce>           ERROR 1003 JHCGENT1
+<ce>                         ERROR 1003 JHCGENT1
 
 QuestComplete:  [1004]
-<ce>           ERROR 1004 JHCGENT1
+<ce>                         ERROR 1004 JHCGENT1
 
-Message: 1010
-<ce>        JHCGENT1: Pick one failure
+Message:  1010
+<ce>                      JHCGENT1: Pick one failure
 
 QBN:
 
-Clock _timer_ 12.00:00 30.00:00
+Clock _timer_ 19.00:00 30.00:00
 
 Person _qg_ group Librarian
 
 --	Quest start-up:
-          start timer _timer_
-          pick one of _Q1_ _Q2_ _Q3_ _QZ_
+        start timer _timer_
+        pick one of _Q1_ _Q2_ _Q3_ _QZ_
 
 variable _Q1_
 variable _Q2_
@@ -39,19 +39,19 @@ variable _QZ_
 variable _timer_
 
 _S1_ task:
-         when _timer_ and _Q1_
-         start quest JHCG001
-         end quest
+        when _timer_ and _Q1_
+        start quest JHCG001
+        end quest
 
 _S2_ task:
-         when _timer_ and _Q2_
-         start quest JHCG002
-         end quest
+        when _timer_ and _Q2_
+        start quest JHCG002
+        end quest
 
 _S3_ task:
-         when _timer_ and _Q3_
-         start quest JHCG003
-         end quest
+        when _timer_ and _Q3_
+        start quest JHCG003
+        end quest
 
 _S4_ task:
         when _timer_ and _QZ_
@@ -59,6 +59,6 @@ _S4_ task:
         end quest
 
 _SNONE_ task:
-         when _timer_ and not _Q1_ and not _Q2_ and not _Q3_ and not _QZ_
-         say 1010
-         end quest
+        when _timer_ and not _Q1_ and not _Q2_ and not _Q3_ and not _QZ_
+        say 1010
+        end quest
