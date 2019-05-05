@@ -14,7 +14,7 @@ RefuseQuest:  [1001]
 
 AcceptQuest:  [1002]
 <ce>                Be going then. You will find _convert_
-<ce>              to actually in _res_. We do not expect you
+<ce>               to be in _res_. We do not expect you to
 <ce>             preach to %g2. We instead have this written
 <ce>           package you may deliver, which we will consider
 <ce>              success on your part. The task is simple.
