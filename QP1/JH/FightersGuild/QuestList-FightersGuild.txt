@@ -11,7 +11,7 @@ schema: *name, group, membership, minReq, flag, notes
 
 JHFG001, FightersGuild, M, 3, 0, a quest to slay a vampire in another town
 JHFG002, FightersGuild, M, 6, 0, a quest to slay a daedra in a dungeon
-JHFG003, FightersGuild, M, 1, 0, a quest to slay a criminal in a dungeon
+JHFG003, FightersGuild, M, 5, 0, a quest to slay a criminal in a dungeon
 JHFG004, FightersGuild, M, 1, 0, a quest to guard a residence from intruders
 JHFG005, FightersGuild, M, 0, 0, a quest to slay a pack of beasts at a rural farmhome
 JHFG006, FightersGuild, M, 1, 0, a quest to stop an assassination inside a home
@@ -37,6 +37,7 @@ JHFGB02, FightersGuild, P, 0, 0, a quest to pay off a debt
 JHFGB03, FightersGuild, P, 0, 0, a quest to seek an enchanted item
 JHFGB04, FightersGuild, P, 0, 0, a quest for Quill Circus
 JHFGC01, FightersGuild, P, 0, 1, a duel with a shapeshifter
+JHFGDAED, FightersGuild, P, 0, 0,
 -go to fellow fighter's hometown, find discouraged, talk to persuade
 -punishment for lacking skill checks (magic schools, weapon types)
 -non-violent ways through quests for TG, MG, DB
@@ -48,3 +49,6 @@ JHFGC01, FightersGuild, P, 0, 1, a duel with a shapeshifter
 -JHFG001: Maybe have a chance for the the "vampire" not actually being a vampire and the client just trying to use the fighters guild as would-be Dark Brotherhood (for whatever reason) the player could decide go with it and kill the innocent or spare the innocent (and maybe that would lead to dealing with the guy who hired the fighters guild) As for skills not sure (maybe Illusion or intelligence or medical skill) depending on what the scenario is with the client.
 -JHFG002: Have a chance to have the daedra offer you a really powerful reward/buff (that has a chance with some king of a down side in the future they wouldn't tell you that) not sure what it would be (from being ambushed by a bunch of dremora lords or being randomly teleported to a new dungeon etc)maybe it would lead to a whole new quest dealing with the results? for letting them go
 -necromancer in dungeon. skele spawns inside
+-try to blackmail Helseth, fail. reward on body or nearby failure person
+-put bag over NPC head
+--short consequence quest: enemies come to fight you for doing something

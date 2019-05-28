@@ -37,3 +37,4 @@ JHTGX07, GeneralPopulace, P, 0, X, offered via JHTG06X
 -Thieves Guild quest: Grab a bag of money from a residence in another town, but don't fight the guards inside. They'll identify you and drop your legal rep.
 -steal a magical item
 -steal a scroll
+-hit to steal, not kill

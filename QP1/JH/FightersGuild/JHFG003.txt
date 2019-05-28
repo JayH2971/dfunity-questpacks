@@ -1,5 +1,5 @@
 Quest: JHFG003
-DisplayName: Civil Duty
+DisplayName: Civic Duty
 -- Message panels
 QRC:
 
@@ -22,62 +22,132 @@ RefuseQuest:  [1001]
 <ce>                   look like? The Dark Brotherhood?
 
 AcceptQuest:  [1002]
-<ce>                 You just can't resist, can you %pcf?
-<ce>           Just remember, this isn't murder. We're lawfully
-<ce>               contracted by the %t for this. Get down
+<ce>            You just can't resist, can you %pcf? Get down
 <ce>                    to __dungeon_ and back here in
 <ce>         =timer_ days, and I'll have your _reward_ gold here.
-<ce>
-<ce>           By the way, this one's a ringleader of some band
-<ce>            of some kind, so be ready if things go south.
-
-QuestFail:  [1003]
-<ce>                Your contract with the Fighters Guild
-<ce>                      in ___dungeon_ is overdue.
 
 QuestComplete:  [1004]
 <ce>                  Good work. That should keep the %t
-<ce>             off our backs for awhile. Here's your gold.
+<ce>                      off our backs for awhile.
 
 Message:  1010
-<ce>        "Wait! Wait, stop! I'm a member of the Thieves Guild!
+<ce>         Wait! Wait, stop! I'm a member of the Thieves Guild!
 <ce>       Don't kill me! If you let me go, I promise I'll tell my
-<ce>    people good things about you! Please, won't you let me live?"
+<ce>              people good things about you! Let me live!
 
 Message:  1011
-<ce>              "There is honor among thieves, %ra. Leave
-<ce>              this place and pretend you never found me.
-<ce>                 I will honor my word and spread your
-<ce>               good fame among the underworld as if my
-<ce>                        life depended on it."
-
-Message:  1012
-<ce>             Thieves Guild or not, you accepted this task
-<ce>                and intend to follow through with it.
-<ce>                   You extend your enemy no mercy.
+<ce>                       Yes! I will spread your
+<ce>                  fame among the underworld as if my
+<ce>                   life depended on it. Thank you!
 
 Message:  1020
-<ce>                  Your foe lets out a blood-curdling
-<ce>                scream which echoes through the halls.
+<ce>                        Your quarry is slain.
 
 Message:  1030
 %qdt:
- I've been contracted by
- the %t through
- the Fighters Guild of
+ I've been contracted by the %t
+ through the Fighters Guild of
  ___qgiver_ to hunt
- down a criminal ringleader
+ down a criminal
  in ___dungeon_. I need to
- be back in =timer_ days
- to get my _reward_ gold.
+ be back in =timer_ days to get my =reward_ gold.
+
+Message:  1040
+<ce>          No, no, wait! We're going to do this right, okay?
+<ce>     I've got a stash of =survivegold_ gold. Sounds pretty good,
+<ce>        right? Just let me live and I'll leave it by the exit.
+<ce>                We both get what we want, right? Okay?
+
+--contributed by Baler
+
+Message:  1041
+<ce>                  See, you're one of the smart ones.
+<ce>                      Glad we found each other.
+<ce>                You just head on out and I'll leave it
+<ce>                     outside the entrance, okay?
+
+Message:  1042
+<ce>            Sure enough, you find a large sack containing
+<ce>                many gold coins outside the entrance.
+<ce>               It's a shame the Fighters Guild won't be
+<ce>           giving a good report this time, but that's life.
+
+Message:  1045
+<ce>         Something strange is happening here. Your foe growls
+<ce>               and gnashes about in a truly savage way.
+
+--daedra ending
+
+Message:  1050
+<ce>                   Moron %ra! You thought I wasn't
+<ce>                     ready for you? COME ON OUT!
+
+--spawn 4 helpers
+
+Message:  1055
+<ce>                Wait, moron. %pcf. %ra working for the
+<ce>          Fighters Guild. I know you and a lot more. Listen.
+<ce>
+<ce>            The reason the %t wants me to die is I've got
+<ce>          some very ugly details about an illegitimate heir
+<ce>          that's coming of age. I'm headed to ___palace_ to
+<ce>            barter for my silence. Join me and split it or
+<ce>              kill me and lose it all. Are you with me?
+
+Message:  1056
+<ce>         All right. I was going to let them stew for another
+<ce>             week but you left me no choice. We're headed
+<ce>                 to the palace at ___palace_. Take me
+<ce>                to someone named _noble_ and we'll see
+<ce>                what %crn's gonna give us. Let's move.
+
+Message:  1057
+<ce>             Your partner's suspicions of you have gotten
+<ce>                 too strong. After you let your guard
+<ce>              down momentarily, you find yourself alone.
+
+Message:  1058
+<ce>                 Your partner takes _noble_ aside and
+<ce>          whispers something in %g3 ear for about a minute.
+<ce>         The noble feigns surprise, clearly in on the secret.
+<ce>         With a snap of the fingers %g1 summons a servant who
+<ce>        brings several useful objects to the two of you, which
+<ce>                you split evenly before parting ways.
+
+Message:  1059
+%qdt:
+ I've sided with the outlaw I was meant to slay.
+ We're headed to ___palace_ to speak
+ with a noble named _noble_
+ to try to barter about some
+ dangerous information.
+
+Message:  1060
+<ce>      Curiously, your mark appears to already be dead. You find
+<ce>        cuts, deep and wide, across the body. Someone seems to
+<ce>                    have already looted it first.
+<ce>
+<ce>          During the time you inspected the body, it appears
+<ce>            you've attracted the real killer's attention.
+
+Message:  1065
+<ce>             Hard as it is to believe, this appears to be
+<ce>          your mark. Surely vampires can be outlaws as well.
 
 QBN:
 Item _reward_ gold
+Item _survivegold_ gold range 4301 to 5600
+Item _body_ dead_body
+Item _magic_ magic_item
+Item _trink_ ring
+Item _diam_ diamond
 
 Person _qgiver_ group Questor male
 Person _dummytg_ faction The_Thieves_Guild
+Person _noble_ faction Random_Noble
 
-Place _dungeon_ remote dungeon
+Place _dungeon_ remote dungeon1
+Place _palace_ remote palace
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
 
@@ -85,73 +155,190 @@ Foe _enemy1_ is Nightblade
 Foe _enemy2_ is Assassin
 Foe _enemy3_ is Rogue
 Foe _enemy4_ is Spellsword
+Foe _vamp_ is Ancient_vampire
+Foe _daed_ is Daedroth
+Foe _assist_ is Archer
 
 --	Quest start-up:
 	start timer _timer_
 	log 1030 step 0
-	pick one of _E.01_ _E.02_ _E.03_ _E.04_
+	pick one of _E.01_ _E.02_ _E.03_ _E.04_ _E.05_ _E.06_
 	reveal _dungeon_
+	pc at _dungeon_ set _inside_
 
+variable _inside_
 _E.01_ task:
 	place foe _enemy1_ at _dungeon_
+	pick one of _A1_ _A2_ _A3_ _A4_ _A5_
 
 _E.02_ task:
 	place foe _enemy2_ at _dungeon_
+	pick one of _A1_ _A2_ _A3_ _A4_ _A5_
 
 _E.03_ task:
 	place foe _enemy3_ at _dungeon_
+	pick one of _A1_ _A2_ _A3_ _A4_ _A5_
 
 _E.04_ task:
 	place foe _enemy4_ at _dungeon_
+	pick one of _A1_ _A2_ _A3_ _A4_ _A5_
+
+_E.05_ task:
+	place foe _vamp_ at _dungeon_
+
+_vampinj_ task:
+	injured _vamp_
+	say 1065
+
+_vampslain_ task:
+	killed _vamp_
+	say 1020
+	start task _victory_
+
+_E.06_ task:
+	place item _body_ at _dungeon_
+
+_findbody_ task:
+	clicked item _body_
+	say 1060
+	take _body_ from pc
+	create foe _daed_ every 0 minutes 1 times with 100% success
+	start task _victory_
 
 _inj_ task:
 	injured _enemy1_
 	injured _enemy2_
 	injured _enemy3_
 	injured _enemy4_
-	pick one of _choice_ _nochoice_
+
+variable _A1_
+--normal version. add assassin quest prompt
+
+_assassinoffer_ task:
+	when _A1_ and _slain_
+	pick one of _makeoffer_ _nooffer_
+
+_makeoffer_ task:
+	start quest JHFGASN1
+
+variable _nooffer_
+
+variable _A2_
+--bribe quest
+_bribeinvite_ task:
+	when _A2_ and _inj_
+	prompt 1040 yes _acceptbribe_ no _killtg_
+
+variable _acceptbribe_
+_takebribe_ task:
+	when _acceptbribe_ and not _slain_
+	say 1041
+	remove foe _enemy1_
+	remove foe _enemy2_
+	remove foe _enemy3_
+	remove foe _enemy4_
+
+_findbribe_ task:
+	when _takebribe_ and not _inside_
+	say 1042
+	get item _survivegold_
+	end quest
+
+variable _A3_
+--ambush event
+
+_ambush_ task:
+	when _inj_ and _A3_
+	say 1050
+	create foe _assist_ every 0 minutes 4 times with 85% success
+
+variable _A4_
+--blackmail prompt
+
+_blackmailinvite_ task:
+	when _A4_ and _inj_
+	prompt 1055 yes _joinblackmail_ no _killtg_
+
+variable _joinblackmail_
+_blackmailgo_ task:
+	when _joinblackmail_ and not _slain_
+	say 1056
+	remove foe _enemy1_
+	remove foe _enemy2_
+	remove foe _enemy3_
+	remove foe _enemy4_
+	log 1059 step 1
+	add _dummytg_ face
+	place npc _noble_ at _palace_
+
+_bmtimer_ task:
+	when _joinblackmail_ and _timer_
+	drop _dummytg_ face
+	say 1057
+
+_finalblackmail_ task:
+	clicked npc _noble_
+	say 1058
+	get item _magic_
+	get item _trink_
+	get item _diam_
+	start quest JHFGNREV
+	end quest
+
+variable _A5_
+_daedraalert_ task:
+	when _A5_ and _inj_
+	say 1045
+
+_daedraspawn_ task:
+	when _A5_ and _slain_
+	start quest JHFGDAED
+
+variable _A6_
+--thieves guild prompt
 
 _choice_ task:
-	prompt 1010 yes _mercy_ no _quit_
+	when _inj_ and _A6_
+	prompt 1010 yes _savetg_ no _killtg_
 
-_mercy_ task:
+variable _savetg_
+_dosavetg_ task:
+	when _savetg_ and not _slain_
 	say 1011
 	restrain foe _enemy1_
 	restrain foe _enemy2_
 	restrain foe _enemy3_
 	restrain foe _enemy4_
 
-_quit_ task:
-	say 1012
-	change repute with _dummytg_ by -5
+variable _killtg_
+_tgrep_ task:
+	when _slain_ and _A6_
+	change repute with _dummytg_ by -20
+	start quest JHFGTHRV
 
-variable _nochoice_
 _slain_ task:
 	killed 1 _enemy1_ saying 1020
 	killed 1 _enemy2_ saying 1020
 	killed 1 _enemy3_ saying 1020
 	killed 1 _enemy4_ saying 1020
-	create foe _enemy1_ every 4 minutes 2 times with 4% success
-	create foe _enemy2_ every 4 minutes 2 times with 4% success
-	create foe _enemy3_ every 4 minutes 2 times with 4% success
-	create foe _enemy4_ every 4 minutes 2 times with 4% success
+	start task _victory_
 
+variable _victory_
 _qgclicked_ task:
 	clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_
+	when _qgclicked_ and not _victory_
 	clear _qgclicked_ _clearclick_
 
 _pcgetsgold_ task:
-	when _qgclicked_ and _slain_
+	when _qgclicked_ and _victory_
 	give pc _reward_
 	end quest
 
 _tgup_ task:
-	when _timer_ and _mercy_
-	change repute with _dummytg_ by +5
+	when _timer_ and _savetg_
+	change repute with _dummytg_ by +10
 
 _timer_ task:
-	say 1003
 	end quest

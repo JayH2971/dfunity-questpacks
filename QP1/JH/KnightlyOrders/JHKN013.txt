@@ -4,58 +4,58 @@ DisplayName: Pursuit
 QRC:
 
 QuestorOffer:  [1000]
-<ce> A local townsperson, _escort_,
-<ce> has been cursed by a wizard with a locating
-<ce> spell. The cowardly maniac sends magical
-<ce> constructs to kill %g2. We need a skilled
-<ce> warrior to slay them all until the curse
-<ce> loses its power.
+<ce>                    A local townsperson, _escort_,
+<ce>             has been cursed by a wizard with a locating
+<ce>               spell. The cowardly maniac sends magical
+<ce>              constructs to kill %g2. We need a skilled
+<ce>               warrior to slay them all until the curse
+<ce>                           loses its power.
 
 RefuseQuest:  [1001]
-<ce> The poor child is unfit for combat.
-<ce> I foresee a very bad ending for %g2
-<ce> unless I find someone quickly.
+<ce>                 The poor child is unfit for combat.
+<ce>                 I foresee a very bad ending for %g2
+<ce>                    unless I find someone quickly.
 
 AcceptQuest:  [1002]
-<ce> "An answer worthy of our order. The attacks
-<ce> are sparing, sometimes spaced across days, but
-<ce> they will come, I assure you. Just go about
-<ce> your ordinary life in the mean time. Gallant?"
-<ce> 
-<ce> A knight leaves the building, and soon returns with
-<ce> another person in tow. A dark aura surrounds %g2,
-<ce> which pulses every few minutes.
-<ce> 
-<ce> "_escort_, we have found your
-<ce> protector. %pcn will stay with you until
-<ce> we are certain the danger has passed.
-<ce> Follow wherever %pcf leads you, no matter
-<ce> what. Understood?"
+<ce>             "An answer worthy of our order. The attacks
+<ce>            are sparing, sometimes spaced across days, but
+<ce>             they will come, I assure you. Just go about
+<ce>            your ordinary life in the mean time. Gallant?"
+<ce>
+<ce>         A knight leaves the building, and soon returns with
+<ce>          another person in tow. A dark aura surrounds %g2,
+<ce>                   which pulses every few minutes.
+<ce>
+<ce>                    "_escort_, we have found your
+<ce>               protector. %pcn will stay with you until
+<ce>                we are certain the danger has passed.
+<ce>              Follow wherever %pcf leads you, no matter
+<ce>                          what. Understood?"
 
 QuestFail:  [1003]
-<ce> 
+<ce>
 
 QuestComplete:  [1004]
-<ce> As this atronach falls, _escort_'s
-<ce> complexion changes entirely. The dark
-<ce> covering around %g2 disappears in an
-<ce> instant. %g1 smiles and thanks you profusely.
-<ce> 
-<ce> "I'm sorry I have no means to pay you,
-<ce> but I will speak with _questgiver_
-<ce> as soon as I am able. You have saved
-<ce> my life! I will not forget it!"
-<ce> 
-<ce> _escort_ heads on %g3
-<ce> way, and you are left alone.
+<ce>                  As this atronach falls, _escort_'s
+<ce>                complexion changes entirely. The dark
+<ce>                 covering around %g2 disappears in an
+<ce>            instant. %g1 smiles and thanks you profusely.
+<ce>
+<ce>                "I'm sorry I have no means to pay you,
+<ce>                  but I will speak with _questgiver_
+<ce>                 as soon as I am able. You have saved
+<ce>                   my life! I will not forget it!"
+<ce>
+<ce>                        _escort_ heads on %g3
+<ce>                     way, and you are left alone.
 
 Message:  1010
-<ce> Words barely creep out of %g3 mouth. You
-<ce> miss what is said, but it likely doesn't matter.
-<--->
-<ce> _escort_'s gaunt eyes tell
-<ce> a long tale. %g1 likely has only slept on
-<ce> horseback if the assaults have persisted so.
+<ce>               Words barely creep out of %g3 mouth. You
+<ce>           miss what is said, but it likely doesn't matter.
+                                     <--->
+<ce>                      _escort_'s gaunt eyes tell
+<ce>              a long tale. %g1 likely has only slept on
+<ce>             horseback if the assaults have persisted so.
 
 Message:  1030
 %qdt:
@@ -67,10 +67,10 @@ Message:  1030
  My role is to strike them
  down until the curse wears out.
 
-Message: 1099
-<ce> You're free to roam, %pcf.
-<ce> Go wherever you like, so long as
-<ce> you keep _escort_ safe.
+Message:  1099
+<ce>                      You're free to roam, %pcf.
+<ce>                   Go wherever you like, so long as
+<ce>                       you keep _escort_ safe.
 
 QBN:
 Person _questgiver_ group Questor male
@@ -84,27 +84,27 @@ Foe _enemy3_ is Flesh_atronach
 Foe _enemy4_ is Ice_atronach
 
 --	Quest start-up:
-	start timer _timer_ 
+	start timer _timer_
 	log 1030 step 0
 	say 1010
 	add _escort_ face
-    create foe _enemy1_ every 8 minutes indefinitely with 1% success
-    create foe _enemy2_ every 15 minutes indefinitely with 2% success
-    create foe _enemy3_ every 28 minutes indefinitely with 4% success
-    create foe _enemy4_ every 55 minutes indefinitely with 8% success
+	create foe _enemy1_ every 16 minutes indefinitely with 1% success
+	create foe _enemy2_ every 26 minutes indefinitely with 2% success
+	create foe _enemy3_ every 40 minutes indefinitely with 4% success
+	create foe _enemy4_ every 126 minutes indefinitely with 8% success
 
 _victory_ task:
 	killed 3 _enemy1_
-    killed 3 _enemy2_
-    killed 3 _enemy3_
-    killed 3 _enemy4_
+	killed 2 _enemy2_
+	killed 3 _enemy3_
+	killed 2 _enemy4_
 	give pc nothing
 	legal repute +3
-	end quest 
+	end quest
 
 _qgclicked_ task:
 	clicked npc _questgiver_
-    say 1099
+	say 1099
 
 _timer_ task:
-	end quest 
+	end quest

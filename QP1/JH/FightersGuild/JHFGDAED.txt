@@ -1,0 +1,69 @@
+Quest: JHFDAED
+DisplayName: Daedra on the Loose
+
+QRC:
+
+QuestComplete:  [1004]
+<ce>                The terror of ___farm_ has been slain,
+<ce>               and the %t will no longer denounce you.
+
+Message:  1010
+<ce>          A bored courier halfheartedly gives you a letter.
+
+Message:  1011
+%pcn
+ 
+ We've got a problem. You did a contract for the Fighters
+Guild to off some outlaw in ___dung_ a while ago.
+After the %t sent the order and before you arrived,
+the scoundrel got possessed by a kind of daedra.
+It's now free of its host body, thanks to you,
+and keeps assaulting ___farm_. The %t's
+holding you responsible. Get on over there
+within 30 days and slay it or your good name
+in ____farm_'s going to lose its shine.
+ 
+                    _fg_
+                    The Fighters Guild
+                    ____farm_
+
+QBN:
+
+Clock _delay_ 5.00:00 7.00:00
+Clock _timer_ 30.00:00
+
+Place _farm_ remote poorhome
+Place _dung_ local dungeon
+
+Person _fg_ faction The_Fighters_Guild
+
+Foe _daed_ is Daedroth
+
+Item _letter_ letter used 1011
+
+---- Quest startup
+    start timer _delay_
+    
+_delay_ task:
+    give pc _letter_ notify 1010
+    have _letter_ set _begin_
+    pc at _farm_ set _arrive_
+
+_begin_ task:
+    start timer _timer_
+    pc at _farm_ set _arrive_
+
+_arrive_ task:
+    start task _spawn_
+
+_spawn_ task:
+    create foe _daed_ every 0 minutes 1 times with 100% success
+
+_slain_ task:
+    killed _daed_
+    give pc nothing
+    end quest
+
+_timer_ task:
+    legal repute -10
+    end quest
