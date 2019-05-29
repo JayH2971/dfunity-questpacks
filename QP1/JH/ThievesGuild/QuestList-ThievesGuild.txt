@@ -38,3 +38,6 @@ JHTGX07, GeneralPopulace, P, 0, X, offered via JHTG06X
 -steal a magical item
 -steal a scroll
 -hit to steal, not kill
+-foe teleports you into dungeon
+-item is trapped, causes disease or poison
+-item trap causes monster spawn

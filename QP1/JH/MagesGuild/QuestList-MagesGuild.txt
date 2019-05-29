@@ -46,3 +46,4 @@ JHMGB02, MagesGuild, P, 0, 0, intervention from the Blades
 -Mages Guild quest: Reverse teleport effect. Use an enchanted item to pull a person back from a Recall spell.
 -follow a daedra lord's instructions for an artifact
 -bad rep via guild member, clear it up or lose rep
+-Faerie -> Death's Embrace -> Jhuldarn
