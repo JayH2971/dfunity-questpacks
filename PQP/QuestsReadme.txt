@@ -8,6 +8,14 @@
 
     Delete the folder JH from the \DaggerfallUnity_Data\StreamingAssets\QuestPacks folder of your Daggerfall Unity installation.
 
+    CONTENTS:
+
+    This quest pack includes quests for the guilds of Daggerfall, for commoners, and for nobles.
+
+    This quest pack also includes the Perpetual Quest Pack. This is a series of random events that the game will initiate every 6 to 10 days.
+
+    To run the Perpetual Quest Pack on an existing character, move the file "JHPFIRST" to the \Quests\ folder of the Daggerfall Unity installation, and in-game use the console command "startquest JHPFIRST".
+
     Take note of the following points:
 
     * Minimal testing for game balance has been made. Bring feedback to the Daggerfall Workshop forums if some quest is ridiculously difficult when it should not be. JHMG00X, "Death's Embrace," is meant to be ridiculously difficult.
@@ -32,3 +40,12 @@
     ACNAero: Ideas for JHFG003
 
     Baler: Ideas for JHFG003
+
+    License:
+    Copyright 2019 "Jay_H" (MIT license)
+
+    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
