@@ -20,8 +20,9 @@ QuestFail:  [1003]
 QuestComplete:  [1004]
 <ce>          You scrounge up a few coins to give to the beggar,
 <ce>         who thanks you profusely and moves on to a different
-<ce>          corner. Hopefully the temple will have pity and do
-<ce>                the work for less than the usual sum.
+<ce>          corner before you can say anything else. Hopefully
+<ce>                 the temple will have pity and do the
+<ce>                  work for less than the usual sum.
 
 Message:  1010
 <ce>       A shabbily-dressed old man is bothering passersby ahead

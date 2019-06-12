@@ -4,66 +4,66 @@ DisplayName: Momento Retrieval
 QRC:
 
 QuestorOffer:  [1000]
-<ce> %pct, it falls upon the knights of this
-<ce> order to restore honor when it has been stolen.
-<ce> A complaint has come to our door concerning
-<ce>  a knave who murdered an honest citizen and
-<ce> then stole his weapon, a family heirloom.
-<ce> We can hardly resist and still consider ourselves
-<ce> defenders of %crn. Will you
-<ce> answer the call and retrieve the weapon?
+<ce>               %pct, it falls upon the knights of this
+<ce>           order to restore honor when it has been stolen.
+<ce>             A complaint has come to our door concerning
+<ce>              a knave who murdered an honest citizen and
+<ce>              then stole his weapon, a family heirloom.
+<ce>          We can hardly resist and still consider ourselves
+<ce>                     defenders of %crn. Will you
+<ce>               answer the call and retrieve the weapon?
 
 RefuseQuest:  [1001]
-<ce>  Then occupy yourself in something you value
-<ce>  more, %pcf. We have work to do here.
+<ce>             Then occupy yourself in something you value
+<ce>                 more, %pcf. We have work to do here.
 
 AcceptQuest:  [1002]
-<ce> Then you will descend into the depths of
-<ce> ___dungeon_ and find the
-<ce>  cruel beast who has done this crime. We
-<ce>  merely hope the _weapon_ is
-<ce> still with the fool, such that recovering it
-<ce>  will be no great chore. Have done with this
-<ce> and bring it to me in fewer than =timer_ days.
-<ce> Honor, virtue, and glory, %pcf.
+<ce>               Then you will descend into the depths of
+<ce>                       ___dungeon_ and find the
+<ce>               cruel beast who has done this crime. We
+<ce>                     merely hope the _weapon_ is
+<ce>             still with the fool, such that recovering it
+<ce>             will be no great chore. Have done with this
+<ce>            and bring it to me in fewer than =timer_ days.
+<ce>                   Honor, virtue, and glory, %pcf.
 
 QuestFail:  [1003]
-<ce> 
+<ce>
 
 QuestComplete:  [1004]
-<ce>  Excellent work, %pct. I shall have it
-<ce> delivered to _res_ this
-<ce>  very day, so soon as one of our squires
-<ce> returns from an errand. The family will
-<ce> remember your name for generations.
-<ce> I assure you of it, honorable knight.
+<ce>                Excellent work, %pct. I shall have it
+<ce>                       delivered to _res_ this
+<ce>               very day, so soon as one of our squires
+<ce>               returns from an errand. The family will
+<ce>                 remember your name for generations.
+<ce>                I assure you of it, honorable knight.
 
 Message:  1020
-<ce>  The thief has been slain. You see
-<ce>  the _weapon_ among the goods.
+<ce>                  The thief has been slain. You see
+<ce>                    the _weapon_ among the goods.
 
 Message:  1021
-<ce>  Wait! Stop! Why are you after me?!
-<ce>  Is it because of this _weapon_?
-<ce>  They told me to hold on to it! I didn't
-<ce>  do anything, by %god! Please, I'll
-<ce>  give you the weapon, but just let me go!
-<--->
-<ce>  Someone help! This %ra's going to
-<ce>  kill me! Please, stop! I promise,
-<ce>  I didn't do anything! I'm just holding
-<ce>  onto this _weapon_ for someone else!
-<ce>  I'll give it to you, but let me go, please!
+<ce>                  Wait! Stop! Why are you after me?!
+<ce>                   Is it because of this _weapon_?
+<ce>               They told me to hold on to it! I didn't
+<ce>                  do anything, by %god! Please, I'll
+<ce>               give you the weapon, but just let me go!
+                                     <--->
+<ce>                  Someone help! This %ra's going to
+<ce>                  kill me! Please, stop! I promise,
+<ce>                I didn't do anything! I'm just holding
+<ce>                 onto this _weapon_ for someone else!
+<ce>             I'll give it to you, but let me go, please!
 
 Message:  1022
-<ce>  Your foe begins to sob bitterly
-<ce>  as you press the attack.
+<ce>                   Your foe begins to sob bitterly
+<ce>                       as you press the attack.
 
 Message:  1023
-<ce>  Your foe throws the weapon at your feet
-<ce>  and races away from you. By the time
-<ce>  you pick it up, you have lost all
-<ce>  trace of its previous holder.
+<ce>               Your foe throws the weapon at your feet
+<ce>                 and races away from you. By the time
+<ce>                  you pick it up, you have lost all
+<ce>                    trace of its previous holder.
 
 Message:  1030
 %qdt:
@@ -89,12 +89,15 @@ Foe _enemy_ is Nightblade
 Item _weapon_ weapon
 
 --	Quest start-up:
-	start timer _timer_ 
-	log 1030 step 0 
+	start timer _timer_
+	log 1030 step 0
 	place foe _enemy_ at _dungeon_
-  reveal _dungeon_
-  pick one of _e1_ _e2_
+	reveal _dungeon_
+	pick one of _e1_ _e2_
+	pick one of _f1_ _f2_
 
+variable _f1_
+variable _f2_
 variable _e1_
 variable _e2_
 _inj_ task:
@@ -105,6 +108,10 @@ _ask_ task:
 	when _inj_ and _e2_
 	prompt 1021 yes _mercy_ no _kill_
 
+_secretmission_ task:
+	when _inj_ and _f2_
+	start quest JHKNA05
+
 _mercy_ task:
 	get item _weapon_
 	say 1023
@@ -114,19 +121,19 @@ _kill_ task:
 	say 1022
 
 _slain_ task:
-	killed 1 _enemy_ saying 1020 
+	killed 1 _enemy_ saying 1020
 
 _victory_ task:
-	toting _weapon_ and _qgiver_ clicked 
+	toting _weapon_ and _qgiver_ clicked
 	give pc nothing
-	end quest 
+	end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+	clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_
 
 _timer_ task:
 	end quest

@@ -4,31 +4,31 @@ DisplayName: Going Home
 QRC:
 
 QuestorOffer:  [1000]
-<ce> We have a task that should have been simple,
-<ce> had it been entrusted to someone of minimal
-<ce> competency. A child named _kid_ has
-<ce> been kept in ___dung_ for several
-<ce> weeks as part of a ransom plot. After we
-<ce> lost communication for some days, one of
-<ce> our more magically talented members scried
-<ce> the place and found the handler dead and
-<ce> the child scared and alone. Now the ransom
-<ce> money has arrived and the child must be retrieved.
-<ce> Aid the Brotherhood in this predicament, %pcf.
+<ce>             We have a task that should have been simple,
+<ce>             had it been entrusted to someone of minimal
+<ce>                 competency. A child named _kid_ has
+<ce>                  been kept in ___dung_ for several
+<ce>               weeks as part of a ransom plot. After we
+<ce>               lost communication for some days, one of
+<ce>              our more magically talented members scried
+<ce>               the place and found the handler dead and
+<ce>              the child scared and alone. Now the ransom
+<ce>          money has arrived and the child must be retrieved.
+<ce>            Aid the Brotherhood in this predicament, %pcf.
 
 RefuseQuest:  [1001]
-<ce> Leave your weapons on your way out.
-<ce> We could give them to someone useful.
+<ce>                 Leave your weapons on your way out.
+<ce>                We could give them to someone useful.
 
 AcceptQuest:  [1002]
-<ce> =2dung_ days will be ample time to descend into
-<ce> ___dung_ and retrieve the child. From there,
-<ce> get %g2 to ___home_ in no more than =2home_ days.
-<ce> Someone named _parent_ will receive the child.
-<ce> Ask around if you cannot find %g2. Now go.
+<ce>           =2dung_ days will be ample time to descend into
+<ce>             ___dung_ and retrieve the child. From there,
+<ce>          get %g2 to ___home_ in no more than =2home_ days.
+<ce>            Someone named _parent_ will receive the child.
+<ce>              Ask around if you cannot find %g2. Now go.
 
 QuestComplete:  [1004]
-<ce> Your work here is done. Now to get out of here.
+<ce>           Your work here is done. Now to get out of here.
 
 RumorsDuringQuest:  [1005]
 Ever heard of the Dark Brotherhood? Bunch of assassins.
@@ -51,44 +51,44 @@ QuestLogEntry:  [1010]
  to fulfill a ransom for the Dark Brotherhood.
 
 Message:  1011
-<ce> _kid_ merely stares in silent
-<ce> terror. ___dung_ has been
-<ce> unkind, but %g1 fears you more.
-<ce> You grab %g2 and get moving.
-<--->
-<ce> _kid_ glares at you hatefully.
-<ce> 
-<ce> "One day I'm going to be a big, strong
-<ce> knight and I'm gonna kill hundreds
-<ce> of Dark Brotherhood people just like you!"
-<ce> 
-<ce> You grab %g2 and move along.
+<ce>                    _kid_ merely stares in silent
+<ce>                      terror. ___dung_ has been
+<ce>                   unkind, but %g1 fears you more.
+<ce>                     You grab %g2 and get moving.
+                                     <--->
+<ce>                    _kid_ glares at you hatefully.
+<ce>
+<ce>                "One day I'm going to be a big, strong
+<ce>                  knight and I'm gonna kill hundreds
+<ce>              of Dark Brotherhood people just like you!"
+<ce>
+<ce>                     You grab %g2 and move along.
 
 Message:  1012
-<ce> The ransom has failed. Since you won't
-<ce> get the credit, there's no reason to maintain
-<ce> _kid_ any longer. You send %g2 on towards
-<ce> ___home_ without you.
+<ce>                The ransom has failed. Since you won't
+<ce>            get the credit, there's no reason to maintain
+<ce>              _kid_ any longer. You send %g2 on towards
+<ce>                        ___home_ without you.
 
 Message:  1013
-<ce>  However good _kid_ may be at hiding,
-<ce>  %g1 won't have survived ___dung_ for this long.
+<ce>                 However good _kid_ may be at hiding,
+<ce>           %g1 won't have survived ___dung_ for this long.
 
 Message:  1016
-<ce>  _kid_ breaks free of your grasp and
-<ce>  runs to _parent_. The two embrace
-<ce>  for several moments. The cold silence
-<ce>  is sufficient reason to leave.
+<ce>                 _kid_ breaks free of your grasp and
+<ce>                  runs to _parent_. The two embrace
+<ce>                for several moments. The cold silence
+<ce>                    is sufficient reason to leave.
 
 Message:  1017
-<ce>  _kid_ breaks free of your grasp and
-<ce>  runs to _parent_ for a tight embrace.
-<ce>  Then the adult says,
-<ce>  
-<ce>  "Pathetic wretch! You won't leave here alive!"
-<ce>  
-<ce>  _parent_ then carries the child in %g3 arms
-<ce>  and rushes out of the building.
+<ce>                 _kid_ breaks free of your grasp and
+<ce>                runs to _parent_ for a tight embrace.
+<ce>                         Then the adult says,
+<ce>
+<ce>            "Pathetic wretch! You won't leave here alive!"
+<ce>
+<ce>             _parent_ then carries the child in %g3 arms
+<ce>                   and rushes out of the building.
 
 QBN:
 
@@ -106,55 +106,62 @@ Clock _2dung_ 00:00 0 flag 1 range 0 2
 Clock _2home_ 15.00:00
 
 --	Quest start-up:
-	start timer _2dung_ 
-	reveal _dung_ 
-	log 1010 step 0 
-	place npc _kid_ at _dung_ 
-  place npc _parent_ at _home_
-  pick one of _E.01_ _E.02_
+	start timer _2dung_
+	reveal _dung_
+	log 1010 step 0
+	place npc _kid_ at _dung_
+	place npc _parent_ at _home_
+	pick one of _E.01_ _E.02_
+	pick one of _f1_ _f2_
 
 variable _E.01_
 variable _E.02_
+variable _f1_
+variable _f2_
 _2dung_ task:
-  start timer _2home_
+	start timer _2home_
 
 _cick_ task:
-	when _S.01_ and _2home_ 
-	say 1012 
+	when _capture_ and _2home_
+	say 1012
 
 _cick2_ task:
-	when not _S.01_ and _2home_ 
+	when not _capture_ and _2home_
 	say 1013
 
 _2home_ task:
-  hide npc _kid_
-	end quest 
+	hide npc _kid_
+	end quest
 
-_S.01_ task:
-	clicked npc _kid_ 
-	hide npc _kid_ 
-	say 1011 
-	add _kid_ face 
+_capture_ task:
+	clicked npc _kid_
+	hide npc _kid_
+	say 1011
+	add _kid_ face
+
+_secretmission_ task:
+	when _capture_ and _f2_
+	start quest JHDBA02
 
 _reward_ task:
-	when _pclicked_ and _S.01_ and _E.01_ 
-  say 1016
+	when _pclicked_ and _capture_ and _E.01_
+	say 1016
 	give pc nothing
-	end quest 
+	end quest
 
 _ambush_ task:
-	when _pclicked_ and _S.01_ and _E.02_ 
-  say 1017
-  hide npc _parent_
+	when _pclicked_ and _capture_ and _E.02_
+	say 1017
+	hide npc _parent_
 	create foe _enemy1_ every 0 minutes 1 times with 60% success
 	create foe _enemy2_ every 0 minutes 1 times with 60% success
 	create foe _enemy3_ every 0 minutes 1 times with 60% success
 	give pc nothing
-	end quest 
+	end quest
 
 _pclicked_ task:
-	clicked npc _parent_ 
+	clicked npc _parent_
 
 _S.04_ task:
-	when _pclicked_ and not _S.01_ 
-	clear _pclicked_ _S.04_ 
+	when _pclicked_ and not _capture_
+	clear _pclicked_ _S.04_

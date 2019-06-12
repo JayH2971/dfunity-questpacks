@@ -2,7 +2,7 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHPFIRST, InitAtGameStart, M, 0, 0, Initializes the perpetual quest system
+-JHPFIRST, InitAtGameStart, M, 0, 0, Initializes the perpetual quest system
 JHCG001, na, P, 0, 0, a Cartographer quest component
 JHCG002, na, P, 0, 0, a Cartographer quest component
 JHCG003, na, P, 0, 0, a Cartographer quest component
@@ -32,10 +32,6 @@ JHPINIT, na, P, 0, 0, Perpetual Quest selection
 JHPINIT2, na, P, 0, 0, Perpetual Quest selection
 JHPINIT3, na, P, 0, 0, Perpetual Quest selection
 JHPINIT4, na, P, 0, 0, Perpetual Quest selection
-JHPINIT5, na, P, 0, 0, Perpetual Quest selection
-JHPINIT6, na, P, 0, 0, Perpetual Quest selection
-JHPINIT7, na, P, 0, 0, Perpetual Quest selection
-JHPINIT8, na, P, 0, 0, Perpetual Quest selection
 JHPQA00, na, P, 0, 0, random outdoors enemy appearance
 JHPQB01, na, P, 0, 0, beginner's challenge quest
 JHPQB02, na, P, 0, 0, beginner's challenge quest
@@ -58,32 +54,6 @@ JHPQ016, na, P, 0, 1, a Perpetual Quest
 JHPQ017, na, P, 0, 0, a Perpetual Quest
 JHPQ018, na, P, 0, 0, a Perpetual Quest
 JHPQ019, na, P, 0, 0, a Perpetual Quest
-JHPQ020, na, P, 0, 0, a Perpetual Quest
-JHPQ021, na, P, 0, 0, a Perpetual Quest
-JHPQ022, na, P, 0, 0, a Perpetual Quest
-JHPQ023, na, P, 0, 0, a Perpetual Quest
-JHPQ024, na, P, 0, 0, a Perpetual Quest
-JHPQ025, na, P, 0, 0, a Perpetual Quest
-JHPQ026, na, P, 0, 0, a Perpetual Quest
-JHPQ027, na, P, 0, 0, a Perpetual Quest
-JHPQ028, na, P, 0, 0, a Perpetual Quest
-JHPQ029, na, P, 0, 0, a Perpetual Quest
-JHPQ030, na, P, 0, 0, a Perpetual Quest
-JHPQ031, na, P, 0, 0, a Perpetual Quest
-JHPQ032, na, P, 0, 0, a Perpetual Quest
-JHPQ033, na, P, 0, 0, a Perpetual Quest
-JHPQ034, na, P, 0, 0, a Perpetual Quest
-JHPQ035, na, P, 0, 0, a Perpetual Quest
-JHPQ036, na, P, 0, 0, a Perpetual Quest
-JHPQ037, na, P, 0, 0, a Perpetual Quest
-JHPQ038, na, P, 0, 0, a Perpetual Quest
-JHPQ039, na, P, 0, 0, a Perpetual Quest
-JHPQ040, na, P, 0, 0, a Perpetual Quest
-JHPQ041, na, P, 0, 0, a Perpetual Quest
-JHPQ042, na, P, 0, 0, a Perpetual Quest
-JHPQ043, na, P, 0, 0, a Perpetual Quest
-JHPQ044, na, P, 0, 0, a Perpetual Quest
-JHPQ045, na, P, 0, 0, a Perpetual Quest
 -various infestations in the region via rumor. Find dungeon and wipe out nest
 -reputation-based quests, depending on minimum (maximum?) rep with factions
 -request to deliver drug to graveyard. avoid cities. if refuse, could alert guard

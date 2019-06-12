@@ -12,12 +12,14 @@ schema: *name, group, membership, minReq, flag, notes
 JHTP001, HolyOrder, M, 0, 0, a quest to take a religious tract to a potential convert
 JHTP002, HolyOrder, M, 0, 0, a quest to deliver a donation to the temple
 JHTP003, HolyOrder, M, 0, 0, a quest to deliver herbs to a sick member
-JHTP004, HolyOrder, M, 1, 0, a quest to find a pilgrim lost in a dungeon
+JHTP004, HolyOrder, M, 2, 0, a quest to find a pilgrim lost in a dungeon
 JHTP005, HolyOrder, M, 0, 0, a quest to pacify a ghost in a home
 JHTP006, HolyOrder, M, 1, 0, a quest to help a couple resolve their differences
 JHTP007, HolyOrder, M, 2, 0, a quest to cleanse an infected dungeon
 JHTP008, HolyOrder, M, 1, 0, a quest to recharge a curing trinket
 -JHTP009, HolyOrder, M, 7, 0, a quest to remove the Necromancers' influence from a home
+JHTPA00, HolyOrder, P, 0, 0, meeting a beggar via TP004
+JHTPA01, HolyOrder, P, 0, 0, finding lost jewelry via TP007
 -seek out and slay necromancer
 -find lost person in cave, cannot leave due to vampire burning
 -Temple quest: A ghost keeps reappearing in a residence in spite of multiple attempts to remove it. The PC must resolve the case of the ghost's murder.

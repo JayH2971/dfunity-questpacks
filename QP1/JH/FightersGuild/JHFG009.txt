@@ -79,7 +79,10 @@ Foe _enemy1_ is Werewolf
 	reveal _dungeon_
 	pc at _dungeon_ set _starthunt_
 	place foe _enemy1_ at _dungeon_
+	pick one of _f1_ _f2_
 
+variable _f1_
+variable _f2_
 _starthunt_ task:
 	say 1015
 	start timer _hunt_
@@ -100,6 +103,10 @@ _pcgetsgold_ task:
 	when _qgclicked_ and _slain_
 	give pc _reward_
 	end quest
+
+_secretmission_ task:
+  when _f2_ and _slain_
+  start quest JHFGA03
 
 _hunt_ task:
 	say 1003

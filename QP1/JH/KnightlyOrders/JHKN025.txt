@@ -4,39 +4,39 @@ DisplayName: A Shrine of Chaos
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  A remote shrine in %crn has been suffering
-<ce>  some raucous interruptions by a group of brigands.
-<ce>  The place needs a guard but the attendant can't
-<ce>  afford the Fighters Guild's help. Will you protect it?
+<ce>              A remote shrine in %crn has been suffering
+<ce>          some raucous interruptions by a group of brigands.
+<ce>           The place needs a guard but the attendant can't
+<ce>        afford the Fighters Guild's help. Will you protect it?
 
 RefuseQuest:  [1001]
-<ce>  What would the %t want, %pct?
+<ce>                    What would the %t want, %pct?
 
 AcceptQuest:  [1002]
-<ce>  The place is called ___cult_. The priest
-<ce>  has described a common scene concerning thugs and vagabonds,
-<ce>  namely, they arrive every few days to shake down the visitors
-<ce>  for coin and valuables before departing. It's quite likely
-<ce>  you'll need to loiter for some time before they show up. As
-<ce>  always, ensure you do not sleep on the premises. We speak of
-<ce>  a temple, after all. Arrive within =timer_ days and stay until
-<ce>  the matter is resolved. Safe travels, %pct.
+<ce>               The place is called ___cult_. The priest
+<ce>     has described a common scene concerning thugs and vagabonds,
+<ce>    namely, they arrive every few days to shake down the visitors
+<ce>      for coin and valuables before departing. It's quite likely
+<ce>     you'll need to loiter for some time before they show up. As
+<ce>     always, ensure you do not sleep on the premises. We speak of
+<ce>    a temple, after all. Arrive within =timer_ days and stay until
+<ce>             the matter is resolved. Safe travels, %pct.
 
 QuestFail:  [1003]
-<ce>  You were to defend ___cult_ by now.
+<ce>                 You were to defend ___cult_ by now.
 
 QuestComplete:  [1004]
-<ce>  Fine work, %pcf. I am proud to associate with knights
-<ce>  such as yourself. You honor our role as guardians of %crn.
+<ce>        Fine work, %pcf. I am proud to associate with knights
+<ce>      such as yourself. You honor our role as guardians of %crn.
 
-Message: 1010
-<ce>  The attendant approaches and informs you that the dead
-<ce>  match his recollection of the band's numbers. He gives you
-<ce>  a thorough and heartfelt thanks before returning to his duties.
+Message:  1010
+<ce>        The attendant approaches and informs you that the dead
+<ce>      match his recollection of the band's numbers. He gives you
+<ce>   a thorough and heartfelt thanks before returning to his duties.
 
 Message:  1011
-<ce>  This is the place. Presumably you'll need
-<ce>  to wait close by for the next attack.
+<ce>              This is the place. Presumably you'll need
+<ce>                to wait close by for the next attack.
 
 Message:  1030
 %qdt:
@@ -59,45 +59,56 @@ Foe _enemy_ is Thief
 
 --	Quest start-up:
 	start timer _timer_
-	log 1030 step 0 
+	log 1030 step 0
+	pick one of _f1_ _f2_
 
+variable _f1_
+variable _f2_
 _there_ task:
 	when pc enters cult
 	stop timer _timer_
-    start timer _wait_
-    say 1011
+	start timer _wait_
+	say 1011
 	clear _notthere_
 
 _notthere_ task:
 	when pc exits cult
-    stop timer _wait_
-    start timer _timer_
+	stop timer _wait_
+	start timer _timer_
 	clear _there_
 -    when not _there_ and not _slain_
 
 variable _wait_
 _spawn_ task:
-    when _wait_ and _there_ and not _slain_
+	when _wait_ and _there_ and not _slain_
 	create foe _enemy_ every 1 minutes 3 times with 100% success
 
 _slain_ task:
 	killed 3 _enemy_ saying 1010
 
+_secretmission_ task:
+	when _slain_ and _f2_
+	start quest JHKNA03
+
+_secretmission2_ task:
+	when _slain_ and _f1_
+	start quest JHKNA07
+
 variable _timer_
 _fail_ task:
-    when _timer_ and not _slain_
+	when _timer_ and not _slain_
 	say 1003
-    end quest
+	end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+	clicked npc _qgiver_
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_
-	clear _qgclicked_ _clearclick_ 
+	clear _qgclicked_ _clearclick_
 
 _pcreward_ task:
-	when _qgclicked_ and _slain_ 
+	when _qgclicked_ and _slain_
 	give pc nothing
 	legal repute +4
 	end quest

@@ -4,60 +4,60 @@ DisplayName: Weaponized Teleportation
 QRC:
 
 QuestorOffer:  [1000]
-<ce>	%pcf, do you like hearing from the %t? I do not.
-<ce>	Most guild members also do not. Our research must
-<ce>	 not be interrupted by petty squabbles such as some
-<ce>	mere murderer holed up in some ruins, as is
-<ce>	the case at this moment. We received a request this
-<ce>	morning to slay one such criminal that the Fighters Guild
-<ce>	simply could not locate. Knowing of your combat skill,
-<ce>	we wish to bestow this task upon you for the sum
-<ce>	of =reward_ gold pieces. Are you ready to teleport?
-<--->
-<ce>	Surely, it must be said that the %t takes
-<ce>	advantage of us at times. It's not as though there aren't
-<ce>	plenty of dashing, youthful adventurers across %crn
-<ce>	willing to slay a criminal in a hole for money.
-<ce>	Nevertheless, their incompetence lays the task
-<ce>	instead at our feet. We have been given the order
-<ce>	of disposing of an outlaw in some ruins,
-<ce>	who must be surprised by the use of teleportation.
-<ce>	Apparently all other means have failed to find
-<ce>	the knave. If you are willing and ready, we should
-<ce>	like to teleport you this instant to get this over with.
+<ce>           %pcf, do you like hearing from the %t? I do not.
+<ce>          Most guild members also do not. Our research must
+<ce>          not be interrupted by petty squabbles such as some
+<ce>             mere murderer holed up in some ruins, as is
+<ce>         the case at this moment. We received a request this
+<ce>      morning to slay one such criminal that the Fighters Guild
+<ce>        simply could not locate. Knowing of your combat skill,
+<ce>           we wish to bestow this task upon you for the sum
+<ce>         of =reward_ gold pieces. Are you ready to teleport?
+                                     <--->
+<ce>              Surely, it must be said that the %t takes
+<ce>      advantage of us at times. It's not as though there aren't
+<ce>         plenty of dashing, youthful adventurers across %crn
+<ce>           willing to slay a criminal in a hole for money.
+<ce>            Nevertheless, their incompetence lays the task
+<ce>          instead at our feet. We have been given the order
+<ce>               of disposing of an outlaw in some ruins,
+<ce>          who must be surprised by the use of teleportation.
+<ce>            Apparently all other means have failed to find
+<ce>          the knave. If you are willing and ready, we should
+<ce>       like to teleport you this instant to get this over with.
 
 RefuseQuest:  [1001]
-<ce>	%oth. No one is, apparently.
+<ce>                     %oth. No one is, apparently.
 
 AcceptQuest:  [1002]
-<ce>	Then we will send you off immediately. Our good
-<ce>	_dummy_ will do the incantation.
-<ce>	I don't so much care about when you come back,
-<ce>	so long as you come back alive. Let the %t
-<ce>	take responsibility for these things sooner than
-<ce>	 bother us again. Once you're off I can say our work
-<ce>	 is in progress. Well then, I won't hold you any further.
-<ce>	 Go ahead, _dummy_.
+<ce>           Then we will send you off immediately. Our good
+<ce>                   _dummy_ will do the incantation.
+<ce>            I don't so much care about when you come back,
+<ce>              so long as you come back alive. Let the %t
+<ce>           take responsibility for these things sooner than
+<ce>         bother us again. Once you're off I can say our work
+<ce>       is in progress. Well then, I won't hold you any further.
+<ce>                          Go ahead, _dummy_.
 
 QuestFail:  [1003]
 
 QuestComplete:  [1004]
-<ce>	Oh, %pcf, I am overjoyed at your return. The %t
-<ce>	sent a few missives while we waited, and I rejoiced
-<ce>	to reply with certain choice words not fit for this guild hall.
-<ce>	I feel to reject such petitions in the future, had I the
-<ce>	confidence this building would not be closed upon within
-<ce>	the week. You have certainly earned your reward. Thank you.
+<ce>           Oh, %pcf, I am overjoyed at your return. The %t
+<ce>         sent a few missives while we waited, and I rejoiced
+<ce>   to reply with certain choice words not fit for this guild hall.
+<ce>       I feel to reject such petitions in the future, had I the
+<ce>       confidence this building would not be closed upon within
+<ce>     the week. You have certainly earned your reward. Thank you.
 
 Message:  1010
-<ce>	Your work is to find an assassin somewhere in this place.
+<ce>      Your work is to find an assassin somewhere in this place.
 <ce>
-<ce>	(Hint: You may be in a location that's impossible to escape from,)
-<ce>	(like the bottom of a chute. If so,)
-<ce>	(make a save and try the console command "teleport" to get out.)
+<ce>  (Hint: You may be in a location that's impossible to escape from,)
+<ce>                 (like the bottom of a chute. If so,)
+<ce>   (make a save and try the console command "teleport" to get out.)
 
 Message:  1020
-<ce>	You have slain the assassin. Now to return to ___qgiver_.
+<ce>      You have slain the assassin. Now to return to ___qgiver_.
 
 Message:  1030
 %qdt:
@@ -85,7 +85,10 @@ Person _dummy_ faction The_Mages_Guild
 	start timer _battle_
 	log 1030 step 0
 	pc at _dung_ set _inside_
+	pick one of _f1_ _f2_
 
+variable _f1_
+variable _f2_
 variable _inside_
 variable _battle_
 _spawn_ task:
@@ -96,17 +99,25 @@ _slain_ task:
 	killed _enemy_
 	say 1020
 
+_secretmission_ task:
+	when _f2_ and _slain_
+	start quest JHMGA04
+
+_secretmission2_ task:
+	when _f1_ and _slain_
+	start quest JHMGA05
+
 _pcgetsgold_ task:
 	when _qgclicked_ and _slain_
 	give pc _reward_
 	end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+	clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_
 
 _failsafe_ task:
-    end quest
+	end quest

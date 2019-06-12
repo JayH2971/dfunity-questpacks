@@ -4,16 +4,16 @@ DisplayName: Pursuit
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                    A local townsperson, _escort_,
-<ce>             has been cursed by a wizard with a locating
-<ce>               spell. The cowardly maniac sends magical
-<ce>              constructs to kill %g2. We need a skilled
+<ce>                     A local townsperson has been
+<ce>                  cursed by a wizard with a locating
+<ce>         spell. The cowardly maniac sends magical constructs
+<ce>             with a killing directive.. We need a skilled
 <ce>               warrior to slay them all until the curse
-<ce>                           loses its power.
+<ce>                      loses its power. Will you?
 
 RefuseQuest:  [1001]
 <ce>                 The poor child is unfit for combat.
-<ce>                 I foresee a very bad ending for %g2
+<ce>                 I foresee a very bad ending for him
 <ce>                    unless I find someone quickly.
 
 AcceptQuest:  [1002]
@@ -23,8 +23,7 @@ AcceptQuest:  [1002]
 <ce>            your ordinary life in the mean time. Gallant?"
 <ce>
 <ce>         A knight leaves the building, and soon returns with
-<ce>          another person in tow. A dark aura surrounds %g2,
-<ce>                   which pulses every few minutes.
+<ce>          another person in tow, surrounded by a dark aura.
 <ce>
 <ce>                    "_escort_, we have found your
 <ce>               protector. %pcn will stay with you until

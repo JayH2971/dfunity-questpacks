@@ -1,17 +1,17 @@
 -- Perpetual Quest
-Quest: JHPQ036
+Quest: JHFGA06
 DisplayName: First Rule about Fight Club
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ERROR 1000 JHPQ036
+<ce>          ERROR 1000 JHFGA06
 
 RefuseQuest:  [1001]
-<ce>          ERROR 1001 JHPQ036
+<ce>          ERROR 1001 JHFGA06
 
 AcceptQuest:  [1002]
-<ce>           ERROR 1002 JHPQ036
+<ce>           ERROR 1002 JHFGA06
 
 QuestFail:  [1003]
 <ce> You and your opponent square up and begin to

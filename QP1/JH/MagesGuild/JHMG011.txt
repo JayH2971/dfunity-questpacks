@@ -4,105 +4,105 @@ DisplayName: Travel Guide
 QRC:
 
 QuestorOffer:  [1000]
-<ce> Oh, %pcf, perhaps this may interest
-<ce> you. One of our instructors needs
-<ce> a guide to a few exotic locations
-<ce> in the area. If you can merely keep
-<ce> _guide_ and a group
-<ce> of students safe during the =goal_
-<ce> days the trip will take, you will be
-<ce> paid =reward_ gold. Feeling up to it?
-<--->
-<ce> %pcf, how was your walk here? And
-<ce> more to the point, do you like the outdoors?
-<ce> Occasionally we send out our more feeble
-<ce> members to gain some real world experience,
-<ce> requiring some danger and some dust between
-<ce> the toes. All in the name of building character,
-<ce> of course. But while one instructor teaches them
-<ce> the way, another keeps the group safe. Will you
-<ce> do the protecting this time?
+<ce>                 Oh, %pcf, perhaps this may interest
+<ce>                  you. One of our instructors needs
+<ce>                  a guide to a few exotic locations
+<ce>                 in the area. If you can merely keep
+<ce>                         _guide_ and a group
+<ce>                  of students safe during the =goal_
+<ce>                 days the trip will take, you will be
+<ce>                paid =reward_ gold. Feeling up to it?
+                                     <--->
+<ce>                  %pcf, how was your walk here? And
+<ce>             more to the point, do you like the outdoors?
+<ce>               Occasionally we send out our more feeble
+<ce>             members to gain some real world experience,
+<ce>             requiring some danger and some dust between
+<ce>           the toes. All in the name of building character,
+<ce>           of course. But while one instructor teaches them
+<ce>           the way, another keeps the group safe. Will you
+<ce>                     do the protecting this time?
 
 RefuseQuest:  [1001]
-<ce> Oh, drat. Why is this so difficult?
+<ce>                 Oh, drat. Why is this so difficult?
 
 AcceptQuest:  [1002]
-<ce> "Splendid! _guide_ is around here.
-<ce> I'm sure the group will be ready to
-<ce> go immediately. Wait here."
-<ce> 
-<ce> _qgiver_ calls out, and
-<ce> from the adjoining rooms come several
-<ce> inexperienced-looking guild members,
-<ce> along with someone a bit older who
-<ce> approaches you directly.
-<ce> 
-<ce> "Hello %pcf. Thank you for
-<ce> taking this up for us. I'm not so much
-<ce> for the wilderness so help like this
-<ce> is truly invaluable. We need to
-<ce> see a graveyard, a rural shrine,
-<ce> and a farmstead. If we can have this
-<ce> done within =goal_ days we will be
-<ce> happy to pay you. All right students,
-<ce> grab your gear! This time is for real!"
-<ce> 
-<ce> The various guild members wrap their
-<ce> belongings into bags and mats and begin
-<ce> to follow you as a cluttered mass.
+<ce>                  "Splendid! _guide_ is around here.
+<ce>                 I'm sure the group will be ready to
+<ce>                     go immediately. Wait here."
+<ce>
+<ce>                       _qgiver_ calls out, and
+<ce>                from the adjoining rooms come several
+<ce>                 inexperienced-looking guild members,
+<ce>                  along with someone a bit older who
+<ce>                       approaches you directly.
+<ce>
+<ce>                      "Hello %pcf. Thank you for
+<ce>                taking this up for us. I'm not so much
+<ce>                 for the wilderness so help like this
+<ce>                   is truly invaluable. We need to
+<ce>                   see a graveyard, a rural shrine,
+<ce>                 and a farmstead. If we can have this
+<ce>                  done within =goal_ days we will be
+<ce>                happy to pay you. All right students,
+<ce>               grab your gear! This time is for real!"
+<ce>
+<ce>                 The various guild members wrap their
+<ce>               belongings into bags and mats and begin
+<ce>                  to follow you as a cluttered mass.
 
 QuestFail:  [1003]
-<ce> _guide_ looks disconcerted.
+<ce>                     _guide_ looks disconcerted.
 <ce>
-<ce> "You know, we are grateful for what you've
-<ce> shown us, but we had a deadline to meet.
-<ce> We wish you luck on the return trip.
-<ce> Come now students, it's time to go!"
-<ce> 
-<ce> You watch %g2 and the students trail off.
+<ce>              "You know, we are grateful for what you've
+<ce>               shown us, but we had a deadline to meet.
+<ce>                 We wish you luck on the return trip.
+<ce>                 Come now students, it's time to go!"
+<ce>
+<ce>              You watch %g2 and the students trail off.
 
 QuestComplete:  [1004]
-<ce> "Oh, this has been splendid. Kudos
-<ce> to you, %pcf. We thank you for your
-<ce> good attitude while putting up with
-<ce> our best efforts to keep up. I believe
-<ce> this payment has never been better earned.
-<ce> Perhaps we will ask for you in the future."
-<ce> 
-<ce> With a bit more confidence in themselves,
-<ce> _guide_ and the travel-worn group
-<ce> of students meander off toward ___qgiver_.
+<ce>                  "Oh, this has been splendid. Kudos
+<ce>                 to you, %pcf. We thank you for your
+<ce>                 good attitude while putting up with
+<ce>                our best efforts to keep up. I believe
+<ce>              this payment has never been better earned.
+<ce>             Perhaps we will ask for you in the future."
+<ce>
+<ce>              With a bit more confidence in themselves,
+<ce>                  _guide_ and the travel-worn group
+<ce>              of students meander off toward ___qgiver_.
 
-Message: 1020
-<ce> _guide_ speaks to the
-<ce> students, pointing out several interesting
-<ce> details about the graveyard, including
-<ce> traces of ectoplasm and other valuable
-<ce> alchemical ingredients. You wait for
-<ce> several minutes while the students
-<ce> take their time collecting samples and
-<ce> attempting rudimentary experiments.
-<ce> Before long everyone looks satisfied,
-<ce> and you get ready to move on.
+Message:  1020
+<ce>                        _guide_ speaks to the
+<ce>              students, pointing out several interesting
+<ce>                details about the graveyard, including
+<ce>                traces of ectoplasm and other valuable
+<ce>                 alchemical ingredients. You wait for
+<ce>                  several minutes while the students
+<ce>                take their time collecting samples and
+<ce>                 attempting rudimentary experiments.
+<ce>                Before long everyone looks satisfied,
+<ce>                    and you get ready to move on.
 
-Message: 1021
-<ce> _guide_ steps forward and
-<ce> explains the existence of shrines such
-<ce> as this one. The students line up to speak
-<ce> to the attendant and make rough sketches
-<ce> of the area. Before long everyone forms
-<ce> up into a group again, ready to follow.
+Message:  1021
+<ce>                      _guide_ steps forward and
+<ce>                explains the existence of shrines such
+<ce>              as this one. The students line up to speak
+<ce>               to the attendant and make rough sketches
+<ce>               of the area. Before long everyone forms
+<ce>               up into a group again, ready to follow.
 
-Message: 1022
-<ce> _guide_ takes the students
-<ce> for a walk around the property, talking
-<ce> about the soil's conditions, the nature of
-<ce> the plants being grown, and various
-<ce> miscellaneous facts concerning alchemy
-<ce> and quality ingredients. The students rapidly
-<ce> take down notes before gathering together.
+Message:  1022
+<ce>                      _guide_ takes the students
+<ce>               for a walk around the property, talking
+<ce>              about the soil's conditions, the nature of
+<ce>                 the plants being grown, and various
+<ce>                miscellaneous facts concerning alchemy
+<ce>            and quality ingredients. The students rapidly
+<ce>              take down notes before gathering together.
 
-Message: 1030
+Message:  1030
 %qdt:
  _guide_ of the Mages
  Guild of ___qgiver_ has
@@ -122,10 +122,13 @@ Clock _vict_ 0:00
 Clock _goal_ 6.00:00 12.00:00
 
 ---- Quest startup
-log 1030 step 0
-add _guide_ face
-start timer _goal_
+	log 1030 step 0
+	add _guide_ face
+	start timer _goal_
+	pick one of _f1_ _f2_
 
+variable _f1_
+variable _f2_
 _findcult_ task:
 	when pc enters cult
 	say 1021
@@ -141,6 +144,14 @@ _findgrave_ task:
 _victory_ task:
 	when _findcult_ and _findfarm_ and _findgrave_
 	start timer _vict_
+
+_secretmission_ task:
+	when _f2_ and _victory_
+	start quest JHMGA02
+
+_secretmission2_ task:
+	when _f1_ and _victory_
+	start quest JHMGA06
 
 _vict_ task:
 	give pc _reward_

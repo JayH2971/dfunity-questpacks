@@ -5,26 +5,26 @@ DisplayName: Turning the Tables
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ERROR 1000 JHPQ013
+<ce>                          ERROR 1000 JHPQ013
 
 RefuseQuest:  [1001]
-<ce>          ERROR 1001 JHPQ013
+<ce>                          ERROR 1001 JHPQ013
 
 AcceptQuest:  [1002]
-<ce>           ERROR 1002 JHPQ013
+<ce>                          ERROR 1002 JHPQ013
 
 QuestFail:  [1003]
-<ce>          ERROR 1003 JHPQ013
+<ce>                          ERROR 1003 JHPQ013
 
 QuestComplete:  [1004]
-<ce>        Among your foe's belongings, you find
-<ce>        a magical _reward_, which you take.
+<ce>                Among your foe's belongings, you find
+<ce>                 a magical _reward_, which you take.
 
 Message:  1010
-<ce>        You take a note hanging from your enemy's pocket.
-<--->
-<ce>        Your attacker had a loose note hanging from
-<ce>        a pocket, which you put into your pack.
+<ce>          You take a note hanging from your enemy's pocket.
+                                     <--->
+<ce>             Your attacker had a loose note hanging from
+<ce>               a pocket, which you put into your pack.
 
 Message:  1011
   _name1_,
@@ -35,11 +35,11 @@ Message:  1011
                      ___place1_
 
 Message:  1012
-<ce>        You notice a note among _name2_'s
-<ce>        belongings, which you put into your pack.
-<--->
-<ce>        _name2_ was carrying a small note.
-<ce>        You put it among your belongings.
+<ce>                  You notice a note among _name2_'s
+<ce>              belongings, which you put into your pack.
+                                     <--->
+<ce>                  _name2_ was carrying a small note.
+<ce>                  You put it among your belongings.
 
 Message:  1013
   _name2_,
@@ -51,11 +51,11 @@ Message:  1013
                      ___place2_
 
 Message:  1014
-<ce>        You find another letter on
-<ce>        _name3_'s corpse, which you take.
-<--->
-<ce>        _name3_ was also carrying
-<ce>        a letter, which you take.
+<ce>                      You find another letter on
+<ce>                  _name3_'s corpse, which you take.
+                                     <--->
+<ce>                      _name3_ was also carrying
+<ce>                      a letter, which you take.
 
 Message:  1015
   _name3_,
@@ -90,11 +90,11 @@ Place _place2_ remote house
 Place _place3_ remote house
 
 --	Quest start-up:
-  start timer _timer_
+   start timer _timer_
 
-   _enter_ task:
+_enter_ task:
    when pc enters templehome
-	create foe _enemy_ every 0 minutes 1 times with 100% success
+   create foe _enemy_ every 0 minutes 1 times with 100% success
 
 _slain1_ task:
    killed _enemy_

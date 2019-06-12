@@ -4,41 +4,42 @@ DisplayName: Wizard Amok
 QRC:
 
 QuestorOffer:  [1000]
-<ce> We've got a request here from ___res_
-<ce> to go off some fellow wreaking havoc
-<ce> around the city. Apparently some member
-<ce> of the Mages Guild who's on _drug_,
-<ce> or so they say. It's paying =gold_ gold.
-<ce> Wanna take it?
+<ce>                We've got a request here from ___res_
+<ce>                 to go off some fellow wreaking havoc
+<ce>               around the city. Apparently some member
+<ce>                 of the Mages Guild who's on _drug_,
+<ce>               or so they say. It's paying =gold_ gold.
+<ce>                            Wanna take it?
 
 RefuseQuest:  [1001]
-<ce> Weird, I thought this was gonna be
-<ce> easy. No one wants to take it.
+<ce>                  Weird, I thought this was gonna be
+<ce>                    easy. No one wants to take it.
 
 AcceptQuest:  [1002]
-<ce> The contract says that this so-called
-<ce> "_dummy_" has to be dead
-<ce> within =2res_ days. After that just
-<ce> come pick up your money whenever you
-<ce> want. Go find %g2 in ___res_.
-<ce> Ask around if %g3 house isn't
-<ce> obvious. Stay safe.
+<ce>               All right, I trust you can deal with the
+<ce>         consequences. The contract says that this so-called
+<ce>                       "_dummy_" has to be dead
+<ce>                 within =2res_ days. After that just
+<ce>                 come pick up your money whenever you
+<ce>                    want. Go find %g2 in ___res_.
+<ce>                    Ask around if %g3 house isn't
+<ce>                         obvious. Stay safe.
 
 QuestFail:  [1003]
-<ce> Your contract to slay _dummy_
-<ce> in ___res_ ends today.
+<ce>                    Your contract to slay _dummy_
+<ce>                        in ___res_ ends today.
 
 QuestComplete:  [1004]
-<ce> Hey, welcome back. Good to see you
-<ce> in one piece. Here's your gold.
+<ce>                  Hey, welcome back. Good to see you
+<ce>                   in one piece. Here's your gold.
 
 Message:  1022
-<ce> Fool! How dare you attack
-<ce> a member of the Mages Guild!
+<ce>                      Fool! How dare you attack
+<ce>                     a member of the Mages Guild!
 
 Message:  1023
-<ce> Your task complete, you may return to
-<ce> _questgiver_ with your head held high.
+<ce>                Your task complete, you may return to
+<ce>                _questgiver_ with your head held high.
 
 Message:  1032
 %qdt:
@@ -65,38 +66,38 @@ Item _drug_ drug
 Foe _mage_ is Spellsword
 
 --	Quest start-up:
-	start timer _2res_ 
-  start timer _failsafe_ 
-	place foe _mage_ at _res_ 
-  place npc _dummy_ at _res_
-  hide npc _dummy_
-	log 1032 step 0 
+	start timer _2res_
+	start timer _failsafe_
+	place foe _mage_ at _res_
+	place npc _dummy_ at _res_
+	hide npc _dummy_
+	log 1032 step 0
 
 _ipr_ task:
-  injured _mage_
-  say 1022
+	injured _mage_
+	say 1022
 
 _slain_ task:
 	killed 1 _mage_
-  change repute with _dummy_ by -10
-  stop timer _2res_
+	change repute with _dummy_ by -10
+	stop timer _2res_
 	say 1023
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _questgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_
 
 _pcreward_ task:
-	when _qgclicked_ and _slain_ 
+	when _qgclicked_ and _slain_
 	give pc _gold_
-	end quest 
+	end quest
 
-  _2res_ task:
+_2res_ task:
 	say 1003
-  end quest
+	end quest
 
 _failsafe_ task:
-  end quest
+	end quest

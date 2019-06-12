@@ -4,54 +4,54 @@ DisplayName: A Natural Order
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  Understand that we have no personal vendetta
-<ce>  against this mark, %pct. For us, all are
-<ce>  free to obey the sky, the trees, the Night Mother, or
-<ce>  nothing at all, however they may find satisfaction.
-<ce>  Yet when one causes wild beasts to attack passers
-<ce>  by, a request for an accounting quickly follows.
-<ce>  Will you return a nature-crazed hermit to the earth?
-<--->
-<ce>  On rare occasions, we receive petitions to execute
-<ce>  the law when the town guard refuses to do so.
-<ce>  My reading of the law is rather negligent, but I
-<ce>  am certain some provision must exist against
-<ce>  enraging wild animals and sending them into
-<ce>  nearby towns. Are you willing to play executioner
-<ce>  against a nature-wielding hermit?
+<ce>             Understand that we have no personal vendetta
+<ce>               against this mark, %pct. For us, all are
+<ce>        free to obey the sky, the trees, the Night Mother, or
+<ce>         nothing at all, however they may find satisfaction.
+<ce>          Yet when one causes wild beasts to attack passers
+<ce>           by, a request for an accounting quickly follows.
+<ce>         Will you return a nature-crazed hermit to the earth?
+                                     <--->
+<ce>          On rare occasions, we receive petitions to execute
+<ce>            the law when the town guard refuses to do so.
+<ce>           My reading of the law is rather negligent, but I
+<ce>             am certain some provision must exist against
+<ce>             enraging wild animals and sending them into
+<ce>          nearby towns. Are you willing to play executioner
+<ce>                  against a nature-wielding hermit?
 
 RefuseQuest:  [1001]
-<ce> This contract will be taken up quickly.
-<ce> It will be a true joy to someone.
+<ce>               This contract will be taken up quickly.
+<ce>                  It will be a true joy to someone.
 
 AcceptQuest:  [1002]
-<ce> The recluse has made of ___mondung_
-<ce> a home, completing rituals of kinds that drive
-<ce> the wildlife into a frenzy. Apparently these
-<ce> attacks wane during the night hours, as even
-<ce> the clerics of the dirt require rest. Restore
-<ce> the natural order and return before =timer_
-<ce> nights have passed. Mephala be with you.
+<ce>                 The recluse has made of ___mondung_
+<ce>            a home, completing rituals of kinds that drive
+<ce>             the wildlife into a frenzy. Apparently these
+<ce>             attacks wane during the night hours, as even
+<ce>            the clerics of the dirt require rest. Restore
+<ce>             the natural order and return before =timer_
+<ce>               nights have passed. Mephala be with you.
 
 QuestFail:  [1003]
-<ce> You were to report to _questgiver_
-<ce> concerning the wild hermit's death by now.
+<ce>                  You were to report to _questgiver_
+<ce>              concerning the wild hermit's death by now.
 
 QuestComplete:  [1004]
-<ce>  Now you see the dangers of subsisting entirely
-<ce>  on _alch_. The Brotherhood is pleased
-<ce>  to provide a return to the natural order when
-<ce>  all other responsible parties refuse to do so.
+<ce>            Now you see the dangers of subsisting entirely
+<ce>                on _alch_. The Brotherhood is pleased
+<ce>            to provide a return to the natural order when
+<ce>            all other responsible parties refuse to do so.
 
 Message:  1020
-<ce>  The priest of nature is now dead. The wild
-<ce>  animals will likely return to their natural patterns.
+<ce>              The priest of nature is now dead. The wild
+<ce>        animals will likely return to their natural patterns.
 
 Message:  1024
-<ce>  Odd. _questgiver_ warned you
-<ce>  your mark would cause mayhem with the
-<ce>  local wildlife, but this place shows no signs
-<ce>  of it. Perhaps the rumors were overblown.
+<ce>                     Odd. _questgiver_ warned you
+<ce>                your mark would cause mayhem with the
+<ce>            local wildlife, but this place shows no signs
+<ce>              of it. Perhaps the rumors were overblown.
 
 Message:  1030
 %qdt:
@@ -78,13 +78,16 @@ Foe _wild3_ is Giant_rat
 Foe _wild4_ is Spriggan
 
 --	Quest start-up:
-	start timer _timer_ 
-	log 1030 step 0 
-  pick one of _dud_ _dud_ _dud_ _dud_ _alt_
+	start timer _timer_
+	log 1030 step 0
+	pick one of _dud_ _dud_ _dud_ _dud_ _alt_
 	pc at _mondung_ set _inside_
 	place foe _enemy_ at _mondung_
-  reveal _mondung_
+	reveal _mondung_
+	pick one of _f1_ _f2_
 
+variable _f1_
+variable _f2_
 _daytime_ task:
 	daily from 8:00 to 18:00
 
@@ -92,34 +95,38 @@ variable _inside_
 variable _dud_
 variable _alt_
 _altspawn_ task:
-  when _inside_ and _alt_
-  start task _altinform_
+	when _inside_ and _alt_
+	start task _altinform_
 
 _altinform_ task:
- say 1024
+	say 1024
 
 _spawn_ task:
 	when _inside_ and _daytime_ and not _slain_ and not _alt_
-	create foe _wild1_ every 4 minutes indefinitely with 45% success
-	create foe _wild2_ every 3 minutes indefinitely with 36% success
-	create foe _wild3_ every 3 minutes indefinitely with 34% success
-	create foe _wild4_ every 10 minutes indefinitely with 22% success
+	create foe _wild1_ every 14 minutes indefinitely with 45% success
+	create foe _wild2_ every 15 minutes indefinitely with 36% success
+	create foe _wild3_ every 17 minutes indefinitely with 34% success
+	create foe _wild4_ every 22 minutes indefinitely with 22% success
 
 _slain_ task:
 	killed 1 _enemy_ saying 1020
 
+_secretmission_ task:
+	when _f2_ and _slain_
+	start quest JHDBA03
+
 _pcgetsgold_ task:
 	when _slain_ and _qgclicked_
 	give pc nothing
-	end quest 
+	end quest
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _questgiver_
 
 _timer_ task:
 	say 1003
-	end quest 
+	end quest
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_
-	clear _qgclicked_ _clearclick_ 
+	clear _qgclicked_ _clearclick_

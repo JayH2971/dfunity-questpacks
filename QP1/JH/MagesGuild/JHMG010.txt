@@ -4,56 +4,56 @@ DisplayName: Culling the Herd
 QRC:
 
 QuestorOffer:  [1000]
-<ce> Shh, %pcf. Speak softly. We have concocted
-<ce> a mission specifically for you. It involves
-<ce> some combat, some spelunking, some teleportation,
-<ce> and absolute loyalty to the guild. Please,
-<ce> tell me you will help us in this matter.
-<--->
-<ce> I have a matter of the greatest sensitivity,
-<ce> %pcf. A guild member of high rank must
-<ce> be removed by force, and the task will
-<ce> require skill, intelligence, and wit.
-<ce> Please, will you accept it?
+<ce>              Shh, %pcf. Speak softly. We have concocted
+<ce>             a mission specifically for you. It involves
+<ce>          some combat, some spelunking, some teleportation,
+<ce>              and absolute loyalty to the guild. Please,
+<ce>               tell me you will help us in this matter.
+                                     <--->
+<ce>             I have a matter of the greatest sensitivity,
+<ce>                %pcf. A guild member of high rank must
+<ce>                be removed by force, and the task will
+<ce>                require skill, intelligence, and wit.
+<ce>                     Please, will you accept it?
 
 RefuseQuest:  [1001]
-<ce> But you are perfect for the task!
-<ce> What can I do to persuade you?
+<ce>                  But you are perfect for the task!
+<ce>                    What can I do to persuade you?
 
 AcceptQuest:  [1002]
-<ce> Then let me tell you concerning the matter.
-<ce> ___qgiver_ is home to _mark_,
-<ce> one of the most talented mages in all
-<ce> %crn. %g1 also conjures the dead for %g3
-<ce> foul purposes. If left to follow %g3 course,
-<ce> %g1 could become the new Archmagister
-<ce> with sufficient time. This cannot be.
-<ce> 
-<ce> Take this _gem_. It is enchanted to send
-<ce> %g2 to ___dungeon_. Do not point it at
-<ce> yourself, for it will wipe away a Recall
-<ce> effect and leave you stranded within the depths.
-<ce> Lead _mark_ to _res_
-<ce> at ___res_ and use it there. Then
-<ce> follow %g2 to the cave and slay %g2.
-<ce> You will likely not have more than
-<ce> =timer_ days once %g1 is teleported there.
-<ce> Are you ready? Best of luck.
-<ce> 
-<ce> Yoo-hoo, _mark_! Our dear %pcn is
-<ce> here to show you the experiment we are so fond of!
+<ce>             Then let me tell you concerning the matter.
+<ce>                    ___qgiver_ is home to _mark_,
+<ce>                one of the most talented mages in all
+<ce>               %crn. %g1 also conjures the dead for %g3
+<ce>             foul purposes. If left to follow %g3 course,
+<ce>                %g1 could become the new Archmagister
+<ce>                with sufficient time. This cannot be.
+<ce>
+<ce>               Take this _gem_. It is enchanted to send
+<ce>                %g2 to ___dungeon_. Do not point it at
+<ce>               yourself, for it will wipe away a Recall
+<ce>           effect and leave you stranded within the depths.
+<ce>                         Lead _mark_ to _res_
+<ce>                  at ___res_ and use it there. Then
+<ce>                 follow %g2 to the cave and slay %g2.
+<ce>                  You will likely not have more than
+<ce>              =timer_ days once %g1 is teleported there.
+<ce>                     Are you ready? Best of luck.
+<ce>
+<ce>                  Yoo-hoo, _mark_! Our dear %pcn is
+<ce>          here to show you the experiment we are so fond of!
 
 QuestFail:  [1003]
-<ce> _mark_ will have absconded
-<ce> from ___dungeon_ by now to plot %g3 revenge.
+<ce>                      _mark_ will have absconded
+<ce>             from ___dungeon_ by now to plot %g3 revenge.
 
 QuestComplete:  [1004]
-<ce> My word, %pcf, you have done us a great service.
-<ce> The damage the Mages Guild would have suffered
-<ce> as an institution harboring a necromancer
-<ce> in its administration would have been beyond
-<ce> description. I will inform the Archmagister.
-<ce> Take this magical _reward_.
+<ce>           My word, %pcf, you have done us a great service.
+<ce>            The damage the Mages Guild would have suffered
+<ce>              as an institution harboring a necromancer
+<ce>             in its administration would have been beyond
+<ce>             description. I will inform the Archmagister.
+<ce>                     Take this magical _reward_.
 
 RumorsDuringQuest:  [1005]
 That _mark_ has always been such a nice person.
@@ -62,46 +62,46 @@ They say _mark_ raises the dead.
 <--->
 _mark_ is a rising star in the Mages Guild.
 
-Message: 1010
-<ce> _mark_ comes out from one of
-<ce> the adjoining rooms, far from earshot.
-<ce> 
-<ce> "You, my escort? Well, this will do.
-<ce> Let us be off to ___res_ then."
-<ce> 
-<ce> _qgiver_ smiles nervously
-<ce> at you and wishes you luck.
+Message:  1010
+<ce>                     _mark_ comes out from one of
+<ce>                the adjoining rooms, far from earshot.
+<ce>
+<ce>                 "You, my escort? Well, this will do.
+<ce>                   Let us be off to ___res_ then."
+<ce>
+<ce>                      _qgiver_ smiles nervously
+<ce>                     at you and wishes you luck.
 
-Message: 1020
-<ce> "Very well, %pct. Let us be on with this.
-<ce> Show me the experiment the Archmagister
-<ce> is so flustered about."
-<ce> 
-<ce> Now is the time to use the _gem_.
+Message:  1020
+<ce>              "Very well, %pct. Let us be on with this.
+<ce>               Show me the experiment the Archmagister
+<ce>                       is so flustered about."
+<ce>
+<ce>                  Now is the time to use the _gem_.
 
-Message: 1021
-<ce> You raise the _gem_ into the air, and it
-<ce> flashes brightly. _mark_ cries
-<ce> out in a stupor, %g3 magical force
-<ce> being drained during the teleportation.
-<ce> Within seconds the room is as before,
-<ce> except without your colleague.
-<ce> Now to find %g2 in ___dungeon_
-<ce> and put an end to this.
+Message:  1021
+<ce>               You raise the _gem_ into the air, and it
+<ce>                    flashes brightly. _mark_ cries
+<ce>                  out in a stupor, %g3 magical force
+<ce>               being drained during the teleportation.
+<ce>                Within seconds the room is as before,
+<ce>                    except without your colleague.
+<ce>                    Now to find %g2 in ___dungeon_
+<ce>                       and put an end to this.
 
-Message: 1022
-<ce> _mark_'s eyes burn furiously.
-<ce> 
-<ce> "I knew this would happen! I knew it
-<ce> all along! Once I'm finished with you,
-<ce> all ___qgiver_ will smolder!"
-<ce> 
-<ce> %g1 casts an incantation.
+Message:  1022
+<ce>                    _mark_'s eyes burn furiously.
+<ce>
+<ce>                 "I knew this would happen! I knew it
+<ce>                all along! Once I'm finished with you,
+<ce>                    all ___qgiver_ will smolder!"
+<ce>
+<ce>                      %g1 casts an incantation.
 
-Message: 1023
-<ce> _mark_'s body slumps down.
-<ce> The battle is over. You take %g3
-<ce> official seal as proof of the deed.
+Message:  1023
+<ce>                      _mark_'s body slumps down.
+<ce>                   The battle is over. You take %g3
+<ce>                 official seal as proof of the deed.
 
 Message:  1030
 %qdt:
@@ -116,16 +116,16 @@ Message:  1030
  I should then travel to
  ___dungeon_ and finish the deed.
 
-Message: 1050
-<ce> _mark_ finds your behavior
-<ce> too suspicious, and steps away.
-<ce> 
-<ce> "I've had far too many attempts on my life.
-<ce> Whether you are %pct or Apprentice
-<ce> means nothing to me. I wish to have nothing
-<ce> to do with you."
-<ce> 
-<ce> Before you can say a single word, %g1 departs.
+Message:  1050
+<ce>                      _mark_ finds your behavior
+<ce>                   too suspicious, and steps away.
+<ce>
+<ce>             "I've had far too many attempts on my life.
+<ce>                  Whether you are %pct or Apprentice
+<ce>             means nothing to me. I wish to have nothing
+<ce>                           to do with you."
+<ce>
+<ce>               Before you can say a word, %g1 departs.
 
 QBN:
 Item _reward_ magic_item
@@ -146,12 +146,15 @@ Foe _undead_ is 3 Wraith
 
 --	Quest start-up:
     pc at _res_ set _inside_
-	log 1030 step 0 
+    log 1030 step 0
     reveal _dungeon_
     add _mark_ face saying 1010
     get item _gem_
     start timer _failsafe_
+    pick one of _f1_ _f2_
 
+variable _f1_
+variable _f2_
 _inside_ task:
     _gem_ used do _send_
     say 1020
@@ -161,36 +164,40 @@ _quick_ task:
     end quest saying 1050
 
 _send_ task:
-	stop timer _quick_
+    stop timer _quick_
     drop _mark_ face
-    place foe _enemy_ at _dungeon_ 
+    place foe _enemy_ at _dungeon_
     take _gem_ from pc saying 1021
-    start timer _timer_ 
+    start timer _timer_
 
 _inj_ task:
     injured _enemy_ saying 1022
     create foe _undead_ every 1 minutes 1 times with 100% success
 
 _slain_ task:
-	killed _enemy_
+    killed _enemy_
     say 1023
 
+_secretmission_ task:
+    when _f2_ and _slain_
+    start quest JHMGA01
+
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+    clicked npc _qgiver_
 
 _pcgetsgold_ task:
-	when _qgclicked_ and _slain_ 
-	give pc _reward_ 
+    when _qgclicked_ and _slain_
+    give pc _reward_
     change repute with _mark_ by +5
-	end quest
+    end quest
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
 
 _timer_ task:
     say 1003
-	end quest 
+    end quest
 
 _failsafe_ task:
     end quest

@@ -1,5 +1,5 @@
 -- Perpetual Quest
-Quest: JHPQ043
+Quest: JHFGA03
 DisplayName: Call for Help
 -- Message panels
 QRC:

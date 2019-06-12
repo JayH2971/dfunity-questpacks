@@ -4,34 +4,22 @@ DisplayName: PERPET INIT
 QRC:
 
 QuestorOffer:  [1000]
-<ce>           JHPINIT 1000
+<ce>                             JHPINIT 1000
 
 RefuseQuest:  [1001]
-<ce>           JHPINIT 1001
+<ce>                             JHPINIT 1001
 
 AcceptQuest:  [1002]
-<ce>           JHPINIT 1002
+<ce>                             JHPINIT 1002
 
 QuestFail:  [1003]
-<ce>           JHPINIT 1003
+<ce>                             JHPINIT 1003
 
 QuestComplete:  [1004]
-<ce>           JHPINIT 1004
+<ce>                             JHPINIT 1004
 
 Message:  1027
-<ce> You currently have the Perpetual Quests add-on
-<ce> installed. Would you like to begin running the
-<ce> Perpetual Quest system now?
-
-Message:  1028
-<ce> Perpetual Quests will not begin at this time.
-<ce> Please see the readme for instructions on how
-<ce> to begin Perpetual Quests on an existing character.
-
-Message:  1029
-<ce> This character will now run Perpetual Quests.
-<ce> Please see the readme for instructions on how
-<ce> to stop or restart for this character.
+<ce>                       Quest Pack #1 initiated.
 
 QBN:
 
@@ -42,35 +30,28 @@ Clock _timer_ 0:02
     start timer _init_
 
 _init_ task:
-    prompt 1027 yes _pqstart_ no _pqfail_
-
-_pqfail_ task:
-	say 1028
-    end quest
-
-_pqstart_ task:
-	start timer _timer_
-    pick one of _e2_ _e3_ _e4_ _e5_ _e6_ _e7_
+    say 1027
+    start timer _timer_
+-    pick one of _e2_ _e3_ _e4_ _e5_ _e6_ _e7_
     start quest JHPQA00
     start quest JHPQ005
     pick one of _q1_ _q2_ _q3_
-    say 1029
 
 _e2_ task:
     start quest JHPINIT2
 
 _e3_ task:
     start quest JHPINIT3
-    
+
 _e4_ task:
     start quest JHPINIT4
-    
+
 _e5_ task:
     start quest JHPINIT5
-    
+
 _e6_ task:
     start quest JHPINIT6
-    
+
 _e7_ task:
     start quest JHPINIT7
 

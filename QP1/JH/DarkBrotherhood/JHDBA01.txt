@@ -1,5 +1,5 @@
 -- Perpetual Quest
-Quest: JHPQ045
+Quest: JHDBA01
 DisplayName: Hunter of the Nightblade
 -- Message panels
 QRC:

@@ -206,7 +206,10 @@ Foe _vamp2_ is Vampire
     pc at _vampres_ do _fight_
     have _report_ set _announce_
     place npc _schol_ at _hide_
+    pick one of _f1_ _f2_
 
+variable _f1_
+variable _f2_
 _arrive_ task:
     daily from 23:00 to 23:59
     setvar _trip_
@@ -277,7 +280,11 @@ _announce_ task:
     say 1021
 
 _pcgetsgold_ task:
-	toting _report_ and _qgiver_ clicked
+    toting _report_ and _qgiver_ clicked
+
+_secretmission_ task:
+    when _f2_ and _pcgetsgold_
+    start quest JHMGA00
 
 _victory_ task:
     when _pcgetsgold_ and _scholdead_

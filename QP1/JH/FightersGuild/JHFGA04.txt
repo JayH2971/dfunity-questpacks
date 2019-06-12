@@ -1,20 +1,20 @@
 -- Perpetual Quest
-Quest: JHPQ040
+Quest: JHFGA04
 DisplayName: The Spider Master
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                          ERROR 1000 JHPQ040
+<ce>                          ERROR 1000 JHFGA04
 
 RefuseQuest:  [1001]
-<ce>                          ERROR 1001 JHPQ040
+<ce>                          ERROR 1001 JHFGA04
 
 AcceptQuest:  [1002]
-<ce>                          ERROR 1002 JHPQ040
+<ce>                          ERROR 1002 JHFGA04
 
 QuestFail:  [1003]
-<ce>                          ERROR 1003 JHPQ040
+<ce>                          ERROR 1003 JHFGA04
 
 QuestComplete:  [1004]
 <ce>              Nearby townsfolk murmur among themselves,

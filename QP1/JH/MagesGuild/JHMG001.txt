@@ -4,65 +4,65 @@ DisplayName: An Illusory Hunt
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  My dear %pcf, we often tell our newest
-<ce>  inductees to the guild, "Too much power in too
-<ce>  little time has destroyed many." Sadly,
-<ce>  not all our students take heed of that
-<ce>  warning, and we currently have a bit of
-<ce> a situation on our hands because of it. 
-<ce>  For a copy of a book, we request
-<ce> your help in culling a student too
-<ce>  well-versed in Illusion magic for
-<ce>  one's own good.
-<--->
-<ce>  I regret to speak of this matter, but it
-<ce>  is a necessary task. The Mages Guild,
-<ce>  wielding all the power that it does,
-<ce>  assumes responsibility for any misuse that
-<ce>  arises out of its teachings. On occasion
-<ce>  there is no solution to a problematic
-<ce>  pupil except a mercy killing. The %t
-<ce>  insists that we do away with this
-<ce>  shapeshifting villain. Will you help us?
+<ce>                My dear %pcf, we often tell our newest
+<ce>            inductees to the guild, "Too much power in too
+<ce>               little time has destroyed many." Sadly,
+<ce>                not all our students take heed of that
+<ce>               warning, and we currently have a bit of
+<ce>               a situation on our hands because of it.
+<ce>                   For a copy of a book, we request
+<ce>                  your help in culling a student too
+<ce>                  well-versed in Illusion magic for
+<ce>                           one's own good.
+                                     <--->
+<ce>               I regret to speak of this matter, but it
+<ce>                is a necessary task. The Mages Guild,
+<ce>                 wielding all the power that it does,
+<ce>              assumes responsibility for any misuse that
+<ce>               arises out of its teachings. On occasion
+<ce>                there is no solution to a problematic
+<ce>                 pupil except a mercy killing. The %t
+<ce>                  insists that we do away with this
+<ce>               shapeshifting villain. Will you help us?
 
 RefuseQuest:  [1001]
-<ce>  Very well, but what if
-<ce> you are the next target?
-<--->
-<ce> Loyalty, %pct. Prove your loyalty.
+<ce>                        Very well, but what if
+<ce>                       you are the next target?
+                                     <--->
+<ce>                  Loyalty, %pct. Prove your loyalty.
 
 AcceptQuest:  [1002]
-<ce> An admirable response, my child.
-<ce>  It seems this student became
-<ce> hopped up on power after using
-<ce>  a chameleon spell for the first time
-<ce> and found it just addictive. Then
-<ce>  came experimentation with the
-<ce> shapeshifting spells, and suddenly
-<ce> we have reports pouring in of a
-<ce>  tiger wearing robes that kills people.
-<ce> One of our student's friends knew
-<ce>  that there was this hiding spot of resort,
-<ce> ___dung_ in this same province.
-<ce> Go there and find our pupil, in whatever
-<ce> state as may be the case, and end this 
-<ce> menace for us. You have =timer_ days.
+<ce>                   An admirable response, my child.
+<ce>                     It seems this student became
+<ce>                    hopped up on power after using
+<ce>                 a chameleon spell for the first time
+<ce>                  and found it just addictive. Then
+<ce>                    came experimentation with the
+<ce>                  shapeshifting spells, and suddenly
+<ce>                   we have reports pouring in of a
+<ce>                tiger wearing robes that kills people.
+<ce>                  One of our student's friends knew
+<ce>              that there was this hiding spot of resort,
+<ce>                   ___dung_ in this same province.
+<ce>               Go there and find our pupil, in whatever
+<ce>                state as may be the case, and end this
+<ce>                menace for us. You have =timer_ days.
 
 QuestFail:  [1003]
-<ce> The Mages Guild expected you to slay the illusionist by now.
+<ce>     The Mages Guild expected you to slay the illusionist by now.
 
 QuestComplete:  [1004]
-<ce> A thousand thanks for saving our
-<ce>  poor pupil from a worse fate. Those
-<ce>  who fail to control power become
-<ce>  slaves to it in time. Have your book.
+<ce>                   A thousand thanks for saving our
+<ce>                 poor pupil from a worse fate. Those
+<ce>                   who fail to control power become
+<ce>                slaves to it in time. Have your book.
 
 Message:  1020
-<ce>  As the creature's corpse falls, you hear a
-<ce>  groan. This must have been the shapeshifter.
+<ce>              As the creature's corpse falls, you hear a
+<ce>             groan. This must have been the shapeshifter.
 
 Message:  1021
-<ce>  This rogue student is no more.
+<ce>                    This rogue student is no more.
 
 Message:  1030
 %qdt:
@@ -90,25 +90,28 @@ Foe _enemy4_ is Grizzley_bear
 Foe _enemy5_ is Mage
 
 --	Quest start-up:
-	start timer _timer_ 
+	start timer _timer_
 	pick one of _D.01_ _D.02_ _D.03_ _D.04_ _D.05_
-	log 1030 step 0 
-  reveal _dung_
+	log 1030 step 0
+	reveal _dung_
+	pick one of _f1_ _f2_
 
+variable _f1_
+variable _f2_
 _D.01_ task:
-	place foe _enemy1_ at _dung_ 
+	place foe _enemy1_ at _dung_
 
 _D.02_ task:
-	place foe _enemy2_ at _dung_ 
+	place foe _enemy2_ at _dung_
 
 _D.03_ task:
-	place foe _enemy3_ at _dung_ 
+	place foe _enemy3_ at _dung_
 
 _D.04_ task:
-	place foe _enemy4_ at _dung_ 
+	place foe _enemy4_ at _dung_
 
 _D.05_ task:
-	place foe _enemy5_ at _dung_ 
+	place foe _enemy5_ at _dung_
 
 _slain_ task:
 	killed 1 _enemy1_ saying 1020
@@ -117,18 +120,22 @@ _slain_ task:
 	killed 1 _enemy4_ saying 1020
 	killed 1 _enemy5_ saying 1021
 
+_secretmission_ task:
+	when _f2_ and _slain_
+	start quest JHMGA03
+
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+	clicked npc _qgiver_
 
 _pcgetsgold_ task:
-	when _qgclicked_ and _slain_ 
-	give pc _reward_ 
-	end quest 
+	when _qgclicked_ and _slain_
+	give pc _reward_
+	end quest
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_
 
 _timer_ task:
-  say 1003
-	end quest 
+	say 1003
+	end quest

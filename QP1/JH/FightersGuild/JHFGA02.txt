@@ -1,5 +1,5 @@
 -- Perpetual Quest
-Quest: JHPQ044
+Quest: JHFGA02
 DisplayName: Death and Taxes
 -- Message panels
 QRC:

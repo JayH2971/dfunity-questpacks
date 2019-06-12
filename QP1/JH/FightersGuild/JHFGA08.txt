@@ -1,17 +1,17 @@
 -- Perpetual Quest
-Quest: JHPQ026
+Quest: JHFGA08
 DisplayName: Field Medic
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                          ERROR 1000 JHPQ026
+<ce>                          ERROR 1000 JHFGA08
 
 RefuseQuest:  [1001]
-<ce>                          ERROR 1001 JHPQ026
+<ce>                          ERROR 1001 JHFGA08
 
 AcceptQuest:  [1002]
-<ce>                          ERROR 1002 JHPQ026
+<ce>                          ERROR 1002 JHFGA08
 
 QuestFail:  [1003]
 <ce>     You draw closer and push some of the people out of the way.

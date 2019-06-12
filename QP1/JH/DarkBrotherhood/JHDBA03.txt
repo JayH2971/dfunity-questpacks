@@ -1,20 +1,20 @@
 -- Perpetual Quest
-Quest: JHPQ031
+Quest: JHDBA03
 DisplayName: Noble's Treasure
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                          ERROR 1000 JHPQ031
+<ce>                          ERROR 1000 JHDBA03
 
 RefuseQuest:  [1001]
-<ce>                          ERROR 1001 JHPQ031
+<ce>                          ERROR 1001 JHDBA03
 
 AcceptQuest:  [1002]
-<ce>                          ERROR 1002 JHPQ031
+<ce>                          ERROR 1002 JHDBA03
 
 QuestFail:  [1003]
-<ce>                          ERROR 1003 JHPQ031
+<ce>                          ERROR 1003 JHDBA03
 
 QuestComplete:  [1004]
 <ce>          Goodness me, you say you've brought my money bag?
@@ -75,7 +75,7 @@ Item _bag_ small_sack
     start timer _failsafe_
 
 _enter_ task:
-    when pc enters tavernhome
+    when pc enters city
     stop timer _failsafe_
     start timer _delay_
     start timer _timer_

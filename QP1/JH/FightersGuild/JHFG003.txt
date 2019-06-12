@@ -1,6 +1,7 @@
 Quest: JHFG003
 DisplayName: Civic Duty
 -- Message panels
+-- Do not add more chained quests to this. It already has a ton of consequences.
 QRC:
 
 QuestorOffer:  [1000]

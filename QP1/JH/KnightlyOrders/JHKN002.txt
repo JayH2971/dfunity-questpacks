@@ -4,94 +4,94 @@ DisplayName: Inhospitable Guests
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  %pcf, ==questgiver_ has
-<ce>   need of your help once more. Mere days ago
-<ce>  ___home_ was overtaken
-<ce>   by a band of thugs who have taken
-<ce>   to robbing, repossessing, and so on.
-<ce>    It's too far for an ordinary patrol
-<ce>   to deal with, and the cry has
-<ce>    therefore come to us. Will you
-<ce> help these poor people?
+<ce>                       %pcf, ==questgiver_ has
+<ce>              need of your help once more. Mere days ago
+<ce>                        ___home_ was overtaken
+<ce>                  by a band of thugs who have taken
+<ce>                 to robbing, repossessing, and so on.
+<ce>                 It's too far for an ordinary patrol
+<ce>                    to deal with, and the cry has
+<ce>                    therefore come to us. Will you
+<ce>                       help these poor people?
 
 RefuseQuest:  [1001]
-<ce>  I suppose I shouldn't be surprised.
+<ce>                 I suppose I shouldn't be surprised.
 
 AcceptQuest:  [1002]
-<ce>   Go quickly now. The thugs should have
-<ce> no interest in killing the townspeople.
-<ce>  Ensure you harm no innocents. Arrive
-<ce>   at night if you must. The scoundrels
-<ce>    are most certainly keeping watch, so
-<ce>   once you appear on the property they will
-<ce>    no doubt move to slay you. You have
-<ce>    =timer_ days. %god be with you. The fate
-<ce>  of ___home_ is in your hands.
+<ce>                Go quickly now. The thugs should have
+<ce>               no interest in killing the townspeople.
+<ce>                 Ensure you harm no innocents. Arrive
+<ce>                 at night if you must. The scoundrels
+<ce>                 are most certainly keeping watch, so
+<ce>              once you appear on the property they will
+<ce>                 no doubt move to slay you. You have
+<ce>               =timer_ days. %god be with you. The fate
+<ce>                    of ___home_ is in your hands.
 
 QuestFail:  [1003]
-<ce>   _questgiver_ 
+<ce>                             _questgiver_
 
 QuestComplete:  [1004]
-<ce>    You should feel proud, %pcf,
-<ce>   for you have done a great deed.
-<ce>   Such sacrifices are not forgotten.
+<ce>                     You should feel proud, %pcf,
+<ce>                   for you have done a great deed.
+<ce>                  Such sacrifices are not forgotten.
 
 Message:  1010
-<ce>   Your entrance is noted, and the ruffians gather.
+<ce>           Your entrance is noted, and the ruffians gather.
 
-Message: 1011
-<ce> This band of thugs is no more.
+Message:  1011
+<ce>                    This band of thugs is no more.
 
 Message:  1020
-<ce> Once you step onto the property,
-<ce> a youth quickly scampers over
-<ce> and whispers into your ear.
-<ce> 
-<ce> "Excuse me %ra, but we can't have
-<ce> you on this property. We resorted to
-<ce> the Dark Brotherhood's aid and they
-<ce> have saved us from our enemies. Please
-<ce> leave before a misunderstanding arises."
-<ce> 
-<ce> This is clearly not how ==questgiver_
-<ce> would allow things to stand. Do you attempt
-<ce> to get the whereabouts of these
-<ce> members of the Dark Brotherhood?
+<ce>                   Once you step onto the property,
+<ce>                    a youth quickly scampers over
+<ce>                     and whispers into your ear.
+<ce>
+<ce>                  "Excuse me %ra, but we can't have
+<ce>                 you on this property. We resorted to
+<ce>                 the Dark Brotherhood's aid and they
+<ce>                have saved us from our enemies. Please
+<ce>               leave before a misunderstanding arises."
+<ce>
+<ce>                This is clearly not how ==questgiver_
+<ce>             would allow things to stand. Do you attempt
+<ce>                   to get the whereabouts of these
+<ce>                   members of the Dark Brotherhood?
 
 Message:  1021
-<ce>  Your speaking ability leaves much to be desired.
-<ce>  The child looks more and more agitated with each
-<ce>  question. Finally the interrogation ends,
-<ce>  and you are left empty-handed.
+<ce>           Your speaking ability leaves much to be desired.
+<ce>           The child looks more and more agitated with each
+<ce>              question. Finally the interrogation ends,
+<ce>                    and you are left empty-handed.
 
 Message:  1022
-<ce>  Your speech skill delivers. The child's confidence
-<ce>  in you rises as you explain what you have come to do and
-<ce>  why the Dark Brotherhood will not bother this family
-<ce>  any more if they trust you to help.
-<ce>  
-<ce>  "Fine, but you'll do it quickly, right? My parents are
-<ce>  miserable with those hooligans taking their stock as
-<ce>  payment. I know they are staying at a nearby shrine,
-<ce>  pretending to be pilgrims while they work a protection
-<ce>  scheme. I can't remember which one it's called, but
-<ce>  it's one of those Shrines of something or Altar to
-<ce>  something. You know, the little domed places.
-<ce>  They won't be far. I'm sure of it."
-<ce>  
-<ce>  Fearing to be seen by someone more important, the
-<ce>  youth wishes you luck and returns to the house.
+<ce>          Your speech skill delivers. The child's confidence
+<ce>       in you rises as you explain what you have come to do and
+<ce>         why the Dark Brotherhood will not bother this family
+<ce>                 any more if they trust you to help.
+<ce>
+<ce>        "Fine, but you'll do it quickly, right? My parents are
+<ce>         miserable with those hooligans taking their stock as
+<ce>         payment. I know they are staying at a nearby shrine,
+<ce>        pretending to be pilgrims while they work a protection
+<ce>         scheme. I can't remember which one it's called, but
+<ce>          it's one of those Shrines of something or Altar to
+<ce>            something. You know, the little domed places.
+<ce>                 They won't be far. I'm sure of it."
+<ce>
+<ce>          Fearing to be seen by someone more important, the
+<ce>           youth wishes you luck and returns to the house.
 
 Message:  1023
-<ce>  It seems you have found the proper shrine.
-<ce>  Rustling nearby indicates someone unhappy with your arrival.
+<ce>              It seems you have found the proper shrine.
+<ce>     Rustling nearby indicates someone unhappy with your arrival.
 
 -Message:  1024
 -<ce>  "Wait, wait. It's you? %pcf? What are you
 -<ce>  doing here? This is an official job, They're gonna run
 -<ce>  you through the ringer if you try to stop us.
 -<ce>  Go back and pretend you never saw us."
--<ce>  
+-<ce>
 -<ce>  Will you ignore and fight them?
 -
 -Message:  1025
@@ -103,17 +103,17 @@ Message:  1023
 -<ce>  this time. Now go tell whatever people you're
 -<ce>  working with that there's no hope here.
 -<ce>  The Dark Brotherhood's got this one under control."
--<ce>  
+-<ce>
 -<ce>  The two assassins vacate the area.
 -
 Message:  1027
-<ce>  You decide not to interfere further.
-<ce>  Perhaps this is what the family wants.
-<ce>  You should inform _questgiver_.
+<ce>                 You decide not to interfere further.
+<ce>                Perhaps this is what the family wants.
+<ce>                   You should inform _questgiver_.
 
 Message:  1028
-<ce>  This matter is definitely settled.
-<ce>  Now to inform _questgiver_ that ___home_ is free.
+<ce>                  This matter is definitely settled.
+<ce>          Now to inform _questgiver_ that ___home_ is free.
 
 Message:  1030
 %qdt:
@@ -143,17 +143,17 @@ Message:  1032
  hunt them down.
 
 Message:  1040
-<ce> _questgiver_ looks deeply upset.
-<ce> 
-<ce> "The Dark Brotherhood? Protecting
-<ce> ___home_? This is a grievous
-<ce> report, %pct. We can do nothing more
-<ce> for now, though I will inform the %t.
-<ce> We cannot permit the powers of darkness
-<ce> further foothold in our fair land. I will
-<ce> credit you nonetheless for making the
-<ce> journey and ensuring their safety.
-<ce> Thank you for a good effort, %pcf."
+<ce>                   _questgiver_ looks deeply upset.
+<ce>
+<ce>                  "The Dark Brotherhood? Protecting
+<ce>                     ___home_? This is a grievous
+<ce>                 report, %pct. We can do nothing more
+<ce>                for now, though I will inform the %t.
+<ce>               We cannot permit the powers of darkness
+<ce>              further foothold in our fair land. I will
+<ce>                credit you nonetheless for making the
+<ce>                  journey and ensuring their safety.
+<ce>                 Thank you for a good effort, %pcf."
 
 QBN:
 Person _questgiver_ group Questor male
@@ -171,10 +171,13 @@ Foe _dbenemy2_ is Assassin
 
 --	Quest start-up:
 	start timer _timer_
-	log 1030 step 0 
+	log 1030 step 0
 	pc at _home_ set _housearrive_
-  	pick one of _norm_ _norm_ _alt_
+	pick one of _norm_ _norm_ _alt_
+	pick one of _f1_ _f2_
 
+variable _f1_
+variable _f2_
 variable _norm_
 variable _alt_
 _housearrive_ task:
@@ -191,54 +194,58 @@ _kill_ task:
 _slain_ task:
 	killed 4 _enemy_ saying 1011
 
+_secretmission_ task:
+	when _slain_ and _f2_
+	start quest JHKNA02
+
 --end of normal quest section. alternate begins
 _altstep_ task:
-  when _alt_ and _housearrive_
-  start task _altfin_
-  log 1031 step 1
-  
+	when _alt_ and _housearrive_
+	start task _altfin_
+	log 1031 step 1
+
 _altfin_ task:
-    prompt 1020 yes _begin_ no _quit_
+	prompt 1020 yes _begin_ no _quit_
 
 _quit_ task:
 	say 1027
 
 _begin_ task:
-    pick one of _go1_ _go2_ _go3_
+	pick one of _go1_ _go2_ _go3_
 	start timer _delay_
 
 _check1_ task:
-   when skill Etiquette is at least 20
+	when skill Etiquette is at least 20
 
 _check2_ task:
-    when skill Etiquette is at least 25
+	when skill Etiquette is at least 25
 
 _check3_ task:
-    when skill Etiquette is at least 30
+	when skill Etiquette is at least 30
 
 variable _go1_
 variable _go2_
 variable _go3_
 _c1_ task:
-    when _check1_ and _go1_
-    start task _victory_
+	when _check1_ and _go1_
+	start task _victory_
 
 _c2_ task:
-    when _check2_ and _go2_
-    start task _victory_
+	when _check2_ and _go2_
+	start task _victory_
 
 _c3_ task:
-    when _check3_ and _go3_
-    start task _victory_
+	when _check3_ and _go3_
+	start task _victory_
 
 _d1_ task:
-    when not _check1_ and _go1_
+	when not _check1_ and _go1_
 
 _d2_ task:
-    when not _check2_ and _go2_
+	when not _check2_ and _go2_
 
 _d3_ task:
-    when not _check3_ and _go3_
+	when not _check3_ and _go3_
 
 _victory_ task:
 	say 1022
@@ -247,7 +254,7 @@ _victory_ task:
 variable _delay_
 _persuadefail_ task:
 	when _begin_ and _delay_ and not _victory_
-	say 1021    
+	say 1021
 
 _cultent_ task:
 	when pc enters cult
@@ -259,17 +266,17 @@ _combat_ task:
 	create foe _dbenemy2_ every 0 minutes 1 times with 100% success
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _questgiver_
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ and not _altfin_
-	clear _qgclicked_ _clearclick_ 
+	clear _qgclicked_ _clearclick_
 
 _pcreward_ task:
-	when _qgclicked_ and _slain_ 
+	when _qgclicked_ and _slain_
 	give pc nothing
 	legal repute +3
-	end quest 
+	end quest
 
 _inj_ task:
 	injured _dbenemy1_

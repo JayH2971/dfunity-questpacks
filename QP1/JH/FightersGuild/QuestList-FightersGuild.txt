@@ -31,13 +31,20 @@ JHFG021, FightersGuild, M, 1, 0, a quest to escort a debtor
 JHFG022, FightersGuild, M, 1, 0, a quest to guard a tavern
 JHFGA00, FightersGuild, M, 4, 1, entry into JHFGA01
 JHFGA01, FightersGuild, P, 0, 0, a quest to help someone fleeing the Dark Brotherhood
+JHFGA02, FightersGuild, P, 0, 0, tax payment via FG005 and FG018
+JHFGA03, FightersGuild, P, 0, 0, a trap invitation via FG017 and FG009
+JHFGA04, FightersGuild, P, 0, 0, Spider Master via FG015
+JHFGA05, FightersGuild, P, 0, 0, archery contest via FG010
+JHFGA06, FightersGuild, P, 0, 0, fisticuffs contest via FG021
+JHFGA07, FightersGuild, P, 0, 0, a confrontation via FG015
+JHFGA08, FightersGuild, P, 0, 0, mending wounds via FG010
 JHFGB0X, FightersGuild, M, 75, 0, entry into JHMFB??
 JHFGB00, FightersGuild, P, 0, 0, a quest to fight daedra
 JHFGB02, FightersGuild, P, 0, 0, a quest to pay off a debt
 JHFGB03, FightersGuild, P, 0, 0, a quest to seek an enchanted item
 JHFGB04, FightersGuild, P, 0, 0, a quest for Quill Circus
 JHFGC01, FightersGuild, P, 0, 1, a duel with a shapeshifter
-JHFGDAED, FightersGuild, P, 0, 0,
+JHFGDAED, FightersGuild, P, 0, 0, kill a daedra because of FG003
 -go to fellow fighter's hometown, find discouraged, talk to persuade
 -punishment for lacking skill checks (magic schools, weapon types)
 -non-violent ways through quests for TG, MG, DB

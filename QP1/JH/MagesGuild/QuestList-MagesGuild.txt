@@ -21,7 +21,7 @@ JHMG010, MagesGuild, M, 5, 0, a quest to slay a necromantic colleague
 JHMG011, MagesGuild, M, 0, 0, a quest to guide students to locations
 JHMG012, MagesGuild, M, 5, 0, a quest to stop a powerful former member
 JHMG013, MagesGuild, M, 1, 0, a quest to bring a wandering atronach home
-JHMG014, MagesGuild, M, 4, 0, a quest to obtain a report on vampirism
+JHMG014, MagesGuild, M, 6, 0, a quest to obtain a report on vampirism
 JHMG015, MagesGuild, M, 1, 0, a quest to defend a shapeshifted member
 JHMG016, MagesGuild, M, 2, 0, a quest to rescue an ambitious experimenter
 JHMG017, MagesGuild, M, 0, 0, a quest to identify a document
@@ -29,6 +29,12 @@ JHMG018, MagesGuild, M, 0, 0, a quest to purify and deliver a poisoned liquid
 JHMG019, MagesGuild, M, 2, 0, a quest to root out a necromancer
 JHMG020, MagesGuild, M, 9, 1, an attempt on your life
 JHMG021, MagesGuild, M, 5, 0, entry into JHMGB??
+JHMGA00, MagesGuild, P, 0, 0, haunted dungeon via MG014
+JHMGA01, MagesGuild, P, 0, 0, save a trapped mage via MG010
+JHMGA02, MagesGuild, P, 0, 0, witness an Argonian beating via MG011
+JHMGA03, MagesGuild, P, 0, 0, help reading Daedric via MG001
+JHMGA04, MagesGuild, P, 0, 0, healing a noble via MG007
+JHMGA05, MagesGuild, P, 0, 0, attacked by a necromancer via MG013 and MG007
 JHMGX00, MagesGuild, M, 95, 1, a quest to investigate an ancient lich
 JHNCA00, MagesGuild, P, 0, 0, entry into JHNCA01
 -JHNCA01, MagesGuild, P, 0, 0, build reputation with Necromancers

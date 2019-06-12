@@ -43,7 +43,7 @@ Message:  1010
 <ce>     lost and unsure of what to do. Will you try to speak to him?
 
 Message:  1011
-<ce>        Your skill with educated conversation works to soothe
+<ce>         Your skill with polite conversation works to soothe
 <ce>        his nerves. You calmly start up a simple conversation,
 <ce>          working to get his mind off his current situation.
 <ce>         As the moments pass, he eventually confides that he

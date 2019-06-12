@@ -23,12 +23,16 @@ JHDB011, DarkBrotherHood, M, 0, X, a quest to slay a Thieves Guild interloper
 JHDB012, DarkBrotherHood, M, 2, X, a quest to end a rival assassination organization
 JHDB013, DarkBrotherHood, M, 2, X, a quest to feed a mark to beasts
 JHDB014, DarkBrotherHood, M, 2, X, a quest to slay and deliver the body
-JHDB015, DarkBrotherHood, M, 1, X, a quest to teleport to slay headhunters
+JHDB015, DarkBrotherHood, M, 1, 0, a quest to teleport to slay headhunters
 JHDB016, DarkBrotherHood, M, 0, 0, a quest to poison with a plant
 JHDB017, DarkBrotherHood, M, 1, X, a quest to steal Mages Guild research notes
 JHDB018, DarkBrotherHood, M, 2, X, a quest to slay a debtor
 JHDB019, DarkBrotherHood, M, 2, 0, a quest to solve a puzzle to find a mark
-JHDBA00, DarkBrotherHood, M, P, 0, branch of JHDB007
+JHDBA00, DarkBrotherHood, P, 0, 0, vengeance branch of DB007
+JHDBA01, DarkBrotherHood, P, 0, 0, bounty hunting secret mission via DB015
+JHDBA02, DarkBrotherHood, P, 0, 0, Spider Master via DB009
+JHDBA03, DarkBrotherHood, P, 0, 0, finding a noble's money bag via DB001
+JHDBA04, DarkBrotherHood, P, 0, 0, kill for money via DB013
 -artifact quest, a diplomat from another region must be slain. Follow paper trail, slaying enemies. Progressively larger groups begin following PC. Diplomat must be slain within 10 seconds of first hit to prevent recall.
 -find a person in hiding. Interrogate a family member by attack.
 -a quest to slay a member of the city guard who interferes with the Brotherhood. Injury leads to failure timer

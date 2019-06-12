@@ -1,20 +1,20 @@
 -- Perpetual Quest
-Quest: JHPQ022
+Quest: JHDBA04
 DisplayName: Blood Money
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ERROR 1000 JHPQ022
+<ce>          ERROR 1000 JHDBA04
 
 RefuseQuest:  [1001]
-<ce>          ERROR 1001 JHPQ022
+<ce>          ERROR 1001 JHDBA04
 
 AcceptQuest:  [1002]
-<ce>           ERROR 1002 JHPQ022
+<ce>           ERROR 1002 JHDBA04
 
 QuestFail:  [1003]
-<ce> ERROR 1003 JHPQ022
+<ce> ERROR 1003 JHDBA04
 
 QuestComplete:  [1004]
 <ce> You got proof? Let me see.

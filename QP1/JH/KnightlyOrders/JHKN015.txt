@@ -4,74 +4,74 @@ DisplayName: Nature's Wrath
 QRC:
 
 QuestorOffer:  [1000]
-<ce> Sparse regions of %crn complain of
-<ce> spriggans attacking their homesteads.
-<ce> Evidence suggests the cause may be
-<ce> within ___dung_. Can
-<ce> we rely on you to stop this problem?
+<ce>                  Sparse regions of %crn complain of
+<ce>                spriggans attacking their homesteads.
+<ce>                  Evidence suggests the cause may be
+<ce>                         within ___dung_. Can
+<ce>                 we rely on you to stop this problem?
 
 RefuseQuest:  [1001]
-<ce> Now you're looking for a simple
-<ce> problem to solve, I suppose?
+<ce>                   Now you're looking for a simple
+<ce>                     problem to solve, I suppose?
 
 AcceptQuest:  [1002]
-<ce> Every time this happens, it is always
-<ce> some fool who has let power get to his
-<ce> head and starts trying to display
-<ce> that power to the world. We wish
-<ce> such could enlist to a noble cause
-<ce> and put their zeal toward good
-<ce> purposes, but some are simply
-<ce> too obstinate. Do your best to
-<ce> defend against the spriggans.
-<ce> Perhaps if you speak their language
-<ce> you'll make some headway in some manner
-<ce> or another. Resolve the cause within
-<ce> =2dung_ days, and then return to
-<ce> report at your leisure. %god
-<ce> go with you into ___dung_.
+<ce>                  So often when this happens, it is
+<ce>                some fool who has let power get to his
+<ce>                  head and starts trying to display
+<ce>                   that power to the world. We wish
+<ce>                  such could enlist to a noble cause
+<ce>                    and put their zeal toward good
+<ce>                    purposes, but some are simply
+<ce>                    too obstinate. Do your best to
+<ce>                    defend against the spriggans.
+<ce>                 Perhaps if you speak their language
+<ce>               you'll make some headway in some manner
+<ce>                 or another. Resolve the cause within
+<ce>                   =2dung_ days, and then return to
+<ce>                     report at your leisure. %god
+<ce>                      go with you into ___dung_.
 
 QuestFail:  [1003]
-<ce> You were to resolve the cause of
-<ce> the attacking spriggans by now.
+<ce>                   You were to resolve the cause of
+<ce>                   the attacking spriggans by now.
 
 QuestComplete:  [1004]
-<ce> Resourceful, skilled, and diligent.
-<ce> A model for knights of this order.
+<ce>                 Resourceful, skilled, and diligent.
+<ce>                  A model for knights of this order.
 
-Message: 1020
-<ce> A spriggan shambles its way toward
-<ce> you, only half conscious of its own
-<ce> actions. Before it reaches you,
-<ce> you attempt conversation. Your
-<ce> best efforts are ignored, and the
-<ce> creature advances in a rage.
+Message:  1020
+<ce>                  A spriggan shambles its way toward
+<ce>                 you, only half conscious of its own
+<ce>                   actions. Before it reaches you,
+<ce>                    you attempt conversation. Your
+<ce>                  best efforts are ignored, and the
+<ce>                     creature advances in a rage.
 
-Message: 1021
-<ce> A spriggan shambles its way toward
-<ce> you, only half conscious of its own
-<ce> actions. Before it reaches you,
-<ce> you attempt conversation, which
-<ce> swiftly grabs its attention.
-<ce> 
-<ce> The creature begins to slow its actions
-<ce> until it stands perfectly still. It is
-<ce> clearly bothered by some effect you can't
-<ce> easily discern. It begs you to hurry
-<ce> in the direction of ___dung_
-<ce> so its kin can return to a life of peace.
-<ce> It then emits a vibrant humming sound
-<ce> which reverberates across the earth.
+Message:  1021
+<ce>                  A spriggan shambles its way toward
+<ce>                 you, only half conscious of its own
+<ce>                   actions. Before it reaches you,
+<ce>                   you attempt conversation, which
+<ce>                     swiftly grabs its attention.
+<ce>
+<ce>               The creature begins to slow its actions
+<ce>                until it stands perfectly still. It is
+<ce>              clearly bothered by some effect you can't
+<ce>                 easily discern. It begs you to hurry
+<ce>                     in the direction of ___dung_
+<ce>              so its kin can return to a life of peace.
+<ce>                It then emits a vibrant humming sound
+<ce>                 which reverberates across the earth.
 
-Message: 1022
-<ce> Your inexplicable aggression is poorly
-<ce> received. The spriggan moans angrily,
-<ce> sending small shock waves through the ground.
+Message:  1022
+<ce>                Your inexplicable aggression is poorly
+<ce>                received. The spriggan moans angrily,
+<ce>            sending small shock waves through the ground.
 
-Message: 1023
-<ce> This sorceror, reeking of green herbs,
-<ce> appears to have been the cause of
-<ce> the spriggans' madness.
+Message:  1023
+<ce>                This sorceror, reeking of green herbs,
+<ce>                  appears to have been the cause of
+<ce>                       the spriggans' madness.
 
 Message:  1030
 %qdt:
@@ -96,13 +96,16 @@ Foe _sprig1_ is Spriggan
 Foe _sprig2_ is Spriggan
 
 --	Quest start-up:
-	log 1030 step 0 
+  log 1030 step 0
   start timer _spawn_
   start timer _2dung_
   start timer _failsafe_
   reveal _dung_
   place foe _mage_ at _dung_
+  pick one of _f1_ _f2_
 
+variable _f1_
+variable _f2_
 _spawn_ task:
   create foe _sprig1_ every 0 minutes 1 times with 100% success
 
@@ -132,6 +135,14 @@ _slain_ task:
   say 1023
   stop timer _2dung_
 
+_secretmission_ task:
+  when _f2_ and _slain_
+  start quest JHKNA09
+
+_secretmission2_ task:
+  when _f1_ and _slain_
+  start quest JHKNA08
+
 _qgclicked_ task:
   clicked npc _qgiver_
 
@@ -140,11 +151,11 @@ _clearclick_ task:
   clear _qgclicked_ _clearclick_
 
 _victory_ task:
-	when _qgclicked_ and _slain_
-	give pc nothing
+  when _qgclicked_ and _slain_
+  give pc nothing
   legal repute +3
-	end quest
- 
+  end quest
+
 _2dung_ task:
   say 1003
   end quest

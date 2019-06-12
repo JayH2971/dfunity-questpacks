@@ -66,7 +66,10 @@ Clock _timer_ 00:00 0 flag 1 range 0 2
   start timer _timer_
   log 1030 step 0
   pc at _poorhome_ do _inside_
+  pick one of _f1_ _f2_
 
+variable _f1_
+variable _f2_
 variable _inside_
 _spawn_ task:
   when _inside_ and not _slain_
@@ -79,6 +82,10 @@ _slain_ task:
   killed _mage_
   say 1011
   change repute with _dummymg_ by -10
+
+_secretmission_ task:
+  when _f2_ and _slain_
+  start quest JHFGA03
 
 _victory_ task:
   when _qgclicked_ and _slain_
