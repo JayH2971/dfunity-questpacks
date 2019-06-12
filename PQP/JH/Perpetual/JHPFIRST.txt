@@ -33,7 +33,7 @@ _init_ task:
     say 1027
     start timer _timer_
 -    pick one of _e2_ _e3_ _e4_ _e5_ _e6_ _e7_
-    start quest JHPQA00
+-    start quest JHPQA00
     start quest JHPQ005
     pick one of _q1_ _q2_ _q3_
 
