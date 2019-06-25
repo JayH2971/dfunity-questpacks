@@ -1,5 +1,5 @@
 -- Perpetual Quest
-Quest: JHPQ035
+Quest: JHTGA02
 DisplayName: Totin' Chip
 -- Message panels
 QRC:
