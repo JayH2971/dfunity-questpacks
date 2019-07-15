@@ -4,61 +4,61 @@ DisplayName: Civilian Guard Duty
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          %ra, sometimes I trust people in error,
-<ce>          and I pray that today is not that day.
-<ce>          A friend in confidence has warned me
-<ce>           that, tonight, my home is marked for
-<ce>          a breaking and entering, an invasion
-<ce>           by some traveling thieves. I can't
-<ce>            handle this myself, and I need help.
-<ce>           The Fighters Guild asked for more
-<ce>           than I could afford. For =reward_ gold,
-<ce>             will you defend my home this night?
+<ce>               %ra, sometimes I trust people in error,
+<ce>                and I pray that today is not that day.
+<ce>                 A friend in confidence has warned me
+<ce>                 that, tonight, my home is marked for
+<ce>                 a breaking and entering, an invasion
+<ce>                  by some traveling thieves. I can't
+<ce>                 handle this myself, and I need help.
+<ce>                  The Fighters Guild asked for more
+<ce>               than I could afford. For =reward_ gold,
+<ce>                 will you defend my home this night?
 
 RefuseQuest:  [1001]
-<ce>          Then please say nothing to anyone
-<ce>          concerning it. I need no reputation
-<ce>               as a coward or a weakling.
+<ce>                  Then please say nothing to anyone
+<ce>                 concerning it. I need no reputation
+<ce>                      as a coward or a weakling.
 
 AcceptQuest:  [1002]
 <ce>                 And may a thousand curses of %god be
-<ce>               upon you if you are somehow complicit in this,
-<ce>                %pcf. I put my life and that of my kindred in
-<ce>              your hands. Our home is down the way, called
-<ce>                  _res_. I expect something
-<ce>                  would occur in the late hours of the night,
-<ce>                 probably after midnight. By then even the
-<ce>                guards are asleep, they say. Please be there
-<ce>                to save us from these foul, demented knaves
-<ce>                who put us in jeopardy. 
+<ce>            upon you if you are somehow complicit in this,
+<ce>            %pcf. I put my life and that of my kindred in
+<ce>             your hands. Our home is down the way, called
+<ce>                      _res_. I expect something
+<ce>             would occur in the late hours of the night,
+<ce>              probably after midnight. By then even the
+<ce>             guards are asleep, they say. Please be there
+<ce>             to save us from these foul, demented knaves
+<ce>                       who put us in jeopardy.
 
 QuestFail:  [1003]
-<ce>               Get lost. We were lucky we didn't need you.
+<ce>             Get lost. We were lucky we didn't need you.
 
 QuestComplete:  [1004]
-<ce>           _questgiver_ opens the door and inspects
-<ce>        the residence. Once %g1 is satisfied, %g1 speaks.
-<ce>           
-<ce>           "No words can express the thanks I feel for
-<ce>            your protection, %pcf. Perhaps your
-<ce>            very presence here warded off some of the
-<ce>            hesitant among them. Who can say? But
-<ce>             I will gladly pay you for this night.
-<ce>               Go with the blessings of %god."
+<ce>               _questgiver_ opens the door and inspects
+<ce>          the residence. Once %g1 is satisfied, %g1 speaks.
+<ce>
+<ce>             "No words can express the thanks I feel for
+<ce>                 your protection, %pcf. Perhaps your
+<ce>              very presence here warded off some of the
+<ce>                hesitant among them. Who can say? But
+<ce>                I will gladly pay you for this night.
+<ce>                   Go with the blessings of %god."
 
 Message:  1018
-<ce>           You're the %ra _questgiver_
-<ce>         sent to keep us safe? Thank you for
-<ce>         coming. Stay anywhere you choose.
-<--->
-<ce>           Please, %ra, stay near the front.
-<ce>            We find it hard to trust anyone
-<ce>            under these circumstances. Wait
-<ce>            there and stand guard for us.
+<ce>                     You're the %ra _questgiver_
+<ce>                 sent to keep us safe? Thank you for
+<ce>                  coming. Stay anywhere you choose.
+                                     <--->
+<ce>                  Please, %ra, stay near the front.
+<ce>                   We find it hard to trust anyone
+<ce>                   under these circumstances. Wait
+<ce>                    there and stand guard for us.
 
 Message:  1020
-<ce>             You saved our lives! We will tell it to all of 
-<ce>                ___questgiver_, you were our hero!
+<ce>            You saved our lives! We will tell it to all of
+<ce>                  ___questgiver_, you were our hero!
 
 Message:  1030
 %qdt:
@@ -70,9 +70,9 @@ Message:  1030
  in the hours before dawn.
 
 Message:  1099
-<ce>          _res_, %pcf.
-<ce>          Please relieve my inner tension
-<ce>          instead of adding to it further.
+<ce>                             _res_, %pcf.
+<ce>                   Please relieve my inner tension
+<ce>                   instead of adding to it further.
 
 QBN:
 Item _reward_ gold range 300 to 350
@@ -86,8 +86,8 @@ Clock _timer_ 1.06:00 0
 Foe _enemy_ is Thief
 
 --	Quest start-up:
-	start timer _timer_ 
-	log 1030 step 0 
+	start timer _timer_
+	log 1030 step 0
 	pick one of _E.01_ _E.02_
 	pc at _res_ set _inside_
 
@@ -104,6 +104,9 @@ _spawntime_ task:
 
 _spawn_ task:
 	when _E.01_ and _inside_ and _spawntime_
+	start task _dospawn_
+
+_dospawn_ task:
 	create foe _enemy_ every 1 minutes 4 times with 100% success
 
 _E.02_ task:
@@ -115,16 +118,16 @@ _goaltime_ task:
 
 _pcgetsgold_ task:
 	when _E.02_ and _inside_ and _goaltime_
-	give pc _reward_ 
-	end quest 
+	give pc _reward_
+	end quest
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _questgiver_
 
 _timer_ task:
-	end quest 
+	end quest
 
 _clearclick_ task:
 	when _qgclicked_
-          say 1099
-	clear _qgclicked_ _clearclick_ 
+	say 1099
+	clear _qgclicked_ _clearclick_

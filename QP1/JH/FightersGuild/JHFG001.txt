@@ -4,82 +4,82 @@ DisplayName: Much at Stake
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  We've got a job for someone experienced like you,
-<ce> %pcf, but I'm not gonna blame you for turning
-<ce> it down. It involves one vampire and no sunlight.
-<ce>  You think you can fix that kind of problem?
-<ce>  There's =reward_ gold in it for you.
-<--->
-<ce>  Ever killed a vampire before, %pcf? Not one of them
-<ce>  ancients. We've got a request here to floor some simple
-<ce>  vampire in a house over in ___vampres_.
-<ce>  Take this one if you feel ready for it.
+<ce>          We've got a job for someone experienced like you,
+<ce>            %pcf, but I'm not gonna blame you for turning
+<ce>          it down. It involves one vampire and no sunlight.
+<ce>             You think you can fix that kind of problem?
+<ce>                 There's =reward_ gold in it for you.
+                                     <--->
+<ce>         Ever killed a vampire before, %pcf? Not one of them
+<ce>       ancients. We've got a request here to floor some simple
+<ce>               vampire in a house over in ___vampres_.
+<ce>               Take this one if you feel ready for it.
 
 RefuseQuest:  [1001]
-<ce> I'll look for someone else then.
+<ce>                   I'll look for someone else then.
 
 AcceptQuest:  [1002]
-<ce>  So here's the deal. You're headed to  _vampres_.
-<ce>  That'll be in ___vampres_. Slay the beast
-<ce>  and get back here so I can get you your =reward_ gold.
-<ce>  I'm giving you =timer_ days before I send for backup 
-<ce>  from a temple or something. Good luck, %pcf.
+<ce>           So here's the deal. You're headed to  _vampres_.
+<ce>              That'll be in ___vampres_. Slay the beast
+<ce>        and get back here so I can get you your =reward_ gold.
+<ce>         I'm giving you =timer_ days before I send for backup
+<ce>             from a temple or something. Good luck, %pcf.
 
 QuestFail:  [1003]
-<ce> You needed to slay the vampire in ___vampres_ by now.
+<ce>        You needed to slay the vampire in ___vampres_ by now.
 
 QuestComplete:  [1004]
-<ce> Excellent work, %pcf. This is why
-<ce>  we count on you. Have your gold.
+<ce>                  Excellent work, %pcf. This is why
+<ce>                   we count on you. Have your gold.
 
 RumorsDuringQuest:  [1005]
 Did you hear about the vampire that showed up in ___vampres_? I can't sleep anymore.
 
-RumorsPostSuccess:   [1007]
+RumorsPostSuccess:  [1007]
 The Fighters Guild can whoop vampires. They can whoop anybody.
 
 Message:  1010
-<ce> Aah! Stop! Stop! Why have you come here?!
-<ce> 
-<ce> No, this is madness! Do you know why you
-<ce> were sent here? My family paid off the Dark
-<ce> Brotherhood and I still live! My foes wish to
-<ce> end my life by any means necessary, and will
-<ce> even deceive the Fighters Guild to achieve
-<ce> their purpose. Please, don't kill me!
-<ce> Let me go, by %god!
+<ce>              Aah! Stop! Stop! Why have you come here?!
+<ce>
+<ce>               No, this is madness! Do you know why you
+<ce>             were sent here? My family paid off the Dark
+<ce>            Brotherhood and I still live! My foes wish to
+<ce>             end my life by any means necessary, and will
+<ce>              even deceive the Fighters Guild to achieve
+<ce>                their purpose. Please, don't kill me!
+<ce>                         Let me go, by %god!
 
 Message:  1011
-<ce> Oh, thank you, %ra. I am surprised that you
-<ce> value something more than money, but perhaps
-<ce> the guild is making headway against its
-<ce> baser instincts. I will flee to a far-off
-<ce> place, one my enemies will not find.
-<ce> May your gods repay you for your kindness.
+<ce>             Oh, thank you, %ra. I am surprised that you
+<ce>             value something more than money, but perhaps
+<ce>               the guild is making headway against its
+<ce>              baser instincts. I will flee to a far-off
+<ce>                 place, one my enemies will not find.
+<ce>              May your gods repay you for your kindness.
 
 Message:  1012
-<ce> Your foe is dead, vampire or not.
+<ce>                  Your foe is dead, vampire or not.
 
 Message:  1013
-<ce> Do you attempt to convince _qgiver_
-<ce> that the "vampire" is indeed dead?
+<ce>                 Do you attempt to convince _qgiver_
+<ce>                  that the "vampire" is indeed dead?
 
 Message:  1014
-<ce> Your attempt at persuasion fails.
-<ce> Perhaps you need more practice.
+<ce>                  Your attempt at persuasion fails.
+<ce>                   Perhaps you need more practice.
 
 Message:  1015
-<ce> "It's a shame that you didn't have what it
-<ce> takes to kill a vampire, even one with a
-<ce> convincing story. Our clients understand that
-<ce> failures happen, so we won't penalize you too
-<ce> hard for this. Just be a little smarter next
-<ce> time you're doubting whether we've done our
-<ce> homework, all right?"
+<ce>              "It's a shame that you didn't have what it
+<ce>               takes to kill a vampire, even one with a
+<ce>            convincing story. Our clients understand that
+<ce>            failures happen, so we won't penalize you too
+<ce>             hard for this. Just be a little smarter next
+<ce>             time you're doubting whether we've done our
+<ce>                        homework, all right?"
 
 Message:  1020
-<ce> "No!" The vampire shrieks
-<ce> before crumpling to the floor.
+<ce>                      "No!" The vampire shrieks
+<ce>                    before crumpling to the floor.
 
 Message:  1030
 %qdt:
@@ -90,10 +90,15 @@ Message:  1030
  to be back in =timer_ days
  or they'll call for the temple.
 
+-Message:  1040
+-<ce>              Fool. So someone has sent you to slay me.
+-<ce>  Do you even know the
+
 QBN:
 Item _reward_ gold
 
 Person _qgiver_ group Questor male
+Person _civil_ factionType Vampire_Clan female
 
 Place _vampres_ remote house1
 
@@ -101,14 +106,15 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 
 Foe _vamp_ is Vampire
 Foe _simp_ is Knight
+Foe _vamp2_ is Vampire
 
 --	Quest start-up:
-	start timer _timer_ 
+	start timer _timer_
 	log 1030 step 0
 	pick one of _real_ _false_ _real_
 
 _real_ task:
-	place foe _vamp_ at _vampres_ 
+	place foe _vamp_ at _vampres_
 
 _slain_ task:
 	killed 1 _vamp_ saying 1020
@@ -116,9 +122,9 @@ _slain_ task:
 
 variable _victory_
 _pcgetsgold_ task:
-	when _qgclicked_ and _slain_ 
-	give pc _reward_ 
-	end quest 
+	when _qgclicked_ and _slain_
+	give pc _reward_
+	end quest
 
 _false_ task:
 	place foe _simp_ at _vampres_
@@ -139,59 +145,59 @@ _murder_ task:
 	start task _victory_
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+	clicked npc _qgiver_
 
 _clearclick_ task:
 	when _qgclicked_ and not _victory_ and not _escape_
-	clear _qgclicked_ _clearclick_ 
+	clear _qgclicked_ _clearclick_
 
 _convince_ task:
 	when _qgclicked_ and _escape_
 	prompt 1013 yes _begin_ no _fail2_
 
 _begin_ task:
-    pick one of _go1_ _go2_ _go3_
+	pick one of _go1_ _go2_ _go3_
 
 _check1_ task:
-   when skill Streetwise is at least 15
+	when skill Streetwise is at least 15
 
 _check2_ task:
-    when skill Streetwise is at least 25
+	when skill Streetwise is at least 25
 
 _check3_ task:
-    when skill Streetwise is at least 35
+	when skill Streetwise is at least 35
 
 variable _go1_
 variable _go2_
 variable _go3_
 
 _c1_ task:
-    when _check1_ and _go1_
-    start task _pcgetsgold2_
+	when _check1_ and _go1_
+	start task _pcgetsgold2_
 
 _c2_ task:
-    when _check2_ and _go2_
-    start task _pcgetsgold2_
+	when _check2_ and _go2_
+	start task _pcgetsgold2_
 
 _c3_ task:
-    when _check3_ and _go3_
-    start task _pcgetsgold2_
+	when _check3_ and _go3_
+	start task _pcgetsgold2_
 
 _d1_ task:
-    when not _check1_ and _go1_
-    start task _fail_
+	when not _check1_ and _go1_
+	start task _fail_
 
 _d2_ task:
-    when not _check2_ and _go2_
-    start task _fail_
+	when not _check2_ and _go2_
+	start task _fail_
 
 _d3_ task:
-    when not _check3_ and _go3_
-    start task _fail_
+	when not _check3_ and _go3_
+	start task _fail_
 
 _pcgetsgold2_ task:
-	give pc _reward_ 
-	end quest 
+	give pc _reward_
+	end quest
 
 _fail_ task:
 	say 1014
@@ -203,4 +209,4 @@ _fail2_ task:
 
 _timer_ task:
 	say 1003
-	end quest 
+	end quest
