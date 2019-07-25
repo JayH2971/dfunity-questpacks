@@ -118,7 +118,7 @@ _kclicked_ task:
 variable _idun_
 _secretmission_ task:
 	when _idun_ and _f2_
-	start quest JHTGA01
+-	start quest JHTGA01
 
 _victory_ task:
 	when _kclicked_ and _idun_
