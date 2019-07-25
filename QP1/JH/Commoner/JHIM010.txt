@@ -92,7 +92,7 @@ _start_ task:
   pick one of _item1_ _item2_ _item3_ _item4_ _item5_ _item5_
   reveal _dung_
   place item _sack_ at _dung_
-	pick one of _f1_ _f2_
+  pick one of _f1_ _f2_
 
 variable _f1_
 variable _f2_
@@ -107,7 +107,7 @@ _found_ task:
 
 _secretmission_ task:
   when _f2_ and _found_
-  start quest JHIMA00
+-  start quest JHIMA00
 
 _vict1_ task:
   when _found_ and _item1_

@@ -94,7 +94,7 @@ _found_ task:
 
 _secretmission_ task:
     when _found_ and _f2_
-    start quest JHKNA06
+-    start quest JHKNA06
 
 _qgclicked_ task:
     clicked npc _qgiver_

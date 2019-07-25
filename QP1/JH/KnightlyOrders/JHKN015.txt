@@ -137,11 +137,11 @@ _slain_ task:
 
 _secretmission_ task:
   when _f2_ and _slain_
-  start quest JHKNA09
+-  start quest JHKNA09
 
 _secretmission2_ task:
   when _f1_ and _slain_
-  start quest JHKNA08
+-  start quest JHKNA08
 
 _qgclicked_ task:
   clicked npc _qgiver_

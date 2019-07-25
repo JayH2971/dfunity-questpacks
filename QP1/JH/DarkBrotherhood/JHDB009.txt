@@ -141,7 +141,7 @@ _capture_ task:
 
 _secretmission_ task:
 	when _capture_ and _f2_
-	start quest JHDBA02
+-	start quest JHDBA02
 
 _reward_ task:
 	when _pclicked_ and _capture_ and _E.01_

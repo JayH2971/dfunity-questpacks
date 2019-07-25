@@ -65,5 +65,5 @@ _f4_ task:
     create foe _e4_ every 0 minutes 1 times with 100% success
 
 _failsafe_ task:
-    start quest JHPQA00
+-    start quest JHPQA00
     end quest

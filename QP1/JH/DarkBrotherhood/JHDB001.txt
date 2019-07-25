@@ -113,7 +113,7 @@ _slain_ task:
 
 _secretmission_ task:
 	when _f2_ and _slain_
-	start quest JHDBA03
+-	start quest JHDBA03
 
 _pcgetsgold_ task:
 	when _slain_ and _qgclicked_

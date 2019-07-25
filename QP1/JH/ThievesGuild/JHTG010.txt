@@ -112,7 +112,7 @@ _found_ task:
 
 _secretmission_ task:
     when _found_ and _f2_
-    start quest JHTGA02
+-    start quest JHTGA02
 
 _fail_ task:
     say 1013

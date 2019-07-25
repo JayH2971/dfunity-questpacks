@@ -156,7 +156,7 @@ _slain_ task:
 
 _secretmission_ task:
     when _slain_ and _f2_
-    start quest JHDBA01
+-    start quest JHDBA01
 
 _pcgetsgold_ task:
 	when _slain_ and _qgclicked_

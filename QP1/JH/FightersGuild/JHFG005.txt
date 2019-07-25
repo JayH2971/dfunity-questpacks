@@ -168,7 +168,7 @@ _clearclick_ task:
 
 _secretmission_ task:
 	when _f2_ and _slain_
-	start quest JHFGA02
+-	start quest JHFGA02
 
 _pcreward_ task:
 	when _qgclicked_ and _slain_

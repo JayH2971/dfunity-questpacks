@@ -297,7 +297,7 @@ _fail_ task:
 
 _secret_ task:
     when _timer_ and _refrain_
-    start quest JHNCA00
+-    start quest JHNCA00
 
 _timer_ task:
     say 1003

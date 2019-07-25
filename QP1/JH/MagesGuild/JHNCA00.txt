@@ -115,7 +115,7 @@ _quit_ task:
 
 _advance_ task:
     give pc nothing
-    start quest JHNCA01
+-    start quest JHNCA01
     end quest
 
 _2nhome_ task:

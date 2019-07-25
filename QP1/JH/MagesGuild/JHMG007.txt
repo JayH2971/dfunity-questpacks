@@ -101,11 +101,11 @@ _slain_ task:
 
 _secretmission_ task:
 	when _f2_ and _slain_
-	start quest JHMGA04
+-	start quest JHMGA04
 
 _secretmission2_ task:
 	when _f1_ and _slain_
-	start quest JHMGA05
+-	start quest JHMGA05
 
 _pcgetsgold_ task:
 	when _qgclicked_ and _slain_

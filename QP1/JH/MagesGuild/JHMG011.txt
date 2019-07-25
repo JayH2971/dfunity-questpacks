@@ -147,11 +147,11 @@ _victory_ task:
 
 _secretmission_ task:
 	when _f2_ and _victory_
-	start quest JHMGA02
+-	start quest JHMGA02
 
 _secretmission2_ task:
 	when _f1_ and _victory_
-	start quest JHMGA06
+-	start quest JHMGA06
 
 _vict_ task:
 	give pc _reward_

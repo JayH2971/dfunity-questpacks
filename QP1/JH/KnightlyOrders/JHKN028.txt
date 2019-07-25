@@ -47,5 +47,5 @@ Place _captive_ remote city
 
 _city_ task:
 	change repute with _qgiver_ by +2
-    start quest JHKNA00
+-    start quest JHKNA00
     end quest

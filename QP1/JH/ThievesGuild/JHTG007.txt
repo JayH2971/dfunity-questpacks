@@ -109,7 +109,7 @@ _finish_ task:
 
 _secretmission_ task:
   when _f2_ and _finish_
-  start quest JHTGA00
+-  start quest JHTGA00
 
 _pcgetsgold_ task:
   toting _pay_ and _qgiver_ clicked

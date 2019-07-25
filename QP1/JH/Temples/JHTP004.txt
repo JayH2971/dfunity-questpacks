@@ -151,7 +151,7 @@ _begin_ task:
 
 _secretmission_ task:
 	when _f2_ and _begin_
-	start quest JHTPA00
+-	start quest JHTPA00
 
 _timer_ task:
 	say 1050

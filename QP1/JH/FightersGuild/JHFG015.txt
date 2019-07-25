@@ -137,11 +137,11 @@ _slain_ task:
 
 _secretmission_ task:
     when _slain_ and _f2_
-    start quest JHFGA04
+-    start quest JHFGA04
 
 _secretmission2_ task:
     when _slain_ and _f1_
-    start quest JHFGA06
+-    start quest JHFGA06
 
 variable _e1_
 _true_ task:

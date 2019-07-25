@@ -205,7 +205,7 @@ _final_ task:
 
 _secretmission_ task:
     when _f2_ and _final_
-    start quest JHFGA06
+-    start quest JHFGA06
 
 _escape_ task:
     give pc nothing

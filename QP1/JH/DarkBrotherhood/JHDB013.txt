@@ -111,7 +111,7 @@ _slain_ task:
 
 _secretmission_ task:
     when _f2_ and _slain_
-    start quest JHDBA04
+-    start quest JHDBA04
 
 _attack_ task:
     when _slain_ and _e2_

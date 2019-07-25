@@ -106,7 +106,7 @@ _pcgetsgold_ task:
 
 _secretmission_ task:
   when _f2_ and _slain_
-  start quest JHFGA03
+-  start quest JHFGA03
 
 _hunt_ task:
 	say 1003

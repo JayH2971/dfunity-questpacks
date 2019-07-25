@@ -106,7 +106,7 @@ _level_ task:
 
 _secretmission_ task:
 	when _slain_ and _level_
-	start quest JHFGC01
+-	start quest JHFGC01
 
 _qgclicked_ task:
 	clicked npc _questgiver_

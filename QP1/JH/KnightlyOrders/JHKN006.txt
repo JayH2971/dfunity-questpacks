@@ -110,7 +110,7 @@ _ask_ task:
 
 _secretmission_ task:
 	when _inj_ and _f2_
-	start quest JHKNA05
+-	start quest JHKNA05
 
 _mercy_ task:
 	get item _weapon_

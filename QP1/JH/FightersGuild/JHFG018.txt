@@ -236,7 +236,7 @@ _slain_ task:
 variable _win_
 _secretmission_ task:
   when _win_ and _f2_
-  start quest JHFGA02
+-  start quest JHFGA02
 
 _victory_ task:
   when _qgclicked_ and _win_

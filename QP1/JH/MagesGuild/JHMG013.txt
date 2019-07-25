@@ -127,7 +127,7 @@ _arrival_ task:
 
 _secretmission_ task:
     when _f2_ and _arrival_
-    start quest JHMGA05
+-    start quest JHMGA05
 
 _stop_ task:
     when not _arrival_

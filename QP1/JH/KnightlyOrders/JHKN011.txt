@@ -141,7 +141,7 @@ _talkfam_ task:
 
 _secretmission_ task:
 	when _f2_ and _inside_
-	start quest JHKNA04
+-	start quest JHKNA04
 
 _talkkni_ task:
 	clicked npc _kni_

@@ -88,7 +88,7 @@ _found_ task:
 
 _secretmission_ task:
     when _found_ and _f2_
-    start quest JHTGA01
+-    start quest JHTGA01
 
 _win_ task:
     say 1011

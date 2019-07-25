@@ -77,11 +77,11 @@ _templehome_ task:
 
 _secretmission_ task:
 	when _f2_ and _templehome_
-	start quest JHFGA05
+-	start quest JHFGA05
 
 _secretmission2_ task:
 	when _f1_ and _templehome_
-	start quest JHFGA08
+-	start quest JHFGA08
 
 variable _spid_
 variable _scorp_

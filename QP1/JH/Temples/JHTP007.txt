@@ -96,7 +96,7 @@ _slain_ task:
 
 _secretmission_ task:
   when _f2_ and _slain_
-  start quest JHTPA01
+-  start quest JHTPA01
 
 _qgclicked_ task:
   clicked npc _qgiver_

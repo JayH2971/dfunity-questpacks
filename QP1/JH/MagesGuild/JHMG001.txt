@@ -122,7 +122,7 @@ _slain_ task:
 
 _secretmission_ task:
 	when _f2_ and _slain_
-	start quest JHMGA03
+-	start quest JHMGA03
 
 _qgclicked_ task:
 	clicked npc _qgiver_

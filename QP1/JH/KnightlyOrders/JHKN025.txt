@@ -88,11 +88,11 @@ _slain_ task:
 
 _secretmission_ task:
 	when _slain_ and _f2_
-	start quest JHKNA03
+-	start quest JHKNA03
 
 _secretmission2_ task:
 	when _slain_ and _f1_
-	start quest JHKNA07
+-	start quest JHKNA07
 
 variable _timer_
 _fail_ task:

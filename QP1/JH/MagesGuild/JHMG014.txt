@@ -284,7 +284,7 @@ _pcgetsgold_ task:
 
 _secretmission_ task:
     when _f2_ and _pcgetsgold_
-    start quest JHMGA00
+-    start quest JHMGA00
 
 _victory_ task:
     when _pcgetsgold_ and _scholdead_

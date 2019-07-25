@@ -196,7 +196,7 @@ _slain_ task:
 
 _secretmission_ task:
 	when _slain_ and _f2_
-	start quest JHKNA02
+-	start quest JHKNA02
 
 --end of normal quest section. alternate begins
 _altstep_ task:
