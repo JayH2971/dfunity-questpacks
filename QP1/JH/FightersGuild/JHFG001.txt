@@ -98,7 +98,6 @@ QBN:
 Item _reward_ gold
 
 Person _qgiver_ group Questor male
-Person _civil_ factionType Vampire_Clan female
 
 Place _vampres_ remote house1
 
@@ -106,7 +105,6 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 
 Foe _vamp_ is Vampire
 Foe _simp_ is Knight
-Foe _vamp2_ is Vampire
 
 --	Quest start-up:
 	start timer _timer_

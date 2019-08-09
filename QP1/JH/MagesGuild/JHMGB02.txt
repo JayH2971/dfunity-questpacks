@@ -215,7 +215,7 @@ _courier_ task:
 _victory_ task:
     toting _let_ and Gothryd1 clicked
     give pc nothing
-    change repute with _blades_ by 10
+    change repute with _blades_ by +10
     end quest
 
 _avoid_ task:

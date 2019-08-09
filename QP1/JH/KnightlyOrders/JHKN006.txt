@@ -94,10 +94,7 @@ Item _weapon_ weapon
 	place foe _enemy_ at _dungeon_
 	reveal _dungeon_
 	pick one of _e1_ _e2_
-	pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 variable _e1_
 variable _e2_
 _inj_ task:
@@ -107,10 +104,6 @@ _inj_ task:
 _ask_ task:
 	when _inj_ and _e2_
 	prompt 1021 yes _mercy_ no _kill_
-
-_secretmission_ task:
-	when _inj_ and _f2_
--	start quest JHKNA05
 
 _mercy_ task:
 	get item _weapon_

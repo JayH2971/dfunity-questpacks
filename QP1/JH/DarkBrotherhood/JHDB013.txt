@@ -87,12 +87,9 @@ Clock _timer_ 00:00 0 flag 1 range 0 2
     place npc _hos_ at _res_
     get item _bell_
     pick one of _e1_ _e2_
-    pick one of _f1_ _f2_
 
 variable _e1_
 variable _e2_
-variable _f1_
-variable _f2_
 variable _inside_
 _take_ task:
   clicked npc _hos_
@@ -108,10 +105,6 @@ _slain_ task:
     drop _hos_ face
     say 1011
     get item _finger_
-
-_secretmission_ task:
-    when _f2_ and _slain_
--    start quest JHDBA04
 
 _attack_ task:
     when _slain_ and _e2_

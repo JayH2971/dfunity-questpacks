@@ -174,10 +174,7 @@ Foe _dbenemy2_ is Assassin
 	log 1030 step 0
 	pc at _home_ set _housearrive_
 	pick one of _norm_ _norm_ _alt_
-	pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 variable _norm_
 variable _alt_
 _housearrive_ task:
@@ -193,10 +190,6 @@ _kill_ task:
 
 _slain_ task:
 	killed 4 _enemy_ saying 1011
-
-_secretmission_ task:
-	when _slain_ and _f2_
--	start quest JHKNA02
 
 --end of normal quest section. alternate begins
 _altstep_ task:

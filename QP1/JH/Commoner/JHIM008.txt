@@ -145,10 +145,12 @@ _victory_ task:
 
 _2loc1_ task:
          say 1003
+         destroy _questgiver_
          end quest
 
 _2loc2_ task:
          say 1003
+         destroy _questgiver_         
          end quest
 
 _2apoc_ task:
@@ -156,7 +158,5 @@ _2apoc_ task:
 
 _extend_ task:
          say 1003
+         destroy _questgiver_
          end quest
-
-_timer_ task:
-	end quest 

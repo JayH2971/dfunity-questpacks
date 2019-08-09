@@ -80,7 +80,6 @@ Item _reward_ gold range 2501 to 2799
 	start timer _timer_ 
 	log 1030 step 0
     pick one of _e1_ _e2_ _e3_
-    pick one of _f1_ _f2_
 
 _e1_ task:
     place npc _debtor_ at _res_
@@ -91,8 +90,6 @@ _e2_ task:
 _e3_ task:
     place foe _m3_ at _res_
 
-variable _f1_
-variable _f2_
 _ipr_ task:
   injured _m1_
   injured _m2_

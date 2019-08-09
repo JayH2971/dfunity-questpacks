@@ -78,10 +78,7 @@ Foe _zombie_ is Zombie
   reveal _dung_
   start timer _timer_
   place foe _zombie_ at _dung_
-	pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 _infect_ task:
   say 1020
 
@@ -93,10 +90,6 @@ _sick_ task:
 _slain_ task:
   killed _zombie_
   say 1021
-
-_secretmission_ task:
-  when _f2_ and _slain_
--  start quest JHTPA01
 
 _qgclicked_ task:
   clicked npc _qgiver_

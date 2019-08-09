@@ -129,7 +129,6 @@ _extend2_ task:
 
 _delay_ task:
 	say 1026
--	start quest JHDBA00
 
 _qgclicked_ task:
 	clicked npc _questgiver_

@@ -96,10 +96,7 @@ Foe _enemy_ is Knight
 	pc at _dung_ set _idun_
 	pc at _res_ set _ires_
 	reveal _dung_
-	pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 _ires_ task:
 	start timer _found_
 	say 1020
@@ -116,10 +113,6 @@ _kclicked_ task:
 	hide npc _kid_
 
 variable _idun_
-_secretmission_ task:
-	when _idun_ and _f2_
--	start quest JHTGA01
-
 _victory_ task:
 	when _kclicked_ and _idun_
 	give pc _reward_

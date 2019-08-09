@@ -125,10 +125,7 @@ Clock _goal_ 6.00:00 12.00:00
 	log 1030 step 0
 	add _guide_ face
 	start timer _goal_
-	pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 _findcult_ task:
 	when pc enters cult
 	say 1021
@@ -144,14 +141,6 @@ _findgrave_ task:
 _victory_ task:
 	when _findcult_ and _findfarm_ and _findgrave_
 	start timer _vict_
-
-_secretmission_ task:
-	when _f2_ and _victory_
--	start quest JHMGA02
-
-_secretmission2_ task:
-	when _f1_ and _victory_
--	start quest JHMGA06
 
 _vict_ task:
 	give pc _reward_

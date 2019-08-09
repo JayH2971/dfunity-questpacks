@@ -133,16 +133,14 @@ _success_ task:
 _delay_ task:
     drop _family_ face
 
-_honor_ task:
-
+variable _honor_
 _happy_ task:
     when _delay_ and not _betray_
     say 1025
     give pc _reward_
     end quest
 
-_betray_ task:
-
+variable _betray_
 _sad_ task:
     when _delay_ and _betray_
     prompt 1020 yes _escape_ no _murder_
@@ -163,11 +161,7 @@ _deadfam_ task:
 
 _qgclicked_ task:
     clicked npc _qgiver_
-
-_death_ task:
-    say 1025
-    end quest
-
+    
 _timer_ task:
     say 1003
     drop _family_ face

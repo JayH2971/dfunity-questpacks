@@ -84,10 +84,7 @@ Foe _wild4_ is Spriggan
 	pc at _mondung_ set _inside_
 	place foe _enemy_ at _mondung_
 	reveal _mondung_
-	pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 _daytime_ task:
 	daily from 8:00 to 18:00
 
@@ -110,10 +107,6 @@ _spawn_ task:
 
 _slain_ task:
 	killed 1 _enemy_ saying 1020
-
-_secretmission_ task:
-	when _f2_ and _slain_
--	start quest JHDBA03
 
 _pcgetsgold_ task:
 	when _slain_ and _qgclicked_

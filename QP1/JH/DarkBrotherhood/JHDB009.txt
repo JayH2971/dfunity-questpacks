@@ -112,12 +112,9 @@ Clock _2home_ 15.00:00
 	place npc _kid_ at _dung_
 	place npc _parent_ at _home_
 	pick one of _E.01_ _E.02_
-	pick one of _f1_ _f2_
 
 variable _E.01_
 variable _E.02_
-variable _f1_
-variable _f2_
 _2dung_ task:
 	start timer _2home_
 
@@ -138,10 +135,6 @@ _capture_ task:
 	hide npc _kid_
 	say 1011
 	add _kid_ face
-
-_secretmission_ task:
-	when _capture_ and _f2_
--	start quest JHDBA02
 
 _reward_ task:
 	when _pclicked_ and _capture_ and _E.01_

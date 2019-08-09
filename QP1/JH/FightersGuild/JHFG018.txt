@@ -122,10 +122,7 @@ Clock _rob2_ 00:03
   start timer _timer_
   log 1030 step 0
   pc at _shop_ do _inside_
-  pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 _day_ task:
   daily from 4:30 to 23:30
 
@@ -234,9 +231,6 @@ _slain_ task:
   start task _win_
 
 variable _win_
-_secretmission_ task:
-  when _win_ and _f2_
--  start quest JHFGA02
 
 _victory_ task:
   when _qgclicked_ and _win_

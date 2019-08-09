@@ -107,7 +107,7 @@ _alert_ task:
     say 1012
     create foe _en_ every 0 minutes 1 times with 100% success
     create foe _en_ every 600 minutes indefinitely with 25% success
--legalrep -20
+    legal repute -20
 
 variable _arrive_
 _reward_ task:

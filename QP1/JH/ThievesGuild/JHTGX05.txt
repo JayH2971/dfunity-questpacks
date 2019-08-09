@@ -164,5 +164,5 @@ _take2_ task:
 _talk_ task:
   toting _bag2_ and _crow_ clicked
   give pc _reward_
-  start quest JHTG06X
+  start quest JHTGX06
   end quest

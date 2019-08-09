@@ -160,10 +160,7 @@ Clock _battle_ 08:00
     start timer _timer_
     log 1030 step 0
     place npc _friend_ at _res_
-    pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 _talk_ task:
     clicked npc _friend_
     say 1010
@@ -202,10 +199,6 @@ _final_ task:
     drop _friend_ face
     stop timer _timer_
     prompt 1012 yes _escape_ no _confront_
-
-_secretmission_ task:
-    when _f2_ and _final_
--    start quest JHFGA06
 
 _escape_ task:
     give pc nothing

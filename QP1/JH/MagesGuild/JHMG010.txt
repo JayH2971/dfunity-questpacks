@@ -151,10 +151,7 @@ Foe _undead_ is 3 Wraith
     add _mark_ face saying 1010
     get item _gem_
     start timer _failsafe_
-    pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 _inside_ task:
     _gem_ used do _send_
     say 1020
@@ -177,10 +174,6 @@ _inj_ task:
 _slain_ task:
     killed _enemy_
     say 1023
-
-_secretmission_ task:
-    when _f2_ and _slain_
--    start quest JHMGA01
 
 _qgclicked_ task:
     clicked npc _qgiver_

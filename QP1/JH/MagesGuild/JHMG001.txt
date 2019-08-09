@@ -94,10 +94,7 @@ Foe _enemy5_ is Mage
 	pick one of _D.01_ _D.02_ _D.03_ _D.04_ _D.05_
 	log 1030 step 0
 	reveal _dung_
-	pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 _D.01_ task:
 	place foe _enemy1_ at _dung_
 
@@ -119,10 +116,6 @@ _slain_ task:
 	killed 1 _enemy3_ saying 1020
 	killed 1 _enemy4_ saying 1020
 	killed 1 _enemy5_ saying 1021
-
-_secretmission_ task:
-	when _f2_ and _slain_
--	start quest JHMGA03
 
 _qgclicked_ task:
 	clicked npc _qgiver_

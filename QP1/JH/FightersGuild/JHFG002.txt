@@ -101,13 +101,6 @@ _slain_ task:
 	killed 1 _daedralord_ saying 1020
 	killed 1 _daedrased_ saying 1021
 
-_level_ task:
-	level 8 completed
-
-_secretmission_ task:
-	when _slain_ and _level_
--	start quest JHFGC01
-
 _qgclicked_ task:
 	clicked npc _questgiver_
 

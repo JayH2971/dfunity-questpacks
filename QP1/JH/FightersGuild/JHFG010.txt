@@ -68,20 +68,9 @@ Foe _enemy2_ is Giant_scorpion
 	log 1030 step 0
 	pick one of _spid_ _scorp_
 	pc at _captive_ set _templehome_
-	pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 _templehome_ task:
 	say 1019
-
-_secretmission_ task:
-	when _f2_ and _templehome_
--	start quest JHFGA05
-
-_secretmission2_ task:
-	when _f1_ and _templehome_
--	start quest JHFGA08
 
 variable _spid_
 variable _scorp_

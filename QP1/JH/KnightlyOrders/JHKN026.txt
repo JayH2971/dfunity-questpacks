@@ -79,10 +79,7 @@ Foe _enemy2_ is Rogue
     log 1030 step 0
     place npc _child_ at _dung_
     reveal _dung_
-    pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 _found_ task:
     clicked npc _child_
     say 1020
@@ -92,9 +89,6 @@ _found_ task:
     stop timer _2dung_
     start timer _failsafe_
 
-_secretmission_ task:
-    when _found_ and _f2_
--    start quest JHKNA06
 
 _qgclicked_ task:
     clicked npc _qgiver_

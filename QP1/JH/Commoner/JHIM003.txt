@@ -43,7 +43,7 @@ Message:  1099
 <ce>          haunted! Why won't you help me?!
 
 QBN:
-Item _reward_ gold range 150 to 200
+Item _reward_ gold
 
 Person _questgiver_ group Questor male
 

@@ -89,8 +89,6 @@ Message:  1030
 QBN:
 Item _reward_ gold range 350 to 350
 
-Person _questgiver_ group Questor male
-
 Clock _failsafe_ 1.00:00
 
 --	Quest start-up:

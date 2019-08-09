@@ -41,6 +41,11 @@ QuestComplete:  [1004]
 <ce>                 I hope you enjoy these things, %pcf.
 <ce>                 Stop and smell the roses some time.
 <ce>                  Here's your _reward_ gold pieces.
+<--->
+<ce>  How was the trip? Too many of our members
+<ce>  just want to stay local and kill rats.
+<ce>  Good to see some initiative out of you.
+<ce>  Take this.
 
 Message:  1020
 <ce>                The growling dies down. You trust the
@@ -105,10 +110,7 @@ Foe _tiger_ is Sabretooth_tiger
 	log 1030 step 0
 	pc at _rural_ set _outside_
 	pick one of _B.01_ _B.01_ _B.01_ _T.01_ _T.01_ _T.01_ _dud_
-	pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 variable _outside_
 _day_ task:
 	daily from 5:30 to 18:30
@@ -165,10 +167,6 @@ _qgclicked_ task:
 _clearclick_ task:
 	when _qgclicked_ and not _slain_ and not _alt2_
 	clear _qgclicked_ _clearclick_
-
-_secretmission_ task:
-	when _f2_ and _slain_
--	start quest JHFGA02
 
 _pcreward_ task:
 	when _qgclicked_ and _slain_

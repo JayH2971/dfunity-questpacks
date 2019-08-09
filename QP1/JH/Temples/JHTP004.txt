@@ -136,10 +136,7 @@ Foe _enemy_ is Zombie
 	place npc _rescue_ at _dung_
 	pc at _dung_ set _inside_
 	pick one of _E.01_ _E.02_
-	pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 variable _E.01_
 variable _E.02_
 _inside_ task:
@@ -148,10 +145,6 @@ _inside_ task:
 
 _begin_ task:
 	start timer _timer_
-
-_secretmission_ task:
-	when _f2_ and _begin_
--	start quest JHTPA00
 
 _timer_ task:
 	say 1050

@@ -91,10 +91,7 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
   start timer _timer_
   pc at _res_ set _inside_
   place npc _fam_ at _res_
-  pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 _talk_ task:
   clicked npc _fam_
   say 1020
@@ -106,10 +103,6 @@ _finish_ task:
   when _inside_ and _persuade_
   take _finger_ from pc saying 1021
   get item _pay_
-
-_secretmission_ task:
-  when _f2_ and _finish_
--  start quest JHTGA00
 
 _pcgetsgold_ task:
   toting _pay_ and _qgiver_ clicked

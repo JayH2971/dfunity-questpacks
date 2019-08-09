@@ -102,10 +102,7 @@ Foe _sprig2_ is Spriggan
   start timer _failsafe_
   reveal _dung_
   place foe _mage_ at _dung_
-  pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 _spawn_ task:
   create foe _sprig1_ every 0 minutes 1 times with 100% success
 
@@ -134,14 +131,6 @@ _slain_ task:
   killed _mage_
   say 1023
   stop timer _2dung_
-
-_secretmission_ task:
-  when _f2_ and _slain_
--  start quest JHKNA09
-
-_secretmission2_ task:
-  when _f1_ and _slain_
--  start quest JHKNA08
 
 _qgclicked_ task:
   clicked npc _qgiver_

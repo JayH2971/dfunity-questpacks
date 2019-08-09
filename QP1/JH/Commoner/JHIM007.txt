@@ -98,7 +98,6 @@ _decision_ task:
 
 _lie_ task:
 	give pc _reward_ 
--startquest merchant's revenge
 	end quest
 
 _bigfail_ task:

@@ -93,10 +93,7 @@ Foe _enemy1_ is Iron_atronach
     reveal _dungeon_
     pc at _dungeon_ set _inside_
     place item _bag_ at _dungeon_
-    pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 _inside_ task:
     say 1010
     start timer _hunt_
@@ -109,10 +106,6 @@ _found_ task:
     clicked item _bag_
     say 1011
     cast Open effect do _fail_
-
-_secretmission_ task:
-    when _found_ and _f2_
--    start quest JHTGA02
 
 _fail_ task:
     say 1013

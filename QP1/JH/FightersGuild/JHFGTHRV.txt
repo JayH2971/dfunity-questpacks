@@ -1,4 +1,4 @@
-Quest: JHFGNREV
+Quest: JHFGTHRV
 DisplayName: A Noble's Revenge
 
 QRC:

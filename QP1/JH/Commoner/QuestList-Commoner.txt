@@ -12,7 +12,6 @@ schema: *name, group, membership, minReq, flag, notes
 JHIM001, Commoners, N, 0, 0, a simple quiz for money
 JHIM002, Commoners, N, 0, 0, a simple quiz for money
 JHIM003, Commoners, N, 0, 0, a quest to end a haunting
-JHIM004, Commoners, N, 0, 0, a quest to guard a house
 JHIM005, Commoners, N, 0, 0, a quest to solve a bar fight
 JHIM006, Commoners, N, 0, 0, a quest to break a grave curse
 JHIM007, Commoners, N, 0, 0, a quest for vengeance in a tavern
@@ -20,7 +19,6 @@ JHIM008, Commoners, N, 0, 0, a quest for reconciliation with witches
 JHIM010, Commoners, N, 0, 0, a quest buying a treasure map
 JHIM011, Commoners, N, 0, 0, a quest as a bodyguard
 JHIM012, Commoners, N, 0, 0, a quest to test a runed object
--JHIMA00, Commoners, P, 0, 0, chopping wood for a peasant via IM010
 -The shopkeeper informs you that after years of mediocre performance, this shop must shortly close unless there's a major financial reversal. The PC is asked to steal a bag of merchandise from another store in exchange for the shopkeeper's last heirloom.
 -Innkeeper quest: The NPC is far too busy, but feels the need to place some flowers on a loved one's grave. He/she bought a particular bouquet of flowers from a shady salesperson who claimed they were proper for the month. 50/50 chance of the flowers causing a zombie to rise from the graveyard or a message coming from the departed loved one. Mischevious salesperson, motive not yet decided. [needs "when dropped anitem"]
 -Innkeeper quest: Loan some money to an NPC to keep their shop. 80% chance of a good return, 20% chance of little or no reward.

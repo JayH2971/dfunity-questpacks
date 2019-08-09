@@ -128,20 +128,13 @@ Item _bag_ large_sack
   	place npc _kni_ at _dung_
 	add dialog for person _kni_
 	pc at _dung_ do _inside_
-	pick one of _f1_ _f2_
 
-variable _f1_
-variable _f2_
 variable _inside_
 _talkfam_ task:
 	clicked npc _family_
 	say 1012
 	log 1031 step 1
 	reveal _dung_
-
-_secretmission_ task:
-	when _f2_ and _inside_
--	start quest JHKNA04
 
 _talkkni_ task:
 	clicked npc _kni_
