@@ -83,7 +83,7 @@ Place _dung_ remote dungeon
 Place _res_ remote house
 
 Clock _timer_ 30.00:00
-Clock _found_ 00:06 00:14
+Clock _found_ 00:04 00:09
 
 Item _reward_ gold range 201 to 399
 
