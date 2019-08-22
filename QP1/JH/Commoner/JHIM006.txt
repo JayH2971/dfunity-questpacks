@@ -136,6 +136,7 @@ _path1_ task:
     when _decision_ and _peace_
     say 1020
     give pc _reward_
+    end quest
 
 _path2_ task:
     when _decision_ and not _peace_
