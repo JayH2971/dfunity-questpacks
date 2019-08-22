@@ -295,10 +295,6 @@ _fail_ task:
     say 1099
     end quest
 
-_secret_ task:
-    when _timer_ and _refrain_
--    start quest JHNCA00
-
 _timer_ task:
     say 1003
     start task _end_
