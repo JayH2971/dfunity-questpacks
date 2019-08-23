@@ -80,7 +80,10 @@ Item _reward_ gold range 2501 to 2799
 	start timer _timer_ 
 	log 1030 step 0
     pick one of _e1_ _e2_ _e3_
+    pick one of _m1_ _m2_
 
+variable _m1_
+variable _m2_
 _e1_ task:
     place npc _debtor_ at _res_
 
@@ -100,13 +103,13 @@ _click_ task:
     clicked npc _debtor_
 
 _norm_ task:
-  when _click_ and _f1_
+  when _click_ and _m1_
   say 1010
   hide npc _debtor_
   place foe _m1_ at _res_
 
 _choice_ task:
-    when _click_ and _f2_
+    when _click_ and _m2_
     prompt 1011 yes _bribe_ no _dud_
 
 _bribe_ task:
