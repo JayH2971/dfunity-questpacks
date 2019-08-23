@@ -38,18 +38,19 @@ JHKN026, KnightlyOrder, M, 0, 0, a quest to rescue a child from a dungeon
 JHKN027, KnightlyOrder, M, 1, 0, a quest to slay countryside thieves
 JHKN028, KnightlyOrder, M, 3, 0, entry into JHKNA00
 JHKNA00, KnightlyOrder, P, 0, 0, a quest to find a necromancer in a city
-JHKN030, KnightlyOrder, M, 3, 0, a quest to pay a ransom
 JHKN029, KnightlyOrder, M, 3, 0, entry into JHKNA01
 JHKNA01, KnightlyOrder, P, 9, 0, a quest to wipe out vigilantes in a city
-JHKNA02, KnightlyOrder, P, 0, 0, log chopping in city via KN002
-JHKNA03, KnightlyOrder, P, 0, 0, bat swinging via KN025
-JHKNA04, KnightlyOrder, P, 0, 0, seeing a peaceful orc via KN011
-JHKNA05, KnightlyOrder, P, 0, 0, guiding a lost child home via KN006
-JHKNA06, KnightlyOrder, P, 0, 0, running for papers via KN026
-JHKNA07, KnightlyOrder, P, 0, 0, confrontation via KN025
-JHKNA08, KnightlyOrder, P, 0, 0, religious confrontation via KN???
-JHKNA09, KnightlyOrder, P, 0, 0, cemetery escort via KN015
--bring an exterminator to resolve an infestation
+JHKN030, KnightlyOrder, M, 3, 0, a quest to pay a ransom
+JHKN031, KnightlyOrder, M, 0, 0, a quest to hire an exterminator
+-JHKNA02, KnightlyOrder, P, 0, 0, log chopping in city via KN002
+-JHKNA03, KnightlyOrder, P, 0, 0, bat swinging via KN025
+-JHKNA04, KnightlyOrder, P, 0, 0, seeing a peaceful orc via KN011
+-JHKNA05, KnightlyOrder, P, 0, 0, guiding a lost child home via KN006
+-JHKNA06, KnightlyOrder, P, 0, 0, running for papers via KN026
+-JHKNA07, KnightlyOrder, P, 0, 0, confrontation via KN025
+-JHKNA08, KnightlyOrder, P, 0, 0, religious confrontation via KN???
+-JHKNA09, KnightlyOrder, P, 0, 0, cemetery escort via KN015
+-certain kind of beast is too dominant in a region, is exterminating others. go to place and kill many (shrine?)
 -slay a mage who teleports beasts into a palace. kill quickly or get teleported elsewhere and fail
 -go into dungeon to look for someone, start sprawling quest
 -A tongue in cheek quest where you have to rescue a "princess" that is actually a hairy, half naked, male nord barbarian [edit (or something similar)].
