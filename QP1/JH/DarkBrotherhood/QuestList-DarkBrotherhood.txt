@@ -28,6 +28,7 @@ JHDB016, DarkBrotherHood, M, 0, 0, a quest to poison with a plant
 JHDB017, DarkBrotherHood, M, 1, X, a quest to steal Mages Guild research notes
 JHDB018, DarkBrotherHood, M, 2, X, a quest to slay a debtor
 JHDB019, DarkBrotherHood, M, 2, 0, a quest to solve a puzzle to find a mark
+JHDB020, DarkBrotherHood, M, 6, 1, a quest to help the Mages Guild end a rogue summoner
 -artifact quest, a diplomat from another region must be slain. Follow paper trail, slaying enemies. Progressively larger groups begin following PC. Diplomat must be slain within 10 seconds of first hit to prevent recall.
 -find a person in hiding. Interrogate a family member by attack.
 -a quest to slay a member of the city guard who interferes with the Brotherhood. Injury leads to failure timer
