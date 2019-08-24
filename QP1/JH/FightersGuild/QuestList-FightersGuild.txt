@@ -23,13 +23,14 @@ JHFG012, FightersGuild, M, 1, 0, a quest to slay a Mages Guild member in a city
 JHFG013, FightersGuild, M, 0, 0, a quest to get a giant out of a house
 JHFG014, FightersGuild, M, 7, 0, a quest to free the town of a gargoyle siege
 JHFG015, FightersGuild, M, 1, 0, a quest to fight in a dungeon with a partner
-JHFG016, FightersGuild, M, 4, 0, a quest to get rid of a bad guild member
+JHFG016, FightersGuild, M, 4, 1, a quest to get rid of a bad guild member
 JHFG017, FightersGuild, M, 4, 0, a quest to slay a high-ranking Mages Guild Necromancer
 JHFG018, FightersGuild, M, 4, 0, a quest to guard a weapons shop at night
 JHFG019, FightersGuild, M, 6, 0, a quest to defend the city against appearing monsters
 JHFG020, FightersGuild, M, 1, 0, a quest to persuade a guild member to start again
 JHFG021, FightersGuild, M, 1, 0, a quest to escort a debtor
 JHFG022, FightersGuild, M, 1, 0, a quest to guard a tavern
+JHFG023, FightersGuild, M, 0, 0, a quest to cull tigers
 JHFGA00, FightersGuild, M, 4, 1, entry into JHFGA01
 JHFGA01, FightersGuild, P, 0, 0, a quest to help someone fleeing the Dark Brotherhood
 JHFGB0X, FightersGuild, M, 75, 0, entry into JHMFB??
