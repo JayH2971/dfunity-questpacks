@@ -5,13 +5,13 @@ DisplayName: The Cartographers
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          JHPQ005 CARTOGRAPHERS OFFER
+<ce>          JHCART CARTOGRAPHERS OFFER
 
 RefuseQuest:  [1001]
-<ce>          JHPQ005 CARTOGRAPHERS REFUSAL
+<ce>          JHCART CARTOGRAPHERS REFUSAL
 
 AcceptQuest:  [1002]
-<ce>           JHPQ005 CARTOGRAPHERS ACCEPTANCE
+<ce>           JHCART CARTOGRAPHERS ACCEPTANCE
 
 QuestFail:  [1003]
 <ce>   You were given =timer_ days to start your
