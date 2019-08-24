@@ -1,0 +1,159 @@
+-- Cartographers Quest
+Quest: JHCG026
+DisplayName: Castle Necromoghan
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCG026
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCG026
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCG026
+
+QuestFail:  [1003]
+<ce>   Your assignment to scout Castle
+<ce>   Necromoghan has now run over.
+
+QuestComplete:  [1004]
+<ce>        Very good, Pathfinder. Did you take a look
+<ce>        inside? Others have told me about awful moaning
+<ce>        they hear from its depths. I'm happy to assign
+<ce>        others to it all day long, even if it were to come
+<ce>        out of my own pay. Speaking of pay, here's yours.
+
+Message:  1010
+<ce>        "Letter, %pcf! The Cartographers!" A courier
+<ce>        cheerfully puts a letter into your hands before
+<ce>        turning and walking away.
+<--->
+<ce>        A courier waves to you. "Hey, %ra! You're
+<ce>        that Pathfinder with the Cartographers, right?
+<ce>        This is for you!" You receive a letter.
+
+Message:  1011
+  Pathfinder,
+ 
+  We have an assignment which required something
+  of etiquette. Please do not divulge widely the terms
+  of this mission. We need to send you to Castle
+  Necromoghan in Daggerfall. If you do not understand
+  the significance of it, do not ask. You have =timer_
+  days to bring your report. Ask me if you need directions.
+  Be certain to physically enter the location in this case
+  to provide us with the most accurate chart possible.
+ 
+                         _qg_
+                         Master Assistant
+                         The Cartographers
+                         ___place_, ____place_
+
+Message:  1012
+<ce>        Before we begin, %pcf, I must emphasize
+<ce>        once again the deep importance that no one know
+<ce>        you are going to visit the place. Castle Necromoghan
+<ce>        is not meant to be publicly known. We put it on some
+<ce>        maps, not on all of them.
+ 
+<ce>        To arrive, I recommend beginning at the Singing Seer
+<ce>        of Kynareth in the Daggerfall region. Press yourself against
+<ce>        the northwesternmost house in the little community there.
+<ce>        Then walk straight north. It's a bit of a trek, but it is supposed
+<ce>        to be hidden, after all. Look for a mound in the earth with
+<ce>        a decrepit door, lying before a small pond. There is no castle.
+<ce>        My theory is that the name is meant to make people go look
+<ce>        for a real castle and leave that place alone. But in any case,
+<ce>        those instructions will be sufficient. You could alternatively
+<ce>        start at The Old Yeomsley Shack and go east or Blessed Ascencion
+<ce>        of Kynareth and go west. Castle Necromoghan is where
+<ce>        all these points meet. And remember, we've given you =timer_ days.
+
+Message:  1013
+<ce>        You've found Castle Necromoghan. The name is far
+<ce>           more justified below ground than above it.
+<--->
+<ce>        Strange as it must be, this has to be Castle Necromoghan.
+
+Message:  1030
+%qdt:
+ I've been sent to make a chart for
+ the Cartographers from Castle
+ Necromoghan to ___place_ in
+ ____place_. I can go there to ask
+ _qg_ for directions. I'll
+ need to enter the castle to
+ make my chart properly.
+
+Message:  1031
+%qdt:
+ The recommendation is to begin at
+ Singing Seer of Kynareth in the
+ Daggerfall region, at the house
+ furthest to the northwest, and walk
+ straight north. Castle Necromoghan
+ will be a little mound in the earth.
+ It's where Singing Seer of Kynareth,
+ The Old Yeomsley Shack, and Blessed
+ Ascencion of Kynareth meet.
+
+Message:  1099
+<ce>  Castle Necromoghan is meant to
+<ce>  be hard to find. Look where those
+<ce>  three points converge. You'll see it.
+
+QBN:
+Item _reward_ gold range 600 to 699
+Item _letter_ letter used 1011
+
+Place _dung_ permanent Castle_Necromoghan
+Place _place_ remote tavern
+
+Clock _timer_ 65.00:00 75.00:00
+
+Person _qg_ group Chemist
+
+--	Quest start-up:
+    give pc _letter_ notify 1010
+    place npc _qg_ at _place_
+    have _letter_ set _log_
+
+_log_ task:
+    log 1030 step 0
+    start timer _timer_
+    pc at _dung_ set _inside_
+
+_qgclicked_ task:
+	clicked npc _qg_ 
+
+_begin_ task:
+    when _qgclicked_ and not _talked_ and not _found_
+    say 1012
+    reveal _dung_
+    clear _qgclicked_
+    log 1031 step 1
+    start task _talked_
+
+variable _talked_
+_inside_ task:
+     start task _found_
+
+_found_ task:
+    say 1013
+
+_reminder_ task:
+    when _qgclicked_ and _talked_ and not _found_
+    say 1099
+    clear _qgclicked_ _reminder_
+
+_victory_ task:
+    when _qgclicked_ and _found_
+    start quest JHCGENT4
+    give pc _reward_
+    end quest
+
+_timer_ task:
+         say 1003
+         start quest JHCGFAL3
+         end quest

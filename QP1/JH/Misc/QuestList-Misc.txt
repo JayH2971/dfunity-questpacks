@@ -1,0 +1,5 @@
+-- Jay_H Perpetual quest pack list
+
+schema: *name, group, membership, minReq, flag, notes
+
+JHPFIRST, InitAtGameStart, M, 0, 0, Initializes a few quests

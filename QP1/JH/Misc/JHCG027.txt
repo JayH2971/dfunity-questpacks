@@ -1,0 +1,142 @@
+-- Cartographers Quest
+Quest: JHCG027
+DisplayName: Castle Llugwych
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCG027
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCG027
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCG027
+
+QuestFail:  [1003]
+<ce>   The =timer_ days you were given to
+<ce>   chart Castle Llugwych have run out.
+
+QuestComplete:  [1004]
+<ce>        Excellent. I do ask that you keep the place
+<ce>        a secret. I will not say who the castle belongs
+<ce>        to or what purpose it has. Some of my good
+<ce>        ties to civilization might fray were I to do so.
+<ce>        Let's change the subject, shall we? Here
+<ce>        is the assignment fee, _reward_ gold.
+
+Message:  1010
+<ce>        "Letter from the Cartographers! Take it!"
+<ce>        You are given no choice before a courier
+<ce>        thrusts it into your hands.
+<--->
+<ce>        A bored-looking page hands you a letter
+<ce>        and departs before you can say a word.
+
+Message:  1011
+  Pathfinder,
+ 
+  Your next assignment is to chart the distance
+  from Castle Llugwych in Ykalon to here. You
+  are given =timer_ days. Speak to me if you
+  don't know how to get there.
+ 
+                         _qg_
+                         Master Assistant
+                         The Cartographers
+                         ___place_, ____place_
+
+Message:  1012
+<ce>        Welcome, Pathfinder. Castle Llugwych is in the
+<ce>        Ykalon region, far to the north. By far the easiest
+<ce>        starting point is at a tiny wilderness shrine called
+<ce>        the Altar of I'ric, which should already be on your
+<ce>        map. From there just go south. If it's a clear day
+<ce>        and you have good eyesight, Castle Llugwych
+<ce>        might already be in view from there. It isn't directly
+<ce>        to the south though, so make a slight adjustment to
+<ce>        the east on the way. That should be enough to get
+<ce>        you there. Report to me when you've done it.
+
+Message:  1013
+<ce>        You've found Castle Llugwych. Who knows what secrets
+<ce>        it holds out here, in the middle of nowhere.
+<--->
+<ce>        This certainly has the appearance of a
+<ce>        castle. No doubt this is Llugwych.
+
+Message:  1030
+%qdt:
+ The Cartographers need me to report
+ the distance from Castle Llugwych in
+ Ykalon to ___place_ in ____place_.
+ I can speak to _qg_
+ if I don't know how to arrive.
+
+Message:  1031
+%qdt:
+ Castle Llugwych should be south
+ and a little to the east of Altar
+ of I'ric in Ykalon. It should also
+ be visible on the horizon.
+
+Message:  1099
+<ce>  Castle Llugwych is one of the
+<ce>  easiest destinations to chart.
+<ce>  This assignment should be
+<ce>  considered a privilege.
+
+QBN:
+Item _reward_ gold range 600 to 699
+Item _letter_ letter used 1011
+
+Place _dung_ permanent Llugwych
+Place _place_ remote house2
+
+Clock _timer_ 60.00:00 70.00:00
+
+Person _qg_ group Chemist
+
+--	Quest start-up:
+    give pc _letter_ notify 1010
+    place npc _qg_ at _place_
+    have _letter_ set _log_
+
+_log_ task:
+    log 1030 step 0
+    start timer _timer_
+    pc at _dung_ set _inside_
+
+_qgclicked_ task:
+	clicked npc _qg_ 
+
+_begin_ task:
+    when _qgclicked_ and not _talked_ and not _found_
+    say 1012
+    reveal _dung_
+    clear _qgclicked_
+    log 1031 step 1
+    start task _talked_
+
+variable _talked_
+_inside_ task:
+     start task _found_
+
+_found_ task:
+    say 1013
+
+_reminder_ task:
+    when _qgclicked_ and _talked_ and not _found_
+    say 1099
+    clear _qgclicked_ _reminder_
+
+_victory_ task:
+    when _qgclicked_ and _found_
+    start quest JHCGENT4
+    give pc _reward_
+    end quest
+
+_timer_ task:
+         say 1003
+         start quest JHCGFAL3
+         end quest

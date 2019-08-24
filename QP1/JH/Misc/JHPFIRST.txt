@@ -1,0 +1,58 @@
+Quest: JHPINIT
+DisplayName: PERPET INIT
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                             JHPINIT 1000
+
+RefuseQuest:  [1001]
+<ce>                             JHPINIT 1001
+
+AcceptQuest:  [1002]
+<ce>                             JHPINIT 1002
+
+QuestFail:  [1003]
+<ce>                             JHPINIT 1003
+
+QuestComplete:  [1004]
+<ce>                             JHPINIT 1004
+
+Message:  1027
+<ce>                       Quest Pack #1 initiated.
+
+QBN:
+
+Clock _init_ 0:00
+Clock _timer_ 0:02
+
+--   Quest start-up:
+    start timer _init_
+
+_init_ task:
+    say 1027
+    start timer _timer_
+    start quest JHPQ005
+    pick one of _q1_ _q2_ _q3_
+
+
+_level_ task:
+    level 3 completed
+
+variable _q1_
+variable _q2_
+variable _q3_
+_p1_ task:
+    when _q1_ and not _level_
+    start quest JHPQB01
+
+_p2_ task:
+    when _q2_ and not _level_
+    start quest JHPQB02
+
+_p3_ task:
+    when _q3_ and not _level_
+    start quest JHPQB03
+
+_timer_ task:
+    end quest

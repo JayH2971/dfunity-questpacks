@@ -1,0 +1,79 @@
+-- Cartographers Quest, Rank 2 Failsafe
+Quest: JHCGFAL2
+DisplayName: Cartographer Failure Diversion Rank 2
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCGFAL2
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCGFAL2
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCGFAL2
+
+QuestFail:  [1003]
+<ce>          ERROR 1003 JHCGFAL2
+
+QuestComplete:  [1004]
+<ce>        How wonderful it is to see you! I was worried you had given
+<ce>        up. Your mistakes don't matter with us. There'll always be
+<ce>        someone else we can send to get the job done. We're
+<ce>        just happy to have you among our ranks. Thank you, Scout.
+<ce>        We'll send you a letter soon with your next assignment.
+
+Message:  1010
+<ce>        A middle-aged, well-dressed courier draws near.
+<ce>        "%pcf, right? I've got some mail for you.
+<ce>        Here, take this. Have a good day."
+
+Message:  1011
+  Scout,
+ 
+  The deadline for your last assignment has passed
+  and we have received no word from you. We hope
+  no evil has befallen you. Perhaps you have chosen
+  to cease working for the Cartographers, and if so,
+  we bear you no ill will. But if you have desires to stay
+  with us, please come speak to me. Your talents are
+  put to good use here. If not, we wish you the best
+  of luck in your new pursuits. %god watch over you.
+ 
+                         _qg_
+                         Pathfinder
+                         The Cartographers
+                         ___place_, ____place_
+
+QBN:
+Item _letter_ letter used 1011
+
+Place _place_ remote house2
+
+Clock _1st_ 5.00:00 10.00:00
+Clock _timer_ 36.00:00 45.00:00
+
+Person _qg_ group Librarian
+
+--	Quest start-up:
+          start timer _1st_
+          start timer _timer_
+          pick one of _Q1_ _Q2_ _Q3_
+
+variable _Q1_
+variable _Q2_
+variable _Q3_
+variable _timer_
+
+_1st_ task:
+          give pc _letter_ notify 1010
+          place npc _qg_ at _place_
+
+_qgclicked_ task:
+         clicked npc _qg_ 
+         give pc nothing
+         start quest JHCGENT2
+
+_free_ task:
+       when _timer_ and not _qgclicked_
+       end quest

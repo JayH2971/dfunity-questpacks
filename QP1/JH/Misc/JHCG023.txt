@@ -1,0 +1,135 @@
+-- Cartographers Quest
+Quest: JHCG023
+DisplayName: Direnni Tower
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHCG023
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHCG023
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHCG023
+
+QuestFail:  [1003]
+<ce>   You needed to travel to Direnni Tower by now.
+
+QuestComplete:  [1004]
+<ce>        They say Direnni Tower is one of the oldest
+<ce>        buildings in all of Tamriel. Well, that's what
+<ce>        they say. Who knows how true it is. I hope
+<ce>        you enjoyed the scenic trip, Pathfinder.
+<ce>        Have your assignment fee.
+
+Message:  1010
+<ce>        A courier presents a scroll to you.
+<ce>        "From the Cartographers," he says
+<ce>        before leaving for other ventures.
+<--->
+<ce>        A courier presents a scroll to you.
+<ce>        "From the Cartographers," she says
+<ce>        before leaving for other ventures.
+
+Message:  1011
+  Pathfinder,
+ 
+  We need a chart from Direnni Tower to here.
+  That's on the Isle of Balfiera. It's a fairly simple trip
+  if you know how to make it. If not, come see me and
+  I'll orient you as best I can. We give you =timer_ days.
+ 
+                         _qg_
+                         Master Assistant
+                         The Cartographers
+                         ___place_, ____place_
+
+Message:  1012
+<ce>        Very good, Pathfinder. Show me your map. Look
+<ce>        first at the Isle of Balfiera. There's this city in
+<ce>        the middle of the greatest land mass, Singbury.
+<ce>        Start there and head east. From there it'll just
+<ce>        be wilderness for a long while. It shouldn't be too
+<ce>        hard to see the tower itself. All the other vegetation
+<ce>        is generally quite low to the ground. Come here
+<ce>        afterwards and present your report. Best of luck.
+
+Message:  1013
+<ce>        This has to be Direnni Tower.
+<--->
+<ce>        Birds circle this enormous stone tower. This
+<ce>        must be what the Cartographers sent you for.
+
+Message:  1030
+%qdt:
+ _qg_, of ___place_ in
+ ____place_, has sent me to Direnni
+ Tower to chart the distance. I have
+ =timer_ days to do so.
+
+Message:  1031
+%qdt:
+ To reach Direnni Tower, I should start
+ in Singbury and go east. It should
+ just be a long walk until I see it.
+
+Message:  1099
+<ce>  It's an enormous stone tower,
+<ce>  in great contrast to the surrounding
+<ce>  area. It should stick out quite clearly.
+
+QBN:
+Item _reward_ gold range 800 to 899
+Item _letter_ letter used 1011
+
+Place _dung_ permanent DirenniTowerEntry
+Place _place_ remote house2
+
+Clock _timer_ 60.00:00 65.00:00
+
+Person _qg_ group Chemist
+
+--	Quest start-up:
+    give pc _letter_ notify 1010
+    place npc _qg_ at _place_
+    have _letter_ set _log_
+
+_log_ task:
+    log 1030 step 0
+    start timer _timer_
+    pc at _dung_ set _inside_
+
+_qgclicked_ task:
+	clicked npc _qg_ 
+
+_begin_ task:
+    when _qgclicked_ and not _talked_ and not _found_
+    say 1012
+    reveal _dung_
+    clear _qgclicked_
+    log 1031 step 1
+    start task _talked_
+
+variable _talked_
+_inside_ task:
+     start task _found_
+
+_found_ task:
+    say 1013
+
+_reminder_ task:
+    when _qgclicked_ and _talked_ and not _found_
+    say 1099
+    clear _qgclicked_ _reminder_
+
+_victory_ task:
+    when _qgclicked_ and _found_
+    start quest JHCGENT4
+    give pc _reward_
+    end quest
+
+_timer_ task:
+         say 1003
+         start quest JHCGFAL3
+         end quest
