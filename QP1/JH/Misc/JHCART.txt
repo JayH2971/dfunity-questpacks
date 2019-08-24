@@ -1,5 +1,5 @@
 -- Perpetual Quest
-Quest: JHPQ005
+Quest: JHCART
 DisplayName: The Cartographers
 -- Message panels
 QRC:

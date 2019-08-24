@@ -32,9 +32,8 @@ Clock _timer_ 0:02
 _init_ task:
     say 1027
     start timer _timer_
-    start quest JHPQ005
+    start quest JHCART
     pick one of _q1_ _q2_ _q3_
-
 
 _level_ task:
     level 3 completed
