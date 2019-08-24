@@ -1,4 +1,3 @@
--- Perpetual Quest
 Quest: JHCART
 DisplayName: The Cartographers
 -- Message panels
