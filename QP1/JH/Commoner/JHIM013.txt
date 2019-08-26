@@ -1,7 +1,6 @@
 Quest: JHIM013
 DisplayName: A Word of Encouragement
 -- Message panels
---Another talking quest. Someone depressed needs some encouragement.
 QRC:
 
 QuestorOffer:  [1000]
