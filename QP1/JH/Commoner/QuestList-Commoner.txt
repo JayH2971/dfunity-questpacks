@@ -17,12 +17,14 @@ JHIM005, Commoners, N, 0, 0, a quest to solve a bar fight
 JHIM006, Commoners, N, 0, 0, a quest to break a grave curse
 JHIM007, Commoners, N, 0, 0, a quest for vengeance in a tavern
 JHIM008, Commoners, N, 0, 0, a quest for reconciliation with witches
+JHIM009, Commoners, N, 0, 0, a quest to spook someone with a fake abduction
 JHIM010, Commoners, N, 0, 0, a quest buying a treasure map
 JHIM011, Commoners, N, 0, 0, a quest as a bodyguard
 JHIM012, Commoners, N, 0, 0, a quest to test a runed object
 JHIM013, Commoners, N, 0, 0, a quest to talk with a frustrated person
-JHIM014, Commoners, N, 0, 0, a quest to rob a house
-JHIM015, Commoners, N, 0, 0, a quest to rob a house
+JHIM014, Commoners, N, 0, 0, a quest to rob a house (small)
+JHIM015, Commoners, N, 0, 0, a quest to rob a house (large)
+-JHIM016, Commoners, N, 0, 0, a test of memory
 -The shopkeeper informs you that after years of mediocre performance, this shop must shortly close unless there's a major financial reversal. The PC is asked to steal a bag of merchandise from another store in exchange for the shopkeeper's last heirloom.
 -Innkeeper quest: The NPC is far too busy, but feels the need to place some flowers on a loved one's grave. He/she bought a particular bouquet of flowers from a shady salesperson who claimed they were proper for the month. 50/50 chance of the flowers causing a zombie to rise from the graveyard or a message coming from the departed loved one. Mischevious salesperson, motive not yet decided. [needs "when dropped anitem"]
 -Innkeeper quest: Loan some money to an NPC to keep their shop. 80% chance of a good return, 20% chance of little or no reward.
