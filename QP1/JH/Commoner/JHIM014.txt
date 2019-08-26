@@ -7,7 +7,7 @@ QuestorOffer:  [1000]
 <ce>  Quiet down. I've got a lead on a house
 <ce>  in town that's gonna be holding some
 <ce>  big money overnight. I can tell you
-<ce>  where but it's gonna cost you money.
+<ce>  where but it's gonna cost you.
 <ce>  Wanna find out?
 
 RefuseQuest:  [1001]
@@ -117,7 +117,7 @@ _nosneak_ task:
     stop timer _sneak_
 
 _entry_ task:
-    when _inside_ and not _day_
+    when _inside_ and _start_ and not _day_
     say 1011
     start timer _sneak_
 
@@ -125,7 +125,7 @@ _day_ task:
     daily from 5:00 to 23:59
 
 _caught1_ task:
-    when _inside_ and _day_
+    when _inside_ and _start_ and _day_
     say 1015
     create foe _warr_ every 0 minutes 3 times with 100% success
     legal repute -20
