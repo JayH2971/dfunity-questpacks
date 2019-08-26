@@ -27,7 +27,7 @@ Message:  1010
 <ce>  So here's the deal. _res_ here in
 <ce>  town's gonna be storing some money from an
 <ce>  estate sale. I didn't hear how much
-<ce>  but it's a couple thou' I think.
+<ce>  but it's more than a thou' I think.
 <ce>  Go in after midnight. If you try it
 <ce>  during the day they're gonna go ballistic
 <ce>  on ya. Their courier's gonna show up to take

@@ -89,7 +89,7 @@ QBN:
 Person _qg_ group Questor
 
 Item _sack_ large_sack
-Item _reward_ gold range 1835 to 2999
+Item _reward_ gold range 1435 to 2499
 
 Place _res_ local house
 
