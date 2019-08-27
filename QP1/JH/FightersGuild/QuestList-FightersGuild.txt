@@ -31,6 +31,7 @@ JHFG020, FightersGuild, M, 1, 0, a quest to persuade a guild member to start aga
 JHFG021, FightersGuild, M, 1, 0, a quest to escort a debtor
 JHFG022, FightersGuild, M, 1, 0, a quest to guard a tavern
 JHFG023, FightersGuild, M, 0, 0, a quest to cull tigers
+JHFG024, FightersGuild, M, 4, 1, a contest to kill bats
 JHFGA00, FightersGuild, M, 4, 1, entry into JHFGA01
 JHFGA01, FightersGuild, P, 0, 0, a quest to help someone fleeing the Dark Brotherhood
 JHFGB0X, FightersGuild, M, 75, 0, entry into JHMFB??
