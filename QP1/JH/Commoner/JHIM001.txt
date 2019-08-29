@@ -1,5 +1,4 @@
--- Innkeeper and Merchant
-Quest: JHIMU001
+Quest: JHIM001
 DisplayName: Quiz Time
 -- Message panels
 QRC:
