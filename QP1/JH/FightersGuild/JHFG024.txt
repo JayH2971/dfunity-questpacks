@@ -32,8 +32,8 @@ QuestFail:  [1003]
 
 QuestComplete:  [1004]
 <ce>  That's how we do it, buddy. Great work.
-<ce>  I took the time to count out your share.
-<ce>  Fifty-fifty, you and me. Here you go.
+<ce>  I took the time to turn your share into
+<ce>  something more useful than money.
 
 Message:  1010
 <ce> You hear _qgiver_'s voice
@@ -73,7 +73,7 @@ QBN:
 Person _qgiver_ group Questor male
 
 Item _chest_ item class 1 subclass 8
-Item _reward_ gold
+Item _reward_ magic_item
 
 Foe _bat_ is Giant_bat
 
