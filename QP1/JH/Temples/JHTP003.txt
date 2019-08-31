@@ -107,6 +107,7 @@ _okay_ task:
 
 _okayend_ task:
   when _qgclicked_ and _okay_
+  drop _npc_ face
   say 1026
   give pc _reward_
   end quest
