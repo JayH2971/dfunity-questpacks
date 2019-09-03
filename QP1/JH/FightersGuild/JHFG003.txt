@@ -146,7 +146,7 @@ Person _qgiver_ group Questor male
 Person _dummytg_ faction The_Thieves_Guild
 Person _noble_ faction Random_Noble
 
-Place _dungeon_ remote dungeon1
+Place _dungeon_ remote dungeon2
 Place _palace_ remote palace
 
 Clock _timer_ 00:00 0 flag 17 range 0 2

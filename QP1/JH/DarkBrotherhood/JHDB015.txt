@@ -94,7 +94,7 @@ Person _qgiver_ group Questor male
 
 Item _gem_ gem
 
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon2
 
 Clock _gtimer_ 6:00 7:00
 Clock _spawn_ 8:00 1.00:00
