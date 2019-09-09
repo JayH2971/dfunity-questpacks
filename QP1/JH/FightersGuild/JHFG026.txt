@@ -71,10 +71,10 @@ Item _letter_ letter used 1013
 
 Person _qgiver_ group Questor male
 
-Place _random_ local random
+Place _random_ local tavern
 
 Clock _timer_ 1.00:00
-Clock _fight_ 0:03
+Clock _fight_ 0:04
 
 Foe _nme_ is Thief
 Foe _nme2_ is Thief
