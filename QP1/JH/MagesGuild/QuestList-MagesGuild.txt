@@ -25,8 +25,8 @@ JHMG013, MagesGuild, M, 1, 0, a quest to bring a wandering atronach home
 JHMG014, MagesGuild, M, 6, 0, a quest to obtain a report on vampirism
 JHMG015, MagesGuild, M, 1, 0, a quest to defend a shapeshifted member
 JHMG016, MagesGuild, M, 2, 0, a quest to rescue an ambitious experimenter
-JHMG017, MagesGuild, M, 0, 0, a quest to identify a document
-JHMG018, MagesGuild, M, 0, 0, a quest to purify and deliver a poisoned liquid
+JHMG017, MagesGuild, M, 0, 1, a quest to identify a document
+JHMG018, MagesGuild, M, 0, 1, a quest to purify and deliver a poisoned liquid
 JHMG019, MagesGuild, M, 2, 0, a quest to root out a necromancer
 JHMG020, MagesGuild, M, 9, 1, an attempt on your life
 JHMG021, MagesGuild, M, 5, 0, entry into JHMGB??
