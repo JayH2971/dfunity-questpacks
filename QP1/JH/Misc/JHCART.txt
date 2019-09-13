@@ -37,6 +37,7 @@ Message:  1010
 
 Message:  1011
   The Cartographers' Association of the Iliac Bay
+  ____place_ Charter
  
   A group of expert explorers and designers wish to
   chart some of the locations lost to memory that might
