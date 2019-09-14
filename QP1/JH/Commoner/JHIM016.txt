@@ -1,0 +1,141 @@
+Quest: JHIM016
+DisplayName: Concentration
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  (Yawn) ... I feel awfully bored.
+<ce> If you're looking for something to do,
+<ce> I could test your memory with a fable
+<ce> of a sort, see how well you can remember
+<ce> it. I'll pay you if you answer it all
+<ce> right. Want to give it a try?
+
+RefuseQuest:  [1001]
+<ce> Nothing lost by asking.
+
+AcceptQuest:  [1002]
+<ce>  Well then, here goes.
+<ce>
+<ce>  The great prince _prince_ called forth
+<ce>  his Nord servant, who bore a recently washed
+<ce>  longsword, to practice fencing. An Argonian who saw
+<ce>  them stood by to admire their expertise. He wished
+<ce>  to be so skilled at long blades, but he only
+<ce>  knew to wield knives. The Argonian went to the
+<ce>  Temple of Akatosh to pursue training with
+<ce>  a katana he had purchased from a pawnbroker,
+<ce>  but his belief in Arkay was an abomination
+<ce>  to them, and he was rejected. He left 200 gold
+<ce>  in their coffers to try to change their mind
+<ce>  but their demeanors stayed harsh as ever.
+<ce>  In despair at the treatment he received, the
+<ce>  Argonian returned to the field where he saw
+<ce>  the prince _prince_ practicing and found
+<ce>  him laying in the grass with a severe wound.
+<ce>  He lept over the fence to bandage up the
+<ce>  wounded man. The Nord came out from hiding and
+<ce>  stabbed the Argonian with a poisoned claymore,
+<ce>  nestling the pommel in the prince's palm.
+<ce>  He then took the paralyzed Argonian's hand
+<ce>  and placed a poisoned tanto in it. Having
+<ce>  framed the lizard, he took the Prince's
+<ce>  inheritance and rode off to his own country.
+
+QuestFail:  [1003]
+<ce>   Nope. It's a good one, isn't it?
+
+QuestComplete:  [1004]
+<ce>  Hey, not bad %ra. Take this money.
+
+Message:  1010
+<ce>  First question: the Argonian left 
+<ce>  1200 gold in the temple's coffers.
+
+Message:  1011
+<ce>  Second question: the Argonian was
+<ce>  rejected from the Temple of Arkay.
+
+Message:  1012
+<ce>  Third question: The Nord stabbed the
+<ce>  Argonian with a poisoned claymore.
+
+Message:  1013
+<ce>  Fourth question: The prince was
+<ce>  practicing jousting with the Nord
+<ce>  at the start of the story.
+
+Message:  1014
+<ce>  Fifth question: The Argonian would have
+<ce>  used bandages to help the wounded prince.
+
+Message:  1015
+<ce>  Sixth question: The Argonian was rejected from
+<ce>  the Temple of Akatosh because of his religion.
+
+Message:  1016
+<ce>  Seventh question: In the final trickery,
+<ce>  the tanto in the Argonian's hand was poisoned
+<ce>  but the claymore in the prince's was not.
+
+Message:  1017
+<ce>  Eighth question: the Nord placed both of the
+<ce>  prince's hands on the handle of the claymore
+<ce>  when framing the Argonian.
+
+Message:  1018
+<ce>  Ninth question: The Argonian had purchased
+<ce>  his katana from a pawn store.
+
+Message:  1019
+<ce>  Tenth question: The weapon the Nord brandished
+<ce>  at the start of the story was a longsword.
+
+QBN:
+Item _reward_ gold
+
+Person _prince_ group Resident1 male
+
+Clock _failsafe_ 2:00
+
+--	Quest start-up:
+	start timer _failsafe_
+	prompt 1010 yes _fail_ no _S.01_
+
+_S.01_ task:
+	prompt 1011 yes _fail_ no _S.02_
+
+_S.02_ task:
+	prompt 1012 yes _S.03_ no _fail_
+
+_S.03_ task:
+	prompt 1013 yes _fail_ no _S.04_
+
+_S.04_ task:
+	prompt 1014 yes _S.05_ no _fail_
+
+_S.05_ task:
+	prompt 1015 yes _S.06_ no _fail_
+
+_S.06_ task:
+	prompt 1016 yes _fail_ no _S.07_
+	
+_S.07_ task:
+	prompt 1017 yes _fail_ no _S.08_
+	
+_S.08_ task:
+	prompt 1018 yes _S.09_ no _fail_
+	
+_S.09_ task:
+	prompt 1019 yes _pcgetsgold_ no _fail_
+
+_fail_ task:
+	say 1003
+	end quest
+
+_pcgetsgold_ task:
+	give pc _reward_
+	end quest 
+
+_failsafe_ task:
+	end quest

@@ -1,5 +1,5 @@
 -- Innkeeper and Merchant
-Quest: JHIMU004
+Quest: JHIM004
 DisplayName: A Game at Dinner
 -- Message panels
 QRC:
