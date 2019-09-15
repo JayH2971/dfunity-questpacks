@@ -61,7 +61,7 @@ Scourg Barrow? Go to Bleeding Soul of Arkay in the Dragontail Mountains. Head st
 <--->
 Ha ha ha! You got a death wish, %ra? Don't go there!
 <--->
-They say it's below Vartom Court and above Makehda. No idea about the latitude.
+They say it's below Vartom Court and above Makehda. No idea about the longitude.
 
 Message:  1030
 %qdt:
