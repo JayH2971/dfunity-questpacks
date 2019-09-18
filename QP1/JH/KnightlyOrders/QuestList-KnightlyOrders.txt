@@ -37,9 +37,9 @@ JHKN025, KnightlyOrder, M, 1, 0, a quest to protect a rural shrine
 JHKN026, KnightlyOrder, M, 0, 0, a quest to rescue a child from a dungeon
 JHKN027, KnightlyOrder, M, 1, 0, a quest to slay countryside thieves
 JHKN028, KnightlyOrder, M, 3, 0, entry into JHKNA00
-JHKNA00, KnightlyOrder, P, 0, 0, a quest to find a necromancer in a city
+JHKN028a, KnightlyOrder, P, 0, 0, a quest to find a necromancer in a city
 JHKN029, KnightlyOrder, M, 3, 0, entry into JHKNA01
-JHKNA01, KnightlyOrder, P, 9, 0, a quest to wipe out vigilantes in a city
+JHKN029a, KnightlyOrder, P, 0, 0, a quest to wipe out vigilantes in a city
 JHKN030, KnightlyOrder, M, 3, 0, a quest to pay a ransom
 JHKN031, KnightlyOrder, M, 0, 0, a quest to hire an exterminator
 -go to tomb, put down the undead there. necromancer influence is too strong to end it
