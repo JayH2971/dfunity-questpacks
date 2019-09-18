@@ -13,7 +13,7 @@ QuestorOffer:  [1000]
 <ce>  their encampments, but they have escaped us, and now
 <ce> word has come that a full assault will soon be upon us.
 <ce> Will you stand watch with me to see whether these
-<ce> things are so, knight of the order?
+<ce> things are so, good knight?
 
 RefuseQuest:  [1001]
 <ce>  Then go quickly, %pcf. I don't want a
@@ -40,6 +40,14 @@ QuestComplete:  [1004]
 <ce> 
 <ce> Others begin to move and clean up the bodies.
 <ce> The assault is over, and life can resume once more.
+
+RumorsPostFailure:   [1006]
+__questgiver_ managed to save ___palace_ from enemy knights.
+
+RumorsPostSuccess:   [1007]
+___palace_ is safe once more, thanks to %pcn.
+<--->
+%pcn, for the __questgiver_, saved ___palace_.
 
 Message:  1010
 <ce> A page bearing the crest of %crn
@@ -119,8 +127,8 @@ _delay2_ task:
 
 _spawnout_ task:
 	start timer _outdoors_
-	create foe _warr_ every 2 minutes indefinitely with 66% success
-	create foe _barb_ every 3 minutes indefinitely with 80% success
+	create foe _warr_ every 3 minutes indefinitely with 50% success
+	create foe _barb_ every 5 minutes indefinitely with 80% success
 
 _msg_ task:
 	killed 1 _warr_
@@ -142,7 +150,7 @@ _finish1_ task:
 variable _inside_
 _spawnin_ task:
 	when _inside_ and _finish1_
-	create foe _kni_ every 2 minutes 4 times with 100% success
+	create foe _kni_ every 3 minutes 4 times with 100% success
 
 _victory_ task:
 	killed 8 _kni_
