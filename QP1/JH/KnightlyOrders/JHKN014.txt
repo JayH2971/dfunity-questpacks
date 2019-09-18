@@ -112,12 +112,10 @@ Foe _enemy2_ is 6 Knight
 
 _inside_ task:
   _lett_ used do _pers_
-  play sound door_slam every 0 minutes 1 times
   say 1020
   start timer _quick_
 
 _quick_ task:
-  play sound sword_ready every 0 minutes 1 times
   say 1003
   take _lett_ from pc
   start timer _delay_
