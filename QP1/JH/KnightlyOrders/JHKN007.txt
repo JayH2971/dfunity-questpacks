@@ -30,8 +30,7 @@ AcceptQuest:  [1002]
 <ce>              at work. No, this is a powerful enemy that
 <ce>           we cannot detect. Do your work to search for the
 <ce>                  guilty party, and then go to _res_
-<ce>                   to find _priest_, a utility mage
-<ce>                renowned for breaking illusion spells.
+<ce>                   to find _priest_, a utility mage.
 <ce>           Confront the suspect together and do your duty.
 <ce>           I cannot give you more than two days to do this.
 
@@ -58,12 +57,12 @@ Message:  1021
 <ce>                 to give me peace and play out their
 <ce>             investigation elsewhere. Now leave, lest my
 <ce>             pocket knife find its way into some part of
-<ce>               you and your murderer find you at last.
+<ce>               you, and your murderer find you at last.
 
 Message:  1022
 <ce>                  Ah, welcome, %pcf. Have you found
 <ce>             someone to investigate? I can't be outdoors
-<ce>              for long, as a person like myself has many
+<ce>              for long, as someone like myself has many
 <ce>              foes. Let us hurry and see this person you
 <ce>            speak of, and get to the truth of the matter.
 
