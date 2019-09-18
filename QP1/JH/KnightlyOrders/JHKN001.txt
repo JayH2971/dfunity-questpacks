@@ -104,7 +104,7 @@ variable _inside_
 _quest_ task:
 	when _inside_ and not _slain_
 	create foe _enemy1_ every 24 minutes indefinitely with 7% success
-	create foe _enemy2_ every 29 minutes indefinitely with 5% success
+	create foe _enemy2_ every 15 minutes indefinitely with 3% success
 
 _inj_ task:
 	injured _enemy1_
