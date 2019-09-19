@@ -1,6 +1,6 @@
 -- Mages Guild
 -- Min Rep: 95
-Quest: JHMGX00
+Quest: JHMG021
 DisplayName: Death's Embrace
 -- Message panels
 QRC:
