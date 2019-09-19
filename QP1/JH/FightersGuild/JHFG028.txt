@@ -1,0 +1,161 @@
+Quest: JHFG028
+DisplayName: One Life for Another
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  Got an escort mission... I think. This one
+<ce>  gives me the creeps. It's got all kinds of
+<ce>  stuff I don't like about it, but I've got
+<ce>  to take it seriously and offer it just like
+<ce>  any other job. If you wanna take someone
+<ce>  to another town and feel ready for some
+<ce>  tough combat, I could use you right now.
+
+RefuseQuest:  [1001]
+<ce>  Yeah, I don't blame you. Maybe he'll give up.
+<--->
+<ce>  Yeah, I don't blame you. Maybe she'll give up.
+
+AcceptQuest:  [1002]
+<ce>  I owe you one. Really, I can't give this out
+<ce>  in good faith without telling you that something
+<ce>  just feels bad about it. Anyway, I won't hold you
+<ce>  any longer. Go look for _person_,
+<ce>  who's in _place_. Take %g2 on over to
+<ce>  a place called _home_ in
+<ce>  ___home_. And be ready for anything,
+<ce>  'cause the rumors I hear about this =person_
+<ce>  are not pleasant stuff. Safe journey, %pcf.
+
+QuestFail:  [1003]
+<ce>  Everything all right? 
+
+QuestComplete:  [1004]
+<ce>                 "This is my friend! Won't you offer
+<ce>                that payment we agreed on, dear sir?"
+<ce>
+<ce>                    _person_'s odd behavior nearly
+<ce>             distracts you as this cloaked figure reaches
+<ce>              out to touch you with its finger. You see
+<ce>             a grin cross its face as it grazes you. Your
+<ce>               surroundings begin to shimmer. Something
+<ce>                    is happening. _person_ flees.
+<ce>
+<ce>               "I'm sorry! I'm so sorry! They demanded
+<ce>               a sacrifice and I couldn't bear to do it
+<ce>                     myself! Please forgive me!"
+<ce>
+<ce>                The hooded figure silently warps away,
+<ce>                   and other beings take its place.
+
+Message:  1011
+<ce>                 Oh! Are you from the Fighters Guild?
+<ce>                     H-hello, I'm _person_. Thank
+<ce>              you for coming. I need help getting home.
+<ce>                    I live in ___home_, I'm afraid
+<ce>               of traveling that far and I want someone
+<ce>                to keep me safe as I go. Can you take
+<ce>                 me there? I have a friend who'll pay
+<ce>                 you =reward_ gold when we get there.
+<ce>                I need to be there in =timer_ days.
+
+Message:  1013
+<ce>               While you battled these daedra, _person_
+<ce>                has most likely run far from ___home_.
+<ce>           You wonder whether %g3 account with Oblivion has
+<ce>               been settled by now. At least these foes
+<ce>                 should carry reward enough for you.
+
+Message:  1014
+<ce>            Rather than remain in this deathtrap, you flee
+<ce>        the building. The daedra appear to have no interest in
+<ce>             pursuing you. Meanwhile, you hear _person_'s
+<ce>                           voice from afar.
+<ce>
+<ce>            "No! Leave me alone! You want the %ra, not me!
+<ce>                  Someone help, they're taking me--"
+<ce>
+<ce>                     Then %g3 voice trails away.
+
+Message:  1021
+<ce>                 A warping effect surrounds _person_,
+<ce>           and space itself appears to distort. The effect
+<ce>           rapidly builds until it seems as though the air
+<ce>             itself is about to hemorrhage magical power.
+<ce>               Once %g1 notices %g3 eyes grow wide but
+<ce>            there is nothing you can do; %g1 is
+<ce>              sucked in amid an otherworldly silence.
+
+Message:  1030
+%qdt:
+ I've accepted a mission on behalf of
+ the Fighters Guild to escort someone named
+ _person_ to ___home_.
+ I'll be paid =reward_ gold pieces when we arrive.
+
+QBN:
+Person _person_ faction Dancers
+Person _friend_ faction The_Necromancers male
+
+Place _place_ local random
+Place _home_ remote house
+
+Item _reward_ gold
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _n1_ is Daedroth
+Foe _n2_ is Fire_daedra
+Foe _n3_ is Frost_daedra
+
+--	Quest start-up:
+    place npc _person_ at _place_
+    log 1030 step 0
+
+_talk_ task:
+    clicked npc _person_
+    say 1011
+    hide npc _person_
+    add _person_ face
+    place npc _friend_ at _home_
+    log 1030 step 0
+    start timer _timer_
+
+_begin_ task:
+    clicked npc _friend_
+    give pc nothing
+    hide npc _friend_
+    drop _person_ face
+    pc at _home_ do _inside_
+    place foe _n1_ at _home_
+    place foe _n2_ at _home_
+    place foe _n3_ at _home_
+-    create foe _n2_ every 0 minutes 1 times with 100% success
+-    create foe _n3_ every 0 minutes 1 times with 100% success
+    stop timer _timer_
+
+_slain1_ task:
+    killed 1 _n1_
+
+_slain2_ task:
+    killed 1 _n2_
+
+_slain3_ task:
+    killed 1 _n3_
+
+_victory_ task:
+    when _slain1_ and _slain2_ and _slain3_
+    say 1013
+    end quest
+
+variable _inside_
+_escape_ task:
+    when _begin_ and not _inside_
+    say 1014
+    end quest
+
+_timer_ task:
+    say 1021
+    drop _person_ face
+    end quest

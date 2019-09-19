@@ -18,7 +18,7 @@ JHFG006, FightersGuild, M, 1, 0, a quest to stop an assassination inside a home
 JHFG007, FightersGuild, M, 1, 1, courier work + ambush in a house
 JHFG009, FightersGuild, M, 2, 0, expert werewolf hunting
 JHFG010, FightersGuild, M, 3, 0, a quest to rid a city's streets of poisonous critters
-JHFG011, FightersGuild, M, 9, 0, an artifact quest to invade a vampire cult
+JHFG011, FightersGuild, M, 9, 1, an artifact quest to invade a vampire cult
 JHFG012, FightersGuild, M, 1, 0, a quest to slay a Mages Guild member in a city
 JHFG013, FightersGuild, M, 1, 0, a quest to get a giant out of a house
 JHFG014, FightersGuild, M, 7, 0, a quest to free the town of a gargoyle siege
@@ -30,18 +30,15 @@ JHFG019, FightersGuild, M, 6, 0, a quest to defend the city against appearing mo
 JHFG020, FightersGuild, M, 1, 0, a quest to persuade a guild member to start again
 JHFG021, FightersGuild, M, 1, 0, a quest to escort a debtor
 JHFG022, FightersGuild, M, 1, 0, a quest to guard a tavern
--JHFG023, FightersGuild, M, 0, 0,
+JHFG023, FightersGuild, M, 6, 0, a quest to save someone from hunting vampires
 JHFG024, FightersGuild, M, 4, 1, a contest to kill bats
 JHFG025, FightersGuild, M, 0, 0, a quest to help find someone from the Mages Guild
 JHFG026, FightersGuild, M, 0, 0, a quest to interrupt thieves' plan to destroy evidence
-JHFGA00, FightersGuild, M, 4, 1, entry into JHFGA01
-JHFGA01, FightersGuild, P, 0, 0, a quest to help someone fleeing the Dark Brotherhood
-JHFGB0X, FightersGuild, M, 75, 0, entry into JHMFB??
-JHFGB00, FightersGuild, P, 0, 0, a quest to fight daedra
-JHFGB02, FightersGuild, P, 0, 0, a quest to pay off a debt
-JHFGB03, FightersGuild, P, 0, 0, a quest to seek an enchanted item
-JHFGB04, FightersGuild, P, 0, 0, a quest for Quill Circus
-JHFGDAED, FightersGuild, P, 0, 0, kill a daedra because of FG003
+JHFG027, FightersGuild, M, 4, 1, a quest to help someone fleeing the Dark Brotherhood
+JHFG028, FightersGuild, M, 8, 1, a quest to supposedly escort someone
+-JHFGB02, FightersGuild, P, 0, 0, a quest to pay off a debt
+-JHFGB03, FightersGuild, P, 0, 0, a quest to seek an enchanted item
+-JHFGB04, FightersGuild, P, 0, 0, a quest for Quill Circus
 -Archaeologists: max daedra skill, go to graveyard, Meridia, get quest, alt path to Meridia reward
 -punishment for lacking skill checks (magic schools, weapon types)
 -non-violent ways through quests for TG, MG, DB
