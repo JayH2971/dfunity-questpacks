@@ -46,9 +46,8 @@ Message: 1020
 <ce> silent. The air is heavy.
 <ce>
 <ce> Oddly, you can't see anyone but you can sense
-<ce> some breathing nearby. Someone must be close,
-<ce> and whoever it is forbears to see what purpose
-<ce> you have here.
+<ce> some breathing nearby, and perhaps an
+<ce> outstretched hand. You'd better act fast.
 
 Message: 1021
 <ce> A terse hand tears the letter from your hand. 
