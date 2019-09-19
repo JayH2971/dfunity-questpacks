@@ -29,11 +29,8 @@ JHMG017, MagesGuild, M, 0, 1, a quest to identify a document
 JHMG018, MagesGuild, M, 0, 1, a quest to purify and deliver a poisoned liquid
 JHMG019, MagesGuild, M, 2, 0, a quest to root out a necromancer
 JHMG020, MagesGuild, M, 9, 1, an attempt on your life
--JHMG021, MagesGuild, M, 5, 0, entry into JHMGB??
-JHMGX00, MagesGuild, M, 95, 1, a quest to investigate an ancient lich
--JHMGB00, MagesGuild, P, 0, 0, a trick to rob a shop
+JHMG021, MagesGuild, M, 95, 1, a quest to investigate an ancient lich
 -JHMGB01, MagesGuild, P, 0, 0, destroy an offending relic
--JHMGB02, MagesGuild, P, 0, 0, intervention from the Blades
 -quest to find rogue imp pack in dungeon, ask townspeople
 -go to various NPCs in cities to pick up needed ingredients
 -artifact quest, join two halves of a document and take it to an expert. Expert will be slain if enough time passes. Artifact is on Daedra Lord's body.
