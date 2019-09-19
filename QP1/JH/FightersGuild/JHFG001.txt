@@ -90,10 +90,6 @@ Message:  1030
  to be back in =timer_ days
  or they'll call for the temple.
 
--Message:  1040
--<ce>              Fool. So someone has sent you to slay me.
--<ce>  Do you even know the
-
 QBN:
 Item _reward_ gold
 
