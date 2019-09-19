@@ -118,7 +118,7 @@ Person _qgiver_ group Questor
 Foe _thief_ is Thief
 Foe _cust_ is Knight
 
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon4
 
 Clock _timer_ 30.00:00
 Clock _recharge_ 1.16:00 1.23:00
