@@ -1,4 +1,4 @@
-Quest: JHFGASN1
+Quest: JHFG003a
 DisplayName: You're Hired
 
 QRC:

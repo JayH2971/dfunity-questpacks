@@ -219,7 +219,7 @@ _assassinoffer_ task:
 	pick one of _makeoffer_ _nooffer_
 
 _makeoffer_ task:
-	start quest JHFGASN1
+	start quest JHFG003a
 
 variable _nooffer_
 
@@ -282,7 +282,7 @@ _finalblackmail_ task:
 	get item _magic_
 	get item _trink_
 	get item _diam_
-	start quest JHFGNREV
+	start quest JHFG003b
 	end quest
 
 variable _A5_
@@ -292,7 +292,7 @@ _daedraalert_ task:
 
 _daedraspawn_ task:
 	when _A5_ and _slain_
-	start quest JHFGDAED
+	start quest JHFG003c
 
 variable _A6_
 --thieves guild prompt
@@ -314,7 +314,7 @@ variable _killtg_
 _tgrep_ task:
 	when _slain_ and _A6_
 	change repute with _dummytg_ by -20
-	start quest JHFGTHRV
+	start quest JHFG003d
 
 _slain_ task:
 	killed 1 _enemy1_ saying 1020
