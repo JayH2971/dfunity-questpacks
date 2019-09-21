@@ -100,6 +100,10 @@ Message:  1027
 <ce> The lich rises to life once more in a
 <ce> new shell. Escape is your only option.
 
+Message:  1028
+<ce> The lich's incantation has perverted this place.
+<ce> Your Recall spell does not work as it should.
+
 Message:  1030
 %qdt:
  The Mages Guild has sent me on
@@ -127,6 +131,9 @@ Person _questgiver_ group Questor male
 Place _mondung_ remote dungeon
 
 Clock _timer_ 35.00:00
+Clock _recdelay_ 0:00
+Clock _recdelay2_ 0:00
+Clock _delay_ 0:00
 
 Foe _boss_ is Ancient_lich
 Foe _boss2_ is Ancient_lich
@@ -142,7 +149,7 @@ Foe _und4_ is Wraith
 	log 1030 step 0 
 	pc at _mondung_ set _inside_
 	place foe _boss_ at _mondung_
-  reveal _mondung_
+ 	reveal _mondung_
 
 _inside_ task:
   start task _announce_
@@ -160,12 +167,29 @@ _injured2_ task:
 	create foe _und2_ every 0 minutes indefinitely with 24% success
 	create foe _und3_ every 0 minutes indefinitely with 22% success
 	create foe _und4_ every 0 minutes indefinitely with 14% success
+	cast Teleport-Effect effect do _recfail_
+
+_recfail_ task:
+	say 1028
+	start timer _recdelay_
+
+_recdelay_ task:
+	start timer _recdelay2_
+
+_recdelay2_ task:
+	teleport pc to _mondung_
+	clear _recfail_ _recdelay_
 
 _announceinj_ task:
   say 1021
 
 _leave_ task:
-  when _announceinj_ and not _inside_
+  when _announceinj_ and not _inside_ and not _recfail_
+  start timer _delay_
+
+variable _delay_
+_exiting_ task:
+  when _announceinj_ and _delay_ and not _inside_
   say 1023
 
 _qgclicked_ task:
