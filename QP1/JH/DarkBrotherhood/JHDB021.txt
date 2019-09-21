@@ -29,7 +29,7 @@ AcceptQuest:  [1002]
 <ce>  in their current state. That may come to pass
 <ce>  sooner rather than later at the instigation of
 <ce>  this agent, who must be slain. This petition comes
-<ce>  from Gortwog, lord of the Orcs.
+<ce>  from Gortwog, lord of the orcs.
 <ce>  
 <ce>  The Brotherhood has no stake in this matter other
 <ce>  than that we have been hired for it. Your partner
