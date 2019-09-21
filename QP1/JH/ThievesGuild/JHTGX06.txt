@@ -125,7 +125,7 @@ _stay_ task:
 _slain_ task:
   killed 3 _warr_
   say 1070
-  change repute with _fg_ by -45
+  change repute with _fg_ by -15
   _bag_ used do _take_
   place npc _crow_ at _crowhome_
 

@@ -176,7 +176,7 @@ _slain_ task:
   killed 3 _barb_
   killed 3 _kni_
   say 1070
-  change repute with _fg_ by -30
+  change repute with _fg_ by -10
   _bag_ used do _take_
   place npc _crow_ at _crowhome_
 

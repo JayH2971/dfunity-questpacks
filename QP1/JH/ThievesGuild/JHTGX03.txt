@@ -12,9 +12,6 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce> ERROR 1002 JHTGX03
 
-QuestFail:  [1003]
-<ce> 
-
 QuestComplete:  [1004]
 <ce> Isn't this the easiest money you've ever made?
 <ce> One of my more squeamish associates over in

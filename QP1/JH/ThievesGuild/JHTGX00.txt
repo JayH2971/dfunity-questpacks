@@ -22,7 +22,6 @@ QuestFail:  [1003]
 QBN:
 Item _letter_ letter
 
-Person _qgiver_ group Questor male
 Person _tg_ faction The_Thieves_Guild
 
 Clock _timer_ 15.00:00

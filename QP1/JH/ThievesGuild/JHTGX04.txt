@@ -125,7 +125,7 @@ _grab_ task:
 _slain_ task:
   killed 3 _warr_
   start timer _delay_
-  change repute with _fg_ by -15
+  change repute with _fg_ by -5
 
 _delay_ task:
   give pc _reward_
