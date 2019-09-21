@@ -30,6 +30,7 @@ JHDB018, DarkBrotherHood, M, 2, X, a quest to slay a debtor
 JHDB019, DarkBrotherHood, M, 2, 0, a quest to solve a puzzle to find a mark
 JHDB020, DarkBrotherHood, M, 6, 1, a quest to help the Mages Guild end a rogue summoner
 JHDB021, DarkBrotherHood, M, 9, 1, an artifact quest to slay an ambassador from the Empire
+JHDB022, DarkBrotherHood, M, 8, 1, an invitation to perform for Quill Circus
 -rescue guild member, turns out to be zombie when leaving dungeon
 -kill thief who makes counterfeit letters of credit. Start at bank as crime investigator
 -find a person in hiding. Interrogate a family member by attack.
