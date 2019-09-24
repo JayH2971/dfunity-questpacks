@@ -204,7 +204,7 @@ Message:  1024
 -<ce> current alias. If we can ask around
 -<ce> for that, I bet we can find him that
 -<ce> way. Good going! Let's get moving!"
-
+-
 Message:  1025
 I dunno, but some _alias_ from the Empire is staying over in ___palace_.
 <--->
