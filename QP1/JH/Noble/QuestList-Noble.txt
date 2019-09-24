@@ -11,4 +11,5 @@ schema: *name, group, membership, minReq, flag, notes
 
 JHNL001, Nobility, N, 0, 0, a quest to slay criminals at night on the street
 JHNL002, Nobility, N, 0, 0, a quest to slay an assassin and employer
-JHNL003, Nobility, N, 0, 0, a quest to slay an overstaying guest
+JHNL003, Nobility, N, 20, 0, a quest to slay an overstaying guest
+JHNL004, Nobility, N, 0, 0, a quest to escort a person needing execution
