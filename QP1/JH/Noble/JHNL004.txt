@@ -53,6 +53,19 @@ Message:  1010
 <ce>  my presence? Let us go immediately.
 <ce>  My tasks here can wait.
 <ce>  I will follow you, %ra.
+<--->
+<ce>  What, _qgiver_ need me?
+<ce>  Yes, let us go right away.
+<--->
+<ce>  What is this? _qgiver_?
+<ce>  I shouldn't delay. I would
+<ce>  hate to tarnish my reputation
+<ce>  with %g2. Let's go now.
+<--->
+<ce>  A message from _qgiver_?
+<ce>  Yes, I agree, we should hurry.
+<ce>  I wouldn't want to alter %g3
+<ce>  opinion of me.
 
 Message:  1030
 %qdt:
