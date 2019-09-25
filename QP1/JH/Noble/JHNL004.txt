@@ -38,7 +38,7 @@ QuestComplete:  [1004]
 <ce>  family, destitute. So shall it be
 <ce>  unto all who betray %crn!"
 <ce>  
-<ce>  The vassal is carried away in a
+<ce>  The vassal is carried outside in a
 <ce>  confused, screaming rage, and the
 <ce>  blackguard follows. _qgiver_
 <ce>  looks up from the papers long enough to
@@ -54,7 +54,7 @@ Message:  1010
 <ce>  My tasks here can wait.
 <ce>  I will follow you, %ra.
 <--->
-<ce>  What, _qgiver_ need me?
+<ce>  What, _qgiver_ needs me?
 <ce>  Yes, let us go right away.
 <--->
 <ce>  What is this? _qgiver_?
