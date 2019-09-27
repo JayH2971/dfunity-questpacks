@@ -39,6 +39,12 @@ QuestComplete:  [1004]
 <ce> tangible reward for you, sort of to
 <ce> say thanks for how you've helped us out.
 
+QuestorPostSuccess:   [1008]
+The true Master Thief. Welcome.
+
+QuestorPostFailure:   [1009]
+I'm glad you're here among the living, but you only get one chance at the Mark of Mastery.
+
 Message:  1010
 <ce> The bracelet put on you dissolves.
 <ce> The vampires fade away into the dark,

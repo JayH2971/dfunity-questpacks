@@ -31,6 +31,7 @@ JHMG019, MagesGuild, M, 2, 0, a quest to root out a necromancer
 JHMG020, MagesGuild, M, 9, 1, an attempt on your life
 JHMG021, MagesGuild, M, 95, 1, a quest to investigate an ancient lich
 -JHMGB01, MagesGuild, P, 0, 0, destroy an offending relic
+-charm spell/language check to get help in a quest
 -quest to find rogue imp pack in dungeon, ask townspeople
 -go to various NPCs in cities to pick up needed ingredients
 -artifact quest, join two halves of a document and take it to an expert. Expert will be slain if enough time passes. Artifact is on Daedra Lord's body.
