@@ -1,5 +1,5 @@
 Quest: JHFG011
-DisplayName: Ancient Artifact
+DisplayName: Cult of the Artifact
 -- Message panels
 QRC:
 

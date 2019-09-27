@@ -1,5 +1,5 @@
 Quest: JHFG016
-DisplayName: The Chopping Block
+DisplayName: Bad Element Removal
 -- Message panels
 QRC:
 

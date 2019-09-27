@@ -1,5 +1,5 @@
 Quest: JHTG010
-DisplayName: Walking on Eggshells
+DisplayName: Blocking Blackmail
 -- Message panels
 QRC:
 

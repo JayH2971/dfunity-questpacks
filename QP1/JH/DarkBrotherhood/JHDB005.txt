@@ -1,5 +1,5 @@
 Quest: JHDB005
-DisplayName: A Barbarous Deed
+DisplayName: Slay a Barbarian
 -- Message panels
 QRC:
 

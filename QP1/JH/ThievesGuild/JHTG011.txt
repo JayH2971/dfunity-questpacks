@@ -1,5 +1,5 @@
 Quest: JHTG011
-DisplayName: Turning Away Justice
+DisplayName: A Bit of Bribery
 -- Message panels
 QRC:
 

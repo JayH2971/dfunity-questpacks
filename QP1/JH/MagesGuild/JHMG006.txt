@@ -1,5 +1,5 @@
 Quest: JHMG006
-DisplayName: The Manchurian Effect
+DisplayName: An Obscure Trinket
 -- Message panels
 QRC:
 

@@ -1,5 +1,5 @@
 Quest: JHDB003
-DisplayName: Thief Slayer
+DisplayName: Slay a Thief
 -- Message panels
 QRC:
 

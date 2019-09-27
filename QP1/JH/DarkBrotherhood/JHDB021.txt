@@ -1,5 +1,5 @@
 Quest: JHDB021
-DisplayName: To Kill an Ambassador, Prelude
+DisplayName: To Kill an Ambassador
 -- Message panels
 QRC:
 
@@ -15,7 +15,7 @@ QuestorOffer:  [1000]
 
 RefuseQuest:  [1001]
 <ce>  If I find someone capable first, it
-<ce>  will go to them. We cannot wait forever.
+<ce>  will go to them. We will not wait forever.
 
 AcceptQuest:  [1002]
 <ce>  Then swear to me that you will tell no

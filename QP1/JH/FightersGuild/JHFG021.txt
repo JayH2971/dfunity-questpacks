@@ -1,5 +1,5 @@
 Quest: JHFG021
-DisplayName: Debt Beyond Measure, Outlander
+DisplayName: Debt Beyond Measure
 -- Message panels
 QRC:
 

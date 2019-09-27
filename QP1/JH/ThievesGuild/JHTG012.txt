@@ -1,5 +1,5 @@
 Quest: JHTG012
-DisplayName: No Honor Among Thieves
+DisplayName: Split Treasure
 -- Message panels
 QRC:
 
@@ -17,9 +17,6 @@ AcceptQuest:  [1002]
 <ce>      a really good locking mechanism, so those hands are gonna
 <ce>      be useless for it. Just bring it back here and we'll give
 <ce>               you a share of the money we find inside.
-
-QuestFail:  [1003]
-<ce>                             JHTG012 1003
 
 QuestComplete:  [1004]
 <ce>          Good work. Keep doing this and we'll all get rich.

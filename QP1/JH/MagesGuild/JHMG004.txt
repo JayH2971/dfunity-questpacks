@@ -1,5 +1,5 @@
 Quest: JHMG004
-DisplayName: The Weakest Link
+DisplayName: Daedric Submission
 -- Message panels
 QRC:
 

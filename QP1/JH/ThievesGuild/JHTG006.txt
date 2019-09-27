@@ -1,5 +1,5 @@
 Quest: JHTG006
-DisplayName: A Noteworthy Mission
+DisplayName: Payment for Notes
 -- Message panels
 QRC:
 

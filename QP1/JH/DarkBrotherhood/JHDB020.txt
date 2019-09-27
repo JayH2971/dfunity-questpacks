@@ -1,5 +1,5 @@
 Quest: JHDB020
-DisplayName: The Things of Witches
+DisplayName: Discord of the Mages Guild
 -- Message panels
 QRC:
 

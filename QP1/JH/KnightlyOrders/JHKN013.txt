@@ -1,5 +1,5 @@
 Quest: JHKN013
-DisplayName: Pursuit
+DisplayName: Center of Attention
 -- Message panels
 QRC:
 

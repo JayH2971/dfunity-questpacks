@@ -1,5 +1,5 @@
 Quest: JHMG016
-DisplayName: A Perilous Journey
+DisplayName: Stop the Experiment
 -- Message panels
 QRC:
 

@@ -1,5 +1,5 @@
 Quest: JHFG025
-DisplayName: Rescue Mission
+DisplayName: Save the Mage
 -- Message panels
 QRC:
 

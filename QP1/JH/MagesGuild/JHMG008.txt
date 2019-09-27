@@ -1,5 +1,5 @@
 Quest: JHMG008
-DisplayName: Noted Research
+DisplayName: Returning the Research
 -- Message panels
 QRC:
 

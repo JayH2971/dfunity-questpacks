@@ -1,5 +1,5 @@
-Quest: JHTP016
-DisplayName: Skin Contact
+Quest: JHDB016
+DisplayName: Venom
 -- Message panels
 QRC:
 

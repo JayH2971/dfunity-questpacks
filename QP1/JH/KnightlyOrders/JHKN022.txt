@@ -132,6 +132,10 @@ _tele_ task:
   when _trap_ and not _slain_ and not _inside_
   teleport pc to _dung_
   say 1015
+  start task _clearing_
+
+_clearing_ task:
+  clear _tele_ _clearing_
 
 _quest_ task:
 	when _inside_ and not _slain_

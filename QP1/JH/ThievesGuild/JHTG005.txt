@@ -1,5 +1,5 @@
 Quest: JHTG005
-DisplayName: Like a Dream
+DisplayName: Hot Gem
 -- Message panels
 QRC:
 

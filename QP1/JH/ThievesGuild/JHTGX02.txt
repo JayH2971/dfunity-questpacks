@@ -75,8 +75,7 @@ Message:  1071
 <ce> begin to expire due to their contact
 <ce> with the open air, and you are greeted
 <ce> with the sight and smell of various
-<ce> internal organs, none of which you
-<ce> are particularly familiar with.
+<ce> internal organs.
 
 Message:  1072
 <ce> You keep the bag sealed and

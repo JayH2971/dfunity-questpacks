@@ -1,5 +1,5 @@
 Quest: JHDB001
-DisplayName: A Natural Order
+DisplayName: Returning to the Natural Order
 -- Message panels
 QRC:
 

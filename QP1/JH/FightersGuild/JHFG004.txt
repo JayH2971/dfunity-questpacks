@@ -1,5 +1,5 @@
 Quest: JHFG004
-DisplayName: Guard Duty
+DisplayName: House Watching
 -- Message panels
 QRC:
 

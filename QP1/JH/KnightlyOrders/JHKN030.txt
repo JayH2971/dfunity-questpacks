@@ -1,5 +1,5 @@
 Quest: JHKN030
-DisplayName: Debt Repayment Plan
+DisplayName: Ransom Payment
 -- Message panels
 QRC:
 

@@ -1,5 +1,5 @@
 Quest: JHFG003
-DisplayName: Civic Duty
+DisplayName: On Order of the Monarch
 -- Message panels
 QRC:
 

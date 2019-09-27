@@ -1,5 +1,5 @@
 Quest: JHKN024
-DisplayName: Medium
+DisplayName: Washing Brains
 -- Message panels
 QRC:
 

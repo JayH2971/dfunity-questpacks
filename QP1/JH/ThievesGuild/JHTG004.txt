@@ -1,5 +1,5 @@
 Quest: JHTG004
-DisplayName: Spirited Away
+DisplayName: Confessional
 -- Message panels
 QRC:
 

@@ -1,5 +1,5 @@
 Quest: JHDB004
-DisplayName: Sanctimonious Wreck
+DisplayName: Slay a Priest
 -- Message panels
 QRC:
 

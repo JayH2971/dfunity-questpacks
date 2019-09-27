@@ -1,5 +1,5 @@
 Quest: JHFG024
-DisplayName: Batmaaaaan
+DisplayName: Box of Bats
 -- Message panels
 QRC:
 

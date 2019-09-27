@@ -1,5 +1,5 @@
 Quest: JHDB002
-DisplayName: Knight Stalker
+DisplayName: Slay a Knight
 -- Message panels
 QRC:
 

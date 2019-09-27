@@ -1,5 +1,5 @@
 Quest: JHMG015
-DisplayName: To Free the Shackled
+DisplayName: A Victim of Shapeshifting
 -- Message panels
 QRC:
 

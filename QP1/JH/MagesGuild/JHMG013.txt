@@ -1,5 +1,5 @@
 Quest: JHMG013
-DisplayName: Misguided Creature
+DisplayName: Wandering Atronach
 -- Message panels
 QRC:
 
