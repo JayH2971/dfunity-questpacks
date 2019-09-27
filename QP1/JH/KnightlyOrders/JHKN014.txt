@@ -130,7 +130,7 @@ _delay_ task:
 _pers_ task:
 	stop timer _quick_
   take _lett_ from pc
-  play sound talking_medium every 0 minutes 1 times
+-  play sound talking_medium every 0 minutes 1 times
   say 1021
 
 _qgclicked_ task:
