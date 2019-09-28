@@ -13,15 +13,15 @@ JHFG001, FightersGuild, M, 3, 0, a quest to slay a vampire in another town
 JHFG002, FightersGuild, M, 6, 0, a quest to slay a daedra in a dungeon
 JHFG003, FightersGuild, M, 5, 0, a quest to slay a criminal in a dungeon
 JHFG004, FightersGuild, M, 1, 0, a quest to guard a residence from intruders
-JHFG005, FightersGuild, M, 1, 0, a quest to slay a pack of beasts at a rural farmhome
-JHFG006, FightersGuild, M, 1, 0, a quest to stop an assassination inside a home
+JHFG005, FightersGuild, M, 2, 0, a quest to slay a pack of beasts at a rural farmhome
+JHFG006, FightersGuild, M, 2, 0, a quest to stop an assassination inside a home
 JHFG007, FightersGuild, M, 1, 1, courier work + ambush in a house
 JHFG009, FightersGuild, M, 2, 0, expert werewolf hunting
 JHFG010, FightersGuild, M, 3, 0, a quest to rid a city's streets of poisonous critters
 JHFG011, FightersGuild, M, 8, 1, an artifact quest to invade a vampire cult
 JHFG012, FightersGuild, M, 1, 0, a quest to slay a Mages Guild member in a city
 JHFG013, FightersGuild, M, 1, 0, a quest to get a giant out of a house
--JHFG014, FightersGuild, M, 7, 1, a quest to free the town of a gargoyle siege
+-JHFG014, FightersGuild, M, 7, 1,
 JHFG015, FightersGuild, M, 0, 0, a quest to fight in a dungeon with a partner
 JHFG016, FightersGuild, M, 4, 1, a quest to get rid of a bad guild member
 JHFG017, FightersGuild, M, 4, 0, a quest to slay a high-ranking Mages Guild Necromancer
@@ -33,10 +33,11 @@ JHFG022, FightersGuild, M, 1, 0, a quest to guard a tavern
 JHFG023, FightersGuild, M, 6, 0, a quest to save someone from hunting vampires
 JHFG024, FightersGuild, M, 4, 1, a contest to kill bats
 JHFG025, FightersGuild, M, 0, 0, a quest to help find someone from the Mages Guild
-JHFG026, FightersGuild, M, 0, 0, a quest to interrupt thieves' plan to destroy evidence
+JHFG026, FightersGuild, M, 1, 0, a quest to interrupt thieves' plan to destroy evidence
 JHFG027, FightersGuild, M, 4, 1, a quest to help someone fleeing the Dark Brotherhood
 JHFG028, FightersGuild, M, 8, 1, a quest to supposedly escort someone
 JHFG029, FightersGuild, M, 7, 1, a quest to meet a mysterious dueler
+-WA dungeon: agree to hold on to a piece of contraband for a little bit
 -one-time quest for a wealthy new client of the guild. capstone?
 -Archaeologists: max daedra skill, go to graveyard, Meridia, get quest, alt path to Meridia reward
 -punishment for lacking skill checks (magic schools, weapon types)
