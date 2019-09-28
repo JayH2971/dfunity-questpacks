@@ -51,8 +51,7 @@ Message:  1020
 <ce>                      and disappears from view.
 
 Message:  1021
-<ce>                        _friend_ bends down to
-<ce>                 take a few objects from this corpse.
+<ce>                        _friend_ speaks up.
 <ce>
 <ce>                  "Listen, I know we agreed on this,
 <ce>              but you've been taking way too much here!
@@ -110,6 +109,7 @@ Person _fg_ faction The_Fighters_Guild
 Place _dung_ remote dungeon
 
 Clock _timer_ 75.00:00
+Clock _dungtime_ 20:00 2.00:00
 
 Foe _enemy1_ is Burglar
 Foe _enemy2_ is Thief
@@ -127,14 +127,23 @@ _inside_ task:
     say 1019
     create foe _enemy1_ every 71 minutes indefinitely with 23% success
     create foe _enemy2_ every 32 minutes indefinitely with 11% success
+    start timer _dungtime_
+
+_notinside_ task:
+    stop timer _dungtime_
+
+_dungtime_ task:
+    start task _victory_
 
 _slain_ task:
     killed 3 _enemy1_
     killed 3 _enemy2_
+    start task _victory_
 
 variable _e1_
+variable _victory_
 _true_ task:
-    when _slain_ and _e1_
+    when _victory_ and _e1_
     say 1020
     drop _friend_ face
     give pc _reward_
@@ -142,7 +151,7 @@ _true_ task:
 
 variable _e2_
 _trick_ task:
-    when _slain_ and _e2_
+    when _victory_ and _e2_
     prompt 1021 yes _mercy_ no _kill_
 
 _mercy_ task:
