@@ -105,7 +105,7 @@ _fail_ task:
     end quest
 
 _slain_ task:
-	killed 50 _bat_ saying 1011
+	killed 45 _bat_ saying 1011
 
 _qgclicked_ task:
 	clicked npc _qgiver_
