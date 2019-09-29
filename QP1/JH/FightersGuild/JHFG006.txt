@@ -204,7 +204,8 @@ _death_ task:
 	say 1003
 	end quest
 
-_dud_ task:
+variable _dud_
+_fraud_ task:
 	when _inside_ and _dud_
 	say 1040
 	drop _escort_ face
