@@ -30,7 +30,7 @@ AcceptQuest:  [1002]
 QuestComplete:  [1004]
 <ce>  Good enough. Trust me, if they sent in
 <ce>  the guards to do this, all they'd find
-<ce>  is a bunch of cold ashes. The %t is
+<ce>  is a bunch of warm ashes. The %t is
 <ce>  right to ask us this, even if I dislike
 <ce>  saying it.
 
