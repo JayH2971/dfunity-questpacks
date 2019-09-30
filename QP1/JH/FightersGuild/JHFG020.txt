@@ -159,7 +159,7 @@ _victory_ task:
     say 1012
 
 _normalpath_ task:
-    when _begin_ and not _easy_ or not _skilled_
+    when _begin_ and not _easy_ or _begin_ and not _skilled_
     say 1010
     hide npc _guy_
     add _guy_ face
