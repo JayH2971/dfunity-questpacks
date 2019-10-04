@@ -165,13 +165,6 @@ _victory2_ task:
 	give pc nothing
 	end quest
 
-_qgclicked_ task:
-	clicked npc _qgiver_ 
-
-_clearclick_ task:
-	when _qgclicked_ and not _talkkni_
-	clear _qgclicked_ _clearclick_ 
-
 _timer_ task:
 	say 1003
 	end quest

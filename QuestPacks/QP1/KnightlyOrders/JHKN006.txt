@@ -121,12 +121,5 @@ _victory_ task:
 	give pc nothing
 	end quest
 
-_qgclicked_ task:
-	clicked npc _qgiver_
-
-_clearclick_ task:
-	when _qgclicked_ and not _slain_
-	clear _qgclicked_ _clearclick_
-
 _timer_ task:
 	end quest

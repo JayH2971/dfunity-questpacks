@@ -111,13 +111,6 @@ _attack_ task:
     say 1012
     create foe _tig_ every 0 minutes 2 times with 100% success
 
-_qgclicked_ task:
-	clicked npc _qgiver_ 
-
-_clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
-
 _pcreward_ task:
 	toting _finger_ and _qgiver_ clicked
     give pc _reward_

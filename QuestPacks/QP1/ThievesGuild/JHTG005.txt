@@ -85,13 +85,6 @@ _victory_ task:
   give pc _reward_
   end quest
 
-_qgclicked_ task:
-  clicked npc _questgiver_
-
-_clearclick_ task:
-  when _qgclicked_ and not _got_
-  clear _qgclicked_ _clearclick_
-
 _timer_ task:
   say 1003
   end quest

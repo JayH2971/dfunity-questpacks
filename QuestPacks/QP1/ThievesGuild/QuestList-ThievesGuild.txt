@@ -37,7 +37,7 @@ JHTGX07, GeneralPopulace, P, 0, X, offered via JHTG06X
 -Thieves Guild quest: 5+ reputation required. The guild has figured out a way to bring justice to a snitch on their operations. The PC must enter the person's home and change one piece of paper for another, without injuring the owner who will most likely be present. If the owner is injured the PC is revealed and the mission fails.
 -Thieves Guild quest: A captured informant is being held hostage but is belligerent and unwilling to give vital information for a robbery. A Charm spell is needed to turn him/her into the Guild's temporary informant.
 -Thieves Guild quest: Grab a bag of money from a residence in another town, but don't fight the guards inside. They'll identify you and drop your legal rep.
--steal a magical item
+-steal a magical item from the Mages Guild, reversal of classic quest
 -steal a scroll
 -hit to steal, not kill
 -foe teleports you into dungeon
