@@ -121,7 +121,7 @@ Place _res_ local house
 Place _dung_ remote dungeon2
 
 Clock _timer_ 00:00 0 flag 1 range 0 2
-Clock _indung_ 8:00 16:00
+Clock _indung_ 12:00 16:00
 
 Item _reward_ gold
 

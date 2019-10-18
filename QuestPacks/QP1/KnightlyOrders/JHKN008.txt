@@ -199,7 +199,7 @@ _capture_ task:
 	log 1031 step 1
 
 _orcs_ task:
-	create foe _orc2_ every 16 minutes indefinitely with 11% success
+	create foe _orc2_ every 29 minutes indefinitely with 11% success
 	create foe _orc3_ every 22 minutes indefinitely with 4% success
 	create foe _orc4_ every 45 minutes indefinitely with 3% success
 	create foe _orc5_ every 29 minutes indefinitely with 3% success

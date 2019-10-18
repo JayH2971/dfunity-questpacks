@@ -103,12 +103,12 @@ _inside_ task:
 
 _spawn_ task:
 	when _spawn_ and _inside_
-	create foe _e1_ every 2 minutes indefinitely with 20% success
-	create foe _e2_ every 3 minutes indefinitely with 30% success
-	create foe _e3_ every 4 minutes indefinitely with 40% success
-	create foe _e4_ every 5 minutes indefinitely with 50% success
-	create foe _e5_ every 6 minutes indefinitely with 60% success
-	create foe _e6_ every 7 minutes indefinitely with 70% success
+	create foe _e1_ every 5 minutes indefinitely with 20% success
+	create foe _e2_ every 8 minutes indefinitely with 30% success
+	create foe _e3_ every 10 minutes indefinitely with 40% success
+	create foe _e4_ every 12 minutes indefinitely with 50% success
+	create foe _e5_ every 14 minutes indefinitely with 60% success
+	create foe _e6_ every 20 minutes indefinitely with 70% success
 
 _warning_ task:
 	killed 3 _e1_

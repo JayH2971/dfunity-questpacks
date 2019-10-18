@@ -100,10 +100,10 @@ _altinform_ task:
 
 _spawn_ task:
 	when _inside_ and _daytime_ and not _slain_ and not _alt_
-	create foe _wild1_ every 14 minutes indefinitely with 45% success
-	create foe _wild2_ every 15 minutes indefinitely with 36% success
-	create foe _wild3_ every 17 minutes indefinitely with 34% success
-	create foe _wild4_ every 22 minutes indefinitely with 22% success
+	create foe _wild1_ every 80 minutes indefinitely with 45% success
+	create foe _wild2_ every 65 minutes indefinitely with 36% success
+	create foe _wild3_ every 59 minutes indefinitely with 34% success
+	create foe _wild4_ every 40 minutes indefinitely with 22% success
 
 _slain_ task:
 	killed 1 _enemy_ saying 1020

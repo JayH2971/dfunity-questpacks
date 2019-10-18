@@ -155,6 +155,9 @@ Foe _n4_ is Ancient_vampire
     place item _tri_ at _dung_
     reveal _dung_
 
+_day_ task:
+    daily from 5:30 to 18:30
+
 variable _inside_
 _reveal_ task:
     when not _inside_
@@ -163,7 +166,9 @@ _reveal_ task:
     log 1031 step 1
     start timer _timer_
 
-_spawn_ task:
+variable _spawn_
+_spawning_ task:
+    when _spawn_ and not _day_
     create foe _n1_ every 0 minutes 1 times with 100% success
     create foe _n2_ every 120 minutes indefinitely with 35% success
     create foe _n3_ every 800 minutes indefinitely with 100% success

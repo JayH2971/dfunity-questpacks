@@ -123,7 +123,7 @@ variable _sacr_
 
 _spawn_ task:
     when not _decision_
-    create foe _skel_ every 60 minutes indefinitely with 60% success
+    create foe _skel_ every 90 minutes indefinitely with 40% success
     create foe _skel2_ every 120 minutes indefinitely with 20% success
 
 _take_ task:
