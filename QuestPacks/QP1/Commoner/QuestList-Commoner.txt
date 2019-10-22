@@ -9,8 +9,8 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHIM001, Commoners, N, 0, 0, a simple quiz for money
-JHIM002, Commoners, N, 0, 0, a simple quiz for money
+JHIM001, Commoners, N, 0, 1, a simple quiz for money
+JHIM002, Commoners, N, 0, 1, a simple quiz for money
 JHIM003, Commoners, N, 0, 0, a quest to end a haunting
 JHIM004, Commoners, N, 0, 0, a game of blackjack
 JHIM005, Commoners, N, 0, 0, a quest to solve a bar fight
@@ -24,7 +24,7 @@ JHIM012, Commoners, N, 0, 0, a quest to test a runed object
 JHIM013, Commoners, N, 0, 0, a quest to talk with a frustrated person
 JHIM014, Commoners, N, 0, 0, a quest to rob a house (small)
 JHIM015, Commoners, N, 0, 0, a quest to rob a house (large)
-JHIM016, Commoners, N, 0, 0, a test of memory
+JHIM016, Commoners, N, 0, 1, a test of memory
 JHIM017, Commoners, N, 0, 10, a quest to escort someone to the King of Worms
 -alter commoner quests to be in first-person rather than helping someone
 -commoner wants to visit a rural shrine, commune with shrine leader
