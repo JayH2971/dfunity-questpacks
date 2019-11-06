@@ -123,8 +123,8 @@ variable _sacr_
 
 _spawn_ task:
     when not _decision_
-    create foe _skel_ every 90 minutes indefinitely with 40% success
-    create foe _skel2_ every 120 minutes indefinitely with 20% success
+    create foe _skel_ every 240 minutes indefinitely with 40% success
+    create foe _skel2_ every 600 minutes indefinitely with 20% success
 
 _take_ task:
     clicked item _relig_
