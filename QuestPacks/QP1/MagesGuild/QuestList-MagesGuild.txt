@@ -31,18 +31,3 @@ JHMG019, MagesGuild, M, 2, 0, a quest to root out a necromancer
 -JHMG020, MagesGuild, M, 9, 1, an attempt on your life NEEDS TESTING
 JHMG021, MagesGuild, M, 95, 1, a quest to investigate an ancient lich
 -JHMGB01, MagesGuild, P, 0, 0, destroy an offending relic
--charm spell/language check to get help in a quest
--quest to find rogue imp pack in dungeon, ask townspeople
--go to various NPCs in cities to pick up needed ingredients
--artifact quest, join two halves of a document and take it to an expert. Expert will be slain if enough time passes. Artifact is on Daedra Lord's body.
--an enchanter has been commissioned to enchant [weapon or armour] but has found themselves 1 short and needs you to buy one in town, an alternate version of this quest could see you have to fetch multiple items
--Mages Guild quest: 55+ reputation required. A house has been haunted for a period of several weeks by a mummy/zombie/lich who keeps reappearing after defeat. The PC must use the Holy Word spell in the residence to end its influence. (AVAILABLE)
--??? quest: An enchanted heavy object of some kind is in a Mages Guild/temple/residence, and while it's present, monsters continue to appear within. The PC must find the mage who constructed it and slay him/her to end the curse. (AVAILABLE)
--Mages Guild quest: 55+ reputation required. Some student has created a flesh atronach with overwhelming regenerative properties, contrary to guild rules. For a gold reward the PC must go to a dungeon and cast Hand of Decay on the creature to end its immortality.
--Mages Guild quest: 45+ reputation required. A spellblade is suffering from a curse by another mage which prevents magicka regeneration. The PC must go to the spellblade's home and cast the Null Magicka spell on him/her to release the curse for a gold reward.
--Mages Guild quest: A renowned scholar is staying at a tavern in the area but selfishly keeps his/her research away from the guild. The PC is asked to take the scholar's writings from the tavern. It may be enchanted to summon monsters upon theft.
--Mages Guild quest: Reverse teleport effect. Use an enchanted item to pull a person back from a Recall spell.
--follow a daedra lord's instructions for an artifact
--bad rep via guild member, clear it up or lose rep
--Faerie -> Death's Embrace -> Jhuldarn -> Send Foe undead
--locate a runaway debtor, have personality lie test for kill

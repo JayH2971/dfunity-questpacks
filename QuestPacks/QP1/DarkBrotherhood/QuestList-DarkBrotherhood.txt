@@ -31,12 +31,3 @@ JHDB019, DarkBrotherHood, M, 2, 0, a quest to solve a puzzle to find a mark
 JHDB020, DarkBrotherHood, M, 6, 1, a quest to help the Mages Guild end a rogue summoner
 JHDB021, DarkBrotherHood, M, 9, 1, an artifact quest to slay an ambassador from the Empire
 JHDB022, DarkBrotherHood, M, 8, 1, an invitation to perform for Quill Circus
--rescue guild member, turns out to be zombie when leaving dungeon
--kill thief who makes counterfeit letters of credit. Start at bank as crime investigator
--find a person in hiding. Interrogate a family member by attack.
--a quest to slay a member of the city guard who interferes with the Brotherhood. Injury leads to failure timer
--present item to get ransom money or confession
--blackguards questline
--DB014: disintegrate is failure
--Dark Brotherhood quest: 70+ reputation required. There's a high price to kidnap a certain wizard for ransom, but they fear he/she may teleport away or die in the struggle. The PC must cast the Wizard Rend spell on the enemy to incapacitate him/her. Dark Brotherhood operatives waiting nearby will then do the rest and provide the PC's reward.
--Dark Brotherhood quest: 80+ reputation required. The Brotherhood is being paid particularly well to not only take the life of a mark but obliterate the body as well. The PC must use Hand of Decay or Sphere of Negation on the enemy to ensure the body disappears entirely. If the enemy is killed the quest fails.

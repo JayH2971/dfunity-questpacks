@@ -18,19 +18,3 @@ JHTP006, HolyOrder, M, 1, 0, a quest to help a couple resolve their differences
 JHTP007, HolyOrder, M, 2, 0, a quest to cleanse an infected dungeon
 JHTP008, HolyOrder, M, 1, 0, a quest to recharge a curing trinket
 -JHTP009, HolyOrder, M, 7, 0, a quest to remove the Necromancers' influence from a home
--JHTPA00, HolyOrder, P, 0, 0, meeting a beggar via TP004
--JHTPA01, HolyOrder, P, 0, 0, finding lost jewelry via TP007
--seek out and slay necromancer
--find lost person in cave, cannot leave due to vampire burning
--Temple quest: A ghost keeps reappearing in a residence in spite of multiple attempts to remove it. The PC must resolve the case of the ghost's murder.
--Temple quest: A rare enchanted item is needed for its proficiency for ending daedric possession. The PC is asked to enter a dungeon to look for it.
--Temple quest: A cursed object threatens to bring an undead each night to haunt the possessor. The temple asks you to take the object and slay the undead when it appears at night to end the curse.
--1) Perhaps guarding a group going on pilgrimage to a shrine, with possible Daedric interference?
--3) A particular apparition needs a specific holy item to banish, which as at (shrine, temple, or was lost in dungeon), and you have to return with it. Of course, certain groups might not want it found again...
--4) Someone has committed grave sin against their deity. As penance, they must visit three different, randomly-generated (shrines, temples). However, their former fellows do not want them to finish this penance, and are willing to resort to force...
--5) Or, related, a vampire hasn't found a cure - However, for living (or close enough) a virtuous life (never drinking blood from people, etc), they have been promised that, as long as they stay at $temple, they will be free from their affliction - not cured, but their vampirism will not affect them there. You must guard them to $temple. Be warned, their former fellows will be after them, to dissuade them, or slay them if they will not be dissuaded.
--6) Related to previous quest, a vampire has been peacefully staying under the protection of a temple for (years, decades, centuries). However, (someone they love/a living descendent/a close friend and confidant) has been kidnapped to force them out of that protection. However, having heard of your fame, they are willing to wait X days for you to rescue $Name before going themselves. (This quest and the previous one would be for characters with a high reputation, naturally. :) )
--7) The PC themselves are given a pilgrimage to a shrine, and an item to give to the shrine-keeper. Forces may attempt to steal it. (Not much there, but it could turn into a plot about keeping an important item out of the wrong hands; or just be a quest to visit a shrine).
--9) As it turns out, one of the members of $Guild is actually a (necromancer, lich, vampire). It's quite embarrassing for them, and also very dangerous, so they came to us for help. (Could turn into #4 or #5).
--purge necromancer influence from home. wait in home for day, resist undead interference
--add betrayal to e1 TP008

@@ -30,16 +30,3 @@ JHTGX04, GeneralPopulace, P, 0, X, offered via JHTG03X
 JHTGX05, GeneralPopulace, P, 0, X, offered via JHTG04X
 JHTGX06, GeneralPopulace, P, 0, X, offered via JHTG05X
 JHTGX07, GeneralPopulace, P, 0, X, offered via JHTG06X
--lay wait in local store for goods delivery, bring it back to guild hall
--retrieve document for necromancer
--revamp 001: hide chance vs mob, recurring
--The PC must take an illicit substance to a person under contract to receive it. Law enforcement mercenaries may ambush the PC during the quest. If the PC injures one of the mercenaries, his/her regional reputation will drop by 5 points, and if he/she kills one of them, the drop will become 25 points. (AVAILABLE)
--Thieves Guild quest: 5+ reputation required. The guild has figured out a way to bring justice to a snitch on their operations. The PC must enter the person's home and change one piece of paper for another, without injuring the owner who will most likely be present. If the owner is injured the PC is revealed and the mission fails.
--Thieves Guild quest: A captured informant is being held hostage but is belligerent and unwilling to give vital information for a robbery. A Charm spell is needed to turn him/her into the Guild's temporary informant.
--Thieves Guild quest: Grab a bag of money from a residence in another town, but don't fight the guards inside. They'll identify you and drop your legal rep.
--steal a magical item from the Mages Guild, reversal of classic quest
--steal a scroll
--hit to steal, not kill
--foe teleports you into dungeon
--item is trapped, causes disease or poison
--item trap causes monster spawn
