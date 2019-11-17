@@ -19,8 +19,10 @@ AcceptQuest:  [1002]
 <ce> where negotiations are being held in a
 <ce> private location, _res_.
 <ce> All you will need to do is present
-<ce> the document and return. We hope it
-<ce> will accelerate the end of their conflict.
+<ce> the document and return. Do not attempt
+<ce> to investigate the residence. Merely offer
+<ce> the letter upon entering. We hope it will
+<ce> accelerate the end of their conflict.
 
 QuestFail:  [1003]
 <ce> Their suspicions get the best of them.
