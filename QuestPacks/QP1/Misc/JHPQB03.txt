@@ -27,10 +27,10 @@ Message:  1011
 %pcn, %ra in the service of Uriel Septim VII
 
   Please forgive my indiscretion. The Emperor
-spoke to me concerning your assignment to Daggerfall
-and I have some information to offer as aid. If what
-is herein contained is of no use to you, please
-disregard it and forget that I have bothered you.
+spoke to me concerning you and I have some
+information to offer as aid. If what is herein
+contained is of no use to you, please disregard
+it and forget that I have bothered you.
 
   In the region of ____dung_ some ruins by the name
 of ___dung_ lie in the wilderness. The place has
@@ -45,7 +45,7 @@ intends to take the key with it.
 
   My involvement in this matter is to inform you concerning
 the object's existence and entreat you to employ all possible
-means to recover it. Surely it will aid you in your mission.
+means to recover it. Surely it will be a great aid to you.
 
   This letter will cease to be in one week's time from delivery,
 and I request that you jot down all information of use. A map
