@@ -85,7 +85,7 @@ with slaying some disturbance in
 QBN:
 Person _qgiver_ group Questor male
 
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon5
 
 Clock _2dung_ 00:00 0 flag 1 range 0 2
 Clock _spawn_ 1:00 6:00

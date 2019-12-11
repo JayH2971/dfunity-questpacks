@@ -135,7 +135,7 @@ Person _qgiver_ group Questor
 
 Item _tri_ Holy_relic
 
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon8
 Place _fhall_ local fighters
 
 Clock _timer_ 00:00 0 flag 17 range 0 2

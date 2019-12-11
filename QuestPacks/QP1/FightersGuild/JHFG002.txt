@@ -71,7 +71,7 @@ Item _reward_ diamond
 
 Person _questgiver_ group Questor male
 
-Place _dungeon_ remote dungeon7
+Place _dungeon_ remote dungeon9
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
 

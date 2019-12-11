@@ -150,7 +150,7 @@ Clock _death_ 1:00
 Clock _wander_ 8:00 1.01:00
 
 Place _res_ remote house
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon15
 
 Foe _imp_ is Imp
 

@@ -95,7 +95,7 @@ QBN:
 Person _kid_ faction Children
 Person _parent_ group Local_3.0
 
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon5
 Place _home_ remote house
 
 Foe _enemy1_ is Assassin

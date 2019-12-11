@@ -172,7 +172,7 @@ Person _mage_ faction The_Cabal male
 Foe _daed_ is Daedra_lord
 Foe _sorc_ is Sorceror
 
-Place _dung_ remote dungeon4
+Place _dung_ remote dungeon16
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _t1_ 00:01

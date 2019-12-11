@@ -95,7 +95,7 @@ Item _reward_ gold range 1201 to 1399
 
 Person _questgiver_ group Questor male
 
-Place _dungeon_ remote dungeon
+Place _dungeon_ remote dungeon9
 
 Clock _2dungeon_ 00:00 0 flag 1 range 0 2
 Clock _killtimer_ 07:15 09:00

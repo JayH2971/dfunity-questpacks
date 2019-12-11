@@ -71,7 +71,7 @@ Clock _battle_ 2:00 4:00
 
 Item _reward_ gold
 
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon3
 
 Foe _enemy_ is Assassin
 

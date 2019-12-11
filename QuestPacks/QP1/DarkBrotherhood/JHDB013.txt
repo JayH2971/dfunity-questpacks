@@ -69,7 +69,7 @@ Person _qgiver_ group Questor male
 Person _hos_ faction Dancers
 
 Place _res_ remote house
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon6
 
 Item _bell_ bell
 Item _reward_ gold

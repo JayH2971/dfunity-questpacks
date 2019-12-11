@@ -194,7 +194,7 @@ Person _ransom_ faction The_Merchants
 Person _qgiver_ group Questor
 
 Place _place_ remote bookstore
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon12
 
 Item _return_ gold range 2152 to 2200
 Item _letter_ letter used 1024

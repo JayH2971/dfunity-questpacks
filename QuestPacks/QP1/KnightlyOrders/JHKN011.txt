@@ -113,7 +113,7 @@ Person _family_ group Resident1
 Person _kni_ faction Generic_Knightly_Order male anyInfo 1005
 
 Place _famtown_ remote random
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon0
 
 Clock _timer_ 60.00:00
 Clock _death_ 25.00:00 40.00:00

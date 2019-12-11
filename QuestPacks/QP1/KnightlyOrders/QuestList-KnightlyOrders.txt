@@ -14,15 +14,15 @@ JHKN002, KnightlyOrder, M, 0, 0, a quest to slay criminals who have taken a farm
 JHKN003, KnightlyOrder, M, 6, 0, a quest to slay a vampire or vampire ancient in a dungeon
 JHKN004, KnightlyOrder, M, 2, 0, a quest to defend a city from an invasion of knights
 JHKN005, KnightlyOrder, M, 0, 0, a quest to retrieve and deliver evidence of a murder
-JHKN006, KnightlyOrder, M, 0, 0, a quest to retrieve a weapon from a murderer in a dungeon
+JHKN006, KnightlyOrder, M, 3, 0, a quest to retrieve a weapon from a murderer in a dungeon
 JHKN007, KnightlyOrder, M, 6, 0, a quest to resolve a mysterious murder spree near a local shop
 JHKN008, KnightlyOrder, M, 3, 0, a quest to stop an assassination attempt by orcs in a palace
 JHKN009, KnightlyOrder, M, 2, 0, a quest to end a cult of necromancer giants
 JHKN010, KnightlyOrder, M, 0, 1, a quest to take a weapon to a fellow knight
-JHKN011, KnightlyOrder, M, 0, 0, a quest to find a missing knight
+JHKN011, KnightlyOrder, M, 4, 0, a quest to find a missing knight
 JHKN012, KnightlyOrder, M, 0, 1, a quest to execute a local criminal
-JHKN013, KnightlyOrder, M, 0, 0, a quest to defend a townsperson from atronachs
-JHKN014, KnightlyOrder, M, 2, 1, a quest to aid negotiations with a letter
+JHKN013, KnightlyOrder, M, 1, 0, a quest to defend a townsperson from atronachs
+-JHKN014, KnightlyOrder, M, 2, 1, a quest to aid negotiations with a letter
 JHKN015, KnightlyOrder, M, 1, 0, a quest to stop the cause of attacking spriggans
 JHKN016, KnightlyOrder, M, 3, 1, a quest to negotiate peace with an orc
 JHKN017, KnightlyOrder, M, 1, 0, a quest to defend a graveyard from intruders
@@ -31,7 +31,7 @@ JHKN017, KnightlyOrder, M, 1, 0, a quest to defend a graveyard from intruders
 JHKN020, KnightlyOrder, M, 1, 0, a quest to draw out an attacking band
 JHKN021, KnightlyOrder, M, 5, 0, a quest to apprehend a witch
 JHKN022, KnightlyOrder, M, 7, 0, a quest to free a sealed dungeon
-JHKN023, KnightlyOrder, M, 7, 1, a quest to arrest the Crow
+JHKN023, KnightlyOrder, M, 5, 1, a quest to arrest the Crow
 JHKN024, KnightlyOrder, M, 7, 0, a quest to stop a brainwasher
 JHKN025, KnightlyOrder, M, 1, 0, a quest to protect a rural shrine
 JHKN026, KnightlyOrder, M, 0, 0, a quest to rescue a child from a dungeon
@@ -40,5 +40,5 @@ JHKN028, KnightlyOrder, M, 3, 0, entry into JHKNA00
 JHKN028a, KnightlyOrder, P, 0, 0, a quest to find a necromancer in a city
 JHKN029, KnightlyOrder, M, 3, 0, entry into JHKNA01
 JHKN029a, KnightlyOrder, P, 0, 0, a quest to wipe out vigilantes in a city
-JHKN030, KnightlyOrder, M, 3, 0, a quest to pay a ransom
+JHKN030, KnightlyOrder, M, 1, 0, a quest to pay a ransom
 JHKN031, KnightlyOrder, M, 0, 0, a quest to hire an exterminator

@@ -66,7 +66,7 @@ Person _qgiver_ group Questor male
 Person _child_ faction Children
 Person _dummydb_ faction The_Dark_Brotherhood
 
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon6
 
 Clock _2dung_ 00:00 0 flag 1 range 0 2
 Clock _failsafe_ 30.00:00

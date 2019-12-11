@@ -117,7 +117,7 @@ QBN:
 Person _qgiver_ group Questor male
 Person _mage_ faction The_Mages_Guild
 
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon8
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _delay_ 00:03 00:05

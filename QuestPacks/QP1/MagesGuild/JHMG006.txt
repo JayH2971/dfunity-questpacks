@@ -129,7 +129,7 @@ Item _tri_ trinket
 Person _qgiver_ group Questor male
 Person _npc_ faction The_Odylic_Mages
 
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon10
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _battle_ 00:05 00:07

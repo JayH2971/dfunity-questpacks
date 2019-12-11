@@ -66,7 +66,7 @@ Message:  1030
 QBN:
 Person _qgiver_ group Questor male
 
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon14
 
 Clock _timer_ 60.00:00
 

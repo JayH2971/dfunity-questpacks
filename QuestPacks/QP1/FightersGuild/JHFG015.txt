@@ -106,7 +106,7 @@ Person _questgiver_ group Questor male
 Person _friend_ faction Generic_Knightly_Order
 Person _fg_ faction The_Fighters_Guild
 
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon3
 
 Clock _timer_ 75.00:00
 Clock _dungtime_ 20:00 2.00:00

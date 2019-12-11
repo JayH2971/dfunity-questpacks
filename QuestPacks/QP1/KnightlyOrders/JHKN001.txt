@@ -80,7 +80,7 @@ QBN:
 
 Person _qgiver_ group Questor male
 
-Place _dungeon_ remote dungeon
+Place _dungeon_ remote dungeon6
 
 Item _bribe_ gold range 1201 to 1999
 

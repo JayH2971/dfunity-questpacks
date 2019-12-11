@@ -126,7 +126,7 @@ Item _reward_ gold range 3000 to 3000
 
 Person _questgiver_ group Questor male
 
-Place _mondung_ remote dungeon
+Place _mondung_ remote dungeon4
 
 Clock _timer_ 35.00:00
 Clock _recdelay_ 0:00

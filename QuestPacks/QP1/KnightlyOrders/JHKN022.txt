@@ -99,7 +99,7 @@ QBN:
 Person _qgiver_ group Questor male
 Person _witch_ faction The_Glenmoril_Witches
 
-Place _dung_ remote dungeon
+Place _dung_ remote dungeon7
 
 Clock _2dung_ 00:00 0 flag 1 range 0 2
 Clock _failsafe_ 14.00:00
