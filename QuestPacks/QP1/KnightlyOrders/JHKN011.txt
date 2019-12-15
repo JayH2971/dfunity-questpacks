@@ -154,6 +154,13 @@ _death_ task:
 	hide npc _kni_
 	place item _bag_ at _dung_
 
+_qgclicked_ task:
+	clicked _qgiver_
+
+_clearclick_ task:
+	when _qgclicked_ and not _talkkni_
+	clear _qgclicked_ _clearclick_
+
 _grabbag_ task:
 	clicked item _bag_
 	say 1014
