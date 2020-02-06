@@ -117,6 +117,9 @@ _talk_ task:
 variable _taken_
 _moveit_ task:
     when _taken_ and _ires_ and _night_
+    start task _moveit2_
+
+_moveit2_ task:
     say 1011
     hide npc _friend_
     add _friend_ face
@@ -140,7 +143,7 @@ _find_ task:
     end quest
 
 _rescue_ task:
-    when _timer_ and _moveit_
+    when _timer_ and _moveit2_
     say 1003
 
 _timer_ task:

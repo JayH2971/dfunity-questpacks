@@ -66,7 +66,9 @@ Message:  1011
 <ce> I'm not doing a thing 'til I see you survive."
 
 Message:  1012
-<ce> _guy_ smiles, perhaps for the
+<ce> Your confidence begins to rub off on
+<ce> _guy_. Getting a feel for
+<ce> adventure, he smiles, perhaps for the
 <ce> first time in weeks.
 <ce> 
 <ce> "You know what? I'm better than this.
@@ -121,7 +123,7 @@ Place _res_ local house
 Place _dung_ remote dungeon2
 
 Clock _timer_ 00:00 0 flag 1 range 0 2
-Clock _indung_ 12:00 16:00
+Clock _indung_ 4:00 6:00
 
 Item _reward_ gold
 
