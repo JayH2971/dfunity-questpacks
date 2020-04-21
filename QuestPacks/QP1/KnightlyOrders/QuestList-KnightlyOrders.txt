@@ -42,3 +42,4 @@ JHKN029, KnightlyOrder, M, 3, 0, entry into JHKNA01
 JHKN029a, KnightlyOrder, P, 0, 0, a quest to wipe out vigilantes in a city
 JHKN030, KnightlyOrder, M, 1, 0, a quest to pay a ransom
 JHKN031, KnightlyOrder, M, 0, 0, a quest to hire an exterminator
+JHKN032, KnightlyOrder, M, 6, X, a quest to slay a beguiling Seducer

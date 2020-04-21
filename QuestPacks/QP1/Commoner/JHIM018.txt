@@ -1,0 +1,153 @@
+Quest: JHIM018
+DisplayName: My Little Ponies
+-- Thanks to Metalhead324 for the concept
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                    Hail friend, name's _qgiver_.
+<ce>              Got a business offer for ya, my good %ra.
+<ce>              Did you know centaurs are exceedingly rare
+<ce>           across Tamriel? There's big money to be made by
+<ce>             capturing and selling them. If you want in,
+<ce>               I know the perfect place to find a few.
+<ce>                     I can pay you =reward_ gold.
+
+RefuseQuest:  [1001]
+<ce>               Ha. There's no law against it, you know.
+
+AcceptQuest:  [1002]
+<ce>               All right then, let's get moving to it.
+<ce>                       Place's called ___dung_.
+<ce>              I'll show it to you on that map of yours.
+<ce>                You keep me safe and let me do my work
+<ce>             in there. With a few good foals we'll be set
+<ce>               mate! You won't regret this, not at all!
+<ce>               But can we be finished by =timer_ days?
+<ce>                  I'm a busy person, don't you know.
+
+QuestFail:  [1003]
+<ce>              "You've taken far too long and I will not
+<ce>         pay you! I'll find help taming centaurs elsewhere!"
+
+QuestComplete:  [1004]
+<ce>                Free from the risk of centaur attack,
+<ce>                       _qgiver_ turns and bows.
+<ce>
+<ce>           "You're quite good at this! Maybe I'll look for
+<ce>          you again some time. There's good money to be made
+<ce>            if you're dependable, %ra. Take your gold and
+<ce>              my best wishes. Come along now creatures!"
+<ce>
+<ce>                    Then %g1 leads the foals away.
+
+Message:  1010
+<ce>              _qgiver_ whispers, "All right, this is how
+<ce>    it's going to work. I'm going to call out for these creatures,
+<ce>          and you'll slay the adults that'll try to stop us.
+<ce>      Once I find a few good colts I'll lasso them up and we'll
+<ce>               get out of here. Keep your eyes peeled!"
+
+Message:  1011
+<ce>              Unbeknownst to you, _qgiver_ has cornered
+<ce>        a pair of young centaurs and gotten ropes around their
+<ce>        necks. The process is far more benign than it sounds.
+<ce>            Using %g3 centaur call, %g1 calms them enough
+<ce>                        to get them to follow.
+<ce>
+<ce>             "Well then, this is looking quite positive.
+<ce>      Let's make our getaway, before we attract more attention."
+
+Message:  1012
+<ce>                            "No! Oh, no!"
+<ce>
+<ce>                _qgiver_ has gotten separated from you
+<ce>            by a short distance, which was enough to let a
+<ce>           raging centaur near. The creature ends %g3 life
+<ce>             and turns to you, furious at your intrusion.
+
+Message:  1013
+<ce>         With the centaur dead, you check _qgiver_'s corpse.
+<ce>          You find the money with which %g1 intended to pay
+<ce>             you and little else. You recover it. Without
+<ce>            %g3 calling, the centaurs here should be much
+<ce>                             more docile.
+
+Message:  1030
+%qdt:
+ Someone named _qgiver_
+ has hired me to capture young
+ centaurs in ___dung_
+ of ____dung_. I will be
+ paid =reward_ gold pieces if we
+ can have the task finished
+ in =timer_ days.
+
+QBN:
+Item _reward_ gold range 800 to 1200
+
+Person _qgiver_ group Questor male
+
+Place _dung_ remote dungeon14
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _indung_ 0:20 0:40
+
+Foe _enemy_ is Centaur
+Foe _enemy1_ is Centaur
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    pc at _dung_ set _inside_
+    reveal _dung_
+    pick one of _f1_ _f1_ _f2_
+    add _qgiver_ face
+    hide npc _qgiver_
+
+variable _f1_
+variable _f2_
+
+_inside_ task:
+    start timer _indung_
+    stop timer _timer_
+    say 1010
+
+_notinside_ task:
+    when not _inside_
+    stop timer _indung_
+    start timer _timer_
+
+_active_ task:
+    when _inside_ and not _indung_
+    create foe _enemy_ every 2 minutes indefinitely with 75% success
+
+variable _indung_
+
+_notdead_ task:
+    when _indung_ and _f1_
+    say 1011
+    start task _escape_
+
+variable _escape_
+
+_fullvictory_ task:
+    when _escape_ and not _inside_
+    give pc _reward_
+    end quest
+
+_dead_ task:
+    when _indung_ and _f2_
+    drop _qgiver_ face
+    say 1012
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    destroy _qgiver_
+
+_retribute_ task:
+    killed _enemy1_
+    say 1013
+    get item _reward_
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest
