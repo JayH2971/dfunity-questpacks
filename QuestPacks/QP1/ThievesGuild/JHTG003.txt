@@ -39,8 +39,8 @@ QuestLogEntry:  [1010]
  I should go in after midnight.
  I can't kill the carrier, but some fighting
  might have to be done to get it free.
- I've got =queston_ days to get it done.
-
+ I've got =queston_ days to get it done
+ and go back to ___qgiver_.
 
 Message:  1020
 <ce>  "%oth!" 

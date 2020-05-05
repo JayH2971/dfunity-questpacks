@@ -4,87 +4,86 @@ DisplayName: Orcish Skirmish
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  A recent raid on an orc encampment
-<ce>  in ___dung_ proved timely.
-<ce>  We are informed that the brutes have
-<ce>  planned an assassination attempt against
-<ce>  _noble_, a noble within the region
-<ce>  of %crn. We must prevent this work
-<ce>  of destabilization, and the time is far
-<ce>  too short to rally the host of knights
-<ce>  this matter deserves. Will you go and
-<ce>  do the work of an army, %pct?
+<ce>                  A recent raid on an orc encampment
+<ce>                      in ___dung_ proved timely.
+<ce>                 We are informed that the brutes have
+<ce>               planned an assassination attempt against
+<ce>                  _noble_, a noble within the region
+<ce>                  of %crn. We must prevent this work
+<ce>               of destabilization, and the time is far
+<ce>                too short to rally the host of knights
+<ce>                this matter deserves. Will you go and
+<ce>                    do the work of an army, %pct?
 
 RefuseQuest:  [1001]
-<ce>  If you hear of _noble_'s death
-<ce>  in the next few weeks, you'll be able to
-<ce>  tell your friends you knew of it beforehand.
+<ce>                    If you hear of _noble_'s death
+<ce>               in the next few weeks, you'll be able to
+<ce>             tell your friends you knew of it beforehand.
 
 AcceptQuest:  [1002]
-<ce>  Move quickly. _noble_ will be at the
-<ce>  palace in ___palace_. We expect the
-<ce>  attack to occur in the night hours in
-<ce>  =2palace_ days. Tell me the tale when you return.
+<ce>                 Move quickly. _noble_ will be at the
+<ce>                 palace in ___palace_. We expect the
+<ce>                attack to occur in the night hours in
+<ce>          =2palace_ days. Tell me the tale when you return.
 
 QuestFail:  [1003]
-<ce>  Loud screams emanate from within the
-<ce>  palace, followed by a joyful roar. You need
-<ce>  not look to know what has happened.
+<ce>                 Loud screams emanate from within the
+<ce>             palace, followed by a joyful roar. You need
+<ce>                 not look to know what has happened.
 
 QuestComplete:  [1004]
-<ce>  _noble_ is led away by
-<ce>  armed guards. A page speaks to you.
-<ce>  
-<ce>  "%pcn, if all knights in %crn are like
-<ce>  yourself, we have no need for fear any longer.
-<ce>  Perhaps next they will send you to capture
-<ce>  Gortwog himself and bring an end to these
-<ce>  hostilities. Your name will be had in open renown
-<ce>  across the land if you remain faithful to the %t."
+<ce>                        _noble_ is led away by
+<ce>                 armed guards. A page speaks to you.
+<ce>
+<ce>                "%pcn, if all knights in %crn are like
+<ce>             yourself, we have no further need for fear.
+<ce>          Perhaps next they will send you to capture Gortwog
+<ce>            himself. Your name will be had in open renown
+<ce>          across the land if you remain faithful to the %t."
 
 Message:  1010
-<ce>  Two palace servants spy you from across
-<ce>  the hall and duck out of view. No doubt they
-<ce>  will have some well-planned escape route
-<ce>  in case their fears are brought to pass.
+<ce>               Two palace servants spy you from across
+<ce>             the hall and duck out of view. No doubt they
+<ce>               will have some well-planned escape route
+<ce>               in case their fears are brought to pass.
 
 Message:  1015
-<ce> You hear savage roaring from within
-<ce>  the palace. The attack has already begun.
+<ce>                 You hear savage roaring from within
+<ce>              the palace. The attack has already begun.
 
 Message:  1018
-<ce>  This is the night the orcs plan to attack
-<ce>  the palace in ___palace_.
+<ce>              This is the night the orcs plan to attack
+<ce>                      the palace in ___palace_.
 
 Message:  1020
-<ce>  You step into the palace and are met by a
-<ce>  frightful servant. The air is tense.
-<ce>  
-<ce>  "The report was false! We are deceived!
-<ce>  They have taken my master _noble_!
-<ce>  The court magician says they are headed
-<ce>  for _dung2_. Please help %g2!"
+<ce>              You step into the palace and are met by a
+<ce>                 frightful servant. The air is tense.
+<ce>
+<ce>               "The report was false! We are deceived!
+<ce>                  They have taken my master _noble_!
+<ce>               The court magician says they are headed
+<ce>                    for _dung2_. Please help %g2!"
 
 Message:  1021
-<ce>  Please! Save me from these horrible creatures!
-<ce>  %oth, how I hate orcs!
-<--->
-<ce>  %god be praised! Free me from this place, please!
+<ce>            Please! Save me from these horrible creatures!
+<ce>                        %oth, how I hate orcs!
+                                     <--->
+<ce>          %god be praised! Free me from this place, please!
 
 Message:  1022
-<ce>  _noble_ suddenly bends over and
-<ce>  retches. Out of respect you look away until it's over.
-<ce>  
-<ce>  "%oth, forgive me. This hole is doing
-<ce>  worse things unto me by the minute. Please, get me
-<ce>  out of here. I don't think I can last a couple more
-<ce>  hours before my condition will become life-threatening."
+<ce>                   _noble_ suddenly bends over and
+<ce>        retches. Out of respect you look away until it's over.
+<ce>
+<ce>                "%oth, forgive me. This hole is doing
+<ce>          worse things unto me by the minute. Please, get me
+<ce>         out of here. I don't think I can last a couple more
+<ce>       hours before my condition will become life-threatening."
 
 Message:  1023
-<ce>  _noble_ suddenly drops to the ground.
-<ce>  Your best attempts to resuscitate %g2 are in vain.
-<ce>  The filthiness within ___dung2_ has
-<ce>  overcome %g2.
+<ce>                _noble_ suddenly drops to the ground.
+<ce>          Your best attempts to resuscitate %g2 are in vain.
+<ce>                 The filthiness within ___dung2_ has
+<ce>                            overcome %g2.
 
 Message:  1030
 %qdt:
@@ -95,7 +94,7 @@ Message:  1030
  to prevent an attack on
  _noble_, who waits inside.
 
- Message:  1031
+Message:  1031
 %qdt:
  The servants of the palace at
  ___palace_ informed me that
@@ -105,9 +104,9 @@ Message:  1030
  to the palace.
 
 Message:  1035
-<ce> Abdicating _noble_ when %g1
-<ce> most needed you will reflect very poorly
-<ce> on yourself and the other knights.
+<ce>                     Abdicating _noble_ when %g1
+<ce>               most needed you will reflect very poorly
+<ce>                  on yourself and the other knights.
 
 QBN:
 Person _noble_ faction Random_Noble
@@ -115,11 +114,11 @@ Person _noble_ faction Random_Noble
 Place _palace_ remote palace
 
 Clock _2palace_ 00:00 0 flag 17 range 0 2
-Clock _death_ 00:20
+Clock _death_ 00:23
 Clock _victory_ 00:01
 Clock _failsafe_ 60.00:00
 Clock _sickdelay_ 0:02
-Clock _sickdeath_ 2:00 4:00 
+Clock _sickdeath_ 2:00 4:00
 
 Place _dung_ remote dungeon
 Place _dung2_ remote dungeon
@@ -133,41 +132,41 @@ Foe _orc5_ is Orc_shaman
 --	Quest start-up:
 	start timer _2palace_
 	start timer _failsafe_
-	log 1030 step 0 
-  pc at _palace_ set _inside_
-  pc at _dung2_ set _orcs_
-  pick one of _real_ _false_
+	log 1030 step 0
+	pc at _palace_ set _inside_
+	pc at _dung2_ set _orcs_
+	pick one of _real_ _false_
 
 variable _real_
 _false_ task:
 	pick one of _sick_ _ok_
 
 _night_ task:
-  daily from 2:00 to 5:00
+	daily from 2:00 to 5:00
 
 variable _inside_
 _notice_ task:
-  when _inside_ and _real_
-  say 1010
+	when _inside_ and _real_
+	say 1010
 
 _2palace_ task:
-  say 1018
+	say 1018
 
 _spawn_ task:
-  when _timeup_ and _inside_ and _real_
+	when _timeup_ and _inside_ and _real_
 	create foe _orc1_ every 3 minutes 3 times with 100% success
 	start timer _death_
 	say 1015
 
 _final_ task:
- when _2palace_ and _night_
- start task _timeup_
+	when _2palace_ and _night_
+	start task _timeup_
 
 variable _timeup_
 _failout_ task:
- when _timeup_ and not _inside_ and not _night_ and _real_
- say 1035
- end quest
+	when _timeup_ and not _inside_ and not _night_ and _real_
+	say 1035
+	end quest
 
 _success_ task:
 	killed 6 _orc1_
@@ -177,18 +176,18 @@ _success_ task:
 _victory_ task:
 	give pc nothing
 	legal repute +8
-	end quest 
+	end quest
 
 variable _death_
 _death2_ task:
- when _death_ and _inside_
- say 1003
- end quest
+	when _death_ and _inside_
+	say 1003
+	end quest
 
 _death3_ task:
- when _death_ and not _inside_
- say 1035
- end quest
+	when _death_ and not _inside_
+	say 1035
+	end quest
 
 _capture_ task:
 	when _inside_ and _false_
@@ -233,4 +232,4 @@ _win_ task:
 	start task _victory_
 
 _failsafe_ task:
- end quest
+	end quest

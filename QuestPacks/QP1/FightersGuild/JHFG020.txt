@@ -4,96 +4,95 @@ DisplayName: Cast Down, but Not Destroyed
 QRC:
 
 QuestorOffer:  [1000]
-<ce> Got a guild member who's feeling really
-<ce> depressed. The fellow's here in town, just
-<ce> sort of moping around, unable to get back
-<ce> in the groove. I bet you'd be pretty good
-<ce> at changing that, right %pcf?
+<ce>               Got a guild member who's feeling really
+<ce>              depressed. The fellow's here in town, just
+<ce>              sort of moping around, unable to get back
+<ce>              in the groove. I bet you'd be pretty good
+<ce>                    at changing that, right %pcf?
 
 RefuseQuest:  [1001]
-<ce> I still say so, even if you don't.
+<ce>                  I still say so, even if you don't.
 
 AcceptQuest:  [1002]
-<ce> All right then, go on and find him over
-<ce> in _res_. Poor guy's really
-<ce> shaken up, but I don't know what about.
-<ce> Name's _guy_. See if you can
-<ce> get his head back in a right place.
-<ce> I'll have =reward_ gold for you when
-<ce> you're done. Don't take longer than =timer_ days.
+<ce>               All right then, go on and find him over
+<ce>                     in _res_. Poor guy's really
+<ce>               shaken up, but I don't know what about.
+<ce>                     Name's _guy_. See if you can
+<ce>                 get his head back in a right place.
+<ce>                 I'll have =reward_ gold for you when
+<ce>          you're done. Don't take longer than =timer_ days.
 
 QuestFail:  [1003]
-<ce> _guy_ feeling any better?
-<ce> No? I'll be waiting here.
+<ce>                      _guy_ feeling any better?
+<ce>                      No? I'll be waiting here.
 
 QuestComplete:  [1004]
-<ce> Haa, I knew you could do it!
-<ce> This is definitely worth the gold.
-<ce> I need someone like him to kill
-<ce> rats and tigers while you're
-<ce> frying the big fish. 
+<ce>                     Haa, I knew you could do it!
+<ce>                  This is definitely worth the gold.
+<ce>                   I need someone like him to kill
+<ce>                     rats and tigers while you're
+<ce>                         frying the big fish.
 
 Message:  1010
-<ce> "Oh what? What're you here for?
-<ce> _qgiver_... Oh, %g2.
-<ce> No, no, I'm not interested. I'm done
-<ce> with the guild. It's not the life for me."
-<ce> 
-<ce> You spend some time trying to force the
-<ce> reason out of him and are met with
-<ce> blunt resistance. Finally, with some
-<ce> exasperation he blurts out the truth.
-<ce> 
-<ce> "It's because of ___dung_, okay?!
-<ce> Filthy den of vipers nearly killed me!
-<ce> I hadn't spent more than an hour in
-<ce> there before I was nearly dead!
-<ce> Unless you're going to take me there and
-<ce> show me how a real fighter acts, I don't
-<ce> want to hear about it!"
-<ce> 
-<ce> It looks like there's only one thing
-<ce> that will convince him. A little begrudgingly,
-<ce> he agrees to follow you to ___dung_.
-<ce> If anything can help him overcome his
-<ce> trauma, it'll be this.
+<ce>                   "Oh what? What're you here for?
+<ce>                         _qgiver_... Oh, %g2.
+<ce>                 No, no, I'm not interested. I'm done
+<ce>              with the guild. It's not the life for me."
+<ce>
+<ce>               You spend some time trying to force the
+<ce>                  reason out of him and are met with
+<ce>                 blunt resistance. Finally, with some
+<ce>                exasperation he blurts out the truth.
+<ce>
+<ce>                  "It's because of ___dung_, okay?!
+<ce>                Filthy den of vipers nearly killed me!
+<ce>                 I hadn't spent more than an hour in
+<ce>                   there before I was nearly dead!
+<ce>               Unless you're going to take me there and
+<ce>               show me how a real fighter acts, I don't
+<ce>                       want to hear about it!"
+<ce>
+<ce>                 It looks like there's only one thing
+<ce>            that will convince him. A little begrudgingly,
+<ce>                 he agrees to follow you to ___dung_.
+<ce>                If anything can help him overcome his
+<ce>                        trauma, it'll be this.
 
 Message:  1011
-<ce> _guy_ starts shaking
-<ce> involuntarily once you enter.
-<ce> 
-<ce> "You know what? Fighting's all yours.
-<ce> I'm not doing a thing 'til I see you survive."
+<ce>                         _guy_ starts shaking
+<ce>                    involuntarily once you enter.
+<ce>
+<ce>                "You know what? Fighting's all yours.
+<ce>            I'm not doing a thing 'til I see you survive."
 
 Message:  1012
-<ce> Your confidence begins to rub off on
-<ce> _guy_. Getting a feel for
-<ce> adventure, he smiles, perhaps for the
-<ce> first time in weeks.
-<ce> 
-<ce> "You know what? I'm better than this.
-<ce> %oth, why am I even talking?
-<ce> I can do this. I can!"
-<ce> 
-<ce> He then leaves you to begin adventuring
-<ce> anew. _qgiver_ will be happy
-<ce> to hear about this.
+<ce>                 Your confidence begins to rub off on
+<ce>                      _guy_. Getting a feel for
+<ce>                adventure, he smiles, perhaps for the
+<ce>                         first time in weeks.
+<ce>
+<ce>                "You know what? I'm better than this.
+<ce>                     %oth, why am I even talking?
+<ce>                        I can do this. I can!"
+<ce>
+<ce>               He then leaves you to begin adventuring
+<ce>                     anew. _qgiver_ will be happy
+<ce>                         to hear about this.
 
 Message:  1013
-<ce> "We've taken far too long for this, and
-<ce> I have better things to do."
-<ce> 
-<ce> _guy_ marches off somewhere else.
+<ce>               "We've taken far too long for this, and
+<ce>                     I have better things to do."
+<ce>
+<ce>                  _guy_ marches off somewhere else.
 
 Message:  1014
-<ce> _guy_ clearly doesn't want to
-<ce> speak to you or anyone from the Fighters Guild.
-<ce> Then again, someone with your speaking ability
-<ce> has breached far greater barriers.
-<ce> You discuss his difficulties on a recent guild
-<ce> job and talk through what to do next time
-<ce> it happens. Through conversation alone his
-<ce> confidence is restored.
+<ce>                    _guy_ clearly doesn't want to
+<ce>           speak to you or anyone from the Fighters Guild.
+<ce>            Then again, someone with your speaking ability
+<ce>                  has breached far greater barriers.
+<ce>            You discuss his difficulties on a recent guild
+<ce>              job and talk through what to do next time
+<ce>                             it happens.
 
 Message:  1030
 %qdt:
@@ -128,10 +127,10 @@ Clock _indung_ 4:00 6:00
 Item _reward_ gold
 
 --	Quest start-up:
-	start timer _timer_
-	log 1030 step 0
-    place npc _guy_ at _res_
-    pick one of _easy_ _easy_ _hard_
+  start timer _timer_
+  log 1030 step 0
+  place npc _guy_ at _res_
+  pick one of _easy_ _easy_ _hard_
 
 variable _easy_
 variable _hard_
@@ -144,49 +143,49 @@ _stre_ task:
   start task _skilled_
 
 _pers_ task:
-    when attribute Personality is at least 85
-    start task _skilled_
+  when attribute Personality is at least 85
+  start task _skilled_
 
 variable _skilled_
 _begin_ task:
   clicked npc _guy_
 
 _persuade_ task:
-    when _begin_ and _easy_ and _skilled_
-    say 1014
-    hide npc _guy_
-    start task _victory_
+  when _begin_ and _easy_ and _skilled_
+  say 1014
+  hide npc _guy_
+  start task _victory_
 
 _victory_ task:
-    say 1012
+  say 1012
 
 _normalpath_ task:
-    when _begin_ and not _easy_ or _begin_ and not _skilled_
-    say 1010
-    hide npc _guy_
-    add _guy_ face
-    reveal _dung_
-    pc at _dung_ do _inside_
-    log 1031 step 1
+  when _begin_ and not _easy_ or _begin_ and not _skilled_
+  say 1010
+  hide npc _guy_
+  add _guy_ face
+  reveal _dung_
+  pc at _dung_ do _inside_
+  log 1031 step 1
 
 _inside_ task:
-    start timer _indung_
-    say 1011
+  start timer _indung_
+  say 1011
 
 _notinside_ task:
-    when not _inside_
-    stop timer _indung_
+  when not _inside_
+  stop timer _indung_
 
 variable _indung_
 _hardwin_ task:
-    when _normalpath_ and _indung_
-    drop _guy_ face
-    start task _victory_
+  when _normalpath_ and _indung_
+  drop _guy_ face
+  start task _victory_
 
 _goodbye_ task:
-    when _timer_ and _normalpath_ and not _victory_
-    drop _guy_ face
-    say 1013
+  when _timer_ and _normalpath_ and not _victory_
+  drop _guy_ face
+  say 1013
 
 _ending_ task:
   when _qgclicked_ and _victory_
@@ -200,7 +199,7 @@ _clearclick_ task:
   when _qgclicked_ and not _victory_
   say 1003
   clear _qgclicked_ _clearclick_
-    
+
 _timer_ task:
   say 1003
-	end quest
+  end quest

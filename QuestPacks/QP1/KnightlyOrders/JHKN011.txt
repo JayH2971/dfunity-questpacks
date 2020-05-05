@@ -155,7 +155,7 @@ _death_ task:
 	place item _bag_ at _dung_
 
 _qgclicked_ task:
-	clicked _qgiver_
+	clicked npc _qgiver_
 
 _clearclick_ task:
 	when _qgclicked_ and not _talkkni_
