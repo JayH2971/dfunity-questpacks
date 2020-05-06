@@ -97,8 +97,9 @@ Message:  1030
  I must deliver a poisoned plant
  to _mark_ in ___tavern_
  before =2tavern_ days' have passed,
- and then return to _qgiver_
- to report my success.
+ and then return to the Dark Brotherhood
+ of ___qgiver_ to report
+ my success.
 
 QBN:
 Item _plant_ large_plant
