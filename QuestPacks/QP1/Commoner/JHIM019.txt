@@ -1,5 +1,6 @@
 Quest: JHIM019
 DisplayName: Walk My Bear
+--Concept by BadLuckBurt
 -- Message panels
 QRC:
 
@@ -139,9 +140,9 @@ Place _temple_ local temple
 
 Clock _timeup_ 4:00
 Clock _disease_ 0:20
-Clock _confront_ 0:03
 Clock _bearattack_ 0:05
-Clock _tavernfight_ 0:03
+Clock _tavernfight_ 0:04
+Clock _confront_ 0:03
 
 Foe _angry_ is Ranger
 Foe _rat_ is 2 Giant_rat
