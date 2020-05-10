@@ -1,6 +1,7 @@
 Quest: JHDB021a
 DisplayName: To Kill an Ambassador
 -- Message panels
+--Needs AnyInfo or Rumors fix
 QRC:
 
 QuestComplete:  [1004]
@@ -198,13 +199,6 @@ Message:  1024
 <ce> current alias. It says he's in ___palace_!
 <ce>  Good going! Let's get moving!"
 
-
--<ce> 
--<ce> "The name on that letterhead must be his
--<ce> current alias. If we can ask around
--<ce> for that, I bet we can find him that
--<ce> way. Good going! Let's get moving!"
--
 Message:  1025
 I dunno, but some _alias_ from the Empire is staying over in ___palace_.
 <--->
@@ -365,8 +359,8 @@ Item _paper_ letter
 
 _begin_ task:
     say 1011
-	start timer _timer_ 
-	log 1030 step 0
+    start timer _timer_
+    log 1030 step 0
     start timer _firsttalk_
     start task _firstpic_
 
@@ -462,16 +456,16 @@ _slain_ task:
     log 1034 step 1
 
 _qgclicked_ task:
-	clicked npc _gort_ 
+    clicked npc _gort_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_
-	clear _qgclicked_ _clearclick_ 
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
 
 _pcreward_ task:
-	when _qgclicked_ and _slain_
-	give pc _reward_
-	end quest 
+    when _qgclicked_ and _slain_
+    give pc _reward_
+    end quest
 
 _timer_ task:
     say 1035

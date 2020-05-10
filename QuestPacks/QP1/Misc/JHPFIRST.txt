@@ -18,19 +18,19 @@ QuestFail:  [1003]
 QuestComplete:  [1004]
 <ce>                             JHPINIT 1004
 
-Message:  1027
+Message:  1010
 <ce>                       Quest Pack #1 initiated.
 
 QBN:
 
-Clock _init_ 0:00
+Clock _init_ 0:05
 Clock _timer_ 0:02
 
 --   Quest start-up:
+    say 1010
     start timer _init_
 
 _init_ task:
-    say 1027
     start timer _timer_
     start quest JHCART
     pick one of _q1_ _q2_ _q3_

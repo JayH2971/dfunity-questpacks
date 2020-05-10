@@ -76,7 +76,6 @@ Place _dungeon_ remote dungeon9
 Clock _timer_ 00:00 0 flag 17 range 0 2
 
 Foe _daedralord_ is Daedra_lord
-
 Foe _daedrased_ is Daedra_seducer
 
 --	Quest start-up:

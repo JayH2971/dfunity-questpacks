@@ -58,7 +58,8 @@ Message:  1030
  attempt by the Dark Brotherhood.
  I am to rescue _child_
  within =2dung_ days' time and return
- %g2 to the order hall.
+ %g2 to the order hall
+ in ___qgiver_.
 
 QBN:
 
@@ -88,7 +89,6 @@ _found_ task:
     create foe _enemy2_ every 10 minutes 4 times with 35% success
     stop timer _2dung_
     start timer _failsafe_
-
 
 _qgclicked_ task:
     clicked npc _qgiver_

@@ -1,30 +1,29 @@
--- Perpetual Quest
 Quest: JHDB022
 DisplayName: Quill Circus
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  Chulmore Quill is a distant... affiliate,
-<ce>  I can say, of the Dark Brotherhood.
-<ce>  The lightweight has never shown skill
-<ce>  with a weapon, but nevertheless makes
-<ce>  the right people die when needed.
-<ce>  We've received an invitation from him
-<ce>  to send a skilled combatant to an arena
-<ce>  of death for a considerable gold reward.
-<ce>  Take it or leave it.
+<ce>              Chulmore Quill is a distant... affiliate,
+<ce>                 I can say, of the Dark Brotherhood.
+<ce>                The lightweight has never shown skill
+<ce>                with a weapon, but nevertheless makes
+<ce>                  the right people die when needed.
+<ce>                We've received an invitation from him
+<ce>               to send a skilled combatant to an arena
+<ce>               of death for a considerable gold reward.
+<ce>                         Take it or leave it.
 
 RefuseQuest:  [1001]
-<ce>  Yes, let's get back to business.
+<ce>                   Yes, let's get back to business.
 
 AcceptQuest:  [1002]
-<ce>  Quill is waiting in _place_,
-<ce>  at ___place_. Find him before
-<ce>  =timer_ days are finished. We care
-<ce>  not for whatever the outcome is,
-<ce>  though your failure could provide
-<ce>  an entertaining tale.
+<ce>                     Quill is waiting in _place_,
+<ce>                    at ___place_. Find him before
+<ce>                  =timer_ days are finished. We care
+<ce>                   not for whatever the outcome is,
+<ce>                  though your failure could provide
+<ce>                        an entertaining tale.
 
 QuestFail:  [1003]
 <ce>       You have stepped outside the bounds of the battlefield.
@@ -42,14 +41,14 @@ QuestComplete:  [1004]
 <ce>                       begins to smoke lightly.
 <ce>
 <ce>          "Quite a show you've put on for us! Clever child.
-<ce>               You have served our purposes, and we will now
-<ce>                         serve yours. Claim your reward."
+<ce>            You have served our purposes, and we will now
+<ce>                   serve yours. Claim your reward."
 <ce>
 <ce>               The ball shatters with a flash of light,
 <ce>                 and in its place you find the gold.
 
 Message:  1011
-<ce>                Ho ho! The Brotherhood has sent me
+<ce>                  Ho ho! The Brotherhood has sent me
 <ce>          a new inductee for the circus! That is what you're
 <ce>       here for, I presume? We don't have any other outstanding
 <ce>          business, you and I. But I do have a treat for you
@@ -68,8 +67,8 @@ Message:  1012
 <ce>                   We hope you do not let us down.
 
 Message:  1013
-<ce>           Oh, then you must be one of the wimps
-<ce>              the Fighters Guild keeps rescuing. Too bad.
+<ce>                Oh, then you must be one of the wimps
+<ce>             the Fighters Guild keeps rescuing. Too bad.
 <ce>               One day I'll meet my champion, I'm sure!
 
 Message:  1014
@@ -87,8 +86,8 @@ Message:  1014
 <ce>        "You didn't think we'd be present, did you? But we can
 <ce>          see the whole show through this clever apparatus.
 <ce>          Now, our deal applies: fight to win, and don't you
-<ce>             dare think of fleeing! Stay close to the shrine!
-<ce>      Let the games begin!"
+<ce>           dare think of fleeing! Stay close to the shrine!
+<ce>                        Let the games begin!"
 
 Message:  1015
 <ce>              _chul_'s shrill laughter pierces the air.

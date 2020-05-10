@@ -4,93 +4,93 @@ DisplayName: Venom
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  Occasionally we receive requests to claim a life
-<ce>  while deflecting suspicion. The greatest assassins
-<ce>  in all Tamriel know how to make people die quickly
-<ce>  or slowly, which is why our business recurs.
-<ce>  Will you accept a simple job to poison a mark?
+<ce>           Occasionally we receive requests to claim a life
+<ce>          while deflecting suspicion. The greatest assassins
+<ce>          in all Tamriel know how to make people die quickly
+<ce>             or slowly, which is why our business recurs.
+<ce>            Will you accept a simple job to poison a mark?
 
 RefuseQuest:  [1001]
-<ce>  Why? Do you need to drink blood after every kill?
+<ce>          Why? Do you need to drink blood after every kill?
 
 AcceptQuest:  [1002]
-<ce>  This task will send you to ___tavern_.
-<ce>  The target, _mark_, is expecting a
-<ce>  prepaid shipment of _plant_ within =2tavern_
-<ce>  days' time. You will deliver this in its place.
-<ce>  We have dispatched %g3 regular courier, so you will
-<ce>  face no interference. Avoid unshielded contact with
-<ce>  the plant. The poison we have placed on it will
-<ce>  react over several hours. To avoid suspicion, you
-<ce>  must not stay within the building for more than a
-<ce>  few minutes. Your face will be easily remembered
-<ce>  otherwise. Return when the task is finished. Farewell.
+<ce>                This task will send you to ___tavern_.
+<ce>                  The target, _mark_, is expecting a
+<ce>             prepaid shipment of _plant_ within =2tavern_
+<ce>           days' time. You will deliver this in its place.
+<ce>         We have dispatched %g3 regular courier, so you will
+<ce>         face no interference. Avoid unshielded contact with
+<ce>           the plant. The poison we have placed on it will
+<ce>          react over several hours. To avoid suspicion, you
+<ce>          must not stay within the building for more than a
+<ce>           few minutes. Your face will be easily remembered
+<ce>        otherwise. Return when the task is finished. Farewell.
 
 QuestFail:  [1003]
-<ce>  _mark_ expected the _plant_
-<ce>  to arrive in ___tavern_ by now.
+<ce>                     _mark_ expected the _plant_
+<ce>                   to arrive in ___tavern_ by now.
 
 QuestComplete:  [1004]
-<ce>  I presume you did not linger in the tavern
-<ce>  for very long? It would be a shame for the Brotherhood
-<ce>  to be associated with clumsy traipsing by one of its
-<ce>  members, no matter %pg3 history. Your devotion
-<ce>  has been noted, %pct.
+<ce>              I presume you did not linger in the tavern
+<ce>        for very long? It would be a shame for the Brotherhood
+<ce>         to be associated with clumsy traipsing by one of its
+<ce>            members, no matter %pg3 history. Your devotion
+<ce>                        has been noted, %pct.
 
 Message:  1015
-<ce>  The time you've spent in this tavern has given the
-<ce>  patrons time to commit you to memory. Your work has failed.
+<ce>          The time you've spent in this tavern has given the
+<ce>     patrons time to commit you to memory. Your work has failed.
 
 Message:  1020
-<ce>  Yes, courier? Why thank you! Yes, this will do just fine.
-<ce>  A lovely sample if I say so myself. Finest work. Send my
-<ce>  regards to my friends. It'll be some time before I can visit.
+<ce>      Yes, courier? Why thank you! Yes, this will do just fine.
+<ce>       A lovely sample if I say so myself. Finest work. Send my
+<ce>    regards to my friends. It'll be some time before I can visit.
 
 Message:  1021
-<ce>  Yes? What is this? Pardon me for saying this, but I do
-<ce>  not recognize or trust you. For all I know you could be
-<ce>  delivering this to the wrong person and soon I will
-<ce>  have some angry lout breaking my door down for
-<ce>  his _plant_. Is there some reason I should
-<ce>  accept this?
-<--->
-<ce>  Hello. I'm sorry, what? I don't recognize you.
-<ce>  I get my shipments from a certain courier in whom I
-<ce>  have placed my confidence, and that is not you.
-<ce>  Is there any reason I should accept this _plant_?
+<ce>        Yes? What is this? Pardon me for saying this, but I do
+<ce>       not recognize or trust you. For all I know you could be
+<ce>         delivering this to the wrong person and soon I will
+<ce>            have some angry lout breaking my door down for
+<ce>              his _plant_. Is there some reason I should
+<ce>                             accept this?
+                                     <--->
+<ce>            Hello. I'm sorry, what? I don't recognize you.
+<ce>         I get my shipments from a certain courier in whom I
+<ce>           have placed my confidence, and that is not you.
+<ce>          Is there any reason I should accept this _plant_?
 
 Message:  1022
-<ce>  My regular courier would have informed me if something had
-<ce>  changed. Surely if he sent you, you must know what our
-<ce>  arrangement is. Am I going to pay you for this delivery?
-<--->
-<ce>  I should be a fool to take this. But our friendship
-<ce>  is not worth tossing into the wastepit merely because
-<ce>  of a wrinkle in the delivery process. Tell me,
-<ce>  before I make my decision. The agreement that I have
-<ce>  to receive this, does it require that I pay my courier?
+<ce>      My regular courier would have informed me if something had
+<ce>        changed. Surely if he sent you, you must know what our
+<ce>       arrangement is. Am I going to pay you for this delivery?
+                                     <--->
+<ce>         I should be a fool to take this. But our friendship
+<ce>        is not worth tossing into the wastepit merely because
+<ce>            of a wrinkle in the delivery process. Tell me,
+<ce>         before I make my decision. The agreement that I have
+<ce>       to receive this, does it require that I pay my courier?
 
 Message:  1023
-<ce>  Well said. I will admit that my suspicions get the worst
-<ce>  of me. This is just a sample of _plant_. What
-<ce>  could possibly go wrong? Thank you, friend.
-<ce>  I will take it now. Send my regards to the fellows
-<ce>  at the apothecary. I hope to see them soon.
-<--->
-<ce>  Indeed. I think it's been a long week and my
-<ce>  suspicions have run away with me this time.
-<ce>  I will take it. Thank you. After all, what harm
-<ce>  could come from this little sample of _plant_?
-<ce>  Farewell, friend. Safe travels.
+<ce>       Well said. I will admit that my suspicions get the worst
+<ce>            of me. This is just a sample of _plant_. What
+<ce>             could possibly go wrong? Thank you, friend.
+<ce>          I will take it now. Send my regards to the fellows
+<ce>             at the apothecary. I hope to see them soon.
+                                     <--->
+<ce>             Indeed. I think it's been a long week and my
+<ce>             suspicions have run away with me this time.
+<ce>           I will take it. Thank you. After all, what harm
+<ce>            could come from this little sample of _plant_?
+<ce>                   Farewell, friend. Safe travels.
 
 Message:  1024
-<ce>  No, no, this will not do. Something is clearly wrong
-<ce>  here, and I will not make of myself a thief to
-<ce>  accept this odd shipment. Leave now.
-<--->
-<ce>  No, I refuse. This is all too odd. Leave now.
-<ce>  I will have nothing to do with this. If I am making
-<ce>  a mistake, I will sort it out later. Begone.
+<ce>         No, no, this will not do. Something is clearly wrong
+<ce>            here, and I will not make of myself a thief to
+<ce>                 accept this odd shipment. Leave now.
+                                     <--->
+<ce>            No, I refuse. This is all too odd. Leave now.
+<ce>         I will have nothing to do with this. If I am making
+<ce>             a mistake, I will sort it out later. Begone.
 
 Message:  1030
 %qdt:
@@ -110,11 +110,12 @@ Person _mark_ faction Generic_Temple
 Place _tavern_ remote tavern
 
 Clock _2tavern_ 00:00 0 flag 17 range 0 2
-Clock _surprise_ 00:05 00:10
+Clock _surprise_ 00:08 00:12
+Clock _failsafe_ 180.00:00
 
 --	Quest start-up:
-	start timer _2tavern_
-	log 1030 step 0 
+  start timer _2tavern_
+  log 1030 step 0
   place npc _mark_ at _tavern_
   get item _plant_
   pc at _tavern_ set _inside_
@@ -123,12 +124,13 @@ Clock _surprise_ 00:05 00:10
 variable _e1_
 variable _e2_
 _inside_ task:
-    start timer _surprise_
+  start timer _surprise_
 
 variable _surprise_
 _deliver_ task:
   toting _plant_ and _mark_ clicked
   stop timer _2tavern_
+  start timer _failsafe_
 
 _easy_ task:
   when _deliver_ and _e1_
@@ -149,22 +151,25 @@ _fail_ task:
   end quest
 
 _failure_ task:
-    when _surprise_ and _inside_
-    say 1015
-    end quest
+  when _surprise_ and _inside_
+  say 1015
+  end quest
 
 _victory_ task:
   when _qgclicked_ and _deliver_
-	give pc nothing
-	end quest
+  give pc nothing
+  end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+  clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _deliver_
-	clear _qgclicked_ _clearclick_ 
+  when _qgclicked_ and not _deliver_
+  clear _qgclicked_ _clearclick_
 
 _2tavern_ task:
   say 1003
-	end quest
+  end quest
+
+_failsafe_ task:
+  end quest
