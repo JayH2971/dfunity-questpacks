@@ -161,7 +161,7 @@ _bigsuccess_ task:
     remove foe _giant_
 
 _fail_ task:
-    when _persuade_ and not _skilled_
+    when _persuade_ and not _skilled_ and not _injur_
     say 1023
     restrain foe _giant_
     take _ing_ from pc

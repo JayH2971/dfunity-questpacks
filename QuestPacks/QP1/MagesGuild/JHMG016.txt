@@ -4,127 +4,127 @@ DisplayName: Stop the Experiment
 QRC:
 
 QuestorOffer:  [1000]
-<ce> My good %pcf, may I tell you concerning _mage_?
-<ce> I love _mage_, and I hate %g2. %g1 has done
-<ce> great work for the Mages Guild in the past,
-<ce> and therefore should not be abandoned in %g3 hour
-<ce> of need. Nevertheless, some experiments simply
-<ce> cannot be allowed to proceed, regardless of the pretended
-<ce> societal benefit. Will you travel to ___res_
-<ce> to shake some sense into %g2?
+<ce>           My good %pcf, may I tell you concerning _mage_?
+<ce>             I love _mage_, and I hate %g2. %g1 has done
+<ce>             great work for the Mages Guild in the past,
+<ce>          and therefore should not be abandoned in %g3 hour
+<ce>            of need. Nevertheless, some experiments simply
+<ce>      cannot be allowed to proceed, regardless of the pretended
+<ce>             societal benefit. Will you travel to ___res_
+<ce>                    to shake some sense into %g2?
 
 RefuseQuest:  [1001]
-<ce> What a bother. Are you interested in work, truly?
+<ce>          What a bother. Are you interested in work, truly?
 
 AcceptQuest:  [1002]
-<ce> Our beloved colleague spends %g3 time in
-<ce> _res_ of ___res_. I know of the
-<ce> subject matter, but I do not speak it aloud, for I know
-<ce> some will not recover from the shame of having their
-<ce> acts voiced abroad. I merely say %g1 needs to stop, now.
-<ce> Please make haste. You will be held responsible for
-<ce> _mage_'s life, and I request you do not return
-<ce> without %g2. Safe travels, %pct.
+<ce>               Our beloved colleague spends %g3 time in
+<ce>                   _res_ of ___res_. I know of the
+<ce>       subject matter, but I do not speak it aloud, for I know
+<ce>         some will not recover from the shame of having their
+<ce>       acts voiced abroad. I merely say %g1 needs to stop, now.
+<ce>         Please make haste. You will be held responsible for
+<ce>            _mage_'s life, and I request you do not return
+<ce>                   without %g2. Safe travels, %pct.
 
 QuestFail:  [1003]
-<ce> _mage_ falls dead. What will
-<ce> you tell _qgiver_ now?
+<ce>                     _mage_ falls dead. What will
+<ce>                        you tell _qgiver_ now?
 
 QuestComplete:  [1004]
-<ce> _mage_! Oh, how I wish to censure
-<ce> you right here and now! But I well see you
-<ce> need to recover, and then I will give you
-<ce> the finest tongue-lashing of the month.
-<ce> My joy and my fury fight for control of my
-<ce> words. I will see you in a few hours,
-<ce> when you have had some rest.
-<ce> 
-<ce> As for you, %pcf, I bestow on you
-<ce> this enchanted _reward_. Finest work
-<ce> across the board.
+<ce>                  _mage_! Oh, how I wish to censure
+<ce>              you right here and now! But I well see you
+<ce>              need to recover, and then I will give you
+<ce>               the finest tongue-lashing of the month.
+<ce>              My joy and my fury fight for control of my
+<ce>                words. I will see you in a few hours,
+<ce>                     when you have had some rest.
+<ce>
+<ce>                  As for you, %pcf, I bestow on you
+<ce>                 this enchanted _reward_. Finest work
+<ce>                          across the board.
 
-QuestorPostFailure:   [1009]
+QuestorPostFailure:  [1009]
 I remember _mage_. No thanks to you.
 <--->
 Ah, if only we had _mage_'s help right now. What a shame.
 
 Message:  1010
-<ce> _mage_ appears to be in a sort
-<ce> of torpor. It's hard to tell whether
-<ce> %g1 controls the imp or the imp
-<ce> controls %g2.
+<ce>                    _mage_ appears to be in a sort
+<ce>                 of torpor. It's hard to tell whether
+<ce>                   %g1 controls the imp or the imp
+<ce>                            controls %g2.
 
 Message:  1011
-<ce> Once the imp falls, _mage_'s eyes open,
-<ce> and %g1 looks at you with consternation.
-<ce> You begin to explain your task, but before
-<ce> you can say much, you hear a noise nearby.
-<ce> In its final moments, the imp points at
-<ce> at _mage_ a trinket, which crumbles under
-<ce> strain of power.
+<ce>               Once the imp falls, _mage_'s eyes open,
+<ce>               and %g1 looks at you with consternation.
+<ce>              You begin to explain your task, but before
+<ce>              you can say much, you hear a noise nearby.
+<ce>               In its final moments, the imp points at
+<ce>              at _mage_ a trinket, which crumbles under
+<ce>                           strain of power.
 
 Message:  1015
-<ce> _mage_'s face turns pale.
-<ce> 
-<ce> "That... carried an infectious enchantment.
-<ce> I've been diseased and my magicka has departed
-<ce> from me. Please, I need to be cured. Help me!
-<ce> Cast a spell! A temple will do me no good!"
-<ce> 
-<ce> %g1 begins sweating and breathing heavily.
+<ce>                      _mage_'s face turns pale.
+<ce>
+<ce>             "That... carried an infectious enchantment.
+<ce>            I've been diseased and my magicka has departed
+<ce>            from me. Please, I need to be cured. Help me!
+<ce>             Cast a spell! A temple will do me no good!"
+<ce>
+<ce>              %g1 begins sweating and breathing heavily.
 
 Message:  1016
-<ce> _mage_ moans, %g3 footsteps faltering.
-<--->
-<ce> _mage_ nearly stumbles. You help %g2
-<ce> regain %g3 footing before continuing.
-<--->
-<ce> _mage_ spends several seconds in a coughing
-<ce> fit before wearily beginning to move again.
+<ce>                _mage_ moans, %g3 footsteps faltering.
+                                     <--->
+<ce>                 _mage_ nearly stumbles. You help %g2
+<ce>                regain %g3 footing before continuing.
+                                     <--->
+<ce>             _mage_ spends several seconds in a coughing
+<ce>             fit before wearily beginning to move again.
 
 Message:  1017
-<ce> _mage_ speaks with %g3 eyes closed.
-<ce> You understand very little of it.
-<--->
-<ce> _mage_ speaks with %g3 eyes closed.
-<ce> The words are merely whispers.
+<ce>                 _mage_ speaks with %g3 eyes closed.
+<ce>                  You understand very little of it.
+                                     <--->
+<ce>                 _mage_ speaks with %g3 eyes closed.
+<ce>                    The words are merely whispers.
 
 Message:  1018
-<ce> _mage_'s breathing is shallow.
-<ce> You help prop %g2 up as you keep moving.
-<--->
-<ce> _mage_ begins shaking uncontrollably.
-<--->
-<ce> _mage_ falls to %g3 feet and vomits profusely.
-<ce> You help %g2 back up and continue on.
+<ce>                    _mage_'s breathing is shallow.
+<ce>               You help prop %g2 up as you keep moving.
+                                     <--->
+<ce>                _mage_ begins shaking uncontrollably.
+                                     <--->
+<ce>            _mage_ falls to %g3 feet and vomits profusely.
+<ce>                You help %g2 back up and continue on.
 
 Message:  1020
-<ce> A flash of light begins to consume _mage_'s body.
-<ce> 
-<ce> "It's a trap! I'm being sent to
-<ce> ___dung_! Please help!"
-<ce> 
-<ce> A moment later, %g1 is gone. Some nearby
-<ce> scribbles show ___dung_'s location.
+<ce>          A flash of light begins to consume _mage_'s body.
+<ce>
+<ce>                   "It's a trap! I'm being sent to
+<ce>                       ___dung_! Please help!"
+<ce>
+<ce>               A moment later, %g1 is gone. Some nearby
+<ce>                 scribbles show ___dung_'s location.
 
 Message:  1021
-<ce> _mage_ comes into view, apparently
-<ce> searching for the exit. With great
-<ce> relief %g1 waves to you.
-<ce> 
-<ce> "Oh, my, thank you for coming here to find me.
-<ce> The daft artifact left me without magicka, leaving
-<ce> flight as my only option in this cave. Please take
-<ce> me to ___qgiver_. I suppose a word with
-<ce> _qgiver_ would do me well at this point."
+<ce>                  _mage_ comes into view, apparently
+<ce>                  searching for the exit. With great
+<ce>                       relief %g1 waves to you.
+<ce>
+<ce>            "Oh, my, thank you for coming here to find me.
+<ce>          The daft artifact left me without magicka, leaving
+<ce>          flight as my only option in this cave. Please take
+<ce>               me to ___qgiver_. I suppose a word with
+<ce>              _qgiver_ would do me well at this point."
 
 Message:  1022
-<ce> Color returns to _mage_'s face, and
-<ce> %g1 walks with ordinary vigor.
-<ce> 
-<ce> "%oth! Never could I have imagined my research
-<ce> ending so! Take me to ___qgiver_. I have
-<ce> much to say to _qgiver_. Thank you."
+<ce>                 Color returns to _mage_'s face, and
+<ce>                    %g1 walks with ordinary vigor.
+<ce>
+<ce>            "%oth! Never could I have imagined my research
+<ce>               ending so! Take me to ___qgiver_. I have
+<ce>                 much to say to _qgiver_. Thank you."
 
 Message:  1030
 %qdt:
@@ -137,6 +137,14 @@ Message:  1031
 %qdt:
  _mage_ has been transported to
  ___dung_ by %g3 own trickery.
+
+Message:  1032
+%qdt: 
+ _mage_ is suffering from a
+ severe arcane disease, the likes of which
+ a temple cannot cure. I must cast a Cure
+ Disease spell, which will presumably
+ take hold of %g2 and cure it.
 
 QBN:
 Person _qgiver_ group Questor male
@@ -157,9 +165,9 @@ Foe _imp_ is Imp
 Item _reward_ magic_item
 
 --	Quest start-up:
-	start timer _timer_ 
-	log 1030 step 0 
-	place foe _imp_ at _res_
+    start timer _timer_
+    log 1030 step 0
+    place foe _imp_ at _res_
     place npc _mage_ at _res_
     pc at _res_ set _inside_
     pc at _dung_ set _idun_
@@ -175,7 +183,7 @@ _conv1_ task:
     clear _conv_
 
 _slain_ task:
-	killed 1 _imp_ saying 1011
+    killed 1 _imp_ saying 1011
     pick one of _tel_ _dis_
 
 _dis_ task:
@@ -184,6 +192,7 @@ _dis_ task:
     hide npc _mage_
     add _mage_ face
     cast Cure_Disease spell do _cure_
+    log 1032 step 2
 
 _bad1_ task:
     start timer _bad2_
@@ -226,26 +235,26 @@ _conv2_ task:
     when _conv_ and _idun_
     say 1021
     add _mage_ face
-    setvar _vict_
+    start task _vict_
 
 _wander_ task:
     when _idun_ and _wander_
     say 1021
     add _mage_ face
-    setvar _vict_
+    start task _vict_
 
 variable _vict_
-_pcreward_ task:	
-	when _qgclicked_ and _vict_ 
+_pcreward_ task:
+    when _qgclicked_ and _vict_
     give pc _reward_
-	end quest 
+    end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+    clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _vict_ 
-	clear _qgclicked_ _clearclick_ 
+    when _qgclicked_ and not _vict_
+    clear _qgclicked_ _clearclick_
 
 _timer_ task:
-	end quest
+    end quest

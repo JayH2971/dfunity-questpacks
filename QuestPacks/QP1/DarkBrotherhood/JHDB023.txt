@@ -4,56 +4,56 @@ DisplayName: Dark Brotherhood Rescue
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  One of our higher-ranking members is
-<ce>  the victim of a ransom plot, and we
-<ce>  need someone to perform a rescue.
-<ce>  Show your allegiance to the Brotherhood.
+<ce>                 One of our higher-ranking members is
+<ce>                 the victim of a ransom plot, and we
+<ce>                  need someone to perform a rescue.
+<ce>               Show your allegiance to the Brotherhood.
 
 RefuseQuest:  [1001]
-<ce>  Oh, of course. What allegiance?
+<ce>                   Oh, of course. What allegiance?
 
 AcceptQuest:  [1002]
-<ce>  Within ___dung_ a relative of one
-<ce>  of our local Dark Brothers is being held
-<ce>  captive. Since said family member is too
-<ce>  involved in a higher-level plot at this
-<ce>  moment, we promised to send someone capable
-<ce>  to resolve this matter instead. Go find
-<ce>  _captive_ and return here within =timer_ days.
+<ce>                  Within ___dung_ a relative of one
+<ce>               of our local Dark Brothers is being held
+<ce>               captive. Since said family member is too
+<ce>               involved in a higher-level plot at this
+<ce>             moment, we promised to send someone capable
+<ce>               to resolve this matter instead. Go find
+<ce>            _captive_ and return here within =timer_ days.
 
 QuestFail:  [1003]
-<ce>  I would not waste time if I were you.
-<ce>  _captive_ is in ___dung_.
+<ce>                I would not waste time if I were you.
+<ce>                      _captive_ is in ___dung_.
 
 QuestComplete:  [1004]
-<ce>  Why is _captive_ not with you?
-<ce>  Give your report.
-<ce>  
-<ce>  I see. I believe your words.
-<ce>  I will pass the news on.
-<ce>  Mephala's wrath will keen
-<ce>  for such a cynical crime.
+<ce>                    Why is _captive_ not with you?
+<ce>                          Give your report.
+<ce>
+<ce>                     I see. I believe your words.
+<ce>                       I will pass the news on.
+<ce>                      Mephala's wrath will keen
+<ce>                      for such a cynical crime.
 
 Message:  1010
-<ce>  You find _captive_,
-<ce>  but %g1 resists your approach.
-<ce>  
-<ce>  "No! No! Leave me down here!
-<ce>  I don't want to go, please!"
-<ce>  
-<ce>  Some people need to be forced out
-<ce>  of the luxury of this squalid hole,
-<ce>  it seems. You pull %g2 along with you.
+<ce>                         You find _captive_,
+<ce>                    but she resists your approach.
+<ce>
+<ce>                     "No! No! Leave me down here!
+<ce>                     I don't want to go, please!"
+<ce>
+<ce>                  Some people need to be forced out
+<ce>                 of the luxury of this squalid hole,
+<ce>                it seems. You pull her along with you.
 
 Message:  1011
-<ce>  _captive_ shrieks as you
-<ce>  exit ___dung_.
-<ce>  
-<ce>  "I TOLD YOU! I TOLD YOU TO 
-<ce>  LEAVE ME THERE! IT HURTS! NO!"
-<ce>  
-<ce>  A gruesome transformation follows,
-<ce>  leaving %g2 in a very different state.
+<ce>                       _captive_ shrieks as you
+<ce>                            exit ___dung_.
+<ce>
+<ce>                      "I TOLD YOU! I TOLD YOU TO
+<ce>                    LEAVE ME THERE! IT HURTS! NO!"
+<ce>
+<ce>                  A gruesome transformation follows,
+<ce>                leaving her in a very different state.
 
 Message:  1030
 %qdt:
@@ -83,18 +83,18 @@ Place _dung_ remote dungeon
 Clock _timer_ 00:00 0 flag 17 range 0 2
 
 --	Quest start-up:
-	start timer _timer_
-	log 1030 step 0 
+    start timer _timer_
+    log 1030 step 0
     place npc _captive_ at _dung_
     pc at _dung_ do _inside_
-	reveal _dung_
+    reveal _dung_
 
 variable _inside_
 _begin_ task:
-  clicked npc _captive_
-  say 1010
-  hide npc _captive_
-  add _captive_ face
+    clicked npc _captive_
+    say 1010
+    hide npc _captive_
+    add _captive_ face
 
 _transform_ task:
     when _begin_ and not _inside_
@@ -105,16 +105,16 @@ _transform_ task:
 
 _pcgetsgold_ task:
     when _qgclicked_ and _transform_
-	give pc nothing
-	end quest
+    give pc nothing
+    end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+    clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _transform_
+    when _qgclicked_ and not _transform_
     say 1003
-	clear _qgclicked_ _clearclick_ 
+    clear _qgclicked_ _clearclick_
 
 _timer_ task:
-	end quest
+    end quest
