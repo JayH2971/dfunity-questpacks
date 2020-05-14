@@ -4,31 +4,31 @@ DisplayName: A Knight's Tale
 QRC:
 
 QuestorOffer:  [1000]
-<ce>	We've been missing _kni_, one of our
-<ce>	more veteran members, for several weeks now. No one
-<ce>	makes of this order a nanny service, but we know he
-<ce>	usually stops by a few times a month to see what
-<ce>	problems he can resolve. Now, only silence. We seek
-<ce>	some capable attendant to find him and put our minds at
-<ce>	ease. Will you do this, %pcf?
+<ce>                 We've been missing _kni_, one of our
+<ce>         more veteran members, for several weeks now. No one
+<ce>         makes of this order a nanny service, but we know he
+<ce>           usually stops by a few times a month to see what
+<ce>         problems he can resolve. Now, only silence. We seek
+<ce>       some capable attendant to find him and put our minds at
+<ce>                    ease. Will you do this, %pcf?
 
 RefuseQuest:  [1001]
-<ce>	More interested in fame and fortune?
+<ce>                 More interested in fame and fortune?
 
 AcceptQuest:  [1002]
-<ce>	Then I discharge the matter into your capable hands.
-<ce>	Look for him under every rock and in every cave you
-<ce>	see. Find him in two months time, at the most. He and I
-<ce>	 have much to discuss, to debate, and to remember. %god
-<ce>	go with thee.
+<ce>         Then I discharge the matter into your capable hands.
+<ce>         Look for him under every rock and in every cave you
+<ce>       see. Find him in two months time, at the most. He and I
+<ce>        have much to discuss, to debate, and to remember. %god
+<ce>                            go with thee.
 
 QuestFail:  [1003]
-<ce>	Two months are up, and _qgiver_ knows
-<ce>	nothing of _kni_.
+<ce>                Two months are up, and _qgiver_ knows
+<ce>                          nothing of _kni_.
 
 QuestComplete:  [1004]
-<ce>	_qgiver_ pats you on the shoulder.
-<ce>	 You consider your job done.
+<ce>                  _qgiver_ pats you on the shoulder.
+<ce>                     You consider your job done.
 
 RumorsDuringQuest:  [1005]
 _kni_? Awfully nice fellow. Rounded up my cattle when they broke their fance.
@@ -50,31 +50,31 @@ _kni_ exorcised some ghost over in ___qgiver_ last year.
 _kni_ spends his holidays with _family_ in ___famtown_.
 
 Message:  1012
-<ce>	Hello? Yes, _kni_ is my cousin. I've been
-<ce>	  worried sick for the last several weeks. It's not like him to
-<ce>	  be gone so long, especially with all the help I need here. If
-<ce>	 something happened to him I wouldn't survive the shock. My
-<ce>	  thought is that he found something in ___dung_
-<ce>	 that interested him enough to make him stay. He's cleansed
-<ce>	  it several times over the last few years, so I know
-<ce>	 he's not in any danger. If _qgiver_
-<ce>	 wants to look for him, I say go there first.
+<ce>              Hello? Yes, _kni_ is my cousin. I've been
+<ce>    worried sick for the last several weeks. It's not like him to
+<ce>    be gone so long, especially with all the help I need here. If
+<ce>      something happened to him I wouldn't survive the shock. My
+<ce>            thought is that he found something in ___dung_
+<ce>      that interested him enough to make him stay. He's cleansed
+<ce>         it several times over the last few years, so I know
+<ce>                 he's not in any danger. If _qgiver_
+<ce>             wants to look for him, I say go there first.
 
 Message:  1013
-<ce>	Who are you? _qgiver_ sent you? %god
-<ce>	be thanked. Yes, I need to leave but my injuries
-<ce>	are very serious. ___dung_ has
-<ce>	changed so much. Please, lead the way.
-<--->
-<ce>	Yes, I am _kni_. Thank %god that
-<ce>	_qgiver_ sent someone to look for me.
-<ce>	I feared I would never come free. Let us go.
-<ce>	I will follow your lead.
+<ce>                 Who are you? _qgiver_ sent you? %god
+<ce>           be thanked. Yes, I need to leave but my injuries
+<ce>                    are very serious. ___dung_ has
+<ce>                changed so much. Please, lead the way.
+                                     <--->
+<ce>                   Yes, I am _kni_. Thank %god that
+<ce>                _qgiver_ sent someone to look for me.
+<ce>             I feared I would never come free. Let us go.
+<ce>                       I will follow your lead.
 
-Message:	1014
-<ce>	_kni_ appears to not be found at all in
-<ce>	___dung_. The only thing you find is this
-<ce>	 bag. You take it to show to _qgiver_.
+Message:  1014
+<ce>               _kni_ appears to not be found at all in
+<ce>              ___dung_. The only thing you find is this
+<ce>                bag. You take it to show to _qgiver_.
 
 Message:  1030
 %qdt:
@@ -92,20 +92,20 @@ Message:  1031
  to ___dung_.
 
 Message:  1050
-<ce>	_kni_, do not ever scare me like that
-<ce>	 again. You're not so young as when we first met!
-<ce>	My personal recommendation is to take a partner,
-<ce>	even when it's to ___dung_. But you
-<ce>	did not come here for a lecture. Welcome home.
-<ce>	And %pcf, I have no words with which to thank you
-<ce>	sufficiently. Welcome home as well.
+<ce>                _kni_, do not ever scare me like that
+<ce>           again. You're not so young as when we first met!
+<ce>           My personal recommendation is to take a partner,
+<ce>                 even when it's to ___dung_. But you
+<ce>            did not come here for a lecture. Welcome home.
+<ce>          And %pcf, I have no words with which to thank you
+<ce>                 sufficiently. Welcome home as well.
 
 Message:  1051
-<ce>	%pcf, what news do you bring? %oth.
-<ce>	%oth, this is not what I had ever expected.
-<ce>	I will inform _family_. This is truly a
-<ce>	 tragedy. I thank you for making the effort. I will
-<ce>	 need some to get over this. %god bless us all.
+<ce>                 %pcf, what news do you bring? %oth.
+<ce>             %oth, this is not what I had ever expected.
+<ce>               I will inform _family_. This is truly a
+<ce>          tragedy. I thank you for making the effort. I will
+<ce>            need some to get over this. %god bless us all.
 
 QBN:
 Person _qgiver_ group Questor male
@@ -123,9 +123,9 @@ Item _bag_ large_sack
 --	Quest start-up:
 	start timer _timer_
 	start timer _death_
-	log 1030 step 0 
+	log 1030 step 0
 	place npc _family_ at _famtown_
-  	place npc _kni_ at _dung_
+	place npc _kni_ at _dung_
 	add dialog for person _kni_
 	pc at _dung_ do _inside_
 
@@ -158,7 +158,7 @@ _qgclicked_ task:
 	clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _talkkni_
+	when _qgclicked_ and not _talkkni_ and not _grabbag_
 	clear _qgclicked_ _clearclick_
 
 _grabbag_ task:
@@ -166,7 +166,7 @@ _grabbag_ task:
 	say 1014
 
 _victory2_ task:
-	toting _bag_ and _qgiver_ clicked
+	when _grabbag_ and _qgclicked_
 	say 1051
 	change repute with _qgiver_ by -2
 	give pc nothing
