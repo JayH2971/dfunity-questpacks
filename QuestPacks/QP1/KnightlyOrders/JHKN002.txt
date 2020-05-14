@@ -86,26 +86,6 @@ Message:  1023
 <ce>              It seems you have found the proper shrine.
 <ce>     Rustling nearby indicates someone unhappy with your arrival.
 
--Message:  1024
--<ce>  "Wait, wait. It's you? %pcf? What are you
--<ce>  doing here? This is an official job, They're gonna run
--<ce>  you through the ringer if you try to stop us.
--<ce>  Go back and pretend you never saw us."
--<ce>
--<ce>  Will you ignore and fight them?
--
--Message:  1025
--<ce>  You have chosen ==questgiver_
--<ce>  over the Dark Brotherhood.
--
--Message:  1026
--<ce>  "That's smart, %pcf. We'll forgive you
--<ce>  this time. Now go tell whatever people you're
--<ce>  working with that there's no hope here.
--<ce>  The Dark Brotherhood's got this one under control."
--<ce>
--<ce>  The two assassins vacate the area.
--
 Message:  1027
 <ce>                 You decide not to interfere further.
 <ce>                Perhaps this is what the family wants.
@@ -274,21 +254,6 @@ _pcreward_ task:
 _inj_ task:
 	injured _dbenemy1_
 	injured _dbenemy2_
--	repute with _nm_ exceeds 1 do _repnm_
--intended for db conflict but not yet working
--
--variable _repnm_
--_spareprompt_ task:
--	when _inj_ and _repnm_
--	prompt 1024 yes _fightdb_ no _avoid_
--
--_fightdb_ task:
--	say 1025
--
--_avoid_ task:
--	say 1026
--	remove foe _dbenemy1_
--	remove foe _dbenemy2_
 
 _kill1_ task:
 	killed _dbenemy1_
@@ -304,7 +269,9 @@ _dbend_ task:
 _altend_ task:
 	when _qgclicked_ and _altfin_ and not _dbend_
 	say 1040
+	change repute with _questgiver_ by +4
 	end quest
+--+4 reputation intentional
 
 _altvict_ task:
 	when _qgclicked_ and _dbend_

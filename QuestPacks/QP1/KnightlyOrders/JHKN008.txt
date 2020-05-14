@@ -229,7 +229,7 @@ _nobledie_ task:
 
 _win_ task:
 	when _inside_ and _rescue_
-	start task _victory_
+	start timer _victory_
 
 _failsafe_ task:
 	end quest

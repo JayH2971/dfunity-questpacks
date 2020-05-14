@@ -485,7 +485,7 @@ _dbconv_ task:
 
 _allin_ task:
     say 1024
-    change repute with _gendb_ by +5
+    change repute with _gendb_ by +10
     hide npc _db_
     make _tri_ permanent
     end quest

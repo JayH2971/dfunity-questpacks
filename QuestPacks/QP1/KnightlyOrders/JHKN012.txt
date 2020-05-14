@@ -4,28 +4,28 @@ DisplayName: The Punisher
 QRC:
 
 QuestorOffer:  [1000]
-<ce>	___qgiver_, against its will, harbors a criminal who refuses to
-<ce>	find some other region to inhabit. The list of crimes would
-<ce>	sooner put me to sleep, albeit for length rather than content.
-<ce>	We need an executioner, in the name of the %t.
-<ce>	Will you step forth, %pcf?	
+<ce>   ___qgiver_, against its will, harbors a criminal who refuses to
+<ce>     find some other region to inhabit. The list of crimes would
+<ce>    sooner put me to sleep, albeit for length rather than content.
+<ce>            We need an executioner, in the name of the %t.
+<ce>                      Will you step forth, %pcf?
 
 RefuseQuest:  [1001]
-<ce>	Not the kind to get your hands dirty, %pct?
+<ce>             Not the kind to get your hands dirty, %pct?
 
 AcceptQuest:  [1002]
-<ce>	Then go on behalf of the laws of %crn. You are permitted
-<ce>	to use any means necessary to make this lawbreaker cease.
-<ce>	Look for someone armed and unruly in _place_.
-<ce>	Report to me when the task is finished. Take no more
-<ce>	than one day to settle the matter.
+<ce>       Then go on behalf of the laws of %crn. You are permitted
+<ce>      to use any means necessary to make this lawbreaker cease.
+<ce>            Look for someone armed and unruly in _place_.
+<ce>         Report to me when the task is finished. Take no more
+<ce>                  than one day to settle the matter.
 
 QuestFail:  [1003]
-<ce>	You were expected to execute the criminal in _place_.
+<ce>        You were expected to execute the criminal in _place_.
 
 QuestComplete:  [1004]
-<ce>	Your works are a service to ___qgiver_, %pct.
-<ce>	May its fair citizens remember your name.
+<ce>            Your works are a service to ___qgiver_, %pct.
+<ce>              May its fair citizens remember your name.
 
 Message:  1032
 %qdt:
@@ -35,7 +35,7 @@ Message:  1032
  I must do so and return in one day.
 
 Message:  1042
-<ce>	The criminal threat is ended.
+<ce>                    The criminal threat is ended.
 
 QBN:
 Person _qgiver_ group Questor male
@@ -47,9 +47,9 @@ Clock _timer_ 1.00:00
 Foe _enemy_ is Nightblade
 
 --	Quest start-up:
-	start timer _timer_ 
+	start timer _timer_
 	place foe _enemy_ at _place_
-	log 1032 step 0 
+	log 1032 step 0
 
 _slain_ task:
 	killed 1 _enemy_ saying 1042
@@ -58,14 +58,14 @@ _timer_ task:
 	end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+	clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_
 
 _pcreward_ task:
-	when _qgclicked_ and _slain_ 
+	when _qgclicked_ and _slain_
 	give pc nothing
-	legal repute +3
+	legal repute +1
 	end quest

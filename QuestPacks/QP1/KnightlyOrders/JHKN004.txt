@@ -161,7 +161,7 @@ _spawnout_ task:
 	start timer _outdoors_
 	create foe _warr_ every 1 minutes indefinitely with 50% success
 	create foe _barb_ every 1 minutes indefinitely with 50% success
-	create foe _spells_ every 1 minutes indefinitely with 80% success msg 1012
+	create foe _spells_ every 1 minutes indefinitely with 65% success msg 1012
 
 _msg_ task:
 	killed 1 _warr_

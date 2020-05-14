@@ -4,66 +4,66 @@ DisplayName: Dragonling Nest
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  My name is _qgiver_. This morning
-<ce> we received a courier on behalf of the %t
-<ce>  requesting aid in ___dungeon_.
-<ce>   Apparently there's a nest of dragonlings
-<ce>    somewhere inside of a rare breed
-<ce>      worth protecting. Poachers have
-<ce>    already begun entering, and it's
-<ce>      only a matter of time before
-<ce>   there are no dragonlings left at all.
-<ce>    Will you offer your hand in this?
+<ce>                  My name is _qgiver_. This morning
+<ce>              we received a courier on behalf of the %t
+<ce>                    requesting aid in ___dungeon_.
+<ce>               Apparently there's a nest of dragonlings
+<ce>                   somewhere inside of a rare breed
+<ce>                   worth protecting. Poachers have
+<ce>                   already begun entering, and it's
+<ce>                     only a matter of time before
+<ce>                there are no dragonlings left at all.
+<ce>                  Will you offer your hand in this?
 
 RefuseQuest:  [1001]
-<ce>   A poor answer.
+<ce>                            A poor answer.
 
 AcceptQuest:  [1002]
-<ce>       The %t has made abundantly
-<ce>       clear that this activity is illegal.
-<ce>      You are authorized to put to death
-<ce>     any who attempt it further. Hurry to
-<ce>       ___dungeon_ and make clear the
-<ce>        intent of our good ruler. I expect
-<ce>     this to be resolved in =timer_ days.
-<ce>     Go now, %pcf.
+<ce>                      The %t has made abundantly
+<ce>                 clear that this activity is illegal.
+<ce>                  You are authorized to put to death
+<ce>                 any who attempt it further. Hurry to
+<ce>                    ___dungeon_ and make clear the
+<ce>                  intent of our good ruler. I expect
+<ce>                 this to be resolved in =timer_ days.
+<ce>                            Go now, %pcf.
 
 QuestFail:  [1003]
-<ce> _qgiver_ expected your report
-<ce> regarding the dragonlings by now.
+<ce>                    _qgiver_ expected your report
+<ce>                  regarding the dragonlings by now.
 
 QuestComplete:  [1004]
-<ce>     Excellent work. Let no one
-<ce>   disobey the %t with impunity.
+<ce>                      Excellent work. Let no one
+<ce>                    disobey the %t with impunity.
 
 Message:  1020
-<ce>   The message has been made
-<ce>    abundantly clear. These corpses
-<ce> will serve as a warning to any
-<ce>      others who trespass here.
+<ce>                      The message has been made
+<ce>                   abundantly clear. These corpses
+<ce>                    will serve as a warning to any
+<ce>                      others who trespass here.
 
-Message: 1021
-<ce>   You get the sinking feeling
-<ce>   that this is not what you
-<ce>      were supposed to do.
+Message:  1021
+<ce>                     You get the sinking feeling
+<ce>                      that this is not what you
+<ce>                         were supposed to do.
 
 Message:  1022
-<ce>   Slow down, knight thug. We're more trouble than
-<ce>   you can handle. My buddies and me are gonna find
-<ce>   this dragon whether you like it or not, so I'll
-<ce>   make it easy. Here's =bribe_ gold pieces if you
-<ce>   leave us in peace.
-<--->
-<ce>   Think fast, knight. I've got =bribe_ gold pieces
-<ce>   for you if you look the other way and leave my
-<ce>   buddies and me alone. We need that dragon,
-<ce>   over your dead body or not.
+<ce>           Slow down, knight thug. We're more trouble than
+<ce>           you can handle. My buddies and me are gonna find
+<ce>           this dragon whether you like it or not, so I'll
+<ce>           make it easy. Here's =bribe_ gold pieces if you
+<ce>                          leave us in peace.
+                                     <--->
+<ce>           Think fast, knight. I've got =bribe_ gold pieces
+<ce>            for you if you look the other way and leave my
+<ce>              buddies and me alone. We need that dragon,
+<ce>                     over your dead body or not.
 
 Message:  1023
-<ce>   Smart %ra. Now get lost.
+<ce>                       Smart %ra. Now get lost.
 
 Message:  1024
-<ce>   Your funeral. You'll be sorry, %ra.
+<ce>                 Your funeral. You'll be sorry, %ra.
 
 Message:  1030
 %qdt:
@@ -91,12 +91,12 @@ Foe _enemy1_ is Knight
 Foe _enemy2_ is Warrior
 
 --	Quest start-up:
-	start timer _timer_ 
-	log 1030 step 0 
+	start timer _timer_
+	log 1030 step 0
 	place foe _drag_ at _dungeon_
 	pc at _dungeon_ set _inside_
-  reveal _dungeon_
-  pick one of _e1_ _e2_
+	reveal _dungeon_
+	pick one of _e1_ _e2_
 
 variable _e1_
 variable _e2_
@@ -128,22 +128,22 @@ _timer_ task:
 	end quest
 
 _slain_ task:
-	killed 3 _enemy1_ saying 1020 
-	killed 3 _enemy2_ saying 1020 
+	killed 3 _enemy1_ saying 1020
+	killed 3 _enemy2_ saying 1020
 
 _fail_ task:
 	killed 1 _drag_ saying 1021
 	end quest
 
 _pcgetsgold_ task:
-	when _qgclicked_ and _slain_ 
+	when _qgclicked_ and _slain_
 	give pc nothing
 	legal repute +3
-	end quest 
+	end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+	clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_

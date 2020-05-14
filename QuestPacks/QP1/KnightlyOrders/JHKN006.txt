@@ -119,6 +119,7 @@ _slain_ task:
 _victory_ task:
 	toting _weapon_ and _qgiver_ clicked
 	give pc nothing
+	legal repute +2
 	end quest
 
 _timer_ task:
