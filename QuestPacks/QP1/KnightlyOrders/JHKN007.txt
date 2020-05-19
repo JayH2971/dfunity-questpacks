@@ -218,14 +218,14 @@ _slain_ task:
 _vict1_ task:
   when _slain_ and _sed_
   say 1024
-  start task _simp_
+  start task _wimp_
 
 _vict2_ task:
   when _slain_ and _frost_
   say 1024
-  start task _simp_
+  start task _wimp_
 
-variable _simp_
+variable _wimp_
 _bigfail_ task:
   when _trick_ and not _inside_ and not _teamkill_
   say 1041
@@ -252,7 +252,7 @@ _clearclick_ task:
   clear _qgclicked_ _clearclick_
 
 _victory_ task:
-  when _qgclicked_ and _simp_
+  when _qgclicked_ and _wimp_
   give pc nothing
   legal repute +3
   end quest

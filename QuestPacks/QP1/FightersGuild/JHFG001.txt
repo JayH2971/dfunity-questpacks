@@ -100,7 +100,7 @@ Place _vampres_ remote house1
 Clock _timer_ 00:00 0 flag 17 range 0 2
 
 Foe _vamp_ is Vampire
-Foe _simp_ is Knight
+Foe _wimp_ is Knight
 
 --	Quest start-up:
 	start timer _timer_
@@ -121,20 +121,20 @@ _pcgetsgold_ task:
 	end quest
 
 _false_ task:
-	place foe _simp_ at _vampres_
-	restrain foe _simp_
+	place foe _wimp_ at _vampres_
+	restrain foe _wimp_
 
 _inj_ task:
-	injured _simp_
+	injured _wimp_
 	prompt 1010 yes _escape_ no _ignore_
 
 _escape_ task:
 	say 1011
-	remove foe _simp_
+	remove foe _wimp_
 
 variable _ignore_
 _murder_ task:
-	killed _simp_
+	killed _wimp_
 	say 1012
 	start task _victory_
 
