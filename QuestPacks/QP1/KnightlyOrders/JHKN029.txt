@@ -4,39 +4,39 @@ DisplayName: Well-Intentioned Extremists
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  A band of rabblerousers is attempting
-<ce>  to inflict its own form of perverted justice
-<ce>  on one of %crn's cities. We need someone
-<ce>  to go restore order to a city in turmoil.
-<ce>  Will that be you?
-<--->
-<ce>  Some scheming citizens in one of %crn's
-<ce>  cities have taken the law into their own hands,
-<ce>  punishing and pursuing whoever they will.
-<ce>  Someone must eliminate this band. Will you?
+<ce>                A band of rabblerousers is attempting
+<ce>             to inflict its own form of perverted justice
+<ce>               on one of %crn's cities. We need someone
+<ce>              to go restore order to a city in turmoil.
+<ce>                          Will that be you?
+                                     <--->
+<ce>               Some scheming citizens in one of %crn's
+<ce>           cities have taken the law into their own hands,
+<ce>              punishing and pursuing whoever they will.
+<ce>             Someone must eliminate this band. Will you?
 
 RefuseQuest:  [1001]
-<ce>  Sigh. You are rank %pct, aren't you?
+<ce>                 Sigh. You are rank %pct, aren't you?
 
 AcceptQuest:  [1002]
-<ce>  Very well. Head on to ___captive_. The
-<ce>  band is quite skilled at remaining undercover and
-<ce>  will likely pull no punches against someone
-<ce>  trying to unravel their scheme. They consider
-<ce>  themselves the true town guard, and apparently the
-<ce>  guardsmen of ___captive_ are quite complicit
-<ce>  in the plot. I predict a good number of beheadings
-<ce>  once order returns to the place. You will likely have
-<ce>  no more than a day once your investigation begins,
-<ce>  for they will scatter off to another city to take
-<ce>  it over once they see their conspiracy in peril.
-<ce>  Prepare here, and then go when you are ready
-<ce>  to represent our good %t.
+<ce>                Very well. Head on to ___captive_. The
+<ce>          band is quite skilled at remaining undercover and
+<ce>             will likely pull no punches against someone
+<ce>            trying to unravel their scheme. They consider
+<ce>          themselves the true town guard, and apparently the
+<ce>             guardsmen of ___captive_ are quite complicit
+<ce>          in the plot. I predict a good number of beheadings
+<ce>        once order returns to the place. You will likely have
+<ce>          no more than a day once your investigation begins,
+<ce>          for they will scatter off to another city to take
+<ce>           it over once they see their conspiracy in peril.
+<ce>             Prepare here, and then go when you are ready
+<ce>                      to represent our good %t.
 
 QuestComplete:  [1004]
-<ce>  Arriving in ___captive_, you are apparently
-<ce>  already in violation of some homebrewn law.
-<ce>  An enforcer sets out to stop you, weapon in hand.
+<ce>             Arriving in ___captive_, you are apparently
+<ce>             already in violation of some homebrewn law.
+<ce>          An enforcer sets out to stop you, weapon in hand.
 
 Message:  1030
 %qdt:
@@ -52,11 +52,11 @@ Person _qgiver_ group Questor male
 Place _captive_ remote city
 
 --	Quest start-up:
-	pc at _captive_ set _city_
+    pc at _captive_ set _city_
     log 1030 step 0
 
 _city_ task:
-	say 1004
+    say 1004
     change repute with _qgiver_ by +2
--    start quest JHKNA01
+    start quest JHKN029a
     end quest

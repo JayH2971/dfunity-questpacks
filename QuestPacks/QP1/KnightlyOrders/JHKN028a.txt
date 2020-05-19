@@ -134,7 +134,7 @@ Message:  1016
 <ce>             blood, the bruises are many and pronounced.
 <ce>
 <ce>             "Fine! Fine, I'll tell you, you daedraspawn!
-<ce>              Go to _random_! Look there! Are you ha--"
+<ce>              Go to _random2_! Look there! Are you ha--"
 <ce>
 <ce>               Suddenly %g1 drops to the ground without
 <ce>            any warning. All movement ceases. You begin to
@@ -153,7 +153,7 @@ Message:  1017
 <ce>             blood, the bruises are many and pronounced.
 <ce>
 <ce>             "Fine! Fine, I'll tell you, you daedraspawn!
-<ce>              Go to _random_! Look there! Are you ha--"
+<ce>              Go to _random3_! Look there! Are you ha--"
 <ce>
 <ce>               Suddenly %g1 drops to the ground without
 <ce>            any warning. All movement ceases. You begin to
@@ -194,7 +194,7 @@ Message:  1028
 <ce>
 <ce>           "Oh %god! Oh %god! Praise be to them and to you!
 <ce>             Thank you, thank you, thank you! Go quickly
-<ce>                  to _random_! Find the cretin there
+<ce>                  to _random2_! Find the cretin there
 <ce>              and end this plague on ___store_! Please!"
 
 Message:  1029
@@ -207,7 +207,7 @@ Message:  1029
 <ce>
 <ce>           "Oh %god! Oh %god! Praise be to them and to you!
 <ce>             Thank you, thank you, thank you! Go quickly
-<ce>                  to _random_! Find the cretin there
+<ce>                  to _random3_! Find the cretin there
 <ce>              and end this plague on ___store_! Please!"
 
 Message:  1030
@@ -375,6 +375,6 @@ variable _magic_
 _slain_ task:
     killed _nec_
     give pc nothing
-    change repute with _dummynec_ by -20
+--    change repute with _dummynec_ by -5
     legal repute +6
     end quest

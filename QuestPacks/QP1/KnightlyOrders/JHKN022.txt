@@ -4,85 +4,85 @@ DisplayName: The Trapped Halls
 QRC:
 
 QuestorOffer:  [1000]
-<ce> Witches are beings of awesome power who
-<ce> should never be trifled with. We agree on that
-<ce> matter, don't we %pcf? %crn needs
-<ce> our order's aid to free a miserable hole from
-<ce> a witch's curse, one that will trap within
-<ce> any who enter. Will you be the needed hero?
-<--->
-<ce> A forlorn labyrinth in the wilderness has become
-<ce> the home of a witch who will trap within all
-<ce> who enters its halls. We need a champion
-<ce> capable of slaying her to release the curse.
-<ce> Will you volunteer for this heroic act?
+<ce>               Witches are beings of awesome power who
+<ce>            should never be trifled with. We agree on that
+<ce>                  matter, don't we %pcf? %crn needs
+<ce>            our order's aid to free a miserable hole from
+<ce>              a witch's curse, one that will trap within
+<ce>             any who enter. Will you be the needed hero?
+                                     <--->
+<ce>           A forlorn labyrinth in the wilderness has become
+<ce>             the home of a witch who will trap within all
+<ce>               who enters its halls. We need a champion
+<ce>             capable of slaying her to release the curse.
+<ce>               Will you volunteer for this heroic act?
 
 RefuseQuest:  [1001]
-<ce> What manner of knight do you intend to be, %pct?
+<ce>           What manner of knight do you intend to be, %pct?
 
 AcceptQuest:  [1002]
-<ce> Go to ___dung_ as marked on your map.
-<ce> I will warn you that, once inside, you will not
-<ce> be permitted to leave. I expect a great deal of
-<ce> confused adventurers inside who cannot find
-<ce> their way out. Defend yourself as necessary,
-<ce> but remember that your only freedom will be
-<ce> in slaying the witch. Please get to the hole
-<ce> within =2dung_ days' time, lest the curse
-<ce> capture more witless souls.
+<ce>                Go to ___dung_ as marked on your map.
+<ce>           I will warn you that, once inside, you will not
+<ce>           be permitted to leave. I expect a great deal of
+<ce>             confused adventurers inside who cannot find
+<ce>             their way out. Defend yourself as necessary,
+<ce>             but remember that your only freedom will be
+<ce>             in slaying the witch. Please get to the hole
+<ce>              within =2dung_ days' time, lest the curse
+<ce>                     capture more witless souls.
 
 QuestFail:  [1003]
-<ce> _qgiver_ tasked you to go to
-<ce> ___dung_ to find the witch by today.
+<ce>                     _qgiver_ tasked you to go to
+<ce>                 ___dung_ to find the witch by today.
 
 QuestComplete:  [1004]
-<ce> So our witch was in fact a daedra in disguise?
-<ce> Perhaps it was an illusion spell instead. I do not
-<ce> know which of the two would have more magical power,
-<ce> for both are foes to be dreaded. My fullest
-<ce> congratulations to you, %pct. I will
-<ce> inform the %t concerning your deed.
+<ce>            So our witch was in fact a daedra in disguise?
+<ce>          Perhaps it was an illusion spell instead. I do not
+<ce>         know which of the two would have more magical power,
+<ce>             for both are foes to be dreaded. My fullest
+<ce>                 congratulations to you, %pct. I will
+<ce>                 inform the %t concerning your deed.
 
 Message:  1010
-<ce> This witch shouts several discordant phrases at you
-<ce> with a hostile tone. Whatever language she speaks,
-<ce> it is clear you do not understand it.
+<ce>         This witch shouts several discordant phrases at you
+<ce>          with a hostile tone. Whatever language she speaks,
+<ce>                it is clear you do not understand it.
 
-Message: 1011
-<ce> This witch shouts several discordant phrases at you,
-<ce> which you immediately identify as Daedric. You respond
-<ce> with sufficient speed and wit as to stop her
-<ce> in her tracks, allowing you the first blow.
+Message:  1011
+<ce>         This witch shouts several discordant phrases at you,
+<ce>        which you immediately identify as Daedric. You respond
+<ce>             with sufficient speed and wit as to stop her
+<ce>             in her tracks, allowing you the first blow.
 
 Message:  1012
-<ce> The power trapping these halls seems to lift.
-<ce> The witch has likely fled by now.
-<ce> Your task has failed.
+<ce>            The power trapping these halls seems to lift.
+<ce>                  The witch has likely fled by now.
+<ce>                        Your task has failed.
 
 Message:  1013
-<ce> The air is very heavy here, laden with magical enchantments.
-<ce> If _qgiver_ spoke truly, you will not be able to leave
-<ce> until the witch is slain or has fled the cave.
+<ce>     The air is very heavy here, laden with magical enchantments.
+<ce>        If _qgiver_ spoke truly, you will not be able to leave
+<ce>            until the witch is slain or has fled the cave.
 
 Message:  1014
-<ce> A loud and angry voice erupts nearby.
-<ce> 
-<ce> "If I can't get out of here I'll kill you all!
-<ce> Every one of you! Come over here!"
-<--->
-<ce> A loud and scared voice erupts nearby.
-<ce> 
-<ce> "There's no hope for us! We're all dead!
-<ce> We're never getting out!"
+<ce>                A loud and angry voice erupts nearby.
+<ce>
+<ce>            "If I can't get out of here I'll kill you all!
+<ce>                  Every one of you! Come over here!"
+                                     <--->
+<ce>                A loud and scared voice erupts nearby.
+<ce>
+<ce>               "There's no hope for us! We're all dead!
+<ce>                      We're never getting out!"
 
 Message:  1015
-<ce> Powerful magicks whisk you back into ___dung_.
-<ce> This is no ordinary foe at work.
+<ce>            Powerful magicks whisk you back into ___dung_.
+<ce>                   This is no ordinary foe at work.
 
 Message:  1016
-<ce> You have slain the witch. Immediately the arcane
-<ce> powers at work in ___dung_ begin to unravel.
-<ce> You will presumably be able to leave now.
+<ce>           You have slain the witch. Immediately the arcane
+<ce>             powers at work in ___dung_ begin to unravel.
+<ce>              You will presumably be able to leave now.
 
 Message:  1030
 %qdt:
@@ -103,7 +103,6 @@ Place _dung_ remote dungeon7
 
 Clock _2dung_ 00:00 0 flag 1 range 0 2
 Clock _failsafe_ 14.00:00
-Clock _spawn_ 1:00 5:00
 
 Foe _w1_ is Daedra_seducer
 Foe _e1_ is Knight
@@ -111,21 +110,27 @@ Foe _e2_ is Rogue
 Foe _e3_ is Burglar
 
 --	Quest start-up:
-	start timer _2dung_ 
-	log 1030 step 0 
-	place npc _witch_ at _dung_
-	pc at _dung_ set _inside_
+  start timer _2dung_
+  log 1030 step 0
+  place npc _witch_ at _dung_
+  pc at _dung_ set _inside_
   reveal _dung_
+
+_day_ task:
+  daily from 0:00 to 23:59
+
+_infight_ task:
+  when _day_
+  change foe _e1_ infighting true
+  change foe _e2_ infighting true
+  change foe _e3_ infighting true
+  clear _day_
 
 _inside_ task:
   start task _trap_
-  start timer _spawn_
+  create foe _e3_ every 30 minutes 1 times with 33% success msg 1014
   start timer _failsafe_
   say 1013
-
-_spawn_ task:
-  say 1014
-  create foe _e3_ every 0 minutes 1 times with 100% success
 
 variable _trap_
 _tele_ task:
@@ -138,13 +143,13 @@ _clearing_ task:
   clear _tele_ _clearing_
 
 _quest_ task:
-	when _inside_ and not _slain_
-	create foe _e1_ every 15 minutes indefinitely with 4% success
-	create foe _e2_ every 20 minutes indefinitely with 5% success
+  when _inside_ and not _slain_
+  create foe _e1_ every 15 minutes indefinitely with 4% success
+  create foe _e2_ every 20 minutes indefinitely with 5% success
   create foe _e3_ every 25 minutes indefinitely with 6% success
 
 _failsafe_ task:
-	hide npc _witch_
+  hide npc _witch_
   say 1012
   end quest
 
@@ -168,22 +173,21 @@ _wf_ task:
   place foe _w1_ at _dung_
 
 _slain_ task:
-	killed _w1_
+  killed _w1_
   say 1016
-  stop timer _spawn_
 
 _pcgetsgold_ task:
-	when _qgclicked_ and _slain_ 
-	give pc nothing
+  when _qgclicked_ and _slain_
+  give pc nothing
   legal repute +8
-	end quest 
+  end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+  clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
+  when _qgclicked_ and not _slain_
+  clear _qgclicked_ _clearclick_
 
 _2dung_ task:
   say 1003

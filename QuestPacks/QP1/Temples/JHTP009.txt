@@ -312,7 +312,7 @@ _victory_ task:
     stop timer _t17_
     stop timer _t18_
     stop timer _t19_
-    change repute with _dummynec_ by -5
+--    change repute with _dummynec_ by -5
 
 _pcgetsgold_ task:
     when _qgclicked_ and _victory_

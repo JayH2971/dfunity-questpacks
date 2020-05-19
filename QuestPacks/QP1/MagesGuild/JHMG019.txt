@@ -4,53 +4,53 @@ DisplayName: Interview with a Necromancer
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  %pcf, you have earned the Archmage's trust,
-<ce>  and therefore are privvy to some rather
-<ce>  sensitive matters. By regiment of the law,
-<ce>  the Mages Guild bears the duty of seeking
-<ce>  out and purging any influence of the
-<ce>  Necromancers in the Iliac Bay, especially
-<ce>  among our own members. Nevertheless the
-<ce>  task is not always so simple, and we require
-<ce>  sometimes subtle and clever practitioners
-<ce>  of the arts of speech to ferret out the
-<ce>  truth as necessary. Are you so skilled
-<ce>  and willing to uncover a possible Necromancer?
+<ce>             %pcf, you have earned the Archmage's trust,
+<ce>               and therefore are privvy to some rather
+<ce>              sensitive matters. By regiment of the law,
+<ce>              the Mages Guild bears the duty of seeking
+<ce>                 out and purging any influence of the
+<ce>              Necromancers in the Iliac Bay, especially
+<ce>               among our own members. Nevertheless the
+<ce>             task is not always so simple, and we require
+<ce>              sometimes subtle and clever practitioners
+<ce>               of the arts of speech to ferret out the
+<ce>                truth as necessary. Are you so skilled
+<ce>            and willing to uncover a possible Necromancer?
 
 RefuseQuest:  [1001]
-<ce>  Hmph. Does trust mean nothing to you?
+<ce>                Hmph. Does trust mean nothing to you?
 
 AcceptQuest:  [1002]
-<ce>  Well then, your task will take you to _nhome_.
-<ce>  Speak to _nec_ and say whatever you
-<ce>  need to uncover the truth. I assume %g1 retires
-<ce>  there at night, so go in the late hours. Surely
-<ce>  your knowledge of magic thus far may aid you
-<ce>  in providing a proper context. Return here with
-<ce>  the knowledge you glean and leave the rest
-<ce>  to us. You have one day to do this.
+<ce>            Well then, your task will take you to _nhome_.
+<ce>                 Speak to _nec_ and say whatever you
+<ce>           need to uncover the truth. I assume %g1 retires
+<ce>           there at night, so go in the late hours. Surely
+<ce>             your knowledge of magic thus far may aid you
+<ce>           in providing a proper context. Return here with
+<ce>              the knowledge you glean and leave the rest
+<ce>                 to us. You have one day to do this.
 
 QuestFail:  [1003]
-<ce>  The Mages Guild asked you to report on
-<ce>  _nec_'s supposed necromancy by now.
+<ce>                The Mages Guild asked you to report on
+<ce>                 _nec_'s supposed necromancy by now.
 
 QuestComplete:  [1004]
-<ce>  _qgiver_ hands you your reward with a kindly smile.
+<ce>         _qgiver_ hands you your reward with a kindly smile.
 
-RumorsPostSuccess:   [1007]
+RumorsPostSuccess:  [1007]
 I couldn't be happier about that dead Necromancer. ____nhome_'s doing its work.
 <--->
 The Necromancer of ___nhome_ was slain!
 
 Message:  1028
-<ce>  Yes? I'm quite busy. I hope this is important.
+<ce>            Yes? I'm quite busy. I hope this is important.
 
 Message:  1029
-<ce>  So you say you have an interest in power beyond what
-<ce>  the Mages Guild can offer. Those are inspiring, and
-<ce>  yet dangerous, lines of thinking. Do you truly believe
-<ce>  there is power to rival or even exceed that held
-<ce>  by the Council of the Archmages?
+<ce>         So you say you have an interest in power beyond what
+<ce>         the Mages Guild can offer. Those are inspiring, and
+<ce>        yet dangerous, lines of thinking. Do you truly believe
+<ce>           there is power to rival or even exceed that held
+<ce>                   by the Council of the Archmages?
 
 Message:  1030
 %qdt:
@@ -62,135 +62,135 @@ Message:  1030
  and take less than a single day.
 
 Message:  1031
-<ce>  I will admit I have considered these things in the
-<ce>  past. Surely there is more magicka in the world than
-<ce>  that found in the six schools taught
-<ce>  by the Guild, wouldn't you agree?
-<--->
-<ce>  I believe so myself. I myself have come to
-<ce>  think that there is more magicka out there than
-<ce>  in merely six schools alone, those regulated
-<ce>  by imperial rule. At least, it makes sense
-<ce>  to me. Wouldn't you agree that there is more
-<ce>  to learn than what is being formally taught?
+<ce>          I will admit I have considered these things in the
+<ce>         past. Surely there is more magicka in the world than
+<ce>                 that found in the six schools taught
+<ce>                  by the Guild, wouldn't you agree?
+                                     <--->
+<ce>              I believe so myself. I myself have come to
+<ce>           think that there is more magicka out there than
+<ce>             in merely six schools alone, those regulated
+<ce>              by imperial rule. At least, it makes sense
+<ce>             to me. Wouldn't you agree that there is more
+<ce>             to learn than what is being formally taught?
 
 Message:  1032
-<ce>  Indeed, censorship of the magicka is something
-<ce>  that has concerned myself and others for quite some
-<ce>  time. I myself believe people should be free to
-<ce>  use whatever magicks they choose and allow the
-<ce>  criminal justice system to punish actual offenses
-<ce>  against society, not merely crimes of mentality
-<ce>  determined by a council of elder wizards.
-<ce>  Does that sound so unreasonable?
-<--->
-<ce>  To be sure, there is a reason for such order as it stands,
-<ce>  and it should not be flaunted at every user's whim. But
-<ce>  we must agree that some orders are based not on
-<ce>  practicality or experience, but the outdated and flawed
-<ce>  perceptions of certain elder wizards on a council.
-<ce>  Is that such a disagreeable thought?
+<ce>            Indeed, censorship of the magicka is something
+<ce>         that has concerned myself and others for quite some
+<ce>           time. I myself believe people should be free to
+<ce>            use whatever magicks they choose and allow the
+<ce>          criminal justice system to punish actual offenses
+<ce>           against society, not merely crimes of mentality
+<ce>              determined by a council of elder wizards.
+<ce>                   Does that sound so unreasonable?
+                                     <--->
+<ce>      To be sure, there is a reason for such order as it stands,
+<ce>       and it should not be flaunted at every user's whim. But
+<ce>           we must agree that some orders are based not on
+<ce>       practicality or experience, but the outdated and flawed
+<ce>          perceptions of certain elder wizards on a council.
+<ce>                 Is that such a disagreeable thought?
 
 Message:  1033
-<ce>  I see that you are serious. Will you keep our
-<ce>  conversation here private, taking it down
-<ce>  with you to the grave?
-<--->
-<ce>  Hmm. I wish to trust you, but I cannot do so without
-<ce>  an oath. Do you swear to keep our conversation here
-<ce>  private, taking it down with you to the grave?
+<ce>            I see that you are serious. Will you keep our
+<ce>              conversation here private, taking it down
+<ce>                        with you to the grave?
+                                     <--->
+<ce>         Hmm. I wish to trust you, but I cannot do so without
+<ce>         an oath. Do you swear to keep our conversation here
+<ce>            private, taking it down with you to the grave?
 
 Message:  1034
-<ce>  I accept your word of honor. Now, to speak plainly.
-<ce>  Would you have qualms discussing a particular branch of
-<ce>  Restoration magic involving the resurrection of the dead?
-<--->
-<ce>  I accept your oath. Now then, to the point. Do you find offense
-<ce>  in a branch of restorative magic that is capable of returning
-<ce>  life to the dead?
+<ce>         I accept your word of honor. Now, to speak plainly.
+<ce>       Would you have qualms discussing a particular branch of
+<ce>      Restoration magic involving the resurrection of the dead?
+                                     <--->
+<ce>   I accept your oath. Now then, to the point. Do you find offense
+<ce>    in a branch of restorative magic that is capable of returning
+<ce>                          life to the dead?
 
 Message:  1035
-<ce>  Well, that is precisely the kind of magic that is outlawed
-<ce>  by the Mages Guild. What a miserable waste! Imagine that,
-<ce>  if we could merely return Lysandus to corporeal form instead
-<ce>  of attempting to whisper to his ghost! Can you see what
-<ce>  value there is in occasionally straying from the
-<ce>  constricting bounds determined by the Council?
-<--->
-<ce>  And that is precisely the problem with the imperial Mages Guild.
+<ce>      Well, that is precisely the kind of magic that is outlawed
+<ce>      by the Mages Guild. What a miserable waste! Imagine that,
+<ce>     if we could merely return Lysandus to corporeal form instead
+<ce>       of attempting to whisper to his ghost! Can you see what
+<ce>           value there is in occasionally straying from the
+<ce>            constricting bounds determined by the Council?
+                                     <--->
+<ce>   And that is precisely the problem with the imperial Mages Guild.
 <ce>  Take the Lysandus crisis. Why should we go waste time questioning
 <ce>  who slew whom on what day, if we could merely return his spirit to
-<ce>  his body? Is that not an obviously legitimate use of magicka?
+<ce>    his body? Is that not an obviously legitimate use of magicka?
 
 Message:  1036
-<ce>  Then perhaps we have more in common than I previously detected.
-<ce>  I demand that you tell me how you found me and why you ask.
-<ce>  
-<ce>  I see. Your attempts to speak to other guild members about
-<ce>  this will arouse great ire, and doubtless oblige the town guard
-<ce>  to carry you to the gallows. Powerful restoration, as we may
-<ce>  term it, is a serious offense requiring the life of the practitioner
-<ce>  in %crn. Say no more to any other person concerning it.
-<ce>  Ensure that no one knows what we have spoken this night.
+<ce>   Then perhaps we have more in common than I previously detected.
+<ce>     I demand that you tell me how you found me and why you ask.
+<ce>
+<ce>      I see. Your attempts to speak to other guild members about
+<ce>   this will arouse great ire, and doubtless oblige the town guard
+<ce>     to carry you to the gallows. Powerful restoration, as we may
+<ce> term it, is a serious offense requiring the life of the practitioner
+<ce>       in %crn. Say no more to any other person concerning it.
+<ce>       Ensure that no one knows what we have spoken this night.
 <ce>  I will look for you in a few weeks' time, when I am certain of my
-<ce>  decision in this matter. Maintain silence. Good night, %pcf.
+<ce>     decision in this matter. Maintain silence. Good night, %pcf.
 
 Message:  1037
-<ce>  This conversation has provided you with ample evidence that
-<ce>  _nec_ is indeed a Necromancer. _qgiver_
-<ce>  instructed you to report the matter to %g2, but surely
-<ce>  an immediate solution is of greater value. Will you
-<ce>  attempt to carry out the execution?
+<ce>     This conversation has provided you with ample evidence that
+<ce>               _nec_ is indeed a Necromancer. _qgiver_
+<ce>        instructed you to report the matter to %g2, but surely
+<ce>         an immediate solution is of greater value. Will you
+<ce>                 attempt to carry out the execution?
 
 Message:  1038
-<ce>  _nec_'s eyes smolder.
-<ce>  
-<ce>  "Fool! You know nothing of the power I wield!"
-<ce>  
-<ce>  Casting a spell, %g3 appearance changes radically.
+<ce>                        _nec_'s eyes smolder.
+<ce>
+<ce>            "Fool! You know nothing of the power I wield!"
+<ce>
+<ce>          Casting a spell, %g3 appearance changes radically.
 
 Message:  1039
-<ce>  By slaying _nec_ you have done a great service to
-<ce>  ___nhome_. _qgiver_ will want to know about this.
+<ce>          By slaying _nec_ you have done a great service to
+<ce>          ___nhome_. _qgiver_ will want to know about this.
 
 Message:  1040
-<ce>  Surely discretion is merited in such cases as these.
-<ce>  You decide to return to _qgiver_
-<ce>  and report the matter through the official channels.
+<ce>         Surely discretion is merited in such cases as these.
+<ce>                   You decide to return to _qgiver_
+<ce>         and report the matter through the official channels.
 
 Message:  1041
-<ce>  What's this? Not only did _nec_ confess
-<ce>  to the crime of necromancy, you slew him in combat?
-<ce>  Oh my word! And such power he wielded! %pct,
-<ce>  your service this day will not be forgotten!
-<ce>  How many others could have died attempting to
-<ce>  apprehend him! Apprentice! Excuse me, could
-<ce>  you go back into storage and get that
-<ce>  trinket we were discussing this morning?
-<ce>  %pcf needs it, for such an act does not merit
-<ce>  gold alone. Oh, thank you my friend! You
-<ce>  have confirmed the integrity of the Mages Guild
-<ce>  and saved us all a monumental trouble!
-<ce>  Have your gold and this reward.
+<ce>               What's this? Not only did _nec_ confess
+<ce>         to the crime of necromancy, you slew him in combat?
+<ce>             Oh my word! And such power he wielded! %pct,
+<ce>             your service this day will not be forgotten!
+<ce>            How many others could have died attempting to
+<ce>             apprehend him! Apprentice! Excuse me, could
+<ce>                you go back into storage and get that
+<ce>               trinket we were discussing this morning?
+<ce>            %pcf needs it, for such an act does not merit
+<ce>               gold alone. Oh, thank you my friend! You
+<ce>           have confirmed the integrity of the Mages Guild
+<ce>                and saved us all a monumental trouble!
+<ce>                   Have your gold and this reward.
 
 Message:  1042
-<ce>  So _nec_ confessed to the crime of
-<ce>  necromancy? So be it. I will inform the town guard
-<ce>  immediately before he can start to doubt you.
-<ce>  Splendid work, %pct.
+<ce>                  So _nec_ confessed to the crime of
+<ce>          necromancy? So be it. I will inform the town guard
+<ce>            immediately before he can start to doubt you.
+<ce>                         Splendid work, %pct.
 
-Message: 1043
-<ce>  Your knowledge of Mysticism magic surprises your foe.
-<ce>  You quickly utter a cantrip, and the hostile spirits he
-<ce>  intended to invoke against you dissipate.
-<ce>  _nec_, due to his transformation,
-<ce>  is held in a momentary stupor by your spell.
+Message:  1043
+<ce>        Your knowledge of Mysticism magic surprises your foe.
+<ce>       You quickly utter a cantrip, and the hostile spirits he
+<ce>              intended to invoke against you dissipate.
+<ce>                  _nec_, due to his transformation,
+<ce>             is held in a momentary stupor by your spell.
 
 Message:  1099
-<ce>  "I see. Well, I hope you find what you're looking for.
-<ce>  Good evening."
-<ce>  
-<ce>  _nec_ clearly distrusts you. You can do nothing more.
+<ce>        "I see. Well, I hope you find what you're looking for.
+<ce>                            Good evening."
+<ce>
+<ce>        _nec_ clearly distrusts you. You can do nothing more.
 
 QBN:
 Person _qgiver_ group Questor male
@@ -209,8 +209,8 @@ Item _reward_ gold
 Item _bigreward_ magic_item
 
 --	Quest start-up:
-	start timer _timer_
-	log 1030 step 0
+    start timer _timer_
+    log 1030 step 0
     place npc _nec_ at _nhome_
 
 _day_ task:
@@ -227,23 +227,23 @@ _begin_ task:
     prompt 1029 yes _Q1_ no _fail_
 
 _Q1_ task:
-	prompt 1031 yes _Q2_ no _fail_
+    prompt 1031 yes _Q2_ no _fail_
 
 _Q2_ task:
-	prompt 1032 yes _fail_ no _Q3_
+    prompt 1032 yes _fail_ no _Q3_
 
 _Q3_ task:
-	prompt 1033 yes _Q4_ no _fail_
+    prompt 1033 yes _Q4_ no _fail_
 
 _Q4_ task:
-	prompt 1034 yes _fail_ no _Q5_
+    prompt 1034 yes _fail_ no _Q5_
 
 _Q5_ task:
-	prompt 1035 yes _Q6_ no _fail_
+    prompt 1035 yes _Q6_ no _fail_
 
 _Q6_ task:
     say 1036
-	prompt 1037 yes _attack_ no _refrain_
+    prompt 1037 yes _attack_ no _refrain_
 
 _skilled_ task:
     when skill Mysticism is at least 85
@@ -270,26 +270,26 @@ _slain_ task:
 _refrain_ task:
     say 1040
 
-_pcreward1_ task:	
-	when _qgclicked_ and _slain_
+_pcreward1_ task:
+    when _qgclicked_ and _slain_
     say 1041
     get item _reward_
     give pc _bigreward_
-	end quest 
+    end quest
 
-_pcreward2_ task:	
-	when _qgclicked_ and _Q6_ and not _slain_
+_pcreward2_ task:
+    when _qgclicked_ and _Q6_ and not _slain_
     say 1042
     give pc _reward_
-    change repute with _dummyn_ by -5
-	end quest 
+--    change repute with _dummyn_ by -5
+    end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+    clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _Q6_ 
-	clear _qgclicked_ _clearclick_ 
+    when _qgclicked_ and not _Q6_
+    clear _qgclicked_ _clearclick_
 
 _fail_ task:
     say 1099
