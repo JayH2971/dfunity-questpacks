@@ -165,7 +165,7 @@ variable _spawn_
 --normal quest section. spawn task is used to ensure no duplicate spawn by stepping on and off property.
 _kill_ task:
 	when _spawn_ and not _alt_
-	create foe _enemy_ every 1 minutes 1 times with 100% success
+	create foe _enemy_ every 0 minutes 1 times with 100% success
 	say 1010
 
 _slain_ task:

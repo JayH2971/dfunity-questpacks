@@ -92,7 +92,7 @@ Person _fg_ faction The_Fighters_Guild
 
 Place _res_ local random
 
-Clock _timer_ 00:30
+Clock _timer_ 00:40
 Clock _failsafe_ 60.00:00
 
 Foe _dk1_ is Spider

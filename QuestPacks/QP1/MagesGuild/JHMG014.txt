@@ -4,110 +4,110 @@ DisplayName: Darkness Falls
 QRC:
 
 QuestorOffer:  [1000]
-<ce> One of our local scholars, _schol_,
-<ce> has been involved in work to counteract the
-<ce> effects of vampirism. Later tonight %g1
-<ce> will travel to _res_ to
-<ce> collaborate with one of %crn's
-<ce> better-known vampire hunters. There must
-<ce> be a combat-ready escort for this encounter,
-<ce> and for some reason I thought of you.
-<ce> Will you accept this task?
+<ce>                 One of our local scholars, _schol_,
+<ce>             has been involved in work to counteract the
+<ce>               effects of vampirism. Later tonight %g1
+<ce>                       will travel to _res_ to
+<ce>                    collaborate with one of %crn's
+<ce>               better-known vampire hunters. There must
+<ce>             be a combat-ready escort for this encounter,
+<ce>                and for some reason I thought of you.
+<ce>                      Will you accept this task?
 
 RefuseQuest:  [1001]
-<ce> Oh, bother. Back into the pile it goes.
-<--->
-<ce> We'll see what you say when you contract hemophilia.
+<ce>               Oh, bother. Back into the pile it goes.
+                                     <--->
+<ce>         We'll see what you say when you contract hemophilia.
 
 AcceptQuest:  [1002]
-<ce> Ah, a champion worthy of the rank of %pct.
-<ce> Very good. I fear you'll need to first track
-<ce> down _schol_, as %g1 has wandered
-<ce> off to some other corner of the city, I believe.
-<ce> The dangers of working with the eccentric mind.
-<ce> The two of you should arrive at _res_
-<ce> by 11:00 tonight. _hunt_ will conduct
-<ce> their meeting, and you will bring %g3 report to me.
-<ce> Do not return without it, and do not arrive late
-<ce> to the residence. Farewell, and good luck,
+<ce>              Ah, a champion worthy of the rank of %pct.
+<ce>             Very good. I fear you'll need to first track
+<ce>                  down _schol_, as %g1 has wandered
+<ce>                off somewhere, I believe. The dangers
+<ce>                 of working with the eccentric mind.
+<ce>                The two of you should arrive at _res_
+<ce>                by 11:00 tonight. _hunt_ will conduct
+<ce>         their meeting, and you will bring %g3 report to me.
+<ce>           Do not return without it, and do not arrive late
+<ce>              to the residence. Farewell, and good luck,
 
 QuestFail:  [1003]
-<ce> You were to arrive at _res_
-<ce> by 11:00 tonight. You have missed the meeting.
+<ce>                     You were to arrive at _res_
+<ce>            by 11:00 tonight. You have missed the meeting.
 
 QuestComplete:  [1004]
-<ce> In spite of the sacrifices made, this research will
-<ce> surely draw us closer to ending vampirism once and for all.
-<ce> Take pride in the work we are doing. This piddling reward
-<ce> does not properly reflect your work, but we insist on
-<ce> granting you something out of our stores.
+<ce>         In spite of the sacrifices made, this research will
+<ce>     surely draw us closer to ending vampirism once and for all.
+<ce>      Take pride in the work we are doing. This piddling reward
+<ce>        does not properly reflect your work, but we insist on
+<ce>              granting you something out of our stores.
 
-RumorsDuringQuest:   [1005]
+RumorsDuringQuest:  [1005]
 ___vampres_ has a problem with vampires apparently, in _vampres_.
 <--->
 A bunch of vampires are consorting about _vampres_ in ___vampres_.
 
 Message:  1010
-<ce> Ah! You, %ra? Looking for me? What for?
-<ce> Oh, that business! Yes, I agree it's certainly
-<ce> time we went off now. Forgive me for appearing
-<ce> a tad disoriented. It is not my intention,
-<ce> I swear it. Now then! Let us be going.
+<ce>               Ah! You, %ra? Looking for me? What for?
+<ce>            Oh, that business! Yes, I agree it's certainly
+<ce>            time we went off now. Forgive me for appearing
+<ce>              a tad disoriented. It is not my intention,
+<ce>                I swear it. Now then! Let us be going.
 
 Message:  1011
-<ce> It appears you were tasked with good cause.
-<ce> Sounds of howling and hissing bounce off the
-<ce> walls of the residence.
-<ce> 
-<ce> _schol_, apparently quite addled,
-<ce> separates from you to assume a sort of
-<ce> battle stance. %g1 disappears from view.
+<ce>             It appears you were tasked with good cause.
+<ce>             Sounds of howling and hissing bounce off the
+<ce>                       walls of the residence.
+<ce>
+<ce>                  _schol_, apparently quite addled,
+<ce>                separates from you to assume a sort of
+<ce>               battle stance. %g1 disappears from view.
 
 Message:  1012
-<ce> From within the residence you hear
-<ce> _schol_ groan, and then
-<ce> the sound of something heavy hitting the ground.
+<ce>                  From within the residence you hear
+<ce>                       _schol_ groan, and then
+<ce>           the sound of something heavy hitting the ground.
 
 Message:  1013
-<ce> _schol_ appears from around a corner.
+<ce>                _schol_ appears from around a corner.
 <ce>
-<ce> "Well, wasn't that an adrenaline rush?
-<ce> No wonder they sent you! I feel awful
-<ce> for the last few who attempted to help
-<ce> in matters of vampirism."
-<ce> 
-<ce> You hear %g3 voice shakes. Apparently %g3 troubled
-<ce> demeanor is the result of experience rather
-<ce> than temperament.
+<ce>                "Well, wasn't that an adrenaline rush?
+<ce>                No wonder they sent you! I feel awful
+<ce>                for the last few who attempted to help
+<ce>                      in matters of vampirism."
+<ce>
+<ce>          You hear %g3 voice shakes. Apparently %g3 troubled
+<ce>             demeanor is the result of experience rather
+<ce>                          than temperament.
 
 Message:  1014
-<ce> You search _hunt_'s body
-<ce> and find an empty envelope, torn wide open.
-<ce> The report has been stolen.
+<ce>                       You search _hunt_'s body
+<ce>             and find an empty envelope, torn wide open.
+<ce>                     The report has been stolen.
 
 Message:  1015
-<ce> _schol_ titters nervously.
-<ce> 
-<ce> "It's gone? Oh, drat. All I can
-<ce> think of is to ask around to see
-<ce> if any rumors abound concerning
-<ce> vampires in the region. I lack any more
-<ce> efficacious idea than that. I will
-<ce> get to it right away and inform you
-<ce> if I learn more. %god will that
-<ce> they have greater purpose for that
-<ce> report than to destroy it."
-<ce> 
-<ce> Taking a deep breath, %g1 stumbles away.
+<ce>                      _schol_ titters nervously.
+<ce>
+<ce>                   "It's gone? Oh, drat. All I can
+<ce>                   think of is to ask around to see
+<ce>                   if any rumors abound concerning
+<ce>               vampires in the region. I lack any more
+<ce>                  efficacious idea than that. I will
+<ce>                 get to it right away and inform you
+<ce>                   if I learn more. %god will that
+<ce>                  they have greater purpose for that
+<ce>                     report than to destroy it."
+<ce>
+<ce>               Taking a deep breath, %g1 stumbles away.
 
 Message:  1020
-<ce> You need only step inside this house for
-<ce> the entire structure to erupt in angry shouts.
-<ce> It appears the rumors were true.
+<ce>               You need only step inside this house for
+<ce>            the entire structure to erupt in angry shouts.
+<ce>                   It appears the rumors were true.
 
 Message:  1021
-<ce> You take the report back.
-<ce> _qgiver_ will want it as soon as possible.
+<ce>                      You take the report back.
+<ce>              _qgiver_ will want it as soon as possible.
 
 Message:  1030
 %qdt:
@@ -139,8 +139,8 @@ Message:  1032
  in ____res_.
 
 Message:  1050
-<ce> A scraggly-looking page with flowing robes
-<ce> hands you a letter before disappearing.
+<ce>              A scraggly-looking page with flowing robes
+<ce>               hands you a letter before disappearing.
 
 Message:  1051
 %pcn,
@@ -155,27 +155,27 @@ Let us hope that the document is being stored there.
              _schol_
              ___res_
 
-Message: 1060
-<ce> Welcome back, %pct. I have already heard
-<ce> concerning the passing of both _schol_
-<ce> and _hunt_. My soul mourns for
-<ce> them, for they did great service to %crn.
-<ce> Yet I know you failed in nothing.
-<ce> You have brought the report, which brings me joy.
+Message:  1060
+<ce>               Welcome back, %pct. I have already heard
+<ce>                concerning the passing of both _schol_
+<ce>                    and _hunt_. My soul mourns for
+<ce>              them, for they did great service to %crn.
+<ce>                  Yet I know you failed in nothing.
+<ce>          You have brought the report, which brings me joy.
 
 Message:  1061
-<ce> Welcome back, %pct! I was filled with
-<ce> sorrow for the passing of _hunt_,
-<ce> but we still have you and _schol_
-<ce> among us. Some tragedies simply cannot be prevented.
-<ce> Carry yourself with pride for the work you have done.
-<ce> I also wish to mention that _schol_
-<ce> contributed to your reward.
+<ce>                Welcome back, %pct! I was filled with
+<ce>                  sorrow for the passing of _hunt_,
+<ce>                  but we still have you and _schol_
+<ce>         among us. Some tragedies simply cannot be prevented.
+<ce>        Carry yourself with pride for the work you have done.
+<ce>                 I also wish to mention that _schol_
+<ce>                     contributed to your reward.
 
 Message:  1080
-<ce> This report is filled with jargon concerning
-<ce> very specialized restoration magic and alchemy.
-<ce> You understand parts of it.
+<ce>             This report is filled with jargon concerning
+<ce>           very specialized restoration magic and alchemy.
+<ce>                     You understand parts of it.
 
 QBN:
 Item _reward_ gold range 1000 to 1200
@@ -193,15 +193,15 @@ Place _hide_ local magery
 Place _vampres_ remote house
 
 Clock _failsafe_ 60.00:00
-Clock _scholdead_ 00:03
+Clock _scholdead_ 00:05
 Clock _lettersend_ 6.00:00 9.00:00
 
 Foe _vamp_ is Vampire
 Foe _vamp2_ is Vampire
 
 --	Quest start-up:
-	start timer _failsafe_ 
-	log 1030 step 0
+    start timer _failsafe_
+    log 1030 step 0
     pc at _res_ do _inside_
     pc at _vampres_ do _fight_
     have _report_ set _announce_
@@ -241,7 +241,7 @@ _scholdead_ task:
     say 1012
 
 _slain_ task:
-	killed 3 _vamp_
+    killed 3 _vamp_
     stop timer _scholdead_
 
 _rejoin_ task:
@@ -282,14 +282,14 @@ _pcgetsgold_ task:
 _victory_ task:
     when _pcgetsgold_ and _scholdead_
     say 1060
-	give pc _reward_ 
-	end quest 
+    give pc _reward_
+    end quest
 
 _bigvictory_ task:
     when _pcgetsgold_ and not _scholdead_
     say 1061
-	give pc _bigreward_ 
-	end quest 
+    give pc _bigreward_
+    end quest
 
 _failsafe_ task:
-	end quest 
+    end quest

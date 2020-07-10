@@ -6,28 +6,28 @@ DisplayName: Sunburn
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  A fellow member has gone into a cave, rambling
-<ce>  something about vampires. I don't know much
-<ce>  more than that but we need our friend to come
-<ce>  back out. Will you go looking?
+<ce>            A fellow member has gone into a cave, rambling
+<ce>             something about vampires. I don't know much
+<ce>            more than that but we need our friend to come
+<ce>                    back out. Will you go looking?
 
 RefuseQuest:  [1001]
-<ce>  Typical.
+<ce>                               Typical.
 
 AcceptQuest:  [1002]
-<ce>  The place is called _dung_.
-<ce>  Our friend, _rescue_, is
-<ce>  capable of handling %g2self on %g3 own but
-<ce>  we believe this is worth sending out some support.
-<ce>  Find %g2 and bring %g2 back here.
-<ce>  Please have this done within =timer_
-<ce>  days, lest the family and I presume that
-<ce>  all hope has been lost.
+<ce>                     The place is called _dung_.
+<ce>                       Our friend, _rescue_, is
+<ce>              capable of handling %g2self on %g3 own but
+<ce>          we believe this is worth sending out some support.
+<ce>                  Find %g2 and bring %g2 back here.
+<ce>                 Please have this done within =timer_
+<ce>               days, lest the family and I presume that
+<ce>                       all hope has been lost.
 
 QuestComplete:  [1004]
-<ce>  _rescue_, a joy to see you above
-<ce>  ground after all. I see %pcf has taken
-<ce>  good care of you. Fine work, both of you.
+<ce>                   _rescue_, a joy to see you above
+<ce>                ground after all. I see %pcf has taken
+<ce>              good care of you. Fine work, both of you.
 
 RumorsDuringQuest:  [1005]
 They told me ___qgiver_'s a good place to live. What do you think?
@@ -47,72 +47,72 @@ QuestLogEntry:  [1010]
  =timer_ days to return.
 
 Message:  1011
-<ce> A loud shout nearly startles you.
-<ce> 
-<ce> "You there! _qgiver_ sent you, didn't %g1? Take
-<ce> me away from here! I need to get to ___qgiver_!"
-<ce> 
-<ce> _rescue_ happily joins you.
-<--->
-<ce> Someone comes into view, startled to see you.
-<ce> 
-<ce> "Excuse me! I need to get back to ___qgiver_.
-<ce> Can you help me? My name is _rescue_."
-<ce> 
-<ce> You tell %g2 to follow you.
+<ce>                  A loud shout nearly startles you.
+<ce>
+<ce>           "You there! _qgiver_ sent you, didn't %g1? Take
+<ce>           me away from here! I need to get to ___qgiver_!"
+<ce>
+<ce>                     _rescue_ happily joins you.
+                                     <--->
+<ce>            Someone comes into view, startled to see you.
+<ce>
+<ce>            "Excuse me! I need to get back to ___qgiver_.
+<ce>                Can you help me? My name is _rescue_."
+<ce>
+<ce>                     You tell %g2 to follow you.
 
 Message:  1012
-<ce> Ah, _rescue_, what a joy it is to see you again.
-<ce> Was the pilgrimage worth it? Most people never again
-<ce> venture under the earth after an experience like that,
-<ce> hence why we granted your request. Now then, we have
-<ce> much work for you to do. No time for nightmares.
-<ce> And have you thanked %pcn? You would be
-<ce> dead now if it weren't for %g2. Our sincerest thanks once
-<ce> more, good %pct.
+<ce>           Ah, _rescue_, what a joy it is to see you again.
+<ce>         Was the pilgrimage worth it? Most people never again
+<ce>        venture under the earth after an experience like that,
+<ce>         hence why we granted your request. Now then, we have
+<ce>           much work for you to do. No time for nightmares.
+<ce>               And have you thanked %pcn? You would be
+<ce>      dead now if it weren't for %g2. Our sincerest thanks once
+<ce>                           more, good %pct.
 
 Message:  1020
-<ce> You hear shambling steps nearby. A voice croaks,
-<ce> 
-<ce> "The King of Worms has given me a better form.
-<ce> He wishes to bestow the gift on you."
-<ce> 
-<ce> You notice the form's mouth does not move.
-<ce> Clearly powerful magicks are in effect.
-<ce> You prepare to put _rescue_
-<ce> out of %g3 misery.
-<--->
-<ce> You hear halting steps nearby, and then a voice.
-<ce> 
-<ce> "My best regards to _qgiver_. Soon I will see %g2."
-<ce> 
-<ce> It appears the curse was more than fiction.
-<ce> _rescue_'s only salvation is death now.
+<ce>           You hear shambling steps nearby. A voice croaks,
+<ce>
+<ce>            "The King of Worms has given me a better form.
+<ce>                He wishes to bestow the gift on you."
+<ce>
+<ce>              You notice the form's mouth does not move.
+<ce>               Clearly powerful magicks are in effect.
+<ce>                     You prepare to put _rescue_
+<ce>                          out of %g3 misery.
+                                     <--->
+<ce>           You hear halting steps nearby, and then a voice.
+<ce>
+<ce>         "My best regards to _qgiver_. Soon I will see %g2."
+<ce>
+<ce>             It appears the curse was more than fiction.
+<ce>               _rescue_'s only salvation is death now.
 
 Message:  1021
-<ce> You wish it weren't necessary, but this was all that
-<ce> you could do. Time to inform _qgiver_.
+<ce>         You wish it weren't necessary, but this was all that
+<ce>                you could do. Time to inform _qgiver_.
 
 Message:  1022
-<ce> Tell me, what happened? Where is _rescue_?
-<ce> 
-<ce> Oh, I think I'm going to be sick. Only the Necromancers
-<ce> could do such a thing. Oh, this is perilous. Could I have
-<ce> changed something if I did not grant %g3 request?
-<ce> Could we have cured %g2? Oh, my. No, I refuse to think
-<ce> about this more today. Not today. Tomorrow, perhaps.
-<ce> No more. Thank you for doing your duty. That is all.
-<--->
-<ce> Welcome back, %pcf, but where is _rescue_?
-<ce> 
-<ce> That is horrifying. Now I wonder whether %g1 brought
-<ce> the curse on by %g3 own actions or whether it was
-<ce> involuntary. Oh, if only we could know. Let us hope
-<ce> never to hear something like this again. Thank you,
-<ce> %pcf. You have done your duty.
+<ce>              Tell me, what happened? Where is _rescue_?
+<ce>
+<ce>       Oh, I think I'm going to be sick. Only the Necromancers
+<ce>      could do such a thing. Oh, this is perilous. Could I have
+<ce>          changed something if I did not grant %g3 request?
+<ce>        Could we have cured %g2? Oh, my. No, I refuse to think
+<ce>         about this more today. Not today. Tomorrow, perhaps.
+<ce>         No more. Thank you for doing your duty. That is all.
+                                     <--->
+<ce>              Welcome back, %pcf, but where is _rescue_?
+<ce>
+<ce>         That is horrifying. Now I wonder whether %g1 brought
+<ce>          the curse on by %g3 own actions or whether it was
+<ce>         involuntary. Oh, if only we could know. Let us hope
+<ce>         never to hear something like this again. Thank you,
+<ce>                    %pcf. You have done your duty.
 
 Message:  1050
-<ce> _qgiver_ told you to be in ___qgiver_ by now.
+<ce>            _qgiver_ told you to be in ___qgiver_ by now.
 
 QBN:
 
@@ -127,59 +127,58 @@ Clock _begin_ 1:00 2.00:00
 Foe _enemy_ is Zombie
 
 --	Quest start-up:
-	start timer _timer_ 
-	reveal _dung_ 
-	log 1010 step 0 
-	place npc _rescue_ at _dung_ 
-  pc at _dung_ set _inside_
-  pick one of _E.01_ _E.02_
+	start timer _timer_
+	reveal _dung_
+	log 1010 step 0
+	place npc _rescue_ at _dung_
+	pc at _dung_ set _inside_
+	pick one of _E.01_ _E.02_
 
 variable _E.01_
 variable _E.02_
 _begin_ task:
- start timer _timer_
+	start timer _timer_
 
 _inside_ task:
- start timer _begin_
- stop timer _timer_
+	start timer _begin_
+	stop timer _timer_
 
 _timer_ task:
-  say 1050
-	end quest 
+	say 1050
+	end quest
 
 _S.01_ task:
-  when _E.01_ and _begin_ and _inside_
-  start task _S.01b_
+	when _E.01_ and _begin_ and _inside_
+	start task _S.01b_
 
 _S.01b_ task:
-	say 1011 
-	add _rescue_ face 
+	say 1011
+	add _rescue_ face
 
 _reward1_ task:
-	when _qgclicked_ and _S.01b_ 
+	when _qgclicked_ and _S.01b_
 	say 1012
-	give pc nothing 
-	end quest 
+	give pc nothing
+	end quest
 
 _S.02_ task:
 	when _E.02_ and _begin_ and _inside_
-  say 1020
-	create foe _enemy_ every 1 minutes 1 times with 100% success
+	say 1020
+	create foe _enemy_ every 0 minutes 1 times with 100% success
 
 _step2_ task:
 	killed _enemy_
-  say 1021
+	say 1021
 
 _reward2_ task:
-	when _qgclicked_ and _step2_ 
+	when _qgclicked_ and _step2_
 	say 1022
 	give pc nothing
 	end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
-
+	clicked npc _qgiver_
 
 _S.04_ task:
-	when _qgclicked_ and not _begin_ 
-	clear _qgclicked_ _S.04_ 
+	when _qgclicked_ and not _begin_
+	clear _qgclicked_ _S.04_

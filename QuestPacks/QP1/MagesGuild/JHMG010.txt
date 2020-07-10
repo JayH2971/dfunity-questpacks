@@ -142,7 +142,7 @@ Clock _quick_ 00:02
 Clock _failsafe_ 120.00:00
 
 Foe _enemy_ is Mage
-Foe _undead_ is 3 Wraith
+Foe _undead_ is Wraith
 
 --	Quest start-up:
     pc at _res_ set _inside_
@@ -169,7 +169,7 @@ _send_ task:
 
 _inj_ task:
     injured _enemy_ saying 1022
-    create foe _undead_ every 1 minutes 1 times with 100% success
+    create foe _undead_ every 0 minutes 1 times with 100% success
 
 _slain_ task:
     killed _enemy_

@@ -135,7 +135,7 @@ _alert_ task:
 variable _spawn_
 _spawnthere_ task:
     when _spawn_ and _arrive_
-    create foe _wiz_ every 1 minutes 1 times with 100% success
+    create foe _wiz_ every 0 minutes 1 times with 100% success
 
 _slain_ task:
     killed _wiz_

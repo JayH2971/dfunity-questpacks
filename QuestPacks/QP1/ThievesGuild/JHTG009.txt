@@ -4,59 +4,59 @@ DisplayName: Only the Best
 QRC:
 
 QuestorOffer:  [1000]
-<ce> Yeah, I've got something for you. That is, for YOU.
-<ce> It ain't gonna be pretty, I can tell you that.
-<ce> But if you take it, the client's offering one of those
-<ce> artifacts, the powerful ones. That's how big this
-<ce> thing is. Are you gonna take it?
+<ce>         Yeah, I've got something for you. That is, for YOU.
+<ce>            It ain't gonna be pretty, I can tell you that.
+<ce>        But if you take it, the client's offering one of those
+<ce>          artifacts, the powerful ones. That's how big this
+<ce>                   thing is. Are you gonna take it?
 
 RefuseQuest:  [1001]
-<ce> Well then, that's that.
+<ce>                       Well then, that's that.
 
 AcceptQuest:  [1002]
-<ce> Here. There's this bag here, and don't bother opening it.
-<ce> You can't and you don't wanna know what's inside. Now that
-<ce> it's in your hands, two things are gonna start to happen.
-<ce> One, you're gonna start to feel violently ill, and that's
-<ce> not gonna go away. Two, you're gonna start to see daedra
-<ce> coming for you. That's why this is for you specifically.
-<ce> For most people this is a suicide job, and maybe we should
-<ce> call it that. But this bag has to get to ___tav_.
-<ce> A contact named _gpers_ is gonna be in a tavern
-<ce> called _tav_ about =days_ days from now.
+<ce>      Here. There's this bag here, and don't bother opening it.
+<ce>      You can't and you don't wanna know what's inside. Now that
+<ce>      it's in your hands, two things are gonna start to happen.
+<ce>      One, you're gonna start to feel violently ill, and that's
+<ce>       not gonna go away. Two, you're gonna start to see daedra
+<ce>       coming for you. That's why this is for you specifically.
+<ce>      For most people this is a suicide job, and maybe we should
+<ce>          call it that. But this bag has to get to ___tav_.
+<ce>           A contact named _gpers_ is gonna be in a tavern
+<ce>               called _tav_ about =days_ days from now.
 
 QuestFail:  [1003]
 
 QuestComplete:  [1004]
-<ce> Welcome, child. Give me the bag, quickly.
-<ce> No creature must know of its continued presence here.
-<ce> And now, before I slay you and your witnessing eyes,
-<ce> take this reward. It is a fair exchange.
-<ce> Safe travels, %ra.
+<ce>              Welcome, child. Give me the bag, quickly.
+<ce>        No creature must know of its continued presence here.
+<ce>         And now, before I slay you and your witnessing eyes,
+<ce>               take this reward. It is a fair exchange.
+<ce>                          Safe travels, %ra.
 
 Message:  1010
-<ce> But really, let me just ask this. One last time.
-<ce> Are you sure you want to do this? You've only got one life,
-<ce> and I'd hate to see you throw it away.
+<ce>           But really, let me just ask this. One last time.
+<ce>     Are you sure you want to do this? You've only got one life,
+<ce>                and I'd hate to see you throw it away.
 
 Message:  1011
-<ce> All right then. Get marching, soldier.
-<ce> Oblivion's on its way.
+<ce>                All right then. Get marching, soldier.
+<ce>                        Oblivion's on its way.
 
 Message:  1012
-<ce> Sure, no hard feelings. Like I said, it's suicide.
-<ce> I'll tell the client it's not worth the trouble.
+<ce>          Sure, no hard feelings. Like I said, it's suicide.
+<ce>           I'll tell the client it's not worth the trouble.
 
 Message:  1015
-<ce> You could throw away the bag if you choose, though
-<ce> that would likely cause problems for the Thieves Guild.
-<ce> Do you wish to abandon it?
+<ce>          You could throw away the bag if you choose, though
+<ce>       that would likely cause problems for the Thieves Guild.
+<ce>                      Do you wish to abandon it?
 
 Message:  1016
-<ce> You discard the bag.
+<ce>                         You discard the bag.
 
 Message:  1020
-<ce> A deafening roar sounds nearby.
+<ce>                   A deafening roar sounds nearby.
 
 Message:  1030
 %qdt:
@@ -93,8 +93,8 @@ Clock _delay_ 0:03
 Clock _days_ 4.00:00 6.00:00
 
 -- Quest start-up:
- log 1030 step 0
- prompt 1010 yes _begin_ no _quit_
+  log 1030 step 0
+  prompt 1010 yes _begin_ no _quit_
 
 _quit_ task:
   say 1012
@@ -115,11 +115,11 @@ _days_ task:
 
 _delay_ task:
   say 1020
-  send _dae1_ every 15 minutes with 40% success
-  send _dae2_ every 15 minutes with 40% success
-  send _dae3_ every 15 minutes with 40% success
-  send _dae4_ every 15 minutes with 40% success
-  send _dae5_ every 15 minutes with 40% success
+  send _dae1_ every 15 minutes with 10% success
+  send _dae2_ every 15 minutes with 10% success
+  send _dae3_ every 15 minutes with 10% success
+  send _dae4_ every 15 minutes with 10% success
+  send _dae5_ every 15 minutes with 10% success
 
 variable _a1_
 variable _a2_

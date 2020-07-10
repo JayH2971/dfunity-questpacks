@@ -1,0 +1,140 @@
+Quest: JHTG014
+DisplayName: Gang War
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              Got a bit of a gang war that'll break out
+<ce>                 near a temple here in %reg. We need
+<ce>               some strong arms for fighting. You gonna
+<ce>                         lend us yours, %pcf?
+
+RefuseQuest:  [1001]
+<ce>             The more we control, the more we all profit.
+<ce>                        Think about it, %pct.
+                                     <--->
+<ce>                 Yeah, why would I ask for your arms
+<ce>                      if you don't have a brain?
+
+AcceptQuest:  [1002]
+<ce>                    Head to ___templehome_. That's
+<ce>            %di from here. A bit of a trek. We've already
+<ce>       got some hired men waiting for the fight, so the thing's
+<ce>            gonna break out any time. Hurry over there and
+<ce>       help us win this. We can't count on dark arts or none of
+<ce>       that Dark Brotherhood business, so take every advantage
+<ce>        you can get. Just don't go killing any guards, right?
+<ce>          You do that, the blood's on your hands. Get going.
+
+QuestFail:  [1003]
+<ce>         Thieves aren't known for their bravery, but running
+<ce>    from this battle will give you a particularly bad reputation.
+
+QuestComplete:  [1004]
+<ce>                The battle is won. Your allies merely
+<ce>                 give each other congratulatory nods
+<ce>                 before fading away into the shadows.
+<ce>             The Thieves Guild's pay is enough for them,
+<ce>                    and the enemy's loot is yours.
+
+RumorsPostSuccess:  [1007]
+The Thieves Guild are a ferocious bunch.
+
+QuestorPostSuccess:  [1008]
+Any other gang war happens, I'll tell you about it.
+
+Message:  1010
+<ce>         Your allies, a hired band of barbarians, notice your
+<ce>                    arrival in ___templehome_ and
+<ce>           give you a sign to lay low. They've counted out
+<ce>              six foes, a mix of rogues and spellswords.
+<ce>
+<ce>         The rival gang shortly notices your group's movement
+<ce>              and rushes to meet you. The battle is on.
+
+Message:  1011
+<ce>                    One of your allies has fallen.
+<ce>          The enemy cheers, rallied by their small victory.
+
+Message:  1030
+%qdt:
+ The Thieves Guild needs help
+ fighting off some rival group
+ that's rooted into ___templehome_
+ in ____questgiver_. They
+ asked me to head over there and
+ kill them off with the
+ help of some hired muscle.
+
+QBN:
+
+Person _questgiver_ group Questor male
+
+Place _templehome_ remote templehome
+
+Clock _timer_ 180.00:00
+Clock _battle_ 1.00:00
+Clock _delay_ 00:01
+Clock _afterbattle_ 1:00
+
+Foe _arch_ is Rogue
+Foe _spells_ is Spellsword
+Foe _ally_ is Barbarian
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    pc at _templehome_ set _inside_
+
+_inside_ task:
+    start task _confront_
+
+_confront_ task:
+    say 1010
+    create foe _ally_ every 0 minutes 3 times with 100% success
+    start timer _delay_
+    start timer _battle_
+
+_delay_ task:
+    create foe _arch_ every 0 minutes 3 times with 50% success
+    create foe _spells_ every 0 minutes 3 times with 50% success
+
+_day_ task:
+    daily from 00:00 to 23:59
+    change foe _arch_ infighting true
+    change foe _spells_ infighting true
+    change foe _ally_ infighting true
+    change foe _ally_ team 1
+    change foe _arch_ team 0
+    change foe _spells_ team 0
+    clear _day_
+
+_kill1_ task:
+    killed 3 _arch_
+
+_kill2_ task:
+    killed 3 _spells_
+
+_victory_ task:
+    when _kill1_ and _kill2_
+    give pc nothing
+    stop timer _battle_
+    start timer _afterbattle_
+    remove log step 0
+    remove foe _ally_
+
+_casualty_ task:
+    killed 1 _ally_ saying 1011
+
+_qgclicked_ task:
+    clicked npc _questgiver_
+
+_timer_ task:
+    end quest
+
+_battle_ task:
+    say 1003
+    end quest
+
+_afterbattle_ task:
+    end quest

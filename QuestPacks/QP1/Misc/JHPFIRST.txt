@@ -1,22 +1,22 @@
-Quest: JHPINIT
-DisplayName: PERPET INIT
+Quest: JHPFIRST
+DisplayName: QP1 INIT
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                             JHPINIT 1000
+<ce>                               QP1 1000
 
 RefuseQuest:  [1001]
-<ce>                             JHPINIT 1001
+<ce>                               QP1 1001
 
 AcceptQuest:  [1002]
-<ce>                             JHPINIT 1002
+<ce>                               QP1 1002
 
 QuestFail:  [1003]
-<ce>                             JHPINIT 1003
+<ce>                               QP1 1003
 
 QuestComplete:  [1004]
-<ce>                             JHPINIT 1004
+<ce>                               QP1 1004
 
 Message:  1010
 <ce>                       Quest Pack #1 initiated.

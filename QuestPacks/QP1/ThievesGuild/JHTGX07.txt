@@ -4,27 +4,27 @@ DisplayName: As the Crow Flies
 QRC:
 
 QuestorOffer:  [1000]
-<ce> ERROR 1000 JHTGX07
+<ce>                          ERROR 1000 JHTGX07
 
 RefuseQuest:  [1001]
-<ce> ERROR 1001 JHTGX07
+<ce>                          ERROR 1001 JHTGX07
 
 AcceptQuest:  [1002]
-<ce> ERROR 1002 JHTGX07
+<ce>                          ERROR 1002 JHTGX07
 
 QuestFail:  [1003]
-<ce> ERROR 1003 JHTGX07
+<ce>                          ERROR 1003 JHTGX07
 
 QuestComplete:  [1004]
-<ce> Maybe hard for others, but not for you. Have your gold.
-<--->
-<ce> You're gonna make us both rich. Here's your pay.
-<--->
-<ce> How'd it go? Pretty ordinary for you, I guess. =reward_ gold for you.
-<--->
-<ce> Glad to see you back with a full bag. Here you go.
+<ce>       Maybe hard for others, but not for you. Have your gold.
+                                     <--->
+<ce>           You're gonna make us both rich. Here's your pay.
+                                     <--->
+<ce>How'd it go? Pretty ordinary for you, I guess. =reward_ gold for you.
+                                     <--->
+<ce>          Glad to see you back with a full bag. Here you go.
 
-RumorsDuringQuest: [1005]
+RumorsDuringQuest:  [1005]
 You and The Crow are gonna die together, they say.
 <--->
 Happy with the name you've earned yourself? The Fighters Guild hates you.
@@ -34,30 +34,30 @@ Aren't you ever worried about The Crow stabbing you in the back?
 What do you have against the Fighters Guild anyway?
 
 Message:  1010
-<ce> All right, here's what I've got.
-<ce> A bunch of the regular targets off
-<ce> in ___place_. Name's _fg_.
-<ce> I need one brain, three hands, and five feet. Meet me in
-<ce> ___crowhome_ when you're done.
-<ce> I'll be at _crowhome_.
-<ce> =reward_ gold this time.
-<--->
-<ce> This time you're gonna look for _fg_
-<ce> in ___place_. From %g2 and friends
-<ce> bring me six lungs and two right feet.
-<ce> I'll be at ___crowhome_ after, at
-<ce> _crowhome_. This is worth =reward_ gold.
-<--->
-<ce> This one's pretty simple. Six ears and six eyes.
-<ce> Look for _fg_ at ___place_.
-<ce> I'll be at ___crowhome_ when you're done.
-<ce> Look for me in _crowhome_
-<ce> for your =reward_ gold pieces.
-<--->
-<ce> I'm sending you to ___place_ to look
-<ce> for someone named _fg_. Kill %g2 and %g3
-<ce> friends and take two hearts and six thumbs. I'll be
-<ce> at ___crowhome_, staying in _crowhome_.
+<ce>                   All right, here's what I've got.
+<ce>                  A bunch of the regular targets off
+<ce>                      in ___place_. Name's _fg_.
+<ce>       I need one brain, three hands, and five feet. Meet me in
+<ce>                    ___crowhome_ when you're done.
+<ce>                        I'll be at _crowhome_.
+<ce>                       =reward_ gold this time.
+                                     <--->
+<ce>                 This time you're gonna look for _fg_
+<ce>                  in ___place_. From %g2 and friends
+<ce>                bring me six lungs and two right feet.
+<ce>                  I'll be at ___crowhome_ after, at
+<ce>               _crowhome_. This is worth =reward_ gold.
+                                     <--->
+<ce>           This one's pretty simple. Six ears and six eyes.
+<ce>                     Look for _fg_ at ___place_.
+<ce>              I'll be at ___crowhome_ when you're done.
+<ce>                      Look for me in _crowhome_
+<ce>                    for your =reward_ gold pieces.
+                                     <--->
+<ce>                 I'm sending you to ___place_ to look
+<ce>               for someone named _fg_. Kill %g2 and %g3
+<ce>         friends and take two hearts and six thumbs. I'll be
+<ce>               at ___crowhome_, staying in _crowhome_.
 
 Message:  1030
 %qdt:
@@ -70,43 +70,43 @@ Message:  1030
  at _crowhome_.
 
 Message:  1060
-<ce> "Someone help! %pcf's here!"
-<--->
-<ce> "Help! Help! I'm gonna die!"
-<--->
-<ce> "The killer's here! Stop %pg2!"
-<--->
-<ce> "I don't want to die! Help me!"
+<ce>                     "Someone help! %pcf's here!"
+                                     <--->
+<ce>                     "Help! Help! I'm gonna die!"
+                                     <--->
+<ce>                   "The killer's here! Stop %pg2!"
+                                     <--->
+<ce>                   "I don't want to die! Help me!"
 
 Message:  1070
-<ce> That looks like it's all of them. Time to gather the organs.
-<--->
-<ce> No more left. These three have enough for The Crow.
-<--->
-<ce> With all three dead, it's time to pick what The Crow needs.
-<--->
-<ce> With the killing done, the harvesting remains.
+<ce>     That looks like it's all of them. Time to gather the organs.
+                                     <--->
+<ce>         No more left. These three have enough for The Crow.
+                                     <--->
+<ce>     With all three dead, it's time to pick what The Crow needs.
+                                     <--->
+<ce>            With the killing done, the harvesting remains.
 
 Message:  1071
-<ce> You put the organs into the bag according to The Crow's instructions.
-<--->
-<ce> You take out the parts The Crow requested and seal the bag.
-<--->
-<ce> You fill the bag as The Crow requested and close it.
-<--->
-<ce> You take what you need from the bodies and close the bag.
+<ce>You put the organs into the bag according to The Crow's instructions.
+                                     <--->
+<ce>     You take out the parts The Crow requested and seal the bag.
+                                     <--->
+<ce>         You fill the bag as The Crow requested and close it.
+                                     <--->
+<ce>      You take what you need from the bodies and close the bag.
 
 Message:  1080
-<ce> Do you wish to leave behind the _lode_
-<ce> and give up your ties to _crow_?
+<ce>                Do you wish to leave behind the _lode_
+<ce>                   and give up your ties to _crow_?
 
 Message:  1081
-<ce> You discard the small piece of metal.
-<ce> Whatever schemes he has are his alone now.
+<ce>                You discard the small piece of metal.
+<ce>              Whatever schemes he has are his alone now.
 
 Message:  1082
-<ce> You return the _lode_ to your
-<ce> belongings, at least for now.
+<ce>                    You return the _lode_ to your
+<ce>                    belongings, at least for now.
 
 QBN:
 Person _crow_ named The_Crow
@@ -115,7 +115,7 @@ Person _fg_ faction The_Fighters_Guild
 Place _crowhome_ remote house
 Place _place_ remote random
 
-Item _reward_ gold range 1501 to 1999
+Item _reward_ gold range 2501 to 3999
 Item _lode_ lodestone
 Item _bag_ small_sack
 Item _bag2_ small_sack
