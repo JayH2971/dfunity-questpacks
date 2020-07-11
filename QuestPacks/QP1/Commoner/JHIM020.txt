@@ -70,8 +70,8 @@ Message:  1011
 <ce>          Will you slay _questgiver_ to end the plague here?
 
 Message:  1012
-<ce>          _questgiver_ howls in despair, attempting to fight
-<ce>                      for %g3 life. You move in.
+<ce>                    _questgiver_ howls in despair,
+<ce>                  attempting to fight for %g3 life.
 
 Message:  1013
 <ce>                 _questgiver_ begins to weep for the
