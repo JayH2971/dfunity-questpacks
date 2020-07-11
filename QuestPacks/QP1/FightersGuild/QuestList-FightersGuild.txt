@@ -16,6 +16,7 @@ JHFG004, FightersGuild, M, 0, 0, a quest to guard a residence from intruders
 JHFG005, FightersGuild, M, 1, 0, a quest to slay a pack of beasts at a rural farmhome
 JHFG006, FightersGuild, M, 2, 0, a quest to stop an assassination inside a home
 JHFG007, FightersGuild, M, 1, 1, courier work + ambush in a house
+JHFG008, FightersGuild, M, 5, 1, a quest to defend a vampire in a palace
 JHFG009, FightersGuild, M, 2, 0, expert werewolf hunting
 JHFG010, FightersGuild, M, 3, 0, a quest to rid a city's streets of poisonous critters
 JHFG011, FightersGuild, M, 8, 1, an artifact quest to invade a vampire cult

@@ -1,0 +1,185 @@
+Quest: JHDB024
+DisplayName: In the Darkest Depths
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>             We require the aid of one skilled in combat,
+<ce>          quick to think and act. One of our senior members
+<ce>           is conducting a ritual to obtain dark powers and
+<ce>          will soon awaken in weakness. Someone must provide
+<ce>              protection when that happens. Will you go?
+
+RefuseQuest:  [1001]
+<ce>         Then get out of the way. This task needs fulfilling.
+
+AcceptQuest:  [1002]
+<ce>                  Somewhere in ___dung_, our friend
+<ce>               _dbf_ has taken refuge while performing
+<ce>           a lengthy ritual to become a lich. The Spymaster
+<ce>         hears rumors that a tribe of brutes will attack %g2
+<ce>         immediately concluding the transformation, while %g1
+<ce>              is weakest. Stay with _dbf_ until %g3 foes
+<ce>       are slain. I will have a magical _item_ for your reward.
+<ce>          Hurry there, for I doubt %g1 can delay longer than
+<ce>                  =2dung_ days to finish the ritual.
+<ce>            Show %g2 this old _gem_ which belongs to %g2,
+<ce>              and return it to me with %g3 power in it.
+
+QuestFail:  [1003]
+<ce>                        _dbf_ has been slain.
+
+QuestComplete:  [1004]
+<ce>                  Ah, the energized _gem_ of _dbf_.
+<ce>          Proof enough. We will have much to do with %g2 in
+<ce>     the future. Your loyalty to the Brotherhood has been noted.
+
+Message:  1010
+<ce>              _dbf_ appears to be only barely conscious.
+<ce>             Great magical power emanates from %g3 body.
+<ce>
+<ce>              Sensing the _gem_, %g1 seems to grow more
+<ce>          lucid. Now that you're here, the final step of the
+<ce>                          ritual can begin.
+
+Message:  1011
+<ce>           You are brought up straight by Orcish shouting.
+<ce>               You do not know what they mean, but they
+<ce>               are obviously hostile. They march toward
+<ce>                           the two of you.
+
+Message:  1012
+<ce>           You are brought up straight by Orcish shouting.
+<ce>            You know enough of their speech to understand.
+<ce>
+<ce>                 "Another lich in the land! Slay it!
+<ce>                 Let the Bretons gain no more power!"
+<ce>
+<ce>                  They march toward the two of you.
+
+Message:  1013
+<ce>               The ritual finishes, and _dbf_ cackles.
+<ce>
+<ce>           "Finally, undying power is mine! Let these orcs
+<ce>                 be the first witnesses of my wrath!"
+<ce>
+<ce>             Then %g1 beckons you to continue the fight.
+
+Message:  1014
+<ce>                _dbf_'s ritual is finished by now, and
+<ce>                  you were not there to protect %g2.
+
+Message:  1015
+<ce>             The orcs are dead. _dbf_ grins delightfully.
+<ce>
+<ce>           "Well done, %ra. May we meet again in darkness."
+<ce>
+<ce>           You explain that you need evidence of your deed,
+<ce>       and %g1 casts a spell on the Lodestone, making it glow.
+<ce>                      With that, %g1 leaves you.
+
+Message:  1030
+%qdt:
+ The Dark Brotherhood of
+ ___questgiver_ has sent me
+ to ___dung_ to protect
+ _dbf_, a member undergoing a ritual
+ to become a lich.
+ I am to present, and then return,
+ a personalized _gem_ as proof of the deed.
+ The ritual will likely end within =2dung_ days.
+
+QBN:
+
+Person _questgiver_ group Questor male
+Person _dbf_ faction The_Necromancers
+Person _darkb_ faction The_Dark_Brotherhood
+
+Place _dung_ remote dungeon9
+
+Item _gem_ lodestone
+Item _gem2_ lodestone
+Item _item_ magic_item
+
+Clock _2dung_ 00:00 0 flag 1 range 0 17
+Clock _awaken_ 00:01
+Clock _failsafe_ 180.00:00
+
+Foe _orcn_ is Orc_shaman
+Foe _orcw_ is Orc_warlord
+Foe _ally_ is Lich
+
+--	Quest start-up:
+    start timer _2dung_
+    log 1030 step 0
+    get item _gem_
+    reveal _dung_
+    place npc _dbf_ at _dung_
+
+_orc_ task:
+    when skill Orcish is at least 40
+
+_click_ task:
+    toting _gem_ and _dbf_ clicked
+    say 1010
+    start task _spawn_
+    stop timer _2dung_
+    start timer _failsafe_
+
+_spawn_ task:
+    create foe _orcn_ every 0 minutes 2 times with 100% success
+    create foe _orcw_ every 0 minutes 2 times with 100% success
+    start timer _awaken_
+
+_noun_ task:
+    when _spawn_ and not _orc_
+    say 1011
+
+_undt_ task:
+    when _spawn_ and _orc_
+    say 1012
+
+_awaken_ task:
+    hide npc _dbf_
+    say 1013
+    place foe _ally_ at _dung_
+
+_day_ task:
+    daily from 00:00 to 23:59
+    change foe _orcn_ infighting true
+    change foe _orcw_ infighting true
+    change foe _ally_ infighting true
+    change foe _ally_ team 1
+    change foe _orcn_ team 0
+    change foe _orcw_ team 0
+    clear _day_
+
+_kill1_ task:
+    killed 2 _orcn_
+
+_kill2_ task:
+    killed 2 _orcw_
+
+_victory_ task:
+    when _kill1_ and _kill2_
+    say 1015
+    get item _gem2_
+    remove foe _ally_
+
+_casualty_ task:
+    killed 1 _ally_ saying 1003
+    change repute with _darkb_ by -8
+    end quest
+
+_pcgetsgold_ task:
+    toting _gem2_ and _questgiver_ clicked
+    give pc _item_
+    end quest
+
+_2dung_ task:
+    say 1014
+    change repute with _darkb_ by -8
+    end quest
+
+_failsafe_ task:
+    end quest
