@@ -1,0 +1,151 @@
+Quest: JHIM020
+DisplayName: Unbreakable Chains
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                    I am _questgiver_, and I need
+<ce>                  an escort. I seem to have taken an
+<ce>               illness no one can cure. Can you help me
+<ce>                get to ___temple_ to see one of %crn's
+<ce>                      experts? I must be cured.
+
+RefuseQuest:  [1001]
+<ce>               My only wish is that you suffer as I do.
+
+AcceptQuest:  [1002]
+<ce>                  I need to see _curer_ at _temple_,
+<ce>           who they tell me is head and shoulders above the
+<ce>            rest. I've tried every cure under the sun and
+<ce>        nothing works. I need help, quickly. Please get me to
+<ce>                 %g2 and I'll pay you =reward_ gold.
+
+QuestFail:  [1003]
+<ce>              "My patience has its limits, and you have
+<ce>            exceeded them. I will find _curer_ on my own."
+<ce>
+<ce>                        _questgiver_ departs.
+
+QuestComplete:  [1004]
+<ce>            _questgiver_'s money is yours for the taking.
+
+Message:  1010
+<ce>                     "Hello, how can I help you?"
+<ce>
+<ce>                 _questgiver_ gives an explanation of
+<ce>               the symptoms from the last several days.
+<ce>               _curer_ listens intently, showing signs
+<ce>         of concern, and then asks to conduct a more thorough
+<ce>               examination. After casting a few spells,
+<ce>                       %g1 jumps back in alarm.
+<ce>
+<ce>        "What have you done? Who have you offended? These are
+<ce>       no ordinary wounds. You carry an illness of the Daedra!"
+<ce>
+<ce>                    _questgiver_ looks ashamed and
+<ce>                  asks how much the cure will cost.
+
+Message:  1011
+<ce>    "There is no cure! Within a few days you'll become contagious,
+<ce>             and infect everyone you touch with the same.
+<ce>                     The plague will cover %crn!
+<ce>            You are now a mere vessel of the Daedric will,
+<ce>          and thousands will suffer at your hands! The only
+<ce>          cure for one of your kind is death. And were I not
+<ce>         sworn to heal, I would administer that death to you
+<ce>                    this instant without remorse."
+<ce>
+<ce>               _curer_ looks at you expectantly, hoping
+<ce>        you will be brave enough to take _questgiver_'s life.
+<ce>                   For %g3 part, %g1 begins to beg.
+<ce>
+<ce>      "No, no, this is all out of proportion. You can't kill me!
+<ce>                     I know! We'll do something!
+<ce>         I'll go flee off into the wilderness and never speak
+<ce>      to another sentient being again! I'll live off rabbits and
+<ce>      fruits! I'll keep away from every civilization in Tamriel!
+<ce>                    Please, just give me my life!"
+<ce>
+<ce>            The decision appears to be in your hands now.
+<ce>          Will you slay _questgiver_ to end the plague here?
+
+Message:  1012
+<ce>          _questgiver_ howls in despair, attempting to fight
+<ce>                      for %g3 life. You move in.
+
+Message:  1013
+<ce>                 _questgiver_ begins to weep for the
+<ce>         mercy you've shown. Saying nothing else, %g1 throws
+<ce>           the promised money at you and flees the temple.
+<ce>                        _curer_ glares at you.
+<ce>
+<ce>        "Do you actually think that fool will follow through?
+<ce>         You may have doomed countless lives. I will hold you
+<ce>               responsible before the %rt if this leads
+<ce>                        to an outbreak, %ra."
+
+Message:  1014
+Needin' a cure? Ain't nobody better than _curer_.
+<--->
+Wow, lookin' a little sick there, am I right? Better find a temple fast.
+
+Message:  1015
+<ce>                 _curer_ stands in respectful silence
+<ce>                       for _questgiver_'s life,
+<ce>                           and then speaks.
+<ce>
+<ce>         "You think it's easy for me to tell a person to die?
+<ce>   My heart aches. Such is the burden I carry in this line of work.
+<ce>           Thank you for carrying out such a grievous act."
+
+Message:  1030
+%qdt:
+ _questgiver_ is a sick =questgiver_
+ who needs to get to ___temple_
+ to see _curer_ to heal an
+ incurable disease. I will be paid
+ =reward_ gold for traveling there.
+
+QBN:
+Person _questgiver_ group Questor anyInfo 1014
+Person _curer_ faction Generic_Temple
+
+Place _temple_ remote temple
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Item _reward_ gold range 201 to 399
+
+Foe _nme_ is Bard
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    hide npc _questgiver_
+    add _questgiver_ face
+    place npc _curer_ at _temple_
+
+_talk_ task:
+    clicked npc _curer_
+    drop _questgiver_ face
+    say 1010
+    prompt 1011 yes _attack_ no _mercy_
+
+_attack_ task:
+    say 1012
+    create foe _nme_ every 0 minutes 1 times with 100% success
+
+_killed_ task:
+    killed _nme_
+    say 1015
+    give pc _reward_
+    end quest
+
+_mercy_ task:
+    say 1013
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest
