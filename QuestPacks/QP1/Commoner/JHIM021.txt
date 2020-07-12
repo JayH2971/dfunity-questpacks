@@ -1,0 +1,198 @@
+Quest: JHIM021
+DisplayName: Of Love and Justice
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              I have suffered a grievous wrong, and the
+<ce>         law gives me no justice. Join me and right my wrong.
+<ce>                   You will be paid for your help.
+
+RefuseQuest:  [1001]
+<ce>                               Begone.
+
+AcceptQuest:  [1002]
+<ce>                   Then let us go deliver justice.
+<ce>                  We will find this man, _fool_, in
+<ce>                  _res_ in this city. Lead the way.
+
+QuestFail:  [1003]
+<ce>                   "I will deliver justice myself!
+<ce>                       You take far too long."
+<ce>
+<ce>                      _questgiver_ hurries off.
+
+QuestComplete:  [1004]
+<ce>                         What's done is done.
+
+Message:  1010
+<ce>                _fool_ cowers at the sight of you two.
+<ce>             There is no question what you have come for.
+<ce>                        _questgiver_ bellows.
+<ce>
+<ce>           " =num_ years married, and no one has ever dared
+<ce>          approach my beloved! And now you have sullied her!
+<ce>                Where the law fails, we will deliver!"
+<ce>
+<ce>                 _fool_ cries out, "I know my wrong!
+<ce>           Please, let us work something out! I have mended
+<ce>                   my ways! Just give me my life!"
+
+Message:  1011
+<ce>              Cold rage overtakes _questgiver_'s visage.
+<ce>
+<ce>            "What you have stolen, no one can ever return.
+<ce>                            You will die!"
+<ce>
+<ce>               _fool_ starts to weep, grabbing a weapon
+<ce>                 to attempt self-defense. Do you help
+<ce>                      _questgiver_ kill _fool_?
+
+Message:  1012
+<ce>                     _questgiver_ roars in fury,
+<ce>                      and the battle commences.
+
+Message:  1013
+<ce>                   _questgiver_ thanks you for your
+<ce>                help, but looks no better than before.
+<ce>
+<ce>            "I thought this would satisfy me. It does not.
+<ce>                 I will not rest until I find peace."
+<ce>
+<ce>         After handing you the promised payment, %g1 departs.
+
+Message:  1014
+<ce>                     _questgiver_ roars in fury,
+<ce>           unwilling to listen. You have become %g3 enemy,
+<ce>               just like _fool_. You and he prepare to
+<ce>                 defend yourselves from _questgiver_.
+
+Message:  1015
+<ce>                  _fool_ weeps terribly at the sight
+<ce>                     of _questgiver_'s dead body.
+<ce>           This experience has shaken everyone up terribly.
+<ce>
+<ce>            "I knew %g2 distantly as another resident here
+<ce>              in ___questgiver_, but never thought this
+<ce>      could come of %g2. How could one be so distorted by hate?"
+<ce>
+<ce>                 _fool_ takes some more time to weep.
+<ce>             Soon he opens up a nearby box and hands you
+<ce>            a ring, unable to express his thanks in words.
+<ce>               He waves you away to commiserate alone.
+
+Message:  1016
+<ce>               You decide to have no part of this feud.
+<ce>        Whatever the outcome will be, it will not involve you.
+
+Message:  1017
+<ce>        It appears you're the only one left standing from this
+<ce>              madness. You locate the money _questgiver_
+<ce>                            promised you.
+
+Message:  1030
+%qdt:
+ _questgiver_ will pay me =reward_ gold to
+ help %g1 get vengeance on someone named
+ _fool_ in ___questgiver_.
+ The tension in the air tells me we shouldn't
+ take more than a day to do so.
+
+QBN:
+Person _questgiver_ group Questor
+Person _fool_ group Local_3.0 male
+
+Place _res_ local house
+
+Clock _timer_ 1.00:00
+Clock _failsafe_ 1:00
+
+Item _reward_ gold range 101 to 249
+Item _num_ gold range 3 to 11
+
+Foe _flfoe_ is Nightblade
+Foe _brfoe_ is Barbarian
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    hide npc _questgiver_
+    add _questgiver_ face
+    pc at _res_ do _inside_
+    place npc _fool_ at _res_
+
+_day_ task:
+    daily from 00:00 to 23:59
+    change foe _flfoe_ infighting true
+    change foe _brfoe_ infighting true
+    clear _day_
+
+variable _inside_
+
+_talk_ task:
+    clicked npc _fool_
+    drop _questgiver_ face
+    say 1010
+    prompt 1011 yes _attack_ no _mercy_
+    start timer _failsafe_
+
+_attack_ task:
+    say 1012
+    hide npc _fool_
+    place foe _flfoe_ at _res_
+    create foe _brfoe_ every 0 minutes 1 times with 100% success
+    start task _allybr_
+
+_allybr_ task:
+    change foe _flfoe_ team 0
+    change foe _brfoe_ team 1
+
+_attackvic_ task:
+    when _attack_ and not _killedbr_ and _killedfl_
+    say 1013
+    remove foe _brfoe_
+    give pc _reward_
+    end quest
+
+_mercy_ task:
+    say 1014
+    hide npc _fool_
+    place foe _flfoe_ at _res_
+    create foe _brfoe_ every 0 minutes 1 times with 100% success
+    start task _allyfl_
+
+_allyfl_ task:
+    change foe _flfoe_ team 1
+    change foe _brfoe_ team 0
+
+_killedfl_ task:
+    killed _flfoe_
+
+_killedbr_ task:
+    killed _brfoe_
+
+_mercyvic_ task:
+    when _mercy_ and _killedbr_ and not _killedfl_
+    say 1015
+    remove foe _flfoe_
+    give pc _reward_
+    end quest
+
+_wipeout_ task:
+    when _talk_ and _killedbr_ and _killedfl_
+    say 1017
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest
+
+_flee_ task:
+    when _talk_ and not _inside_
+    say 1016
+    give pc nothing
+    end quest
+
+_failsafe_ task:
+    end quest

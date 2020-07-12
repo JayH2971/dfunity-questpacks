@@ -139,13 +139,16 @@ _killed_ task:
     killed _nme_
     say 1015
     give pc _reward_
+    destroy _questgiver_
     end quest
 
 _mercy_ task:
     say 1013
     give pc _reward_
+    destroy _questgiver_
     end quest
 
 _timer_ task:
     say 1003
+    destroy _questgiver_
     end quest
