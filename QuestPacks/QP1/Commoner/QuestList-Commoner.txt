@@ -29,4 +29,4 @@ JHIM017, Commoners, N, 0, 10, a quest to escort someone to the King of Worms
 JHIM018, Commoners, N, 0, 0, a quest to capture centaurs
 JHIM019, Commoners, N, 0, 0, a quest to walk a bear
 JHIM020, Commoners, N, 0, 1, a quest to cure an incurable disease
-JHIM021, Commoners, M, 0, 1, a quest to aid in revenge on adultery
+JHIM021, Commoners, M, 0, 0, a quest to aid in revenge on adultery
