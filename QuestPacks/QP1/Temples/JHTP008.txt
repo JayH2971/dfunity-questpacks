@@ -112,6 +112,7 @@ Item _tri_ trinket
 Item _pay_ gold range 1100 to 1700
 Item _mclo_ mens_clothing
 Item _fclo_ womens_robe
+Item _ring_ ring
 
 Person _qgiver_ group Questor
 
@@ -209,6 +210,7 @@ _victory_ task:
     when _qgclicked_ and _finish_
     give pc _mclo_
     give pc _fclo_
+    give pc _ring_
     end quest
 
 _qgclicked_ task:
