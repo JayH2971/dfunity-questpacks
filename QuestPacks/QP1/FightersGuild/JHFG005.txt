@@ -41,11 +41,11 @@ QuestComplete:  [1004]
 <ce>                 I hope you enjoy these things, %pcf.
 <ce>                 Stop and smell the roses some time.
 <ce>                  Here's your _reward_ gold pieces.
-<--->
-<ce>  How was the trip? Too many of our members
-<ce>  just want to stay local and kill rats.
-<ce>  Good to see some initiative out of you.
-<ce>  Take this.
+                                     <--->
+<ce>              How was the trip? Too many of our members
+<ce>                just want to stay local and kill rats.
+<ce>               Good to see some initiative out of you.
+<ce>                              Take this.
 
 Message:  1020
 <ce>                The growling dies down. You trust the
@@ -115,19 +115,15 @@ variable _outside_
 _day_ task:
 	daily from 5:30 to 18:30
 
-_B.01_ task:
-	pick one of _bears_
-
+variable _B.01_
 _bears_ task:
-	when _outside_ and not _day_ and not _slain_ and not _T.01_
+	when _outside_ and not _day_ and not _slain_ and _B.01_
 	create foe _bear_ every 3 minutes indefinitely with 65% success
 	create foe _bear_ every 1 minutes indefinitely with 20% success
 
-_T.01_ task:
-	pick one of _tigers_
-
+variable _T.01_
 _tigers_ task:
-	when _outside_ and not _day_ and not _slain_ and not _B.01_
+	when _outside_ and not _day_ and not _slain_ and _T.01_
 	create foe _tiger_ every 1 minutes indefinitely with 20% success
 	create foe _tiger_ every 3 minutes indefinitely with 65% success
 
