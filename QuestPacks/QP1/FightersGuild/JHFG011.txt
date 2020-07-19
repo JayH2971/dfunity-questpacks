@@ -4,35 +4,35 @@ DisplayName: Cult of the Artifact
 QRC:
 
 QuestorOffer:  [1000]
-<ce>	Hey %pcf, I've got some news you might be
-<ce>	 interested in hearing. Turns out in some cave around
-<ce>	 here there's an artifact, like the real, ancient, powerful
-<ce>	kind. Heard of Auriel's Bow, Chrysamere, that kind
-<ce>	of thing? This is one of those artifacts. It's being held
-<ce>	by a vampire ancient way down in there, guarded by
-<ce>	a whole cult of his. I've talked with some of the other
-<ce>	guild members, and we've all agreed we're not touching
-<ce>	it with a ten-foot pole. Then you showed up and I figured
-<ce>	 I'd tell you. No shame if you fail to get it, all right? I'll
-<ce>	 tell you where it is if you're interested.
+<ce>              Hey %pcf, I've got some news you might be
+<ce>         interested in hearing. Turns out in some cave around
+<ce>      here there's an artifact, like the real, ancient, powerful
+<ce>          kind. Heard of Auriel's Bow, Chrysamere, that kind
+<ce>      of thing? This is one of those artifacts. It's being held
+<ce>          by a vampire ancient way down in there, guarded by
+<ce>       a whole cult of his. I've talked with some of the other
+<ce>        guild members, and we've all agreed we're not touching
+<ce>      it with a ten-foot pole. Then you showed up and I figured
+<ce>    I'd tell you. No shame if you fail to get it, all right? I'll
+<ce>              tell you where it is if you're interested.
 
 RefuseQuest:  [1001]
-<ce>	Good. I really don't want to lose you down there.
+<ce>          Good. I really don't want to lose you down there.
 
 AcceptQuest:  [1002]
-<ce>	Well, all right then. It's in ___dung_.
-<ce>	Take everything you've got. I said there's a cult
-<ce>	down there, and I'm not kidding. Those folks are nuts,
-<ce>	but like loony. It's gonna be a fight for your life 'til you
-<ce>	find the head honcho. If it gets bad, promise me you're
-<ce>	gonna run, all right? Good luck down there buddy.
-<ce>	Come back in one piece.
+<ce>               Well, all right then. It's in ___dung_.
+<ce>          Take everything you've got. I said there's a cult
+<ce>        down there, and I'm not kidding. Those folks are nuts,
+<ce>     but like loony. It's gonna be a fight for your life 'til you
+<ce>       find the head honcho. If it gets bad, promise me you're
+<ce>          gonna run, all right? Good luck down there buddy.
+<ce>                       Come back in one piece.
 
 QuestFail:  [1003]
 
 QuestComplete:  [1004]
-<ce>	With the artifact in your hands, this cult has
-<ce>	 lost its attraction. Your quest is complete.
+<ce>            With the artifact in your hands, this cult has
+<ce>             lost its attraction. Your quest is complete.
 
 RumorsDuringQuest:  [1005]
 There's a cult down in ___dung_. Don't bother no one, though.
@@ -43,16 +43,16 @@ So you actually beat the cult. You're a legend.
 QuestorPostfailure:  [1009]
 
 Message:  1019
-<ce>	You immediately notice a powerful aura of death in
-<ce>	 ___dung_. The cult takes notice of you.
+<ce>          You immediately notice a powerful aura of death in
+<ce>               ___dung_. The cult takes notice of you.
 
 Message:  1021
-<ce>	 The cult's numbers appear endless.
-<ce>	  You may wish to reconsider.
+<ce>                  The cult's numbers appear endless.
+<ce>                     You may wish to reconsider.
 
 Message:  1020
-<ce>	The vampire ancient emits a shrill hiss.
-<ce>	Waves of power seem to pulse through the air.
+<ce>               The vampire ancient emits a shrill hiss.
+<ce>            Waves of power seem to pulse through the air.
 
 Message:  1030
 %qdt:
@@ -87,8 +87,8 @@ Item _art6_ artifact Staff_of_Magnus
 Item _art7_ artifact Warlocks_Ring
 
 --	Quest start-up:
-	start timer _timer_ 
-	log 1030 step 0 
+	start timer _timer_
+	log 1030 step 0
 	place foe _anc_ at _dung_
 	pick one of _a1_ _a2_ _a3_ _a4_ _a5_ _a6_ _a7_
 	reveal _dung_
@@ -100,6 +100,16 @@ _inside_ task:
 	create foe _e3_ every 1 minutes 1 times with 95% success
 	create foe _e4_ every 1 minutes 1 times with 95% success
 	create foe _e6_ every 1 minutes 1 times with 95% success
+
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _e1_ infighting true
+	change foe _e2_ infighting true
+	change foe _e3_ infighting true
+	change foe _e4_ infighting true
+	change foe _e5_ infighting true
+	change foe _e6_ infighting true
+	clear _infight_
 
 _spawn_ task:
 	when _spawn_ and _inside_

@@ -4,70 +4,70 @@ DisplayName: Discord of the Mages Guild
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  We recently received a request from the
-<ce>  Mages Guild to off one of their members.
-<ce>  Quite official-looking. I suppose it couldn't
-<ce>  hurt to improve your standing among them
-<ce>  by taking this job, would it %pct?
+<ce>               We recently received a request from the
+<ce>               Mages Guild to off one of their members.
+<ce>            Quite official-looking. I suppose it couldn't
+<ce>               hurt to improve your standing among them
+<ce>                  by taking this job, would it %pct?
 
 RefuseQuest:  [1001]
-<ce>  You can have other allegiances, %ra.
-<ce>  We will not be jealous.
+<ce>                 You can have other allegiances, %ra.
+<ce>                       We will not be jealous.
 
 AcceptQuest:  [1002]
-<ce>  Good. First head to the sap's guild hall
-<ce>  in ___guild_. They'll explain where
-<ce>  to go. We don't particularly care about why
-<ce>  the fool needs to die; the Brotherhood
-<ce>  is merely happy to be the instrument, and
-<ce>  you are given the honor of carrying it out.
-<ce>  They demanded that this matter be concluded
-<ce>  in =timer_ days. Be sure that whoever this is
-<ce>  ceases breathing by then. Your contact's
-<ce>  name in the guild is _mage_. Farewell.
+<ce>               Good. First head to the sap's guild hall
+<ce>                 in ___guild_. They'll explain where
+<ce>             to go. We don't particularly care about why
+<ce>                the fool needs to die; the Brotherhood
+<ce>              is merely happy to be the instrument, and
+<ce>             you are given the honor of carrying it out.
+<ce>             They demanded that this matter be concluded
+<ce>            in =timer_ days. Be sure that whoever this is
+<ce>               ceases breathing by then. Your contact's
+<ce>                name in the guild is _mage_. Farewell.
 
 QuestFail:  [1003]
-<ce>  Did you get lost on the way to ___guild_, %pct?
+<ce>           Did you get lost on the way to ___guild_, %pct?
 
 QuestComplete:  [1004]
-<ce>  This matter is finished. The mages of
-<ce>  ___guild_ need fear no more a rogue
-<ce>  daedra summoner.
+<ce>                This matter is finished. The mages of
+<ce>                 ___guild_ need fear no more a rogue
+<ce>                           daedra summoner.
 
 Message:  1010
-<ce>  Good day. Ah, you would be our, um, specialist!
-<ce>  For that one difficult matter! Please, let us
-<ce>  speak softly.
-<ce>  
-<ce>  We would tell you of a problem that needs solving,
-<ce>  and it's quite urgent. The summoning of daedra is
-<ce>  a task of great hazards, not to be propagated
-<ce>  by every last child with a desire to speak to
-<ce>  otherworldly forces. We of the Mages Guild do well
-<ce>  to restrict that power only to the responsible.
-<ce>  Nevertheless, we occasionally let one or another
-<ce>  slip through our fingers, as has happened this time.
-<ce>  
-<ce>  Our hard-headed pupil has taken refuge in a hole,
-<ce>  ___dung_, hoping to continue with
-<ce>  the daedra-baiting down there. Where this art
-<ce>  was learned we do not know, for a mere Journeyman
-<ce>  in our halls will never so be taught. Please
-<ce>  have finished with this menace, that we may
-<ce>  all rest more easily.
+<ce>           Good day. Ah, you would be our, um, specialist!
+<ce>            For that one difficult matter! Please, let us
+<ce>                            speak softly.
+<ce>
+<ce>          We would tell you of a problem that needs solving,
+<ce>          and it's quite urgent. The summoning of daedra is
+<ce>            a task of great hazards, not to be propagated
+<ce>            by every last child with a desire to speak to
+<ce>          otherworldly forces. We of the Mages Guild do well
+<ce>           to restrict that power only to the responsible.
+<ce>           Nevertheless, we occasionally let one or another
+<ce>         slip through our fingers, as has happened this time.
+<ce>
+<ce>          Our hard-headed pupil has taken refuge in a hole,
+<ce>                  ___dung_, hoping to continue with
+<ce>            the daedra-baiting down there. Where this art
+<ce>          was learned we do not know, for a mere Journeyman
+<ce>             in our halls will never so be taught. Please
+<ce>             have finished with this menace, that we may
+<ce>                        all rest more easily.
 
 Message:  1011
-<ce>  This foe's face turns pale. A few shouts in an
-<ce>  arcane language follow, and one hand goes into
-<ce>  the pack for some kind of parchment. It quickly
-<ce>  starts to degrade due to an enchantment put on it.
+<ce>            This foe's face turns pale. A few shouts in an
+<ce>            arcane language follow, and one hand goes into
+<ce>           the pack for some kind of parchment. It quickly
+<ce>          starts to degrade due to an enchantment put on it.
 
 Message:  1012
-<ce>  This parchment has stopped disintegrating
-<ce>  with the rogue mage's death, but it likely
-<ce>  won't last longer than a day in its current
-<ce>  state. If you're going to get any use from it,
-<ce>  it will be from memorizing its contents.
+<ce>              This parchment has stopped disintegrating
+<ce>              with the rogue mage's death, but it likely
+<ce>             won't last longer than a day in its current
+<ce>            state. If you're going to get any use from it,
+<ce>               it will be from memorizing its contents.
 
 Message:  1013
 A thousand thanks to thee, child. To rely on one
@@ -117,9 +117,9 @@ Foe _dae2_ is Frost_daedra
 Item _parch_ letter used 1013
 
 --	Quest start-up:
-	start timer _timer_ 
+    start timer _timer_
     place npc _mage_ at _guild_
-	log 1030 step 0 
+    log 1030 step 0
 
 _talk_ task:
     clicked npc _mage_
@@ -135,6 +135,12 @@ _inj_ task:
     create foe _dae2_ every 0 minutes 1 times with 100% success
     give item _parch_ to _enemy_
     have _parch_ set _warn_
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _dae1_ infighting true
+    change foe _da2_ infighting true
+    clear _infight_
 
 _slay_ task:
     killed _enemy_

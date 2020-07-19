@@ -195,6 +195,11 @@ _resist_ task:
     say 1022
     create foe _merc_ every 0 minutes 1 times with 100% success
 
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe merc infighting true
+    clear _infight_
+
 _final_ task:
     drop _friend_ face
     stop timer _timer_

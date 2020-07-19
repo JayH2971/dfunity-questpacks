@@ -11,7 +11,7 @@ QuestorOffer:  [1000]
 <ce>                      experts? I must be cured.
 
 RefuseQuest:  [1001]
-<ce>               My only wish is that you suffer as I do.
+<ce>                    Then I must travel on my own.
 
 AcceptQuest:  [1002]
 <ce>                  I need to see _curer_ at _temple_,
@@ -134,6 +134,7 @@ _talk_ task:
 _attack_ task:
     say 1012
     create foe _nme_ every 0 minutes 1 times with 100% success
+    change foe _nme_ infighting true
 
 _killed_ task:
     killed _nme_

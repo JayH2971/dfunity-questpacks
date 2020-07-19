@@ -88,6 +88,14 @@ Foe _wild4_ is Spriggan
 _daytime_ task:
 	daily from 8:00 to 18:00
 
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _wild1_ infighting true
+	change foe _wild2_ infighting true
+	change foe _wild3_ infighting true
+	change foe _wild4_ infighting true
+	clear _infight_
+
 variable _inside_
 variable _dud_
 variable _alt_

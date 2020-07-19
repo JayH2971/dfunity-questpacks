@@ -79,7 +79,7 @@ Item _reward_ gold range 2501 to 2799
 --	Quest start-up:
     start timer _timer_
     log 1030 step 0
-    pick one of _e1_ _e2_ _e3_
+    pick one of _e1_ _e1_ _e1_ _e2_ _e3_
     pick one of _t1_ _t2_
 
 variable _t1_

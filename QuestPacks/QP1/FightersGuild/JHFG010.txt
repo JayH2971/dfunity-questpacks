@@ -72,6 +72,12 @@ Foe _enemy2_ is Giant_scorpion
 _templehome_ task:
 	say 1019
 
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _enemy1_ infighting true
+	change foe _enemy2_ infighting true
+	clear _infight_
+
 variable _spid_
 variable _scorp_
 _spawn_ task:

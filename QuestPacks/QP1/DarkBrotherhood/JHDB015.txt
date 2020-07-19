@@ -138,14 +138,19 @@ _atr_ task:
     create foe _e2_ every 0 minutes 1 times with 100% success
     create foe _e3_ every 60 minutes indefinitely with 50% success
 
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _e2_ infighting true
+    change foe _e3_ infighting true
+    clear _infight_
+
 _fail_ task:
     when _tele_ and not _inside_ and not _slain_
     say 1014
     end quest
 
 _spawn_ task:
-    say 1012
-    create foe _e1_ every 0 minutes 3 times with 80% success
+    create foe _e1_ every 0 minutes 3 times with 80% success msg 1012
 
 _slain_ task:
     killed 3 _e1_

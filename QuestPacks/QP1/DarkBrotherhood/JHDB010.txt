@@ -108,6 +108,11 @@ _nosafe_ task:
 	say 1020
 	create foe _enemy2_ every 600 minutes indefinitely with 75% success
 
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _enemy2_ infighting true
+	clear _infight_
+
 _dam_ task:
 	injured _enemy1_
 	say 1040

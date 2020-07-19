@@ -143,6 +143,10 @@ _inside_ task:
     say 1019
     _ing_ used do _persuade_
 
+_click_ task:
+    clicked foe _giant_
+    start task _persuade_
+
 variable _check_
 _slain_ task:
     killed _giant_

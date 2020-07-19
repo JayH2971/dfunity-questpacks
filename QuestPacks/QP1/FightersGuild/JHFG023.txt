@@ -4,112 +4,112 @@ DisplayName: Hunter of the Dark
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  Got a fellow waiting who was talking
-<ce>  about rescuing someone from down in
-<ce>  some cave. Didn't want to do it himself,
-<ce>  said he needed help. I overheard
-<ce>  something about vampires but he didn't
-<ce>  want to tell me that. Sounds fishy.
-<ce>  You want to talk to him anyway?
+<ce>                 Got a fellow waiting who was talking
+<ce>                 about rescuing someone from down in
+<ce>               some cave. Didn't want to do it himself,
+<ce>                   said he needed help. I overheard
+<ce>                something about vampires but he didn't
+<ce>                 want to tell me that. Sounds fishy.
+<ce>                   You want to talk to him anyway?
 
 RefuseQuest:  [1001]
-<ce>  Yeah, I wouldn't touch that with a barge pole.
+<ce>            Yeah, I wouldn't touch that with a barge pole.
 
 AcceptQuest:  [1002]
-<ce>  "Hold on a sec."
-<ce>  
-<ce>  _qgiver_ pounds on the wall, and
-<ce>  a =person_ enters the guild hall.
-<ce>  After a brief introduction, you get
-<ce>  an excited summary of the task ahead.
-<ce>  
-<ce>  "Haven't you ever heard of the great scholar
-<ce>  _dummy_? The poor fool's down
-<ce>  in ___dung_ and needs to be rescued!
-<ce>  We're in for fame and fortune, we are!
-<ce>  Come on now, let's go!"
-<ce>  
-<ce>  Your traveling companion marks the location
-<ce>  on your map and shakes your hand eagerly.
+<ce>                           "Hold on a sec."
+<ce>
+<ce>                   _qgiver_ pounds on the wall, and
+<ce>                  a =person_ enters the guild hall.
+<ce>                 After a brief introduction, you get
+<ce>                an excited summary of the task ahead.
+<ce>
+<ce>             "Haven't you ever heard of the great scholar
+<ce>                    _dummy_? The poor fool's down
+<ce>                 in ___dung_ and needs to be rescued!
+<ce>                We're in for fame and fortune, we are!
+<ce>                       Come on now, let's go!"
+<ce>
+<ce>             Your traveling companion marks the location
+<ce>              on your map and shakes your hand eagerly.
 
 QuestFail:  [1003]
-<ce>  _person_ slumps onto the ground,
-<ce>  having suffered too much from the strains of travel.
-<ce>  The vampires should be satisfied with %g3 death
-<ce>  once they find the corpse.
+<ce>                   _person_ slumps onto the ground,
+<ce>         having suffered too much from the strains of travel.
+<ce>           The vampires should be satisfied with %g3 death
+<ce>                      once they find the corpse.
 
 QuestComplete:  [1004]
-<ce>  You take the _tri_ and break it in half with a
-<ce>  satisfying crunch, and then crush it under foot.
-<ce>  The vampires will no longer have any reason to pursue you.
+<ce>            You take the _tri_ and break it in half with a
+<ce>           satisfying crunch, and then crush it under foot.
+<ce>      The vampires will no longer have any reason to pursue you.
 
 Message:  1010
-<ce>  "Oh, good! Thank you for coming to help.
-<ce>  You are a master at combat, yes? I know
-<ce>  that will be a great help, for we're
-<ce>  going to rescue the famed researcher
-<ce>  _dummy_. You lead the way to
-<ce>  ___dung_ and I'll help with the rest.
-<ce>  I'll just mark it on your map."
-<ce>  
-<ce>  _person_ shakes your hand eagerly.
+<ce>               "Oh, good! Thank you for coming to help.
+<ce>               You are a master at combat, yes? I know
+<ce>                 that will be a great help, for we're
+<ce>                 going to rescue the famed researcher
+<ce>                     _dummy_. You lead the way to
+<ce>                ___dung_ and I'll help with the rest.
+<ce>                   I'll just mark it on your map."
+<ce>
+<ce>                  _person_ shakes your hand eagerly.
 
 Message:  1011
-<ce>  I've gotta come clean with you, %pcf.
-<ce>  Everything I told them in there, that's all
-<ce>  a lie. I just joined this place 'cause I need
-<ce>  help, really bad. I've got vampires coming after
-<ce>  me. They wanna kill me. I left some holy relic as
-<ce>  a prank down in ___dung_. Went down
-<ce>  with some friends and we all had a good laugh,
-<ce>  said we'd really stirred up some trouble now.
-<ce>  I'm the only one left alive. Please, you gotta
-<ce>  help me. I can't go down there myself with them
-<ce>  bloodsuckers coming on me. I'll die. They've
-<ce>  got my scent, and now it's on you too. We're
-<ce>  gonna go smash that relic together, right?
+<ce>                I've gotta come clean with you, %pcf.
+<ce>             Everything I told them in there, that's all
+<ce>            a lie. I just joined this place 'cause I need
+<ce>           help, really bad. I've got vampires coming after
+<ce>          me. They wanna kill me. I left some holy relic as
+<ce>                 a prank down in ___dung_. Went down
+<ce>            with some friends and we all had a good laugh,
+<ce>            said we'd really stirred up some trouble now.
+<ce>            I'm the only one left alive. Please, you gotta
+<ce>           help me. I can't go down there myself with them
+<ce>             bloodsuckers coming on me. I'll die. They've
+<ce>             got my scent, and now it's on you too. We're
+<ce>              gonna go smash that relic together, right?
 
 Message:  1012
-<ce>  %oth. Really, you know, you have no idea
-<ce>  what this means to me. Some day I'll pay you back,
-<ce>  I promise. Lead the way to ___dung_.
+<ce>               %oth. Really, you know, you have no idea
+<ce>          what this means to me. Some day I'll pay you back,
+<ce>                 I promise. Lead the way to ___dung_.
 
 Message:  1013
-<ce>  This vampire hisses at you hatefully.
-<ce>  No doubt there will be many more to follow.
+<ce>                This vampire hisses at you hatefully.
+<ce>             No doubt there will be many more to follow.
 
 Message:  1014
-<ce>  _person_ jumps for joy.
-<ce>  
-<ce>  "Finally! Oh, %god, how I've waited for this!
-<ce>  Here, let me sift some of that dust through
-<ce>  my fingers. I can't believe I survived!
-<ce>  You really are a hero! Wow, what a story!
-<ce>  I'll tell it to all my posterity!"
-<ce>  
-<ce>  After moving %g3 fingers through the _tri_'s
-<ce>  remains, %g1 absent-mindedly wanders off toward the
-<ce>  dungeon entrance. Perhaps a simple expression of
-<ce>  gratitude is too much to ask.
+<ce>                       _person_ jumps for joy.
+<ce>
+<ce>            "Finally! Oh, %god, how I've waited for this!
+<ce>             Here, let me sift some of that dust through
+<ce>               my fingers. I can't believe I survived!
+<ce>              You really are a hero! Wow, what a story!
+<ce>                  I'll tell it to all my posterity!"
+<ce>
+<ce>             After moving %g3 fingers through the _tri_'s
+<ce>         remains, %g1 absent-mindedly wanders off toward the
+<ce>           dungeon entrance. Perhaps a simple expression of
+<ce>                    gratitude is too much to ask.
 
 Message:  1020
-<ce>  "What? No, it doesn't matter! They know my
-<ce>  scent! It's on you! You're gonna have to destroy
-<ce>  the thing anyway!"
-<ce>  
-<ce>  You push _person_ hard, putting as much
-<ce>  distance between %g2 and you as possible.
+<ce>              "What? No, it doesn't matter! They know my
+<ce>           scent! It's on you! You're gonna have to destroy
+<ce>                          the thing anyway!"
+<ce>
+<ce>               You push _person_ hard, putting as much
+<ce>              distance between %g2 and you as possible.
 
 Message:  1021
-<ce>  A hooded figure approaches.
-<ce>  
-<ce>  "The transgressor has been slain.
-<ce>  Our vendetta is satisfied.
-<ce>  Go in peace."
-<ce>  
-<ce>  You catch a glimpse of red eyes glancing
-<ce>  at you. Your messenger then dashes away
-<ce>  with superhuman speed.
+<ce>                     A hooded figure approaches.
+<ce>
+<ce>                  "The transgressor has been slain.
+<ce>                      Our vendetta is satisfied.
+<ce>                            Go in peace."
+<ce>
+<ce>               You catch a glimpse of red eyes glancing
+<ce>               at you. Your messenger then dashes away
+<ce>                        with superhuman speed.
 
 Message:  1030
 %qdt:
@@ -148,7 +148,7 @@ Foe _n3_ is Vampire
 Foe _n4_ is Ancient_vampire
 
 --	Quest start-up:
-	say 1010
+    say 1010
     add _person_ face
     pc at _fhall_ do _inside_
     log 1030 step 0
@@ -161,7 +161,7 @@ _day_ task:
 variable _inside_
 _reveal_ task:
     when not _inside_
-    prompt 1011 yes _begin_ no _flee_    
+    prompt 1011 yes _begin_ no _flee_
     start task _spawn_
     log 1031 step 1
     start timer _timer_
@@ -173,6 +173,14 @@ _spawning_ task:
     create foe _n2_ every 120 minutes indefinitely with 35% success
     create foe _n3_ every 800 minutes indefinitely with 100% success
     create foe _n4_ every 400 minutes indefinitely with 10% success
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _n1_ infighting true
+    change foe _n2_ infighting true
+    change foe _n3_ infighting true
+    change foe _n4_ infighting true
+    clear _infight_
 
 _flee_ task:
     drop _person_ face

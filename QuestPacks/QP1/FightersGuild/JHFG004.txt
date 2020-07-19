@@ -153,7 +153,9 @@ _stfail_ task:
 	when _st1_ and not _skill_
 	say 1023
 	get item _stealg_
-	end quest
+	setplayercrime Theft
+	spawncityguards immediate
+	remove log step 0
 
 _stealth_ task:
 	when skill Stealth is at least 60
@@ -177,11 +179,11 @@ _goaltime_ task:
 	daily from 5:00 to 6:30
 
 _notice_ task:
-	when _E.01_ and _inside_ and _goaltime_
+	when _E.01_ and _inside_ and _goaltime_ and not _stfail_
 	say 1020
 
 _pcgetsgold_ task:
-	when _E.02_ and _inside_ and _goaltime_
+	when _E.02_ and _inside_ and _goaltime_ and not _stfail_
 	give pc _reward_
 	end quest
 

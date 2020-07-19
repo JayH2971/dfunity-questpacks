@@ -4,75 +4,75 @@ DisplayName: Major Burglary at its Finest
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  Quiet down. I've got a lead on a house
-<ce>  in town that's gonna be holding some
-<ce>  big money overnight. I can tell you
-<ce>  where but it's gonna cost you.
-<ce>  Wanna find out?
+<ce>                Quiet down. I've got a lead on a house
+<ce>                 in town that's gonna be holding some
+<ce>                 big money overnight. I can tell you
+<ce>                    where but it's gonna cost you.
+<ce>                           Wanna find out?
 
 RefuseQuest:  [1001]
-<ce>  Fine. Let's keep it that way.
+<ce>                    Fine. Let's keep it that way.
 
 AcceptQuest:  [1002]
-<ce>  It's gonna be 400 gold. It's worth it though.
-<ce>  Talk to me in a sec, I gotta get my money bag out.
+<ce>            It's gonna be 400 gold. It's worth it though.
+<ce>          Talk to me in a sec, I gotta get my money bag out.
 
 QuestComplete:  [1004]
-<ce>  It looks like this is the stash.
+<ce>                   It looks like this is the stash.
 
 Message:  1010
-<ce>  400 gold, yessirree. I'll take that,
-<ce>  thank you very much.
-<ce>  
-<ce>  So here's the deal. _res_ here in
-<ce>  town's gonna be storing some money from an
-<ce>  estate sale. I didn't hear how much
-<ce>  but it's a couple thou' I think.
-<ce>  Go in after midnight. If you try it
-<ce>  during the day they're gonna go ballistic
-<ce>  on ya. Their courier's gonna show up to take
-<ce>  the money after midnight so if ya wanna fake
-<ce>  it, that's your cover. Whatever happens after
-<ce>  that is your show. Nice doing business.
+<ce>                 400 gold, yessirree. I'll take that,
+<ce>                         thank you very much.
+<ce>
+<ce>                  So here's the deal. _res_ here in
+<ce>              town's gonna be storing some money from an
+<ce>                 estate sale. I didn't hear how much
+<ce>                   but it's a couple thou' I think.
+<ce>                 Go in after midnight. If you try it
+<ce>              during the day they're gonna go ballistic
+<ce>             on ya. Their courier's gonna show up to take
+<ce>             the money after midnight so if ya wanna fake
+<ce>            it, that's your cover. Whatever happens after
+<ce>               that is your show. Nice doing business.
 
 Message:  1011
-<ce>  You enter the residence and quietly close
-<ce>  the door behind you.
+<ce>              You enter the residence and quietly close
+<ce>                         the door behind you.
 
 Message:  1012
-<ce>  "Excuse me? Who are you?"
-<ce>  
-<ce>  A startled youth looks at you from around a corner.
-<ce>  Do you say you're here to take the money?
+<ce>                      "Excuse me? Who are you?"
+<ce>
+<ce>         A startled youth looks at you from around a corner.
+<ce>              Do you say you're here to take the money?
 
 Message:  1013
-<ce>  "Oh, you're the courier? Okay."
-<ce>  
-<ce>  She leaves you to your task.
-<--->
-<ce>  "Oh, you're the courier? Okay."
-<ce>  
-<ce>  He leaves you to your task.
+<ce>                   "Oh, you're the courier? Okay."
+<ce>
+<ce>                     She leaves you to your task.
+                                     <--->
+<ce>                   "Oh, you're the courier? Okay."
+<ce>
+<ce>                     He leaves you to your task.
 
 Message:  1014
-<ce>  "Then what are you here for?! Huh?!"
-<ce>  
-<ce>  Her shrill scream pierces the air,
-<ce>  and people begin to look for you.
-<--->
-<ce>  "Then what are you here for?! Huh?!"
-<ce>  
-<ce>  His loud yell pierces the air,
-<ce>  and people begin to look for you.
+<ce>                 "Then what are you here for?! Huh?!"
+<ce>
+<ce>                  Her shrill scream pierces the air,
+<ce>                  and people begin to look for you.
+                                     <--->
+<ce>                 "Then what are you here for?! Huh?!"
+<ce>
+<ce>                    His loud yell pierces the air,
+<ce>                  and people begin to look for you.
 
 Message:  1015
-<ce>  Your purchased knowledge was correct.
-<ce>  They are indeed guarding the house until
-<ce>  midnight. You have arrived at the wrong time
-<ce>  and been identified as a threat.
+<ce>                Your purchased knowledge was correct.
+<ce>               They are indeed guarding the house until
+<ce>             midnight. You have arrived at the wrong time
+<ce>                   and been identified as a threat.
 
 Message:  1016
-<ce>  400, come on. I don't have all day.
+<ce>                 400, come on. I don't have all day.
 
 Message:  1030
 %qdt:
@@ -113,38 +113,42 @@ _fail_ task:
 
 variable _inside_
 _nosneak_ task:
-    when not _inside_
-    stop timer _sneak_
+  when not _inside_
+  stop timer _sneak_
 
 _entry_ task:
-    when _inside_ and _start_ and not _day_
-    say 1011
-    start timer _sneak_
+  when _inside_ and _start_ and not _day_
+  say 1011
+  start timer _sneak_
 
 _day_ task:
-    daily from 5:00 to 23:59
+  daily from 5:00 to 23:59
 
 _caught1_ task:
-    when _inside_ and _start_ and _day_
-    say 1015
-    create foe _warr_ every 0 minutes 3 times with 100% success
-    legal repute -20
+  when _inside_ and _start_ and _day_
+  say 1015
+  setplayercrime Theft
+  spawncityguards immediate
 
 _sneak_ task:
-    prompt 1012 yes _agree_ no _caught2_
+  prompt 1012 yes _agree_ no _caught2_
 
 _agree_ task:
-    say 1013
+  say 1013
 
 _caught2_ task:
-    say 1014
-    create foe _warr_ every 0 minutes 3 times with 100% success
-    legal repute -20
+  say 1014
+  setplayercrime Theft
+  spawncityguards immediate
 
 _found_ task:
   clicked item _sack_
   take _sack_ from pc
   give pc _reward_
+  remove log step 0
+
+_finish_ task:
+  when _found_ and not _inside_
   end quest
 
 _timer_ task:

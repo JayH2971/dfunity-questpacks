@@ -51,7 +51,7 @@ Message:  1020
 <ce>                      and disappears from view.
 
 Message:  1021
-<ce>                        _friend_ speaks up.
+<ce>                         _friend_ speaks up.
 <ce>
 <ce>                  "Listen, I know we agreed on this,
 <ce>              but you've been taking way too much here!
@@ -122,6 +122,12 @@ Foe _frenemy_ is Warrior
     add _friend_ face
     pc at _dung_ do _inside_
     pick one of _e1_ _e2_
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    clear _infight_
 
 _inside_ task:
     say 1019

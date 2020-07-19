@@ -5,39 +5,39 @@ DisplayName: Walk My Bear
 QRC:
 
 QuestorOffer:  [1000]
-<ce>       If you have a few hours to kill, maybe you can help me out.
-<ce>    I have a pet bear that needs to go for a walk, but I
-<ce>    sprained my ankle. Could you do it for =reward_ gold?
+<ce>     If you have a few hours to kill, maybe you can help me out.
+<ce>         I have a pet bear that needs to go for a walk, but I
+<ce>        sprained my ankle. Could you do it for =reward_ gold?
 
 RefuseQuest:  [1001]
-<ce>      My poor bear. Gonna get fat, you know?
-<--->
-<ce>  But he's tame!
+<ce>                My poor bear. Gonna get fat, you know?
+                                     <--->
+<ce>                            But he's tame!
 
 AcceptQuest:  [1002]
-<ce>       "Thanks! I'll call for him."
-<ce>   
-<ce>  The bear trundles in soon after and rubs against
-<ce>  his owner's leg. _questgiver_ gives you
-<ce>  a leash and shows you how to pull the bear around.
-<ce>  
-<ce>  "Ya wanna take him over to _tavern_?
-<ce>  It's a good walk, not too far. That's what we
-<ce>  usually do. And if my bear dies, by %god,
-<ce>  I will make you pay. Don't take too long,
-<ce>  you hear? Bears are lovable but you should
-<ce>  bring him back in four hours, no later."
+<ce>                     "Thanks! I'll call for him."
+<ce>
+<ce>           The bear trundles in soon after and rubs against
+<ce>               his owner's leg. _questgiver_ gives you
+<ce>          a leash and shows you how to pull the bear around.
+<ce>
+<ce>                 "Ya wanna take him over to _tavern_?
+<ce>            It's a good walk, not too far. That's what we
+<ce>              usually do. And if my bear dies, by %god,
+<ce>              I will make you pay. Don't take too long,
+<ce>              you hear? Bears are lovable but you should
+<ce>               bring him back in four hours, no later."
 
 QuestFail:  [1003]
-<ce>  The bear rumbles. With a burst of speed
-<ce>  he takes off and breaks free of your grasp.
+<ce>               The bear rumbles. With a burst of speed
+<ce>             he takes off and breaks free of your grasp.
 
 QuestComplete:  [1004]
-<ce>   How was it? You both have a good time? People can
-<ce>   be mean to a pet bear, but a few arrows through the
-<ce>   lungs is how I solve it. You did good. Take this money.
+<ce>          How was it? You both have a good time? People can
+<ce>         be mean to a pet bear, but a few arrows through the
+<ce>       lungs is how I solve it. You did good. Take this money.
 
-RumorsDuringQuest:   [1005]
+RumorsDuringQuest:  [1005]
 Sorry, is that a bear following you?
 <--->
 Keep that bear away.
@@ -46,74 +46,74 @@ QuestorPostFailure:  [1009]
 Bear killer.
 
 Message:  1010
-<ce>       This is _tavern_, as _questgiver_
-<ce>   asked you. The bear sniffs the various familiar objects
-<ce>   nearby and lumbers back over to you.
+<ce>                  This is _tavern_, as _questgiver_
+<ce>       asked you. The bear sniffs the various familiar objects
+<ce>                 nearby and lumbers back over to you.
 
 Message:  1011
-<ce>        "Hey! A bear! A bear's here! I'm gonna kill it!"
-<ce>   
-<ce>   One patron, feeling particularly heroic,
-<ce>   tries to slay the pet bear.
+<ce>           "Hey! A bear! A bear's here! I'm gonna kill it!"
+<ce>
+<ce>               One patron, feeling particularly heroic,
+<ce>                     tries to slay the pet bear.
 
 Message:  1012
-<ce>    The bear roars at something nearby. You see a pair of rats
-<ce>   scurrying about, and the bear's rumbling has startled
-<ce>   them into action.
+<ce>      The bear roars at something nearby. You see a pair of rats
+<ce>        scurrying about, and the bear's rumbling has startled
+<ce>                          them into action.
 
 Message:  1013
-<ce>    The bear starts moving about rather haphazardly.
-<ce>   You see a small gash on one of its paws -- perhaps
-<ce>   it was diseased by the rats. You notice a small
-<ce>   note tucked into its collar.
-<ce>   
-<ce>   "If sick, please deliver to _priest_
-<ce>   at _temple_, ___questgiver_"
+<ce>           The bear starts moving about rather haphazardly.
+<ce>          You see a small gash on one of its paws -- perhaps
+<ce>           it was diseased by the rats. You notice a small
+<ce>                     note tucked into its collar.
+<ce>
+<ce>                 "If sick, please deliver to _priest_
+<ce>                     at _temple_, ___questgiver_"
 
 Message:  1014
-<ce>        I see _questgiver_'s bear.
-<ce>    Hello bear. Yes, I'll charge %g2 for
-<ce>   the service. Let me cast the spell... Done.
-<ce>   %god watch over you and your new master,
-<ce>  furry friend.
+<ce>                      I see _questgiver_'s bear.
+<ce>                 Hello bear. Yes, I'll charge %g2 for
+<ce>             the service. Let me cast the spell... Done.
+<ce>               %god watch over you and your new master,
+<ce>                            furry friend.
 
 Message:  1015
-<ce>  The bear slumps over and ceases moving.
-<ce>  It appears the disease acted faster
-<ce>  than you expected.
+<ce>               The bear slumps over and ceases moving.
+<ce>                 It appears the disease acted faster
+<ce>                          than you expected.
 
 Message:  1016
-<ce>        "Hey you! Idiot! You idiot! Stupid %ra!"
-<ce>  
-<ce>  Someone is calling for you.
-<ce>  
-<ce>  "That bear was our pet! You killed it!
-<ce>  You die now!"
+<ce>               "Hey you! Idiot! You idiot! Stupid %ra!"
+<ce>
+<ce>                     Someone is calling for you.
+<ce>
+<ce>                "That bear was our pet! You killed it!
+<ce>                            You die now!"
 
 Message:  1017
-<ce>  The bear suddenly gets startled by some noise
-<ce>  in the distance. You struggle to hold on to
-<ce>  the leash, but he breaks free. In his confusion,
-<ce>  he tries to attack you.
+<ce>            The bear suddenly gets startled by some noise
+<ce>             in the distance. You struggle to hold on to
+<ce>           the leash, but he breaks free. In his confusion,
+<ce>                       he tries to attack you.
 
 Message:  1018
-<ce>  Slowly coming to his senses, the bear calms down
-<ce>  and lies on the floor. You cautiously attach the
-<ce>  leash to him once more. He pretends that
-<ce>  nothing ever happened.
+<ce>           Slowly coming to his senses, the bear calms down
+<ce>           and lies on the floor. You cautiously attach the
+<ce>               leash to him once more. He pretends that
+<ce>                        nothing ever happened.
 
 Message:  1019
-<ce>  The ranger manages to get in a shot while the bear
-<ce>  is separated from you. He only manages to get out
-<ce>  an agonized roar before he ceases breathing.
-<ce>  
-<ce>  "Yes! Got 'im!"
+<ce>          The ranger manages to get in a shot while the bear
+<ce>          is separated from you. He only manages to get out
+<ce>             an agonized roar before he ceases breathing.
+<ce>
+<ce>                           "Yes! Got 'im!"
 
 Message:  1020
-<ce>  My bear looks sick. There's a note in his
-<ce>  collar that says to take him to
-<ce>  _temple_. Be a pal and
-<ce>  do that, will you? My ankle's sprained.
+<ce>              My bear looks sick. There's a note in his
+<ce>                   collar that says to take him to
+<ce>                        _temple_. Be a pal and
+<ce>               do that, will you? My ankle's sprained.
 
 Message:  1030
 %qdt:
@@ -230,6 +230,7 @@ _pacifybear_ task:
 _confront_ task:
     say 1016
     create foe _owner_ every 0 minutes 1 times with 100% success
+    change foe _owner_ infighting true
 
 _qgclicked_ task:
     clicked npc _questgiver_
