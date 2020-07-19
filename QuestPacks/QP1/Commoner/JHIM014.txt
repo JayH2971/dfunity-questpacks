@@ -127,7 +127,7 @@ _day_ task:
 _caught1_ task:
   when _inside_ and _start_ and _day_
   say 1015
-  setplayercrime Burglary
+  setplayercrime Theft
   spawncityguards immediate
 
 _sneak_ task:
@@ -138,7 +138,7 @@ _agree_ task:
 
 _caught2_ task:
   say 1014
-  setplayercrime Burglary
+  setplayercrime Theft
   spawncityguards immediate
 
 _found_ task:
