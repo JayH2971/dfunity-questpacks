@@ -92,7 +92,7 @@ Message:  1030
  ___dung_ to retrieve some
  _relig_ which has caused a
  curse to fall on %g2. Skeletons
- will attack him until we solve it.
+ will attack %g2 until we solve it.
  We have =timer_ days.
 
 QBN:
