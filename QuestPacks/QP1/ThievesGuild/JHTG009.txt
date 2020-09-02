@@ -56,7 +56,7 @@ Message:  1016
 <ce>                         You discard the bag.
 
 Message:  1020
-<ce>                   A deafening roar sounds nearby.
+<ce>               A deafening roar sounds in the distance.
 
 Message:  1030
 %qdt:
