@@ -111,10 +111,12 @@ _kclicked_ task:
 	clicked npc _kid_
 	say 1021
 	hide npc _kid_
+	add _kid_ face
 
 variable _idun_
 _victory_ task:
 	when _kclicked_ and _idun_
+	drop _kid_ face
 	give pc _reward_
 	end quest
 
