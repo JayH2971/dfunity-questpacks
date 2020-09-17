@@ -51,7 +51,7 @@ Message:  1011
 <ce>       belongings, including a few weapons and a vial of blood.
 <ce>           "Okay %pcf, this is what we have to do. You get
 <ce>       this kid to drink this," %g1 says, pointing to the vial.
-<ce>                    "Then help me do the killing."
+<ce>      "Then get ready to run, 'cause things are gonna get ugly."
 <ce>
 <ce>     You understand why %g1 kept these details secret until now.
 <ce>       As if to assuage any hesitation on your part, %g1 says,
@@ -68,18 +68,17 @@ Message:  1011
 
 Message:  1012
 <ce>          You agreed to help _person_ get cured, and this is
-<ce>        the price to pay. You send %g2 out of the room so you
+<ce>            the price to pay. You send %g2 outside so you
 <ce>             can calm the child down. Convincing _kid_ to
 <ce>        drink the werewolf blood is easier than you expect --
 <ce>      perhaps this talk of latent lycanthropy is true after all.
 <ce>         It doesn't take long before %g1 starts groaning and
 <ce>          writhing, turning into a werewolf in front of you.
-<ce>                        One more step remains.
 
 Message:  1013
 <ce>        _person_ pops back into the room, sobbing with relief.
 <ce>
-<ce>     "I could feel it! The moment you struck %g2 down, I knew it!
+<ce>    "I could feel it! The moment of the transformation, I knew it!
 <ce>            I'm free! By %god, my life is mine once more!
 <ce>      Thank you, %pct! __questgiver_ has my thanks forevermore!"
 <ce>
@@ -97,7 +96,7 @@ Message:  1014
 <ce>           I need to do this, even if I have to kill you!"
 
 Message:  1015
-<ce>            You've saved _kid_'s life by slaying _person_.
+<ce>               You've spared _kid_ by slaying _person_.
 <ce>            Though __questgiver_ may not have intended it,
 <ce>                  this certainly solves the problem.
 
@@ -108,6 +107,16 @@ Message:  1016
 
 Message:  1017
 <ce>           You've taken too long, and _person_ leaves you.
+
+Message:  1018
+<ce>           You find _person_ outside, sobbing with relief.
+<ce>
+<ce>    "I could feel it! The moment of the transformation, I knew it!
+<ce>            I'm free! By %god, my life is mine once more!
+<ce>      Thank you, %pct! __questgiver_ has my thanks forevermore!"
+<ce>
+<ce>       You gain no reward, but hope the temple has a very firm
+<ce>                 ally in ___questgiver_ from now on.
 
 Message:  1030
 %qdt:
@@ -158,11 +167,13 @@ _talkkid_ task:
 _help_ task:
     say 1012
     place foe _kidwolf_ at _farhouse_
+    legal repute -10
 
 _kill_ task:
     killed _kidwolf_
     say 1013
     give pc nothing
+    legal repute -20
     end quest
 
 _deny_ task:
