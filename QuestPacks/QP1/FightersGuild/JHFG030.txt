@@ -1,0 +1,224 @@
+Quest: JHFG030
+DisplayName: Like a Snake
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>            Got a weird one that I'm hoping you'll be able
+<ce>       to sort out. Says a shapeshifter's plodding around some
+<ce>    cemetery, pretending to be a vampire. The request is that you
+<ce>    go help kill this thing, since it's too strong for one person.
+<ce>                            Wanna take it?
+
+RefuseQuest:  [1001]
+<ce>                      All right, thanks anyway.
+
+AcceptQuest:  [1002]
+<ce>               "Well then, let's get you on your way."
+<ce>
+<ce>           _questgiver_ hollers, and a member of the guild
+<ce>       opens the door. A heavily-armed warrior enters and bows.
+<ce>
+<ce>             "Hail, fighter! I am _fighter_. I thank you
+<ce>                 for your intervention on my behalf.
+<ce>           We have a shapeshifter to kill, a vile creature!
+<ce>             To ___cemetery_ we go, and in =timer_ days!"
+
+QuestFail:  [1003]
+
+QuestComplete:  [1004]
+<ce>                      You take your gold reward.
+
+Message:  1010
+<ce>       "It is yet day, and the monster fits the disguise well,"
+<ce>               _fighter_ says. "Let us camp 'til night
+<ce>                     and we shall find our foe."
+
+Message:  1011
+<ce>                You and _fighter_ notice some movement
+<ce>                      nearby and arm yourselves.
+<ce>             The being maintains distance and calls out.
+<ce>
+<ce>      "Halt, adventurers! This cemetery is under my protection.
+<ce>    I will allow no further raids upon it! Let the dead rest, and
+<ce>                their belongings remain undisturbed!"
+<ce>
+<ce>           _fighter_ shouts, "You slew my friends who came
+<ce>     before me! You deserve no mercy, bloodsucker! You will die!"
+<ce>
+<ce>        You ask the vampire why it has taken this form and get
+<ce>       a confused response. "I don't understand what you mean.
+<ce>        I am a vampire, who defends the remains of my family."
+
+Message:  1012
+<ce>                      Now outnumbered, _fighter_
+<ce>                   fights all the more desperately.
+
+Message:  1013
+<ce>              The vampire hisses, preparing for battle.
+
+Message:  1014
+<ce>                  _fighter_ sighs. "I'm glad you saw
+<ce>          things my way. Monsters like this shouldn't exist.
+<ce>          I'll have to come back here with my cart so we can
+<ce>          start looting this place. Here, take your money."
+
+Message:  1015
+<ce>     The vampire bows. "Your respect for the dead is commendable.
+<ce>    I will take my leave shortly, and inform my kin of your deeds.
+<ce>                Thank you, %ra, for showing me mercy."
+<ce>
+<ce>                 You notice a conspicuous money pouch
+<ce>           on _fighter_'s body, which must be your reward.
+<ce>          Since %g1 won't be around to use it any longer...
+
+Message:  1016
+<ce>   Both combatants are dead now. You see a conspicuous money pouch
+<ce>           on _fighter_'s body, which must be your reward.
+<ce>          Since %g1 won't be around to use it any longer...
+
+Message:  1017
+<ce>               You needed to be at ___cemetery_ by now.
+<ce>                     _fighter_ huffs off angrily.
+
+Message:  1018
+<ce>             _fighter_ shakes %g2 head and turns to you.
+<ce>                 "I said that so you'd come out here.
+<ce>              I didn't want to tell the guild the truth,
+<ce>               so I made up stuff about a shapeshifter.
+<ce>                          Now stop talking."
+<ce>          Then %g1 shouts at the vampire, "You will die now,
+<ce>                         as my friends died!"
+<ce>
+<ce>       The vampire looks at you with fear but summons courage.
+<ce>         "I must defend my family. They are all I have left."
+<ce>
+<ce>            The two begin to fight. Will you side with the
+<ce>                  fighter (yes) or the vampire (no)?
+
+Message:  1030
+%qdt:
+ _fighter_ has enlisted me, through
+ the Fighters Guild of ___questgiver_, to
+ help kill a shapeshifter that haunts the
+ cemetery called ___cemetery_. We must
+ get there in =timer_ days.
+
+QBN:
+Item _reward_ gold range 300 to 500
+
+Place _cemetery_ remote graveyard
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _delay_ 4:00
+
+Person _fighter_ group Resident1
+Person _questgiver_ group Questor
+Person _vamp1_ faction The_Anthotis
+Person _vamp2_ faction The_Garlythi
+Person _vamp3_ faction The_Haarvenu
+Person _vamp4_ faction The_Khulari
+Person _vamp5_ faction The_Lyrezi
+Person _vamp6_ faction The_Montalion
+Person _vamp7_ faction The_Selenu
+Person _vamp8_ faction The_Thrafey
+Person _vamp9_ faction The_Vraseth
+
+Foe _fgt_ is Warrior
+Foe _vmp_ is Vampire
+
+--	Quest start-up:
+    start timer _timer_
+    pc at _cemetery_ set _inside_
+    log 1030 step 0
+    add _fighter_ face
+    reveal _cemetery_
+
+_daytime_ task:
+    daily from 6:00 to 18:00
+
+variable _inside_
+
+_notyet_ task:
+    when _inside_ and _daytime_
+    say 1010
+
+_nowspawn_ task:
+    when _inside_ and not _daytime_
+    say 1011
+    prompt 1018 yes _helpfight_ no _helpvamp_
+    create foe _fgt_ every 0 minutes 1 times with 100% success
+    create foe _vmp_ every 0 minutes 1 times with 100% success
+    change foe _fgt_ infighting true
+    change foe _vmp_ infighting true
+    drop _fighter_ face
+
+_helpfight_ task:
+    say 1013
+    cast Shield spell on _fgt_
+    cast Orc_Strength spell on _fgt_
+    cast Feet_of_Notorgo spell on _fgt_
+    cast Free_Action spell on _fgt_
+    change foe _fgt_ team 1
+    change foe _vmp_ team 0
+
+_helpvamp_ task:
+    say 1012
+    cast Shield spell on _vmp_
+    cast Orc_Strength spell on _vmp_
+    cast Feet_of_Notorgo spell on _vmp_
+    cast Free_Action spell on _vmp_
+    change foe _fgt_ team 0
+    change foe _vmp_ team 1
+
+_killfight_ task:
+    killed _fgt_
+
+_killvamp_ task:
+    killed _vmp_
+
+_vampvict_ task:
+    when _helpvamp_ and _killfight_ and not _killvamp_
+    say 1015
+    give pc _reward_
+    start task _endfight_
+    stop timer _timer_
+    start timer _delay_
+    remove log step 0
+
+_fightvict_ task:
+    when _helpfight_ and _killvamp_ and not _killfight_
+    say 1014
+    give pc _reward_
+    end quest
+
+_nend1_ task:
+    when _killvamp_ and _killfight_ and not _endfight_
+    say 1016
+    give pc _reward_
+    end quest
+
+variable _endfight_
+
+_vamprep_ task:
+    when _delay_ and not _killvamp_
+    remove foe _vmp_
+    change repute with _vamp1_ by +5
+    change repute with _vamp2_ by +5
+    change repute with _vamp3_ by +5
+    change repute with _vamp4_ by +5
+    change repute with _vamp5_ by +5
+    change repute with _vamp6_ by +5
+    change repute with _vamp7_ by +5
+    change repute with _vamp8_ by +5
+    change repute with _vamp9_ by +5
+
+_delay_ task:
+    end quest
+
+_timertext_ task:
+    when _timer_ and not _helpfight_ and not _helpvamp_
+    say 1017
+
+_timer_ task:
+    end quest

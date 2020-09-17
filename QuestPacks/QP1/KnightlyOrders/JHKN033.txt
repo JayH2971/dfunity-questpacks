@@ -83,7 +83,7 @@ Message:  1013
 <ce>         "If you're not here to kill tigers, what're you good
 <ce>             for?! Get lost and let me handle this then!"
 <ce>
-<ce>          Taking a short blade out, %g1 advances toward the
+<ce>          With the short blade out, %g1 advances toward the
 <ce>                   cubs. Do you let %g2 kill them?
 
 Message:  1014
