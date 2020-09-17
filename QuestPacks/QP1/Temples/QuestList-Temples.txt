@@ -18,3 +18,4 @@ JHTP006, HolyOrder, M, 1, 0, a quest to help a couple resolve their differences
 JHTP007, HolyOrder, M, 2, 0, a quest to cleanse an infected dungeon
 JHTP008, HolyOrder, M, 1, 0, a quest to recharge a curing trinket
 -JHTP009, HolyOrder, M, 7, 0, a quest to remove the Necromancers' influence from a home
+JHTP010, HolyOrder, M, 2, 1, a quest to cure a citizen's lycanthropy
