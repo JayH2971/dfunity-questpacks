@@ -163,6 +163,7 @@ _talkkid_ task:
     prompt 1011 yes _help_ no _deny_
     drop _person_ face
     hide npc _kid_
+    stop timer _timer_
 
 _help_ task:
     say 1012
@@ -190,6 +191,12 @@ variable _inside_
 _coward_ task:
     when _deny_ and not _inside_
     say 1016
+    end quest
+
+_escape_ task:
+    when _help_ and not _inside_
+    say 1018
+    give pc nothing
     end quest
 
 _endtalk_ task:
