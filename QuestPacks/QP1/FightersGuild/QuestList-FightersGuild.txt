@@ -12,6 +12,10 @@ schema: *name, group, membership, minReq, flag, notes
 JHFG001, FightersGuild, M, 3, 0, a quest to slay a vampire in another town
 JHFG002, FightersGuild, M, 6, X, a quest to slay a daedra in a dungeon
 JHFG003, FightersGuild, M, 5, 0, a quest to slay a criminal in a dungeon
+JHFG003a, FightersGuild, P, 0, 0,
+JHFG003b, FightersGuild, P, 0, 0,
+JHFG003c, FightersGuild, P, 0, 0,
+JHFG003d, FightersGuild, P, 0, 0,
 JHFG004, FightersGuild, M, 0, 0, a quest to guard a residence from intruders
 JHFG005, FightersGuild, M, 1, 0, a quest to slay a pack of beasts at a rural farmhome
 JHFG006, FightersGuild, M, 2, 0, a quest to stop an assassination inside a home
@@ -36,6 +40,7 @@ JHFG024, FightersGuild, M, 4, 1, a contest to kill bats
 JHFG025, FightersGuild, M, 0, 0, a quest to help find someone from the Mages Guild
 JHFG026, FightersGuild, M, 1, 0, a quest to interrupt thieves' plan to destroy evidence
 JHFG027, FightersGuild, M, 4, 1, a quest to help someone fleeing the Dark Brotherhood
+JHFG027a, FightersGuild, P, 4, 1, a quest to help someone fleeing the Dark Brotherhood
 JHFG028, FightersGuild, M, 8, 1, a quest to supposedly escort someone
 JHFG029, FightersGuild, M, 7, 1, a quest to meet a mysterious dueler
 JHFG030, FightersGuild, M, 3, 1, a quest to help clear a cemetery of its guardian
