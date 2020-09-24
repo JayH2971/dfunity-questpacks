@@ -152,7 +152,7 @@ _attackvic_ task:
     when _attack_ and not _killedbr_ and _killedfl_
     say 1013
     remove foe _brfoe_
-    give pc _reward_
+    give pc _ring_
     end quest
 
 _mercy_ task:
