@@ -118,7 +118,9 @@ _bribe_ task:
     get item _reward_
     end quest
 
-variable _dud_
+_dud_ task:
+    place foe _m1_ at _res_
+
 _slain_ task:
     killed _m1_
     killed _m2_
