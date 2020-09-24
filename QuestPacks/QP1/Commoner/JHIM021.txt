@@ -93,7 +93,7 @@ Message:  1017
 Message:  1030
 %qdt:
  _questgiver_ will pay me =reward_ gold to
- help %g1 get vengeance on someone named
+ help %g2 get vengeance on someone named
  _fool_ in ___questgiver_.
  The tension in the air tells me we shouldn't
  take more than a day to do so.
@@ -109,6 +109,7 @@ Clock _failsafe_ 1:00
 
 Item _reward_ gold range 101 to 249
 Item _num_ gold range 3 to 11
+Item _ring_ ring
 
 Foe _flfoe_ is Nightblade
 Foe _brfoe_ is Barbarian
