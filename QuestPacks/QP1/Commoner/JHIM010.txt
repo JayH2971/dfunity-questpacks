@@ -71,7 +71,7 @@ Person _dummy_ group Local_3.0
 
 Item _letter_ letter used 1025
 Item _num_ gold range 14 to 49
-Item _sack_ large_sack
+Item _sack_ item class 1 subclass 10
 Item _reward1_ magic_item
 Item _reward2_ mineral
 Item _reward3_ diamond
