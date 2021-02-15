@@ -85,10 +85,11 @@ _found_ task:
     clicked npc _child_
     say 1020
     hide npc _child_
-    create foe _enemy1_ every 15 minutes 3 times with 15% success
-    create foe _enemy2_ every 10 minutes 4 times with 35% success
+    create foe _enemy1_ every 35 minutes 3 times with 15% success
+    create foe _enemy2_ every 40 minutes 4 times with 35% success
     stop timer _2dung_
     start timer _failsafe_
+    add _child_ face
 
 _qgclicked_ task:
     clicked npc _qgiver_

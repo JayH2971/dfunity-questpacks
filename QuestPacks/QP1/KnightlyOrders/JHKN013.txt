@@ -5,9 +5,9 @@ QRC:
 
 QuestorOffer:  [1000]
 <ce>                     A local townsperson has been
-<ce>                  cursed by a wizard with a locating
-<ce>         spell. The cowardly maniac sends magical constructs
-<ce>             with a killing directive.. We need a skilled
+<ce>              cursed by a wizard with a locating spell.
+<ce>             The cowardly maniac sends magical constructs
+<ce>             with a killing directive. We need a skilled
 <ce>               warrior to slay them all until the curse
 <ce>                      loses its power. Will you?
 
