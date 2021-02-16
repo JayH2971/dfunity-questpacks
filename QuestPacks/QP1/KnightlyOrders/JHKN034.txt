@@ -8,7 +8,7 @@ QuestorOffer:  [1000]
 <ce>                a noble gone berserk. We mostly avoid
 <ce>      such a problem, but today we come close. One of our knight
 <ce>        brothers is betrothed to the daughter of an important
-<ce>    aristocrat, but only recently gained information that her past
+<ce>    aristocrat, and only recently gained information that her past
 <ce>     is not as pure as promised. He wishes out of the engagement,
 <ce>      but fears royal wrath. We require a knight more persuasive
 <ce>   than any other. Have you etiquette to ward off a furious parent?
@@ -97,7 +97,7 @@ Message:  1016
 Message:  1017
 <ce>            You shuffle around to find 2,500 gold pieces,
 <ce>              but do not have enough. _nob_ seethes with
-<ce>           rage, but does not open %g3 mouth to release it.
+<ce>       rage, though %g1 does not open %g3 mouth to release it.
 
 Message:  1018
 <ce>             You discreetly deliver the 2,500 gold pieces
