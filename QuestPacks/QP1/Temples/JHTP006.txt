@@ -4,200 +4,203 @@ DisplayName: Marriage Counseling
 QRC:
 
 QuestorOffer:  [1000]
-<ce> Among the many responsibilities we discharge,
-<ce> such as curing the sick and flooring the
-<ce> living dead, we have some duty towards more
-<ce> mundane matters. I should likely ask how eloquent
-<ce> your speech is before extending this assignment.
-<ce> We have one _husb_ who arrived
-<ce> earlier today requesting help in saving his marriage.
-<ce> This will require a linguist, not a warlord,
-<ce> and it must be done today. Are you capable of it?
+<ce>            Among the many responsibilities we discharge,
+<ce>               such as curing the sick and flooring the
+<ce>             living dead, we have some duty towards more
+<ce>          mundane matters. I should likely ask how eloquent
+<ce>           your speech is before extending this assignment.
+<ce>                    We have one _husb_ who arrived
+<ce>        earlier today requesting help in saving his marriage.
+<ce>             This will require a linguist, not a warlord,
+<ce>          and it must be done today. Are you capable of it?
 
 RefuseQuest:  [1001]
-<ce> Better to be honest.
+<ce>                         Better to be honest.
 
 AcceptQuest:  [1002]
-<ce> "Well then, I'll go call for him now. Just
-<ce> tell them whatever will keep them together
-<ce> as a couple and trying, agreed? Whatever
-<ce> your own thoughts are, do our work."
-<ce> 
-<ce> _qgiver_ calls out to _husb_.
-<ce> The man enters after a moment.
-<ce> 
-<ce> "Oh, thank you for spending this time with
-<ce> us. I don't know how much anyone can do,
-<ce> but maybe you'll be the one to figure us out.
-<ce> We live in _res_ here
-<ce> in town. I'll follow you there, and we can
-<ce> talk to my wife, _wife_."
+<ce>              "Well then, I'll go call for him now. Just
+<ce>              tell them whatever will keep them together
+<ce>               as a couple and trying, agreed? Whatever
+<ce>                 your own thoughts are, do our work."
+<ce>
+<ce>                    _qgiver_ calls out to _husb_.
+<ce>                    The man enters after a moment.
+<ce>
+<ce>              "Oh, thank you for spending this time with
+<ce>               us. I don't know how much anyone can do,
+<ce>            but maybe you'll be the one to figure us out.
+<ce>                        We live in _res_ here
+<ce>              in town. I'll follow you there, and we can
+<ce>                      talk to my wife, _wife_."
 
 QuestFail:  [1003]
-<ce> _husb_ looks around.
+<ce>                         _husb_ looks around.
 <ce>
-<ce> "Where on Tamriel are we? I need to get back
-<ce> home, lest she accuse me of drinking again."
-<ce> 
-<ce> He then starts on his way alone.
+<ce>             "Where on Tamriel are we? I need to get back
+<ce>             home, lest she accuse me of drinking again."
+<ce>
+<ce>                   He then starts on his way alone.
 
 QuestComplete:  [1004]
-<ce> You continue along in this vein for some
-<ce> time, trying to show them that their
-<ce> vicious cycle will lead to nothing good.
-<ce> Little by little, they both begin to
-<ce> listen conscientiously. When you're finished,
-<ce> they exchange glances and one of them speaks.
-<ce> 
-<ce> "%ra, we cannot thank you enough.
-<ce> We still have a long way to go, but we
-<ce> can see things a little better now.
-<ce> Send _qgiver_ our regards.
-<ce> Take the fee we promised to pay.
-<ce> %god bless you for your kindness."
+<ce>               You continue along in this vein for some
+<ce>                 time, trying to show them that their
+<ce>               vicious cycle will lead to nothing good.
+<ce>                 Little by little, they both begin to
+<ce>            listen conscientiously. When you're finished,
+<ce>            they exchange glances and one of them speaks.
+<ce>
+<ce>                  "%ra, we cannot thank you enough.
+<ce>                We still have a long way to go, but we
+<ce>                 can see things a little better now.
+<ce>                      Send _qgiver_ our regards.
+<ce>                   Take the fee we promised to pay.
+<ce>                  %god bless you for your kindness."
 
 Message:  1028
-<ce> _husb_ smiles weakly at his wife.
-<ce> 
-<ce> "Hello sweetheart, I've brought a temple worker
-<ce> to try to help us find some more peace."
-<ce> 
-<ce> Her eyes flare up, and both hands curl into fists.
-<ce> 
-<ce> "Don't you 'sweetheart' me! Acting nice in front
-<ce> of a complete stranger, that is just like you!
-<ce> Why don't you ask %g2self what the temple
-<ce> does to people who cheat on their spouse with
-<ce> one of the locals at _tavern_?!"
-<ce> 
-<ce> This clearly will not be a simple case.
-<--->
-<ce> _husb_ smiles weakly at his wife.
-<ce> 
-<ce> "Hello sweetheart, I've brought a temple worker
-<ce> to try to help us find some more peace."
-<ce> 
-<ce> Her eyes flare up, and both hands curl into fists.
-<ce> 
-<ce> "Don't you 'sweetheart' me! Acting nice in front
-<ce> of a complete stranger, that is just like you!
-<ce> Why don't you ask what the temple thinks
-<ce> about people who swindle their in-laws
-<ce> for their fortune and then run off to a far
-<ce> corner of %crn?!"
-<ce> 
-<ce> This clearly will not be a simple case.
+<ce>                  _husb_ smiles weakly at his wife.
+<ce>
+<ce>           "Hello sweetheart, I've brought a temple worker
+<ce>               to try to help us find some more peace."
+<ce>
+<ce>          Her eyes flare up, and both hands curl into fists.
+<ce>
+<ce>           "Don't you 'sweetheart' me! Acting nice in front
+<ce>            of a complete stranger, that is just like you!
+<ce>              Why don't you ask %g2self what the temple
+<ce>            does to people who cheat on their spouse with
+<ce>                   one of the locals at _tavern_?!"
+<ce>
+<ce>               This clearly will not be a simple case.
+                                     <--->
+<ce>                  _husb_ smiles weakly at his wife.
+<ce>
+<ce>           "Hello sweetheart, I've brought a temple worker
+<ce>               to try to help us find some more peace."
+<ce>
+<ce>          Her eyes flare up, and both hands curl into fists.
+<ce>
+<ce>           "Don't you 'sweetheart' me! Acting nice in front
+<ce>            of a complete stranger, that is just like you!
+<ce>               Why don't you ask what the temple thinks
+<ce>                about people who swindle their in-laws
+<ce>             for their fortune and then run off to a far
+<ce>                          corner of %crn?!"
+<ce>
+<ce>               This clearly will not be a simple case.
 
 Message:  1029
-<ce> Several minutes pass by in bickering before you
-<ce> can so much as say a word. As you open your mouth,
-<ce> _wife_ turns to you and asks,
-<ce> 
-<ce> "Well, why don't we have a discussion then? If
-<ce> we're going to take up your valuable time with
-<ce> our problems, we should at least involve you.
-<ce> Tell me, do you think a man who spends five
-<ce> nights a week at the tavern is fulfilling his
-<ce> responsibilities as a husband?"
+<ce>           Several minutes pass by in bickering before you
+<ce>          can so much as say a word. As you open your mouth,
+<ce>                    _wife_ turns to you and asks,
+<ce>
+<ce>            "Well, why don't we have a discussion then? If
+<ce>            we're going to take up your valuable time with
+<ce>            our problems, we should at least involve you.
+<ce>             Tell me, do you think a man who spends five
+<ce>            nights a week at the tavern is fulfilling his
+<ce>                   responsibilities as a husband?"
 
 Message:  1031
-<ce> _husb_ looks at the two of
-<ce> you with some grief.
-<ce> 
-<ce> "Honey, no one's arguing otherwise.
-<ce> I know I'm falling short. I just feel
-<ce> miserable coming home every night to
-<ce> more fighting. That's why I go."
-<ce> 
-<ce> _wife_ turns to you.
-<ce> 
-<ce> "Well then, temple worker, what do you
-<ce> say? Do I need to 'calm down' instead
-<ce> of showing him why he's wrong?"
+<ce>                      _husb_ looks at the two of
+<ce>                         you with some grief.
+<ce>
+<ce>                 "Honey, no one's arguing otherwise.
+<ce>                I know I'm falling short. I just feel
+<ce>                 miserable coming home every night to
+<ce>                   more fighting. That's why I go."
+<ce>
+<ce>                         _wife_ turns to you.
+<ce>
+<ce>                "Well then, temple worker, what do you
+<ce>                say? Do I need to 'calm down' instead
+<ce>                   of showing him why he's wrong?"
 
 Message:  1034
-<ce> _wife_ looks bothered by
-<ce> your answer. She then asks another question.
-<ce> 
-<ce> "If a man comes home drunk and starts an
-<ce> argument, shouldn't he pay some price for it?"
+<ce>                       _wife_ looks bothered by
+<ce>             your answer. She then asks another question.
+<ce>
+<ce>               "If a man comes home drunk and starts an
+<ce>            argument, shouldn't he pay some price for it?"
 
 Message:  1035
-<ce> _wife_ looks bothered by
-<ce> your answer. She then asks another question.
-<ce> 
-<ce> "He's failed in his marital responsibilities. He
-<ce> married me for my money, and now he's spending
-<ce> it all. Don't I have the right to resent him for that?
+<ce>                       _wife_ looks bothered by
+<ce>             your answer. She then asks another question.
+<ce>
+<ce>           "He's failed in his marital responsibilities. He
+<ce>            married me for my money, and now he's spending
+<ce>        it all. Don't I have the right to resent him for that?
 
 Message:  1037
-<ce> _husb_, now somber, interjects.
-<ce> 
-<ce> "Honey, you knew this about me before we
-<ce> were married. I asked you to be patient with
-<ce> me. Why can't you give me more time?"
-<ce> 
-<ce> His wife looks at him with disgust.
-<ce> 
-<ce> "It's been =int_ years now! =int_ years!
-<ce> And you're still the same as ever! A man
-<ce> has to live up to his promises, doesn't he?"
+<ce>                   _husb_, now somber, interjects.
+<ce>
+<ce>               "Honey, you knew this about me before we
+<ce>             were married. I asked you to be patient with
+<ce>                me. Why can't you give me more time?"
+<ce>
+<ce>                 His wife looks at him with disgust.
+<ce>
+<ce>               "It's been =int_ years now! =int_ years!
+<ce>               And you're still the same as ever! A man
+<ce>             has to live up to his promises, doesn't he?"
 
 Message:  1038
-<ce> _husb_, now somber, interjects.
-<ce> 
-<ce> "Honey, you knew this about me before we
-<ce> were married. I asked you to be patient with
-<ce> me. Why can't you give me more time?"
-<ce> 
-<ce> His wife looks at him with disgust.
-<ce> 
-<ce> "And what has patience gotten me? It's been
-<ce> =int_ years now! You don't have the right to
-<ce> more patience! Isn't that right, %ra?"
+<ce>                   _husb_, now somber, interjects.
+<ce>
+<ce>               "Honey, you knew this about me before we
+<ce>             were married. I asked you to be patient with
+<ce>                me. Why can't you give me more time?"
+<ce>
+<ce>                 His wife looks at him with disgust.
+<ce>
+<ce>             "And what has patience gotten me? It's been
+<ce>             =int_ years now! You don't have the right to
+<ce>                more patience! Isn't that right, %ra?"
 
 Message:  1040
-<ce> You attempt to explain that, whatever their difficulties,
-<ce> they would be happier trying to improve individually
-<ce> instead of dwelling on the defects of the other.
-<ce> They both listen thoughtfully, but as soon as their
-<ce> gazes meet, they return to baser thoughts. The
-<ce> argument goes back and forth for a few minutes.
-<ce> 
-<ce> _husb_ says, "If I promise to
-<ce> give up mead today and return to my father's
-<ce> work, will you at least give me a chance?"
-<ce> 
-<ce> _wife_ rolls her eyes.
-<ce> 
-<ce> "Is there some reason you're making this proposal
-<ce> in front of a stranger but not when it's just you
-<ce> and me? Where was this last year, or =int_ years ago?"
-<ce> 
-<ce> _husb_ looks at you earnestly.
-<ce> 
-<ce> "Then let this %ra be a witness of my promise.
-<ce> If I fail, you can go tell _qgiver_
-<ce> of this incident as a testimony, and I'll accept
-<ce> whatever consequence you decide to mete out.
-<ce> Isn't that a fair proposal, friend?"
+<ce>      You attempt to explain that, whatever their difficulties,
+<ce>         they would be happier trying to improve individually
+<ce>           instead of dwelling on the defects of the other.
+<ce>         They both listen thoughtfully, but as soon as their
+<ce>            gazes meet, they return to baser thoughts. The
+<ce>           argument goes back and forth for a few minutes.
+<ce>
+<ce>                    _husb_ says, "If I promise to
+<ce>             give up mead today and return to my father's
+<ce>              work, will you at least give me a chance?"
+<ce>
+<ce>                        _wife_ rolls her eyes.
+<ce>
+<ce>          "Is there some reason you're making this proposal
+<ce>          in front of a stranger but not when it's just you
+<ce>        and me? Where was this last year, or =int_ years ago?"
+<ce>
+<ce>                    _husb_ looks at you earnestly.
+<ce>
+<ce>            "Then let this %ra be a witness of my promise.
+<ce>                 If I fail, you can go tell _qgiver_
+<ce>           of this incident as a testimony, and I'll accept
+<ce>             whatever consequence you decide to mete out.
+<ce>                 Isn't that a fair proposal, friend?"
 
 Message:  1043
-<ce> _wife_ looks mollified, but not entirely content.
-<ce> 
-<ce> "Well, here's another question. Isn't it wrong
-<ce> for a man to hit his wife when he's drunk?
-<ce> It's pathetic, I tell you!"
-<ce> 
-<ce> _husb_ looks down in shame.
+<ce>          _wife_ looks mollified, but not entirely content.
+<ce>
+<ce>            "Well, here's another question. Isn't it wrong
+<ce>              for a man to hit his wife when he's drunk?
+<ce>                     It's pathetic, I tell you!"
+<ce>
+<ce>                     _husb_ looks down in shame.
 
 Message:  1044
-<ce> _wife_ smirks.
-<ce> 
-<ce> "Well then, this witness here can remember that just as
-<ce> well as your promise. And once I find a way to pay you back
-<ce> for all the misery you've caused me, then we can talk
-<ce> about finding some peace and quiet together. Isn't that right?"
+<ce>                            _wife_ smirks.
+<ce>
+<ce>       "Well then, this witness here can remember that just as
+<ce>     well as your promise. And once I find a way to pay you back
+<ce>        for all the misery you've caused me, then we can talk
+<ce>   about finding some peace and quiet together. Isn't that right?"
+
+Message:  1045
+<ce>                       (ETIQUETTE CHECK PASSED)
 
 Message:  1080
 %qdt:
@@ -208,11 +211,11 @@ Message:  1080
  marriage. It must be done today.
 
 Message:  1099
-<ce> Rather than helping them resolve the conflict,
-<ce> you've muddied the water and damaged your
-<ce> credibility. The argument lasts a little
-<ce> longer, and both parties separate for the night.
-<ce> You are left alone without so much as a sendoff.
+<ce>            Rather than helping them resolve the conflict,
+<ce>              you've muddied the water and damaged your
+<ce>               credibility. The argument lasts a little
+<ce>           longer, and both parties separate for the night.
+<ce>           You are left alone without so much as a sendoff.
 
 QBN:
 
@@ -229,8 +232,8 @@ Item _int_ gold range 3 to 7
 Item _reward_ gold
 
 --	Quest start-up:
-	start timer _timer_
-	log 1080 step 0
+  start timer _timer_
+  log 1080 step 0
   place npc _wife_ at _res_
   add _husb_ face
 
@@ -240,40 +243,42 @@ _begin_ task:
   prompt 1029 yes _fail_ no _Q1_
 
 _Q1_ task:
-	prompt 1031 yes _junction1_ no _fail_
+  prompt 1031 yes _junction1_ no _fail_
 
 variable _junction1_
 _pick1_ task:
   when _junction1_ and not _skill1_
-	pick one of _Q2A_ _Q2B_
+  pick one of _Q2A_ _Q2B_
 
 _shortcut1_ task:
   when _junction1_ and _skill1_
+  say 1045
   start task _success_
 
 _Q2A_ task:
-	prompt 1034 yes _junction2_ no _fail_
+  prompt 1034 yes _junction2_ no _fail_
 
 _Q2B_ task:
-	prompt 1035 yes _fail_ no _junction2_
+  prompt 1035 yes _fail_ no _junction2_
 
 variable _junction2_
 _pick2_ task:
   when _junction2_ and not _skill2_
-	pick one of _Q3A_ _Q3B_
+  pick one of _Q3A_ _Q3B_
 
 _shortcut2_ task:
   when _junction2_ and _skill2_
+  say 1045
   start task _success_
 
 _Q3A_ task:
-	prompt 1037 yes _Q4_ no _fail_
+  prompt 1037 yes _Q4_ no _fail_
 
 _Q3B_ task:
-	prompt 1038 yes _fail_ no _Q4_
+  prompt 1038 yes _fail_ no _Q4_
 
 _Q4_ task:
-	prompt 1040 yes _junction3_ no _fail_
+  prompt 1040 yes _junction3_ no _fail_
 
 variable _junction3_
 _pick3_ task:
@@ -281,13 +286,14 @@ _pick3_ task:
   pick one of _Q5A_ _Q5B_
 
 _Q5A_ task:
-	prompt 1043 yes _success_ no _fail_
+  prompt 1043 yes _success_ no _fail_
 
 _Q5B_ task:
-	prompt 1044 yes _fail_ no _success_
+  prompt 1044 yes _fail_ no _success_
 
 _shortcut3_ task:
   when _junction3_ and _skill3_
+  say 1045
   start task _success_
 
 _skill1_ task:
@@ -300,17 +306,17 @@ _skill3_ task:
   when skill Etiquette is at least 20
 
 _fail_ task:
-	say 1099
+  say 1099
   hide npc _wife_
   drop _husb_ face
-	end quest
+  end quest
 
 _success_ task:
-	give pc _reward_
+  give pc _reward_
   hide npc _wife_
   drop _husb_ face
-	end quest
+  end quest
 
 _timer_ task:
   say 1003
-	end quest
+  end quest

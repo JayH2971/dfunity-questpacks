@@ -42,10 +42,13 @@ Message:  1015
 <ce>                    _kid_ will now be in _place_.
 
 Message:  1019
+<ce>                        (STEALTH CHECK PASSED)
+<ce>
 <ce>                      You creep into _place_ in
 <ce>            perfect silence. Now for the surprise attack.
 
 Message:  1020
+<ce>                        (STEALTH CHECK FAILED)
 <ce>                       You enter _place_, where
 <ce>                         _kid_ is being kept.
 

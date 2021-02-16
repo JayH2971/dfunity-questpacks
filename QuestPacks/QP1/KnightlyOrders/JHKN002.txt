@@ -59,12 +59,16 @@ Message:  1020
 <ce>                   members of the Dark Brotherhood?
 
 Message:  1021
+<ce>                       (ETIQUETTE CHECK FAILED)
+<ce>
 <ce>           Your speaking ability leaves much to be desired.
 <ce>           The child looks more and more agitated with each
 <ce>              question. Finally the interrogation ends,
 <ce>                    and you are left empty-handed.
 
 Message:  1022
+<ce>                       (ETIQUETTE CHECK PASSED)
+<ce>
 <ce>          Your speech skill delivers. The child's confidence
 <ce>       in you rises as you explain what you have come to do and
 <ce>         why the Dark Brotherhood will not bother this family

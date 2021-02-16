@@ -124,11 +124,15 @@ Message:  1021
 <ce>                   attempt to take it for yourself?
 
 Message:  1022
+<ce>                  (STEALTH/PICKPOCKET CHECK PASSED)
+<ce>
 <ce>           This is all too easy for one of your skill set.
 <ce>               The bag of money is now yours, adding an
 <ce>            additional =stealg_ gold pieces to your count.
 
 Message:  1023
+<ce>                  (STEALTH/PICKPOCKET CHECK FAILED)
+<ce>
 <ce>           Your movement while grabbing the coin bag is too
 <ce>           obvious. Someone peering over sees that you have
 <ce>          your hand on property which is clearly not yours.
@@ -154,14 +158,6 @@ Message:  1023
 <ce>              work on your thieving skills before trying
 <ce>                       to rip off your clients.
 
--Message:  1024
--<ce>            "Ha ha ha! No one's better at cards in ___tav_
--<ce>           than me! No one! You can take that to the bank!"
--
--Message:  1025
--<ce>            "You and what army? Your mother isn't an army,
--<ce>                     though she weighs the same!"
-
 Message:  1026
 <ce>   The crowd breaks out in an impromptu song, entirely out of key.
 
@@ -170,9 +166,6 @@ Message:  1027
 <ce>
 <ce>                       A fight fails to start.
 
--Message:  1028
--<ce>      "Oh really? And I'm Uriel Septim's grandson! Ha ha ha ha!"
--
 Message:  1029
 <ce>         "How's about we see if we throw bottles at that %ra
 <ce>           patrolling the tavern, see who hits %pg2 first?
@@ -398,20 +391,12 @@ _pickpocket_ task:
     start task _skill_
 
 variable _skill_
--_e6_ task:
--    say 1024
--
--_e7_ task:
--    say 1025
 
 _e8_ task:
     say 1026
 
 _e9_ task:
     say 1027
--
--_e10_ task:
--    say 1028
 
 _e11_ task:
     say 1029

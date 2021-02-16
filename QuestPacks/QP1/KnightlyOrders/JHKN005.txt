@@ -49,14 +49,20 @@ QuestComplete:  [1004]
 <ce>                the trial. Superb work on all counts.
 
 Message:  1019
+<ce>                        (STEALTH CHECK PASSED)
+<ce>
 <ce>           Someone less skilled would not have noticed the
 <ce>          sigils written about the doorpost. You stealthily
 <ce>                     step in, avoiding detection.
 
 Message:  1020
+<ce>                        (STEALTH CHECK FAILED)
+<ce>
 <ce>                  The guards ignored your entry. Now
 <ce>                     you must find the _clothes_.
                                      <--->
+<ce>                        (STEALTH CHECK FAILED)
+<ce>
 <ce>            Once inside, now you must find the _clothes_.
 
 Message:  1021

@@ -57,6 +57,8 @@ Message:  1020
 <ce>            This once peaceful giant now throws a tantrum.
 
 Message:  1021
+<ce>                       (GIANTISH CHECK PASSED)
+<ce>
 <ce>              You toss the _ing_ to the giant. He takes
 <ce>              it kindly and puts it into a pouch on his
 <ce>            animal skin. You then make a short and simple
@@ -74,6 +76,8 @@ Message:  1021
 <ce>             for them himself, he gives you the contents,
 <ce>                which amount to =reward_ gold pieces.
                                      <--->
+<ce>                       (GIANTISH CHECK PASSED)
+<ce>
 <ce>              You toss the _ing_ to the giant. He takes
 <ce>              it kindly and puts it into a pouch on his
 <ce>            animal skin. You then make a short and simple
@@ -96,6 +100,8 @@ Message:  1022
 <ce>                 _res_. Time to return to ___qgiver_.
 
 Message:  1023
+<ce>                       (GIANTISH CHECK FAILED)
+<ce>
 <ce>                You show the giant the _ing_. He takes
 <ce>              it kindly and puts it into a pouch on his
 <ce>                animal skin. You attempt to make basic

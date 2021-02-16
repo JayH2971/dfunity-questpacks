@@ -20,10 +20,11 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce>       And we have our %ra. Get it back here in =queston_ days.
 <ce>        Make sure you go at night, like after ten. Less ruckus
-<ce>          that way. And I'm just gonna say this once: if you
-<ce>       kill the carrier, there will be no forgiveness for you.
-<ce>       At least not on my part. I'll have the money here after.
-<ce>                              Get to it.
+<ce>        that way. This won't take pickpocketing; a good, heavy
+<ce>      smack should let you get it into your hands, but I'm just
+<ce>       gonna say this once: if you kill the carrier, there will
+<ce>         be no forgiveness for you. At least not on my part.
+<ce>              I'll have the money here after. Get to it.
 
 QuestComplete:  [1004]
 <ce>             There it is. This kind of thing can make you

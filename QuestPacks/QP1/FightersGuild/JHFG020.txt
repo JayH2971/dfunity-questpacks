@@ -86,6 +86,8 @@ Message:  1013
 <ce>                  _guy_ marches off somewhere else.
 
 Message:  1014
+<ce>           (ETIQUETTE/STREETWISE/PERSONALITY CHECK PASSED)
+<ce>
 <ce>                    _guy_ clearly doesn't want to
 <ce>           speak to you or anyone from the Fighters Guild.
 <ce>            Then again, someone with your speaking ability

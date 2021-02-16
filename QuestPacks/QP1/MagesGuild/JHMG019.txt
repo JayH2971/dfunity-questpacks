@@ -180,6 +180,8 @@ Message:  1042
 <ce>                         Splendid work, %pct.
 
 Message:  1043
+<ce>                       (MYSTICISM CHECK PASSED)
+<ce>
 <ce>        Your knowledge of Mysticism magic surprises your foe.
 <ce>       You quickly utter a cantrip, and the hostile spirits he
 <ce>              intended to invoke against you dissipate.

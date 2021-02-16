@@ -41,6 +41,8 @@ Message:  1010
 <ce>              to roam the city and look for the culprit.
 
 Message:  1011
+<ce>                        (ETIQUETTE CHECK FAILED)
+<ce>
 <ce>           "Y-yes? No, I'm sorry, I don't know what you're
 <ce>           talking about. I can't help with no necromancer.
 <ce>              You got me there. G-good luck to you with
@@ -51,6 +53,8 @@ Message:  1011
 <ce>               you. You'll have to look for the villain
 <ce>               without this particular source of help.
                                      <--->
+<ce>                        (ETIQUETTE CHECK FAILED)
+<ce>
 <ce>              "H-hello? No, I'm sorry, you've got wrong
 <ce>             information. I don't know nothing about the
 <ce>             necromancer. Can't help with a thing. Sorry
@@ -62,6 +66,8 @@ Message:  1011
 <ce>               without this particular source of help.
 
 Message:  1012
+<ce>                        (ETIQUETTE CHECK PASSED)
+<ce>
 <ce>           "Y-yes? No, I'm sorry, I don't know what you're
 <ce>           talking about. I can't help with no necromancer.
 <ce>             You've got me there. G-good luck to you with
@@ -72,6 +78,8 @@ Message:  1012
 <ce>              what happens, you will keep the city safe.
 <ce>               _help_ seems to believe you momentarily.
                                      <--->
+<ce>                        (ETIQUETTE CHECK PASSED)
+<ce>
 <ce>              "H-hello? No, I'm sorry, you've got wrong
 <ce>             information. I don't know nothing about the
 <ce>             necromancer. Can't help with a thing. Sorry
@@ -106,6 +114,8 @@ Message:  1014
 <ce>           to tell you where the necromancer's hideout is?
 
 Message:  1015
+<ce>                        (MYSTICISM/RESTORATION/THAUMATURGY CHECK FAILED)
+<ce>
 <ce>          Sometimes the ends justify the means, you reason,
 <ce>            and %g1 could die from this curse either way.
 <ce>            You begin to employ various percussive methods
@@ -125,6 +135,8 @@ Message:  1015
 <ce>                its pretended protector, and strikes.
 
 Message:  1016
+<ce>                        (MYSTICISM/RESTORATION/THAUMATURGY CHECK FAILED)
+<ce>
 <ce>          Sometimes the ends justify the means, you reason,
 <ce>            and %g1 could die from this curse either way.
 <ce>            You begin to employ various percussive methods
@@ -144,6 +156,8 @@ Message:  1016
 <ce>                its pretended protector, and strikes.
 
 Message:  1017
+<ce>                        (MYSTICISM/RESTORATION/THAUMATURGY CHECK FAILED)
+<ce>
 <ce>          Sometimes the ends justify the means, you reason,
 <ce>            and %g1 could die from this curse either way.
 <ce>            You begin to employ various percussive methods
@@ -172,6 +186,8 @@ Message:  1026
 <ce>                      Do you wish to attempt it?
 
 Message:  1027
+<ce>                        (MYSTICISM/RESTORATION/THAUMATURGY CHECK PASSED)
+<ce>
 <ce>              You piece together what you need from your
 <ce>              knowledge of the relevant magical schools.
 <ce>             It takes some experimenting and effort, but
@@ -185,6 +201,8 @@ Message:  1027
 <ce>              and end this plague on ___store_! Please!"
 
 Message:  1028
+<ce>                        (MYSTICISM/RESTORATION/THAUMATURGY CHECK PASSED)
+<ce>
 <ce>              You piece together what you need from your
 <ce>              knowledge of the relevant magical schools.
 <ce>             It takes some experimenting and effort, but
@@ -198,6 +216,8 @@ Message:  1028
 <ce>              and end this plague on ___store_! Please!"
 
 Message:  1029
+<ce>                        (MYSTICISM/RESTORATION/THAUMATURGY CHECK PASSED)
+<ce>
 <ce>              You piece together what you need from your
 <ce>              knowledge of the relevant magical schools.
 <ce>             It takes some experimenting and effort, but

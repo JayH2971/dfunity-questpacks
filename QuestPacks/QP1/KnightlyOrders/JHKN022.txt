@@ -44,15 +44,19 @@ QuestComplete:  [1004]
 <ce>                 inform the %t concerning your deed.
 
 Message:  1010
+<ce>                        (DAEDRIC CHECK FAILED)
+<ce>
 <ce>         This witch shouts several discordant phrases at you
 <ce>          with a hostile tone. Whatever language she speaks,
 <ce>                it is clear you do not understand it.
 
 Message:  1011
+<ce>                        (DAEDRIC CHECK PASSED)
+<ce>
 <ce>         This witch shouts several discordant phrases at you,
 <ce>        which you immediately identify as Daedric. You respond
-<ce>             with sufficient speed and wit as to stop her
-<ce>             in her tracks, allowing you the first blow.
+<ce>      with sufficient speed and wit as to catch her by surprise,
+<ce>                     allowing you the first blow.
 
 Message:  1012
 <ce>            The power trapping these halls seems to lift.

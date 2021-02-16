@@ -4,93 +4,97 @@ DisplayName: Interview with an Orc
 QRC:
 
 QuestorOffer:  [1000]
-<ce> The orcs are brutal creatures, as all
-<ce> %crn will agree. Very rarely one or
-<ce> another rises up with a brain surpassing
-<ce> the size of a grapefruit, wishing to
-<ce> negotiate for a peaceful concession
-<ce> of lands or other territories in which
-<ce> its people may live. Such requests
-<ce> are always suspect, but we entrust one
-<ce> of them to you. Perhaps you may find a
-<ce> way to do some good on this occasion.
+<ce>                The orcs are brutal creatures, as all
+<ce>                 %crn will agree. Very rarely one or
+<ce>               another rises up with a brain surpassing
+<ce>                 the size of a grapefruit, wishing to
+<ce>                 negotiate for a peaceful concession
+<ce>                of lands or other territories in which
+<ce>                  its people may live. Such requests
+<ce>                are always suspect, but we entrust one
+<ce>                of them to you. Perhaps you may find a
+<ce>                way to do some good on this occasion.
 
 RefuseQuest:  [1001]
-<ce> Or perhaps not.
+<ce>                           Or perhaps not.
 
 AcceptQuest:  [1002]
-<ce> The creature has been allocated
-<ce> _res_ in ___res_.
-<ce> You should arrive within =2res_ days,
-<ce> but it goes without saying that the
-<ce> family that owns the house wishes
-<ce> the matter to be resolved immediately.
-<ce> No matter what happens, do not slay
-<ce> the orc within. They may be a filthy
-<ce> and cunning race of beasts, but they
-<ce> will use a death of their own to
-<ce> further their barbarous causes.
-<ce> Present this _trink_, which was
-<ce> previously agreed to be the sign
-<ce> for our negotiator. What happens
-<ce> from there will be your matter
-<ce> to handle.
+<ce>                   The creature has been allocated
+<ce>                          _res_ in ___res_.
+<ce>                You should arrive within =2res_ days,
+<ce>                 but it goes without saying that the
+<ce>                  family that owns the house wishes
+<ce>                the matter to be resolved immediately.
+<ce>                 No matter what happens, do not slay
+<ce>                 the orc within. They may be a filthy
+<ce>                 and cunning race of beasts, but they
+<ce>                   will use a death of their own to
+<ce>                   further their barbarous causes.
+<ce>                   Present this _trink_, which was
+<ce>                   previously agreed to be the sign
+<ce>                   for our negotiator. What happens
+<ce>                    from there will be your matter
+<ce>                              to handle.
 
 QuestFail:  [1003]
-<ce> The orc warlord lies dead at your feet.
-<ce> Its tribe now has even greater reason
-<ce> to raid the local region.
+<ce>               The orc warlord lies dead at your feet.
+<ce>                Its tribe now has even greater reason
+<ce>                      to raid the local region.
 
 QuestComplete:  [1004]
-<ce> Well done, %pct. You have found peace
-<ce> amidst tension. Remember that to prevent
-<ce> war is nobler than to wage it.
+<ce>                Well done, %pct. You have found peace
+<ce>               amidst tension. Remember that to prevent
+<ce>                    war is nobler than to wage it.
 
-Message: 1019
-<ce> You hear deep, throaty chuckling.
-<ce> The orc is inside and waiting for you.
+Message:  1019
+<ce>                  You hear deep, throaty chuckling.
+<ce>                The orc is inside and waiting for you.
 
-Message: 1021
-<ce> You present the _trink_ to the
-<ce> orc. It takes it and crushes it with
-<ce> one hand, tossing its remains to the
-<ce> floor. The green warrior then begins to ask
-<ce> questions. You answer vaguely, making sure
-<ce> not to promise anything the %t would
-<ce> not grant. It makes several brusk
-<ce> accusations concerning the %t, %crn,
-<ce> and the filthy %ra before it before
-<ce> gradually calming down. Seeing no
-<ce> opportunity to make headway, the creature
-<ce> ceases speaking and waves you away.
-<ce> You suppose this counts as success.
+Message:  1021
+<ce>                        (ORCISH CHECK PASSED)
+<ce>
+<ce>                    You present the _trink_ to the
+<ce>                 orc. It takes it and crushes it with
+<ce>                 one hand, tossing its remains to the
+<ce>             floor. The green warrior then begins to ask
+<ce>              questions. You answer vaguely, making sure
+<ce>                 not to promise anything the %t would
+<ce>                  not grant. It makes several brusk
+<ce>                 accusations concerning the %t, %crn,
+<ce>              and the filthy %ra in its presence before
+<ce>                  gradually calming down. Seeing no
+<ce>              opportunity to make headway, the creature
+<ce>                 ceases speaking and waves you away.
+<ce>                 You suppose this counts as success.
 
-Message: 1023
-<ce> You present the _trink_ to the
-<ce> orc, not sure how to proceed. It takes
-<ce> it and crushes it with one hand, tossing
-<ce> its remains to the floor. The warrior then
-<ce> begins to ask questions, first roughly, then
-<ce> mockingly. Once it realizes you speak
-<ce> very little of its language, it pulls out its
-<ce> weapon and decides to take a chance for sport.
+Message:  1023
+<ce>                        (ORCISH CHECK FAILED)
+<ce>
+<ce>                    You present the _trink_ to the
+<ce>                orc, not sure how to proceed. It takes
+<ce>               it and crushes it with one hand, tossing
+<ce>              its remains to the floor. The warrior then
+<ce>             begins to ask questions, first roughly, then
+<ce>                mockingly. Once it realizes you speak
+<ce>            very little of its language, it pulls out its
+<ce>            weapon and decides to take a chance for sport.
 
-Message: 1024
-<ce> The orc is perplexed at your insistence against
-<ce> fighting. It shouts several confused and
-<ce> incomprehensible statements, getting worked
-<ce> up before gradually calming down. It appears
-<ce> to feel guilty about fighting a foe who
-<ce> refuses to raise a defense. Seeing no
-<ce> opportunity to make headway, the creature
-<ce> ceases speaking and waves you away.
-<ce> You suppose this counts as success.
+Message:  1024
+<ce>           The orc is perplexed at your insistence against
+<ce>               fighting. It shouts several confused and
+<ce>             incomprehensible statements, getting worked
+<ce>             up before gradually calming down. It appears
+<ce>               to feel guilty about fighting a foe who
+<ce>                refuses to raise a defense. Seeing no
+<ce>              opportunity to make headway, the creature
+<ce>                 ceases speaking and waves you away.
+<ce>                 You suppose this counts as success.
 
-Message: 1025
-<ce> You hear the orc erupt into booming laughter
-<ce> within the residence, and then dragging footsteps
-<ce> lead away in a different direction. Whatever you
-<ce> were supposed to negotiate appears not to have happened.
+Message:  1025
+<ce>             You hear the orc erupt into booming laughter
+<ce>          within the residence, and then dragging footsteps
+<ce>           lead away in a different direction. Whatever you
+<ce>       were supposed to negotiate appears not to have happened.
 
 Message:  1030
 %qdt:
@@ -120,7 +124,7 @@ Clock _fight_ 00:09 00:12
 Clock _failsafe_ 120.00:00
 
 --	Quest start-up:
-	log 1030 step 0 
+  log 1030 step 0
   start timer _2res_
   start timer _failsafe_
   get item _trink_
@@ -171,18 +175,18 @@ _clearclick_ task:
   clear _qgclicked_ _clearclick_
 
 _victory1_ task:
-	when _qgclicked_ and _fight_
-	start task _final_
+  when _qgclicked_ and _fight_
+  start task _final_
 
 _victory2_ task:
-	when _qgclicked_ and _easywin_
+  when _qgclicked_ and _easywin_
   start task _final_
 
 _final_ task:
-	give pc nothing
+  give pc nothing
   legal repute +3
-	end quest
- 
+  end quest
+
 _2res_ task:
   say 1003
   end quest

@@ -64,11 +64,15 @@ Message:  1021
 <ce>                   attempt to take it for yourself?
 
 Message:  1022
+<ce>                  (STEALTH/PICKPOCKET CHECK PASSED)
+<ce>
 <ce>           This is all too easy for one of your skill set.
 <ce>               The bag of money is now yours, adding an
 <ce>            additional =stealg_ gold pieces to your count.
 
 Message:  1023
+<ce>                  (STEALTH/PICKPOCKET CHECK FAILED)
+<ce>
 <ce>           Your movement while grabbing the coin bag is too
 <ce>           obvious. Someone peering over sees that you have
 <ce>          your hand on property which is clearly not yours.
@@ -83,6 +87,8 @@ Message:  1023
 <ce>              work on your thieving skills before trying
 <ce>                       to rip off your clients.
                                      <--->
+<ce>                  (STEALTH/PICKPOCKET CHECK FAILED)
+<ce>
 <ce>           Your movement while grabbing the coin bag is too
 <ce>           obvious. Someone peering over sees that you have
 <ce>          your hand on property which is clearly not yours.

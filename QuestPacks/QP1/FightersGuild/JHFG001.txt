@@ -65,6 +65,8 @@ Message:  1013
 <ce>                  that the "vampire" is indeed dead?
 
 Message:  1014
+<ce>                      (STREETWISE CHECK FAILED)
+<ce>
 <ce>                  Your attempt at persuasion fails.
 <ce>                   Perhaps you need more practice.
 
@@ -76,6 +78,10 @@ Message:  1015
 <ce>             hard for this. Just be a little smarter next
 <ce>             time you're doubting whether we've done our
 <ce>                        homework, all right?"
+
+Message:  1016
+<ce>                      (STREETWISE CHECK PASSED)
+<ce>
 
 Message:  1020
 <ce>                      "No!" The vampire shrieks
@@ -167,14 +173,17 @@ variable _go3_
 
 _c1_ task:
 	when _check1_ and _go1_
+	say 1016
 	start task _pcgetsgold2_
 
 _c2_ task:
 	when _check2_ and _go2_
+	say 1016
 	start task _pcgetsgold2_
 
 _c3_ task:
 	when _check3_ and _go3_
+	say 1016
 	start task _pcgetsgold2_
 
 _d1_ task:

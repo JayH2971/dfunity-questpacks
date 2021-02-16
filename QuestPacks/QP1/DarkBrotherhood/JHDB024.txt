@@ -43,12 +43,16 @@ Message:  1010
 <ce>                          ritual can begin.
 
 Message:  1011
+<ce>                        (ORCISH CHECK FAILED)
+<ce>
 <ce>           You are brought up straight by Orcish shouting.
 <ce>               You do not know what they mean, but they
 <ce>               are obviously hostile. They march toward
 <ce>                           the two of you.
 
 Message:  1012
+<ce>                        (ORCISH CHECK PASSED)
+<ce>
 <ce>           You are brought up straight by Orcish shouting.
 <ce>            You know enough of their speech to understand.
 <ce>

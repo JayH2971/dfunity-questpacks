@@ -32,9 +32,13 @@ QuestComplete:  [1004]
 <ce>      I figured %g1'd put up a show. Nice work. Take the money.
 
 Message:  1011
-<ce>        "Thief! I'm so sick of you lot! I'll kill you myself!"
+<ce>                     (PICKPOCKETING CHECK FAILED)
+<ce>
+<ce>         "Thief! I'm sick of you lot! I'll kill you myself!"
 
 Message:  1012
+<ce>                     (PICKPOCKETING CHECK PASSED)
+<ce>
 <ce>          You deftly put the gem away. No one is the wiser.
 
 Message:  1013

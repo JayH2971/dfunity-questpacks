@@ -40,6 +40,8 @@ QuestComplete:  [1004]
 <ce>                  A model for knights of this order.
 
 Message:  1020
+<ce>                       (SPRIGGAN CHECK FAILED)
+<ce>
 <ce>                  A spriggan shambles its way toward
 <ce>                 you, only half conscious of its own
 <ce>                   actions. Before it reaches you,
@@ -48,6 +50,8 @@ Message:  1020
 <ce>                     creature advances in a rage.
 
 Message:  1021
+<ce>                       (SPRIGGAN CHECK PASSED)
+<ce>
 <ce>                  A spriggan shambles its way toward
 <ce>                 you, only half conscious of its own
 <ce>                   actions. Before it reaches you,
