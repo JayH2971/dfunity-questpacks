@@ -9,14 +9,14 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHTP001, HolyOrder, M, 0, 0, a quest to take a religious tract to a potential convert
-JHTP002, HolyOrder, M, 0, 0, a quest to deliver a donation to the temple
-JHTP003, HolyOrder, M, 0, 0, a quest to deliver herbs to a sick member
+JHTP001, HolyOrder, M, 0, 1, a quest to take a religious tract to a potential convert
+JHTP002, HolyOrder, M, 0, 1, a quest to deliver a donation to the temple
+JHTP003, HolyOrder, M, 0, 1, a quest to deliver herbs to a sick member
 JHTP004, HolyOrder, M, 5, 0, a quest to find a pilgrim lost in a dungeon
 JHTP005, HolyOrder, M, 0, 0, a quest to pacify a ghost in a home
 JHTP006, HolyOrder, M, 1, 0, a quest to help a couple resolve their differences
 JHTP007, HolyOrder, M, 2, 0, a quest to cleanse an infected dungeon
 JHTP008, HolyOrder, M, 1, 0, a quest to recharge a curing trinket
--JHTP009, HolyOrder, M, 7, 0, a quest to remove the Necromancers' influence from a home
+JHTP009, HolyOrder, M, 7, 1, a quest to remove the Necromancers' influence from a home
 JHTP010, HolyOrder, M, 2, 1, a quest to cure a citizen's lycanthropy
 JHTP011, HolyOrder, M, 4, 1, a quest to investigate a daedric cohort

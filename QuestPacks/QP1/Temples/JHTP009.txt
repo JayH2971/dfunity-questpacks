@@ -64,13 +64,9 @@ Message:  1014
 <ce>                    "Death comes for you, %ra..."
 
 Message:  1015
-<ce>                   "Give in and become as we are!"
-                                     <--->
 <ce>                 "How long will I endure this pain?"
 
 Message:  1016
-<ce>                  "The gods shall quake before us!"
-                                     <--->
 <ce>                 "Please, stop, stop, stop, stop..."
 
 Message:  1017
@@ -96,7 +92,7 @@ Message:  1023
 <ce>                      and cast the spell anew!"
 
 Message:  1024
-<ce>  "Torture me today, and I will torture you in the great beyond..."
+<ce>                   "Give in and become as we are!"
 
 Message:  1025
 <ce>    The effect has taken permanent hold. The spirit bound to this
@@ -183,7 +179,7 @@ _sound2_ task:
 
 _spawn_ task:
     when _cast_ and not _victory_
-    create foe _ghost_ every 23 minutes indefinitely with 5% success
+    create foe _ghost_ every 23 minutes indefinitely with 8% success
     create foe _wraith_ every 41 minutes indefinitely with 11% success
 
 _slain_ task:
