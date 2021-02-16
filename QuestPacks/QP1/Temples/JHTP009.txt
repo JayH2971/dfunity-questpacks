@@ -47,7 +47,7 @@ Message:  1010
 <ce>                       the malignant influence.
 
 Message:  1011
-<ce>                             "No... NO!"
+<ce>                           "No... No! NO!"
 <ce>
 <ce>        The Necromancers have bound a spirit here to maintain
 <ce>           their influence. This will be a long day indeed.
@@ -76,16 +76,16 @@ Message:  1018
 <ce>        "Cease... this... incantation... for... my... pain..."
 
 Message:  1019
-<ce>              "Release me from undeath! Free me, fool!"
+<ce>                 "Release me from undeath! Free me!"
 
 Message:  1020
-<ce>        "Who are you to challenge the Necromancers, imbecile?"
+<ce>           "You will regret challenging the Necromancers!"
 
 Message:  1021
 <ce>           "Darkness will always devour the light, mortal."
 
 Message:  1022
-<ce>              "Quickly, slay me... I will come free..."
+<ce>           "Quickly, leave this place... I will give in..."
 
 Message:  1023
 <ce>             "I'm almost free! Please, leave the building
@@ -104,7 +104,7 @@ Message:  1030
  _questgiver_ has sent me to purify
  _res_, a local home, from
  the Necromancers' influence.
- I am to cast a spell to dispel the undead
+ I am to cast any spell to dispel the undead
  within and then remain inside for twenty-four
  hours. I should begin before a day has passed.
 
