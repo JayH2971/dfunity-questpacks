@@ -30,12 +30,12 @@ JHFG014, FightersGuild, M, 0, 1, a quest to slay a zombie in a house
 JHFG015, FightersGuild, M, 0, 0, a quest to fight in a dungeon with a partner
 JHFG016, FightersGuild, M, 4, 1, a quest to get rid of a bad guild member
 JHFG017, FightersGuild, M, 4, 0, a quest to slay a high-ranking Mages Guild Necromancer
--JHFG018, FightersGuild, M, 4, 0,
+JHFG018, FightersGuild, M, 0, 1, a quest to destroy skeletons in a cemetery
 JHFG019, FightersGuild, M, 6, 0, a quest to defend the city against appearing monsters
 JHFG020, FightersGuild, M, 1, 0, a quest to persuade a guild member to start again
 JHFG021, FightersGuild, M, 1, 0, a quest to escort a debtor
 JHFG022, FightersGuild, M, 1, 0, a quest to guard a tavern
-JHFG023, FightersGuild, M, 6, 0, a quest to save someone from attacking vampires
+JHFG023, FightersGuild, M, 6, 0, a quest to save someone from vampires
 JHFG024, FightersGuild, M, 4, 1, a contest to kill bats
 JHFG025, FightersGuild, M, 0, 0, a quest to help find someone from the Mages Guild
 JHFG026, FightersGuild, M, 1, 0, a quest to interrupt thieves' plan to destroy evidence

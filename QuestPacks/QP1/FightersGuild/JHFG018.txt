@@ -1,0 +1,96 @@
+Quest: JHFG018
+DisplayName: Rattling Bones
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                  Not your typical cemetery problem:
+<ce>          the bones don't stay underground. Could be because
+<ce>       of necromancer mischief, residual magic, ancient curses,
+<ce>       what have you. We just need someone to head on over and
+<ce>           kill skeletons until the ground stops vibrating.
+<ce>                       Wanna take this one on?
+
+RefuseQuest:  [1001]
+<ce>               Skeletons can be pretty tough if you're
+<ce>                     not equipped right, I know.
+
+AcceptQuest:  [1002]
+<ce>           It's called ___cemetery_, quite a way out there.
+<ce>              People can't properly visit their dead for
+<ce>              the skeletons roaming around, so make sure
+<ce>           they're gone. The contract needs you to be back
+<ce>          by =timer_ days, and they're paying =reward_ gold.
+<ce>                            Safe travels.
+
+QuestFail:  [1003]
+<ce>           Your time to report success on the skeletons to
+<ce>                   the Fighters Guild has run out.
+
+QuestComplete:  [1004]
+<ce>                 Well done! What weapon did you use?
+<ce>        I tell people, you've got to be packing a blunt weapon
+<ce>         of some kind. Swords and daggers are useless against
+<ce>            whole bone. I'm just glad you're back, anyway.
+<ce>       Take your reward, and see what else we've got available.
+
+Message:  1010
+%qdt:
+ The Fighters Guild will pay me
+ _reward_ gold to fulfill a contract.
+ I need to destroy the roaming skeletons
+ around ___cemetery_ until they
+ stop appearing. I have =timer_ days
+ to return to ___qgiver_ for my pay.
+
+Message:  1011
+<ce>          The ground indeed vibrates here, albeit slightly.
+<ce>         The magic animating these skeletons must be at work.
+<ce>      You'll just have to wait around until they come together.
+
+Message:  1012
+<ce>             With this skeleton defeated, the dark magic
+<ce>                giving power to these bodies runs out.
+<ce>             The earth ceases moving. Your reward awaits.
+
+QBN:
+Item _reward_ gold range 300 to 500
+
+Place _cemetery_ remote graveyard
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Person _qgiver_ group Questor
+
+Foe _skel_ is Skeletal_warrior
+
+--	Quest start-up:
+    start timer _timer_
+    pc at _cemetery_ set _inside_
+    log 1010 step 0
+    reveal _cemetery_
+
+variable _inside_
+_spawn_ task:
+    when _inside_ and not _slain_
+    say 1011
+    create foe _skel_ every 30 minutes indefinitely with 10% success
+
+_slain_ task:
+    killed 4 _skel_
+    say 1012
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
+
+_pcgetsgold_ task:
+    when _qgclicked_ and _slain_
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    end quest
