@@ -59,8 +59,8 @@ Message:  1011
 <ce>               and %g1 looks at you with consternation.
 <ce>              You begin to explain your task, but before
 <ce>              you can say much, you hear a noise nearby.
-<ce>               In its final moments, the imp points at
-<ce>              at _mage_ a trinket, which crumbles under
+<ce>            In its final moments, the imp points a trinket
+<ce>                   at _mage_, which crumbles under
 <ce>                           strain of power.
 
 Message:  1015
@@ -183,7 +183,8 @@ _conv1_ task:
     clear _conv_
 
 _slain_ task:
-    killed 1 _imp_ saying 1011
+    killed 1 _imp_
+    say 1011
     pick one of _tel_ _dis_
 
 _dis_ task:
