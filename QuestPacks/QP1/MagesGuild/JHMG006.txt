@@ -4,101 +4,101 @@ DisplayName: An Obscure Trinket
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  %pcf, we believe we have a simple task for you.
-<ce>  One of our members brought back this _tri_ that
-<ce>  we consider to have magical properties. However, ordinary 
-<ce>  identification spells fail us, and testing it directly seems
-<ce>  like a dangerously absurd proposition, knowing it could
-<ce>  hold any effect in Tamriel. What the Odylic Mages
-<ce>  cannot identify, one of our greater experts can.
-<ce>  Please deliver it for identification.
-<--->
-<ce>  One of the grandiose mysteries of Tamriel is
-<ce>  that there are simply forms of magic and power
-<ce>  we do not yet understand. My sincerest desire
-<ce>  is that the empire will last another 1500 years
-<ce>  so we may have time to unravel every enigma
-<ce>  across the world itself in peace. But to
-<ce>  get to the point, a very strange _tri_ was
-<ce>  delivered to us recently with a latent enchantment
-<ce>  we cannot draw out. The regular identification
-<ce>  spells avail us nothing. This requires the help of
-<ce>  a true expert. Will you take it into the ruins
-<ce>  to obtain that manner of help?
+<ce>           %pcf, we believe we have a simple task for you.
+<ce>           One of our members brought back this _tri_ that
+<ce>      we consider to have magical properties. However, ordinary
+<ce>     identification spells fail us, and testing it directly seems
+<ce>       like a dangerously absurd proposition, knowing it could
+<ce>          hold any effect in Tamriel. What the Odylic Mages
+<ce>           cannot identify, one of our greater experts can.
+<ce>                Please deliver it for identification.
+                                     <--->
+<ce>             One of the grandiose mysteries of Tamriel is
+<ce>            that there are simply forms of magic and power
+<ce>            we do not yet understand. My sincerest desire
+<ce>           is that the empire will last another 1500 years
+<ce>             so we may have time to unravel every enigma
+<ce>               across the world itself in peace. But to
+<ce>              get to the point, a very strange _tri_ was
+<ce>          delivered to us recently with a latent enchantment
+<ce>            we cannot draw out. The regular identification
+<ce>          spells avail us nothing. This requires the help of
+<ce>            a true expert. Will you take it into the ruins
+<ce>                    to obtain that manner of help?
 
 RefuseQuest:  [1001]
-<ce>  Even so, we refuse to test it in this guild hall.
-<ce>  The risks are too great.
+<ce>          Even so, we refuse to test it in this guild hall.
+<ce>                       The risks are too great.
 
 AcceptQuest:  [1002]
-<ce>  Very well, here it is. I would ask you not to tamper with
-<ce>  it, but I doubt you could in any case. If our specialists
-<ce>  could not unleash its power, so much less will you. You
-<ce>  will most likely find _npc_ in a hole
-<ce>  called ___dung_. Please treat %g2 with respect,
-<ce>  for %g1 is a former member of the Guild. We do not want some
-<ce>  controversy to arise merely because someone cannot control %pg3
-<ce>  tongue. I will see you here within =timer_ days to hear
-<ce>  _npc_'s report. %god watch over you.
+<ce>      Very well, here it is. I would ask you not to tamper with
+<ce>      it, but I doubt you could in any case. If our specialists
+<ce>       could not unleash its power, so much less will you. You
+<ce>                will most likely find _npc_ in a hole
+<ce>           called ___dung_. Please treat %g2 with respect,
+<ce>     for %g1 is a former member of the Guild. We do not want some
+<ce>   controversy to arise merely because someone cannot control %pg3
+<ce>       tongue. I will see you here within =timer_ days to hear
+<ce>                 _npc_'s report. %god watch over you.
 
 QuestFail:  [1003]
-<ce>  You had the audacity to slay _npc_? What madness
-<ce>  has overcome you? If I have my way, the mop and pail will
-<ce>  not leave your hands for the next year. What a disgusting
-<ce>  outcome to a simple task. Say nothing more of this. I
-<ce>  assure you, the council will learn all it needs to.
+<ce>           You had the audacity to slay _npc_? What madness
+<ce>      has overcome you? If I have my way, the mop and pail will
+<ce>      not leave your hands for the next year. What a disgusting
+<ce>        outcome to a simple task. Say nothing more of this. I
+<ce>         assure you, the council will learn all it needs to.
 
 QuestComplete:  [1004]
-<ce>  Oh my, our poor _npc_! What an awful trap!
-<ce>  We owe you much this day, %pct. Had you slain %g2,
-<ce>  we would have lost one of our foremost experts on arcane
-<ce>  artifacts. Well done, my child! Please take this reward
-<ce>  for uncovering the secret within the _tri_. What we
-<ce>  do with it is now in the council's hands.
+<ce>              Oh my, our poor _npc_! What an awful trap!
+<ce>          We owe you much this day, %pct. Had you slain %g2,
+<ce>       we would have lost one of our foremost experts on arcane
+<ce>       artifacts. Well done, my child! Please take this reward
+<ce>         for uncovering the secret within the _tri_. What we
+<ce>              do with it is now in the council's hands.
 
 Message:  1010
-<ce>  "Ah, good day. Yes, I am _npc_. What do you need
-<ce>  of me? Hmm. Well, I suppose I can take a look at it. It's just
-<ce>  this _tri_? Very well. Allow me to work on it for a moment."
-<ce>  
-<ce>  You hold the trinket in front of %g2, which %g1 touches while
-<ce>  chanting an incantation. A burst of light follows which leaves
-<ce>  you unsettled. Once your eyes adjust, you see a very different
-<ce>  demeanor on _npc_'s face.
-<ce>  
-<ce>  "Filthy, disgusting %ra! This is my home! What are you
-<ce>  doing in my home?! Murder! Murder! This day to Oblivion!"
-<--->
-<ce>  "Ah, good day. Yes, I am _npc_. What do you need
-<ce>  of me? Hmm. Well, I suppose I can take a look at it. It's just
-<ce>  this _tri_? Very well. Allow me to work on it for a moment."
-<ce>  
-<ce>  You hold the trinket in front of %g2, which %g1 touches while
-<ce>  chanting an incantation. A burst of light follows which leaves
-<ce>  you unsettled. Once your eyes adjust, you see a very different
-<ce>  demeanor on _npc_'s face.
-<ce>  
-<ce>  "%oth! Filthy cur, this day you meet your end! For
-<ce>  Oblivion and its ten thousand chanting godly servants! Die!"
+<ce>           "Ah, good day. Yes, I am _npc_. What do you need
+<ce>    of me? Hmm. Well, I suppose I can take a look at it. It's just
+<ce>     this _tri_? Very well. Allow me to work on it for a moment."
+<ce>
+<ce>    You hold the trinket in front of %g2, which %g1 touches while
+<ce>    chanting an incantation. A burst of light follows which leaves
+<ce>    you unsettled. Once your eyes adjust, you see a very different
+<ce>                      demeanor on _npc_'s face.
+<ce>
+<ce>        "Filthy, disgusting %ra! This is my home! What are you
+<ce>      doing in my home?! Murder! Murder! This day to Oblivion!"
+                                     <--->
+<ce>           "Ah, good day. Yes, I am _npc_. What do you need
+<ce>    of me? Hmm. Well, I suppose I can take a look at it. It's just
+<ce>     this _tri_? Very well. Allow me to work on it for a moment."
+<ce>
+<ce>    You hold the trinket in front of %g2, which %g1 touches while
+<ce>    chanting an incantation. A burst of light follows which leaves
+<ce>    you unsettled. Once your eyes adjust, you see a very different
+<ce>                      demeanor on _npc_'s face.
+<ce>
+<ce>          "%oth! Filthy cur, this day you meet your end! For
+<ce>     Oblivion and its ten thousand chanting godly servants! Die!"
 
-Message: 1011
-<ce>  _npc_ lies dead. You put the _tri_ in your pack.
+Message:  1011
+<ce>           _npc_ lies dead. You put the _tri_ in your pack.
 
-Message: 1012
-<ce>  _npc_ halts midstep. Lucidity appears
-<ce>  to return to %g3 eyes, and %g1 trembles.
-<ce>  
-<ce>  "Oh, my. Oh, dear. I didn't hurt you, did I? What
-<ce>  an awful, awful trap was put on this simple little thing!
-<ce>  One of us could have been killed! Oh, I feel faint.
-<ce>  Tell _qgiver_ we now know everything we
-<ce>  need to about that device. And tell %g2 to burn it.
-<ce>  I would do so myself if I weren't convinced it would
-<ce>  arouse the Archmagister's wrath. Go in peace,
-<ce>  %ra, and thank you for sparing my life."
+Message:  1012
+<ce>                _npc_ halts midstep. Lucidity appears
+<ce>               to return to %g3 eyes, and %g1 trembles.
+<ce>
+<ce>          "Oh, my. Oh, dear. I didn't hurt you, did I? What
+<ce>      an awful, awful trap was put on this simple little thing!
+<ce>         One of us could have been killed! Oh, I feel faint.
+<ce>               Tell _qgiver_ we now know everything we
+<ce>         need to about that device. And tell %g2 to burn it.
+<ce>         I would do so myself if I weren't convinced it would
+<ce>             rouse the Archmagister's wrath. Go in peace,
+<ce>               %ra, and thank you for sparing my life."
 
-Message: 1013
-<ce>  Do you tell _qgiver_ you slew _npc_?
+-Message: 1013
+-<ce>  Do you tell _qgiver_ you slew _npc_?
 
 Message:  1030
 %qdt:
@@ -137,56 +137,53 @@ Clock _battle_ 00:05 00:07
 Foe _nme_ is Spellsword
 
 --	Quest start-up:
-	start timer _timer_
-	log 1030 step 0 
+  start timer _timer_
+  log 1030 step 0
   place npc _npc_ at _dung_
   reveal _dung_
   get item _tri_
 
 _talk_ task:
- clicked npc _npc_
- say 1010
- hide npc _npc_
- place foe _nme_ at _dung_
- start timer _battle_
+  clicked npc _npc_
+  say 1010
+  hide npc _npc_
+  place foe _nme_ at _dung_
+  start timer _battle_
 
 _fail_ task:
-    killed 1 _nme_
-    say 1011
-    log 1031 step 2
-    stop timer _battle_
+  killed 1 _nme_
+  say 1011
+  log 1031 step 2
+  stop timer _battle_
 
 _battle_ task:
-   say 1012
-   log 1032 step 1
-   restrain foe _nme_
+  say 1012
+  log 1032 step 1
+  restrain foe _nme_
 
 _pcgetsgold_ task:
   when _qgclicked_ and _battle_ and not _fail_
-	give pc _reward_
-	end quest
+  give pc _reward_
+  end quest
 
 _prompt_ task:
   when _qgclicked_ and _fail_
-  prompt 1013 yes _badend_ no _falsegetsgold_
+  say 1003
+  change repute with _qgiver_ by -23
+  end quest
 
-_falsegetsgold_ task:
-	give pc _reward_
+-_falsegetsgold_ task:
+-  give pc _reward_
 - mages guild revenge quest
-	end quest
-
-_badend_ task:
-	say 1003
-    change repute with _qgiver_ by -23
-	end quest
+-  end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+  clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _talk_
-	clear _qgclicked_ _clearclick_ 
+  when _qgclicked_ and not _talk_
+  clear _qgclicked_ _clearclick_
 
 _timer_ task:
   make _tri_ permanent
-	end quest
+  end quest
