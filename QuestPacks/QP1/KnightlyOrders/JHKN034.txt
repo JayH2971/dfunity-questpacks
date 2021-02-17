@@ -224,6 +224,7 @@ _payup_ task:
     pay 2500 money do _victory3_ otherwise do _nomoney_
 
 _victory3_ task:
+    clear _payup_
     say 1018
     give pc nothing
     end quest
