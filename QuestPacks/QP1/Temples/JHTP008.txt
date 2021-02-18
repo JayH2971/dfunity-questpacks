@@ -70,6 +70,8 @@ Message:  1014
 <ce>           if you wanted, you could take it back by force.
 
 Message:  1015
+<ce>                       (STRENGTH CHECK FAILED)
+<ce>
 <ce>      A hooded figure emerges from some nearby shadows and takes
 <ce>       the _tri_ from among your possessions. You see the thief
 <ce>                hurry further down the dark passages.
@@ -79,6 +81,8 @@ Message:  1016
 <ce>                Here, take it back. Just let me live."
 
 Message:  1017
+<ce>                       (STRENGTH CHECK PASSED)
+<ce>
 <ce>      A hooded figure emerges from some nearby shadows to steal
 <ce>           the _tri_ from you. Your foe underestimates your
 <ce>        strength and slips awkwardly while trying to wrench it
