@@ -228,7 +228,7 @@ _spawn_ task:
     when _arrive_ and _join1_ and _inside_
     start task _meeting_
     say 1011
-    create foe _vamp_ every 0 minutes 3 times with 100% success
+    create foe _vamp_ every 0 minutes 2 times with 100% success
     place item _body_ at _res_
     drop _schol_ face
 
@@ -241,7 +241,7 @@ _scholdead_ task:
     say 1012
 
 _slain_ task:
-    killed 3 _vamp_
+    killed 2 _vamp_
     stop timer _scholdead_
 
 _rejoin_ task:

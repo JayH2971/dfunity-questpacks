@@ -137,7 +137,9 @@ _take_ task:
     drop _questgiver_ face
     start task _decision_
 
-variable _decision_
+_decision_ task:
+    take _relig_ from pc
+
 _path1_ task:
     when _decision_ and _peace_
     say 1020
