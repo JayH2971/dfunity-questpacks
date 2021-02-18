@@ -43,7 +43,7 @@ Message:  1010
 <ce>     on these women for a few moments. Ask your questions quickly
 <ce>       at the time you use it. With any luck they will despise
 <ce>      being controlled and give you the information you desire.
-<ce>             Please do %crn justive, good %ra. Farewell.
+<ce>             Please do %crn justice, good %ra. Farewell.
 
 Message:  1011
 <ce>               _maid_ shrieks and trembles at thin air.
