@@ -49,13 +49,14 @@ QuestComplete:  [1004]
 <ce>  of my sincerity, and joy at our meeting."
 
 Message:  1010
-<ce>  Gortwog, king of the orcs, has asked me to visit
-<ce>  him in his capitol ___gort_.
+%qdt:
+ Gortwog, king of the orcs, has asked me to visit
+ him in his capitol ___orsin_.
 
 QBN:
 Person _gort_ named Gortwog atHome
 
-Place _orsin_ permanent OrsiniumCity
+Place _orsin_ permanent OrsiniumCastle1
 
 Item _gortreward1_ magic_item
 Item _gortreward2_ gold range 5000 to 5000

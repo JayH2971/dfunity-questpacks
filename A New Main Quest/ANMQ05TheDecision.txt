@@ -131,7 +131,7 @@ Message:  1030
 <ce>  one of the captains calls out as the army departs.
 <ce>  As you gather your things together, you realize
 <ce>  they broke the portal wand in their haste.
-<ce>  At least you got its proper use from it
+<ce>  At least you got a proper use from it.
 
 QBN:
 

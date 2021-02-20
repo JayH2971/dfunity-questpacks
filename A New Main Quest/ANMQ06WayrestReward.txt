@@ -35,8 +35,6 @@ Message:  1013
 
 QBN:
 Person _ead_ named King_Eadwyre atHome
-Person _wayc_ named Court_of_Wayrest
-Person _peep_ named People_of_Wayrest
 
 Place _wayr_ permanent WayrestCity
 
@@ -46,8 +44,6 @@ Item _necam_ artifact Warlocks_Ring
 --	Quest start-up:
     pc at _wayr_ do _skirmish_
     log 1013 step 0
-    change repute with _wayc_ by +100
-    change repute with _peep_ by +100
 
 _skirmish_ task:
     say 1012
@@ -56,6 +52,7 @@ _reward_ task:
     clicked npc _ead_
     start quest ANMQ07MedoraEnding
     start quest ANMQ06AttackWayrest
+    legal repute +200
     give pc _lordmail_
     give pc _necam_
     end quest

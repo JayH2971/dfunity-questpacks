@@ -23,13 +23,10 @@ Message:  1011
 
 QBN:
 Person _gort_ named Gortwog atHome
-Person _ors_ named People_of_Orsinium
-Person _orsc_ named Court_of_Orsinium
 
 --	Quest start-up:
     log 1011 step 0
-    change repute with _ors_ by +100
-    change repute with _orsc_ by +100
+    legal repute +200
     start quest ANMQ06AttackOrsinium
 
 _conv_ task:

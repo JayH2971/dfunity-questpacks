@@ -1,0 +1,76 @@
+Quest: ANMQ02EmpLetter1
+DisplayName: ANMQ02EmpLetter1
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  A tall messenger, bearing the banner
+<ce>  of the Imperial City, gives you a letter.
+
+Message:  1011
+To my friend %pcn
+Last known region: ____here_
+  
+Message dictated to High Chancellor Ocato
+  
+My good friend, how are you doing?
+Feel no hurry to respond to my message.
+I am certain you have many important
+things on your mind, and I do not wish to
+take from your time.
+  
+It appears my simple mission for you has become
+much more complex. I nevertheless believe I have
+sent the right person. There will be no replacement
+for you. I trust you wholeheartedly, and hope for
+the same from you.
+  
+I'm aware you lost, sold, or somehow misplaced your
+  imperial seal. In other cases I would call for censure,
+  but I am certain you did things with the proper judgment.
+  One day you will tell me the story, and I will understand.
+  
+  I agree with your decision to trust in Popudax.
+  Were the noble Lysandus still alive he would be
+  my counselor in all things, but his court
+  wizard makes a fine replacement.
+  
+  Many will try to bribe you and sway your judgment.
+  I have sent you to a land of soft words and flattery.
+  Remember that the nicer the appearance, the less
+  likely they speak with sincerity.
+  
+  Now that the word concerning Numidium is out, the
+  whole land will move to recover it. I trust in you,
+  both to survive in these wild times and to return
+  its power to me. As Tiber Septim's descendant,
+  carrying his legacy, I will protect the Empire
+  he gave his life to create. All people will be
+  safe under my command. You know this perfectly well.
+  
+  I look forward to hearing more of your adventures,
+  my confidant.
+  
+  The Divines be on your side
+  Uriel Septim VII
+
+QBN:
+Item _letter_ letter used 1011
+
+Clock _delay_ 1.00:00 3.00:00
+Clock _afterread_ 3.00:00
+
+Place _here_ remote anywhere
+
+--	Quest start-up:
+    start timer _delay_
+
+_delay_ task:
+    give pc _letter_ notify 1010
+    have _letter_ set _starttimer_
+
+_starttimer_ task:
+    start timer _afterread_
+
+_afterread_ task:
+    end quest

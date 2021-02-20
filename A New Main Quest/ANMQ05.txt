@@ -30,11 +30,12 @@ Place _llug_ permanent LlugwychCastle
 Item _totem_ totem
 
 --	Quest start-up:
+    start quest ANMQ04WOOD
     log 1010 step 0
     place item _totem_ at _llug_ marker 0
 
 _clicky_ task:
     clicked item _totem_
     say 1011
-    start quest TheDecision
+    start quest ANMQ05TheDecision
     end quest

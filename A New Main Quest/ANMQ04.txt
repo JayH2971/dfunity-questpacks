@@ -80,3 +80,4 @@ _winmedora_ task:
 _advance_ task:
     when _winmedora_ and _winnulfaga_
     start quest ANMQ05
+    end quest

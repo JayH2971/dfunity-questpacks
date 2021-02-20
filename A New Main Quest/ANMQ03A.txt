@@ -158,6 +158,7 @@ Clock _fight_ 1:00
 --	Quest start-up:
     say 1010
     log 1014 step 0
+    start quest ANMQ03WOOD
 
 _arrival_ task:
     when pc enters cult
@@ -257,7 +258,6 @@ _fight_ task:
     start task _final_
 
 _final_ task:
-    start quest ANMQ03WOOD
     reveal _scourg_
     remove foe _lich_
     restrain foe _garg1_

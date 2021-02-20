@@ -19,8 +19,14 @@ QBN:
 
 Place _dagg_ permanent DaggerfallCity1
 
+Clock _nomore_ 1:00
+
 --	Quest start-up:
 	log 1010 step 0
 
 FinishedMantellanCrux _finish_
+	remove log step 0
+	start timer _nomore_
+
+_nomore_ task:
 	end quest

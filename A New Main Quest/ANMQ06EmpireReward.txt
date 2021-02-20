@@ -32,9 +32,15 @@ Penned by my own hand
 QBN:
 Item _letter_ letter used 1011
 
+Clock _letter2_ 4.00:00
+
 --	Quest start-up:
     give pc _letter_ notify 1010
     start quest ANMQ07MedoraEnding
+    _letter_ used do _letterout_
 
-FinishedMantellanCrux _finishedMantellanCrux_
-    end quest
+_letterout_ task:
+    start timer _letter2_
+
+_letter2_ task:
+    take _letter_ from pc

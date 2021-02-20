@@ -4,20 +4,21 @@ DisplayName: ANMQ06Cyndassa
 QRC:
 
 Message:  1010
-<ce>  A courier wearing the crest of Daggerfall
-<ce>  gives you a message and departs.
+<ce>            A messenger wearing Daggerfall's coat of arms
+<ce>  presents you with a message.
+
 
 Message:  1011
-<ce>  %pcn
+%pcn
 <ce>  
-<ce>  Word has it Lord Woodborne, an important
-<ce>  noble of Wayrest, was slain recently. No one knows
-<ce>  by whom. There's a maid here named Cyndassa
-<ce>  who wants to speak to you now that he's dead.
-<ce>  I promised her nothing, but should you feel so
-<ce>  inclined, you may find her in Castle Daggerfall.
+Word has it Lord Woodborne, an important
+noble of Wayrest, was slain recently. No one knows
+by whom. There's a maid here named Cyndassa
+who wants to speak to you now that he's dead.
+I promised her nothing, but should you feel so
+inclined, you may find her in Castle Daggerfall.
 <ce>  
-<ce>  Popudax
+Popudax
 
 Message:  1012
 <ce>  Oh wow! So the court wizard really has some pull, don't he?

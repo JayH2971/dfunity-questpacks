@@ -50,6 +50,8 @@ _reward_ task:
     clicked npc _goth_
     start quest ANMQ07MedoraEnding
     start quest ANMQ06AttackDaggerfall
+    change repute with _goth_ by +200
+    legal repute +200
     give pc _lordmail_
     give pc _necam_
     end quest

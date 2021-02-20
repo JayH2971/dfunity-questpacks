@@ -36,8 +36,8 @@ Message:  1010
 <ce>                 I have tasks that really can't wait.
 <ce>
 <ce>             Hmm, I have an idea. I need to keep my dues
-<ce>              with the Mages Guild up to date. Could you
-<ce>             accompany me to ___mondung_ and help me grab
+<ce>         with the Mages Guild up to date. Could you accompany
+<ce>                  me to ___mondung_ and help me grab
 <ce>               some _ingred_? We can talk once inside.
 <ce>              Sorry I can't spare any more time for you,
 <ce>            but this journey gives us a good opportunity.

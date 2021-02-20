@@ -117,11 +117,11 @@ Message:  1014
 <ce>
 <ce>              This appears to be your only way forward.
 
-Message:  1015
-<ce>     As you leave the castle, you hear troops being ordered into
-<ce>       regiments. Eadwyre suffers no hesitation in ordering the
-<ce>        war against Orsinium. For better or for worse, things
-<ce>                   are now irretrievably in motion.
+-Message:  1015
+-<ce>     As you leave the castle, you hear troops being ordered into
+-<ce>       regiments. Eadwyre suffers no hesitation in ordering the
+-<ce>        war against Orsinium. For better or for worse, things
+-<ce>                   are now irretrievably in motion.
 
 Message:  1016
 <ce>         The man's face contorts in a rage, but before he can
@@ -182,16 +182,18 @@ Message:  1019
 <ce>                      as could this monstro..."
 
 Message:  1020
-<ce> Perhaps I'm a fool, but I traded away my imperial seal of authority
-<ce>    to find the location of the Emperor's letter. It is somewhere
-<ce>         in ___tristlab_, on the Isle of Betony to the south.
+%qdt:
+Perhaps I'm a fool, but I traded away my imperial seal of authority
+to find the location of the Emperor's letter. It is somewhere
+in ___tristlab_, on the Isle of Betony to the south.
 
 Message:  1021
 %qdt:
  I found the Emperor's letter, damaged though
  it may be. The orcs who followed me in repaired
  the parchment and read its contents.
- The best I can do now is deliver it to Queen Aubk-i.
+ The best I can do now is deliver it to Queen Aubk-i
+ in ___dagg_.
 
 Message:  1022
 %qdt:
@@ -200,7 +202,7 @@ Message:  1022
  the Mages Guild of the city of ___dagg_.
 
 QBN:
-Person _ukagent_ faction Agents_of_The_Underking male
+Person _ukagent_ group Resident1 male
 Person _ead_ named King_Eadwyre atHome
 Person _aubki_ named Queen_Aubk-i atHome
 Person _pop_ named Popudax atHome

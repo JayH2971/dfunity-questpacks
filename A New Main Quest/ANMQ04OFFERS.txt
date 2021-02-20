@@ -97,7 +97,7 @@ Gortwog, Lord of the Orcs
  (You'll destroy this letter in a few days' time.)
 
 Message:  1024
-                              %pcf,
+%pcf,
 <ce>
 Do you remember what I told you about the
 Underking? Please consider the future of
@@ -164,40 +164,40 @@ Scourg Barrow, Dragontail Mountains
  (You'll destroy this letter in a few days' time.)
 
 Message:  1027
-                             To %pcn
+To %pcn
 <ce>
-          150,000 gold coins. I have emptied my vaults,
-         liquidated my ship, and sold every loose object
-          in my house that I could without arousing the
-          fear of the peasantry. All of it, and endless fame
-             among the people of Sentinel, are yours
-          if you bring me the Totem. Buy a ship and free
-         yourself of the troubles of Tamriel. Profit and
-           live your own life. Or purchase a house here
-           in Sentinel. We will welcome you as our own.
+150,000 gold coins. I have emptied my vaults,
+liquidated my ship, and sold every loose object
+in my house that I could without arousing the
+fear of the peasantry. All of it, and endless fame
+among the people of Sentinel, are yours
+if you bring me the Totem. Buy a ship and free
+yourself of the troubles of Tamriel. Profit and
+live your own life. Or purchase a house here
+in Sentinel. We will welcome you as our own.
 <ce>
-            The people of Sentinel will guard Numidium
-            as our own, and it will defend our lands.
-           We will never fear invasion again, nor will
-              we strike against any nation with it.
-            All lands will be at peace if the machine
-                         is given to us.
+The people of Sentinel will guard Numidium
+as our own, and it will defend our lands.
+We will never fear invasion again, nor will
+we strike against any nation with it.
+All lands will be at peace if the machine
+is given to us.
 <ce>
-                            So sworn,
-                      Queen Aubk-i, Sentinel
+So sworn,
+Queen Aubk-i, Sentinel
 <ce>
- (You'll destroy this letter in a few days' time.)
+(You'll destroy this letter in a few days' time.)
 
 QBN:
 Place _here_ remote random
 
-Clock _wayrletter_ 1.00:00 20.00:00
-Clock _daggletter_ 1.00:00 20.00:00
-Clock _orcletter_ 1.00:00 20.00:00
-Clock _ukletter_ 1.00:00 2.00:00
-Clock _empletter_ 1.00:00 20.00:00
-Clock _kowletter_ 1.00:00 20.00:00
-Clock _sentletter_ 1.00:00 20.00:00
+Clock _wayrletter_ 1.00:00 40.00:00
+Clock _daggletter_ 1.00:00 40.00:00
+Clock _orcletter_ 1.00:00 40.00:00
+Clock _ukletter_ 1.00:00 6.00:00
+Clock _empletter_ 1.00:00 40.00:00
+Clock _kowletter_ 1.00:00 40.00:00
+Clock _sentletter_ 1.00:00 40.00:00
 
 Item _wletter_ letter used 1021
 Item _dletter_ letter used 1022

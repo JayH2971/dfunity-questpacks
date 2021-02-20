@@ -103,3 +103,4 @@ _stranger_ task:
 	say 1011
 	reveal _mondung_
 	start quest ANMQ01
+	end quest

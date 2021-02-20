@@ -10,7 +10,7 @@ Message:  1010
 <ce>            all my hard work. I'm certain you're carrying
 <ce>               something that leads to the Totem, yes?"
 <ce>
-<ce>               You become aware of others in the room.
+<ce>                  You become aware of others nearby.
 
 Message:  1011
 %pcn

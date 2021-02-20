@@ -18,7 +18,17 @@ Message:  1010
 <ce>  green gem suspended in the air somewhere
 <ce>  in the other plane. You must merely touch it,
 <ce>  and it will return you to this tower.
-<ce>  
+
+Message:  1011
+<ce>                    Then speak to me when you are.
+
+Message:  1012
+%qdt:
+ All that's left now is to return to Medora.
+ She has something to explain about Numidium's
+ power source, and how to get the machine started.
+
+Message:  1013
 <ce>  After that? It's impossible to say. Perhaps
 <ce>  it will spring to life and give its holder
 <ce>  power to annihilate. I doubt it. More likely
@@ -26,22 +36,21 @@ Message:  1010
 <ce>  No one will ever know, except the heart itself.
 <ce>  
 <ce>  You will be stranded on the other side until
-<ce>  you find the heart. Mark and Recall spells will
-<ce>  be useless. Therefore, you must prepare.
+<ce>  you find the heart. Therefore, you must prepare.
 <ce>  
 <ce>  Are you ready to go?
 
-Message:  1011
-<ce>  Then speak to me when you are.
 
 QBN:
 Person _medora_ named Medora atHome
 
 --	Quest start-up:
+    log 1012 step 0
 
 _conv_ task:
     clicked npc _medora_
-    prompt 1010 yes _start_ no _cycle_
+    say 1010
+    prompt 1013 yes _start_ no _cycle_
 
 _start_ task:
     start quest ANMQ07Mantella

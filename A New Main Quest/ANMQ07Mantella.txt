@@ -13,10 +13,6 @@ Message:  1012
 <ce>   Very well. Close your eyes.
 <ce>   It'll make the voyage easier.
 
-Message:  1020
-<ce>       The ordinary media of space and time are distorted here.
-<ce>   Your Recall spell fails to work the way it should.
-
 Message:  1050
 <ce>    Medora Direnni's voice sounds in your mind.
 <ce>    
@@ -34,24 +30,27 @@ Message:  1050
 QBN:
 
 Place _L.00_ permanent MantellanCrux
-Place _shedungent_ permanent DirenniTowerEntry
+Place _shedungent_ permanent DirenniTower2
 
-Clock _delay_ 00:01
+Clock _wait_ 00:10
+
+Person _medora_ named Medora atHome
 
 --	Quest start-up:
 	dialog link for location _L.00_
 	log 1010 step 0
 	say 1012
 	transfer pc inside _L.00_ marker 0
-	cast Recall spell do _recallfail_
 
-_delay_ task:
-	play video 3
-	say 1050
+_conv_ task:
+	clicked npc _medora_
+	transfer pc inside _L.00_ marker 0
+	clear _conv_
 
 FinishedMantellanCrux _S.01_
-	start timer _delay_
 	teleport pc to _shedungent_
+	play video 3
+	say 1050
 
 GothrydGotTotem _S.02_
 	when _S.20_ and _S.21_
@@ -63,35 +62,39 @@ AkorithiGotTotem _S.06_
 UnderkingGotTotem _S.07_
 EadwyreGotTotem _S.08_
 GothrydEnding _S.09_
-	when _S.01_ and _S.02_ and _delay_
+	when _S.01_ and _S.02_
 	play video 14
 
 BrisiennaEnding _S.10_
-	when _S.01_ and _S.03_ and _delay_
+	when _S.01_ and _S.03_
 	play video 10
 
 KingOfWormsEnding _S.11_
-	when _S.01_ and _S.04_ and _delay_
+	when _S.01_ and _S.04_
 	play video 6
 
 GortwogEnding _S.12_
-	when _S.01_ and _S.05_ and _delay_
+	when _S.01_ and _S.05_
 	play video 8
 
 AkorithiEnding _S.13_
-	when _S.01_ and _S.06_ and _delay_
+	when _S.01_ and _S.06_
 	play video 9
 
 UnderkingEnding _S.14_
-	when _S.01_ and _S.07_ and _delay_
+	when _S.01_ and _S.07_
 	play video 15
 
 EadwyreEnding _S.15_
-	when _S.01_ and _S.08_ and _delay_
+	when _S.01_ and _S.08_
 	play video 7
 
 _S.16_ task:
 	when _S.18_ or _S.19_
+	remove log step 0
+	start timer _wait_
+
+_wait_ task:
 	end quest
 
 _S.18_ task:
@@ -105,11 +108,3 @@ _S.20_ task:
 
 _S.21_ task:
 	when not _S.06_ and not _S.07_ and not _S.08_
-
-_norecall_ task:
-	when _recallfail_ and not _S.01_
-	transfer pc inside _L.00_ marker 0
-	say 1020
-	clear _recallfail_ _norecall_
-
-variable _recallfail_

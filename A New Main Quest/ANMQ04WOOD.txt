@@ -61,9 +61,14 @@ Foe _archer2_ is Archer
 
 Item _fake_ letter
 
+Clock _tele_ 0:00
+
 --	Quest start-up:
     give pc _fake_ notify 1010
-    have _fake_ set _tele_
+    have _fake_ set _starttimer_
+
+_starttimer_ task:
+    start timer _tele_
 
 _tele_ task:
     take _fake_ from pc

@@ -59,7 +59,7 @@ Message:  1011
 <ce>   save or spare the people. The future of Tamriel is before you."
 <ce>
 <ce>     The spell wavers, and soon the uncomfortable vacuum of noise
-<ce>     unravels around you. Popudax tries his best to fake a smile.
+<ce>       unravels around you. He tries his best to fake a smile.
 
 Message:  1012
 <ce>           Popudax writes something on a piece of paper and
@@ -150,7 +150,7 @@ _talkkareth_ task:
 _talkcharvek_ task:
     clicked npc _charv_
     run quest ANMQ03B then _charvdone_ or _charvdone_
-    start quest EmpLetter1
+    start quest ANMQ02EmpLetter1
 
 _karethdone_ task:
     log 1025 step 1
