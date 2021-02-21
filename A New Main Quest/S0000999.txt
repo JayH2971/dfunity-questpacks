@@ -11,7 +11,7 @@ QuestLogEntry:  [1010]
  If I should find out what happened to the letter
  and then destroy it, he would be most appreciative.
  He also warned me that the spirit of Lysandus, former
- king of Daggerfall, haunts the capitol city.
+ king of Daggerfall, haunts the capital city.
  If possible, I should find the cause and put
  the spirit to rest.
 

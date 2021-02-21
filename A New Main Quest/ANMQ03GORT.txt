@@ -51,7 +51,7 @@ QuestComplete:  [1004]
 Message:  1010
 %qdt:
  Gortwog, king of the orcs, has asked me to visit
- him in his capitol ___orsin_.
+ him in his capital ___orsin_.
 
 QBN:
 Person _gort_ named Gortwog atHome

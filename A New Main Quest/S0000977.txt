@@ -4,7 +4,7 @@ DisplayName: ANMQ Curse of Daggerfall
 QRC:
 
 RumorsDuringQuest:  [1005]
-The ghost of King Lysandus haunts his old capitol at night. No one knows why.
+The ghost of King Lysandus haunts his old capital at night. No one knows why.
 
 RumorsPostFailure:  [1006]
 They say Daggerfall City isn't haunted anymore.

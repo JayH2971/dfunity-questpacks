@@ -43,9 +43,8 @@ Message:  1011
 <ce>            "The location of the Totem, I cannot tell you.
 <ce>         But a tool was created ages ago that can reveal it.
 <ce>          Unbeknownst to them, the royal family of Sentinel
-<ce>        holds this tool in their vaults. Search for it in the
-<ce>           most guarded place. It will show you how to find
-<ce>           the Totem and undo its invisibility enchantment.
+<ce>        holds this tool in their vaults. It will show you how
+<ce>       to find the Totem and undo its invisibility enchantment.
 <ce>
 <ce>          "Still, you don't know what the Totem looks like.
 <ce>                This is it." She casts a short spell,
@@ -65,8 +64,7 @@ Message:  1011
 
 Message:  1012
 <ce>                  Somewhere underneath this castle,
-<ce>               in "the most guarded place," a tool will
-<ce>                    show you the Totem's location.
+<ce>              a tool will show you the Totem's location.
 
 Message:  1013
 <ce>              You're surprised to find a telescope here.
