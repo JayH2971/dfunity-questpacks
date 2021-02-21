@@ -67,7 +67,7 @@ Message:  1011
 
 Message:  1012
 <ce>          Once I make it out of this cave, I should talk to
-<ce>            the Queen of ___daggcas_.
+<ce>            the Queen of ___daggcas_ about the letter.
 
 Message:  1020
 <ce>                     TES2: A NEW MAIN QUEST
