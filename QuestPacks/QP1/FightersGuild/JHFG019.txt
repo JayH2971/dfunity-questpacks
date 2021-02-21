@@ -282,7 +282,7 @@ _delay3_ task:
   start timer _timer4_
 
 _spawn4a_ task:
-  pc at _place2_ do _mon41_
+  pc at _place4_ do _mon41_
 
 _mon41_ task:
   create foe _mon4a_ every 0 minutes 1 times with 100% success

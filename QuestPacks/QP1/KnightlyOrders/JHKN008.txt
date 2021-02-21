@@ -62,7 +62,7 @@ Message:  1020
 <ce>               "The report was false! We are deceived!
 <ce>                  They have taken my master _noble_!
 <ce>               The court magician says they are headed
-<ce>                   for ___dung2_. Please help %g2!"
+<ce>                    for ___dung2_. Please help %g2!"
 
 Message:  1021
 <ce>            Please! Save me from these horrible creatures!
