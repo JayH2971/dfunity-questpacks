@@ -66,8 +66,9 @@ Message:  1011
 <ce>  You also seem to hear other footsteps moving away from the castle.
 
 Message:  1012
-<ce>          Once I make it out of this cave, I should talk to
-<ce>            the Queen of ___daggcas_ about the letter.
+%qdt:
+Once I make it out of this cave, I should talk to
+the Queen of ___daggcas_ about the letter.
 
 Message:  1020
 <ce>                     TES2: A NEW MAIN QUEST
