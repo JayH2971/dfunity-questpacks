@@ -74,6 +74,10 @@ Message:  1011
 <ce>
 <ce>              You must make a decision. Do you side with
 <ce>                 the man (yes) or with the orcs (no)?
+<ce>
+<ce>        (NOTE: This version of ANMQ only allows the Orc path.)
+<ce>                (The man's path will be added later.)
+<ce>              (Thank you for playing the beta version.)
 
 Message:  1012
 <ce>                     (ORCISH SKILL CHECK PASSED)
