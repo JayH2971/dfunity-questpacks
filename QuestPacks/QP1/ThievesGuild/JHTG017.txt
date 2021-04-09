@@ -1,0 +1,149 @@
+Quest: JHTG017
+DisplayName: Daily Heist, Large
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          One of the benefits of being in the Thieves Guild
+<ce>          is knowing where money is, free for the grabbing.
+<ce>             There's a house in another town that's got a
+<ce>      ton of gold in it. If you're good at sneaking, you can try
+<ce>    to nab it for yourself. Want me to reserve the house for you?
+                                     <--->
+<ce>      Every day, people hide away their savings in their houses.
+<ce>          Some do it good, others do it sloppy. We got a tip
+<ce>        on a house that's carrying around a few thousand gold.
+<ce>       If you want, I can mark it down for you. Won't earn you
+<ce>        any points with the guild, but you'll get some money.
+<ce>                            You takin' it?
+
+RefuseQuest:  [1001]
+<ce>       No loss. People get suspicious if we get too consistent
+                                     <--->
+<ce>                   Better not to try than to fail.
+
+AcceptQuest:  [1002]
+<ce>          All right then. Go to ___house_ and find _house_.
+<ce>    They know carrying that much money is a risk, so you're gonna
+<ce>          have to be good. You're running a real risk here.
+<ce>                I don't think you'll get more than two
+<ce>            weeks before it's spent or moved, so hurry on.
+<ce>        And remember that if you get caught, whoever tipped us
+<ce>      off on the house is gonna suffer for it. Don't get caught.
+                                     <--->
+<ce>                       _house_ has your money,
+<ce>                          in ___house_, %di.
+<ce>           It's got a few thousand gold, and they're gonna
+<ce>                watch it like hawks. Don't get caught.
+<ce>            Whoever told us about that house would suffer
+<ce>        for it. Money like that gets spent in a couple weeks,
+<ce>                        so don't dally on it.
+
+QuestFail:  [1003]
+<ce>                You know how to sneak, but not enough.
+<ce>     Someone knows you're here, and they're shouting up a storm.
+
+QuestComplete:  [1004]
+<ce>     Looks like you're in the clear. The money is yours to spend.
+
+QuestorPostFailure:  [1009]
+Remember, you owe us for the money in _house_. Take some jobs and pay us back.
+
+Message:  1010
+%qdt:
+ The Thieves Guild tipped me off
+ about a house in ___house_
+ that should be holding several thousand
+ gold called _house_.
+ If I can find the money in the next
+ couple of days, it's mine.
+
+Message:  1011
+<ce>            You rifle through the chest and find the gold.
+<ce>             You quickly count out =reward_ gold pieces.
+
+QBN:
+Item _item_ item class 1 subclass 8
+Item _reward_ gold range 2500 to 4000
+
+Place _house_ local house
+
+Person _qgiver_ group Questor
+
+Clock _danger_ 00:02 00:05
+Clock _ending_ 2.00:00 2.12:00
+
+--	Quest start-up:
+    start timer _ending_
+    log 1010 step 0
+    place item _item_ at _house_
+    pc at _house_ do _inside_
+
+_inside_ task:
+    start timer _danger_
+    stop timer _ending_
+
+_notinside_ task:
+    when not _inside_
+    stop timer _danger_
+    start timer _ending_
+
+_grab_ task:
+    clicked item _item_
+    get item _reward_
+    take _item_ from pc saying 1011
+    make _reward_ permanent
+
+_check1_ task:
+    when skill Stealth is at least 85
+
+_check2_ task:
+    when skill Stealth is at least 90
+
+_check3_ task:
+    when skill Stealth is at least 95
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+    when _check1_ and _go1_
+
+_c2_ task:
+    when _check2_ and _go2_
+
+_c3_ task:
+    when _check3_ and _go3_
+
+_d1_ task:
+    when not _check1_ and _go1_
+    start task _fail_
+
+_d2_ task:
+    when not _check2_ and _go2_
+    start task _fail_
+
+_d3_ task:
+    when not _check3_ and _go3_
+    start task _fail_
+
+_fail_ task:
+    setplayercrime Trespassing
+    spawncityguards immediate
+    say 1003
+    change repute with _qgiver_ by -1
+    end quest
+
+_escape_ task:
+    when _grab_ and _notinside_
+    say 1004
+    change repute with _qgiver_ by +2
+    end quest
+
+_danger_ task:
+    pick one of _go1_ _go2_ _go3_
+
+_ending_ task:
+    change repute with _qgiver_ by +2
+    end quest
