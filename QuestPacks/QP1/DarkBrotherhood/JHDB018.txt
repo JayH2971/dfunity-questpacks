@@ -89,9 +89,11 @@ _e1_ task:
 
 _e2_ task:
     place foe _m2_ at _res_
+    change foe _m2_ infighting true
 
 _e3_ task:
     place foe _m3_ at _res_
+    change foe _m3_ infighting true
 
 _ipr_ task:
     injured _m1_
@@ -107,6 +109,7 @@ _norm_ task:
     say 1010
     hide npc _debtor_
     place foe _m1_ at _res_
+    change foe _m1_ infighting true
 
 _choice_ task:
     when _click_ and _t2_
@@ -120,6 +123,7 @@ _bribe_ task:
 
 _dud_ task:
     place foe _m1_ at _res_
+    change foe _m1_ infighting true
 
 _slain_ task:
     killed _m1_

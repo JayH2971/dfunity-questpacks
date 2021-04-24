@@ -107,6 +107,7 @@ Foe _bguard_ is Barbarian
 	place foe _acro_ at _res_
 	pc at _res_ set _inside_
 	pick one of _e1_ _e2_
+	change foe _acro_ infighting true
 
 variable _e1_
 variable _e2_
@@ -115,6 +116,11 @@ _spawn_ task:
 	when _inside_ and _e1_
 	say 1019
 	create foe _bguard_ every 0 minutes 1 times with 100% success
+
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _bguard_ infighting true
+	clear _infight_
 
 _extend_ task:
 	when _inside_ and _e2_

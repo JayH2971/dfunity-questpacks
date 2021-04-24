@@ -61,9 +61,11 @@ Foe _ghost2_ is Wraith
 
 _D.01_ task:
 	place foe _ghost1_ at _ghostres_
+	change foe _ghost1_ infighting true
 
 _D.02_ task:
 	place foe _ghost2_ at _ghostres_
+	change foe _ghost2_ infighting true
 
 _slain_ task:
 	killed 1 _ghost1_ saying 1020

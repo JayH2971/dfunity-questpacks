@@ -135,6 +135,7 @@ _inj_ task:
     create foe _dae2_ every 0 minutes 1 times with 100% success
     give item _parch_ to _enemy_
     have _parch_ set _warn_
+    change foe _enemy_ infighting true
 
 _infight_ task:
     daily from 0:00 to 23:59

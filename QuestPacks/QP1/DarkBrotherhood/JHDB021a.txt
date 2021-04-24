@@ -439,6 +439,12 @@ _confront_ task:
     place foe _vamp_ at _palace_
     create foe _guar_ every 0 minutes 4 times with 100% success
     start timer _recall_
+    change foe _vamp_ infighting true
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _guar_ infighting true
+    clear _infight_
 
 _recall_ task:
     remove foe _vamp_

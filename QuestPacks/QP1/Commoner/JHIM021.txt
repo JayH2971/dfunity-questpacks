@@ -122,14 +122,7 @@ Foe _brfoe_ is Barbarian
     pc at _res_ do _inside_
     place npc _fool_ at _res_
 
-_day_ task:
-    daily from 00:00 to 23:59
-    change foe _flfoe_ infighting true
-    change foe _brfoe_ infighting true
-    clear _day_
-
 variable _inside_
-
 _talk_ task:
     clicked npc _fool_
     drop _questgiver_ face
@@ -147,6 +140,8 @@ _attack_ task:
 _allybr_ task:
     change foe _flfoe_ team 0
     change foe _brfoe_ team 1
+    change foe _brfoe_ infighting true
+    change foe _flfoe_ infighting true
 
 _attackvic_ task:
     when _attack_ and not _killedbr_ and _killedfl_
@@ -165,6 +160,8 @@ _mercy_ task:
 _allyfl_ task:
     change foe _flfoe_ team 1
     change foe _brfoe_ team 0
+    change foe _brfoe_ infighting true
+    change foe _flfoe_ infighting true
 
 _killedfl_ task:
     killed _flfoe_

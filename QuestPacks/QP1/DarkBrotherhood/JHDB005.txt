@@ -75,24 +75,31 @@ Place _tavern_ local tavern
 Clock _timer_ 12:00
 
 Foe _barb_ is Barbarian
-Foe _barb2_ is 2 Barbarian
+Foe _barb2_ is Barbarian
 
 --	Quest start-up:
 	start timer _timer_
 	place foe _barb_ at _tavern_
 	restrain foe _barb_
 	log 1033 step 0
+	change foe _barb_ infighting true
 
 _iba_ task:
 	injured _barb_
 	pick one of _iba2_ _iba3_
+	clear _iba_
+
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _barb2_ infighting true
+	clear _infight_
 
 _iba2_ task:
 	say 1023
 
 _iba3_ task:
 	say 1024
-	create foe _barb2_ every 0 minutes 1 times with 100% success
+	create foe _barb2_ every 0 minutes 2 times with 100% success
 
 _slain_ task:
 	killed 1 _barb_ saying 1043

@@ -81,6 +81,7 @@ Foe _knight_ is Knight
 	place foe _knight_ at _knightly_
 	restrain foe _knight_
 	log 1030 step 0
+	change foe _knight_ infighting true
 
 _ikn_ task:
 	injured _knight_

@@ -113,6 +113,10 @@ _spawn_ task:
 	create foe _wild3_ every 59 minutes indefinitely with 34% success
 	create foe _wild4_ every 40 minutes indefinitely with 22% success
 
+_injured_ task:
+	injured _enemy_
+	change foe _enemy_ infighting true
+
 _slain_ task:
 	killed 1 _enemy_ saying 1020
 

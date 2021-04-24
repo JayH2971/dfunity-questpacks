@@ -97,6 +97,7 @@ _2place_ task:
 	start timer _steal_
 	place npc _kid_ at _place_
 	place foe _enemy1_ at _place_
+	change foe _enemy1_ infighting true
 
 variable _ires_
 _sneak_ task:
