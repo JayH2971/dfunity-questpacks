@@ -197,7 +197,7 @@ _resist_ task:
 
 _infight_ task:
     daily from 0:00 to 23:59
-    change foe merc infighting true
+    change foe _merc_ infighting true
     clear _infight_
 
 _final_ task:

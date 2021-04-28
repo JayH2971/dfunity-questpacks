@@ -4,57 +4,57 @@ DisplayName: Hide and Go Seek
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  There's a group of criminals in town who've
-<ce>  absconded with some pretty important
-<ce>  evidence. Someone needs to go in quick and
-<ce>  wipe 'em out before they do some irreversible
-<ce>  damage. Feeling like moving fast today?
+<ce>             There's a group of criminals in town who've
+<ce>                 absconded with some pretty important
+<ce>              evidence. Someone needs to go in quick and
+<ce>            wipe 'em out before they do some irreversible
+<ce>               damage. Feeling like moving fast today?
 
 RefuseQuest:  [1001]
-<ce>  Need to relax instead?
-<ce>  They'll figure something out.
+<ce>                        Need to relax instead?
+<ce>                    They'll figure something out.
 
 AcceptQuest:  [1002]
-<ce>  These thugs're trapped in a building in
-<ce>  town, trying to barter their freedom with
-<ce>  this little piece of paper they've stolen.
-<ce>  They said they'll burn it if someone tries
-<ce>  to get in. I don't think they'll do anything
-<ce>  risky if they just see someone, but once you
-<ce>  start the fight, you better finish it fast.
-<ce>  One of 'em has to have it. Bring the paper
-<ce>  back here and I'll have a reward for you.
-<ce>  
-<ce>  Oh, almost forgot. _random_.
+<ce>               These thugs're trapped in a building in
+<ce>              town, trying to barter their freedom with
+<ce>              this little piece of paper they've stolen.
+<ce>              They said they'll burn it if someone tries
+<ce>             to get in. I don't think they'll do anything
+<ce>             risky if they just see someone, but once you
+<ce>             start the fight, you better finish it fast.
+<ce>              One of 'em has to have it. Bring the paper
+<ce>              back here and I'll have a reward for you.
+<ce>
+<ce>                     Oh, almost forgot. _random_.
 
 QuestComplete:  [1004]
-<ce>  Good enough. Trust me, if they sent in
-<ce>  the guards to do this, all they'd find
-<ce>  is a bunch of warm ashes. The %t is
-<ce>  right to ask us this, even if I dislike
-<ce>  saying it.
+<ce>                Good enough. Trust me, if they sent in
+<ce>                the guards to do this, all they'd find
+<ce>                 is a bunch of warm ashes. The %t is
+<ce>               right to ask us this, even if I dislike
+<ce>                              saying it.
 
 Message:  1010
-<ce>  This thug yells some code words, and
-<ce>  others come out of hiding. You
-<ce>  smell something burning but don't
-<ce>  know where it's coming from.
+<ce>                 This thug yells some code words, and
+<ce>                    others come out of hiding. You
+<ce>                  smell something burning but don't
+<ce>                     know where it's coming from.
 
 Message:  1011
-<ce>  You quickly rummage through your foes'
-<ce>  items and find the burning parchment.
-<ce>  Slapping the fire out, you store it
-<ce>  as safely as you can.
+<ce>                You quickly rummage through your foes'
+<ce>                items and find the burning parchment.
+<ce>                 Slapping the fire out, you store it
+<ce>                        as safely as you can.
 
 Message:  1012
-<ce>  The burning has ceased. One of the
-<ce>  thieves smirks triumphantly.
-<ce>  You have failed to stop them.
+<ce>                  The burning has ceased. One of the
+<ce>                     thieves smirks triumphantly.
+<ce>                    You have failed to stop them.
 
 Message:  1013
-<ce>  Though burnt, this parchment describes
-<ce>  a series of past and future crimes
-<ce>  across %crn. It's still legible.
+<ce>                Though burnt, this parchment describes
+<ce>                  a series of past and future crimes
+<ce>                   across %crn. It's still legible.
 
 Message:  1030
 %qdt:
@@ -78,27 +78,35 @@ Clock _fight_ 0:04
 
 Foe _nme_ is Thief
 Foe _nme2_ is Thief
+Foe _nme3_ is Thief
 
 --	Quest start-up:
-	start timer _timer_
-	log 1030 step 0
+    start timer _timer_
+    log 1030 step 0
     place foe _nme_ at _random_
     restrain foe _nme_
 
 _inj_ task:
     injured _nme_
     say 1010
-    create foe _nme2_ every 0 minutes 2 times with 100% success
+    create foe _nme2_ every 0 minutes 1 times with 100% success
+    create foe _nme3_ every 0 minutes 1 times with 100% success
     start timer _fight_
+    change foe _nme_ infighting true
+    change foe _nme2_ infighting true
+    change foe _nme3_ infighting true
 
 _slain1_ task:
     killed _nme_
 
 _slain2_ task:
-    killed 2 _nme2_
+    killed _nme2_
+
+_slain3_ task:
+    killed _nme3_
 
 _slain_ task:
-    when _slain1_ and _slain2_
+    when _slain1_ and _slain2_ and _slain3_
     stop timer _fight_
     say 1011
     get item _letter_
@@ -108,9 +116,9 @@ _fight_ task:
     end quest
 
 _pcgetsgold_ task:
-	toting _letter_ and _qgiver_ clicked
-	give pc _reward_
-	end quest
+    toting _letter_ and _qgiver_ clicked
+    give pc _reward_
+    end quest
 
 _timer_ task:
-	end quest
+    end quest

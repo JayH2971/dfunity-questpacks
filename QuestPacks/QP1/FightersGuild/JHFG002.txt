@@ -85,10 +85,12 @@ Foe _daedrased_ is Daedra_seducer
 
 _D.01_ task:
 	place foe _daedralord_ at _dungeon_
+	change foe _daedralord_ infighting true
 	log 1031 step 0
 
 _D.02_ task:
 	place foe _daedrased_ at _dungeon_
+	change foe _daedrased_ infighting true
 	log 1030 step 0
 
 _pcgetsgold_ task:

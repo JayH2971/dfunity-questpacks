@@ -112,12 +112,12 @@ _read_ task:
   create foe _meet_ every 0 minutes 1 times with 100% success
   restrain foe _meet_
 
-variable _safe_
-_found_ task:
-  when _safe_ and _read_
-  say 1021
-  create foe _meet_ every 0 minutes 1 times with 100% success
-  restrain foe _meet_
+-variable _safe_
+-_found_ task:
+-  when _safe_ and _read_
+-  say 1021
+-  create foe _meet_ every 0 minutes 1 times with 100% success
+-  restrain foe _meet_
 
 _inj_ task:
   injured _meet_
@@ -139,6 +139,12 @@ _first_ task:
   killed 3 _enemy1_
   killed 3 _enemy2_
   create foe _enemy4_ every 0 minutes 1 times with 100% success
+
+_infight_ task:
+  daily from 0:00 to 23:59
+  change foe _enemy1_ infighting true
+  change foe _enemy2_ infighting true
+  clear _infight_
 
 _slain_ task:
   killed _enemy4_

@@ -86,9 +86,11 @@ Foe _man_ is Nightblade
 
 _inj1_ task:
     injured _man_ saying 1011
+    change foe _sed_ infighting true
 
 _inj2_ task:
     injured _sed_
+    change foe _sed_ infighting true
 
 _injd_ task:
     when _inj2_ and not _killman_

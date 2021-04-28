@@ -147,15 +147,13 @@ _awaken_ task:
     hide npc _dbf_
     say 1013
     place foe _ally_ at _dung_
+    change foe _ally_ team 1
+    change foe _ally_ infighting true
 
 _day_ task:
     daily from 00:00 to 23:59
     change foe _orcn_ infighting true
     change foe _orcw_ infighting true
-    change foe _ally_ infighting true
-    change foe _ally_ team 1
-    change foe _orcn_ team 0
-    change foe _orcw_ team 0
     clear _day_
 
 _kill1_ task:

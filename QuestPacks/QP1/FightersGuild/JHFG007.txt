@@ -4,63 +4,63 @@ DisplayName: Courier Work
 QRC:
 
 QuestorOffer:  [1000]
-<ce> We have a job here that doesn't really
-<ce> fit the bill for what the Fighters Guild
-<ce> was made for, but it still pays. Do
-<ce> ya wanna go over to ___res_
-<ce> and bring some _pick_ someone left
-<ce> over there? Sounds like easy pickin's.
-<--->
-<ce> We've got a request here to go over to
-<ce> ___res_ and pick up something
-<ce> that got left over there by accident.
-<ce> Sounds simple enough. Wanna take
-<ce> this one, %pcf?
+<ce>                We have a job here that doesn't really
+<ce>               fit the bill for what the Fighters Guild
+<ce>                 was made for, but it still pays. Do
+<ce>                     ya wanna go over to ___res_
+<ce>                  and bring some _pick_ someone left
+<ce>                over there? Sounds like easy pickin's.
+                                     <--->
+<ce>                We've got a request here to go over to
+<ce>                    ___res_ and pick up something
+<ce>                that got left over there by accident.
+<ce>                   Sounds simple enough. Wanna take
+<ce>                           this one, %pcf?
 
 RefuseQuest:  [1001]
-<ce> Man, are you just here to smash skulls or what?
+<ce>           Man, are you just here to smash skulls or what?
 
 AcceptQuest:  [1002]
-<ce> All right, get going then. ___res_,
-<ce> _res_. You're looking
-<ce> for some _pick_ that they said is
-<ce> gonna be on the floor. Just grab it and
-<ce> there should be some instructions on
-<ce> where you take it. That's what they
-<ce> told me, at least. _culp_
-<ce> should give you your reward after that.
-<ce> I'm giving you =timer_ days to do this.
+<ce>                 All right, get going then. ___res_,
+<ce>                        _res_. You're looking
+<ce>                  for some _pick_ that they said is
+<ce>               gonna be on the floor. Just grab it and
+<ce>                 there should be some instructions on
+<ce>                 where you take it. That's what they
+<ce>                      told me, at least. _culp_
+<ce>               should give you your reward after that.
+<ce>               I'm giving you =timer_ days to do this.
 
 QuestFail:  [1003]
-<ce> _questgiver_ expected you to return to
-<ce> ___questgiver_ with the _pick_ by now.
+<ce>                _questgiver_ expected you to return to
+<ce>                ___questgiver_ with the _pick_ by now.
 
 QuestComplete:  [1004]
-<ce> This again? %oth. Hey, I'm really sorry
-<ce> about this. We told the %t and everyone's doing
-<ce> everything they can to find who's behind it.
-<ce> But look, I'm not gonna let you walk away empty-handed.
-<ce> Keep that _pick_ you got from them and sell
-<ce> it if you want, and I'll give you =reward_ gold
-<ce> out of my own pocket. It's not that much
-<ce> but it's literally all I've got left over from
-<ce> last week. Just know that we appreciate
-<ce> how there are members like you watching
-<ce> out for the rest of us.
+<ce>               This again? %oth. Hey, I'm really sorry
+<ce>           about this. We told the %t and everyone's doing
+<ce>             everything they can to find who's behind it.
+<ce>       But look, I'm not gonna let you walk away empty-handed.
+<ce>             Keep that _pick_ you got from them and sell
+<ce>           it if you want, and I'll give you =reward_ gold
+<ce>               out of my own pocket. It's not that much
+<ce>            but it's literally all I've got left over from
+<ce>               last week. Just know that we appreciate
+<ce>               how there are members like you watching
+<ce>                       out for the rest of us.
 
 Message:  1020
-<ce> You hear a faint snicker.
+<ce>                      You hear a faint snicker.
 
 Message:  1023
-<ce> "Th-that's... im-mposs..."
-<ce> The ringleader collapses.
+<ce>                      "Th-that's... im-mposs..."
+<ce>                      The ringleader collapses.
 
 Message:  1025
-<ce> This month we're paying =bigsum_ for
-<ce> every Fighters Guild bozo. Remember:
-<ce> priorities are eyes, hearts, and lungs.
-<ce> Partials mean less pay for you.
-<ce> 
+<ce>                 This month we're paying =bigsum_ for
+<ce>                 every Fighters Guild bozo. Remember:
+<ce>               priorities are eyes, hearts, and lungs.
+<ce>                   Partials mean less pay for you.
+<ce>
                              K.
 
 Message:  1030
@@ -101,7 +101,7 @@ Foe _perp_ is Nightblade
 --   Quest start-up:
    start timer _timer_
    log 1030 step 0
-   place item _pick_ at _res_   
+   place item _pick_ at _res_
    give item _letter_ to _perp_
 
 _got_ task:
@@ -110,24 +110,30 @@ _got_ task:
    create foe _enemy_ every 0 minutes 1 times with 100% success
    create foe _perp_ every 0 minutes 1 times with 20% success
 
+_infight_ task:
+   daily from 0:00 to 23:59
+   change foe _enemy_ infighting true
+   change foe _perp_ infighting true
+   clear _infight_
+
 _slain_ task:
    killed _perp_
    say 1023
    log 1031 step 1
 
 _victory_ task:
-  when _qgclicked_ and _got_
-  make _pick_ permanent
-  give pc _reward_
-  end quest
+   when _qgclicked_ and _got_
+   make _pick_ permanent
+   give pc _reward_
+   end quest
 
 _qgclicked_ task:
-    clicked npc _questgiver_
+   clicked npc _questgiver_
 
 _clearclick_ task:
-    when _qgclicked_ and not _got_
-    clear _qgclicked_ _clearclick_
- 
+   when _qgclicked_ and not _got_
+   clear _qgclicked_ _clearclick_
+
 _timer_ task:
-    say 1003
-    end quest
+   say 1003
+   end quest

@@ -62,6 +62,7 @@ Foe _enemy_ is Zombie
     place foe _enemy_ at _house_
     get item _tali_
     _tali_ used do _halt_
+    change foe _enemy_ infighting true
 
 _halt_ task:
     restrain foe _enemy_

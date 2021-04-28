@@ -88,13 +88,17 @@ Foe _wild4_ is Spriggan
 _daytime_ task:
 	daily from 8:00 to 18:00
 
-_infight_ task:
+_daily_ task:
 	daily from 0:00 to 23:59
 	change foe _wild1_ infighting true
 	change foe _wild2_ infighting true
 	change foe _wild3_ infighting true
 	change foe _wild4_ infighting true
-	clear _infight_
+	change foe _wild1_ team 0
+	change foe _wild2_ team 0
+	change foe _wild3_ team 0
+	change foe _wild4_ team 0
+	clear _daily_
 
 variable _inside_
 variable _dud_
@@ -116,6 +120,7 @@ _spawn_ task:
 _injured_ task:
 	injured _enemy_
 	change foe _enemy_ infighting true
+	change foe _enemy_ team 0
 
 _slain_ task:
 	killed 1 _enemy_ saying 1020

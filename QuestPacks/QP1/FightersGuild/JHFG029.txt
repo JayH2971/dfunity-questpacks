@@ -4,30 +4,30 @@ DisplayName: Mirage
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  There's a fellow in town who keeps comin'
-<ce>  'round demanding a challenger for a fight.
-<ce>  Offers gold and everything. I think it's
-<ce>  gonna be harder than it looks, but it's
-<ce>  there if you want it.
+<ce>              There's a fellow in town who keeps comin'
+<ce>              'round demanding a challenger for a fight.
+<ce>               Offers gold and everything. I think it's
+<ce>               gonna be harder than it looks, but it's
+<ce>                        there if you want it.
 
 RefuseQuest:  [1001]
-<ce>  I guess I'll just have to get used to this guy.
-<ce>  No one else wants to try.
+<ce>           I guess I'll just have to get used to this guy.
+<ce>                      No one else wants to try.
 
 AcceptQuest:  [1002]
-<ce>  Really? All right then. Go to
-<ce>  _res_ here in town. Name's
-<ce>  _pers_. All's I know is that
-<ce>  you just wanna go in and start a
-<ce>  fight. The twit's been aching for
-<ce>  a good one for a long time, he says.
-<ce>  I'll send him word that you'll be
-<ce>  there within, say, two days. Let
-<ce>  you rest up a little if you need it.
+<ce>                    Really? All right then. Go to
+<ce>                      _res_ here in town. Name's
+<ce>                     _pers_. All's I know is that
+<ce>                   you just wanna go in and start a
+<ce>                  fight. The twit's been aching for
+<ce>                 a good one for a long time, he says.
+<ce>                  I'll send him word that you'll be
+<ce>                   there within, say, two days. Let
+<ce>                 you rest up a little if you need it.
 
 QuestFail:  [1003]
-<ce>  _pers_ is in _res_.
-<ce>  Head on over when you're ready.
+<ce>                         _pers_ is in _res_.
+<ce>                   Head on over when you're ready.
 
 QuestComplete:  [1004]
 <ce>                       %oth, you can be lethal.
@@ -46,9 +46,9 @@ QuestComplete:  [1004]
 <ce>            we often find ourselves disadvantaged in other
 <ce>           fields. Combat in general is something of a weak
 <ce>            spot for us. We would enjoy counting you among
-<ce>        our allies. If that sounds agreeable, perhaps someday we
-<ce>           could send you occasional missives according to our
-<ce>               needs. I assure you we will compensate you for
+<ce>       our allies. If that sounds agreeable, perhaps someday we
+<ce>         could send you occasional missives according to our
+<ce>            needs. I assure you we will compensate you for
 <ce>           the work we do together. Oh, the things we could
 <ce>          accomplish with your skill! But for now, farewell.
 <ce>           Thank you for listening to me with such respect.
@@ -56,27 +56,27 @@ QuestComplete:  [1004]
 Message:  1011
 <ce>        "Thank you for coming. Please, tell me your full name.
 <ce>
-<ce>                 "Very well then, %pcn. I wish to test
+<ce>                "Very well then, %pcn. I wish to test
 <ce>         my skills and see if I emerge the victor. I ask that
 <ce>        you hold nothing back. I have a small reward available
-<ce>          for you if you succeed. And if you leave this building,
-<ce>                           you forfeit our duel.
+<ce>       for you if you succeed. And if you leave this building,
+<ce>                        you forfeit our duel.
 <ce>
-<ce>                      "Let our duel begin!"
+<ce>                        "Let our duel begin!"
 <ce>
-<ce>                        _pers_ shouts a cantrip
+<ce>                       _pers_ shouts a cantrip
 <ce>                dramatically before disappearing. You
 <ce>              brace yourself for the battle before you.
 
 Message:  1014
-<ce>                      The rat keels over. _pers_'s
+<ce>                     The rat keels over. _pers_'s
 <ce>              voice breaks your puzzled thought process.
 <ce>
 <ce>           "Well, you can kill a rat! So what? Take this!"
 
 Message:  1015
 <ce>              The bat drops to the ground pathetically.
-<ce>                  From its mouth you hear _pers_ say,
+<ce>                 From its mouth you hear _pers_ say,
 <ce>
 <ce>               "Warm-ups are over! Now we get serious!"
 
@@ -87,7 +87,7 @@ Message:  1017
 <ce>                From the giant fish's mouth you hear,
 <ce>
 <ce>                 "Come on, I want a real fight! Show
-<ce>                   me the mettle of the Fighters Guild!"
+<ce>                me the mettle of the Fighters Guild!"
 
 Message:  1018
 <ce>            The scorpion's body heaves and finally drops.
@@ -126,10 +126,10 @@ Message:  1026
 <ce>          the other creatures, a voice comes from its mouth.
 <ce>
 <ce>              "It's been a long time since someone made
-<ce>            it to the vampire. Your skill truly is memorable.
+<ce>          it to the vampire. Your skill truly is memorable.
 <ce>                       Come, see me once more."
 <ce>
-<ce>                       _pers_ appears once again.
+<ce>                      _pers_ appears once again.
 <ce>             Now you can get to the bottom of the matter.
 
 Message:  1030
@@ -142,7 +142,7 @@ Message:  1030
  to take on the fight for a gold reward.
 
 Message:  1050
-<ce>                   _pers_'s voice booms in your ears.
+<ce>                  _pers_'s voice booms in your ears.
 <ce>
 <ce>                  "HA! I've proven my victory! Leave
 <ce>                    %crn before my siblings and I
@@ -193,69 +193,82 @@ _f0_ task:
 -
 -_f_ task:
 -       create foe _rat_ every 0 minutes 1 times with 100% success
-        place foe _rat_ at _res_
+       place foe _rat_ at _res_
+       change foe _rat_ infighting true
 
 _f1_ task:
        killed _rat_
        say 1014
        place foe _bat_ at _res_
+       change foe _bat_ infighting true
 
 _f2_ task:
        killed _bat_
        say 1015
        place foe _spid_ at _res_
+       change foe _spid_ infighting true
 
 _f3_ task:
        killed _spid_
        say 1016
        place foe _fish_ at _res_
+       change foe _fish_ infighting true
 
 _f4_ task:
        killed _fish_
        say 1017
        place foe _scorp_ at _res_
+       change foe _scorp_ infighting true
 
 _f5_ task:
        killed _scorp_
        say 1018
        place foe _were_ at _res_
+       change foe _were_ infighting true
 
 _f6_ task:
        killed _were_
        say 1019
        place foe _gho_ at _res_
        cast Silence spell on _gho_
+       change foe _gho_ infighting true
 
 _f7_ task:
        killed _gho_
        say 1020
        place foe _wra_ at _res_
+       change foe _wra_ infighting true
 
 _f8_ task:
        killed _wra_
        say 1021
        place foe _atr_ at _res_
+       change foe _atr_ infighting true
 
 _f9_ task:
        killed _atr_
        say 1022
        place foe _dreu_ at _res_
+       change foe _dreu_ infighting true
 
 _f10_ task:
        killed _dreu_
        say 1023
        place foe _dra_ at _res_
+       change foe _dra_ infighting true
 
 _f11_ task:
        killed _dra_
        say 1024
        place foe _garg_ at _res_
+       change foe _garg_ infighting true
 
 _f12_ task:
        killed _garg_
        say 1025
        place foe _vamp_ at _res_
        cast Silence spell on _vamp_
+       change foe _vamp_ infighting true
 
 _f13_ task:
        killed _vamp_

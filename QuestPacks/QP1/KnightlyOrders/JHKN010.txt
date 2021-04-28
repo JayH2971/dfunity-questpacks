@@ -132,6 +132,7 @@ _e2_ task:
   place item _body_ at _knighttown_
   place foe _enemy_ at _knighttown_
   pc at _knighttown_ do _inside_
+  change foe _enemy_ infighting true
 
 _inside_ task:
   say 1022

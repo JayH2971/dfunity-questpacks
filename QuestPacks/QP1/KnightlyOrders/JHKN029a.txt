@@ -240,6 +240,36 @@ Clock _delay2_ 0:10
     create foe _e6_ every 0 minutes 1 times with 100% success
     start task _spawn_
 
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _e1_ infighting true
+    change foe _e2_ infighting true
+    change foe _e3_ infighting true
+    change foe _e4_ infighting true
+    change foe _e5_ infighting true
+    change foe _e6_ infighting true
+    change foe _e7_ infighting true
+    change foe _e8_ infighting true
+    change foe _e9_ infighting true
+    change foe _e10_ infighting true
+    change foe _e11_ infighting true
+    change foe _e12_ infighting true
+    change foe _e13_ infighting true
+    change foe _e1_ team 0
+    change foe _e2_ team 0
+    change foe _e3_ team 0
+    change foe _e4_ team 0
+    change foe _e5_ team 0
+    change foe _e6_ team 0
+    change foe _e7_ team 0
+    change foe _e8_ team 0
+    change foe _e9_ team 0
+    change foe _e10_ team 0
+    change foe _e11_ team 0
+    change foe _e12_ team 0
+    change foe _e13_ team 0
+    clear _infight_
+
 _spawn_ task:
     create foe _e1_ every 15 minutes indefinitely with 6% success
 

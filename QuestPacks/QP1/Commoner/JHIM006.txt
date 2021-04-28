@@ -126,11 +126,11 @@ _spawn_ task:
     create foe _skel_ every 240 minutes indefinitely with 40% success
     create foe _skel2_ every 600 minutes indefinitely with 20% success
 
-_day_ task:
+_daily_ task:
     daily from 0:00 to 23:59
     change foe _skel_ infighting true
     change foe _skel2_ infighting true
-    clear _day_
+    clear _daily_
 
 _take_ task:
     clicked item _relig_

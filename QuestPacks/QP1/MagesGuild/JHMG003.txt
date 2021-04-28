@@ -4,79 +4,79 @@ DisplayName: The Dark Artist
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  %pct, %crn grants us great
-<ce>  autonomy concerning our methods of
-<ce>  research, our purposes, our disciplinary
-<ce>  pursuits, and so forth, provided we promote
-<ce>  the "common good" with our scholarly work.
-<ce>  A fascinating term, that. In exchange, we
-<ce>  have something of an unspoken agreement,
-<ce>  if you will, that when students of the magical
-<ce>  arts become a menace to society, we are
-<ce>  the first to remove the threat. Please help
-<ce>  us to fulfill that agreement, %pcf.
-<--->
-<ce>  Great scandals surround the Mages Guild, many
-<ce>  of which are started by those envious of the
-<ce>  power we wield. To ensure a spark does not become
-<ce>  a wildfire, we must stamp out any cause for
-<ce>  suspicion with haste. A knave in fellowship
-<ce>  with this honorable institution has taken
-<ce>  advantage of our good name to conduct work of
-<ce>  the foulest kind, putting us all in jeopardy
-<ce>  of disrepute. Will you dispose of this
-<ce>  renegade and help us maintain our good name?
+<ce>                      %pct, %crn grants us great
+<ce>                  autonomy concerning our methods of
+<ce>               research, our purposes, our disciplinary
+<ce>             pursuits, and so forth, provided we promote
+<ce>              the "common good" with our scholarly work.
+<ce>              A fascinating term, that. In exchange, we
+<ce>               have something of an unspoken agreement,
+<ce>            if you will, that when students of the magical
+<ce>               arts become a menace to society, we are
+<ce>             the first to remove the threat. Please help
+<ce>                 us to fulfill that agreement, %pcf.
+                                     <--->
+<ce>            Great scandals surround the Mages Guild, many
+<ce>             of which are started by those envious of the
+<ce>          power we wield. To ensure a spark does not become
+<ce>             a wildfire, we must stamp out any cause for
+<ce>             suspicion with haste. A knave in fellowship
+<ce>              with this honorable institution has taken
+<ce>            advantage of our good name to conduct work of
+<ce>             the foulest kind, putting us all in jeopardy
+<ce>                of disrepute. Will you dispose of this
+<ce>             renegade and help us maintain our good name?
 
 RefuseQuest:  [1001]
-<ce>  I assure you, %pct, had you permitted me to
-<ce>  explain more, you would not have refused.
+<ce>             I assure you, %pct, had you permitted me to
+<ce>              explain more, you would not have refused.
 
 AcceptQuest:  [1002]
-<ce> A worthy response. This duty falls upon
-<ce> every member of the guild in its due time.
-<ce> We will send you to ___res_.
-<ce> A guild member in the city, highly
-<ce> trustworthy, informs us that the
-<ce> errant magician, _necr_, hides
-<ce> and practices in _res_.
-<ce> I certainly hope necromancy inspires
-<ce> no fear in you, for that is what you
-<ce> have agreed to quash this day.
-<ce> Make this rogue magician one with
-<ce> the death that so fascinates %g2.
-<ce> We must know it is done in =timer_ days.
-<ce> Courage, good friend.
+<ce>               A worthy response. This duty falls upon
+<ce>              every member of the guild in its due time.
+<ce>                     We will send you to ___res_.
+<ce>                  A guild member in the city, highly
+<ce>                   trustworthy, informs us that the
+<ce>                    errant magician, _necr_, hides
+<ce>                       and practices in _res_.
+<ce>                 I certainly hope necromancy inspires
+<ce>                 no fear in you, for that is what you
+<ce>                    have agreed to quash this day.
+<ce>                  Make this rogue magician one with
+<ce>                  the death that so fascinates %g2.
+<ce>               We must know it is done in =timer_ days.
+<ce>                        Courage, good friend.
 
 QuestFail:  [1003]
-<ce> The Mages Guild has waited for your
-<ce> announcement of _necr_'s death,
-<ce> and the time has now passed.
+<ce>                 The Mages Guild has waited for your
+<ce>                   announcement of _necr_'s death,
+<ce>                     and the time has now passed.
 
 QuestComplete:  [1004]
-<ce>  Splendidly done, %pct. This work
-<ce> ensures the general public lends the
-<ce> proper confidence to the Mages Guild.
-<ce> Would a _diam_ be a proper reward
-<ce> for this task, in your estimation?
-<ce> I pray you put it to good use.
+<ce>                   Splendidly done, %pct. This work
+<ce>                 ensures the general public lends the
+<ce>                proper confidence to the Mages Guild.
+<ce>                  Would a _diam_ be a proper reward
+<ce>                  for this task, in your estimation?
+<ce>                    I pray you put it to good use.
 
 Message:  1020
-<ce> How pathetic. Why will you fools
-<ce> continue to resist the power and
-<ce> beauty of the art of necromancy?
-<ce> Do you not see the hypocrisy in
-<ce> slaying me? But if you so insist,
-<ce> we will have our duel. Have at you.
+<ce>                   How pathetic. Why will you fools
+<ce>                   continue to resist the power and
+<ce>                   beauty of the art of necromancy?
+<ce>                   Do you not see the hypocrisy in
+<ce>                  slaying me? But if you so insist,
+<ce>                 we will have our duel. Have at you.
 
 Message:  1021
-<ce> "So be it! See the power that you scorn!"
-<ce> 
-<ce> _necr_ mutters an
-<ce> incantation. You hear something stirring.
+<ce>              "So be it! See the power that you scorn!"
+<ce>
+<ce>                          _necr_ mutters an
+<ce>              incantation. You hear something stirring.
 
 Message:  1022
-<ce>  The necromancer falls to the ground.
-<ce>  Your duty is fulfilled.
+<ce>                 The necromancer falls to the ground.
+<ce>                       Your duty is fulfilled.
 
 Message:  1030
 %qdt:
@@ -104,32 +104,36 @@ Foe _und2_ is Wraith
 Foe _und3_ is Wraith
 
 -- Quest start-up:
- start timer _timer_
- log 1030 step 0
- place npc _necr_ at _res_ 
- pc at _res_ set _inside_
+  start timer _timer_
+  log 1030 step 0
+  place npc _necr_ at _res_
+  pc at _res_ set _inside_
 
 variable _inside_
 
 _conv_ task:
- clicked npc _necr_
- say 1020
- hide npc _necr_
- place foe _enemy_ at _res_
+  clicked npc _necr_
+  say 1020
+  hide npc _necr_
+  place foe _enemy_ at _res_
+  change foe _enemy_ infighting true
 
 _inj_ task:
- injured _enemy_
- say 1021
+  injured _enemy_
+  say 1021
 
 _spawn_ task:
   when _inside_ and _inj_
   create foe _und1_ every 0 minutes 1 times with 10% success
   create foe _und2_ every 0 minutes 1 times with 10% success
   create foe _und3_ every 0 minutes 1 times with 10% success
+  change foe _und1_ infighting true
+  change foe _und2_ infighting true
+  change foe _und3_ infighting true
 
 _slain_ task:
- killed _enemy_
- say 1022
+  killed _enemy_
+  say 1022
 
 _victory_ task:
   when _qgclicked_ and _slain_
@@ -142,6 +146,6 @@ _qgclicked_ task:
 _clearclick_ task:
   when _qgclicked_ and not _slain_
   clear _qgclicked_ _clearclick_
- 
+
 _timer_ task:
   end quest

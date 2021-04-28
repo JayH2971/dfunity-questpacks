@@ -295,14 +295,24 @@ Clock _timer_ 1.00:00
     create foe _e2_ every 45 minutes indefinitely with 15% success
     create foe _e4_ every 1 minutes 1 times with 25% success
 
+_daily_ task:
+    daily from 0:00 to 23:59
+    change foe _e1_ infighting true
+    change foe _e2_ infighting true
+    change foe _e4_ infighting true
+    clear _daily_
+
 _f1_ task:
     place foe _nec_ at _random_
+    change foe _nec_ infighting true
 
 _f2_ task:
     place foe _nec_ at _random2_
+    change foe _nec_ infighting true
 
 _f3_ task:
     place foe _nec_ at _random3_
+    change foe _nec_ infighting true
 
 _timer_ task:
 -    when pc exits anywhere
@@ -353,6 +363,7 @@ _force1_ task:
     hide npc _help_
     place foe _e3_ at _store_
     log 1031 step 1
+    change foe _e3_ infighting true
 
 _force2_ task:
     when _force_ and _f2_
@@ -360,6 +371,7 @@ _force2_ task:
     hide npc _help_
     place foe _e3_ at _store_
     log 1032 step 1
+    change foe _e3_ infighting true
 
 _force3_ task:
     when _force_ and _f3_
@@ -367,6 +379,7 @@ _force3_ task:
     hide npc _help_
     place foe _e3_ at _store_
     log 1033 step 1
+    change foe _e3_ infighting true
 
 _quit_ task:
     say 1040

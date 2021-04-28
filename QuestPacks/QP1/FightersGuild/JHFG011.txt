@@ -160,6 +160,7 @@ _a7_ task:
 _inj_ task:
 	injured _anc_
 	say 1020
+	change foe _anc_ infighting true
 
 _victory_ task:
 	make _art1_ permanent

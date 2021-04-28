@@ -131,6 +131,15 @@ _norm_ task:
   create foe _sprig2_ every 60 minutes indefinitely with 20% success
   say 1020
 
+_infight_ task:
+  daily from 0:00 to 23:59
+  change foe _sprig2_ infighting true
+  clear _infight_
+
+_inj_ task:
+  injured _mage_
+  change foe _mage_ infighting true
+
 _slain_ task:
   killed _mage_
   say 1023

@@ -92,6 +92,14 @@ _spawn_ task:
 	when _injured_ and _inside_ and not _slain_
 	create foe _enemy1_ every 4 minutes indefinitely with 25% success
 
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _enemy_ infighting true
+	change foe _enemy1_ infighting true
+	change foe _enemy_ team 0
+	change foe _enemy1_ team 0
+	clear _infight_
+
 _slain_ task:
 	killed 7 _enemy_ saying 1021
 

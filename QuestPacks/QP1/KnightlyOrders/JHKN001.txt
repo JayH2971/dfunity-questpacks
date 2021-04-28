@@ -106,6 +106,12 @@ _quest_ task:
 	create foe _enemy1_ every 24 minutes indefinitely with 7% success
 	create foe _enemy2_ every 15 minutes indefinitely with 3% success
 
+_daily_ task:
+	daily from 0:00 to 23:59
+	change foe _enemy1_ infighting true
+	change foe _enemy2_ infighting true
+	clear _daily_
+
 _inj_ task:
 	injured _enemy1_
 	injured _enemy2_

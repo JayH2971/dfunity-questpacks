@@ -91,6 +91,12 @@ _found_ task:
     start timer _failsafe_
     add _child_ face
 
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    clear _infight_
+
 _qgclicked_ task:
     clicked npc _qgiver_
 

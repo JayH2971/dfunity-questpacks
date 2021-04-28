@@ -144,10 +144,9 @@ _day_ task:
 	daily from 00:00 to 23:59
 	change foe _warr_ infighting true
 	change foe _barb_ infighting true
+	change foe _kni_ infighting true
 	change foe _spells_ infighting true
 	change foe _spells_ team 1
-	change foe _warr_ team 0
-	change foe _barb_ team 0
 	clear _day_
 
 _delay_ task:

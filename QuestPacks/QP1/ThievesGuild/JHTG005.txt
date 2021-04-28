@@ -71,6 +71,7 @@ Foe _perp_ is Warrior
   log 1030 step 0
   place item _gem_ at _res_
   place foe _perp_ at _res_
+  change foe _perp_ infighting true
 
 _got_ task:
   clicked item _gem_

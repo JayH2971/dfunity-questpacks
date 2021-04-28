@@ -115,6 +115,7 @@ Foe _wimp_ is Knight
 
 _real_ task:
 	place foe _vamp_ at _vampres_
+	change foe _vamp_ infighting true
 
 _slain_ task:
 	killed 1 _vamp_ saying 1020
@@ -134,11 +135,17 @@ _inj_ task:
 	injured _wimp_
 	prompt 1010 yes _escape_ no _ignore_
 
+_click_ task:
+	clicked foe _wimp_
+	prompt 1010 yes _escape_ no _ignore_
+
 _escape_ task:
 	say 1011
 	remove foe _wimp_
 
-variable _ignore_
+_ignore_ task:
+	change foe _wimp_ infighting true
+
 _murder_ task:
 	killed _wimp_
 	say 1012

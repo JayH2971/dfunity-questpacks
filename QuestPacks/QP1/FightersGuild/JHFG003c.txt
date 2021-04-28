@@ -43,7 +43,7 @@ Item _letter_ letter used 1011
 
 ---- Quest startup
     start timer _delay_
-    
+
 _delay_ task:
     give pc _letter_ notify 1010
     have _letter_ set _begin_
@@ -58,6 +58,7 @@ _arrive_ task:
 
 _spawn_ task:
     create foe _daed_ every 0 minutes 1 times with 100% success
+    change foe _daed_ infighting true
 
 _slain_ task:
     killed _daed_

@@ -72,6 +72,7 @@ Foe _mage_ is Spellsword
 	place npc _dummy_ at _res_
 	hide npc _dummy_
 	log 1032 step 0
+	change foe _mage_ infighting true
 
 _ipr_ task:
 	injured _mage_

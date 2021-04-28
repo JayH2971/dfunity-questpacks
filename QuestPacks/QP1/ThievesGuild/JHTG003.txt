@@ -204,6 +204,11 @@ _alttalk2_ task:
   hide npc _alt_
   create foe _ambush_ every 0 minutes 1 times with 100% success
 
+_daily_ task:
+  daily from 0:00 to 23:59
+  change foe _ambush_ infighting true
+  clear _daily_
+
 _finishalt_ task:
   killed 3 _ambush_
   say 1055

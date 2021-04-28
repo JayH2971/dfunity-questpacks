@@ -160,7 +160,6 @@ _helpfight_ task:
     cast Feet_of_Notorgo spell on _fgt_
     cast Free_Action spell on _fgt_
     change foe _fgt_ team 1
-    change foe _vmp_ team 0
 
 _helpvamp_ task:
     say 1012
@@ -168,7 +167,6 @@ _helpvamp_ task:
     cast Orc_Strength spell on _vmp_
     cast Feet_of_Notorgo spell on _vmp_
     cast Free_Action spell on _vmp_
-    change foe _fgt_ team 0
     change foe _vmp_ team 1
 
 _killfight_ task:

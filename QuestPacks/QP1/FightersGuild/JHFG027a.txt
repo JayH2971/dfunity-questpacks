@@ -381,6 +381,12 @@ Foe _spawn_ is 2 Assassin
     _tri_ used do _giveup_
     place npc _db_ at _dbtown_
 
+_daily_ task:
+    daily from 0:00 to 23:59
+    change foe _ambush_ infighting true
+    change foe _spawn_ infighting true
+    clear _daily_
+
 _initial_ task:
     end quest
 
@@ -408,6 +414,7 @@ _murder_ task:
     hide npc _helpdb_
     place foe _helpdb1_ at _res_
     start timer _killhelp_
+    change foe _helpdb1_ infighting true
 
 _fullrefuse_ task:
     say 1082
@@ -416,7 +423,7 @@ _fullrefuse_ task:
 
 _killhelp_ task:
     say 1089
-    restrain foe _helpdb1_
+    remove foe _helpdb1_
     end quest
 
 _murderend_ task:
@@ -437,6 +444,7 @@ _peaceful_ task:
 _strike_ task:
     say 1087
     create foe _helpdb1_ every 0 minutes 1 times with 100% success
+    change foe _helpdb1_ infighting true
     give item _tri_ to _helpdb1_
     make _tri_ permanent
 

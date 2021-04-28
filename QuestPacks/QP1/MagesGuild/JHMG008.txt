@@ -106,6 +106,7 @@ Item _research1_ letter used 1015
 	place foe _enemy_ at _res_
 	give item _research1_ to _enemy_
 	have _research1_ set _go_
+	change foe _enemy_ infighting true
 
 _slain_ task:
 	killed 1 _enemy_ saying 1020

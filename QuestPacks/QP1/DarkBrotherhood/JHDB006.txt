@@ -100,6 +100,11 @@ _ires_ task:
 	say 1020
 	create foe _enemy_ every 1 minutes 1 times with 75% success
 
+_daily_ task:
+	daily from 0:00 to 23:59
+	change foe _enemy_ infighting true
+	clear _daily_
+
 _kclicked_ task:
 	clicked npc _kid_
 	say 1021

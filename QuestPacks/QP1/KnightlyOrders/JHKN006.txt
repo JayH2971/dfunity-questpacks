@@ -100,6 +100,7 @@ variable _e2_
 _inj_ task:
 	injured _enemy_
 	give item _weapon_ to _enemy_
+	change foe _enemy_ infighting true
 
 _ask_ task:
 	when _inj_ and _e2_

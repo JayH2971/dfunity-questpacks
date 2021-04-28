@@ -102,6 +102,7 @@ _transform_ task:
     drop _captive_ face
     create foe _zomb_ every 0 minutes 1 times with 100% success
     log 1031 step 1
+    change foe _zomb_ infighting true
 
 _pcgetsgold_ task:
     when _qgclicked_ and _transform_

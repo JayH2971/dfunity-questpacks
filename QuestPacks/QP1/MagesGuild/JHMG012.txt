@@ -149,6 +149,7 @@ _talkmage_ task:
         pick one of _dae_ _tele_ _dis_ _null_ _null_
         setvar _tele_
         _thing_ used do _cancel_
+        change foe _mage_ infighting true
 
 _null_ task:
         clear _null_
@@ -170,6 +171,11 @@ _trigger_ task:
 _curse1_ task:
         when _trigger_ and _dae_
         create foe _daedr_ every 0 minutes 1 times with 100% success
+
+_daily_ task:
+        daily from 0:00 to 23:59
+        change foe _daedr_ infighting true
+        clear _daily_
 
 _curse2_ task:
         when _trigger_ and _tele_

@@ -254,6 +254,7 @@ _attack_ task:
     say 1038
     hide npc _nec_
     place foe _lich_ at _nhome_
+    change foe _lich_ infighting true
 
 _stun_ task:
     when _attack_ and _skilled_
@@ -264,6 +265,8 @@ _fight_ task:
     when _attack_ and not _skilled_
     create foe _m1_ every 0 minutes 1 times with 100% success
     create foe _m2_ every 0 minutes 1 times with 100% success
+    change foe _m1_ infighting true
+    change foe _m2_ infighting true
 
 _slain_ task:
     killed _lich_

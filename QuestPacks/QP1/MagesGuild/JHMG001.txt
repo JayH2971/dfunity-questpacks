@@ -117,6 +117,18 @@ _slain_ task:
 	killed 1 _enemy4_ saying 1020
 	killed 1 _enemy5_ saying 1021
 
+_inj_ task:
+	injured _enemy1_
+	injured _enemy2_
+	injured _enemy3_
+	injured _enemy4_
+	injured _enemy5_
+	change foe _enemy1_ infighting true
+	change foe _enemy2_ infighting true
+	change foe _enemy3_ infighting true
+	change foe _enemy4_ infighting true
+	change foe _enemy5_ infighting true
+
 _qgclicked_ task:
 	clicked npc _qgiver_
 

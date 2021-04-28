@@ -196,6 +196,7 @@ _inj_ task:
     say 1016
     get item _tri_
     restrain foe _thief_
+    change foe _thief_ infighting true
 
 _defend_ task:
     when _e2_ and _strength_

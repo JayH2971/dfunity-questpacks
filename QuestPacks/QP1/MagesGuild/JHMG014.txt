@@ -232,6 +232,12 @@ _spawn_ task:
     place item _body_ at _res_
     drop _schol_ face
 
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _vamp_ infighting true
+    change foe _vamp2_ infighting true
+    clear _infight_
+
 _startdeath_ task:
     injured _vamp_
     start timer _scholdead_

@@ -4,30 +4,30 @@ DisplayName: Witch Hunt
 QRC:
 
 QuestorOffer:  [1000]
-<ce> Good day. We were recently informed of a witch
-<ce> hiding in another city, likely determined to
-<ce> do no good thing. We need someone to apprehend
-<ce> her and bring an end to her crimes.
+<ce>            Good day. We were recently informed of a witch
+<ce>             hiding in another city, likely determined to
+<ce>            do no good thing. We need someone to apprehend
+<ce>                 her and bring an end to her crimes.
 
 RefuseQuest:  [1001]
-<ce> Then what are you willing to do, %pct?
+<ce>                Then what are you willing to do, %pct?
 
 AcceptQuest:  [1002]
-<ce> Her name is _witch_. Head on to
-<ce> ___res_ where she lives. You are assigned to
-<ce> capture her and bring her here for holding until a proper
-<ce> trial can be carried out. If she resists, that will be
-<ce> evidence sufficient of her witchery, and you are permitted
-<ce> to end the threat immediately. Whatever the outcome,
-<ce> you must return here within =timer_ days with news of
-<ce> your success. Safest travels, %pct.
+<ce>                   Her name is _witch_. Head on to
+<ce>             ___res_ where she lives. You are assigned to
+<ce>      capture her and bring her here for holding until a proper
+<ce>        trial can be carried out. If she resists, that will be
+<ce>      evidence sufficient of her witchery, and you are permitted
+<ce>         to end the threat immediately. Whatever the outcome,
+<ce>        you must return here within =timer_ days with news of
+<ce>                 your success. Safest travels, %pct.
 
-QuestFail: [1003]
-<ce> You are too late for the trial. Whatever cause you had
-<ce> to hold _witch_ has expired.
+QuestFail:  [1003]
+<ce>        You are too late for the trial. Whatever cause you had
+<ce>                     to hold _witch_ has expired.
 
 QuestComplete:  [1004]
-<ce> Fine work, %pcf. Well done.
+<ce>                     Fine work, %pcf. Well done.
 
 RumorsDuringQuest:  [1005]
 Witches are all around ____res_.
@@ -48,66 +48,66 @@ QuestLogEntry:  [1010]
  I am permitted to end her life. I have =timer_ days.
 
 Message:  1011
-<ce> _witch_ looks at you with a perturbed glance.
-<ce> 
-<ce> "Me, a witch? This is nonsense! Is this about the %t?
-<ce> I knew this would come back to injure me! Please,
-<ce> won't you let me go? Must I stand trial for nothing
-<ce> at all? Honorable knight, this must not be!"
-<ce> 
-<ce> In spite of her complaints you bind her hands and
-<ce> set forth for ___qgiver_.
-<--->
-<ce> _witch_ returns your glance with indignation.
-<ce> 
-<ce> "This is preposterous! I have lived here for =sum_
-<ce> years and only now am I accused of witchcraft?
-<ce> Speak to the tavern owners and the store merchants.
-<ce> They know the truth! How absurd this is!"
-<ce> 
-<ce> In spite of her complaints you bind her hands and
-<ce> set forth for ___qgiver_.
+<ce>            _witch_ looks at you with a perturbed glance.
+<ce>
+<ce>        "Me, a witch? This is nonsense! Is this about the %t?
+<ce>          I knew this would come back to injure me! Please,
+<ce>         won't you let me go? Must I stand trial for nothing
+<ce>             at all? Honorable knight, this must not be!"
+<ce>
+<ce>          In spite of her complaints you bind her hands and
+<ce>                      set forth for ___qgiver_.
+                                     <--->
+<ce>            _witch_ returns your glance with indignation.
+<ce>
+<ce>          "This is preposterous! I have lived here for =sum_
+<ce>            years and only now am I accused of witchcraft?
+<ce>         Speak to the tavern owners and the store merchants.
+<ce>              They know the truth! How absurd this is!"
+<ce>
+<ce>          In spite of her complaints you bind her hands and
+<ce>                      set forth for ___qgiver_.
 
 Message:  1015
-<ce> Oh, a witch, am I? Fools will never recognize the good
-<ce> I do for ___res_ or for ____res_. Well then
-<ce> honorable knight, do your worst! I am prepared to fight!
-<--->
-<ce> Ha! You call me a witch and wish me to die? Fine thanks
-<ce> for defending ___res_ in its time of need.
-<ce> To Oblivion with thee! Thy time is come, %ra!
+<ce>        Oh, a witch, am I? Fools will never recognize the good
+<ce>             I do for ___res_ or for ____res_. Well then
+<ce>       honorable knight, do your worst! I am prepared to fight!
+                                     <--->
+<ce>       Ha! You call me a witch and wish me to die? Fine thanks
+<ce>              for defending ___res_ in its time of need.
+<ce>            To Oblivion with thee! Thy time is come, %ra!
 
 Message:  1016
-<ce> "Good %ra, my mind has turned the matter over
-<ce> while we have been journeying, and I feel it a shame
-<ce> that I should be held in contempt by bickering fools.
-<ce> I must protest my captivity, this instant!"
-<ce> 
-<ce> _witch_'s demeanor changes and she casts
-<ce> an incantation of some sort, freeing
-<ce> her hands from their binding.
+<ce>            "Good %ra, my mind has turned the matter over
+<ce>         while we have been journeying, and I feel it a shame
+<ce>        that I should be held in contempt by bickering fools.
+<ce>             I must protest my captivity, this instant!"
+<ce>
+<ce>               _witch_'s demeanor changes and she casts
+<ce>                 an incantation of some sort, freeing
+<ce>                    her hands from their binding.
 
 Message:  1017
-<ce> You have eliminated the witch and any threat she presented.
-<ce> It is high time to report to _qgiver_.
+<ce>     You have eliminated the witch and any threat she presented.
+<ce>                It is high time to report to _qgiver_.
 
 Message:  1018
-<ce> Good day _witch_. I assume this %pct has explained
-<ce> the accusations against you? You will be held nearby
-<ce> under lock and key to prevent your flight.
-<ce> The trial will be in less than a day, so your fate
-<ce> will not be long delayed.
+<ce>          Good day _witch_. I assume this %pct has explained
+<ce>         the accusations against you? You will be held nearby
+<ce>              under lock and key to prevent your flight.
+<ce>          The trial will be in less than a day, so your fate
+<ce>                      will not be long delayed.
 
 Message:  1020
-<ce> So the rumors were true, correct %pcf?
-<ce> You have saved us much trouble, and for this we thank you.
+<ce>                So the rumors were true, correct %pcf?
+<ce>      You have saved us much trouble, and for this we thank you.
 
 Message:  1021
-<ce> This witch carried some scribbles speaking
-<ce> of a coven. You are not sure you can make
-<ce> sense of it, though you make great efforts.
-<ce> In any case it is irrelevant to the
-<ce> task _qgiver_ gave you.
+<ce>              This witch carried some scribbles speaking
+<ce>              of a coven. You are not sure you can make
+<ce>             sense of it, though you make great efforts.
+<ce>                 In any case it is irrelevant to the
+<ce>                       task _qgiver_ gave you.
 
 QBN:
 
@@ -128,9 +128,9 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _surprise_ 1:00 8.00:00
 
 --	Quest start-up:
-	start timer _timer_ 
-	log 1010 step 0 
-	place npc _witch_ at _res_ 
+  start timer _timer_
+  log 1010 step 0
+  place npc _witch_ at _res_
   pick one of _E.01_ _E.02_
   pick one of _map_ _nomap_ _nomap_ _nomap_ _nomap_
 
@@ -141,7 +141,7 @@ _timer_ task:
   end quest
 
 _conv_ task:
-	clicked npc _witch_ 
+  clicked npc _witch_
 
 _pac_ task:
   when _E.01_ and _conv_
@@ -165,6 +165,9 @@ _fi_ task:
   hide npc _witch_
   place foe _w1_ at _res_
   pick one of _K01_ _K02_ _K03_
+  change foe _w1_ infighting true
+  change foe _d1_ infighting true
+  change foe _d2_ infighting true
 
 variable _K01_
 _K02_ task:
@@ -189,22 +192,22 @@ _mark_ task:
   reveal _coven_
 
 _qgclicked_ task:
-	clicked npc _qgiver_
+  clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _S1_ and not _pac_
-	clear _qgclicked_ _clearclick_
+  when _qgclicked_ and not _S1_ and not _pac_
+  clear _qgclicked_ _clearclick_
 
 _rew1_ task:
-	when _qgclicked_ and _S1_
+  when _qgclicked_ and _S1_
   say 1020
-	give pc nothing
+  give pc nothing
   legal repute +3
-	end quest
+  end quest
 
 _rew2_ task:
   when _qgclicked_ and _pac2_
   say 1018
-	give pc nothing
+  give pc nothing
   legal repute +3
-	end quest
+  end quest

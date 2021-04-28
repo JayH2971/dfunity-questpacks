@@ -440,6 +440,7 @@ _confront_ task:
     create foe _guar_ every 0 minutes 4 times with 100% success
     start timer _recall_
     change foe _vamp_ infighting true
+    change foe _vamp_ team 19
 
 _infight_ task:
     daily from 0:00 to 23:59
@@ -471,6 +472,7 @@ _clearclick_ task:
 _pcreward_ task:
     when _qgclicked_ and _slain_
     give pc _reward_
+    start quest JHDB021b
     end quest
 
 _timer_ task:

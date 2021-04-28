@@ -140,8 +140,12 @@ _atr_ task:
 
 _infight_ task:
     daily from 0:00 to 23:59
+    change foe _e1_ infighting true
     change foe _e2_ infighting true
     change foe _e3_ infighting true
+    change foe _e1_ team 0
+    change foe _e2_ team 0
+    change foe _e3_ team 0
     clear _infight_
 
 _fail_ task:
@@ -151,6 +155,9 @@ _fail_ task:
 
 _spawn_ task:
     create foe _e1_ every 0 minutes 3 times with 80% success msg 1012
+
+_inj_ task:
+    injured _e1_
 
 _slain_ task:
     killed 3 _e1_

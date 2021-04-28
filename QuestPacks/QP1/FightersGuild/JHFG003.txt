@@ -170,21 +170,26 @@ variable _inside_
 _E.01_ task:
 	place foe _enemy1_ at _dungeon_
 	pick one of _A1_ _A2_ _A3_ _A4_ _A5_
+	change foe _enemy1_ infighting true
 
 _E.02_ task:
 	place foe _enemy2_ at _dungeon_
 	pick one of _A1_ _A2_ _A3_ _A4_ _A5_
+	change foe _enemy2_ infighting true
 
 _E.03_ task:
 	place foe _enemy3_ at _dungeon_
 	pick one of _A1_ _A2_ _A3_ _A4_ _A5_
+	change foe _enemy3_ infighting true
 
 _E.04_ task:
 	place foe _enemy4_ at _dungeon_
 	pick one of _A1_ _A2_ _A3_ _A4_ _A5_
+	change foe _enemy4_ infighting true
 
 _E.05_ task:
 	place foe _vamp_ at _dungeon_
+	change foe _vamp_ infighting true
 
 _vampinj_ task:
 	injured _vamp_

@@ -4,55 +4,55 @@ DisplayName: The Lone Wolf
 QRC:
 
 QuestorOffer:  [1000]
-<ce> ERROR 1000 JHTGX04
+<ce>                          ERROR 1000 JHTGX04
 
 RefuseQuest:  [1001]
-<ce> ERROR 1001 JHTGX04
+<ce>                          ERROR 1001 JHTGX04
 
 AcceptQuest:  [1002]
-<ce> ERROR 1002 JHTGX04
+<ce>                          ERROR 1002 JHTGX04
 
 QuestFail:  [1003]
-<ce> The Crow definitely wouldn't have
-<ce> wanted you to take this much time.
+<ce>                  The Crow definitely wouldn't have
+<ce>                  wanted you to take this much time.
 
 QuestComplete:  [1004]
-<ce> The Crow saunters in pleasantly.
-<ce> 
-<ce> "Well, nice work, my friend. I'm not
-<ce> going to spare a lot for this job since
-<ce> I'm splitting my pay three ways, but
-<ce> the next one's gonna be worth a lot more,
-<ce> I promise. Hopefully this teaches
-<ce> the Fighters Guild not to come after
-<ce> us anymore, right kid?"
-<ce> 
-<ce> He hands you a sack of coins.
+<ce>                   The Crow saunters in pleasantly.
+<ce>
+<ce>                 "Well, nice work, my friend. I'm not
+<ce>               going to spare a lot for this job since
+<ce>                 I'm splitting my pay three ways, but
+<ce>              the next one's gonna be worth a lot more,
+<ce>                  I promise. Hopefully this teaches
+<ce>                 the Fighters Guild not to come after
+<ce>                       us anymore, right kid?"
+<ce>
+<ce>                    He hands you a sack of coins.
 
-RumorsDuringQuest: [1005]
+RumorsDuringQuest:  [1005]
 They say The Crow's showing up in the Bay again. I think it's an impostor.
 <--->
 Y'hear about The Crow showing up in some town? Probably lies.
 <--->
 They say The Crow's around, but I thought he died awhile ago.
 
-RumorsPostSuccess: [1007]
+RumorsPostSuccess:  [1007]
 Someone named %pcf hates the Fighters Guild.
 <--->
 They say %pcf and The Crow are murderers.
 
 Message:  1010
-<ce> I've got a change of pace for you here.
-<ce> I'm about to head over to _tavern_
-<ce> here in town. The job's already done and I'm
-<ce> gonna go pick up the parts myself. Problem is,
-<ce> someone's tipped off a bunch of Fighters Guild
-<ce> wimps and they're all headed in there like they
-<ce> own the place. Dunno who pays them to go back
-<ce> for a dead body. Anyway, first check the body,
-<ce> and then stay and make sure no one touches it.
-<ce> Kill everyone who goes in there. I'll be there after
-<ce> the fracas is over. Don't waste time.
+<ce>               I've got a change of pace for you here.
+<ce>                  I'm about to head over to _tavern_
+<ce>             here in town. The job's already done and I'm
+<ce>            gonna go pick up the parts myself. Problem is,
+<ce>            someone's tipped off a bunch of Fighters Guild
+<ce>           wimps and they're all headed in there like they
+<ce>            own the place. Dunno who pays them to go back
+<ce>            for a dead body. Anyway, first check the body,
+<ce>            and then stay and make sure no one touches it.
+<ce>         Kill everyone who goes in there. I'll be there after
+<ce>                the fracas is over. Don't waste time.
 
 Message:  1030
 %qdt:
@@ -67,22 +67,22 @@ Message:  1030
  he shows up.
 
 Message:  1070
-<ce> This looks like the body. You
-<ce> move it out of the way, and it only
-<ce> takes a few seconds for heavy
-<ce> footsteps to come plodding around.
+<ce>                    This looks like the body. You
+<ce>                 move it out of the way, and it only
+<ce>                    takes a few seconds for heavy
+<ce>                  footsteps to come plodding around.
 
 Message:  1080
-<ce> Do you wish to leave behind the _lode_
-<ce> and give up your ties to The Crow?
+<ce>                Do you wish to leave behind the _lode_
+<ce>                  and give up your ties to The Crow?
 
 Message:  1081
-<ce> You discard the small piece of metal.
-<ce> Whatever schemes he has are his alone now.
+<ce>                You discard the small piece of metal.
+<ce>              Whatever schemes he has are his alone now.
 
 Message:  1082
-<ce> You return the _lode_ to your
-<ce> belongings, at least for now.
+<ce>                    You return the _lode_ to your
+<ce>                    belongings, at least for now.
 
 QBN:
 Person _fg_ faction The_Fighters_Guild
@@ -121,6 +121,11 @@ _grab_ task:
   take _body_ from pc
   say 1070
   create foe _warr_ every 0 minutes 3 times with 100% success
+
+_infight_ task:
+  daily from 0:00 to 23:59
+  change foe _warr_ infighting true
+  clear _infight_
 
 _slain_ task:
   killed 3 _warr_

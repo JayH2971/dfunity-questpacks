@@ -169,6 +169,7 @@ _help_ task:
     say 1012
     place foe _kidwolf_ at _farhouse_
     legal repute -10
+    change foe _kidwolf_ infighting true
 
 _kill_ task:
     killed _kidwolf_
@@ -180,6 +181,7 @@ _kill_ task:
 _deny_ task:
     say 1014
     place foe _spellsword_ at _farhouse_
+    change foe _spellsword_ infighting true
 
 _killman_ task:
     killed _spellsword_

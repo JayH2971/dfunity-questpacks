@@ -44,5 +44,10 @@ _dospawn_ task:
     create foe _enemy_ every 0 minutes 3 times with 100% success
     start timer _ending_
 
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy_ infighting true
+    clear _infight_
+
 _ending_ task:
     end quest

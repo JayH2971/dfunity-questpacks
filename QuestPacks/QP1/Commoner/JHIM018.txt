@@ -121,11 +121,11 @@ _active_ task:
     when _inside_ and not _indung_
     create foe _enemy_ every 2 minutes indefinitely with 75% success
 
-_day_ task:
+_daily_ task:
     daily from 0:00 to 23:59
     change foe _enemy_ infighting true
     change foe _enemy1_ infighting true
-    clear _day_
+    clear _daily_
 
 variable _indung_
 

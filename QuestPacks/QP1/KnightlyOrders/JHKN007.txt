@@ -111,11 +111,13 @@ Message:  1040
 <ce>            "Lo, the mighty =dae1_ is mine! See now, %ra!
 <ce>             My patience with those childish knights has
 <ce>              been well rewarded. My new pet and I shall
-<ce>                      become the lords of %crn!"
+<ce>                        become lords of %crn!"
 <ce>
 <ce>               _culp_'s illusion fades away and reveals
-<ce>                 the daedra who used to maintain it.
+<ce>                        the daedra behind it.
 <ce>              Now you must fight it and its new master.
+<ce>               It appears _questgiver_ should check %g3
+<ce>         references on these people before recommending them.
 
 Message:  1041
 <ce>             Without your intervention, _priest_ is free
@@ -195,12 +197,14 @@ _step3_ task:
   say 1023
   hide npc _culp_
   place foe _dae1_ at _shop_
+  change foe _dae1_ infighting true
 
 _step3a_ task:
   when _cclicked_ and _step2_ and _frost_
   say 1023
   hide npc _culp_
   place foe _dae2_ at _shop_
+  change foe _dae2_ infighting true
 
 _trick_ task:
   when _cclicked_ and _step2_ and _team_
@@ -209,6 +213,8 @@ _trick_ task:
   place foe _dae2_ at _shop_
   create foe _mage_ every 0 minutes 1 times with 100% success
   drop _priest_ face
+  change foe _dae2_ infighting true
+  change foe _mage_ infighting true
 
 _slain_ task:
   killed _dae1_

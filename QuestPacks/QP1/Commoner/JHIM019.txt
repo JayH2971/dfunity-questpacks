@@ -145,7 +145,8 @@ Clock _tavernfight_ 0:04
 Clock _confront_ 0:03
 
 Foe _angry_ is Ranger
-Foe _rat_ is 2 Giant_rat
+Foe _rat1_ is Giant_rat
+Foe _rat2_ is Giant_rat
 Foe _owner_ is Acrobat
 Foe _bear_ is Grizzley_bear
 
@@ -167,6 +168,7 @@ variable _tavernfight_
 _spawnhero_ task:
     say 1011
     create foe _angry_ every 0 minutes 1 times with 100% success
+    change foe _angry_ infighting true
 
 _killangry_ task:
     killed _angry_
@@ -187,10 +189,19 @@ _act2_ task:
 
 _a1_ task:
     say 1012
-    create foe _rat_ every 0 minutes 1 times with 100% success
+    create foe _rat1_ every 0 minutes 1 times with 100% success
+    create foe _rat2_ every 0 minutes 1 times with 100% success
+    change foe _rat1_ infighting true
+    change foe _rat2_ infighting true
+
+_kill1rat_ task:
+    killed _rat1_
+
+_kill2rat_ task:
+    killed _rat2_
 
 _killedrats_ task:
-    killed 2 _rat_
+    when _kill1rat_ and _kill2rat_
     say 1013
     start timer _disease_
     log 1031 step 1

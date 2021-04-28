@@ -84,6 +84,10 @@ _starthunt_ task:
 	say 1015
 	start timer _hunt_
 
+_inj_ task:
+	injured _enemy1_
+	change foe _enemy1_ infighting true
+
 _slain_ task:
 	killed 1 _enemy1_ saying 1020
 	stop timer _hunt_

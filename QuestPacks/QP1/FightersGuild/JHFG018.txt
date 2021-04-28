@@ -76,6 +76,11 @@ _spawn_ task:
     say 1011
     create foe _skel_ every 30 minutes indefinitely with 10% success
 
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _skel_ infighting true
+    clear _infight_
+
 _slain_ task:
     killed 4 _skel_
     say 1012

@@ -202,9 +202,15 @@ _delay_ task:
     start timer _delay2_
     start timer _jt_
     start task _liches_
+    change foe _lich1_ infighting true
 
 _liches_ task:
     create foe _lich_ every 60 minutes indefinitely with 100% success
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _lich_ infighting true
+    clear _infight_
 
 _delay2_ task:
     say 1013

@@ -175,6 +175,11 @@ _kill_ task:
 _slain_ task:
 	killed 4 _enemy_ saying 1011
 
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _enemy_ infighting true
+	clear _infight_
+
 --end of normal quest section. alternate begins
 _altstep_ task:
 	when _alt_ and _housearrive_
@@ -241,6 +246,8 @@ _combat_ task:
 	say 1023
 	create foe _dbenemy1_ every 0 minutes 1 times with 100% success
 	create foe _dbenemy2_ every 0 minutes 1 times with 100% success
+	change foe _dbenemy1_ infighting true
+	change foe _dbenemy2_ infighting true
 
 _qgclicked_ task:
 	clicked npc _questgiver_
@@ -254,10 +261,6 @@ _pcreward_ task:
 	give pc nothing
 	legal repute +3
 	end quest
-
-_inj_ task:
-	injured _dbenemy1_
-	injured _dbenemy2_
 
 _kill1_ task:
 	killed _dbenemy1_

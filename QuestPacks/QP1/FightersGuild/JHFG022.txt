@@ -311,6 +311,7 @@ _t8_ task:
 _e1_ task:
     say 1011
     create foe _spid_ every 0 minutes 1 times with 100% success
+    change foe _spid_ infighting true
 
 _e1a_ task:
     killed _spid_
@@ -319,6 +320,11 @@ _e1a_ task:
 _e2_ task:
     say 1013
     create foe _rob_ every 0 minutes 1 times with 100% success
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _rob_ infighting true
+    clear _infight_
 
 _e2a_ task:
     killed 3 _rob_
@@ -407,9 +413,11 @@ _e12_ task:
 
 _sum1_ task:
     create foe _firat_ every 0 minutes 1 times with 100% success
+    change foe _firat_ infighting true
 
 _sum2_ task:
     create foe _iceat_ every 0 minutes 1 times with 100% success
+    change foe _iceat_ infighting true
 
 _killsum_ task:
     killed _firat_

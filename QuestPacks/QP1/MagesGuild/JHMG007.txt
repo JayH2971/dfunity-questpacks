@@ -33,8 +33,8 @@ AcceptQuest:  [1002]
 <ce>           Then we will send you off immediately. Our good
 <ce>                   _dummy_ will do the incantation.
 <ce>             Regrettably, we cannot pinpoint the precise
-<ce>           location of your foe, so you'll have a bit of
-<ce>         spelunking to do to find it.
+<ce>            location of your foe, so you'll have a bit of
+<ce>                     spelunking to do to find it.
 <ce>            I don't so much care about when you come back,
 <ce>              so long as you come back alive. Let the %t
 <ce>           take responsibility for these things sooner than
@@ -94,6 +94,10 @@ variable _battle_
 _spawn_ task:
 	when _battle_ and _inside_ and not _slain_
 	create foe _enemy_ every 5 minutes indefinitely with 5% success
+
+_inj_ task:
+	injured _enemy_
+	change foe _enemy_ infighting true
 
 _slain_ task:
 	killed _enemy_

@@ -4,10 +4,10 @@ DisplayName: Gang War
 QRC:
 
 QuestorOffer:  [1000]
-<ce>              Got a bit of a gang war that'll break out
-<ce>                 near a temple here in %reg. We need
-<ce>               some strong arms for fighting. You gonna
-<ce>                         lend us yours, %pcf?
+<ce>            Got a bit of a territory war that'll break out
+<ce>              near a temple here in %reg. The Wharf Rats
+<ce>        are getting brave again, and we need some strong arms
+<ce>             for fighting. You gonna lend us yours, %pcf?
 
 RefuseQuest:  [1001]
 <ce>             The more we control, the more we all profit.
@@ -35,13 +35,13 @@ QuestComplete:  [1004]
 <ce>                 give each other congratulatory nods
 <ce>                 before fading away into the shadows.
 <ce>             The Thieves Guild's pay is enough for them,
-<ce>                    and the enemy's loot is yours.
+<ce>                  and the Wharf Rats' loot is yours.
 
 RumorsPostSuccess:  [1007]
 The Thieves Guild are a ferocious bunch.
 
 QuestorPostSuccess:  [1008]
-Any other gang war happens, I'll tell you about it.
+The Wharf Rats show up again, I'll tell you about it.
 
 Message:  1010
 <ce>         Your allies, a hired band of barbarians, notice your
@@ -49,8 +49,8 @@ Message:  1010
 <ce>           give you a sign to lay low. They've counted out
 <ce>              six foes, a mix of rogues and spellswords.
 <ce>
-<ce>         The rival gang shortly notices your group's movement
-<ce>              and rushes to meet you. The battle is on.
+<ce>           The Wharf Rats soon notice your group's movement
+<ce>               and rush to meet you. The battle is on.
 
 Message:  1011
 <ce>                    One of your allies has fallen.

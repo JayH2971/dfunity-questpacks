@@ -62,7 +62,7 @@ Message:  1020
 <ce>               "The report was false! We are deceived!
 <ce>                  They have taken my master _noble_!
 <ce>               The court magician says they are headed
-<ce>                    for ___dung2_. Please help %g2!"
+<ce>                   for ___dung2_. Please help %g2!"
 
 Message:  1021
 <ce>            Please! Save me from these horrible creatures!
@@ -157,6 +157,15 @@ _spawn_ task:
 	create foe _orc1_ every 3 minutes 3 times with 100% success
 	start timer _death_
 	say 1015
+
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _orc1_ infighting true
+	change foe _orc2_ infighting true
+	change foe _orc3_ infighting true
+	change foe _orc4_ infighting true
+	change foe _orc5_ infighting true
+	clear _infight_
 
 _final_ task:
 	when _2palace_ and _night_

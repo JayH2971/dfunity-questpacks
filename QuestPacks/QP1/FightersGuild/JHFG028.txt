@@ -4,32 +4,32 @@ DisplayName: One Life for Another
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  Got an escort mission... I think. This one
-<ce>  gives me the creeps. It's got all kinds of
-<ce>  stuff I don't like about it, but I've got
-<ce>  to take it seriously and offer it just like
-<ce>  any other job. If you wanna take someone
-<ce>  to another town and feel ready for some
-<ce>  tough combat, I could use you right now.
+<ce>              Got an escort mission... I think. This one
+<ce>              gives me the creeps. It's got all kinds of
+<ce>              stuff I don't like about it, but I've got
+<ce>             to take it seriously and offer it just like
+<ce>               any other job. If you wanna take someone
+<ce>               to another town and feel ready for some
+<ce>               tough combat, I could use you right now.
 
 RefuseQuest:  [1001]
-<ce>  Yeah, I don't blame you. Maybe he'll give up.
-<--->
-<ce>  Yeah, I don't blame you. Maybe she'll give up.
+<ce>            Yeah, I don't blame you. Maybe he'll give up.
+                                     <--->
+<ce>            Yeah, I don't blame you. Maybe she'll give up.
 
 AcceptQuest:  [1002]
-<ce>  I owe you one. Really, I can't give this out
-<ce>  in good faith without telling you that something
-<ce>  just feels bad about it. Anyway, I won't hold you
-<ce>  any longer. Go look for _person_,
-<ce>  who's in _place_. Take %g2 on over to
-<ce>  a place called _home_ in
-<ce>  ___home_. And be ready for anything,
-<ce>  'cause the rumors I hear about this =person_
-<ce>  are not pleasant stuff. Safe journey, %pcf.
+<ce>             I owe you one. Really, I can't give this out
+<ce>           in good faith without telling you that something
+<ce>          just feels bad about it. Anyway, I won't hold you
+<ce>                  any longer. Go look for _person_,
+<ce>                who's in _place_. Take %g2 on over to
+<ce>                       a place called _home_ in
+<ce>                 ___home_. And be ready for anything,
+<ce>             'cause the rumors I hear about this =person_
+<ce>             are not pleasant stuff. Safe journey, %pcf.
 
 QuestFail:  [1003]
-<ce>  Everything all right? 
+<ce>                        Everything all right?
 
 QuestComplete:  [1004]
 <ce>                 "This is my friend! Won't you offer
@@ -58,7 +58,7 @@ Message:  1011
 <ce>                to keep me safe as I go. Can you take
 <ce>                 me there? I have a friend who'll pay
 <ce>                 you =reward_ gold when we get there.
-<ce>                I need to be there in =timer_ days.
+<ce>                 I need to be there in =timer_ days.
 
 Message:  1013
 <ce>               While you battled these daedra, _person_
@@ -84,8 +84,8 @@ Message:  1021
 <ce>           rapidly builds until it seems as though the air
 <ce>             itself is about to hemorrhage magical power.
 <ce>               Once %g1 notices %g3 eyes grow wide but
-<ce>            there is nothing you can do; %g1 is
-<ce>              sucked in amid an otherworldly silence.
+<ce>                 there is nothing you can do; %g1 is
+<ce>               sucked in amid an otherworldly silence.
 
 Message:  1030
 %qdt:
@@ -131,9 +131,10 @@ _begin_ task:
     place foe _n1_ at _home_
     place foe _n2_ at _home_
     place foe _n3_ at _home_
--    create foe _n2_ every 0 minutes 1 times with 100% success
--    create foe _n3_ every 0 minutes 1 times with 100% success
     stop timer _timer_
+    change foe _n1_ infighting true
+    change foe _n2_ infighting true
+    change foe _n3_ infighting true
 
 _slain1_ task:
     killed 1 _n1_

@@ -171,6 +171,7 @@ Item _reward_ magic_item
     place npc _mage_ at _res_
     pc at _res_ set _inside_
     pc at _dung_ set _idun_
+    change foe _imp_ infighting true
 
 variable _inside_
 

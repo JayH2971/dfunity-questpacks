@@ -71,7 +71,7 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 
 Foe _enemy1_ is Burglar
 Foe _enemy2_ is Thief
-Foe _enemy3_ is Bard
+Foe _enemy3_ is Rogue
 Foe _enemy4_ is Nightblade
 
 --	Quest start-up:
@@ -89,11 +89,19 @@ _spawn_ task:
 	create foe _enemy2_ every 2 minutes indefinitely with 45% success
 	create foe _enemy3_ every 3 minutes indefinitely with 33% success
 
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _enemy1_ infighting true
+	change foe _enemy2_ infighting true
+	change foe _enemy3_ infighting true
+	clear _infight_
+
 _first_ task:
 	killed 6 _enemy1_ saying 1020
 	killed 7 _enemy2_ saying 1020
 	killed 7 _enemy3_ saying 1020
 	create foe _enemy4_ every 0 minutes 1 times with 100% success
+	change foe _enemy4_ infighting true
 
 _slain_ task:
 	killed _enemy4_

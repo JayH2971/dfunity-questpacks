@@ -163,6 +163,14 @@ _s4_ task:
 _prompt_ task:
   prompt 1080 yes _quit_ no _stay_
 
+_infight_ task:
+  daily from 0:00 to 23:59
+  change foe _warr_ infighting true
+  change foe _rog_ infighting true
+  change foe _barb_ infighting true
+  change foe _kni_ infighting true
+  clear _infight_
+
 _quit_ task:
   say 1081
   end quest

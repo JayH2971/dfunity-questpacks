@@ -136,6 +136,7 @@ variable _spawn_
 _spawnthere_ task:
     when _spawn_ and _arrive_
     create foe _wiz_ every 0 minutes 1 times with 100% success
+    change foe _wiz_ infighting true
 
 _slain_ task:
     killed _wiz_

@@ -146,9 +146,12 @@ _ambush_ task:
 	when _pclicked_ and _capture_ and _E.02_
 	say 1017
 	hide npc _parent_
-	create foe _enemy1_ every 0 minutes 1 times with 60% success
-	create foe _enemy2_ every 0 minutes 1 times with 60% success
-	create foe _enemy3_ every 0 minutes 1 times with 60% success
+	create foe _enemy1_ every 0 minutes 1 times with 100% success
+	create foe _enemy2_ every 0 minutes 1 times with 50% success
+	create foe _enemy3_ every 0 minutes 1 times with 25% success
+	change foe _enemy1_ infighting true
+	change foe _enemy2_ infighting true
+	change foe _enemy3_ infighting true
 	give pc nothing
 	end quest
 

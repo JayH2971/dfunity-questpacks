@@ -108,7 +108,8 @@ Place _tavern_ local tavern
 Clock _timer_ 1.00:00
 Clock _delay_ 00:01
 
-Foe _enemy_ is 2 Monk
+Foe _enemy1_ is Monk
+Foe _enemy2_ is Monk
 Foe _fam_ is Archer
 
 --	Quest start-up:
@@ -124,10 +125,19 @@ _inside_ task:
 
 _begin_ task:
     say 1011
-    create foe _enemy_ every 0 minutes 1 times with 100% success
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+
+_kill1_ task:
+    killed _enemy1_
+
+_kill2_ task:
+    killed _enemy2_
 
 _success_ task:
-    killed 2 _enemy_
+    when _kill1_ and _kill2_
     start timer _delay_
 
 _delay_ task:
@@ -152,6 +162,8 @@ _escape_ task:
 _murder_ task:
     say 1021
     create foe _fam_ every 0 minutes 1 times with 100% success
+    change foe _fam_ infighting true
+    change foe _fam_ team 0
 
 _deadfam_ task:
     killed _fam_
@@ -161,7 +173,7 @@ _deadfam_ task:
 
 _qgclicked_ task:
     clicked npc _qgiver_
-    
+
 _timer_ task:
     say 1003
     drop _family_ face

@@ -166,6 +166,7 @@ _spawn2_ task:
   when _go_ and _spawn_ and not _slain_
   say 1013
   create foe _q1_ every 0 minutes 1 times with 100% success
+  change foe _q1_ infighting true
   start task _ch1_
 
 _thau_ task:

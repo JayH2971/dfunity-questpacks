@@ -171,6 +171,7 @@ _kill_ task:
     say 1023
     create foe _frenemy_ every 0 minutes 1 times with 100% success
     give item _reward_ to _frenemy_
+    change foe _frenemy_ infighting true
 
 _kill2_ task:
     killed _frenemy_

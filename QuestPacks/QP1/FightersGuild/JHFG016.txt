@@ -4,40 +4,40 @@ DisplayName: Bad Element Removal
 QRC:
 
 QuestorOffer:  [1000]
-<ce> Hey %pcf, let me tell you about this one in secret.
-<ce> I wish it didn't come to this, but it's gotta happen
-<ce> every once in a while. The guild's got a member who's
-<ce> into some really shady business, stuff that shouldn't
-<ce> touch our good name. The problem is that the fool
-<ce> hasn't broken any actual rules so we've got to
-<ce> put up with this bad behavior. But if someone from
-<ce> out here went over there to take care of the problem,
-<ce> everyone would be a lot happier, right? Can I count
-<ce> on you for something like this?
+<ce>         Hey %pcf, let me tell you about this one in secret.
+<ce>         I wish it didn't come to this, but it's gotta happen
+<ce>        every once in a while. The guild's got a member who's
+<ce>        into some really shady business, stuff that shouldn't
+<ce>          touch our good name. The problem is that the fool
+<ce>            hasn't broken any actual rules so we've got to
+<ce>          put up with this bad behavior. But if someone from
+<ce>        out here went over there to take care of the problem,
+<ce>         everyone would be a lot happier, right? Can I count
+<ce>                   on you for something like this?
 
 RefuseQuest:  [1001]
-<ce> Just do me a favor and don't tell anyone, all right?
+<ce>         Just do me a favor and don't tell anyone, all right?
 
 AcceptQuest:  [1002]
-<ce> All right then, be quick and be quiet. Get to
-<ce> ___fg_. With any luck you'll find our
-<ce> former friend in the guild hall over there.
-<ce> Just be done with it quickly and come back here.
-<ce> This is an official guild job so you're gonna get
-<ce> paid =reward_ gold, but we do some complicated writing
-<ce> to make sure you're free of blame. Come back
-<ce> in =timer_ days when you're done.
+<ce>            All right then, be quick and be quiet. Get to
+<ce>                ___fg_. With any luck you'll find our
+<ce>             former friend in the guild hall over there.
+<ce>           Just be done with it quickly and come back here.
+<ce>          This is an official guild job so you're gonna get
+<ce>        paid =reward_ gold, but we do some complicated writing
+<ce>             to make sure you're free of blame. Come back
+<ce>                  in =timer_ days when you're done.
 
 QuestFail:  [1003]
-<ce> _qgiver_ asked you to eliminate the rogue member by now.
+<ce>       _qgiver_ asked you to eliminate the rogue member by now.
 
 QuestComplete:  [1004]
-<ce> Anyone over there put up a fuss? No?
-<ce> Proof's in the pudding, as they say.
-<ce> Here's your gold. Your secret's safe.
+<ce>                 Anyone over there put up a fuss? No?
+<ce>                 Proof's in the pudding, as they say.
+<ce>                Here's your gold. Your secret's safe.
 
 Message:  1020
-<ce> You have slain the disreputable guild member.
+<ce>            You have slain the disreputable guild member.
 
 Message:  1030
 %qdt:
@@ -60,27 +60,28 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 Foe _enemy_ is Warrior
 
 --	Quest start-up:
-	start timer _timer_ 
-	log 1030 step 0 
+	start timer _timer_
+	log 1030 step 0
 	place foe _enemy_ at _fg_
-    give item _drug_ to _enemy_
-    make _drug_ permanent
+	give item _drug_ to _enemy_
+	make _drug_ permanent
+	change foe _enemy_ infighting true
 
 _pcgetsgold_ task:
-	when _qgclicked_ and _slain_ 
-	give pc _reward_ 
-	end quest 
+	when _qgclicked_ and _slain_
+	give pc _reward_
+	end quest
 
 _slain_ task:
-	killed 1 _enemy_ saying 1020 
+	killed 1 _enemy_ saying 1020
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+	clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_
 
 _timer_ task:
-    say 1003
-	end quest 
+	say 1003
+	end quest

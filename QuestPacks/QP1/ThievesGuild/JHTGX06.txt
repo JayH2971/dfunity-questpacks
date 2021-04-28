@@ -4,21 +4,21 @@ DisplayName: Party Crasher
 QRC:
 
 QuestorOffer:  [1000]
-<ce> ERROR 1000 JHTGX06
+<ce>                          ERROR 1000 JHTGX06
 
 RefuseQuest:  [1001]
-<ce> ERROR 1001 JHTGX06
+<ce>                          ERROR 1001 JHTGX06
 
 AcceptQuest:  [1002]
-<ce> ERROR 1002 JHTGX06
+<ce>                          ERROR 1002 JHTGX06
 
 QuestFail:  [1003]
-<ce> ERROR 1003 JHTGX06
+<ce>                          ERROR 1003 JHTGX06
 
 QuestComplete:  [1004]
-<ce> Talk about reliable. Did you even break a sweat?
+<ce>           Talk about reliable. Did you even break a sweat?
 
-RumorsDuringQuest: [1005]
+RumorsDuringQuest:  [1005]
 They say The Crow's showing up in the Bay again. I think it's an impostor.
 <--->
 Y'hear about The Crow showing up in some town? Probably lies.
@@ -26,18 +26,18 @@ Y'hear about The Crow showing up in some town? Probably lies.
 They say The Crow's around, but I thought he died awhile ago.
 
 Message:  1010
-<ce> I've got one final irregular job before we can
-<ce> start up a rhythm. If you're constant, I can get
-<ce> a stream of jobs coming in. You'll be able to make
-<ce> as much money as you want.
-<ce> 
-<ce> I tried looking around, and there's three members of the
-<ce> Fighters Guild who waste their time in ___weap_.
-<ce> Look for someone named _fg_. If you're
-<ce> lucky at all, you'll find all three together and get
-<ce> it done. Get all three tongues and a kidney.
-<ce> I'll be paying =reward_ this time. Meet me
-<ce> in ___crowhome_, at _crowhome_.
+<ce>            I've got one final irregular job before we can
+<ce>           start up a rhythm. If you're constant, I can get
+<ce>          a stream of jobs coming in. You'll be able to make
+<ce>                      as much money as you want.
+<ce>
+<ce>       I tried looking around, and there's three members of the
+<ce>           Fighters Guild who waste their time in ___weap_.
+<ce>                Look for someone named _fg_. If you're
+<ce>         lucky at all, you'll find all three together and get
+<ce>             it done. Get all three tongues and a kidney.
+<ce>              I'll be paying =reward_ this time. Meet me
+<ce>                   in ___crowhome_, at _crowhome_.
 
 Message:  1030
 %qdt:
@@ -53,35 +53,35 @@ Message:  1030
  ___crowhome_.
 
 Message:  1060
-<ce> You only barely enter the building when
-<ce> the walls shake from a deafening scream.
-<ce> 
-<ce> "It's %pcf! Kill %pg2! NOW!!"
+<ce>               You only barely enter the building when
+<ce>               the walls shake from a deafening scream.
+<ce>
+<ce>                    "It's %pcf! Kill %pg2! NOW!!"
 
 Message:  1070
-<ce> With the Fighters Guild down,
-<ce> it's time to take the organs.
+<ce>                    With the Fighters Guild down,
+<ce>                    it's time to take the organs.
 
 Message:  1071
-<ce> You stuff the bag with three tongues and a kidney and seal it.
+<ce>    You stuff the bag with three tongues and a kidney and seal it.
 
 Message:  1080
-<ce> Do you wish to leave behind the _lode_
-<ce> and give up your ties to _crow_?
+<ce>                Do you wish to leave behind the _lode_
+<ce>                   and give up your ties to _crow_?
 
 Message:  1081
-<ce> You discard the small piece of metal.
-<ce> Whatever schemes he has are his alone now.
+<ce>                You discard the small piece of metal.
+<ce>              Whatever schemes he has are his alone now.
 
 Message:  1082
-<ce> You return the _lode_ to your
-<ce> belongings, at least for now.
+<ce>                    You return the _lode_ to your
+<ce>                    belongings, at least for now.
 
 Message:  1099
-<ce> All right, you've made it. You have now completely
-<ce> earned my trust. I've gotten my responses from the
-<ce> people over in "Bruma" as they call it, and they're
-<ce> ready to do business. Let me see what I have here.
+<ce>          All right, you've made it. You have now completely
+<ce>          earned my trust. I've gotten my responses from the
+<ce>         people over in "Bruma" as they call it, and they're
+<ce>          ready to do business. Let me see what I have here.
 
 QBN:
 
@@ -111,6 +111,11 @@ _inside_ task:
   hide npc _fg_
   say 1060
   create foe _warr_ every 0 minutes 3 times with 100% success
+
+_infight_ task:
+  daily from 0:00 to 23:59
+  change foe _warr_ infighting true
+  clear _infight_
 
 _prompt_ task:
   prompt 1080 yes _quit_ no _stay_

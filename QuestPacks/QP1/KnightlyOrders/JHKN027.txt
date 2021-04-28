@@ -4,106 +4,106 @@ DisplayName: The Caravan
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  Merchants around %crn have been waylaid
-<ce>  by a band of thieves in their travels. They have
-<ce>  petitioned our order for help in rooting them out.
-<ce>  Are you willing to go along with their plot?
+<ce>               Merchants around %crn have been waylaid
+<ce>           by a band of thieves in their travels. They have
+<ce>          petitioned our order for help in rooting them out.
+<ce>             Are you willing to go along with their plot?
 
 RefuseQuest:  [1001]
-<ce>  These people need a guardian, %pct.
+<ce>                 These people need a guardian, %pct.
 
 AcceptQuest:  [1002]
-<ce>  "Excellent. Now, it is difficult to tell where
-<ce>  the band will strike next. Your task will be to
-<ce>  remain with _guide_ and %g3 caravan
-<ce>  until the thieves come out of hiding. Travel to
-<ce>  various small settlements, for the reports tell
-<ce>  us they tend to shy away from large cities.
-<ce>  Level them to the earth and report to me your
-<ce>  success. I grant you one month to do this."
-<ce>  
-<ce>  _qgiver_ calls out to _guide_
-<ce>  and introduces you, explaining the task.
-<ce>  The merchant thanks you profusely.
-<ce>  
-<ce>  "This is wonderful! I have the fullest assurance
-<ce>  that this problem will be dealt with in record time.
-<ce>  I suppose that we should just go traveling about
-<ce>  until they find us!"
-<--->
-<ce>  "Excellent. Now, it is difficult to tell where
-<ce>  the band will strike next. Your task will be to
-<ce>  remain with _guide_ and %g3 caravan
-<ce>  until the thieves come out of hiding. Travel to
-<ce>  various small settlements, for the reports tell
-<ce>  us they tend to shy away from large cities.
-<ce>  Level them to the earth and report to me your
-<ce>  success. I grant you one month to do this."
-<ce>  
-<ce>  _qgiver_ calls out to _guide_
-<ce>  and introduces you, explaining the task.
-<ce>  The merchant thanks you profusely.
-<ce>  
-<ce>  "A knight to protect me! The %t has heard us
-<ce>  at last! Thank you! Lead the way. Where shall we go?"
+<ce>            "Excellent. Now, it is difficult to tell where
+<ce>           the band will strike next. Your task will be to
+<ce>                 remain with _guide_ and %g3 caravan
+<ce>           until the thieves come out of hiding. Travel to
+<ce>           various small settlements, for the reports tell
+<ce>             us they tend to shy away from large cities.
+<ce>            Level them to the earth and report to me your
+<ce>             success. I grant you one month to do this."
+<ce>
+<ce>                    _qgiver_ calls out to _guide_
+<ce>               and introduces you, explaining the task.
+<ce>                  The merchant thanks you profusely.
+<ce>
+<ce>           "This is wonderful! I have the fullest assurance
+<ce>         that this problem will be dealt with in record time.
+<ce>           I suppose that we should just go traveling about
+<ce>                         until they find us!"
+                                     <--->
+<ce>            "Excellent. Now, it is difficult to tell where
+<ce>           the band will strike next. Your task will be to
+<ce>                 remain with _guide_ and %g3 caravan
+<ce>           until the thieves come out of hiding. Travel to
+<ce>           various small settlements, for the reports tell
+<ce>             us they tend to shy away from large cities.
+<ce>            Level them to the earth and report to me your
+<ce>             success. I grant you one month to do this."
+<ce>
+<ce>                    _qgiver_ calls out to _guide_
+<ce>               and introduces you, explaining the task.
+<ce>                  The merchant thanks you profusely.
+<ce>
+<ce>             "A knight to protect me! The %t has heard us
+<ce>        at last! Thank you! Lead the way. Where shall we go?"
 
 QuestFail:  [1003]
-<ce>  During this fracas _guide_ has fallen dead.
-<ce>  This is a terrible price to pay for uncovering
-<ce>  this group of thieves.
+<ce>             During this fracas _guide_ has fallen dead.
+<ce>            This is a terrible price to pay for uncovering
+<ce>                        this group of thieves.
 
 QuestComplete:  [1004]
-<ce>  _qgiver_ shakes your hand warmly for your service.
+<ce>          _qgiver_ shakes your hand warmly for your service.
 
-Message: 1020
-<ce>  Your small caravan is surrounded by
-<ce>  a pack of thieves. Presumably this is what
-<ce>  _qgiver_ sent you to find.
+Message:  1020
+<ce>                 Your small caravan is surrounded by
+<ce>              a pack of thieves. Presumably this is what
+<ce>                      _qgiver_ sent you to find.
 
 Message:  1021
-<ce>  _guide_, unscathed during the battle,
-<ce>  is overjoyed to know that the group has been slain.
-<ce>  
-<ce>  "You are truly a knight of the highest order!
-<ce>  What a tale I will tell throughout %crn!"
-<ce>  
-<ce>  After offering you profuse thanks, %g1
-<ce>  prepares his things for the next leg of the
-<ce>  journey and departs. Now to report
-<ce>  to _qgiver_ in ___qgiver_.
-<--->
-<ce>  _guide_, unscathed during the battle,
-<ce>  is overjoyed to know that the group has been slain.
-<ce>  
-<ce>  "Wow, what did I just watch? That was incredible!
-<ce>  Thank you, thank you, thank you!"
-<ce>  
-<ce>  After offering you profuse thanks, %g1
-<ce>  prepares his things for the next leg of the
-<ce>  journey and departs. Now to report
-<ce>  to _qgiver_ in ___qgiver_.
+<ce>                _guide_, unscathed during the battle,
+<ce>         is overjoyed to know that the group has been slain.
+<ce>
+<ce>            "You are truly a knight of the highest order!
+<ce>              What a tale I will tell throughout %crn!"
+<ce>
+<ce>                After offering you profuse thanks, %g1
+<ce>             prepares his things for the next leg of the
+<ce>                  journey and departs. Now to report
+<ce>                      to _qgiver_ in ___qgiver_.
+                                     <--->
+<ce>                _guide_, unscathed during the battle,
+<ce>         is overjoyed to know that the group has been slain.
+<ce>
+<ce>          "Wow, what did I just watch? That was incredible!
+<ce>                  Thank you, thank you, thank you!"
+<ce>
+<ce>                After offering you profuse thanks, %g1
+<ce>             prepares his things for the next leg of the
+<ce>                  journey and departs. Now to report
+<ce>                      to _qgiver_ in ___qgiver_.
 
 Message:  1022
-<ce>  Welcome, %pct. So _guide_ did not
-<ce>  survive the battle, it would seem. We are elated
-<ce>  at the destruction of this thieving band,
-<ce>  but we wish it did not have to come at this cost.
-<ce>  I nevertheless thank you for your service.
-<ce>  %crn will be greatly benefitted by your work.
+<ce>                  Welcome, %pct. So _guide_ did not
+<ce>           survive the battle, it would seem. We are elated
+<ce>              at the destruction of this thieving band,
+<ce>          but we wish it did not have to come at this cost.
+<ce>              I nevertheless thank you for your service.
+<ce>            %crn will be greatly benefitted by your work.
 
 Message:  1023
-<ce>  Welcome, %pct. You have slain the band of thieves
-<ce>  and preserved the life of the merchant. Truly
-<ce>  you have passed this test with flying colors. I will
-<ce>  tell new recruits to this order concerning your
-<ce>  deeds and the example they provide. Excellent work.
+<ce>          Welcome, %pct. You have slain the band of thieves
+<ce>            and preserved the life of the merchant. Truly
+<ce>         you have passed this test with flying colors. I will
+<ce>           tell new recruits to this order concerning your
+<ce>         deeds and the example they provide. Excellent work.
 
 Message:  1024
-<ce>  Though _guide_ fell during the battle,
-<ce>  this band is still vanquished. It is time
-<ce>  to report to _qgiver_.
+<ce>                Though _guide_ fell during the battle,
+<ce>              this band is still vanquished. It is time
+<ce>                        to report to _qgiver_.
 
-Message: 1030
+Message:  1030
 %qdt:
  _qgiver_ of ___qgiver_ has
  sent me to accompany a merchant
@@ -142,13 +142,13 @@ variable _e4_
 variable _appear_
 
 _f1_ task:
-	when pc enters tavernhome
+    when pc enters tavernhome
 
 _f2_ task:
-	when pc enters village
+    when pc enters village
 
 _f3_ task:
-	when pc enters hamlet
+    when pc enters hamlet
 
 _f4_ task:
     when pc enters templehome
@@ -187,6 +187,12 @@ _spawn_ task:
     create foe _s1_ every 0 minutes 1 times with 100% success
     create foe _s2_ every 0 minutes 3 times with 100% success
 
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _s1_ infighting true
+    change foe _s2_ infighting true
+    clear _infight_
+
 _battle_ task:
     say 1003
     drop _guide_ face
@@ -211,27 +217,27 @@ _notsurvive_ task:
     say 1024
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+    clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ 
-	clear _qgclicked_ _clearclick_ 
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
 
 _pcgetsgold1_ task:
-	when _qgclicked_ and _slain_ and _battle_
+    when _qgclicked_ and _slain_ and _battle_
     say 1022
     change repute with _qgiver_ by -2
-	give pc nothing
+    give pc nothing
     legal repute +3
-	end quest 
+    end quest
 
 _pcgetsgold2_ task:
-	when _qgclicked_ and _slain_ and not _battle_
+    when _qgclicked_ and _slain_ and not _battle_
     say 1023
-	give pc nothing
+    give pc nothing
     legal repute +3
-	end quest 
+    end quest
 
 _goal_ task:
-	change repute with _qgiver_ by +2
-	end quest
+    change repute with _qgiver_ by +2
+    end quest

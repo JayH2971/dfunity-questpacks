@@ -19,7 +19,7 @@ AcceptQuest:  [1002]
 <ce>                     Name's _noble_. Very quiet.
 <ce>           Stays in the Palace. Actually not a bad fellow.
 <ce>         You might see him in some of the pubs, buying drinks
-<ce>       for the folks. Turns out some rascals want to raise some
+<ce>       for the folks. Turns out some rascals want to cause some
 <ce>        instability, and he's worried for his safety tonight.
 <ce>        Says the attack's probably gonna come after midnight.
 <ce>         You be there and help him fight off whatever things
@@ -117,7 +117,7 @@ _talk_ task:
     hide npc _noble_
     place foe _ally_ at _pal_
 
-_day_ task:
+_infight_ task:
     daily from 00:00 to 23:59
     change foe _nym_ infighting true
     change foe _garg_ infighting true
@@ -125,7 +125,7 @@ _day_ task:
     change foe _ally_ team 1
     change foe _nym_ team 0
     change foe _garg_ team 0
-    clear _day_
+    clear _infight_
 
 _kill1_ task:
     killed 3 _nym_

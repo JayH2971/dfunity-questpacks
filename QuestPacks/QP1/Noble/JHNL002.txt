@@ -5,43 +5,43 @@ DisplayName: Loose Ends
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  The Dark Brotherhood serves a
-<ce>  useful and legitimate purpose, so
-<ce> long as they are not spoken of publicly.
-<ce>  Ignorant minds make an outcry about
-<ce> the kind of work they do. Nevertheless,
-<ce>  this last month they failed me in what
-<ce> should have been a simple task. You
-<ce>  must wipe the slate clean of all
-<ce> knowledgeable parties.
+<ce>                    The Dark Brotherhood serves a
+<ce>                  useful and legitimate purpose, so
+<ce>               long as they are not spoken of publicly.
+<ce>                 Ignorant minds make an outcry about
+<ce>               the kind of work they do. Nevertheless,
+<ce>                this last month they failed me in what
+<ce>                 should have been a simple task. You
+<ce>                   must wipe the slate clean of all
+<ce>                        knowledgeable parties.
 
 RefuseQuest:  [1001]
-<ce> Are you good at keeping secrets, %ra?
+<ce>                Are you good at keeping secrets, %ra?
 
 AcceptQuest:  [1002]
-<ce> The only proper response. Your
-<ce>  objectives are in _loc1_
-<ce> at ___loc1_,
-<ce> and _loc2_, which is in
-<ce> ___loc2_. Have done with 
-<ce> both of them and I will grant you a magic
-<ce>  _reward_ from my own personal vault.
-<ce> Take no more than =timer_ days.
-<ce> Do not fail me as they have.
+<ce>                    The only proper response. Your
+<ce>                       objectives are in _loc1_
+<ce>                             at ___loc1_,
+<ce>                       and _loc2_, which is in
+<ce>                       ___loc2_. Have done with
+<ce>              both of them and I will grant you a magic
+<ce>                 _reward_ from my own personal vault.
+<ce>                   Take no more than =timer_ days.
+<ce>                     Do not fail me as they have.
 
 QuestFail:  [1003]
-<ce>  
+<ce>
 
 QuestComplete:  [1004]
-<ce> Smartly played, %pcf. Your work
-<ce> lets me sleep at night. Have your
-<ce> _reward_ as we agreed.
+<ce>                   Smartly played, %pcf. Your work
+<ce>                  lets me sleep at night. Have your
+<ce>                        _reward_ as we agreed.
 
 Message:  1020
-<ce>  This failed assassin is no more.
+<ce>                   This failed assassin is no more.
 
 Message:  1021
-<ce> _questgiver_'s target is no more.
+<ce>                  _questgiver_'s target is no more.
 
 Message:  1030
 %qdt:
@@ -55,21 +55,21 @@ Message:  1030
  in =timer_ days for my reward,
  an enchanted _reward_.
 
-Message: 1031
+Message:  1031
 %qdt:
  I have slain the assassin on
  behalf of _questgiver_.
 
-Message: 1032
+Message:  1032
 %qdt:
  I have slain _questgiver_'s
  former enemy.
 
 Message:  1099
-<ce>  I do not know how long
-<ce>  my foes will remain in
-<ce>  ___loc1_ and ___loc2_.
-<ce>  Find them and kill them.
+<ce>                        I do not know how long
+<ce>                        my foes will remain in
+<ce>                        ___loc1_ and ___loc2_.
+<ce>                       Find them and kill them.
 
 QBN:
 Item _reward_ magic_item
@@ -85,10 +85,12 @@ Place _loc2_ remote random
 Clock _timer_ 30.00:00
 
 --	Quest start-up:
-	start timer _timer_ 
+	start timer _timer_
 	place foe _assa_ at _loc1_
 	place foe _mark_ at _loc2_
 	log 1030 step 0
+	change foe _assa_ infighting true
+	change foe _mark_ infighting true
 
 _aslain_ task:
 	killed 1 _assa_ saying 1020
@@ -100,16 +102,16 @@ _mslain_ task:
 
 _pcgetsgold_ task:
 	when _qgclicked_ and _aslain_ and _mslain_
-	give pc _reward_ 
-	end quest 
+	give pc _reward_
+	end quest
 
 _qgclicked_ task:
-	clicked npc _questgiver_ 
+	clicked npc _questgiver_
 
 _clearclick_ task:
 	when _qgclicked_ and not _aslain_ and not _mslain_
-  say 1099
-	clear _qgclicked_ _clearclick_ 
+	say 1099
+	clear _qgclicked_ _clearclick_
 
 _timer_ task:
-	end quest 
+	end quest
