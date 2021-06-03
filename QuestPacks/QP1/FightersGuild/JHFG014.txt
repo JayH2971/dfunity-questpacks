@@ -32,6 +32,12 @@ QuestComplete:  [1004]
 <ce>        You've got a future with us, I think. Let me take back
 <ce>                 that talisman, and here's your gold.
 
+QuestorPostSuccess:  [1008]
+Now that you've slain that zombie, you're officially ready for the big stuff. What can I get you?
+
+QuestorPostFailure:  [1009]
+Hey, don't feel too bad about that zombie. Tough sons of Oblivion, they are.
+
 Message:  1010
 %qdt:
  A zombie has invaded _house_

@@ -68,7 +68,7 @@ Message:  1030
  evidence statement about a guild
  member in the palace at ___pal_.
  I've got an escape plan to teleport
- using a gem they got me. I have to
+ using a _trinket_ they got me. I have to
  steal it within =2pal_ days, but after
  that I can take my time getting back
  to ___qgiver_.
@@ -109,7 +109,6 @@ _begin_ task:
  say 1050
 
 _danger_ task:
-  play sound halt every 0 minutes 1 times
   say 1011
   change repute with _dummytg_ by -15
 
@@ -117,6 +116,9 @@ variable _inside_
 _spawn_ task:
   when _danger_ and not _send_
   create foe _knight_ every 1 minutes indefinitely with 100% success
+  play sound halt every 0 minutes 1 times
+  setplayercrime Theft
+  spawncityguards immediate
 
 _send_ task:
  stop timer _2pal_
