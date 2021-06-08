@@ -72,7 +72,7 @@ Message:  1013
 <ce>    Numidium, and the destruction it has caused, to no longer be.
 <ce>              That's what his followers tell me, anyway.
 <ce>
-<ce>     "Does that all sound too simple? Too easy? I could be wrong.
+<ce>    "Does that all sound too simple or too easy? I could be wrong.
 <ce>  I've spoken with some of his people, and they all recite the same
 <ce>      story. I have come to believe them. Perhaps I am deceived,
 <ce>   or too easily swayed. But if it were true, how much better would
@@ -124,13 +124,8 @@ Message:  1018
  the Mages Guild gave her to find a sample
  of _ingred_ in ___mondung_ in Sentinel.
 
-Message:  1019
-Charvek-si's a nice lady. She has a laboratory right next to the arboretum in Sentinel palace.
-<--->
-Charvek-si's a noble in Sentinel Palace. Go into the arboretum in there and just open some doors, you'll see her.
-
 QBN:
-Person _charvek_ named Charvek-si atHome anyInfo 1019 rumors 1019
+Person _charvek_ named Charvek-si atHome
 
 Item _ingred_ organs
 

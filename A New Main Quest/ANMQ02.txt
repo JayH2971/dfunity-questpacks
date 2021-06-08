@@ -94,14 +94,16 @@ Message:  1022
 Message:  1023
 She's the court sorceress of Wayrest. They say Helseth likes her.
 <--->
-She lives in Wayrest Castle, as the royal sorceress.
+Karethys is one of the Wayrest nobles. You'll find her in the castle behind the partition.
 <--->
-She's part of the Court of Wayrest. Flirtatious little firecracker, she is.
+Karethys is the court sorceress of Wayrest. She stays in the same room as Helseth, with the tables.
 
 Message:  1024
-A dignified woman, I'll say. Lives in Sentinel Palace.
-<--->
 The Sentinel royal healer. She's got private quarters in Sentinel Palace, next to the arboretum.
+<--->
+Charvek-si's a nice lady. She has a laboratory right next to the arboretum in Sentinel palace.
+<--->
+Charvek-si's a noble in Sentinel Palace. Go into the arboretum in there and just open some doors, you'll see her.
 
 Message:  1025
 %qdt:
@@ -121,8 +123,8 @@ QBN:
 Item _popletter_ letter used 1013
 
 Person _pop_ named Popudax
-Person _kareth_ named Karethys atHome anyInfo 1023
-Person _charv_ named Charvek-si atHome anyInfo 1024
+Person _kareth_ named Karethys atHome anyInfo 1023 rumors 1023
+Person _charv_ named Charvek-si atHome anyInfo 1024 rumors 1024
 
 Place _mages_ local magery
 

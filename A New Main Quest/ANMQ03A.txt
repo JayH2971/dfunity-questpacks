@@ -129,16 +129,11 @@ Message:  1014
  and go to ___shrine_ to talk privately
  as Popudax suggested.
 
-Message:  1015
-Karethys is one of the Wayrest nobles. You'll find her in the castle behind the partition.
-<--->
-Karethys is the court sorceress of Wayrest. She stays in the same room as Helseth, with the tables.
-
 --while visiting MQ towns, get letters from totem holders
 -to wine and dine you or offer other incentives.
 
 QBN:
-Person _kareth_ named Karethys atHome anyInfo 1015 rumors 1015
+Person _kareth_ named Karethys atHome
 
 Foe _zomb1_ is Skeletal_warrior
 Foe _zomb2_ is Skeletal_warrior
