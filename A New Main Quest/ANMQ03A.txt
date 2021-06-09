@@ -152,6 +152,7 @@ Foe _imp4_ is Imp
 Place _shrine_ remote cult
 Place _scourg_ permanent ScourgBarrowEntry
 
+Clock _delay1_ 0:01
 Clock _delay_ 0:02 0:02
 Clock _fight_ 1:00
 
@@ -162,6 +163,9 @@ Clock _fight_ 1:00
 
 _arrival_ task:
     when pc enters cult
+    start timer _delay1_
+
+_delay1_ task:
     say 1011
     say 1012
     add _kareth_ face
