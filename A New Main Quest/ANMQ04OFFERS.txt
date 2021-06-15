@@ -235,8 +235,8 @@ _dletter2_ task:
     take _dletter_ from pc
 
 _wayrletter_ task:
-    give pc _dletter_ notify 1011
-    _dletter_ used do _wletterout_
+    give pc _wletter_ notify 1011
+    _wletter_ used do _wletterout_
 
 _wletterout_ task:
     start timer _wletter2_

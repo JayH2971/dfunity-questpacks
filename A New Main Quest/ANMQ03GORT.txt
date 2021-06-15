@@ -4,49 +4,52 @@ DisplayName: Gortwog
 QRC:
 
 QuestComplete:  [1004]
-<ce>  You introduce yourself, and Gortwog smiles broadly.
-<ce>  
-<ce>  "Welcome, %pcf, to the land of Orsinium!
-<ce>  I hope your journey was safe and uneventful."
-<ce>  He speaks far more fluently than his messengers did.
-<ce>  
-<ce>  "Your coming this far shows much greater wisdom than
-<ce>  many of the Bretons. Most of them would exterminate
-<ce>  my kind, had they the power. Armies led by Eadwyre
-<ce>  raid our farms and slay our children. Your Emperor
-<ce>  turns a blind eye to our suffering, while pretending
-<ce>  he is the god-king of the whole continent.
-<ce>  I find in him a coward.
-<ce>  
-<ce>  "Hear me, %ra. When was it that you last heard
-<ce>  an Orcish army burn a settlement of the Bretons?
-<ce>  My people are fierce and unruly, yes, but I have never
-<ce>  permitted them to slay the innocent. I can control
-<ce>  my people. The kings of your lands cannot control theirs.
-<ce>  What, then, will happen when the ultimate
-<ce>  power reaches their hands?"
-<ce>  
-<ce>  Gortwog folds his arms and maintains a fixed stare.
-<ce>  "I know you are of the few who have heard of the Totem.
-<ce>  I do not know where it is, though my people search
-<ce>  for it across all lands. The orcs you encounter on
-<ce>  your voyages would live and die to put the Totem
-<ce>  in my hands. They know I am the only one who acts with
-<ce>  restraint and honor. I wish to defend my people and gain
-<ce>  the Emperor's ear. The orcs will be equals with the humans!
-<ce>  The slaughter of my kin must end! Whether you find the Totem
-<ce>  or are merely a messenger for other lords, I put into you
-<ce>  my words: Numidium is only safe under me. By any other,
-<ce>  this whole land will suffer, and my people will all die.
-<ce>  Do not be fooled."
-<ce>  
-<ce>  He then sighs. "Lastly, forgive my soldiers who attack you.
-<ce>  I do not hold you responsible for their deaths. Should they 
-<ce>  disobey my orders, they take their lives into their hands.
-<ce>  Your self-defense is guiltless."
-<ce>  
-<ce>  Finally, he bows. "Now go. And take this as a gift
-<ce>  of my sincerity, and joy at our meeting."
+<ce>         You introduce yourself, and Gortwog smiles broadly.
+<ce>
+<ce>               "Welcome, %pcf, to the land of Orsinium!
+<ce>            I hope your journey was safe and uneventful."
+<ce>         He speaks far more fluently than his messengers did.
+<ce>
+<ce>         "Your coming this far shows much greater wisdom than
+<ce>         many of the Bretons. Most of them would exterminate
+<ce>          my kind, had they the power. Armies led by Eadwyre
+<ce>          raid our farms and slay our children. Your Emperor
+<ce>         turns a blind eye to our suffering, while pretending
+<ce>              he is the god-king of the whole continent.
+<ce>                       I find in him a coward.
+<ce>
+<ce>            "Hear me, %ra. When was it that you last heard
+<ce>           an Orcish army burn a settlement of the Bretons?
+<ce>        My people are fierce and unruly, yes, but I have never
+<ce>          permitted them to slay the innocent. I can control
+<ce>      my people. The kings of your lands cannot control theirs.
+<ce>              What, then, will happen when the ultimate
+<ce>                     power reaches their hands?"
+<ce>
+<ce>         Gortwog folds his arms and maintains a fixed stare.
+<ce>       "I know you are of the few who have heard of the Totem.
+<ce>          I do not know where it is, though my people search
+<ce>          for it across all lands. The orcs you encounter on
+<ce>           your voyages would live and die to put the Totem
+<ce>        in my hands. They know I am the only one who acts with
+<ce>       restraint and honor. I wish to defend my people and gain
+<ce>     the Emperor's ear. The orcs will be equals with the humans!
+<ce>     The slaughter of my kin must end! Whether you find the Totem
+<ce>      or are merely a messenger for other lords, I put into you
+<ce>       my words: Numidium is only safe under me. By any other,
+<ce>       this whole land will suffer, and my people will all die.
+<ce>                          Do not be fooled."
+<ce>
+<ce>     He then sighs. "Lastly, forgive my soldiers who attack you.
+<ce>     I do not hold you responsible for their deaths. Should they
+<ce>      disobey my orders, they take their lives into their hands.
+<ce>                   Your self-defense is guiltless."
+<ce>
+<ce>          Finally, he bows. "Now go. And take this as a gift
+<ce>              of my sincerity, and joy at our meeting."
+<ce>
+<ce>          You are given 5,000 gold in a large sack, as well
+<ce>   as the following.
 
 Message:  1010
 %qdt:
@@ -68,7 +71,8 @@ Item _gortreward2_ gold range 5000 to 5000
 _talk_ task:
     clicked npc _gort_
     give pc _gortreward1_
-    give pc _gortreward2_
+    get item _gortreward2_
+    make _gortreward2_ permanent
     end quest
 
 LysandusSatisfied _ending_
