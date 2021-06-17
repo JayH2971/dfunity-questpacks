@@ -43,6 +43,8 @@ AcceptQuest:  [1002]
 <ce>                          Go ahead, _dummy_.
 
 QuestFail:  [1003]
+<ce>               It happens to the best of us, I suppose.
+<ce>                        Better luck next time.
 
 QuestComplete:  [1004]
 <ce>           Oh, %pcf, I am overjoyed at your return. The %t
@@ -58,6 +60,13 @@ Message:  1010
 <ce>  (Hint: You may be in a location that's impossible to escape from,)
 <ce>                 (like the bottom of a chute. If so,)
 <ce>   (make a save and try the console command "teleport" to get out.)
+
+Message:  1011
+<ce>       You're back, and you have no proof of a slain criminal.
+<ce>                  Do you wish to give up this task?
+
+Message:  1012
+<ce>                     Very well then. Off you go.
 
 Message:  1020
 <ce>      You have slain the assassin. Now to return to ___qgiver_.
@@ -113,7 +122,15 @@ _qgclicked_ task:
 
 _clearclick_ task:
 	when _qgclicked_ and not _slain_
+	prompt 1011 yes _allfail_ no _continue_
 	clear _qgclicked_ _clearclick_
+
+_allfail_ task:
+	say 1003
+	end quest
+
+_continue_ task:
+	say 1012
 
 _failsafe_ task:
 	end quest
