@@ -83,12 +83,16 @@ QBN:
 Item _letter_ letter used 1011
 
 Clock _afterread_ 3.00:00
+Clock _delay_ 8.00:00 22.00:00
 
 Person _cyndas_ named Cyndassa atHome
 
 --	Quest start-up:
-    give pc _letter_ notify 1010
     have _letter_ set _starttimer_
+    start timer _delay_
+
+_delay_ task:
+    give pc _letter_ notify 1010
 
 _starttimer_ task:
     start timer _afterread_
