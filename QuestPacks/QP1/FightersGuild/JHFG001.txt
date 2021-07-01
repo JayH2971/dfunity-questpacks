@@ -117,11 +117,11 @@ _real_ task:
 	place foe _vamp_ at _vampres_
 	change foe _vamp_ infighting true
 
-_slain_ task:
+_kill_ task:
 	killed 1 _vamp_ saying 1020
-	start task _victory_
+	start task _slain_
 
-variable _victory_
+variable _slain_
 _pcgetsgold_ task:
 	when _qgclicked_ and _slain_
 	give pc _reward_
@@ -149,13 +149,13 @@ _ignore_ task:
 _murder_ task:
 	killed _wimp_
 	say 1012
-	start task _victory_
+	start task _slain_
 
 _qgclicked_ task:
 	clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _victory_ and not _escape_
+	when _qgclicked_ and not _slain_ and not _escape_
 	clear _qgclicked_ _clearclick_
 
 _convince_ task:
