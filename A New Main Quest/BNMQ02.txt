@@ -1,0 +1,202 @@
+Quest: BNMQ02
+DisplayName: BNMQ02
+-- Message panels
+QRC:
+
+Message:  1011
+%qdt:
+ The mysterious Redguard told me to wait
+ until he contacts me. I'll have to trust him.
+
+Message:  1012
+<ce>                A stout man with an scar over one eye
+<ce>           delivers a letter to you and departs in silence.
+
+Message:  1013
+  %pcn,
+<ce>
+  I'll be waiting at ___shrine_ in ____shrine_.
+  Come find me and we'll talk about some important things.
+<ce>
+              Your friend from Tristore Laboratory
+
+Message:  1014
+%qdt:
+ I received a notice from the man who took
+ the Emperor's letter, saying he's waiting
+ at ___shrine_ of ____shrine_.
+
+Message:  1015
+<ce>             Approaching the shrine, you see the Redguard
+<ce>                speaking to the attendant. He wraps up
+<ce>                his conversation and walks toward you.
+<ce>
+<ce>         "Ah, nice of you to make some time to come out here.
+<ce>            Of course, I wasn't getting tired or anything.
+<ce>                You'd be amazed how long these priests
+<ce>           out here can talk. We could do this for a whole
+<ce>          other week without running out of things to say."
+<ce>
+<ce>           He then reaches into his coat and pulls out two
+<ce>       sheets of paper. You're disappointed to see that neither
+<ce>                   of them is the Emperor's letter.
+<ce>
+<ce>     "No, I told you, the letter's gone. But I have the contents
+<ce>        memorized. I'll give them to you when you've finished
+<ce>       what I ask you to do today. I promise, no more delays."
+
+Message:  1016
+<ce>        You're distracted by the sound of swirling air nearby.
+<ce>      The Redguard cuts short his conversation as you both stare
+<ce>                     at something being conjured.
+<ce>
+<ce>             "Liar," a voice hisses out from the center.
+<ce>                "That man will not keep his promises."
+<ce>     A ghost begins to materialize from the source of the sound.
+<ce>
+<ce>                 "I know that voice... Oh, not you!"
+<ce>                   The man moves close toward you.
+<ce>                  "I need you to destroy that ghost.
+<ce>                It's connected to someone really bad.
+<ce>                 Whatever you do, don't talk to it."
+<ce>
+<ce>                  The ghost waits patiently for you
+<ce>                         to make your choice.
+
+Message:  1017
+<ce>              "Good work," the man huffs once the ghost
+<ce>           stops moving. "I'm glad you trusted me over it.
+<ce>              I can tell you right now, you do not want
+<ce>          to get involved with the person behind that thing.
+<ce>        You ever find any talking ghosts, keep away from them.
+<ce>
+<ce>     "Okay, now let me explain some things. I've got two letters
+<ce>      here for you. One is from Sentinel to Daggerfall, and the
+<ce>       other is from Daggerfall to Sentinel. Don't mix them up.
+<ce>     I need you to deliver them to the King of Daggerfall, that's
+<ce>         Gothryd, and the Queen of Sentinel, named Akorithi.
+<ce>         They're sealed and no one except their court wizards
+<ce>       are going to get them open. Once that's done, I promise,
+<ce>         on my Redguard honor, that I'll tell you everything
+<ce>               and deliver the Emperor's words to you.
+<ce>               My people will know when it's been done.
+<ce>         Watch for my letter after that. Safe travels, %pcf."
+
+Message:  1018
+<ce>             The agent departs. Once he's out of earshot,
+<ce>            you hear a voice whispering out from the inert
+<ce>                        remains of the ghost.
+<ce>
+<ce>                 "Fool. I told you not to trust him.
+<ce>          The one he represents would throw the whole Empire
+<ce>                   into chaos. Mend your ways, %ra.
+<ce>                     Come to me in Scourg Barrow.
+<ce>                I have gifts for you, power you cannot
+<ce>          obtain any other way. Come and see my generosity."
+<ce>
+<ce>        A figure of a map lights up on the ground, long enough
+<ce>    for you to see a large X in the eastern Dragontail Mountains.
+<ce>             This must be where Scourg Barrow is located.
+<ce>                  Whether you go there is up to you.
+
+Message:  1019
+<ce>            You lower your hands and listen to the ghost.
+<ce>             The agent grows furious and starts to shout,
+<ce>            but the phantom casts a Silence spell on him.
+<ce>                  With none to interrupt, it speaks.
+<ce>
+<ce>            "Thank you. That man, and whom he represents,
+<ce>          are terrible dangers to this land. The thing they
+<ce>        seek presents mortal risk to us all. Do not trust him.
+<ce>                     Come to me in Scourg Barrow.
+<ce>                I have gifts for you, power you cannot
+<ce>          obtain any other way. Come and see my generosity."
+<ce>
+<ce>        A figure of a map lights up on the ground, long enough
+<ce>    for you to see a large X in the eastern Dragontail Mountains.
+<ce>             This must be where Scourg Barrow is located.
+<ce>      Having exhausted its power, the ghost fades into nothing.
+
+Message:  1020
+<ce>           The Redguard, once free of the Silence spell, is
+<ce>         absolutely livid with you. He berates you for giving
+<ce>          the apparition a chance to speak, and swears that
+<ce>        any further failures will lose his confidence forever.
+<ce>           He takes a few minutes to regain his composure,
+<ce>         requiring several deep breaths and some meditation.
+<ce>
+<ce>       "Now, forget everything you just heard from that thing,
+<ce>          all right? It doesn't exist. You just heard a liar
+<ce>        speak, and he only means bad things to the rest of us.
+<ce>        I'm dead serious. You never, ever want to get mixed up
+<ce>                    with what you just heard from.
+<ce>
+<ce>     "Okay, now let me explain some things. I've got two letters
+<ce>      here for you. One is from Sentinel to Daggerfall, and the
+<ce>       other is from Daggerfall to Sentinel. Don't mix them up.
+<ce>     I need you to deliver them to the King of Daggerfall, that's
+<ce>         Gothryd, and the Queen of Sentinel, named Akorithi.
+<ce>         They're sealed and no one except their court wizards
+<ce>       are going to get them open. Once that's done, I promise,
+<ce>         on my Redguard honor, that I'll tell you everything
+<ce>               and deliver the Emperor's words to you.
+<ce>               My people will know when it's been done.
+<ce>         Watch for my letter after that. Safe travels, %pcf."
+
+QBN:
+Person _ukagent_ named The_Acolyte
+
+Item _letter_ letter used 1013
+
+Foe _ghost_ is Ghost
+
+Clock _delay_ 0:01
+
+Place _shrine_ remote cult
+Place _scourg_ permanent ScourgBarrow1
+
+--	Quest start-up:
+    log 1011 step 0
+    give pc _letter_ notify 1012
+    _letter_ used do _journal_
+
+_journal_ task:
+    log 1014 step 0
+
+_arrival_ task:
+    when pc enters cult
+    start timer _delay_
+
+_delay_ task:
+    say 1015
+    say 1016
+    create foe _ghost_ every 0 minutes 1 times with 100% success
+    restrain foe _ghost_
+    add _ukagent_ face
+
+_inj_ task:
+    injured _ghost_
+
+_clicky_ task:
+    clicked foe _ghost_
+
+_listen_ task:
+    when _clicky_ and not _inj_
+    drop _ukagent_ face
+    say 1019
+    remove foe _ghost_
+    reveal _scourg_
+    say 1020
+    start quest BNMQ03
+    start quest BNMQKOW1
+    end quest
+
+_kill_ task:
+    killed _ghost_
+    drop _ukagent_ face
+    say 1017
+    say 1018
+    reveal _scourg_
+    start quest BNMQ03
+    start quest BNMQKOW1
+    end quest

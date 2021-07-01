@@ -1,0 +1,21 @@
+Quest: BNMQ01
+DisplayName: BNMQ01
+-- Message panels
+QRC:
+
+Message:  1011
+%qdt:
+ The mysterious Redguard told me to wait
+ until he contacts me. I'll have to trust him.
+
+QBN:
+
+Clock _delay_ 7.00:00 12.00:00
+
+--	Quest start-up:
+    log 1011 step 0
+    start timer _delay_
+
+_delay_ task:
+    start quest BNMQ02
+    end quest

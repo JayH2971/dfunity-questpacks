@@ -74,10 +74,6 @@ Message:  1011
 <ce>
 <ce>              You must make a decision. Do you side with
 <ce>              the Redguard (yes) or with the orcs (no)?
-<ce>
-<ce>        (NOTE: This version of ANMQ only allows the Orc path.)
-<ce>                (The man's path will be added later.)
-<ce>              (Thank you for playing the beta version.)
 
 Message:  1012
 <ce>                     (ORCISH SKILL CHECK PASSED)
@@ -102,10 +98,6 @@ Message:  1012
 <ce>
 <ce>              You must make a decision. Do you side with
 <ce>              the Redguard (yes) or with the orcs (no)?
-<ce>
-<ce>        (NOTE: This version of ANMQ only allows the Orc path.)
-<ce>                (The man's path will be added later.)
-<ce>              (Thank you for playing the beta version.)
 
 Message:  1013
 <ce>           The man throws the bag at you before anyone can
@@ -120,12 +112,6 @@ Message:  1014
 <ce>        "Once I hear of a new war, I will send word for you."
 <ce>
 <ce>              This appears to be your only way forward.
-
--Message:  1015
--<ce>     As you leave the castle, you hear troops being ordered into
--<ce>       regiments. Eadwyre suffers no hesitation in ordering the
--<ce>        war against Orsinium. For better or for worse, things
--<ce>                   are now irretrievably in motion.
 
 Message:  1016
 <ce>         The man's face contorts in a rage, but before he can
@@ -205,6 +191,13 @@ Message:  1022
  damaged letter to Popudax, who should be in
  the Mages Guild of the city of ___dagg_.
 
+Message:  1023
+%qdt:
+ A mysterious man beat me to the letter and forced me
+ into a fight with a group of orcs. He told me he would
+ show the letter's contents to me if I delivered a bag
+ of incriminating evidence to Eadwyre in Wayrest.
+
 QBN:
 Person _ukagent_ group Resident1 male
 Person _ead_ named King_Eadwyre atHome
@@ -222,6 +215,7 @@ Clock _delay_ 0:00
 
 Place _tristlab_ permanent Tristore_Laboratory2
 Place _dagg_ permanent DaggerfallCastle
+Place _wayr_ permanent WayrestCastle
 
 Item _bag_ small_sack
 Item _empletter_ letter used 1019
@@ -230,6 +224,7 @@ Item _empletter_ letter used 1019
     place npc _ukagent_ at _tristlab_
     pc at _tristlab_ do _inside_
     pc at _dagg_ do _dig_
+    pc at _wayr_ do _wayrestplace_
     hide npc _pop_
     log 1020 step 0
 
@@ -247,14 +242,14 @@ _noorc_ task:
     create foe _orc1_ every 0 minutes 1 times with 100% success
     create foe _orc2_ every 0 minutes 1 times with 100% success
     create foe _orc3_ every 0 minutes 1 times with 100% success
-    prompt 1011 yes _orcpath_ no _orcpath_
+    prompt 1011 yes _orcpath_ no _ukpath_
 
 _goorc_ task:
     when _delay_ and _skilled_
     create foe _orc1_ every 0 minutes 1 times with 100% success
     create foe _orc2_ every 0 minutes 1 times with 100% success
     create foe _orc3_ every 0 minutes 1 times with 100% success
-    prompt 1012 yes _orcpath_ no _orcpath_
+    prompt 1012 yes _orcpath_ no _ukpath_
 
 _ukpath_ task:
     say 1013
@@ -268,6 +263,7 @@ _ukpath_ task:
     change foe _orc2_ infighting true
     change foe _orc3_ infighting true
     get item _bag_
+    log 1023 step 0
 
 _pinnote_ task:
     when _ukpath_ and not _inside_
@@ -276,6 +272,13 @@ _pinnote_ task:
 _eadwyrerage_ task:
     toting _bag_ and _ead_ clicked
     give pc nothing
+
+variable _wayrestplace_
+
+_leave_ task:
+    when _eadwyrerage_ and not _wayrestplace_
+    start quest BNMQ01
+    start quest nowayrest
     end quest
 
 _orcpath_ task:

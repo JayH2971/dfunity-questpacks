@@ -1,0 +1,108 @@
+Quest: nowayrest
+DisplayName: Wayrest Forbidden
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>           The guards of Castle Wayrest have committed your
+<ce>              face to memory, and bark for you to leave
+<ce>               the premises. They don't attack you yet,
+<ce>           but watch carefully to make sure you don't speak
+<ce>                     to any of the royal family.
+                                     <--->
+<ce>            The guards of Castle Wayrest recognize you and
+<ce>          shout furiously for you to leave. They hold their
+<ce>          weapons at the ready, making sure you don't speak
+<ce>                         to the royal family.
+                                     <--->
+<ce>          Upon recognizing you, the guards of Castle Wayrest
+<ce>             draw their weapons and get ready to attack.
+<ce>           They haven't received an order to kill you yet,
+<ce>       but will not hesitate if you approach the royal family.
+
+Message:  1011
+<ce>           The guards tolerated you this far, but no more.
+<ce>           The members of the royal family are escorted to
+<ce>           a secure location while a small legion unleashes
+<ce>                          its fury on you.
+
+QBN:
+Person _ead_ named King_Eadwyre atHome
+Person _barenz_ named Queen_Barenziah atHome
+Person _hels_ named Prince_Helseth atHome
+Person _elys_ named Princess_Elysana atHome
+Person _morg_ named Princess_Morgiah atHome
+
+Place _wayr_ permanent WayrestCastle
+
+Foe _guard1a_ is Knight
+Foe _guard1b_ is Knight
+Foe _guard1c_ is Knight
+Foe _guard2a_ is Spellsword
+Foe _guard2b_ is Spellsword
+Foe _guard2c_ is Spellsword
+Foe _guard3a_ is Mage
+Foe _guard3b_ is Mage
+Foe _guard3c_ is Mage
+
+--	Quest start-up:
+    pc at _wayr_ set _incastle_
+
+_incastle_ task:
+    say 1010
+    start task _warned_
+
+variable _warned_
+
+_badclick_ task:
+    clicked npc _ead_
+    start task _alarm_
+
+_alarm_ task:
+    say 1011
+    hide npc _ead_
+    hide npc _barenz_
+    hide npc _hels_
+    hide npc _elys_
+    hide npc _morg_
+    create foe _guard1a_ every 0 minutes 1 times with 100% success
+    create foe _guard1b_ every 0 minutes 1 times with 100% success
+    create foe _guard1c_ every 0 minutes 1 times with 100% success
+    change foe _guard1a_ infighting true
+    change foe _guard1b_ infighting true
+    change foe _guard1c_ infighting true
+    create foe _guard2a_ every 0 minutes 1 times with 100% success
+    create foe _guard2b_ every 0 minutes 1 times with 100% success
+    create foe _guard2c_ every 0 minutes 1 times with 100% success
+    change foe _guard2a_ infighting true
+    change foe _guard2b_ infighting true
+    change foe _guard2c_ infighting true
+    create foe _guard3a_ every 0 minutes 1 times with 100% success
+    create foe _guard3b_ every 0 minutes 1 times with 100% success
+    create foe _guard3c_ every 0 minutes 1 times with 100% success
+    change foe _guard3a_ infighting true
+    change foe _guard3b_ infighting true
+    change foe _guard3c_ infighting true
+
+_reset_ task:
+    when _warned_ and not _incastle_
+    restore _ead_
+    restore _barenz_
+    restore _hels_
+    restore _elys_
+    restore _morg_
+    remove foe _guard1a_
+    remove foe _guard1b_
+    remove foe _guard1c_
+    remove foe _guard2a_
+    remove foe _guard2b_
+    remove foe _guard2c_
+    remove foe _guard3a_
+    remove foe _guard3b_
+    remove foe _guard3c_
+    start quest nowayrest
+    end quest
+
+LysandusSatisfied _endthis_
+    end quest
+
