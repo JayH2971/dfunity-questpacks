@@ -1,0 +1,165 @@
+Quest: JHTG018
+DisplayName: Kidnapping
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                 There's a kid here in town who needs
+<ce>                 to get abducted and held for ransom.
+<ce>            We need someone who's good with words and can
+<ce>                  move from place to place quickly.
+<ce>            Accept only if you meet those qualifications.
+
+RefuseQuest:  [1001]
+<ce>                Speech is real important for a thief.
+<ce>                  I hope you get better at it, fast.
+
+AcceptQuest:  [1002]
+<ce>                     All right. The kid's name is
+<ce>              ==kid_. Every day %g3 parents leave %g2 in
+<ce>                  _tavern_ while they work, and then
+<ce>             a relative comes and picks %g3 up later on.
+<ce>               Whatever excuse you wanna come up with,
+<ce>            that's your job, but you need to get this kid
+<ce>                   out of the tavern and into _res_
+<ce>             in town. That'll mean =reward_ gold for you.
+<ce>                    Screw up, and you get nothing.
+<ce>               We need to collect on this in 24 hours.
+
+QuestFail:  [1003]
+<ce>                  24 hours have passed, and you have
+<ce>                    not delivered _kid_ to _res_.
+<ce>                        The scheme has failed.
+
+QuestComplete:  [1004]
+<ce>                    When you enter the residence,
+<ce>             a hooded figure takes _kid_ by the shoulder
+<ce>                    and leads %g2 to another room.
+<ce>           You wait for your payment, and then realize that
+<ce>          a bag of gold has somehow been put into your hand.
+
+Message:  1010
+<ce>              The typical cacophany of _tavern_ assaults
+<ce>         your ears as you enter. Loud laughter, cheering, and
+<ce>          some snoring sound from within the patrons' rooms.
+
+Message:  1011
+<ce>         _kid_ looks at you distrustfully. "Who are you, and
+<ce>            why are we leaving so early? We just got here.
+<ce>         Where's my aunt?" You make up some explanations that
+<ce>         the child naively accepts, and %g1 starts to follow.
+
+Message:  1012
+<ce>        You are spotted immediately after leaving the tavern.
+<ce>         "Halt!" A member of the town guard runs over to you.
+<ce>      "I've seen that child leave the tavern lots of times, but
+<ce>         never with you. Who are you and what are you doing?"
+<ce>
+<ce>      Your mind races. Do you attempt to lie (yes) or surrender
+<ce>                     the child to the guard (no)?
+<ce>
+<ce>               (SKILL CHECK: YES: Streetwise, very low)
+
+Message:  1013
+<ce>                       (SKILL CHECK SUCCEEDED)
+<ce>
+<ce>         "So %g3 aunt asked you to come for %g2 because she's
+<ce>       injured? Well, all right then." He kneels down and asks
+<ce>     _kid_, "Do you believe this %ra?" The child shrugs and says,
+<ce>               "I guess. My aunt's a pretty smart lady.
+<ce>      I'll have to see what's wrong with her when we get home."
+<ce>
+<ce>     "All right, get moving, you two. But I'll be watching you,"
+<ce>                  the guard says, waving you along.
+
+Message:  1014
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>       Your mind freezes up. You start to come up with a story,
+<ce>           but your manner of telling it convinces no one.
+<ce>         The child shrieks and runs away, and the town guard
+<ce>                flees back a pace, shouting for help.
+
+Message:  1015
+<ce>                You surrender the child to the guard.
+<ce>       He looks at you with some surprise, but can tell you're
+<ce>      in over your head here. "Fine then. I'll just forget about
+<ce>      this, and we'll make sure this young one gets home safe."
+<ce>
+<ce>              You step back and let the two of them go,
+<ce>                 washing your hands of the incident.
+
+Message:  1030
+%qdt:
+ The Thieves Guild has sent me
+ to kidnap _kid_, a child
+ in _tavern_ here in ___tavern_.
+ I then need to take %g2 to
+ _res_. I have 24 hours.
+
+QBN:
+Person _kid_ faction Children
+
+Place _tavern_ local tavern
+Place _res_ local house
+
+Clock _timer_ 1.00:00
+Clock _delay_ 0:05
+
+Item _reward_ gold range 201 to 399
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    place npc _kid_ at _tavern_
+    pc at _tavern_ set _idun_
+    pc at _res_ set _ires_
+    start timer _timer_
+
+variable _ires_
+_idun_ task:
+    say 1010
+
+_kidclick_ task:
+    clicked npc _kid_
+    say 1011
+    hide npc _kid_
+    add _kid_ face
+
+_ambush_ task:
+    when _kidclick_ and not _idun_ and not _ires_
+    prompt 1012 yes _lie_ no _surrender_
+
+variable _lie_
+
+_skilled_ task:
+    when skill Streetwise is at least 99
+
+_winner_ task:
+    when _lie_ and _skilled_
+    say 1013
+
+_failure_ task:
+    when _lie_ and not _skilled_
+    say 1014
+    setplayercrime Assault
+    drop _kid_ face
+    clear _kidclick_
+    spawncityguards immediate
+    start timer _delay_
+
+_surrender_ task:
+    say 1015
+    end quest
+
+_delay_ task:
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest
+
+_final_ task:
+    when _kidclick_ and _ires_
+    give pc _reward_
+    end quest
