@@ -4,150 +4,151 @@ DisplayName: Daedric Submission
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  Contrary to our urging, a guild member
-<ce>  has taken to seclusion in a foul hole,
-<ce>  attempting to control a powerful daedra.
-<ce>  This kind of ritual is always dangerous
-<ce>  and never approved. We need someone with
-<ce>  good skill and proper wisdom to find
-<ce>  our friend and end this madness.
-
+<ce>                Contrary to our urging, a guild member
+<ce>                has taken to seclusion in a foul hole,
+<ce>               attempting to control a powerful daedra.
+<ce>               This kind of ritual is always dangerous
+<ce>               and never approved. We need someone with
+<ce>                 good skill and proper wisdom to find
+<ce>                   our friend and end this madness.
 
 RefuseQuest:  [1001]
-<ce>  Oh dear. We must find someone soon.
+<ce>                 Oh dear. We must find someone soon.
 
 AcceptQuest:  [1002]
-<ce>  Expect serious peril when you go.
-<ce>  This is the kind of power reserved for
-<ce>  the highest tiers of the Mages Guild, and
-<ce>  to even fathom controlling it in whole
-<ce>  is mere fantasy. _mage_ went
-<ce>  into ___dung_ a few days ago
-<ce>  and our minds have not ceased to worry
-<ce>  for %g3 state. Please bring %g2
-<ce>  back within =timer_ days' time.
-<ce>  If you follow the gods, seek their help as
-<ce>  you go. No one can predict what will happen.
+<ce>                  Expect serious peril when you go.
+<ce>                This is the kind of power reserved for
+<ce>              the highest tiers of the Mages Guild, and
+<ce>                to even fathom controlling it in whole
+<ce>                     is mere fantasy. _mage_ went
+<ce>                     into ___dung_ a few days ago
+<ce>                and our minds have not ceased to worry
+<ce>                   for %g3 state. Please bring %g2
+<ce>                   back within =timer_ days' time.
+<ce>              If you follow the gods, seek their help as
+<ce>             you go. No one can predict what will happen.
 
 QuestFail:  [1003]
-<ce>  Hmm? I do not see _mage_.
-<ce>  Return here when that changes, %pct.
+<ce>                      Hmm? I do not see _mage_.
+<ce>                 Return here when that changes, %pct.
 
 QuestComplete:  [1004]
-<ce>  _qgiver_ calls for a few
-<ce>  attendants, who rush in from nearby rooms to
-<ce>  take _mage_ off your hands.
-<ce>  
-<ce>  "My word, %pcf, you have done the impossible.
-<ce>  Fifty other guild members we could have sent
-<ce>  would not have known what to do. Neither
-<ce>  thanks nor congratulations will do, my friend.
-<ce>  A diamond seems to me a pittance but will
-<ce>  hopefully compensate your travail."
+<ce>                       _qgiver_ calls for a few
+<ce>             attendants, who rush in from nearby rooms to
+<ce>                     take _mage_ off your hands.
+<ce>
+<ce>            "My word, %pcf, you have done the impossible.
+<ce>             Fifty other guild members we could have sent
+<ce>               would not have known what to do. Neither
+<ce>            thanks nor congratulations will do, my friend.
+<ce>              A diamond seems to me a pittance but will
+<ce>                 hopefully compensate your travail."
 
 Message:  1010
-<ce>  _mage_ appears to be in deep
-<ce>  concentration. You try to get %g3 attention.
-<ce>  
-<ce>  Then something goes wrong. Crackles of power
-<ce>  shoot from %g3 body in various directions.
-<ce>  The room momentarily pulses darker.
-<ce>  As %g3 eyes shoot open, %g1 shouts.
-<ce>  
-<ce>  "N-no! It wasn't finished! You fool!
-<ce>  For distracting me..."
-<ce>  
-<ce>  You become aware of a daedra nearby,
-<ce>  a powerful one. Through sheer mental effort
-<ce>  _mage_ appears to be holding
-<ce>  it in place.
+<ce>                     _mage_ appears to be in deep
+<ce>             concentration. You try to get %g3 attention.
+<ce>
+<ce>             Then something goes wrong. Crackles of power
+<ce>              shoot from %g3 body in various directions.
+<ce>                 The room momentarily pulses darker.
+<ce>                 As %g3 eyes shoot open, %g1 shouts.
+<ce>
+<ce>                 "N-no! It wasn't finished! You fool!
+<ce>                        For distracting me..."
+<ce>
+<ce>                 You become aware of a daedra nearby,
+<ce>             a powerful one. Through sheer mental effort
+<ce>                     _mage_ appears to be holding
+<ce>                             it in place.
 
 Message:  1011
-<ce>  "Release me," the daedra shouts at you.
-<ce>  "Slay the fool who has summoned me,
-<ce>  and I will return to my realm."
-<ce>  
-<ce>  "No! Do not listen to it!"
-<ce>  _mage_ shouts in response.
-<ce>  "This creature is dangerous and
-<ce>  must not be given free reign!
-<ce>  Do not interfere!"
+<ce>               "Release me," the daedra shouts at you.
+<ce>                 "Slay the fool who has summoned me,
+<ce>                   and I will return to my realm."
+<ce>
+<ce>                      "No! Do not listen to it!"
+<ce>                      _mage_ shouts in response.
+<ce>                   "This creature is dangerous and
+<ce>                    must not be given free reign!
+<ce>                          Do not interfere!"
 
 Message:  1012
-<ce>  The daedra and mage begin to shout
-<ce>  at each other in various languages.
-<ce>  Oddly, _mage_'s voice
-<ce>  and the monster's begin to meld.
-<ce>  They soon sound very much alike.
-<ce>  
-<ce>  "You will not win! This is my realm!"
-<ce>  
-<ce>  "Stop this madness! I am the victor!"
-<ce>  
-<ce>  You sense sheer arcane power pouring out
-<ce>  from both beings. If the daedra is right,
-<ce>  it will leave this realm once freed from
-<ce>  the spell. If not, interfering could have
-<ce>  serious consequences. This is well beyond
-<ce>  your ken. What will you do?
+<ce>                  The daedra and mage begin to shout
+<ce>                 at each other in various languages.
+<ce>                        Oddly, _mage_'s voice
+<ce>                   and the monster's begin to meld.
+<ce>                   They soon sound very much alike.
+<ce>
+<ce>                "You will not win! This is my realm!"
+<ce>
+<ce>                "Stop this madness! I am the victor!"
+<ce>
+<ce>               You sense sheer arcane power pouring out
+<ce>              from both beings. If the daedra is right,
+<ce>               it will leave this realm once freed from
+<ce>              the spell. If not, interfering could have
+<ce>              serious consequences. This is well beyond
+<ce>                     your ken. What will you do?
 
 Message:  1013
-<ce>  _mage_'s eyes turn red. From %g3 and
-<ce>  the daedra's mouth come the same words.
-<ce>  
-<ce>  "I am =daed_, lord of Oblivion! I cannot
-<ce>  be slain! Aid me and I will grant you power!
-<ce>  Free me from these bands!"
+<ce>                 _mage_'s eyes turn red. From %g3 and
+<ce>               the daedra's mouth come the same words.
+<ce>
+<ce>               "I am =daed_, lord of Oblivion! I cannot
+<ce>             be slain! Aid me and I will grant you power!
+<ce>                      Free me from these bands!"
 
 Message:  1014
-<ce>  _mage_ yells with great intensity
-<ce>  and fights back against =daed_'s mental assault.
-<ce>  Gaining power back, first imperceptibly and then
-<ce>  at a growing pace, the mage finishes the binding
-<ce>  spell and returns the daedra to its own realm
-<ce>  with a blinding flash of light.
-<ce>  
-<ce>  You feel exhausted merely by watching
-<ce>  the spectacle, but the summoner is
-<ce>  completely drained. _mage_
-<ce>  only has energy enough to mutter some
-<ce>  choice words against you before entering a torpor.
-<ce>  You gather up %g3 inert form and take %g2 with you.
+<ce>                  _mage_ yells with great intensity
+<ce>           and fights back against =daed_'s mental assault.
+<ce>           Gaining power back, first imperceptibly and then
+<ce>           at a growing pace, the mage finishes the binding
+<ce>            spell and returns the daedra to its own realm
+<ce>                   with a blinding flash of light.
+<ce>
+<ce>                You feel exhausted merely by watching
+<ce>                  the spectacle, but the summoner is
+<ce>                      completely drained. _mage_
+<ce>                only has energy enough to mutter some
+<ce>          choice words against you before entering a torpor.
+<ce>         You gather up %g3 inert form and take %g2 with you.
 
 Message:  1015
-<ce>  You strike the daedra, and the mental link
-<ce>  shares the pain with _mage_.
-<ce>  In that moment of weakness %g3 guard is down,
-<ce>  and the monster takes the opportunity to blast
-<ce>  %g3 mind from the inside. You watch %g3
-<ce>  body crumple to the floor.
-<ce>  
-<ce>  "Well done, feeble creature! Now I am free
-<ce>  to traverse this world as I please!"
-<ce>  
-<ce>  All that's left now is to inform the Mages Guild.
+<ce>              You strike the daedra, and the mental link
+<ce>                     shares the pain with _mage_.
+<ce>            In that moment of weakness %g3 guard is down,
+<ce>            and the monster takes the opportunity to blast
+<ce>               %g3 mind from the inside. You watch %g3
+<ce>                      body crumple to the floor.
+<ce>
+<ce>              "Well done, feeble creature! Now I am free
+<ce>                 to traverse this world as I please!"
+<ce>       It owes you no gratitude, and marches to kill you next.
+<ce>
+<ce>           You'll have to tell the Mages Guild about this.
 
 Message:  1016
-<ce>  You strike _mage_ and break
-<ce>  %g3 concentration. In that moment of
-<ce>  weakness %g3 guard is down, and the
-<ce>  monster takes the opportunity to blast
-<ce>  %g3 mind from the inside. You watch %g3
-<ce>  body crumple to the floor. The daedra roars
-<ce>  with laughter.
-<ce>  
-<ce>  "Well done, feeble creature! Now I am free
-<ce>  to traverse this world as I please!"
-<ce>  
-<ce>  All that's left now is to inform the Mages Guild.
+<ce>                     You strike _mage_ and break
+<ce>                 %g3 concentration. In that moment of
+<ce>                 weakness %g3 guard is down, and the
+<ce>                monster takes the opportunity to blast
+<ce>               %g3 mind from the inside. You watch %g3
+<ce>             body crumple to the floor. The daedra roars
+<ce>                            with laughter.
+<ce>
+<ce>              "Well done, feeble creature! Now I am free
+<ce>                 to traverse this world as I please!"
+<ce>       It owes you no gratitude, and marches to kill you next.
+<ce>
+<ce>           You'll have to tell the Mages Guild about this.
 
 Message:  1017
-<ce>  This is simply awful. I feared the worst
-<ce>  and received it in turn. If nothing else,
-<ce>  we now have a cautionary tale for so many
-<ce>  aspirants who come through our doors.
-<ce>  Thank you for going, %pcf, though
-<ce>  I cannot reward you.
+<ce>               This is simply awful. I feared the worst
+<ce>              and received it in turn. If nothing else,
+<ce>              we now have a cautionary tale for so many
+<ce>                aspirants who come through our doors.
+<ce>                  Thank you for going, %pcf, though
+<ce>                         I cannot reward you.
 
 Message:  1030
 %qdt:
@@ -181,8 +182,8 @@ Clock _t3_ 00:03
 Clock _t4_ 00:03
 
 --	Quest start-up:
-	start timer _timer_
-	log 1030 step 0 
+    start timer _timer_
+    log 1030 step 0
     place npc _mage_ at _dung_
     reveal _dung_
 
@@ -235,8 +236,9 @@ _injm_ task:
     stop timer _t4_
     say 1016
     remove foe _sorc_
+    unrestrain foe _daed_
+    change foe _daed_ infighting true
     start task _failure_
-    cast Heal spell on _daed_
     clear _sound_
     clear _injm_
 
@@ -248,7 +250,6 @@ _injd_ task:
     stop timer _t4_
     remove foe _sorc_
     start task _failure_
-    cast Heal spell on _daed_
     clear _sound_
     clear _injd_
 
@@ -256,22 +257,22 @@ _failure_ task:
     log 1031 step 1
 
 _pcgetsgold_ task:
-  when _qgclicked_ and _t4_
-	give pc _reward_
-	end quest
+    when _qgclicked_ and _t4_
+    give pc _reward_
+    end quest
 
 _badend_ task:
-  when _qgclicked_ and _failure_
-	say 1017
-	end quest
+    when _qgclicked_ and _failure_
+    say 1017
+    end quest
 
 _qgclicked_ task:
-	clicked npc _qgiver_ 
+    clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _begin_
-	clear _qgclicked_ _clearclick_ 
+    when _qgclicked_ and not _begin_
+    clear _qgclicked_ _clearclick_
 
 _timer_ task:
-  say 1003
-	end quest
+    say 1003
+    end quest
