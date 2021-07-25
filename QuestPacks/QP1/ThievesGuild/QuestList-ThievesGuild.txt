@@ -10,7 +10,7 @@
 schema: *name, group, membership, minReq, flag, notes
 
 JHTG001, GeneralPopulace, M, 2, 1, a quest to evade combat while getting a treasure
-JHTG002, GeneralPopulace, M, 0, 0, a quest to kidnap a child for ransom
+JHTG002, GeneralPopulace, M, 1, 0, a quest to kidnap a child for ransom
 JHTG003, GeneralPopulace, M, 0, 0, a quest to take a land deed by force
 JHTG004, GeneralPopulace, M, 1, 0, a quest to steal a criminal confession
 JHTG005, GeneralPopulace, M, 0, 0, a quest to lift a guarded gem
@@ -26,7 +26,7 @@ JHTG014, GeneralPopulace, M, 3, 0, a quest to participate in a gang war
 JHTG015, GeneralPopulace, M, 0, 0, a small daily heist
 JHTG016, GeneralPopulace, M, 0, 0, a moderate daily heist
 JHTG017, GeneralPopulace, M, 0, 0, a large daily heist
-JHTG018, GeneralPopulace, M, 0, 0, a quest to kidnap a child from a tavern
+JHTG018, GeneralPopulace, M, 0, 1, a quest to kidnap a child from a tavern
 JHTGX00, GeneralPopulace, M, 6, 1, a quest invitation from a guild member
 JHTGX01, GeneralPopulace, P, 0, X, offered via JHTG00X
 JHTGX02, GeneralPopulace, P, 0, X, offered via JHTG01X
