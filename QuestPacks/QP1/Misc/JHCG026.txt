@@ -130,7 +130,6 @@ _qgclicked_ task:
 _begin_ task:
     when _qgclicked_ and not _talked_ and not _found_
     say 1012
-    reveal _dung_
     clear _qgclicked_
     log 1031 step 1
     start task _talked_

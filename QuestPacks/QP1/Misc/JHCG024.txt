@@ -5,31 +5,31 @@ DisplayName: Coven of Dust
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ERROR 1000 JHCG024
+<ce>                          ERROR 1000 JHCG024
 
 RefuseQuest:  [1001]
-<ce>          ERROR 1001 JHCG024
+<ce>                          ERROR 1001 JHCG024
 
 AcceptQuest:  [1002]
-<ce>           ERROR 1002 JHCG024
+<ce>                          ERROR 1002 JHCG024
 
 QuestFail:  [1003]
-<ce>   Your assignment to chart the Coven of Dust has expired.
+<ce>       Your assignment to chart the Coven of Dust has expired.
 
 QuestComplete:  [1004]
-<ce>        I hope it was fairly easy to find. Have you ever
-<ce>        spoken with witches? I hear a lot of nasty rumors
-<ce>        about them, but they behaved quite civilly when
-<ce>        I was on the circuit. Well, anyway, here's your fee.
+<ce>           I hope it was fairly easy to find. Have you ever
+<ce>          spoken with witches? I hear a lot of nasty rumors
+<ce>           about them, but they behaved quite civilly when
+<ce>         I was on the circuit. Well, anyway, here's your fee.
 
 Message:  1010
-<ce>        A young courier takes a letter out
-<ce>        of her bag. "This is for you, %pcf."
-<ce>        She then departs.
-<--->
-<ce>        A young courier takes a letter out
-<ce>        of his bag. "This is for you, %pcf."
-<ce>        He then departs.
+<ce>                  A young courier takes a letter out
+<ce>                 of her bag. "This is for you, %pcf."
+<ce>                          She then departs.
+                                     <--->
+<ce>                  A young courier takes a letter out
+<ce>                 of his bag. "This is for you, %pcf."
+<ce>                           He then departs.
 
 Message:  1011
   Pathfinder,
@@ -45,18 +45,18 @@ Message:  1011
                          ___place_, ____place_
 
 Message:  1012
-<ce>        All right, %pcf. Let's begin with your map.
-<ce>        See this temple, Perpetual Sunrise of Mara
-<ce>        in Antiphyllos? Start there and walk northeast.
-<ce>        It'll be a couple of minutes before you can see
-<ce>        the coven in the distance, but it should be easy
-<ce>        to stop. It's a stone dome with sand covering
-<ce>        the top of it. You'll have =timer_ days to do this.
+<ce>             All right, %pcf. Let's begin with your map.
+<ce>              See this temple, Perpetual Sunrise of Mara
+<ce>           in Antiphyllos? Start there and walk northeast.
+<ce>           It'll be a couple of minutes before you can see
+<ce>           the coven in the distance, but it should be easy
+<ce>            to stop. It's a stone dome with sand covering
+<ce>         the top of it. You'll have =timer_ days to do this.
 
 Message:  1013
-<ce>        You've found the Coven of Dust.
-<--->
-<ce>        The Coven of Dust lies before you.
+<ce>                   You've found the Coven of Dust.
+                                     <--->
+<ce>                  The Coven of Dust lies before you.
 
 Message:  1030
 %qdt:
@@ -75,9 +75,9 @@ Message:  1031
  should be in few within a couple of minutes.
 
 Message:  1099
-<ce>  The vegetation out there is so arid,
-<ce>  finding the coven site should be easy.
-<ce>  You don't have to go very far to see it.
+<ce>                 The vegetation out there is so arid,
+<ce>                finding the coven site should be easy.
+<ce>               You don't have to go very far to see it.
 
 QBN:
 Item _reward_ gold range 500 to 599
@@ -91,7 +91,7 @@ Clock _timer_ 55.00:00 65.00:00
 Person _qg_ group Chemist
 
 --	Quest start-up:
-     give pc _letter_ notify 1010
+    give pc _letter_ notify 1010
     place npc _qg_ at _place_
     have _letter_ set _log_
 
@@ -101,19 +101,18 @@ _log_ task:
     pc at _dung_ set _inside_
 
 _qgclicked_ task:
-	clicked npc _qg_ 
+    clicked npc _qg_
 
 _begin_ task:
     when _qgclicked_ and not _talked_ and not _found_
     say 1012
-    reveal _dung_
     clear _qgclicked_
     log 1031 step 1
     start task _talked_
 
 variable _talked_
 _inside_ task:
-     start task _found_
+    start task _found_
 
 _found_ task:
     say 1013
@@ -130,6 +129,6 @@ _victory_ task:
     end quest
 
 _timer_ task:
-         say 1003
-         start quest JHCGFAL3
-         end quest
+    say 1003
+    start quest JHCGFAL3
+    end quest

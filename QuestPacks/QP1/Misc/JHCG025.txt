@@ -5,34 +5,34 @@ DisplayName: Wroth Coven
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ERROR 1000 JHCG025
+<ce>                          ERROR 1000 JHCG025
 
 RefuseQuest:  [1001]
-<ce>          ERROR 1001 JHCG025
+<ce>                          ERROR 1001 JHCG025
 
 AcceptQuest:  [1002]
-<ce>           ERROR 1002 JHCG025
+<ce>                          ERROR 1002 JHCG025
 
 QuestFail:  [1003]
-<ce>   The Cartographers assigned you to
-<ce>   chart the Wroth Coven by now.
+<ce>                  The Cartographers assigned you to
+<ce>                    chart the Wroth Coven by now.
 
 QuestComplete:  [1004]
-<ce>        Well done, %pcf. These things are
-<ce>        always a bother to find at the first, but once
-<ce>        you've done it, you can keep doing the task
-<ce>        with perfect confidence. We may never run
-<ce>        out of charting assignments, even if you find
-<ce>        yourself at the same locations once and again.
+<ce>                  Well done, %pcf. These things are
+<ce>            always a bother to find at the first, but once
+<ce>             you've done it, you can keep doing the task
+<ce>              with perfect confidence. We may never run
+<ce>            out of charting assignments, even if you find
+<ce>            yourself at the same locations once and again.
 
 Message:  1010
-<ce>        A man bearing the crest of the
-<ce>        Cartographers gives you a letter
-<ce>        and promptly departs.
-<--->
-<ce>        A woman bearing the crest of the
-<ce>        Cartographers gives you a letter
-<ce>        and promptly departs.
+<ce>                    A man bearing the crest of the
+<ce>                   Cartographers gives you a letter
+<ce>                        and promptly departs.
+                                     <--->
+<ce>                   A woman bearing the crest of the
+<ce>                   Cartographers gives you a letter
+<ce>                        and promptly departs.
 
 Message:  1011
   Pathfinder,
@@ -48,25 +48,25 @@ Message:  1011
                          ___place_, ____place_
 
 Message:  1012
-<ce>        Of course I'll help you, %pcf.
-<ce>        Start in the village of Deerville in the
-<ce>        Wrothgarian Mountains. Specifically,
-<ce>        stand next to a store called Deerville's Best
-<ce>        General Store, and march east. If you follow
-<ce>        that direction precisely, you should walk right
-<ce>        over the stone circle of the Wroth Coven.
-<ce>        There aren't any nearby landmarks or hills, so
-<ce>        unfortunately that's all the direction I can give
-<ce>        you. I will add that it's no further than
-<ce>        two leagues out. Don't go wandering off into
-<ce>        Skyrim looking for it. We've given you =timer_
-<ce>        days to do this task.
+<ce>                    Of course I'll help you, %pcf.
+<ce>               Start in the village of Deerville in the
+<ce>                 Wrothgarian Mountains. Specifically,
+<ce>            stand next to a store called Deerville's Best
+<ce>             General Store, and march east. If you follow
+<ce>           that direction precisely, you should walk right
+<ce>              over the stone circle of the Wroth Coven.
+<ce>            There aren't any nearby landmarks or hills, so
+<ce>          unfortunately that's all the direction I can give
+<ce>              you. I will add that it's no further than
+<ce>             two leagues out. Don't go wandering off into
+<ce>            Skyrim looking for it. We've given you =timer_
+<ce>                        days to do this task.
 
 Message:  1013
-<ce>        This must be the Wroth Coven.
-<--->
-<ce>        You've found the Wroth Coven. Now it's
-<ce>        time to report to _qg_.
+<ce>                    This must be the Wroth Coven.
+                                     <--->
+<ce>                You've found the Wroth Coven. Now it's
+<ce>                       time to report to _qg_.
 
 Message:  1030
 %qdt:
@@ -85,9 +85,9 @@ Message:  1031
  than two leagues from the village.
 
 Message:  1099
-<ce>  It's not always easy to find, since there
-<ce>  aren't any landmarks besides Deerville.
-<ce>  Watch for the jagged stones in the coven.
+<ce>              It's not always easy to find, since there
+<ce>               aren't any landmarks besides Deerville.
+<ce>              Watch for the jagged stones in the coven.
 
 QBN:
 Item _reward_ gold range 800 to 899
@@ -101,7 +101,7 @@ Clock _timer_ 70.00:00 80.00:00
 Person _qg_ group Chemist
 
 --	Quest start-up:
-     give pc _letter_ notify 1010
+    give pc _letter_ notify 1010
     place npc _qg_ at _place_
     have _letter_ set _log_
 
@@ -111,19 +111,18 @@ _log_ task:
     pc at _dung_ set _inside_
 
 _qgclicked_ task:
-	clicked npc _qg_ 
+    clicked npc _qg_
 
 _begin_ task:
     when _qgclicked_ and not _talked_ and not _found_
     say 1012
-    reveal _dung_
     clear _qgclicked_
     log 1031 step 1
     start task _talked_
 
 variable _talked_
 _inside_ task:
-     start task _found_
+    start task _found_
 
 _found_ task:
     say 1013
@@ -140,6 +139,6 @@ _victory_ task:
     end quest
 
 _timer_ task:
-         say 1003
-         start quest JHCGFAL3
-         end quest
+    say 1003
+    start quest JHCGFAL3
+    end quest

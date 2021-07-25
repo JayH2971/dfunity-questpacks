@@ -5,32 +5,32 @@ DisplayName: The Barrow
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ERROR 1000 JHCG011
+<ce>                          ERROR 1000 JHCG011
 
 RefuseQuest:  [1001]
-<ce>          ERROR 1001 JHCG011
+<ce>                          ERROR 1001 JHCG011
 
 AcceptQuest:  [1002]
-<ce>           ERROR 1002 JHCG011
+<ce>                          ERROR 1002 JHCG011
 
 QuestFail:  [1003]
-<ce>   The Cartographers expected you to scout
-<ce>     out Scourg Barrow's location by now.
+<ce>               The Cartographers expected you to scout
+<ce>                 out Scourg Barrow's location by now.
 
 QuestComplete:  [1004]
-<ce>        Most citizens of ____place_ consider
-<ce>        the Necromancers to be mere fiction. But Scourg
-<ce>        Barrow exists, and you are living proof of it. 
-<ce>        Little by little, our work brings the truth to Tamriel.
-<ce>        Have this reward in exchange for your report.
+<ce>                 Most citizens of ____place_ consider
+<ce>           the Necromancers to be mere fiction. But Scourg
+<ce>            Barrow exists, and you are living proof of it.
+<ce>       Little by little, our work brings the truth to Tamriel.
+<ce>            Have this reward in exchange for your report.
 
 Message:  1010
-<ce>        A page calls your name and presses a letter
-<ce>        into your pack before calling out another name
-<ce>        and pressing a letter into that person's pack.
-<--->
-<ce>        A letter has found its way into your pack.
-<ce>        It carries the Cartographers' seal, a compass.
+<ce>             A page calls your name and presses a letter
+<ce>            into your pack before calling out another name
+<ce>            and pressing a letter into that person's pack.
+                                     <--->
+<ce>              A letter has found its way into your pack.
+<ce>            It carries the Cartographers' seal, a compass.
 
 Message:  1011
   %pcf,
@@ -48,25 +48,25 @@ Message:  1011
 
 Message:  1012
 <ce>        %pcf, it is good to see you. You'll find Scourg Barrow
-<ce>        in the Dragontail Mountains. It's a place legendary for
-<ce>        the tales people tell concerning its Necromancer inhabitants.
+<ce>       in the Dragontail Mountains. It's a place legendary for
+<ce>    the tales people tell concerning its Necromancer inhabitants.
  
-<ce>        If you can't find it on your own, start at Maaghtam
+<ce>         If you can't find it on your own, start at Maaghtam
 <ce>        Grange. Depart it exactly south-southeast and continue
-<ce>        on. That direction should send you straight to the Barrow.
-<ce>        Watch your surroundings. If you need further orientation, it's
-<ce>        directly to the south of Bleeding Soul of Arkay, though that's
-<ce>        much further to the north. Don't go any further south than
-<ce>        Makehda. The Barrow will look like a black cube covered by
-<ce>        a spire with a small tower on each corner. Once you've found it,
-<ce>        come back. =timer_ days, remember. I will wait for you here.
+<ce>      on. That direction should send you straight to the Barrow.
+<ce>    Watch your surroundings. If you need further orientation, it's
+<ce>    directly to the south of Bleeding Soul of Arkay, though that's
+<ce>      much further to the north. Don't go any further south than
+<ce>      Makehda. The Barrow will look like a black cube covered by
+<ce>   a spire with a small tower on each corner. Once you've found it,
+<ce>     come back. =timer_ days, remember. I will wait for you here.
 
 Message:  1013
-<ce>        You see Scourg Barrow before you.
-<ce>        Now to head to ___place_.
-<--->
-<ce>        Scourg Barrow lies before you.
-<ce>        _qg_ awaits your report now.
+<ce>                  You see Scourg Barrow before you.
+<ce>                      Now to head to ___place_.
+                                     <--->
+<ce>                    Scourg Barrow lies before you.
+<ce>                     _qg_ awaits your report now.
 
 Message:  1030
 %qdt:
@@ -89,9 +89,9 @@ Message:  1031
  shouldn't go further south than Makehda.
 
 Message:  1099
-<ce>  Scourg Barrow awaits. Do not
-<ce>  worry. You are in no danger
-<ce>  if you do not venture within.
+<ce>                     Scourg Barrow awaits. Do not
+<ce>                     worry. You are in no danger
+<ce>                    if you do not venture within.
 
 QBN:
 Item _reward_ gold range 1000 to 1099
@@ -115,19 +115,18 @@ _log_ task:
     pc at _dung_ set _inside_
 
 _qgclicked_ task:
-	clicked npc _qg_ 
+    clicked npc _qg_
 
 _begin_ task:
     when _qgclicked_ and not _talked_ and not _found_
     say 1012
-    reveal _dung_
     clear _qgclicked_
     log 1031 step 1
     start task _talked_
 
 variable _talked_
 _inside_ task:
-     start task _found_
+    start task _found_
 
 _found_ task:
     say 1013
@@ -144,6 +143,6 @@ _victory_ task:
     end quest
 
 _timer_ task:
-         say 1003
-         start quest JHCGFAL2
-         end quest
+    say 1003
+    start quest JHCGFAL2
+    end quest

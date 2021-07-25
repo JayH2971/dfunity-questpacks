@@ -5,33 +5,33 @@ DisplayName: To Shedungent
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ERROR 1000 JHCG012
+<ce>                          ERROR 1000 JHCG012
 
 RefuseQuest:  [1001]
-<ce>          ERROR 1001 JHCG012
+<ce>                          ERROR 1001 JHCG012
 
 AcceptQuest:  [1002]
-<ce>           ERROR 1002 JHCG012
+<ce>                          ERROR 1002 JHCG012
 
 QuestFail:  [1003]
-<ce>   Your assignment to provide a chart
-<ce>   from Shedungent has expired.
+<ce>                  Your assignment to provide a chart
+<ce>                     from Shedungent has expired.
 
 QuestComplete:  [1004]
-<ce>        As I might have mentioned, we'll probably be
-<ce>        sending you back to Shedungent time and again.
-<ce>        Queen Aubk-i has a particular interest in her
-<ce>        grandmother-in-law's dwelling place. But once
-<ce>        you know where it is, this is easy money.
+<ce>             As I might have mentioned, we'll probably be
+<ce>            sending you back to Shedungent time and again.
+<ce>            Queen Aubk-i has a particular interest in her
+<ce>            grandmother-in-law's dwelling place. But once
+<ce>              you know where it is, this is easy money.
 
 Message:  1010
-<ce>        A young adult in the employ of a courtier hands
-<ce>        you a letter. "You must be %pcf.
-<ce>        This belongs to you." He then moves on.
-<--->
-<ce>        A young adult in the employ of a courtier hands
-<ce>        you a letter. "You must be %pcf.
-<ce>        This belongs to you." She then moves on.
+<ce>           A young adult in the employ of a courtier hands
+<ce>                   you a letter. "You must be %pcf.
+<ce>               This belongs to you." He then moves on.
+                                     <--->
+<ce>           A young adult in the employ of a courtier hands
+<ce>                   you a letter. "You must be %pcf.
+<ce>               This belongs to you." She then moves on.
 
 Message:  1011
   %pcf,
@@ -51,30 +51,30 @@ Message:  1011
                    ___place_, ____place_
 
 Message:  1012
-<ce>        Always a pleasure, %pcf. Shedungent is quite far out there,
-<ce>        which makes it an important target to chart once and again.
-<ce>        The former Queen Mother, Nulfaga, is also there. We try
-<ce>        not to bother her for good reasons.
+<ce>     Always a pleasure, %pcf. Shedungent is quite far out there,
+<ce>     which makes it an important target to chart once and again.
+<ce>       The former Queen Mother, Nulfaga, is also there. We try
+<ce>                 not to bother her for good reasons.
  
-<ce>        If you don't know where it is, I will warn you it isn't easy to find.
-<ce>        It's east of Kieran Theatre and south of The Hearthhouse Tombs.
-<ce>        Go to Longwell in the Wrothgarian Mountains. Leave to the
-<ce>        south-southeast until you're directly between The Greensley
-<ce>        Plantation and The Greensly Farmstead. From there, head directly south.
-<ce>        It's in a low point in the ground, so use the hills to your advantage.
+<ce>If you don't know where it is, I will warn you it isn't easy to find.
+<ce>   It's east of Kieran Theatre and south of The Hearthhouse Tombs.
+<ce>      Go to Longwell in the Wrothgarian Mountains. Leave to the
+<ce>     south-southeast until you're directly between The Greensley
+<ce> Plantation and The Greensly Farmstead. From there, head directly south.
+<ce> It's in a low point in the ground, so use the hills to your advantage.
  
-<ce>        Alternatively you could start from The Greensley Plantation and
-<ce>        go east-southeast, but that'll usually get you lost pretty fast.
-<ce>        Just keep looking around there. I assure you it's there, somewhere.
-<ce>        It's a peculiar building, all black with a staircase up one side and a
-<ce>        straw roof. Come back when you've found it, in no more than =timer_ days.
+<ce>   Alternatively you could start from The Greensley Plantation and
+<ce>   go east-southeast, but that'll usually get you lost pretty fast.
+<ce> Just keep looking around there. I assure you it's there, somewhere.
+<ce> It's a peculiar building, all black with a staircase up one side and a
+<ce> straw roof. Come back when you've found it, in no more than =timer_ days.
 
 Message:  1013
-<ce>        You recognize this as Shedungent.
-<ce>        It's time to get back to ___qg_.
-<--->
-<ce>        Now that you've scouted Shedungent,
-<ce>        it's time to give your report to _qg_.
+<ce>                  You recognize this as Shedungent.
+<ce>                   It's time to get back to ___qg_.
+                                     <--->
+<ce>                 Now that you've scouted Shedungent,
+<ce>                it's time to give your report to _qg_.
 
 Message:  1030
 %qdt:
@@ -99,9 +99,9 @@ Message:  1031
  and south of The Hearthhouse Tombs.
 
 Message:  1099
-<ce>  I warn you not to enter Shedungent.
-<ce>  I've lost a couple people over the years
-<ce>  who did so. Just chart it and return.
+<ce>                 I warn you not to enter Shedungent.
+<ce>               I've lost a couple people over the years
+<ce>                who did so. Just chart it and return.
 
 QBN:
 Item _reward_ gold range 1000 to 1099
@@ -125,19 +125,18 @@ _log_ task:
     pc at _dung_ set _inside_
 
 _qgclicked_ task:
-	clicked npc _qg_ 
+    clicked npc _qg_
 
 _begin_ task:
     when _qgclicked_ and not _talked_ and not _found_
     say 1012
-    reveal _dung_
     clear _qgclicked_
     log 1031 step 1
     start task _talked_
 
 variable _talked_
 _inside_ task:
-     start task _found_
+    start task _found_
 
 _found_ task:
     say 1013
@@ -154,6 +153,6 @@ _victory_ task:
     end quest
 
 _timer_ task:
-         say 1003
-         start quest JHCGFAL2
-         end quest
+    say 1003
+    start quest JHCGFAL2
+    end quest

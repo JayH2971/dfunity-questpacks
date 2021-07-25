@@ -5,35 +5,35 @@ DisplayName: Witch Hunt
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ERROR 1000 JHCG013
+<ce>                          ERROR 1000 JHCG013
 
 RefuseQuest:  [1001]
-<ce>          ERROR 1001 JHCG013
+<ce>                          ERROR 1001 JHCG013
 
 AcceptQuest:  [1002]
-<ce>           ERROR 1002 JHCG013
+<ce>                          ERROR 1002 JHCG013
 
 QuestFail:  [1003]
-<ce>   The Cartographers needed you to report on
-<ce>   the location of the Glenmoril Witches by now.
+<ce>              The Cartographers needed you to report on
+<ce>            the location of the Glenmoril Witches by now.
 
 QuestComplete:  [1004]
-<ce>        Welcome back. Pretty weird people, right?
-<ce>        You're free to go back and see what they
-<ce>        have to offer if you want. Just remember
-<ce>        to keep me and the rest of the association
-<ce>        out of it. If we find you drinking blood and
-<ce>        dancing in a thunderstorm or something,
-<ce>        we're keeping our names far from it.
+<ce>              Welcome back. Pretty weird people, right?
+<ce>               You're free to go back and see what they
+<ce>               have to offer if you want. Just remember
+<ce>              to keep me and the rest of the association
+<ce>             out of it. If we find you drinking blood and
+<ce>               dancing in a thunderstorm or something,
+<ce>                 we're keeping our names far from it.
 
 Message:  1010
-<ce>        A young adult in the employ of a courtier hands
-<ce>        you a letter. "You must be %pcf.
-<ce>        This belongs to you." He then moves on.
-<--->
-<ce>        A young adult in the employ of a courtier hands
-<ce>        you a letter. "You must be %pcf.
-<ce>        This belongs to you." She then moves on.
+<ce>           A young adult in the employ of a courtier hands
+<ce>                   you a letter. "You must be %pcf.
+<ce>               This belongs to you." He then moves on.
+                                     <--->
+<ce>           A young adult in the employ of a courtier hands
+<ce>                   you a letter. "You must be %pcf.
+<ce>               This belongs to you." She then moves on.
 
 Message:  1011
   %pcf,
@@ -49,32 +49,32 @@ Message:  1011
                    ___place_, ____place_
 
 Message:  1012
-<ce>        Welcome, Scout. The route before you is not
-<ce>        particularly easy. A friend told me you can reach
-<ce>        the Glenmorial Coven like this.
+<ce>             Welcome, Scout. The route before you is not
+<ce>          particularly easy. A friend told me you can reach
+<ce>                   the Glenmorial Coven like this.
  
-<ce>        First, mount a horse at Old Chrystausa's Place
-<ce>        in Ilessan Hills. Get the horse pressed up
-<ce>        against the house's west wall, and then
-<ce>        ride for between eighty and eighty-five
-<ce>        seconds directly to the west. After that,
-<ce>        continue north until you see it. It looks like
-<ce>        a brick dome with grass on top. If you find
-<ce>        yourself at the same latitude as The
-<ce>        Hearthhart Cemetery, you've gone too
-<ce>        far to the north. It's east of Crossfort and
-<ce>        north of Old Evelona's Place, if that's any help.
-<ce>        I don't know if this is your first time meeting
-<ce>        the witches, but if it is, make sure you've got a
-<ce>        strong stomache before you do them any favors.
+<ce>            First, mount a horse at Old Chrystausa's Place
+<ce>              in Ilessan Hills. Get the horse pressed up
+<ce>               against the house's west wall, and then
+<ce>               ride for between eighty and eighty-five
+<ce>              seconds directly to the west. After that,
+<ce>            continue north until you see it. It looks like
+<ce>             a brick dome with grass on top. If you find
+<ce>                 yourself at the same latitude as The
+<ce>                 Hearthhart Cemetery, you've gone too
+<ce>             far to the north. It's east of Crossfort and
+<ce>          north of Old Evelona's Place, if that's any help.
+<ce>           I don't know if this is your first time meeting
+<ce>          the witches, but if it is, make sure you've got a
+<ce>            strong stomache before you do them any favors.
 
 Message:  1013
-<ce>        The dome before you must be the
-<ce>        Glenmoril Witches' coven.
-<ce>        You can report this to _qg_.
-<--->
-<ce>        You can see the Glenmoril Witches. Now
-<ce>        You can head to ___place_ to report.
+<ce>                   The dome before you must be the
+<ce>                      Glenmoril Witches' coven.
+<ce>                     You can report this to _qg_.
+                                     <--->
+<ce>                You can see the Glenmoril Witches. Now
+<ce>                 You can head to ___place_ to report.
 
 Message:  1030
 %qdt:
@@ -97,9 +97,9 @@ Message:  1031
  Cemetery, I need to go further south.
 
 Message:  1099
-<ce>  Some people try to find the witches to curry favor
-<ce>  with them. I stay out of such people's business.
-<ce>  So much can go wrong when working with them.
+<ce>          Some people try to find the witches to curry favor
+<ce>           with them. I stay out of such people's business.
+<ce>             So much can go wrong when working with them.
 
 QBN:
 Item _reward_ gold range 800 to 899
@@ -123,19 +123,18 @@ _log_ task:
     pc at _dung_ set _inside_
 
 _qgclicked_ task:
-	clicked npc _qg_ 
+    clicked npc _qg_
 
 _begin_ task:
     when _qgclicked_ and not _talked_ and not _found_
     say 1012
-    reveal _dung_
     clear _qgclicked_
     log 1031 step 1
     start task _talked_
 
 variable _talked_
 _inside_ task:
-     start task _found_
+    start task _found_
 
 _found_ task:
     say 1013
@@ -152,6 +151,6 @@ _victory_ task:
     end quest
 
 _timer_ task:
-         say 1003
-         start quest JHCGFAL2
-         end quest
+    say 1003
+    start quest JHCGFAL2
+    end quest

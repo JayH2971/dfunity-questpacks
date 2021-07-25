@@ -5,32 +5,32 @@ DisplayName: Tomb of the Unknown...
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          ERROR 1000 JHCG021
+<ce>                          ERROR 1000 JHCG021
 
 RefuseQuest:  [1001]
-<ce>          ERROR 1001 JHCG021
+<ce>                          ERROR 1001 JHCG021
 
 AcceptQuest:  [1002]
-<ce>           ERROR 1002 JHCG021
+<ce>                          ERROR 1002 JHCG021
 
 QuestFail:  [1003]
-<ce>   Your assignment to scout the
-<ce>   unmarked tomb has expired.
+<ce>                     Your assignment to scout the
+<ce>                      unmarked tomb has expired.
 
 QuestComplete:  [1004]
-<ce>        Not what you were expecting, right Pathfinder?
-<ce>        We Cartographers make different maps for
-<ce>        different purposes. The place we just sent you
-<ce>        to won't be on ordinary maps, I can say that
-<ce>        much. Take your pay, and see if anyone will
-<ce>        believe what you've witnessed.
+<ce>            Not what you were expecting, right Pathfinder?
+<ce>               We Cartographers make different maps for
+<ce>            different purposes. The place we just sent you
+<ce>             to won't be on ordinary maps, I can say that
+<ce>             much. Take your pay, and see if anyone will
+<ce>                    believe what you've witnessed.
 
 Message:  1010
-<ce>        You realize a message has found its way
-<ce>        into your belongings without your noticing.
-<--->
-<ce>        There's a letter in your pack which carries
-<ce>        the compass seal of the Cartographers.
+<ce>               You realize a message has found its way
+<ce>             into your belongings without your noticing.
+                                     <--->
+<ce>             There's a letter in your pack which carries
+<ce>                the compass seal of the Cartographers.
 
 Message:  1011
   Pathfinder,
@@ -48,22 +48,22 @@ Message:  1011
                          ___place_, ____place_
 
 Message:  1012
-<ce>        Pathfinder, well met. We are sending you
-<ce>        to Menevia. Begin at the village of Westcastle.
-<ce>        From the House of Dibella, walk straight south.
-<ce>        Your destination will be visible after the second
-<ce>        hill you cross. It's a small building made of brick
-<ce>        with an odd-looking roof that stretches over it,
-<ce>        like an awning. Venture inside if you wish for
-<ce>        curiosity's sake, but I urge caution. We have
-<ce>        lost enough people inside that cavern. I will
-<ce>        hear from you before =timer_ days are up.
+<ce>               Pathfinder, well met. We are sending you
+<ce>           to Menevia. Begin at the village of Westcastle.
+<ce>           From the House of Dibella, walk straight south.
+<ce>          Your destination will be visible after the second
+<ce>         hill you cross. It's a small building made of brick
+<ce>           with an odd-looking roof that stretches over it,
+<ce>            like an awning. Venture inside if you wish for
+<ce>            curiosity's sake, but I urge caution. We have
+<ce>            lost enough people inside that cavern. I will
+<ce>              hear from you before =timer_ days are up.
 
 Message:  1013
-<ce>        This must be the mysterious tomb.
-<--->
-<ce>        You see the tomb before you. Now to
-<ce>        return to _qg_.
+<ce>                  This must be the mysterious tomb.
+                                     <--->
+<ce>                 You see the tomb before you. Now to
+<ce>                           return to _qg_.
 
 Message:  1030
 %qdt:
@@ -86,10 +86,10 @@ Message:  1031
  then, a small brick building.
 
 Message:  1099
-<ce>  The place should be pretty easy to find.
-<ce>  I don't know that it's more than a few hundred
-<ce>  steps out. Follow the directions and come
-<ce>  back here when you've found it.
+<ce>               The place should be pretty easy to find.
+<ce>            I don't know that it's more than a few hundred
+<ce>              steps out. Follow the directions and come
+<ce>                   back here when you've found it.
 
 QBN:
 Item _reward_ gold range 700 to 799
@@ -113,19 +113,18 @@ _log_ task:
     pc at _dung_ set _inside_
 
 _qgclicked_ task:
-	clicked npc _qg_ 
+    clicked npc _qg_
 
 _begin_ task:
     when _qgclicked_ and not _talked_ and not _found_
     say 1012
-    reveal _dung_
     clear _qgclicked_
     log 1031 step 1
     start task _talked_
 
 variable _talked_
 _inside_ task:
-     start task _found_
+    start task _found_
 
 _found_ task:
     say 1013
@@ -142,6 +141,6 @@ _victory_ task:
     end quest
 
 _timer_ task:
-         say 1003
-         start quest JHCGFAL3
-         end quest
+    say 1003
+    start quest JHCGFAL3
+    end quest
