@@ -44,4 +44,5 @@ JHFG027a, FightersGuild, P, 4, 1, a quest to help someone fleeing the Dark Broth
 JHFG028, FightersGuild, M, 8, 1, a quest to supposedly escort someone
 JHFG029, FightersGuild, M, 7, 1, a quest to meet a mysterious dueler
 JHFG030, FightersGuild, M, 3, 1, a quest to help clear a cemetery of its guardian
+JHFG031, FightersGuild, M, 2, 1, a quest to rescue a child from a dungeon
 --quest to remove spider from home, can kill for guild credit or remove, both ways pay
