@@ -211,6 +211,7 @@ _spawn1a_ task:
 
 _mon11_ task:
   create foe _mon1a_ every 0 minutes 1 times with 100% success
+  change foe _mon1a_ infighting true
   stop timer _timer1_
 
 _spawn1b_ task:
@@ -218,6 +219,7 @@ _spawn1b_ task:
 
 _mon12_ task:
   create foe _mon1b_ every 0 minutes 1 times with 100% success
+  change foe _mon1b_ infighting true
   stop timer _timer1_
 
 _killed1_ task:
@@ -236,6 +238,7 @@ _spawn2a_ task:
 
 _mon21_ task:
   create foe _mon2a_ every 0 minutes 1 times with 100% success
+  change foe _mon2a_ infighting true
   stop timer _timer2_
 
 _spawn2b_ task:
@@ -243,6 +246,7 @@ _spawn2b_ task:
 
 _mon22_ task:
   create foe _mon2b_ every 0 minutes 1 times with 100% success
+  change foe _mon2b_ infighting true
   stop timer _timer2_
 
 _killed2_ task:
@@ -261,6 +265,7 @@ _spawn3a_ task:
 
 _mon31_ task:
   create foe _mon3a_ every 0 minutes 1 times with 100% success
+  change foe _mon3a_ infighting true
   stop timer _timer3_
 
 _spawn3b_ task:
@@ -268,6 +273,7 @@ _spawn3b_ task:
 
 _mon32_ task:
   create foe _mon3b_ every 0 minutes 1 times with 100% success
+  change foe _mon3b_ infighting true
   stop timer _timer3_
 
 _killed3_ task:
@@ -286,6 +292,7 @@ _spawn4a_ task:
 
 _mon41_ task:
   create foe _mon4a_ every 0 minutes 1 times with 100% success
+  change foe _mon4a_ infighting true
   stop timer _timer4_
 
 _spawn4b_ task:
@@ -293,6 +300,7 @@ _spawn4b_ task:
 
 _mon42_ task:
   create foe _mon4b_ every 0 minutes 1 times with 100% success
+  change foe _mon4b_ infighting true
   stop timer _timer4_
 
 _killed4_ task:
@@ -311,6 +319,7 @@ _spawn5a_ task:
 
 _mon51_ task:
   create foe _mon5a_ every 0 minutes 1 times with 100% success
+  change foe _mon5a_ infighting true
   stop timer _timer5_
 
 _spawn5b_ task:
@@ -318,6 +327,7 @@ _spawn5b_ task:
 
 _mon52_ task:
   create foe _mon5b_ every 0 minutes 1 times with 100% success
+  change foe _mon5b_ infighting true
   stop timer _timer5_
 
 _killed5_ task:

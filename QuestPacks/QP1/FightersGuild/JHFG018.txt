@@ -45,13 +45,46 @@ Message:  1010
 
 Message:  1011
 <ce>          The ground indeed vibrates here, albeit slightly.
-<ce>         The magic animating these skeletons must be at work.
-<ce>      You'll just have to wait around until they come together.
+<ce>         The magic animating these skeletons is hard at work.
+<ce>
+<ce>       You could wait around for the skeletons to come together
+<ce>  and bash them apart, or you could try to stop the revival process
+<ce>   with magic of your own. Do you try to stop the enchantment (yes)
+<ce>             or fight the skeletons after they form (no)?
+<ce>
+<ce>                 (SKILL CHECK: YES: Mysticism, high)
 
 Message:  1012
-<ce>             With this skeleton defeated, the dark magic
-<ce>                giving power to these bodies runs out.
+<ce>        The dark magic giving power to these bodies runs out.
 <ce>             The earth ceases moving. Your reward awaits.
+
+Message:  1013
+<ce>        You know better than to mess with this kind of power.
+<ce>      You'll just have to wait around until the skeletons rise.
+
+Message:  1014
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>              You concentrate and try to read the forces
+<ce>            at work. You perceive enough to see what keeps
+<ce>        the enchantment going, and cast a spell to disrupt it.
+<ce>       Once the cycle fails to renew itself, the magick stops.
+
+Message:  1015
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>              You concentrate and try to read the forces
+<ce>              at work. You reach a conclusion and try to
+<ce>        disrupt the spell. Too late, you realize that this is
+<ce>       far beyond you. Some bones begin to rise from the earth,
+<ce>        but far more smoothly than with the ordinary skeleton.
+<ce>        This one glares at you with supernatural intelligence.
+<ce>                    Then it utters a single word.
+<ce>
+<ce>                               "IDIOT."
+<ce>
+<ce>                   Your task to slay the skeletons
+<ce>                      has gained a complication.
 
 QBN:
 Item _reward_ gold range 300 to 500
@@ -63,6 +96,7 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 Person _qgiver_ group Questor
 
 Foe _skel_ is Skeletal_warrior
+Foe _lich_ is Lich
 
 --	Quest start-up:
     start timer _timer_
@@ -72,8 +106,8 @@ Foe _skel_ is Skeletal_warrior
 
 variable _inside_
 _spawn_ task:
-    when _inside_ and not _slain_
-    say 1011
+    when _inside_ and not _victory_
+    prompt 1011 yes _attempt_ no _flee_
     create foe _skel_ every 30 minutes indefinitely with 10% success
 
 _infight_ task:
@@ -81,19 +115,41 @@ _infight_ task:
     change foe _skel_ infighting true
     clear _infight_
 
+_skilled_ task:
+    when skill Mysticism is at least 70
+
+variable _attempt_
+
+_fastwin_ task:
+    when _skilled_ and _attempt_
+    say 1014
+    start task _victory_
+
+_bigfail_ task:
+    when not _skilled_ and _attempt_
+    say 1015
+    create foe _lich_ every 0 minutes 1 times with 100% success
+    change foe _lich_ infighting true
+
+_flee_ task:
+    say 1013
+
 _slain_ task:
     killed 4 _skel_
+    start task _victory_
+
+_victory_ task:
     say 1012
 
 _qgclicked_ task:
     clicked npc _qgiver_
 
 _clearclick_ task:
-    when _qgclicked_ and not _slain_
+    when _qgclicked_ and not _victory_
     clear _qgclicked_ _clearclick_
 
 _pcgetsgold_ task:
-    when _qgclicked_ and _slain_
+    when _qgclicked_ and _victory_
     give pc _reward_
     end quest
 

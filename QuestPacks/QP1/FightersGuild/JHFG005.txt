@@ -47,32 +47,40 @@ QuestComplete:  [1004]
 <ce>               Good to see some initiative out of you.
 <ce>                              Take this.
 
+Message:  1010
+<ce>      As you approach the property, you notice pair of spriggans
+<ce>            a ways off. They seem to be watching the bears
+<ce>        move across the property, neither interfering with nor
+<ce>         helping them. If you knew how to, perhaps you could
+<ce>                 ask them to help you kill the bears.
+<ce>      Do you ask for their help (yes) or do it on your own (no)?
+<ce>
+<ce>                  (SKILL CHECK: YES: Spriggan, low)
+
+Message:  1011
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>            You explain to the spriggans that these bears
+<ce>             are harming the cycle of nature by attacking
+<ce>               humans, the caretakers of this property.
+<ce>            They see the bears' violent nature at work and
+<ce>                      march toward you to help.
+
+Message:  1012
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>        You call out to the spriggans and try to convince them
+<ce>      to attack the bears. You attract their attention but don't
+<ce>      have the words to explain yourself. They take your shouts
+<ce>               to be taunts and step in to attack you.
+
+Message:  1013
+<ce>      You'd rather not introduce another unknown into this mess.
+<ce>    The spriggans idly watch for a few minutes, and then pass by.
+
 Message:  1020
 <ce>                The growling dies down. You trust the
 <ce>           property owners will take care of the clean-up.
-
-Message:  1024
-<ce>                   A young man cracks the door open
-<ce>                  and hollers in an irritated voice.
-<ce>
-<ce>               "Hey, you dumb Fighters Guild brute! We
-<ce>              already killed all the animals! Maybe try
-<ce>                showing up a month ago and we could've
-<ce>                 used some help! Thanks for nothing!"
-<ce>
-<ce>                There was nothing you could have done
-<ce>                  this time. Better head back to the
-<ce>             Fighters Guild in ___questgiver_ and report.
-
-Message:  1025
-<ce>               Aw, geez, what a mess. I'm sorry, %pcf,
-<ce>             this happens every once in a while. It's not
-<ce>             your fault, believe me. I'm still gonna give
-<ce>                you credit for going though, even if I
-<ce>            can't give you the full reward. I'm stretching
-<ce>            it just paying for your travel expenses. Here,
-<ce>           have =altrew_ gold. At least it's something. And
-<ce>             sorry about all this. It won't happen again.
 
 Message:  1030
 %qdt:
@@ -85,16 +93,8 @@ Message:  1030
  to ___questgiver_ in
  =timer_ days or less.
 
-Message:  1031
-%qdt:
- ___rural_ has sought to help
- instead of relying on the Fighter's Guild.
- I should report this news to
- _questgiver_ about it.
-
 QBN:
 Item _reward_ gold
-Item _altrew_ gold range 30 to 40
 
 Person _questgiver_ group Questor male
 
@@ -104,14 +104,20 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 
 Foe _bear_ is Grizzley_bear
 Foe _tiger_ is Sabretooth_tiger
+Foe _spriggan1_ is Spriggan
+Foe _spriggan2_ is Spriggan
 
 --	Quest start-up:
 	start timer _timer_
 	log 1030 step 0
 	pc at _rural_ set _outside_
-	pick one of _B.01_ _B.01_ _B.01_ _T.01_ _T.01_ _T.01_ _dud_
+	pick one of _B.01_ _B.01_ _B.01_ _T.01_ _T.01_ _T.01_
+
+_skilled_ task:
+	when skill Spriggan is at least 25
 
 variable _outside_
+
 _day_ task:
 	daily from 5:30 to 18:30
 
@@ -120,12 +126,47 @@ _bears_ task:
 	when _outside_ and not _day_ and not _slain_ and _B.01_
 	create foe _bear_ every 3 minutes indefinitely with 65% success
 	create foe _bear_ every 1 minutes indefinitely with 20% success
+	prompt 1010 yes _recruit_ no _flee_
 
 variable _T.01_
 _tigers_ task:
 	when _outside_ and not _day_ and not _slain_ and _T.01_
 	create foe _tiger_ every 1 minutes indefinitely with 20% success
 	create foe _tiger_ every 3 minutes indefinitely with 65% success
+	prompt 1010 yes _recruit_ no _flee_
+
+variable _recruit_
+
+_easywin_ task:
+	when _recruit_ and _skilled_
+	say 1011
+	create foe _spriggan1_ every 0 minutes 1 times with 100% success
+	create foe _spriggan2_ every 0 minutes 1 times with 100% success
+	change foe _spriggan1_ infighting true
+	change foe _spriggan2_ infighting true
+	change foe _spriggan1_ team 1
+	change foe _spriggan2_ team 1
+
+_bigfail_ task:
+	when _recruit_ and not _skilled_
+	say 1012
+	create foe _spriggan1_ every 0 minutes 1 times with 100% success
+	create foe _spriggan2_ every 0 minutes 1 times with 100% success
+	change foe _spriggan1_ infighting true
+	change foe _spriggan2_ infighting true
+
+_allybears_ task:
+	when _bigfail_ and _B.01_
+	change foe _spriggan1_ team 4
+	change foe _spriggan2_ team 4
+
+_allytigers_ task:
+	when _bigfail_ and _T.01_
+	change foe _spriggan1_ team 5
+	change foe _spriggan2_ team 5
+
+_flee_ task:
+	say 1013
 
 _infight_ task:
 	daily from 0:00 to 23:59
@@ -147,27 +188,11 @@ variable _continue_
 _slain_ task:
 	say 1020
 
-variable _dud_
-_alt_ task:
-	when _outside_ and _dud_
-	start task _alt2_
-
-_alt2_ task:
-	say 1024
-	log 1031 step 1
-
-_altend_ task:
-	when _qgclicked_ and _alt2_
-	get item _altrew_
-	say 1025
-	change repute with _questgiver_ by +7
-	end quest
-
 _qgclicked_ task:
 	clicked npc _questgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _slain_ and not _alt2_
+	when _qgclicked_ and not _slain_
 	clear _qgclicked_ _clearclick_
 
 _pcreward_ task:

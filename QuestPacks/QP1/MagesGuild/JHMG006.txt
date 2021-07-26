@@ -42,11 +42,14 @@ AcceptQuest:  [1002]
 <ce>                 _npc_'s report. %god watch over you.
 
 QuestFail:  [1003]
-<ce>           You had the audacity to slay _npc_? What madness
-<ce>      has overcome you? If I have my way, the mop and pail will
-<ce>      not leave your hands for the next year. What a disgusting
-<ce>        outcome to a simple task. Say nothing more of this. I
-<ce>         assure you, the council will learn all it needs to.
+<ce>                       _qgiver_ scowls at you.
+<ce>
+<ce>              "One of our members used your position as
+<ce>                  a reference to scry into ___dung_
+<ce>             and see how _npc_ was doing with the _tri_.
+<ce>           No one expected to see %g3 dead corpse instead.
+<ce>               I'd have you thrown in prison had I time
+<ce>                  to prove my case. Begone, churl."
 
 QuestComplete:  [1004]
 <ce>              Oh my, our poor _npc_! What an awful trap!
@@ -97,8 +100,34 @@ Message:  1012
 <ce>             rouse the Archmagister's wrath. Go in peace,
 <ce>               %ra, and thank you for sparing my life."
 
--Message: 1013
--<ce>  Do you tell _qgiver_ you slew _npc_?
+Message:  1013
+<ce>           Magical power continues to shoot from the _tri_.
+<ce>                   You can't tell exactly what it's
+<ce>                  doing, but it can't be beneficial.
+<ce>                If you were confident in your ability,
+<ce>                you could attempt to dampen the magic
+<ce>                      at its source. Do you try?
+<ce>
+<ce>                (SKILL CHECK: YES: Thaumaturgy, high)
+
+Message:  1014
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>              You turn the _tri_'s power against itself.
+<ce>                            It goes inert.
+
+Message:  1015
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>            You try to turn the _tri_'s power against it,
+<ce>           but it glows all the more, and starts to bounce
+<ce>         of its own power. _npc_ shrieks in an inhumane tone,
+<ce>
+<ce>                         "Imbecile! Stop it!
+<ce>                        Stop hurting my home!"
+<ce>
+<ce>            Light bursts out of the trinket again, and you
+<ce>               sense other beings have appeared nearby.
 
 Message:  1030
 %qdt:
@@ -132,9 +161,12 @@ Person _npc_ faction The_Odylic_Mages
 Place _dung_ remote dungeon10
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _charm_ 00:01
 Clock _battle_ 00:05 00:07
 
 Foe _nme_ is Spellsword
+Foe _daedroth1_ is Daedroth
+Foe _daedroth2_ is Daedroth
 
 --	Quest start-up:
   start timer _timer_
@@ -148,18 +180,47 @@ _talk_ task:
   say 1010
   hide npc _npc_
   place foe _nme_ at _dung_
-  start timer _battle_
+  start timer _charm_
 
 _fail_ task:
   killed 1 _nme_
   say 1011
   log 1031 step 2
+  stop timer _charm_
   stop timer _battle_
+  change repute with _qgiver_ by -23
+
+_charm_ task:
+  prompt 1013 yes _attempt_ no _flee_
+
+_flee_ task:
+  start timer _battle_
+
+variable _attempt_
+
+_skilled_ task:
+  when skill Thaumaturgy is at least 65
+
+_easywin_ task:
+  when _attempt_ and _skilled_
+  say 1014
+  start task _battle_
+
+_bigfail_ task:
+  when _attempt_ and not _skilled_
+  say 1015
+  create foe _daedroth1_ every 0 minutes 1 times with 100% success
+  create foe _daedroth2_ every 0 minutes 1 times with 100% success
+  change foe _daedroth1_ infighting true
+  change foe _daedroth2_ infighting true
+  start timer _battle_
 
 _battle_ task:
   say 1012
   log 1032 step 1
   restrain foe _nme_
+  remove foe _daedroth1_
+  remove foe _daedroth2_
 
 _pcgetsgold_ task:
   when _qgclicked_ and _battle_ and not _fail_
@@ -169,13 +230,7 @@ _pcgetsgold_ task:
 _prompt_ task:
   when _qgclicked_ and _fail_
   say 1003
-  change repute with _qgiver_ by -23
   end quest
-
--_falsegetsgold_ task:
--  give pc _reward_
-- mages guild revenge quest
--  end quest
 
 _qgclicked_ task:
   clicked npc _qgiver_

@@ -102,6 +102,15 @@ Message:  1028
 <ce>           The lich's incantation has perverted this place.
 <ce>            Your Recall spell does not work as it should.
 
+Message:  1029
+<ce>              The environment roars with magical power.
+<ce>                  There seems to be no end to this.
+<ce>             If you were absolutely certain of yourself,
+<ce>              you could try to interfere with the lich's
+<ce>                       summoning spell. Do you?
+<ce>
+<ce>               (SKILL CHECK: YES: Mysticism, very high)
+
 Message:  1030
 %qdt:
  The Mages Guild has sent me on
@@ -121,17 +130,50 @@ Message:  1031
  return to ___questgiver_
  and escape this menace for now.
 
+Message:  1032
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>             You stop for a moment and channel everything
+<ce>           you have within. It seems like it takes forever,
+<ce>               though mere seconds have likely passed.
+<ce>             Knowing of the rapidly advancing danger, you
+<ce>            concentrate all the power you have and manage
+<ce>          to perceive the spell's origin. Then you cut deep
+<ce>                               into it.
+<ce>
+<ce>                "NO!" You hear the lich's voice boom.
+<ce>                "My power... I will submit to NO ONE!"
+<ce>
+<ce>             What you've achieved is probably temporary,
+<ce>               but it's enough to slow the creation of
+<ce>                         the summoner's pets.
+
+Message:  1033
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>            You stop for a moment and try to tap into the
+<ce>      tremendous power that reverberates through these tunnels.
+<ce>           You're quickly overwhelmed, and feel stupefied.
+<ce>                       The lich's voice booms,
+<ce>
+<ce>             "HA HA HA! Such impudence! I feel insulted!
+<ce>          If you admire my power so, have some more of it!"
+<ce>
+<ce>                The surge around you intensifies, and
+<ce>            you notice more undead get added to the fray.
+
 QBN:
 Item _reward_ gold range 3000 to 3000
 
 Person _questgiver_ group Questor male
 
-Place _mondung_ remote dungeon4
+Place _mondung_ remote dungeon0
 
 Clock _timer_ 35.00:00
 Clock _recdelay_ 0:00
 Clock _recdelay2_ 0:00
 Clock _delay_ 0:00
+Clock _summonchange_ 0:02
 
 Foe _boss_ is Ancient_lich
 Foe _boss2_ is Ancient_lich
@@ -141,6 +183,7 @@ Foe _und1_ is Zombie
 Foe _und2_ is Skeletal_warrior
 Foe _und3_ is Mummy
 Foe _und4_ is Wraith
+Foe _und5_ is Lich
 
 --	Quest start-up:
 	start timer _timer_
@@ -155,17 +198,59 @@ _inside_ task:
 _announce_ task:
 	say 1020
 
+_clicky_ task:
+	clicked foe _boss_
+	start task _announceinj_
+	change foe _boss_ infighting true
+	start timer _summonchange_
+
 _injured_ task:
 	injured _boss_
 	start task _announceinj_
 	change foe _boss_ infighting true
+	start timer _summonchange_
+
+_summonchange_ task:
+	prompt 1029 yes _attempt_ no _flee_
+
+variable _flee_
+variable _attempt_
+
+_skilled_ task:
+	when skill Mysticism is at least 95
+
+_bigwin_ task:
+	when _skilled_ and _attempt_
+	say 1032
+	start task _weaken_
+
+variable _weaken_
+
+_bigfail_ task:
+	when _attempt_ and not _skilled_
+	say 1033
+	start task _intensify_
+
+variable _intensify_
 
 _injured2_ task:
-	when _announceinj_ and _inside_
+	when _announceinj_ and _inside_ and not _weaken_
 	create foe _und1_ every 0 minutes indefinitely with 30% success
 	create foe _und2_ every 0 minutes indefinitely with 24% success
 	create foe _und3_ every 0 minutes indefinitely with 22% success
 	create foe _und4_ every 0 minutes indefinitely with 14% success
+	cast Teleport-Effect effect do _recfail_
+
+_spawnmore_ task:
+	when _inside_ and _intensify_
+	create foe _und5_ every 0 minutes indefinitely with 20% success
+
+_spawnless_ task:
+	when _inside_ and _weaken_
+	create foe _und1_ every 1 minutes indefinitely with 15% success
+	create foe _und2_ every 1 minutes indefinitely with 12% success
+	create foe _und3_ every 1 minutes indefinitely with 11% success
+	create foe _und4_ every 1 minutes indefinitely with 7% success
 	cast Teleport-Effect effect do _recfail_
 
 _daily_ task:
@@ -174,6 +259,7 @@ _daily_ task:
 	change foe _und2_ infighting true
 	change foe _und3_ infighting true
 	change foe _und4_ infighting true
+	change foe _und5_ infighting true
 	clear _daily_
 
 _recfail_ task:
@@ -198,6 +284,10 @@ variable _delay_
 _exiting_ task:
 	when _announceinj_ and _delay_ and not _inside_
 	say 1023
+
+--delay is because if you teleport out, you get the escape message and get
+--teleported back into the dungeon. This tries to ensure that you only see
+--it upon natural exit.
 
 _qgclicked_ task:
 	clicked npc _questgiver_

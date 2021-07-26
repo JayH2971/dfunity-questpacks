@@ -133,7 +133,7 @@ _ambush_ task:
 variable _lie_
 
 _skilled_ task:
-    when skill Streetwise is at least 99
+    when skill Streetwise is at least 15
 
 _winner_ task:
     when _lie_ and _skilled_

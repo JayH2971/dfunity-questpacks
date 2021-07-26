@@ -71,7 +71,7 @@ Message:  1015
 <ce>            from me. Please, I need to be cured. Help me!
 <ce>             Cast a spell! A temple will do me no good!"
 <ce>
-<ce>              %g1 begins sweating and breathing heavily.
+<ce>           Then %g1 begins sweating and breathing heavily.
 
 Message:  1016
 <ce>                _mage_ moans, %g3 footsteps faltering.
@@ -126,6 +126,44 @@ Message:  1022
 <ce>               ending so! Take me to ___qgiver_. I have
 <ce>                 much to say to _qgiver_. Thank you."
 
+Message:  1023
+<ce>            Injuring the imp seems to stun it momentarily.
+<ce>       Assuming this creature was summoned, it surely must have
+<ce>                 some control words to make it stop.
+<ce>                  Do you try to gain control of it?
+<ce>
+<ce>                  (SKILL CHECK: YES: Impish, medium)
+
+Message:  1024
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>             You shout out some commands, part guesswork,
+<ce>            part past knowledge flowing through your mind.
+<ce>         The imp's face freezes over, and it stops attacking.
+<ce>        You then dismiss it to another part of the residence.
+<ce>
+<ce>                 _mage_ soon returns to reality, and
+<ce>         kneels before you. "Thank you, thank you, thank you!
+<ce>           The creature rebelled against me and had me here
+<ce>             for hours. What a disaster you have averted!
+<ce>               Yes, I'm certain _qgiver_ has some words
+<ce>                   for me. Lead on, and I will go."
+
+Message:  1025
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>            Whatever you said, it had the opposite effect.
+<ce>          The imp foams with rage, and then turns to _mage_
+<ce>           and slashes %g2 severely. In %g3 weakened state,
+<ce>       %g1 can't withstand the blow, and tumbles to the floor.
+
+Message:  1026
+<ce>                  Do you wish to give up this quest?
+
+Message:  1027
+<ce>                       _qgiver_ is not pleased,
+<ce>           but you are permitted to abdicate all the same.
+
 Message:  1030
 %qdt:
  I have been assigned to bring _mage_
@@ -142,9 +180,9 @@ Message:  1032
 %qdt: 
  _mage_ is suffering from a
  severe arcane disease, the likes of which
- a temple cannot cure. I must cast a Cure
- Disease spell, which will presumably
- take hold of %g2 and cure it.
+ a temple cannot cure. I should be able
+ to dispel it with a Cure Disease spell
+ of my own.
 
 QBN:
 Person _qgiver_ group Questor male
@@ -173,7 +211,8 @@ Item _reward_ magic_item
     pc at _dung_ set _idun_
     change foe _imp_ infighting true
 
-variable _inside_
+_inside_ task:
+    cast Shield spell on _imp_
 
 _conv_ task:
     clicked npc _mage_
@@ -183,8 +222,42 @@ _conv1_ task:
     say 1010
     clear _conv_
 
+_inj_ task:
+    injured _imp_
+    prompt 1023 yes _attempt_ no _flee_
+
+variable _attempt_
+variable _flee_
+
+_bigwin_ task:
+    when _attempt_ and _skilled_
+    remove foe _imp_
+    say 1024
+    hide npc _mage_
+    add _mage_ face
+    start task _vict_
+
+_bigfail_ task:
+    when _attempt_ and not _skilled_
+    say 1025
+    hide npc _mage_
+    start task _death_
+
 _slain_ task:
     killed 1 _imp_
+
+_skilled_ task:
+    when skill Impish is at least 50
+
+_killedimp1_ task:
+    when _slain_ and _flee_
+    start task _trap_
+
+_killedimp2_ task:
+    when _slain_ and not _inj_
+    start task _trap_
+
+_trap_ task:
     say 1011
     pick one of _tel_ _dis_
 
@@ -210,6 +283,7 @@ _bad3_ task:
 
 _death_ task:
     say 1003
+    change repute with _mage_ by -2
     end quest
 
 _cure_ task:
@@ -256,7 +330,14 @@ _qgclicked_ task:
 
 _clearclick_ task:
     when _qgclicked_ and not _vict_
+    prompt 1026 yes _surrender_ no _continue_
     clear _qgclicked_ _clearclick_
 
 _timer_ task:
     end quest
+
+_surrender_ task:
+    say 1027
+    end quest
+
+variable _continue_

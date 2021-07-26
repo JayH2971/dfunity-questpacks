@@ -62,6 +62,9 @@ Message:  1021
 <ce>               events may have worn them out too much,
 <ce>              lending to momentary distraction. Will you
 <ce>                   attempt to take it for yourself?
+<ce>
+<ce>                 (SKILL CHECK: YES: Pickpocket, low)
+<ce>                (OR SKILL CHECK: YES: Stealth, medium)
 
 Message:  1022
 <ce>                  (STEALTH/PICKPOCKET CHECK PASSED)

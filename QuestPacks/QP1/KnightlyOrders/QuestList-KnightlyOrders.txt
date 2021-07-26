@@ -10,8 +10,8 @@
 schema: *name, group, membership, minReq, flag, notes
 
 JHKN001, KnightlyOrder, M, 1, 0, a quest to protect a dragonling in a dungeon
-JHKN002, KnightlyOrder, M, 0, 0, a quest to slay criminals who have taken a farm captive
-JHKN003, KnightlyOrder, M, 6, 0, a quest to slay a vampire or vampire ancient in a dungeon
+JHKN002, KnightlyOrder, M, 0, 1, a quest to slay criminals who have taken a farm captive
+JHKN003, KnightlyOrder, M, 6, 1, a quest to slay a vampire or vampire ancient in a dungeon
 JHKN004, KnightlyOrder, M, 2, 0, a quest to defend a city from an invasion of knights
 JHKN005, KnightlyOrder, M, 0, 0, a quest to retrieve and deliver evidence of a murder
 JHKN006, KnightlyOrder, M, 3, 0, a quest to retrieve a weapon from a murderer in a dungeon

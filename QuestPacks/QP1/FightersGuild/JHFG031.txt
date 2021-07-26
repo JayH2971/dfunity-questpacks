@@ -180,7 +180,7 @@ _ignore_ task:
     say 1014
 
 _skilled_ task:
-    when skill LongBlade is at least 500
+    when skill LongBlade is at least 50
 
 variable _train_
 

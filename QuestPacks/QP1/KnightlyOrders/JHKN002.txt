@@ -57,9 +57,11 @@ Message:  1020
 <ce>             would allow things to stand. Do you attempt
 <ce>                   to get the whereabouts of these
 <ce>                   members of the Dark Brotherhood?
+<ce>
+<ce>                  (SKILL CHECK: YES: Etiquette, low)
 
 Message:  1021
-<ce>                       (ETIQUETTE CHECK FAILED)
+<ce>                         (SKILL CHECK FAILED)
 <ce>
 <ce>           Your speaking ability leaves much to be desired.
 <ce>           The child looks more and more agitated with each
@@ -67,7 +69,7 @@ Message:  1021
 <ce>                    and you are left empty-handed.
 
 Message:  1022
-<ce>                       (ETIQUETTE CHECK PASSED)
+<ce>                         (SKILL CHECK PASSED)
 <ce>
 <ce>          Your speech skill delivers. The child's confidence
 <ce>       in you rises as you explain what you have come to do and
@@ -99,6 +101,12 @@ Message:  1028
 <ce>                  This matter is definitely settled.
 <ce>          Now to inform _questgiver_ that ___home_ is free.
 
+Message:  1029
+<ce>              Two rogues spring up nearby, arms in hand.
+<ce>
+<ce>          "Shoulda left well enough alone over at ___home_!
+<ce>             Then we wouldn'a had to bury a body today!"
+
 Message:  1030
 %qdt:
  I have been sent from
@@ -126,6 +134,12 @@ Message:  1032
  domed shrine, should I choose to
  hunt them down.
 
+Message:  1033
+<ce>            The thugs appear to have no identification or
+<ce>              anything else to lead you to their source.
+<ce>             With no lead to go on, your only recourse is
+<ce>                   to return to the Fighters Guild.
+
 Message:  1040
 <ce>                   _questgiver_ looks deeply upset.
 <ce>
@@ -148,10 +162,13 @@ Place _home_ remote farmhome
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _delay_ 00:00
+Clock _stalk_ 4:00 1.00:00
 
 Foe _enemy_ is 4 Rogue
 Foe _dbenemy1_ is Nightblade
 Foe _dbenemy2_ is Assassin
+Foe _stalker1_ is Rogue
+Foe _stalker2_ is Rogue
 
 --	Quest start-up:
 	start timer _timer_
@@ -237,6 +254,22 @@ variable _delay_
 _persuadefail_ task:
 	when _begin_ and _delay_ and not _victory_
 	say 1021
+	start timer _stalk_
+
+_stalk_ task:
+	create foe _stalker1_ every 0 minutes 1 times with 100% success
+	create foe _stalker2_ every 0 minutes 1 times with 100% success
+	say 1029
+
+_killstalker1_ task:
+	killed _stalker1_
+
+_killstalker2_ task:
+	killed _stalker2_
+
+_killedstalkers_ task:
+	when _killstalker1_ and _killstalker2_
+	say 1033
 
 _cultent_ task:
 	when pc enters cult
