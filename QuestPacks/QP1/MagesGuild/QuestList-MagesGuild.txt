@@ -10,7 +10,7 @@
 schema: *name, group, membership, minReq, flag, notes
 
 JHMG001, MagesGuild, M, 0, 0, a quest to slay a shapeshifting mage in a dungeon
-JHMG002, MagesGuild, M, 3, 0, a quest to convince a scholar to leave a dungeon via quiz
+JHMG002, MagesGuild, M, 3, 1, a quest to convince a scholar to leave a dungeon via quiz
 JHMG003, MagesGuild, M, 4, 0, a quest to slay a necromancer in a residence
 JHMG004, MagesGuild, M, 5, 1, a quest to resolve a daedric mental battle
 -JHMG005, MagesGuild, M, 4, 1,
@@ -21,8 +21,8 @@ JHMG009, MagesGuild, M, 0, 0, a quest to deliver a manuscript after certain days
 JHMG010, MagesGuild, M, 5, 0, a quest to slay a necromantic colleague
 JHMG011, MagesGuild, M, 0, 0, a quest to guide students to locations
 JHMG012, MagesGuild, M, 5, 0, a quest to stop a powerful former member
-JHMG013, MagesGuild, M, 1, 0, a quest to bring a wandering atronach home
-JHMG014, MagesGuild, M, 6, 0, a quest to obtain a report on vampirism
+JHMG013, MagesGuild, M, 1, 1, a quest to bring a wandering atronach home
+JHMG014, MagesGuild, M, 6, 1, a quest to obtain a report on vampirism
 JHMG015, MagesGuild, M, 1, 0, a quest to defend a shapeshifted member
 JHMG016, MagesGuild, M, 4, 1, a quest to rescue an ambitious experimenter
 JHMG017, MagesGuild, M, 0, 1, a quest to identify a document
