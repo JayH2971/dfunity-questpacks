@@ -47,13 +47,11 @@ QuestFail:  [1003]
 <ce>                       will have slain _dummy_.
 
 QuestComplete:  [1004]
-<ce>           Oh, what a hero! The spell will wear off by the
-<ce>          latter part of a day, or perhaps even now it has,
-<ce>            but that will be too soon for more mercenaries
-<ce>                 to get word of it. _dummy_ will know
-<ce>            about your work and praise your name. You have
-<ce>                truly saved a life this day. Take this
-<ce>                     magnificent book, =reward_,
+<ce>                  Oh, what a hero! _dummy_ will know
+<ce>                about your work and praise your name,
+<ce>                  once she's able to think straight.
+<ce>                You have truly saved a life this day.
+<ce>                Take this magnificent book, =reward_,
 <ce>         as my heartfelt thanks for protecting the innocent.
 
 RumorsDuringQuest:  [1005]
@@ -62,13 +60,52 @@ Them Shapeshifters are awful people, I says.
 You heard about that fellow cursed by the Shapeshifters? Wonder if he deserved it.
 
 Message:  1010
-<ce>              It appears you have arrived in the nick of
-<ce>              time. You can already hear multiple voices
-<ce>                engaged in raucous discussion outside.
+<ce>             You made it here before the Fighters Guild.
+<ce>        The shapeshifted mage, in bestial form, cowers nearby.
+<ce>             With some skill in Illusion magic, you could
+<ce>                try to dispel the enchantment yourself
+<ce>                   and save everyone some trouble.
+<ce>                 Do you attempt it (yes) or fight off
+<ce>                    the mercenaries instead (no)?
+<ce>
+<ce>                  (SKILL CHECK: YES: Illusion, low)
 
 Message:  1011
 <ce>       You hear no more shouting. Hopefully these are the last
 <ce>                  mercenaries sent to slay _dummy_.
+
+Message:  1012
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>            Just as you hear footsteps approach the door,
+<ce>               you grasp the spell's concept and try to
+<ce>                  undo it. _dummy_ takes the form of
+<ce>              a person once more and falls to the floor.
+<ce>
+<ce>                  "Thank you, thank you, thank you!
+<ce>               What a horrifying experience that was!"
+<ce>
+<ce>             Mercenaries from the Fighters Guild burst in
+<ce>                seconds after, demanding to know where
+<ce>               the creature is. You both tell them that
+<ce>          the house is clean, and they depart, disappointed.
+<ce>
+<ce>                 _dummy_ retreats to collect %g2self.
+<ce>                     Your role here is finished.
+
+Message:  1013
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>            Just as you hear footsteps approach the door,
+<ce>               you grasp the spell's concept and try to
+<ce>                    undo it. Your skills fail you,
+<ce>            and the enchanted creature misinterprets your
+<ce>      attempt as an offensive spell. It prepares for the attack
+<ce>    just as the Fighters Guild mercenaries burst through the door.
+
+Message:  1014
+<ce>              You hear two people approaching the door.
+<ce>                   You hope you're ready for this.
 
 Message:  1020
 <ce>                 _dummy_ has been slain by your hand,
@@ -117,35 +154,55 @@ variable _b1_
 variable _b2_
 
 _inside_ task:
-    say 1010
+    prompt 1010 yes _attempt_ no _flee_
     stop timer _timer_
+
+variable _attempt_
+_skilled_ task:
+    when skill Illusion is at least 25
+
+_flee_ task:
+    say 1014
+    restrain foe _dk1_
+    restrain foe _dk2_
+    restrain foe _dk3_
+    restrain foe _dk4_
+
+_bigwin_ task:
+    when _attempt_ and _skilled_
+    say 1012
+    start task _vict_
+
+_bigfail_ task:
+    when _attempt_ and not _skilled_
+    say 1013
 
 _notinside_ task:
     when not _inside_ and not _slain_
     start timer _timer_
 
 _spawn1_ task:
-    when _inside_ and _d1_
+    when _inside_ and _d1_ and not _vict_
     create foe _dk1_ every 0 minutes 1 times with 100% success
 
 _spawn2_ task:
-    when _inside_ and _d2_
+    when _inside_ and _d2_ and not _vict_
     create foe _dk2_ every 0 minutes 1 times with 100% success
 
 _spawn3_ task:
-    when _inside_ and _d3_
+    when _inside_ and _d3_ and not _vict_
     create foe _dk3_ every 0 minutes 1 times with 100% success
 
 _spawn4_ task:
-    when _inside_ and _d4_
+    when _inside_ and _d4_ and not _vict_
     create foe _dk4_ every 0 minutes 1 times with 100% success
 
 _bk1_ task:
-    when _inside_ and _b1_
+    when _inside_ and _b1_ and not _vict_
     create foe _bk1_ every 1 minutes 1 times with 75% success
 
 _bk2_ task:
-    when _inside_ and _b2_
+    when _inside_ and _b2_ and not _vict_
     create foe _bk2_ every 1 minutes 1 times with 75% success
 
 _infight_ task:
@@ -160,6 +217,9 @@ _slain_ task:
     say 1011
     stop timer _failsafe_
     change repute with _fg_ by -10
+    start task _vict_
+
+variable _vict_
 
 _fail_ task:
     killed _dk1_
@@ -174,11 +234,11 @@ _qgclicked_ task:
     clicked npc _qgiver_
 
 _clearclick_ task:
-    when _qgclicked_ and not _slain_
+    when _qgclicked_ and not _vict_
     clear _qgclicked_ _clearclick_
 
 _pcreward_ task:
-    when _qgclicked_ and _slain_
+    when _qgclicked_ and _vict_
     give pc _reward_
     end quest
 

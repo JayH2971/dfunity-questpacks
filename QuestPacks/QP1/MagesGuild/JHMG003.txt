@@ -117,6 +117,7 @@ _conv_ task:
   hide npc _necr_
   place foe _enemy_ at _res_
   change foe _enemy_ infighting true
+  change foe _enemy_ team 13
 
 _inj_ task:
   injured _enemy_

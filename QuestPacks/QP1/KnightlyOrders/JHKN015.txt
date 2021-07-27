@@ -40,42 +40,53 @@ QuestComplete:  [1004]
 <ce>                  A model for knights of this order.
 
 Message:  1020
-<ce>                       (SPRIGGAN CHECK FAILED)
-<ce>
 <ce>                  A spriggan shambles its way toward
 <ce>                 you, only half conscious of its own
-<ce>                   actions. Before it reaches you,
-<ce>                    you attempt conversation. Your
-<ce>                  best efforts are ignored, and the
-<ce>                     creature advances in a rage.
+<ce>                      actions. You could try to
+<ce>                talk to it, to see if you can find out
+<ce>                    anything that could help you.
+<ce>                  Do you try to talk to it (yes) or
+<ce>                        try to avoid it (no)?
+<ce>
+<ce>                  (SKILL CHECK: YES: Spriggan, low)
 
 Message:  1021
-<ce>                       (SPRIGGAN CHECK PASSED)
+<ce>                         (SKILL CHECK PASSED)
 <ce>
-<ce>                  A spriggan shambles its way toward
-<ce>                 you, only half conscious of its own
-<ce>                   actions. Before it reaches you,
-<ce>                   you attempt conversation, which
-<ce>                     swiftly grabs its attention.
-<ce>
-<ce>               The creature begins to slow its actions
-<ce>                until it stands perfectly still. It is
-<ce>              clearly bothered by some effect you can't
-<ce>                 easily discern. It begs you to hurry
-<ce>                     in the direction of ___dung_
-<ce>              so its kin can return to a life of peace.
-<ce>                It then emits a vibrant humming sound
-<ce>                 which reverberates across the earth.
+<ce>               You catch the creature's attention with
+<ce>              a greeting and tell it you intend no harm.
+<ce>        It responds, in broken language, that its kind suffers
+<ce>          a burning agony beyond their control. It promises
+<ce>              to inform its kin that you are no danger.
+<ce>              You hope it can make good on that promise.
+<ce>              You dismiss it, and it wanders elsewhere.
 
 Message:  1022
-<ce>                Your inexplicable aggression is poorly
-<ce>                received. The spriggan moans angrily,
-<ce>            sending small shock waves through the ground.
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>              Whatever you know of the Spriggan language
+<ce>          is not enough. Your speech incenses the creature,
+<ce>                    and it wanders off in a rage.
+<ce>
+<ce>           If spriggans are as communal as the stories say,
+<ce>            this bodes poorly for your visit to ___dung_.
 
 Message:  1023
 <ce>                This sorceror, reeking of green herbs,
 <ce>                  appears to have been the cause of
 <ce>                       the spriggans' madness.
+
+Message:  1024
+<ce>              The poor creature hobbles about in agony.
+<ce>          It looks at you momentarily, and then turns about
+<ce>            and departs. Perhaps you could have helped it,
+<ce>                 but spriggans can be temperamental.
+
+Message:  1025
+<ce>             As soon as you cross the threshold, you hear
+<ce>                   the angry groaning of spriggans.
+<ce>               You hope they won't harass you too much
+<ce>           while you search for the source of the problem.
 
 Message:  1030
 %qdt:
@@ -89,15 +100,14 @@ with slaying some disturbance in
 QBN:
 Person _qgiver_ group Questor male
 
-Place _dung_ remote dungeon5
+Place _dung_ remote dungeon6
 
 Clock _2dung_ 00:00 0 flag 1 range 0 2
 Clock _spawn_ 1:00 6:00
 Clock _failsafe_ 120.00:00
 
 Foe _mage_ is Sorceror
-Foe _sprig1_ is Spriggan
-Foe _sprig2_ is Spriggan
+Foe _sprig_ is Spriggan
 
 --	Quest start-up:
   log 1030 step 0
@@ -106,39 +116,49 @@ Foe _sprig2_ is Spriggan
   start timer _failsafe_
   reveal _dung_
   place foe _mage_ at _dung_
+  pc at _dung_ do _inside_
+
+variable _inside_
 
 _spawn_ task:
-  create foe _sprig1_ every 0 minutes 1 times with 100% success
+  prompt 1020 yes _attempt_ no _flee_
+
+variable _attempt_
+
+_bigwin_ task:
+  when _attempt_ and _skilled_
+  say 1021
+
+_bigfail_ task:
+  when _attempt_ and not _skilled_
+  say 1022
+
+_flee_ task:
+  say 1024
+
+_smallspawn_ task:
+  when _flee_ and _inside_ and not _slain_
+  say 1025
+  create foe _sprig_ every 15 minutes indefinitely with 5% success
+
+_bigspawn_ task:
+  when _bigfail_ and _inside_ and not _slain_
+  say 1025
+  create foe _sprig_ every 15 minutes indefinitely with 10% success
+  create foe _sprig_ every 0 minutes 1 times with 100% success
 
 _skilled_ task:
   when skill Spriggan is at least 20
 
-_peaceful_ task:
-  when _spawn_ and _skilled_
-  restrain foe _sprig1_
-  say 1021
-
-_hurt_ task:
-  injured _sprig1_
-
-_betray_ task:
-  when _peaceful_ and _hurt_ and not _slain_
-  say 1022
-  create foe _sprig2_ every 60 minutes indefinitely with 20% success
-
-_norm_ task:
-  when _spawn_ and not _skilled_ and not _slain_
-  create foe _sprig2_ every 60 minutes indefinitely with 20% success
-  say 1020
-
 _infight_ task:
   daily from 0:00 to 23:59
-  change foe _sprig2_ infighting true
+  change foe _sprig_ infighting true
   clear _infight_
 
 _inj_ task:
   injured _mage_
   change foe _mage_ infighting true
+  change foe _mage_ team 3
 
 _slain_ task:
   killed _mage_

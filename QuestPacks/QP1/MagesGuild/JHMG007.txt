@@ -55,11 +55,17 @@ QuestComplete:  [1004]
 <ce>     the week. You have certainly earned your reward. Thank you.
 
 Message:  1010
-<ce>      Your work is to find an assassin somewhere in this place.
-<ce>
 <ce>  (Hint: You may be in a location that's impossible to escape from,)
 <ce>                 (like the bottom of a chute. If so,)
 <ce>   (make a save and try the console command "teleport" to get out.)
+<ce>
+<ce>     Somewhere in this dark hole, you have an assassin to locate.
+<ce>       You could wander around until you bump into each other,
+<ce>        or perhaps you could set a trap to see if you can get
+<ce>       your foe to come to you. Do you try to set a trap (yes)
+<ce>                     or search on your own (no)?
+<ce>
+<ce>                 (SKILL CHECK: YES: Stealth, medium)
 
 Message:  1011
 <ce>       You're back, and you have no proof of a slain criminal.
@@ -67,6 +73,31 @@ Message:  1011
 
 Message:  1012
 <ce>                     Very well then. Off you go.
+
+Message:  1013
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>             Using a few pieces of litter nearby, you arm
+<ce>         a noise trap that sounds a few steps away from you.
+<ce>        You hear a single person approach, and then the words,
+<ce>
+<ce>                         "Is someone there?"
+
+Message:  1014
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>          You gather a few pieces of litter nearby and start
+<ce>         to work on a noise trap. However, you're not nearly
+<ce>                    as quiet as you think you are.
+<ce>         Multiple footsteps approach, and one person shouts,
+<ce>
+<ce>                  "We heard something! Who is it?!"
+<ce>
+<ce>             Your quarry still eludes you, unfortunately.
+
+Message:  1015
+<ce>            If you get moving now, you have the advantage
+<ce>              on your target. It's time to go searching.
 
 Message:  1020
 <ce>      You have slain the assassin. Now to return to ___qgiver_.
@@ -77,32 +108,66 @@ Message:  1030
  has sent me to slay an assassin
  in ___dung_.
 
+Message:  1031
+%qdt:
+ I have slain the outlaw in ___dung_
+ and can return to ___qgiver_ at my leisure.
+
 QBN:
 Clock _failsafe_ 180.00:00
-Clock _battle_ 2:00 4:00
+Clock _battle_ 4:00 6:00
 
 Item _reward_ gold
 
-Place _dung_ remote dungeon3
+Place _dung_ remote dungeon15
 
 Foe _enemy_ is Assassin
+Foe _archer1_ is Archer
+Foe _archer2_ is Archer
 
 Person _qgiver_ group Questor male
 Person _dummy_ faction The_Mages_Guild
 
 --	Quest start-up:
 	teleport pc to _dung_
-	say 1010
 	start timer _failsafe_
-	start timer _battle_
 	log 1030 step 0
 	pc at _dung_ set _inside_
 
-variable _inside_
+_inside_ task:
+	prompt 1010 yes _attempt_ no _flee_
+	start timer _battle_
+
+_flee_ task:
+	say 1015
+
+variable _attempt_
+
+_skilled_ task:
+	when skill Stealth is at least 45
+
+_bigwin_ task:
+	when _attempt_ and _skilled_
+	say 1013
+	create foe _enemy_ every 0 minutes 1 times with 100% success
+	change foe _enemy_ infighting true
+
 variable _battle_
+_guaranteespawn_ task:
+	when _battle_ and _inside_ and not _inj_
+	create foe _enemy_ every 60 minutes indefinitely with 100% success
+
 _spawn_ task:
-	when _battle_ and _inside_ and not _slain_
-	create foe _enemy_ every 5 minutes indefinitely with 5% success
+	when _inside_ and not _inj_ and not _bigwin_
+	create foe _enemy_ every 5 minutes indefinitely with 1% success
+
+_bigfail_ task:
+	when _attempt_ and not _skilled_
+	say 1014
+	create foe _archer1_ every 0 minutes 1 times with 100% success
+	create foe _archer2_ every 0 minutes 1 times with 100% success
+	change foe _archer1_ infighting true
+	change foe _archer2_ infighting true
 
 _inj_ task:
 	injured _enemy_
@@ -111,6 +176,7 @@ _inj_ task:
 _slain_ task:
 	killed _enemy_
 	say 1020
+	log 1031 step 1
 
 _pcgetsgold_ task:
 	when _qgclicked_ and _slain_
