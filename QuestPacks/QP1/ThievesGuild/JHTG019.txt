@@ -1,0 +1,158 @@
+Quest: JHTG019
+DisplayName: The Black Box
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>           Just got a request from one of our guild members
+<ce>        out looking for treasure. Needs a top-tier lockpicker
+<ce>            to help out with something that got uncovered
+<ce>             down there. If it's really a black box like
+<ce>            the message says it is, it's worth real money.
+<ce>                  You good enough to take this one?
+
+RefuseQuest:  [1001]
+<ce>             Fair enough. We've got some people here who
+<ce>                can crack a deadbolt in half a second.
+
+AcceptQuest:  [1002]
+<ce>             Then it's yours. Hope you can live up to it.
+<ce>        Look for _thief_ in ___dungeon_. We got %g3 messenger
+<ce>       pigeon with a note that %g3's too afraid to open it up.
+<ce>         Ugly-looking powder around the door frame, %g1 says.
+<ce>          Smart people keep away from that unless they know
+<ce>          what they're doing. The note said %g1's gonna wait
+<ce>        =timer_ days more and then leave. Don't let %g2 down,
+<ce>      or us, on this one. And keep the spoils for your trouble.
+
+QuestFail:  [1003]
+<ce>         _thief_ has given up waiting for you in ___dungeon_.
+
+QuestComplete:  [1004]
+<ce>                      You made the journey here.
+<ce>        The Thieves Guild can't fault you for doing your job.
+
+Message:  1010
+<ce>               "Halt. Thieves Guild? Good. Here it is."
+<ce>                 _thief_ shows you a large black box,
+<ce>          made of oak and ebony. It can withstand incredible
+<ce>           punishment, as evidenced by the numerous impacts
+<ce>               %g1 has given it while waiting for you.
+<ce>
+<ce>            "If you can get this open, we split it 50-50.
+<ce>           If you can't, I'm outta here. Make your choice.
+<ce>             And no, magic is useless. I already tried."
+<ce>
+<ce>       Black boxes are legendary among thieves. To open one up
+<ce>      is a major achievement. Are you sure you want to try this?
+<ce>
+<ce>              (SKILL CHECK: YES: Lockpicking, very high)
+
+Message:  1011
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>       You carefully, gently set to work on the lock mechanism.
+<ce>          You know from experience that one of these things
+<ce>            can hurt you much worse than you can hurt it.
+<ce>     Minutes pass, and you listen carefully to the springs move.
+<ce>          _thief_ sits down and rests %g3 head in %g3 hands.
+<ce>           It takes much longer than an ordinary door bolt,
+<ce>         but in the end, you conquer. Gold spills out of the
+<ce>        box and onto the floor. You divide it into equal piles
+<ce>                            on the ground.
+<ce>
+<ce>         "Good work. Hope you brought a wagon. I'm definitely
+<ce>       not walking this stuff home." Pulling out a large sack,
+<ce>        %g1 gathers the coins together and then casts a Recall
+<ce>                    spell, disappearing from view.
+<ce>                        The rest is all yours.
+
+Message:  1012
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>                    You start to work on the lock,
+<ce>                reaching in and feeling for the pins.
+<ce>             You quickly find this box is unlike anything
+<ce>            you've ever opened before. You hear a loud and
+<ce>           angry snap from within the box, making it shake
+<ce>                inside. Then with a loud boom, the top
+<ce>        compartment flies off and purple powder scatters into
+<ce>                   the air. _thief_ screams at you,
+<ce>         "WORTHLESS CHILD OF A HORSE! DO YOU HAVE ANY IDEA--"
+<ce>
+<ce>           Then %g1 starts gagging and coughing, and flees.
+<ce>           The purple dust goes everywhere, onto your bag,
+<ce>                     your sinuses, and your skin.
+<ce>              You swing your arms to get some fresh air,
+<ce>                   coughing from the noxious agent.
+<ce>             Finally, with another snap, the box locks up
+<ce>         permanently. It refuses entry to any key whatsoever.
+<ce>         Its contents are forever lost to you and all others.
+
+Message:  1013
+<ce>            "Cold feet? Disappointing, but you've got the
+<ce>        sense to recognize danger. I thought this was gonna be
+<ce>         a child's toy too, until I looked at it. Better not
+<ce>              to mess around with it. I'll have to look
+<ce>                       for someone myself now."
+<ce>
+<ce>            _thief_ casts an invisibility spell on the box
+<ce>                      and departs with a salute.
+
+Message:  1030
+%qdt:
+ A Thieves Guild member in ___dungeon_
+ found a black box with valuables
+ inside and requested a thief to
+ help unlock it. I have to be
+ there within =timer_ days to
+ help open it.
+
+QBN:
+Item _reward_ gold range 4400 to 6000
+
+Place _dungeon_ remote dungeon6
+
+Person _thief_ faction The_Thieves_Guild
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    reveal _dungeon_
+    place npc _thief_ at _dungeon_
+
+_found_ task:
+    clicked npc _thief_
+    prompt 1010 yes _attempt_ no _flee_
+
+variable _attempt_
+_flee_ task:
+    say 1013
+    hide npc _thief_
+    give pc nothing
+    end quest
+
+_skilled_ task:
+    when skill Lockpicking is at least 85
+
+_victory_ task:
+    when _attempt_ and _skilled_
+    say 1011
+    give pc _reward_
+    hide npc _thief_
+    end quest
+
+_bigfail_ task:
+    when _attempt_ and not _skilled_
+    say 1012
+    hide npc _thief_
+    make pc ill with Plague
+    make pc ill with Cholera
+    make pc ill with Red_Death
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest
