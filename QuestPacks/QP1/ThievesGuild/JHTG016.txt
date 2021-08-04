@@ -40,6 +40,8 @@ AcceptQuest:  [1002]
 <ce>                        so don't dally on it.
 
 QuestFail:  [1003]
+<ce>                        (STEALTH CHECK FAILED)
+<ce>
 <ce>          You know something about sneaking, but not enough.
 <ce>     Someone knows you're here, and they're shouting up a storm.
 
@@ -60,8 +62,37 @@ Message:  1010
  couple of days, it's mine.
 
 Message:  1011
-<ce>            You rifle through the chest and find the gold.
-<ce>             You quickly count out =reward_ gold pieces.
+<ce>               You find the chest and see it has a good
+<ce>                lock on it. If you want what's inside,
+<ce>             you're going to have to unlock it yourself.
+<ce>                      Do you attempt to open it?
+<ce>
+<ce>                (SKILL CHECK: YES: Lockpicking, high)
+
+Message:  1012
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>          Knowing you don't have much time, you get working.
+<ce>        It doesn't take more than a few seconds before the lid
+<ce>           flies open. You grab the contents for yourself.
+
+Message:  1013
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>          Knowing you don't have much time, you get working.
+<ce>      You dig in deep and trigger something you shouldn't have.
+<ce>               A loud siren rings throughout the house.
+<ce>                        You're in it deep now.
+
+Message:  1014
+<ce>    Looking at the lock, you start to second-guess your abilities.
+<ce>            You can still get out without causing a major
+<ce>      screw-up, you tell yourself. You leave the chest. No sense
+<ce>       carrying around a big red flag if you can't get it open.
+
+Message:  1015
+<ce>             This is the right house. You've got to find
+<ce>                     a chest somewhere inside it.
 
 QBN:
 Item _item_ item class 1 subclass 8
@@ -79,30 +110,29 @@ Clock _ending_ 2.00:00 2.12:00
     log 1010 step 0
     place item _item_ at _house_
     pc at _house_ do _inside_
+    pick one of _seeskill1_ _seeskill2_ _seeskill3_
 
 _inside_ task:
     start timer _danger_
     stop timer _ending_
+    say 1015
 
 _notinside_ task:
     when not _inside_
     stop timer _danger_
     start timer _ending_
 
-_grab_ task:
-    clicked item _item_
-    get item _reward_
-    take _item_ from pc saying 1011
-    make _reward_ permanent
+_danger_ task:
+    pick one of _go1_ _go2_ _go3_
 
 _check1_ task:
-    when skill Stealth is at least 50
+    when skill Stealth is at least 40
 
 _check2_ task:
-    when skill Stealth is at least 60
+    when skill Stealth is at least 50
 
 _check3_ task:
-    when skill Stealth is at least 70
+    when skill Stealth is at least 60
 
 variable _go1_
 variable _go2_
@@ -129,6 +159,29 @@ _d3_ task:
     when not _check3_ and _go3_
     start task _fail_
 
+_pick1_ task:
+    when skill Lockpicking is at least 30
+
+_pick2_ task:
+    when skill Lockpicking is at least 35
+
+_pick3_ task:
+    when skill Lockpicking is at least 40
+
+_e1_ task:
+    when not _pick1_ and _seeskill1_
+    start task _skillfail_
+
+_e2_ task:
+    when not _pick2_ and _seeskill2_
+    start task _skillfail_
+
+_e3_ task:
+    when not _pick3_ and _seeskill3_
+    start task _skillfail_
+
+variable _skillfail_
+
 _fail_ task:
     setplayercrime Trespassing
     spawncityguards immediate
@@ -136,14 +189,38 @@ _fail_ task:
     change repute with _qgiver_ by -1
     end quest
 
+_grab_ task:
+    clicked item _item_
+    prompt 1011 yes _attempt_ no _flee_
+    take _item_ from pc
+
+variable _attempt_
+variable _seeskill1_
+variable _seeskill2_
+variable _seeskill3_
+
+_flee_ task:
+    say 1014
+
+_bigfail_ task:
+    when _attempt_ and _skillfail_
+    setplayercrime Theft
+    spawncityguards immediate
+    say 1013
+    change repute with _qgiver_ by -1
+    end quest
+
+_victory_ task:
+    when _attempt_ and not _skillfail_
+    get item _reward_
+    make _reward_ permanent
+    say 1012
+
 _escape_ task:
     when _grab_ and _notinside_
     say 1004
     change repute with _qgiver_ by +2
     end quest
-
-_danger_ task:
-    pick one of _go1_ _go2_ _go3_
 
 _ending_ task:
     change repute with _qgiver_ by +2
