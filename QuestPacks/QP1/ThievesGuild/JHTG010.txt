@@ -122,6 +122,10 @@ _spawn_ task:
     when _hunt_ and _inside_
     create foe _enemy1_ every 1 minutes indefinitely with 50% success
 
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy1_ infighting true
+
 _timer_ task:
     say 1003
     end quest
