@@ -154,7 +154,7 @@ _2palace_ task:
 
 _spawn_ task:
 	when _timeup_ and _inside_ and _real_
-	create foe _orc1_ every 3 minutes 3 times with 100% success
+	create foe _orc1_ every 3 minutes 2 times with 100% success
 	start timer _death_
 	say 1015
 
@@ -178,7 +178,7 @@ _failout_ task:
 	end quest
 
 _success_ task:
-	killed 6 _orc1_
+	killed 4 _orc1_
 	stop timer _death_
 	start timer _victory_
 
