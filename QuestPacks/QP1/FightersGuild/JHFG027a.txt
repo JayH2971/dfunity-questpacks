@@ -368,8 +368,8 @@ Item _warning_ letter used 1018
 Item _dummytimer_ gold range 6 to 15
 
 Foe _helpdb1_ is Rogue
-Foe _ambush_ is 3 Assassin
-Foe _spawn_ is 2 Assassin
+Foe _ambush_ is 3 Thief
+Foe _spawn_ is 2 Acrobat
 
 --	Quest start-up:
     start timer _initial_

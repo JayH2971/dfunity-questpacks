@@ -152,7 +152,7 @@ Place _palace_ remote palace
 Clock _timer_ 00:00 0 flag 17 range 0 2
 
 Foe _enemy1_ is Nightblade
-Foe _enemy2_ is Assassin
+Foe _enemy2_ is Acrobat
 Foe _enemy3_ is Rogue
 Foe _enemy4_ is Spellsword
 Foe _vamp_ is Ancient_vampire

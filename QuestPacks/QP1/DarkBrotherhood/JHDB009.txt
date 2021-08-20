@@ -98,7 +98,7 @@ Person _parent_ group Local_3.0
 Place _dung_ remote dungeon5
 Place _home_ remote house
 
-Foe _enemy1_ is Assassin
+Foe _enemy1_ is Rogue
 Foe _enemy2_ is Nightblade
 Foe _enemy3_ is Barbarian
 

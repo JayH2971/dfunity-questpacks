@@ -155,7 +155,7 @@ Place _res_ remote house
 Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _conv_ 00:02
 
-Foe _enemy_ is Assassin
+Foe _enemy_ is Rogue
 
 --	Quest start-up:
     start timer _timer_

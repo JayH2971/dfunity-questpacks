@@ -213,7 +213,7 @@ Place _goal_ local random
 Place _tr_ local random
 
 Foe _e1_ is Rogue
-Foe _e2_ is Assassin
+Foe _e2_ is Bard
 Foe _e3_ is Barbarian
 Foe _e4_ is Nightblade
 Foe _e5_ is Giant_scorpion

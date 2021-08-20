@@ -166,7 +166,7 @@ Clock _stalk_ 4:00 1.00:00
 
 Foe _enemy_ is 4 Rogue
 Foe _dbenemy1_ is Nightblade
-Foe _dbenemy2_ is Assassin
+Foe _dbenemy2_ is Bard
 Foe _stalker1_ is Rogue
 Foe _stalker2_ is Rogue
 

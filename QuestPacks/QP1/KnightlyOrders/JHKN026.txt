@@ -72,7 +72,7 @@ Place _dung_ remote dungeon6
 Clock _2dung_ 00:00 0 flag 1 range 0 2
 Clock _failsafe_ 30.00:00
 
-Foe _enemy1_ is Assassin
+Foe _enemy1_ is Bard
 Foe _enemy2_ is Rogue
 
 --	Quest start-up:

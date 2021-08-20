@@ -82,7 +82,7 @@ Clock _2place_ 00:00 0 flag 1 range 0 2
 Clock _steal_ 1.00:00
 Clock _timer_ 90.00:00
 
-Foe _enemy1_ is Assassin
+Foe _enemy1_ is Acrobat
 Foe _enemy2_ is 2 Rogue
 
 --	Quest start-up:
