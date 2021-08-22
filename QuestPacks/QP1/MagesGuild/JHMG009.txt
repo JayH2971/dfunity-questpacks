@@ -58,7 +58,7 @@ QuestComplete:  [1004]
 Message:  1010
 <ce>                       You hear voices nearby.
 <ce>
-<ce>                         "There %pg1 is. Go."
+<ce>                         "There %pg is. Go."
 
 Message:  1011
 <ce>             Don't toy with us here. We're Thieves Guild.
