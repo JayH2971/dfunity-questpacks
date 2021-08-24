@@ -94,7 +94,7 @@ _pcgetsgold_ task:
 
 _decision_ task:
 	when _qgclicked_ and _slain_
-	prompt 1022 yes _lie_ no _bigfail_
+	prompt 1022 yes _bigfail_ no _lie_
 
 _lie_ task:
 	give pc _reward_
