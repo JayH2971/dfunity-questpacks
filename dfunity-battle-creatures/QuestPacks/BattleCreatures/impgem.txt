@@ -1,0 +1,110 @@
+Quest: impgem
+DisplayName: Imp Summoning Gem
+-- Message panels
+QRC:
+
+Message:  1010
+<ce> You are given a small emerald and a receipt of purchase.
+<ce> You note the date in your journal for reference.
+
+Message:  1011
+%qdt:
+I bought a summoning emerald for imps today, which
+is good for three castings for the next =timer_ days.
+
+Message:  1012
+<ce>  You activate the gem, and three mindless imps
+<ce>  appear out of thin air to defend you.
+<ce>  This gem has two uses left.
+
+Message:  1013
+<ce>  You activate the gem, and three mindless imps
+<ce>  appear out of thin air to defend you.
+<ce>  This gem has one use left.
+
+Message:  1014
+<ce>  You activate the gem, and three mindless imps
+<ce>  appear out of thin air to defend you.
+<ce>  The gem crumbles to dust in your hand.
+
+Message:  1015
+<ce>  Two weeks are up, and the imp summoning gem
+<ce>  crumbles in your pack.
+
+QBN:
+
+Clock _timer_ 14.00:00
+Clock _delay_ 0:01
+
+Foe _imp1_ is Imp
+Foe _imp2_ is Imp
+Foe _imp3_ is Imp
+Foe _imp4_ is Imp
+Foe _imp5_ is Imp
+Foe _imp6_ is Imp
+Foe _imp7_ is Imp
+Foe _imp8_ is Imp
+Foe _imp9_ is Imp
+
+Item _gem1_ emerald
+Item _gem2_ emerald
+Item _gem3_ emerald
+
+--   Quest start-up:
+    say 1010
+    get item _gem1_
+    start timer _timer_
+    log 1011 step 0
+    _gem1_ used do _summon1_
+
+_summon1_ task:
+    say 1012
+    create foe _imp1_ every 0 minutes 1 times with 100% success
+    create foe _imp2_ every 0 minutes 1 times with 100% success
+    create foe _imp3_ every 0 minutes 1 times with 100% success
+    change foe _imp1_ infighting true
+    change foe _imp2_ infighting true
+    change foe _imp3_ infighting true
+    change foe _imp1_ team 1
+    change foe _imp2_ team 1
+    change foe _imp3_ team 1
+    take _gem1_ from pc
+    get item _gem2_
+    _gem2_ used do _summon2_
+
+_summon2_ task:
+    say 1013
+    create foe _imp4_ every 0 minutes 1 times with 100% success
+    create foe _imp5_ every 0 minutes 1 times with 100% success
+    create foe _imp6_ every 0 minutes 1 times with 100% success
+    change foe _imp4_ infighting true
+    change foe _imp5_ infighting true
+    change foe _imp6_ infighting true
+    change foe _imp4_ team 1
+    change foe _imp5_ team 1
+    change foe _imp6_ team 1
+    take _gem2_ from pc
+    get item _gem3_
+    _gem3_ used do _summon3_
+
+_summon3_ task:
+    say 1014
+    create foe _imp7_ every 0 minutes 1 times with 100% success
+    create foe _imp8_ every 0 minutes 1 times with 100% success
+    create foe _imp9_ every 0 minutes 1 times with 100% success
+    change foe _imp7_ infighting true
+    change foe _imp8_ infighting true
+    change foe _imp9_ infighting true
+    change foe _imp7_ team 1
+    change foe _imp8_ team 1
+    change foe _imp9_ team 1
+    take _gem3_ from pc
+    start timer _delay_
+    remove log step 0
+
+_delay_ task:
+    end quest
+
+_timer_ task:
+    say 1015
+    end quest

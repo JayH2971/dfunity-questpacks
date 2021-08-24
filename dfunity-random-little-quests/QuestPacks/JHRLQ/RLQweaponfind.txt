@@ -1,0 +1,81 @@
+Quest: RLQweaponfind
+DisplayName: Random Little Quest A Weapon to Find
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You take the weapon for yourself.
+
+Message:  1010
+<ce>  The shining sun reflects off something partially
+<ce>  concealed in the ground. You make out the form of
+<ce>  a weapon, apparently an abandoned _weapon_.
+<ce>  Perhaps it has no owner now.
+<ce>  Will you take it for yourself?
+
+Message:  1011
+<ce>  You start to unearth the weapon when you
+<ce>  hear a voice shout nearby. "Hey!
+<ce>  Filthy git, that's mine! Don't touch it!"
+<ce>  
+<ce>  If you leave it now, you might be able
+<ce>  to avoid a misunderstanding. Of course,
+<ce>  you could still take the _weapon_
+<ce>  if you really wanted to.
+<ce>  Do you take the weapon anyway?
+
+Message:  1012
+<ce>  "Hey! No, that's mine! Guards! Someone help!"
+<ce>  
+<ce>  Commotion stirs nearby as the peasant
+<ce>  calls for the city watch.
+
+Message:  1013
+<ce>  "That's right, you get back now!"
+<ce>  
+<ce>  You back off and let the situation
+<ce>  alone. You could get into a lot of
+<ce>  trouble for persisting.
+
+Message:  1014
+<ce>  For all you know, this is a trap of some kind
+<ce>  to hurt or defame a person. Better to let things be.
+
+Message:  1015
+<ce>  You look around and try to make your intentions obvious,
+<ce>  just in case the _weapon_ actually belongs to someone
+<ce>  around here. No one stops you, and several townspeople
+<ce>  pass by without batting an eye.
+
+QBN:
+
+Item _weapon_ weapon
+
+--	Quest start-up:
+    prompt 1010 yes _pick_ no _ignore_
+
+_pick_ task:
+    pick one of _caught_ _win_
+
+_ignore_ task:
+    say 1014
+    end quest
+
+_caught_ task:
+    prompt 1011 yes _guards_ no _backoff_
+
+_guards_ task:
+    say 1012
+    setplayercrime Theft
+    spawncityguards immediate
+    give pc _weapon_
+    end quest
+
+_backoff_ task:
+    say 1013
+    end quest
+
+_win_ task:
+    say 1015
+    give pc _weapon_
+    end quest

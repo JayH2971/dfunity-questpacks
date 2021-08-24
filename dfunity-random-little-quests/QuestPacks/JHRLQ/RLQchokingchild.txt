@@ -1,0 +1,66 @@
+Quest: RLQchokingchild
+DisplayName: Random Little Quest A Choking Child
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You may not be Tamriel's foremost expert on blocked
+<ce>  airways, but you know enough medicine to work out
+<ce>  a solution. You grab the child from his mother and
+<ce>  inspect his mouth, trying to dislodge anything
+<ce>  that may be readily visible. You then press
+<ce>  hard on the abdomen, expulsing the air that was
+<ce>  inside his lungs. A small, heavily gnawed object flies
+<ce>  out of his mouth and through the air. The boy's normal
+<ce>  breathing resumes, much to the relief of everyone present.
+<ce>  The mother sheepishly admits she doesn't have much
+<ce>  of a compensation to offer, but then pulls a book
+<ce>  out of her pack to pay you.
+
+Message:  1010
+<ce>  A woman cries out in a shrill tone, begging for help.
+<ce>  Her young child is choking and she doesn't understand
+<ce>  how to help. They need a physician. Will you try?
+
+Message:  1011
+<ce>  You refuse to intervene. Thankfully, it doesn't take
+<ce>  long for someone qualified to step up and resolve
+<ce>  the problem, earning the mother's profuse thanks.
+<--->
+<ce>  You refuse to intervene. She calls out again and again,
+<ce>  and then passes by in a flurry. You see the boy's face
+<ce>  turning blue before they disappear from sight.
+
+Message:  1012
+<ce>  You confidently step forward and grab the boy, and
+<ce>  then begin beating his back and neck to try to dislodge
+<ce>  whatever is stuck within. The mother watches in horror and
+<ce>  grabs him back after a few moments. The last you see of them,
+<ce>  the blue-faced child is dragged out into the rain,
+<ce>  hopefully to find someone qualified.
+
+QBN:
+
+Item _reward_ book
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when skill Medical is at least 55
+
+variable _accept_
+_finalwin_ task:
+    when _accept_ and _qualified_
+    give pc _reward_
+    train pc Medical
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    say 1012
+    end quest

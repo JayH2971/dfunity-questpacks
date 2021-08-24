@@ -1,0 +1,28 @@
+Quest: battlecreaturesinit
+DisplayName: Spawn Battle Creatures Merchant
+-- Message panels
+QRC:
+
+QBN:
+
+Clock _timer_ 22:00
+
+--   Quest start-up:
+_nighttime_ task:
+    daily from 2:00 to 3:30
+    pick one of _q1_ _q2_ _q3_
+    start timer _timer_
+
+_timer_ task:
+    start quest battlecreaturesinit
+    end quest
+
+_q1_ task:
+    start quest lowlevelbc
+
+_q2_ task:
+    start quest midlevelbc
+
+_q3_ task:
+    start quest highlevelbc
+

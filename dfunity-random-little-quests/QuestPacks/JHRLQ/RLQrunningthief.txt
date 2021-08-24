@@ -1,0 +1,77 @@
+Quest: RLQrunningthief
+DisplayName: Random Little Quest A Running Thief
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You reach in and find a decrepit pouch of gold
+<ce>  within the hole. It looks years old, and carries
+<ce>  no name. You ensure no one nearby cares as you
+<ce>  take it for yourself.
+
+Message:  1010
+<ce>  You hear an uproar nearby. Among the shouts for
+<ce>  someone to halt, you hear the town guard
+<ce>  talk among themselves.
+<ce>  
+<ce>  "No! How'd we lose the trail?
+<ce>  We can't lose that thief!"
+<ce>  
+<ce>  Though they lost the trail, you see a hooded figure
+<ce>  sneaking away nearby. Do you alert the guards?
+<--->
+<ce>  You hear an uproar nearby. Among the shouts for
+<ce>  someone to halt, you hear the town guard
+<ce>  talk among themselves.
+<ce>  
+<ce>  "No! Where's the thief?
+<ce>  Split up, look around quickly!"
+<ce>  
+<ce>  Though they lost the trail, you see a hooded figure
+<ce>  sneaking away nearby. Do you alert the guards?
+
+Message:  1011
+<ce>  With the loudest shout you can muster,
+<ce>  you ruin the thief's getaway. You hear
+<ce>  a frustrated growl, and the criminal
+<ce>  pulls out arms to try to silence you.
+
+Message:  1012
+<ce>  The town guard manage to catch up to you.
+<ce>  They thank you for resolving the problem.
+<ce>  
+<ce>  "Self-defense, no doubt about it. We'll be telling
+<ce>  the %rt of %crn about this, we will!"
+
+Message:  1013
+<ce>  This is no concern of yours. If this person really
+<ce>  needs to be caught, the city watch can put in the effort.
+
+QBN:
+
+Clock _clock_ 1:00
+
+Foe _monster_ is Thief
+
+--	Quest start-up:
+    prompt 1010 yes _bat_ no _ignore_
+
+_ignore_ task:
+    say 1013
+    end quest
+
+_bat_ task:
+    say 1011
+    create foe _monster_ every 0 minutes 1 times with 100% success
+    change foe _monster_ infighting true
+    start timer _clock_
+
+_gold_ task:
+    killed _monster_
+    say 1012
+    legal repute +4
+    end quest
+
+_clock_ task:
+    remove foe _monster_
+    end quest

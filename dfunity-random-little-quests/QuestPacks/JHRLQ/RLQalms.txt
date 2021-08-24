@@ -1,0 +1,66 @@
+Quest: RLQalms
+DisplayName: Random Little Quest Alms for the Poor
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  A beggar pleads with nearby folk for some money.
+<ce>  
+<ce>  "Alms? Alms for the poor? 20 gold, anyone?"
+<ce>  
+<ce>  Will you offer him the money?
+<--->
+<ce>  You see a beggar nearby, entreating passers by
+<ce>  for their money.
+<ce>  
+<ce>  "Can you spare 20 gold for the poorest of folk?
+<ce>  Please, I need to eat today."
+<ce>  
+<ce>  Will you offer him the money?
+
+Message:  1012
+<ce>  You avoid the mendicant.
+
+Message:  1013
+<ce>  You approach and deliver 20 gold pieces into
+<ce>  the beggar's hands. He cries out for joy and bows
+<ce>  many times before you, and then departs for
+<ce>  the nearest tavern.
+<--->
+<ce>  You approach and deliver 20 gold pieces into
+<ce>  the beggar's hands. He cries out for joy and bows
+<ce>  many times before you, and then departs toward
+<ce>  a nearby residence.
+<--->
+<ce>  You approach and deliver 20 gold pieces into
+<ce>  the beggar's hands. He cries out for joy and bows
+<ce>  many times before you, and then continues begging
+<ce>  other people in the area.
+
+Message:  1014
+<ce>  In spite of your best intentions, you do not find
+<ce>  20 gold pieces among your belongings. You'll have
+<ce>  to forego the alms this time.
+
+QBN:
+
+--	Quest start-up:
+    prompt 1011 yes _pay_ no _reject_
+
+_reject_ task:
+    say 1012
+    end quest
+
+variable _pay_
+
+_payhim_ task:
+    when _pay_ and not _given_
+    pay 20 money do _given_ otherwise do _nomoney_
+
+_nomoney_ task:
+    say 1014
+    end quest
+
+_given_ task:
+    say 1013
+    end quest

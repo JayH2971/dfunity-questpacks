@@ -1,0 +1,205 @@
+Quest: RLQlibrarydonation
+DisplayName: Random Little Quest Library Donation
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  Upon entering the library, you present
+<ce>  the voucher you were given and are
+<ce>  handed a pristine new book.
+
+QuestLogEntry:  [1010]
+%qdt:
+ For a small donation, I received a
+ voucher for a free book the next time
+ I enter a library in ____store_.
+
+Message:  1011
+<ce>  A city official wearing formal clothing approaches
+<ce>  you with a coin bag and a jar of multicolored beads.
+<ce>  
+<ce>  "Good day %ra, I have an offer and
+<ce>  an opportunity for you. I'm here to collect donations
+<ce>  to keep %crn's libraries open. 35 gold to relieve your
+<ce>  conscience and keep their doors open, that is all.
+<ce>  Not only that, you get to randomly choose a bead from
+<ce>  this jar. If your bead is green, you get a book as
+<ce>  a free gift the next time you visit a library.
+<ce>  Swell, isn't it?"
+<ce>  
+<ce>  Do you donate 35 gold pieces?
+
+Message:  1012
+<ce>  "No, I understand. Poverty strikes us all
+<ce>  sooner or later."
+<ce>  
+<ce>  The official departs in search of donors.
+<--->
+<ce>  "Are you sure? We all need a library at some point."
+<ce>  
+<ce>  The official departs in search of donors.
+<--->
+<ce>  "Well, I suppose not all of us have an aptitude
+<ce>  for reading and libraries, I suppose."
+<ce>  
+<ce>  The official departs in search of donors.
+
+Message:  1013
+<ce>  You offer up 35 gold pieces and the official
+<ce>  receives them with glee.
+<ce>  
+<ce>  "Now then, go ahead and pick out a bead!
+<ce>  I wish you the best of luck!"
+<ce>  
+<ce>  You reach in and pull out a shiny red
+<ce>  bead. He lets out a disappointed groan,
+<ce>  but thanks you for the donation
+<ce>  and moves on to other townspeople.
+<--->
+<ce>  You offer up 35 gold pieces and the official
+<ce>  receives them with glee.
+<ce>  
+<ce>  "Now then, go ahead and pick out a bead!
+<ce>  I wish you the best of luck!"
+<ce>  
+<ce>  You reach in and pull out a shiny black
+<ce>  bead. He lets out a disappointed groan,
+<ce>  but thanks you for the donation
+<ce>  and moves on to other townspeople.
+<--->
+<ce>  You offer up 35 gold pieces and the official
+<ce>  receives them with glee.
+<ce>  
+<ce>  "Now then, go ahead and pick out a bead!
+<ce>  I wish you the best of luck!"
+<ce>  
+<ce>  You reach in and pull out a shiny orange
+<ce>  bead. She lets out a disappointed groan,
+<ce>  but thanks you for the donation
+<ce>  and moves on to other townspeople.
+<--->
+<ce>  You offer up 35 gold pieces and the official
+<ce>  receives them with glee.
+<ce>  
+<ce>  "Now then, go ahead and pick out a bead!
+<ce>  I wish you the best of luck!"
+<ce>  
+<ce>  You reach in and pull out a shiny white
+<ce>  bead. She lets out a disappointed groan,
+<ce>  but thanks you for the donation
+<ce>  and moves on to other townspeople.
+<--->
+<ce>  You offer up 35 gold pieces and the official
+<ce>  receives them with glee.
+<ce>  
+<ce>  "Now then, go ahead and pick out a bead!
+<ce>  I wish you the best of luck!"
+<ce>  
+<ce>  You reach in and pull out a shiny blue
+<ce>  bead. She lets out a disappointed groan,
+<ce>  but thanks you for the donation
+<ce>  and moves on to other townspeople.
+
+Message:  1014
+<ce>  You thumb around your things but do not find
+<ce>  35 gold pieces ready at hand. The official
+<ce>  politely thanks you for the thought
+<ce>  and moves on to search for other people.
+
+Message:  1015
+<ce>  You offer up 35 gold pieces and the official
+<ce>  receives them with glee.
+<ce>  
+<ce>  "Now then, go ahead and pick out a bead!
+<ce>  I wish you the best of luck!"
+<ce>  
+<ce>  You reach in and pull out a shiny green
+<ce>  bead. She emits a joyful yell.
+<ce>  
+<ce>  "A winner! We have a winner!
+<ce>  Congratulations my friend!
+<ce>  Here's a voucher for a free book
+<ce>  the next time you visit any library
+<ce>  in ____store_.
+<ce>  Thank you very much, and a fine day to you!"
+<ce>  
+<ce>  She then moves on to other townspeople.
+<ce>  The voucher is so small, you need not
+<ce>  make place for it among your things.
+<--->
+<ce>  You offer up 35 gold pieces and the official
+<ce>  receives them with glee.
+<ce>  
+<ce>  "Now then, go ahead and pick out a bead!
+<ce>  I wish you the best of luck!"
+<ce>  
+<ce>  You reach in and pull out a shiny green
+<ce>  bead. He emits a joyful yell.
+<ce>  
+<ce>  "A winner! We have a winner!
+<ce>  Congratulations my friend!
+<ce>  Here's a voucher for a free book
+<ce>  the next time you visit any library
+<ce>  in ____store_.
+<ce>  Thank you very much, and a fine day to you!"
+<ce>  
+<ce>  He then moves on to other townspeople.
+<ce>  The voucher is so small, you need not
+<ce>  make place for it among your things.
+
+QBN:
+
+Place _store_ remote library
+
+Clock _timer_ 30.00:00
+
+Item _reward_ book
+
+--	Quest start-up:
+    prompt 1011 yes _pay_ no _reject_
+    pc at any library set _entlibr_
+
+_reject_ task:
+    say 1012
+    end quest
+
+variable _pay_
+
+_payhim_ task:
+    when _pay_ and not _given_
+    pay 35 money do _given_ otherwise do _nomoney_
+
+_nomoney_ task:
+    say 1014
+    end quest
+
+_lucky_ task:
+    when attribute Luck is at least 90
+
+variable _given_
+_unluckypick_ task:
+    when _given_ and not _lucky_
+    pick one of _failure_ _failure_ _failure_ _success_ _failure_ _failure_ _failure_ _failure_
+
+_luckypick_ task:
+    when _given_ and _lucky_
+    pick one of _success_ _success_ _failure_
+
+_success_ task:
+    say 1015
+    log 1010 step 0
+    start timer _timer_
+
+_failure_ task:
+    say 1013
+    end quest
+
+variable _entlibr_
+
+_givebook_ task:
+    when _entlibr_ and _success_
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    end quest

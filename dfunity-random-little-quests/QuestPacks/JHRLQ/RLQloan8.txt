@@ -1,0 +1,105 @@
+Quest: RLQloan8
+DisplayName: Random Little Quest Loan 8
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  "Yoo-hoo! %pcf! Wait for me!"
+<ce>  
+<ce>  A spry messenger comes racing toward you.
+<ce>  
+<ce>  "_merchant_ sends %g3 regards and thanks
+<ce>  you infinitely for your kindness.
+<ce>  Have the money %g1 promised."
+
+QuestLogEntry:  [1010]
+%qdt:
+ I decided to loan 164 gold to a local merchant named
+ _merchant_, who works at _store_.
+ I was promised double the amount back within
+ twelve hours' time.
+
+Message:  1011
+<ce>  You are accosted by a very nervous merchant.
+<ce>  
+<ce>  "Excuse me, hello, yes, %ra? My name
+<ce>  is _merchant_, of _store_.
+<ce>  A pleasure. Forgive my intrusion on
+<ce>  your time, but I must ask.
+<ce>  Could you temporarily spare 164 gold pieces?
+<ce>  My store has just barely run its liquidity
+<ce>  to the ground and an important payment is due
+<ce>  today. I'll have you paid back double your
+<ce>  money within twelve hours' time, I swear it!"
+<ce>  
+<ce>  Do you loan 164 gold pieces to the merchant?
+
+Message:  1012
+<ce>  _merchant_ turns away, crestfallen.
+<ce>  
+<ce>  "I do not blame you, %ra, for these
+<ce>  are hard times. I will sort this matter
+<ce>  out myself, have no fear."
+
+Message:  1013
+<ce>  "Oh yes! Yes yes yes! Thank you, thank
+<ce>  you! Yes, I'll take that. Where do you plan
+<ce>  to be in twelve hours? I'll have it in
+<ce>  your hands, by sweet %god! I'll not forget this!"
+
+Message:  1014
+<ce>  You thumb around your things but do not find
+<ce>  164 gold pieces ready at hand. _merchant_
+<ce>  groans in exasperation and thanks you
+<ce>  for your time.
+
+Message:  1015
+<ce>  Twelve hours are up, and your money is not forthcoming.
+<ce>  It seems you've been had.
+
+QBN:
+
+Item _reward_ gold range 328 to 328
+
+Person _merchant_ faction The_Merchants
+
+Place _store_ local generalstore
+
+Clock _timer_ 12:00
+
+--	Quest start-up:
+    prompt 1011 yes _pay_ no _reject_
+
+_reject_ task:
+    say 1012
+    end quest
+
+variable _pay_
+
+_payhim_ task:
+    when _pay_ and not _given_
+    pay 164 money do _given_ otherwise do _nomoney_
+
+_nomoney_ task:
+    say 1014
+    end quest
+
+_given_ task:
+    pick one of _success_ _success_ _failure_
+    start timer _timer_
+    say 1013
+    change repute with _merchant_ by +2
+
+variable _timer_
+variable _success_
+variable _failure_
+
+_finalwin_ task:
+    when _timer_ and _success_
+    give pc _reward_
+    end quest
+
+_finalfail_ task:
+    when _timer_ and _failure_
+    say 1015
+    end quest

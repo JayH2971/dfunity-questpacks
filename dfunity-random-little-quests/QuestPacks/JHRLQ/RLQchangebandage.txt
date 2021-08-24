@@ -1,0 +1,67 @@
+Quest: RLQchangebandage
+DisplayName: Random Little Quest Change a Bandage
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You begin systematically unravelling the bandages
+<ce>  on his legs. You're experienced enough to require no
+<ce>  help, and though it takes a few hours, it's a pleasant
+<ce>  experience for you both. The man cheerfully hands
+<ce>  you the payment, happy to have found an adequate physician.
+
+Message:  1010
+<ce>  A heavily wounded peasant approaches you, needing help
+<ce>  to replace the bandages on his legs. He explains that
+<ce>  a recent forestry expedition went terribly wrong,
+<ce>  and he has to change the bandages each day.
+<ce>  If you have a proper understanding of medicine,
+<ce>  will you help him change them today for =reward_ gold?
+
+Message:  1011
+<ce>  You can't possibly imagine everything that could go
+<ce>  wrong with this. You decline, garnering little surprise
+<ce>  from the wounded peasant.
+
+Message:  1012
+<ce>  You hold the clean bandages and begin to unwrap the ones
+<ce>  already placed. Extreme discomfort follows for both of you,
+<ce>  as you awkwardly pull on the skin from angles you're not aware
+<ce>  of. A few minutes pass by before it becomes evident you
+<ce>  are no physician. The peasant interrupts you and flees
+<ce>  before suffering further at your hands. You wonder whether
+<ce>  you've exposed yourself to the risk of infectious disease
+<ce>  with this adventure.
+
+QBN:
+
+Item _reward_ gold range 41 to 74
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when skill Medical is at least 30
+
+variable _accept_
+_finalwin_ task:
+    when _accept_ and _qualified_
+    give pc _reward_
+    train pc Medical
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    say 1012
+    pick one of _disease_ _dud_ _dud_
+
+_disease_ task:
+    make pc ill with Wound_Rot
+    end quest
+
+_dud_ task:
+    end quest

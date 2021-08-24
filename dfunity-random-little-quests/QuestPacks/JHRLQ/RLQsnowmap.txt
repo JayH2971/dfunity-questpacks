@@ -1,0 +1,27 @@
+Quest: RLQsnowmap
+DisplayName: Random Little Quest A Snow Map
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  There's something crunchy in the snow here.
+<ce>  You search among the powder and find a
+<ce>  crumbled map, still intact.
+<ce>  It shows the way to ___dung_
+<ce>  in this region. You make sure to
+<ce>  jot it down.
+<--->
+<ce>  You feel something odd underfoot here.
+<ce>  A short search produces a faded map
+<ce>  leading to ___dung_ in
+<ce>  this region. You make sure to mark it down
+<ce>  just in case it's useful.
+
+QBN:
+
+Place _dung_ remote dungeon
+
+--	Quest start-up:
+    say 1010
+    reveal _dung_
+    end quest

@@ -1,0 +1,60 @@
+Quest: RLQmysticismlesson
+DisplayName: Random Little Quest A Mysticism Lesson
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  You notice a book chained to a nearby wall,
+<ce>  replete with magical seals. Next to it hangs
+<ce>  a pouch with a note.
+<ce>  
+<ce>  "100 gold to read book for three hours.
+<ce>  Learn the fine art of mysticism.
+<ce>  Book will be relocated at owner's pleasure."
+<ce>  
+<ce>  The pouch is just barely open enough to fit
+<ce>  coins into its mouth. Do you take advantage
+<ce>  of the opportunity?
+
+Message:  1011
+<ce>  You continue on without trying it. After a few
+<ce>  moments you look back by chance and notice that
+<ce>  the book and pouch are no longer visible.
+
+Message:  1012
+<ce>  You search and search but cannot find 100 gold
+<ce>  coins among your things. You'll have to forego
+<ce>  the lesson this time. After a few
+<ce>  moments you look back by chance and notice that
+<ce>  the book and pouch are no longer visible.
+
+Message:  1013
+<ce>  After feeding in 100 gold pieces, you sit down
+<ce>  and survey the contents of the book.
+<ce>  It has far more material than even three hours could
+<ce>  cover. You gain what you can from it, and when
+<ce>  your allotted time is over, the tome disappears from
+<ce>  view along with the pouch.
+
+QBN:
+
+--	Quest start-up:
+    prompt 1010 yes _pay_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+variable _pay_
+_payhim_ task:
+    when _pay_ and not _given_
+    pay 100 money do _given_ otherwise do _nomoney_
+
+_given_ task:
+    say 1013
+    train pc Mysticism
+    end quest
+
+_nomoney_ task:
+    say 1012
+    end quest

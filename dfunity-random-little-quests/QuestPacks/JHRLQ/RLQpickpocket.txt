@@ -1,0 +1,87 @@
+Quest: RLQpickpocket
+DisplayName: Random Little Quest Pickpocket
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  You take a look into your pack and find
+<ce>  a few of your coins are missing. It appears you've
+<ce>  fallen victim to a pickpocket without even knowing.
+
+Message:  1012
+<ce>  You notice a slight movement in your pack.
+<ce>  You swiftly turn around but find no one to blame.
+<ce>  Nevertheless, looking inside, you're a few
+<ce>  gold pieces poorer than you were before.
+
+Message:  1013
+<ce>  You feel a minute movement in your pack.
+<ce>  Your skills as a pickpocket alert you to
+<ce>  the feel of a hand trying to grab some
+<ce>  coins. You're quick enough to surprise
+<ce>  the thief, who runs off in terror,
+<ce>  without losing any money.
+
+Message:  1014
+<ce>  You notice a slight movement in your pack.
+<ce>  You turn around but see no one, only hearing a whisper.
+<ce>  
+<ce>  "%oth mate, I'm sorry! Can't be
+<ce>  stealing from one of the Thieves Guild,
+<ce>  I can't! A right mistake! I'm sorry!"
+<ce>  
+<ce>  You then hear the figure run away.
+
+QBN:
+
+Person _person_ faction The_Thieves_Guild
+
+--	Quest start-up:
+    repute with _person_ exceeds 30 do _rep_
+
+_rep_ task:
+    say 1014
+    end quest
+
+_starter_ task:
+    when not _skill1_ and not _rep_
+    start task _pay_
+
+_starter2_ task:
+    when _skill1_ and not _skill2_ and not _rep_
+    start task _payalt_
+
+variable _pay_
+_payhim_ task:
+    when _pay_ and not _given_
+    pay 30 money do _given_ otherwise do _nomoney_
+
+variable _payalt_
+_payhim2_ task:
+    when _payalt_ and not _given_
+    pay 15 money do _given_ otherwise do _nomoney_
+
+_nomoney_ task:
+    end quest
+
+_skill1_ task:
+    when skill Pickpocket is at least 10
+
+_skill2_ task:
+    when skill Pickpocket is at least 25
+
+variable _given_
+_alert_ task:
+    when _given_ and not _skill1_
+    say 1011
+    end quest
+
+_alert2_ task:
+    when _given_ and _skill1_ and not _skill2_
+    say 1012
+    end quest
+
+_alert3_ task:
+    when _skill2_ and not _rep_
+    say 1013
+    end quest

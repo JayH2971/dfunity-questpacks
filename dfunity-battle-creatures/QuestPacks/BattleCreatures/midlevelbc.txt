@@ -1,0 +1,67 @@
+Quest: midlevelbc
+DisplayName: Mid-Level Battle Creature
+-- Message panels
+QRC:
+
+RumorsDuringQuest:   [1005]
+There's someone selling a gargoyle summoning gem at _inn_.
+<--->
+If you want to pick up a gargoyle summoning gem, _seller_ is selling them at _inn_.
+
+Message:  1010
+<ce>  Hail there %ra, have some money to spend? How about
+<ce>  this summoning gem? Yours for just 3500 gold, you'll
+<ce>  be able to invoke two gargoyles to fight for you up to
+<ce>  three times during the next two weeks. Wanting to buy it?
+<ce>  No letters of credit, I need gold coins.
+
+Message:  1011
+<ce>  You don't seem to have 3500 gold at all!
+<ce>  Am I being scammed? Next customer!
+<--->
+<ce>  But the 3500 gold, where is it?
+<ce>  Move aside please, I have business to do.
+
+Message:  1012
+<ce>  Fare thee well then.
+<--->
+<ce>  It's a really good deal though.
+
+Message:  1013
+<ce>  Enjoy it, may it keep you safe!
+
+QBN:
+
+Clock _timer_ 1.00:00
+
+Person _seller_ faction The_Merchants
+
+Place _inn_ local tavern
+
+--   Quest start-up:
+    start timer _timer_
+    place npc _seller_ at _inn_
+
+_talk_ task:
+    clicked npc _seller_
+    prompt 1010 yes _buy_ no _refuse_
+
+_buy_ task:
+    pay 3500 money do _getgem_ otherwise do _failmoney_
+
+_getgem_ task:
+    say 1013
+    start quest garggem
+    end quest
+
+_failmoney_ task:
+    say 1011
+    end quest
+
+_refuse_ task:
+    say 1012
+    end quest
+
+_timer_ task:
+    hide npc _seller_
+    end quest

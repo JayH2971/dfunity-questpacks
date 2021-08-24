@@ -1,0 +1,115 @@
+Quest: RLQdrugdeliver
+DisplayName: Random Little Quest A Drug Delivery
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  YES! Give me that! Step away! Get out
+<ce>  of here! Yes, here, money, take it!
+
+Message:  1010
+<ce>  A hooded figure interrupts you and speaks
+<ce>  in a low voice.
+<ce>  
+<ce>  "'Scuse me stranger, I've got a little bit
+<ce>  of something that needs to get to a
+<ce>  house here in town. Pays =reward_
+<ce>  gold if you know how to sneak about it."
+
+Message:  1011
+<ce>  "That's good. Place is _res_,
+<ce>  to the %di. Guards are gonna get word of
+<ce>  it soon and they'll be searching the area.
+<ce>  Might wanna deliver it fast, unless you
+<ce>  know you're a world-class sneak.
+<ce>  If it's not there in six hours
+<ce>  your money is forfeit. Give it to _person_."
+
+Message:  1012
+<ce>  Six hours have passed and you did not deliver
+<ce>  the _ingred_ to _res_.
+
+Message:  1013
+<ce>  The figure departs in silence.
+
+Message:  1014
+<ce>  A member of the city watch approaches you
+<ce>  and gives you no quarter.
+<ce>  If you weren't such a good sneak, he might have
+<ce>  found the _ingred_ you were given. As you were properly
+<ce>  prepared, you suffer only a little jostling
+<ce>  before the guard leaves.
+
+Message:  1015
+<ce>  A member of the city watch approaches you and gives
+<ce>  you no quarter. You thought you had a good hiding
+<ce>  place for the _ingred_, but it wasn't good enough.
+<ce>  He confiscates it and runs away, calling for your arrest.
+<ce>  Clearly you were not the sneak for this job.
+
+Message:  1016
+%qdt:
+ I have been given a small something to deliver to
+ someone named _person_ in _res_, ___res_.
+ It needs to be there in six hours, and I'll
+ be paid =reward_ gold.
+
+QBN:
+
+Clock _timer_ 6:00
+Clock _smalldelay_ 0:10 0:30
+
+Item _reward_ gold range 92 to 125
+Item _ingred_ drug
+
+Person _person_ faction Dancers
+
+Place _res_ local house
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1013
+    end quest
+
+_accept_ task:
+    say 1011
+    get item _ingred_
+    place npc _person_ at _res_
+    start timer _timer_
+    start timer _smalldelay_
+    log 1016 step 0
+
+_finalwin_ task:
+    toting _ingred_ and _person_ clicked
+    give pc _reward_
+    end quest
+
+variable _smalldelay_
+_pickpocket_ task:
+    when skill Pickpocket is at least 30
+    start task _qualified_
+
+_stealth_ task:
+    when skill Stealth is at least 50
+    start task _qualified_
+
+variable _qualified_
+_caught_ task:
+    when _smalldelay_ and not _qualified_
+    setplayercrime Smuggling
+    spawncityguards immediate
+    take _ingred_ from pc
+    hide npc _person_
+    say 1015
+    end quest
+
+_scammed_ task:
+    when _smalldelay_ and _qualified_
+    say 1014
+
+_timer_ task:
+    say 1012
+    make _ingred_ permanent
+    end quest

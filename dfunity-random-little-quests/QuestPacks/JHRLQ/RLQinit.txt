@@ -1,0 +1,282 @@
+Quest: RLQinit
+DisplayName: Random Little Quests Creator
+-- Message panels
+QRC:
+
+QBN:
+
+Clock _smalldelay_ 0:01 0:04
+Clock _timer_ 1.00:00 1.04:00
+
+--   Quest start-up:
+    pc at any fighters set _fightered_
+    pc at any tavern set _taverned_
+
+variable _fightered_
+variable _taverned_
+_eventstart_ task:
+    when pc enters city
+    when pc enters hamlet
+    when pc enters village
+    start timer _timer_
+    start timer _smalldelay_
+
+variable _smalldelay_
+variable _stopevents_
+
+_sunning_ task:
+    weather sunny
+
+_clouded_ task:
+    weather cloudy
+
+_overcasty_ task:
+    weather overcast
+
+_foggy_ task:
+    weather fog
+
+_rainy_ task:
+    weather rain
+
+_thundered_ task:
+    weather thunder
+
+_snowy_ task:
+    weather snow
+
+_sunnyday_ task:
+    when _daylight_ and _sunning_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    pick one of _sunnydayevents_ _dud_ _dud_
+    start task _stopevents_
+
+_sunnydayevents_ task:
+    pick one of _batnest_ _potionsale_ _alms_ _weaponfind_ _loanpick_ _mysticismlesson_
+
+_batnest_ task:
+    start quest RLQbatnest
+
+_alms_ task:
+    start quest RLQalms
+
+_loanpick_ task:
+    pick one of _loan1_ _loan2_ _loan3_ _loan4_ _loan5_ _loan6_ _loan7_ _loan8_ _loan9_ _loan10_
+
+_loan1_ task:
+    start quest RLQloan1
+
+_loan2_ task:
+    start quest RLQloan2
+
+_loan3_ task:
+    start quest RLQloan3
+
+_loan4_ task:
+    start quest RLQloan4
+
+_loan5_ task:
+    start quest RLQloan5
+
+_loan6_ task:
+    start quest RLQloan6
+
+_loan7_ task:
+    start quest RLQloan7
+
+_loan8_ task:
+    start quest RLQloan8
+
+_loan9_ task:
+    start quest RLQloan9
+
+_loan10_ task:
+    start quest RLQloan10
+
+_magesguild_ task:
+    start quest RLQmagesguild
+
+_weaponfind_ task:
+    start quest RLQweaponfind
+
+_mysticismlesson_ task:
+    start quest RLQmysticismlesson
+
+_sunnynight_ task:
+    when not _daylight_ and _sunning_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    pick one of _sunnynightevents_ _dud_ _dud_
+    start task _stopevents_
+
+_sunnynightevents_ task:
+    pick one of _pickpocket_ _nightguard_ _nightrat_
+
+_pickpocket_ task:
+    start quest RLQpickpocket
+
+_cloudyday_ task:
+    when _daylight_ and _clouded_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    pick one of _cloudydayevents_ _dud_ _dud_ _dud_ _dud_
+    start task _stopevents_
+
+_cloudydayevents_ task:
+    pick one of _changebandage_ _potionsale_ _loanpick_ _angrypick_
+
+_changebandage_ task:
+    start quest RLQchangebandage
+
+_angrypick_ task:
+    start quest RLQangrypick
+
+_overcastday_ task:
+    when _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    pick one of _overcastdayevents_ _dud_ _dud_
+    start task _stopevents_
+
+_overcastdayevents_ task:
+    pick one of _meddeliver_ _potionsale_ _restorationlesson_ _runningthief_
+
+_restorationlesson_ task:
+    start quest RLQrestorationlesson
+
+_runningthief_ task:
+    start quest RLQrunningthief
+
+_overcastnight_ task:
+    when not _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    pick one of _overcastnightevents_ _dud_ _dud_
+    start task _stopevents_
+
+_overcastnightevents_ task:
+    pick one of _pickpocket_ _nightguard_
+
+_meddeliver_ task:
+    start quest RLQmeddeliver
+
+_fognight_ task:
+    when not _daylight_ and _foggy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    pick one of _fognightevents_ _dud_ _dud_
+    start task _stopevents_
+
+_fognightevents_ task:
+    pick one of _drugdeliver_ _pickpocket_ _yousteal_
+
+_drugdeliver_ task:
+    start quest RLQdrugdeliver
+
+_yousteal_ task:
+    start quest RLQyousteal
+
+_rainday_ task:
+    when _daylight_ and _rainy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    pick one of _raindayevents_ _dud_ _dud_
+    start task _stopevents_
+
+_raindayevents_ task:
+    pick one of _chokingchild_ _fightersguild_ _payraintaxes_
+
+_chokingchild_ task:
+    start quest RLQchokingchild
+
+_fightersguild_ task:
+    start quest RLQfightersguild
+
+_payraintaxes_ task:
+    pick one of _raintaxes1_ _raintaxes2_ _raintaxes3_
+
+_raintaxes1_ task:
+    start quest RLQraintaxes1
+
+_raintaxes2_ task:
+    start quest RLQraintaxes2
+
+_raintaxes3_ task:
+    start quest RLQraintaxes3
+
+_thundday_ task:
+    when _daylight_ and _thundered_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    pick one of _thunddayevents_ _dud_ _dud_
+    start task _stopevents_
+
+_thunddayevents_ task:
+    pick one of _magesguild_ 
+
+_thundnight_ task:
+    when not _daylight_ and _thundered_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    pick one of _thundnightevents_ _dud_ _dud_
+    start task _stopevents_
+
+_thundnightevents_ task:
+    pick one of _nightmug_ _nightguard_ _nightrat_
+
+_nightmug_ task:
+    start quest RLQnightmug
+
+_nightguard_ task:
+    start quest RLQnightguard
+
+_nightrat_ task:
+    start quest RLQnightrat
+
+_snowyday_ task:
+    when _daylight_ and _snowy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    pick one of _snowydayevents_ _dud_ _dud_
+    start task _stopevents_
+
+_snowydayevents_ task:
+    pick one of _axechop_ _maze_ _snowmap_ _paysnowtaxes_
+
+_axechop_ task:
+    start quest RLQaxechop
+
+_maze_ task:
+    start quest RLQmaze
+
+_snowmap_ task:
+    start quest RLQsnowmap
+
+_paysnowtaxes_ task:
+    pick one of _snowtaxes1_ _snowtaxes2_ _snowtaxes3_
+
+_snowtaxes1_ task:
+    start quest RLQsnowtaxes1
+
+_snowtaxes2_ task:
+    start quest RLQsnowtaxes2
+
+_snowtaxes3_ task:
+    start quest RLQsnowtaxes3
+
+_daylight_ task:
+    daily from 6:00 to 18:00
+
+_timer_ task:
+    start quest RLQinit
+    start task _endit_
+
+_endit_ task:
+    end quest
+
+_potionsale_ task:
+    pick one of _potcuredisease_ _potcurepoison_ _potfreeaction_ _pothealing_ _potinvis_ _potlevitate_ _potstamina_
+
+_potcuredisease_ task:
+    start quest RLQpotcuredisease
+
+_potcurepoison_ task:
+    start quest RLQpotcurepoison
+
+_potfreeaction_ task:
+    start quest RLQpotfreeaction
+
+_pothealing_ task:
+    start quest RLQpothealing
+
+_potinvis_ task:
+    start quest RLQpotinvis
+
+_potlevitate_ task:
+    start quest RLQpotlevitate
+
+_potstamina_ task:
+    start quest RLQpotstamina
+
+variable _dud_

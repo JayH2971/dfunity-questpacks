@@ -1,0 +1,47 @@
+Quest: RLQnightrat
+DisplayName: Random Little Quest Night Rat
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  "Watch out! There's a rat there!"
+<ce>  
+<ce>  Someone calls out in your direction. Sure enough,
+<ce>  a large rat skitters about in the darkness.
+<ce>  
+<ce>  "That one's mine! I'll take care of it!"
+<--->
+<ce>  "Watch out! There's a rat there!"
+<ce>  
+<ce>  Someone calls out in your direction. Sure enough,
+<ce>  a large rat is scurrying toward you in the night.
+<ce>  
+<ce>  "Don't worry! I'll fight it off!"
+
+Message:  1011
+<ce>  The knight rejoices at the rodent's death.
+<ce>  
+<ce>  "Glad we're both doing okay, friend!"
+
+QBN:
+
+Foe _monster_ is Knight
+Foe _rat_ is Giant_rat
+
+Clock _timer_ 1:00
+
+--	Quest start-up:
+    say 1010
+    create foe _monster_ every 0 minutes 1 times with 100% success
+    change foe _monster_ infighting true
+    change foe _monster_ team 1
+    create foe _rat_ every 0 minutes 1 times with 100% success
+    change foe _rat_ infighting true
+    start timer _timer_
+
+_kill_ task:
+    killed _rat_
+    say 1011
+
+_timer_ task:
+    end quest

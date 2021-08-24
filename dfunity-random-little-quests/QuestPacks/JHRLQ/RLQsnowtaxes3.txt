@@ -1,0 +1,95 @@
+Quest: RLQsnowtaxes3
+DisplayName: Random Little Quest Snow Taxes 3
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  A small troop of the city watch trudges around
+<ce>  miserably in the snow, confronting the peasants
+<ce>  that pass by. They make their way to you.
+<ce>  
+<ce>  "Hail, %ra. We come to collect taxes to fund
+<ce>  the city watch from all who benefit from
+<ce>  our protection. The decreed amount is 
+<ce>  40 gold pieces. Are you able to pay now?"
+
+Message:  1011
+<ce>  You take out 40 gold pieces and pay the
+<ce>  watchman. He smiles and takes
+<ce>  down your name and description.
+<ce>  
+<ce>  "Thank you. %cn depends on this money
+<ce>  for its safety, and you are doing your
+<ce>  part. %god watch over us all."
+
+Message:  1012
+<ce>  You start searching for 40 gold pieces, but
+<ce>  cannot find them on hand.
+
+Message:  1013
+<ce>  The guard frowns and takes down a rough
+<ce>  description of you.
+<ce>  
+<ce>  "Well, you can still turn in the money to
+<ce>  _person_ at _palace_ here in town within
+<ce>  the next 24 hours. Otherwise we'll remember
+<ce>  this. Fair %sea to you, %ra."
+
+Message:  1014
+<ce>  You've passed the 24-hour time limit to pay
+<ce>  the tax of ___palace_. You wonder what
+<ce>  consequences this will have for you.
+
+Message:  1015
+<ce>  Yes? Are you here to pay your taxes?
+<ce>  Gold coins only, no letters of credit.
+
+Message:  1016
+%qdt:
+ The guardsmen of ___palace_ have demanded that
+ I pay 40 gold to _person_ at the Palace
+ within the next 24 hours.
+
+QBN:
+
+Clock _timer_ 1.00:00
+
+Person _person_ faction Generic_Knightly_Order male
+
+Place _palace_ local palace
+
+--	Quest start-up:
+    prompt 1010 yes _pay_ no _reject_
+
+variable _pay_
+_payhim_ task:
+    when _pay_ and not _given_
+    pay 40 money do _given_ otherwise do _nomoney_
+
+_given_ task:
+    say 1011
+    end quest
+
+_nomoney_ task:
+    say 1012
+    start task _reject_
+    clear _pay_
+
+_reject_ task:
+    say 1013
+    place npc _person_ at _palace_
+    start timer _timer_
+    log 1016 step 0
+
+_clicky_ task:
+    clicked _person_ and at least 40 gold otherwise do _nomoney2_
+    say 1011
+    end quest
+
+_nomoney2_ task:
+    say 1015
+
+_timer_ task:
+    say 1014
+    legal repute -5
+    end quest

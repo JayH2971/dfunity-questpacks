@@ -1,0 +1,122 @@
+Quest: RLQmaze
+DisplayName: Random Little Quest Maze
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  The man then marches off.
+
+Message:  1010
+<ce>  A rather smug figure ambles around the area, showing off
+<ce>  some piece of paper to passers-by. Eventually
+<ce>  he comes into contact with you.
+<ce>  
+<ce>  "Hail %ra! Got a bit of a trick for you.
+<ce>  I've designed a truly perplexing maze that only
+<ce>  the smartest of people will decipher in time.
+<ce>  The faster you solve it, the more money you get.
+<ce>  But if it takes you more than a minute,
+<ce>  I win 100 gold from you instead. Give it a try, hmm?"
+
+Message:  1011
+<ce>  You ignore the offer and move on. The fellow
+<ce>  begins to accost other people in the area.
+
+Message:  1012
+<ce>  You grab the paper from him and show him, with
+<ce>  lightning precision and speed, how to reach the exit
+<ce>  from the entrance of the maze. Your total time is less
+<ce>  than =number_ seconds. He looks dumbfounded.
+<ce>  Almost accusing you of cheating, he maintains his
+<ce>  dignity and pulls out some money for your reward
+<ce>  in addition to the 100 gold he collected from you.
+
+Message:  1013
+<ce>  You take the paper and carefully trace the route from
+<ce>  the end to the beginning. He watches you carefully
+<ce>  for any signs of fraud. You take around twenty seconds
+<ce>  to trace the right trail and satisfy his demand.
+<ce>  He agrees that you did well and offers you some money
+<ce>  in addition to the 100 gold he collected from you.
+
+Message:  1014
+<ce>  Perhaps you overestimated your intellect, for the maze
+<ce>  looks much more complex up close. You try one path and
+<ce>  another but encounter multiple failures. Still, you
+<ce>  manage to complete it in just under 40 seconds.
+<ce>  He politely applauds you and offers a small reward
+<ce>  in addition to the 100 gold he collected from you.
+
+Message:  1015
+<ce>  You're almost certainly in over your head, for this
+<ce>  maze is unlike any other you've seen in your life.
+<ce>  You run into one dead end after another.
+<ce>  Frustration mounts as you fail to see how it's
+<ce>  even possible. Finally, a small bell rings to announce
+<ce>  that your time has run out. The man gleefully
+<ce>  collects the 100 gold as previously determined.
+
+Message:  1016
+<ce>  You fail to produce the 100 gold needed to try the maze.
+<ce>  The man scowls at you.
+<ce>  
+<ce>  "Thought to cheat me, eh? Not today."
+<ce>  
+<ce>  In a huff he marches off.
+
+QBN:
+
+Item _reward1_ gold range 151 to 175
+Item _reward2_ gold range 125 to 150
+Item _reward3_ gold range 101 to 124
+Item _number_ gold range 6 to 10
+
+--	Quest start-up:
+    prompt 1010 yes _pay_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+variable _pay_
+
+_payhim_ task:
+    when _pay_ and not _given_
+    pay 100 money do _given_ otherwise do _nomoney_
+
+_nomoney_ task:
+    say 1016
+    end quest
+
+variable _given_
+_int90_ task:
+    when attribute Intelligence is at least 90
+
+_int70_ task:
+    when attribute Intelligence is at least 70
+
+_int50_ task:
+    when attribute Intelligence is at least 50
+
+_bigwin_ task:
+    when _given_ and _int90_
+    say 1012
+    give pc _reward1_
+    end quest
+
+_medwin_ task:
+    when _given_ and _int70_ and not _int90_
+    say 1013
+    give pc _reward2_
+    end quest
+
+_smallwin_ task:
+    when _given_ and _int50_ and not _int70_
+    say 1014
+    give pc _reward3_
+    end quest
+
+_fail_ task:
+    when _given_ and not _int50_
+    say 1015
+    end quest

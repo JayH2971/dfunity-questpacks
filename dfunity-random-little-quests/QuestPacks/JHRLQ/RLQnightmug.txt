@@ -1,0 +1,92 @@
+Quest: RLQnightmug
+DisplayName: Random Little Quest Night Mugging
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  The robber's target bows before you.
+<ce>  
+<ce>  "Thank you, kind soul. Even Mara's grace
+<ce>  does not protect the unwary these days.
+<ce>  The thief dropped this in the altercation.
+<ce>  Perhaps it would be of use to a just
+<ce>  warrior such as yourself?"
+<ce>  
+<ce>  You are given a weapon, and the peasant departs.
+
+Message:  1010
+<ce>  In these dark hours of the night, even the slightest noise
+<ce>  seems to echo out. You can barely perceive someone being
+<ce>  accosted by a thug in the dark.
+<ce>  
+<ce>  "Come on, don't mug me off.
+<ce>   You can't do this. %oth..."
+<ce>
+<ce>  Do you intervene to stop the robbery?
+
+Message:  1011
+<ce>  This is no fight of yours, and who knows what
+<ce>  kind of problem you could be getting into.
+<ce>  Better to let nature take its course.
+
+Message:  1012
+<ce>  You shout to stop the altercation, and
+<ce>  get a hostile sneer in response.
+<ce>  
+<ce>  "You'd better well know what you're doing to
+<ce>  stop a member of the Thieves Guild,"
+<ce>  you hear as the robber's attention turns to you.
+
+Message:  1013
+<ce>  The robber's target bows before you.
+<ce>  
+<ce>  "Thank you, kind soul. Even Mara's grace
+<ce>  does not protect the unwary these days.
+<ce>  I carry nothing with me, but will tell my
+<ce>  family what you have done for me.
+<ce>  I pray that be reward enough for your deed."
+<ce>  
+<ce>  The peasant departs.
+
+QBN:
+
+Person _person_ faction The_Thieves_Guild
+
+Item _reward_ weapon
+
+Foe _monster_ is Thief
+
+Clock _timer_ 1:00
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+    pick one of _rewarding_ _notrewarding_
+    start timer _timer_
+
+variable _rewarding_
+variable _notrewarding_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_accept_ task:
+    say 1012
+    create foe _monster_ every 0 minutes 1 times with 100% success
+    change repute with _person_ by -3
+
+_kill_ task:
+    killed _monster_
+
+_finalwin_ task:
+    when _kill_ and _rewarding_
+    give pc _reward_
+    end quest
+
+_finalfail_ task:
+    when _kill_ and not _rewarding_
+    say 1013
+    end quest
+
+_timer_ task:
+    end quest

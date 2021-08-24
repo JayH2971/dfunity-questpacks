@@ -1,0 +1,63 @@
+Quest: RLQbatnest
+DisplayName: Random Little Quest Bat's Nest
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You reach in and find a decrepit pouch of gold
+<ce>  within the hole. It looks years old, and carries
+<ce>  no name. You ensure no one nearby cares as you
+<ce>  take it for yourself.
+
+Message:  1010
+<ce>  You see a small hole in the ground here,
+<ce>  distinct from the nearby terrain.
+<ce>  It looks like it goes fairly deep.
+<ce>  Do you try to reach in and see if
+<ce>  anything is inside?
+
+Message:  1011
+<ce>  You reach in and are surprised by the feel
+<ce>  of something furry within. You retract your
+<ce>  hand but have already disturbed the
+<ce>  denizen. An angry bat flies out to
+<ce>  attack you in self-defense.
+
+Message:  1012
+<ce>  You reach in and find nothing at all.
+<ce>  Perhaps this is the den of some creature,
+<ce>  but it isn't home. You move on.
+
+Message:  1013
+<ce>  Some holes simply don't need to be explored.
+<ce>  You leave this one alone.
+
+QBN:
+
+Item _reward_ gold range 30 to 50
+
+Foe _angrybat_ is Giant_bat
+
+--	Quest start-up:
+    prompt 1010 yes _pick_ no _ignore_
+
+_pick_ task:
+    pick one of _bat_ _gold_ _nothing_
+
+_ignore_ task:
+    say 1013
+    end quest
+
+_bat_ task:
+    say 1011
+    create foe _angrybat_ every 0 minutes 1 times with 100% success
+    change foe _angrybat_ infighting true
+    end quest
+
+_gold_ task:
+    give pc _reward_
+    end quest
+
+_nothing_ task:
+    say 1012
+    end quest

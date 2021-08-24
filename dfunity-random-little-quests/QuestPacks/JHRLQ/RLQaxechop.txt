@@ -1,0 +1,87 @@
+Quest: RLQaxechop
+DisplayName: Random Little Quest Axe Chop
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You are led a short ways to the home
+<ce>  of this simple peasant. The
+<ce>  lumber poses no great difficulty
+<ce>  to someone of your strength.
+<ce>  It takes a few hours, but you manage to
+<ce>  fill an entire wagon with chopped wood,
+<ce>  enough to last several weeks.
+<ce>  
+<ce>  "You're awfully kind to do this for me.
+<ce>  I'm sure this gold won't compensate you.
+<ce>  Maybe %god will in my place.
+<ce>  May %monn be kind to you."
+
+Message:  1010
+<ce>  A weary, elderly peasant opportunes
+<ce>  people in the area for help with something.
+<ce>  He then approaches you, and asks for your
+<ce>  help in a raspy voice.
+<ce>  
+<ce>  "I'm sorry to bother you %ra, but I've no
+<ce>  one else to ask. I sent my children off to
+<ce>  labor for the season, and have run out of wood
+<ce>  for my stove at home. The nights get so cold.
+<ce>  I'm too old to chop the wood myself.
+<ce>  If you've got a strong arm, would you be able
+<ce>  to chop some for me? I'll pay you, honest."
+<--->
+<ce>  A weary, elderly peasant opportunes
+<ce>  people in the area for help with something.
+<ce>  She then approaches you, and asks for your
+<ce>  help in a raspy voice.
+<ce>  
+<ce>  "I'm sorry to bother you %ra, but I've no
+<ce>  one else to ask. My husband died this year
+<ce>  and my family has forgotten all about me.
+<ce>  All I want is some wood for the stove.
+<ce>  I get so cold at night I can't sleep, and
+<ce>  I can't split the wood myself.
+<ce>  If you've got a strong arm, would you be able
+<ce>  to chop some for me? I'll pay you what little
+<ce>  money I can for it."
+
+Message:  1011
+<ce>  The peasant's voice trembles.
+<ce>  
+<ce>  "Oh... Oh, I'm sure I'll find someone,
+<ce>  don't you worry. %god bless your travels."
+
+Message:  1012
+<ce>  You take the hand axe and follow a short ways
+<ce>  to the peasant's home. You try and try to split
+<ce>  the wood, but you simply aren't strong enough
+<ce>  for the task. The elderly peasant, feeling sorry for
+<ce>  you, excuses you and thanks you for the attempt.
+
+QBN:
+
+Item _reward_ gold range 41 to 74
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when attribute Strength is at least 60
+
+variable _accept_
+
+_finalwin_ task:
+    when _accept_ and _qualified_
+    give pc _reward_
+    train pc Axe
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    say 1012
+    end quest

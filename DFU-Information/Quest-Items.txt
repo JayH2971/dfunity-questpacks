@@ -1,0 +1,385 @@
+# Each item is shown by class,  subclass
+# Use in quests as "Item _item_ item class # subclass #"
+# I just made up each class name as I went, I need to properly rename these
+
+Drug Class             0, -1
+Indulcet               0, 0
+Sursam                 0, 1
+Quaesto_vil            0, 2
+Aegrostat              0, 3
+End of Drug Class
+
+Junk Class             1, -1
+Glass Jar              1, 0
+Potion                 1, 1
+Potion specific type:         Item _p1_ potion key 221871 [recipe number]
+decanter               1, 2
+Clay Jar               1, 3
+Small Sack             1, 4
+Large Sack             1, 5
+Quiver                 1, 6
+Backpack               1, 7
+Small Chest            1, 8
+Wine Rack              1, 9 (ground sprite is tomato, inventory icon is tomato)
+Large Chest            1, 10
+End of Junk Class
+
+Armor Class            2, -1
+Leather Cuirass        2, 0 (ground icon is metal armor)
+Leather Gauntlets      2, 1 (ground sprite is bracer accessory)
+Leather Greaves        2, 2 (ground sprite is bracer accessory)
+Leather Left Pauldron  2, 3 (ground sprite is bracer accessory)
+Leather Right Pauldron 2, 4 (ground sprite is bracer accessory)
+Helm                   2, 5 (ground sprite is metal helm, material is leather)
+Leather Boots          2, 6 (ground sprite looks like black rubber boots)
+Buckler                2, 7 (ground sprite is metal shield, material is leather)
+Round Shield           2, 8 (ground sprite is metal shield, material is leather)
+Kite Shield            2, 9 (ground sprite is tall shield, material is leather)
+Tower Shield           2, 10 (ground sprite is tall shield, material is leather)
+End of Armor Class
+
+Weapon Class           3, -1
+Iron Dagger            3, 0
+Iron Tanto             3, 1 (ground sprite is metal shield)
+Iron Staff             3, 2 (ground sprite is wooden staff)
+Iron Shortsword        3, 3 (ground sprite is metal sword)
+Iron Wakazashi         3, 4 (ground sprite is impaled metal sword)
+Iron Broadsword        3, 5 (ground sprite is impaled metal sword)
+Iron Saber             3, 6 (ground sprite is impaled metal sword)
+Iron Longsword         3, 7 (ground sprite is impaled metal sword)
+Iron Katana            3, 8
+Iron Claymore          3, 9 (ground sprite is impaled metal sword)
+Iron Dai-katana        3, 10 (ground sprite is impaled metal sword)
+Iron Mace              3, 11 (ground sprite is spiked metal club)
+Iron Flail             3, 12 (ground sprite is spiked metal club)
+Iron Warhammer         3, 13 (ground sprite is small hammer)
+Iron Battleaxe         3, 14 (ground sprite is small axe)
+Iron War Axe           3, 15 (ground sprite is small axe)
+Iron Short Bow         3, 16
+Iron Long Bow          3, 17
+Arrow                  3, 18
+End of Weapon Class
+
+Magic Item             4, -1 (items are random, effect is fixed)
+CWU Silence            4, 0
+CWH Wisdom             4, 1
+CWU Wildfire           4, 2
+CWU Force Bolt         4, 3
+CWU Light              4, 4
+CWU Wizard Lock        4, 5
+CWU Open               4, 6
+CWU Cure Poison        4, 7
+Vampiric effect when strikes 4,8
+CWU Wizard's Fire      4, 9
+CWU Levitate           4, 10 ("Leaping item")
+CWH Water Walking      4, 11
+Absorbs spells         4, 12 ("item of Magicka")
+CWU Stamina            4, 13 ("Never Tiring item")
+CWU Slowfalling        4, 14 (item of Featherweight")
+CWU Shield             4, 15 (item, the Protector")
+CWU Shock              4, 16
+CWS Paralysis          4, 17 ("material Cursing item")
+CWU Far Silence        4, 18
+Enhances skill Dragonish 4, 19 ("item of Venom Spitting")
+CWU Fireball           4, 20 ("Blazing item of Fireballs")
+CWU Ice Storms         4, 21 ("Frosty item of Ice Storms")
+CWU Lightning          4, 22
+CWU Fire Storm         4, 23 ("Deadman's item")
+CWU Heal               4, 24
+CWH Orc Strength       4, 25 ("item of the Orc Lord")
+CWU Free Action        4, 26 ("Unrestrainable item")
+CWH Iron Will          4, 27
+CWH Nimbleness         4, 28
+CWH Feet of Notorgo    4, 29 ("Torgo's item")
+CWH Fortitude          4, 30
+CWH Charisma           4, 31 ("item of Friendship")
+CWH Jack of Trades     4, 32 ("item of Good Luck")
+CWS Sphere of Negation 4, 33 ("item of Oblivion")
+CWU Toxic Cloud        4, 34
+CWU Medusa's Gaze      4, 35 ("item of Paralysis")
+End of Magic Item Class
+
+5 is ancient artifact class, they're all defined as their own items
+
+Men's Clothing Class   6, -1 (all are blue-dyed, ground sprites are all clothing piles)
+Straps                 6, 0
+Armbands               6, 1
+Kimono                 6, 2
+Fancy Armbands         6, 3
+Sash                   6, 4
+Eodoric                6, 5
+Shoes                  6, 6
+Tall Boots             6, 7
+Boots                  6, 8
+Sandals                6, 9
+Casual Pants           6, 10
+Breeches               6, 11
+Short Skirt            6, 12
+Casual Cloak           6, 13
+Formal Cloak           6, 14
+Khajiit Suit           6, 15
+Dwynnen Surcoat        6, 16
+Short Tunic            6, 17
+Formal Tunic           6, 18
+Toga                   6, 19
+Reversible Tunic       6, 20
+Loincloth              6, 21
+Plain Robes            6, 22
+Priest Robes           6, 23
+Short Shirt            6, 24
+Short Shirt            6, 25 (same as 24 but has belt)
+Long Shirt             6, 26 (shirt looks pirate-y)
+Long Shirt             6, 27 (same as 26 but has belt)
+Short Shirt            6, 28 (inventory shirt is permanently closed)
+Short Shirt            6, 29 (same as 28 but has belt)
+Long Shirt             6, 30 (tight shirt with sleeves)
+Long Shirt             6, 31 (same as 30 but has belt)
+Open Tunic             6, 32
+Wrap                   6, 33 (lettuce skirt)
+Long Skirt             6, 34
+Anticlere Surcoat      6, 35
+Challenger Straps      6, 36 (vertical suspenders)
+Short Shirt            6, 37 (Legend of Zelda-ish tunic, has belt)
+Long Shirt             6, 38 (same as 37 but has sleeves)
+Vest                   6, 39 (black sides with gold chains in middle)
+Champion Straps        6, 40 (crossed suspenders)
+End of Men's Clothing Class
+
+Book Class             7, -1
+book0                  7, 0 (common books)
+book1                  7, 1 (rarer books? not sure)
+book2                  7, 2 (common books)
+book3                  7, 3 (rarer books? not sure)
+Book Class appears to be limitless, subclass extends to 900 for no reason
+
+Furniture Class        8, -1 (this gives no valid result when called. Only pillows have a visible ground or inventory sprite)
+Plain Single Bed       8, 0
+Fancy Single Bed       8, 1
+Plain Double Bed       8, 2
+Fancy Double Bed       8, 3
+Large Oak Table        8, 4
+Large Cherry Table     8, 5
+Large Mahogany Table   8, 6
+Large Teak Table       8, 7
+Small Oak Table        8, 8
+Small Cherry Table     8, 9
+Small Mahogany Table   8, 10
+Small Teak Table       8, 11
+Oak Chair              8, 12
+Cherry Chair           8, 13
+Mahogany Chair         8, 14
+Teak Chair             8, 15
+Curtains               8, 16
+Fancy Curtains         8, 17
+Large Pillow           8, 18 (has pillow icon, looks tiny on ground)
+Small Pillow           8, 19 (has pillow icon, looks tiny on ground)
+Small Plain Rug        8, 20
+Large Plain Rug        8, 21
+Small Fine Rug         8, 22
+Large Fine Rug         8, 23
+Large Tapestry         8, 24
+Medium Tapestry        8, 25
+Small Tapestry         8, 26
+Large Skins            8, 27
+Small Skins            8, 28
+End of Furniture Class
+
+Flamable Class         9, -1
+Torch                  9, 0 (tall torch with skull, cannot be clicked on from ground)
+Lantern                9, 1
+Bandage                9, 2
+Oil                    9, 3
+Candle                 9, 4
+Parchment              9, 5
+End of Fuel Class
+
+Religious Class        10, -1
+Prayer Beads           10, 0
+Rare Symbol            10, 1
+Common Symbol          10, 2
+Bell                   10, 3
+Holy Water             10, 4
+Talisman               10, 5
+Religious Item         10, 6
+Small Statue           10, 7
+Icon                   10, 8
+Scarab                 10, 9
+Holy Candle            10, 10
+Holy Dagger            10, 11
+Holy Tome              10, 12
+End of Religious Class
+
+Map Class              11, -1
+Map                    11, 0
+End of Map Class
+
+womens_clothing        12, -1 *******
+womens_robe            12, 18
+
+
+
+Painting Class         13, -1
+Portrait               13, 0 (spawns a random painting)
+End of Painting Class
+
+Gem Class              14, -1
+Ruby                   14, 0
+Emerald                14, 1
+Sapphire               14, 2
+Diamond                14, 3
+Jade                   14, 4
+Turquoise              14, 5
+Malachite              14, 6
+Amber                  14, 7
+End of Gem Class
+
+Small_plant Class          15, -1
+Twigs                  15, 0
+Green Leaves           15, 1
+Red Flowers            15, 2
+Yellow Flowers         15, 3
+Root Tendrils          15, 4
+Root Bulb              15, 5
+Pine Branch            15, 6
+Green Berries          15, 7
+Red Berries            15, 8
+Yellow Berries         15, 9
+Clover                 15, 10
+Red Rose               15, 11
+Yellow Rose            15, 12
+Red Poppy              15, 13
+Golden Poppy           15, 14
+End of Small Plant Class
+
+Large_plant Class      16, -1
+Twigs                  16, 0
+Green Leaves           16, 1
+Red Flowers            16, 2
+Yellow Flowers         16, 3
+Root Tendrils          16, 4
+Root Bulb              16, 5
+Green Berries          16, 6
+Red Berries            16, 7
+Yellow Berries         16, 8
+Black Rose             16, 9
+White Rose             16, 10
+Black Poppy            16, 11
+White Poppy            16, 12
+Gingko Leaves          16, 13
+Bamboo                 16, 14
+Palm                   16, 15
+Aloe                   16, 16
+Fig                    16, 17
+Cactus                 16, 18
+End of Medicinal Class
+
+Organs Class           17, -1
+Werewolf Blood         17, 0
+Fairy Dragon's Scales  17, 1
+Wraith Essence         17, 2
+Ectoplasm              17, 3
+Ghoul's Tongue         17, 4
+Spider's Venom         17, 5
+Troll's Blood          17, 6
+Snake Venom            17, 7
+Gorgon Snake           17, 8
+Lich Dust              17, 9
+Giant's Blood          17, 10
+Basilisk Eye           17, 11
+Daedra Heart           17, 12
+Saint's Hair           17, 13
+Orc's Blood            17, 14
+End of Organs Class
+
+Skin Class             18, -1
+Dragon's Scales        18, 0
+Giant Scorpion Stinger 18, 1
+Small Scorpion Stinger 18, 2
+Mummy Wrappings        18, 3
+Harpy Feather          18, 4
+End of Skin Class
+
+Mythic Class           19, -1
+Wereboar's Tusk        19, 0
+Nymph Hair             19, 1
+Unicorn Horn           19, 2
+End of Mythic Class
+
+misc                   20, -1
+Holy_relic             20, 0
+Pure_water             20, 4
+Elixir_vitae           20, 6
+
+element                21, -1
+lodestone              21, 3
+gold_bar               21, 9
+
+mineral                22, -1
+ivory                  22, 0
+pearl                  22, 1
+
+transport              23, -1
+
+deed                   24, -1
+
+trinket                25, -1
+
+Jewelry Class          25, -1
+Amulet                 25, 0
+Bracer                 25, 1
+Ring                   25, 2
+Bracelet               25, 3
+Mark                   25, 4
+Torc                   25, 5
+Cloth Amulet           25, 6
+Wand                   25, 7
+End of Jewelry Class
+
+Quest Item Class       26, -1
+Telescope              26, 0
+Scales                 26, 1 (ie money scales, balance)
+Globe                  26, 2
+Skeleton               26, 3 (skeleton on vertical display, cannot be clicked on)
+Totem                  26, 4 (the main quest totem)
+Dead Body              26, 5
+Mantella               26, 6 (looks like two crystals coming out of dirt? worth 100000 gold, not seen in game)
+Finger                 26, 7
+End of Quest Items Class
+
+Adventuring Class            (-1 value does not work in this class)
+Spellbook              27, 0
+Soul Trap              27, 1 (aka soul gem)
+Letter of Credit       27, 2 (worth zero gold)
+Gold Pieces            27, 3 (just a sprite of gold pieces. does not become money in inventory)
+Potion Recipe          27, 4 (always Recipe for Potion of Unknown Powers, with no ingredients)
+Dead Body              27, 5
+House Deed             27, 6 (unusable item, reads "Deed for your house in the region of %hrg in the town of %htwn.")
+Ship Deed              27, 7
+Map                    27, 8 (map to random dungeon)
+End of Adventuring Class
+
+Gold coin              28, 0 (a single gold coin. ground sprite is gold pile)
+
+
+
+Potion Recipe #
+Stamina 221871
+Orc Strength 239524
+Healing 4975678
+Waterwalking 5017404
+Restore Power 5188896
+Resist Fire 111516185
+Resist Frost 4826108
+Resist Shock 216843
+Cure Disease 224588
+Slow Falling 220192
+Water Breathing 240081
+Heal True 4937012
+Levitation 228890
+Resist Poison 221117
+Free Action 4870452
+Cure Poison 5361377
+Chameleon Form 112080144
+Shadow Form 4842851
+Invisibility 4815872
+Purification 2031019196

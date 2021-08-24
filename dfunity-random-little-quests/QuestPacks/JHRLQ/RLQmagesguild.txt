@@ -1,0 +1,97 @@
+Quest: RLQmagesguild
+DisplayName: Random Little Quest Mages Guild
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  "Ah, good! I picked up this book when we raided
+<ce>  some bandits yesterday and I didn't know who I'd
+<ce>  give it to. You've got to make some use of it,
+<ce>  don't you? Take it, it's my gift! Farewell!"
+<ce>  
+<ce>  You are handed a book, and the warrior departs.
+
+Message:  1010
+<ce>  "Stop right there!"
+<ce>  
+<ce>  A harsh voice calls out to you. You turn around and see
+<ce>  an armored figure with a grim demeanor.
+<ce>  
+<ce>  "You there! Are you a member of the Mages Guild?"
+
+Message:  1011
+<ce>  "I knew it! I'll have revenge on you people for what
+<ce>  you did to my village!"
+<ce>  
+<ce>  Ignorant though you may be to this incident,
+<ce>  you are nonetheless the scapegoat for whatever happened.
+<ce>  The warrior prepares for battle.
+<--->
+<ce>  "One less from Tamriel then, I'll clean you right up!
+<ce>  For Julianos!"
+<ce>  
+<ce>  Whatever grudge this person has
+<ce>  is about to be taken out on you.
+<--->
+<ce>  "An easy target as always! Can't wait to count out your coin!"
+<ce>  
+<ce>  The warrior prepares for battle.
+
+Message:  1012
+<ce>  "Phew, am I glad to hear that. Not enough mages around
+<ce>  here when we need the supernatural touch.
+<ce>  Stay safe, I imagine a mage's life isn't easy!"
+<ce>  
+<ce>  The warrior then marches off in a different direction.
+<--->
+<ce>  "Wish I could buy you a pint, I'm off to help in a
+<ce>  bandit raid. Just wanted to thank you folks for
+<ce>  getting rid of all the spriggans 'round here.
+<ce>  Right abominations, they are! Farewell!"
+<ce>  
+<ce>  The warrior then hurries off.
+
+Message:  1013
+<ce>  "By %god you aren't! Stay safe out there, all right?"
+<ce>  
+<ce>  The warrior then hurries off.
+<--->
+<ce>  "Are you sure? Could've sworn I heard about you
+<ce>  in the guild hall recently."
+<ce>  
+<ce>  Though perplexed, the warrior heads off.
+
+QBN:
+
+Item _reward_ book
+
+Foe _monster_ is Warrior
+
+Clock _timer_ 0:02
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1013
+    end quest
+
+_accept_ task:
+    pick one of _good_ _good_ _good_ _book_ _bad_ _bad_ _bad_
+
+_good_ task:
+    say 1012
+    end quest
+
+_bad_ task:
+    say 1011
+    create foe _monster_ every 0 minutes 1 times with 100% success
+    change foe _monster_ infighting true
+    start timer _timer_
+
+_timer_ task:
+    end quest
+
+_book_ task:
+    give pc _reward_
+    end quest

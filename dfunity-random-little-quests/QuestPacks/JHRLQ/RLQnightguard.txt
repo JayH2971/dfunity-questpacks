@@ -1,0 +1,36 @@
+Quest: RLQnightguard
+DisplayName: Random Little Quest Night Guard
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  "Hey there! Hello!"
+<ce>  
+<ce>  An archer waves to you from a safe distance.
+<ce>  
+<ce>  "I'm a volunteer to help guard the town at night.
+<ce>  If you run into any trouble, come find me!"
+<--->
+<ce>  "Hi there! Excuse me!"
+<ce>  
+<ce>  An archer waves to you from a safe distance.
+<ce>  
+<ce>  "I'm a volunteer to help guard the town at night.
+<ce>  If you find any evil-doers, bring them to me!"
+
+QBN:
+
+
+Foe _monster_ is Archer
+
+Clock _timer_ 0:02
+
+--	Quest start-up:
+    say 1010
+    create foe _monster_ every 0 minutes 1 times with 100% success
+    change foe _monster_ infighting true
+    change foe _monster_ team 1
+    start timer _timer_
+
+_timer_ task:
+    end quest

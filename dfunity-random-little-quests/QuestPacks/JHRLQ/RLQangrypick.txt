@@ -1,0 +1,109 @@
+Quest: RLQangrypick
+DisplayName: Random Little Quest Angry at Pickpocketer
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  "You! Stop right there, thief! I've got you now!"
+<ce>  
+<ce>  Someone in town is angry with you, and you're
+<ce>  not sure why. Apparently your thieving ways
+<ce>  are coming back to haunt you.
+<--->
+<ce>  "You! You're the thief! I know you are!"
+<ce>  
+<ce>  Someone in town is angry with you, and you're
+<ce>  not sure why. Apparently your thieving ways
+<ce>  are coming back to haunt you.
+
+Message:  1012
+<ce>  Thankfully, you're also skilled with speech.
+<ce>  You deflect the accusations and match
+<ce>  every word. Your pursuer is dumbfounded
+<ce>  and decides to leave you alone.
+
+Message:  1013
+<ce>  At least the guards aren't coming for you.
+<ce>  Your self-defense is probably justified here.
+
+QBN:
+
+Clock _end_ 0:05
+
+Foe _enemy1_ is Mage
+Foe _enemy2_ is Barbarian
+Foe _enemy3_ is Archer
+
+--	Quest start-up:
+
+_skilled_ task:
+    when skill Pickpocket is at least 40
+    say 1011
+    start task _begin_
+
+_reject_ task:
+    when not _skilled_
+    end quest
+
+_begin_ task:
+	pick one of _go1_ _go2_ _go3_
+
+_check1_ task:
+	when skill Streetwise is at least 40
+
+_check2_ task:
+	when skill Streetwise is at least 50
+
+_check3_ task:
+	when skill Streetwise is at least 60
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+	when _check1_ and _go1_
+	say 1012
+    end quest
+
+_c2_ task:
+	when _check2_ and _go2_
+	say 1012
+    end quest
+
+_c3_ task:
+	when _check3_ and _go3_
+	say 1012
+    end quest
+
+_d1_ task:
+	when not _check1_ and _go1_
+	start task _fail_
+
+_d2_ task:
+	when not _check2_ and _go2_
+	start task _fail_
+
+_d3_ task:
+	when not _check3_ and _go3_
+	start task _fail_
+
+_fail_ task:
+    say 1013
+    pick one of _spawn1_ _spawn2_ _spawn3_
+    start timer _end_
+
+_spawn1_ task:
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    change foe _enemy1_ infighting true
+
+_spawn2_ task:
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    change foe _enemy2_ infighting true
+
+_spawn3_ task:
+    create foe _enemy3_ every 0 minutes 1 times with 100% success
+    change foe _enemy3_ infighting true
+
+_end_ task:
+    end quest
