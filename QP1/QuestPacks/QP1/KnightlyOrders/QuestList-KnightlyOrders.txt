@@ -45,3 +45,4 @@ JHKN031, KnightlyOrder, M, 0, 0, a quest to hire an exterminator
 JHKN032, KnightlyOrder, M, 6, X, a quest to slay a beguiling Seducer
 JHKN033, KnightlyOrder, M, 1, 1, a quest to help a hunter kill tigers
 JHKN034, KnightlyOrder, M, 3, 1, a quest to persuade a noble to prevent a marriage
+JHKN035, KnightlyOrder, M, 1, 1, a quest to find a missing youth in a dungeon
