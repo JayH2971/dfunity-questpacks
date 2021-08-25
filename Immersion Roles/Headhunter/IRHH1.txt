@@ -53,7 +53,7 @@ Item _horsie_ item class 23 subclass 1
 Item _armor1_ armor
 Item _armor2_ armor
 Item _armor3_ armor
-Item _armor4_ armor
+Item _armor4_ potion key 4815872
 
 Place _town_ remote city
 

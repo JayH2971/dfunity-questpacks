@@ -50,10 +50,12 @@ Item _weapon3_ weapon
 Item _weapon4_ weapon
 Item _weapon5_ item class 4 subclass 17
 Item _gold_ gold range 100 to 300
-Item _armor1_ armor
-Item _armor2_ armor
-Item _armor3_ armor
-Item _armor4_ armor
+Item _armor1_ potion key 4975678
+Item _armor2_ potion key 221871
+Item _armor3_ potion key 4975678
+Item _armor4_ potion key 4815872
+
+Person _db_ faction The_Dark_Brotherhood
 
 --	Quest start-up:
     say 1011
@@ -78,13 +80,10 @@ Item _armor4_ armor
     make _armor3_ permanent
     make _armor4_ permanent
     log 1013 step 0
+    change repute with _db_ by +10
 
 _travelstop_ task:
     when pc enters village
     when pc enters hamlet
     when pc enters city
     say 1012
-
-_nextstep_ task:
-    start quest IRHH2
-    end quest
