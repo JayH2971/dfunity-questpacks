@@ -1,0 +1,15 @@
+
+Note that these are NOT the same as character classes.
+Roles should be general social concepts.
+
+Escaped Slave
+Merchant
+Pirate
+Outlaw (-30 legal reputation)
+Noble's child (+30 legal reputation)
+Courier
+Weaponmaster
+Slayer (choose a specific monster type to fight against)
+Bounty Hunter
+Dark Brotherhood adept (+10 reputation with DB)
+Thieves Guild adept (+10 reputation with TG)

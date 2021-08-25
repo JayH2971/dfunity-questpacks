@@ -1,0 +1,68 @@
+Quest: IRHH6
+DisplayName: Headhunter Step 6
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  Greetings. Your name and purpose?
+<ce>  Slain the Sapphire Scourge, you say?
+<ce>  My word. Where was the hideout?
+<ce>  How did you do it? Show me your proof.
+<ce>  
+<ce>  Interesting. Well, we shall make it known
+<ce>  among the people, and they can rest in peace
+<ce>  now. There will be many other dangers
+<ce>  a skilled bounty hunter like yourself will
+<ce>  want to pursue. Ask among the townspeople,
+<ce>  and see how you can help them. Many a
+<ce>  fighter has grown rich keeping the people safe.
+<ce>  Perhaps joining a guild would be to your liking,
+<ce>  if you haven't already.
+<ce>  
+<ce>  Well done, %pcn.
+<ce>  
+<ce>  (HEADHUNTER QUEST LINE COMPLETE!)
+
+Message:  1011
+%qdt:
+ I have slain the Sapphire Scourge.
+ _noble_ at _palace_ will have my
+ reward in ___palace_.
+
+Message:  1012
+<ce>  You emerge victorious. The Sapphire Scourge lies dead
+<ce>  for egregious crimes against the people of ____palace_.
+<ce>  Your reward is held by a noble named _noble_,
+<ce>  who awaits you at the Palace of ___palace_.
+
+RumorsPostSuccess:   [1007]
+The Sapphire Scourge has been slain! All ____palace_ can rest easy now!
+<--->
+People across ____palace_ are rejoicing to hear the Sapphire Scourge was killed.
+<--->
+Wait, are you %pcn? The one who killed the Sapphire Scourge?
+
+QBN:
+
+Person _noble_ faction Dancers male
+
+Place _palace_ remote palace
+
+Item _reward_ gold range 3000 to 3000
+
+Clock _delay_ 0:02
+
+--	Quest start-up:
+    log 1011 step 0
+    say 1012
+    place npc _noble_ at _palace_
+
+_clicked_ task:
+    clicked npc _noble_
+    play sound levelup_gong every 0 minutes 1 times
+    give pc _reward_
+    remove log step 0
+    start timer _delay_
+
+_delay_ task:
+    end quest

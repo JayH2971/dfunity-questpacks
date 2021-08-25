@@ -1,0 +1,54 @@
+Quest: IRHH3
+DisplayName: Headhunter Step 3
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  Walking among the residents of the city,
+<ce>  you hear a crier calling out.
+<ce>  
+<ce>  "The Sapphire Scourge strikes again!
+<ce>  Whole family slain in ___city_!
+<ce>  Guards baffled, citizens in fear!"
+<ce>  
+<ce>  Perhaps in ___city_ you can gain
+<ce>  more clues on how to find this criminal.
+
+Message:  1012
+%qdt:
+ I'm searching for an outlaw known
+ as the Sapphire Scourge, who has
+ a bounty of 3,000 gold pieces.
+ My search for clues has been fruitless.
+ I'll just need to wait until more
+ information comes out, one way or another.
+
+Message:  1013
+%qdt:
+ I'm searching for an outlaw known
+ as the Sapphire Scourge, who has
+ a bounty of 3,000 gold pieces.
+ My search for clues has been fruitless.
+ He or she recently struck in ___city_,
+ and if I go there I may find clues to
+ find him or her.
+
+QBN:
+
+Place _city_ remote city
+
+Item _dummy_ gem
+
+--	Quest start-up:
+    log 1012 step 0
+    give pc _dummy_ notify 1011
+    have _dummy_ set _remove_
+
+_remove_ task:
+    log 1013 step 0
+    take _dummy_ from pc
+    pc at _city_ set _arrival_
+
+_arrival_ task:
+    start quest IRHH4
+    end quest

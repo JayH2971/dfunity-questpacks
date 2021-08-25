@@ -1,0 +1,113 @@
+Quest: IRHH5
+DisplayName: Headhunter Step 5
+-- Message panels
+QRC:
+
+Message:  1011
+%qdt:
+ I'm searching for an outlaw known
+ as the Sapphire Scourge, who has
+ a bounty of 3,000 gold pieces.
+ A clue found in a ruin said I should
+ try to find "_dummy_'s dugout."
+ Perhaps the townspeople
+ will know what that means.
+
+Message:  1012
+_dummy_'s dugout? I's heard that name before, I thinks.
+<--->
+_dummy_'s dugout... Nickname for ___dung_, if I remember right. I'll mark it on your map.
+
+Message:  1013
+<ce>  This parchment reads as follows:
+<ce>  
+<ce>  "This location is known by too many people.
+<ce>  Regroup at _dummy_'s dugout.
+<ce>  Use smarter pass codes this time.
+<ce>  
+                       SS"
+<ce>  
+<ce>  You have no idea what "_dummy_'s dugout"
+<ce>  could refer to. With any luck, the
+<ce>  people of %crn might know about it.
+
+Message:  1014
+<ce>  You enter ___dung_ and are accosted by
+<ce>  two armed guards.
+<ce>  
+<ce>  "Intruder alert! We have an intruder!"
+<ce>  
+<ce>  This place is lively and well-defended.
+<ce>  Your hunt may be nearing its end.
+<ce>  You are concerned, though, that their
+<ce>  shouting may have woken the whole place up.
+
+Message:  1015
+<ce>  You notice a distinctive sapphire bound into
+<ce>  this assassin's clothing. The rumors were true.
+<ce>  This must be the Sapphire Scourge.
+<ce>  
+<ce>  "We're under attack! Slay this %ra! Quickly!"
+
+Message:  1016
+%qdt:
+ I have found ___dung_, which is
+ the Sapphire Scourge's lair.
+ All that remains is to find this
+ foe and carry out the deed.
+
+QBN:
+
+Person _dummy_ faction The_Thieves_Guild male anyInfo 1012
+
+Place _dung_ remote dungeon
+
+Foe _guard_ is Rogue
+Foe _thief_ is Bard
+Foe _burglar_ is Burglar
+Foe _boss_ is Assassin
+
+Item _sapphire_ item class 14 subclass 2
+
+--	Quest start-up:
+    log 1011 step 0
+    say 1013
+    reveal _dung_
+    place foe _boss_ at _dung_
+    pc at _dung_ do _inside_
+    give item _sapphire_ to _boss_
+    make _sapphire_ permanent
+
+_inside_ task:
+    say 1014
+    create foe _guard_ every 0 minutes 2 times with 100% success
+    log 1016 step 0
+
+_spawn_ task:
+    when _inside_ and not _slain_
+    create foe _guard_ every 24 minutes indefinitely with 6% success
+    create foe _thief_ every 18 minutes indefinitely with 5% success
+    create foe _burglar_ every 13 minutes indefinitely with 3% success
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _guard_ infighting true
+    change foe _thief_ infighting true
+    change foe _burglar_ infighting true
+    clear _infight_
+
+_injure_ task:
+    injured _boss_
+    say 1015
+    change foe _boss_ infighting true
+    cast Heal spell on _boss_
+    cast Shield spell on _boss_
+    cast Spell_Resistance spell on _boss_
+    cast Feet_of_Notorgo spell on _boss_
+    cast Orc_Strength spell on _boss_
+    create foe _guard_ every 0 minutes 1 times with 100% success
+
+_slain_ task:
+    killed _boss_
+    start quest IRHH6
+    end quest

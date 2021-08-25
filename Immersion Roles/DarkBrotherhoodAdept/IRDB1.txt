@@ -1,0 +1,90 @@
+Quest: IRDB1
+DisplayName: Dark Brotherhood Step 1
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  YOU ROLE IS: DARK BROTHERHOOD INITIATE
+<ce>  
+<ce>  You shake your head, getting a hold of your senses.
+<ce>  The dead body of your quarry stinks nearby.
+<ce>  You made it this far, and now you need to get out.
+<ce>  
+<ce>  Your efforts to join the Dark Brotherhood have been
+<ce>  extensive. Weeks passed by, and all your information
+<ce>  gathering seemed to be for naught. Then a note
+<ce>  appeared in your pack while you slept one night.
+<ce>  It told you to come here and slay a one-eyed
+<ce>  thief as a test of your courage. Deep in the depths
+<ce>  of this place, you found him and carried it out.
+<ce>  You trust the Dark Brotherhood will find you
+<ce>  if it's pleased with your work.
+<ce>  
+<ce>  Now you need to make it out.
+<ce>  You were too focused on your search to map your
+<ce>  way in, unfortunately. But if you could kill
+<ce>  this thief, surely you'll be able to handle
+<ce>  anything else here...
+
+Message:  1012
+<ce>  You step into the settlement. You feel different
+<ce>  from when you crossed through here last time.
+<ce>  Now you're a murderer, a cold-blooded killer.
+<ce>  You have spilt blood, and your fear is gone.
+<ce>  
+<ce>  Now you wonder what the Dark Brotherhood thinks of you.
+
+Message:  1013
+%qdt:
+ I have slain the Dark Brotherhood's
+ apparent quarry, and hope to gain
+ their favor. If I have passed their
+ test of courage, I'll just have to wait
+ until they contact me again.
+
+QBN:
+
+Item _weapon1_ weapon
+Item _weapon2_ weapon
+Item _weapon3_ weapon
+Item _weapon4_ weapon
+Item _weapon5_ item class 4 subclass 17
+Item _gold_ gold range 100 to 300
+Item _armor1_ armor
+Item _armor2_ armor
+Item _armor3_ armor
+Item _armor4_ armor
+
+--	Quest start-up:
+    say 1011
+    get item _weapon1_
+    get item _weapon2_
+    get item _weapon3_
+    get item _weapon4_
+    get item _weapon5_
+    get item _gold_
+    get item _armor1_
+    get item _armor2_
+    get item _armor3_
+    get item _armor4_
+    make _weapon1_ permanent
+    make _weapon2_ permanent
+    make _weapon3_ permanent
+    make _weapon4_ permanent
+    make _weapon5_ permanent
+    make _gold_ permanent
+    make _armor1_ permanent
+    make _armor2_ permanent
+    make _armor3_ permanent
+    make _armor4_ permanent
+    log 1013 step 0
+
+_travelstop_ task:
+    when pc enters village
+    when pc enters hamlet
+    when pc enters city
+    say 1012
+
+_nextstep_ task:
+    start quest IRHH2
+    end quest

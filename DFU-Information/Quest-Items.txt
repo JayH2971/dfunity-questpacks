@@ -319,8 +319,19 @@ ivory                  22, 0
 pearl                  22, 1
 
 transport              23, -1
+Small Cart             23, 0
+Horse                  23, 1
+Rowboat (useless)      23, 2
+Large Boat (useless)   23, 3
+Small Ship (useless)   23, 4
+Large Galley (useless) 23, 5  (worth 1,500,000 gold and weighs hundreds of kilos)
+End of Transport class
 
 deed                   24, -1
+Ruby                   24, 0
+Emerald                24, 1
+Sapphire               24, 2
+End of Deed Class
 
 trinket                25, -1
 

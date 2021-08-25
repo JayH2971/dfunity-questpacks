@@ -1,0 +1,73 @@
+Quest: IRDBinterlopers
+DisplayName: Dark Brotherhood vs Interlopers
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  "Halt! For your crimes against %crn,
+<ce>  I have come to claim your life!
+<ce>  Death to the Dark Brotherhood!"
+<ce>  
+<ce>  A self-proclaimed justiciar wishes to
+<ce>  fight you. Some can't wait to die, it seems.
+<--->
+<ce>  "You! One of those Dark Brotherhood scoundrels,
+<ce>  you are! This day will be your last!"
+<ce>  
+<ce>  Some weakling wishes to end your life.
+<ce>  It would be fitting to respond in kind.
+<--->
+<ce>  "Stop right there, criminal scum!
+<ce>  I'm authorized to take your life,
+<ce>  by order of the %rt!"
+<ce>  
+<ce>  You wonder what it would be like to be
+<ce>  scared of this miscreant's threats.
+<--->
+<ce>  "Death to the Dark Brotherhood and all
+<ce>  its allies! Hurrah!!"
+<ce>  
+<ce>  Someone has decided to target you today.
+<ce>  Quite unfortunate, really.
+<--->
+<ce>  "Your murders end here, %ra! Engarde!"
+<ce>  
+<ce>  Some dumb adventurer is pretending to
+<ce>  be a threat today. How quaint.
+
+QBN:
+
+Foe _enemy1_ is Knight
+Foe _enemy2_ is Mage
+Foe _enemy3_ is Spellsword
+
+Clock _refresh_ 1.00:00 40.00:00
+
+Item _dummy_ gem
+
+--	Quest start-up:
+    give pc _dummy_ notify 1011
+    have _dummy_ set _remove_
+
+_remove_ task:
+    take _dummy_ from pc
+    pick one of _kni_ _mage_ _spel_
+    start timer _refresh_
+
+_kni_ task:
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    change foe _enemy1_ infighting true
+    change foe _enemy1_ team 21
+
+_mage_ task:
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    change foe _enemy2_ infighting true
+    change foe _enemy2_ team 21
+
+_spel_ task:
+    create foe _enemy3_ every 0 minutes 1 times with 100% success
+    change foe _enemy3_ infighting true
+    change foe _enemy3_ team 21
+
+_refresh_ task:
+    start quest IRDBinterlopers
