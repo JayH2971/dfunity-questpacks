@@ -18,6 +18,10 @@ QuestFail:  [1003]
 QuestComplete:  [1004]
 <ce>                               QP1 1004
 
+Message:  1011
+<ce>            Do you want to receive an Early Artifact Quest
+<ce>                     as part of DFU Quest Pack 1?
+
 QBN:
 
 Clock _init_ 0:05
@@ -29,8 +33,12 @@ Clock _timer_ 0:02
 _init_ task:
     start timer _timer_
     start quest JHCART
+    prompt 1011 yes _accept_ no _reject_
+
+_accept_ task:
     pick one of _q1_ _q2_ _q3_
 
+variable _reject_
 _level_ task:
     level 3 completed
 
