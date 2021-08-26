@@ -10,6 +10,5 @@ Noble's child (+30 legal reputation)
 Courier
 Weaponmaster
 Slayer (choose a specific monster type to fight against)
-Bounty Hunter
+Headhunter (bounty hunter)
 Dark Brotherhood adept (+10 reputation with DB)
-Thieves Guild adept (+10 reputation with TG)

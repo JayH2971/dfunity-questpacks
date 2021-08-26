@@ -41,8 +41,11 @@ Item _dummy_ gem
 
 --	Quest start-up:
     log 1012 step 0
-    give pc _dummy_ notify 1011
     have _dummy_ set _remove_
+
+_level3_ task:
+    level 3 completed
+    give pc _dummy_ notify 1011
 
 _remove_ task:
     log 1013 step 0

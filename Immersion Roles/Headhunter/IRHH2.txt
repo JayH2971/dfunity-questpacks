@@ -65,6 +65,8 @@ _return_ task:
     clicked npc _pers_
     give pc _gold_
     log 1014 step 0
+    start quest IRHH3
+    end quest
 
 _level3_ task:
     level 3 completed
@@ -74,5 +76,3 @@ _nextstep_ task:
     start timer _timer_
 
 _timer_ task:
-    start quest IRHH3
-    end quest

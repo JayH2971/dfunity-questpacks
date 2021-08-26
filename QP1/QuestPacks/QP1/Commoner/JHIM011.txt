@@ -25,6 +25,8 @@ QuestFail:  [1003]
 <ce>                          ERROR 1003 JHIM011
 
 QuestComplete:  [1004]
+<ce>                _qgiver_ then looks at you sheepishly.
+<ce>
 <ce>    "Well, this matter is finished, isn't it %pcf? My everlasting
 <ce>      gratitude to you for keeping me safe. Have these =reward_
 <ce>      gold pieces. I would feel guilty holding on to them now."
@@ -33,11 +35,12 @@ Message:  1017
 <ce>                     You sense something moving.
 
 Message:  1018
+<ce>          _qgiver_ grasps %g3 head and wheezes from fright.
+<ce>
 <ce>         "I can't believe someone would try to kill me. What
-<ce>       is this world coming to? Yes, I shouldn't have done it,
-<ce>         but how does it come to this? Oh, this is terrible.
-<ce>          I am grateful I did not have to draw blood, but my
-<ce>            reputation will be ruined nonetheless. Perhaps
+<ce>            is this world coming to? Oh, this is terrible.
+<ce>          Though I am grateful I did not have to draw blood,
+<ce>          my reputation will be ruined nonetheless. Perhaps
 <ce>              ___qgiver_ is no place for me after all."
 
 Message:  1019
@@ -61,6 +64,8 @@ deeply foolish debts you have incurred.
                       ___dummy_
 
 Message:  1021
+<ce>              _qgiver_ reads the letter with wide eyes.
+<ce>
 <ce>           "Oh, my. I believe I was wrong about this whole
 <ce>          matter. Then, I think we can both agree that there
 <ce>           won't be any assassin heading my way, is there?
@@ -105,8 +110,7 @@ variable _E.02_
 
 _danger_ task:
     when _E.01_ and _timer_
-    say 1017
-    create foe _enemy_ every 1200 minutes indefinitely with 100% success
+    create foe _enemy_ every 1200 minutes indefinitely with 100% success msg 1017
 
 _daily_ task:
     daily from 0:00 to 23:59
