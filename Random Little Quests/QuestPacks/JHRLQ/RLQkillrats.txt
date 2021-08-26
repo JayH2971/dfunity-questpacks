@@ -13,19 +13,19 @@ Message:  1011
 <ce>         "Hi. I'm giving up on a task from the Fighters Guild
 <ce>          here in town to kill some rats infesting a house.
 <ce>            Turns out I got the plague halfway through and
-<ce>          am about to spend my savings at the temple. If you
+<ce>            have to spend my savings at the temple. If you
 <ce>             want to go in and clean the rest, I'll split
 <ce>                    the reward with you. You in?"
                                      <--->
-<ce>         A warrior with a bit of blood all around hails you.
+<ce>         A warrior spattered with blood all around hails you.
 <ce>
-<ce>          "Hail. I got an assignment from the Fighters Guild
-<ce>       to kill some rats in a local house. But then they bit me
-<ce>          and I'm carrying some illness now. It's gonna wipe
-<ce>       out everything I earned this week to get a cure, and I'm
-<ce>        not risking that again. Wanna take over the contract?
+<ce>         "Hail. I have an assignment from the Fighters Guild
+<ce>         to kill a few rats in a local house, but they're tougher
+<ce>          than I thought. Think I've got an illness. It'll take
+<ce>         everything I earned this week to get a cure, and I'm
+<ce>        not risking that again. Want take over the contract?
 <ce>         Kill the remaining rats and I'll split it with you,
-<ce>                  half and half. What do you think?"
+<ce>                           half and half."
 
 Message:  1012
 <ce>             "Maybe you're smarter than I am. This guild
