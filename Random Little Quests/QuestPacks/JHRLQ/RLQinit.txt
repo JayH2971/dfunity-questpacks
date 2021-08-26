@@ -11,9 +11,20 @@ Clock _timer_ 1.00:00 1.04:00
 --   Quest start-up:
     pc at any fighters set _fightered_
     pc at any tavern set _taverned_
+    pc at any house set _homed_
+    pc at any shop set _shopped_
+    pc at any magery set _maged_
+    pc at any temple set _templed_
+    pc at any palace set _palaced_
 
 variable _fightered_
 variable _taverned_
+variable _homed_
+variable _shopped_
+variable _maged_
+variable _templed_
+variable _palaced_
+
 _eventstart_ task:
     when pc enters city
     when pc enters hamlet
@@ -46,7 +57,7 @@ _snowy_ task:
     weather snow
 
 _sunnyday_ task:
-    when _daylight_ and _sunning_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    when _daylight_ and _sunning_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _sunnydayevents_ _dud_ _dud_
     start task _stopevents_
 
@@ -102,7 +113,7 @@ _mysticismlesson_ task:
     start quest RLQmysticismlesson
 
 _sunnynight_ task:
-    when not _daylight_ and _sunning_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    when not _daylight_ and _sunning_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _sunnynightevents_ _dud_ _dud_
     start task _stopevents_
 
@@ -113,7 +124,7 @@ _pickpocket_ task:
     start quest RLQpickpocket
 
 _cloudyday_ task:
-    when _daylight_ and _clouded_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    when _daylight_ and _clouded_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _cloudydayevents_ _dud_ _dud_ _dud_ _dud_
     start task _stopevents_
 
@@ -127,7 +138,7 @@ _angrypick_ task:
     start quest RLQangrypick
 
 _overcastday_ task:
-    when _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    when _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _overcastdayevents_ _dud_ _dud_
     start task _stopevents_
 
@@ -141,7 +152,7 @@ _runningthief_ task:
     start quest RLQrunningthief
 
 _overcastnight_ task:
-    when not _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    when not _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _overcastnightevents_ _dud_ _dud_
     start task _stopevents_
 
@@ -152,7 +163,7 @@ _meddeliver_ task:
     start quest RLQmeddeliver
 
 _fognight_ task:
-    when not _daylight_ and _foggy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    when not _daylight_ and _foggy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _fognightevents_ _dud_ _dud_
     start task _stopevents_
 
@@ -166,7 +177,7 @@ _yousteal_ task:
     start quest RLQyousteal
 
 _rainday_ task:
-    when _daylight_ and _rainy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    when _daylight_ and _rainy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _raindayevents_ _dud_ _dud_
     start task _stopevents_
 
@@ -192,15 +203,15 @@ _raintaxes3_ task:
     start quest RLQraintaxes3
 
 _thundday_ task:
-    when _daylight_ and _thundered_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    when _daylight_ and _thundered_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _thunddayevents_ _dud_ _dud_
     start task _stopevents_
 
 _thunddayevents_ task:
-    pick one of _magesguild_ 
+    pick one of _magesguild_
 
 _thundnight_ task:
-    when not _daylight_ and _thundered_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    when not _daylight_ and _thundered_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _thundnightevents_ _dud_ _dud_
     start task _stopevents_
 
@@ -217,7 +228,7 @@ _nightrat_ task:
     start quest RLQnightrat
 
 _snowyday_ task:
-    when _daylight_ and _snowy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _stopevents_
+    when _daylight_ and _snowy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _snowydayevents_ _dud_ _dud_
     start task _stopevents_
 
