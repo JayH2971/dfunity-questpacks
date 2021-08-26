@@ -182,13 +182,16 @@ _rainday_ task:
     start task _stopevents_
 
 _raindayevents_ task:
-    pick one of _chokingchild_ _fightersguild_ _payraintaxes_
+    pick one of _chokingchild_ _fightersguild_ _payraintaxes_ _killrats_
 
 _chokingchild_ task:
     start quest RLQchokingchild
 
 _fightersguild_ task:
     start quest RLQfightersguild
+
+_killrats_ task:
+    start quest RLQkillrats
 
 _payraintaxes_ task:
     pick one of _raintaxes1_ _raintaxes2_ _raintaxes3_

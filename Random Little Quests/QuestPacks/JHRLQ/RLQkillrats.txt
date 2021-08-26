@@ -1,0 +1,133 @@
+Quest: RLQkillrats
+DisplayName: Random Little Quest Kill Rats
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>        You find a small bag of gold at your feet, presumably
+<ce>                 your payment for completing the job.
+
+Message:  1011
+<ce>                  A tired-looking warrior hails you.
+<ce>
+<ce>         "Hi. I'm giving up on a task from the Fighters Guild
+<ce>          here in town to kill some rats infesting a house.
+<ce>            Turns out I got the plague halfway through and
+<ce>          am about to spend my savings at the temple. If you
+<ce>             want to go in and clean the rest, I'll split
+<ce>                    the reward with you. You in?"
+                                     <--->
+<ce>         A warrior with a bit of blood all around hails you.
+<ce>
+<ce>          "Hail. I got an assignment from the Fighters Guild
+<ce>       to kill some rats in a local house. But then they bit me
+<ce>          and I'm carrying some illness now. It's gonna wipe
+<ce>       out everything I earned this week to get a cure, and I'm
+<ce>        not risking that again. Wanna take over the contract?
+<ce>         Kill the remaining rats and I'll split it with you,
+<ce>                  half and half. What do you think?"
+
+Message:  1012
+<ce>             "Maybe you're smarter than I am. This guild
+<ce>             doesn't have your back when things get bad."
+<ce>
+<ce>          The wounded warrior heads off to find the temple.
+                                     <--->
+<ce>                   "Oh well. It was worth a shot."
+<ce>
+<ce>                 The fighter moves on to find a cure.
+                                     <--->
+<ce>                 "Maybe it's for the better. I should
+<ce>                       head back to the farm."
+<ce>
+<ce>                    The warrior leaves you alone.
+
+Message:  1013
+<ce>                  "It's called _place_, %di from here.
+<ce>              I think there's about 18 hours left before
+<ce>            they call the contract. If you can kill them,
+<ce>          I'll come back and make sure you get the payment."
+<ce>
+<ce>                The warrior heads off to find a cure.
+
+Message:  1014
+<ce>                      This is indeed the house.
+<ce>                    The smell of rodent is strong.
+
+Message:  1015
+<ce>                   Sounds like that's all of them.
+<ce>          You don't hear anything else moving in the house.
+
+Message:  1016
+%qdt:
+ A local warrior asked me for help
+ cleaning some rats out of
+ _place_ in ___place_.
+ I have about 18 hours
+ if I want to split the
+ payment with him.
+
+QBN:
+
+Foe _monster_ is Giant_rat
+
+Clock _timer_ 18:00
+
+Place _fighters_ local fighters
+Place _place_ local house
+
+Item _reward_ gold range 50 to 90
+
+--	Quest start-up:
+    prompt 1011 yes _accept_ no _reject_
+    start timer _timer_
+
+_reject_ task:
+    say 1012
+    end quest
+
+_accept_ task:
+    say 1013
+    log 1016 step 0
+    pc at _place_ set _inside_
+    pick one of _two_ _three_
+
+_inside_ task:
+    say 1014
+
+variable _two_
+variable _three_
+
+_spawntwo_ task:
+    when _inside_ and _two_
+    create foe _monster_ every 1 minutes 2 times with 80% success
+
+_spawnthree_ task:
+    when _inside_ and _three_
+    create foe _monster_ every 1 minutes 3 times with 80% success
+
+_killedtwo_ task:
+    killed 2 _monster_
+
+_killedthree_ task:
+    killed 3 _monster_
+
+_2vict_ task:
+    when _two_ and _killedtwo_
+    say 1015
+    start task _victory_
+
+_3vict_ task:
+    when _three_ and _killedthree_
+    say 1015
+    start task _victory_
+
+variable _victory_
+
+_getgold_ task:
+    when _victory_ and not _inside_
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    end quest
