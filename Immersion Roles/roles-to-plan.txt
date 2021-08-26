@@ -5,10 +5,11 @@ Roles should be general social concepts.
 Escaped Slave
 Merchant
 Pirate
-Outlaw (-30 legal reputation)
-Noble's child (+30 legal reputation)
+Outlaw (-30 legal reputation) (framed for murder, clear your name)
+Noble's child (+30 legal reputation) (plague prophesied to come, find clues and stop the source)
 Courier
 Weaponmaster
 Slayer (choose a specific monster type to fight against)
 Headhunter (bounty hunter)
 Dark Brotherhood adept (+10 reputation with DB)
+Devotee (get a vision of an impending disaster, travel to find the cursed artifact)
