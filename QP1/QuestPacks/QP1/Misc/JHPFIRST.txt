@@ -24,18 +24,18 @@ Message:  1011
 
 QBN:
 
-Clock _init_ 0:05
-Clock _timer_ 0:01
+Clock _init_ 0:00
+Clock _timer_ 0:00
 
 --   Quest start-up:
     start timer _init_
 
 _init_ task:
-    start timer _timer_
     start quest JHCART
     prompt 1011 yes _accept_ no _reject_
 
 _accept_ task:
+    start timer _timer_
     pick one of _q1_ _q2_ _q3_
 
 variable _reject_
