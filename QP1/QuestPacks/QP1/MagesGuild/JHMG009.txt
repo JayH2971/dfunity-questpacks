@@ -70,7 +70,7 @@ Message:  1012
 <ce>                      We'll do it the hard way.
 
 Message:  1013
-<ce>                 If _qgiver_ spoke correctly, by now
+<ce>                     If _qgiver_ spoke correctly,
 <ce>                     _client_ should have arrived
 <ce>                           at _res_ by now.
 
