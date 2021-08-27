@@ -2,14 +2,13 @@
 Note that these are NOT the same as character classes.
 Roles should be general social concepts.
 
-Escaped Slave
+Escaped Slave (escape from your captors, find their den eventually)
 Merchant
 Pirate
-Outlaw (-30 legal reputation) (framed for murder, clear your name)
-Noble's child (+30 legal reputation) (plague prophesied to come, find clues and stop the source)
+Outlaw (-20 legal reputation) (framed for murder, clear your name)
+Noble's child (+40 legal reputation) (plague prophesied to come, find clues and stop the source)
 Courier
-Weaponmaster
-Slayer (choose a specific monster type to fight against)
-Headhunter (bounty hunter)
-Dark Brotherhood adept (+10 reputation with DB)
+Justiciar (pursue justice for a person wronged, gain legal rep at end)
+-- Headhunter (bounty hunter)
+Dark Brotherhood initiate (+10 reputation with DB)
 Devotee (get a vision of an impending disaster, travel to find the cursed artifact)
