@@ -28,7 +28,7 @@ Message:  1012
 
 QBN:
 
-Item _potion_ potion key 4870452
+Item _potion_ potion key 4937012
 
 --	Quest start-up:
     prompt 1010 yes _pay_ no _reject_

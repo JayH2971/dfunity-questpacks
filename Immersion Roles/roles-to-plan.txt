@@ -3,8 +3,7 @@ Note that these are NOT the same as character classes.
 Roles should be general social concepts.
 
 Escaped Slave (escape from your captors, find their den eventually)
-Merchant
-Pirate
+Pirate (make your mark on the region, become a feared name, -20 legal rep at end)
 Outlaw (-20 legal reputation) (framed for murder, clear your name)
 Noble's child (+40 legal reputation) (plague prophesied to come, find clues and stop the source)
 Courier
@@ -12,3 +11,5 @@ Justiciar (pursue justice for a person wronged, gain legal rep at end)
 -- Headhunter (bounty hunter)
 Dark Brotherhood initiate (+10 reputation with DB)
 Devotee (get a vision of an impending disaster, travel to find the cursed artifact)
+The Monster, The Cursed?? (survive as long as possible, get random gifts. -100 legal reputation every 12 hours)
+Alchemist (gather ingredients for a potion rumored to give thousand years' life to a noble)

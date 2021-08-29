@@ -1,0 +1,77 @@
+Quest: IRDB2
+DisplayName: Dark Brotherhood Initiate Step 2
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  
+
+Message:  1011
+<ce>  A figure in a black hood puts a letter
+<ce>  into your pack and departs without
+<ce>  addressing you.
+
+Message:  1012
+%pcn
+<ce>  
+  Your passion to join the Dark Brotherhood
+has reached the ears of persons of importance.
+If you feel so inclined, one particular task
+would distinguish you from the many knife-wielding
+children whom the Brotherhood is gracious enough
+to grant membership.
+<ce>  
+  If this interests you, see _db_
+at _dbhouse_ in ___dbhouse_.
+Feel no hurry to contact %g2.
+That house is %g3 home, and %g1
+has no intention of moving.
+<ce>
+  This letter will cease to be in
+three days' time. Record anything of
+worth in it before then.
+
+Message:  1013
+%qdt:
+ I have slain the Dark Brotherhood's
+ apparent quarry, and hope to gain
+ their favor. If I have passed their
+ test of courage, I'll need to wait
+ until they contact me again. 
+
+Message:  1014
+%qdt:
+ I have slain the Dark Brotherhood's
+ quarry, and have been given
+ an unusual offer by an apparent
+ member thereof. I am directed to
+ see someone named _db_
+ who lives in _dbhouse_
+ ___dbhouse_ of ____dbhouse_
+ at my leisure.
+ 
+
+QBN:
+
+Item _letter_ letter used 1012
+
+Place _dbhouse_ remote house
+
+Person _db_ faction The_Dark_Brotherhood
+
+--	Quest start-up:
+    give pc _letter_ notify 1011
+    place npc _db_ at _dbhouse_
+    log 1013 step 0
+    _letter_ used do _changelog_
+
+_changelog_ task:
+    log 1014 step 0
+
+_return_ task:
+    clicked npc _pers_
+    give pc _gold_
+
+_timer_ task:
+    start quest IRDB3
+    end quest

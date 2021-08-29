@@ -71,3 +71,4 @@ _spel_ task:
 
 _refresh_ task:
     start quest IRDBinterlopers
+    end quest

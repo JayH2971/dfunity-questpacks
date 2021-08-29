@@ -1,5 +1,5 @@
 Quest: IRDB1
-DisplayName: Dark Brotherhood Step 1
+DisplayName: Dark Brotherhood Initiate Step 1
 -- Message panels
 QRC:
 
@@ -39,7 +39,7 @@ Message:  1013
  I have slain the Dark Brotherhood's
  apparent quarry, and hope to gain
  their favor. If I have passed their
- test of courage, I'll just have to wait
+ test of courage, I'll need to wait
  until they contact me again.
 
 QBN:
@@ -87,3 +87,10 @@ _travelstop_ task:
     when pc enters hamlet
     when pc enters city
     say 1012
+
+_level3_ task:
+    level 3 completed
+
+_nextstep_ task:
+    when _level3_ and _travelstop_
+    start quest IRDB2

@@ -1,0 +1,43 @@
+Quest: IRDBguards
+DisplayName: Dark Brotherhood vs Guards
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>    "Halt! This one consorts with the Dark Brotherhood!
+<ce>  Requesting backup!"
+<ce>  
+<ce>  Your history has won the guards' attention.
+<--->
+<ce>  "Halt! We have a murderer here, a friend
+<ce>  of the Dark Brotherhood!"
+<ce>  
+<ce>  If you wanted to be famous, here it is.
+<ce>  The city watch is after you.
+<--->  
+<ce>  "Stop right there criminal scum!
+<ce>  You're one of those Dark Brotherhood
+<ce>  filth, aren't you? Prepare to die!"
+<ce>  
+<ce>  A member of the city watch has spotted you
+<ce>  and calls for help.
+
+QBN:
+
+Clock _refresh_ 30.00:00 90.00:00
+
+Item _dummy_ gem
+
+--	Quest start-up:
+    give pc _dummy_ notify 1011
+    have _dummy_ set _remove_
+
+_remove_ task:
+    take _dummy_ from pc
+    setplayercrime Murder
+    spawncityguards immediate
+    start timer _refresh_
+
+_refresh_ task:
+    start quest IRDBguards
+    end quest
