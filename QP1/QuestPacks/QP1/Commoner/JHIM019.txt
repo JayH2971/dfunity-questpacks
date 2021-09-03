@@ -184,7 +184,7 @@ _bearisdead_ task:
     hide npc _questgiver_
 
 _act2_ task:
-    when _spawnhero_ and not _inside_
+    when _spawnhero_ and not _inside_ and not _bearisdead_
     pick one of _a1_ _a2_
 
 _a1_ task:
@@ -259,8 +259,15 @@ _clearclick3_ task:
     say 1020
     clear _clearclick3_ _qgclicked_
 
-_timeup_ task:
+variable _timeup_
+
+_timeout_ task:
+    when _timeup_ and not _bearisdead_
     say 1003
+    end quest
+
+_timeout2_ task:
+    when _timeup_ and _bearisdead_
     end quest
 
 _pcgetsgold1_ task:
