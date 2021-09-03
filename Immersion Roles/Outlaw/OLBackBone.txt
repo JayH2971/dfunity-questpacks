@@ -1,0 +1,77 @@
+Quest: OLBackBone
+DisplayName: Backbone for Outlaw Immersion Role
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  The shock of being called a murderer
+<ce>  has passed. You feel like you can look
+<ce>  people in the eyes now without fear.
+<ce>  This whole ordeal has been miserable,
+<ce>  and you feel your life has been turned
+<ce>  upside-down. But a certain sort of maturity
+<ce>  has been beaten into you by your trials.
+<ce>  You're starting to see how small you are
+<ce>  compared to this huge world -- and it's
+<ce>  eye-opening to see how easily a mere
+<ce>  accusation can ruin a life.
+
+--level 2
+
+Message:  1012
+<ce>  You no longer yearn for those simple, carefree
+<ce>  days before your involuntary life of crime began.
+<ce>  You're growing quickly from your adversities.
+<ce>  You never would have wished this to happen,
+<ce>  but working through it has taught you more
+<ce>  than the past several years.
+
+--level 4
+
+Message:  1013
+<ce>  It's amazing how much you've grown as a result
+<ce>  of one simple accusation. It changed your life
+<ce>  forever, and you think it's for the better.
+<ce>  You're using this as a springboard for
+<ce>  much greater things, and you already see some
+<ce>  of them on the horizon.
+
+--level 6
+
+Message:  1014
+<ce>  Looking back, you wonder how your life might
+<ce>  have been had you always lived innocent.
+<ce>  It had some advantages, to be sure.
+<ce>  But would you have gained everything you have now?
+<ce>  You have no room left for regret. Your experiences,
+<ce>  all you've gained, have paid you back too much
+<ce>  to regret anything. You have too much potential
+<ce>  to waste time on little nagging thoughts --
+<ce>  especially because you never chose this.
+<ce>  But you've made good things come
+<ce>  from this wild ride.
+
+--level 8
+
+QBN:
+
+
+--	Quest start-up:
+    start quest IROL1
+
+_level2_ task:
+    level 2 completed
+    say 1011
+
+_level4_ task:
+    level 4 completed
+    say 1012
+
+_level6_ task:
+    level 6 completed
+    say 1013
+
+_level8_ task:
+    level 8 completed
+    say 1014
+    end quest

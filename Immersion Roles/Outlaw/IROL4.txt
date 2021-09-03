@@ -1,0 +1,175 @@
+Quest: IROL4
+DisplayName: Outlaw Step 4
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>       _pers_ begins looking around and bothering the servants.
+<ce>
+<ce>     "Hello? Yes, I need to speak to your chief justice officer.
+<ce>    Yes, it is urgent. I need to clear this innocent %ra's name."
+<ce>
+<ce>          A few moments later, a harried and angry official
+<ce>       emerges to listen. _pers_ clears %g3 throat and begins.
+<ce>
+<ce>    "First of all, my sincerest thanks to you for giving me time.
+<ce>  You must be very busy searching for and punishing true criminals.
+<ce>            One of which, I must make clear, is not %pcn.
+<ce>       I was involved in a plot to frame %pg2 and abscond with
+<ce>        the money left behind by Registyr T'laik while the %t
+<ce>      fumbled about trying to find any remaining family members.
+<ce>      We were going to use that money to begin a larger network,
+<ce>   one that would survive without any dependencies on the cities."
+<ce>
+<ce>               _pers_ goes into length about the plot,
+<ce>             giving details no one would know except the
+<ce>          highest officials in the government. The officer's
+<ce>     demeanor softens as the story comes out. Putting everything
+<ce>         aside, he takes out a book and starts writing notes.
+<ce>                            Then he says,
+<ce>
+<ce>       "It's clear that we let ourselves be persuaded too much
+<ce>    by a single witness, no matter how well-crafted the story was.
+<ce>          It's a lesson of caution for us in the future, and
+<ce>             a grievous mistake to correct now. We do not
+<ce>          have any goods to return to you since you were not
+<ce>        arrested, but I will emit an edict clearing your name
+<ce>      this instant. You should face no more difficulty from the
+<ce>              city guard for the privilege of existing.
+<ce>         I will warn you, though, that any future crimes will
+<ce>               be held to your account. Remember that."
+<ce>
+<ce>                       _pers_ then bows to you.
+<ce>         "I am so sorry we involved you in this. You were not
+<ce>          the only victim in our schemes, and I will work to
+<ce>          extricate the others from their difficulties, too.
+<ce>            With the Marauders against me, my only hope is
+<ce>      in the %t's mercy. %god will that my hope be not in vain."
+<ce>          _pers_ is then led away in chains, and the officer
+<ce>      heads outdoors to tell messengers the truth of the matter.
+<ce>
+<ce>                        (QUEST LINE COMPLETE!)
+
+RumorsDuringQuest:  [1005]
+Some %ra is hiding around in ____palace_. I dunno why the guards don't just execute %pg2.
+<--->
+Someone got murdered in ____palace_, and the guards are letting %pg2 run free.
+
+RumorsPostSuccess:  [1007]
+Hey, you're that one who's not guilty! Hooray!
+<--->
+Wait, you're %pcn? Who was falsely accused? Wow, what misfortune.
+<--->
+Some %ra got exonerated from accusations of murder.
+
+Message:  1011
+<ce>             This letter seems particularly conspicuous.
+
+Message:  1012
+%qdt:
+ I have been accused of murdering
+ a person named Registyr T'laik.
+ A weapons expert led me to a
+ cave where I found an abandoned letter.
+
+Message:  1013
+Ogre:
+<ce>
+We're making a move. Head to ___res_ and
+kill _pers_. We'll split the money
+and head to our new hideout.
+Hurry up about it.
+<ce>
+Troll
+
+Message:  1014
+%qdt:
+ I have found a coded letter talking about
+ killing someone named _pers_
+ who lives in ___res_. If I can get
+ there first, maybe I could make it
+ work to my advantage somehow.
+
+Message:  1015
+<ce>           Once you enter the residence, you hear startled
+<ce>                shouting outside. "Hey! Get a move on!
+<ce>              %pcn's already inside the house! Come on!"
+
+Message:  1016
+<ce>                You tell _pers_ your name and show %g2
+<ce>               the coded letter you found. "Oh my word.
+<ce>                   Yes, we must leave immediately.
+<ce>                     Please, get us out of here."
+
+Message:  1017
+<ce>                Now free of danger, _pers_ speaks up.
+<ce>
+<ce>           "Thank you very much, %pcn. I am, or was, one of
+<ce>           the leading members of the Marauders. Apparently
+<ce>        I've been kicked out of the club. I owe you my life."
+<ce>
+<ce>                You tell _pers_ that you need %g3 help
+<ce>                         to clear your name.
+<ce>
+<ce>            "I can do no less, for you have saved my life.
+<ce>             Perhaps the %t will extend leniency to me if
+<ce>                I help root out my remaining brethren.
+<ce>            I will follow you to the palace of ___palace_.
+<ce>           There, I will make everything known to the law,
+<ce>             and you will be left in peace, I swear it."
+
+Message:  1018
+%qdt:
+ I have rescued _pers_, one of the former
+ leaders of the Marauder band.
+ In exchange, %g1 will testify on my behalf
+ to the officials at the _palace_ of ___palace_
+ once we arrive there.
+
+QBN:
+
+Person _pers_ faction The_Thieves_Guild
+
+Place _res_ remote house
+Place _palace_ remote palace
+
+Item _tanto_ item class 3 subclass 1
+Item _letter_ letter used 1013
+
+Foe _enemy_ is Assassin
+
+--	Quest start-up:
+    say 1011
+    log 1012 step 0
+    get item _letter_
+    get item _tanto_
+    _letter_ used do _reveal_
+
+_reveal_ task:
+    log 1014 step 1
+    pc at _res_ do _inside_
+    place npc _pers_ at _res_
+
+_inside_ task:
+    say 1015
+    create foe _enemy_ every 1 minutes 2 times with 100% success
+
+_clicked_ task:
+    clicked npc _pers_
+    say 1016
+    add _pers_ face
+    hide npc _pers_
+
+_talk_ task:
+    when _clicked_ and not _inside_
+    say 1017
+    log 1018 step 1
+    pc at _palace_ do _victory_
+
+_victory_ task:
+    drop _pers_ face
+    make _tanto_ permanent
+    give pc nothing
+    legal repute -200
+    legal repute +100
+    end quest

@@ -1,0 +1,154 @@
+Quest: IROL3
+DisplayName: Outlaw Step 3
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>                       "Hello? Ah, you're %pcn!
+<ce>                  The fact that you haven't stabbed
+<ce>                  me means you're in a mood to talk.
+<ce>                I guess we're both pretty lucky today!
+<ce>
+<ce>             "You may have been surprised by the rapidity
+<ce>                  of the guards' advance on you, but
+<ce>           we had your guilt based on very good authority.
+<ce>              A witness named you perfectly, and gave us
+<ce>            details coinciding with the scene of the crime
+<ce>            and the manner of execution that we could not
+<ce>                 plausibly deny. I think we acted in
+<ce>               good conscience in trying to tie you up.
+<ce>           But I'm willing to allow a proper defense before
+<ce>                  we have you hauled out in chains."
+<ce>
+<ce>               You ask who the witness was, and receive
+<ce>             only a head shake. "No, I'm sorry, I cannot
+<ce>             tell you that. If you really are guilty, you
+<ce>              would murder the key witness in the case,
+<ce>            wouldn't you? We have no room for error here,
+<ce>        not with the very %t receiving reports on this matter.
+<ce>           We'll give you time to proceed on your defense,
+<ce>          but we will not expose the innocent to help you."
+<ce>
+<ce>               You ask what they know about the murder.
+<ce>
+<ce>            "This iron tanto was recovered from the scene.
+<ce>          We have no use for it anymore, so you can have it
+<ce>            as you build your defense. Our witness saw you
+<ce>           stab Registyr T'laik multiple times as he slept,
+<ce>           and when the witness called out for the guards,
+<ce>            the story is that you fled, leaving the weapon
+<ce>                            in the body."
+<ce>
+<ce>               Finally, you ask who Registyr T'laik is.
+<ce>
+<ce>         "A recent immigrant from the inner bay, it appears.
+<ce>                Wealthy, single, and a bit flamboyant.
+<ce>          We have no record of any family of his, so whether
+<ce>            he cut ties with them all or they're all dead,
+<ce>            we do not know. If the %t gets no information
+<ce>       concerning his estate in the next few months, his goods
+<ce>          will be seized and distributed to the city watch."
+<ce>
+<ce>           You've asked all the questions you can think of.
+<ce>            You thank the noble for giving you this time.
+
+Message:  1012
+%qdt:
+ I have been accused of murdering
+ a person named Registyr T'laik.
+ The government official in charge of
+ the case told me Registyr had no family
+ and was quite wealthy. A single anonymous
+ witness pinned this on me. I retrieved the
+ iron tanto used in the murder. Perhaps
+ someone can tell me more about it.
+
+Message:  1013
+Go ask _npc_ at _place_ about that. Weapons expert, but not reputable with the law.
+<--->
+Look at them insignias on it. _npc_'s the best expert in ___place_, go ask %g2 at _place_.
+
+Message:  1014
+<ce>     Hail. You want info on that iron tanto of yours, don't you?
+<ce>      I don't even need a closer look at it. I already know more
+<ce>       than the ignorant guards do. But that information comes
+<ce>       at a price. Give me 500 and I'll tell you enough to make
+<ce>                           your head spin.
+
+Message:  1016
+<ce>        You want info on that iron tanto of yours, don't you?
+<ce>             I've got info, and it costs 500. Yes, you're
+<ce>            a smart one, aren't you? Thank you very much.
+<ce>
+<ce>                Insignia like that belongs to a group
+<ce>                  calling themselves the Marauders.
+<ce>              Fools gaining power, thinking they're some
+<ce>               kind of new Dark Brotherhood. Just some
+<ce>                common cutthroats trying to establish
+<ce>                  themselves in %crn, nothing more.
+<ce>                    Their hideout is a hole called
+<ce>                  ___dung_ here in this same region.
+<ce>                       Here it is on your map.
+<ce>                   They're small-time, I tell you.
+<ce>
+<ce>                Wonder why the guards don't know this?
+<ce>          They don't pay. They bumble around, thinking they
+<ce>         can get info from the underground through extortion.
+<ce>          Bunch of morons. I don't make a living from being
+<ce>         threatened. Good luck to you. I hear the law's gonna
+<ce>       have your head if you don't get moving. I'm outta here.
+
+Message:  1017
+%qdt:
+ A local weapons expert has exposed the tanto's origin.
+ It belongs to a criminal group called the Marauders.
+ Their base is a place called ___dung_
+ in ____dung_.
+
+Message:  1018
+<ce>            This is supposedly the base of the Marauders.
+<ce>               You hope to find something of use here.
+
+QBN:
+
+Person _npc_ faction The_Thieves_Guild
+
+Place _place_ local random
+Place _dung_ remote dungeon15
+
+Item _tanto_ item class 3 subclass 1 anyInfo 1013
+Item _letter_ letter
+
+--	Quest start-up:
+    say 1011
+    get item _tanto_
+    pc at _place_ do _provide_
+    log 1012 step 0
+    hide npc _npc_
+
+_provide_ task:
+    place npc _npc_ at _place_
+
+_payable_ task:
+    clicked _npc_ and at least 500 gold otherwise do _insufficient_
+    start task _payout_
+
+_payout_ task:
+    say 1016
+    reveal _dung_
+    destroy _npc_
+    log 1017 step 1
+    place item _letter_ at _dung_
+    pc at _dung_ do _inside_
+
+_insufficient_ task:
+    say 1014
+    clear _payable_
+
+_inside_ task:
+    say 1018
+
+_clickeditem_ task:
+    clicked item _letter_
+    start quest IROL4
+    end quest

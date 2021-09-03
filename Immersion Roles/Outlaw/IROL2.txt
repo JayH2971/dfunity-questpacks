@@ -1,0 +1,205 @@
+Quest: IROL2
+DisplayName: Outlaw Step 2
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>                       You step into ___home_,
+<ce>                      fearful of being arrested.
+<ce>                 You take a quick look around and are
+<ce>                 relieved to see that the city guards
+<ce>               restrain themselves at the sight of you.
+<ce>                Apparently they do believe in the rule
+<ce>                of law here after all. You don't know
+<ce>              how long it'll last, but you have a chance
+<ce>                         to clear your name.
+
+Message:  1012
+%qdt:
+ I have been accused of murder
+ in ___home_, of a person named
+ Registyr T'laik who apparently
+ lived there. I have returned to
+ find something that could clear
+ my name.
+
+Message:  1013
+<ce>                             "Hey! %pcf!"
+<ce>
+<ce>               You're brought up straight by a whisper.
+<ce>                 You recognize who it is without even
+<ce>                 turning around. At a time like this,
+<ce>                      a friend like _friend_ is
+<ce>                      worth %g3 weight in gold.
+<ce>
+<ce>                     "%oth, where have you been?
+<ce>                   Come to _home_. We need to talk
+<ce>                       about what's going on."
+<ce>
+<ce>                   _friend_ slips from view, making
+<ce>                  sure the guards haven't seen %g2.
+<ce>
+
+Message:  1014
+%qdt:
+ I have been accused of murder
+ in ___home_, of a person named
+ Registyr T'laik who apparently
+ lived there. I have returned to
+ find something that could clear
+ my name. My old friend _friend_
+ wants me to follow %g2
+ to %g3 home, _home_,
+ to talk about my accusations.
+
+Message:  1015
+<ce>                  What a relief to be in the safety
+<ce>                     of a friend's home. _friend_
+<ce>                    brings you some water and bids
+<ce>                           you take a seat.
+<ce>
+<ce>                "What on Tamriel has happened to you?
+<ce>                    People calling you a murderer?
+<ce>              Who even is this Registyr person anyway?"
+<ce>
+<ce>               Of all the things you've done, you know
+<ce>               for a fact this can't be pinned on you.
+<ce>            You also have no idea who Registyr T'laik is.
+<ce>               You recount that you were merely walking
+<ce>             to the store, and the guards started chasing
+<ce>                   you and accusing you of murder.
+<ce>                 You tell _friend_ where you've been
+<ce>                   in the meantime, and %g1 shakes
+<ce>                          %g3 head in pity.
+<ce>
+<ce>                      "The sad part is, in %crn
+<ce>               your accusations are already being taken
+<ce>                into account against you. Don't commit
+<ce>                  any more crimes while you're here,
+<ce>                 not even vagrancy. I hear talk that
+<ce>              they're so suspicious of you, pretty much
+<ce>            anything will count as proof of your crimes."
+<ce>
+<ce>            As %g1 thinks, %g1 remembers, "The official in
+<ce>             charge of investigating crimes for this area
+<ce>                 is in the palace over at ___palace_.
+<ce>                    _noble_, I think the name is.
+<ce>                 If you try to talk to %g2, maybe you
+<ce>                    can try to find some lead on a
+<ce>                        way out of this mess."
+<ce>
+<ce>                  _friend_ gives you a hug and says,
+<ce>               "I wouldn't wish this on my worst enemy,
+<ce>               much less a best friend. Please be safe.
+<ce>         Life is so short. Get this resolved quickly. Okay?"
+
+Message:  1016
+%qdt:
+ I have been accused of murder
+ in ___home_, of a person named
+ Registyr T'laik who apparently
+ lived there. I have returned to
+ find something that could clear
+ my name. My old friend _friend_
+ told me to look for an official
+ named _noble_ at the Palace
+ of ___palace_, who oversees
+ my case. With any luck, %g1
+ will give me some chance to
+ proof my innocence.
+
+Message:  1017
+<ce>               As you enter, a servant asks who you're
+<ce>                  looking for. "_noble_? I'm sorry,
+<ce>             %g1 is out visiting the neighboring cities.
+<ce>             But I'll leave a message for %g2, and we'll
+<ce>              send you a letter as soon as %g1 returns."
+<ce>
+<ce>               It looks like you have no choice but to
+<ce>                  occupy your time in something else
+<ce>                          until %g1 returns.
+
+Message:  1018
+%qdt:
+ I tried to find _noble_ at
+ the palace of ___palace_,
+ but %g1 has gone out to visit
+ other cities. I will receive a
+ letter when %g1 returns.
+
+Message:  1019
+<ce>                  A messenger bearing the colors of
+<ce>                     ____palace_ bows before you
+<ce>                        and pronounces, "%pcn?
+<ce>                     I'm here to inform you that
+<ce>                 _noble_ has returned to ___palace_.
+<ce>              A sincere apology for the inconvenience."
+<ce>
+<ce>                        The page then departs.
+<ce>         This isn't precisely a letter, but it's good enough.
+
+QBN:
+
+Person _friend_ group Local_3.0
+Person _noble_ faction Dancers
+
+Place _palace_ remote palace
+Place _home_ local house
+
+Item _letter_ letter
+
+Clock _timer_ 0:02
+Clock _delay_ 12:00 1.00:00
+
+--	Quest start-up:
+    say 1011
+    pc at _palace_ do _inside_
+    log 1012 step 0
+    start timer _timer_
+
+_timer_ task:
+    say 1013
+    place npc _friend_ at _home_
+    log 1014 step 0
+
+_click_ task:
+    clicked npc _friend_
+    say 1015
+    log 1016 step 0
+    place npc _noble_ at _palace_
+
+variable _inside_
+
+_level3_ task:
+    level 3 completed
+
+_fakeout_ task:
+    when _inside_ and not _level3_
+    say 1017
+    hide npc _noble_
+    start task _hidden_
+    log 1018 step 1
+
+variable _hidden_
+
+_reveal_ task:
+    when _hidden_ and _level3_
+    start timer _delay_
+
+_delay_ task:
+    restore _noble_
+    give pc _letter_ notify 1019
+    take _letter_ from pc
+    remove log step 1
+
+_clicknoble_ task:
+    clicked npc _noble_
+
+_clearclick_ task:
+    when _clicknoble_ and not _inside_
+    clear _clicknoble_ _clearclick_
+
+_nextstep_ task:
+    when _clicknoble_ and _inside_
+    start quest IROL3
+    end quest

@@ -1,0 +1,111 @@
+Quest: IROL1
+DisplayName: Outlaw Step 1
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>                         YOU ROLE IS: OUTLAW
+<ce>
+<ce>             You feel like you're living in a nightmare.
+<ce>
+<ce>            Days previous, you were surrounded by hostile
+<ce>             guards who claimed to have evidence that you
+<ce>          murdered someone named Registyr T'laik, a resident
+<ce>                    of ___town_ where you resided.
+<ce>             Resided, most certainly past tense. Now you
+<ce>                don't know what to do. If you want to
+<ce>              clear your name, you'll have to go back to
+<ce>              ___town_, hoping the city watch will have
+<ce>         pity on you to let you find some exonerating proof.
+<ce>
+<ce>           You fled for hours and hours, seeking some kind
+<ce>             of refuge from the accusations from without
+<ce>               and fear from within. This place looked
+<ce>                empty when you entered, but it appears
+<ce>             something has stirred up its usual denizens.
+<ce>              You'll make sure you keep a map next time
+<ce>                    you explore a dangerous cave.
+<ce>
+<ce>              If you make no effort at all to clear your
+<ce>            name in %crn, your window of opportunity will
+<ce>               close. That's another option, of course.
+<ce>            Just move on and find another home, somewhere
+<ce>                 far from here. The choice is yours.
+
+Message:  1012
+<ce>              You enter this settlement and look around.
+<ce>             You see concerned eyes and guarded stances.
+<ce>               Apparently your bad reputation has made
+<ce>               it this far. You look forward to a life
+<ce>                without a burden of proof against you.
+
+Message:  1013
+%qdt:
+ I have been accused of murder
+ in ___town_, of a person named
+ Registyr T'laik who apparently
+ lived there. I could choose
+ whether to flee ____town_ entirely
+ or return to the town and
+ find something that will
+ exonerate me.
+
+Message:  1014
+<ce>                  You're ready to move on. ___town_
+<ce>                 and ___town_ will have to deal with
+<ce>                       their own controversies.
+<ce>                You have an entirely new life to lead,
+<ce>                and you intend to make the best of it.
+
+QBN:
+
+Item _weapon1_ item class 9 subclass 2
+Item _weapon2_ item class 9 subclass 2
+Item _weapon3_ religious
+Item _gold_ gold range 100 to 200
+Item _armor1_ potion key 4870452
+Item _armor2_ potion key 224588
+Item _armor3_ potion key 240081
+Item _armor4_ potion key 4815872
+
+Place _town_ remote city
+
+--	Quest start-up:
+    say 1011
+    get item _weapon1_
+    get item _weapon2_
+    get item _weapon3_
+    get item _gold_
+    get item _armor1_
+    get item _armor2_
+    get item _armor3_
+    get item _armor4_
+    make _weapon1_ permanent
+    make _weapon2_ permanent
+    make _weapon3_ permanent
+    make _gold_ permanent
+    make _armor1_ permanent
+    make _armor2_ permanent
+    make _armor3_ permanent
+    make _armor4_ permanent
+    pc at _town_ do _nextstep_
+    log 1013 step 0
+    legal repute -9
+
+_travelstop_ task:
+    when pc enters village
+    when pc enters hamlet
+    when pc enters city
+
+_flavor_ task:
+    when _travelstop_ and not _nextstep_
+    say 1012
+
+_nextstep_ task:
+    start quest IROL2
+    end quest
+
+_level5_ task:
+    level 5 completed
+    say 1014
+    end quest
