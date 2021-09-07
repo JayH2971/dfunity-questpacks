@@ -51,6 +51,12 @@ Message:  1011
 <ce>
 <ce>           You've asked all the questions you can think of.
 <ce>            You thank the noble for giving you this time.
+<ce>
+<ce>           (IMPORTANT: At this point you're supposed to ask
+<ce>         townspeople about the Iron Tanto and get told where
+<ce>               to go, but that's not working right now.
+<ce>           You need to find _npc_ at _place_ in ___place_.
+<ce>               This will not show up in your journal!)
 
 Message:  1012
 %qdt:
