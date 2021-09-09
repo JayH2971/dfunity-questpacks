@@ -1,0 +1,55 @@
+Quest: mosquitos
+DisplayName: Insect Swarm
+-- Wilderness event, swamp
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              mosquitos 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             mosquitos 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             mosquitos 1002 Called
+
+QuestFail:  [1003]
+<ce>         mosquitos 1003 Called
+
+QuestComplete:  [1004]
+<ce>         mosquitos 1004 Called
+
+Message:  1010
+<ce>   You are beset by a swarm of hostile insects.
+<ce>   The disease-riddled creatures bite and drink from you
+<ce>   what they can, and then depart to find fresher prey.
+
+QBN:
+
+Clock _failsafe_ 0:02
+
+--	Quest start-up:
+    start timer _failsafe_
+    say 1010
+    pick one of _e1_ _e2_ _e2_
+
+_e1_ task:
+    pick one of _f1_ _f2_ _f3_ _f4_
+
+_f1_ task:
+    make pc ill with Stomach_Rot
+
+_f2_ task:
+    make pc ill with Consumption
+
+_f3_ task:
+    make pc ill with Swamp_Rot
+
+_f4_ task:
+    make pc ill with Wound_Rot
+
+_e2_ task:
+    end quest
+
+_failsafe_ task:
+    end quest

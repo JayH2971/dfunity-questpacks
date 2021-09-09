@@ -1,0 +1,133 @@
+-- Perpetual Quest
+Quest: JHPQ033
+DisplayName: The Friendly Orc
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  ERROR 1000 JHPQ033
+
+RefuseQuest:  [1001]
+<ce>  ERROR 1001 JHPQ033
+
+AcceptQuest:  [1002]
+<ce> ERROR 1002 JHPQ033
+
+QuestFail:  [1003]
+<ce>  ERROR 1003 JHPQ033
+
+QuestComplete:  [1004]
+<ce>  Whatever this orc's plans were, the creature is
+<ce>  now finished. You take pride in protecting this
+<ce>  part of %crn from its kind.
+
+Message:  1010
+<ce>  An odd sight is before you: an orc is meandering
+<ce>  about the city as a common citizen would.
+<ce>  The town guard are either unaware or intentionally
+<ce>  ignorant of its presence. Orcs can be crafty creatures,
+<ce>  and this supposed passerby could be a scout for a
+<ce>  an attack on civilized folk. Do you wish to stop it?
+
+Message:  1011
+<ce>  You shout in the orc's language, making it straighten up
+<ce>  immediately. You interrogate it concerning its doings
+<ce>  and plans, and as the answers become more and more
+<ce>  vague, the creature's agitation increases. Soon it
+<ce>  unsheathes its sword and prepares to cut you down.
+
+Message:  1012
+<ce>  You advance toward the creature. Sensing your hostile
+<ce>  intentions, it reciprocates and unsheathes its blade.
+
+Message:  1013
+<ce>  Whatever it's doing is none of your business.
+<ce>  Surely if there were a problem, the town guard would solve it.
+
+Message:  1020
+<ce>  You shout in the orc's language, making it straighten up
+<ce>  immediately. You interrogate it concerning its doings
+<ce>  and plans, to which it answers truthfully concerning its
+<ce>  desires to assimilate peacefully into civilization.
+<ce>  With no reason to doubt its words, you wish it well and
+<ce>  the two of you depart in peace.
+
+QBN:
+Clock _timer_ 0:30
+Clock _failsafe_ 7.00:00
+Clock _delay_ 0:01 0:02
+
+Foe _enemy_ is Orc
+
+--	Quest start-up:
+	start timer _failsafe_
+
+ _enter_ task:
+    when pc enters city
+    start timer _delay_
+    stop timer _failsafe_
+    start timer _timer_
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest
+
+_delay_ task:
+    prompt 1010 yes _fight_ no _watch_
+
+_fight_ task:
+    pick one of _e1_ _e2_
+    pick one of _go1_ _go2_ _go3_
+
+variable _e1_
+variable _e2_
+_check1_ task:
+   when skill Orcish is at least 25
+
+_check2_ task:
+    when skill Orcish is at least 35
+
+_check3_ task:
+    when skill Orcish is at least 45
+
+variable _go1_
+variable _go2_
+variable _go3_
+_c1_ task:
+    when _check1_ and _go1_
+    start task _skilled_
+
+_c2_ task:
+    when _check2_ and _go2_
+    start task _skilled_
+
+_c3_ task:
+    when _check3_ and _go3_
+    start task _skilled_
+
+variable _skilled_
+_nospawn_ task:
+    when _skilled_ and _e1_
+    say 1020
+    end quest
+
+_spawn_ task:
+    when _skilled_ and _e2_
+    say 1011
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_simp_ task:
+    when _fight_ and not _skilled_
+    say 1012
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_slain_ task:
+    killed _enemy_
+    give pc nothing
+    end quest
+
+_watch_ task:
+    say 1013
+    end quest

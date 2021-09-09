@@ -1,0 +1,89 @@
+-- Perpetual Quest
+Quest: JHPQ014
+DisplayName: A Simple Accusation
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  ERROR 1000 JHPQ014
+
+RefuseQuest:  [1001]
+<ce>  ERROR 1001 JHPQ014
+
+AcceptQuest:  [1002]
+<ce> ERROR 1002 JHPQ014
+
+QuestFail:  [1003]
+<ce>  ERROR 1003 JHPQ014
+
+QuestComplete:  [1004]
+<ce>  You have evaded your brash accuser.
+
+Message:  1010
+<ce>  "Give me back my _gem_! Right now!"
+<ce>  
+<ce>  Someone is rapidly approaching, armed and furious.
+<ce>  You know you've done nothing wrong here.
+<--->
+<ce>  "%ra! Get back here, you thief!"
+<ce>  
+<ce>  It seems you've been falsely accused by
+<ce>  someone in no mood for civilized discussion.
+
+Message:  1011
+<ce>  "%oth! Give it up!"
+
+Message:  1012
+<ce>  "But... my family..."
+<ce>  
+<ce> Your accuser dead, the witnesses nearby murmur among
+<ce> themselves. With little effort they agree that you
+<ce> acted in self-defense and were justified. The crowd
+<ce> soon disperses without raising the alarm.
+
+Message:  1020
+<ce> For some this might have been a difficult situation,
+<ce> but for one of your speaking ability it is child's play.
+<ce> You concisely and simply explain where you have been
+<ce> for the last few hours, which is enough to convince
+<ce> your accuser of your innocence. After some sincere
+<ce> apologies you are left alone.
+
+QBN:
+Clock _timer_ 0:30
+
+Foe _enemy_ is Knight
+
+Item _gem_ gem
+
+--	Quest start-up:
+	start timer _timer_
+ say 1010
+ start task _question_
+
+variable _question_
+_etiq_ task:
+ when skill Etiquette is at least 40
+
+_avoid_ task:
+ when _question_ and _etiq_
+ say 1020
+ end quest
+
+_noavoid_ task:
+ when _question_ and not _etiq_
+ create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_inj_ task:
+ injured _enemy_
+ say 1011
+
+_slain_ task:
+ killed _enemy_
+ say 1012
+ end quest
+
+_timer_ task:
+ restrain foe _enemy_
+ give pc nothing
+ end quest

@@ -1,0 +1,98 @@
+-- Perpetual Quest
+Quest: JHPQ012
+DisplayName: A Quick Pilfering
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ012
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ012
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ012
+
+QuestFail:  [1003]
+<ce>         Surely such a distraction could appeal to
+<ce>         someone of lesser priorities than yourself.
+
+QuestComplete:  [1004]
+<ce>        It looks like the money is yours now.
+<ce>        You pocket it and get ready to move on.
+
+Message:  1010
+<ce>        You notice someone left a wagon unattended here.
+<ce>        It's mostly filled with edibles, neatly preserved
+<ce>        for sale. There's also a bag of coins tucked inside.
+<ce>        Do you quickly reach in and take the gold?
+<--->
+<ce>        You notice someone left a wagon unattended here.
+<ce>        It's mostly filled with clothes, folded and marked
+<ce>        for sale. There's also a bag of coins tucked inside.
+<ce>        Do you quickly reach in and take the gold?
+
+Message:  1011
+<ce>        You reach to untie the bag. Just before it comes
+<ce>        unloose, you hear someone shouting at you.
+<ce>        
+<ce>        "Thief! Thief, get away from my cart!"
+
+Message:  1012
+<ce> Someone of lesser skill might have been caught,
+<ce> but a pickpocket of your level can easily reach inside.
+
+QBN:
+Clock _timer_ 1:00
+Clock _delay_ 0:01 0:04
+
+Item _reward_ gold
+
+Foe _enemy_ is Acrobat
+
+--	Quest start-up:
+	
+ _enter_ task:
+   when pc enters city
+   start timer _delay_
+
+_delay_ task:
+   start timer _timer_
+   pick one of _hard_ _easy_
+	prompt 1010 yes _begin_ no _quit_
+
+variable _hard_
+variable _easy_
+variable _begin_
+
+_pick_ task:
+   when skill Pickpocket is at least 20
+
+_fight_ task:
+    when _hard_ and _begin_ and not _pick_
+    say 1011
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_nofight_ task:
+    when _hard_ and _begin_ and _pick_
+    say 1012
+    give pc _reward_
+    end quest
+
+_slain_ task:
+   killed _enemy_
+-legalrep -20
+   give pc _reward_
+   end quest
+
+_take_ task:
+    when _easy_ and _begin_
+    give pc _reward_
+    end quest    
+
+_timer_ task:
+   end quest
+
+_quit_ task:
+  say 1003
+  end quest

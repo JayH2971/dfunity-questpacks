@@ -1,0 +1,2 @@
+Villager asks you to plant evidence inside a store about a crime. Check upon entering store,
+yes to persuade, no to sneak. Get reward shortly after leaving store.

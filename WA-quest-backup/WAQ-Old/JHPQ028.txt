@@ -1,0 +1,124 @@
+-- Perpetual Quest
+Quest: JHPQ028
+DisplayName: The Marathon Runner
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ028
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ028
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ028
+
+QuestFail:  [1003]
+<ce> You leap forward and run to try to catch them.
+<ce> Making great bounds you fight hard to reach
+<ce> the loose papers, but soon your burst of speed
+<ce> runs out. You and the man watch as the papers
+<ce> flitter away. He thanks you for at least making
+<ce> the effort and heads elsewhere, depressed.
+
+QuestComplete:  [1004]
+<ce> At the drop of a hat you leap forward and race
+<ce> for the airborne papers. Quickly passing their
+<ce> owner, you sprint and catch them in midair before
+<ce> they can rise beyond your grasp. The man thanks
+<ce> you profusely.
+<ce> 
+<ce> "My %ra, you have no idea what this means to me!
+<ce> This is the last letter my mother ever wrote to me
+<ce> before she passed away! Dear friend, I have so little
+<ce> to reward you with. Perhaps it may not count for much,
+<ce> but would this recipe interest you? My humble means do
+<ce> not allow me any more than that, but please, take
+<ce> it at least as an expression of my gratitude.
+<ce> Praise be to %god!"
+<--->
+<ce> At the drop of a hat you leap forward and race
+<ce> for the airborne papers. Quickly passing their
+<ce> owner, you sprint and catch them in midair before
+<ce> they can rise beyond your grasp. The man thanks
+<ce> you profusely.
+<ce> 
+<ce> "My %ra, you have no idea what this means to me!
+<ce> This is the only drawing I made of my boyhood home two 
+<ce> decades past! Dear friend, I have so little
+<ce> to reward you with. Perhaps it may not count for much,
+<ce> but would this recipe interest you? My humble means do
+<ce> not allow me any more than that, but please, take
+<ce> it at least as an expression of my gratitude.
+<ce> Praise be to %god!"
+<--->
+<ce> At the drop of a hat you leap forward and race
+<ce> for the airborne papers. Quickly passing their
+<ce> owner, you sprint and catch them in midair before
+<ce> they can rise beyond your grasp. The man thanks
+<ce> you profusely.
+<ce> 
+<ce> "My %ra, you have no idea what this means to me!
+<ce> This is a list of ingredients I need to cure my sick
+<ce> sister! Dear friend, I have so little to reward
+<ce> you with. Perhaps it may not count for much,
+<ce> but would this recipe interest you? My humble means do
+<ce> not allow me any more than that, but please, take
+<ce> it at least as an expression of my gratitude.
+<ce> Praise be to %god!"
+
+Message:  1010
+<ce> "Hey, wait! Stop!"
+<ce> 
+<ce> A man shouts at some papers that have apparently escaped his grasp
+<ce> through a gust of wind. He attempts to run for them, but his pace
+<ce> can't quite match them, and he is in danger of losing them forever.
+<ce> If you were a swift runner, perhaps you could do what he could not.
+<ce> Do you make the attempt?
+
+Message:  1012
+<ce> There are many things that merit your time, but this is not
+<ce> one of them. Hopefully the papers aren't of very great value.
+
+QBN:
+Clock _failsafe_ 30.00:00
+Clock _timer_ 1:00
+Clock _delay_ 0:01 0:02
+
+Item _reward_ random_recipe
+
+--	Quest start-up:
+    start timer _failsafe_
+
+ _enter_ task:
+    when pc enters village
+    stop timer _failsafe_
+    start timer _delay_
+    start timer _timer_
+
+_delay_ task:
+    prompt 1010 yes _begin_ no _quit_
+
+variable _begin_
+_check1_ task:
+   when skill Running is at least 50
+
+_victory_ task:
+    when _check1_ and _begin_
+    give pc _reward_
+    end quest
+
+_fail_ task:
+    when _begin_ and not _check1_
+    say 1003
+    end quest
+
+_timer_ task:
+   end quest
+
+_failsafe_ task:
+   end quest
+
+_quit_ task:
+  say 1012
+  end quest

@@ -1,0 +1,139 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST02
+--JHFGA06 (Warm Ashes)
+DisplayName: First Rule about Fight Club
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHFGA06
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHFGA06
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHFGA06
+
+QuestFail:  [1003]
+<ce> You and your opponent square up and begin to
+<ce> fight once the signal is given. You trade blows
+<ce> rather equally, neither one gaining a real
+<ce> advantage over the other. After several minutes
+<ce> the crowd grows restless and you are both ejected
+<ce> in favor of more skilled combatants.
+
+QuestComplete:  [1004]
+<ce> You make a ready stance before your opponent.
+<ce> The right opportunity comes seconds after the
+<ce> fight starts. You wheel back and lunge forward
+<ce> with a haymaker that sends the other fighter to the
+<ce> ground. You shake hands afterwards to reassure the
+<ce> startled crowd and the officiator gives you
+<ce> your well-earned prize.
+
+Message:  1010
+<ce> A crowd has gathered to watch fisticuff matches
+<ce> among the local citizenry. The organizer carries
+<ce> several sacks of money which are destined for
+<ce> the winners of each match. It looks like the
+<ce> next round is about to start and an opponent has
+<ce> volunteered. Do you want to try your hand?
+
+Message:  1012
+<ce> Surely if violence is called for, it would be to more
+<ce> fulfilling ends than this. You depart from the crowd.
+
+QBN:
+Clock _failsafe_ 7.00:00
+Clock _timer_ 1:00
+Clock _delay_ 0:01 0:02
+
+Item _reward_ gold range 251 to 399
+
+--	Quest start-up:
+    start timer _failsafe_
+	
+---------* Sound**---
+_makesound_ task:
+	play sound talking_loud every 0 minutes 10 times
+	clear _makesound_
+	
+_makesound2_ task:
+	play sound laughter_loud every 0 minutes 10 times
+	clear _makesound2_
+	
+_makesound3_ task:
+	play sound levelup_gong every 0 minutes 10 times
+	clear _makesound3_
+
+
+ _enter_ task:
+   when pc enters city
+   setvar _makesound_ 
+   stop timer _failsafe_
+    start timer _delay_
+    start timer _timer_
+
+_delay_ task:_
+    prompt 1010 yes _begin_ no _quit_
+
+_begin_ task:
+    pick one of _go1_ _go2_ _go3_
+
+_check1_ task:
+   when skill HandToHand is at least 20
+
+_check2_ task:
+    when skill HandToHand is at least 30
+
+_check3_ task:
+    when skill HandToHand is at least 40
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+    when _check1_ and _go1_
+    start task _victory_
+
+_c2_ task:
+    when _check2_ and _go2_
+    start task _victory_
+
+_c3_ task:
+    when _check3_ and _go3_
+    start task _victory_
+
+_d1_ task:
+    when not _check1_ and _go1_
+    start task _fail_
+
+_d2_ task:
+    when not _check2_ and _go2_
+    start task _fail_
+
+_d3_ task:
+    when not _check3_ and _go3_
+    start task _fail_
+
+_victory_ task:
+    give pc _reward_
+	setvar _makesound3_
+    end quest
+
+_fail_ task:
+    say 1003 
+	setvar _makesound2_ 
+    end quest
+
+_timer_ task:
+   end quest
+
+_failsafe_ task:
+   end quest
+
+_quit_ task:
+  say 1012
+  clear _makesound_ 
+  end quest

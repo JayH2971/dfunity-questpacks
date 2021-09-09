@@ -1,0 +1,120 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST07
+--JHFGA03 (Warm Ashes)
+DisplayName: Call for Help
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ043
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ043
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ043
+
+QuestFail:  [1003]
+<ce> ERROR 1003 JHPQ043
+
+QuestComplete:  [1004]
+<ce>  Whatever manner of trap this was, you
+<ce>  hope the fools have learned their lesson.
+
+Message:  1010
+<ce>  "Hey, take this. Gotta go."
+<ce>  
+<ce>  You barely see the messenger before you have
+<ce>  already lost sight of him. A parchment remains
+<ce>  in your hand after the fact.
+<--->
+<ce>  "Hey, take this. Gotta go."
+<ce>  
+<ce>  You barely see the messenger before you have
+<ce>  already lost sight of her. A parchment remains
+<ce>  in your hand after the fact.
+
+Message:  1011
+ My good friend! How good it is to know you
+ are alive! I am happy for your continued
+ success in the face of ambitious adventure.
+ I am going to ask your help. Please meet me in
+ _start_, my home in
+ ___start_. It is very urgent.
+ I will be here for =2start_ days.
+<ce>
+                _client_
+
+Message:  1012
+<ce> A tripwire snaps behind the door as you
+<ce> push it open. A bell sounds. Deeper within the
+<ce> house you hear a shout.
+<ce> 
+<ce> "It worked, boys! Come on!"
+<--->
+<ce> A tripwire snaps behind the door as you
+<ce> push it open. A bell sounds. Deeper within the
+<ce> house you hear a shout.
+<ce> 
+<ce> "Hurry! Move! Go!"
+
+QBN:
+Person _client_ group Local_3.0
+
+Place _start_ remote house
+
+Foe _e1_ is Spellsword
+Foe _e2_ is Mage
+Foe _e3_ is Sabretooth_tiger
+
+Clock _2start_ 00:00 0 flag 2 range 0 2
+Clock _bellt2_ 00:01
+Clock _avoid_ 2:00
+
+Item _letter_ letter used 1011
+
+--	Quest start-up:
+    give pc _letter_ notify 1010
+    pc at _start_ do _inside_
+    have _letter_ set _countdown_
+
+_countdown_ task:
+    start timer _2start_
+
+_inside_ task:
+    say 1012
+    start task _bellt_
+    create foe _e1_ every 1 minutes 2 times with 100% success
+    create foe _e2_ every 1 minutes 2 times with 100% success
+    create foe _e3_ every 1 minutes 1 times with 100% success
+    start timer _avoid_
+
+_kill1_ task:
+    killed 2 _e1_
+
+_kill2_ task:
+    killed 2 _e2_
+
+_bellt_ task:
+  play sound belltower every 0 minutes 1 times
+  start timer _bellt2_
+
+_bellt2_ task:
+  clear _bellt_
+
+_pcgetsgold_ task:
+    when _kill1_ and _kill2_
+    start task _victory_
+
+_avoid_ task:
+    remove foe _e1_
+    remove foe _e2_
+    remove foe _e3_
+    start task _victory_
+
+_victory_ task:
+    give pc nothing
+    end quest
+
+_2start_ task:
+    end quest

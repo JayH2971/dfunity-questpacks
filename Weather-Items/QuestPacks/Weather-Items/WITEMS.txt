@@ -1,0 +1,20 @@
+Quest: WITEMS
+DisplayName: Weather Items
+-- Message panels
+QRC:
+
+-Message: 1010
+-<ce>  You're glad you have a set of boots
+-<ce>  and a robe. You never know what
+-<ce>  you might encounter.
+
+QBN:
+Item _boots_ item class 6 subclass 8
+Item _robe_ item class 6 subclass 22
+
+--	Quest start-up:
+    get item _boots_
+    get item _robe_
+    make _boots_ permanent
+    make _robe_ permanent
+    end quest

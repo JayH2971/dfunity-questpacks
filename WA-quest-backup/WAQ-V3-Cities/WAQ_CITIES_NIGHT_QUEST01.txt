@@ -1,0 +1,115 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_NIGHT_QUEST01
+--JHPQ019 (Warm Ashes)
+DisplayName: Your Answer Please
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ019
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ019
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ019
+
+QuestFail:  [1003]
+<ce>          ERROR 1003 JHPQ019
+
+QuestComplete:  [1004]
+<ce> "Oh, what a joy to meet a fellow believer!
+<ce> There are so few of us these days. Let me
+<ce> give you this because of your good example!"
+<ce> 
+<ce> Your sudden friend reaches into a bag and
+<ce> hands you an object before waving farewell.
+
+Message:  1010
+<ce> You become aware of someone waving at you,
+<ce> trying to get your attention.
+<ce> 
+<ce> "Hey you! Wait! Are you a follower of %god?"
+<--->
+<ce> Someone comes near and
+<ce> immediately takes notice of you.
+<ce> 
+<ce> "Hey! Hey! Do you follow after %god?"
+
+Message:  1011
+<ce> "Too many of you freaks around.
+<ce> I've got a better god for you."
+<ce> 
+<ce> Your conversation partner brings out weaponry.
+<ce> You have no interest in knowing what this new deity is.
+
+Message:  1012
+<ce> "What a waste of time! Has that ever accomplished anything
+<ce> for you? Let me tell you about something better."
+<ce> 
+<ce> A prolonged conversation about some extremely
+<ce> complex sales system takes place. Whatever effort
+<ce> you put into understanding it is insufficient. Your
+<ce> conversation partner soon gives up and walks away.
+
+Message:  1013
+<ce> "Then die!"
+<ce> 
+<ce> A closer look at this person shows bright
+<ce> red eyes under her hood. People of her
+<ce> type have good reason to be wary of deity.
+
+Message:  1020
+<ce> "Well, it was worth asking."
+<ce> 
+<ce> You are left alone.
+
+QBN:
+Clock _failsafe_ 10.00:00
+Clock _timer_ 0:30
+Clock _delay_ 0:01 0:04
+
+Foe _barb_ is Barbarian
+Foe _vamp_ is Vampire
+
+Item _reward_ magic_item
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_enter_ task:
+    when pc enters city
+    start timer _delay_
+    start timer _timer_
+
+_delay_ task:
+    prompt 1010 yes _begin_ no _quit_
+
+_quit_ task:
+    say 1020
+    end quest
+
+_begin_ task:
+    pick one of _1_ _1_ _2_ _3_ _4_
+
+_1_ task:
+    give pc _reward_
+    end quest
+
+_2_ task:
+    say 1011
+    create foe _barb_ every 0 minutes 1 times with 100% success
+
+_3_ task:
+    say 1012
+    end quest
+
+_4_ task:
+    say 1013
+    create foe _vamp_ every 0 minutes 1 times with 100% success
+
+_timer_ task:
+   end quest
+
+_failsafe_ task:
+    end quest

@@ -1,0 +1,80 @@
+Quest: woodtreasure
+DisplayName: Treasure in the Woods
+-- Wilderness event, desert
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              woodtreasure 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             woodtreasure 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             woodtreasure 1002 Called
+
+QuestFail:  [1003]
+<ce>         woodtreasure 1003 Called
+
+QuestComplete:  [1004]
+<ce>  You open the lid and look inside.
+
+Message:  1010
+<ce>  You notice a treasure chest up ahead.
+<ce>  Its lid is left ajar, and you think
+<ce>  you can see something inside.
+<ce>  Steal its contents for yourself?
+
+Message:  1011
+<ce>  You move on, having plenty of reasons to avoid it.
+
+Message:  1012
+<ce>  You open the lid and find nothing.
+<ce>  Then a whistle sounds nearby.
+<ce>  This trap has caught another victim.
+
+QBN:
+
+Foe _hu1_ is Archer
+
+Item _gold_ gold range 151 to 399
+Item _flam1_ flamable
+Item _flam2_ flamable
+Item _flam3_ flamable
+Item _alch1_ small_plant
+Item _alch2_ large_plant
+Item _alch3_ mythic
+Item _alch4_ organs
+
+Clock _failsafe_ 0:03
+
+--	Quest start-up:
+    start timer _failsafe_
+    prompt 1010 yes _attempt_ no _deny_
+
+_deny_ task:
+    say 1011
+
+_attempt_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_
+
+_e1_ task:
+    give pc _gold_
+
+_e2_ task:
+    give pc _flam1_
+    give pc _flam2_
+    give pc _flam3_
+
+_e3_ task:
+    give pc _alch1_
+    give pc _alch2_
+    give pc _alch3_
+    give pc _alch4_
+
+_e4_ task:
+    say 1012
+    create foe _hu1_ every 0 minutes 3 times with 100% success
+
+_failsafe_ task:
+    end quest

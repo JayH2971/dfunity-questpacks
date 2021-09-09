@@ -1,0 +1,80 @@
+-- Person about to transform into werewolf, asks you to kill him/her before
+
+Quest: werewolf
+DisplayName: A Werewolf in Transformation
+-- Dungeon event
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              werewolf 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             werewolf 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             werewolf 1002 Called
+
+QuestFail:  [1003]
+<ce>         werewolf 1003 Called
+
+QuestComplete:  [1004]
+<ce>         werewolf 1004 Called
+
+Message:  1010
+<ce>  You are accosted by a frantic fellow adventurer.
+<ce>  
+<ce>  "Please, kill me! I've been cursed to turn into
+<ce>  a werewolf, and it's going to happen any second!
+<ce>  I don't want to slay the innocent! Please,
+<ce>  kill me before that happens!"
+<ce>  
+<ce>  Will you?
+
+Message:  1011
+<ce>     The panicked adventurer offers you his weapon
+<ce>  to get it over with. You make the kill as quick
+<ce>  as possible, and his dead body slumps over.
+<--->
+<ce>     The panicked adventurer offers you her weapon
+<ce>  to get it over with. You make the kill as quick
+<ce>  as possible, and her dead body slumps over.
+
+Message:  1012
+<ce>  The adventurer starts off in a different direction,
+<ce>  but doesn't make it far. He screams in a horrifying
+<ce>  manner as fur sprouts on all sides. Just before the
+<ce>  transformation finishes, the last of his remaining
+<ce>  intellect roars at you.
+<ce>  
+<ce>  "YOU IDIOT! IDIOT! WHY?!"
+<--->
+<ce>  The adventurer starts off in a different direction,
+<ce>  but doesn't make it far. She screams in a horrifying
+<ce>  manner as fur sprouts on all sides. Just before the
+<ce>  transformation finishes, the last of her remaining
+<ce>  intellect roars at you.
+<ce>  
+<ce>  "COWARD! WHY?!"
+
+QBN:
+
+Clock _failsafe_ 0:03
+
+Foe _hu1_ is Werewolf
+
+--	Quest start-up:
+    start timer _failsafe_
+    prompt 1010 yes _kill_ no _refuse_
+
+_kill_ task:
+    say 1011
+    end quest
+
+_refuse_ task:
+    say 1012
+    create foe _hu1_ every 0 minutes 1 times with 100% success
+    change foe _hu1_ infighting true
+
+_failsafe_ task:
+    end quest

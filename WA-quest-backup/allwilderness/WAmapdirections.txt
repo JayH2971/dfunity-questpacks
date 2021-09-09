@@ -1,0 +1,199 @@
+Quest: mapdirections
+DisplayName: A Map and Directions
+-- Wilderness event in Dragontail Mountains, Ilessan Hills, Sentinel, and Shalgora
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              mapdirections 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             mapdirections 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             mapdirections 1002 Called
+
+QuestFail:  [1003]
+<ce>         mapdirections 1003 Called
+
+QuestComplete:  [1004]
+<ce>  It doesn't take long to point the way
+<ce>  to the traveler's destination.
+<ce>  
+<ce>  "Oh %god, I was worried. I have
+<ce>  some time to make up but I'll make it
+<ce>  after all. Take this for your troubles.
+<ce>  Thank you!"
+
+Message:  1010
+<ce>  "Excuse me %ra, I'm a bit lost.
+<ce>  Do you know the way to ___place_?"
+<ce>  
+<ce>  A traveler nearby struggles to
+<ce>  understand a map.
+
+Message:  1011
+<ce>  "I'm trying to find ___place_ here
+<ce>   but I don't see where it is.
+<ce>  Do you know?"
+<ce>  
+<ce>  Take some time to help this errant wanderer?
+
+Message:  1012
+<ce>  You look at the map and find
+<ce>  ___place_ with little difficulty.
+<ce>  The traveler breathes a sigh of relief.
+<ce>  
+<ce>  "Oh %god, I was worried. I have
+<ce>  some time to make up but I'll make it
+<ce>  after all. Thank you!"
+<ce>  
+<ce>  Once you're left alone, you notice
+<ce>  someone has ruffled through your pack
+<ce>  to take some money.
+
+Message:  1013
+<ce>  You look at the map to find ___place_.
+<ce>  Unbeknownst to you, an accomplice sneaks
+<ce>  up behind you to try to pilfer some money.
+<ce>  However, lucky as you are, a snake leaps
+<ce>  out at the would-be robber and digs in its fangs.
+<ce>  
+<ce>  "Oh %god! No, no!"
+<ce>  
+<ce>  With the scheme gone horribly wrong,
+<ce>  the "traveler" casts a teleportation spell
+<ce>  to take them both to safety.
+<ce>  You lose nothing in the exchange.
+
+Message:  1014
+<ce>  "Not to worry, I'll find it. Farewell!"
+
+Message:  1015
+<ce>  You look at the map to find ___place_.
+<ce>  Just as you locate it, you sense a
+<ce>  sly hand trying to take some money from you.
+<ce>  You stop the theft in progress,
+<ce>  and the "traveler" and accomplice flee.
+
+QBN:
+
+Clock _failsafe_ 0:15
+
+Place _place_ remote random
+
+Foe _hu1_ is Ranger
+
+Item _reward_ flamable
+
+--	Quest start-up:
+    start timer _failsafe_
+    say 1010
+    create foe _hu1_ every 0 minutes 1 times with 100% success
+    restrain foe _hu1_
+
+_talk1_ task:
+    clicked foe _hu1_
+    prompt 1011 yes _accept_ no _deny_
+
+_deny_ task:
+    say 1014
+    end quest
+
+_accept_ task:
+    pick one of _true_ _false_
+
+_true_ task:
+    give pc _reward_
+    remove foe _hu1_
+    end quest
+
+_pickp_ task:
+    when skill Pickpocket is at least 90
+    start task _skilled_
+
+_stealth_ task:
+    when skill Stealth is at least 90
+    start task _skilled_
+
+variable _skilled_
+
+_false_ task:
+    pick one of _go1_ _go2_ _go3_
+
+_check1_ task:
+	when attribute Luck is at least 80
+
+_check2_ task:
+	when attribute Luck is at least 85
+
+_check3_ task:
+	when attribute Luck is at least 90
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+	when _check1_ and _go1_
+	start task _success_
+
+_c2_ task:
+	when _check2_ and _go2_
+	start task _success_
+
+_c3_ task:
+	when _check3_ and _go3_
+	start task _success_
+
+_d1_ task:
+	when not _check1_ and _go1_
+	start task _fail_
+
+_d2_ task:
+	when not _check2_ and _go2_
+	start task _fail_
+
+_d3_ task:
+	when not _check3_ and _go3_
+	start task _fail_
+
+_success_ task:
+    say 1013
+    remove foe _hu1_
+    end quest
+
+variable _fail_
+_ssave_ task:
+    when _fail_ and _skilled_
+    say 1015
+    remove foe _hu1_
+    end quest
+
+_bigfail_ task:
+    when _fail_ and not _skilled_
+    say 1012
+    remove foe _hu1_
+    pay 250 money do _failsafe_ otherwise do _v150_
+    
+_v150_ task:
+    pay 150 money do _failsafe_ otherwise do _v100_
+
+_v150_ task:
+    pay 150 money do _failsafe_ otherwise do _v100_
+
+_v100_ task:
+    pay 100 money do _failsafe_ otherwise do _v50_
+
+_v50_ task:
+    pay 50 money do _failsafe_ otherwise do _v25_
+
+_v25_ task:
+    pay 25 money do _failsafe_ otherwise do _failsafe_
+
+_failsafe_ task:
+    end quest
+
+_failsafe_ task:
+    remove foe _hu1_
+    end quest

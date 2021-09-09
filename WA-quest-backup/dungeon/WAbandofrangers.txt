@@ -1,0 +1,48 @@
+Quest: bandofrangers
+DisplayName: A Band of Rangers
+-- Dungeon event, human stronghold
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              bandofrangers 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             bandofrangers 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             bandofrangers 1002 Called
+
+QuestFail:  [1003]
+<ce>         bandofrangers 1003 Called
+
+QuestComplete:  [1004]
+<ce>         bandofrangers 1004 Called
+
+Message:  1010
+<ce>    A pair of rangers draws close and makes camp nearby.
+<ce>  
+<ce>  "Hail, stranger. Here we rest. Rest as well if you
+<ce>  believe in mutual protection."
+
+QBN:
+
+Clock _failsafe_ 9:00
+
+Foe _hu1_ is Ranger
+Foe _hu2_ is Ranger
+
+--	Quest start-up:
+    start timer _failsafe_
+    say 1010
+    create foe _hu1_ every 0 minutes 1 times with 100% success
+    create foe _hu2_ every 0 minutes 1 times with 100% success
+    change foe _hu1_ team 1
+    change foe _hu2_ team 1
+    change foe _hu1_ infighting true
+    change foe _hu2_ infighting true
+
+_failsafe_ task:
+    remove foe _hu1_
+    remove foe _hu2_
+    end quest

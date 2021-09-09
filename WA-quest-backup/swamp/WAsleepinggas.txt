@@ -1,0 +1,108 @@
+Quest: sleepinggas
+DisplayName: Sleep Trap
+-- Wilderness event, swamp
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              sleepinggas 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             sleepinggas 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             sleepinggas 1002 Called
+
+QuestFail:  [1003]
+<ce>         sleepinggas 1003 Called
+
+QuestComplete:  [1004]
+<ce>         sleepinggas 1004 Called
+
+Message:  1010
+<ce>  A puff of noxious fumes reaches your nose.
+<ce>  Before you can react, you black out.
+<ce>  Your weak constitution can't handle the
+<ce>  chemicals you've inhaled.
+<ce>  
+<ce>  You awaken soon after without harm,
+<ce>  but it seems some coward has thoroughly
+<ce>  pilfered your money bag.
+
+Message:  1011
+<ce>  A puff of noxious fumes reaches your nose.
+<ce>  Your constitution is strong enough
+<ce>  to withstand the dazing effect in the
+<ce>  airborne chemicals. You race away
+<ce>  and suffer no harm.
+
+QBN:
+
+Clock _failsafe_ 0:05
+
+--	Quest start-up:
+    start timer _failsafe_
+    pick one of _go1_ _go2_ _go3_
+
+_check1_ task:
+	when attribute Endurance is at least 25
+
+_check2_ task:
+	when attribute Endurance is at least 30
+
+_check3_ task:
+	when attribute Endurance is at least 35
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+	when _check1_ and _go1_
+	start task _success_
+
+_c2_ task:
+	when _check2_ and _go2_
+	start task _success_
+
+_c3_ task:
+	when _check3_ and _go3_
+	start task _success_
+
+_d1_ task:
+	when not _check1_ and _go1_
+	start task _fail_
+
+_d2_ task:
+	when not _check2_ and _go2_
+	start task _fail_
+
+_d3_ task:
+	when not _check3_ and _go3_
+	start task _fail_
+
+_success_ task:
+    say 1011
+    end quest
+
+_fail_ task:
+    say 1010
+    pay 500 money do _failsafe_ otherwise do _v300_
+
+_v300_ task:
+    pay 300 money do _failsafe_ otherwise do _v150_
+
+_v150_ task:
+    pay 150 money do _failsafe_ otherwise do _v100_
+
+_v100_ task:
+    pay 100 money do _failsafe_ otherwise do _v50_
+
+_v50_ task:
+    pay 50 money do _failsafe_ otherwise do _v25_
+
+_v25_ task:
+    pay 25 money do _failsafe_ otherwise do _failsafe_
+
+_failsafe_ task:
+    end quest

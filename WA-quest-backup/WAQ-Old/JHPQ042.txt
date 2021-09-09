@@ -1,0 +1,262 @@
+-- Perpetual Quest
+Quest: JHPQ042
+DisplayName: Haunting
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ042
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ042
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ042
+
+QuestFail:  [1003]
+<ce>          ERROR 1003 JHPQ042
+
+QuestComplete:  [1004]
+<ce>  You find the cursed object at the center of this cave's
+<ce>  warping effects. Thankfully, it takes no great effort
+<ce>  to break apart. Wisps of smoke waver off of it when
+<ce>  you are done, and ___crypt_ begins to
+<ce>  regain a more natural tone.
+
+Message:  1010
+<ce>  You hear peasants talking nearby in fearful tones.
+<ce>  
+<ce>  "But if ___crypt_'s haunted, who's gonna do
+<ce>  something about it? The %t? And what about all the
+<ce>  people who went there and disappeared?"
+<ce>  
+<ce>  From their conversation you gather its location
+<ce>  within ____crypt_, which you mark on your map.
+<--->
+<ce>  You hear peasants talking nearby in fearful tones.
+<ce>  
+<ce>  "Innocent folks have been lost there. I'm really starting
+<ce>  to believe ___crypt_'s haunted. I can't let
+<ce>  anyone in my family hear about it 'cause I know they'd go."
+<ce>  
+<ce>  From their conversation you gather its location
+<ce>  within ____crypt_, which you mark on your map.
+
+Message:  1011
+<ce>  You are now sealed in ___crypt_.
+<ce>  The cause of its curse must be within.
+
+Message:  1012
+<ce>  This place has a peculiar effect on you.
+
+Message:  1013
+ screams of the tortured fill my ears
+<--->
+ this is my home now
+ i will be happy here
+<--->
+ why will they not leave
+<--->
+ hope is the canker of the soul
+<--->
+ a slave to dear =e1_
+ joyous future let it be
+<--->
+ master will be pleased
+
+Message:  1015
+<ce> pantheon of chaos
+<ce> delicious to the taste
+
+Message:  1030
+%qdt:
+ I overheard peasants discussing
+ ___crypt_, which they say
+ is haunted. Many have entered without
+ returning to daylight.
+
+Message:  1031
+%qdt:
+ I have entered the cave.
+ Perhaps I can find the cause of the
+ so-called haunting within.
+
+Message:  1032
+ i have entered the cave
+ perhaps I can find the cause of the
+ so called haunting within
+
+Message:  1033
+ screams of the tortured fill my ears
+<--->
+ this is my home now
+ i will be happy here
+<--->
+ why will they not leave
+<--->
+ hope is the canker of the soul
+<--->
+ HAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHAHA
+<--->
+ a slave to dear =e1_
+ joyous future let it be
+<--->
+ master will be pleased
+<--->
+ five hundred years ago in mournhold city of gems there lived a
+ blind widow woman and her only child a strapping young man he was
+ a miner as was his father before him a common laborer in the kings
+ mines for his magicka ability was but small the work was honorable
+ but poorly paid his mother made and sold small wildenberry cakes in
+ the market to help make out their living they did well enough his
+ mother said they had enough to fill their bellies no one could wear
+ more than one suit of clothing at a time and the roof only leaked
+ when it rained symmachus would have liked more he hoped for a lucky
+ strike in the mines which would garner him a large bonus in his free
+ hours he enjoyed hoisting a glass of ale in the tavern with his friends
+ and gambling with them at cards and he drew the eyes and sighs of more
+ than one pretty elven girl although none held his interest for long in
+ short symmachus was a typical young dark elf man remarkable only for his
+ size it was rumored that he had a bit of nord blood in him
+<--->
+close your eyes
+<--->
+behind you
+
+QBN:
+Item _stat_ finger
+Item _fake1_ finger
+Item _fake2_ finger
+Item _fake3_ finger
+Item _fake4_ finger
+Item _fake5_ finger
+Item _fake6_ finger
+Item _fake7_ finger
+Item _fake8_ finger
+Item _fake9_ finger
+Item _fake10_ finger
+
+Place _crypt_ remote dungeon
+
+Clock _delay_ 00:00 00:02
+Clock _timer_ 14.00:00
+Clock _t1_ 2:00
+-Clock _t2_ 2:00 4:00
+Clock _t3_ 2:00 4:00
+Clock _t4_ 2:00 4:00
+Clock _trip_ 00:03
+Clock _failsafe_ 14.00:00
+Clock _scream_ 00:02
+
+Foe _garg_ is 2 Gargoyle
+Foe _e1_ is Ghost
+Foe _e2_ is Wraith
+Foe _e3_ is Mummy
+Foe _e4_ is Zombie
+
+--	Quest start-up:
+    start timer _failsafe_
+
+ _enter_ task:
+   when pc enters city
+   stop timer _failsafe_
+    start timer _delay_
+    start timer _timer_
+
+_delay_ task:
+	say 1010
+    start timer _timer_
+    log 1030 step 0
+    reveal _crypt_
+    pc at _crypt_ set _inside_
+
+_inside_ task:
+    start task _trapped_
+    start timer _t1_
+    log 1031 step 0
+    make pc ill with Wizard_Fever
+    say 1011
+
+_trapped_ task:
+    create foe _e1_ every 10 minutes indefinitely with 2% success
+    create foe _e2_ every 9 minutes indefinitely with 2% success
+    create foe _e3_ every 11 minutes indefinitely with 3% success
+
+_tele_ task:
+    when _trapped_ and not _inside_
+    teleport pc to _crypt_
+    say 1033
+
+_t1_ task:
+    log 1032 step 0
+    say 1012
+
+_t2_ task:
+    injured _e1_
+    injured _e2_
+    injured _e3_
+    injured _e4_
+    start task _g1_
+
+_g1_ task_:
+    create foe _garg_ every 0 minutes indefinitely with 50% success
+    start timer _trip_
+
+_trip_ task:
+    remove foe _garg_
+    clear _g1_
+    start timer _t3_
+    place item _stat_ at _crypt_
+
+_t3_ task:
+    create foe _e4_ every 0 minutes 1 times with 100% success
+    restrain foe _e4_
+    give item _fake1_ to _e4_
+    give item _fake2_ to _e4_
+    give item _fake3_ to _e4_
+    give item _fake4_ to _e4_
+    give item _fake5_ to _e4_
+    give item _fake6_ to _e4_
+    give item _fake7_ to _e4_
+    give item _fake8_ to _e4_
+    give item _fake9_ to _e4_
+    give item _fake10_ to _e4_
+    make _fake1_ permanent
+    make _fake2_ permanent
+    make _fake3_ permanent
+    make _fake4_ permanent
+    make _fake5_ permanent
+    make _fake6_ permanent
+    make _fake7_ permanent
+    make _fake8_ permanent
+    make _fake9_ permanent
+    make _fake10_ permanent
+    start timer _t4_
+    say 1013
+
+_inj_ task:
+    injured _e4_
+    start task _sc1_
+
+_sc1_ task:
+    play sound scream_female_2 every 0 minutes 1 times
+    start timer _scream_
+
+_scream_ task:
+    clear _sc1_
+
+_t4_ task:
+    say 1015
+
+_victory_ task:
+    clicked item _stat_
+    take _stat_ from pc
+    give pc nothing
+    cure Wizard_Fever
+    end quest
+
+_timer_ task:
+	end quest
+
+_failsafe_ task:
+    end quest

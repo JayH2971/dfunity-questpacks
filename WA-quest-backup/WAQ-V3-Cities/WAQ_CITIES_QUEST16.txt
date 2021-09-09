@@ -1,0 +1,87 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST16
+--JHPQ023 (Warm Ashes)
+DisplayName: To Give Life
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQ023
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQ023
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQ023
+
+QuestFail:  [1003]
+<ce>                          ERROR 1003 JHPQ023
+
+QuestComplete:  [1004]
+<ce>                 You draw close to _client_ and cast
+<ce>         the spell. The effect is immediate, restoring colour
+<ce>           to %g3 skin and hastening %g3 breath. You watch
+<ce>               as %g1 returns from the gates of death.
+<ce>
+<ce>             "%oth! To imagine that I was mere hours from
+<ce>            perishing, and now I am whole. Thank you, %ra!
+<ce>               Please take the %t's _gem_. I will speak
+<ce>            wonders of you among all my kin and friends!"
+
+Message:  1010
+<ce>            A bit of posterboard carrying an announcement
+<ce>               has broken off and fallen to the ground.
+<ce>                   It appears to come from the %t.
+<ce>                   You pick it up out of curiosity.
+
+Message:  1011
+ Edict of the %t:
+ 
+ Experienced practicioners of Restoration magic
+ in ____start_ are requested at _start_
+ of ___start_ to excise an affliction that has
+ taken hold of one _client_, a dear friend.
+ Life expectancy is short, currently prognosticated
+ at =2start_ days. Reward offered is one _gem_.
+
+Message:  1012
+<ce>                     H-hello? I can barely speak.
+<ce>               If you will do something, please do it.
+
+QBN:
+Person _client_ faction Random_Noble
+
+Place _start_ remote palace
+
+Clock _2start_ 00:00 0 flag 2 range 0 2
+
+Item _letter_ letter used 1011
+Item _gem_ gem
+
+--	Quest start-up:
+    give pc _letter_ notify 1010
+    have _letter_ set _begin_
+    pc at _start_ do _inside_
+
+_begin_ task:
+    place npc _client_ at _start_
+    start timer _2start_
+
+_talk_ task:
+    clicked npc _client_
+    say 1012
+    cast Balyna's_Balm spell do _heal_
+    cast Cure_Disease spell do _heal_
+
+variable _heal_
+variable _inside_
+
+_pcgetsgold_ task:
+    when _heal_ and _inside_
+    give pc _gem_
+    legal repute +2
+    end quest
+
+_2start_ task:
+    hide npc _client_
+    end quest

@@ -1,0 +1,128 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST14
+--JHPQ029 (Warm Ashes)
+DisplayName: Eye for an Eye
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  ERROR 1000 JHPQ029
+
+RefuseQuest:  [1001]
+<ce>  ERROR 1001 JHPQ029
+
+AcceptQuest:  [1002]
+<ce> ERROR 1002 JHPQ029
+
+QuestFail:  [1003]
+<ce>  ERROR 1003 JHPQ029
+
+QuestComplete:  [1004]
+<ce>  The adversary is dead. The Argonian can barely speak but 
+<ce>  beckons for you to come closer. Nearby spectators begin to apply
+<ce>  bandages to his wounds. He croaks to you with labored breaths.
+<ce>  
+<ce>  "Our people are not welcome here. Why must we suffer
+<ce>  this violence? I beg you, take this before the guard comes.
+<ce>  I cannot be found with it."
+<ce>  
+<ce>  He hands you a small bag before relenting to the villagers' grasp,
+<ce>  carrying him away to an inn to recuperate from his wounds.
+<--->
+<ce>  The adversary is dead. The Argonian can barely speak but
+<ce>  beckons for you to come closer. Nearby spectators begin to apply
+<ce>  bandages to her wounds. She croaks to you with labored breaths.
+<ce>  
+<ce>  "Our people are not welcome here. Why must we suffer
+<ce>  this violence? I beg you, take this before the guard comes.
+<ce>  I cannot be found with it."
+<ce>  
+<ce>  She hands you a small bag before relenting to the villagers' grasp,
+<ce>  carrying her away to an inn to recuperate from her wounds.
+
+Message:  1010
+<ce>  You become aware of a struggle nearby pertaining
+<ce>  to a rare sight: an Argonian has met with a strident racist.
+<ce>  
+<ce>  "%oth! Go back to the marshes, lizard-freak!"
+<ce>  
+<ce>  The aggressor clearly has the upper hand and shows no signs
+<ce>  of stopping. Will you intervene to stop the attack?
+<--->
+<ce>  You become aware of a struggle nearby pertaining
+<ce>  to a rare sight: an Argonian has met with a strident racist.
+<ce>  
+<ce>  "Suffer, coldblood! %crn isn't for you!"
+<ce>  
+<ce>  The aggressor clearly has the upper hand and shows no sign
+<ce>  of stopping. Will you intervene to stop the attack?
+
+Message:  1011
+<ce>  You shout for the fight to stop, but only attract it toward yourself.
+<ce>  The rogue was in no mood for an interruption.
+
+Message:  1020
+<ce>  The savage beating continues for more than a minute. A few timid
+<ce>  passersby contemplate saying something or alerting the guard,
+<ce>  but no one summons up the courage. The rogue's wrath is eventually
+<ce>  sated and he leaves the Argonian's corpse to bleed out.
+<ce>  
+<ce>  You notice that a considerable amount of money came spilling out
+<ce>  from the victim's pockets during the attack. Will you take advantage
+<ce>  of the situation to fill your coin bag?
+
+Message:  1021
+<ce>  You discreetly gather up what you can, avoiding the villagers'
+<ce>  wandering gazes. Hopefully someone else can donate to take
+<ce>  the victim to the inn when you're done.
+
+Message:  1022
+<ce>  Surely this poor fellow has suffered enough for one day.
+<ce>  You leave the money where it is.
+
+QBN:
+Clock _timer_ 0:30
+Clock _failsafe_ 7.00:00
+Clock _delay_ 0:01 0:02
+
+Foe _enemy_ is Rogue
+
+Item _gold_ gold range 201 to 399
+Item _drug_ drug
+
+--	Quest start-up:
+	start timer _failsafe_
+
+ _enter_ task:
+    when pc enters city
+    start timer _delay_
+    stop timer _failsafe_
+    start timer _timer_
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest
+
+_delay_ task:
+    prompt 1010 yes _fight_ no _watch_
+
+_fight_ task:
+    say 1011
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_slain_ task:
+    killed _enemy_
+    give pc _drug_
+
+_watch_ task:
+    prompt 1020 yes _steal_ no _leave_
+
+_steal_ task:
+    say 1021
+    get item _gold_
+    make _gold_ permanent
+
+_leave_ task:
+    say 1022

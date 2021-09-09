@@ -1,0 +1,127 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST15
+--JHPQ027 (Warm Ashes)
+DisplayName: Master of Daedric
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ027
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ027
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ027
+
+QuestFail:  [1003]
+<ce> You approach and offer to help. He is elated to hear from
+<ce> an expert, but your explanations offer more confusion
+<ce> than clarity. You mistake one rune for another and
+<ce> several words come out improperly. He notices your
+<ce> lack of expertise and is quick to retract his request,
+<ce> knowing that incompetent help can damage more than
+<ce> no help at all. He politely excuses himself and departs.
+<--->
+<ce> You approach and offer to help. She is elated to hear from
+<ce> an expert, but your explanations offer more confusion
+<ce> than clarity. You mistake one rune for another and
+<ce> several words come out improperly. She notices your
+<ce> lack of expertise and is quick to retract her request,
+<ce> knowing that incompetent help can damage more than
+<ce> no help at all. She politely excuses herself and departs.
+
+QuestComplete:  [1004]
+<ce> You approach and begin to read the required document with
+<ce> considerable ease. Together you work out its general meaning
+<ce> and what his response should be. His relief is visible.
+<ce>
+<ce> "Oh %ra, you cannot imagine the joy I feel having found you!
+<ce> I worried that I would be held in contempt for taking on an
+<ce> assignment I could not carry honorably. Please, tell me your
+<ce> name. I will add you as a co-author to the work and we will both
+<ce> be credited in the eyes of the Mages Guild. How does that sound?
+<ce> I have no material reward, but surely one so skilled in the arcane
+<ce> as yourself can see the value of the Guild's esteem."
+<ce> 
+<ce> With no other reward forthcoming, you accept it as compensation
+<ce> for your time and wish him luck on the way back.
+<--->
+<ce> You approach and begin to read the required document with
+<ce> considerable ease. Together you work out its general meaning
+<ce> and what her response should be. Her relief is visible.
+<ce>
+<ce> "Oh %ra, you cannot imagine the joy I feel having found you!
+<ce> I worried that I would be held in contempt for taking on an
+<ce> assignment I could not carry honorably. Please, tell me your
+<ce> name. I will add you as a co-author to the work and we will both
+<ce> be credited in the eyes of the Mages Guild. How does that sound?
+<ce> I have no material reward, but surely one so skilled in the arcane
+<ce> as yourself can see the value of the Guild's esteem."
+<ce> 
+<ce> With no other reward forthcoming, you accept it as compensation
+<ce> for your time and wish her luck on the way back.
+
+Message:  1010
+<ce> From afar you see a robed figure asking passersby for help.
+<ce> You piece together the conversation as such:
+<ce> 
+<ce> "Excuse me! I know this is a long shot, but do you have
+<ce> any knowledge of the Daedric language? I have an urgent
+<ce> assignment with the Mages Guild that requires an expert.
+<ce> And you? Can you help me?"
+<ce> 
+<ce> If you're confident in your skill, you could offer to help.
+
+Message:  1012
+<ce> After attempting to speak to a few others, the mage's shoulders
+<ce> slump, disconsolate. It appears he will fail the assignment after all.
+<ce> He soon walks away to his inevitable fate.
+<--->
+<ce> After attempting to speak to a few others, the mage's shoulders
+<ce> slump, disconsolate. It appears she will fail the assignment after all.
+<ce> She soon walks away to her inevitable fate.
+
+QBN:
+Clock _failsafe_ 7.00:00
+Clock _timer_ 1:00
+Clock _delay_ 0:01 0:02
+
+Person _dummymg_ faction The_Mages_Guild
+
+--	Quest start-up:
+    start timer _failsafe_
+
+ _enter_ task:
+    when pc enters city
+    stop timer _failsafe_
+    start timer _delay_
+    start timer _timer_
+
+_delay_ task:
+    prompt 1010 yes _begin_ no _quit_
+
+variable _begin_
+_check1_ task:
+   when skill Daedric is at least 30
+
+_victory_ task:
+    when _check1_ and _begin_
+    give pc nothing
+    change repute with _dummymg_ by +5
+    end quest
+
+_fail_ task:
+    when _begin_ and not _check1_
+    say 1003
+    end quest
+
+_timer_ task:
+   end quest
+
+_failsafe_ task:
+   end quest
+
+_quit_ task:
+  say 1012
+  end quest

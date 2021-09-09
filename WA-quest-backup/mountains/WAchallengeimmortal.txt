@@ -1,0 +1,86 @@
+Quest: challengeimmortal
+DisplayName: To Challenge an Immortal
+-- Wilderness event, mountains
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              challengeimmortal 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             challengeimmortal 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             challengeimmortal 1002 Called
+
+QuestFail:  [1003]
+<ce>         challengeimmortal 1003 Called
+
+QuestComplete:  [1004]
+<ce>            "Disturbing. I have much to do."
+<ce>   
+<ce>   The wizard throws your due payment and disappears.
+
+Message:  1010
+<ce>         A hooded figure hails you and approaches.
+<ce>   
+<ce>   "Greetings, traveler. I have worked to create
+<ce>  the ultimate battle atronach, which cannot
+<ce>  be slain. I will wager my 500 gold against
+<ce>  yours that it is truly immortal."
+<ce>  
+<ce>  Accept the challenge?
+
+Message:  1011
+<ce>  After taking your money, the wizard
+<ce>  casts a Recall spell that pulls the
+<ce>  atronach from its laboratory lair,
+<ce>  and it lumbers at you.
+
+Message:  1012
+<ce>  You search around your belongings but do not find
+<ce>  500 gold pieces. The wizard departs without a word.
+
+Message:  1013
+<ce>  The wizard disappears.
+
+QBN:
+
+Clock _failsafe_ 1.00:00
+
+Foe _gt1_ is Iron_atronach
+
+Item _reward_ gold range 1000 to 1000
+
+--	Quest start-up:
+    start timer _failsafe_
+    prompt 1010 yes _attempt_ no _refuse_
+
+_attempt_ task:
+    pay 500 money do _hasmoney_ otherwise do _nomoney_
+
+_hasmoney_ task:
+    create foe _gt1_ every 0 minutes 1 times with 100% success
+    say 1011
+
+_nomoney_ task:
+    say 1012
+    end quest
+
+_refuse_ task:
+    say 1013
+    end quest
+
+_day_ task:
+    daily from 0:00 to 23:59
+    cast Balyna's_Balm spell on _gt1_
+    clear _day_
+
+_victory_ task:
+    killed _gt1_
+    give pc _reward_
+    end quest
+
+_failsafe_ task:
+    remove foe _gt1_
+    end quest

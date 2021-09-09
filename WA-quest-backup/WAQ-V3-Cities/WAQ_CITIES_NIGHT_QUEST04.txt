@@ -1,0 +1,87 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_NIGHT_QUEST04
+--JHPQ021 (Warm Ashes)
+DisplayName: Boisterous Bellow
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQ021
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQ021
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQ021
+
+QuestFail:  [1003]
+<ce>                          ERROR 1003 JHPQ021
+
+QuestComplete:  [1004]
+<ce>            Your opponent has been felled, and appears to
+<ce>            have been carrying a significant sum of money.
+
+Message:  1010
+<ce>             You hear the sound of magic working nearby.
+<ce>                   A mage appears out of thin air.
+<ce>
+<ce>           "Ha ha ha! Now for my next target! Go, my pets!"
+<ce>
+<ce>            Two skeletons rise up and move to attack you.
+                                     <--->
+<ce>             You hear the sound of magic working nearby.
+<ce>                   A mage appears out of thin air.
+<ce>
+<ce>                 "Look, my pets! See the %ra! Kill!"
+<ce>
+<ce>            Two skeletons rise up and move to attack you.
+
+Message:  1011
+<ce>           You know enough about Mysticism to dissipate the
+<ce>      skeletons' frail bindings with a quick spell. They crumple
+<ce>        back onto the ground, leaving the mage to fight alone.
+
+QBN:
+Clock _timer_ 0:30
+
+Foe _enemy_ is Mage
+Foe _skeleton_ is Skeletal_warrior
+
+Item _reward_ gold range 800 to 1500
+
+--	Quest start-up:
+
+_enter_ task:
+    when pc enters city
+    start timer _timer_
+    say 1010
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+    give item _reward_ to _enemy_
+    make _reward_ permanent
+    start task _question_
+
+variable _question_
+_unskilled_ task:
+    when _question_ and not _myst_
+    create foe _skeleton_ every 0 minutes 2 times with 100% success
+
+_myst_ task:
+    when skill Mysticism is at least 40
+
+_skilled_ task:
+    when _question_ and _myst_
+    say 1011
+
+_slain1_ task:
+    killed 2 _skeleton_
+
+_slain2_ task:
+    killed _enemy_
+
+_victory_ task:
+    when _slain1_ and _slain2_
+    give pc nothing
+    end quest
+
+_timer_ task:
+    end quest

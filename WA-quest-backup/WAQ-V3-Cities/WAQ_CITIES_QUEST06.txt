@@ -1,0 +1,84 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST06
+--JHFGA02 (Warm Ashes)
+DisplayName: Death and Taxes
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                             JHPQ044 1000
+
+RefuseQuest:  [1001]
+<ce>                             JHPQ044 1001
+
+AcceptQuest:  [1002]
+<ce>                             JHPQ044 1002
+
+QuestFail:  [1003]
+<ce>          If the notice you received was correct, your taxes
+<ce>                    to ____place_ were due today.
+
+QuestComplete:  [1004]
+<ce>                Hello, your name and place of origin?
+<ce>                         %pcn? Just a moment.
+<ce>
+<ce>          Yes, I see here the taxes due are 437 gold pieces.
+<ce>            I accept your payment in the name of the %rt.
+<ce>                   Thank you, friend. Safe travels.
+
+Message:  1010
+<ce>         A page offers you a piece of paper. You notice your
+<ce>                 name neatly written across the flap.
+
+Message:  1011
+  CONFIDENTIAL
+  Name: %pcn
+  Race: %ra
+<ce>
+  In the name of the %rt, you are hereby ordered to pay
+437 gold pieces as a traveler's tax for within
+the borders of the region of ____place_.
+Please ensure payment arrives to the agent
+listed below within 15 days' time from receipt
+of this letter.
+<ce>
+<ce>                        AUTHORIZED AGENT: _qg_
+<ce>                          _place_, ___place_
+
+Message:  1012
+<ce>                Hello, your name and place of origin?
+<ce>
+<ce>                Your taxes to pay are 437 gold pieces.
+<ce>       I do not see that sum on you at this time. Please ensure
+<ce>           that you have it in physical form, as we do not
+<ce>        accept letters of credit. I will wait for your return.
+
+QBN:
+Item _letter_ letter used 1011
+
+Place _place_ remote palace
+
+Clock _timer_ 15.00:00
+
+Person _qg_ group Banker male
+
+--	Quest start-up:
+    give pc _letter_ notify 1010
+    place npc _qg_ at _place_
+    have _letter_ set _timelimit_
+
+_timelimit_ task:
+    start timer _timer_
+
+_pay_ task:
+    clicked _qg_ and at least 437 gold otherwise do _nopay_
+    give pc nothing
+    end quest
+
+_nopay_ task:
+    say 1012
+
+_timer_ task:
+    say 1003
+    legal repute -10
+    end quest

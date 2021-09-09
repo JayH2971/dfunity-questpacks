@@ -1,0 +1,118 @@
+-- Perpetual Quest
+Quest: JHPQ035
+DisplayName: Totin' Chip
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ035
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ035
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ035
+
+QuestFail:  [1003]
+<ce> You sit down and try your hand. You think you're
+<ce> carrying a good pace, but right when you feel you're
+<ce> getting the hang of it, another contestant stands up
+<ce> and shows the peeled apple, receiving the prize money.
+<ce> If only you were more expert working a knife.
+
+QuestComplete:  [1004]
+<ce> So soon as the contest begins, you wrap the knife blade
+<ce> across the surface of the apple and begin turning it.
+<ce> Your speed well exceeds that of the other contestants,
+<ce> and soon the crowd is fixated on your work. Some wonder
+<ce> aloud if anyone in %crn can match your skill with
+<ce> short blades. As the others are reaching the halfway point
+<ce> you stand up to show the peeled fruit and receive your prize money.
+
+Message:  1010
+<ce> A small contest is set to occur nearby, where people
+<ce> are given table knives and told to peel an apple as
+<ce> quickly as possible. It looks like there are still
+<ce> places available. A prize of =reward_ gold pieces
+<ce> has been gathered. Do you wish to enter?
+
+Message:  1012
+<ce> Alas, greater riches, fame, and fulfillment await you
+<ce> elsewhere. You doubt you'll miss the prize money.
+
+QBN:
+Clock _failsafe_ 7.00:00
+Clock _timer_ 1:00
+Clock _delay_ 0:01 0:02
+
+Item _reward_ gold range 201 to 349
+
+--	Quest start-up:
+    start timer _failsafe_
+
+ _enter_ task:
+   when pc enters city
+   stop timer _failsafe_
+   start timer _delay_
+    start timer _timer_
+
+_delay_ task:
+    prompt 1010 yes _begin_ no _quit_
+
+_begin_ task:
+    pick one of _go1_ _go2_ _go3_
+
+_check1_ task:
+   when skill ShortBlade is at least 15
+
+_check2_ task:
+    when skill ShortBlade is at least 25
+
+_check3_ task:
+    when skill ShortBlade is at least 35
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+    when _check1_ and _go1_
+    start task _victory_
+
+_c2_ task:
+    when _check2_ and _go2_
+    start task _victory_
+
+_c3_ task:
+    when _check3_ and _go3_
+    start task _victory_
+
+_d1_ task:
+    when not _check1_ and _go1_
+    start task _fail_
+
+_d2_ task:
+    when not _check2_ and _go2_
+    start task _fail_
+
+_d3_ task:
+    when not _check3_ and _go3_
+    start task _fail_
+
+_victory_ task:
+    give pc _reward_
+    end quest
+
+_fail_ task:
+    say 1003
+    end quest
+
+_timer_ task:
+   end quest
+
+_failsafe_ task:
+   end quest
+
+_quit_ task:
+  say 1012
+  end quest

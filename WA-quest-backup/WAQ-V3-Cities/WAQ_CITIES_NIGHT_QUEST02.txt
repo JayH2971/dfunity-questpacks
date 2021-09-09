@@ -1,0 +1,133 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_NIGHT_QUEST02
+--JHPQ018(Warm Ashes)
+DisplayName: Under Cloak and Dagger
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ018
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ018
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ018
+
+QuestFail:  [1003]
+<ce>          ERROR 1003 JHPQ018
+
+QuestComplete:  [1004]
+<ce> "How kind of you. I hope this money is reward
+<ce> enough. I have matters to attend to here and
+<ce> request my privacy, if you will."
+<ce> 
+<ce> The woman bows and hides in the graveyard.
+
+Message:  1010
+<ce> A woman wearing a dark hood approaches you.
+<ce> 
+<ce> "Excuse me, kind stranger. I need to get to
+<ce> ___cem_ in a hurry and will
+<ce> pay =reward_ gold to the one who escorts me.
+<ce> Would you have time to guide me there?"
+
+Message:  1011
+<ce> "Thank you. I will follow. Lead the way."
+
+Message:  1012
+<ce> "Thank you. I will follow. Lead the way."
+<ce> 
+<ce> You begin to move forward, but suddenly
+<ce> hear a faint hissing behind you.
+
+Message:  1013
+<ce> You have survived the ambush.
+
+Message:  1021
+<ce> You quickly speak a cantrip of Thaumaturgy,
+<ce> assuming the worst. The vampire's mind turns blank
+<ce> and she ceases the attack.
+
+Message:  1030
+%qdt:
+ I am escorting a woman to
+ ___cem_ in exchange
+ for =reward_ gold.
+
+Message:  1080
+<ce> "Your loss."
+
+QBN:
+Clock _timer_ 1:00
+Clock _failsafe_ 30.00:00
+
+Item _reward_ gold range 600 to 800
+
+Foe _enemy_ is Vampire
+
+Person _esc_ group Local_3.0 female
+
+Place _cem_ remote graveyard
+
+--	Quest start-up:
+    start timer _failsafe_
+    pc at _cem_ do _arrive_
+
+_day_ task:
+    daily from 5:30 to 18:30
+
+_one_ task:
+    when not _day_
+    pick one of _attack_ _safe_
+	prompt 1010 yes _begin_ no _quit_
+
+variable _begin_
+variable _attack_
+variable _arrive_
+variable _safe_
+
+_escort_ task:
+    when _safe_ and _begin_
+    say 1011
+    add _esc_ face
+    log 1030 step 0
+    reveal _cem_
+
+_fight_ task:
+    when _attack_ and _begin_
+    say 1012
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+    start timer _timer_
+    start task _ambu_
+
+variable _ambu_
+_slain_ task:
+   killed _enemy_
+   say 1013
+   end quest
+
+_thaum_ task:
+    when skill Thaumaturgy is at least 50
+
+_adv_ task:
+    when _thaum_ and _ambu_
+    say 1021
+    restrain foe _enemy_
+
+_victory_ task:
+    when _safe_ and _arrive_
+    give pc _reward_
+    end quest    
+
+_timer_ task:
+   say 1013
+   restrain foe _enemy_
+   end quest
+
+_quit_ task:
+  say 1080
+  end quest
+
+_failsafe_ task:
+    end quest

@@ -1,0 +1,180 @@
+-- Perpetual Quest
+Quest: JHPQ022
+DisplayName: Blood Money
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ022
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ022
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ022
+
+QuestFail:  [1003]
+<ce> ERROR 1003 JHPQ022
+
+QuestComplete:  [1004]
+<ce> You got proof? Let me see.
+<ce> 
+<ce> All right, I believe you. Have this and
+<ce> get lost. We never, ever spoke today.
+
+Message:  1010
+<ce> Though visible, the approaching courier is deadly
+<ce> silent. You accept the proffered note, and he
+<ce> stalks away without making a sound.
+<--->
+<ce> Though visible, the approaching courier is deadly
+<ce> silent. You accept the proffered note, and she
+<ce> stalks away without making a sound.
+
+Message:  1011
+ %ra,
+
+ I need a killer. I have an enchanted _reward_ to give
+ you if you're competent. Come to me in =2start_ days or
+ I'll disappear. Be smart.
+ 
+                _start_
+                ___start_
+
+Message:  1012
+<ce> Welcome. Let's not talk names. I'd prefer to stay
+<ce> anonymous just like you. This is a hit the Dark Brotherhood
+<ce> refused to take, so I've got to resort to talking to strangers.
+<ce> But this matters to me. Can you kill a lady?
+
+Message:  1013
+<ce> Thanks for being honest. Now get out of here.
+<ce> You and me never met, got it?
+
+Message:  1014
+<ce> Okay. I need _nob_ dead. Find her in a house called
+<ce> _res_ at ___res_. Don't go dragging
+<ce> your knuckles or nothing. Do it fast.
+<ce> Get back here in =timer_ days. I'll give you
+<ce> that magic _reward_ I was telling you about.
+<ce> And don't ever tell anyone about this.
+
+Message:  1030
+%qdt:
+ A proprietor who will remain nameless
+ will give me an enchanted _reward_ if I kill
+ a lady named _nob_, who lives in
+ _res_ of ___res_. I have =timer_ days
+ to then return to ___start_.
+
+Message:  1041
+<ce> _nob_ is petrified at the sight of you.
+<ce> Your eyes lock for a long moment,
+<ce> just enough time for her to begin trembling
+<ce> uncontrollably. Will you kill her?
+<--->
+<ce> _nob_ first gasps at the sight of you,
+<ce> and then starts crying frantically,
+<ce> hiding her head in fear. She knows her
+<ce> end is here. Will you kill her?
+
+Message:  1042
+<ce> As expected, the task takes little effort.
+<ce> Once you are certain of her death,
+<ce> you take one of her fingers as proof.
+<--->
+<ce> The difference of strength between
+<ce> the two of you yields a very simple task.
+<ce> Once you are certain of her death,
+<ce> you take one of her fingers as proof.
+
+Message:  1043
+<ce> Your lingering humanity makes you yield.
+<ce> The atmosphere gradually softens as
+<ce> _nob_ realizes you have not
+<ce> come to kill her. Scarcely holding back
+<ce> the tears of gratitude, she rushes out
+<ce> the door to find some safety elsewhere.
+
+QBN:
+Person _nob_ faction Random_Noble female
+Person _client_ faction The_Thieves_Guild
+Person _dummydb_ faction The_Dark_Brotherhood
+
+Place _start_ remote house1
+Place _res_ remote house2
+
+Foe _kni1_ is Knight
+Foe _kni2_ is Knight
+
+Clock _2start_ 00:00 0 flag 2 range 0 2
+Clock _timer_ 6.00:00 8.00:00
+
+Item _letter_ letter used 1011
+Item _reward_ magic_item
+Item _finger_ finger
+
+--	Quest start-up:
+       give pc _letter_ notify 1010
+       have _letter_ set _begin_
+       pc at _start_ do _spawn_
+
+_begin_ task:
+       start timer _2start_
+
+_spawn_ task:
+    place npc _client_ at _start_
+
+_prompt_ task:
+	clicked npc _client_
+    stop timer _2start_
+    take _letter_ from pc
+    prompt 1012 yes _accept_ no _refuse_
+
+_refuse_ task:
+    say 1013
+    end quest
+
+_accept_ task:
+    place npc _nob_ at _res_
+    say 1014
+    log 1030 step 0
+    start timer _timer_
+    pick one of _sp1_ _sp2_ _sp3_
+
+variable _sp1_
+_sp2_ task:
+    place foe _kni1_ at _res_
+
+_sp3_ task:
+    place foe _kni1_ at _res_
+    place foe _kni2_ at _res_
+
+_dec_ task:
+    clicked npc _nob_
+    prompt 1041 yes _kill_ no _mercy_
+
+_kill_ task:
+    say 1042
+    get item _finger_
+    hide npc _nob_
+    change repute with _dummydb_ by -5
+    -legalrep
+
+_mercy_ task:
+    say 1043
+    hide npc _nob_
+    end quest
+
+_pcgetsgold_ task:
+    toting _finger_ and _client_ clicked
+    give pc _reward_
+    hide npc _client_
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest
+
+_2start_ task:
+    end quest

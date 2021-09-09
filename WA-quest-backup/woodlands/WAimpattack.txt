@@ -1,0 +1,114 @@
+Quest: impattack
+DisplayName: Attack of the Imps
+-- Wilderness event, woodlands
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              impattack 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             impattack 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             impattack 1002 Called
+
+QuestFail:  [1003]
+<ce>         impattack 1003 Called
+
+QuestComplete:  [1004]
+<ce>         impattack 1004 Called
+
+Message:  1010
+<ce>         A swarm of imps converges on you.
+<ce>  They laugh and speak among themselves in
+<ce>  their unintelligible language before charging.
+
+Message:  1011
+<ce>         A swarm of imps converges on you.
+<ce>  They laugh and speak among themselves in
+<ce>  words you know well. You speak back to them
+<ce>  in fluent Impish and gain considerable
+<ce>  respect from them.
+<ce>  
+<ce>  "This one, this one we will not kill.
+<ce>  It may rest, and we will guard it."
+
+QBN:
+
+Clock _failsafe_ 0:05
+
+Foe _imp1_ is Imp
+Foe _imp2_ is Imp
+Foe _imp3_ is Imp
+Foe _imp4_ is Imp
+Foe _imp5_ is Imp
+Foe _imp6_ is Imp
+
+--	Quest start-up:
+    start timer _failsafe_
+    create foe _imp1_ every 0 minutes 1 times with 100% success
+    create foe _imp2_ every 0 minutes 1 times with 100% success
+    create foe _imp3_ every 0 minutes 1 times with 100% success
+    create foe _imp4_ every 0 minutes 1 times with 100% success
+    create foe _imp5_ every 0 minutes 1 times with 100% success
+    create foe _imp6_ every 0 minutes 1 times with 100% success
+    change foe _imp1_ infighting true
+    change foe _imp2_ infighting true
+    change foe _imp3_ infighting true
+    change foe _imp4_ infighting true
+    change foe _imp5_ infighting true
+    change foe _imp6_ infighting true
+    pick one of _go1_ _go2_ _go3_
+
+_check1_ task:
+	when skill Impish is at least 30
+
+_check2_ task:
+	when skill Impish is at least 40
+
+_check3_ task:
+	when skill Impish is at least 50
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+	when _check1_ and _go1_
+	start task _success_
+
+_c2_ task:
+	when _check2_ and _go2_
+	start task _success_
+
+_c3_ task:
+	when _check3_ and _go3_
+	start task _success_
+
+_d1_ task:
+	when not _check1_ and _go1_
+	start task _fail_
+
+_d2_ task:
+	when not _check2_ and _go2_
+	start task _fail_
+
+_d3_ task:
+	when not _check3_ and _go3_
+	start task _fail_
+
+_success_ task:
+    say 1011
+    change foe _imp1_ team 1
+    change foe _imp2_ team 1
+    change foe _imp3_ team 1
+    change foe _imp4_ team 1
+    change foe _imp5_ team 1
+    change foe _imp6_ team 1
+
+_fail_ task:
+    say 1010
+
+_failsafe_ task:
+    end quest

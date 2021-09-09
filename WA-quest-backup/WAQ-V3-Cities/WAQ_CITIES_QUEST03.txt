@@ -1,0 +1,143 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST03
+--JHPQ038 (warm Ashes)
+DisplayName: Paul Bunyan Time
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQ038
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQ038
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQ038
+
+QuestFail:  [1003]
+<ce>               You make good time and form a large pile
+<ce>               of usable firewood. When time runs out,
+<ce>             you look at the other competitors and notice
+<ce>              one in particular has much more split wood
+<ce>                 than any other, including yourself.
+<ce>              You leave without the prize. Perhaps your
+<ce>              axe skills leave something to be desired.
+
+QuestComplete:  [1004]
+<ce>            You cleave log after log, splitting them with
+<ce>              expert precision and confidence. Your work
+<ce>             with axes shines clearly in this competition
+<ce>            and garners some admiration from the watching
+<ce>             townspeople. When time is called, your pile
+<ce>              clearly has an advantage over that of your
+<ce>            fellow competitors. You are granted the prize.
+
+Message:  1010
+<ce>              The citizens of the town have gathered to
+<ce>             run a charitable contest intended to produce
+<ce>        firewood for some of the local widows. Competitors are
+<ce>        each given a wood axe and access to a supply of logs,
+<ce>          and for several minutes all will work furiously to
+<ce>      build the biggest firewood pile. A reward of =reward_ gold
+<ce>    pieces is provided as incentive. Do you want to take a place?
+
+Message:  1012
+<ce>           The good spirits and gratitude of the crowd are
+<ce>            heartwarming but not enough to earn your time.
+<ce>                   You leave them to their contest.
+
+QBN:
+Clock _failsafe_ 7.00:00
+Clock _timer_ 1:00
+Clock _delay_ 0:01 0:02
+
+Item _reward_ gold range 301 to 449
+
+--	Quest start-up:
+    start timer _failsafe_
+	
+	
+---------* Sound**---
+_makesound_ task:
+	play sound talking_loud every 0 minutes 10 times
+	clear _makesound_
+	
+_makesound2_ task:
+	play sound laughter_loud every 0 minutes 10 times
+	clear _makesound2_
+	
+_makesound3_ task:
+	play sound levelup_gong every 0 minutes 10 times
+	clear _makesound3_
+
+
+_enter_ task:
+    when pc enters city
+	setvar _makesound_ 
+    stop timer _failsafe_
+    start timer _delay_
+    start timer _timer_
+
+_delay_ task:
+    prompt 1010 yes _begin_ no _quit_
+
+_begin_ task:
+    pick one of _go1_ _go2_ _go3_
+
+_check1_ task:
+    when skill Axe is at least 25
+
+_check2_ task:
+    when skill Axe is at least 35
+
+_check3_ task:
+    when skill Axe is at least 45
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+    when _check1_ and _go1_
+    start task _victory_
+
+_c2_ task:
+    when _check2_ and _go2_
+    start task _victory_
+
+_c3_ task:
+    when _check3_ and _go3_
+    start task _victory_
+
+_d1_ task:
+    when not _check1_ and _go1_
+    start task _fail_
+
+_d2_ task:
+    when not _check2_ and _go2_
+    start task _fail_
+
+_d3_ task:
+    when not _check3_ and _go3_
+    start task _fail_
+
+_victory_ task:
+    legal repute +2
+	setvar _makesound3_ 
+    give pc _reward_
+    end quest
+
+_fail_ task:
+    setvar _makesound2_ 
+    say 1003
+    end quest
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest
+
+_quit_ task:
+    say 1012
+    end quest

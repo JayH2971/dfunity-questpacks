@@ -1,0 +1,73 @@
+-- Perpetual Quest
+Quest: JHPQ015
+DisplayName: The Sursum Band
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ015
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ015
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ015
+
+QuestFail:  [1003]
+<ce>          ERROR 1003 JHPQ015
+
+QuestComplete:  [1004]
+<ce>        On this foe's body you find a bag of
+<ce>        _reward_, which you can pilfer if you choose
+<ce>        to. Now you know what drove them mad.
+
+Message:  1010
+<ce>        You sense a hostile presence nearby. The sound
+<ce>        of gnashing teeth and frothing mouths fills the air.
+
+Message:  1011
+<ce>        This enemy's eyes are blood red. Incoherent
+<ce>        word fragments flow into the air without meaning.
+
+QBN:
+Clock _failsafe_ 20.00:00
+Clock _timer_ 0:30
+
+Foe _enemy_ is 3 Burglar
+
+Item _reward_ sursam
+
+--	Quest start-up:
+   start timer _failsafe_
+
+_level_ task:
+   level 3 completed
+
+_enter_ task:
+   when pc enters tavernhome
+   clear _exit_
+
+_exit_ task:
+   when pc enters tavernhome
+   clear _enter_
+
+_fight_ task:
+   when _level_ and _enter_
+   say 1010
+   create foe _enemy_ every 0 minutes 1 times with 100% success
+   start timer _timer_
+
+_inj_ task:
+   injured _enemy_
+   say 1011
+
+_slain_ task:
+   killed 3 _enemy_
+   give pc _reward_
+   end quest
+
+_timer_ task:
+   end quest
+
+_failsafe_ task:
+    end quest

@@ -1,0 +1,116 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST05
+--JHDBA03 (Warm Ashes)
+DisplayName: Noble's Treasure
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHDBA03
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHDBA03
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHDBA03
+
+QuestFail:  [1003]
+<ce>                          ERROR 1003 JHDBA03
+
+QuestComplete:  [1004]
+<ce>          Goodness me, you say you've brought my money bag?
+<ce>          %oth! I had given up all hope of seeing it again.
+<ce>            Thank you for keeping it sealed! Surely I can
+<ce>            find a proper reward for such an unprecedented
+<ce>               good act. Take this. Go on, good friend.
+
+Message:  1010
+<ce>           You see here a bag with a name inscribed on it.
+<ce>            No one else seems to care about its existence,
+<ce>             but it shape suggests that it carries a good
+<ce>                amount of money. Will you pick it up?
+
+Message:  1011
+<ce>             On the side the name is written as follows:
+<ce>
+<ce>                   "Property of _noble_, ___ntown_"
+<ce>
+<ce>              The bag is sealed, though that would be a
+<ce>             trivial obstacle in the face of some effort.
+<ce>         Do you choose to open the bag and take its contents?
+
+Message:  1012
+<ce>              It doesn't take much more than some simple
+<ce>             tugging to get the bag open. Inside you find
+<ce>                =gold_ gold pieces, which you pocket.
+
+Message:  1013
+<ce>               Its owner will likely be looking for it.
+<ce>            You pack the bag away and set on your journey.
+
+Message:  1020
+<ce>              Who knows whether this isn't some sort of
+<ce>              trap or prank? You don't want to be caught
+<ce>                       in the middle of either.
+
+Message:  1030
+%qdt:
+ I have found a sealed bag of money
+ belonging to _noble_ of
+ ___ntown_.
+
+QBN:
+Clock _failsafe_ 30.00:00
+Clock _timer_ 60.00:00
+Clock _delay_ 0:00 0:02
+
+Person _noble_ faction Random_Noble
+
+Place _ntown_ remote palace
+
+Item _gold_ gold range 301 to 499
+Item _reward_ gem
+Item _bag_ small_sack
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_enter_ task:
+    when pc enters city
+    stop timer _failsafe_
+    start timer _delay_
+    start timer _timer_
+
+_delay_ task:
+    prompt 1010 yes _begin_ no _quit_
+
+_begin_ task:
+    prompt 1011 yes _steal_ no _deliver_
+
+_steal_ task:
+    say 1012
+    get item _gold_
+    make _gold_ permanent
+    end quest
+
+_deliver_ task:
+    place npc _noble_ at _ntown_
+    log 1030 step 0
+    say 1013
+    get item _bag_
+
+_victory_ task:
+    toting _bag_ and _noble_ clicked
+    give pc _reward_
+    legal repute +5
+    end quest
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest
+
+_quit_ task:
+    say 1020
+    end quest

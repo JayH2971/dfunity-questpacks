@@ -1,0 +1,226 @@
+Quest: giantWA
+DisplayName: Giant Encounter
+-- Wilderness event, mountains
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              giantWA 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             giantWA 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             giantWA 1002 Called
+
+QuestFail:  [1003]
+<ce>         giantWA 1003 Called
+
+QuestComplete:  [1004]
+<ce>            "Thank you. I'll be safe from here."
+<ce>   
+<ce>   _name_ gives you the payment as promised.
+
+Message:  1010
+<ce>         "Oh no! No! Someone help!"
+<ce>   
+<ce>   It appears a small band of adventurers
+<ce>   has been ambushed by a pair of giants.
+<ce>   Do you try to help them?
+<--->
+<ce>   "By %god! Someone help us!"
+<ce>   
+<ce>   It appears a small band of adventurers
+<ce>   has been ambushed by a pair of giants.
+<ce>   Do you try to help them?
+
+Message:  1011
+<ce>  Not knowing much of the Giantish language,
+<ce>  you shout various phrases at the brutes.
+<ce>  It has no visible effect on them.   
+
+Message:  1012
+<ce>  You know enough of the giants' language
+<ce>  to make some rather specific threats.
+<ce>  They shake, startled to see someone
+<ce>  proficient in their tongue.
+<ce>  Then they turn and run.
+
+Message:  1013
+<ce>  The adventurers wave at you,
+<ce>  grateful for your support.
+<ce>  
+<ce>  "Hello there! And how are you this fine day?"
+<ce>  
+<ce>  It looks like they want to chat.
+
+Message:  1014
+<ce>  Terrifying traveling about in the wild like this, isn't it?
+<--->
+<ce>  You look like you'd make a great traveling companion!
+
+Message:  1015
+<ce>  Those things are much taller than they say in the taverns!
+<--->
+<ce>  I'm not sure I'm cut out for this!
+
+Message:  1016
+<ce>  My word, my ankle is not faring well after that battle.
+<ce>  I think I'm going to have to leave this troupe for a while.
+<ce>  Would you be willing to take me to the nearest city?
+<ce>  I need some place to rest until I get better.
+<ce>  =reward_ gold in it for you.
+
+Message:  1017
+<ce>  Well, you tried your best, even if everyone's dead.
+
+Message:  1018
+<ce>  _name_ has gone too far with %g3 injury.
+<ce>  
+<ce>  "I thank you for keeping me safe, but I must rest."
+<ce>  
+<ce>  With that %g1 hobbles off to another direction.
+
+Message:  1019
+<ce>  Thank you. Any city or village will do.
+<ce>  I just need to rest. My name's _name_.
+
+Message:  1020
+<ce>  Well, I'm sure I'll get better in any case.
+
+Message:  1021
+%qdt:
+ Following a giant attack, an adventurer
+ named _name_ needs me as an escort
+ to any nearby city or village to recover.
+ I'll be paid =reward_ gold for it.
+
+QBN:
+
+Clock _failsafe_ 4.00:00
+
+Foe _gt1_ is Giant
+Foe _gt2_ is Giant
+Foe _hu1_ is Rogue
+Foe _hu2_ is Knight
+Foe _hu3_ is Nightblade
+
+Item _reward_ gold range 201 to 349
+
+Person _name_ faction The_Thieves_Guild
+
+--	Quest start-up:
+    start timer _failsafe_
+    create foe _hu1_ every 0 minutes 1 times with 100% success
+    create foe _hu2_ every 0 minutes 1 times with 100% success
+    create foe _hu3_ every 0 minutes 1 times with 100% success
+    create foe _gt1_ every 0 minutes 1 times with 100% success
+    create foe _gt2_ every 0 minutes 1 times with 100% success
+    prompt 1010 yes _attack_ no _wimp_
+
+variable _attack_
+
+_skilled_ task:
+    when skill Giantish is at least 40
+
+_nofun_ task:
+    when _attack_ and not _skilled_
+    say 1011
+
+_funtime_ task:
+    when _attack_ and _skilled_
+    say 1012
+    remove foe _gt1_
+    remove foe _gt2_
+    start task _victory_ 
+
+variable _wimp_
+_day_ task:
+    daily from 0:00 to 23:59
+    change foe _hu1_ team 1
+    change foe _hu2_ team 1
+    change foe _hu3_ team 1
+    change foe _gt1_ infighting true
+    change foe _gt2_ infighting true
+    change foe _hu1_ infighting true
+    change foe _hu2_ infighting true
+    change foe _hu3_ infighting true
+    clear _day_
+
+_kill1_ task:
+    killed _hu1_
+
+_kill2_ task:
+    killed _hu2_
+
+_kill3_ task:
+    killed _hu3_
+
+_gt1dead_ task:
+    killed _gt1_
+
+_gt2dead_ task:
+    killed _gt2_
+
+_gtdead_ task:
+    when _gt1dead_ and _gt2dead_
+    start task _victory_
+
+variable _victory_
+_talkie_ task:
+    when _victory_ and _attack_
+    say 1013
+
+_fail_ task:
+    when _gtdead_ and _kill1_ and _kill2_ and _kill3_
+    say 1017
+    end quest
+
+_talk1_ task:
+    clicked foe _hu1_
+    prompt 1016 yes _accept_ no _deny_
+
+_talk2_ task:
+    clicked foe _hu2_
+    say 1014
+
+_talk3_ task:
+    clicked foe _hu3_
+    say 1015
+
+_deny_ task:
+    say 1020
+
+_accept_ task:
+    say 1019
+    remove foe _hu1_
+    add _name_ face
+    log 1021 step 0
+
+_clearclick1_ task:
+    when _talk1_ and not _victory_
+    clear _talk1_ _clearclick1_
+
+_clearclick2_ task:
+    when _talk2_ and not _victory_
+    clear _talk2_ _clearclick2_
+
+_clearclick3_ task:
+    when _talk3_ and not _victory_
+    clear _talk3_ _clearclick3_
+
+_goodbye_ task:
+    when _failsafe_ and _accept_
+    say 1018
+    drop _name_ face
+
+_arrival_ task:
+    when pc enters city
+    when pc enters village
+    when pc enters tavernhome
+    when pc enters hamlet
+    give pc _reward_
+    end quest
+
+_failsafe_ task:
+    end quest

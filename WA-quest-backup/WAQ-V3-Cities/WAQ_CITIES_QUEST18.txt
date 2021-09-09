@@ -1,0 +1,129 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST18
+--JHTGA01(Warm Ashes)
+DisplayName: The Pick
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHTGA01
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHTGA01
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHTGA01
+
+QuestFail:  [1003]
+<ce>               You make a good faith effort at picking
+<ce>             the lock, but its complexity surprises you.
+<ce>                 A few minutes pass without progress.
+<ce>              Soon the homeowner, fearing you will only
+<ce>                 damage the internal workings, pulls
+<ce>               you aside and begins to look for a more
+<ce>                         competent locksmith.
+
+QuestComplete:  [1004]
+<ce>              Your skill at lockpicking shines through,
+<ce>                amazing the homeowner and his friends.
+<ce>                In less time than it took to hear the
+<ce>                   request you have already gotten
+<ce>             the pins in place and pulled the door open.
+<ce>              Your sudden employer is overjoyed at your
+<ce>               swift work and minimal damage and hands
+<ce>                      you a small bag of coins.
+
+Message:  1010
+<ce>             You notice a few men huddled around the door
+<ce>           of a nearby home, looking into the door handle.
+<ce>               They grumble among themselves concerning
+<ce>          the lock. One of them tries speaking to passersby.
+<ce>
+<ce>            "Pardon me good friend, but my child is inside
+<ce>            and has locked the door on me. I have no means
+<ce>             to open it without damaging the door, which
+<ce>         I cannot afford to repair. Can you help unlock it?"
+<ce>
+<ce>        Several move by without answering. Do you attempt it?
+
+Message:  1012
+<ce>      There are many things to ask in this situation, including
+<ce>          whether these fellows are not robbers themselves.
+<ce>                     Better not to get involved.
+
+QBN:
+Clock _failsafe_ 30.00:00
+Clock _timer_ 1:00
+Clock _delay_ 0:00 0:01
+
+Item _reward_ gold range 101 to 249
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_enter_ task:
+    when pc enters city
+    stop timer _failsafe_
+    start timer _delay_
+    start timer _timer_
+
+_delay_ task:
+    prompt 1010 yes _begin_ no _quit_
+
+_begin_ task:
+    pick one of _go1_ _go2_ _go3_
+
+_check1_ task:
+    when skill Lockpicking is at least 15
+
+_check2_ task:
+    when skill Lockpicking is at least 25
+
+_check3_ task:
+    when skill Lockpicking is at least 35
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+    when _check1_ and _go1_
+    start task _victory_
+
+_c2_ task:
+    when _check2_ and _go2_
+    start task _victory_
+
+_c3_ task:
+    when _check3_ and _go3_
+    start task _victory_
+
+_d1_ task:
+    when not _check1_ and _go1_
+    start task _fail_
+
+_d2_ task:
+    when not _check2_ and _go2_
+    start task _fail_
+
+_d3_ task:
+    when not _check3_ and _go3_
+    start task _fail_
+
+_victory_ task:
+    give pc _reward_
+    end quest
+
+_fail_ task:
+    say 1003
+    end quest
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest
+
+_quit_ task:
+    say 1012
+    end quest

@@ -1,0 +1,86 @@
+-- Perpetual Quest
+Quest: JHPQ040
+DisplayName: The Spider Master
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQ040
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQ040
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQ040
+
+QuestFail:  [1003]
+<ce>                          ERROR 1003 JHPQ040
+
+QuestComplete:  [1004]
+<ce>              Nearby townsfolk murmur among themselves,
+<ce>             claiming they have heard this fellow attack
+<ce>            other settlements. A member of the town guard
+<ce>               thanks you for slaying the arachnids and
+<ce>                  leaves to attend to other duties.
+
+RumorsPostSuccess:  [1007]
+The Spider Master struck again.
+<--->
+I hope they catch that Spider Master.
+
+Message:  1010
+<ce>          A puff of smoke nearby signals someone's dramatic
+<ce>        entrance. You see a man cowled in white, baggy scraps,
+<ce>        his face entirely covered. He shouts to the passersby.
+<ce>
+<ce>            "Ho! Behold, the Spider Master strikes again!
+<ce>                 Fall before my might! Minions, go!"
+<ce>
+<ce>            He snaps his fingers and a pair of beady-eyed
+<ce>            spiders clamber out from nearby smoke clouds.
+<ce>           The man cackles as he disappears into thin air,
+<ce>          leaving his creatures to terrorize the settlement.
+                                     <--->
+<ce>          A puff of smoke nearby signals someone's dramatic
+<ce>        entrance. You see a man cowled in white, baggy scraps,
+<ce>        his face entirely covered. He shouts to the passersby.
+<ce>
+<ce>             "Ha ha ha! Go, my spiders! The Spider Master
+<ce>                has found food for you again! Strike!"
+<ce>
+<ce>            He snaps his fingers and a pair of beady-eyed
+<ce>            spiders clamber out from nearby smoke clouds.
+<ce>           The man cackles as he disappears into thin air,
+<ce>          leaving his creatures to terrorize the settlement.
+
+QBN:
+Clock _failsafe_ 7.00:00
+Clock _timer_ 1:00
+Clock _delay_ 0:01 0:02
+
+Foe _enemy_ is Spider
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_enter_ task:
+    when pc enters city
+    stop timer _failsafe_
+    start timer _delay_
+    start timer _timer_
+
+_delay_ task:
+    say 1010
+    create foe _enemy_ every 0 minutes 2 times with 100% success
+
+_slain_ task:
+    killed 2 _enemy_
+    legal repute +2
+    give pc nothing
+    end quest
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest

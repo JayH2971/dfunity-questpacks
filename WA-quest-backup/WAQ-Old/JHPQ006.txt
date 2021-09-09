@@ -1,0 +1,122 @@
+-- Perpetual Quest
+Quest: JHPQ006
+DisplayName: A Chance Rescue
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ006
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ006
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ006
+
+QuestFail:  [1003]
+<ce>   I'll find my own way. Please tell
+<ce>   no one you saw me, %pcf.
+
+QuestComplete:  [1004]
+<ce>        Oh, thank you! Thank you! You have no idea
+<ce>        what this means! Helseth will do anything
+<ce>        to keep his secrets from the public.
+<ce>        My escort is already waiting here. Please,
+<ce>        accept this small sum. It may not be much,
+<ce>        but please take it anyway.
+
+Message:  1010
+<ce>        You hear a desperate cry nearby. Turning,
+<ce>        you see a man fleeing a few soldiers.
+<ce>
+<ce>        "Please! Someone help! Helseth's
+<ce>        out to kill me! Quickly!"
+<ce>
+<ce>        The others arm their bows and motion
+<ce>        to you to stay out of it. Do you intervene?
+
+Message:  1011
+<ce>          You signal to the man to follow you.
+<ce>        The warriors turn their malevolent gaze
+<ce>        to you instead and arm their weapons.
+
+Message:  1012
+<ce>        "You've saved my life! My savior! My champion!"
+<ce>
+<ce>        After catching his breath, he continues.
+<ce>
+<ce>        "My name is _qg_. I need to make
+<ce>        the people aware of what Helseth has been doing
+<ce>        outside of his father's court. Please lead me to
+<ce>        ___temple_. My friends will guide me
+<ce>        from there to Sentinel Palace, where I will be
+<ce>        safe from these murderers. We were waylaid and
+<ce>        separated several days ago, and I've been pursued
+<ce>        ever since. Without you, I truly doubt I would be
+<ce>        able to make the journey. But now, I am ready.
+<ce>        Let us hurry to _temple_.
+<ce>        I'll be pleased if it takes us no more than =timer_ days."
+
+Message:  1013
+<ce>       Before the man can get away, an arrow
+<ce>       enters his calf, disabling him. The soldiers gag
+<ce>       him and put him into a nearby cart. One of them
+<ce>       bows to you in thanks for not interfering, and
+<ce>       the group departs.
+
+Message:  1030
+%qdt:
+ I am escorting _qg_
+ to ___temple_ in defiance of
+ Prince Helseth of Wayrest.
+ I must deliver %g2 to _temple_
+ so %g1 can expose the prince's corruption
+ from a safe location. He wants to
+ be there in =timer_ days.
+
+QBN:
+Item _reward_ gold range 120 to 999
+
+Place _temple_ remote temple
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _failsafe_ 1.00:00
+
+Person _qg_ group Questor male
+Person _helseth_ faction Prince_Helseth
+
+Foe _enemy_ is 2 Barbarian
+
+--	Quest start-up:
+	start timer _failsafe_
+          prompt 1010 yes _accept_ no _refuse_
+          pc at _temple_ set _victory_
+
+_refuse_ task:
+     say 1013
+     end quest
+
+_accept_ task:
+    say 1011
+    add _qg_ face
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+    
+_begin_ task:
+    killed 2 _enemy_
+    say 1012
+    log 1030 step 0
+    stop timer _failsafe_
+    start timer _timer_
+    create foe _enemy_ every 600 minutes indefinitely with 100% success
+
+_victory_ task:
+    give pc _reward_
+    change repute with _helseth_ by -3
+    end quest
+
+_timer_ task:
+         say 1003
+         end quest
+
+_failsafe_ task:
+         end quest

@@ -1,0 +1,140 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST10
+--JHKNA03 (Warm Ashes)
+DisplayName: Batter Up
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHKNA03
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHKNA03
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHKNA03
+
+QuestFail:  [1003]
+<ce>       What seemed like a simple game becomes complex once the
+<ce>       club touches your hand. Its odd weight and shape make a
+<ce>     solid hit very difficult. The gamesman tosses the ball five
+<ce>       times, eliciting five misses. While you fail to earn the
+<ce>       prize, the only penalty you suffer is the mockery of the
+<ce>       small crowd that stopped to watch you. Surely some more
+<ce>           practice with clubs and hammers will prepare you
+<ce>                            for a rematch.
+
+QuestComplete:  [1004]
+<ce>         Your experience with blunt weaponry serves you well.
+<ce>         The club is weighted oddly, probably on purpose, but
+<ce>          you quickly gain your bearings and strike the ball
+<ce>           into the air. The smattering of townspeople who
+<ce>           stopped to watch you stare as it flies uncounted
+<ce>         meters across the sky. The game owner grumbles a bit
+<ce>            about cheaters while counting out your reward.
+
+Message:  1010
+<ce>          Someone has set up an attraction nearby, gathering
+<ce>           a small crowd together to try to hit a ball with
+<ce>          a large wooden club. A few people make the attempt
+<ce>           and all fail. The owner shouts that whoever can
+<ce>            hit the ball further than ten meters will win
+<ce>                =reward_ gold pieces. Will you try it?
+
+Message:  1012
+<ce>             With so much to do in %crn, you have no time
+<ce>           to waste. You leave the games to the townsfolk.
+
+QBN:
+Clock _failsafe_ 7.00:00
+Clock _timer_ 1:00
+Clock _delay_ 0:01 0:04
+
+Item _reward_ gold range 251 to 399
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_enter_ task:
+    when pc enters city
+	setvar _makesound_ 
+    stop timer _failsafe_
+    start timer _delay_
+    start timer _timer_
+	
+	
+---------* Sound**---
+_makesound_ task:
+	play sound talking_loud every 0 minutes 10 times
+	clear _makesound_
+	
+_makesound2_ task:
+	play sound laughter_loud every 0 minutes 10 times
+	clear _makesound2_
+	
+_makesound3_ task:
+	play sound levelup_gong every 0 minutes 10 times
+	clear _makesound3_
+
+_delay_ task:
+    prompt 1010 yes _begin_ no _quit_
+
+_begin_ task:
+    pick one of _go1_ _go2_ _go3_
+
+_check1_ task:
+    when skill BluntWeapon is at least 30
+
+_check2_ task:
+    when skill BluntWeapon is at least 40
+
+_check3_ task:
+    when skill BluntWeapon is at least 50
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+    when _check1_ and _go1_
+    start task _victory_
+
+_c2_ task:
+    when _check2_ and _go2_
+    start task _victory_
+
+_c3_ task:
+    when _check3_ and _go3_
+    start task _victory_
+
+_d1_ task:
+    when not _check1_ and _go1_
+    start task _fail_
+
+_d2_ task:
+    when not _check2_ and _go2_
+    start task _fail_
+
+_d3_ task:
+    when not _check3_ and _go3_
+    start task _fail_
+
+_victory_ task:
+    give pc _reward_
+	setvar _makesound3_ 
+    end quest
+
+_fail_ task:
+    say 1003
+	setvar _makesound2_ 
+    end quest
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest
+
+_quit_ task:
+    say 1012
+    end quest

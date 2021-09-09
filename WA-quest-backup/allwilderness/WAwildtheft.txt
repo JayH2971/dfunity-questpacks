@@ -1,0 +1,59 @@
+Quest: wildtheft
+DisplayName: A Wilderness Theft
+-- Wilderness event
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              wildtheft 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             wildtheft 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             wildtheft 1002 Called
+
+QuestFail:  [1003]
+<ce>         wildtheft 1003 Called
+
+QuestComplete:  [1004]
+<ce>          wildtheft 1004 Called
+
+Message:  1010
+<ce>   You're startled by a figure rushing past you,
+<ce>   throwing your personal effects into disorder.
+<ce>   You notice you have 25 less gold than before.
+
+Message:  1011
+<ce>   You're startled by a figure rushing past you,
+<ce>   throwing your personal effects into disorder.
+<ce>   In the distance you hear, "%oth!
+<ce>   More empty pockets!"
+
+Message:  1012
+<ce>   You're startled by a figure rushing past you.
+<ce>   Your expertise in pickpocketing trains you to
+<ce>   put one hand on your money bag, right when
+<ce>   the runner tries to steal from it.
+<ce>   You lose no money.
+
+QBN:
+
+--	Quest start-up:
+
+_skilled_ task:
+    when skill Pickpocket is at least 80
+    say 1012
+    end quest
+
+_notskilled_ task:
+    when not _skilled_
+    pay 25 money do _hasmoney_ otherwise do _nomoney_
+
+_hasmoney_ task:
+    say 1010
+    end quest
+
+_nomoney_ task:
+    say 1011
+    end quest

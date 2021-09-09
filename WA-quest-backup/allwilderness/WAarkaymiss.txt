@@ -1,0 +1,132 @@
+Quest: arkaymiss
+DisplayName: Missionary of Arkay
+-- Wilderness event in Dragontail Mountains, Ilessan Hills, Sentinel, and Shalgora
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              arkaymiss 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             arkaymiss 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             arkaymiss 1002 Called
+
+QuestFail:  [1003]
+<ce>         arkaymiss 1003 Called
+
+QuestComplete:  [1004]
+<ce>         arkaymiss 1004 Called
+
+Message:  1010
+<ce>         You barely notice a priest nearby,
+<ce>  whose meditations seem to radiate peace.
+<ce>  A hand wave follows.
+<ce>  
+<ce>  "Hello child! Would you like to hear of Arkay,
+<ce>  god of life and death?"
+
+Message:  1011
+<ce>  "Ah, 'tis a surprise to see one in the prime of life,
+<ce>  brimming with adventuresome spirit, take time to 
+<ce>  learn of the divine. A welcome surprise, I should say.
+<ce>  Come. We have much to discuss concerning Arkay the Great!"
+<ce>  
+<ce>  This missionary seems quite determined to talk to you.
+<ce>  Do you accept?
+
+Message:  1012
+<ce>  "Well now, you're serious about this indeed.
+<ce>  Where shall we begin? To speak of Arkay is to speak
+<ce>  of the balance between death and life -- the very
+<ce>  god who keeps these two primal forces in balance.
+<ce>  Were our eyes a little sharper, my friend, we would..."
+<ce>  
+<ce>  The lecture continues on in this vein for some time.
+<ce>  
+<ce>  "But it would be silly to speak merely of the divine or
+<ce>  the metaphysical without coming to the question,
+<ce>  'And what's in it for me?' Let's turn it to you, then.
+<ce>  Tell me, do you fear death?"
+
+Message:  1013
+<ce>  "Your honesty is good, my child. Work hard to overcome that fear.
+<ce>  One day death will claim you. Be ready for that day!
+<ce>  Arkay the Great is supreme above this whole sphere, and
+<ce>  we need not fear! Now, my friend, I must soon depart, 
+<ce>  but let us commune with Arkay together. Come now."
+<ce>  
+<ce>  The two of you spend several quiet moments contemplating
+<ce>  these words. You feel your affinity for the god Arkay has grown.
+<ce>  
+<ce>  The missionary embraces you and departs,
+<ce>  happy to have accomplished a good deed for the day.
+
+Message:  1014
+<ce>  "That is good. Be ready for it all! Give your whole heart
+<ce>  to your purpose, keep nothing back! When death claims you,
+<ce>  let it take all, body and heart! Why, there is nothing at all
+<ce>  to fear in death! Arkay the Great is wondrous.
+<ce>  Now, my friend, I must soon depart, but let us commune with
+<ce>  Arkay together. Come now."
+<ce>  
+<ce>  The two of you spend several quiet moments contemplating
+<ce>  these words. You feel your affinity for the god Arkay has grown.
+<ce>  
+<ce>  The missionary embraces you and departs,
+<ce>  happy to have accomplished a good deed for the day.
+
+Message:  1015
+<ce>  "Very well child, let Arkay be in your thoughts.
+<ce>  Safe travels!"
+
+QBN:
+
+Clock _failsafe_ 8:00
+
+Foe _hu1_ is Healer
+
+Person _name_ faction Arkay
+
+--	Quest start-up:
+    start timer _failsafe_
+    say 1010
+    create foe _hu1_ every 0 minutes 1 times with 100% success
+
+_day_ task:
+    daily from 0:00 to 23:59
+    change foe _hu1_ team 1
+    change foe _hu1_ infighting true
+    clear _day_
+
+_kill1_ task:
+    killed _hu1_
+    end quest
+
+_talk1_ task:
+    clicked foe _hu1_
+    prompt 1011 yes _accept_ no _deny_
+
+_deny_ task:
+    say 1015
+    end quest
+
+_accept_ task:
+    prompt 1012 yes _fear_ no _nofear_
+
+_fear_ task:
+    say 1013
+    change repute with _name_ by +3
+    remove foe _hu1_
+    end quest
+
+_nofear_ task:
+    say 1014
+    change repute with _name_ by +3
+    remove foe _hu1_
+    end quest
+
+_failsafe_ task:
+    remove foe _hu1_
+    end quest

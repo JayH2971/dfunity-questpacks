@@ -1,0 +1,63 @@
+Quest: barbknight
+DisplayName: Barbarian x Knight
+-- Dungeon event
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              barbknight 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             barbknight 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             barbknight 1002 Called
+
+QuestFail:  [1003]
+<ce>         barbknight 1003 Called
+
+QuestComplete:  [1004]
+<ce>         barbknight 1004 Called
+
+Message:  1010
+<ce>            A fight has broken out near you.
+<ce>  A barbarian and a knight seem to have
+<ce>  gotten into a brawl.
+<ce>  
+<ce>  "Knave! In the name of the %t I will stop you!"
+
+Message:  1011
+<ce>         The knight celebrates the victory.
+<ce>  
+<ce>  "Finally, I'm out of this hole!
+<ce>  The Fighters Guild better pay well for this!"
+
+QBN:
+
+Clock _failsafe_ 1:00
+
+Foe _hu1_ is Knight
+Foe _hu2_ is Barbarian
+
+--	Quest start-up:
+    start timer _failsafe_
+    say 1010
+    create foe _hu1_ every 0 minutes 1 times with 100% success
+    create foe _hu2_ every 0 minutes 1 times with 100% success
+    change foe _hu1_ team 1
+    change foe _hu1_ infighting true
+    change foe _hu2_ infighting true
+
+_killkni_ task:
+    killed _hu1_
+
+_killbarb_ task:
+    killed _hu2_
+
+_vict_ task:
+    when _killbarb_ and not _killkni_
+    say 1011
+    remove foe _hu1_
+
+_failsafe_ task:
+    end quest

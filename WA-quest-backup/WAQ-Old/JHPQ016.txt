@@ -1,0 +1,560 @@
+-- Perpetual Quest
+Quest: JHPQ016
+DisplayName: North, South, East, West
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ016
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ016
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ016
+
+QuestFail:  [1003]
+<ce>          My proper %pcf, I believe we have
+<ce>          received many meaningful offers for adoption.
+<ce>          I believe I have settled on one, and I will take
+<ce>          my leave for it, for the time is far spent.
+<ce>          I do thank you for your care and wish
+<ce>          %god's blessings upon you in your
+<ce>          travelings. Farewell, my guardian.
+
+QuestComplete:  [1004]
+<ce>          You hope you chose well. This decision will
+<ce>          determine much of _kid_'s future.
+
+Message:  1010
+<ce>        A scrawny and dirty child gives you a letter, and
+<ce>        then meanders off in a different direction.
+<--->
+<ce>        "Hello there! I have a letter for %pcn.
+<ce>        Is that you? Please take it, my dear."
+<ce>        
+<ce>        The courier turns and leaves you with the note.
+
+Message:  1011
+ To %pcn,
+ 
+ Some rumors in the area speak to your trustworthiness
+ and ability to travel in safety. My name is _kid_.
+ I am an orphan in formative years, seeking a family who will
+ provide me with such experiences as will set the cornerstone
+ for a foundation of a good life. If I may rely on your help for this,
+ please come to me within =timer_ days, else I will move on.
+ 
+                _kid_
+                _start_
+                ___start_, ____start_
+
+Message:  1012
+<ce>        Ah, my pretended champion, %pcn!
+<ce>        You look just like they said. How truly marvelous
+<ce>        to meet you in person! And quite a change of
+<ce>        pace from the doldrums of this place, the
+<ce>        endless monotony of the good people here.
+<ce>        True, I've lived off of my inheritance here without
+<ce>        issue, but I need something more. Can you
+<ce>        help me find a family that will introduce me to the
+<ce>        world of the craftsmen and the mechants, who will
+<ce>        show me the path of success?
+
+Message:  1013
+<ce>        Oh, drat. I do thank you for coming to meet me
+<ce>        at least. Now I know to look for someone else.
+<ce>        Thank you, and %god watch over you this year.
+
+Message:  1014
+<ce>        And your answer, precisely as I hoped! Oh, what
+<ce>        a thrill this is! I have my belongings ready. I have
+<ce>        informed my butler to send out the circulars so soon
+<ce>        as I leave town, so I have great reason to assume
+<ce>        we will soon locate a suitable match for me.
+<ce>        I will trust your judgment, knowing all the wiles and
+<ce>        concerns of the complex adult world. Send me to
+<ce>        whosoever you will, and I will dedicate myself to
+<ce>        their cause. Let us go!
+
+Message:  1030
+%qdt:
+ _kid_, a well-behaved orphan,
+ has asked me to find him a proper
+ home where he can mature and learn
+ the trades of the world. We will travel
+ until that time, or perhaps until he gets bored.
+
+Message:  1041
+<ce>        A weary, journey-worn page pulls out a
+<ce>        parchment and hands it to _kid_
+<ce>        before resuming his duties.
+<--->
+<ce>        A weary, journey-worn page pulls out a
+<ce>        parchment and hands it to _kid_
+<ce>        before resuming her duties.
+
+Message:  1042
+ To the orphan _kid_,
+ 
+ My name is _smith_. My family and I
+ are hard-working and honest weaponsmiths, bearing
+ the family line for centuries past. We read of your
+ request and believe ourselves to be suitable tutors
+ in your desires to face the world with courage.
+ We will teach you quality blacksmithing, haggling,
+ travel, and accountability for your actions. Should
+ we be in agreement, I and my family will await
+ you with great anticipation.
+ 
+                _smith_
+                _wshop_, ___wshop_
+
+Message: 1043
+<ce>        A broad smile crests _smith_'s face.
+<ce>        
+<ce>        "Welcome, my fine visitors, to _wshop_!
+<ce>        _kid_, I am certain, yes? A pleasure to
+<ce>        meet you, lad. I meant all that I wrote and wish
+<ce>        to show you how to enter the world of a real
+<ce>        man. Do not worry for those twigs at your side,
+<ce>        for within a year's time you will have strength
+<ce>        enough to bend iron itself at your pleasure.
+<ce>        And as for you, %ra, I wish to offer you this
+<ce>        _weapon_ as payment for your travels, which
+<ce>        I believe to be fair payment. Do we have a deal?"
+<ce>        
+<ce>        _kid_ looks slightly uncomfortable
+<ce>        at the loud noise and rough demeanor present in this
+<ce>        store. He sees the value in it but doesn't look entirely
+<ce>        committed. Nevertheless, he said he would trust your
+<ce>        judgment. Will you commit him to _smith_?
+
+Message:  1044
+<ce>        "Then that is a pity beyond my power to express, %ra.
+<ce>        Be away with both of you, then. I have work to be doing."
+
+Message:  1045
+<ce>        You shake _smith_'s hand, bringing
+<ce>        another broad smile to his face.
+<ce>        
+<ce>        "I assure you that you've made a fine choice.
+<ce>        My word and my integrity are as valuable as
+<ce>        my own soul, and I will raise and teach this child
+<ce>        as one of my own. As I stated, I have this _weapon_
+<ce>        as an adoption fee of sorts, if we will call it that.
+<ce>        Take it and trust me and my family, for we will do right."
+<ce>        
+<ce>        You gesture to _kid_ to take his place as the
+<ce>        weaponsmith hands you the _weapon_.
+
+Message:  1051
+<ce>        A small and dirty child, likely incapable of speech,
+<ce>        hands _kid_ a note and totters off.
+
+Message:  1052
+ To the boy _kid_,
+ 
+ We write to you in hopes that you will hear our
+ plea. My family and I are not favored with
+ material things as you may be used to, and
+ we wish to state that first of all. Our labor is
+ any that we can accumulate to keep ourselves
+ fed and sheltered. We know you keep an
+ inheritance from which you live, that which
+ descended from your parents. If you will bring
+ it to us and join yourself to our family, we will
+ make you our guardian and appoint you over all
+ our financial matters. We will entrust ourselves
+ to you. Certainly no academic education can
+ exceed the learning you will gain from us.
+ I will await you in ___phouse_, under
+ the roof lent to us for this season.
+ 
+                _poor_
+                _phouse_, ___phouse_
+
+Message:  1053
+<ce>        _poor_ generates a smell that _kid_
+<ce>        reacts to poorly. He is clearly well out of his
+<ce>        element here. Your host vigorously shakes your hands.
+<ce>        
+<ce>        "Well met, _kid_! It causes me shame
+<ce>        to speak of such matters as these, but I bared
+<ce>        my soul in my letter and made clear our situation.
+<ce>        We need such money as you have. I do not have
+<ce>        such tact or talent that you grew up with,
+<ce>        and I do not hope to convince you if you are
+<ce>        not already certain. But as a family we are
+<ce>        close-knit, forgiving, and dedicated to our mutual
+<ce>        well-being. These are things you will not learn
+<ce>        in a bank or a guild. That I know! I have nothing to
+<ce>        offer your guide as an adoption fee except my most
+<ce>        express promise that we will raise you to be a proper
+<ce>        adult, surrounded by integrity and the best of wishes."
+<ce>        
+<ce>        _kid_ looks bemused, to say the least.
+<ce>        Still, he said he would trust you. Do you
+<ce>        entrust him to _poor_?
+
+Message:  1054
+<ce>        "I have to ask, what did you come here for?
+<ce>        To laugh at the poverty you knew you would
+<ce>        find? Have your comedy then, and leave."
+
+Message:  1055
+<ce>        _poor_ embraces you joyfully, unpleasant
+<ce>        as the experience is. _kid_ receives
+<ce>        of the same kind of treatment.
+<ce>        
+<ce>        "Well, I suppose I should get used to it. This
+<ce>        is my future, after all. I do not know what your
+<ce>        plan is, but I do know to trust your judgment.
+<ce>        Why else did I choose you, after all?"
+<ce>         
+<ce>        _kid_ sighs and begins unpacking his things, the
+<ce>        first of which being a small pouch he hands to _poor_.
+<ce>        
+<ce>        "This is a handful of gold. With it, we first buy some
+<ce>        bathing water and a cleansing agent for your whole
+<ce>        family. Then I insist you take me about and show
+<ce>        me this town. I will need to know the whereabouts
+<ce>        if I will lift you out of poverty, for my money alone
+<ce>        will not last a lifetime."
+<ce>        
+<ce>        As the conversation turns into a din, you take your leave.
+
+Message:  1061
+<ce>        A cloaked figure silently hands you a letter and marches away.
+
+Message:  1062
+ %pcf,
+ 
+ We are informed you convey one _kid_ to
+ look for a suitable family with which to build his future.
+ We hope you will not forget that Brotherhood which
+ serves all of Tamriel day and night. No greater family
+ exists in all of ____dbhome_. Take heed to bring him
+ to ___dbhome_. We will orient him in the ways
+ of business, royalty, riches, and power as no other faction
+ could ever dream of. Certainly you understand the value
+ of our esteem, as well as an enchanted _mitem_
+ from my personal store.
+ 
+                _db_
+                _dbhome_
+
+Message:  1063
+<ce>        _db_ extends a solemn hand toward _kid_.
+<ce>        
+<ce>        "You have made the right choice, %ra. Our promises
+<ce>        are sure. Turn the child over to us. One with his
+<ce>        heritage and age has great potential to the Night Mother."
+<ce>        
+<ce>        _kid_'s eyes are wide open, and you think
+<ce>        you see him shaking slightly. He apparently has
+<ce>        no experience at all with the Dark Brotherhood.
+<ce>        You will have to trust _db_ to orient him
+<ce>        in its ways. Do you accept the offer?
+
+Message:  1064
+<ce>        "Fool! Why do you mock us so? Have we not shown
+<ce>        you our secrets? Take this child away from here!
+<ce>        Forget all that you have seen and heard! Now!"
+
+Message:  1065
+<ce>        You take _db_'s hand,
+<ce>        and %g1 draws _kid_ near. 
+<ce>        
+<ce>        "There was only one choice after all, %pcf.
+<ce>        I am pleased you did not hesitate. This day you
+<ce>        have earned the attention of the Night Mother
+<ce>        herself, which is no easy feat. She will know of
+<ce>        you by name, and this child will be hers."
+<ce>        
+<ce>        _kid_'s brow furrows as he looks at you.
+<ce>        He then puts his worries out of his mind,
+<ce>        determined to learning this strange new world of
+<ce>        crime and darkness. While _db_ makes small
+<ce>        talk with him, %g1 pulls out the promised _mitem_
+<ce>        and hands it to you before fully ignoring you.
+
+Message:  1071
+<ce>        A well-dressed page riding a steed offers you
+<ce>        a letter and departs with a respectful bow.
+
+Message:  1072
+ _kid_,
+ 
+ I have heard your story and wish to make you an offer.
+ I am the owner of _bank_ in ___bank_.
+ If you will join me, I will make of you one of the richest
+ men in all of ____bank_ within ten years' time.
+ Bring your inheritance and any adoption papers you will
+ have me sign. I offer your escort =bankrew_ gold pieces
+ for his or her trouble.
+ 
+                _banker_
+
+Message:  1073
+<ce>        "Good. I'm glad to see you both well. Now, let's
+<ce>        get down to business to make a man out of you."
+<ce>        
+<ce>        A steady and generally meaningless procession of
+<ce>        business terms regarding loans, interests, repossession,
+<ce>        and negotiation follows. _banker_ brings
+<ce>        out maps of the city to show what properties are pending
+<ce>        sale, as well as some lesser matters %g1 is watching.
+<ce>        
+<ce>        "_kid_, I will require you to invest the whole sum
+<ce>        of your inheritance before I will accept you. In exchange,
+<ce>        I promise you, with an ironclad guarantee, that you will
+<ce>        bring forth a sum of no less than =dummymoney_ gold
+<ce>        in the first year, which will duplicate in each succeeding
+<ce>        year. Mark my words, for it will be done."
+<ce>        
+<ce>        _kid_ would certainly learn the adult world here, even if it
+<ce>        were under the pressure of deadlines and negotiation.
+<ce>        Do you accept _banker_'s offer of =bankrew_ gold pieces
+<ce>        and give _kid_ to the care of _bank_?
+
+Message:  1074
+<ce>        _banker_ abruptly shuts the ledger and begins
+<ce>        packing away the recently opened documents.
+<ce>        
+<ce>        "Go. Now. I do not care for you here."
+
+Message:  1075
+<ce>        You shake _banker_'s hand.
+<ce>        
+<ce>        "Fine. We have a room somewhere around here.
+<ce>        You'll want to clean the dust off the bed before you
+<ce>        sleep. Your first week's earnings will be sufficient
+<ce>        to hire a servant girl, but until that time the chores will
+<ce>        fall to you. Be ready for transactions no later than 7:45
+<ce>        tomorrow morning. Every second client will be yours.
+<ce>        Do what I do and say what I say. Do not vary from it."
+<ce>        
+<ce>        _banker_ nonchalantly brings out a sack of coins
+<ce>        and hands it to you. _kid_ bows to you,
+<ce>        mentally preparing himself for his new life.
+
+Message:  1081
+<ce>        A very distracted courier, holding several
+<ce>        loose sheets of parchment, stumbles over and
+<ce>        hands one to you. He then looks around to
+<ce>        get his bearings on where to go next.
+<--->
+<ce>        A very distracted courier, holding several
+<ce>        loose sheets of parchment, stumbles over and
+<ce>        hands one to you. She then looks around to
+<ce>        get her bearings on where to go next.
+
+Message:  1082
+ _kid_,
+ 
+ I'm writing to you on behalf of the Fighters Guild. We picked
+ up one of the circulars you sent around, and we think we can
+ take pretty good care of you. With us you'll learn combat,
+ training, partnership, how to travel on your own, and how
+ to work contracts and deadlines and such. At first you'll
+ just be killing rats and scorpions and little critters like them,
+ but it gets better after that. You'll have an honest living and
+ learn to take care of yourself. You'll become a respectable
+ young man working with us. Come see me in ___fguild_
+ if that's an attractive offer. I can offer your escort
+ =fgrew_ gold pieces as an adoption fee.
+  
+                _fg_
+                _fguild_, ___fguild_
+
+Message:  1083
+<ce>        "Ah, great! Welcome, %pcf. And you're _kid_!
+<ce>        I think you've got what it takes to start with us.
+<ce>        I can at least justify it if you're good at running
+<ce>        or jumping or swimming or something. In any case,
+<ce>        they bend the rules a bit more if you start young.
+<ce>        You're gonna have to learn to live in common quarters
+<ce>        like what we've got upstairs, so take that into account.
+<ce>        You're gonna live like us, act like us, talk like us, everything.
+<ce>        No wimping out and sleeping in an inn from now on.
+<ce>        We'll make you tough. That sound like a good deal to you?"
+<ce>        
+<ce>        _kid_ considers it thoughtfully. He doesn't appear
+<ce>        to have any serious objection to staying here, though
+<ce>        he's likely to spend most of his time as a follower
+<ce>        rather than a leader. Do you accept the Fighters Guild's
+<ce>        offer of =fgrew_ gold pieces and give him to their care?
+
+Message:  1084
+<ce>        "Oh, man! I was practicing that speech for days. Well, I guess
+<ce>        that's it, then. Good luck looking for your new family.
+<ce>        The Fighters Guild isn't for everyone, I know that."
+
+Message:  1085
+<ce>        _fg_ beams at your response.
+<ce>        
+<ce>        "All right then, it's settled! Welcome to the Fighters Guild,
+<ce>        _kid_! You're one of us now. I'll take you to see our
+<ce>        trainer tomorrow. She's gonna teach you what a _weapon_ is.
+<ce>        You'll need to know how to swing it, 'cause next week
+<ce>        we're sending you on your first assignment. It's probably
+<ce>        gonna be something here in ___fguild_, like killing a bear
+<ce>        or what have you. Who knows what it's gonna be. But just
+<ce>        do what we say and you'll make it through just fine."
+<ce>        
+<ce>        _fg_ then hands you your payment. A pat on the
+<ce>        back assures you that the Fighters Guild appreciates
+<ce>        your bringing _kid_ here. The two wave to
+<ce>        you and prepare for their first joint training session.
+
+QBN:
+Person _kid_ faction Children male
+Person _smith_ group Smith male
+Person _poor_ group Local_3.0
+Person _db_ faction Dark_Slayers
+Person _banker_ faction Random_Noble
+Person _fg_ faction The_Fighters_Guild
+
+Place _start_ remote library
+Place _wshop_ remote weaponstore
+Place _phouse_ remote tavern
+Place _dbhome_ remote house
+Place _bank_ remote bank
+Place _fguild_ remote fighters
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _duration_ 30.00:00
+Clock _tim1_ 1.00:00 3.00:00
+Clock _tim2_ 1.00:00 4.00:00
+Clock _tim3_ 3.00:00 5.00:00
+Clock _tim4_ 3.00:00 6.00:00
+Clock _tim5_ 3.00:00 7.00:00
+
+Item _letter_ letter used 1011
+Item _nlet1_ letter used 1042
+Item _nlet2_ letter used 1052
+Item _nlet3_ letter used 1062
+Item _nlet4_ letter used 1072
+Item _nlet5_ letter used 1082
+Item _weapon_ weapon
+Item _mitem_ magic_item
+Item _dummymoney_ gold range 12001 to 24999
+Item _bankrew_ gold range 551 to 799
+Item _fgrew_ gold range 301 to 599
+
+--	Quest start-up:
+       place npc _kid_ at _start_
+       give pc _letter_ notify 1010
+       have _letter_ set _begin_
+
+_begin_ task:
+       start timer _timer_ 
+
+_prompt_ task:
+	clicked npc _kid_
+       take _letter_ from pc
+          prompt 1012 yes _accept_ no _refuse_
+
+_refuse_ task:
+          say 1013
+          end quest
+
+_accept_ task:
+          stop timer _timer_
+          start timer _duration_
+	start timer _tim1_
+	start timer _tim2_
+	start timer _tim3_
+	start timer _tim4_
+	start timer _tim5_
+          say 1014
+          hide npc _kid_
+          log 1030 step 0
+
+_tim1_ task:
+         give pc _nlet1_ notify 1041
+         place npc _smith_ at _wshop_
+
+_obj1_ task:
+         clicked npc _smith_
+         prompt 1043 yes _win1_ no _fail1_
+
+_fail1_ task:
+       say 1044
+
+_win1_ task:
+        say 1045
+        give pc _weapon_
+        end quest
+
+_tim2_ task:
+         give pc _nlet2_ notify 1051
+         place npc _poor_ at _phouse_
+
+_obj2_ task:
+         clicked npc _poor_
+         prompt 1053 yes _win2_ no _fail2_
+
+_fail2_ task:
+       say 1054
+
+_win2_ task:
+        say 1055
+        give pc nothing
+        end quest
+
+_tim3_ task:
+         give pc _nlet3_ notify 1061
+         place npc _db_ at _dbhome_
+
+_obj3_ task:
+         clicked npc _db_
+         prompt 1063 yes _win3_ no _fail3_
+
+_fail3_ task:
+       say 1064
+
+_win3_ task:
+        say 1065
+        give pc _mitem_
+        end quest
+
+_tim4_ task:
+         give pc _nlet4_ notify 1071
+         place npc _banker_ at _bank_
+
+_obj4_ task:
+         clicked npc _banker_
+         prompt 1073 yes _win4_ no _fail4_
+
+_fail4_ task:
+       say 1074
+
+_win4_ task:
+        say 1075
+        give pc _bankrew_
+        end quest
+
+_tim5_ task:
+         give pc _nlet5_ notify 1081
+         place npc _fg_ at _fguild_
+
+_obj5_ task:
+         clicked npc _smith_
+         prompt 1083 yes _win5_ no _fail5_
+
+_fail5_ task:
+       say 1084
+
+_win5_ task:
+        say 1085
+        give pc _fgrew_
+        end quest
+
+_timer_ task:
+       end quest
+
+_duration_ task:
+       say 1003
+       end quest

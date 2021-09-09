@@ -1,0 +1,349 @@
+-- Perpetual Quest
+Quest: JHPQ011
+DisplayName: Identity Lost
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQ011
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQ011
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQ011
+
+QuestFail:  [1003]
+<ce>            My friend, I thank you for the adventures you
+<ce>            have shown me. Nevertheless, I feel the weight
+<ce>            of destiny upon my shoulders. I will pursue my
+<ce>            course on my own. Perhaps we will meet again.
+
+QuestComplete:  [1004]
+<ce>               _knight_ sighs deeply and turns to you.
+<ce>
+<ce>                "%pcf, I am indebted to you. You have
+<ce>               helped me put my memories back together.
+<ce>
+<ce>           "My name is _knight_. I was planning to end the
+<ce>      threat of the King of Worms once and for all, training up
+<ce>          squires such as _npc1_ so we could begin an army.
+<ce>     I have vague memories of a fierce battle with some of them.
+<ce>          We have yet to know of the others, but I will soon
+<ce>         begin my travels to find them, or perhaps those that
+<ce>          remain of them. Soon I will start the work I began
+<ce>           to hunt and destroy the Necromancers. All I can
+<ce>         offer you is the weapon I have used since I lost my
+<ce>         memory. I was never so skilled with it in any case.
+<ce>          Farewell, and may %god join our paths once more."
+
+Message:  1010
+<ce>               A young courier, barely in adolescence,
+<ce>          quietly hands you a letter before scurrying away.
+                                     <--->
+<ce>           A dashing, athletic courier presents a letter to
+<ce>               you with a crisp motion and gallops off.
+
+Message:  1011
+ %pcf,
+ 
+ I send this letter to you, ignorant of your ability to help me.
+ If you will pass by ___start_ in this season, please
+ pay me a visit. I have lost my memory and now seclude
+ myself in this city until I can find someone trustworthy to
+ guide me. I am staying at _start_.
+ 
+  "_dummy_"
+
+Message:  1020
+<ce>                  So you are %pcf! %pcn, precisely.
+<ce>             To be honest, I don't know what I expected.
+<ce>              Yours was one of several names I heard in
+<ce>                recurring rumors in this tavern across
+<ce>              the weeks. I sent out several letters, and
+<ce>           you are the first to respond. Will you help me?
+<ce>             I need to look for people who might know me,
+<ce>              but I fear going into public by reason of
+<ce>               the attacks which I have faced thus far.
+
+Message:  1021
+<ce>            I am saddened, but I know not everyone can go
+<ce>           carting an amnesiac behind them while they move
+<ce>         about their daily business. If you change your mind,
+<ce>                 please return. I may still be here.
+
+Message:  1022
+<ce>            Oh, thank you! I will follow you, then. Do not
+<ce>              worry about taking care of me. I know how
+<ce>            to fight. That didn't leave me when my memory
+<ce>         fled, at least. I woke up with a large sack of gold,
+<ce>           such that I can take care of my own expenses, as
+<ce>          well as a very painful scar. I'm merely using this
+<ce>                pseudonym, "_dummy_," since it sounds
+<ce>        better than "Amnesiac." Besides my race and skill with
+<ce>        weaponry, I truly have no idea concerning my identity.
+<ce>       But now I will follow you, and we will see if we can get
+<ce>          to the bottom of this. Thank you once more, %pcf.
+<ce>
+<ce>         I will also give you this _tal_. If you decide that
+<ce>           my accompanying you is too much a burden, merely
+<ce>            return it to me. I will honor your withdrawal.
+
+Message:  1023
+<ce>                 "Hey! You! Take this letter!" A loud
+<ce>               courier with a trill in his voice gives
+<ce>                      you a letter and departs.
+                                     <--->
+<ce>                A well-dressed page presents you with
+<ce>                a letter and requests a small payment.
+<ce>               When no gold is forthcoming, he leaves.
+<ce>                   "It was worth a shot," you hear.
+
+Message:  1024
+<ce>                A red-faced, breathless courier shoves
+<ce>                 a parchment into your hands and runs
+<ce>                   off to yet another destination.
+                                     <--->
+<ce>                 An elderly woman offers you a letter
+<ce>                   and says something in a croaking
+<ce>                     voice you don't understand.
+
+Message:  1025
+<ce>                    You become aware of a paper in
+<ce>                 your pack that wasn't there before.
+                                     <--->
+<ce>                There's a letter among your belongings
+<ce>                that you don't remember seeing before.
+<ce>                     How long has it been there?
+
+Message:  1030
+%qdt:
+ I am guiding a knight who
+ has lost his memory due to
+ some incident in ____start_.
+ If I help him look for clues,
+ maybe he can get a hold
+ of his past and purpose.
+
+Message:  1033
+ %pcf,
+ 
+ This very hour I have been informed you
+ are leading my mentor around ____start_,
+ or so the rumors say. Please meet me
+ at ___place1_, that I might see
+ him once more. It's been far too long.
+ 
+  _npc1_
+
+Message:  1043
+<ce>       "Oh, joyous day! How wonderful it is to see you, Master!
+<ce>             Why have you disappeared? Have I failed your
+<ce>         expectations of me? Will I train no more with you?"
+<ce>
+<ce>                   Your companion and _npc1_ begin
+<ce>        a long and heartfelt discussion. As the two go through
+<ce>         memories of several months past, it becomes apparent
+<ce>           their talk is emotive but has little substance.
+<ce>              _npc1_ either never knew your companion's
+<ce>        name or heard it once and forgot it, for %g1 was only
+<ce>       to call him Master or Lord. You wait for them to finish.
+<ce>
+<ce>       "Well, all I can tell you is that you had an assignment
+<ce>        you were training me for personally. We spent one week
+<ce>     per month practicing combat and visiting temples and mages,
+<ce>      getting ourselves ready for a work that awaited us. I felt
+<ce>     you were too fearful to tell me what it was, at least until
+<ce>      I was ready for it. If you regain your memory and wish to
+<ce>        start anew, please tell me. I'll be the first to take
+<ce>             up sword and shield in your cause, my lord!"
+<ce>
+<ce>Your friend feels edified, if not fully informed, by this discussion.
+
+Message:  1053
+ %pcf,
+ 
+ Please bring me my father.
+ Six months is too long to wait.
+ 
+  _npc2_
+  ___place2_
+
+Message:  1063
+<ce>                  In an instant _npc2_ grabs _dummy_
+<ce>           and hugs %g2 tight without words. You stand off
+<ce>          to the side and allow their conversation to begin.
+<ce>
+<ce>             The first of the many topics they discuss is
+<ce>              _dummy_'s memory loss, which his child is
+<ce>           quick to address as thoroughly as possible. The
+<ce>           ensuing discussion reveals that his name is name
+<ce>            is _knight_. The details of his past campaigns
+<ce>         are scant, since he apparently spent little time in
+<ce>                 ___place2_. _npc2_ tries to get some
+<ce>           kind of commitment for him to return home soon,
+<ce>                           but to no avail.
+<ce>
+<ce>                "Then you, %pcn, please make my father
+<ce>        return soon. For my entire adult life I've never spent
+<ce>            more than a week at a time with him. He has to
+<ce>           retire eventually, hopefully while he yet lives.
+<ce>           Please give me your word that you'll make him."
+<ce>
+<ce>            You acknowledge the request without making any
+<ce>         significant promises. After they share another warm
+<ce>               hug, you and _knight_ prepare to depart.
+
+Message:  1073
+ %pcn,
+ 
+ I've worked out the plans the master requested.
+ Please bring him here so we can discuss them.
+ 
+  _npc3_
+  ___place3_
+
+Message:  1083
+<ce>              _npc3_ receives both of you with a cordial
+<ce>          handshake. You then take places in front of %g2 as
+<ce>                %g1 begins to unfold charts and maps.
+<ce>
+<ce>              "Very good, this is what I've worked out.
+<ce>             The Necromancers are based in Scourg Barrow.
+<ce>         However, they've sent out agents to certain outposts
+<ce>         in Mournoth and Gavaudon. The next one furthest out
+<ce>         is in Koegria. This is merely what the monarchs have
+<ce>          reported in the last few months. I hope this will
+<ce>        help you in your quest. I'll expect the other half of
+<ce>                  your payment within thirty days."
+<ce>
+<ce>          Your companion thanks %g2 and puts the maps away.
+<ce>        You doubt any of this information matters to you, but
+<ce>               _dummy_ appears pleased to remember it.
+
+Message:  1085
+<ce>                   This foe just hisses menacingly.
+
+Message:  1090
+<ce>                _dummy_ told you to return this _tal_
+<ce>       if you no longer wanted to accompany him in his journey.
+<ce>                      Are you through with him?
+
+Message:  1091
+<ce>         He is clearly saddened but accepts your resignation.
+<ce>
+<ce>        "Do not worry. I will seek for someone else to aid me.
+<ce>                 %god watch over you in your labors."
+
+QBN:
+Person _knight_ faction Generic_Knightly_Order male
+Person _dummy_ faction Generic_Knightly_Order male
+Person _npc1_ group Resident1
+Person _npc2_ group Resident2
+Person _npc3_ group Bookseller
+
+Place _start_ remote tavern
+Place _place1_ remote random
+Place _place2_ remote random
+Place _place3_ remote random
+
+Clock _timer_ 120.00:00
+Clock _event1_ 10.00:00 30.00:00
+Clock _event2_ 15.00:00 40.00:00
+Clock _event3_ 15.00:00 50.00:00
+
+Foe _nme_ is 2 Battle_mage
+Foe _nme2_ is 2 Mage
+
+Item _letter_ letter used 1011
+Item _nlet1_ letter used 1033
+Item _nlet2_ letter used 1053
+Item _nlet3_ letter used 1073
+Item _reward_ weapon
+Item _tal_ common_symbol
+
+--	Quest start-up:
+  start timer _timer_
+  place npc _dummy_ at _start_
+  give pc _letter_ notify 1010
+
+_prompt_ task:
+  clicked npc _dummy_
+  prompt 1020 yes _accept_ no _refuse_
+  clear _prompt_
+  take _letter_ from pc
+
+_refuse_ task:
+  say 1021
+  clear _refuse_
+
+_accept_ task:
+  start timer _event1_
+  start timer _event2_
+  start timer _event3_
+  say 1022
+  hide npc _dummy_
+  add _dummy_ face
+  create foe _nme_ every 2000 minutes indefinitely with 40% success
+  log 1030 step 0
+  get item _tal_
+  _tal_ used do _quit_
+
+_quit_ task:
+  prompt 1090 yes _fquit_ no _nquit_
+
+_fquit_ task:
+  say 1091
+  take _tal_ from pc
+  drop _dummy_ face
+  end quest
+
+variable _nquit_
+_event1_ task:
+  give pc _nlet1_ notify 1023
+  place npc _npc1_ at _place1_
+
+_obj1_ task:
+  clicked npc _npc1_
+  say 1043
+  create foe _nme2_ every 10000 minutes indefinitely with 30% success
+  take _nlet1_ from pc
+
+_event2_ task:
+  give pc _nlet2_ notify 1024
+  place npc _npc2_ at _place2_
+
+_obj2_ task:
+  clicked npc _npc2_
+  say 1063
+  take _nlet2_ from pc
+
+_event3_ task:
+  give pc _nlet3_ notify 1025
+  place npc _npc3_ at _place3_
+
+_obj3_ task:
+  clicked npc _npc3_
+  say 1083
+  take _nlet3_ from pc
+
+_inj_ task:
+  injured _nme_
+  say 1085
+
+_victory_ task:
+  when _obj1_ and _obj2_ and _obj3_
+  give pc _reward_
+  drop _dummy_ face
+  end quest
+
+variable _timer_
+_end1_ task:
+  when _timer_ and not _accept_
+  end quest
+
+_end2_ task:
+  when _timer_ and _accept_
+  say 1003
+  drop _dummy_ face
+  end quest

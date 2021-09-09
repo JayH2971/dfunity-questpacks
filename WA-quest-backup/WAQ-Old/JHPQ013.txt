@@ -1,0 +1,135 @@
+-- Perpetual Quest
+Quest: JHPQ013
+DisplayName: Turning the Tables
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQ013
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQ013
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQ013
+
+QuestFail:  [1003]
+<ce>                          ERROR 1003 JHPQ013
+
+QuestComplete:  [1004]
+<ce>                Among your foe's belongings, you find
+<ce>                 a magical _reward_, which you take.
+
+Message:  1010
+<ce>          You take a note hanging from your enemy's pocket.
+                                     <--->
+<ce>             Your attacker had a loose note hanging from
+<ce>               a pocket, which you put into your pack.
+
+Message:  1011
+  _name1_,
+ 
+  Bring the %ra to me. Better alive, but okay if dead.
+ 
+                     _name2_
+                     ___place1_
+
+Message:  1012
+<ce>                  You notice a note among _name2_'s
+<ce>              belongings, which you put into your pack.
+                                     <--->
+<ce>                  _name2_ was carrying a small note.
+<ce>                  You put it among your belongings.
+
+Message:  1013
+  _name2_,
+ 
+  No more failures. No excuses. Meet your quota.
+  We need bodies right now.
+ 
+                     _name3_
+                     ___place2_
+
+Message:  1014
+<ce>                      You find another letter on
+<ce>                  _name3_'s corpse, which you take.
+                                     <--->
+<ce>                      _name3_ was also carrying
+<ce>                      a letter, which you take.
+
+Message:  1015
+  _name3_,
+ 
+  You're still short _num_ bodies for this month.
+  We both know what's gonna happen if I run out.
+ 
+                     _name4_
+                     ___place3_
+
+QBN:
+Clock _timer_ 60.00:00
+
+Item _reward_ magic_item
+Item _num_ gold range 2 to 4
+Item _note1_ letter used 1011
+Item _note2_ letter used 1013
+Item _note3_ letter used 1015
+
+Person _name1_ group Resident1
+Person _name2_ group Resident2
+Person _name3_ group Resident3
+Person _name4_ group Resident3
+
+Foe _enemy_ is Acrobat
+Foe _boss_ is Assassin
+Foe _chief_ is Nightblade
+Foe _lord_ is Nightblade
+
+Place _place1_ remote tavern
+Place _place2_ remote house
+Place _place3_ remote house
+
+--	Quest start-up:
+   start timer _timer_
+
+_enter_ task:
+   when pc enters templehome
+   create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_slain1_ task:
+   killed _enemy_
+   pick one of _victory_ _step2_
+
+_step2_ task:
+   say 1010
+   get item _note1_
+   place foe _boss_ at _place1_
+
+_slain2_ task:
+   killed _boss_
+   pick one of _victory_ _step3_
+
+_step3_ task:
+   say 1012
+   get item _note2_
+   place foe _chief_ at _place2_
+
+_slain3_ task:
+   killed _chief_
+   pick one of _victory_ _step4_
+
+_step4_ task:
+   say 1014
+   get item _note3_
+   place foe _lord_ at _place3_
+
+_slain4_ task:
+   killed _lord_
+   start task _victory_
+
+_victory_ task:
+   give pc _reward_
+   end quest
+
+_timer_ task:
+   end quest

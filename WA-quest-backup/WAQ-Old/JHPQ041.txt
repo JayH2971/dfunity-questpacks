@@ -1,0 +1,150 @@
+-- Perpetual Quest
+Quest: JHPQ041
+DisplayName: Message from Afar
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ041
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ041
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ041
+
+QuestFail:  [1003]
+<ce>          ERROR 1003 JHPQ041
+
+QuestComplete:  [1004]
+<ce>  Now safe, _mage_ lets out
+<ce>  a sigh of relief. He leans against
+<ce>  the wall to catch his breath.
+<ce>  
+<ce>  "That will do, now won't it %pcf?
+<ce>  Thank you for coming to my aid. I forgot to
+<ce>  station a Recall spell far from here and these
+<ce>  cretins would have had my head in a few days' time.
+<ce>  Please take this. I hope it compensates your trouble."
+<ce>  
+<ce>  He offers you a reward before casting an invisibility
+<ce>  spell on himself, departing toward an unknown destination.
+
+Message:  1010
+<ce>  You are assaulted by a feeling of strong magical feedback
+<ce>  within your mind. It is evidently not hostile, but you
+<ce>  feel uncomfortable until it settles down. The voice of
+<ce>  a man speaks to you once the channel is calm.
+<ce>  
+<ce>  "Is this %pcf? Forgive me for my intrusion on your time.
+<ce>  I know you are a friend of the Mages Guild, and I need help.
+<ce>  I am _mage_, trapped in _res_,
+<ce>  which is in ___res_. Outlaws who seek my life have
+<ce>  this building surrounded. I need to leave but will surely
+<ce>  die without someone to accompany me. Please, I beg you to aid
+<ce>  me. I will only be able to last another =2res_ days here."
+<ce>  
+<ce>  The mage's communication begins to waver, and a lesser sense of
+<ce>  feedback once more ebbs into your mind. Soon the influence
+<ce>  disappears altogether, leaving you in peace.
+
+Message:  1011
+<ce>  Ah! %pcf, my most heartfelt thanks to you. I have the door
+<ce>  here warded to keep any others out, but that was bound to
+<ce>  fail sooner or later. Whether from arms or starvation I would
+<ce>  have succumbed to my pursuers. When you are ready, feel free
+<ce>  to lead the way out. Just be ready for my foes outside, for
+<ce>  they will not have mercy on you.
+
+Message:  1012
+<ce>  _mage_ was not exaggerating. A well-armed
+<ce>  troop waits outside the door, and everything about
+<ce>  them says that surrender will not be an option.
+
+Message:  1030
+%qdt:
+ I have been contacted telepathically
+ by a mage named _mage_
+ who claims to be trapped in ___res_
+ in _res_. He requests that
+ I rescue him in =2res_ days' time.
+
+QBN:
+Item _reward_ gem
+
+Place _res_ remote house2
+
+-Clock _2res_ 00:00 0 flag 2 range 0 2
+Clock _begin_ 00:02
+Clock _2res_ 2.00:00 4.00:00
+Clock _failsafe_ 00:10
+Clock _timer_ 12:00
+
+Person _mage_ faction The_Mages_Guild male
+
+Foe _e1_ is Knight
+Foe _e2_ is Assassin
+Foe _e3_ is Nightblade
+Foe _e4_ is Spellsword
+Foe _e5_ is Mage
+
+--	Quest start-up:
+-    start timer _failsafe_
+    start timer _begin_
+
+_failsafe_ task:
+    end quest
+
+_begin_ task:
+-    when repute with The_Mages_Guild is at least 20
+-    stop timer _failsafe_
+    say 1010
+    place npc _mage_ at _res_
+    pc at _res_ set _inside_
+    start timer _2res_
+    log 1030 step 0
+
+variable _inside_
+_qgclicked_ task:
+    clicked npc _mage_ 
+    stop timer _2res_
+    say 1011
+    hide npc _mage_
+    add _mage_ face
+
+_spawn_ task:
+    when _qgclicked_ and not _inside_
+    say 1012
+    create foe _e1_ every 0 minutes 1 times with 100% success
+    create foe _e2_ every 0 minutes 1 times with 100% success
+    create foe _e3_ every 0 minutes 1 times with 100% success
+    create foe _e4_ every 0 minutes 1 times with 100% success
+    create foe _e5_ every 0 minutes 1 times with 100% success
+    start timer _timer_
+
+_s1_ task:
+    killed _e1_
+
+_s2_ task:
+    killed _e2_
+
+_s3_ task:
+    killed _e3_
+
+_s4_ task:
+    killed _e4_
+
+_s5_ task:
+    killed _e5_
+
+_slain_ task:
+    when _s1_ and _s2_ and _s3_ and _s4_ and _s5_
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    give pc _reward_
+    end quest
+
+_2res_ task:
+    end quest

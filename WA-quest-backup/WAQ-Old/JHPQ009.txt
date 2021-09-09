@@ -1,0 +1,198 @@
+-- Perpetual Quest
+Quest: JHPQ009
+DisplayName: The Waking Forest
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ009
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ009
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ009
+
+QuestFail:  [1003]
+<ce>          You suddenly hear the voice of the creature
+<ce>          in your mind, which then grows quieter
+<ce>          until it ceases completely.
+
+QuestComplete:  [1004]
+<ce>        Your petitioner makes the same motion as
+<ce>        before, and then begins speaking.
+<ce>        
+<ce>        "You have lessened the burden of nature in this
+<ce>        region, %ra. For this we thank you. Please bear
+<ce>        our good will to this people. Let them know
+<ce>        they have nothing to fear from such creatures
+<ce>        as we. We will watch over you. Farewell."
+<ce>        
+<ce>        The being then makes a trailing motion
+<ce>        with two hands and becomes faint.
+<ce>        
+<ce>        TO BE CONTINUED
+
+Message:  1010
+<ce>       An excited peasant shouts at you while running past.
+ 
+<ce>      "Some woodland creature showed up in
+<ce>       ___place_! Like out of a fairy tale or
+<ce>      something! It's in _place_!"
+ 
+<ce>      He then departs, leaving you alone with the thought.
+<--->
+<ce>       An excited peasant shouts at you while running past.
+ 
+<ce>      "Some woodland creature showed up in
+<ce>       ___place_! Like out of a fairy tale or
+<ce>      something! It's in _place_!"
+ 
+<ce>      She then departs, leaving you alone with the thought.
+
+Message:  1011
+<ce>      You and this fantastic creature stare at each other
+<ce>      for several moments. Its form and vestiment are
+<ce>      of a nature few of your kin have ever seen.
+ 
+<ce>      As you are about to speak, it opens its mouth and
+<ce>      utters a pleasant but discordant stream of words
+<ce>      which are entirely incomprehensible to you. Noting
+<ce>      your confusion, it waves its hands to cast a spell.
+<ce>      It then speaks again after regaining composure.
+ 
+<ce>      "Greetings, %ra. We thank you for taking a moment
+<ce>      to listen, unlike your kinsfolk. Please forgive our
+<ce>      intrusion on that portion of this land which is yours.
+ 
+<ce>      "Our refuge, __dung_, is defiled by the
+<ce>      work of ones who raise bones for servants,
+<ce>      they who come from the southeastern mountains.
+<ce>      Their abominable enchantment disturbs our
+<ce>      labors, and we can find no peace. Please
+<ce>      aid our kind in this endeavor. But once you
+<ce>      take our task, take it seriously."
+
+Message:  1012
+<ce>        "Your honesty is virtuous but of no value to us.
+<ce>        We will wait here for a champion. Leave us."
+
+Message:  1013
+<ce>        It bows before you.
+ 
+<ce>        "Our fullest appreciation to that %ra who rids us
+<ce>        of this plague. We will watch for your success.
+<ce>        Please return our home to us. We will let the sun
+<ce>        set =timer_ times more before we know you have
+<ce>        forsaken our kind. Go now to earn our praise."
+
+Message:  1014
+<ce>        From deep within this place you can hear murmuring voices,
+<ce>        speaking confused and incomprehensible words.
+
+Message:  1015
+<ce>        This mummy shrieks horribly. It would cause a serious
+<ce>        disturbance to anyone, woodland creature or not.
+
+Message:  1016
+<ce>        The faint murmurings die down.
+<ce>        __dung_ feels more at peace now.
+
+Message:  1030
+%qdt:
+ Someone told me there's some
+ creature out of a fairy tale in
+ ___place_,
+ at _place_.
+
+Message:  1031
+%qdt:
+ The fantasy creature in
+ ___place_ has asked me to rid
+ __dung_ of an undead
+ creature someone has raised in it
+ within =timer_ days.
+
+Message:  1099
+<ce>   The creature says nothing more.
+
+QBN:
+Person _fey_ faction The_Fey
+
+Place _place_ remote house
+Place _dung_ remote dungeon
+
+Clock _initial_ 60.00:00
+Clock _timer_ 30.00:00 35.00:00
+
+Foe _enemy_ is Mummy
+
+--	Quest start-up:
+        hide npc _fey_
+
+_begin_ task:
+        when pc enters city
+        start timer _initial_
+        say 1010
+        log 1030 step 0
+        pc at _dung_ set _there_
+        pc at _place_ set _res_
+
+_res_ task:
+        place npc _fey_ at _place_
+        restore npc _fey_
+
+_initial_ task:
+        end quest
+
+_qgclicked_ task:
+	clicked npc _fey_
+
+_talk_ task:
+         when _qgclicked_ and not _slain_ and not _accept_
+         prompt 1011 yes _accept_ no _refuse_
+        clear _talk_ _qgclicked_
+
+_refuse_ task:
+        say 1012
+        clear _refuse_
+
+_accept_ task:
+         say 1013
+         stop timer _initial_
+         start timer _timer_
+         log 1031 step 1
+         place foe _enemy_ at _dung_
+        clear _qgclicked_
+        reveal _dung_
+
+_talk2_ task:
+         when _qgclicked_ and not _slain_ and _accept_
+         say 1099
+        clear _qgclicked_
+
+_there_ task:
+         start task _arrival_
+
+_arrival_ task:
+         say 1014
+
+_hit_ task:
+         injured _enemy_
+         say 1015
+
+_slain_ task:
+          killed _enemy_
+          say 1016
+
+_victory_ task:
+          when _qgclicked_ and _slain_
+          hide npc _fey_
+	give pc nothing
+        change repute with _fey_ by +5
+-         start quest ???
+	end quest
+
+_timer_ task:
+          say 1003
+	end quest

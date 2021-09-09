@@ -1,0 +1,123 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST17
+--JHPQ032 (Warm Ashes)
+DisplayName: Hope and Spare Change
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQ032
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQ032
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQ032
+
+QuestFail:  [1003]
+<ce>       You do everything humanly possible to avoid the beggar's
+<ce>           attention and slip by without further incident.
+
+QuestComplete:  [1004]
+<ce>          You scrounge up a few coins to give to the beggar,
+<ce>         who thanks you profusely and moves on to a different
+<ce>          corner before you can say anything else. Hopefully
+<ce>                 the temple will have pity and do the
+<ce>                  work for less than the usual sum.
+
+Message:  1010
+<ce>       A shabbily-dressed old man is bothering passersby ahead
+<ce>         of you. Sores along his hands and face indicate some
+<ce>          manner of illness which he must be trying to cure.
+<ce>            Do you wish to give him a few pieces of gold?
+                                     <--->
+<ce>      A shabbily-dressed old woman is bothering passersby ahead
+<ce>         of you. Sores along her hands and face indicate some
+<ce>         manner of illness which she must be trying to cure.
+<ce>            Do you wish to give her a few pieces of gold?
+
+Message:  1011
+<ce>          Thanks to your medical knowledge, you immediately
+<ce>          recognize the mendicant's affliction as Blood Rot.
+<ce>           You cover your hands and mouth as you approach.
+
+QBN:
+Clock _failsafe_ 7.00:00
+Clock _timer_ 1:00
+Clock _delay_ 0:01 0:02
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_enter_ task:
+    when pc enters city
+    stop timer _failsafe_
+    start timer _delay_
+    start timer _timer_
+
+_delay_ task:
+    prompt 1010 yes _begin_ no _quit_
+
+_begin_ task:
+    pick one of _go1_ _go2_ _go3_
+    start task _accept_
+
+_check1_ task:
+    when skill Medical is at least 15
+
+_check2_ task:
+    when skill Medical is at least 20
+
+_check3_ task:
+    when skill Medical is at least 25
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+    when _check1_ and _go1_
+    start task _victory_
+
+_c2_ task:
+    when _check2_ and _go2_
+    start task _victory_
+
+_c3_ task:
+    when _check3_ and _go3_
+    start task _victory_
+
+_d1_ task:
+    when not _check1_ and _go1_
+
+_d2_ task:
+    when not _check2_ and _go2_
+
+_d3_ task:
+    when not _check3_ and _go3_
+
+variable _accept_
+variable _victory_
+_w1_ task:
+    when _accept_ and _victory_
+    legal repute +2
+    say 1011
+    give pc nothing
+    end quest
+
+_w2_ task:
+    when _accept_ and not _victory_
+    legal repute +2
+    give pc nothing
+    make pc ill with Blood_Rot
+    end quest
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest
+
+_quit_ task:
+    say 1003
+    end quest

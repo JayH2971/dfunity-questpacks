@@ -1,0 +1,99 @@
+Quest: trappedobject
+DisplayName: A Trapped Treasure
+-- town event, just in case Realistic Wagon makes teleportation leave it and horse behind. people would kill us if they lost their horse and cart forever
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              trappedobject 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             trappedobject 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             trappedobject 1002 Called
+
+QuestFail:  [1003]
+<ce>         trappedobject 1003 Called
+
+QuestComplete:  [1004]
+<ce>         trappedobject 1004 Called
+
+Message:  1010
+<ce>  What luck! An enchanted _item_ lies here
+<ce>  in front of you. Do you take it?
+
+Message:  1011
+<ce>  Before your hand reaches it, magical energy bursts out
+<ce>  around you. You are caught away. Perhaps someone more
+<ce>  skilled in the thieving arts would have recognized that trap.
+
+Message:  1012
+<ce>  "Got another one! Kill %pg2!" This looks like an ambush.
+<ce>
+<ce>  (Hint: You may be in a location that's impossible to escape from,)
+<ce>               (like at the bottom of a chute. If so,)
+<ce>   (make a save and try the console command "teleport" to get out.)
+
+Message:  1013
+<ce>  Others might fall for this trap, but not you.
+<ce>  You notice suspicious markings near the _item_.
+<ce>  Out of an abundance of caution you toss
+<ce>  a small stone, which disappears in a magical flourish.
+<ce>  With the trap disarmed, you take the _item_
+<ce>  gingerly and continue on your way.
+
+Message:  1014
+<ce>  You step away. Perhaps no one has taken it for a reason.
+
+QBN:
+Clock _failsafe_ 0:05
+
+Item _item_ magic_item
+
+Place _dung_ remote dungeon2
+
+Foe _nme1_ is Barbarian
+Foe _nme2_ is Archer
+
+--	Quest start-up:
+    start timer _failsafe_
+    prompt 1010 yes _take_ no _reject_
+
+variable _skilled_
+_lockp_ task:
+    when skill Lockpicking is at least 45
+    start task _skilled_
+
+_pickp_ task:
+    when skill Pickpocket is at least 40
+    start task _skilled_
+
+_agi_ task:
+    when attribute Agility is at least 85
+    start task _skilled_
+
+variable _take_
+_victory_ task:
+    when _take_ and _skilled_
+    say 1013
+    get item _item_
+    make _item_ permanent
+
+_failure_ task:
+    when _take_ and not _skilled_
+    say 1011
+    teleport pc to _dung_
+    say 1012
+    create foe _nme1_ every 0 minutes 1 times with 100% success
+    create foe _nme2_ every 0 minutes 1 times with 100% success
+    change foe _nme1_ infighting true
+    change foe _nme2_ infighting true
+    change foe _nme2_ team Criminals
+
+_reject_ task:
+    say 1014
+    end quest
+
+_failsafe_ task:
+    end quest

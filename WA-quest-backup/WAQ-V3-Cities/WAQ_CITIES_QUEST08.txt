@@ -1,0 +1,136 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST08
+--JHPQ037 (Warm Ashes)
+DisplayName: Bullseye
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ037
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ037
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ037
+
+QuestFail:  [1003]
+<ce> Your shots are good and come close to the center,
+<ce> but others are better. One particularly skilled
+<ce> archer is crowned the winner and given the prize money.
+<ce> The crowd disperses and you are left alone.
+
+QuestComplete:  [1004]
+<ce> Your steady hands take aim for the center
+<ce> of the target. Each arrow comes close
+<ce> to the innermost point, granting you
+<ce> a very favorable score compared to your
+<ce> fellow competitors. Once all have had
+<ce> their chance you are declared the winner.
+
+Message:  1010
+<ce> An official sent by the %rt has organized
+<ce> an archery contest in the city. Contestants
+<ce> are given three arrows to shoot at a target
+<ce> from a distance of several dozen meters.
+<ce> A prize of =reward_ gold pieces awaits the
+<ce> highest scoring competitor. Do you enter?
+
+Message:  1012
+<ce> With every chance comes the risk of humiliation.
+<ce> Whether that would happen or not today is up
+<ce> in the air, but you still have better things
+<ce> to spend your time on.
+
+QBN:
+Clock _failsafe_ 7.00:00
+Clock _timer_ 1:00
+Clock _delay_ 0:01 0:02
+
+Item _reward_ gold range 301 to 449
+
+--	Quest start-up:
+    start timer _failsafe_
+
+ _enter_ task:
+   when pc enters city
+   setvar _makesound_ 
+   stop timer _failsafe_
+    start timer _delay_
+    start timer _timer_
+	
+---------* Sound**---
+_makesound_ task:
+	play sound talking_loud every 0 minutes 10 times
+	clear _makesound_
+	
+_makesound2_ task:
+	play sound laughter_loud every 0 minutes 10 times
+	clear _makesound2_
+	
+_makesound3_ task:
+	play sound levelup_gong every 0 minutes 10 times
+	clear _makesound3_
+
+_delay_ task:
+    prompt 1010 yes _begin_ no _quit_
+
+_begin_ task:
+    pick one of _go1_ _go2_ _go3_
+
+_check1_ task:
+   when skill Archery is at least 25
+
+_check2_ task:
+    when skill Archery is at least 35
+
+_check3_ task:
+    when skill Archery is at least 45
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+    when _check1_ and _go1_
+    start task _victory_
+
+_c2_ task:
+    when _check2_ and _go2_
+    start task _victory_
+
+_c3_ task:
+    when _check3_ and _go3_
+    start task _victory_
+
+_d1_ task:
+    when not _check1_ and _go1_
+    start task _fail_
+
+_d2_ task:
+    when not _check2_ and _go2_
+    start task _fail_
+
+_d3_ task:
+    when not _check3_ and _go3_
+    start task _fail_
+
+_victory_ task:
+    give pc _reward_
+	setvar _makesound3_ 
+    end quest
+
+_fail_ task:
+    say 1003
+	setvar _makesound2_ 
+    end quest
+
+_timer_ task:
+   end quest
+
+_failsafe_ task:
+   end quest
+
+_quit_ task:
+  say 1012
+  end quest

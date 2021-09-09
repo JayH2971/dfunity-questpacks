@@ -1,0 +1,151 @@
+Quest: lockedsafe
+DisplayName: A Locked Safe
+-- Wilderness event, desert
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              lockedsafe 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             lockedsafe 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             lockedsafe 1002 Called
+
+QuestFail:  [1003]
+<ce>         lockedsafe 1003 Called
+
+QuestComplete:  [1004]
+<ce>  The vault springs open, and its contents are
+<ce>  yours for the taking.
+
+Message:  1010
+<ce>  You feel something hard underfoot. You dig
+<ce>  a little and find a large, heavy vault
+<ce>  buried in the sand here. A rather imposing
+<ce>  lock adorns the door, as well as a warning
+<ce>  against robbers. Do you attempt to pick the safe?
+
+Message:  1011
+<ce>  Who knows what kind of traps this thing could
+<ce>  carry? Some other fool will soon learn.
+
+Message:  1012
+<ce>  The vault springs open, presenting nothing
+<ce>  more than very stuffy air. You find no treasure.
+
+Message:  1016
+<ce>  You attempt to open the lock in vain.
+<ce>  Whatever it holds, you may never know.
+
+Message:  1017
+<ce>  You fail to open the very complex lock.
+<ce>  The safe, reacting to your attempt,
+<ce>  triggers its anti-theft mechanism,
+<ce>  and two guardians appear nearby.
+
+Message:  1018
+<ce>  You fail to open the very complex lock.
+<ce>  The safe, reacting to your attempt,
+<ce>  triggers its anti-theft mechanism,
+<ce>  and a noxious powder explodes into the air.
+
+QBN:
+
+Foe _garg_ is 2 Gargoyle
+
+Item _gold_ gold range 1500 to 2500
+Item _gem1_ gem
+Item _gem2_ gem
+Item _gem3_ gem
+Item _magic_ magic_item
+
+Clock _failsafe_ 0:03
+
+--	Quest start-up:
+    start timer _failsafe_
+    prompt 1010 yes _attempt_ no _deny_
+
+_attempt_ task:
+pick one of _go1_ _go2_ _go3_
+
+_deny_ task:
+    say 1011
+    end quest
+
+_check1_ task:
+	when skill Lockpicking is at least 45
+
+_check2_ task:
+	when skill Lockpicking is at least 55
+
+_check3_ task:
+	when skill Lockpicking is at least 65
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+	when _check1_ and _go1_
+	start task _success_
+
+_c2_ task:
+	when _check2_ and _go2_
+	start task _success_
+
+_c3_ task:
+	when _check3_ and _go3_
+	start task _success_
+
+_d1_ task:
+	when not _check1_ and _go1_
+	start task _fail_
+
+_d2_ task:
+	when not _check2_ and _go2_
+	start task _fail_
+
+_d3_ task:
+	when not _check3_ and _go3_
+	start task _fail_
+
+_fail_ task:
+    pick one of _f1_ _f2_ _f3_
+
+_f1_ task:
+    say 1016
+    end quest
+
+_f2_ task:
+    say 1017
+    create foe _garg_ every 0 minutes 1 times with 100% success
+
+_f3_ task:
+    say 1018
+    make pc ill with Leprosy
+
+_success_ task:
+    pick one of _r1_ _r2_ _r3_ _r4_
+
+_r1_ task:
+    say 1012
+    end quest
+
+_r2_ task:
+    give pc _gold_
+    end quest
+
+_r3_ task:
+    give pc _gem1_
+    give pc _gem2_
+    give pc _gem3_
+    end quest
+
+_r4_ task:
+    give pc _magic_
+    end quest
+
+_failsafe_ task:
+    end quest

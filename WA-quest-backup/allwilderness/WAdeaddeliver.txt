@@ -1,0 +1,116 @@
+Quest: deaddeliver
+DisplayName: Delivering the Belongings
+-- Wilderness event, any region
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              deaddeliver 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             deaddeliver 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             deaddeliver 1002 Called
+
+QuestFail:  [1003]
+<ce>         deaddeliver 1003 Called
+
+QuestComplete:  [1004]
+<ce>            "Welcome to _temple_. How may I help you?"
+<ce>   
+<ce>   You present the _magic_ and
+<ce>   _priest_ gives you a payment.
+
+Message:  1010
+<ce>         "Hail, %ra! Are you headed
+<ce>   in the direction of ___temple_?"
+<ce>   
+<ce>   Another traveler wants your attention.
+<--->
+<ce>  "Pardon! Do you have time for a
+<ce>  trip to ___temple_, %ra?"
+<ce>   
+<ce>   Another traveler wants your attention.
+
+Message:  1011
+<ce>   "Well met, friend. I need to deliver
+<ce>   this enchanted _magic_ to ___temple_
+<ce>   soon, but I don't think I'll make it in time.
+<ce>   It's for a funeral; the thing belongs to a
+<ce>   fellow who lived there. They need it in
+<ce>   =2temple_ days and will pay you for it.
+<ce>   Can you take it for me?"
+
+Message:  1012
+<ce>  "Look for _priest_ in _temple_.
+<ce>  The whole of ___temple_ will thank you
+<ce>  for this, I say. Safe travels!"
+
+Message:  1013
+<ce>  "A shame. I'll have to hurry if I'm going
+<ce>  to make it. Stay safe friend!"
+
+Message:  1014
+<ce>  You become aware of a malignant spirit
+<ce>  nearby. It eyes the enchanted
+<ce>  _magic_ you were to deliver
+<ce>  to ___temple_ by today. The wraith
+<ce>  turns hostile, angry that you failed
+<ce>  to fulfil your promise.
+
+Message:  1015
+%qdt:
+ I will be rewarded if I
+ can deliver an enchanted
+ _magic_ to _priest_
+ at ___temple_ within =2temple_ days
+ for a funeral.
+
+QBN:
+
+Clock _2temple_ 00:00 0 flag 2 range 0 2
+
+Foe _dead_ is Wraith
+Foe _hu1_ is Bard
+
+Person _priest_ faction Generic_Temple
+
+Place _temple_ remote temple
+
+Item _magic_ magic_item
+Item _reward_ gem
+
+--	Quest start-up:
+    start timer _2temple_
+    say 1010
+    create foe _hu1_ every 0 minutes 1 times with 100% success
+    change foe _hu1_ team 1
+
+_begin_ task:
+    clicked foe _hu1_
+    prompt 1011 yes _accept_ no _deny_
+
+_deny_ task:
+    say 1013
+    end quest
+
+_accept_ task:
+    say 1012
+    get item _magic_
+    place npc _priest_ at _temple_
+    log 1015 0
+
+_deliver_ task:
+    toting _magic_ and _priest_ clicked
+    give pc _reward_
+    end quest
+
+_notify_ task:
+    when _accept_ and _2temple_
+    say 1014
+    create foe _dead_ every 0 minutes 1 times with 100% success
+
+_2temple_ task:
+    make _magic_ permanent
+    end quest

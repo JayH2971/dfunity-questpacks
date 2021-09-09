@@ -1,0 +1,107 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST01
+--JHPQ020 (Warm Ashes)
+DisplayName: The Great Race 
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQ020
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQ020
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQ020
+
+QuestFail:  [1003]
+<ce>                          ERROR 1003 JHPQ020
+
+QuestComplete:  [1004]
+<ce>            "I figured as much. I feel bad for people who
+<ce>             have to come here empty-handed. Take this."
+<ce>
+<ce>                  You are handed a bag of money, and
+<ce>                  your benefactor leaves you alone.
+
+Message:  1010
+<ce>                       "Wait! You, %ra! Stop!"
+<ce>
+<ce>                     Someone is calling for you.
+<ce>
+<ce>               "You're not from around here, are you?"
+                                     <--->
+<ce>                      "Hey %ra! Wait a minute!"
+<ce>
+<ce>                     Someone is calling for you.
+<ce>
+<ce>              "You don't come from these parts, do you?"
+
+Message:  1011
+<ce>         "I knew it! Filthy muck, I'll get you out of here!"
+                                     <--->
+<ce>                 "And you never should've come here!"
+                                     <--->
+<ce>                 "Another filthy foreigner! Begone!"
+
+Message:  1012
+<ce>         Your questioner takes acute interest in your story.
+<ce>      You are peppered with various mundane questions about your
+<ce>       place of birth and early life. You answer as much as you
+<ce>    feel comfortable to and excuse yourself from the conversation.
+<ce>
+<ce>              "Thank you for your time! %god bless you!"
+
+Message:  1020
+<ce>                  "Really? You don't look like it."
+<ce>
+<ce>       An awkward silence follows, and your pursuer turns away.
+                                     <--->
+<ce>                       "Really? You fooled me."
+<ce>
+<ce>       An awkward silence follows, and your pursuer turns away.
+
+QBN:
+Clock _failsafe_ 10.00:00
+Clock _timer_ 0:30
+Clock _delay_ 0:01 0:04
+
+Foe _ran_ is Ranger
+
+Item _reward_ gold range 100 to 850
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_enter_ task:
+    when pc enters city
+    start timer _delay_
+    start timer _timer_
+
+_delay_ task:
+    prompt 1010 yes _quit_ no _begin_
+
+_quit_ task:
+    say 1020
+    end quest
+
+_begin_ task:
+    pick one of _1_ _2_ _3_
+
+_1_ task:
+    give pc _reward_
+    end quest
+
+_2_ task:
+    say 1011
+    create foe _ran_ every 0 minutes 1 times with 100% success
+
+_3_ task:
+    say 1012
+    end quest
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest

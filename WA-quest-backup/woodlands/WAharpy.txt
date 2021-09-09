@@ -1,0 +1,147 @@
+Quest: harpyWA
+DisplayName: Harpy Encounter
+-- Wilderness event, woodlands
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              HarpyWA 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             HarpyWA 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             HarpyWA 1002 Called
+
+QuestFail:  [1003]
+<ce>         HarpyWA 1003 Called
+
+QuestComplete:  [1004]
+<ce>                The harpies' hunters have been slain.
+<ce>    One of them calls to you.
+<ce>    
+<ce>    "Our fullest gratitude to this %ra creature.
+<ce>  May nature bow itself to your will."
+
+Message:  1010
+<ce>         A flock of harpies screeches nearby. They seem to
+<ce>  be fleeing something, but in their panic,
+<ce>  they see you as another threat.
+
+Message:  1011
+<ce>         A flock of harpies screeches nearby. They seem to
+<ce>  be fleeing something. You call out in their language
+<ce>  and receive a startled response.
+<ce>  
+<ce>  "You speak as we do?! Help us! Hunters follow
+<ce>  and try to kill us!"
+<ce>  
+<ce>  Do you help defend the harpies?
+
+Message:  1012
+<ce>  "Worthless! Or are you just here to delay us?!"
+<ce>  
+<ce>  The harpies direct their rage to you.
+
+Message:  1013
+<ce>  In short order a group of humans
+<ce>  catches up to the harpies.
+<ce>  You make clear that the hunt is over.
+<ce>  
+<ce>  "Ha! And who is this %ra that tries to
+<ce>  stop the lot of us? Pickings just got
+<ce>  richer boys, have at it!"
+
+Message:  1014
+<ce>  The humans are dead, but so are the harpies.
+<ce>  You did what you could, at least.
+
+QBN:
+
+Clock _failsafe_ 8:00
+
+Foe _harp1_ is Harpy
+Foe _harp2_ is Harpy
+Foe _harp3_ is Harpy
+Foe _hu1_ is Spellsword
+Foe _hu2_ is Barbarian
+Foe _hu3_ is Archer
+
+--	Quest start-up:
+    start timer _failsafe_
+    create foe _harp1_ every 0 minutes 1 times with 100% success
+    create foe _harp2_ every 0 minutes 1 times with 100% success
+    create foe _harp3_ every 0 minutes 1 times with 100% success
+
+_skilled_ task:
+    when skill Harpy is at least 30
+
+_nofun_ task:
+    when not _skilled_
+    say 1010
+
+_funtime_ task:
+    when _skilled_
+    prompt 1011 yes _defend_ no _wimp_
+
+_wimp_ task:
+    say 1012
+
+_defend_ task:
+    change foe _harp1_ team 1
+    change foe _harp2_ team 1
+    change foe _harp3_ team 1
+    say 1013
+    create foe _hu1_ every 0 minutes 1 times with 100% success
+    create foe _hu2_ every 0 minutes 1 times with 100% success
+    create foe _hu3_ every 0 minutes 1 times with 100% success
+
+_day_ task:
+    daily from 0:00 to 23:59
+    change foe _hu1_ team 0
+    change foe _hu2_ team 0
+    change foe _hu3_ team 0
+    change foe _harp1_ infighting true
+    change foe _harp2_ infighting true
+    change foe _harp3_ infighting true
+    change foe _hu1_ infighting true
+    change foe _hu2_ infighting true
+    change foe _hu3_ infighting true
+    clear _day_
+
+_kill1_ task:
+    killed _hu1_
+
+_kill2_ task:
+    killed _hu2_
+
+_kill3_ task:
+    killed _hu3_
+
+_harp1dead_ task:
+    killed _harp1_
+
+_harp2dead_ task:
+    killed _harp2_
+
+_harp3dead_ task:
+    killed _harp3_
+
+_harpdead_ task:
+    when _harp1dead_ and _harp2dead_ and _harp3dead_
+
+_fail_ task:
+    when _harpdead_ and _kill1_ and _kill2_ and _kill3_
+    say 1014
+    end quest
+
+_success_ task:
+    when _kill1_ and _kill2_ and _kill3_ and not _harpdead_
+    say 1004
+
+_solokill_ task:
+    when _harpdead_ and not _defend_
+    end quest
+
+_failsafe_ task:
+    end quest

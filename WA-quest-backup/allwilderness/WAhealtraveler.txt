@@ -1,0 +1,101 @@
+Quest: healtraveler
+DisplayName: Healing a Traveler
+-- Wilderness event, any region
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              healtraveler 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             healtraveler 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             healtraveler 1002 Called
+
+QuestFail:  [1003]
+<ce>         healtraveler 1003 Called
+
+QuestComplete:  [1004]
+<ce>            "Here, take this money. Thanks."
+
+Message:  1010
+<ce>   "Ow..." A wounded adventurer nearby tries
+<ce>   to keep out of sight.
+
+Message:  1011
+<ce>   "%oth. I was trying not to attract attention.
+<ce>   Listen, do you have any healing magic?
+<ce>   I just got out of a really bad hunt and
+<ce>   I'm not sure how far I can make it.
+<ce>   I'll pay you for a healing spell."
+
+Message:  1012
+<ce>  The adventurer's face washes with relief.
+<ce>  
+<ce>  "Oh! Yeah, I needed that! Thank you,
+<ce>  buddy! I'll be fine from now. Wow!"
+
+Message:  1013
+<ce>  Seeing no help from you, the adventurer limps away.
+
+Message:  1014
+<ce>   "%oth. I was trying not to attract attention.
+<ce>   Listen, do you have any healing magic?
+<ce>   I just got out of a really bad hunt and
+<ce>   I'm not sure how far I can make it.
+<ce>   I'll pay you for a healing spell."
+<ce>  
+<ce>  Your advanced medical knowledge is a worthy
+<ce>  substitute, and the sutures you provide
+<ce>  are very effective. The adventurer's
+<ce>  face washes with relief.
+<ce>  
+<ce>  "Oh! Yeah, I needed that! Thank you,
+<ce>  buddy! I'll be fine from now. Wow!"
+
+QBN:
+
+Clock _timer_ 0:10
+
+Foe _hu1_ is Warrior
+
+Item _reward_ gold range 100 to 150
+
+--	Quest start-up:
+    start timer _timer_
+    say 1010
+    create foe _hu1_ every 0 minutes 1 times with 100% success
+    restrain foe _hu1_
+
+_skilled_ task:
+    when skill Medical is at least 80
+
+_begin_ task:
+    clicked foe _hu1_
+
+_bypass_ task:
+    when _skilled_ and _begin_
+    say 1014
+    give pc _reward_
+    remove foe _hu1_
+    end quest
+
+_explain_ task:
+    when _begin_ and not _skilled_
+    say 1011
+    cast Heal-Health effect do _victory_
+
+_victory_ task:
+    say 1012
+    give pc _reward_
+    remove foe _hu1_
+    end quest
+
+_ignore_ task:
+    when _timer_ and _begin_
+    say 1013
+    remove foe _hu1_
+
+_timer_ task:
+    end quest

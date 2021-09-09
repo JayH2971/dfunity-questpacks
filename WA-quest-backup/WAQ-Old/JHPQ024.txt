@@ -1,0 +1,134 @@
+-- Perpetual Quest
+Quest: JHPQ024
+DisplayName: Lost Jewelry
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQ024
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQ024
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQ024
+
+QuestFail:  [1003]
+<ce>                          ERROR 1003 JHPQ024
+
+QuestComplete:  [1004]
+<ce>               Well, what a grand surprise! Do you see
+<ce>               here? My initials, engraved on the side.
+<ce>               Absolute proof. Oh, how I've missed it!
+<ce>               What a fine help you have been. Please,
+<ce>                 take your reward. A good deed should
+<ce>               be properly addressed. %god be praised!
+
+Message:  1010
+<ce>            A small leaflet flitters about on the ground.
+<ce>                     You pick it up and take it.
+
+Message:  1011
+%qdt
+Citizens of ____start_:
+ 
+ Several days ago a _jewel_ belonging to
+ _client_, noble of ____start_, was
+ stolen from the Palace of ___start_. A reward
+ of =reward_ gold pieces is offered in exchange
+ for its prompt return. Please deliver it
+ to %g2 at the Palace. The reward will
+ be forfeit in two months' time.
+
+Message:  1012
+<ce>        Ooh, look at the big tough hero! Rumors led you to me,
+<ce>       huh? Well, you fell for it. Just a bunch of lies. I know
+<ce>          for a fact that it got lost way down in ___dung_.
+<ce>          Don't ask me how I know, but it's true. Now scram.
+                                     <--->
+<ce>         Ooooh, listen to the tough %ra! You want the missing
+<ce>             _jewel_? Tough luck. It's down in ___dung_.
+<ce>          I swear it on my mother's grave. If you want your
+<ce>           cheap reward that bad, get hiking. Outta my way.
+
+Message:  1013
+<ce>            You bluff your way through _perp_'s boisterous
+<ce>          allegations. When you're clearly not convinced and
+<ce>     willing to start a fight for information, %g3 eyes go wide.
+<ce>
+<ce>      "Hey, calm down, all right? I was lying. I've got it right
+<ce>         here. Now get out of here. And if we meet again, I'm
+<ce>       expecting half the reward. So take it and go get lost."
+
+Message:  1014
+<ce>              This _jewel_ is of unusual craftsmanship.
+<ce>                  Presumably it belongs to _client_.
+
+Message:  1015
+That old _client_'s gonna lose some hair over that _jewel_, huh?
+<--->
+Maybe _client_ should be paying the town guard instead of embezzling the %t's money!
+<--->
+I guess our taxes are gonna pay for _client_'s reward money, huh?
+<--->
+Can't say I feel sorry for _client_. I wish I could buy a _jewel_.
+<--->
+You don't think this has anything to do with that _jewel_ _perp_ has over in ___thiefh_ do you?
+<--->
+
+QBN:
+Person _client_ faction Random_Noble
+Person _perp_ faction The_Thieves_Guild
+
+Place _start_ remote palace
+Place _thiefh_ remote house1
+Place _dung_ remote dungeon
+
+Clock _timer_ 60.00:00
+
+Item _letter_ letter used 1011
+Item _jewel_ trinket anyInfo 1015
+Item _reward_ gold
+
+--	Quest start-up:
+    give pc _letter_ notify 1010
+    have _letter_ set _begin_
+    place npc _client_ at _start_
+    place npc _perp_ at _thiefh_
+
+_streetw_ task:
+    when skill Streetwise is at least 40
+
+_begin_ task:
+    start timer _timer_
+    add dialog for item _jewel_
+
+_talk1_ task:
+    clicked npc _perp_
+    say 1012
+    start task _talk2_
+
+variable _talk2_
+
+_easy_ task:
+    when _talk2_ and _streetw_
+    say 1013
+    get item _jewel_
+
+_hard_ task:
+    when _talk2_ and not _streetw_
+    reveal _dung_
+    place item _jewel_ at _dung_
+
+_take_ task:
+    clicked item _jewel_
+    say 1014
+
+_pcgetsgold_ task:
+    toting _jewel_ and _client_ clicked
+    give pc _reward_
+    legal repute +5
+    end quest
+
+_timer_ task:
+    end quest

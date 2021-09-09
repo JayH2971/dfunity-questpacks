@@ -1,0 +1,93 @@
+-- Perpetual Quest
+Quest: JHPQ007
+DisplayName: Hot Merchandise
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          ERROR 1000 JHPQ007
+
+RefuseQuest:  [1001]
+<ce>          ERROR 1001 JHPQ007
+
+AcceptQuest:  [1002]
+<ce>           ERROR 1002 JHPQ007
+
+QuestFail:  [1003]
+<ce>          ERROR 1003 JHPQ007
+
+QuestComplete:  [1004]
+<ce>        Nice work, %ra. It's a shame about our
+<ce>        friend, but we've got a back-up plan worked
+<ce>        out. Have a bit of money for your trouble.
+
+Message:  1010
+<ce>        Angry shouts roar up behind you. A lithe
+<ce>        figure presses a small bag into your hands
+<ce>        while passing by, only managing to say
+<ce>        in a harsh whisper,
+<ce>
+<ce>        "_qg_ in ___place_. Hurry."
+<ce>
+<ce>        Do you put the object into your bag?
+
+Message:  1011
+<ce>        With one swift movement you sink it into the 
+<ce>        bottom of your pack and watch as %g1 runs
+<ce>        away. The shortening distance suggests
+<ce>        the chase is about to end. Once you're left 
+<ce>        alone, you notice the bag contains a small
+<ce>        amount of _subs_.
+
+Message:  1013
+<ce>       You let the item slip out of your hands and drop
+<ce>       to the ground. One of the armed pursuers stops
+<ce>       to pick it up and speak to you.
+<ce>
+<ce>       "Thank you for not helping %g2. We'll catch that
+<ce>       pond scum within the hour. Leave it to us."
+<ce>
+<ce>       The warrior rushes off to catch up to
+<ce>       the others, and you are left alone.
+
+Message:  1030
+%qdt:
+ A criminal gave me a bag of _subs_
+ and told me to get it to ___place_,
+ to a person named _qg_.
+
+QBN:
+Item _reward_ gold range 120 to 250
+Item _subs_ drug
+
+Place _place_ remote house
+
+Clock _failsafe_ 180.00:00
+
+Person _qg_ faction The_Thieves_Guild
+
+--	Quest start-up:
+	start timer _failsafe_
+
+_enter_ task:
+    when pc enters city
+    prompt 1010 yes _accept_ no _refuse_
+    place npc _qg_ at _place_
+
+_refuse_ task:
+     say 1013
+     legal repute +5
+     end quest
+
+_accept_ task:
+    say 1011
+    get item _subs_
+    log 1030 step 0
+
+_victory_ task:
+    toting _subs_ and _qg_ clicked
+    give pc _reward_
+    end quest
+
+_failsafe_ task:
+         end quest

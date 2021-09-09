@@ -1,0 +1,155 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST04
+--JHDBA01
+DisplayName: Hunter of the Nightblade
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQ045
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQ045
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQ045
+
+QuestFail:  [1003]
+<ce>                          ERROR 1003 JHPQ045
+
+QuestComplete:  [1004]
+<ce>                Welcome, %ra. What have you to report?
+<ce>
+<ce>            Let's see, the case of the missing Nightblade.
+<ce>             I indeed see your reward allotted here, and
+<ce>            you have fulfilled the %t's terms. Well done.
+<ce>          Take this money. %crn thanks you for your service.
+
+RumorsDuringQuest:  [1005]
+That Nightblade's gotta be in a house. The guard's 've looked in all the businesses.
+<--->
+A bounty hunt in ___res_! How exciting!
+<--->
+People in ___res_ say _res_ looks suspicious.
+
+Message:  1010
+<ce>             You pick up a leaflet from under your feet,
+<ce>                 which appears to be newly published.
+
+Message:  1011
+ Edict of the %t:
+<ce>
+The region of ____res_ offers a gold reward for the capture
+or slaughter of one Nightblade of particular infamy
+known to consort in the city of ___res_.
+This villain has eluded the city guard and is presumed
+to be a flight risk. The %t insists that the
+foe be subdued or slain within =2res_ days.
+Payment for successful completion may be obtained
+from the agent detailed below.
+<ce>
+            AGENT: _ag_
+            _pal_, ___pal_
+            DEAD: =less_ gold pieces
+            ALIVE: =more_ gold pieces
+
+Message:  1012
+<ce>                     This house is deadly silent.
+
+Message:  1013
+<ce>        You have slain the Nightblade. You take some personal
+<ce>          effects from the deceased's belongings for proof.
+
+Message:  1014
+<ce>       Your Paralysis spell caught the Nightblade by surprise.
+<ce>      In this moment of vulnerability, you are quick to relieve
+<ce>          your foe of consciousness. Now to get your reward
+<ce>                      at the palace of ___pal_.
+
+Message:  1015
+<ce>         Your Sleep spell caught the Nightblade by surprise.
+<ce>        Within moments, your foe is unconscious on the floor.
+<ce>            You hoist the body with you to get your reward
+<ce>                      at the palace of ___pal_.
+
+QBN:
+Person _ag_ faction Random_Knight
+
+Place _pal_ remote palace
+Place _res_ remote house
+
+Clock _2res_ 00:00 0 flag 2 range 0 2
+Clock _failsafe_ 90.00:00
+
+Foe _nb_ is Nightblade
+
+Item _letter_ letter used 1011
+Item _less_ gold range 301 to 699
+Item _more_ gold range 1375 to 2200
+
+--	Quest start-up:
+    give pc _letter_ notify 1010
+    have _letter_ set _begin_
+    pc at _res_ do _inside_
+    place npc _ag_ at _pal_
+
+_begin_ task:
+    start timer _2res_
+
+_inside_ task:
+    say 1012
+    start task _spawn_
+    cast ContinuousDamage-Fatigue effect do _sleep_
+    cast Damage-Fatigue effect do _sleep_
+    cast Paralyze effect do _para_
+
+_spawn_ task:
+    create foe _nb_ every 0 minutes 1 times with 100% success
+
+_slain_ task:
+    killed _nb_
+    say 1013
+    stop timer _2res_
+    start timer _failsafe_
+
+variable _para_
+_para2_ task:
+    when _para_ and not _alive_ and not _slain_
+    say 1014
+    start task _alive_
+    remove foe _nb_
+    stop timer _2res_
+    start timer _failsafe_
+
+variable _sleep_
+_sleep2_ task:
+    when _sleep_ and not _alive_ and not _slain_
+    say 1015
+    start task _alive_
+    remove foe _nb_
+    stop timer _2res_
+    start timer _failsafe_
+
+variable _alive_
+_qgclicked_ task:
+    clicked npc _ag_
+
+_clearclick_ task:
+    when _qgclicked_ and not _slain_ and not _alive_
+    clear _qgclicked_ _clearclick_
+
+_capture_ task:
+    when _qgclicked_ and _alive_
+    give pc _more_
+    end quest
+
+_dead_ task:
+    when _qgclicked_ and _slain_
+    give pc _less_
+    end quest
+
+_2res_ task:
+    end quest
+
+_failsafe_ task:
+    end quest

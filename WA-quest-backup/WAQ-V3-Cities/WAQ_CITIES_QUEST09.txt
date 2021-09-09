@@ -1,0 +1,93 @@
+-- Perpetual Quest
+Quest: WAQ_CITIES_QUEST09 
+--JHFGA08 (Warm Ashes)
+DisplayName: Field Medic
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHFGA08
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHFGA08
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHFGA08
+
+QuestFail:  [1003]
+<ce>     You draw closer and push some of the people out of the way.
+<ce>         Once you've begun stitching, the task's true nature
+<ce>      quickly becomes apparent, as this is no mere flesh wound.
+<ce>         Hemorrhaging increases, and the patient soon faints.
+<ce>      Once the bystanders realize you are not fit for this work
+<ce>         they push you aside and carry the injured to someone
+<ce>                     more capable to do the job.
+
+QuestComplete:  [1004]
+<ce>     You step forward and reduce circulation to the wounded area
+<ce>      with one cloth while instructing some of the bystanders to
+<ce> prepare some antiseptic to pour on other bandages. They follow your
+<ce>  instructions and, following your lead with stitches, soon have the
+<ce>   bleeding entirely under control. A nearby family member breathes
+<ce>       a deep sigh of relief and offers you a small reward for
+<ce>                    your kindness and dedication.
+
+Message:  1010
+<ce>    You notice a crowd gathered up nearby. Someone has apparently
+<ce>   fallen with a gaping wound that bleed profusely onto the ground.
+<ce>       Various townsfolk nearby attempt to cover it with cloths
+<ce>       which turn red and damp. Will you try to intervene with
+<ce>                       your medical knowledge?
+
+Message:  1012
+<ce>        Finding no hope in sight, they pick up the peasant and
+<ce>      carry him off to some other place. Hopefully he will find
+<ce>          someone to suture the wound before it's too late.
+                                     <--->
+<ce>        Finding no hope in sight, they pick up the peasant and
+<ce>      carry her off to some other place. Hopefully she will find
+<ce>          someone to suture the wound before it's too late.
+
+QBN:
+Clock _failsafe_ 7.00:00
+Clock _timer_ 1:00
+Clock _delay_ 0:01 0:03
+
+Item _reward_ gold range 151 to 199
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_enter_ task:
+    when pc enters city
+    stop timer _failsafe_
+    start timer _delay_
+    start timer _timer_
+
+_delay_ task:
+    prompt 1010 yes _begin_ no _quit_
+
+variable _begin_
+_check1_ task:
+    when skill Medical is at least 30
+
+_victory_ task:
+    when _check1_ and _begin_
+    give pc _reward_
+    legal repute +2
+    end quest
+
+_fail_ task:
+    when _begin_ and not _check1_
+    say 1003
+    end quest
+
+_timer_ task:
+    end quest
+
+_failsafe_ task:
+    end quest
+
+_quit_ task:
+    say 1012
+    end quest

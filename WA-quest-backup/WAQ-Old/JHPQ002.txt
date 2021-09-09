@@ -1,0 +1,100 @@
+-- Perpetual Quest
+Quest: JHPQ002
+DisplayName: An Orcish Tale
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQ002
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQ002
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQ002
+
+QuestFail:  [1003]
+<ce>                          ERROR 1003 JHPQ002
+
+QuestComplete:  [1004]
+<ce>             On the warlord's body you find an enchanted
+<ce>                     _reward_, which you pocket.
+<ce>
+<ce>               This is merely one of many orcish bands
+<ce>                   that infest %crn, but cleansing
+<ce>                    it is work enough for one day.
+
+Message:  1010
+<ce>             You hear muffled orcish grunting around you.
+
+Message:  1011
+<ce>                You notice a scribbled piece of paper
+<ce>                has fallen to the ground. It contains
+<ce>               words written in a meaningless language
+<ce>                    and a map leading from __dung_
+<ce>              through this place to a few destinations.
+
+Message:  1012
+<ce>              This place carries the foul smell of orc.
+<ce>               You prepare yourself for the incursion.
+
+Message:  1013
+<ce>              This unlearned warlord shouts bitterly in
+<ce>              its crude version of Orcish language. Some
+<ce>                 of the few words you understand are
+<ce>                      "%ra," "kill," and "now."
+
+Message:  1030
+%qdt:
+ I have been attacked by a band
+ of orcs, who carried a map
+ leading from __dung_.
+
+QBN:
+Item _reward_ magic_item
+
+Place _dung_ remote dungeon
+
+Clock _timer_ 45.00:00
+Clock _final_ 12:00
+
+Foe _skirm_ is 2 Orc_sergeant
+Foe _const_ is Orc
+Foe _enemy_ is Orc_warlord
+
+--	Quest start-up:
+    start timer _timer_
+    say 1010
+    create foe _skirm_ every 0 minutes 1 times with 100% success
+    pc at _dung_ set _spawn_
+    place foe _enemy_ at _dung_
+
+_initial_ task:
+    killed 2 _skirm_
+    reveal _dung_
+    say 1011
+    log 1030 step 0
+
+_spawn_ task:
+    start task _entered_
+    create foe _const_ every 27 minutes indefinitely with 15% success
+    create foe _const_ every 56 minutes indefinitely with 6% success
+
+_entered_ task:
+    say 1012
+
+_inj_ task:
+    injured _enemy_
+    say 1013
+
+_victory_ task:
+    killed _enemy_
+    give pc _reward_
+    start timer _final_
+    remove log step 0
+
+_final_ task:
+    end quest
+
+_timer_ task:
+    end quest

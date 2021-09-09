@@ -1,0 +1,114 @@
+Quest: ritual
+DisplayName: A Ritual at Work
+-- Wilderness event, swamp
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              ritual 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             ritual 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             ritual 1002 Called
+
+QuestFail:  [1003]
+<ce>         ritual 1003 Called
+
+QuestComplete:  [1004]
+<ce>  The ritual finishes, and a portal opens in
+<ce>  the air above the mages. A force from within
+<ce>  sucks them in. One of them attempts to shout
+<ce>  something to you over the noise of the portal,
+<ce>  and throws what you suppose is your reward.
+
+Message:  1010
+<ce>  You seem to have stumbled into the midst
+<ce>  of a group of conjurers. You assume a
+<ce>  defensive position, but find no need for it.
+<ce>  One of their number speaks.
+<ce>  
+<ce>  "Hail, traveler. We wish to open a portal to
+<ce>  a far-off land, but cannot do so undefended.
+<ce>  The cities shun our kind and present us with much
+<ce>  risk. Here in the shrine of wilderness, would
+<ce>  you keep us safe as we open the portal?"
+
+Message:  1011
+<ce>  Their willingness to trust you seems foolish, but
+<ce>  they seem to know more about you than they're
+<ce>  willing to let on.
+<ce>  
+<ce>  "Then it shall be so. Keep us safe from our foes,
+<ce>  %ra, whatever they be. You will be rewarded,
+<ce>  that I promise. But if any of us die, the ritual will fail."
+<ce>  
+<ce>  The mages then take their positions and begin chanting.
+<ce>  The ground begins vibrating noticeably, agitating nearby creatures.
+
+Message:  1012
+<ce>  "That is understandable. We have interrupted your
+<ce>  journey. Please, take it up once more."
+<ce>  
+<ce>  Casting spells of invisibility, the mages
+<ce>  part ways with you.
+
+Message:  1013
+<ce>  One of the mages falls. Their leader sighs in contempt.
+<ce>  
+<ce>  "Perhaps we have put too much trust in you.
+<ce>  We shall find a better ward."
+<ce>  
+<ce>  Casting spells of invisibility, the remaining
+<ce>  mages part ways with you.
+
+QBN:
+Foe _mag_ is Mage
+Foe _nym_ is Nymph
+Foe _harp_ is Harpy
+Foe _rat_ is Giant_rat
+Foe _sprig_ is Spriggan
+
+Clock _ritual_ 0:15
+
+Item _reward_ magic_item
+
+--	Quest start-up:
+    prompt 1010 yes _begin_ no _refuse_
+
+_refuse_ task:
+    say 1012
+    end quest
+
+_begin_ task:
+    say 1011
+    create foe _mag_ every 0 minutes 4 times with 100% success
+    start timer _ritual_
+    create foe _harp_ every 8 minutes indefinitely with 100% success
+    create foe _rat_ every 3 minutes indefinitely with 100% success
+    create foe _sprig_ every 6 minutes indefinitely with 100% success
+    create foe _nym_ every 7 minutes indefinitely with 100% success
+    play sound magic_fizzle every 0 minutes 100 times
+
+_day_ task:
+    daily from 0:00 to 23:59
+    change foe _mag_ infighting true
+    change foe _mag_ team 1
+    change foe _nym_ infighting true
+    change foe _harp_ infighting true
+    change foe _rat_ infighting true
+    change foe _sprig_ infighting true
+    cast Wizard_Rend spell on _mag_
+    clear _day_
+
+_fail_ task:
+    killed _mag_
+    say 1013
+    remove foe _mag_
+    end quest
+
+_ritual_ task:
+    give pc _reward_
+    remove foe _mag_
+    end quest

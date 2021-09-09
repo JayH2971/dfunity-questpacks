@@ -1,0 +1,153 @@
+-- Perpetual Quest
+Quest: JHPQ017
+DisplayName: Abducted
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQ017
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQ017
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQ017
+
+QuestFail:  [1003]
+<ce>                          ERROR 1003 JHPQ017
+
+QuestComplete:  [1004]
+<ce>         It looks like you're free. Hopefully the town guard
+<ce>           will be more vigilant about these kinds of acts.
+
+Message:  1010
+<ce>      You are suddenly stopped by a jagged blade pressed against
+<ce>       your neck. Out of the corner of your eye you see a green
+<ce>      hand sustaining it, belonging to a cloaked figure. Another
+<ce>     cloaked being whispers with an unmistakable Orcish grunting.
+<ce>
+<ce>             "You come with us. No hurt. Prison. Ransom."
+<ce>
+<ce>       It appears they mean business. Do you surrender to them?
+
+Message:  1011
+<ce>          You turn to break free of your captors. You merely
+<ce>                hope not to have underestimated them.
+
+Message:  1020
+<ce>          You drop your defenses, and the nearer orc strikes
+<ce>          the side of your head. You hear the other begin an
+<ce>                incantation as you lose consciousness.
+
+Message:  1021
+<ce>      You awake moments later in a very different-looking place.
+<ce>      Surviving to your ransom date, if anyone wanted to ransom
+<ce>         you to begin with, would not be easy standing here.
+<ce>                   It's time to find your way out.
+<ce>
+<ce>  (Hint: You may be in a location that's impossible to escape from,)
+<ce>               (like at the bottom of a chute. If so,)
+<ce>   (make a save and try the console command "teleport" to get out.)
+
+Message:  1022
+<ce>      The filthy orcs apparently carried a disease of some kind.
+<ce>                   Your stomach churns from within.
+
+Message:  1023
+<ce>     Your captors unsurprisingly carried some manner of disease,
+<ce>    but your medical knowledge is sufficient to prevent contagion.
+
+Message:  1040
+<ce>            You refuse their demand and state that the %rt
+<ce>         will not tolerate such incursions on civilized land.
+<ce>       The orcs are surprised at your mastery of their language
+<ce>          and assume you are a person of unusual importance.
+<ce>        Before you can turn around, they have already stalked
+<ce>              off to search for someone else to abduct.
+
+QBN:
+Clock _timer_ 1.00:00
+Clock _failsafe_ 90.00:00
+Clock _tele_ 0:00
+Clock _delay_ 0:00 0:02
+
+Foe _orc1_ is Orc_warlord
+Foe _orc2_ is Orc_shaman
+
+Place _dung_ remote dungeon
+
+--	Quest start-up:
+        pc at _dung_ set _inside_
+        start timer _failsafe_
+
+_begin_ task:
+        when pc enters city
+        start timer _delay_
+
+_delay_ task:
+        prompt 1010 yes _surrender_ no _flee_
+
+_surrender_ task:
+        say 1020
+        start timer _tele_
+
+_tele_ task:
+        teleport pc to _dung_
+        say 1021
+        pick one of _pcsick_ _pcnotsick_
+
+_medi_ task:
+        when skill Medical is at least 30
+
+variable _pcnotsick_
+variable _pcsick_
+_si1_ task:
+        when _pcsick_ and not _medi_
+        say 1022
+        make pc ill with Stomach_Rot
+
+_si2_ task:
+        when _pcsick_ and _medi_
+        say 1023
+
+_inside_ task:
+        start task _needesc_
+
+variable _needesc_
+_escape_ task:
+        when _needesc_ and not _inside_
+        give pc nothing
+        end quest
+
+variable _flee_
+_orc_ task:
+        when skill Orcish is at least 40
+
+_branch1_ task:
+        when _flee_ and not _orc_
+        say 1011
+        create foe _orc1_ every 0 minutes 1 times with 100% success
+        create foe _orc2_ every 0 minutes 1 times with 100% success
+        start timer _timer_
+
+_branch2_ task:
+        when _flee_ and _orc_
+        say 1040
+        end quest
+
+_slay1_ task:
+        killed _orc1_
+
+_slay2_ task:
+        killed _orc2_
+
+_fleewin_ task:
+        when _slay1_ and _slay2_
+        give pc nothing
+        end quest
+
+_timer_ task:
+        end quest
+
+_failsafe_ task:
+        end quest

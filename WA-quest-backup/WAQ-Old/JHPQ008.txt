@@ -1,0 +1,138 @@
+-- Perpetual Quest
+Quest: JHPQ008
+DisplayName: Damsel in Distress
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQ008
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQ008
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQ008
+
+QuestFail:  [1003]
+<ce>             "Well, thank you anyway for saving me, %ra.
+<ce>                  I'll make it on my own from here."
+ 
+<ce>            Though addled, the woman is determined to get
+<ce>                 to ___farm_ as quickly as possible.
+
+QuestComplete:  [1004]
+<ce>             You pocket the money and prepare to move on.
+
+Message:  1010
+<ce>              A shrill scream breaks out nearby. A woman
+<ce>           is fighting to get free from a few armed people,
+<ce>            clearly not of any honorable origin. They seem
+<ce>              disposed to carry her off to some unknown
+<ce>                    destination. Do you stop them?
+
+Message:  1011
+<ce>           You throw a rock, which impacts the head of one
+<ce>            of the would-be kidnappers. The distraction is
+<ce>           sufficient for your purposes. They let up on the
+<ce>                  woman while they move to slay you.
+
+Message:  1012
+<ce>          With her pursuers dead, the woman starts sobbing,
+<ce>          kneeling on the ground. She takes several minutes
+<ce>               to regain her composure before speaking.
+<ce>
+<ce>            "I don't feel safe in my own house now. Please
+<ce>                  take me to ___farm_. No one knows
+<ce>           about it. I'll be okay there. Please, let's go."
+<ce>
+<ce>            With no apparent witnesses, you have a choice.
+<ce>              You could escort her to the farm house, or
+<ce>           you could take her life for whatever money she's
+<ce>              carrying. Will you escort her to the farm?
+
+Message:  1013
+<ce>           She still shakes as you help her off the ground.
+<ce>           It's likely she'll be affected by this for quite
+<ce>              awhile. She gets behind you silently, and
+<ce>                   you move together for ___farm_.
+
+Message:  1014
+<ce>         The woman's pursuers quickly grab her and heave her
+<ce>         over their shoulders. Before long both the spectacle
+<ce>            and her agonized voice fade into the distance.
+
+Message:  1015
+<ce>          Before she can so much as react, your blow leaves
+<ce>           her slumping on the ground, dead. In her pockets
+<ce>        you find =steal_ gold, likely for her travel expenses.
+<ce>            You hope people assume she died of the wounds
+<ce>                     previously inflicted on her.
+
+Message:  1016
+<ce>           The woman can't restrain herself from giving you
+<ce>          a heartfelt hug. She then hurries into the house.
+<ce>        After a few minutes, a man steps out to speak to you.
+<ce>
+<ce>             "Thank you, from the bottom of my heart, for
+<ce>                bringing my cousin here. ____farm_ is
+<ce>         rapidly turning into the cesspool of the Iliac Bay.
+<ce>               Gold can't compensate for what you saved
+<ce>                 _name_ from, but at least this will
+<ce>             cover your travel costs. %god watch over you
+<ce>                     the rest of your days, %ra."
+
+Message:  1030
+%qdt:
+ I am leading a woman to a safe place,
+ ___farm_, away from her pursuers.
+ I don't want to take longer than
+ =timer_ days to get her there.
+
+QBN:
+Item _reward_ gold range 100 to 350
+Item _steal_ gold range 150 to 250
+
+Place _farm_ remote farmhome
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Person _name_ group Questor female
+
+Foe _enemy_ is 3 Thief
+
+--	Quest start-up:
+    start timer _timer_
+    prompt 1010 yes _accept_ no _refuse_
+    pc at _farm_ set _victory_
+
+_refuse_ task:
+    say 1014
+    end quest
+
+_accept_ task:
+    say 1011
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_decis_ task:
+    killed 3 _enemy_
+    prompt 1012 yes _escort_ no _slay_
+
+_slay_ task:
+    say 1015
+    give pc _steal_
+    end quest
+
+_escort_ task:
+    say 1013
+    add _name_ face
+    log 1030 step 0
+
+_victory_ task:
+    say 1016
+    give pc _reward_
+    legal repute +2
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest

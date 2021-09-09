@@ -1,0 +1,51 @@
+Quest: vamphunters
+DisplayName: Vampire Hunters
+-- Dungeon event
+-- Quest should fire only when player is vampire
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              vamphunters 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             vamphunters 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             vamphunters 1002 Called
+
+QuestFail:  [1003]
+<ce>         vamphunters 1003 Called
+
+QuestComplete:  [1004]
+<ce>         vamphunters 1004 Called
+
+Message:  1010
+<ce>  Something feels off here. You sense
+<ce>  several presences nearby.
+<ce>  
+<ce>  "Fire! Slay the vampire!"
+
+QBN:
+
+Clock _failsafe_ 8:00
+
+Foe _hu1_ is Spellsword
+Foe _hu2_ is Battle_mage
+Foe _hu3_ is Barbarian
+Foe _hu4_ is Knight
+Foe _hu5_ is Archer
+Foe _hu6_ is Ranger
+
+--	Quest start-up:
+    start timer _failsafe_
+    say 1010
+    create foe _hu1_ every 0 minutes 1 times with 100% success
+    create foe _hu2_ every 0 minutes 1 times with 100% success
+    create foe _hu3_ every 0 minutes 1 times with 100% success
+    create foe _hu4_ every 0 minutes 1 times with 100% success
+    create foe _hu5_ every 0 minutes 1 times with 100% success
+    create foe _hu6_ every 0 minutes 1 times with 100% success
+
+_failsafe_ task:
+    end quest

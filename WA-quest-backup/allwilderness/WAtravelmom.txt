@@ -1,0 +1,92 @@
+Quest: travelmom
+DisplayName: A Traveling Mother
+-- Wilderness event, any region
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              travelmom 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             travelmom 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             travelmom 1002 Called
+
+QuestFail:  [1003]
+<ce>         travelmom 1003 Called
+
+QuestComplete:  [1004]
+<ce>         travelmom 1004 Called
+
+Message:  1010
+<ce>  You see a woman traveling opposite your direction.
+<ce>  She hails you, stopping you in the way.
+<ce>  
+<ce>  "Excuse me %ra, I must ask this of you.
+<ce>  I'm no beggar but a mother in distress.
+<ce>  I've taken up to deliver some goods to ___place_,
+<ce>  leaving my young children at home.
+<ce>  It's the only way I can keep us fed.
+<ce>  Kind stranger, would you have some money to spare?
+<ce>  It hurts to ask, but it tears me to pieces leaving
+<ce>  them unattended, to say nothing of the dangers
+<ce>  out here in the wild. I could return home right now
+<ce>  and live a whole week with just 150 coins. I have
+<ce>  nothing to reward you with, other than eternal gratitude."
+
+Message:  1011
+<ce>  Tears come to her eyes. "I suppose we all have our
+<ce>  hardships. %god bless both of us to get
+<ce>  where we're going. Goodbye."
+
+Message:  1012
+<ce>  She weeps openly and thanks you for your kindness.
+<ce>  
+<ce>  "%god watch over you, %ra.
+<ce>  This means more to me than you could know."
+<ce>  
+<ce>  She fills a small sack with the coins and departs
+<ce>  in a different direction.
+
+Message:  1013
+<ce>  You look through your belongings but find you
+<ce>  don't have enough money. Before you can say
+<ce>  anything else, she interjects.
+<ce>  
+<ce>  "You know what? I'm so sorry that I asked you
+<ce>  this. It's clear we're all going through hard times.
+<ce>  %god bless both of us to get
+<ce>  where we're going. Goodbye."
+
+QBN:
+
+Clock _failsafe_ 8:00
+
+Foe _hu1_ is Healer
+
+Person _name_ faction Arkay
+
+Place _place_ remote house
+
+--	Quest start-up:
+    start timer _failsafe_
+    prompt 1010 yes _accept_ no _deny_
+
+_deny_ task:
+    say 1011
+    end quest
+
+_accept_ task:
+    pay 150 money do _hasmoney_ otherwise do _nomoney_
+
+_hasmoney_ task:
+    say 1012
+    end quest
+
+_nomoney_ task:
+    say 1013
+    end quest
+
+_failsafe_ task:
+    end quest

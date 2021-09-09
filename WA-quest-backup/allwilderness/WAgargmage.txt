@@ -1,0 +1,49 @@
+Quest: gargmage
+DisplayName: A Gargoyle and its Mage
+-- Wilderness event, any region
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              gargmage 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             gargmage 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             gargmage 1002 Called
+
+QuestFail:  [1003]
+<ce>         gargmage 1003 Called
+
+QuestComplete:  [1004]
+<ce>         gargmage 1004 Called
+
+Message:  1010
+<ce>   Magical feedback roars nearby.
+<ce>  A mage is conducting some sort
+<ce>  of powerful spell. Just as you're
+<ce>  passing by, complications arise.
+<ce>  
+<ce>  "No! Stupid construct!
+<ce>  Fight the %ra, not me!"
+
+QBN:
+
+Clock _failsafe_ 00:02
+
+Foe _mag_ is Mage
+Foe _gar_ is Gargoyle
+
+--	Quest start-up:
+    start timer _failsafe_
+    create foe _mag_ every 0 minutes 1 times with 100% success
+    create foe _gar_ every 0 minutes 1 times with 100% success
+    say 1010
+    change foe _mag_ infighting true
+    change foe _mag_ team 0
+    change foe _gar_ infighting true
+    change foe _gar_ team 2
+
+_failsafe_ task:
+    end quest

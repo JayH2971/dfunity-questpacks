@@ -1,0 +1,207 @@
+-- Perpetual Quest
+Quest: JHPQ001
+DisplayName: Necromantic Intervention
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  ERROR 1000 JHPQ001
+
+RefuseQuest:  [1001]
+<ce>  ERROR 1001 JHPQ001
+
+AcceptQuest:  [1002]
+<ce> ERROR 1002 JHPQ001
+
+QuestFail:  [1003]
+<ce>  You feel the ghostly presence depart
+<ce>  from you. Perhaps you took too long.
+
+QuestComplete:  [1004]
+<ce>  "Ah, I see you're working well with
+<ce>  _appa_. Isn't death a remarkable
+<ce>  power? You can practically close your eyes
+<ce>  and let %g2 do all the work. Let me see the
+<ce>  papers you took from the Mages Guild.
+<ce>  
+<ce>  "Yes, this statement is of superb quality.
+<ce>  I may have to invoke the scholar later
+<ce>  to follow up on some of it. For now,
+<ce>  I will let you go. As a show of good
+<ce>  will, take these _reward_ gold pieces. Never
+<ce>  let it be said that the Necromancers
+<ce>  do not take care of their own. Now,
+<ce>  allow me to free you from my messenger. 
+<ce>  
+<ce>  "Come away from the %ra, _appa_!
+<ce>  I must return you to __graveyard_!"
+<ce>  
+<ce>  The ghostly presence departs from
+<ce>  you, and _necr_ silently
+<ce>  hands you your reward.
+
+Message:  1010
+<ce> You notice a letter among your
+<ce> belongings that wasn't there before,
+<ce>  written on very tattered parchment.
+
+Message:  1011
+  %ra of ____graveyard_:
+ 
+ We greet you in the name of the King of Worms.
+ We take upon ourselves the title of the Necromancers,
+ partakers of undying power. We have need of a servant
+ capable of moving about the civilized world undetected.
+ If you wish to know power beyond that found on this
+ mortal coil, turn to __graveyard_ and wait
+ for our message there.
+
+Message:  1012
+<ce>  Stepping into the graveyard, you feel the
+<ce>  wind suddenly whip up in intensity. Dead
+<ce>  leaves swirl to lead you to a specific point
+<ce>  in the earth. You look toward it and wait.
+<ce>  
+<ce>  Sensing your presence, some force begins
+<ce>  spiralling up and down on the ground,
+<ce>  spitting a current of cold air in every direction.
+<ce>  A translucent form begins to take shape
+<ce>  above the designated point and draws near.
+<ce>  A faint voice croaks all around you.
+<ce>  
+<ce>  "__city_, quickly. A researcher
+<ce>  for the Mages Guild. Vital.
+<ce>  Slay and obtain letter.
+<ce>  I will aid you. With haste."
+
+Message:  1013
+<ce>  The apparition hovers closer until it
+<ce>  seems to overshadow your head,
+<ce>  and then disappears altogether.
+<ce>  Somehow you feel it close to you still.
+
+Message:  1014
+<ce>  A whisper surrounds your head.
+<ce>  
+<ce>  "Watch. Mage is near.
+<ce>  Search area."
+
+Message:  1015
+<ce>  The apparition hisses in your ear.
+
+Message:  1016
+<ce>  "Take papers. ___res_.
+<ce>  _necr_ awaits."
+<ce>  
+<ce>  The presence ceases speaking.
+<ce>  You take the paperwork from
+<ce>  the researcher's corpse.
+
+Message:  1030
+%qdt:
+ An apparition, doing the bidding
+ of the Necromancers, is guiding me
+ to __city_ to find a
+ scholar from the Mages Guild.
+ I must slay him or her and take
+ the research he or she carries.
+
+Message:  1031
+%qdt:
+ The apparition told me to take
+ the mage's research to
+ ___res_, to an agent
+ named _necr_.
+
+Message:  1035
+  To _dummy_
+  The Mages Guild
+  Quarter _num_
+ 
+My research concerning resuscitation magic been
+has more draining than any could have imagined.
+To search among the people of %crn
+for the near-dead and attempt to heal
+them to fulness, sometimes failing and sometimes
+succeeding, has sapped my will to continue.
+I expect to present a short summary of my
+activities by the beginning of next year to
+the council, that they may consider my proposal
+concerning revivification as a circinate spell.
+Until that time, have a short statement regarding
+my aims and methods. I have coded it once again.
+Use cypher C_num_ this time. Please send a month's
+worth of living expenses to __city_ in
+exchange for this report.
+ 
+(The next page is entirely unreadable.)
+
+QBN:
+Item _inv_ letter used 1011
+Item _research_ letter used 1035
+Item _num_ gold range 1 to 4
+Item _reward_ gold range 200 to 400
+
+Person _dummy_ faction The_Mages_Guild
+Person _necr_ faction The_Necromancers
+Person _appa_ group Chemist
+
+Place _city_ remote city
+Place _res_ remote house1
+Place _graveyard_ remote graveyard
+
+Clock _initial_ 15.00:00
+Clock _find_ 00:03 00:08
+Clock _timer_ 30.00:00
+
+Foe _enemy_ is Mage
+
+--	Quest start-up:
+	start timer _initial_
+  say 1010
+  place npc _necr_ at _res_
+  get item _inv_
+  pc at _graveyard_ set _grave_
+  pc at _city_ set _arrival_
+  have _research_ set _steal_
+  reveal _graveyard_
+
+_initial_ task:
+ end quest
+
+_grave_ task:
+ start task _begin_
+ stop timer _initial_
+ start timer _timer_
+
+_begin_ task:
+ say 1012
+ say 1013
+ log 1030 step 0
+ take _inv_ from pc
+-  play sound ???
+
+_arrival_ task:
+ say 1014
+ start timer _find_
+
+_find_ task:
+ say 1015
+ create foe _enemy_ every 0 minutes 1 times with 100% success
+ restrain foe _enemy_
+ give item _research_ to _enemy_
+
+_steal_ task:
+  say 1016
+  log 1031 step 1
+
+_victory_ task:
+  toting _research_ and _necr_ clicked
+	give pc _reward_
+  change repute with _necr_ by +5
+- start quest ???
+	end quest
+
+_timer_ task:
+  say 1003
+	end quest

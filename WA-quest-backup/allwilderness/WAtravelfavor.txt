@@ -1,0 +1,141 @@
+Quest: travelfavor
+DisplayName: A Favor for a Traveler
+-- Wilderness event, any region
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              travelfavor 1000 Called
+
+RefuseQuest:  [1001]
+<ce>             travelfavor 1001 Called
+
+AcceptQuest:  [1002]
+<ce>             travelfavor 1002 Called
+
+QuestFail:  [1003]
+<ce>         travelfavor 1003 Called
+
+QuestComplete:  [1004]
+<ce>            "Welcome to _temple_. How may I help you?"
+<ce>   
+<ce>   You present the _relig_ and
+<ce>   _priest_ gives you the payment as promised.
+
+Message:  1010
+<ce>         "Hail, %ra! Are you headed
+<ce>   to ___temple_ any time soon?"
+<ce>   
+<ce>   Another traveler wants your attention.
+<--->
+<ce>  "Excuse me! Are you interested in making
+<ce>   a bit of gold for traveling to ___temple_?"
+<ce>   
+<ce>   Another traveler wants your attention.
+<--->
+<ce>  "Pardon! Do you have time for a
+<ce>  trip to ___temple_, %ra?"
+<ce>   
+<ce>   Another traveler wants your attention.
+
+Message:  1011
+<ce>   "Well met, friend. I need to deliver
+<ce>   some _relig_ to ___temple_
+<ce>   soon, but an urgent family matter is taking
+<ce>   me elsewhere. They'll pay you if you're there
+<ce>   in =timer_ days. Can you help?"
+
+Message:  1012
+<ce>  "The best of luck to you! Look for _priest_
+<ce>   over there, in _temple_. That's the one
+<ce>   with your payment. %god follow you!"
+
+Message:  1013
+<ce>  "Well, perhaps they won't get their _relig_
+<ce>   after all. A shame, but no one will take
+<ce>   me up on it. Safe travels, %ra."
+
+Message:  1014
+<ce>  "A fool and %pg3 money are soon parted, eh! Hahaha!"
+
+Message:  1015
+%qdt:
+ I will be paid gold if I
+ can deliver some traveler's
+ _relig_ to _priest_
+ at ___temple_ within =timer_ days.
+
+Message:  1016
+<ce> You're too late to deliver the _relig_
+<ce> to ___temple_.
+
+QBN:
+
+Clock _timer_ 6.00:00 8.00:00
+Clock _delay_ 0:03
+
+Foe _hu1_ is Rogue
+Foe _hu2_ is Assassin
+Foe _hu3_ is Thief
+Foe _hu4_ is Bard
+Foe _tig_ is Sabretooth_tiger
+
+Person _priest_ faction Generic_Temple
+
+Place _temple_ remote temple
+
+Item _relig_ religious
+Item _reward_ gold range 300 to 500
+
+--	Quest start-up:
+    start timer _timer_
+    say 1010
+    create foe _hu1_ every 0 minutes 1 times with 100% success
+    change foe _hu1_ team 1
+    pick one of _e1_ _e2_
+
+variable _e1_
+variable _e2_
+
+_begin_ task:
+    clicked foe _hu1_
+
+_favor_ task:
+    when _begin_ and _e1_
+    prompt 1011 yes _accept_ no _deny_
+
+_deny_ task:
+    say 1013
+    end quest
+
+_accept_ task:
+    say 1012
+    get item _relig_
+    place npc _priest_ at _temple_
+    log 1015 0
+
+_deliver_ task:
+    toting _relig_ and _priest_ clicked
+    give pc _reward_
+    end quest
+
+_notify_ task:
+    when _accept_ and _timer_
+    say 1016
+    take _relig_ from pc
+
+_timer_ task:
+    end quest
+
+_ambush_ task:
+    when _begin_ and _e2_
+    say 1014
+    create foe _hu2_ every 0 minutes 1 times with 100% success
+    create foe _hu3_ every 0 minutes 1 times with 100% success
+    create foe _hu4_ every 0 minutes 1 times with 100% success
+    create foe _tig_ every 0 minutes 2 times with 100% success
+    change foe _hu1_ team 0
+    start timer _delay_
+
+_delay_ task:
+    end quest

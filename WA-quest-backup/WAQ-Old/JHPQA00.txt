@@ -1,0 +1,69 @@
+-- Perpetual Quest
+Quest: JHPQA00
+DisplayName: 
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                          ERROR 1000 JHPQA00
+
+RefuseQuest:  [1001]
+<ce>                          ERROR 1001 JHPQA00
+
+AcceptQuest:  [1002]
+<ce>                          ERROR 1002 JHPQA00
+
+QuestFail:  [1003]
+<ce>                          ERROR 1003 JHPQA00
+
+QuestComplete:  [1004]
+<ce>                          ERROR 1004 JHPQA00
+
+Message:  1010
+<ce>                  You meet thieves intent on taking
+<ce>              your belongings and leaving no witnesses.
+                                     <--->
+<ce>               Some criminals crawl out to ambush you.
+                                     <--->
+<ce>                     You are waylaid by thieves.
+                                     <--->
+<ce>         Someone whispers nearby, "I bet that %ra has money."
+
+QBN:
+Clock _failsafe_ 6.00:00
+
+Foe _e1_ is 2 Thief
+Foe _e2_ is 2 Burglar
+Foe _e3_ is 2 Acrobat
+Foe _e4_ is 2 Rogue
+
+--	Quest start-up:
+    start timer _failsafe_
+
+_enter_ task:
+    when pc exits anywhere
+    start task _pick_
+
+_pick_ task:
+    pick one of _dud_ _dud_ _fight_ _dud_ _dud_
+
+variable _dud_
+_fight_ task:
+    say 1010
+    pick one of _f1_ _f2_ _f3_ _f4_
+
+_f1_ task:
+    create foe _e1_ every 0 minutes 1 times with 100% success
+
+_f2_ task:
+    create foe _e2_ every 0 minutes 1 times with 100% success
+
+_f3_ task:
+    create foe _e3_ every 0 minutes 1 times with 100% success
+
+_f4_ task:
+    create foe _e4_ every 0 minutes 1 times with 100% success
+
+_failsafe_ task:
+    start quest JHPQA00
+    end quest
