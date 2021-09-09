@@ -46,3 +46,4 @@ JHFG029, FightersGuild, M, 7, 1, a quest to meet a mysterious dueler
 JHFG030, FightersGuild, M, 3, 1, a quest to help clear a cemetery of its guardian
 JHFG031, FightersGuild, M, 2, 1, a quest to rescue a child from a dungeon
 JHFG032, FightersGuild, M, 10, 1, a quest to destroy a conducting atronach in a house
+JHFG033, FightersGuild, M, 1, 1, a quest to deliver a bag of gold across town
