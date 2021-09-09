@@ -36,6 +36,9 @@ QuestComplete:  [1004]
 <ce>                      Excellent work. Let no one
 <ce>                    disobey the %t with impunity.
 
+RumorsDuringQuest:  [1005]
+Some unlucky soul from the Fighters Guild got sent to kill a daedroth.
+
 Message:  1020
 <ce>                      The message has been made
 <ce>                   abundantly clear. These corpses

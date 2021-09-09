@@ -37,6 +37,9 @@ QuestFail:  [1003]
 QuestComplete:  [1004]
 <ce>                   You are a credit to %crn, %pcf.
 
+RumorsDuringQuest:  [1005]
+The %t's been meeting with the Dark Brotherhood, they says.
+
 Message:  1010
 <ce>               _mage_ recognizes this vampire at once.
 <ce>

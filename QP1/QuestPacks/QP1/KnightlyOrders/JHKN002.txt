@@ -36,6 +36,9 @@ QuestComplete:  [1004]
 <ce>                   for you have done a great deed.
 <ce>                  Such sacrifices are not forgotten.
 
+RumorsDuringQuest:  [1005]
+Lots of harpy feathers have appeared around ___questgiver_. Strange, isn't it?
+
 Message:  1010
 <ce>           Your entrance is noted, and the ruffians gather.
 

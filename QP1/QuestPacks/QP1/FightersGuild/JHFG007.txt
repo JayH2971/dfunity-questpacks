@@ -48,6 +48,9 @@ QuestComplete:  [1004]
 <ce>               how there are members like you watching
 <ce>                       out for the rest of us.
 
+RumorsDuringQuest:  [1005]
+Some moron bard attacked the %t in open court this week, they say.
+
 Message:  1020
 <ce>                      You hear a faint snicker.
 

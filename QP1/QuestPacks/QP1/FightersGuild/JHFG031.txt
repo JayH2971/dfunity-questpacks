@@ -32,6 +32,9 @@ QuestFail:  [1003]
 QuestComplete:  [1004]
 <ce>                  You take the gold they offer you.
 
+RumorsDuringQuest:  [1005]
+I have it on really good authority that the %t is a vampire.
+
 Message:  1010
 <ce>           "Hi! You look different from the bad people who
 <ce>                brought me here. Where are we going?"

@@ -49,6 +49,9 @@ QuestComplete:  [1004]
 <ce>                The hooded figure silently warps away,
 <ce>                   and other beings take its place.
 
+RumorsDuringQuest:  [1005]
+Some idiot here in town let a tiger get into his house. Lucky the Fighters Guild exists.
+
 Message:  1011
 <ce>                 Oh! Are you from the Fighters Guild?
 <ce>                     H-hello, I'm _person_. Thank

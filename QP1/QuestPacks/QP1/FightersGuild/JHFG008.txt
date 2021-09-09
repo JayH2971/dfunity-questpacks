@@ -44,6 +44,9 @@ QuestComplete:  [1004]
 <ce>          Calling for a servant, he retires to another room.
 <ce>                      Your reward soon arrives.
 
+RumorsDuringQuest:  [1005]
+People are getting extorted by some Argonian all across Wayrest. Weird, isn't it?
+
 RumorsPostFailure:  [1006]
 Such a shame, what happened to _noble_.
 <--->

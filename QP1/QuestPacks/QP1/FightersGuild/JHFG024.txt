@@ -35,6 +35,9 @@ QuestComplete:  [1004]
 <ce>               I took the time to turn your share into
 <ce>                  something more useful than money.
 
+RumorsDuringQuest:  [1005]
+Some spellsword is getting rich from defending the Mages Guild from intruders.
+
 Message:  1010
 <ce>                      You hear _qgiver_'s voice
 <ce>               come from the wood siding of the chest.

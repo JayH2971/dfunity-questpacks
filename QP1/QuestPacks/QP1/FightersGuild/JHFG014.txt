@@ -32,6 +32,9 @@ QuestComplete:  [1004]
 <ce>        You've got a future with us, I think. Let me take back
 <ce>                 that talisman, and here's your gold.
 
+RumorsDuringQuest:  [1005]
+Someone hatched a harpy around ___house_, but no one can find it.
+
 QuestorPostSuccess:  [1008]
 Now that you've slain that zombie, you're officially ready for the big stuff. What can I get you?
 

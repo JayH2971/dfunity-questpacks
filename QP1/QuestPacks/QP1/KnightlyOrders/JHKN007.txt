@@ -103,44 +103,6 @@ Message:  1030
  _res_, for help in
  unmasking the foe. I have two days.
 
-Message:  1040
-<ce>            _culp_'s eyes fill with terror at the sight of
-<ce>           _priest_, who grins victoriously. After pushing
-<ce>          you aside, %g1 shouts an incantation and exclaims,
-<ce>
-<ce>            "Lo, the mighty =dae1_ is mine! See now, %ra!
-<ce>             My patience with those childish knights has
-<ce>              been well rewarded. My new pet and I shall
-<ce>                        become lords of %crn!"
-<ce>
-<ce>               _culp_'s illusion fades away and reveals
-<ce>                        the daedra behind it.
-<ce>              Now you must fight it and its new master.
-<ce>               It appears _questgiver_ should check %g3
-<ce>         references on these people before recommending them.
-
-Message:  1041
-<ce>             Without your intervention, _priest_ is free
-<ce>               to attempt spells of greater magnitude.
-<ce>        You hear a teleportation spell, and the inside of the
-<ce>        building goes quiet. You have failed to bring justice
-<ce>                      to ___res_'s foe this day.
-
-Message:  1042
-<ce>           Whatever _priest_'s reasons for turning against
-<ce>          you, the problem has been solved. Both the daedra
-<ce>               and the would-be master have been slain.
-<ce>                It is time to report to _questgiver_.
-
-Message:  1043
-<ce>                          Your report, %pct.
-<ce>
-<ce>             My word, to think that _priest_ would betray
-<ce>       us for the chance to enslave a daedra. Could the monster
-<ce>       have tempted %g2 in some ethereal way to help it escape?
-<ce>           Or was this something %g1 had planned time ago?
-<ce>             In either case, your work has been stellar.
-
 QBN:
 Person _questgiver_ group Questor male
 Person _culp_ group Chemist
@@ -153,19 +115,17 @@ Clock _timer_ 2.00:00
 
 Foe _dae1_ is Daedra_seducer
 Foe _dae2_ is Frost_daedra
-Foe _mage_ is Mage
 
 --	Quest start-up:
   start timer _timer_
   log 1030 step 0
   place npc _culp_ at _shop_
   place npc _priest_ at _res_
-  pick one of _sed_ _frost_ _team_
+  pick one of _sed_ _frost_
   pc at _shop_ do _inside_
 
 variable _sed_
 variable _frost_
-variable _team_
 variable _inside_
 
 _pclicked_ task:
@@ -206,16 +166,6 @@ _step3a_ task:
   place foe _dae2_ at _shop_
   change foe _dae2_ infighting true
 
-_trick_ task:
-  when _cclicked_ and _step2_ and _team_
-  say 1040
-  hide npc _culp_
-  place foe _dae2_ at _shop_
-  create foe _mage_ every 0 minutes 1 times with 100% success
-  drop _priest_ face
-  change foe _dae2_ infighting true
-  change foe _mage_ infighting true
-
 _slain_ task:
   killed _dae1_
   killed _dae2_
@@ -232,19 +182,6 @@ _vict2_ task:
   start task _wimp_
 
 variable _wimp_
-_bigfail_ task:
-  when _trick_ and not _inside_ and not _teamkill_
-  say 1041
-  remove foe _mage_
-  remove foe _dae2_
-  end quest
-
-_teamkill_ task:
-  killed _mage_
-
-_vict3_ task:
-  when _slain_ and _teamkill_
-  say 1042
 
 _timer_ task:
   say 1003
@@ -259,13 +196,6 @@ _clearclick_ task:
 
 _victory_ task:
   when _qgclicked_ and _wimp_
-  give pc nothing
-  legal repute +3
-  end quest
-
-_hard_ task:
-  when _qgclicked_ and _vict3_
-  say 1043
   give pc nothing
   legal repute +3
   end quest

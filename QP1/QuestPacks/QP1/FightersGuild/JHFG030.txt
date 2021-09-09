@@ -29,6 +29,9 @@ QuestFail:  [1003]
 QuestComplete:  [1004]
 <ce>                      You take your gold reward.
 
+RumorsDuringQuest:  [1005]
+Lots of werewolves been out and about in the night.
+
 Message:  1010
 <ce>       "It is yet day, and the monster fits the disguise well,"
 <ce>               _fighter_ says. "Let us camp 'til night

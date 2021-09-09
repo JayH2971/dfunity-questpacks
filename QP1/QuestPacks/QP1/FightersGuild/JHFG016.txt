@@ -36,6 +36,9 @@ QuestComplete:  [1004]
 <ce>                 Proof's in the pudding, as they say.
 <ce>                Here's your gold. Your secret's safe.
 
+RumorsDuringQuest:  [1005]
+The merchants are going to strike if the %t increases their taxes again.
+
 Message:  1020
 <ce>            You have slain the disreputable guild member.
 

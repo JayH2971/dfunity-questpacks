@@ -45,6 +45,9 @@ QuestComplete:  [1004]
 <ce>         tips his hat to you kindly and makes his way out of
 <ce>                   the building, leaving you alone.
 
+RumorsDuringQuest:  [1005]
+I saw a company of Mages Guild recruits headed to a farm earlier.
+
 Message:  1010
 To the %ra named %pcn,
  

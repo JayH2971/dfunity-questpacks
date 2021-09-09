@@ -33,6 +33,9 @@ QuestComplete:  [1004]
 <ce>                  Hey, welcome back. Good to see you
 <ce>                   in one piece. Here's your gold.
 
+RumorsDuringQuest:  [1005]
+The Fighters Guild failed to save some kid from an abandoned prison. Shame on them.
+
 Message:  1022
 <ce>                      Fool! How dare you attack
 <ce>                     a member of the Mages Guild!

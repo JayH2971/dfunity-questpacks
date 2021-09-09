@@ -43,6 +43,9 @@ QuestComplete:  [1004]
 <ce>            Others begin to move and clean up the bodies.
 <ce>         The assault is over, and life can resume once more.
 
+RumorsDuringQuest:  [1005]
+Some Dark Elf has been taking loans out from banks and not paying them back. That's worth a hanging.
+
 RumorsPostFailure:  [1006]
 __questgiver_ managed to save ___palace_ from enemy knights.
 

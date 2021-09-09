@@ -34,6 +34,9 @@ QuestComplete:  [1004]
 <ce>            whole bone. I'm just glad you're back, anyway.
 <ce>       Take your reward, and see what else we've got available.
 
+RumorsDuringQuest:  [1005]
+The good harvest this year means food prices are getting real low.
+
 Message:  1010
 %qdt:
  The Fighters Guild will pay me
