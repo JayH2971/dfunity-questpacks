@@ -1,0 +1,174 @@
+Quest: JHFG032
+DisplayName: The Grounding Element
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                   Used to killing many atronachs?
+<ce>             We've got a job to kill one in another town.
+<ce>             Neighbors are getting freaked out about it,
+<ce>                   holed up in a house over there.
+<ce>                      Iron atronach, apparently.
+<ce>                         Feel ready for this?
+
+RefuseQuest:  [1001]
+<ce>                    Too bad. Sounds pretty simple.
+
+AcceptQuest:  [1002]
+<ce>                 Get yourself on over to ___house_ to
+<ce>               the %di and find a place called _house_.
+<ce>            Reports say the atronach does a lot of wailing
+<ce>               but not much moving, so it shouldn't be
+<ce>        all that hard to find. Take it out and come back here.
+<ce>        I'll have your =reward_ gold pieces all ready for you
+<ce>                   if you're back in =timer_ days.
+
+QuestFail:  [1003]
+<ce>               You needed to report on the atronach job
+<ce>                         to _qgiver_ by now.
+
+QuestComplete:  [1004]
+<ce>                Atronach's dead, isn't it? Good work.
+<ce>           Those things sure are hard to hit, aren't they?
+<ce>            Gotta get the best weaponry for those things,
+<ce>                 I say. Glad to pay this out to you.
+
+RumorsDuringQuest:  [1005]
+Some warrior got paid to kill a bunch of imps in a crypt. What a life.
+
+Message:  1010
+<ce>            This house is charged with electrical energy.
+<ce>               The atronach shouldn't be hard to find.
+
+Message:  1011
+<ce>                  You examine the atronach, and find
+<ce>                 a note attached to the front of it.
+<ce>
+<ce>             "EXPERIMENT UNDERWAY. Please do not disturb!
+<ce>                 Vital climate experiments in action,
+<ce>              subject is inert and will not harm anyone!
+<ce>              Please DO NOT call for the Fighters Guild,
+<ce>                the Dark Brotherhood, or any others!"
+<ce>
+<ce>           Perhaps the Fighters Guild may not have had all
+<ce>             the information it should have on this job.
+<ce>        Or maybe the neighbors don't care about the experiment
+<ce>       and want it destroyed anyway. You could finish it here,
+<ce>        or leave and try to gather more information about it.
+
+Message:  1012
+<ce>               Sensing a threat, the atronach whirs to
+<ce>                    life and advances against you.
+
+Message:  1013
+<ce>              With the atronach destroyed, it's time to
+<ce>            return to ___qgiver_ and report your success.
+
+Message:  1014
+<ce>         As you leave the house, a startled mage approaches.
+<ce>
+<ce>       "Oh dear, oh my! A mercenary? Were you inside the house?
+<ce>       You didn't destroy the atronach, I can tell! Thank you,
+<ce>         thank you! Oh, months of research would have gone to
+<ce>                waste in mere moments while I was out!
+<ce>      The golem is part of an experiment to change the weather,
+<ce>         create more rain for crops and so on. I'll have you
+<ce>        know, I have friends in high places and they will know
+<ce>            about this, right away! How good it is to have
+<ce>           wiser than ordinary persons holding the weapons
+<ce>                     in this realm, I tell you!"
+<ce>
+<ce>                The spellcaster hurries into the house
+<ce>            to cover up whatever work you could have done.
+<ce>               You're sure to benefit from this, though
+<ce>                you're not sure you'll tell _qgiver_.
+
+Message:  1015
+<ce>                 Mages? Experiments? Weather control?
+<ce>          That sounds interesting and all %pcf, but you had
+<ce>             a job to do. The contract was pretty clear.
+<ce>         With the mage alerted now, the thing might not ever
+<ce>          get destroyed. The guild's gonna have to back out
+<ce>       on this contract entirely, and that's bad for all of us.
+<ce>       Next time, I need you to follow the word of a contract,
+<ce>                         down to the letter.
+
+Message:  1030
+%qdt:
+ __qgiver_ assigned me
+ to destroy an atronach inside
+ a house called _house_
+ at ___house_. =reward_ gold
+ will be mine if I return to
+ ___qgiver_ in =timer_ days.
+
+Message:  1031
+%qdt:
+ I elected not to destroy the atronach
+ in _house_, and a mage thanked
+ me by promising to spread my good
+ name around ____house_.
+ All that's left to do is return
+ to ___qgiver_.
+
+QBN:
+Item _reward_ gold range 150 to 250
+
+Person _qgiver_ group Questor male
+
+Place _house_ remote house
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _nme_ is Iron_atronach
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    place foe _nme_ at _house_
+    restrain foe _nme_
+    pc at _house_ do _inside_
+
+_inside_ task:
+    say 1010
+
+_click_ task:
+    clicked foe _nme_
+    say 1011
+
+_inj_ task:
+    injured _nme_
+    say 1012
+    change foe _nme_ infighting true
+
+_slain_ task:
+    killed _nme_
+    say 1013
+
+_exit_ task:
+    when _click_ and not _inside_ and not _inj_
+    say 1014
+    remove foe _nme_
+    legal repute +10
+    log 1031 step 1
+
+_pcgetsgold_ task:
+    when _clickqg_ and _slain_
+    give pc _reward_
+    end quest
+
+_pcgetsbad_ task:
+    when _clickqg_ and _exit_
+    say 1015
+    end quest
+
+_clickqg_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _clickqg_ and not _exit_ and not _slain_
+    clear _clearclick_ _clickqg_
+
+_timer_ task:
+    say 1003
+    end quest
