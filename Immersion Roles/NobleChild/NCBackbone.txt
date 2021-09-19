@@ -1,0 +1,67 @@
+Quest: NCBackbone
+DisplayName: Backbone for Noble Child Immersion Role
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>                   You may have royal blood in you,
+<ce>          but your experience so far has put no silver spoon
+<ce>           in your mouth. You want to establish your worth
+<ce>              in ____place_ by your own merits -- not by
+<ce>                         the luck of your birth. 
+
+--level 2
+
+Message:  1012
+<ce>         Where once your name alone was the key to your fame,
+<ce>             your works are starting to garner attention.
+<ce>             You wonder if, in the absence of your lineage,
+<ce>           you could have reached your current standing
+<ce>               just by your very acts. It's hard to say.
+
+--level 4
+
+Message:  1013
+<ce>             Some nobles carry the unfortunate reputation
+<ce>            of being too soft to govern, too weak to lead.
+<ce>               The people of ____place_ would be fools
+<ce>          to consider you so. Should some rulership open up,
+<ce>           you have little doubt that your merits make you
+<ce>                       an obvious candidate.
+
+--level 6
+
+Message:  1014
+<ce>      You've far exceeded what is expected of the average noble.
+<ce>            Some prefer to live off of the wealth garnered
+<ce>             by others' labor, satisfying their own wants
+<ce>                in luxurious palaces or safe castles.
+<ce>            You are a different kind of noble altogether.
+<ce>              Your very name commands respect. You set a
+<ce>           standard for a new kind of ruler in ____place_.
+
+--level 8
+
+QBN:
+
+Place _place_ remote house
+
+--	Quest start-up:
+    start quest IRNC1
+
+_level2_ task:
+    level 2 completed
+    say 1011
+
+_level4_ task:
+    level 4 completed
+    say 1012
+
+_level6_ task:
+    level 6 completed
+    say 1013
+
+_level8_ task:
+    level 8 completed
+    say 1014
+    end quest

@@ -1,0 +1,86 @@
+Quest: JHFGA01
+DisplayName: The Fires of Oblivion
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          So it turns out there are two kinds of atronachs.
+<ce>           One's the kind that comes from the great beyond,
+<ce>               puppets of daedra and things like that.
+<ce>            Then the Mages Guild studied them and started
+<ce>                  making copies of them as servants.
+<ce>          We need someone to hunt down a real fire atronach
+<ce>               from Oblivion itself. That interest you?
+
+RefuseQuest:  [1001]
+<ce>                         It was worth a shot.
+
+AcceptQuest:  [1002]
+<ce>           It's not a major threat, but the real problem is
+<ce>            that it's in a palace. Head over to ___place_
+<ce>          and find it inside. Kill it and come back here for
+<ce>                your =reward_ gold pieces. As long as
+<ce>            you kill it in =timer_ days, you can take your
+<ce>                          time coming back.
+
+QuestFail:  [1003]
+<ce>         You needed to slay the atronach in ___place_ by now.
+
+QuestComplete:  [1004]
+<ce>           Not too tough, right %pcf? Maybe for some folks,
+<ce>                   but not for the Fighters Guild.
+
+Message:  1010
+%qdt:
+ The Fighters Guild of
+ ___qgiver_ has sent me to
+ ___place_ to slay a fire atronach
+ in _place_ within =timer_ days.
+ I can then return for my reward any time.
+
+Message:  1011
+<ce>          The blistering heat in the room starts to die down
+<ce>          as the atronach ceases moving. Your work is done.
+
+QBN:
+Item _reward_ gold range 200 to 300
+
+Person _qgiver_ group Questor male
+
+Place _place_ remote palace
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _failsafe_ 180.00:00
+
+Foe _enemy_ is Fire_atronach
+
+--	Quest start-up:
+	log 1010 step 0
+	start timer _timer_
+	place foe _enemy_ at _place_
+	change foe _enemy_ infighting true
+
+_slain_ task:
+	killed _enemy_
+	say 1011
+	stop timer _timer_
+	start timer _failsafe_
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _slain_
+	give pc _reward_
+	end quest
+
+_qgclicked_ task:
+	clicked npc _qgiver_
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_
+
+_timer_ task:
+	say 1003
+	end quest
+
+_failsafe_ task:
+	end quest

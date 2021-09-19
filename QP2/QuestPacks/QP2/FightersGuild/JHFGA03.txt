@@ -1,0 +1,103 @@
+Quest: JHFGA03
+DisplayName: Clattering Bones
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                      Some idiot in town thought
+<ce>          he'd try to raise his grandparents from the dead.
+<ce>     I mean, I get the feeling, and we miss our families, right?
+<ce>          But now they're a pair of angry skeletons walking
+<ce>         around the house, and he's paying money to get them
+<ce>                   dead... again. Interested, %pcf?
+
+RefuseQuest:  [1001]
+<ce>                 I don't blame you, skeletons are not
+<ce>                        as easy as they sound.
+
+AcceptQuest:  [1002]
+<ce>               You're looking for _place_, which is...
+<ce>                    um, %di. Yeah, now I remember.
+<ce>             You're gonna find both skeletons inside, and
+<ce>               you'll get paid when they're both dead.
+<ce>             We normally charge less for a local job, but
+<ce>             he really wanted it to be done in 24 hours,
+<ce>          so that's your time limit. This is worth =reward_
+<ce>                gold pieces for you. Also, I'm hoping
+<ce>           you've got a blunt weapon or something, because
+<ce>                 blades don't do jack to solid bone.
+<ce>        Might want to stop by the store if you feel confident
+<ce>             holding one. Anyway, that's enough from me.
+
+QuestFail:  [1003]
+<ce>                  You needed to return from slaying
+<ce>                   the skeletons in _place_ by now.
+
+QuestComplete:  [1004]
+<ce>                  Excellent work, %pcf. This is why
+<ce>                   we count on you. Have your gold.
+
+Message:  1010
+%qdt:
+ The Fighters Guild of
+ ___qgiver_ has sent me to
+ _place_ to kill two skeletons.
+ I have 24 hours to return for
+ =reward_ gold pieces.
+
+Message:  1011
+<ce>                   You've destroyed both skeletons.
+<ce>           The client probably won't be messing around with
+<ce>               necromancy any more after this incident.
+
+QBN:
+Item _reward_ gold range 200 to 250
+
+Person _qgiver_ group Questor male
+
+Place _place_ local house
+
+Clock _timer_ 1.00:00
+
+Foe _enemy1_ is Skeletal_warrior
+Foe _enemy2_ is Skeletal_warrior
+
+--	Quest start-up:
+    start timer _timer_
+    log 1010 step 0
+    place foe _enemy1_ at _place_
+    change foe _enemy1_ infighting true
+    pc at _place_ do _inside_
+
+_inside_ task:
+    start task _spawner_
+
+_spawner_ task:
+    create foe _enemy2_ every 2 minutes 1 times with 100% success
+    change foe _enemy2_ infighting true
+
+_slain1_ task:
+    killed _enemy1_
+
+_slain2_ task:
+    killed _enemy2_
+
+_slain_ task:
+    when _slain1_ and _slain2_
+    say 1011
+
+_pcgetsgold_ task:
+    when _qgclicked_ and _slain_
+    give pc _reward_
+    end quest
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
+
+_timer_ task:
+    say 1003
+    end quest

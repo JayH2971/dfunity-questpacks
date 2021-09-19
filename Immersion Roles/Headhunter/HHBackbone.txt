@@ -1,4 +1,4 @@
-Quest: HHBackBone
+Quest: HHBackbone
 DisplayName: Backbone for Headhunter Immersion Role
 -- Message panels
 QRC:
@@ -41,7 +41,6 @@ Message:  1014
 --level 8
 
 QBN:
-
 
 --	Quest start-up:
     start quest IRHH1

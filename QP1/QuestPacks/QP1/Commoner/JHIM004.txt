@@ -1,0 +1,484 @@
+Quest: JHIM004
+DisplayName: Season Unending
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>               Hey there! Hello! Fine day to meet you.
+<ce>              I've come looking for some long-term help
+<ce>              with our family farm. We'll pay you money
+<ce>                           for it, I swear!
+
+RefuseQuest:  [1001]
+<ce>                Ah, blasted luck I'm having out here.
+
+AcceptQuest:  [1002]
+<ce>               Wonderful! Fantastic! Thank you so much!
+<ce>                %hnr, if you'll head over to ___farm_
+<ce>                     within the next =timer_ days
+<ce>                they'll be most delighted to see you.
+<ce>              Maybe we'll run into each other over there
+<ce>                    as well! Fair travels to you!
+
+QuestFail:  [1003]
+<ce>                You declined to visit ___farm_ within
+<ce>                     the designated time period.
+
+QuestComplete:  [1004]
+<ce>              You approach the house, and are surprised
+<ce>                    to hear cheering and singing.
+<ce>                  _farmer_ and his family await you
+<ce>              with beaming smiles and a wrapped package.
+<ce>
+<ce>            "We just wanted to show you some appreciation
+<ce>             for the help you've given us the past year.
+<ce>             We're really grateful that you've gotten us
+<ce>                       out of some real binds.
+<ce>                          Here! Take this!"
+<ce>
+<ce>              They soon have to return to their duties,
+<ce>              but they wait with joyful eyes as you open
+<ce>                          the gift package.
+
+Message:  1010
+%qdt:
+ I've offered some of my time
+ to help fix problems at a
+ farm called ___farm_
+ in ____farm_. I was asked
+ to arrive within =timer_ days.
+
+Message:  1011
+<ce>        "Well don't that beat all! A little request for help,
+<ce>          and it actually worked! Thank you very much %hnr.
+<ce>             My name's _farmer_, the head of this house.
+<ce>        I'll be honest, we don't have anything to do yet, but
+<ce>      we'll send you a message when something real bad comes up.
+<ce>       And yes there'll be payment! By my grandfather's grave,
+<ce>             we will pay you for your help, I swear it!"
+<ce>
+<ce>                   The farmer then returns to work.
+
+Message:  1012
+<ce>                      "Hey you! %hnr! The %ra!"
+<ce>
+<ce>       You turn around and see a poorer youth calling for you,
+<ce>                     shivering in the winter air.
+<ce>
+<ce>           "If you can come on back to ___farm_, we've got
+<ce>               a problem we hope you can take care of!
+<ce>                Come look for my father at the house!"
+<ce>
+<ce>                  The youth then heads home to %di.
+
+Message:  1013
+%qdt:
+ I have been summoned to ___farm_
+ to help them with something.
+ I should go to the residence
+ to see what I can help with.
+
+Message:  1014
+<ce>        You enter the residence, and _farmer_ shouts for joy.
+<ce>
+<ce>      "Glad to have our hired help here! We were really hurting.
+<ce>              We've got an issue with our main supplier,
+<ce>                  a store called _shop_ in ___shop_.
+<ce>               Haven't heard a word from them in weeks.
+<ce>         We need a new shipment from them but we have no idea
+<ce>         what the hold-up is. I've gotta tend this place, so
+<ce>          can you go for me? Just ask them what the deal is,
+<ce>         it shouldn't take no special permission or nothing.
+<ce>           We'll see you back here when it's all finished.
+<ce>                           Thank you %hnr."
+
+Message:  1015
+%qdt:
+ _farmer_ of ___farm_
+ has asked me to visit _shop_
+ in ___shop_ and ask the supplier
+ why they haven't received any shipments lately.
+
+Message:  1016
+<ce>                        Yes, hello? ___farm_?
+<ce>      Oh, dear. That name sounds familiar, but... let me check.
+<ce>
+<ce>         %oth. My word, we completely forgot about that one.
+<ce>           It was supposed to go out on the 9th of... %oth.
+<ce>           I'm glad you came to check up on us! Yes, please
+<ce>                 tell _farmer_ that this is our first
+<ce>             priority. We won't go to sleep tonight until
+<ce>           we've loaded the wagon. My sincerest apologies!
+
+Message:  1017
+<ce>              _farmer_ is close by. He listens intently.
+<ce>
+<ce>         "Ha! A simple mistake, I knew it! It's a good thing
+<ce>              we nipped that little problem in the bud.
+<ce>              Fine thanks to you, %pcf. Have this bit of
+<ce>                        gold for the journey."
+<ce>
+<ce>              He counts out =winterreward_ gold pieces.
+
+Message:  1018
+<ce>                      "Hey you! %hnr! The %ra!"
+<ce>
+<ce>        You turn around and see a poorer youth calling for you
+<ce>                       in the crisp spring air.
+<ce>
+<ce>           "If you can come on back to ___farm_, we've got
+<ce>               a problem we hope you can take care of!
+<ce>                Come look for my father at the house!"
+<ce>
+<ce>                  The youth then heads home to %di.
+
+Message:  1019
+<ce>           You find _farmer_ nearby, holding a dull knife.
+<ce>
+<ce>         "Ho, %pcf! Glad to see you. We've got a bat problem.
+<ce>             Filthy things are coming out of hibernation
+<ce>           and looking for food wherever they can find it.
+<ce>              Every few hours another of them shows up.
+<ce>               Could you spend a few days out here and
+<ce>         strike them down? It's driving us all crazy, I say.
+<ce>     I'll scavenge up a payment when I'm sure they're all dead."
+<ce>
+<ce>            He then takes a much-needed rest, turning the
+<ce>                       bat problem over to you.
+
+Message:  1020
+<ce>                _farmer_ approaches you with a smile.
+<ce>
+<ce>             "Haven't heard a chirp for a few hours now!
+<ce>              I think we're good with them. You've been
+<ce>              a tremendous help through this nightmare.
+<ce>       I hope these =springreward_ gold pieces show our sincere
+<ce>                           thanks to you."
+
+Message:  1021
+<ce>                      "Hey you! %hnr! The %ra!"
+<ce>
+<ce>        You turn around and see a poorer youth calling for you
+<ce>                       in the warm summer air.
+<ce>
+<ce>           "If you can come on back to ___farm_, we've got
+<ce>               a problem we hope you can take care of!
+<ce>                Come look for my father at the house!"
+<ce>
+<ce>                  The youth then heads home to %di.
+
+Message:  1022
+<ce>        You enter the house and find _farmer_ waiting for you.
+<ce>
+<ce>               "Ah, glad to see you! Ready for a trip?
+<ce>               I hope the walk here didn't exhaust you.
+<ce>             Every year I make a journey to visit my dead
+<ce>             family at ___cemetery_, which is to the %di
+<ce>              of here. I usually spend a few hours there
+<ce>               and then return. I'd much rather go with
+<ce>           a group, but no one else has taken up my offer.
+<ce>           Instead, I'll go with you! We can leave for the
+<ce>                   cemetery whenever you're ready."
+
+Message:  1023
+<ce>            _farmer_ gets quiet as you enter the cemetery.
+<ce>         He goes to tend to some of the headstones, removing
+<ce>         weeds, pulling away vines, and tossing away rubble.
+<ce>           The process takes some time, mixed in with bouts
+<ce>                   of quiet reflection and memory.
+<ce>              You wait patiently, and he returns to you.
+<ce>
+<ce>           "Thank you, %pcf. This means a great deal to me.
+<ce>             I'm sorry I don't have more to pay you with,
+<ce>       but the harvest was a bit meager these last few months.
+<ce>            Please take these =summerreward_ gold pieces.
+<ce>             I can find my own way home. I know the path,
+<ce>        and I've already taken enough of your time. Farewell."
+
+Message:  1024
+<ce>                      "Hey you! %hnr! The %ra!"
+<ce>
+<ce>        You turn around and see a poorer youth calling for you
+<ce>                      in the breezy autumn air.
+<ce>
+<ce>           "If you can come on back to ___farm_, we've got
+<ce>               a problem we hope you can take care of!
+<ce>                Come look for my father at the house!"
+<ce>
+<ce>                  The youth then heads home to %di.
+
+Message:  1025
+<ce>         _farmer_ is waiting by the door, and looks spooked.
+<ce>
+<ce>         "Oh! %pcf! Am I glad you're here, we have a problem!
+<ce>       Some stupid bear keeps coming onto our property, looking
+<ce>              for something to eat before it hibernates.
+<ce>           We're terrified it's going to attack one of us.
+<ce>            Please, come outside and help me draw it out.
+<ce>           The animal needs to die, or it'll be one of us.
+<ce>                       Quick! I see it coming!"
+<ce>
+<ce>               _farmer_ starts whooping and hollering,
+<ce>            looking out into the distance. His eyes widen.
+<ce>
+<ce>         "Here it comes! I see it lumbering from over there!
+<ce>                   This is all in your hands %pcf!"
+<ce>
+<ce>              He then ducks back inside the house as the
+<ce>                        bear runs toward you.
+
+Message:  1027
+<ce>                _farmer_ comes out and approaches you,
+<ce>                  very relieved to see you survived.
+<ce>
+<ce>             "I'm so sorry, that was such a stupid idea!
+<ce>             But you handled yourself tremendously well.
+<ce>               Thank you so much for taking care of it.
+<ce>            Here's every coin I can spare from this month.
+<ce>      Please, take them." He counts out =fallreward_ gold pieces
+<ce>                   and heads into the house again.
+
+Message:  1028
+%qdt:
+ _farmer_ and I are headed to
+ ___cemetery_ to honor his dead.
+
+Message:  1029
+<ce>                      "Hey you! %hnr! The %ra!"
+<ce>
+<ce>    You turn around and see a well-dressed youth calling for you.
+<ce>
+<ce>                "If you can come on back to ___farm_,
+<ce>              we've got something we want to show you!!"
+<ce>
+<ce>                  The youth then heads home to %di.
+
+Message:  1030
+%qdt:
+ _farmer_ has asked me to go
+ to ___farm_ again to show me something.
+
+Message:  1031
+<ce>            As you step onto the property, a friendly sort
+<ce>        waves at you and asks how you came to know this place.
+<ce>           You answer that _qgiver_ in ___qgiver_ sent you.
+
+Message:  1032
+%qdt:
+ I've offered some of my time
+ to help fix problems at a
+ farm called ___farm_
+ in ____farm_.
+ They'll let me know when I'm needed.
+
+QBN:
+
+Place _farm_ remote farmhome
+
+Person _qgiver_ group Questor
+Person _farmer_ faction The_Merchants male remote
+Person _shopkeep_ faction The_Merchants remote
+
+Place _shop_ remote generalstore
+Place _cemetery_ remote graveyard
+
+Foe _bat_ is Giant_bat
+Foe _bear_ is Grizzley_bear
+
+Clock _delay_ 3.00:00 5.00:00
+Clock _batdelay_ 6:00
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _finaldelay_ 2.00:00 3.00:00
+
+Item _winterletter_ letter
+Item _springletter_ letter
+Item _summerletter_ letter
+Item _fallletter_ letter
+Item _winterreward_ gold range 100 to 200
+Item _springreward_ gold range 150 to 200
+Item _summerreward_ gold range 100 to 150
+Item _fallreward_ gold range 150 to 250
+Item _finalreward_ magic_item
+Item _endingletter_ letter
+
+--	Quest start-up:
+    start timer _timer_
+    log 1010 step 0
+    pc at _farm_ do _inside_
+    have _winterletter_ set _beginwinter2_
+    have _springletter_ set _beginspring2_
+    have _summerletter_ set _beginsummer2_
+    have _fallletter_ set _beginfall2_
+
+_inside_ task:
+    start task _greeting_
+
+_greeting_ task:
+    say 1031
+    say 1011
+    start timer _delay_
+    stop timer _timer_
+    log 1032 step 0
+
+_timer_ task:
+    say 1003
+    end quest
+
+variable _delay_
+variable _eventlock_
+_winter_ task:
+    season winter
+
+_spring_ task:
+    season spring
+
+_summer_ task:
+    season summer
+
+_fall_ task:
+    season fall
+
+_beginwinter_ task:
+    when _delay_ and _winter_ and not _eventlock_ and not _winterfinished_
+    give pc _winterletter_ notify 1012
+
+_beginwinter2_ task:
+    take _winterletter_ from pc
+    log 1013 step 0
+    start task _eventlock_
+    start task _beginwinter3_
+
+variable _beginwinter3_
+_beginwinter4_ task:
+    when _inside_ and _beginwinter3_ and not _winterfinished_
+    say 1014
+    log 1015 step 0
+    place npc _shopkeep_ at _shop_
+
+_clickshopkeep_ task:
+    clicked npc _shopkeep_
+
+_nullifyshopkeep_ task:
+    when _clickshopkeep_ and not _beginwinter3_ and not _winterfinished_
+    clear _nullifyshopkeep_ _clickshopkeep_
+
+_advanceshopkeep_ task:
+    when _clickshopkeep_ and _beginwinter3_ and not _winterfinished_
+    say 1016
+
+_endwinterevent_ task:
+    when _advanceshopkeep_ and _inside_ and not _winterfinished_
+    say 1017
+    get item _winterreward_
+    clear _eventlock_
+    remove log step 0
+    start task _winterfinished_
+
+variable _winterfinished_
+_beginspring_ task:
+    when _delay_ and _spring_ and not _eventlock_ and not _springfinished_
+    give pc _springletter_ notify 1018
+
+_beginspring2_ task:
+    take _springletter_ from pc
+    log 1013 step 0
+    start task _eventlock_
+    start task _beginspring3_
+
+variable _beginspring3_
+_beginspring4_ task:
+    when _inside_ and _beginspring3_ and not _batslain_ and not _springfinished_
+    say 1019
+    create foe _bat_ every 135 minutes indefinitely with 95% success
+
+_batslain_ task:
+    killed 5 _bat_
+    start timer _batdelay_
+
+variable _batdelay_
+_endspringevent_ task:
+    when _batdelay_ and _inside_ and not _springfinished_
+    say 1020
+    get item _springreward_
+    clear _eventlock_
+    remove log step 0
+    start task _springfinished_
+
+variable _springfinished_
+_beginsummer_ task:
+    when _delay_ and _summer_ and not _eventlock_ and not _summerfinished_
+    give pc _summerletter_ notify 1021
+
+_beginsummer2_ task:
+    take _summerletter_ from pc
+    log 1013 step 0
+    start task _eventlock_
+    start task _beginsummer3_
+
+variable _beginsummer3_
+_beginsummer4_ task:
+    when _beginsummer3_ and _inside_ and not _summerfinished_
+    say 1022
+    add _farmer_ face
+    start task _walking_
+    log 1028 step 0
+    reveal _cemetery_
+
+_walking_ task:
+    pc at _cemetery_ do _arrivecemetery_
+
+variable _arrivecemetery_
+_endsummerevent_ task:
+    when _arrivecemetery_ and not _summerfinished_
+    say 1023
+    get item _summerreward_
+    start task _summerfinished_
+    remove log step 0
+    drop _farmer_ face
+    clear _eventlock_
+
+variable _summerfinished_
+_beginfall_ task:
+    when _delay_ and _fall_ and not _eventlock_ and not _fallfinished_
+    give pc _fallletter_ notify 1024
+
+_beginfall2_ task:
+    take _fallletter_ from pc
+    log 1013 step 0
+    start task _eventlock_
+    start task _beginfall3_
+
+variable _beginfall3_
+_beginfall4_ task:
+    when _beginfall3_ and _inside_ and not _fallfinished_
+    say 1025
+    create foe _bear_ every 0 minutes 1 times with 100% success
+    change foe _bear_ infighting true
+
+_endfallevent_ task:
+    killed _bear_
+    say 1027
+    get item _fallreward_
+    remove log step 0
+    start task _fallfinished_
+    clear _eventlock_
+
+variable _fallfinished_
+
+_finalevent_ task:
+    when _fallfinished_ and _winterfinished_ and _summerfinished_ and _springfinished_
+    start timer _finaldelay_
+
+_finaldelay_ task:
+    give pc _endingletter_ notify 1029
+    pc at _farm_ do _ending_
+    have _endingletter_ set _finaljournal_
+
+_finaljournal_ task:
+    log 1030 step 0
+    take _endingletter_ from pc
+
+_ending_ task:
+    when _finaljournal_ and _inside_
+    give pc _finalreward_
+    end quest

@@ -1,0 +1,233 @@
+Quest: IRNC2
+DisplayName: Noble Child Step 2
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>            You did not look forward to suffering more of
+<ce>        the prophetess's eccentricities. She raises both hands
+<ce>                      in the air and proclaims,
+<ce>
+<ce>         "The tome! %god's holy word for the people of %crn!
+<ce>                       Listen closely, child!"
+<ce>
+<ce>           An awkward silence ensues as she opens the book
+<ce>                 and attempts to read from its pages.
+<ce>           Many of them are too worn and faded to make out.
+<ce>          She makes an uncomfortable humming noise, perhaps
+<ce>        to fill the air as she reads. You wish this would end.
+<ce>
+<ce>               "Ha ha ha ha! Yes, thy journey has been
+<ce>               told to me by the great gods themselves!
+<ce>      Stay thy tongue and open thy ears, for I have much to say!
+<ce>             A witch harboring in ___dung_ shall unleash
+<ce>           this curse as vengeance for misdeeds against her
+<ce>               ancestors by the %t's great-grandfather,
+<ce>         and her rage must be placated! Speak thou with her,
+<ce>           and find what it is that shall ease her wrath!"
+<ce>
+<ce>         You ask if there's anything you could do in advance
+<ce>      of the journey to stop the witch, and she shakes her head
+<ce>    and starts rambling. She goes on and on about utter nonsense,
+<ce>          and you hope for some way to end the conversation.
+<ce>    Finally she leans back and starts breathing deeply, exhausted.
+<ce>          You take your leave before she gets a second wind.
+
+Message:  1012
+%qdt:
+ The prophetess told me that a witch
+ in ___dung_ is the one who will
+ bring about the plague on ____dung_.
+ If I hope to avert it, I must find
+ and speak with her.
+
+Message:  1013
+<ce>              You've found the witch. She smirks at you.
+<ce>      She seems more in touch with reality than the prophetess.
+<ce>
+<ce>          "So some %ra hath found me. It mattereth not how.
+<ce>            Soon thy people shall be consumed in boils and
+<ce>          festering wounds, and nothing shall turn it back.
+<ce>            Even should I die, thou couldst not stop it!"
+<ce>
+<ce>         You declare your identity as a member of ____dung_'s
+<ce>        nobility, and, taking a knee, ask what you must do to
+<ce>             obtain clemency for the people of the land.
+<ce>
+<ce>      "Bold words, noble rat. Thou canst not even remember that
+<ce>        my grandfather was beaten, flayed, and burned alive by
+<ce>      thy people, and for this crime, judgment must be wrought.
+<ce>        If thou wouldst hold back my plague from this people,
+<ce>         I demand a life for a life. Find _noble_ in the city
+<ce>       of ___palace_, and bring him here. I must slay him with
+<ce>    my hands, for it was his ancestor who brought about the deed.
+<ce>                    I will accept no substitute."
+<ce>
+<ce>  She ignores any and all reason you try to bring to the discussion.
+<ce>    If you wish to save the people of ____dung_, _noble_ must die.
+
+Message:  1014
+<ce>         You enter the palace and look around. A servant asks
+<ce>     if you need any help, and you tell who you are looking for.
+<ce>
+<ce>       "_noble_? Oh, you just missed him. He left on a trip to
+<ce>          review the prisons across ____dung_. He didn't say
+<ce>       when he would return, but I'll tell him to send for you
+<ce>                     as soon as I see him again."
+<ce>
+<ce>        You thank the servant. You'll just have to wait until
+<ce>              he returns. You hope it won't be too long.
+
+Message:  1015
+<ce>           A knight riding a majestic steed approaches you.
+<ce>
+<ce>          "Noble %pcn, _noble_ apologizes for not attending
+<ce>           to your visit to the palace. He has returned and
+<ce>                 greatly desires to hear your words."
+<ce>
+<ce>              With a mighty salute the knight rides off.
+
+Message:  1016
+<ce>             _noble_'s eyes light up at the sight of you.
+<ce>         You've only heard his name a few times in the past,
+<ce>           and never have met him. He is stiff but cordial.
+<ce>
+<ce>           "Welcome, welcome. What have we to talk about?"
+<ce>
+<ce>         You tell of the prophetess and the witch, the coming
+<ce>        plague, and the offenses done to the crone's ancestor.
+<ce>                         He listens intently.
+<ce>
+<ce>            "Interesting. I am willing to help, if we may
+<ce>             avert a disaster. What is my part in this?"
+<ce>
+<ce>        Do you tell him the truth, that his life is required?
+
+Message:  1017
+<ce>        He begins to shake as you explain the witch's demand.
+<ce>          Covering his face with his hands, he first refuses
+<ce>             to consider it, and then flies into a rage.
+<ce>          Demanding to know whether there is any other way,
+<ce>      you make clear that the witch's demand was very specific.
+<ce>
+<ce>         He stays silent for several minutes. Then he grabs a
+<ce>            piece of parchment and begins to write on it.
+<ce>       Handing it to a nearby servant, he says, "I am serious."
+<ce>   The servant reads it and gasps. "I'll let them know, my liege."
+<ce>
+<ce>             _noble_ says, "There must be some other way.
+<ce>      We will go to see this witch, and I will offer her riches,
+<ce>      fame, hospitality, anything. Anything! She must have some
+<ce>         susceptibility to her! We will think as we go, %pcf.
+<ce>              Lead the way. You know how to get to her."
+
+Message:  1018
+<ce>       You tell _noble_ that the witch demands an apology from
+<ce>    the closest known descendant of the perpetrator, which is him.
+<ce>
+<ce>      "Hm! Well, I am not one to go spelunking and so forth, but
+<ce>      I can see what is at stake here. You say we can save many
+<ce>      lives if I go, do you? Then I am bound by oath to do this.
+<ce>        I will think on the matter and provide the fullest and
+<ce>     most sincere apology of my life to this woman, and pray that
+<ce>           she show mercy to ____dung_. Lead the way, %pcf.
+<ce>                You know how to find her, after all."
+
+Message:  1019
+<ce>        The witch's eyes burn with fury once she sees _noble_.
+<ce>        Before he can even open his mouth, she launches a bolt
+<ce>      of lightning at him, burning him severely and sending him
+<ce>     to the ground. You step aside as she casts a paralysis spell
+<ce>             and starts kicking him in the ribs and neck.
+<ce>       Pent-up decades of fury come screeching from her throat
+<ce>        as she finishes by torching his body with wild flames.
+<ce>        Her breathing is quick and frantic as she studies his
+<ce>                     darkened bones on the floor.
+<ce>
+<ce>         "And yet, it is not enough. I do not feel satisfied.
+<ce>                Such a quick death did not become him.
+<ce>             I should have kept him here for days and..."
+
+Message:  1020
+%qdt:
+ The witch of ___dung_ informed me that she demands
+ the life of _noble_, a noble who resides
+ at _palace_ in ___palace_.
+ I must fetch him and deliver him to her.
+
+Message:  1021
+%qdt:
+ _noble_ is not at the _palace_
+ in ___palace_, though I will be informed
+ as soon as he returns.
+
+QBN:
+
+Item _letter_ letter
+
+Place _dung_ remote dungeon
+Place _palace_ remote palace
+
+Person _witch_ faction The_Glenmoril_Witches female
+Person _noble_ faction Dancers male
+
+--	Quest start-up:
+    say 1011
+    log 1012 step 0
+    place npc _witch_ at _dung_
+    reveal _dung_
+
+_clickwitch_ task:
+    clicked npc _witch_
+    say 1013
+    pc at _palace_ do _inside_
+    log 1020 step 0
+
+_level3_ task:
+    level 3 completed
+
+variable _inside_
+
+_notyet_ task:
+    when _inside_ and not _level3_
+    say 1014
+    start task _advise_
+    log 1021 step 1
+
+variable _advise_
+
+_sendletter_ task:
+    when _level3_ and _advise_
+    give pc _letter_ notify 1015
+    have _letter_ set _removeletter_
+
+_removeletter_ task:
+    take _letter_ from pc
+    remove log step 1
+
+_display_ task:
+    when _level3_ and _inside_
+    place npc _noble_ at _palace_
+
+_clickednoble_ task:
+    clicked npc _noble_
+    clear _clickwitch_
+    prompt 1016 yes _truth_ no _lie_
+
+_truth_ task:
+    say 1017
+    start task _accompany_
+
+_lie_ task:
+    say 1018
+    start task _accompany_
+
+_accompany_ task:
+    add _noble_ face
+    hide npc _noble_
+
+_returnwitch_ task:
+    when _clickwitch_ and _accompany_
+    say 1019
+    start quest IRNC3
+    end quest

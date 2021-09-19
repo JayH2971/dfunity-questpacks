@@ -49,8 +49,8 @@ _conv_ task:
 
 FinishedMantellanCrux _S.01_
 	teleport pc to _shedungent_
-	play video 3
 	say 1050
+	play video 3
 
 GothrydGotTotem _S.02_
 	when _S.20_ and _S.21_

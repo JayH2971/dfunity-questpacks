@@ -9,7 +9,6 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHFG001, FightersGuild, M, 3, 0, a quest to slay a vampire in another town
 JHFG002, FightersGuild, M, 6, X, a quest to slay a daedra in a dungeon
 JHFG003, FightersGuild, M, 5, 0, a quest to slay a criminal in a dungeon
 JHFG003a, FightersGuild, P, 0, 0, consequences of FG003

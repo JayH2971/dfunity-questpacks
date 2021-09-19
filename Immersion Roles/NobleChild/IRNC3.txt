@@ -1,0 +1,80 @@
+Quest: IRNC3
+DisplayName: Noble Child Step 3
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>       You cover your ears as she begins a gruesome description
+<ce>                of everything she wanted to do to him.
+<ce>   You hope you can forget the few details that reach your hearing.
+<ce>         After several minutes of ranting, she looks to you.
+<ce>
+<ce>            "And thou, %ra. Thou hast fulfilled thy part.
+<ce>             Go to ___dung_. A wooden box there contains
+<ce>               the precursors to the plague I speak of.
+<ce>            If thou wilt find and burn it, ____dung_ will
+<ce>          suffer no plague by my hand. Thou wilt learn that
+<ce>           a witch's honor is held in high esteem, for thy
+<ce>            people have stolen all material goods from us.
+<ce>        Our honor is our only treasure, and we hold it dear."
+
+Message:  1012
+%qdt:
+ The witch told me to find
+ a wooden box in ___dung_
+ that must be burned to avert
+ the plague in ____dung_.
+
+Message:  1013
+<ce>         This place smells putrid. If any hole in the ground
+<ce>        were the proper starting place for a plague, this one
+<ce>                    would come first of them all.
+
+Message:  1014
+<ce>         The terrible odors in this cave grow overwhelmingly
+<ce>         as you approach this box. You can't doubt that this
+<ce>     is the right one. You waste no time in setting flame to it.
+<ce>
+<ce>      An inhuman howling fills the air. The box turns inert, but
+<ce>       it would seem the witch set up a defense system for it.
+<ce>          Whether she forgot or simply declined to tell you,
+<ce>        you won't know. The box's guardians will want revenge
+<ce>           on you even if they can't stop what you've done.
+<ce>
+<ce>                Your work is done. It's time to leave.
+
+QBN:
+
+Item _box_ item class 1 subclass 8
+
+Place _dung_ remote dungeon
+
+Foe _zombie1_ is Zombie
+Foe _zombie2_ is Zombie
+
+--	Quest start-up:
+    say 1011
+    log 1012 step 0
+    place item _box_ at _dung_
+    pc at _dung_ set _inside_
+    reveal _dung_
+
+_inside_ task:
+    say 1013
+
+_getbox_ task:
+    clicked item _box_
+    say 1014
+    have _box_ set _gotten_
+    create foe _zombie1_ every 0 minutes 1 times with 100% success
+    create foe _zombie2_ every 0 minutes 1 times with 100% success
+    change foe _zombie1_ infighting true
+    change foe _zombie2_ infighting true
+
+_gotten_ task:
+    take _box_ from pc
+
+_exit_ task:
+    when _getbox_ and not _inside_
+    start quest IRNC4
+    end quest

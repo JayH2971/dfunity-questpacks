@@ -12,21 +12,21 @@ schema: *name, group, membership, minReq, flag, notes
 JHIM001, Commoners, N, 0, 1, a simple quiz for money
 JHIM002, Commoners, N, 0, 1, a simple quiz for money
 JHIM003, Commoners, N, 0, 0, a quest to end a haunting
--JHIM004, Commoners, N, 0, 0,
+JHIM004, Commoners, N, 0, 1, a long-term quest to help a farm
 JHIM005, Commoners, N, 0, 0, a quest to solve a bar fight
 JHIM006, Commoners, N, 0, 0, a quest to break a grave curse
 JHIM007, Commoners, N, 0, 0, a quest for vengeance in a tavern
-JHIM008, Commoners, N, 0, 0, a quest for reconciliation with witches
-JHIM009, Commoners, N, 0, 0, a quest to spook someone with a fake abduction
+JHIM008, Commoners, N, 0, 1, a quest for reconciliation with witches
+JHIM009, Commoners, N, 0, 1, a quest to spook someone with a fake abduction
 JHIM010, Commoners, N, 0, 0, a quest buying a treasure map
 JHIM011, Commoners, N, 0, 0, a quest as a bodyguard
-JHIM012, Commoners, N, 0, 0, a quest to test a runed object
-JHIM013, Commoners, N, 0, 0, a quest to talk with a frustrated person
+JHIM012, Commoners, N, 0, 1, a quest to test a runed object
+JHIM013, Commoners, N, 0, 1, a quest to talk with a frustrated person
 JHIM014, Commoners, N, 0, 0, a quest to rob a house (small)
 JHIM015, Commoners, N, 0, 0, a quest to rob a house (large)
 JHIM016, Commoners, N, 0, 1, a test of memory
-JHIM017, Commoners, N, 0, 10, a quest to escort someone to the King of Worms
-JHIM018, Commoners, N, 0, 0, a quest to capture centaurs
-JHIM019, Commoners, N, 0, 0, a quest to walk a bear
+JHIM017, Commoners, N, 0, 1, a quest to escort someone to the King of Worms
+JHIM018, Commoners, N, 0, 1, a quest to capture centaurs
+JHIM019, Commoners, N, 0, 1, a quest to walk a bear
 JHIM020, Commoners, N, 0, 1, a quest to cure an incurable disease
 JHIM021, Commoners, M, 0, 0, a quest to aid in revenge on adultery

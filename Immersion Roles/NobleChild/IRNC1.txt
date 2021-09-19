@@ -1,0 +1,92 @@
+Quest: IRNC1
+DisplayName: Noble Child Step 1
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>                       YOU ROLE IS: NOBLE CHILD
+<ce>
+<ce>         Your father was a noble in the region of ____town_,
+<ce>      and your mother's identity is not known. When you came of
+<ce>        age, one of the %t's councilors informed you of rumors
+<ce>          that your father put your mother to death after a
+<ce>        strong disagreement about what your future should be.
+<ce>      Your father recently passed, eliminating your only chance
+<ce>                 to certify or refute the allegation.
+<ce>
+<ce>      In recent weeks, an apparent prophetess named _priestess_
+<ce>  began to forewarn the coming of a devastating plague to ____town_.
+<ce>      Feeling some responsibility for the land in which you hold
+<ce>    a stake of nobility, and wanting to establish a new reputation
+<ce>        for yourself, you undertook to come to this labyrinth,
+<ce>      where she told you a holy tome could be found to alleviate
+<ce> or cure the plague. You found it, but lost your way while you crept
+<ce>  along the passages. Now you have to find your way out, and deliver
+<ce>           the tome to the prophetess in _town_, ___town_.
+<ce>
+<ce>          You prepared to come here with your _armor2_ that
+<ce>             can remove paralysis, and your _armor3_ that
+<ce>                  can emit fire bolts at your foes.
+
+Message:  1012
+<ce>             You look at this settlement and see so many
+<ce>            strangers, people who supported your family in
+<ce>          your youth as nobility. You hope you'll be able to
+<ce>           avert this plague and save many of their lives.
+
+Message:  1013
+%qdt:
+ I have found the holy tome
+ _priestess_ spoke of, and
+ must deliver it to her
+ at _town_ in ___town_.
+
+QBN:
+
+Item _weapon1_ weapon
+Item _weapon2_ weapon
+Item _gold_ gold range 1500 to 2000
+Item _horsie_ item class 23 subclass 1
+Item _armor1_ item class 23 subclass 0
+Item _armor2_ item class 4 subclass 26
+Item _armor3_ item class 4 subclass 9
+Item _armor4_ potion key 4815872
+Item _tome_ item class 10 subclass 12
+
+Place _town_ remote temple
+
+Person _priestess_ factiontype Temple female
+
+--	Quest start-up:
+    say 1011
+    legal repute +50
+    get item _weapon1_
+    get item _weapon2_
+    get item _tome_
+    get item _gold_
+    get item _horsie_
+    get item _armor1_
+    get item _armor2_
+    get item _armor3_
+    get item _armor4_
+    make _weapon1_ permanent
+    make _weapon2_ permanent
+    make _gold_ permanent
+    make _horsie_ permanent
+    make _armor1_ permanent
+    make _armor2_ permanent
+    make _armor3_ permanent
+    make _armor4_ permanent
+    log 1013 step 0
+    place npc _priestess_ at _town_
+
+_travelstop_ task:
+    when pc enters village
+    when pc enters hamlet
+    when pc enters city
+    say 1012
+
+_nextstep_ task:
+    toting _tome_ and _priestess_ clicked
+    start quest IRNC2
+    end quest

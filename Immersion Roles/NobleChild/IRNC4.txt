@@ -1,0 +1,162 @@
+Quest: IRNC4
+DisplayName: Noble Child Step 4
+-- Message panels
+QRC:
+
+Message:  1004
+"%pcn,
+<ce>
+Were your father and your mother here, their pride in you would
+know no limits. At the price of your sacrifice, thousands of lives
+across ____palace_ have been saved. As your %t, know that I will
+not forget these deeds. I have made your fame known among the
+ruling class, and soon the peasantry will recognize you as well.
+<ce>
+When you feel a desire to settle down from your current
+adventures, please come see me. I have much to speak about.
+____palace_ can greatly benefit from a brave soul such
+as yours. %god watch over you until that day.
+<ce>
+                                                        With pride and honor,
+                                                        Your %t
+                                                        %rn"
+<ce>
+<ce>                        (QUEST LINE COMPLETE!)
+
+Message:  1006
+You're %pcn, the one who prevented the plague! %god bless you!
+<--->
+Some %ra among the nobility saved a lot of people in ____palace_ from a future plague.
+<--->
+I know who you are, %pcn. You're a hero!
+
+Message:  1011
+<ce>           You emerge joyfully from the foul-smelling cave,
+<ce>       breathing in the fresh air. The plague has been averted,
+<ce>                        and you are yet alive!
+<ce>
+<ce>         However, a hooded figure is waiting for you outside,
+<ce>                          eyes fixed on you.
+<ce>
+<ce>                    "%pcf! I've finally found you.
+<ce>                 Don't ask how I knew where you were.
+<ce>        Just tell me, you were the one who made my father die,
+<ce>                     weren't you? Weren't you?!"
+<ce>
+<ce>               Out comes a knife, and the foe advances.
+<ce>           Your words have no effect. Even if you explained
+<ce>         that all %crn was saved by his sacrifice, you doubt
+<ce>        it would change a thing. Some people just don't care.
+<ce>
+<ce>                  "Your life for my father's! Die!"
+
+Message:  1012
+<ce>        You survived the encounter. You hope this will be the
+<ce>      only attempt on your life. Every noble has a few skeletons
+<ce>   in the closet, perhaps, and you hope not to accumulate any more.
+<ce>
+<ce>           You can report the end of this plague to _noble_
+<ce>       at ___palace_, who has the proper communication channels
+<ce>       with the %t. Though you could tell the prophetess, it's
+<ce>            better to assuage the people's fears properly.
+<ce>             You're sure she'll find out sooner or later,
+<ce>                     if she doesn't already know.
+
+Message:  1013
+%qdt:
+ I have survived the witch's treachery and
+ destroyed the source of the plague.
+ I must tell this to _noble_, who will
+ inform the %t appropriately.
+ _noble_ stays at _palace_ of
+ ___palace_ in ____palace_.
+
+Message:  1014
+<ce>                  _noble_ gives you a warm greeting.
+<ce>              "Hello %pcf! What can I do for you today?"
+<ce>
+<ce>          You take a deep breath and start to tell the tale.
+<ce>               By the end, _noble_ is quite impressed.
+<ce>             You make sure to suppress any details about
+<ce>             the noble the witch murdered, just in case.
+<ce>
+<ce>          "So on nothing more than the words of a mad woman,
+<ce>                 you ventured out into two dark caves
+<ce>                      and disposed of the source
+<ce>              of a future plague? Well done, well done!
+<ce>        Would that all ____palace_'s nobility had such bravery
+<ce>           and initiative. I assure you, I will inform the
+<ce>          %t so soon as I am able. Your father did much good
+<ce>               for this land, and I am happy to see you
+<ce>                     on a course to surpass him."
+<ce>
+<ce>      You'll just have to let things roll on their own from now.
+<ce>    You wonder what the %t's response will be when you receive it.
+
+Message:  1015
+<ce>          You are surrounded by three royal couriers wearing
+<ce>           the colors of ____palace_. The foremost of them
+<ce>                     blows loudly into a trumpet.
+<ce>
+<ce>         "To the great %pcn, the %t's thanks and recognition!
+<ce>        Have this official document bearing the %t's signature
+<ce>                        for a job well done!"
+<ce>
+<ce>     They then ride out a decorative figure-8 on their horses as
+<ce>         a sort of salute before bowing to you and departing.
+<ce>               You open the letter and read as follows:
+
+QBN:
+
+Place _palace_ remote palace
+
+Person _noble_ faction Dancers
+
+Foe _enemy_ is Nightblade
+
+Item _letter_ letter
+
+Clock _timer_ 0:30
+Clock _enddelay_ 7.00:00 10.00:00
+
+--	Quest start-up:
+    say 1011
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+    change foe _enemy_ infighting true
+    cast Feet_of_Notorgo spell on _enemy_
+    cast Orc_Strength spell on _enemy_
+    cast Shield spell on _enemy_
+    cast Shalidor's_Mirror spell on _enemy_
+    start timer _timer_
+
+_slain_ task:
+    killed _enemy_
+    start task _endfight_
+
+_timer_ task:
+    remove foe _enemy_
+    start task _endfight_
+
+_endfight_ task:
+    say 1012
+    log 1013 step 0
+    place npc _noble_ at _palace_
+
+_clicknoble_ task:
+    clicked npc _noble_
+    say 1014
+    start timer _enddelay_
+    remove log step 0
+
+_enddelay_ task:
+    give pc _letter_ notify 1015
+    have _letter_ set _ending_
+
+_ending_ task:
+    take _letter_ from pc
+    start task _ending2_
+
+_ending2_ task:
+    say 1004
+    legal repute +200
+    end quest
