@@ -1,0 +1,7 @@
+schema: *name, group, membership, minReq, flag, notes
+
+OLBackBone, InitAtGameStart, P, 0, 0, begins the Outlaw role
+IROL1, Commoners, P, 0, 0,
+IROL2 Commoners, P, 0, 0,
+IROL3, Commoners, P, 0, 0,
+IROL4, Commoners, P, 0, 0,

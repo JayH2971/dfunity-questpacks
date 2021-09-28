@@ -1,3 +1,9 @@
 schema: *name, group, membership, minReq, flag, notes
 
 HHBackbone, InitAtGameStart, P, 0, 0, begins the Headhunter role
+IRHH1, Commoners, P, 0, 0,
+IRHH2, Commoners, P, 0, 0,
+IRHH3, Commoners, P, 0, 0,
+IRHH4, Commoners, P, 0, 0,
+IRHH5, Commoners, P, 0, 0,
+IRHH6, Commoners, P, 0, 0,

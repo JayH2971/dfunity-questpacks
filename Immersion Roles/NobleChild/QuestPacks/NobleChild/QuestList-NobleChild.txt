@@ -1,3 +1,7 @@
 schema: *name, group, membership, minReq, flag, notes
 
 NCBackbone, InitAtGameStart, P, 0, 0, begins the Noble Child role
+IRNC1, Commoners, P, 0, 0,
+IRNC2, Commoners, P, 0, 0,
+IRNC3, Commoners, P, 0, 0,
+IRNC4, Commoners, P, 0, 0,
