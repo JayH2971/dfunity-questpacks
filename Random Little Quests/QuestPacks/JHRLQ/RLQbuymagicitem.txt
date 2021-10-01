@@ -1,0 +1,56 @@
+Quest: RLQbuymagicitem
+DisplayName: Random Little Quest Buy a Magic Item
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>           After casting a spell to count your money for him,
+<ce>             the frazzled wizard hands you the _item_ and
+<ce>                  stumbles off into another direction.
+
+Message:  1011
+<ce>           A robed wizard with a rather confused demeanor bumbles
+<ce>            about nearby. His distance from reality seems
+<ce>         to vary with every passing moment. He stumbles close
+<ce>          enough to focus his eyes on you, and then speaks.
+<ce>
+<ce>           "%hnr, I have a fine _item_ here, enchanted with
+<ce>       powerful magicks. I can't remember what the enchantment
+<ce>         is, or I'd be selling it for a lot more. For just 750
+<ce>             gold pieces, it's all yours for the taking."
+<ce>
+<ce>                Do you purchase the magic _item_?
+
+Message:  1012
+<ce>                 The wizard stumbles away as you hear
+<ce>                  thunder claps in the distance.
+
+Message:  1014
+<ce>             You try to gather up 750 gold pieces to give
+<ce>              to him, but you do not have enough on hand.
+<ce>           When you look back up toward the wizard, he is gone.
+
+QBN:
+
+Item _item_ magic_item
+
+--	Quest start-up:
+    prompt 1011 yes _pay_ no _reject_
+
+_reject_ task:
+    say 1012
+    end quest
+
+variable _pay_
+
+_payhim_ task:
+    when _pay_ and not _given_
+    pay 750 money do _given_ otherwise do _nomoney_
+
+_nomoney_ task:
+    say 1014
+    end quest
+
+_given_ task:
+    give pc _item_
+    end quest

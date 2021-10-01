@@ -18,33 +18,34 @@ QuestComplete:   [1004]
 <ce>  May %monn be kind to you."
 
 Message:  1010
-<ce>  A weary, elderly peasant opportunes
-<ce>  people in the area for help with something.
-<ce>  He then approaches you, and asks for your
-<ce>  help in a raspy voice.
-<ce>  
-<ce>  "I'm sorry to bother you %ra, but I've no
-<ce>  one else to ask. I sent my children off to
-<ce>  labor for the season, and have run out of wood
-<ce>  for my stove at home. The nights get so cold.
-<ce>  I'm too old to chop the wood myself.
-<ce>  If you've got a strong arm, would you be able
-<ce>  to chop some for me? I'll pay you, honest."
-<--->
-<ce>  A weary, elderly peasant opportunes
-<ce>  people in the area for help with something.
-<ce>  She then approaches you, and asks for your
-<ce>  help in a raspy voice.
-<ce>  
-<ce>  "I'm sorry to bother you %ra, but I've no
-<ce>  one else to ask. My husband died this year
-<ce>  and my family has forgotten all about me.
-<ce>  All I want is some wood for the stove.
-<ce>  I get so cold at night I can't sleep, and
-<ce>  I can't split the wood myself.
-<ce>  If you've got a strong arm, would you be able
-<ce>  to chop some for me? I'll pay you what little
-<ce>  money I can for it."
+<ce>                 A weary, elderly peasant opportunes
+<ce>             people in the area for help with something.
+<ce>              He then approaches you, and asks for your
+<ce>                        help in a raspy voice.
+<ce>
+<ce>              "I'm sorry to bother you %ra, but I've no
+<ce>              one else to ask. I sent my children off to
+<ce>            labor for the season, and have run out of wood
+<ce>            for my stove at home. The nights get so cold.
+<ce>                 I'm too old to chop the wood myself.
+<ce>             If you've got a strong arm and a few hours,
+<ce>                would you be able to chop some for me?
+<ce>                        I'll pay you, honest."
+                                     <--->
+<ce>                 A weary, elderly peasant opportunes
+<ce>             people in the area for help with something.
+<ce>              She then approaches you, and asks for your
+<ce>                        help in a raspy voice.
+<ce>
+<ce>              "I'm sorry to bother you %ra, but I've no
+<ce>              one else to ask. My husband died this year
+<ce>              and my family has forgotten all about me.
+<ce>                All I want is some wood for the stove.
+<ce>              I get so cold at night I can't sleep, and
+<ce>                    I can't split the wood myself.
+<ce>             If you've got a strong arm and a few hours,
+<ce>                would you be able to chop some for me?
+<ce>              I'll pay you what little money I can for it."
 
 Message:  1011
 <ce>  The peasant's voice trembles.

@@ -9,8 +9,9 @@ Message:  1011
 <ce>             You feel like you're living in a nightmare.
 <ce>
 <ce>            Days previous, you were surrounded by hostile
-<ce>             guards who claimed to have evidence that you
-<ce>          murdered someone named Registyr T'laik, a resident
+<ce>         guards who, amidst a sea of orders for you to halt,
+<ce>              claimed to have evidence that you murdered
+<ce>              someone named Registyr T'laik, a resident
 <ce>                    of ___town_ where you resided.
 <ce>             Resided, most certainly past tense. Now you
 <ce>                don't know what to do. If you want to
@@ -24,7 +25,7 @@ Message:  1011
 <ce>                empty when you entered, but it appears
 <ce>             something has stirred up its usual denizens.
 <ce>              You'll make sure you keep a map next time
-<ce>                    you explore a dangerous cave.
+<ce>                       you explore a deep cave.
 <ce>
 <ce>              If you make no effort at all to clear your
 <ce>            name in %crn, your window of opportunity will

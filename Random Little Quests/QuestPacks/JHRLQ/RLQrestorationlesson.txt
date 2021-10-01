@@ -3,6 +3,15 @@ DisplayName: Random Little Quest A Restoration Lesson
 -- Message panels
 QRC:
 
+QuestComplete:   [1004]
+<ce>  Their numbers and experience lead to a fruitful
+<ce>  discussion concerning the uses and methods
+<ce>  of Restoration magic. The beginners and intermediate
+<ce>  casters in the crowd are quite pleased, and others
+<ce>  are simply amused by the magic show at work.
+<ce>  After a few hours have passed, the group packs
+<ce>  up and heads off to rest.
+
 Message:  1010
 <ce>  Under the cover of the overcast sky above,
 <ce>  you notice a crowd gathering at the call
@@ -30,15 +39,6 @@ Message:  1012
 <ce>  to hand in. The acolytes politely turn toward
 <ce>  the other attendees and begin the lesson.
 
-Message:  1013
-<ce>  Their numbers and experience lead to a fruitful
-<ce>  discussion concerning the uses and methods
-<ce>  of Restoration magic. The beginners and intermediate
-<ce>  casters in the crowd are quite pleased, and others
-<ce>  are simply amused by the magic show at work.
-<ce>  After a few hours have passed, the group packs
-<ce>  up and heads off to rest.
-
 QBN:
 
 --	Quest start-up:
@@ -54,7 +54,6 @@ _payhim_ task:
     pay 150 money do _given_ otherwise do _nomoney_
 
 _given_ task:
-    say 1013
     train pc Restoration
     end quest
 

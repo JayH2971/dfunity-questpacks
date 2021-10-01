@@ -62,7 +62,7 @@ _sunnyday_ task:
     start task _stopevents_
 
 _sunnydayevents_ task:
-    pick one of _batnest_ _potionsale_ _alms_ _weaponfind_ _loanpick_ _mysticismlesson_
+    pick one of _potionsale_ _alms_ _weaponfind_ _mysticismlesson_ _medicaltraining_
 
 _batnest_ task:
     start quest RLQbatnest
@@ -112,6 +112,9 @@ _weaponfind_ task:
 _mysticismlesson_ task:
     start quest RLQmysticismlesson
 
+_medicaltraining_ task:
+    start quest RLQmedicaltraining
+
 _sunnynight_ task:
     when not _daylight_ and _sunning_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _sunnynightevents_ _dud_ _dud_
@@ -125,17 +128,20 @@ _pickpocket_ task:
 
 _cloudyday_ task:
     when _daylight_ and _clouded_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
-    pick one of _cloudydayevents_ _dud_ _dud_ _dud_ _dud_
+    pick one of _cloudydayevents_ _dud_ _dud_
     start task _stopevents_
 
 _cloudydayevents_ task:
-    pick one of _changebandage_ _potionsale_ _loanpick_ _angrypick_
+    pick one of _changebandage_ _potionsale_ _loanpick_ _angrypick_ _buyrandomweapon_
 
 _changebandage_ task:
     start quest RLQchangebandage
 
 _angrypick_ task:
     start quest RLQangrypick
+
+_buyrandomweapon_ task:
+    start quest RLQbuyrandomweapon
 
 _overcastday_ task:
     when _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
@@ -151,6 +157,9 @@ _restorationlesson_ task:
 _runningthief_ task:
     start quest RLQrunningthief
 
+_etiquettelesson_ task:
+    start quest RLQetiquettetraining
+
 _overcastnight_ task:
     when not _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _overcastnightevents_ _dud_ _dud_
@@ -161,6 +170,17 @@ _overcastnightevents_ task:
 
 _meddeliver_ task:
     start quest RLQmeddeliver
+
+_fogday_ task:
+    when _daylight_ and _foggy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
+    pick one of _fogdayevents_ _dud_ _dud_
+    start task _stopevents_
+
+_fogdayevents_ task:
+    pick one of _etiquettelesson_ _freepotion_ _batnest_
+
+_freepotion_ task:
+    start quest RLQfreepotion
 
 _fognight_ task:
     when not _daylight_ and _foggy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
@@ -211,7 +231,10 @@ _thundday_ task:
     start task _stopevents_
 
 _thunddayevents_ task:
-    pick one of _magesguild_
+    pick one of _magesguild_ _buymagicitem_ _maze_
+
+_buymagicitem_ task:
+    start quest RLQbuymagicitem
 
 _thundnight_ task:
     when not _daylight_ and _thundered_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
@@ -236,7 +259,10 @@ _snowyday_ task:
     start task _stopevents_
 
 _snowydayevents_ task:
-    pick one of _axechop_ _maze_ _snowmap_ _paysnowtaxes_
+    pick one of _axechop_ _snowmap_ _paysnowtaxes_ _climbingtraining_
+
+_climbingtraining_ task:
+    start quest RLQclimbingtraining
 
 _axechop_ task:
     start quest RLQaxechop
