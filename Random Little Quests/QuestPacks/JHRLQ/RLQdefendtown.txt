@@ -1,0 +1,128 @@
+Quest: RLQdefendtown
+DisplayName: Random Little Quest Defend the Town
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+
+Message:  1010
+<ce>          You notice a trio of hooded figures walking about,
+<ce>         planning some sort of mayhem under the guise of fog.
+<ce>          Before they can get far, a ranger approaches them.
+<ce>
+<ce>         "Stop! There'll be no mischief here! Surrender your
+<ce>           weapons, or I'll be forced to take your lives!"
+<ce>
+<ce>                They ready their arms in defiance.
+<ce>       Do you intervene to help the ranger, or keep out of this?
+
+Message:  1011
+<ce>            You ready for battle and signal to the ranger
+<ce>              that you'll help as well. "Thank you, friend!"
+<ce>                the ranger shouts, as the battle begins.
+
+Message:  1012
+<ce>             The three criminals are down. The city watch
+<ce>            finally emerge from the fog and thank you for
+<ce>              your assistance in keeping the town safe.
+
+Message:  1013
+<ce>         You take advantage of the fog to stay out of sight.
+<ce>          An arduous battle commences, and the ranger falls.
+<ce>              Out of fear of being caught, the criminals
+<ce>          rush away from the city to plan their next scheme.
+                                     <--->
+<ce>         You take advantage of the fog to stay out of sight.
+<ce>         An arduous battle commences, and the criminals fall.
+<ce>            Members of the city watch arrive afterwards to
+<ce>             congratulate the ranger for his selflessness
+<ce>                      in keeping the town safe.
+
+Message:  1014
+<ce>             The three criminals are down. The city watch
+<ce>          finally emerge from the fog and thank both of you
+<ce>            for your assistance in keeping the town safe.
+<ce>                The ranger also thanks you profusely.
+<ce>
+<ce>           "It's so good to see others willing to stem troubles
+<ce>              at their source! I pray that evil may suffer
+<ce>                much butt-kicking through your wrath!"
+<ce>
+<ce>     With the deed finished, the ranger disappears into the fog.
+<ce>      You barely make out a small hamster on the ranger's shoulder.
+<--->
+<ce>             The three criminals are down. The city watch
+<ce>          finally emerge from the fog and thank both of you
+<ce>            for your assistance in keeping the town safe.
+<ce>                 The ranger also thanks you profusely
+<ce>                       and disappears into the fog.
+<--->
+<ce>             The three criminals are down. The city watch
+<ce>          finally emerge from the fog and thank both of you
+<ce>            for your assistance in keeping the town safe.
+<ce>                 The ranger also thanks you profusely
+<ce>                       and disappears into the fog.
+
+
+QBN:
+
+Foe _monster_ is Ranger
+Foe _rat1_ is Thief
+Foe _rat2_ is Thief
+Foe _rat3_ is Thief
+
+Clock _timer_ 1:00
+
+--	Quest start-up:
+    prompt 1010 yes _fight_ no _avoid_
+
+_fight_ task:
+    say 1011
+    create foe _monster_ every 0 minutes 1 times with 100% success
+    change foe _monster_ infighting true
+    change foe _monster_ team 1
+    create foe _rat1_ every 0 minutes 1 times with 100% success
+    change foe _rat1_ infighting true
+    create foe _rat2_ every 0 minutes 1 times with 100% success
+    change foe _rat2_ infighting true
+    create foe _rat3_ every 0 minutes 1 times with 100% success
+    change foe _rat3_ infighting true
+    start timer _timer_
+    cast Orc_Strength spell on _monster_
+    cast Feet_of_Notorgo spell on _monster_
+    cast Shield spell on _monster_
+
+_kill1_ task:
+    killed _rat1_
+
+_kill2_ task:
+    killed _rat2_
+
+_kill3_ task:
+    killed _rat3_
+
+_killall_ task:
+    when _kill1_ and _kill2_ and _kill3_
+
+_rangerdead_ task:
+    killed _monster_
+
+_goodend_ task:
+    when _killall_ and not _rangerdead_
+    say 1014
+    remove foe _monster_
+    legal repute +2
+    end quest
+
+_badend_ task:
+    when _killall_ and _rangerdead_
+    say 1012
+    legal repute +2
+    end quest
+
+_timer_ task:
+    end quest
+
+_avoid_ task:
+    say 1013
+    end quest

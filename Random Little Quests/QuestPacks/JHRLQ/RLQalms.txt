@@ -3,6 +3,12 @@ DisplayName: Random Little Quest Alms for the Poor
 -- Message panels
 QRC:
 
+Message:  1010
+%qdt:
+ After I gave a beggar some money, I was informed that
+ there's a valuable enchanted _item_ being stored at the
+ Mages Guild tonight.
+
 Message:  1011
 <ce>  A beggar pleads with nearby folk for some money.
 <ce>  
@@ -38,11 +44,29 @@ Message:  1013
 <ce>  other people in the area.
 
 Message:  1014
-<ce>  In spite of your best intentions, you do not find
-<ce>  20 gold pieces among your belongings. You'll have
-<ce>  to forego the alms this time.
+<ce>          In spite of your best intentions, you do not find
+<ce>          20 gold pieces among your belongings. You'll have
+<ce>                    to forego the alms this time.
+
+Message:  1015
+<ce>          The beggar rejoices, and then leans in and speaks
+<ce>                         with a wispy voice.
+<ce>
+<ce>       "Someone nice like you deserves to have some more money.
+<ce>       Them Mages Guild people are hiding some enchanted _item_
+<ce>            in their guild hall tonight after they close.
+<ce>                Go grab it for yourself, why don't ya?
+<ce>             Not like they need it any more than you do."
+<ce>
+<ce>  The beggar then sits back and accosts other people for money.
 
 QBN:
+
+Place _magery_ local magery
+
+Item _item_ magic_item
+
+Clock _timer_ 12:00
 
 --	Quest start-up:
     prompt 1011 yes _pay_ no _reject_
@@ -62,5 +86,28 @@ _nomoney_ task:
     end quest
 
 _given_ task:
+    pick one of _tip_ _end_ _end_ _end_ _end_
+
+_end_ task:
     say 1013
+    end quest
+
+_daytime_ task:
+    daily from 11:00 to 23:00
+
+_tip_ task:
+    say 1015
+    log 1010 step 0
+
+_plant_ task:
+    when _tip_ and not _daytime_
+    place item _item_ at _magery_
+    start timer _timer_
+    have _item_ set _grab_
+
+_grab_ task:
+    make _item_ permanent
+    end quest
+
+_timer_ task:
     end quest

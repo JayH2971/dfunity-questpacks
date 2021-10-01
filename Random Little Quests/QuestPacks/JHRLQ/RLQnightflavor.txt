@@ -1,0 +1,21 @@
+Quest: RLQnightflavor
+DisplayName: Random Little Quest Night Flavor
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>            You're surprised to see the ghostly figure of
+<ce>        a little boy standing nearby, staring directly at you.
+<ce>        He says nothing, only looking at you with hollow eyes.
+<ce>           You take another step, and the figure vanishes.
+<--->
+<ce>            You're surprised to see the ghostly figure of
+<ce>        a little girl standing nearby, staring directly at you.
+<ce>        She says nothing, only looking at you with hollow eyes.
+<ce>           You take another step, and the figure vanishes.
+
+QBN:
+
+--	Quest start-up:
+    say 1011
+    end quest

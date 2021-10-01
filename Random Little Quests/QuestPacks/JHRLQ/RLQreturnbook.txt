@@ -1,0 +1,83 @@
+Quest: RLQreturnbook
+DisplayName: Random Little Quest Returning a Book
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>             You enter the Mages Guild and find _person_
+<ce>          waiting by the entrance. You hand %g2 the book and
+<ce>         receive your payment. "Thank you! %hnr, I could not
+<ce>                 have gone another day without this.
+<ce>                Luck be with thee in thy travels."
+
+Message:  1010
+<ce>           You are flagged down by a nervous-looking person
+<ce>                    wearing robes, holding a book.
+<ce>
+<ce>            "Excuse me! I borrowed this book from _person_
+<ce>         in the Mages Guild and need it returned there today.
+<ce>            They'll pay you =reward_ gold. Can you do it?"
+
+Message:  1011
+<ce>               "Thank you! _building_ is %di from here.
+<ce>      Please make sure it's there before 12 hours have passed."
+<ce>
+<ce>            He places the book in your hands and heads off
+<ce>                          to leave the town.
+                                     <--->
+<ce>               "Thank you! _building_ is %di from here.
+<ce>      Please make sure it's there before 12 hours have passed."
+<ce>
+<ce>            She places the book in your hands and heads off
+<ce>                 to leave the town.
+
+Message:  1012
+<ce>                  _person_ in the Mages Guild needed
+<ce>          the book by now. With the time limit passed and
+<ce>         no one else to give it to, you keep it for yourself.
+
+Message:  1013
+<ce>  The magician sighs and tries to speak to other passersby.
+
+Message:  1014
+%qdt:
+ I was given a book that needs to be delivered
+ to _building_ in ___building_ within 12 hours.
+ I should look for _person_ inside.
+
+QBN:
+
+Clock _timer_ 12:00
+
+Item _reward_ gold range 31 to 61
+Item _ingred_ book
+
+Person _person_ faction The_Mages_Guild
+
+Place _building_ local magery
+
+--	Quest start-up:
+    hide npc _person_
+    pc at _building_ do _inside_
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1013
+    end quest
+
+_accept_ task:
+    say 1011
+    get item _ingred_
+    start timer _timer_
+    log 1014 step 0
+
+_inside_ task:
+    take _ingred_ from pc
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    say 1012
+    make _ingred_ permanent
+    change repute with _person_ by -2
+    end quest

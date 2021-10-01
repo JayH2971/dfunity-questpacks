@@ -121,10 +121,13 @@ _sunnynight_ task:
     start task _stopevents_
 
 _sunnynightevents_ task:
-    pick one of _pickpocket_ _nightguard_ _nightrat_
+    pick one of _pickpocket_ _nightguard_ _nightrat_ _nightflavor_
 
 _pickpocket_ task:
     start quest RLQpickpocket
+
+_nightflavor_ task:
+    start quest RLQnightflavor
 
 _cloudyday_ task:
     when _daylight_ and _clouded_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
@@ -132,7 +135,7 @@ _cloudyday_ task:
     start task _stopevents_
 
 _cloudydayevents_ task:
-    pick one of _changebandage_ _potionsale_ _loanpick_ _angrypick_ _buyrandomweapon_
+    pick one of _changebandage_ _loanpick_ _angrypick_ _buyrandomweapon_
 
 _changebandage_ task:
     start quest RLQchangebandage
@@ -149,7 +152,7 @@ _overcastday_ task:
     start task _stopevents_
 
 _overcastdayevents_ task:
-    pick one of _meddeliver_ _potionsale_ _restorationlesson_ _runningthief_
+    pick one of _meddeliver_ _restorationlesson_ _runningthief_
 
 _restorationlesson_ task:
     start quest RLQrestorationlesson
@@ -177,10 +180,16 @@ _fogday_ task:
     start task _stopevents_
 
 _fogdayevents_ task:
-    pick one of _etiquettelesson_ _freepotion_ _batnest_
+    pick one of _etiquettelesson_ _freepotion_ _batnest_ _buydrug_ _defendtown_
 
 _freepotion_ task:
     start quest RLQfreepotion
+
+_buydrug_ task:
+    start quest RLQbuydrug
+
+_defendtown_ task:
+    start quest RLQdefendtown
 
 _fognight_ task:
     when not _daylight_ and _foggy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
@@ -202,7 +211,7 @@ _rainday_ task:
     start task _stopevents_
 
 _raindayevents_ task:
-    pick one of _chokingchild_ _fightersguild_ _payraintaxes_ _killrats_
+    pick one of _chokingchild_ _fightersguild_ _payraintaxes_ _killrats_ _returnbook_
 
 _chokingchild_ task:
     start quest RLQchokingchild
@@ -212,6 +221,9 @@ _fightersguild_ task:
 
 _killrats_ task:
     start quest RLQkillrats
+
+_returnbook_ task:
+    start quest RLQreturnbook
 
 _payraintaxes_ task:
     pick one of _raintaxes1_ _raintaxes2_ _raintaxes3_

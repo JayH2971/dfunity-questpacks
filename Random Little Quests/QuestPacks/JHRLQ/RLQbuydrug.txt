@@ -1,0 +1,50 @@
+Quest: RLQbuydrug
+DisplayName: Random Little Quest Buy a Drug
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>              You and the vendor silently make the exchange,
+<ce>                  and he walks off into the fog.
+
+Message:  1011
+<ce>         A sharp-looking fellow, taking advantage of the fog,
+<ce>             gestures at you with a small bag of powder.
+<ce>             He silently mouths the word "_weapon_," asking
+<ce>              for 50 gold. It looks like you'd be buying
+<ce>                    a single dose for that price.
+<ce>                          Take up his offer?
+
+Message:  1012
+<ce>            The vendor hurries away into the fog,
+<ce>                  and you lose sight of him.
+
+Message:  1014
+<ce>         You search your belongings but do not find 50 gold.
+<ce>                 The merchant disappears into the fog
+<ce>                  when he sees no money forthcoming.
+
+QBN:
+
+Item _weapon_ drug
+
+--	Quest start-up:
+    prompt 1011 yes _pay_ no _reject_
+
+_reject_ task:
+    say 1012
+    end quest
+
+variable _pay_
+
+_payhim_ task:
+    when _pay_ and not _given_
+    pay 50 money do _given_ otherwise do _nomoney_
+
+_nomoney_ task:
+    say 1014
+    end quest
+
+_given_ task:
+    give pc _weapon_
+    end quest
