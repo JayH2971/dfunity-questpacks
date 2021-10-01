@@ -1,0 +1,529 @@
+Quest: JHIronmanMadness
+DisplayName: The Jay_H Ironman Madness Spawner
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>                       Ironman Madness Level 1
+<ce>                          No Infighting Version
+<ce> 
+<ce>     Your only safe havens are taverns, houses, Fighters Guilds,
+<ce>              Mages Guilds, shops, temples, and palaces.
+<ce>              You will be hunted anywhere else.
+<ce>
+<ce>            Rats, bats, bears, werewolves and dragonlings.
+
+Message:  1012
+<ce>                       Ironman Madness Level 2
+<ce>                     Tigers, imps, zombies, and vampires.
+
+Message:  1013
+<ce>                       Ironman Madness Level 3
+<ce>                 Centaurs, skeletal warriors, spriggans, and gargoyles.
+
+Message:  1014
+<ce>                       Ironman Madness Level 4
+<ce>          Orcs, harpies, fire atronachs, and ice atronachs.
+
+Message:  1015
+<ce>                       Ironman Madness Level 5
+<ce>             Mummies, orc sergeants, nymphs, ghosts, and liches.
+
+Message:  1016
+<ce>                       Ironman Madness Level 6
+<ce>          Giants, wraiths, orc shaman, and ancient vampires.
+
+Message:  1017
+<ce>                       Ironman Madness Level 7
+<ce>        Rats II, iron atronach, flesh atronach, and daedra lords.
+
+Message:  1018
+<ce>                       Ironman Madness Level 8
+<ce>        Imps II, daedroths, orc warlords, and ancient liches.
+
+Message:  1019
+<ce>                       Ironman Madness Level 9
+<ce> Zombies II, ghosts II, fire daedra, frost daedra, and daedra seducers.
+
+Message:  1020
+<ce>                       Ironman Madness Level 10
+<ce>  Bats II, daedroths II, vampires II, and ancient vampires II.
+
+Message:  1021
+<ce>                       Ironman Madness Level 11
+<ce>  Nymphs II, werewolves II, orc warlords II, and daedra seducers II.
+
+Message:  1022
+<ce>                       Ironman Madness Level 12
+<ce>  Fire daedra II, frost daedra II, and ancient liches II.
+
+Message:  1023
+<ce>                       Ironman Madness Level 13
+<ce>                           Lucky level 13!
+<ce>
+<ce>   Daedra lords II, ancient vampires III, and ancient liches III.
+
+Message:  1024
+<ce>                       Ironman Madness Level 14
+<ce>  Harpies II, giants II, orc warlords III, and liches II.
+
+Message:  1025
+<ce>                       Ironman Madness Level 15
+<ce>   Mummies II, gargoyles II, ghosts II, and liches III.
+
+Message:  1026
+<ce>                       Ironman Madness Level 16
+<ce>  Vampires III, zombies III, and daedra seducers III.
+
+Message:  1027
+<ce>                       Ironman Madness Level 17
+<ce>  Orc shaman II, wraiths II, and liches IV.
+
+Message:  1028
+<ce>                       Ironman Madness Level 18
+<ce>  Mummies III, zombies III, ghosts III, and daedra lords III.
+
+Message:  1029
+<ce>                       Ironman Madness Level 19
+<ce>  Fire daedra III, frost daedra III, and liches V.
+
+Message:  1030
+<ce>                       Ironman Madness Level 20
+<ce>  Wraiths IV, zombies IV, gargoyles III, and daedra seducers III.
+
+Message:  1031
+<ce>                       Ironman Madness Level 21
+<ce> Vampires III, orc shaman III, fire daedra III, and frost daedra III.
+
+Message:  1032
+<ce>                       Ironman Madness Level 22
+<ce>   Dragonlings II, vampires IV, liches IV, and daedra seducers IV.
+
+Message:  1033
+<ce>                       Ironman Madness Level 23
+<ce>           Werewolf III, ice atronach II, fire atronach II,
+<ce>               flesh atronach II, and iron atronach II.
+
+Message:  1034
+<ce>                       Ironman Madness Level 24
+<ce>                          Are you cheating?
+<ce>
+<ce>  Daedroths III, fire daedra IV, frost daedra IV, and daedra lords IV.
+
+Message:  1035
+<ce>                       Ironman Madness Level 25
+<ce>                       How are you still alive?
+<ce>
+<ce>    Imps III, dragonlings III, and ancient vampires IV.
+
+Message:  1036
+<ce>                       Ironman Madness Level 26
+<ce>         I noticed you have TGM activated. Turning it off...
+<ce>
+<ce>  Mummies IV, fire daedra IV, and daedra lords V.
+
+Message:  1037
+<ce>                       Ironman Madness Level 27
+<ce>  Frost daedra IV, vampires V, and ancient liches IV.
+
+Message:  1038
+<ce>                       Ironman Madness Level 28
+<ce>             Annoying number of bats III, imps galore IV,
+<ce>                       and ancient vampires V.
+
+Message:  1039
+<ce>                       Ironman Madness Level 29
+<ce>                   Even my patience has its limits.
+<ce>         I just can't leave this thing up to you any longer.
+<ce>             I'll do the fighting. You can just go home.
+<ce>
+<ce>  Even more annoying bats IV, werewolves IV, and daedra seducers V.
+
+Message:  1040
+<ce>                   Ironman Madness Level 30: Final
+<ce> With this character's ascension, the thread of prophecy is severed.
+<ce>             Restore a saved game to improve your sanity,
+<ce>           or persist in the doomed world you have created.
+<ce>
+<ce> Daedroths IV, ancient vampires V, and ancient liches V.
+
+QBN:
+
+Foe _bats_ is 2 Giant_bat
+Foe _rats_ is 2 Giant_rat
+Foe _bears_ is 2 Grizzley_bear
+Foe _tigers_ is 2 Sabretooth_tiger
+Foe _cents_ is 2 Centaur
+Foe _giants_ is 2 Giant
+Foe _harpies_ is 2 Harpy
+Foe _imps_ is 2 Imp
+Foe _nymphs_ is 2 Nymph
+Foe _dragonling_ is 2 Dragonling
+Foe _spriggan_ is 2 Spriggan
+Foe _gargoyle_ is 2 Gargoyle
+Foe _orc_ is 2 Orc
+Foe _orcsarge_ is 2 Orc_sergeant
+Foe _orcshaman_ is 2 Orc_shaman
+Foe _orcwarlord_ is 2 Orc_warlord
+Foe _werewolf_ is 2 Werewolf
+Foe _iatr_ is 2 Ice_atronach
+Foe _fatr_ is 2 Flesh_atronach
+Foe _fireatr_ is 2 Fire_atronach
+Foe _ironatr_ is 2 Iron_atronach
+Foe _skel_ is 2 Skeletal_warrior
+Foe _zomb_ is 2 Zombie
+Foe _wraith_ is 2 Wraith
+Foe _ghost_ is 2 Ghost
+Foe _vampire_ is 2 Vampire
+Foe _mummy_ is 2 Mummy
+Foe _lich_ is 2 Lich
+Foe _avamp_ is 2 Ancient_vampire
+Foe _alich_ is 2 Ancient_lich
+Foe _daed_ is 2 Daedroth
+Foe _sed_ is 2 Daedra_seducer
+Foe _firedaed_ is Fire_daedra
+Foe _frostdaed_ is Frost_daedra
+Foe _daedlord_ is Daedra_lord
+
+--   Quest start-up:
+    pc at any fighters set _fightered_
+    pc at any tavern set _taverned_
+    pc at any house set _homed_
+    pc at any shop set _shopped_
+    pc at any magery set _maged_
+    pc at any temple set _templed_
+    pc at any palace set _palaced_
+
+variable _fightered_
+variable _taverned_
+variable _homed_
+variable _shopped_
+variable _maged_
+variable _templed_
+variable _palaced_
+
+_spawner_ task:
+    when not _fightered_ and not _taverned_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_
+
+_level1_ task:
+    level 1 completed
+    say 1011
+
+_level2_ task:
+    level 2 completed
+    say 1012
+
+_level3_ task:
+    level 3 completed
+    say 1013
+
+_level4_ task:
+    level 4 completed
+    say 1014
+
+_level5_ task:
+    level 5 completed
+    say 1015
+
+_level6_ task:
+    level 6 completed
+    say 1016
+
+_level7_ task:
+    level 7 completed
+    say 1017
+
+_level8_ task:
+    level 8 completed
+    say 1018
+
+_level9_ task:
+    level 9 completed
+    say 1019
+
+_level10_ task:
+    level 10 completed
+    say 1020
+
+_level11_ task:
+    level 11 completed
+    say 1021
+
+_level12_ task:
+    level 12 completed
+    say 1022
+
+_level13_ task:
+    level 13 completed
+    say 1023
+
+_level14_ task:
+    level 14 completed
+    say 1024
+
+_level15_ task:
+    level 15 completed
+    say 1025
+
+_level16_ task:
+    level 16 completed
+    say 1026
+
+_level17_ task:
+    level 17 completed
+    say 1027
+
+_level18_ task:
+    level 18 completed
+    say 1028
+
+_level19_ task:
+    level 19 completed
+    say 1029
+
+_level20_ task:
+    level 20 completed
+    say 1030
+
+_level21_ task:
+    level 21 completed
+    say 1031
+
+_level22_ task:
+    level 22 completed
+    say 1032
+
+_level23_ task:
+    level 23 completed
+    say 1033
+
+_level24_ task:
+    level 24 completed
+    say 1034
+
+_level25_ task:
+    level 25 completed
+    say 1035
+
+_level26_ task:
+    level 26 completed
+    say 1036
+
+_level27_ task:
+    level 27 completed
+    say 1037
+
+_level28_ task:
+    level 28 completed
+    say 1038
+
+_level29_ task:
+    level 29 completed
+    say 1039
+
+_level30_ task:
+    level 30 completed
+    say 1040
+
+_level1spawn_ task:
+    when _level1_ and _spawner_
+    create foe _rats_ every 43 minutes indefinitely with 1% success
+    create foe _bats_ every 47 minutes indefinitely with 1% success
+    create foe _bears_ every 121 minutes indefinitely with 1% success
+    create foe _dragonling_ every 707 minutes indefinitely with 1% success
+    create foe _werewolf_ every 503 minutes indefinitely with 1% success
+
+_level2spawn_ task:
+    when _level2_ and _spawner_
+    create foe _tigers_ every 113 minutes indefinitely with 1% success
+    create foe _imps_ every 48 minutes indefinitely with 1% success
+    create foe _zomb_ every 203 minutes indefinitely with 1% success
+    create foe _vampire_ every 405 minutes indefinitely with 1% success
+
+_level3spawn_ task:
+    when _level3_ and _spawner_
+    create foe _cents_ every 50 minutes indefinitely with 1% success
+    create foe _skel_ every 67 minutes indefinitely with 1% success
+    create foe _spriggan_ every 93 minutes indefinitely with 1% success
+    create foe _gargoyle_ every 191 minutes indefinitely with 1% success
+
+_level4spawn_ task:
+    when _level4_ and _spawner_
+    create foe _orc_ every 77 minutes indefinitely with 1% success
+    create foe _harpies_ every 83 minutes indefinitely with 1% success
+    create foe _fireatr_ every 61 minutes indefinitely with 1% success
+    create foe _iatr_ every 73 minutes indefinitely with 1% success
+
+_level5spawn_ task:
+    when _level5_ and _spawner_
+    create foe _mummy_ every 89 minutes indefinitely with 1% success
+    create foe _orcsarge_ every 73 minutes indefinitely with 1% success
+    create foe _nymphs_ every 57 minutes indefinitely with 1% success
+    create foe _ghost_ every 86 minutes indefinitely with 1% success
+    create foe _lich_ every 171 minutes indefinitely with 1% success
+
+_level6spawn_ task:
+    when _level6_ and _spawner_
+    create foe _giants_ every 67 minutes indefinitely with 1% success
+    create foe _wraith_ every 57 minutes indefinitely with 1% success
+    create foe _orcshaman_ every 91 minutes indefinitely with 1% success
+    create foe _avamp_ every 701 minutes indefinitely with 1% success
+
+_level7spawn_ task:
+    when _level7_ and _spawner_
+    create foe _rats_ every 87 minutes indefinitely with 1% success
+    create foe _ironatr_ every 117 minutes indefinitely with 1% success
+    create foe _fatr_ every 133 minutes indefinitely with 1% success
+    create foe _daedlord_ every 1013 minutes indefinitely with 1% success
+
+_level8spawn_ task:
+    when _level8_ and _spawner_
+    create foe _imps_ every 89 minutes indefinitely with 1% success
+    create foe _daed_ every 91 minutes indefinitely with 1% success
+    create foe _orcwarlord_ every 113 minutes indefinitely with 1% success
+    create foe _alich_ every 819 minutes indefinitely with 1% success
+
+_level9spawn_ task:
+    when _level9_ and _spawner_
+    create foe _zomb_ every 113 minutes indefinitely with 1% success
+    create foe _ghost_ every 141 minutes indefinitely with 1% success
+    create foe _firedaed_ every 119 minutes indefinitely with 1% success
+    create foe _frostdaed_ every 127 minutes indefinitely with 1% success
+    create foe _sed_ every 407 minutes indefinitely with 1% success
+
+_level10spawn_ task:
+    when _level10_ and _spawner_
+    create foe _bats_ every 91 minutes indefinitely with 1% success
+    create foe _daed_ every 83 minutes indefinitely with 1% success
+    create foe _vampire_ every 77 minutes indefinitely with 1% success
+    create foe _avamp_ every 171 minutes indefinitely with 1% success
+
+_level11spawn_ task:
+    when _level11_ and _spawner_
+    create foe _nymphs_ every 113 minutes indefinitely with 1% success
+    create foe _werewolf_ every 99 minutes indefinitely with 1% success
+    create foe _orcwarlord_ every 81 minutes indefinitely with 1% success
+    create foe _alich_ every 217 minutes indefinitely with 1% success
+
+_level12spawn_ task:
+    when _level12_ and _spawner_
+    create foe _firedaed_ every 113 minutes indefinitely with 1% success
+    create foe _frostdaed_ every 117 minutes indefinitely with 1% success
+    create foe _alich_ every 181 minutes indefinitely with 1% success
+
+_level13spawn_ task:
+    when _level13_ and _spawner_
+    create foe _daedlord_ every 179 minutes indefinitely with 1% success
+    create foe _avamp_ every 157 minutes indefinitely with 1% success
+    create foe _alich_ every 197 minutes indefinitely with 1% success
+
+_level14spawn_ task:
+    when _level14_ and _spawner_
+    create foe _harpies_ every 71 minutes indefinitely with 1% success
+    create foe _giants_ every 89 minutes indefinitely with 1% success
+    create foe _orcwarlord_ every 81 minutes indefinitely with 1% success
+    create foe _lich_ every 101 minutes indefinitely with 1% success
+
+_level15spawn_ task:
+    when _level15_ and _spawner_
+    create foe _mummy_ every 111 minutes indefinitely with 1% success
+    create foe _gargoyle_ every 101 minutes indefinitely with 1% success
+    create foe _ghost_ every 113 minutes indefinitely with 1% success
+    create foe _lich_ every 151 minutes indefinitely with 1% success
+
+_level16spawn_ task:
+    when _level16_ and _spawner_
+    create foe _vampire_ every 139 minutes indefinitely with 1% success
+    create foe _zomb_ every 121 minutes indefinitely with 1% success
+    create foe _sed_ every 171 minutes indefinitely with 1% success
+
+_level17spawn_ task:
+    when _level17_ and _spawner_
+    create foe _orcshaman_ every 91 minutes indefinitely with 1% success
+    create foe _wraith_ every 97 minutes indefinitely with 1% success
+    create foe _lich_ every 177 minutes indefinitely with 1% success
+
+_level18spawn_ task:
+    when _level18_ and _spawner_
+    create foe _mummy_ every 113 minutes indefinitely with 1% success
+    create foe _zomb_ every 97 minutes indefinitely with 1% success
+    create foe _ghost_ every 91 minutes indefinitely with 1% success
+    create foe _daedlord_ every 403 minutes indefinitely with 1% success
+
+_level19spawn_ task:
+    when _level19_ and _spawner_
+    create foe _firedaed_ every 121 minutes indefinitely with 1% success
+    create foe _frostdaed_ every 119 minutes indefinitely with 1% success
+    create foe _lich_ every 99 minutes indefinitely with 1% success
+
+_level20spawn_ task:
+    when _level20_ and _spawner_
+    create foe _wraith_ every 71 minutes indefinitely with 1% success
+    create foe _zomb_ every 81 minutes indefinitely with 1% success
+    create foe _gargoyle_ every 113 minutes indefinitely with 1% success
+    create foe _sed_ every 127 minutes indefinitely with 1% success
+
+_level21spawn_ task:
+    when _level21_ and _spawner_
+    create foe _vampire_ every 93 minutes indefinitely with 1% success
+    create foe _orcshaman_ every 87 minutes indefinitely with 1% success
+    create foe _firedaed_ every 78 minutes indefinitely with 1% success
+    create foe _frostdaed_ every 74 minutes indefinitely with 1% success
+
+_level22spawn_ task:
+    when _level22_ and _spawner_
+    create foe _dragonling_ every 47 minutes indefinitely with 1% success
+    create foe _vampire_ every 89 minutes indefinitely with 1% success
+    create foe _lich_ every 97 minutes indefinitely with 1% success
+    create foe _sed_ every 91 minutes indefinitely with 1% success
+
+_level23spawn_ task:
+    when _level23_ and _spawner_
+    create foe _werewolf_ every 57 minutes indefinitely with 1% success
+    create foe _iatr_ every 59 minutes indefinitely with 1% success
+    create foe _fireatr_ every 71 minutes indefinitely with 1% success
+    create foe _fatr_ every 67 minutes indefinitely with 1% success
+    create foe _ironatr_ every 73 minutes indefinitely with 1% success
+
+_level24spawn_ task:
+    when _level24_ and _spawner_
+    create foe _daed_ every 61 minutes indefinitely with 1% success
+    create foe _firedaed_ every 81 minutes indefinitely with 1% success
+    create foe _frostdaed_ every 72 minutes indefinitely with 1% success
+    create foe _daedlord_ every 91 minutes indefinitely with 1% success
+
+_level25spawn_ task:
+    when _level25_ and _spawner_
+    create foe _imps_ every 53 minutes indefinitely with 1% success
+    create foe _dragonling_ every 73 minutes indefinitely with 1% success
+    create foe _avamp_ every 61 minutes indefinitely with 1% success
+
+_level26spawn_ task:
+    when _level26_ and _spawner_
+    create foe _mummy_ every 57 minutes indefinitely with 1% success
+    create foe _firedaed_ every 79 minutes indefinitely with 1% success
+    create foe _daedlord_ every 113 minutes indefinitely with 1% success
+
+_level27spawn_ task:
+    when _level27_ and _spawner_
+    create foe _frostdaed_ every 91 minutes indefinitely with 1% success
+    create foe _vampire_ every 53 minutes indefinitely with 1% success
+    create foe _alich_ every 89 minutes indefinitely with 1% success
+
+_level28spawn_ task:
+    when _level28_ and _spawner_
+    create foe _bats_ every 33 minutes indefinitely with 3% success
+    create foe _imps_ every 37 minutes indefinitely with 3% success
+    create foe _avamp_ every 81 minutes indefinitely with 1% success
+
+_level29spawn_ task:
+    when _level29_ and _spawner_
+    create foe _bats_ every 39 minutes indefinitely with 3% success
+    create foe _werewolf_ every 56 minutes indefinitely with 1% success
+    create foe _sed_ every 81 minutes indefinitely with 1% success
+
+_level30spawn_ task:
+    when _level30_ and _spawner_
+    create foe _daed_ every 57 minutes indefinitely with 1% success
+    create foe _avamp_ every 59 minutes indefinitely with 1% success
+    create foe _alich_ every 61 minutes indefinitely with 1% success
