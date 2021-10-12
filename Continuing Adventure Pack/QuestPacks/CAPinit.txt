@@ -1,0 +1,96 @@
+Quest: CAPinit
+DisplayName: The Continuing Adventure Pack
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  The Continuing Adventure Pack is now underway.
+
+QBN:
+
+Clock _level4timer_ 2.00:00 6.00:00
+Clock _level6timer_ 2.00:00 6.00:00
+Clock _level8timer_ 2.00:00 6.00:00
+Clock _level10timer_ 2.00:00 6.00:00
+
+--   Quest start-up:
+    say 1011
+
+_level4_ task:
+    level 4 completed
+
+_level6_ task:
+    level 6 completed
+
+_level8_ task:
+    level 8 completed
+
+_level10_ task:
+    level 10 completed
+
+_level12_ task:
+    level 12 completed
+
+_level4pack_ task:
+    when _level4_ and not _level6_
+    start timer _level4timer_
+
+_level4timer_ task:
+    pick one of _lv4quest1_ _lv4quest2_ _lv4quest3_
+
+_lv4quest1_ task:
+    start quest nobleandnecromancer
+
+_lv4quest2_ task:
+-start quest *
+
+_lv4quest3_ task:
+-start quest *
+
+_level6pack_ task:
+    when _level6_ and not _level8_
+    start timer _level6timer_
+
+_level6timer_ task:
+    pick one of _lv6quest1_ _lv6quest2_ _lv6quest3_
+
+_lv6quest1_ task:
+-start quest *
+
+_lv6quest2_ task:
+-start quest *
+
+_lv6quest3_ task:
+-start quest *
+
+_level8pack_ task:
+    when _level8_ and not _level10_
+    start timer _level8timer_
+
+_level8timer_ task:
+    pick one of _lv8quest1_ _lv8quest2_ _lv8quest3_
+
+_lv8quest1_ task:
+-start quest *
+
+_lv8quest2_ task:
+-start quest *
+
+_lv8quest3_ task:
+-start quest *
+
+_level10pack_ task:
+    when _level10_ and not _level12_
+    start timer _level10timer_
+
+_level10timer_ task:
+    pick one of _lv10quest1_ _lv10quest2_ _lv10quest3_
+
+_lv10quest1_ task:
+-start quest *
+
+_lv10quest2_ task:
+-start quest *
+
+_lv10quest3_ task:
+-start quest *

@@ -1,6 +1,107 @@
     # Each item is shown by class, subclass
     # Use in quests as "Item _item_ item class # subclass #"
-    # I just made up each class name as I went, I need to properly rename these
+    
+All defined items:
+
+--
+drug                   ,0,-1
+indulcet               ,0,0
+sursam                 ,0,1
+quaesto_vil            ,0,2
+aegrostat              ,0,3
+junk                   ,1,-1
+potion                 ,1,1
+decanter               ,1,2
+small_sack             ,1,4
+large_sack             ,1,5
+armor                  ,2,-1
+weapon                 ,3,-1
+magic_item             ,4,-1
+mens_clothing          ,6,-1
+straps                 ,6,0
+armbands               ,6,1
+kimono                 ,6,2
+boots                  ,6,8
+Formal_cloak           ,6,14
+book                   ,7,-1
+book0                  ,7,0
+book1                  ,7,1
+book2                  ,7,2
+book3                  ,7,3
+datura                 ,8,0
+wolfbane               ,8,1
+flamable               ,9,-1
+lantern                ,9,1
+letter                 ,9,5
+religious              ,10,-1
+common_symbol          ,10,2
+bell                   ,10,3
+talisman               ,10,5
+scarab                 ,10,9
+map                    ,11,-1
+womens_clothing        ,12,-1
+womens_robe            ,12,18
+painting               ,13,-1
+portrait               ,13,0
+Lysandus_death         ,13,0
+gem                    ,14,-1
+ruby                   ,14,0
+emerald                ,14,1
+sapphire               ,14,2
+diamond                ,14,3
+jade                   ,14,4
+turquoise              ,14,5
+malachite              ,14,6
+amber                  ,14,7
+small_plant            ,15,-1
+large_plant            ,16,-1
+yellow_flowers         ,16,3
+root_tendrils          ,16,4
+organs                 ,17,-1
+werewolf_blood         ,17,0
+wraith_essence         ,17,2
+snake_venom            ,17,7
+lich_dust              ,17,9
+basilisk_eye           ,17,11
+daedra_heart           ,17,12
+skin                   ,18,-1
+mummy_wrappings        ,18,3
+harpy_feather          ,18,4
+mythic                 ,19,-1
+tusk                   ,19,0
+horn                   ,19,2
+misc                   ,20,-1
+Holy_relic             ,20,0
+Pure_water             ,20,4
+Elixir_vitae           ,20,6
+element                ,21,-1
+lodestone              ,21,3
+gold_bar               ,21,9
+mineral                ,22,-1
+ivory                  ,22,0
+pearl                  ,22,1
+transport              ,23,-1
+deed                   ,24,-1
+trinket                ,25,-1
+amulet                 ,25,0
+bracer                 ,25,1
+ring                   ,25,2
+bracelet               ,25,3
+mark                   ,25,4
+torc                   ,25,5
+cloth_amulet           ,25,6
+wand                   ,25,7
+specials               ,26,-1
+telescope              ,26,0
+totem                  ,26,4
+dead_body              ,26,5
+mantella_crux          ,26,6
+finger                 ,26,7
+random_map             ,27,8
+random_recipe          ,27,4
+coins                  ,28,0
+
+All items:
 
     Drug Class 0, -1
     Indulcet 0, 0
@@ -153,8 +254,8 @@
     Book Class appears to be limitless, subclass extends to 900 for no reason
 
     Furniture Class 8, -1 (this gives no valid result when called. Only pillows have a visible ground or inventory sprite)
-    Plain Single Bed 8, 0
-    Fancy Single Bed 8, 1
+    Plain Single Bed 8, 0 (defined as datura)
+    Fancy Single Bed 8, 1 (defined as wolfbane)
     Plain Double Bed 8, 2
     Fancy Double Bed 8, 3
     Large Oak Table 8, 4
@@ -190,7 +291,7 @@
     Bandage 9, 2
     Oil 9, 3
     Candle 9, 4
-    Parchment 9, 5
+    Parchment 9, 5 (defined as letter)
     End of Fuel Class
 
     Religious Class 10, -1
@@ -214,10 +315,45 @@
     End of Map Class
 
     womens_clothing 12, -1 *******
+    Brassiere 12, 0 (shoulder straps)
+    Formal Brassiere 12, 1 (shoulder wraps and golden lining)
+    Peasant Blouse 12, 2 (off the shoulder, bare neck, much arm)
+    Eodoric 12, 3 (golden egyptian frontal dress)
+    Shoes 12, 4 (burlap slippers)
+    Tall Boots 12, 5
+    Boots 12, 6
+    Sandals 12, 7
+    Casual Pants 12, 8
+    Casual Cloak 12, 9
+    Formal Cloak 12, 10
+    Khajiit Suit 12, 11
+    Formal Eodoric 12, 12 (colored-gold-colored with golden collar)
+    Evening Gown 12, 13 (same as Peasant Blouse but covers body)
+    Day Gown 12, 14 (colored top with black middle and pink skirt)
+    Casual Dress 12, 15 (semi-tight dress with belt)
+    Strapless Dress 12, 16 (brasierre and belt, and then a long skirt below)
+    Loincloth 12, 17
     womens_robe 12, 18
+    Priestess Robes 12, 19
+    Short Shirt 12, 20 (open chest)
+    Short Shirt 12, 21 (same as above but with belt)
+    Long Shirt 12, 22 (open chest)
+    Long Shirt 12, 23 (same as above but with belt)
+    Short Shirt 12, 24 (fully modest)
+    Short Shirt 12, 25 (same as above but with belt)
+    Long Shirt 12, 26 (fully modest)
+    Long Shirt 12, 27 (same as above but with belt)
+    Open Tunic 12, 28 (V-shaped)
+    Wrap 12, 29 (lettuce skirt)
+    Long Skirt 12, 30 (belt and long skirt)
+    Tights 12, 31 (spandex)
+    Short Shirt 12, 32 (Same as 12.25 but with more shirt below)
+    Long Shirt 12, 33 (Same story as 12.32)
+    Vest 12, 34 (green with green straps in front)
+    End of womens_clothing class
 
     Painting Class 13, -1
-    Portrait 13, 0 (spawns a random painting)
+    Portrait 13, 0 (spawns a random painting) (defined as Lysandus_death)
     End of Painting Class
 
     Gem Class 14, -1
@@ -303,18 +439,36 @@
     Unicorn Horn 19, 2
     End of Mythic Class
 
-    misc 20, -1
+    misc Class 20, -1
     Holy_relic 20, 0
+    Big tooth 20, 1
+    Medium tooth 20, 2
+    Small tooth 20, 3
     Pure_water 20, 4
+    Rain water 20, 5
     Elixir_vitae 20, 6
+    Nectar 20, 7
+    Ichor 20, 8
+    End of misc Class
 
-    element 21, -1
+    element Class 21, -1
+    mercury 21, 0
+    Tin 21, 1
+    Brass 21, 2
     lodestone 21, 3
+    sulphur 21, 4
+    Lead 21, 5
+    Iron 21, 6
+    Copper 21, 7
+    Silver 21, 8
     gold_bar 21, 9
+    platinum 21, 10
+    End of element class
 
     mineral 22, -1
     ivory 22, 0
     pearl 22, 1
+    End of mineral class
 
     transport 23, -1
     Small Cart 23, 0
@@ -331,9 +485,7 @@
     Sapphire 24, 2
     End of Deed Class
 
-    trinket 25, -1
-
-    Jewelry Class 25, -1
+    trinket Class 25, -1
     Amulet 25, 0
     Bracer 25, 1
     Ring 25, 2
@@ -342,9 +494,9 @@
     Torc 25, 5
     Cloth Amulet 25, 6
     Wand 25, 7
-    End of Jewelry Class
+    End of trinket Class
 
-    Quest Item Class 26, -1
+    specials Class 26, -1
     Telescope 26, 0
     Scales 26, 1 (ie money scales, balance)
     Globe 26, 2

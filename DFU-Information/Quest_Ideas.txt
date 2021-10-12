@@ -1,0 +1,381 @@
+    Long-term:
+
+    Temple: Quaesto Vil appears to be a cure for the plague, but it has serious repercussions. Is it worth it to spread it around?
+
+    Hermän2000: Psijic riles up Mages Guild
+
+    BadLuckBurt/Magicono43: hunt down the person posing as you
+
+    BadLuckBurt: Fake a noble's death
+
+    Thieves Guild quest: -> Offer bribe of 5000 gold or flee (delay task of 1 hour)
+
+    Thieves Guild quest: -> cast Invisibility or be detected
+
+    Thieves Guild quest: -> roll three times vs Pickpocketing skill to open a locked chest before guards appear
+
+    Dark Brotherhood quest: -> cast Paralysis or Wizard Rend or Spider Touch to incapacitate an informant
+
+    Mages Guild quest: -> Soul Trap on behalf of a partner who needs to sell the soul gem for money
+
+    Fighters Guild quest: -> Lead a mission to train troops to exterminate a necromancer in a graveyard who's raising the dead.
+
+    Dark Brotherhood quest: -> Slay innocent witness / let witness go
+
+    Thieves Guild quest: -> Steal a painting in exchange for information
+
+    Mages Guild quest: -> Recruit or slay enemy's former pet, an imp
+
+    Thieves Guild quest: -> take substance to noble for information
+
+    FG: -> Bounty hunter announces will pursue and slay for months
+
+    FG: -> House is ambushed,
+
+    KN: -> Obtain house deed from criminal
+
+    KN: -> Find dead body with note with information
+
+    KN and MG: -> Dialogue prompt to convince person (here to capture, can kill, back-up outside)
+
+    Thieves: -> Cast invisibility before stealing object in house or quest fails
+
+    MG: -> Cast Charm Foe to get info from informant
+
+    ???: -> Personality above 70, 80 to succeed
+
+    ???: -> Streetwise, Etiquette above 50 to succeed
+
+    Thieves: -> Intercept spy with orders
+
+    Thieves: -> Kill Skeleton holding an ancient sword with inscription to treasure
+
+    Temple: -> cast Calm Undead on ghost to get information
+
+    Temple: -> cast Calm Humanoid to get information
+
+    Temple: -> obtain book for student's education
+
+    Thieves: -> find an old business partner for QG deep in a dungeon and convince/beat him to come out
+
+    ???: Organize a wedding ceremony for a noble, and have a secret meeting with an informant while everyone else is busy.
+
+    Thieves: -> the precise ingredient needed for a quest shows up in an anonymous letter. Sender comes to blackmail the PC near end of quest.
+
+    Thieves: -> letter arrives offering to kidnap/kill a quest objective and save the PC the trouble. At end of quest line, sender & co. arrive to claim the reward for quest line.
+
+    Thieves: -> have Stealth above 80 or cast Invisibility to listen on another group's meeting and gain intel.
+
+    Temple: -> informant has been cursed with madness, bring to temple to be cured
+
+    ???: -> Noble turns hostile, kill or flee
+
+    Thieves: -> Stealth check after entering residence, if fail enemy invasion
+
+    DB: -> Informant/ransom is locked away in a dungeon, must be taken to town and treated to gain political influence (missing soldier captain)
+
+    Temple: -> Slay lich who summons zombies to reduce necromantic power in the region
+
+    Thieves: -> Kill a debtor and take back money to finance project
+
+    DB: -> Make a deal with a necromancer to summon undead in a city as a distraction for a kidnapping
+
+    ???: -> Take potion with effect Illusion Werewolf to create a distraction in a city
+
+    ???: -> Vampire Ancient has taken city hostage, must offer gift to appease (personality check)
+
+    ???: -> Carry and unleash a rat in a tavern to flush someone out
+
+    ???: -> Knowledge quiz
+
+    Knight: -> Bring a ring from a dead ancestor to motivate a disgraced knight to fight
+
+    ???: -> Magician demands Exile 2 math test
+
+    ???: -> Campaign to prove someone is a long-lost heir to the Emperor, false in the end
+
+    ???: -> Must take old weapon to prove message
+
+    Knight: -> Must persuade soldier to lead a defense outside dungeon, while PC goes in to assassinate criminal leader
+
+    Knight: -> Recruit weaponsmith to supply for knight army
+
+    ???: -> Traveling companion turns into werewolf in the night in tavern
+
+    Fighter: Kill region marshal as first step in quest. Then rest of quest decides whether to restore order or take advantage of chaos. Enemies spawn during campaign
+
+    Fighter: -> Captain of the guard is actually traitor to ruler, must be killed prior to assassination attempt
+
+    Mages: -> Patron is daedra summoner, must decide to betray or obey. If betray, teleports away and sends daedra against you rarely for duration of campaign
+
+    Knight: -> PC gets teleported away during defense, must escape dungeon and find survivors
+
+    ???: -> Companion was actually a daedra in disguise. Allow or prohibit killing noble. Allow changes storyline drastically, prohibit means long-term suspicion of PC.
+
+    Thieves: -> During heist, partner tosses a small gem that emits smoke and paralyzes you (knocks you unconscious) so you get caught. Remainder of quest is to hunt down and get treasure.
+
+    DB: -> Get framed for murder by corrupt noble. Clear name or get payback. (False letter comes from a questgiver, who after the fact says he/she never sent it.)
+
+    Mages: -> Teleport directly to necromancer's lair. If leave his lair, immediate undead summoning around to murder you.
+
+    ???: -> Find coded message and cypher separately
+
+    Knight: -> bring back outlaw as captive to noble to gain trust
+
+    Thieves: -> Do quest for large bounty (kill powerful monster?), send payment to thief NPC to finance work
+
+    ???: -> Kill several enemies, get teleported to a dungeon
+
+    Mages Guild: -> Get three pieces in inventory which will work as teleporting artifact to a dungeon
+
+    Mages Guild: Powerful lich is raising undead throughout region. Temple artifact is keeping its power down. PC must obtain item, item will be stolen, undead attacks will increase in strength over time until quest ends. Final point is to defend priest who will restore its enchantment, or dies and curse continues for a year?
+
+    ???: -> death curse is put on PC, must be cured in very short time range or death is inevitable
+
+    Mages Guild: -> very long quiz. 30 questions?
+
+    bunkerboy99: This one is kinda similar but what if it's something like peasants armed themselves in a rebellion against whatever kingdom you're in and you have to go to a few different farms and when you arrive you get a popup and the rebel leader at that farm is like "who are you and what are you doing here" and then you have to either try to convince them to lay down their arms or you have to fight them
+
+    ???: --> Find teleporting object on enemy's body. Use it to teleport into the enemy dungeon and slay the chief. Certain similar decoy objects could exist to teleport to some bad places.
+
+    Knights: Campaign to paint PC as hero to lead a revolution or start a new knightly order.
+
+    ??? quest: -> talk to townsperson, see die and sink into undead form. Loot item from corpse (Parchment? Map?).
+
+    lay wait in local store for goods delivery, bring it back to guild hall
+
+    *
+    ******
+    *
+
+    Short-term:
+
+    Magicono43: Alchemist accidentally delivered expired ingredients
+    Deliver Vampire Some Ordered Blood
+    Deliver Food Rations to Friendly Exiled Werebeast
+    Cure a leper of their affliction
+    Dark Brotherhood: Quest on behalf of TG to kill MG, +3 TG -10 MG and so on
+    BadLuckBurt: steal back someone's diary, ambush a courier with magical items, one-time only?
+    Magicono43: Trick Fellow Noble With Fools Gold
+    WA: Stranger approaches at night, requests blood. Money if accept (and hurt), nothing or enemy vampire if refuse
+    ???: Escort vampire who wants to be cured. Flee from or fight against invading temple people, who want to kill him/her. -10 rep with temple for refusing
+    Thieves Quest A: A letter arrives, inviting you to take part in a store theft at night. You must provide 2,000 gold as an entry fee for supply costs. Have to find the information through ???. The partner accompanies you to the store, at which time he/she uses a magical item that puts you to stuns you for a few minutes, after which the store's guards appear and begin to attack. Track down a family member of the culprit and threaten/bribe to know where he/she is hiding. Find the culprit in a dungeon. If personality is above 75, get info from culprit, and then choose to kill or pardon. If pardon, enemies will periodically spawn around PC for a few weeks. If info gotten, head to house where the treasure is being stored and recover it to end quest.
+    MG: Ancient tome carried by mummy, must kill and retrieve
+    Dark Brotherhood quest: -> Use Hand of Decay to kill enemy or fail (body can’t exist)
+    WA: agree to hold on to a piece of contraband for a little bit
+    necromancer in dungeon. skele spawns inside
+    Thieves: --> Get sent to steal something. Get caught and have to talk your way out, or suffer legal rep, faction rep, and a fight.
+    A Fighters Guild quest to capture a Dark Brotherhood assassin hiding in another city. +5 FG, -10 DB.
+
+    *
+    ******
+    *
+
+    Mages Guild quest: Order of Notorgo with enemies that haste themselves
+
+    Mages Guild quest: Accompany mage to see foe. Foe slays mage with a single spell, teleports away?
+
+    Knight: Vampire-slaying
+
+    ???: --> Meet wizard, attempt to slay. 25% chance of success, 50% of failure and combat, 25% of failure and teleporting.
+
+    =====
+
+    Fighters Guild:
+-JHFG002: Have a chance to have the daedra offer you a really powerful reward/buff (that has a chance with some king of a down side in the future they wouldn't tell you that) not sure what it would be (from being ambushed by a bunch of dremora lords or being randomly teleported to a new dungeon etc)maybe it would lead to a whole new quest dealing with the results? for letting them go
+
+    Commoner quests:
+-commoner wants to visit a rural shrine, commune with shrine leader
+-The shopkeeper informs you that after years of mediocre performance, this shop must shortly close unless there's a major financial reversal. The PC is asked to steal a bag of merchandise from another store in exchange for the shopkeeper's last heirloom.
+-Innkeeper quest: The NPC is far too busy, but feels the need to place some flowers on a loved one's grave. He/she bought a particular bouquet of flowers from a shady salesperson who claimed they were proper for the month. 50/50 chance of the flowers causing a zombie to rise from the graveyard or a message coming from the departed loved one. Mischevious salesperson, motive not yet decided. [needs "when dropped anitem"]
+-Innkeeper quest: Loan some money to an NPC to keep their shop. 80% chance of a good return, 20% chance of little or no reward.
+-Innkeeper/temple quest: Someone in the city has been poisoned/diseased and needs to be cured immediately. The PC must go and cast a curing spell within thirty minutes.
+-Innkeeper quest: A particular relic with disease-curing properties is losing its power. The NPC asks you to take it to a rural shrine/dungeon which recharged it the previous time through no obvious means, then bring it back when it's powered up.
+-Innkeeper quest: The merchant excitedly tells you he/she has met a member of the Necromancers and asks you if you want to join the cult. 75% chance of being some fledgling nobody, 25% chance of being an undead in disguise, and in either case the PC must defend him/herself from attack.
+-Innkeeper quest: The innkeeper's residence in another city has been taken over by armed foes, but it's due to a shady deal that went badly, so he/she doesn't want the guards involved. Go with the innkeeper to the residence and slay the foes for a reward.
+-Innkeeper quest: A simple betting game. Bet 200 gold and choose from two options to either lose it or double it.
+-Innkeeper quest: Entirely dialogue-based, where you can talk the shopkeeper through some problem via yes or no prompts. Receive some payment for granting peace of mind.
+-2) For a temple-related Commoner quest, guarding someone infected with Lycanthropy to a temple, with a one-to-three-day failure limit (after which, well... ), and the possibility of interference from the clan of lycanthropes who infected them?
+
+    Dark Brotherhood:
+-rescue guild member, turns out to be zombie when leaving dungeon
+-kill thief who makes counterfeit letters of credit. Start at bank as crime investigator
+-find a person in hiding. Interrogate a family member by attack.
+-a quest to slay a member of the city guard who interferes with the Brotherhood. Injury leads to failure timer
+-present item to get ransom money or confession
+-blackguards questline
+-DB014: disintegrate is failure
+-Dark Brotherhood quest: 70+ reputation required. There's a high price to kidnap a certain wizard for ransom, but they fear he/she may teleport away or die in the struggle. The PC must cast the Wizard Rend spell on the enemy to incapacitate him/her. Dark Brotherhood operatives waiting nearby will then do the rest and provide the PC's reward.
+-Dark Brotherhood quest: 80+ reputation required. The Brotherhood is being paid particularly well to not only take the life of a mark but obliterate the body as well. The PC must use Hand of Decay or Sphere of Negation on the enemy to ensure the body disappears entirely. If the enemy is killed the quest fails.
+
+    Knightly Order:
+
+-Night Falls on Sentinel questline
+-Orsinium questline to establish peace with the Empire
+-There is always the theory in the community that the reason Uriel went after the Numidium is he learned about Dagoth-Ur's threat and wanted a way to combat him. The theory stated he found about about Dagoth-Ur when The Eternal Champion went to red mountain to get the piece of the staff.
+-For another post main quest storyline there was the story of failed coup mentioned in Battlehorn castle in Oblivion. Lord Kain ended up being killed.
+-go to tomb, put down the undead there. necromancer influence is too strong to end it
+-certain kind of beast is too dominant in a region, is exterminating others. go to place and kill many (shrine?)
+-slay a mage who teleports beasts into a palace. kill quickly or get teleported elsewhere and fail
+-go into dungeon to look for someone, start sprawling quest
+-A tongue in cheek quest where you have to rescue a "princess" that is actually a hairy, half naked, male nord barbarian [edit (or something similar)].
+-fellow wants to hunt orcs. If orc skill is high, can be informed he is massacring them, and can kill him instead
+-escort quest w/ various outcomes: death and informing relative, was runaway debtor, is criminal, etc.
+-the gauntlet: get transported to 3 different dungeons, test to survive.
+
+    Mages Guild:
+-charm spell/language check to get help in a quest
+-quest to find rogue imp pack in dungeon, ask townspeople
+-go to various NPCs in cities to pick up needed ingredients
+-artifact quest, join two halves of a document and take it to an expert. Expert will be slain if enough time passes. Artifact is on Daedra Lord's body.
+-an enchanter has been commissioned to enchant [weapon or armour] but has found themselves 1 short and needs you to buy one in town, an alternate version of this quest could see you have to fetch multiple items
+-Mages Guild quest: 55+ reputation required. A house has been haunted for a period of several weeks by a mummy/zombie/lich who keeps reappearing after defeat. The PC must use the Holy Word spell in the residence to end its influence. (AVAILABLE)
+-??? quest: An enchanted heavy object of some kind is in a Mages Guild/temple/residence, and while it's present, monsters continue to appear within. The PC must find the mage who constructed it and slay him/her to end the curse. (AVAILABLE)
+-Mages Guild quest: 55+ reputation required. Some student has created a flesh atronach with overwhelming regenerative properties, contrary to guild rules. For a gold reward the PC must go to a dungeon and cast Hand of Decay on the creature to end its immortality.
+-Mages Guild quest: 45+ reputation required. A spellblade is suffering from a curse by another mage which prevents magicka regeneration. The PC must go to the spellblade's home and cast the Null Magicka spell on him/her to release the curse for a gold reward.
+-Mages Guild quest: A renowned scholar is staying at a tavern in the area but selfishly keeps his/her research away from the guild. The PC is asked to take the scholar's writings from the tavern. It may be enchanted to summon monsters upon theft.
+-Mages Guild quest: Reverse teleport effect. Use an enchanted item to pull a person back from a Recall spell.
+-follow a daedra lord's instructions for an artifact
+-bad rep via guild member, clear it up or lose rep
+-Faerie -> Death's Embrace -> Jhuldarn -> Send Foe undead
+-locate a runaway debtor, have personality lie test for kill
+
+    Temples:
+-seek out and slay necromancer
+-find lost person in cave, cannot leave due to vampire burning
+-Temple quest: A ghost keeps reappearing in a residence in spite of multiple attempts to remove it. The PC must resolve the case of the ghost's murder.
+-Temple quest: A rare enchanted item is needed for its proficiency for ending daedric possession. The PC is asked to enter a dungeon to look for it.
+-Temple quest: A cursed object threatens to bring an undead each night to haunt the possessor. The temple asks you to take the object and slay the undead when it appears at night to end the curse.
+-1) Perhaps guarding a group going on pilgrimage to a shrine, with possible Daedric interference?
+-3) A particular apparition needs a specific holy item to banish, which as at (shrine, temple, or was lost in dungeon), and you have to return with it. Of course, certain groups might not want it found again...
+-4) Someone has committed grave sin against their deity. As penance, they must visit three different, randomly-generated (shrines, temples). However, their former fellows do not want them to finish this penance, and are willing to resort to force...
+-5) Or, related, a vampire hasn't found a cure - However, for living (or close enough) a virtuous life (never drinking blood from people, etc), they have been promised that, as long as they stay at $temple, they will be free from their affliction - not cured, but their vampirism will not affect them there. You must guard them to $temple. Be warned, their former fellows will be after them, to dissuade them, or slay them if they will not be dissuaded.
+-6) Related to previous quest, a vampire has been peacefully staying under the protection of a temple for (years, decades, centuries). However, (someone they love/a living descendent/a close friend and confidant) has been kidnapped to force them out of that protection. However, having heard of your fame, they are willing to wait X days for you to rescue $Name before going themselves. (This quest and the previous one would be for characters with a high reputation, naturally. :) )
+-7) The PC themselves are given a pilgrimage to a shrine, and an item to give to the shrine-keeper. Forces may attempt to steal it. (Not much there, but it could turn into a plot about keeping an important item out of the wrong hands; or just be a quest to visit a shrine).
+-9) As it turns out, one of the members of $Guild is actually a (necromancer, lich, vampire). It's quite embarrassing for them, and also very dangerous, so they came to us for help. (Could turn into #4 or #5).
+-purge necromancer influence from home. wait in home for day, resist undead interference
+
+    Thieves:
+-retrieve document for necromancer
+-The PC must take an illicit substance to a person under contract to receive it. Law enforcement mercenaries may ambush the PC during the quest. If the PC injures one of the mercenaries, his/her regional reputation will drop by 5 points, and if he/she kills one of them, the drop will become 25 points. (AVAILABLE)
+-Thieves Guild quest: 5+ reputation required. The guild has figured out a way to bring justice to a snitch on their operations. The PC must enter the person's home and change one piece of paper for another, without injuring the owner who will most likely be present. If the owner is injured the PC is revealed and the mission fails.
+-Thieves Guild quest: A captured informant is being held hostage but is belligerent and unwilling to give vital information for a robbery. A Charm spell is needed to turn him/her into the Guild's temporary informant.
+-Thieves Guild quest: Grab a bag of money from a residence in another town, but don't fight the guards inside. They'll identify you and drop your legal rep.
+-steal a magical item from the Mages Guild, reversal of classic quest
+-steal a scroll
+-hit to steal, not kill
+-foe teleports you into dungeon
+-item is trapped, causes disease or poison
+-item trap causes monster spawn
+
+    ===========================
+    Misc other ideas:
+
+    Mages Guild: A scholar (/enemy faction) has left a research tome for the Guild’s use at a home in a regional city, and the PC must retrieve it. The house is guarded by a human or summoned enemy. (Rank 3+)
+
+    Mages Guild: The guild wants to win over a local noble for the sake of a new guild hall in the region. The PC will take an enchanted object to the ruler as a gift. (Rank 1+)
+
+    Mages Guild: The city is suffering from attacks by the undead and the noble has asked the guild to investigate and resolve it or suffer censure. The enemy mage causing it is within a local home, which can be found by asking for rumors. Undead will spawn within the city until the quest is resolved. (Rank 5+)
+
+    Mages Guild: A daedric artifact has been divined in a home in a regional city. The owner appears to be a cloaked mage but is an ancient lich, who requests a favor from the PC in exchange for the artifact. The PC can refuse and kill the lich instead to retrieve the artifact from the corpse. (Rank 8+)
+
+    Mages Guild: A daedra summoning witch has been located in a home in a regional city. The PC must eliminate this unauthorized practitioner to ensure the public’s safety. (Rank 5+)
+
+    Mages Guild: The Guild has heard rumors concerning an object or place called the Mantellan Crux, and several scholars are vying for information on it. The PC must find a scholar in the region who would be willing to shed some light on the topic, likely for a bribe of gold. (Rank 4+)
+
+    Mages Guild quest: The Guild requests that the character eliminate an atronach with a puzzling new characteristic planted in an innocent citizen's home. The creature will multiply itself in two upon death repeatedly, and the character must endure to its final death. (Rank 3+)
+
+    Mages Guild quest: The guild has been troubled by the recent malicious campaign of a former member. Using a variety of illusion spells, he/she has attacked various people and groups out in the wilderness, and must be stopped. The character is sent to a dungeon to find this enemy, but it will be impossible to know what form he/she has taken until found. (Rank 3+)
+
+    Mages Guild quest: A mid-level Mages Guild quest could send the character to terminate a known Necromancer in a residence of another town. When the first hit on the enemy is struck, several undead could be summoned (skeletons, wraiths, etc) to attack the character. (Rank 4+)
+
+    Fighters Guild: The Guild has heard of a weapons master in the region whose expertise could be a benefit. The PC must go into a dungeon to find the master and request his/her help. (Rank 3+)
+
+    Fighters Guild quest: The guild has been hired to resolve a series of murders occurring in and around a shop within the city. Some hint is given that the current shopkeeper may be a daedra or daedra accomplice using illusion spells. (Rank 5+)
+
+    Fighters Guild quest: For the last twenty-four hours the city has had a rash of attacks by atronachs or gargoyles within various stores. After eliminating the threat within one building, the character will be informed by courier to move on to another location, and so on for up to six buildings within a period of forty-eight hours. (Rank 4+)
+
+    Fighters Guild quest: A rural home in the region has been assaulted by a family of fairly aggressive wild animals, and has hired the Guild to eliminate them. (Rank 1+)
+
+    Fighters Guild quest: A merchant carrying very valuable merchandise has paid the guild to be escorted to two regional cities. Due to his fame he expects interference from brigands and/or competing merchants. (Rank 3+)
+
+    Fighters Guild quest: A regional city has contracted the guild to help with a group of criminals who have been roughing up and extorting local merchants. The character is asked to either persuade or strike down the outlaws, who can be found within a residence. (Rank 4+)
+
+    Thieves Guild: The PC must enter a heavily guarded palace in the region and steal away a noble’s child to broker a black market trade. (Rank 6+)
+
+    Knight quest: Orcs in the region are planning an assassination on a noble. The character must reach a palace in the region and wait there during the nighttime for three Orc Sergeants or otherwise leveled Orcs. Similar to Mage's Guild night watch quest. (Rank 5+)
+
+    Knightly Order quest: News has spread throughout the region of a nest of dragonlings within a dungeon of a certain breed that the monarch wishes to protect. The Order has been requested to send a skilled knight to the dungeon to slay any poachers who enter, but not kill any of the dragonlings. (Rank 4+)
+
+    Knightly Order quest: The character is asked to voluntarily accept a magicka-obliterating curse from a wizard who has suffered from it for several months. The character may end the curse by going into a dungeon and destroying the lich who cast it. Magicka will remain at zero until that time. (Rank 6+)
+
+    Riddle quest: A miscellaneous quest could let the character answer five trivia questions about the Iliac Bay or other facets of Daggerfall life. Success TBD. If the character fails, a curse is put on the character, with such negative outcomes as causing a hostile imp or werewolf to appear near the character every six hours for a few days or being followed by Grizzly Bears for ten days, teleporting the character into a random dungeon or directly in front of Medora Direnni, losing 10 luck permanently, or contracting the Plague. If there's a Jester faction of some kind that would probably be most appropriate as questgiver.
+
+    Innkeeper quest: Some months ago the merchant failed a serious obligation/desecrated a memorial and is now haunted by skeletons. The character is asked to accompany the merchant to a dungeon, where he/she can right the wrong and end the matter. Skeletons will appear periodically while the merchant is with the character.
+
+    Merchant quest (over level 5): When spoken to, a merchant/innkeeper offers you a cup of tea made of certain special ingredients. The greater chance is that the character's health and stamina are fully restored at no cost. The lesser chance is that the character blacks out and wakes up at a quest location inside a regional dungeon (similar to An Unexpected Journey quest), with a note asking for forgiveness, as there were threats being made against the merchant's family if he/she did not cooperate.
+
+    Noble quest: Certain debts the noble considers illegitimate are required by a particularly noxious band of collectors. The noble requests that you meet the collectors and either eliminate them or pay the sum out of your own pocket.
+
+    Noble quest: The ruler requests your aid in dispossessing a rural home of its current owner, as a previous agreement has not been honored.
+
+    Noble quest: The Dark Brotherhood has failed in making a certain person disappear, and now both the would-be assassin and the target must be eliminated.
+
+    Noble quest: The noble's child has been offered a piece of jewelry as a birthday gift from another noble, but it appears suspicious. In the role of a courier you will accept the item and test any curse it contains on yourself before delivering it.
+
+    Over level 20 quest: A jester challenges you to retrieve a statue from within a dungeon. For the duration of the challenge, the character's health will be 1, but will have immunity to all spells.
+
+    *****
+
+    I'll include ideas for WA quests here.
+
+    Outside/anywhere: 1. You see a traveling merchant being accosted by a pair of brigands. 2. You hear a voice but don't see the source. "I need your money more than you do. Just 500/1500/2000, that's all I ask."
+
+    Outside/anywhere/night: 1. You hear a soft whispering in your ear, demanding vengeance for its death at the hands of paid assassins.
+
+    Outside/town/daylight: 1. You hear a shopkeeper calling nearby, "Thief! Somebody stop him!" 2. An older man in worn clothes approaches and asks for a loan to pay his debts, promising to pay you back in a few weeks if you meet him in another town. 3. A hooded spellcaster proclaims, "This city and its citizens will bow to my power! Send forth your greatest champion, and I will fell him to the earth!" 4. A distraught voice calls out, "Do none of you care about my missing child?! Help me find him/her, please!" 5. You hear a lively voice call out, "Welcome one and all, and how wonderful it is to see you! Today, and only today, here in this glorious city of [city] I've come to offer free samples of my famous, fabulous, fanatically popular Miracle Elixir! You've all heard the stories from throughout the Iliac Bay of what wonders my potions can do! Try it, find out for yourselves! Who's brave enough to be the first to try this wonderful, unforgettable elixir?!" 6. A courier hands you and others a small leaflet. "The Bank of [region] offers a reward for recovering certain records that were recently stolen. Inquire with [NPC] in the Bank of [region] in [city] for more information." 7. A masked figure draws near, stating that a group of criminals wants to hire you to help rob a local shop at night. 8. The innkeeper quest regarding a false accusation of a jewel ("Are you [name]? The [race]?) could be made an ambient quest. 9. You hear some shouting around the corner. A hooded figure runs into view, briefly stopping next to you. "The heat's on me. Take this jewel and find me in [building] tomorrow. Good pay."
+
+    Outside/wilderness: 1. A cloaked figure draws near haltingly and speaks to you in a whisper. "Please, listen to me. My name is [name], and I am, or was, one of the lords of this region. My brother has betrayed me and declared me an outlaw, and now every guard in [region] watches to throw me into prison or end my life. I can prove my innocence if you will only take me to Palace in [town] and promise me that no guard will see my face." 2. A youth moves close and speaks in hushed tones. "Good [race], my name is [name]. I need your help and your ironclad confidence. I am the son of Lord [name], one of the greater lords of this region. I've plotted to fake my own kidnapping and receive the ransom payment from my father, and then abscond to some corner of Tamriel where he may never find me. However, I require a partner to collect the payment, with whom I will split half the gold. Will you be my champion in this endeavor?"
+
+    Outside/wilderness/night: 1. A soft rustling is your only clue that others are nearby. A few feet away, someone says, "My friends and I would be happy to relieve you of all that heavy gold. You wouldn't want to take a chance with a group like us, would you?"
+
+    Outside/wilderness/storm: 1. A voice booms forth from the clouds. "Why, hello there, young child! Splendid to see a fine [race] such as yeself crawling across the earth, looking for entertainment! Entertainment, says you? I quite agree, there's always room for entertainment in that square skull of thine, is it not? And my near and dear kindred whisper that some hovel called [city] is just filled to the brim with daedra, looking for a partner for the next dance! What says the [race]? Will you dance? Have thou the life of a good party in you?"
+
+    Inside/dungeon: 1. You feel a tap on your shoulder from an injured adventurer who needs an escort to his home town. 2. You see a shimmer in the dim light, accompanied by a voice out of thin air: "Drop all your money or this blade goes through that armor." 3. You hear someone being chased by something dangerous nearby, but you likely won't be detected unless you intervene.
+
+    Inside/tavern: 1. You hear a loud patron trying to start a fight as others start to flee. 2. Someone asks, "Does anyone here know how to fight a werewolf? It's stalking my family's orchard and I don't have the money to hire the Fighters' Guild." 3. A patron sighs, "I think the only thing that'll work now is the Open spell. I'd split half of whatever's in that chest if someone got it open for me." 4. A patron complains, "It's impossible to find anything around here! Can someone show me the way to [general store/apothecary] so I can buy medicine for my brother/sister?" 5. A weak moaning emanates from a corner of the tavern. The innkeeper calls out for someone's help in taking a drunk tavern-goer to the temple for curing. Inspired by a Fighter's Guild custom quest as tavern guard.
+
+    Inside/shop: 1. A loud banging shakes the walls. The shopkeeper shouts, "I said you're not welcome here anymore! Stop! I said stop!" A brigand will walk away with several valuable items unless you step in. 2. For a small sum of money, the shopkeeper asks whether you would be willing to investigate prices in a general store of another town by talking to one of its owners.
+
+    Inside/locked location/night: 1. You hear a sudden rustling, followed by a few hushed whispers. It appears someone has chosen to burgle this place. Will you intervene?
+
+    Leaving dungeon: 1. You notice someone has left a wagon nearby. It contains few goods, but you could pilfer from it if you choose. 2. You find yourself surrounded by armed figures. "We'll take your spare weapons and armor, and in exchange we'll give you your life. Fair deal?"
+
+    High rank in Mages' Guild: 1. A letter arrives, indicating that a high-ranking official has specifically requested you for a task of serious import. The only detail you can make out is a passing reference to daedra summoning. 2. The Acolyte fears that a noble of the region has been kidnapped and supplanted by an illusionist, and asks you to investigate. 3. A band of apprentices, having heard of your fame, have trapped a powerful creature in a house and want to see you defeat it. 4. A letter from an anonymous spellcaster claims to have the power to turn you into a vampire unless you obtain a rare book from within a dungeon for him/her. 5. The Archmage of a Mages' Guild in another region requests a visit from you to hear from you regarding your experiences. However, he will meet within a private residence, as he fears the Necromancers may plan an attack should they become aware. 6. A letter arrives from an unfamiliar guild official, who states that you must pay guild fees totaling a few thousand gold due to your recent neglect of guild quests. 7. A letter from a local guild member informs you that a regional dungeon purportedly contains a rare spell scroll, which the guild believes you deserve the first chance at taking due to your past service. 8. A regional Mages Guild hall has been plagued by a series of attackers who arrive through teleportation. One of the advanced members of the guild has determined the location and may teleport you there to eliminate the spellcaster orchestrating the assault. 9. The vanilla Acolyte/Oracle quest could be made an ambient quest, rather than one obtained through the questgiver.
+
+    High rank in Fighters' Guild: 1. A courier from the ruling noble requests your aid in ending an infestation in a nearby city, leaving you to find out where they're coming from. 2. A shop in a regional city has a problem with gargoyles which keep getting summoned at midnight, causing a hassle for the town guard. The guild needs to find out what's causing it and get rid of the source. 3. A letter arrives, stating that you at some time were the cause of great offense to a powerful warrior. He challenges you to a duel to the death, and if you fail to appear, he will ruin your legal reputation in the current region.
+
+    High rank in Knightly Order: 1. A prince/princess has been kidnapped for an exorbitant ransom. The Order believes you are the only one capable of rescuing him/her before the time limit is reached. 2. A letter arrives, purportedly from an official within the Order, requesting that the character terminate a certain person who is claimed to be a known criminal. 3. An anonymous letter arrives, demanding that the character renounce all allegiance to the Order. Assassins will be sent until the character finds the origin of the letter and eliminates it.
+
+    High rank in Thieves' Guild: 1. An anonymous letter, hinted to be from a regional noble, says that you may be framed for a crime unless you help him/her get a rare jewel from a guarded shop. 2. A letter, supposedly from The Crow, challenges you to raid a locale where he says a bank holds its excess goods, in exchange for a magical piece of jewelry directly from him. 3. The Guild has decided that a certain noble has interfered for too long, and wants to exchange a piece of his clothing for something with disastrous magical effects. The Palace will likely be guarded, and killing any of the guards will have lasting ramifications for you. 4. A letter from an experienced thief challenges you to a race to obtain a certain treasure from within a dungeon with a strict time limit, at the risk of losing reputation with the guild upon failure. 5. An unnamed noble will reward generously if you retrieve several pieces of incriminating evidence from multiple locations in the region, at least some of which will be guarded.
+
+    Over level 20/outdoors: 1. A letter requests your aid in freeing a kidnapped person from within a regional city. The kidnappers were accidentally informed that the rich family intends a rescue, and it's likely that the city will be overflowing with hostiles once you arrive.
+
+    2. A noble has received word that an artifact belonging to the region has been uncovered in a distant region, and requests your help in recovering it in a clandestine manner, in return for a large legal reputation boost.
+
+    3. The infamous Radastyr Kingsfield, a necromancer (level 25-30 lich-type) who appears to be immortal through persistent self-revival, has appeared in a dungeon in the current region. A noble offers a large sum of money for defeating him, and the character will also find on the corpse Radastyr's Staff, a powerfully enchanted blunt weapon.
+
+    ================================
+
+    "I've got a walking problem. There's a plant there, and I just kind of ate him. Well, I didn't eat him. My pet dragon did. There's a bat that looks like a parrot, at least, according to a buddy of mine. This is how you can tell if your kids are taking drugs, is, just measure the swollenness of their head, basically. I have no way of defending myself against this onslaught of rats. Come on, drink some lava, pet dragon. You know you want to grow up and be large and nimble, and the best way to do that is to drink magma." The Great Dimensional Rift
+
+    "Hello there, hole in fence, how do you feel today? A hole does not feel, for it is not something but the lack of something, and a lack cannot be other than a lack or a hole. Oh yeah, it was you! Well, now you are dust, so there you go. That solves that problem. Science, ha! Isn't that great, %ra? I'm sorry, but I just saved your health. I managed to avoid endangering myself and loved ones!" 48th and one of 47th
+
+    "Do larger eyes make you see better? I don't know. Do larger eyes make you see better? Because, I mean, would you see bigger? What are the results of having eyes more or less large? That's a part of biology I don't know. I'm hopeful that someone who's knowledgeable about that is gonna give us some form of an answer." 8th place
+
+    ================================
+
+    Quest line 1:
+
+    Receive letter from noble, looking for adventurous citizenry. Asks you to contact a necromancer in a dungeon to create an undead plague that the noble will crush, for him to become a hero. Defend town from undead raid. Necromancer will try to blackmail noble
+    for more money. Side with necromancer for split money, or noble for big reputation gain.

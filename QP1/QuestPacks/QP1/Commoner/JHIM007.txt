@@ -62,6 +62,7 @@ Person _questgiver_ group Questor male
 Place _res_ local house
 
 Clock _timer_ 1.00:00
+Clock _delay_ 0:05
 
 Foe _enemy_ is Bard
 
@@ -103,7 +104,12 @@ _lie_ task:
 _bigfail_ task:
 	say 1003
 	change repute with _questgiver_ by -10
-	legal repute -20
+	setplayercrime Murder
+	spawncityguards immediate
+	start timer _delay_
+	remove log step 0
+
+_delay_ task:
 	end quest
 
 _timer_ task:

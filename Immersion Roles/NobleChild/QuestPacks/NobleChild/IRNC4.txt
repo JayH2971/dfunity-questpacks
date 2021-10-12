@@ -118,6 +118,7 @@ Item _letter_ letter
 
 Clock _timer_ 0:30
 Clock _enddelay_ 7.00:00 10.00:00
+Clock _ending2_ 0:00
 
 --	Quest start-up:
     say 1011
@@ -154,7 +155,7 @@ _enddelay_ task:
 
 _ending_ task:
     take _letter_ from pc
-    start task _ending2_
+    start timer _ending2_
 
 _ending2_ task:
     say 1004
