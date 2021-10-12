@@ -1,0 +1,7 @@
+schema: *name, group, membership, minReq, flag, notes
+
+ESBackbone, InitAtGameStart, P, 0, 0, begins the Escaped Slave role
+IRES1, Commoners, P, 0, 0,
+IRES2, Commoners, P, 0, 0,
+IRES3, Commoners, P, 0, 0,
+IRES4, Commoners, P, 0, 0,

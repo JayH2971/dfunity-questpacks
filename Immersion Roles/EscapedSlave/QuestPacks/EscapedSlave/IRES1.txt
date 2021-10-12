@@ -1,0 +1,71 @@
+Quest: IRES1
+DisplayName: Escaped Slave Step 1
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>                      YOU ROLE IS: ESCAPED SLAVE
+<ce>
+<ce>          Two weeks prior, you enjoyed a simple life in your
+<ce>         home town. Ignorant of the many dangers that plague
+<ce>      Tamriel, you set out for a walk in the nearby wilderness.
+<ce>       Alerted by some shouting nearby, you turned to see what
+<ce>          it was. You heard a mage cast a spell nearby, and
+<ce>       you next remember waking up on a boat with several other
+<ce>                captives, surrounded by fierce guards.
+<ce>
+<ce>         Luckily, a group of vigilantes happened to sail by.
+<ce>         They recognized your captors' vessel and gave battle
+<ce>           to free the slaves on board, including yourself.
+<ce>         You watched as the slavers fought fiercely to retain
+<ce>     their hard-earned prizes. As their captain fell, an unusual
+<ce>       gem spilled out of his shirt pocket, clearly enchanted.
+<ce>         You scrambled over to grab it and use its magic for
+<ce>       your benefit, if possible. One of the criminals shouted,
+<ce>                     "No! That %ra's about to--"
+<ce>
+<ce>      Then the teleportation enchantment fired, sending you far
+<ce>       from the battle. As your eyes adjusted to the darkness,
+<ce>                you looked around. You can only assume
+<ce>        this is the slavers' hideout -- or was, since they'll
+<ce>              be looking for a new one now that you were
+<ce>                 teleported here. The secret is out.
+<ce>
+<ce>             They left a small cache of equipment nearby,
+<ce>         and you've picked out several things that look to be
+<ce>      of use to you. Hopefully you'll be able to find the exit.
+
+Message:  1012
+<ce>     You enter this settlement and greet the nearest townsperson.
+<ce>          As you tell your story, a crowd gathers, and they
+<ce>            give several shocked responses to your plight.
+<ce>         Some rummage through their belongings and offer you
+<ce>                  money to help you on your journey.
+<ce>            You also receive a Potion of Invisibility and
+<ce>            an enchanted _item_ that can heal your wounds.
+<ce>
+<ce>           As the crowd disperses, you hear, "Imagine that!
+<ce>                  Slave masters in %crn! How awful!"
+
+QBN:
+
+Item _gold_ gold range 200 to 400
+Item _item_ item class 4 subclass 24
+Item _potion_ potion key 4815872
+
+--	Quest start-up:
+    say 1011
+
+_travelstop_ task:
+    when pc enters village
+    when pc enters hamlet
+    when pc enters city
+    say 1012
+    get item _gold_
+    get item _potion_
+    get item _item_
+    make _gold_ permanent
+    make _potion_ permanent
+    make _item_ permanent
+    start quest IRES2
+    end quest

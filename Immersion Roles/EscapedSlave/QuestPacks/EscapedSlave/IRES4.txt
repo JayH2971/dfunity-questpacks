@@ -1,0 +1,74 @@
+Quest: IRES4
+DisplayName: Escaped Slave Step 4
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>          Something doesn't feel right. You look around, and
+<ce>     your suspicions are vindicated -- three foes move in on your
+<ce>         position, determined to reclaim their slave or kill
+<ce>                         you in the process.
+
+Message:  1012
+<ce>             The gem you took from your assailaints seems
+<ce>              to carry the same design and magical power
+<ce>            as the one that teleported you from the ship.
+<ce>              If you use this one, you assume it'll send
+<ce>                        you to their new lair.
+<ce>
+<ce>          You'll make sure not to use it until you're ready.
+
+Message:  1013
+%qdt:
+ The slavers put a rune under my skin that tells them
+ where I am at all times. Until I get it out, I'm
+ continually in danger of being captured again.
+ If they come for me, I may get lucky and find
+ some way to track them to their home.
+
+Message:  1014
+<ce>           You notice a conspicuous gem on this fallen foe.
+<ce>           If it reacts like the one on the ship did, it'll
+<ce>        teleport you when you touch it. You'll either have to
+<ce>           get ready now, or wait until another group comes
+<ce>                     for another chance to warp.
+
+QBN:
+
+Clock _delay_ 6.00:00 8.00:00
+
+Foe _enemy1_ is Rogue
+Foe _enemy2_ is Nightblade
+Foe _enemy3_ is Barbarian
+
+Item _dummy_ letter
+Item _gem_ diamond
+
+--	Quest start-up:
+    have _dummy_ set _instigate_
+    give pc _dummy_ notify 1011
+    log 1013 step 0
+
+_instigate_ task:
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    create foe _enemy3_ every 0 minutes 1 times with 100% success
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    change foe _enemy3_ infighting true
+    start timer _delay_
+    take _dummy_ from pc
+    give item _gem_ to _enemy3_
+    have _gem_ set _advance_
+
+_kill_ task:
+    killed _enemy3_
+
+_advance_ task:
+    say 1012
+    start quest IRES5
+    end quest
+
+_delay_ task:
+    start quest IRES4
+    end quest

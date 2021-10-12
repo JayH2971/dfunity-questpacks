@@ -1,0 +1,65 @@
+Quest: IRES3
+DisplayName: Escaped Slave Step 3
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>                    "Welcome! How can I help you?"
+<ce>
+<ce>          You show the priest the rune put under your skin,
+<ce>           earning a horrified gasp. You then give a short
+<ce>                    version of how it came to be.
+<ce>
+<ce>             "Oh my! Your captors were no simple band, I
+<ce>        can tell that much. This requires great magical power.
+<ce>           It had to have been done while you were asleep.
+<ce>                      Let me see if I can help."
+<ce>
+<ce>               Several spells follow, but to no effect.
+<ce>                Your heart sinks as you see no change.
+<ce>
+<ce>           "I'm really sorry, but there's nothing I can do.
+<ce>         Thinking about it properly, they must be using some
+<ce>          enchanted device of a kind to brand their slaves.
+<ce>            Most mages don't deal with this kind of power.
+<ce>                 and those who do, won't waste it on
+<ce>             a criminal trade. They're greater than that.
+<ce>            Once you find the device, break it in pieces,
+<ce>            and all brands it created will cease to exist.
+<ce>        They're designed with that failsafe to prevent misuse
+<ce>                        against their creator.
+<ce>
+<ce>            "Well, so long as this rune is active they'll
+<ce>            come looking for you again. Take any measures
+<ce>          necessary to defend yourself, and with luck you'll
+<ce>       get some clue to ending this curse. A thousand apologies
+<ce>          that I can't help more. %god help you come free."
+
+Message:  1012
+<ce>                "There %pg2 is! The one who escaped!"
+<ce>
+<ce>         Armed with knives, two thugs rush to apprehend you.
+
+Message:  1013
+%qdt:
+ The slavers put a rune under my skin that tells them
+ where I am at all times. Until I get it out, I'm
+ continually in danger of being captured again.
+ If they come for me, I may get lucky and find
+ some way to track them to their home.
+ I have to break whatever device they used to
+ put the brand on me.
+
+QBN:
+
+Foe _enemy1_ is 2 Acrobat
+
+--	Quest start-up:
+    say 1011
+    send _enemy1_ every 333 minutes with 5% success msg 1012
+    log 1013 step 0
+
+_advance_ task:
+    level 3 completed
+    start quest IRES4
+    end quest

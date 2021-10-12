@@ -1,0 +1,107 @@
+Quest: IRES5
+DisplayName: Escaped Slave Step 5
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>        Emerging from ___dung_, you breathe in the fresh air.
+<ce>         With relief you finally accept it: you are no longer
+<ce>                   a slave of this merciless band!
+<ce>          You can't tell whether the carnage you left behind
+<ce>               will be enough to break up their power.
+<ce>          Perhaps that's a task for someone else, or a group
+<ce>                  of someone elses. But as for you,
+<ce>        you are free -- and freedom has never tasted sweeter.
+<ce>
+<ce>                        (QUEST LINE COMPLETE!)
+
+Message:  1011
+<ce>     You activate the gem and feel yourself go underground again.
+<ce>                  Darkness surrounds you once more.
+<ce>        As you steady your footing, you hear a piece of paper
+<ce>             under your foot. You reach down and grab it.
+
+Message:  1012
+Keep slaves here. Separate hideout for
+crew at ___dung_. See map on opposite
+side. Squeal and lose your tongue.
+
+Message:  1013
+<ce>                  This mage sees the rune implanted
+<ce>                     under your skin and hisses,
+<ce>
+<ce>         "Fool! I'll sooner kill you than let you come free!"
+
+Message:  1014
+<ce>            This _trinket_ shimmers with malevolent power.
+<ce>              You don't hesitate to smash it to pieces.
+<ce>               You look at the rune under your skin and
+<ce>        see it rapidly fading. A minute later, no trace of it
+<ce>      is left. These cretins will no longer be able to find you.
+
+Message:  1015
+%qdt:
+ I am being hunted by a group of slavers,
+ who have put a locating rune under my skin.
+ I have in my possession an enchanted diamond,
+ which I think will send me to the slavers'
+ hideout. I can use it when I'm ready.
+
+Message:  1016
+%qdt:
+ I am being hunted by a group of slavers,
+ who have put a locating rune under my skin.
+ In the slavers' hideout, I found a map leading
+ to their main lair, called ___dung_.
+ I'll have to go there and investigate whether
+ the means to removing this locating rune is inside.
+
+QBN:
+
+Place _teledung_ remote dungeon
+Place _dung_ remote dungeon2
+
+Item _letter_ letter used 1012
+Item _trinket_ trinket
+
+Foe _mage_ is Mage
+
+--	Quest start-up:
+    log 1015 step 0
+    pc at _dung_ do _inside_
+    have _trinket_ set _break_
+    teleport pc to _teledung_
+    say 1011
+    get item _letter_
+    _letter_ used do _reveal_
+
+_reveal_ task:
+    reveal _dung_
+    place item _trinket_ at _dung_
+    place foe _mage_ at _dung_
+    log 1016 step 0
+
+_inj_ task:
+    injured _mage_
+    say 1013
+    cast Heal spell on _mage_
+    cast Shield spell on _mage_
+    cast Shalidor's_Mirror spell on _mage_
+    cast Feet_of_Notorgo spell on _mage_
+    cast Orc_Strength spell on _mage_
+    change foe _mage_ infighting true
+
+variable _inside_
+
+_break_ task:
+    say 1014
+    start task _victory_
+    take _trinket_ from pc
+    remove log step 0
+
+variable _victory_
+
+_ending_ task:
+    when _victory_ and not _inside_
+    give pc nothing
+    end quest

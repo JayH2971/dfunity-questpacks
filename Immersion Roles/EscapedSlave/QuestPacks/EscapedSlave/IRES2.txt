@@ -1,0 +1,95 @@
+Quest: IRES2
+DisplayName: Escaped Slave Step 2
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>                You hear talk nearby, directed at you.
+<ce>              You look around and see two armed figures,
+<ce>                     a warrior and a spellsword.
+<ce>
+<ce>             "That's the %ra, that's right. Still got the
+<ce>                       brand on %pg2. Come on."
+<ce>
+<ce>                  They march forward to subdue you.
+
+Message:  1012
+<ce>      Now that the battle has ended, you recall what they said.
+<ce>             There's a mark on you, if they spoke right.
+<ce>           You search around and find that they did indeed
+<ce>  brand you with a locating rune in the shape of a small _trinket_.
+<ce>       Deep under your skin, it'll be impossible to get rid of
+<ce>                  by your own effort. You need help.
+<ce>     Perhaps the citizenry of ____temple_ can tell you about it.
+
+Message:  1013
+Ooh, that looks serious. You need to talk to _priest_ of ____temple_, over at ___temple_.
+<--->
+Locator rune? You in trouble? Best thing is to talk to _priest_ at ___temple_ within ____temple_.
+
+Message:  1014
+%qdt:
+ I've been captured by slavers and taken far from home.
+ Some people in a local settlement took pity on me
+ and offered me what goods they had on hand.
+ To survive in this strange land, I should
+ seek some form of employment, until I feel
+ confident enough to travel elsewhere.
+
+QBN:
+
+Clock _delay_ 1.00:00 3.00:00
+Clock _fight_ 0:30
+
+Foe _enemy1_ is Warrior
+Foe _enemy2_ is Spellsword
+
+Item _dummy_ letter
+Item _trinket_ trinket anyInfo 1013
+
+Place _temple_ remote temple
+
+Person _priest_ faction Akatosh
+
+--	Quest start-up:
+    log 1014 step 0
+
+_advance_ task:
+    level 2 completed
+    start timer _delay_
+    have _dummy_ set _instigate_
+
+_delay_ task:
+    give pc _dummy_ notify 1011
+
+_instigate_ task:
+    say 1011
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    start timer _fight_
+    take _dummy_ from pc
+
+_killed1_ task:
+    killed _enemy1_
+
+_killed2_ task:
+    killed _enemy2_
+
+_killedboth_ task:
+    when _killed1_ and _killed2_
+    start task _victory_
+
+_fight_ task:
+    start task _victory_
+
+_victory_ task:
+    say 1012
+    add dialog for item _trinket_
+    place npc _priest_ at _temple_
+
+_clickpriest_ task:
+    clicked npc _priest_
+    start quest IRES3
+    end quest

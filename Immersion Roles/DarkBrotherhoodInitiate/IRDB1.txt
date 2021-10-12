@@ -4,35 +4,36 @@ DisplayName: Dark Brotherhood Initiate Step 1
 QRC:
 
 Message:  1011
-<ce>  YOU ROLE IS: DARK BROTHERHOOD INITIATE
-<ce>  
-<ce>  You shake your head, getting a hold of your senses.
-<ce>  The dead body of your quarry stinks nearby.
-<ce>  You made it this far, and now you need to get out.
-<ce>  
-<ce>  Your efforts to join the Dark Brotherhood have been
-<ce>  extensive. Weeks passed by, and all your information
-<ce>  gathering seemed to be for naught. Then a note
-<ce>  appeared in your pack while you slept one night.
-<ce>  It told you to come here and slay a one-eyed
-<ce>  thief as a test of your courage. Deep in the depths
-<ce>  of this place, you found him and carried it out.
-<ce>  You trust the Dark Brotherhood will find you
-<ce>  if it's pleased with your work.
-<ce>  
-<ce>  Now you need to make it out.
-<ce>  You were too focused on your search to map your
-<ce>  way in, unfortunately. But if you could kill
-<ce>  this thief, surely you'll be able to handle
-<ce>  anything else here...
+<ce>                YOU ROLE IS: DARK BROTHERHOOD INITIATE
+<ce>
+<ce>         You shake your head, getting a hold of your senses.
+<ce>              The dead body of your quarry lies nearby.
+<ce>          You made it this far, and now you need to get out.
+<ce>
+<ce>         Your efforts to join the Dark Brotherhood have been
+<ce>         extensive. Weeks passed by, and all your information
+<ce>            gathering seemed to be for naught. Then a note
+<ce>           appeared in your pack while you slept one night.
+<ce>   It told you to kill someone without doubting, without thinking.
+<ce>             You snuck into a tavern and used a pillow to
+<ce>          take the life from your first target -- silently,
+<ce>           smartly. When next you slept, you awoke to find
+<ce>         instructions beside your bed to come here and slay a
+<ce>     one-eyed thief as a test of your courage. Deep in the depths
+<ce>           of this place, you found him and carried it out.
+<ce>
+<ce>                     Now you need to make it out.
+<ce>           You were too focused on your search to map your
+<ce>             way in, unfortunately. But if you could kill
+<ce>             this thief, surely you'll be able to handle
+<ce>                        anything else here...
 
 Message:  1012
-<ce>  You step into the settlement. You feel different
-<ce>  from when you crossed through here last time.
-<ce>  Now you're a murderer, a cold-blooded killer.
-<ce>  You have spilt blood, and your fear is gone.
-<ce>  
-<ce>  Now you wonder what the Dark Brotherhood thinks of you.
+<ce>           You step into the settlement. You feel different
+<ce>            from when you crossed through here last time.
+<ce>             You have spilt blood, and your fear is gone.
+<ce>
+<ce>         You wonder what the Dark Brotherhood thinks of you.
 
 Message:  1013
 %qdt:

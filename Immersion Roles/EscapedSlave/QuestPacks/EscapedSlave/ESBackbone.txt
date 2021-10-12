@@ -1,0 +1,58 @@
+Quest: ESBackbone
+DisplayName: Backbone for Escaped Slave Immersion Role
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>             The shock of being stolen from your homeland
+<ce>            and nearly forced into labor, or worse, rings
+<ce>             fresh in your mind. You are free as yet, but
+<ce>              you feel alone, lost, and without friends.
+
+--level 2
+
+Message:  1012
+<ce>             Learning to defend yourself from the slavers
+<ce>      has given you confidence. The idyllic life you left behind
+<ce>   may never come back, but you can replace it with better things.
+<ce>   You're learning to manage your own affairs.
+
+--level 4
+
+Message:  1013
+<ce>         You remember the fear you felt on the slavers' ship,
+<ce>      wondering what life held for you next. Now, you no longer
+<ce>       feel bound to fate's whim. You're making your own luck,
+<ce>           and the thrill of life pushes you ever forward.
+
+--level 6
+
+Message:  1014
+<ce>         You pity whoever would dare try to capture you now.
+<ce>      Your skills so far exceed the youthful version of yourself
+<ce>       that once fought for survival. Any who dare approach you
+<ce>   without your approval will see the grave error they've committed.
+
+--level 8
+
+QBN:
+
+--	Quest start-up:
+    start quest IRES1
+
+_level2_ task:
+    level 2 completed
+    say 1011
+
+_level4_ task:
+    level 4 completed
+    say 1012
+
+_level6_ task:
+    level 6 completed
+    say 1013
+
+_level8_ task:
+    level 8 completed
+    say 1014
+    end quest

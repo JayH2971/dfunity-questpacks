@@ -6,9 +6,9 @@ QRC:
 Message:  1011
 <ce>                   You may have royal blood in you,
 <ce>          but your experience so far has put no silver spoon
-<ce>           in your mouth. You want to establish your worth
-<ce>              in ____place_ by your own merits -- not by
-<ce>                         the luck of your birth. 
+<ce>            in your mouth. Your journey is just beginning,
+<ce>             and you are determined to set yourself apart
+<ce>             from the ordinary bureaucrats in the palaces.
 
 --level 2
 
@@ -17,7 +17,7 @@ Message:  1012
 <ce>             your works are starting to garner attention.
 <ce>             You wonder if, in the absence of your lineage,
 <ce>           you could have reached your current standing
-<ce>               just by your very acts. It's hard to say.
+<ce>               by your very acts alone. It's hard to say.
 
 --level 4
 
