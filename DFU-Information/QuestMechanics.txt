@@ -1,3 +1,5 @@
+    # https://www.dfworkshop.net/static_files/questing-source-docs.html
+
     "create foe" creates all foes on their natural team, NOT on player enemy. Make sure to assign
     them to a common team if you don't want them infighting.
 

@@ -1,126 +1,183 @@
-Groups:
+    Groups:
 
+    Factions:
 
-
-
-Factions:
-
-Abibon-Gora
+    Abibon-Gora
     The Squid (stylish fat man)
     White-haired queen in yellow robe with polka-dot trim (white-haired queen)
 
-Agents_of_The_Underking
+    Agents_of_The_Underking
     Breton in grey jacket (man in a blue coat)
     Young woman in green clothing (young lady in green)
 
-Akatosh
+    Akatosh
     Short pony-tailed bald priest (blue-cloaked boy)
     Sitting woman praying to air (young woman in blue)
 
-Alcaire
+    Alcaire
     Banker sprite (flamboyant young man)
     White-haired queen in yellow robe with polka-dot trim (white-haired queen)
 
-Alik'ra
+    Alik'ra
     Lhotun sprite (brown-haired young man)
     Lhotun sprite (brown-haired young man)
 
-Anticlere
+    Anticlere
     FG questor (man in a green coat)
     Quaker-looking blue dress woman (blue-cloaked woman)
 
-Antiphyllos
+    Antiphyllos
     Blond bearded man with black tunic (blond aristocrat)
     Barenziah sprite (brunette queen)
 
-Apothecaries_of_Akatosh
+    Apothecaries_of_Akatosh
     Breton in grey jacket (man in a blue coat)
     Quaker-looking blue dress woman (blue-cloaked woman)
 
-Apothecaries_of_Arkay
+    Apothecaries_of_Arkay
     Breton in grey jacket (man in a blue coat)
     Quaker-looking blue dress woman (blue-cloaked woman)
 
-Apothecaries_of_Dibella
+    Apothecaries_of_Dibella
     Breton in grey jacket (man in a blue coat)
     Quaker-looking blue dress woman (blue-cloaked woman)
 
-Apothecaries_of_Mara
+    Apothecaries_of_Mara
     Breton in grey jacket (man in a blue coat)
     Quaker-looking blue dress woman (blue-cloaked woman)
 
-Apothecaries_of_Stendarr
+    Apothecaries_of_Stendarr
     Breton in grey jacket (man in a blue coat)
     Quaker-looking blue dress woman (blue-cloaked woman)
 
-Apothecaries_of_Z'en
+    Apothecaries_of_Z'en
     Breton in grey jacket (man in a blue coat)
     Quaker-looking blue dress woman (blue-cloaked woman)
 
-Arkay
+    Arkay
     Breton in grey jacket (man in a blue coat)
     Brisienna sprite (elegantly dressed lady)
 
-Ayasofya
+    Ayasofya
     Bearded noble with jewelry and yellow turban (king wearing a turban)
     Barenziah sprite (brunette queen)
 
-Azura
+    Azura
     Azura sprite, always named Azura (beautiful maiden)
     Azura sprite, always named Azura (beautiful maiden)
 
-Baltham_Greyman
-    Breton in grey jacket, always named Baltham Greyman (man in a blue coat) 
+    Baltham_Greyman
+    Breton in grey jacket, always named Baltham Greyman (man in a blue coat)
     Breton in grey jacket, always named Baltham Greyman (man in a blue coat)
 
-Baron_Shrike
+    Baron_Shrike
     Breton knight in checkered tunic, always named Baron Shrike (noble-looking man)
     Breton knight in checkered tunic, always named Baron Shrike (noble-looking man)
 
-Baroness_Dh'emka
-    Redguard woman with long hair and all-yellow robe and beehive hair, always named Baroness Dh'emka (queen)
-    Redguard woman with long hair and all-yellow robe and beehive hair, always named Baroness Dh'emka (queen)
+    Baroness_Dh'emka
+    Redguard woman with long beehive hair and all-yellow robe, always named Baroness Dh'emka (queen)
+    Redguard woman with long beehive hair and all-yellow robe, always named Baroness Dh'emka (queen)
 
-Bergama
+    Bergama
     Bearded noble with jewelry and yellow turban (king wearing a turban)
     Barenziah sprite (brunette queen)
 
-Betony
+    Betony
     Lhotun sprite (brown-haired young man)
     Brisienna sprite (elegantly dressed lady)
 
-Bhoriane
+    Bhoriane
     Breton with brown hair in green coat (king)
     White-haired queen in yellow robe with polka-dot trim (white-haired queen)
 
-Binders_of_Arkay
+    Binders_of_Arkay
     Breton in grey jacket (man in a blue coat)
     Young woman in green clothing (young lady in green)
 
-Boethiah
-    Clavicus Vile sprite, always named Boethiah (terrible child)
-    Clavicus Vile sprite, always named Boethiah (terrible child)
+    Boethiah
+    Boethiah sprite, always named Boethiah (dark warrior)
+    Boethiah sprite, always named Boethiah (dark warrior)
 
-Br'itsa
+    Br'itsa
     Platinum-haired woman with gray shoulderless dress, always named Br'itsa (woman in gray)
     Platinum-haired woman with gray shoulderless dress, always named Br'itsa (woman in gray)
 
-Charvek-si
+    Charvek-si
     Black-haired woman with green shoulderless dress, always named Charvek-si (woman in blue)
     Black-haired woman with green shoulderless dress, always named Charvek-si (woman in blue)
 
-Children
+    Children
     Teenage Breton boy (well-dressed boy)
     Girl on floor in pink blanket (little girl)
 
-Chulmore_Quill
+    Chulmore_Quill
     White-haired merchant sprite, always named Chulmore Quill (white-haired old man)
     White-haired merchant sprite, always named Chulmore Quill (white-haired old man)
 
-Clavicus_Vile
+    Clavicus_Vile
     Clavicus Vile sprite, always named Clavicus Vile (terrible child)
     Clavicus Vile sprite, always named Clavicus Vile (terrible child)
 
-The Merchants
+    Cybiades
+    Kneeling blonde bearded man (fair-bearded man)
+    Brisienna sprite (elegantly dressed lady)
+
+    Cyndassa
+    Cyndassa sprite (Cyadasga)
+    Cyndassa sprite (Cyadasga)
+
+    Daenia
+    Blond bearded man with black tunic (blond aristocrat)
+    Redguard woman with long beehive hair and all-yellow robe (queen)
+
+    Daggerfall
+    Gothryd sprite (handsome young king)
+    Medora sprite (stunning brunette)
+
+    Dak'fron
+    Lhotun sprite (brown-haired young man)
+    Brisienna sprite (elegantly dressed lady)
+
+    Dancers
+    Blond bearded man with black tunic (blond aristocrat)
+    Black-haired woman with green shoulderless dress (woman in blue)
+
+    Dark_Binders
+    Dark Brotherhood questor (dark-cloaked man)
+    Pale-looking woman in blue cloak (hooded woman)
+
+    Dark_Mixers
+    Dark Brotherhood questor (dark-cloaked man)
+    Pale-looking woman in blue cloak (hooded woman)
+
+    Dark_Plotters
+    Dark Brotherhood questor (dark-cloaked man)
+    Pale-looking woman in blue cloak (hooded woman)
+
+    Dark_Slayers
+    Dark Brotherhood questor (dark-cloaked man)
+    Pale-looking woman in blue cloak (hooded woman)
+
+    Dark_Trainers
+    Dark Brotherhood questor (dark-cloaked man)
+    Pale-looking woman in blue cloak (hooded woman)
+
+    Default
+    No sprite (Nord; region-related?)
+    No sprite (Nord; region-related?)
+
+    Dibella
+    Green-tunic FG guy (blond-bearded man)
+    Barkeep lady (comely maiden)
+
+    Dragontail
+    Lhotun sprite (brown-haired young man)
+    Brisienna sprite (elegantly dressed lady)
+
+    Dwynnen (note, name and gender are mismatched)
+    Redguard woman with long beehive hair and all-yellow robe (queen)
+    Breton with brown hair in green coat (king)
+
+    The Merchants
     Redguard merchant with gray beard (well-to-do merchant)
     Young woman in green clothing (young lady in green)

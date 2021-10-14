@@ -6,19 +6,19 @@ QRC:
 Message:  1011
 <ce>                      YOU ROLE IS: ESCAPED SLAVE
 <ce>
-<ce>          Two weeks prior, you enjoyed a simple life in your
-<ce>         home town. Ignorant of the many dangers that plague
-<ce>      Tamriel, you set out for a walk in the nearby wilderness.
-<ce>       Alerted by some shouting nearby, you turned to see what
-<ce>          it was. You heard a mage cast a spell nearby, and
-<ce>       you next remember waking up on a boat with several other
+<ce>      You enjoyed a simple life in your home town mere days ago.
+<ce>          Ignorant of the many dangers that plague Tamriel,
+<ce>           you set out for a walk in the nearby wilderness.
+<ce>       You heard some shouting nearby and approached the source
+<ce>                of it. Someone then cast a spell, and
+<ce>       you next remember waking up on a ship with several other
 <ce>                captives, surrounded by fierce guards.
 <ce>
-<ce>         Luckily, a group of vigilantes happened to sail by.
-<ce>         They recognized your captors' vessel and gave battle
-<ce>           to free the slaves on board, including yourself.
+<ce>          Luckily, a group of vigilantes happened to sail by
+<ce>       a short time later. They recognized your captors' vessel
+<ce>   and gave battle to free the slaves on board, including yourself.
 <ce>         You watched as the slavers fought fiercely to retain
-<ce>     their hard-earned prizes. As their captain fell, an unusual
+<ce>        their hard-earned prizes. As one mage fell, an unusual
 <ce>       gem spilled out of his shirt pocket, clearly enchanted.
 <ce>         You scrambled over to grab it and use its magic for
 <ce>       your benefit, if possible. One of the criminals shouted,
@@ -33,7 +33,7 @@ Message:  1011
 <ce>
 <ce>             They left a small cache of equipment nearby,
 <ce>         and you've picked out several things that look to be
-<ce>      of use to you. Hopefully you'll be able to find the exit.
+<ce>            of use to you. Now you need to find the exit.
 
 Message:  1012
 <ce>     You enter this settlement and greet the nearest townsperson.

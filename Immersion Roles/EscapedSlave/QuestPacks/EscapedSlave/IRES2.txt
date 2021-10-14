@@ -36,6 +36,14 @@ Message:  1014
  seek some form of employment, until I feel
  confident enough to travel elsewhere.
 
+Message:  1015
+%qdt:
+ I was attacked by slavers, who recognized
+ a rune in the shape of a small _trinket_
+ tattooed under my skin. I need to find out
+ more about this object. With any luck,
+ the townspeople will know something of use.
+
 QBN:
 
 Clock _delay_ 1.00:00 3.00:00
@@ -53,6 +61,7 @@ Person _priest_ faction Akatosh
 
 --	Quest start-up:
     log 1014 step 0
+    dialog link for item _trinket_
 
 _advance_ task:
     level 2 completed
@@ -88,6 +97,7 @@ _victory_ task:
     say 1012
     add dialog for item _trinket_
     place npc _priest_ at _temple_
+    log 1015 step 0
 
 _clickpriest_ task:
     clicked npc _priest_
