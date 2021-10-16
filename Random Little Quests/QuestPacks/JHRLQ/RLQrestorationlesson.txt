@@ -18,7 +18,7 @@ Message:  1010
 <ce>  of a priest of Mara. He and a few other traveling
 <ce>  acolytes are giving a class on Restoration magic
 <ce>  that would take the next few hours.
-<ce>  They ask 150 gold pieces per participant.
+<ce>  They ask 450 gold pieces per participant.
 <ce>  Will you join the lesson?
 <--->
 <ce>  Under the cover of the overcast sky above,
@@ -26,7 +26,7 @@ Message:  1010
 <ce>  of a priestess of Mara. She and a few other traveling
 <ce>  acolytes are giving a class on Restoration magic
 <ce>  that would take the next few hours.
-<ce>  They ask 150 gold pieces per participant.
+<ce>  They ask 450 gold pieces per participant.
 <ce>  Will you join the lesson?
 
 Message:  1011
@@ -35,7 +35,7 @@ Message:  1011
 <ce>  you have other places to be.
 
 Message:  1012
-<ce>  Unfortunately, you don't have 150 gold coins
+<ce>  Unfortunately, you don't have 450 gold coins
 <ce>  to hand in. The acolytes politely turn toward
 <ce>  the other attendees and begin the lesson.
 
@@ -51,7 +51,7 @@ _reject_ task:
 variable _pay_
 _payhim_ task:
     when _pay_ and not _given_
-    pay 150 money do _given_ otherwise do _nomoney_
+    pay 450 money do _given_ otherwise do _nomoney_
 
 _given_ task:
     train pc Restoration

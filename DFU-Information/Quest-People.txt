@@ -163,11 +163,11 @@
     Pale-looking woman in blue cloak (hooded woman)
 
     Default
-    No sprite (Nord; region-related?)
-    No sprite (Nord; region-related?)
+    No sprite (Nord)
+    No sprite (Nord)
 
     Dibella
-    Green-tunic FG guy (blond-bearded man)
+    Green-tunic FG entrance guy (blond-bearded man)
     Barkeep lady (comely maiden)
 
     Dragontail
@@ -177,6 +177,34 @@
     Dwynnen (note, name and gender are mismatched)
     Redguard woman with long beehive hair and all-yellow robe (queen)
     Breton with brown hair in green coat (king)
+
+    Ebonarm
+    No sprite (Breton)
+    No sprite (Breton)
+
+    Enchanters_of_Kynareth
+    Breton in grey jacket (man in a blue coat)
+    Quaker-looking blue dress woman (blue-cloaked woman)
+
+    Ephesus (redguard faces)
+    Breton with brown hair in green coat (king)
+    White-haired queen in yellow robe with polka-dot trim (white-haired queen)
+
+    Farrington
+    Breton in grey jacket (man in a blue coat)
+    Breton in grey jacket (man in a blue coat)
+
+    Fighter_Equippers
+    Blond bearded man with black tunic (blond aristocrat)
+    Knight brown-haired woman in gray outfit with trumpet (adventuresome woman)
+
+    Fighter_Questers
+    FG questor (man in a green coat)
+    Brisienna sprite (elegantly dressed lady)
+
+    Fighter_Trainers
+    Gray-haired man in gray tunic used in indoor covens (handome young man)???
+    Knight brown-haired woman in gray outfit with trumpet (adventuresome woman)
 
     The Merchants
     Redguard merchant with gray beard (well-to-do merchant)

@@ -1,0 +1,12 @@
+    "play sound Ancient_vampire_1 every 0 minutes 1 times" is quick enough at quest end.
+    Will play infinite times until task is cleared, no matter how many times you say
+
+    Ancient_vampire_1: footsteps
+    Ancient_vampire_2: THE GROWL
+    Ancient_vampire_3: Mechanical growl
+    Ancient_lich_1: footsteps
+    Ancient_lich_2: main howl
+    Ancient_lich_3: alternate howl
+    Centaur_1: trotting
+    Centaur_2: HA HA
+    Centaur_3: urgh

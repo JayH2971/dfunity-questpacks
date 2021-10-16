@@ -1,0 +1,42 @@
+Quest: RandomMonsterNoises
+DisplayName: Random Monster Noises
+-- Message panels
+QRC:
+
+QBN:
+
+Clock _timer_ 0:01 1.00:00
+
+--   Quest start-up:
+    start timer _timer_
+
+_timer_ task:
+    pick one of _dud_ _dud_ _dud_ _book1_ _dud_ _dud_ _dud_ _book2_ _dud_ _dud_ _dud_
+
+_book1_ task:
+    pick one of _vamp_ _skel_ _seducer_ _nymph_ _ghost_
+
+_book2_ task:
+    pick one of _wraith_ _atronach_ _spriggan_ _rat_
+
+_vamp_ task:
+    play sound nn
+    play sound A nn nn
+
+_skel_ task:
+
+_seducer_ task:
+
+_nymph_ task:
+
+_ghost_ task:
+
+_wraith_ task:
+
+_atronach_ task:
+
+_spriggan_ task:
+
+_rat_ task:
+
+variable _dud_
