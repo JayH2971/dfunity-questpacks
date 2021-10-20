@@ -14,7 +14,6 @@ JHTG002, GeneralPopulace, M, 1, 0, a quest to kidnap a child for ransom
 JHTG003, GeneralPopulace, M, 0, 0, a quest to take a land deed by force
 JHTG004, GeneralPopulace, M, 1, 0, a quest to steal a criminal confession
 JHTG005, GeneralPopulace, M, 0, 0, a quest to lift a guarded gem
-JHTG006, GeneralPopulace, M, 0, 0, a quest to steal research notes
 JHTG007, GeneralPopulace, M, 1, X, a quest to persuade a ransom target
 JHTG008, GeneralPopulace, M, 2, 0, a quest to steal a gem belonging to the ruling family
 JHTG009, GeneralPopulace, M, 8, 0, an artifact quest to take a bag to a client
