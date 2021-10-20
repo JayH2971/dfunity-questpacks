@@ -1,0 +1,48 @@
+-- Jay_H Knightly Orders quest pack list
+
+-- name:        filename of QRC txt file
+-- group:       guild group from FactionFile.GuildGroups enum, or social group from FactionFile.SocialGroups enum
+-- membership:  N=non-member, M=member, P=prospect, T=Akatosh, A=Arkay, D=Dibella, J=Julianos, K=Kynareth, R=Mara, S=Stendarr, Z=Zenithar
+-- minReq:      minimum requirement to be offered the quest: (val < 10) = guild rank / player level, or (val >= 10) = min reputation
+-- flag:        0 = nothing, X = adult/nudity, 1 = one time quest
+-- notes:
+
+schema: *name, group, membership, minReq, flag, notes
+
+JHKN001, KnightlyOrder, M, 1, 1, a quest to protect a dragonling in a dungeon
+JHKN002, KnightlyOrder, M, 0, 1, a quest to slay criminals who have taken a farm captive
+JHKN003, KnightlyOrder, M, 6, 1, a quest to slay a vampire or vampire ancient in a dungeon
+JHKN004, KnightlyOrder, M, 2, 1, a quest to defend a city from an invasion of knights
+JHKN005, KnightlyOrder, M, 0, 0, a quest to retrieve and deliver evidence of a murder
+JHKN006, KnightlyOrder, M, 3, 0, a quest to retrieve a weapon from a murderer in a dungeon
+JHKN007, KnightlyOrder, M, 6, 1, a quest to resolve a mysterious murder spree near a local shop
+JHKN008, KnightlyOrder, M, 3, 1, a quest to stop an assassination attempt by orcs in a palace
+JHKN009, KnightlyOrder, M, 2, 1, a quest to end a cult of necromancer giants
+JHKN010, KnightlyOrder, M, 0, 1, a quest to take a weapon to a fellow knight
+JHKN011, KnightlyOrder, M, 4, 1, a quest to find a missing knight
+JHKN012, KnightlyOrder, M, 0, 1, a quest to execute a local criminal
+JHKN013, KnightlyOrder, M, 1, 0, a quest to defend a townsperson from atronachs
+-JHKN014, KnightlyOrder, M, 2, 1,
+JHKN015, KnightlyOrder, M, 1, 1, a quest to stop the cause of attacking spriggans
+JHKN016, KnightlyOrder, M, 3, 1, a quest to negotiate peace with an orc
+JHKN017, KnightlyOrder, M, 1, 0, a quest to defend a graveyard from intruders
+-JHKN018, KnightlyOrder, M, 1, 0,
+-JHKN019, KnightlyOrder, M, 9, 1,
+JHKN020, KnightlyOrder, M, 1, 0, a quest to draw out an attacking band
+JHKN021, KnightlyOrder, M, 5, 0, a quest to apprehend a witch
+JHKN022, KnightlyOrder, M, 7, 0, a quest to free a sealed dungeon
+JHKN023, KnightlyOrder, M, 5, 1, a quest to arrest the Crow
+JHKN024, KnightlyOrder, M, 7, 0, a quest to stop a brainwasher
+JHKN025, KnightlyOrder, M, 1, 0, a quest to protect a rural shrine
+JHKN026, KnightlyOrder, M, 0, 0, a quest to rescue a child from a dungeon
+JHKN027, KnightlyOrder, M, 1, 0, a quest to slay countryside thieves
+JHKN028, KnightlyOrder, M, 3, 0, entry into JHKNA00
+JHKN028a, KnightlyOrder, P, 0, 0, a quest to find a necromancer in a city
+JHKN029, KnightlyOrder, M, 3, 0, entry into JHKNA01
+JHKN029a, KnightlyOrder, P, 0, 0, a quest to wipe out vigilantes in a city
+JHKN030, KnightlyOrder, M, 1, 0, a quest to pay a ransom
+JHKN031, KnightlyOrder, M, 0, 0, a quest to hire an exterminator
+JHKN032, KnightlyOrder, M, 6, X, a quest to slay a beguiling Seducer
+JHKN033, KnightlyOrder, M, 1, 1, a quest to help a hunter kill tigers
+JHKN034, KnightlyOrder, M, 3, 1, a quest to persuade a noble to prevent a marriage
+JHKN035, KnightlyOrder, M, 1, 1, a quest to find a missing youth in a dungeon

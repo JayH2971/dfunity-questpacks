@@ -1,0 +1,18 @@
+-- Jay_H Dark Brotherhood quest pack list
+
+-- name:        filename of QRC txt file
+-- group:       guild group from FactionFile.GuildGroups enum, or social group from FactionFile.SocialGroups enum
+-- membership:  N=non-member, M=member, P=prospect, T=Akatosh, A=Arkay, D=Dibella, J=Julianos, K=Kynareth, R=Mara, S=Stendarr, Z=Zenithar
+-- minReq:      minimum requirement to be offered the quest: (val < 10) = guild rank / player level, or (val >= 10) = min reputation
+-- flag:        0 = nothing, X = adult/nudity, 1 = one time quest
+-- notes:
+
+schema: *name, group, membership, minReq, flag, notes
+
+JHDB001, DarkBrotherHood, M, 0, 0, a quest to slay a hermit causing animal attacks
+JHDB002, DarkBrotherHood, M, 0, 1, a quest to slay a knight inside the same town
+JHDB003, DarkBrotherHood, M, 0, 1, a quest to slay a thief inside the same town
+JHDB004, DarkBrotherHood, M, 0, 1, a quest to slay a priest inside the same town
+JHDB005, DarkBrotherHood, M, 0, 1, a quest to slay a barbarian inside the same town
+JHDB007, DarkBrotherHood, M, 0, X, a quest to slay a mark over a bodyguard's objection
+JHDB011, DarkBrotherHood, M, 0, X, a quest to slay a Thieves Guild interloper

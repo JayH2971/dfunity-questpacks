@@ -7,7 +7,7 @@ QuestorOffer:  [1000]
 <ce>           Gotta love some poetic justice. The Mages Guild,
 <ce>            right? All high-and-mighty? They have no idea
 <ce>           what they're doing sometimes. Just got a request
-<ce>              about how they summoned a daedra and just
+<ce>                 about how they summoned a daedra and
 <ce>                 lost control of it. They came crying
 <ce>             to us to fix their problem. All I've got to
 <ce>                offer you is this _reward_, which I'll

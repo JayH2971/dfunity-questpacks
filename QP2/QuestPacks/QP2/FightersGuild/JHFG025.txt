@@ -1,5 +1,5 @@
 Quest: JHFG025
-DisplayName: Save the Mage
+DisplayName: Find the Mage
 -- Message panels
 QRC:
 

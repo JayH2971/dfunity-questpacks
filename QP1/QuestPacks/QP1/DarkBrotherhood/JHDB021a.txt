@@ -472,7 +472,6 @@ _clearclick_ task:
 _pcreward_ task:
     when _qgclicked_ and _slain_
     give pc _reward_
-    start quest JHDB021b
     end quest
 
 _timer_ task:

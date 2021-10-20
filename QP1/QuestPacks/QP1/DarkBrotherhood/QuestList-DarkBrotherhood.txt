@@ -9,17 +9,10 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHDB001, DarkBrotherHood, M, 0, 0, a quest to slay a hermit causing animal attacks
-JHDB002, DarkBrotherHood, M, 0, 1, a quest to slay a knight inside the same town
-JHDB003, DarkBrotherHood, M, 0, 1, a quest to slay a thief inside the same town
-JHDB004, DarkBrotherHood, M, 0, 1, a quest to slay a priest inside the same town
-JHDB005, DarkBrotherHood, M, 0, 1, a quest to slay a barbarian inside the same town
 JHDB006, DarkBrotherHood, M, 0, 0, a quest to kidnap a child for ransom
-JHDB007, DarkBrotherHood, M, 0, X, a quest to slay a mark over a bodyguard's objection
 JHDB008, DarkBrotherHood, M, 3, X, a quest to slay a teleported noble
 JHDB009, DarkBrotherHood, M, 0, 0, a quest to retrieve a ransomed child
 JHDB010, DarkBrotherHood, M, 1, 0, a quest to hijack a ransom plot
-JHDB011, DarkBrotherHood, M, 0, X, a quest to slay a Thieves Guild interloper
 JHDB012, DarkBrotherHood, M, 2, X, a quest to end a rival assassination organization
 JHDB013, DarkBrotherHood, M, 0, X, a quest to feed a mark to beasts
 JHDB014, DarkBrotherHood, M, 2, X, a quest to slay and deliver the body
