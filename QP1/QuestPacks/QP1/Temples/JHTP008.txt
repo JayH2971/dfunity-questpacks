@@ -22,7 +22,7 @@ AcceptQuest:  [1002]
 <ce>           recharge its power. You'll know when it's ready.
 <ce>            It gives off a distinct glow for a few minutes
 <ce>        before subsiding, which is all the signal you'll need.
-<ce>       If I can see you here within one months' time, you will
+<ce>       If I can see you here within one month's time, you will
 <ce>       have mended our gap and ensured the people of ___qgiver_
 <ce>           remain free of the exotic illnesses of Tamriel.
 <ce>                        Safe spelunking, %pct.

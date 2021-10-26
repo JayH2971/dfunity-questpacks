@@ -11,7 +11,6 @@ schema: *name, group, membership, minReq, flag, notes
 
 JHIM001, Commoners, N, 0, 1, a simple quiz for money
 JHIM002, Commoners, N, 0, 1, a simple quiz for money
-JHIM003, Commoners, N, 0, 0, a quest to end a haunting
 JHIM004, Commoners, N, 0, 1, a long-term quest to help a farm
 JHIM005, Commoners, N, 0, 0, a quest to solve a bar fight
 JHIM006, Commoners, N, 0, 0, a quest to break a grave curse

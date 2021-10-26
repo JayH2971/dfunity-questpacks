@@ -1,4 +1,4 @@
-Quest: JHFGA02
+Quest: JHFG001
 DisplayName: Domestic Vampire
 -- Message panels
 QRC:

@@ -172,10 +172,10 @@ _kill_ task:
     create foe _frenemy_ every 0 minutes 1 times with 100% success
     give item _reward_ to _frenemy_
     change foe _frenemy_ infighting true
+    make _reward_ permanent
 
 _kill2_ task:
     killed _frenemy_
-    make _reward_ permanent
 
 _qgclicked_ task:
     clicked npc _questgiver_

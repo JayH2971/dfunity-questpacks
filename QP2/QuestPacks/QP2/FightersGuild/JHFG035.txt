@@ -1,4 +1,4 @@
-Quest: JHFGA03
+Quest: JHFG035
 DisplayName: Clattering Bones
 -- Message panels
 QRC:

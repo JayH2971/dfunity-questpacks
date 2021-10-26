@@ -1,4 +1,4 @@
-Quest: JHFGA01
+Quest: JHFG034
 DisplayName: The Fires of Oblivion
 -- Message panels
 QRC:
