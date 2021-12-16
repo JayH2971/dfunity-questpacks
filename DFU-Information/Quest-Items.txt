@@ -1,116 +1,116 @@
     # Each item is shown by class, subclass
     # Use in quests as "Item _item_ item class # subclass #"
-    
-All defined items:
+
+    All defined items:
 
 --
-drug                   ,0,-1
-indulcet               ,0,0
-sursam                 ,0,1
-quaesto_vil            ,0,2
-aegrostat              ,0,3
-junk                   ,1,-1
-potion                 ,1,1
-decanter               ,1,2
-small_sack             ,1,4
-large_sack             ,1,5
-armor                  ,2,-1
-weapon                 ,3,-1
-magic_item             ,4,-1
-mens_clothing          ,6,-1
-straps                 ,6,0
-armbands               ,6,1
-kimono                 ,6,2
-boots                  ,6,8
-Formal_cloak           ,6,14
-book                   ,7,-1
-book0                  ,7,0
-book1                  ,7,1
-book2                  ,7,2
-book3                  ,7,3
-datura                 ,8,0
-wolfbane               ,8,1
-flamable               ,9,-1
-lantern                ,9,1
-letter                 ,9,5
-religious              ,10,-1
-common_symbol          ,10,2
-bell                   ,10,3
-talisman               ,10,5
-scarab                 ,10,9
-map                    ,11,-1
-womens_clothing        ,12,-1
-womens_robe            ,12,18
-painting               ,13,-1
-portrait               ,13,0
-Lysandus_death         ,13,0
-gem                    ,14,-1
-ruby                   ,14,0
-emerald                ,14,1
-sapphire               ,14,2
-diamond                ,14,3
-jade                   ,14,4
-turquoise              ,14,5
-malachite              ,14,6
-amber                  ,14,7
-small_plant            ,15,-1
-large_plant            ,16,-1
-yellow_flowers         ,16,3
-root_tendrils          ,16,4
-organs                 ,17,-1
-werewolf_blood         ,17,0
-wraith_essence         ,17,2
-snake_venom            ,17,7
-lich_dust              ,17,9
-basilisk_eye           ,17,11
-daedra_heart           ,17,12
-skin                   ,18,-1
-mummy_wrappings        ,18,3
-harpy_feather          ,18,4
-mythic                 ,19,-1
-tusk                   ,19,0
-horn                   ,19,2
-misc                   ,20,-1
-Holy_relic             ,20,0
-Pure_water             ,20,4
-Elixir_vitae           ,20,6
-element                ,21,-1
-lodestone              ,21,3
-gold_bar               ,21,9
-mineral                ,22,-1
-ivory                  ,22,0
-pearl                  ,22,1
-transport              ,23,-1
-deed                   ,24,-1
-trinket                ,25,-1
-amulet                 ,25,0
-bracer                 ,25,1
-ring                   ,25,2
-bracelet               ,25,3
-mark                   ,25,4
-torc                   ,25,5
-cloth_amulet           ,25,6
-wand                   ,25,7
-specials               ,26,-1
-telescope              ,26,0
-totem                  ,26,4
-dead_body              ,26,5
-mantella_crux          ,26,6
-finger                 ,26,7
-random_map             ,27,8
-random_recipe          ,27,4
-coins                  ,28,0
+    drug ,0,-1
+    indulcet ,0,0
+    sursam ,0,1
+    quaesto_vil ,0,2
+    aegrostat ,0,3
+    junk ,1,-1
+    potion ,1,1
+    decanter ,1,2
+    small_sack ,1,4
+    large_sack ,1,5
+    armor ,2,-1
+    weapon ,3,-1
+    magic_item ,4,-1
+    mens_clothing ,6,-1
+    straps ,6,0
+    armbands ,6,1
+    kimono ,6,2
+    boots ,6,8
+    Formal_cloak ,6,14
+    book ,7,-1
+    book0 ,7,0
+    book1 ,7,1
+    book2 ,7,2
+    book3 ,7,3
+    datura ,8,0
+    wolfbane ,8,1
+    flamable ,9,-1
+    lantern ,9,1
+    letter ,9,5
+    religious ,10,-1
+    common_symbol ,10,2
+    bell ,10,3
+    talisman ,10,5
+    scarab ,10,9
+    map ,11,-1
+    womens_clothing ,12,-1
+    womens_robe ,12,18
+    painting ,13,-1
+    portrait ,13,0
+    Lysandus_death ,13,0
+    gem ,14,-1
+    ruby ,14,0
+    emerald ,14,1
+    sapphire ,14,2
+    diamond ,14,3
+    jade ,14,4
+    turquoise ,14,5
+    malachite ,14,6
+    amber ,14,7
+    small_plant ,15,-1
+    large_plant ,16,-1
+    yellow_flowers ,16,3
+    root_tendrils ,16,4
+    organs ,17,-1
+    werewolf_blood ,17,0
+    wraith_essence ,17,2
+    snake_venom ,17,7
+    lich_dust ,17,9
+    basilisk_eye ,17,11
+    daedra_heart ,17,12
+    skin ,18,-1
+    mummy_wrappings ,18,3
+    harpy_feather ,18,4
+    mythic ,19,-1
+    tusk ,19,0
+    horn ,19,2
+    misc ,20,-1
+    Holy_relic ,20,0
+    Pure_water ,20,4
+    Elixir_vitae ,20,6
+    element ,21,-1
+    lodestone ,21,3
+    gold_bar ,21,9
+    mineral ,22,-1
+    ivory ,22,0
+    pearl ,22,1
+    transport ,23,-1
+    deed ,24,-1
+    trinket ,25,-1
+    amulet ,25,0
+    bracer ,25,1
+    ring ,25,2
+    bracelet ,25,3
+    mark ,25,4
+    torc ,25,5
+    cloth_amulet ,25,6
+    wand ,25,7
+    specials ,26,-1
+    telescope ,26,0
+    totem ,26,4
+    dead_body ,26,5
+    mantella_crux ,26,6
+    finger ,26,7
+    random_map ,27,8
+    random_recipe ,27,4
+    coins ,28,0
 
-All items:
+    All items:
 
-    Drug Class 0, -1
+    Drug Class
     Indulcet 0, 0
     Sursam 0, 1
     Quaesto_vil 0, 2
     Aegrostat 0, 3
     End of Drug Class
 
-    Junk Class 1, -1
+    Junk Class
     Glass Jar 1, 0
     Potion 1, 1
     Potion specific type: Item _p1_ potion key 221871 [recipe number]
@@ -125,7 +125,7 @@ All items:
     Large Chest 1, 10
     End of Junk Class
 
-    Armor Class 2, -1
+    Armor Class
     Leather Cuirass 2, 0 (ground icon is metal armor)
     Leather Gauntlets 2, 1 (ground sprite is bracer accessory)
     Leather Greaves 2, 2 (ground sprite is bracer accessory)
@@ -139,7 +139,7 @@ All items:
     Tower Shield 2, 10 (ground sprite is tall shield, material is leather)
     End of Armor Class
 
-    Weapon Class 3, -1
+    Weapon Class
     Iron Dagger 3, 0
     Iron Tanto 3, 1 (ground sprite is metal shield)
     Iron Staff 3, 2 (ground sprite is wooden staff)
@@ -161,7 +161,7 @@ All items:
     Arrow 3, 18
     End of Weapon Class
 
-    Magic Item 4, -1 (items are random, effect is fixed)
+    Magic_Item (items are random, effect is fixed)
     CWU Silence 4, 0
     CWH Wisdom 4, 1
     CWU Wildfire 4, 2
@@ -202,7 +202,7 @@ All items:
 
     5 is ancient artifact class, they're all defined as their own items
 
-    Men's Clothing Class 6, -1 (all are blue-dyed, ground sprites are all clothing piles)
+    Men's Clothing Class (all are blue-dyed, ground sprites are all clothing piles)
     Straps 6, 0
     Armbands 6, 1
     Kimono 6, 2
@@ -246,14 +246,14 @@ All items:
     Champion Straps 6, 40 (crossed suspenders)
     End of Men's Clothing Class
 
-    Book Class 7, -1
+    Book Class
     book0 7, 0 (common books)
     book1 7, 1 (rarer books? not sure)
     book2 7, 2 (common books)
     book3 7, 3 (rarer books? not sure)
     Book Class appears to be limitless, subclass extends to 900 for no reason
 
-    Furniture Class 8, -1 (this gives no valid result when called. Only pillows have a visible ground or inventory sprite)
+    Furniture Class (this gives no valid result when called. Only pillows have a visible ground or inventory sprite)
     Plain Single Bed 8, 0 (defined as datura)
     Fancy Single Bed 8, 1 (defined as wolfbane)
     Plain Double Bed 8, 2
@@ -285,7 +285,7 @@ All items:
     Small Skins 8, 28
     End of Furniture Class
 
-    Flamable Class 9, -1
+    Flamable Class
     Torch 9, 0 (tall torch with skull, cannot be clicked on from ground)
     Lantern 9, 1
     Bandage 9, 2
@@ -294,7 +294,7 @@ All items:
     Parchment 9, 5 (defined as letter)
     End of Fuel Class
 
-    Religious Class 10, -1
+    Religious Class
     Prayer Beads 10, 0
     Rare Symbol 10, 1
     Common Symbol 10, 2
@@ -310,11 +310,11 @@ All items:
     Holy Tome 10, 12
     End of Religious Class
 
-    Map Class 11, -1
+    Map Class
     Map 11, 0
     End of Map Class
 
-    womens_clothing 12, -1 *******
+    womens_clothing
     Brassiere 12, 0 (shoulder straps)
     Formal Brassiere 12, 1 (shoulder wraps and golden lining)
     Peasant Blouse 12, 2 (off the shoulder, bare neck, much arm)
@@ -352,11 +352,11 @@ All items:
     Vest 12, 34 (green with green straps in front)
     End of womens_clothing class
 
-    Painting Class 13, -1
+    Painting Class
     Portrait 13, 0 (spawns a random painting) (defined as Lysandus_death)
     End of Painting Class
 
-    Gem Class 14, -1
+    Gem Class
     Ruby 14, 0
     Emerald 14, 1
     Sapphire 14, 2
@@ -367,7 +367,7 @@ All items:
     Amber 14, 7
     End of Gem Class
 
-    Small_plant Class 15, -1
+    Small_plant Class
     Twigs 15, 0
     Green Leaves 15, 1
     Red Flowers 15, 2
@@ -385,7 +385,7 @@ All items:
     Golden Poppy 15, 14
     End of Small Plant Class
 
-    Large_plant Class 16, -1
+    Large_plant Class
     Twigs 16, 0
     Green Leaves 16, 1
     Red Flowers 16, 2
@@ -407,7 +407,7 @@ All items:
     Cactus 16, 18
     End of Medicinal Class
 
-    Organs Class 17, -1
+    Organs Class
     Werewolf Blood 17, 0
     Fairy Dragon's Scales 17, 1
     Wraith Essence 17, 2
@@ -425,7 +425,7 @@ All items:
     Orc's Blood 17, 14
     End of Organs Class
 
-    Skin Class 18, -1
+    Skin Class
     Dragon's Scales 18, 0
     Giant Scorpion Stinger 18, 1
     Small Scorpion Stinger 18, 2
@@ -433,13 +433,13 @@ All items:
     Harpy Feather 18, 4
     End of Skin Class
 
-    Mythic Class 19, -1
+    Mythic Class
     Wereboar's Tusk 19, 0
     Nymph Hair 19, 1
     Unicorn Horn 19, 2
     End of Mythic Class
 
-    misc Class 20, -1
+    misc Class
     Holy_relic 20, 0
     Big tooth 20, 1
     Medium tooth 20, 2
@@ -451,7 +451,7 @@ All items:
     Ichor 20, 8
     End of misc Class
 
-    element Class 21, -1
+    element Class
     mercury 21, 0
     Tin 21, 1
     Brass 21, 2
@@ -465,12 +465,12 @@ All items:
     platinum 21, 10
     End of element class
 
-    mineral 22, -1
+    mineral
     ivory 22, 0
     pearl 22, 1
     End of mineral class
 
-    transport 23, -1
+    transport
     Small Cart 23, 0
     Horse 23, 1
     Rowboat (useless) 23, 2
@@ -479,13 +479,13 @@ All items:
     Large Galley (useless) 23, 5 (worth 1,500,000 gold and weighs hundreds of kilos)
     End of Transport class
 
-    deed 24, -1
+    deed
     Ruby 24, 0
     Emerald 24, 1
     Sapphire 24, 2
     End of Deed Class
 
-    trinket Class 25, -1
+    trinket Class
     Amulet 25, 0
     Bracer 25, 1
     Ring 25, 2
@@ -496,7 +496,7 @@ All items:
     Wand 25, 7
     End of trinket Class
 
-    specials Class 26, -1
+    specials Class
     Telescope 26, 0
     Scales 26, 1 (ie money scales, balance)
     Globe 26, 2
@@ -507,7 +507,7 @@ All items:
     Finger 26, 7
     End of Quest Items Class
 
-    Adventuring Class (-1 value does not work in this class)
+    Adventuring Class
     Spellbook 27, 0
     Soul Trap 27, 1 (aka soul gem)
     Letter of Credit 27, 2 (worth zero gold)

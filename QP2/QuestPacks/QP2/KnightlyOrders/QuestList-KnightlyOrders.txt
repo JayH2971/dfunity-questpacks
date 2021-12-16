@@ -13,4 +13,6 @@ JHKN003, KnightlyOrder, M, 6, 1, a quest to slay a vampire or vampire ancient in
 JHKN009, KnightlyOrder, M, 2, 1, a quest to end a cult of necromancer giants
 JHKN010, KnightlyOrder, M, 0, 1, a quest to take a weapon to a fellow knight
 JHKN012, KnightlyOrder, M, 0, 1, a quest to execute a local criminal
-JHKN025, KnightlyOrder, M, 1, 0, a quest to protect a rural shrine
+JHKN025, KnightlyOrder, M, 1, 1, a quest to protect a rural shrine
+JHKN036, KnightlyOrder, M, 0, 1, a quest to slay a pair of centaurs
+JHKN036, KnightlyOrder, M, 1, 1, a quest to slay an ice atronach

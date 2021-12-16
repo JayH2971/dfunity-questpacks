@@ -1,0 +1,107 @@
+Quest: JHKN037
+DisplayName: Child of Ice
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>               Ah, this may suit you. An ice atronach,
+<ce>           a golem-like creature, is attacking residents of
+<ce>       a religious site in %crn. We assured them that we would
+<ce>       send aid when possible. I hope you can fulfill our duty.
+
+RefuseQuest:  [1001]
+<ce>        Your honor will be given to a far less capable knight.
+<ce>                   This task is mindlessly simple.
+
+AcceptQuest:  [1002]
+<ce>            Yes! A righteous answer in a righteous cause.
+<ce>         The site is called ___place_. Go there and find the
+<ce>        creature in the streets somewhere. Grant it no mercy,
+<ce>       for it does not live; it is no more than magicka within
+<ce>           a frame of ice. Return here within =timer_ days,
+<ce>                and we will recognize your good work.
+
+QuestFail:  [1003]
+<ce>                _qgiver_ expected word of your slaying
+<ce>                         the atronach by now.
+
+QuestComplete:  [1004]
+<ce>            Fine work! You have saved lives by undertaking
+<ce>        this journey. Though this weapon may be a poor reward,
+<ce>               it is a symbol of our esteem toward you.
+
+Message:  1010
+<ce>           Somewhere in these streets, the atronach roams.
+<ce>              Finding it will be a mere matter of time.
+
+Message:  1011
+<ce>            A harsh yell nearby alerts you to a struggle.
+<ce>                   People flee from some assailant.
+<ce>             It takes you little effort to recognize that
+<ce>                      the atronach has appeared.
+
+Message:  1012
+<ce>         The residents of this community need fear no longer.
+<ce>               Where the atronach came from eludes you,
+<ce>           but you trust that question will be answered by
+<ce>                     the appropriate authorities.
+
+Message:  1030
+%qdt:
+ _qgiver_ of __qgiver_ has
+ sent me to a religious community
+ called ___place_ to destroy
+ an ice atronach that attacks its residents.
+ I am to return to ___qgiver_
+ within =timer_ days.
+
+QBN:
+Person _qgiver_ group Questor male
+
+Place _place_ remote templehome
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _delay_ 0:02 0:06
+
+Foe _enemy_ is Ice_atronach
+
+Item _reward_ weapon
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    pc at _place_ do _spawn_
+
+_spawn_ task:
+    start timer _delay_
+    say 1010
+
+_nospawn_ task:
+    when not _spawn_
+    stop timer _delay_
+
+_delay_ task:
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+    change foe _enemy_ infighting true
+    say 1011
+
+_slain_ task:
+    killed _enemy_
+    say 1012
+
+_timer_ task:
+    say 1003
+    end quest
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
+
+_pcreward_ task:
+    when _qgclicked_ and _slain_
+    give pc _reward_
+    legal repute +4
+    end quest
