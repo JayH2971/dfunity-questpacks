@@ -1,0 +1,3 @@
+schema: *name, group, membership, minReq, flag, notes
+
+FunSurpriseMod, InitAtGameStart, P, 0, 0, begins the Fun Surprise Mod

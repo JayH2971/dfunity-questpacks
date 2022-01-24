@@ -1,0 +1,58 @@
+Quest: FunSurpriseMod
+DisplayName: Fun Surprise Mod
+-- Message panels
+QRC:
+
+QBN:
+
+Clock _timer_ 9.00:00 14.00:00
+
+--   Quest start-up:
+    start timer _timer_
+
+_timer_ task:
+    start quest FunSurpriseMod
+    pick one of _book1_ _book2_
+    end quest
+
+_book1_ task:
+    pick one of _vamp_ _vamp2_ _skel_ _seducer_ _nymph_ _ghost_ _daed_
+
+_book2_ task:
+    pick one of _wraith_ _spriggan_ _zombie_ _giant_ _wolf_
+
+_vamp_ task:
+    play sound Ancient_vampire_2 every 0 minutes 1 times
+
+_vamp2_ task:
+    play sound Vampire_2 every 0 minutes 1 times
+
+_skel_ task:
+    play sound Skeletal_warrior_2 every 0 minutes 1 times
+
+_seducer_ task:
+    play sound Daedra_seducer_2 every 0 minutes 1 times
+
+_nymph_ task:
+    play sound Nymph_2 every 0 minutes 1 times
+
+_ghost_ task:
+    play sound Ghost_2 every 0 minutes 1 times
+
+_daed_ task:
+    play sound Daedra_lord_2 every 0 minutes 1 times
+
+_wraith_ task:
+    play sound Wraith_2 every 0 minutes 1 times
+
+_spriggan_ task:
+    play sound Spriggan_2 every 0 minutes 1 times
+
+_zombie_ task:
+    play sound Zombie_2 every 0 minutes 1 times
+
+_giant_ task:
+    play sound Giant_2 every 0 minutes 1 times
+
+_wolf_ task:
+    play sound Werewolf_2 every 0 minutes 1 times
