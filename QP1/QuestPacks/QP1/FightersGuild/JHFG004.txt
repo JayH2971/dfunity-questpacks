@@ -35,8 +35,8 @@ QuestFail:  [1003]
 <ce>                          ERROR 1003 JHFG004
 
 QuestComplete:  [1004]
-<ce>                 The sense of safety you brought was
-<ce>                 well worth the payment, %ra. This is
+<ce>                  You have protected our house, %ra,
+<ce>                    and earned your gold. This is
 <ce>                   what they said belonged to you.
 
 QuestorPostFailure:  [1009]
