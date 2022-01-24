@@ -161,7 +161,7 @@ Place _res_ remote house
 Place _escape_ remote poorhome
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
-Clock _death_ 00:05 00:07
+Clock _death_ 00:03 00:05
 Clock _delay_ 00:01
 Clock _mtimer_ 00:05
 Clock _final_ 12:00
@@ -184,6 +184,9 @@ _begin_ task:
 	say 1020
 	drop _escort_ face
 	create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_inj_ task:
+	injured _enemy_
 	start timer _death_
 
 _infight_ task:
