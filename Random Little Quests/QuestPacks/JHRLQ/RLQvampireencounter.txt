@@ -1,0 +1,52 @@
+Quest: RLQvampireencounter
+DisplayName: Random Little Quest Vampire Encounter
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>           A hissing sound nearby makes your ears perk up.
+<ce>      A feral vampire has come to the town, seeking sustenance.
+<ce>        You could fight her if you felt brave. Do you attack?
+
+Message:  1011
+<ce>            You call for the vampire's attention,
+<ce>                and she gladly closes in on you.
+
+Message:  1012
+<ce>           The vampire falls, and her belongings are yours
+<ce>          to take. A member of the city watch approaches and
+<ce>   gives you thanks and praise for keeping the town safe.
+
+Message:  1013
+<ce>     You keep out of the vampire's sight. As she starts searching
+<ce>     for prey, she encounters multiple members of the town guard,
+<ce>   who destroy her with ease.
+
+QBN:
+
+Clock _clock_ 1:00
+
+Foe _monster_ is Vampire
+
+--	Quest start-up:
+    prompt 1010 yes _bat_ no _ignore_
+
+_ignore_ task:
+    say 1013
+    end quest
+
+_bat_ task:
+    say 1011
+    create foe _monster_ every 0 minutes 1 times with 100% success
+    change foe _monster_ infighting true
+    start timer _clock_
+
+_gold_ task:
+    killed _monster_
+    say 1012
+    legal repute +4
+    end quest
+
+_clock_ task:
+    remove foe _monster_
+    end quest

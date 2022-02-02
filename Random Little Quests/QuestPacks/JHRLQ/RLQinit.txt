@@ -124,7 +124,7 @@ _sunnynight_ task:
     start task _stopevents_
 
 _sunnynightevents_ task:
-    pick one of _pickpocket_ _nightguard_ _nightrat_ _nightflavor_
+    pick one of _pickpocket_ _nightguard_ _nightrat_ _nightflavor_ _vampireencounter_
 
 _pickpocket_ task:
     start quest RLQpickpocket
@@ -132,13 +132,16 @@ _pickpocket_ task:
 _nightflavor_ task:
     start quest RLQnightflavor
 
+_vampireencounter_ task:
+    start quest RLQvampireencounter
+
 _cloudyday_ task:
     when _daylight_ and _clouded_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _cloudydayevents_ _dud_ _dud_
     start task _stopevents_
 
 _cloudydayevents_ task:
-    pick one of _changebandage_ _loanpick_ _angrypick_ _buyrandomweapon_
+    pick one of _changebandage_ _loanpick_ _angrypick_ _buyrandomweapon_ _orcencounter_
 
 _changebandage_ task:
     start quest RLQchangebandage
@@ -148,6 +151,9 @@ _angrypick_ task:
 
 _buyrandomweapon_ task:
     start quest RLQbuyrandomweapon
+
+_orcencounter_ task:
+    start quest RLQorcencounter
 
 _overcastday_ task:
     when _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
@@ -280,7 +286,7 @@ _snowyday_ task:
     start task _stopevents_
 
 _snowydayevents_ task:
-    pick one of _axechop_ _snowmap_ _paysnowtaxes_ _climbingtraining_
+    pick one of _axechop_ _snowmap_ _paysnowtaxes_ _climbingtraining_ _giantencounter_
 
 _climbingtraining_ task:
     start quest RLQtrainclimbing
@@ -305,6 +311,9 @@ _snowtaxes2_ task:
 
 _snowtaxes3_ task:
     start quest RLQsnowtaxes3
+
+_giantencounter_ task:
+    start quest RLQgiantencounter
 
 _daylight_ task:
     daily from 6:00 to 18:00

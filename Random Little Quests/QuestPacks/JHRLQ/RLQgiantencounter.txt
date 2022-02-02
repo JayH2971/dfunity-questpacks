@@ -1,0 +1,55 @@
+Quest: RLQgiantencounter
+DisplayName: Random Little Quest Giant Encounter
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>                Screams nearby alert you to trouble.
+<ce>           A giant has lumbered into town, hungry from the
+<ce>              scarcity of winter and unwilling to listen
+<ce>         to reason. It has come for food -- animal or human.
+<ce>                   Do you attempt to stop it?
+
+Message:  1011
+<ce>                With the loudest shout you can muster,
+<ce>                   you gain the giant's attention.
+<ce>            The townspeople stand back to watch your duel
+<ce>                          with the creature.
+
+Message:  1012
+<ce>       The townspeople roar with delight as the monster falls.
+<ce>         They leave you to take its belongings for your prize.
+
+Message:  1013
+<ce>         You turn away and listen as the town guard surround
+<ce>          the creature, hacking it to bits. They soon share
+<ce>        the giant's belongings among one another as reward.
+
+QBN:
+
+Clock _clock_ 1:00
+
+Foe _monster_ is Giant
+
+--	Quest start-up:
+    prompt 1010 yes _bat_ no _ignore_
+
+_ignore_ task:
+    say 1013
+    end quest
+
+_bat_ task:
+    say 1011
+    create foe _monster_ every 0 minutes 1 times with 100% success
+    change foe _monster_ infighting true
+    start timer _clock_
+
+_gold_ task:
+    killed _monster_
+    say 1012
+    legal repute +4
+    end quest
+
+_clock_ task:
+    remove foe _monster_
+    end quest
