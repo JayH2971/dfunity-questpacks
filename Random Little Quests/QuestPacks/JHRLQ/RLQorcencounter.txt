@@ -1,0 +1,76 @@
+Quest: RLQorcencounter
+DisplayName: Random Little Quest An Orc Encounter
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>        The people nearby roar victoriously as the orc falls.
+<ce>  No one appears interested in taking his possessions.
+
+Message:  1010
+<ce>    You notice a curious sight nearby. An orc, bundled up in human
+<ce> clothing, is attempting to go about the town as an ordinary person.
+<ce>  He doesn't appear to be doing any harm as yet, but you don't
+<ce>         know his intentions. Do you call out for help (yes),
+<ce>        attack him yourself (no), or leave him alone (cancel)?
+
+Message:  1011
+<ce>      The orc, spooked by your advance, runs away and manages to
+<ce>           escape. Hopefully he learned his lesson, anyway.
+
+Message:  1012
+<ce>          Your shouting attracts the attention of two other
+<ce>                 adventurers nearby. They ready arms.
+<ce>
+<ce>                 "No Orcs allowed! Strike him down!"
+<ce>
+<ce>      The orc disposes of the disguise and readies a weapon.
+
+Message:  1013
+<ce>           This is no concern of yours. If this orc really
+<ce>          is a threat, the city watch will take care of him.
+
+QBN:
+
+Clock _clock_ 1:00
+
+Foe _monster_ is Orc
+Foe _ally1_ is Archer
+Foe _ally2_ is Ranger
+
+--	Quest start-up:
+    promptmulti 1010 3:yes _group_ 4:no _solo_ 2:cancel _release_
+
+_release_ task:
+    say 1013
+    end quest
+
+_group_ task:
+    say 1012
+    create foe _monster_ every 0 minutes 1 times with 100% success
+    change foe _monster_ infighting true
+    start timer _clock_
+    create foe _ally1_ every 0 minutes 1 times with 100% success
+    change foe _ally1_ infighting true
+    change foe _ally1_ team 1
+    create foe _ally2_ every 0 minutes 1 times with 100% success
+    change foe _ally2_ infighting true
+    change foe _ally2_ team 1
+
+_solo_ task:
+    say 1011
+    end quest
+
+_gold_ task:
+    killed _monster_
+    give pc nothing
+    remove foe _ally1_
+    remove foe _ally2_
+    legal repute +2
+    end quest
+
+_clock_ task:
+    remove foe _monster_
+    remove foe _ally1_
+    remove foe _ally2_
+    end quest

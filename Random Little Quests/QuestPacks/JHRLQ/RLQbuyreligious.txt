@@ -1,0 +1,59 @@
+Quest: RLQbuyreligious
+DisplayName: Random Little Quest Buy a Religious Trinket
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>              You pay the gold and receive the _weapon_,
+<ce>        and the merchant heads off in search of other clientele.
+
+Message:  1011
+<ce>          A priest stands under the shining sun, calling out
+<ce>              sales of trinkets from the Temple of %god.
+<ce>               Buyers quickly take up the merchandise.
+<ce>
+<ce>             Of the few remaining objects, you notice one
+<ce>           _weapon_ in good shape. The price tag on it says
+<ce>                      150 gold. Will you buy it?
+                                     <--->
+<ce>                 A priest calls out, "Clearance sale!
+<ce>     The Temple of %god has no further need for these goods!"
+<ce> He stands behind a pile of rapidly diminishing trinkets.
+<ce>
+<ce>             Of the few remaining objects, you notice one
+<ce>         _weapon_ in good shape. The price tag on it says
+<ce>                150 gold. Will you buy it?
+
+Message:  1012
+<ce>              The sale quickly ends, as the townspeople
+<ce>          take up all they can before other buyers appear.
+
+Message:  1014
+<ce>         You search your belongings but do not find 150 gold.
+<ce>         Another townsperson snatches up the _weapon_, and the
+<ce>                  priest soon departs.
+
+QBN:
+
+Item _weapon_ religious
+
+--	Quest start-up:
+    prompt 1011 yes _pay_ no _reject_
+
+_reject_ task:
+    say 1012
+    end quest
+
+variable _pay_
+
+_payhim_ task:
+    when _pay_ and not _given_
+    pay 150 money do _given_ otherwise do _nomoney_
+
+_nomoney_ task:
+    say 1014
+    end quest
+
+_given_ task:
+    give pc _weapon_
+    end quest

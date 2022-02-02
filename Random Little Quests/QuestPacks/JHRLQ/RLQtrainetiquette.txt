@@ -1,4 +1,4 @@
-Quest: RLQetiquettetraining
+Quest: RLQtrainetiquette
 DisplayName: Random Little Quest Etiquette Training
 -- Message panels
 QRC:

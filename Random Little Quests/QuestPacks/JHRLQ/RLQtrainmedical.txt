@@ -1,4 +1,4 @@
-Quest: RLQmedicaltraining
+Quest: RLQtrainmedical
 DisplayName: Random Little Quest Medical Training
 -- Message panels
 QRC:
@@ -15,10 +15,9 @@ Message:  1010
 <ce>              Under the shining sun, a group of healers
 <ce>          from the Temple of %god adjure the people to learn
 <ce>           basic first aid, to solve small problems without
-<ce>         requiring the intervention of the temple's healers.
-<ce>      To cover their traveling costs, they offer a demonstrative
-<ce>         clinic and charge 200 gold pieces per head to teach
-<ce>            important techniques for mending basic wounds.
+<ce>         requiring the temple's healers.
+<ce>      They offer a demonstrative clinic, charging
+<ce>        200 gold pieces per head to teach mending basic wounds.
 <ce>                The full lesson will take three hours.
 <ce>                   Do you apply to learn from them?
 

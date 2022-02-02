@@ -1,0 +1,55 @@
+Quest: RLQbuygem
+DisplayName: Random Little Quest Buy a Gem
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>              You pay the gold and receive the _weapon_,
+<ce>        and the merchant heads off in search of other clientele.
+
+Message:  1011
+<ce>          Under the overcast sky, you notice a hooded figure
+<ce>       proffering gems to passers by. You catch his attention.
+<ce>
+<ce>       "Got this _weapon_ here for sale. 250 gold and it's yours."
+<ce>
+<ce>          The gem is clearly not enchanted. Will you buy it?
+<--->
+<ce>          Under the overcast sky, you notice a hooded figure
+<ce>       proffering gems to passers by. You catch her attention.
+<ce>
+<ce>       "Got this _weapon_ here for sale. 250 gold and it's yours."
+<ce>
+<ce>          The gem is clearly not enchanted. Will you buy it?
+
+Message:  1012
+<ce>            The vendor moves on to find paying clients.
+
+Message:  1014
+<ce>         You search your belongings but do not find 250 gold.
+<ce>         The merchant heads off in search of other clientele.
+
+QBN:
+
+Item _weapon_ gem
+
+--	Quest start-up:
+    prompt 1011 yes _pay_ no _reject_
+
+_reject_ task:
+    say 1012
+    end quest
+
+variable _pay_
+
+_payhim_ task:
+    when _pay_ and not _given_
+    pay 250 money do _given_ otherwise do _nomoney_
+
+_nomoney_ task:
+    say 1014
+    end quest
+
+_given_ task:
+    give pc _weapon_
+    end quest
