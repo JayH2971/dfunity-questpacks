@@ -1,0 +1,55 @@
+Quest: RLQfireatronach
+DisplayName: Random Little Quest Fire Atronach
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>               Shouts for help sound nearby. It seems a
+<ce>           fire atronach, feeding off the sun's warm rays,
+<ce>        has lost control and is attacking townspeople.
+<ce>                    Will you try to stop it?
+
+
+Message:  1011
+<ce>                You call for the atronach's attention.
+<ce>              It shambles toward you, ready for battle.
+<ce>             Nearby villagers stand back and watch the
+<ce>                            duel with awe.
+
+Message:  1012
+<ce>            You hear cheering and applause as you destroy
+<ce>        the creature. A few people nearby, including a member
+<ce>  of the city watch, thank you for your help.
+
+Message:  1013
+<ce>          The city guard hurry to strike the creature down,
+<ce>                and the townspeople resume their activities.
+
+QBN:
+
+Clock _clock_ 1:00
+
+Foe _monster_ is Fire_atronach
+
+--	Quest start-up:
+    prompt 1010 yes _bat_ no _ignore_
+
+_ignore_ task:
+    say 1013
+    end quest
+
+_bat_ task:
+    say 1011
+    create foe _monster_ every 0 minutes 1 times with 100% success
+    change foe _monster_ infighting true
+    start timer _clock_
+
+_gold_ task:
+    killed _monster_
+    say 1012
+    legal repute +4
+    end quest
+
+_clock_ task:
+    remove foe _monster_
+    end quest
