@@ -50,6 +50,13 @@ Message:  1011
 <ce>           The client probably won't be messing around with
 <ce>               necromancy any more after this incident.
 
+Message:  1012
+<ce>                  (ATTRIBUTE CHECK FAILED: AGILITY)
+<ce>
+<ce>         One of the dangers of fighting multiple foes is that
+<ce>    you risk being stabbed in the back. With unique intelligence,
+<ce>      one of the skeletons finds an opportunity to do just that.
+
 QBN:
 Item _reward_ gold range 200 to 250
 
@@ -68,6 +75,18 @@ Foe _enemy2_ is Skeletal_warrior
     place foe _enemy1_ at _place_
     change foe _enemy1_ infighting true
     pc at _place_ do _inside_
+
+_will_ task:
+    when attribute Agility is at least 35
+
+_inj_ task:
+    injured _enemy1_
+    injured _enemy2_
+
+_badwill_ task:
+    when _inj_ and not _will_
+    say 1012
+    reduce player health by 30
 
 _inside_ task:
     start task _spawner_

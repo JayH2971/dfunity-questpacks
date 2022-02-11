@@ -68,6 +68,17 @@ Message:  1010
 <ce>                    be honest. I agree, we should
 <ce>                    find a way out of this place.
 
+Message:  1011
+<ce>                    (ATTRIBUTE CHECK PASSED: LUCK)
+<ce>
+<ce>            As luck would have it, the scholar is near the
+<ce>                entrance to ___dung_. _scholar_ says,
+<ce>
+<ce>                  "Are you from the Fighters Guild?
+<ce>           Oh my! I just now found the exit and wondered if
+<ce>           I had the courage to make it on my own. Please,
+<ce>                     lead the way to ___qgiver_!"
+
 Message:  1030
 %qdt:
  __qgiver_ of ___qgiver_
@@ -93,6 +104,26 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 	log 1030 step 0
 	place npc _scholar_ at _dung_
 	reveal _dung_
+	pc at _dung_ do _inside_
+
+_luck_ task:
+	when attribute Luck is at least 85
+	pick one of _lucky_ _unlucky_ _unlucky_
+
+variable _unlucky_
+variable _lucky_
+
+variable _inside_
+
+_luckywin_ task:
+	when _inside_ and _lucky_
+	start task _easywin_
+
+_easywin_ task:
+	say 1011
+	hide npc _scholar_
+	add _scholar_ face
+	change repute with _scholar_ by +2
 
 _success_ task:
 	clicked npc _scholar_
@@ -106,11 +137,16 @@ _pcgetsgold_ task:
 	give pc _reward_
 	end quest
 
+_pcgetsgold2_ task:
+	when _qgclicked_ and _easywin_
+	give pc _reward_
+	end quest
+
 _qgclicked_ task:
 	clicked npc _qgiver_
 
 _clearclick_ task:
-	when _qgclicked_ and not _success_
+	when _qgclicked_ and not _success_ and not _easywin_
 	say 1003
 	clear _qgclicked_ _clearclick_
 

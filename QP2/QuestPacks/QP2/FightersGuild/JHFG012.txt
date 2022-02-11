@@ -36,6 +36,14 @@ QuestComplete:  [1004]
 RumorsDuringQuest:  [1005]
 The Fighters Guild failed to save some kid from an abandoned prison. Shame on them.
 
+Message:  1010
+<ce>                  (ATTRIBUTE CHECK FAILED: AGILITY)
+<ce>
+<ce>             Your drug-addled foe is in a frenzy, willing
+<ce>          to try anything. Up comes a swift roundhouse kick
+<ce>      to your face, which anyone more agile might have avoided.
+<ce>                           It hurts a lot.
+
 Message:  1022
 <ce>                      Fool! How dare you attack
 <ce>                     a member of the Mages Guild!
@@ -80,6 +88,14 @@ Foe _mage_ is Spellsword
 _ipr_ task:
 	injured _mage_
 	say 1022
+
+_agi_ task:
+	when attribute Agility is at least 35
+
+_badagi_ task:
+	when _ipr_ and not _agi_
+	say 1010
+	reduce player health by 30
 
 _slain_ task:
 	killed 1 _mage_

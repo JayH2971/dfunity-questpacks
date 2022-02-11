@@ -46,6 +46,14 @@ Message:  1011
 <ce>                      "No!" The vampire shrieks
 <ce>                    before crumpling to the floor.
 
+Message:  1012
+<ce>                 (ATTRIBUTE CHECK FAILED: WILLPOWER)
+<ce>
+<ce>           The vampire raises her arms and shrieks, casting
+<ce>       a spell in self-defense. It only stuns you for a moment,
+<ce>    but it's enough for her to invoke multiple empowering spells.
+<ce>                     This fight just got harder.
+
 QBN:
 Item _reward_ gold range 300 to 400
 
@@ -62,6 +70,21 @@ Foe _enemy_ is Vampire
 	log 1010 step 0
 	place foe _enemy_ at _place_
 	change foe _enemy_ infighting true
+
+_will_ task:
+	when attribute Willpower is at least 35
+
+_inj_ task:
+	injured _enemy_
+
+_failwill_ task:
+	when _inj_ and not _will_
+	say 1012
+	cast Heal spell on _enemy_
+	cast Feet_of_Notorgo spell on _enemy_
+	cast Orc_Strength spell on _enemy_
+	cast Shield spell on _enemy_
+	cast Shalidor's_Mirror spell on _enemy_
 
 _slain_ task:
 	killed _enemy_

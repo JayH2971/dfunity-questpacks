@@ -40,6 +40,22 @@ Message:  1011
 <ce>                  fame among the underworld as if my
 <ce>                   life depended on it. Thank you!
 
+Message:  1012
+<ce>                 (ATTRIBUTE CHECK FAILED: ENDURANCE)
+<ce>
+<ce>           As soon as you enter, you step on a false tile.
+<ce>            A disgusting gas begins to shoot into the air.
+<ce>       You don't seem to suffer any immediate effects from it,
+<ce>            but you wonder what it might have done to you.
+
+Message:  1013
+<ce>                 (ATTRIBUTE CHECK PASSED: ENDURANCE)
+<ce>
+<ce>           As soon as you enter, you step on a false tile.
+<ce>            A disgusting gas begins to shoot into the air.
+<ce>             Your system is strong enough to fight it off
+<ce>        until you reach cleaner air, and you emerge unscathed.
+
 Message:  1020
 <ce>                        Your quarry is slain.
 
@@ -136,7 +152,7 @@ Message:  1065
 
 QBN:
 Item _reward_ gold
-Item _survivegold_ gold range 4301 to 5600
+Item _survivegold_ gold range 2301 to 2600
 Item _body_ dead_body
 Item _magic_ magic_item
 Item _trink_ ring
@@ -165,6 +181,18 @@ Foe _assist_ is Archer
 	pick one of _E.01_ _E.02_ _E.03_ _E.04_ _E.05_ _E.06_
 	reveal _dungeon_
 	pc at _dungeon_ set _inside_
+
+_will_ task:
+	when attribute Endurance is at least 45
+
+_badwill_ task:
+	when _inside_ and not _will_
+	say 1012
+	make pc ill with Red_Death
+
+_goodwill_ task:
+	when _inside_ and _will_
+	say 1013
 
 variable _inside_
 _E.01_ task:

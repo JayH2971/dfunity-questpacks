@@ -38,6 +38,22 @@ QuestComplete:  [1004]
 <ce>                 remember your name for generations.
 <ce>                I assure you of it, honorable knight.
 
+Message:  1012
+<ce>                 (ATTRIBUTE CHECK FAILED: ENDURANCE)
+<ce>
+<ce>           As soon as you enter, you step on a false tile.
+<ce>            A disgusting gas begins to shoot into the air.
+<ce>       You don't seem to suffer any immediate effects from it,
+<ce>            but you wonder what it might have done to you.
+
+Message:  1013
+<ce>                 (ATTRIBUTE CHECK PASSED: ENDURANCE)
+<ce>
+<ce>           As soon as you enter, you step on a false tile.
+<ce>            A disgusting gas begins to shoot into the air.
+<ce>             Your system is strong enough to fight it off
+<ce>        until you reach cleaner air, and you emerge unscathed.
+
 Message:  1020
 <ce>                  The thief has been slain. You see
 <ce>                    the _weapon_ among the goods.
@@ -94,6 +110,20 @@ Item _weapon_ weapon
 	place foe _enemy_ at _dungeon_
 	reveal _dungeon_
 	pick one of _e1_ _e2_
+	pc at _dungeon_ set _inside_
+
+variable _inside_
+_will_ task:
+	when attribute Endurance is at least 45
+
+_badwill_ task:
+	when _inside_ and not _will_
+	say 1012
+	make pc ill with Red_Death
+
+_goodwill_ task:
+	when _inside_ and _will_
+	say 1013
 
 variable _e1_
 variable _e2_

@@ -47,6 +47,17 @@ Message:  1010
 <ce>               will have some well-planned escape route
 <ce>               in case their fears are brought to pass.
 
+Message:  1011
+<ce>                     (SKILL CHECK PASSED: ORCISH)
+<ce>
+<ce>            You hear the orcs begin to enter the building.
+<ce>                Deepening your voice, you roar at them
+<ce>           to cease the attack and flee. Mistaking you for
+<ce>          one of their leaders, the orcs abandon their plan
+<ce>                    and scurry out of ___palace_.
+<ce>               Nearby servants stare in wonder at your
+<ce>                   mastery of the Orcish language.
+
 Message:  1015
 <ce>                 You hear savage roaring from within
 <ce>              the palace. The attack has already begun.
@@ -137,6 +148,9 @@ Foe _orc5_ is Orc_shaman
 	pc at _dung2_ set _orcs_
 	pick one of _real_ _false_
 
+_skill_ task:
+	when skill Orcish is at least 70
+
 variable _real_
 _false_ task:
 	pick one of _sick_ _ok_
@@ -153,10 +167,15 @@ _2palace_ task:
 	say 1018
 
 _spawn_ task:
-	when _timeup_ and _inside_ and _real_
+	when _timeup_ and _inside_ and _real_ and not _skill_
 	create foe _orc1_ every 3 minutes 2 times with 100% success
 	start timer _death_
 	say 1015
+
+_easywin_ task:
+	when _timeup_ and _inside_ and _real_ and _skill_
+	say 1011
+	start task _victory_
 
 _infight_ task:
 	daily from 0:00 to 23:59

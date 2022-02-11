@@ -48,6 +48,17 @@ QuestComplete:  [1004]
 <ce>                 Excellent, %pct. We can now expedite
 <ce>                the trial. Superb work on all counts.
 
+Message:  1010
+<ce>                  (ATTRIBUTE CHECK PASSED: STRENGTH)
+<ce>
+<ce>                 Your foes' courage begins to falter.
+<ce>          One shouts to the other, "Hey, this one's a freak!
+<ce>                      We gotta get out of here!"
+<ce>
+<ce>              Your foes flee before you tear them apart.
+<ce>               You assume your return journey will have
+<ce>                      no further interruptions.
+
 Message:  1019
 <ce>                        (STEALTH CHECK PASSED)
 <ce>
@@ -102,8 +113,19 @@ Foe _enemy_ is 2 Rogue
 variable _inside_
 variable _silent_
 
+_will_ task:
+  when attribute Strength is at least 80
+
+_inj_ task:
+  injured _enemy_
+
+_goodwill_ task:
+  when _will_ and _inj_
+  say 1010
+  remove foe _enemy_
+
 _stealth_ task:
-  when skill Stealth is at least 70
+  when skill Stealth is at least 700
   start task _silent_
 
 _entry_ task:

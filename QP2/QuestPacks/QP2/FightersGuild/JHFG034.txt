@@ -42,6 +42,13 @@ Message:  1011
 <ce>          The blistering heat in the room starts to die down
 <ce>          as the atronach ceases moving. Your work is done.
 
+Message:  1012
+<ce>                 (ATTRIBUTE CHECK FAILED: ENDURANCE)
+<ce>
+<ce>        This atronach has clearly come straight from Oblivion.
+<ce>             Fiery tendrils reach out and rake your skin,
+<ce>                    causing you significant pain.
+
 QBN:
 Item _reward_ gold range 200 to 300
 
@@ -59,6 +66,17 @@ Foe _enemy_ is Fire_atronach
 	start timer _timer_
 	place foe _enemy_ at _place_
 	change foe _enemy_ infighting true
+
+_will_ task:
+	when attribute Endurance is at least 35
+
+_inj_ task:
+	injured _enemy_
+
+_badwill_ task:
+	when _inj_ and not _will_
+	say 1012
+	reduce player health by 25
 
 _slain_ task:
 	killed _enemy_

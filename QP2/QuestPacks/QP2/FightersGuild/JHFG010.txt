@@ -30,6 +30,21 @@ QuestComplete:  [1004]
 <ce>      find anyone over there to do it, so it's a good thing you
 <ce>                    stepped up. Here's your money.
 
+Message:  1010
+<ce>                    (ATTRIBUTE CHECK PASSED: LUCK)
+<ce>
+<ce>        As you arrive at ___captive_, you're surprised to see
+<ce>            small remains of arthropods all over. You ask
+<ce>              a member of the town guard what happened.
+<ce>
+<ce>      "Pesticide, that's what happened! Mages Guild proved their
+<ce>       worth for once. Created enchanted food for the critters,
+<ce>          and it started eating them apart from the inside.
+<ce>             We've been free of 'em for a few days now."
+<ce>
+<ce>              While you didn't do the work, ___captive_
+<ce>               is technically free of its pest problem.
+
 Message:  1019
 <ce>         This extermination contract should just be a matter
 <ce>          of walking the streets. You consider waiting until
@@ -69,8 +84,23 @@ Foe _enemy2_ is Giant_scorpion
 	pick one of _spid_ _scorp_
 	pc at _captive_ set _templehome_
 
-_templehome_ task:
+_luck_ task:
+	when attribute Luck is at least 85
+	pick one of _lucky_ _unlucky_ _unlucky_
+
+variable _unlucky_
+variable _lucky_
+
+variable _templehome_
+
+_spawner_ task:
+	when _templehome_ and not _lucky_
 	say 1019
+
+_freewin_ task:
+	when _lucky_ and _templehome_
+	say 1010
+	start task _slain_
 
 _infight_ task:
 	daily from 0:00 to 23:59
