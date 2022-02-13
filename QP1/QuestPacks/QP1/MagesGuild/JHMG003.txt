@@ -25,7 +25,7 @@ QuestorOffer:  [1000]
 <ce>            advantage of our good name to conduct work of
 <ce>             the foulest kind, putting us all in jeopardy
 <ce>                of disrepute. Will you dispose of this
-<ce>             renegade and help us maintain our good name?
+<ce>               renegade and help us maintain our image?
 
 RefuseQuest:  [1001]
 <ce>             I assure you, %pct, had you permitted me to
@@ -60,19 +60,31 @@ QuestComplete:  [1004]
 <ce>                  for this task, in your estimation?
 <ce>                    I pray you put it to good use.
 
+Message:  1010
+<ce>                  (SKILL CHECK PASSED: DESTRUCTION)
+<ce>
+<ce>                  The necromancer activates a trap,
+<ce>                sending a bolt of magic flying at you.
+<ce>           Your quick reflexes and knowledge of Destruction
+<ce>        magic allow you to halt the bolt in midair and return
+<ce>               it to its caster. "OW!" your foe winces.
+
+Message:  1011
+<ce>                  (SKILL CHECK FAILED: DESTRUCTION)
+<ce>
+<ce>                  The necromancer activates a trap,
+<ce>                sending a bolt of magic flying at you.
+<ce>              Someone more skilled in Destruction magic
+<ce>            might have avoided it one way or another, but
+<ce>                      you suffer injury instead.
+
 Message:  1020
-<ce>                   How pathetic. Why will you fools
+<ce>                  "How pathetic. Why will you fools
 <ce>                   continue to resist the power and
 <ce>                   beauty of the art of necromancy?
 <ce>                   Do you not see the hypocrisy in
 <ce>                  slaying me? But if you so insist,
-<ce>                 we will have our duel. Have at you.
-
-Message:  1021
-<ce>              "So be it! See the power that you scorn!"
-<ce>
-<ce>                          _necr_ mutters an
-<ce>              incantation. You hear something stirring.
+<ce>                 we will have our duel. Have at you."
 
 Message:  1022
 <ce>                 The necromancer falls to the ground.
@@ -101,7 +113,6 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
 Foe _enemy_ is Mage
 Foe _und1_ is Ghost
 Foe _und2_ is Wraith
-Foe _und3_ is Wraith
 
 -- Quest start-up:
   start timer _timer_
@@ -111,6 +122,19 @@ Foe _und3_ is Wraith
 
 variable _inside_
 
+_skilled_ task:
+  when skill Destruction is at least 40
+
+_trapdamage_ task:
+  when _skilled_ and _spawn_
+  say 1010
+  cast Wizard's_Fire spell on _enemy_
+
+_suffertrap_ task:
+  when _spawn_ and not _skilled_
+  say 1011
+  reduce player health by 18
+
 _conv_ task:
   clicked npc _necr_
   say 1020
@@ -119,22 +143,18 @@ _conv_ task:
   change foe _enemy_ infighting true
   change foe _enemy_ team 13
 
-_inj_ task:
-  injured _enemy_
-  say 1021
-
 _spawn_ task:
-  when _inside_ and _inj_
+  when _inside_ and _conv_ and not _slain_
   create foe _und1_ every 0 minutes 1 times with 10% success
   create foe _und2_ every 0 minutes 1 times with 10% success
-  create foe _und3_ every 0 minutes 1 times with 10% success
   change foe _und1_ infighting true
   change foe _und2_ infighting true
-  change foe _und3_ infighting true
 
 _slain_ task:
   killed _enemy_
   say 1022
+  remove foe _und1_
+  remove foe _und2_
 
 _victory_ task:
   when _qgclicked_ and _slain_

@@ -1,0 +1,72 @@
+Quest: RLQimmortal
+DisplayName: Random Little Quest Immortal Foe
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  The barbarian falls. It looks like no one lives forever, after all.
+
+Message:  1010
+<ce>           You hear someone roaring under the shining sun.
+<ce>                  A barbarian shouts to the people,
+<ce>
+<ce>     "Hahaha! I am an avatar of the gods! No one can defeat me!"
+<ce>
+<ce>      The fighter then begins swinging an axe around recklessly,
+<ce>      trying to impress the villagers. People look worried that
+<ce>  this may turn dangerous. Do you try to stop the barbarian?
+
+Message:  1011
+<ce>          You call for the mad fighter to stop, and only earn
+<ce>        wrath in return. Marching at you, the berserker shouts,
+<ce>               "Should've left well enough alone, %ra!
+<ce>                      I can't be beaten!!"
+
+Message:  1012
+<ce>         You stay back and watch as members of the town guard
+<ce>        work together to subdue the assailant. It takes a lot
+<ce>             of bodies and some spellcasters as support,
+<ce>  but they manage to arrest him. This fellow was clearly powerful.
+
+QBN:
+
+Item _reward_ gold range 3000 to 5000
+
+Foe _angrybat_ is Barbarian
+
+Clock _ending_ 3:00
+
+--	Quest start-up:
+
+_level_ task:
+    level 9 completed
+    prompt 1010 yes _pick_ no _ignore_
+
+_pick_ task:
+    say 1011
+    create foe _angrybat_ every 0 minutes 1 times with 100% success
+    change foe _angrybat_ infighting true
+    give item _reward_ to _angrybat_
+    start timer _ending_
+
+_heal_ task:
+    daily from 0:00 to 23:59
+    cast Heal spell on _angrybat_
+    clear _heal_
+
+_ignore_ task:
+    say 1012
+    end quest
+
+_notlevel_ task:
+    when not _level_
+    end quest
+
+_slain_ task:
+    killed _angrybat_
+    give pc nothing
+    end quest
+
+_ending_ task:
+    remove foe _angrybat_
+    end quest

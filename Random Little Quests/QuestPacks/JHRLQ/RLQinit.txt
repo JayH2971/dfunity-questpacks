@@ -62,7 +62,7 @@ _sunnyday_ task:
     start task _stopevents_
 
 _sunnydayevents_ task:
-    pick one of _potionsale_ _alms_ _weaponfind_ _mysticismlesson_ _medicaltraining_ _buyreligious_ _fireatronach_
+    pick one of _potionsale_ _alms_ _weaponfind_ _mysticismlesson_ _medicaltraining_ _buyreligious_ _fireatronach_ _immortal_
 
 _batnest_ task:
     start quest RLQbatnest
@@ -121,6 +121,9 @@ _buyreligious_ task:
 _fireatronach_ task:
     start quest RLQfireatronach
 
+_immortal_ task:
+    start quest RLQimmortal
+
 _sunnynight_ task:
     when not _daylight_ and _sunning_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_
     pick one of _sunnynightevents_ _dud_ _dud_
@@ -164,7 +167,7 @@ _overcastday_ task:
     start task _stopevents_
 
 _overcastdayevents_ task:
-    pick one of _meddeliver_ _restorationlesson_ _runningthief_ _buygem_ _orcishtraining_
+    pick one of _meddeliver_ _restorationlesson_ _runningthief_ _buygem_ _orcishtraining_ _lottery_
 
 _restorationlesson_ task:
     start quest RLQtrainrestoration
@@ -180,6 +183,9 @@ _buygem_ task:
 
 _orcishtraining_ task:
     start quest RLQtrainorcish
+
+_lottery_ task:
+    start quest RLQlottery
 
 _overcastnight_ task:
     when not _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_

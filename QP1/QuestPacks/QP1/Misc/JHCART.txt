@@ -4,36 +4,36 @@ DisplayName: The Cartographers
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          JHCART CARTOGRAPHERS OFFER
+<ce>                      JHCART CARTOGRAPHERS OFFER
 
 RefuseQuest:  [1001]
-<ce>          JHCART CARTOGRAPHERS REFUSAL
+<ce>                     JHCART CARTOGRAPHERS REFUSAL
 
 AcceptQuest:  [1002]
-<ce>           JHCART CARTOGRAPHERS ACCEPTANCE
+<ce>                   JHCART CARTOGRAPHERS ACCEPTANCE
 
 QuestFail:  [1003]
-<ce>   You were given =timer_ days to start your
-<ce>   work with the Cartographers and return.
-<ce>   That time has expired.
+<ce>              You were given =timer_ days to start your
+<ce>               work with the Cartographers and return.
+<ce>                        That time has expired.
 
 QuestComplete:  [1004]
-<ce>        Good work! We occasionally send our
-<ce>        members on such trips to calculate distances
-<ce>        and so on. Cartography is a science that
-<ce>        must undergo continual development.
+<ce>                 Good work! We occasionally send our
+<ce>             members on such trips to calculate distances
+<ce>               and so on. Cartography is a science that
+<ce>                 must undergo continual development.
 <ce>
-<ce>        As I said, your early fees will be low.
-<ce>        This time we only have _reward_ gold pieces
-<ce>        allotted for you. But please be patient with
-<ce>        us and let more funding come in. We hope
-<ce>        you'll keep helping us. Who knows what could
-<ce>        turn up in one of Tamriel's forgotten corners?
-<ce>        So, we'll send for you when we need you.
+<ce>               As I said, your early fees will be low.
+<ce>             This time we only have _reward_ gold pieces
+<ce>             allotted for you. But please be patient with
+<ce>               us and let more funding come in. We hope
+<ce>             you'll keep helping us. Who knows what could
+<ce>            turn up in one of Tamriel's forgotten corners?
+<ce>               So, we'll send for you when we need you.
 
 Message:  1010
-<ce>        A piece of paper gently blows past you.
-<ce>        You grab it and pick it up.
+<ce>               A piece of paper gently blows past you.
+<ce>                     You grab it and pick it up.
 
 Message:  1011
   The Cartographers' Association of the Iliac Bay
@@ -54,50 +54,50 @@ Message:  1011
   as chartered by each regional monarch.
 
 Message:  1012
-<ce>        Welcome! My name is _qg_, and I am
-<ce>        the regional registrar for the Cartographers'
-<ce>        Association of the Iliac Bay. I assume that by
-<ce>        coming here, you show some interest in
-<ce>        uncovering the mysteries of Hammerfell and
-<ce>        High Rock, are capable of long-distance travel
-<ce>        on a coin's drop, and can handle yourself under
-<ce>        adverse and sometimes dangerous conditions.
-<ce>        Now that I have warned you concerning the
-<ce>        hazards of the cartographer's path, do you
-<ce>        desire to follow it and aid us in mapping
-<ce>        out Tamriel's past, present, and future?
+<ce>                  Welcome! My name is _qg_, and I am
+<ce>            the regional registrar for the Cartographers'
+<ce>            Association of the Iliac Bay. I assume that by
+<ce>                coming here, you show some interest in
+<ce>              uncovering the mysteries of Hammerfell and
+<ce>            High Rock, are capable of long-distance travel
+<ce>           on a coin's drop, and can handle yourself under
+<ce>             adverse and sometimes dangerous conditions.
+<ce>              Now that I have warned you concerning the
+<ce>              hazards of the cartographer's path, do you
+<ce>              desire to follow it and aid us in mapping
+<ce>               out Tamriel's past, present, and future?
 
 Message:  1013
-<ce>       Then I formally welcome you, %pcf,
-<ce>       to the ranks of the Cartographers. Please allow
-<ce>       me some short explanations. First, your actions
-<ce>       will be your own while on duty. If you sleep on
-<ce>       some street you're not supposed to or take
-<ce>       something that doesn't really belong to you,
-<ce>       you will be prosecuted and not us. The courts
-<ce>       know this well and will not humor any excuse
-<ce>       that involves naming us. Second, compensation
-<ce>       is middling for a new recruit such as yourself
-<ce>       and depends on the generosity of our donors.
-<ce>       We hope to improve on it, but at the start you
-<ce>       may only be earning your own travel expenses.
+<ce>                  Then I formally welcome you, %pcf,
+<ce>           to the ranks of the Cartographers. Please allow
+<ce>           me some short explanations. First, your actions
+<ce>           will be your own while on duty. If you sleep on
+<ce>              some street you're not supposed to or take
+<ce>             something that doesn't really belong to you,
+<ce>            you will be prosecuted and not us. The courts
+<ce>             know this well and will not humor any excuse
+<ce>            that involves naming us. Second, compensation
+<ce>            is middling for a new recruit such as yourself
+<ce>             and depends on the generosity of our donors.
+<ce>            We hope to improve on it, but at the start you
+<ce>            may only be earning your own travel expenses.
 <ce>
-<ce>       With that out of the way, allow me to present you
-<ce>       your first assignment. This is indeed menial, but
-<ce>       we must ascertain the skill level of each member
-<ce>       by the work they do. Your first assignment is
-<ce>       to find  _target_ in ___target_,
-<ce>       a simple test. I'll give you =timer_ days to do that
-<ce>      and return here.
+<ce>          With that out of the way, allow me to present you
+<ce>          your first assignment. This is indeed menial, but
+<ce>           we must ascertain the skill level of each member
+<ce>            by the work they do. Your first assignment is
+<ce>                   to find  _target_ in ___target_,
+<ce>         a simple test. I'll give you =timer_ days to do that
+<ce>                           and return here.
 
 Message:  1015
-<ce>     Well, I hope you change your mind. You appear
-<ce>     to be cut out for it, in my honest opinion.
+<ce>            Well, I hope you change your mind. You appear
+<ce>             to be cut out for it, in my honest opinion.
 
 Message:  1020
-<ce>  From all you can tell, this is the place
-<ce>  _qg_ told you to find. Now
-<ce>  to report its location back to %g2.
+<ce>               From all you can tell, this is the place
+<ce>                      _qg_ told you to find. Now
+<ce>                 to report its location back to %g2.
 
 Message:  1030
 %qdt:
@@ -109,10 +109,10 @@ Message:  1030
  to ___place_ within =timer_ days.
 
 Message:  1099
-<ce>  You will find _target_ in
-<ce>  ___target_. Enter it to make
-<ce>  sure and return here. You have =timer_ days
-<ce>  to complete your entry exam.
+<ce>                      You will find _target_ in
+<ce>                     ___target_. Enter it to make
+<ce>             sure and return here. You have =timer_ days
+<ce>                     to complete your entry exam.
 
 QBN:
 Item _reward_ gold range 60 to 100
@@ -121,28 +121,32 @@ Item _letter_ letter used 1011
 Place _target_ remote random
 Place _place_ remote library
 
+Clock _entry_ 45.00:00 90.00:00
 Clock _1st_ 20.00:00 45.00:00
 Clock _timer_ 16.00:00 20.00:00
 
 Person _qg_ group Librarian
 
 --	Quest start-up:
-	start timer _1st_
-          give pc _letter_ notify 1010
-          place npc _qg_ at _place_
-          pc at _target_ set _inside_
+    start timer _entry_
+
+_entry_ task:
+    start timer _1st_
+    give pc _letter_ notify 1010
+    place npc _qg_ at _place_
+    pc at _target_ set _inside_
 
 _qgclicked_ task:
-	clicked npc _qg_ 
+    clicked npc _qg_
 
 _enroll_ task:
-     when _qgclicked_ and not _begin_
-     prompt 1012 yes _begin_ no _refuse_
-     clear _qgclicked_
+    when _qgclicked_ and not _begin_
+    prompt 1012 yes _begin_ no _refuse_
+    clear _qgclicked_
 
 _refuse_ task:
-     say 1015
-     clear _qgclicked_ _refuse_ _enroll_
+    say 1015
+    clear _qgclicked_ _refuse_ _enroll_
 
 _begin_ task:
     say 1013
@@ -151,7 +155,7 @@ _begin_ task:
     start timer _timer_
 
 _inside_ task:
-     start task _found_
+    start task _found_
 
 _found_ task:
     say 1020
@@ -168,8 +172,8 @@ _victory_ task:
     end quest
 
 _1st_ task:
-         end quest
+    end quest
 
 _timer_ task:
-         say 1003
-         end quest
+    say 1003
+    end quest

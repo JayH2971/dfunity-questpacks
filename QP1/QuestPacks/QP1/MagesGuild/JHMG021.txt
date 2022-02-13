@@ -161,6 +161,7 @@ Message:  1033
 <ce>
 <ce>                The surge around you intensifies, and
 <ce>            you notice more undead get added to the fray.
+<ce>           You suffer a shock of magical feedback as well.
 
 QBN:
 Item _reward_ gold range 3000 to 3000
@@ -201,6 +202,7 @@ _announce_ task:
 _clicky_ task:
 	clicked foe _boss_
 	start task _announceinj_
+	restrain foe _boss_
 	change foe _boss_ infighting true
 	start timer _summonchange_
 
@@ -229,6 +231,7 @@ variable _weaken_
 _bigfail_ task:
 	when _attempt_ and not _skilled_
 	say 1033
+	reduce player health by 15
 	start task _intensify_
 
 variable _intensify_
@@ -260,6 +263,7 @@ _daily_ task:
 	change foe _und3_ infighting true
 	change foe _und4_ infighting true
 	change foe _und5_ infighting true
+	cast Heal spell on _boss_
 	clear _daily_
 
 _recfail_ task:

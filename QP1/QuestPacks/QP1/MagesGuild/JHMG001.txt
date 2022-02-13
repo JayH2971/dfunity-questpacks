@@ -57,6 +57,13 @@ QuestComplete:  [1004]
 <ce>                   who fail to control power become
 <ce>                slaves to it in time. Have your book.
 
+Message:  1010
+<ce>                    (ATTRIBUTE CHECK PASSED: LUCK)
+<ce>
+<ce>          Luck is on your side. The renegade student is both
+<ce>        nearby and in normal form. You both arm yourselves for
+<ce>          the battle as you hear, "You won't take me alive!"
+
 Message:  1020
 <ce>              As the creature's corpse falls, you hear a
 <ce>             groan. This must have been the shapeshifter.
@@ -82,6 +89,7 @@ Person _qgiver_ group Questor male
 Place _dung_ remote dungeon5
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _pause_ 0:01
 
 Foe _enemy1_ is Sabretooth_tiger
 Foe _enemy2_ is Spider
@@ -91,9 +99,29 @@ Foe _enemy5_ is Mage
 
 --	Quest start-up:
 	start timer _timer_
-	pick one of _D.01_ _D.02_ _D.03_ _D.04_ _D.05_
 	log 1030 step 0
 	reveal _dung_
+	pc at _dung_ do _inside_
+
+_luck_ task:
+	when attribute Luck is at least 85
+	pick one of _lucky_ _notlucky_ _notlucky_
+
+variable _notlucky_
+variable _lucky_
+variable _inside_
+
+_freewin_ task:
+	when _lucky_ and _inside_
+	start timer _pause_
+
+_pause_ task:
+	say 1010
+	create foe _enemy5_ every 0 minutes 1 times with 100% success
+
+_noluck_ task:
+	when not _lucky_
+	pick one of _D.01_ _D.02_ _D.03_ _D.04_ _D.05_
 
 _D.01_ task:
 	place foe _enemy1_ at _dung_

@@ -126,7 +126,7 @@
 
     PROMPT MULTI
 
-    promptmulti 1011 0:guilty _guilty_ 18:lie _lie_
+    promptmulti 1011 0:accept _suffer_ 18:lie _lie_
 
     0 Accept
     1 Reject

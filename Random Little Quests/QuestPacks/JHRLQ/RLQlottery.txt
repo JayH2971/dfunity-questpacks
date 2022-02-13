@@ -1,0 +1,125 @@
+Quest: RLQlottery
+DisplayName: Random Little Quest A Lottery
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>     You pay the fee and deposit your name. A few moments later,
+<ce>               the official makes the announcement.
+<ce>
+<ce>                 "And the winning ticket is... %pcn!"
+<ce>
+<ce>           The crowd politely claps for you as your reward
+<ce>         is delivered. The town registrar counts out =reward_
+<ce>       gold pieces for you, and the people gradually disperse.
+
+Message:  1010
+<ce>            Under the overcast sky, a smattering
+<ce>         of citizens gather around a local official,
+<ce>        who is running a lottery to raise funds for the town.
+<ce>        If you deposit 50 gold pieces, you'll be entered into
+<ce>    a drawing to win =reward_ gold. You would be competing against
+<ce>           several dozen people. Do you test your luck?
+
+Message:  1011
+<ce>   You pass the lottery by, and they continue the game without you.
+
+Message:  1012
+<ce>     You pay the fee and deposit your name. A few moments later,
+<ce>                 the official makes the announcement.
+<ce>
+<ce>               "And the winning ticket is... _random_!"
+<ce>
+<ce>        The town registrar calls %g2 up to receive the reward.
+<ce>                    The crowd begins to disperse.
+
+Message:  1013
+<ce>          You're surprised to find you lack 50 gold pieces.
+<ce>               While you rummage about for money, they
+<ce>                     call the name of the winner.
+<ce>                       You miss out, this time.
+
+QBN:
+
+Item _reward_ gold range 400 to 600
+
+Person _random_ group Local_4.1
+
+--	Quest start-up:
+    prompt 1010 yes _pay_ no _refuse_
+
+_refuse_ task:
+    say 1011
+    end quest
+
+_luck35_ task:
+    when attribute Luck is at least 35
+
+_luck60_ task:
+    when attribute Luck is at least 60
+
+_luck75_ task:
+    when attribute Luck is at least 75
+
+_luck85_ task:
+    when attribute Luck is at least 85
+
+_luck98_ task:
+    when attribute Luck is at least 98
+
+_pay_ task:
+    pay 50 money do _try_ otherwise do _nomoney_
+
+_nomoney_ task:
+    say 1013
+    end quest
+
+_try_ task:
+    clear _pay_
+
+_try0_ task:
+    when _try_ and not _luck35_
+    start task _lose_
+
+_try35_ task:
+    when _try_ and _luck35_ and not _luck60_
+    start task _selection1_
+
+_try60_ task:
+    when _try_ and _luck60_ and not _luck75_
+    start task _selection2_
+
+_try75_ task:
+    when _try_ and _luck75_ and not _luck85_
+    start task _selection3_
+
+_try85_ task:
+    when _try_ and _luck85_ and not _luck98_
+    start task _selection4_
+
+_try98_ task:
+    when _try_ and _luck98_
+    start task _win_
+
+_lose_ task:
+    say 1012
+    end quest
+
+_win_ task:
+    give pc _reward_
+    end quest
+
+_selection1_ task:
+    pick one of _lose_ _lose_ _lose_ _lose_ _lose_ _lose_ _egg_ _lose_ _lose_ _lose_
+
+_selection2_ task:
+    pick one of _lose_ _lose_ _egg_ _lose_ _lose_ _lose_ _lose_
+
+_selection3_ task:
+    pick one of _lose_ _lose_ _egg_ _lose_ _lose_
+
+_selection4_ task:
+    pick one of _lose_ _lose_ _win_
+
+_egg_ task:
+    pick one of _lose_ _lose_ _lose_ _lose_ _lose_ _win_ _lose_ _lose_ _lose_ _lose_

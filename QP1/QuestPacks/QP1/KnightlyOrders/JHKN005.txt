@@ -125,7 +125,7 @@ _goodwill_ task:
   remove foe _enemy_
 
 _stealth_ task:
-  when skill Stealth is at least 700
+  when skill Stealth is at least 70
   start task _silent_
 
 _entry_ task:
