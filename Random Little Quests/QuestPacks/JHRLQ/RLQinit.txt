@@ -281,10 +281,13 @@ _thundday_ task:
     start task _stopevents_
 
 _thunddayevents_ task:
-    pick one of _magesguild_ _buymagicitem_ _maze_
+    pick one of _magesguild_ _buymagicitem_ _maze_ _templedelivery_
 
 _buymagicitem_ task:
     start quest RLQbuymagicitem
+
+_templedelivery_ task:
+    start quest RLQtempledelivery
 
 _thundnight_ task:
     when not _daylight_ and _thundered_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_

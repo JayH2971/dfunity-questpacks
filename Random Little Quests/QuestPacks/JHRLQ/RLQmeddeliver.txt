@@ -10,8 +10,9 @@ QuestComplete:   [1004]
 <ce>  Take this gold.
 
 Message:  1010
-<ce>  A woman in fairly formal clothing accosts you,
-<ce>  shouting far too loudly for the purpose.
+<ce>              Under the overcast sky, a woman in fairly
+<ce>                    formal clothing accosts you,
+<ce>               shouting far too loudly for the purpose.
 <ce>  
 <ce>  "EXCUSE ME! I need a delivery! _person_
 <ce>  at _tavern_ is expecting this _ingred_ and
