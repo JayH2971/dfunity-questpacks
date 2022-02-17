@@ -15,7 +15,7 @@ Message:  1010
 <ce>
 <ce>      "Hello! I'm on my way out of town and I realized I forgot
 <ce>             to return something to _temple_ here locally. They'll pay
-<ce>  for it upon delivery! Would you have time to help?"
+<ce>              for it upon delivery! Would you have time to help?"
 
 Message:  1011
 <ce>                 The priest bows reverently and hands
@@ -34,7 +34,7 @@ Message:  1012
 
 Message:  1013
 <ce>                 The priest sighs with exasperation,
-<ce>  reaching out to other people on their way.
+<ce>            reaching out to other people on their way.
 
 Message:  1014
 %qdt:

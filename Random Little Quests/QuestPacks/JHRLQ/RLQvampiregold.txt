@@ -1,0 +1,117 @@
+Quest: RLQvampiregold
+DisplayName: Random Little Quest Vampire and Gold
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>                The hooded woman grants you your money
+<ce>              and escapes before searching eyes find her.
+
+Message:  1010
+<ce>       You become aware of a hooded woman watching you nearby.
+<ce>                      She speaks in a low voice,
+<ce>
+<ce>        "Greetings, stranger. I have gold, and you have blood.
+<ce>                 We must exchange, I insist. Please."
+<ce>
+<ce>            She bares fangs and requests to feed from you.
+<ce>            For 25 gold, do you allow her to drain blood?
+<ce>      Or if you were daring, you could try to slay this vampire.
+<ce>
+<ce>         Do you: (ACCEPT) allow her to feed, (REJECT) refuse,
+<ce> or (COUNTER) attack the vampire?
+
+Message:  1011
+<ce>  She turns away silently.
+
+Message:  1012
+<ce>            With great care and speed she sinks her teeth
+<ce>           into your neck. You don't feel much pain as she
+<ce>                        draws blood from you.
+<ce>
+<ce>                 "More? I have more gold," she says.
+<ce>
+<ce>       For 25 more gold pieces, do you allow her to feed more?
+
+Message:  1013
+<ce>            She feeds again. You feel more pain this time,
+<ce>                 though you manage to stick with it.
+<ce>
+<ce>         She offers 25 more gold if you will allow it again.
+
+Message:  1014
+<ce>          She drains more blood, hurried to get all she can.
+<ce>          This time hurts quite a bit more, but you survive.
+<ce>
+<ce> "Almost there. One last time?" she asks, showing 25 more gold coins.
+
+Message:  1015
+<ce>   The pain is overwhelming now, but she is finally satisfied.
+
+Message:  1016
+<ce>  The vampire hisses and defends herself.
+
+QBN:
+
+Item _reward1_ gold range 25 to 25
+Item _reward2_ gold range 50 to 50
+Item _reward3_ gold range 75 to 75
+Item _reward4_ gold range 100 to 100
+
+Foe _vamp_ is Vampire
+
+Clock _delay_ 1:00
+
+--	Quest start-up:
+    promptmulti 1010 0:accept _accept1_ 1:reject _reject_ 11:counter _attack_
+
+_attack_ task:
+    say 1016
+    create foe _vamp_ every 0 minutes 1 times with 100% success
+    change foe _vamp_ infighting true
+    start timer _delay_
+
+_delay_ task:
+    end quest
+
+_kill_ task:
+    killed _vamp_
+    legal repute +2
+    end quest
+
+_reject_ task:
+    say 1011
+    end quest
+
+_accept1_ task:
+    reduce player health by 8
+    prompt 1012 yes _accept2_ no _reject_
+
+_accept2_ task:
+    reduce player health by 12
+    prompt 1013 yes _accept3_ no _reject_
+
+_accept3_ task:
+    reduce player health by 25
+    prompt 1014 yes _acceptfinal_ no _reject_
+
+_pay1_ task:
+    when _accept1_ and _reject_ and not _accept2_
+    give pc _reward1_
+    end quest
+
+_pay2_ task:
+    when _accept2_ and _reject_ and not _accept3_
+    give pc _reward2_
+    end quest
+
+_pay3_ task:
+    when _accept3_ and _reject_ and not _acceptfinal_
+    give pc _reward3_
+    end quest
+
+_acceptfinal_ task:
+    reduce player health by 35
+    say 1015
+    give pc _reward4_
+    end quest

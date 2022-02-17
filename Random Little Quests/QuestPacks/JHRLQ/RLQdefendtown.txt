@@ -49,7 +49,6 @@ Message:  1014
 <ce>                much butt-kicking through your wrath!"
 <ce>
 <ce>     With the deed finished, the ranger disappears into the fog.
-<ce>      You barely make out a small hamster on the ranger's shoulder.
 <--->
 <ce>             The three criminals are down. The city watch
 <ce>          finally emerge from the fog and thank both of you

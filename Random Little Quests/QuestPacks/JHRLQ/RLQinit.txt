@@ -161,7 +161,7 @@ _cloudyday_ task:
     start task _stopevents_
 
 _cloudydayevents_ task:
-    pick one of _changebandage_ _loanpick_ _angrypick_ _buyrandomweapon_ _orcencounter_
+    pick one of _changebandage_ _loanpick_ _angrypick_ _buyrandomweapon_ _orcencounter_ _longbladefight_
 
 _changebandage_ task:
     start quest RLQchangebandage
@@ -175,6 +175,17 @@ _buyrandomweapon_ task:
 _orcencounter_ task:
     start quest RLQorcencounter
 
+_longbladefight_ task:
+    start quest RLQlongbladefight
+
+_cloudynight_ task:
+    when not _daylight_ and _clouded_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
+    pick one of _cloudynightevents_ _dud_ _dud_
+    start task _stopevents_
+
+_cloudynightevents_ task:
+    pick one of _nightflavor_ _pickpocket_
+
 _overcastday_ task:
     when _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
     pick one of _overcastdayevents_ _dud_ _dud_
@@ -182,6 +193,9 @@ _overcastday_ task:
 
 _overcastdayevents_ task:
     pick one of _meddeliver_ _restorationlesson_ _runningthief_ _buygem_ _orcishtraining_ _lottery_
+
+_meddeliver_ task:
+    start quest RLQmeddeliver
 
 _restorationlesson_ task:
     start quest RLQtrainrestoration
@@ -207,10 +221,10 @@ _overcastnight_ task:
     start task _stopevents_
 
 _overcastnightevents_ task:
-    pick one of _pickpocket_ _nightguard_
+    pick one of _pickpocket_ _nightguard_ _vampiregold_
 
-_meddeliver_ task:
-    start quest RLQmeddeliver
+_vampiregold_ task:
+    start quest RLQvampiregold
 
 _fogday_ task:
     when _daylight_ and _foggy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
@@ -274,6 +288,14 @@ _raintaxes2_ task:
 
 _raintaxes3_ task:
     start quest RLQraintaxes3
+
+_rainnight_ task:
+    when not _daylight_ and _rainy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
+    pick one of _rainnightevents_ _dud_ _dud_
+    start task _stopevents_
+
+_rainnightevents_ task:
+    pick one of _pickpocket_ _nightflavor_
 
 _thundday_ task:
     when _daylight_ and _thundered_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_

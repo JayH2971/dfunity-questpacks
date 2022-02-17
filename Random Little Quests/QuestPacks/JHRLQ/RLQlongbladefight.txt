@@ -1,0 +1,154 @@
+Quest: RLQlongbladefight
+DisplayName: Random Little Quest Long Blade Fight
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>                   (SKILL CHECK PASSED: LONG BLADE)
+<ce>
+<ce>                    You are inducted into a match against
+<ce>               a =person1_ shortly thereafter.
+<ce>                You grip the wooden rapier firmly and
+<ce>              begin advancing expertly toward your foe.
+<ce>              Though %g1 tries to defend %g2self, you're
+<ce>          simply too good. A smattering of applause goes up
+<ce>                 from the crowd as you best your foe.
+<ce>
+<ce>        After the match, you are given your prize money.
+<--->
+<ce>                   (SKILL CHECK PASSED: LONG BLADE)
+<ce>
+<ce>                    You are inducted into a match against
+<ce>               a =person2_ shortly thereafter.
+<ce>                You grip the wooden rapier firmly and
+<ce>              begin advancing expertly toward your foe.
+<ce>              Though %g1 tries to defend %g2self, you're
+<ce>          simply too good. A smattering of applause goes up
+<ce>                 from the crowd as you best your foe.
+<ce>
+<ce>        After the match, you are given your prize money.
+<--->
+<ce>                   (SKILL CHECK PASSED: LONG BLADE)
+<ce>
+<ce>                    You are inducted into a match against
+<ce>               a =person3_ shortly thereafter.
+<ce>                You grip the wooden rapier firmly and
+<ce>              begin advancing expertly toward your foe.
+<ce>              Though %g1 tries to defend %g2self, you're
+<ce>          simply too good. A smattering of applause goes up
+<ce>                 from the crowd as you best your foe.
+<ce>
+<ce>        After the match, you are given your prize money.
+<--->
+<ce>                   (SKILL CHECK PASSED: LONG BLADE)
+<ce>
+<ce>                    You are inducted into a match against
+<ce>               a =person4_ shortly thereafter.
+<ce>                You grip the wooden rapier firmly and
+<ce>              begin advancing expertly toward your foe.
+<ce>              Though %g1 tries to defend %g2self, you're
+<ce>          simply too good. A smattering of applause goes up
+<ce>                 from the crowd as you best your foe.
+<ce>
+<ce>        After the match, you are given your prize money.
+
+Message:  1010
+<ce>         To garner some kind of entertainment, the peasantry
+<ce>             are organizing random matches among fighters
+<ce>          using wooden rapiers. They don't look particularly
+<ce>        expert at the craft, though a random few seem to know
+<ce>            what they're doing. The entry fee is 50 gold,
+<ce>         and you would earn 100 if you won a round. Do you enroll?
+
+Message:  1011
+<ce>  You move on and let the peasants have their games.
+
+Message:  1012
+<ce>                   (SKILL CHECK FAILED: LONG BLADE)
+<ce>
+<ce>                    You are inducted into a match against
+<ce>               a =person1_ shortly thereafter.
+<ce>                You grip the wooden rapier shakily and
+<ce>                   begin advancing toward your foe.
+<ce>            However, as luck would have it, your opponent
+<ce>              knows more than rudimentary swordsmanship.
+<ce>     Though %g3 wooden sword doesn't cut deeply, it still hurts.
+<ce>          You suffer a blow and are ejected from the match.
+<--->
+<ce>                   (SKILL CHECK FAILED: LONG BLADE)
+<ce>
+<ce>                    You are inducted into a match against
+<ce>               a =person2_ shortly thereafter.
+<ce>                You grip the wooden rapier shakily and
+<ce>                   begin advancing toward your foe.
+<ce>            However, as luck would have it, your opponent
+<ce>              knows more than rudimentary swordsmanship.
+<ce>     Though %g3 wooden sword doesn't cut deeply, it still hurts.
+<ce>          You suffer a blow and are ejected from the match.
+<--->
+<ce>                   (SKILL CHECK FAILED: LONG BLADE)
+<ce>
+<ce>                    You are inducted into a match against
+<ce>               a =person3_ shortly thereafter.
+<ce>                You grip the wooden rapier shakily and
+<ce>                   begin advancing toward your foe.
+<ce>            However, as luck would have it, your opponent
+<ce>              knows more than rudimentary swordsmanship.
+<ce>     Though %g3 wooden sword doesn't cut deeply, it still hurts.
+<ce>          You suffer a blow and are ejected from the match.
+<--->
+<ce>                   (SKILL CHECK FAILED: LONG BLADE)
+<ce>
+<ce>                    You are inducted into a match against
+<ce>               a =person4_ shortly thereafter.
+<ce>                You grip the wooden rapier shakily and
+<ce>                   begin advancing toward your foe.
+<ce>            However, as luck would have it, your opponent
+<ce>              knows more than rudimentary swordsmanship.
+<ce>     Though %g3 wooden sword doesn't cut deeply, it still hurts.
+<ce>          You suffer a blow and are ejected from the match.
+<--->
+
+Message:  1013
+<ce>    You're surprised to find you don't have 50 gold coins on hand.
+<ce>  You'll have to wait until they do this again.
+
+QBN:
+
+Item _reward_ gold range 100 to 100
+
+Person _person1_ faction Enchanters_of_Kynareth
+Person _person2_ faction Akatosh
+Person _person3_ faction Dark_Binders
+Person _person4_ faction Dancers
+
+--	Quest start-up:
+    prompt 1010 yes _pay_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when skill LongBlade is at least 30
+
+_pay_ task:
+    pay 50 money do _accept_ otherwise do _nomoney_
+
+_accept_ task:
+    clear _pay_
+
+_finalwin_ task:
+    when _accept_ and _qualified_
+    give pc _reward_
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    say 1012
+    reduce player health by 10
+    end quest
+
+_nomoney_ task:
+    say 1013
+    end quest

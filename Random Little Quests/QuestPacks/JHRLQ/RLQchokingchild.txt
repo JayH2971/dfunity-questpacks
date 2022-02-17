@@ -32,12 +32,16 @@ Message:  1011
 <ce>  turning blue before they disappear from sight.
 
 Message:  1012
-<ce>  You confidently step forward and grab the boy, and
-<ce>  then begin beating his back and neck to try to dislodge
-<ce>  whatever is stuck within. The mother watches in horror and
-<ce>  grabs him back after a few moments. The last you see of them,
-<ce>  the blue-faced child is dragged out into the rain,
-<ce>  hopefully to find someone qualified.
+<ce>          You confidently step forward and grab the boy, and
+<ce>       then begin beating his back and neck to try to dislodge
+<ce>      whatever is stuck within. The mother watches in horror and
+<ce>    grabs him back after a few moments. The last you see of them,
+<ce>          the blue-faced child is dragged out into the rain,
+<ce>                 hopefully to find someone qualified.
+<ce>
+<ce>            An onlooker glares at you and shouts,
+<ce>        "If you're not qualified, don't waste the lady's time!
+<ce>                     %oth!"
 
 QBN:
 
@@ -63,4 +67,5 @@ _finalwin_ task:
 _finalfail_ task:
     when _accept_ and not _qualified_
     say 1012
+    legal repute -1
     end quest
