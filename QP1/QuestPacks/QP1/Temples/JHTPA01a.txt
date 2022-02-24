@@ -1,0 +1,41 @@
+Quest: JHTPA01a
+DisplayName: Arkay's Revenge
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>       Somehow, a band of warriors has gotten the jump on you.
+<ce>  With weapons drawn, they waste no time in attacking you.
+<ce>  
+<ce>  "For the glory of Arkay! Vampire lover, be smitten!!"
+
+QBN:
+
+Clock _delay_ 3.00:00 4.00:00
+Clock _smalldelay_ 0:05
+
+Foe _warr_ is Warrior
+Foe _heal_ is Healer
+Foe _arch_ is Archer
+Foe _rang_ is Ranger
+Foe _mage_ is Mage
+
+--	Quest start-up:
+    start timer _delay_
+
+_delay_ task:
+    say 1010
+    create foe _warr_ every 0 minutes 1 times with 100% success
+    create foe _heal_ every 0 minutes 1 times with 100% success
+    create foe _arch_ every 0 minutes 1 times with 100% success
+    create foe _rang_ every 0 minutes 1 times with 100% success
+    create foe _mage_ every 0 minutes 1 times with 100% success
+    change foe _warr_ infighting true
+    change foe _heal_ infighting true
+    change foe _arch_ infighting true
+    change foe _rang_ infighting true
+    change foe _mage_ infighting true
+    start timer _smalldelay_
+
+_smalldelay_ task:
+    end quest

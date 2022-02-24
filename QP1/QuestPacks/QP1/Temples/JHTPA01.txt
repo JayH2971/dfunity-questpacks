@@ -1,0 +1,252 @@
+Quest: JHTPA01
+DisplayName: A Curse to Reverse
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>      Our duty to Stendarr must ascend above all other concerns.
+<ce>                  He, Lord of Mercy, has given us a
+<ce>            decree to save one from undeath -- vampirism.
+<ce>           The sorry soul requires a guard, for word has it
+<ce>           that opposing forces wish to interfere and slay
+<ce>            the nightstalker as an "aberration of nature."
+<ce>          Show your loyalty to the temple, above all others,
+<ce>                      by helping in this cause.
+
+RefuseQuest:  [1001]
+<ce>          Then may Stendarr have mercy on us should we fail.
+
+AcceptQuest:  [1002]
+<ce>            Very well. You will find your ward, _person_,
+<ce>         in __person_ here in ___person_. Travel with %g2 to
+<ce>           %g3 destination. You may not see strong signs of
+<ce>          vampirism in %g2, for the infection is yet recent,
+<ce>                   but %g3 nature cannot be denied.
+<ce>         Do not betray Stendarr, and use any means necessary
+<ce>                       to get %g2 to the cure.
+<ce>               Should you fail to have this done within
+<ce>          =timer_ days, others will be sent to replace you,
+<ce>                            to your shame.
+
+QuestFail:  [1003]
+<ce>             Fellow members of __qgiver_ approach you and
+<ce>              _person_. Insisting to hurry to the task,
+<ce>       they take %g2 from you and travel toward ___goalplace_.
+
+QuestComplete:  [1004]
+<ce>                _person_ drinks the potion and waits.
+<ce>       Within moments, %g3 skin returns to its ordinary color.
+<ce>              Breathing and heartrate resume as normal,
+<ce>         and soon there is no sign of undeath in %g2 at all.
+<ce>       With a peal of rejoicing %g1 gives you a firm, grateful
+<ce>                embrace and departs from _goalplace_.
+<ce>
+<ce>       You trust that the forces of Arkay will desist once they
+<ce>                   see %g2 in a more normal state.
+
+Message:  1010
+<ce>                   Stendarr? Are you from Stendarr?
+<ce>
+<ce>       %oth, you had me worried. Agents of another temple have
+<ce>       been searching all throughout ___person_ on rumors that
+<ce>       I exist. The ruthless curs refuse to rest until they've
+<ce>      got my ashes in an urn. I pray, lead me to ___goalplace_.
+<ce>
+<ce>             I've sold my home and almost all I have for
+<ce>          the knowledge of a cure, sold by _apoc_ who visits
+<ce>                    _goalplace_ in ___goalplace_.
+<ce>         I am assured that %g1 will have it ready, if we will
+<ce>                     arrive within =timer_ days.
+<ce>         May Stendarr look upon our journey with favor, %ra.
+
+Message:  1011
+<ce>              You become aware of three persons nearby,
+<ce>                           weapons in hand.
+<ce>
+<ce>         "Halt! We refuse to shed blood, except that it be to
+<ce>             destroy that abomination hiding behind you.
+<ce>                If you will surrender it immediately,
+<ce>           no harm will come to you. We swear it to Arkay!"
+<ce>
+<ce>           You know the Temple of Arkay will hear of it if
+<ce>        you refuse their demands. But you must make a choice.
+<ce>                Will you defend the vampire from them?
+
+Message:  1013
+<ce>                   "Then Arkay bless our blades!!"
+
+Message:  1014
+<ce>                 _person_ is surprised when you throw
+<ce>                  %g2 to the ground in front of you.
+<ce>           The followers of Arkay are quick and merciless.
+<ce>           A cry scarcely reaches the air before they have
+<ce>          punctured %g2 through with several lethal weapons.
+<ce>          Once they're sure _person_ is incapable of rising,
+<ce>                         they bow before you.
+<ce>
+<ce>             "Many thanks unto you for helping us destroy
+<ce>        this vampire! Let none cross your path with impunity!"
+<ce>
+<ce>          They haul away the corpse as proof of their deed.
+<ce>                  One gives you a gift, a holy tome,
+<ce>            as a token of cooperation between the temples.
+
+Message:  1015
+<ce>              _person_ is deeply relieved to find _apoc_
+<ce>           here as promised. The alchemist appears to share
+<ce>             no concern for the vampire's plight, though.
+<ce>
+<ce>            "Hello, welcome. Yes, I have your potion here.
+<ce>                For a mere 300 gold, you can have it."
+<ce>
+<ce>             In _person_'s madness, %g1 does not hesitate
+<ce>   to pull the required coins from your belongings, thrusting them
+<ce>          at _apoc_. The cure is then delivered as promised.
+
+Message:  1016
+<ce>              _person_ is deeply relieved to find _apoc_
+<ce>           here as promised. The alchemist appears to share
+<ce>             no concern for the vampire's plight, though.
+<ce>
+<ce>            "Hello, welcome. Yes, I have your potion here.
+<ce>                For a mere 300 gold, you can have it."
+<ce>
+<ce>                   _person_ seems bewildered that,
+<ce>          after selling all %g3 possessions, %g1 is required
+<ce>                to pay still more to receive the cure.
+<ce>                Having no money left, %g1 pleads with
+<ce>              you to cover the cost. You look among your
+<ce>       belongings but do not find the required 300 gold pieces.
+<ce>
+<ce>               Of course, there is another alternative.
+<ce>           The least scrupulous person could simply attack
+<ce>                     _apoc_ and take the potion.
+<ce>                Will you use violence to get your way?
+
+Message:  1017
+<ce>                  _apoc_ shrieks and grabs a weapon.
+
+Message:  1018
+<ce>              _person_ is worried that a life had to be
+<ce>       taken in this instance, but %g3 morality is in suspense.
+<ce>           The two of you find the cure, and %g1 drinks it.
+
+Message:  1019
+<ce>                You consider it terribly contradictory
+<ce>    for an agent of the God of Mercy to murder out of convenience.
+<ce>   You stay your hand. You require 300 gold pieces for the potion.
+
+Message:  1030
+%qdt:
+__qgiver_ of
+___qgiver_ requires me
+to guard a hapless vampire to a
+cure for undeath. I am to meet
+the vampire, named _person_,
+at __person_ here locally.
+
+Message:  1031
+%qdt:
+_person_ must travel to ___goalplace_,
+to find an alchemist named _apoc_
+within _goalplace_. We will then
+obtain the cure for vampirism,
+if we take no longer than =timer_ days.
+
+Message:  1032
+%qdt:
+_apoc_ is unexpectedly
+extorting 300 more gold pieces from us
+to purchase _person_'s cure.
+We must gather the money and deliver
+it, else %g2 will remain a vampire.
+
+QBN:
+Person _qgiver_ group Questor
+Person _person_ faction The_Vraseth local
+Person _apoc_ faction Apothecaries_of_Stendarr
+Person _arkay_ faction Arkay
+
+Foe _knight_ is Knight
+Foe _archer_ is Archer
+Foe _healer_ is Healer
+Foe _apok_ is Healer
+
+Place _goalplace_ remote apothecary
+
+Item _gift_ item class 10 subclass 12
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _battle_ 6:00 1.00:00
+
+--	Quest start-up:
+    log 1030 step 0
+    start timer _timer_
+    place npc _apoc_ at _goalplace_
+    hide npc _apoc_
+
+_clicked_ task:
+    clicked npc _person_
+    say 1010
+    hide npc _person_
+    add _person_ face
+    start timer _battle_
+    restore npc _apoc_
+    log 1031 step 1
+
+_battle_ task:
+    prompt 1011 yes _defend_ no _surrender_
+
+_angryarkay_ task:
+    change repute with _arkay_ by -20
+
+_defend_ task:
+    say 1013
+    create foe _knight_ every 0 minutes 1 times with 100% success
+    create foe _archer_ every 0 minutes 1 times with 100% success
+    create foe _healer_ every 0 minutes 1 times with 100% success
+    change foe _knight_ infighting true
+    change foe _archer_ infighting true
+    change foe _healer_ infighting true
+    start task _angryarkay_
+
+_surrender_ task:
+    drop _person_ face
+    say 1014
+    get item _gift_
+    make _gift_ permanent
+    change repute with _qgiver_ by -8
+    end quest
+
+_ending_ task:
+    clicked _apoc_ and at least 300 gold otherwise do _nogold_
+    say 1015
+    give pc nothing
+    start quest JHTPA01a
+    end quest
+
+_nogold_ task:
+    prompt 1016 yes _murder_ no _peace_
+
+_murder_ task:
+    say 1017
+    hide npc _apoc_
+    place foe _apok_ at _goalplace_
+    change foe _apok_ infighting true
+
+_killed_ task:
+    killed _apok_
+    say 1018
+    legal repute -10
+    give pc nothing
+    start quest JHTPA01a
+    end quest
+
+_peace_ task:
+    say 1019
+    log 1032 step 2
+    clear _nogold_ _ending_
+
+_timer_ task:
+    say 1003
+    end quest
