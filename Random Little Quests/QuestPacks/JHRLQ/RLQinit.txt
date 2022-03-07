@@ -192,7 +192,7 @@ _overcastday_ task:
     start task _stopevents_
 
 _overcastdayevents_ task:
-    pick one of _meddeliver_ _restorationlesson_ _runningthief_ _buygem_ _orcishtraining_ _lottery_
+    pick one of _meddeliver_ _restorationlesson_ _runningthief_ _buygem_ _orcishtraining_ _lottery_ _leprosyheal_
 
 _meddeliver_ task:
     start quest RLQmeddeliver
@@ -215,6 +215,9 @@ _orcishtraining_ task:
 _lottery_ task:
     start quest RLQlottery
 
+_leprosyheal_ task:
+    start quest RLQleprosyheal
+
 _overcastnight_ task:
     when not _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
     pick one of _overcastnightevents_ _dud_ _dud_
@@ -232,7 +235,7 @@ _fogday_ task:
     start task _stopevents_
 
 _fogdayevents_ task:
-    pick one of _etiquettelesson_ _freepotion_ _batnest_ _buydrug_ _defendtown_
+    pick one of _etiquettelesson_ _freepotion_ _batnest_ _buydrug_ _defendtown_ _guardweapon_
 
 _freepotion_ task:
     start quest RLQfreepotion
@@ -242,6 +245,9 @@ _buydrug_ task:
 
 _defendtown_ task:
     start quest RLQdefendtown
+
+_guardweapon_ task:
+    start quest RLQguardweapon
 
 _fognight_ task:
     when not _daylight_ and _foggy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_

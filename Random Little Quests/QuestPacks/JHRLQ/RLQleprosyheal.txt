@@ -1,0 +1,150 @@
+Quest: RLQleprosyheal
+DisplayName: Random Little Quest Heal Leprosy
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>       A villager accosts you, covered in serious and repugnant
+<ce>           sores. He tells you that he has leprosy, and the
+<ce>         temple refuses to treat him for the severity of it.
+<ce>      Though he has nothing to pay you with, he begs for a cure,
+<ce>              as the illness rapidly consumes his life.
+<ce>
+<ce>                     Do you attempt to heal him?
+<ce>
+<ce>                 (YES: Skill check, Medical, high; or
+<ce>               (YES: Skill check, Restoration, medium)
+
+Message:  1011
+<ce>          You turn away from the leper, hoping his affliction
+<ce>                 doesn't affect you in some way.
+
+Message:  1012
+<ce>                        (SKILL CHECKS FAILED)
+<ce>
+<ce>           You overestimate your abilities as you approach.
+<ce>       Just as the temple healers failed to cure him by magic,
+<ce>       you are also unable. Your medical skill is also lacking.
+<ce>     You make a few disappointing attempts, but achieve nothing.
+<ce>             Tears fill the man's eyes as he turns away,
+<ce>                waiting for another savior to arrive.
+
+Message:  1013
+<ce>                    (SKILL CHECK PASSED: MEDICAL)
+<ce>
+<ce>       His case is quite advanced, and a lesser physician would
+<ce>               be lost. But you've seen enough to know
+<ce>     an obvious cure. A nearby townsperson brings a few herbs at
+<ce>           your request, and you mix them to make a potion.
+<ce>                Upon drinking it, the leper is cured.
+<ce>      A few wide-eyed villagers watch in awe as his sores heal.
+<ce>
+<ce>                  "A miracle! It's a miracle! %oth!"
+<ce>
+<ce>         He then runs through the streets, shouting for joy.
+<ce>                  It appears your reputation in %crn
+<ce>                    is about to improve a little.
+                                     <--->
+<ce>                    (SKILL CHECK PASSED: MEDICAL)
+<ce>
+<ce>       His case is quite advanced, and a lesser physician would
+<ce>               be lost. But you've seen enough to know
+<ce>     an obvious cure. A nearby townsperson brings a few herbs at
+<ce>           your request, and you mix them to make a potion.
+<ce>                Upon drinking it, the leper is cured.
+<ce>      A few wide-eyed villagers watch in awe as his sores heal.
+<ce>
+<ce>                  "Healed! I'm healed! Thank %god!!"
+<ce>
+<ce>         He then runs through the streets, shouting for joy.
+<ce>                  It appears your reputation in %crn
+<ce>                    is about to improve a little.
+                                     <--->
+<ce>                    (SKILL CHECK PASSED: MEDICAL)
+<ce>
+<ce>       His case is quite advanced, and a lesser physician would
+<ce>               be lost. But you've seen enough to know
+<ce>     an obvious cure. A nearby townsperson brings a few herbs at
+<ce>           your request, and you mix them to make a potion.
+<ce>                Upon drinking it, the leper is cured.
+<ce>      A few wide-eyed villagers watch in awe as his sores heal.
+<ce>
+<ce>           "This %ra healed me! My life is saved! By %god!"
+<ce> 
+<ce>         He then runs through the streets, shouting for joy.
+<ce>                  It appears your reputation in %crn
+<ce>                    is about to improve a little.
+
+Message:  1014
+<ce>                  (SKILL CHECK PASSED: RESTORATION)
+<ce>
+<ce>   His case is quite advanced, enough to daunt the temple healers.
+<ce>         But you approach unafraid and attempt magic on him.
+<ce>    It takes a few castings, but soon enough, the leper is cured.
+<ce>      A few wide-eyed villagers watch in awe as his sores heal.
+<ce>
+<ce>                  "A miracle! It's a miracle! %oth!"
+<ce>
+<ce>         He then runs through the streets, shouting for joy.
+<ce>                  It appears your reputation in %crn
+<ce>                    is about to improve a little.
+                                     <--->
+<ce>                  (SKILL CHECK PASSED: RESTORATION)
+<ce>
+<ce>   His case is quite advanced, enough to daunt the temple healers.
+<ce>         But you approach unafraid and attempt magic on him.
+<ce>    It takes a few castings, but soon enough, the leper is cured.
+<ce>      A few wide-eyed villagers watch in awe as his sores heal.
+<ce>
+<ce>                  "Healed! I'm healed! Thank %god!!"
+<ce>
+<ce>         He then runs through the streets, shouting for joy.
+<ce>                  It appears your reputation in %crn
+<ce>                    is about to improve a little.
+                                     <--->
+<ce>                  (SKILL CHECK PASSED: RESTORATION)
+<ce>
+<ce>   His case is quite advanced, enough to daunt the temple healers.
+<ce>         But you approach unafraid and attempt magic on him.
+<ce>    It takes a few castings, but soon enough, the leper is cured.
+<ce>      A few wide-eyed villagers watch in awe as his sores heal.
+<ce>
+<ce>           "This %ra healed me! My life is saved! By %god!"
+<ce>
+<ce>         He then runs through the streets, shouting for joy.
+<ce>                  It appears your reputation in %crn
+<ce>                    is about to improve a little.
+
+QBN:
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_medical_ task:
+    when skill Medical is at least 70
+
+_resto_ task:
+    when skill Restoration is at least 50
+
+variable _accept_
+_finalwin_ task:
+    when _accept_ and _medical_
+    say 1013
+    legal repute +4
+    end quest
+
+_finalwin2_ task:
+    when _accept_ and _resto_ and not _medical_
+    say 1014
+    legal repute +4
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _medical_ and not _resto_
+    say 1012
+    make pc ill with Leprosy
+    end quest

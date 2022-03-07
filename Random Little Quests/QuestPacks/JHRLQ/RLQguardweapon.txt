@@ -1,0 +1,92 @@
+Quest: RLQguardweapon
+DisplayName: Random Little Quest Guard Weapon
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>          You make sure no one is looking, and nab the axe.
+<ce>              Its restraint is flimsy and easily broken.
+<ce>                     Since it's of generic make,
+<ce>                   selling it should be quite easy.
+
+Message:  1010
+<ce>            Fastened to a nearby wall, you see an axe with
+<ce>                  a warning note written on the top:
+<ce>
+<ce>             "PROPERTY OF THE CITY GUARD. DO NOT REMOVE"
+<ce>
+<ce>          While it looks like an ordinary war axe, you could
+<ce>         still take it if you felt skilled in pickpocketing.
+<ce>             You don't think anyone's watching right now,
+<ce>              and the foggy air provides a natural cover.
+<ce>                       Do you make the attempt?
+
+Message:  1011
+<ce>        You feel no need to incite the wrath of the city watch.
+<ce>                       You ignore the axe.
+
+Message:  1012
+<ce>            You lay your hands on the axe and try to pull.
+<ce>             Your pickpocketing skills come up short, as
+<ce>              your obvious movements attract attention.
+<ce>            Members of the city watch hurtle towards you,
+<ce>                      demanding that you halt.
+
+QBN:
+
+Item _reward_ gem
+
+Clock _delay_ 00:10
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_accept_ task:
+    pick one of _go1_ _go2_
+
+_skill1_ task:
+    when skill Pickpocket is at least 15
+
+_skill2_ task:
+    when skill Pickpocket is at least 20
+
+variable _go1_
+variable _go2_
+
+_c1_ task:
+    when _skill1_ and _go1_
+    start task _success_
+
+_c2_ task:
+    when _skill2_ and _go2_
+    start task _success_
+
+_d1_ task:
+    when not _skill1_ and _go1_
+    start task _fail_
+
+_d2_ task:
+    when not _skill2_ and _go2_
+    start task _fail_
+
+variable _success_
+variable _fail_
+
+_finalwin_ task:
+    when _accept_ and _success_
+    give pc _reward_
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _success_
+    say 1012
+    setplayercrime Theft
+    spawncityguards immediate
+    start timer _delay_
+
+_delay_ task:
+    end quest
