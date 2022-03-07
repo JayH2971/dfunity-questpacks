@@ -1,0 +1,46 @@
+Quest: JHTPA02a
+DisplayName: Mages Guild's Revenge
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>                   You hear a warping sound nearby.
+<ce>       Out of nowhere, a hooded mage appears and casts a spell.
+<ce>
+<ce>                     "Die, slave of Julianos!!"
+<ce>
+<ce>           A few golems begin to materialize, and the mage
+<ce>                 disappears as quickly as he arrived.
+                                     <--->
+<ce>                   You hear a warping sound nearby.
+<ce>       Out of nowhere, a hooded mage appears and casts a spell.
+<ce>
+<ce>                      "Die, slave of Julianos!!"
+<ce>
+<ce>           A few golems begin to materialize, and the mage
+<ce>               disappears as quickly as she arrived.
+
+QBN:
+
+Clock _delay_ 3.00:00 4.00:00
+Clock _smalldelay_ 0:05
+
+Foe _warr_ is Fire_atronach
+Foe _heal_ is Ice_atronach
+Foe _arch_ is Iron_atronach
+
+--	Quest start-up:
+    start timer _delay_
+
+_delay_ task:
+    say 1010
+    create foe _warr_ every 0 minutes 1 times with 100% success
+    create foe _heal_ every 0 minutes 1 times with 100% success
+    create foe _arch_ every 0 minutes 1 times with 100% success
+    change foe _warr_ infighting true
+    change foe _heal_ infighting true
+    change foe _arch_ infighting true
+    start timer _smalldelay_
+
+_smalldelay_ task:
+    end quest

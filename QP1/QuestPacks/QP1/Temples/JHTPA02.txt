@@ -1,0 +1,142 @@
+Quest: JHTPA02
+DisplayName: Washing the Brain
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          Our long-running feud with the Mages Guild should
+<ce>         not surprise anyone. They have repeatedly stolen our
+<ce>         work and claimed it as their own, to name the least
+<ce>         of their crimes against us. But we are informed that
+<ce>          one of our members has been stolen away and forced
+<ce>         to work in a Mages Guild hall, far from ___qgiver_.
+<ce>           Julianos requires a brave soul to bring us back
+<ce>                       our friend. Will you go?
+
+RefuseQuest:  [1001]
+<ce>                   Remember, if it happened to you,
+<ce>              one of us would rescue you. Remember that.
+
+AcceptQuest:  [1002]
+<ce>                   Julianos smiles upon thee, %pct.
+<ce>             You will travel to ___magery_ to find =apoc_
+<ce>                 named _apoc_ within the mages' hall.
+<ce>     You should expect resistance once your intentions are known,
+<ce>              but neither we nor the law would hold you
+<ce>               accountable should you defend yourself.
+<ce>         The Mages Guild generally prefers a few dead bodies
+<ce>    in lieu of the %rt finding out what they really do over there.
+<ce>           However your method, return here in =timer_ days
+<ce>             with _apoc_ intact. Should that time expire,
+<ce>              others will be sent in your place, and you
+<ce>                      will be dubbed a failure.
+
+QuestFail:  [1003]
+<ce>                   You were to return to ___qgiver_
+<ce>                      with _apoc_ by this time.
+
+QuestComplete:  [1004]
+<ce>            _apoc_ wildly thrashes about as %g1 recognizes
+<ce>           the familiar faces of the adherents of Julianos.
+<ce>          Healers approach and begin the long, arduous work
+<ce>         of dispelling the Mages Guild's enchantment on %g2,
+<ce>           pulling %g2 into another room. _qgiver_ speaks.
+<ce>
+<ce>                "It isn't pretty, but it is necessary.
+<ce>               The Mages Guild will pay for its crimes,
+<ce>             even if the whole Empire should burn for it.
+<ce>          Julianos' wrath will be poured out in its season.
+<ce>            As for you, I managed to get my hands on this
+<ce>              fairly unique _item_ while you were away.
+<ce>                  Would you accept it as a reward?"
+
+Message:  1010
+<ce>                A tense air reigns in the Mages Guild.
+<ce>           The people here seem to know something is wrong,
+<ce>        but they aren't brave enough to do anything about it.
+<ce>
+<ce>     You hope none of them get in your way once you find _apoc_.
+
+Message:  1011
+<ce>             This =apoc_ matches the description _qgiver_
+<ce>          gave you of _apoc_. However, %g3 eyes are distant,
+<ce>            and %g1 appears to bear no conscious thought.
+<ce>     You grab %g3 wrist, and though %g1 offers little resistance,
+<ce>             %g1 is impelled to shout, "H-help! Enemies!
+<ce>                  They're coming to take me away!!"
+
+Message:  1012
+<ce>         A serious-looking group from the Temple of Julianos
+<ce>          have found you. They take _apoc_ from your custody
+<ce>                     and lead %g2 to ___qgiver_.
+<ce>                       Your reward is forfeit.
+
+Message:  1030
+%qdt:
+__qgiver_ of
+___qgiver_ has asked me to travel
+to ___magery_ to find a =apoc_
+named _apoc_ inside the Mages Guild.
+I am to return within =timer_ days
+with %g2.
+
+QBN:
+Person _qgiver_ group Questor
+Person _apoc_ faction Apothecaries_of_Stendarr
+Person _mages_ faction The_Mages_Guild
+
+Foe _mage_ is Mage
+Foe _battl_ is Battle_mage
+
+Place _magery_ remote magery
+
+Item _item_ item class 4 subclass 1
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+--	Quest start-up:
+    log 1030 step 0
+    start timer _timer_
+    hide npc _apoc_
+    pc at _magery_ do _inside_
+
+_inside_ task:
+    start task _place_
+
+_place_ task:
+    say 1010
+    place npc _apoc_ at _magery_
+    restore _apoc_
+
+_clicked_ task:
+    clicked npc _apoc_
+    say 1011
+    hide npc _apoc_
+    add _apoc_ face
+    change repute with _mages_ by -10
+    create foe _mage_ every 0 minutes 1 times with 100% success
+    create foe _battl_ every 0 minutes 1 times with 100% success
+    change foe _mage_ infighting true
+    change foe _battl_ infighting true
+
+_timer_ task:
+    say 1003
+    end quest
+
+_timerpeople_ task:
+    when _timer_ and _clicked_
+    say 1012
+
+_victory_ task:
+    when _qgclicked_ and _clicked_
+    give pc _item_
+    change repute with _mages_ by -10
+    start quest JHTPA02a
+    end quest
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _clicked_
+    clear _qgclicked_ _clearclick_

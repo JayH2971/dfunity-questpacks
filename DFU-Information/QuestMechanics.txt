@@ -59,7 +59,7 @@
 
     Mage: KnightsAndMages 128
     Spellsword: KnightsAndMages 129
-    Battlemage: KnightsAndMages 130
+    Battle_mage: KnightsAndMages 130
     Sorcerer: KnightsAndMages 131
     Healer: KnightsAndMages 132
     Nightblade: Criminals 133
