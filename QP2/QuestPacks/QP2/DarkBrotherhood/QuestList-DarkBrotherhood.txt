@@ -15,4 +15,5 @@ JHDB003, DarkBrotherHood, M, 0, 1, a quest to slay a thief inside the same town
 JHDB004, DarkBrotherHood, M, 0, 1, a quest to slay a priest inside the same town
 JHDB005, DarkBrotherHood, M, 0, 1, a quest to slay a barbarian inside the same town
 JHDB007, DarkBrotherHood, M, 0, X, a quest to slay a mark over a bodyguard's objection
-JHDB011, DarkBrotherHood, M, 0, X, a quest to slay a Thieves Guild interloper
+JHDB011, DarkBrotherHood, M, 0, 1, a quest to slay a Thieves Guild interloper
+JHDB025, DarkBrotherHood, M, 2, 1, a quest to slay a member of the Fighers Guild
