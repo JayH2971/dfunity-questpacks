@@ -1,0 +1,204 @@
+Quest: JHIM025
+DisplayName: Money Duplication Trick
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                   Hail, %ra. Have time for a game?
+<ce>         It's very simple. You pay 100 gold, non-refundable,
+<ce>          and we flip a coin. If heads is up, I pay you 200.
+<ce>                 If heads is down, I keep your money.
+<ce>          You can keep doubling as long as you get heads up,
+<ce>           but if you ever get a heads down, I take it all.
+<ce>                     Want to put down a hundred?
+
+RefuseQuest:  [1001]
+<ce>                     Maybe a wise choice, friend.
+
+QuestComplete:  [1004]
+<ce>                   "Fine then. Here's your money."
+
+QuestorPostSuccess:  [1008]
+You're quite good at math!
+
+Message:  1011
+<ce>           You count out 100 gold coins and offer them up.
+<ce>
+<ce>   "Okay, result is... heads up. You have 200. Want to keep going?"
+
+Message:  1012
+<ce>          You watch the coin flip again. It lands heads up.
+<ce>
+<ce>                     "You're at 400. Keep going?"
+
+Message:  1013
+<ce>            The coin is flipped again. It lands heads up.
+<ce>
+<ce>                   "You have 800 now. Keep going?"
+
+Message:  1014
+<ce>        You watch another coin flip. It lands heads up again.
+<ce>
+<ce>   "%oth, I'm starting to regret this. 1,600 in the pot. Go again?"
+
+Message:  1015
+<ce>           The coin gets flipped again. It lands heads up.
+<ce>
+<ce>       "You know the odds of this? 3,200 gold now. Do another?"
+
+Message:  1016
+<ce>        You watch another flip of the coin. It lands heads up.
+<ce>
+<ce>                "I don't believe this. I really don't.
+<ce>            6,400 gold to you. Risk it all and go again?"
+
+Message:  1017
+<ce>        The coin is flipped once more. It lands in your favor.
+<ce>
+<ce>          "You're about to clean me out for the month, %ra.
+<ce>               Unless you lose the next flip. Try it?"
+<ce>               You currently have 12,800 gold at stake.
+
+Message:  1018
+<ce>      Once more the coin flips, and once more it lands heads up.
+<ce>
+<ce>            "I don't believe this. Take your money and go.
+<ce>     Whatever witchcraft you're dealing in, I don't want in here.
+<ce>               You don't get another flip. Leave now."
+<ce>
+<ce>                   You are given 25,000 gold coins.
+<ce>              Apparently you've cleaned this place out.
+
+Message:  1019
+<ce>                    (ATTRIBUTE CHECK PASSED: LUCK)
+<ce>
+<ce>   You're certain no one expected someone as lucky as you to play.
+<ce>     You win the first coin flip, and then another, and another.
+<ce>
+<ce>   "Hey, something's wrong here. I don't know what you're pulling,
+<ce>    but I don't like it. Take your 800 coins and get outta here."
+
+Message:  1020
+<ce>            The coin is flipped, and it lands heads down.
+<ce>
+<ce>               "Sorry %ra, but I win, fair and square."
+<ce>
+<ce>                    Your money is taken from you.
+
+Message:  1021
+<ce>   You search your belongings for 100 coins, but don't find enough.
+<ce>                  You'll have to miss out this time.
+
+QBN:
+
+Item _200_ gold range 200 to 200
+Item _400_ gold range 400 to 400
+Item _800_ gold range 800 to 800
+Item _1600_ gold range 1600 to 1600
+Item _3200_ gold range 3200 to 3200
+Item _6400_ gold range 6400 to 6400
+Item _12800_ gold range 12800 to 12800
+Item _25000_ gold range 25000 to 25000
+
+--	Quest start-up:
+    pay 100 money do _begin_ otherwise do _nomoney_
+
+_lucky_ task:
+    when attribute Luck is at least 90
+
+variable _begin_
+
+_beginner_ task:
+    when _begin_ and not _lucky_
+    start task _choice2_
+
+_instantwin_ task:
+    when _begin_ and _lucky_
+    say 1019
+    get item _800_
+    make _800_ permanent
+    end quest
+
+_nomoney_ task:
+    say 1021
+    end quest
+
+_fail_ task:
+    say 1020
+    end quest
+
+_choice2_ task:
+    prompt 1011 yes _branch2_ no _quit1_
+
+_quit1_ task:
+    give pc _200_
+    end quest
+
+_branch2_ task:
+    pick one of _choice3_ _fail_
+
+_choice3_ task:
+    prompt 1012 yes _branch3_ no _quit2_
+
+_quit2_ task:
+    give pc _400_
+    end quest
+
+_branch3_ task:
+    pick one of _choice4_ _fail_
+
+_choice4_ task:
+    prompt 1013 yes _branch4_ no _quit3_
+
+_quit3_ task:
+    give pc _800_
+    end quest
+
+_branch4_ task:
+    pick one of _choice5_ _fail_
+
+_choice5_ task:
+    prompt 1014 yes _branch5_ no _quit4_
+
+_quit4_ task:
+    give pc _1600_
+    end quest
+
+_branch5_ task:
+    pick one of _choice6_ _fail_
+
+_choice6_ task:
+    prompt 1015 yes _branch6_ no _quit5_
+
+_quit5_ task:
+    give pc _3200_
+    end quest
+
+_branch6_ task:
+    pick one of _choice7_ _fail_
+
+_choice7_ task:
+    prompt 1016 yes _branch7_ no _quit6_
+
+_quit6_ task:
+    give pc _6400_
+    end quest
+
+_branch7_ task:
+    pick one of _choice8_ _fail_
+
+_choice8_ task:
+    prompt 1017 yes _branch8_ no _quit7_
+
+_quit7_ task:
+    give pc _12800_
+    end quest
+
+_branch8_ task:
+    pick one of _victory_ _fail_
+
+_victory_ task:
+    say 1018
+    get item _25000_
+    make _25000_ permanent
+    end quest

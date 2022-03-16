@@ -1,0 +1,76 @@
+Quest: JHIM022
+DisplayName: Whittlemaster
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                 "Hey there %ra! Wanna try your hand?
+<ce>             We're having fun skinning some apples here,
+<ce>         and we're trying to see who's the fastest of us all.
+<ce>                              Want in?"
+<ce>
+<ce>                  (SKILL CHECK: Short Blade, medium)
+
+RefuseQuest:  [1001]
+<ce>            "All right then! Have yourself a blessed day!"
+
+AcceptQuest:  [1002]
+<ce>       They offer you a small knife and hold a couple of apples
+<ce>              at the ready. At their signal, you begin.
+
+QuestComplete:  [1004]
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>            If they were hoping for a show, they got one.
+<ce>             Your skill with knives far surpasses theirs.
+<ce>                  They watch with wonder as the skin
+<ce>         peels cleanly off the apples. After you're finished,
+<ce>          they hoop and laugh among themselves. The =qgiver_
+<ce>                 then pulls out some money and says,
+<ce>
+<ce>               "Well by %god, wasn't that entertaining!
+<ce>           Have yourself some money. We'd love to see that
+<ce>                       when we do this again!"
+
+QuestorPostSuccess:  [1008]
+I'll let you know when I get another shipment of apples!
+
+Message:  1011
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>     You grab the knife and try hard to meet their expectations.
+<ce>          Your hands and your mind don't agree on the task,
+<ce>        and you find a couple of new gashes on your fingers in
+<ce>          your haste to beat their record. Unimpressed, they
+<ce>          give you some dull thanks and change the subject.
+
+QBN:
+
+Item _reward_ gold range 75 to 110
+
+Person _qgiver_ group Questor
+
+--	Quest start-up:
+
+_qualified_ task:
+    when skill ShortBlade is at least 45
+
+_basic_ task:
+    when skill ShortBlade is at least 20
+
+_finalwin_ task:
+    when _qualified_
+    give pc _reward_
+    end quest
+
+_finalfail_ task:
+    when not _qualified_ and _basic_
+    say 1011
+    reduce player health by 8
+    end quest
+
+_bigfail_ task:
+    when not _basic_
+    say 1011
+    reduce player health by 15
+    end quest

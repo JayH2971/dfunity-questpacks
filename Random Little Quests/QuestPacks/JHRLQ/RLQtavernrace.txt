@@ -1,0 +1,97 @@
+Quest: RLQtavernrace
+DisplayName: Random Little Quest Tavern Race
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>                 You enter the tavern. Moments later,
+<ce>               _person_ arrives after you, breathless.
+<ce>
+<ce>        "No way! I can't believe it! Huh, you really are fast!
+<ce>       Well, I'd be a terrible competitor if I didn't pay out.
+<ce>     Here, have some bandages. They'll be great for any blisters
+<ce>  you get on the road!"
+
+Message:  1010
+<ce>           You attract the attention of an athletic-looking
+<ce>                 youth nearby, and are flagged down.
+<ce>
+<ce>          "Hey there! You know the town? My name's _person_.
+<ce>        I'm trying to find someone who'll race me to _tavern_.
+<ce>  No one's beaten me yet!
+<ce>       My current record's 50 seconds from here. Ya wanna race?"
+
+Message:  1011
+<ce>       "Don't think I'll go easy!" %g1 shouts and hurries off.
+<ce>  The race is on.
+
+Message:  1012
+<ce>                You decline. _person_ shrugs and says,
+<ce>
+<ce>                     "Oh well. Fine day to you!"
+
+Message:  1013
+<ce>                        As you enter _tavern_,
+<ce>             you see _person_ wearing a victorious grin.
+<ce>
+<ce>       "The reigning champion wins! Thanks for the race though.
+<ce>        Always gets the blood racing when I get an opponent!"
+<ce>
+<ce>           _person_ then leaves to find another competitor.
+
+Message:  1014
+<ce>        Your race with _person_ to _tavern_ has long expired.
+
+Message:  1015
+%qdt:
+I am racing an athlete named _person_
+to the tavern called _tavern_
+within ___tavern_. I could win
+if I beat %g3 record of 50 seconds
+from our starting point.
+
+QBN:
+
+Person _person_ faction The_Merchants
+
+Place _tavern_ local tavern
+
+Clock _timer_ 00:10
+Clock _ending_ 1:00
+
+Item _bandage1_ item class 9 subclass 2
+Item _bandage2_ item class 9 subclass 2
+Item _bandage3_ item class 9 subclass 2
+
+--	Quest start-up:
+    prompt 1010 yes _pick_ no _ignore_
+    pc at _tavern_ do _inside_
+
+_pick_ task:
+    say 1011
+    start timer _timer_
+    start timer _ending_
+    log 1015 step 0
+
+_ignore_ task:
+    say 1012
+    end quest
+
+variable _inside_
+variable _timer_
+
+_victory_ task:
+    when _inside_ and not _timer_
+    give pc _bandage1_
+    give pc _bandage2_
+    give pc _bandage3_
+    end quest
+
+_2ndplace_ task:
+    when _timer_ and _inside_
+    say 1013
+    end quest
+
+_ending_ task:
+    say 1014
+    end quest

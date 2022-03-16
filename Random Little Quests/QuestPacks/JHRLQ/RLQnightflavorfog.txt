@@ -1,0 +1,16 @@
+Quest: RLQnightflavorfog
+DisplayName: Random Little Quest Night Flavor Fog
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>             In the foggy darkness, your eyes perceive
+<ce>     an impossible sight -- someone who looks precisely like you.
+<ce>       You peer closer and the figure vanishes without a trace.
+<ce>         You wonder if your eyes are playing tricks on you.
+
+QBN:
+
+--	Quest start-up:
+    say 1011
+    end quest

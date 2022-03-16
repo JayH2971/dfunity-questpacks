@@ -255,13 +255,16 @@ _fognight_ task:
     start task _stopevents_
 
 _fognightevents_ task:
-    pick one of _drugdeliver_ _pickpocket_ _yousteal_
+    pick one of _drugdeliver_ _pickpocket_ _yousteal_ _nightflavorfog_
 
 _drugdeliver_ task:
     start quest RLQdrugdeliver
 
 _yousteal_ task:
     start quest RLQyousteal
+
+_nightflavorfog_ task:
+    start quest RLQnightflavorfog
 
 _rainday_ task:
     when _daylight_ and _rainy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
