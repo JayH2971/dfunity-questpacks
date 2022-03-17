@@ -49,7 +49,13 @@ Person _mg_ faction The_Mages_Guild
     change repute with _fg_ by -200
     change repute with _tg_ by -200
     change repute with _mg_ by -200
-    start quest IRCM2
+
+_travelstop_ task:
+    when pc enters village
+    when pc enters hamlet
+    when pc enters city
+    setplayercrime Criminal_Conspiracy
+    spawncityguards immediate
 
 _daily_ task:
     daily from 0:01 to 1:59
