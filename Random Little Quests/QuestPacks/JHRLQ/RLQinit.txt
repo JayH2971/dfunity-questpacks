@@ -72,7 +72,7 @@ _snowy_ task:
 
 _sunnyday_ task:
     when _daylight_ and _sunning_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
-    pick one of _sunnydayevents_ _dud_ _dud_
+    pick one of _sunnydayevents_ _dud_
     start task _stopevents_
 
 _sunnydayevents_ task:
@@ -140,7 +140,7 @@ _immortal_ task:
 
 _sunnynight_ task:
     when not _daylight_ and _sunning_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
-    pick one of _sunnynightevents_ _dud_ _dud_
+    pick one of _sunnynightevents_ _dud_
     start task _stopevents_
 
 _sunnynightevents_ task:
@@ -157,7 +157,7 @@ _vampireencounter_ task:
 
 _cloudyday_ task:
     when _daylight_ and _clouded_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
-    pick one of _cloudydayevents_ _dud_ _dud_
+    pick one of _cloudydayevents_ _dud_
     start task _stopevents_
 
 _cloudydayevents_ task:
@@ -183,7 +183,7 @@ _tavernrace_ task:
 
 _cloudynight_ task:
     when not _daylight_ and _clouded_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
-    pick one of _cloudynightevents_ _dud_ _dud_
+    pick one of _cloudynightevents_ _dud_
     start task _stopevents_
 
 _cloudynightevents_ task:
@@ -191,7 +191,7 @@ _cloudynightevents_ task:
 
 _overcastday_ task:
     when _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
-    pick one of _overcastdayevents_ _dud_ _dud_
+    pick one of _overcastdayevents_ _dud_
     start task _stopevents_
 
 _overcastdayevents_ task:
@@ -223,7 +223,7 @@ _leprosyheal_ task:
 
 _overcastnight_ task:
     when not _daylight_ and _overcasty_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
-    pick one of _overcastnightevents_ _dud_ _dud_
+    pick one of _overcastnightevents_ _dud_
     start task _stopevents_
 
 _overcastnightevents_ task:
@@ -234,7 +234,7 @@ _vampiregold_ task:
 
 _fogday_ task:
     when _daylight_ and _foggy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
-    pick one of _fogdayevents_ _dud_ _dud_
+    pick one of _fogdayevents_ _dud_
     start task _stopevents_
 
 _fogdayevents_ task:
@@ -254,7 +254,7 @@ _guardweapon_ task:
 
 _fognight_ task:
     when not _daylight_ and _foggy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
-    pick one of _fognightevents_ _dud_ _dud_
+    pick one of _fognightevents_ _dud_
     start task _stopevents_
 
 _fognightevents_ task:
@@ -271,7 +271,7 @@ _nightflavorfog_ task:
 
 _rainday_ task:
     when _daylight_ and _rainy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
-    pick one of _raindayevents_ _dud_ _dud_
+    pick one of _raindayevents_ _dud_
     start task _stopevents_
 
 _raindayevents_ task:
@@ -303,7 +303,7 @@ _raintaxes3_ task:
 
 _rainnight_ task:
     when not _daylight_ and _rainy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
-    pick one of _rainnightevents_ _dud_ _dud_
+    pick one of _rainnightevents_ _dud_
     start task _stopevents_
 
 _rainnightevents_ task:
@@ -311,7 +311,7 @@ _rainnightevents_ task:
 
 _thundday_ task:
     when _daylight_ and _thundered_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
-    pick one of _thunddayevents_ _dud_ _dud_
+    pick one of _thunddayevents_ _dud_
     start task _stopevents_
 
 _thunddayevents_ task:
@@ -325,7 +325,7 @@ _templedelivery_ task:
 
 _thundnight_ task:
     when not _daylight_ and _thundered_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
-    pick one of _thundnightevents_ _dud_ _dud_
+    pick one of _thundnightevents_ _dud_
     start task _stopevents_
 
 _thundnightevents_ task:
@@ -342,7 +342,7 @@ _nightrat_ task:
 
 _snowyday_ task:
     when _daylight_ and _snowy_ and _smalldelay_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_ and not _palaced_ and not _stopevents_ and not _castle_
-    pick one of _snowydayevents_ _dud_ _dud_
+    pick one of _snowydayevents_ _dud_
     start task _stopevents_
 
 _snowydayevents_ task:

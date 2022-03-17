@@ -4,7 +4,7 @@ DisplayName: Escaped Slave Step 1
 QRC:
 
 Message:  1011
-<ce>                      YOU ROLE IS: ESCAPED SLAVE
+<ce>                     YOUR ROLE IS: ESCAPED SLAVE
 <ce>
 <ce>      You enjoyed a simple life in your home town mere days ago.
 <ce>          Ignorant of the many dangers that plague Tamriel,

@@ -9,7 +9,7 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHIM022, Commoners, N, 0, 1, skin apples
-JHIM023, Commoners, N, 0, 1, read a Mysticism book
-JHIM024, Commoners, N, 0, 1, do some introductory math exercises
-JHIM025, Commoners, N, 0, 1, double your money
+RQI001, Commoners, N, 0, 1, skin apples
+RQI002, Commoners, N, 0, 1, read a Mysticism book
+RQI003, Commoners, N, 0, 1, do some introductory math exercises
+RQI004, Commoners, N, 0, 1, double your money

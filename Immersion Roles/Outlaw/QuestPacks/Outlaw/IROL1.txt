@@ -4,7 +4,7 @@ DisplayName: Outlaw Step 1
 QRC:
 
 Message:  1011
-<ce>                         YOU ROLE IS: OUTLAW
+<ce>                         YOUR ROLE IS: OUTLAW
 <ce>
 <ce>             You feel like you're living in a nightmare.
 <ce>

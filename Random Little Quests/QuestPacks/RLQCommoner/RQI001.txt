@@ -1,4 +1,4 @@
-Quest: JHIM022
+Quest: RQI001
 DisplayName: Whittlemaster
 -- Message panels
 QRC:

@@ -1,4 +1,4 @@
-Quest: JHIM023
+Quest: RQI002
 DisplayName: Master of Mysticism
 -- Message panels
 QRC:

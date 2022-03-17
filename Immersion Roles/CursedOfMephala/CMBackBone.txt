@@ -1,0 +1,70 @@
+Quest: DBBackBone
+DisplayName: Backbone for Dark Brotherhood Immersion Role
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  A few days past, doubts found place in your mind.
+<ce>  Not anymore, though. You're quickly becoming
+<ce>  a skilled assassin, a lethal weapon in the hands
+<ce>  of your employers. You feel a burning desire
+<ce>  to be worthy of the Dark Brotherhood's legacy.
+
+--level 2
+
+Message:  1012
+<ce>  Your confidence continues to grow.
+<ce>  You occasionally feel pity for those
+<ce>  foes who cross your path, even if momentarily.
+<ce>  Their heads are your stepping stones
+<ce>  to the great accomplishments in your future.
+
+--level 4
+
+Message:  1013
+<ce>  You ponder the number of kills you've accrued.
+<ce>  Your skill is a wonder. The Dark Brotherhood
+<ce>  lives on in you -- you feel its very essence
+<ce>  within your body. With its legacy, you can
+<ce>  become something so much more than you were.
+
+--level 6
+
+Message:  1014
+<ce>  Murderer. Slayer. Killer. Slaughterer.
+<ce>  To some these are ugly words, but to you
+<ce>  they are the most beautiful notes in the
+<ce>  symphony of your life. You want to hear them
+<ce>  again and again. Let the whole world speak
+<ce>  of this %ra manslayer. May your name strike
+<ce>  terror into their hearts, as it should.
+
+--level 8
+
+QBN:
+
+
+--	Quest start-up:
+    start quest IRDB1
+    start quest L0A01L00
+
+_level2_ task:
+    level 2 completed
+    say 1011
+
+_level4_ task:
+    level 4 completed
+    say 1012
+
+_level5_ task:
+    level 5 completed
+    start quest IRDBinterlopers
+
+_level6_ task:
+    level 6 completed
+    say 1013
+
+_level8_ task:
+    level 8 completed
+    say 1014
+    end quest

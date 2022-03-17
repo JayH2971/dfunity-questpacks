@@ -4,7 +4,7 @@ DisplayName: Noble Child Step 1
 QRC:
 
 Message:  1011
-<ce>                       YOU ROLE IS: NOBLE CHILD
+<ce>                      YOUR ROLE IS: NOBLE CHILD
 <ce>
 <ce>         Your father was a noble in the region of ____town_,
 <ce>      and your mother's identity is not known. When you came of

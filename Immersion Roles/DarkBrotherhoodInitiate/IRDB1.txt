@@ -4,7 +4,7 @@ DisplayName: Dark Brotherhood Initiate Step 1
 QRC:
 
 Message:  1011
-<ce>                YOU ROLE IS: DARK BROTHERHOOD INITIATE
+<ce>               YOUR ROLE IS: DARK BROTHERHOOD INITIATE
 <ce>
 <ce>         You shake your head, getting a hold of your senses.
 <ce>              The dead body of your quarry lies nearby.

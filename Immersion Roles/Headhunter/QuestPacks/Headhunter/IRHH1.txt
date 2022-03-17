@@ -4,33 +4,33 @@ DisplayName: Headhunter Step 1
 QRC:
 
 Message:  1011
-<ce>  YOU ROLE IS: HEADHUNTER
-<ce>  
-<ce>  You groggily stand up.
-<ce>  You went to sleep yesterday after spending
-<ce>  far too many hours here, searching for supposed
-<ce>  clues to your quarry. What a waste of your time.
-<ce>  
-<ce>  You are searching for an outlaw known as
-<ce>  the Sapphire Scourge. With a promise of
-<ce>  3,000 gold pieces for his or her head,
-<ce>  you asked around ___town_ until you were
-<ce>  told, on good authority, that he or she
-<ce>  calls this place home. Not likely.
-<ce>  Or perhaps you were left in the dust.
-<ce>  You doubt you can make any more progress here.
-<ce>  
-<ce>  While you were sleeping, it appears some
-<ce>  of the usual residents moved back in.
-<ce>  Looks like you'll need to fight your way out.
-<ce>  You'll have to take better notes
-<ce>  on where the exit is next time.
+<ce>                       YOUR ROLE IS: HEADHUNTER
+<ce>
+<ce>                        You groggily stand up.
+<ce>              You went to sleep yesterday after spending
+<ce>           far too many hours here, searching for supposed
+<ce>           clues to your quarry. What a waste of your time.
+<ce>
+<ce>               You are searching for an outlaw known as
+<ce>               the Sapphire Scourge. With a promise of
+<ce>                3,000 gold pieces for his or her head,
+<ce>               you asked around ___town_ until you were
+<ce>               told, on good authority, that he or she
+<ce>                  calls this place home. Not likely.
+<ce>                Or perhaps you were left in the dust.
+<ce>            You doubt you can make any more progress here.
+<ce>
+<ce>               While you were sleeping, it appears some
+<ce>                of the usual residents moved back in.
+<ce>            Looks like you'll need to fight your way out.
+<ce>                   You'll have to take better notes
+<ce>                   on where the exit is next time.
 
 Message:  1012
-<ce>  You enter this settlement and look around, happy
-<ce>  to escape the ravages of the wilderness.
-<ce>  It isn't ___town_, but it is a respite from the
-<ce>  labors of traveling.
+<ce>           You enter this settlement and look around, happy
+<ce>               to escape the ravages of the wilderness.
+<ce>           It isn't ___town_, but it is a respite from the
+<ce>                         labors of traveling.
 
 Message:  1013
 %qdt:

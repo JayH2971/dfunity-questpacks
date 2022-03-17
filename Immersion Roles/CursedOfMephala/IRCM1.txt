@@ -1,0 +1,61 @@
+Quest: IRCM1
+DisplayName: Cursed of Mephala Introduction
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>                   YOUR ROLE IS: CURSED OF MEPHALA
+<ce>
+<ce>            Your path was chosen before you ever knew it.
+<ce>            You were the Cursed of Mephala; life among the
+<ce>           civilized people of Tamriel was never your lot.
+<ce>     Wherever your name is spoken, it is with disdain and hatred.
+<ce>Through means you never understood, infamy follows you like wildfire.
+<ce>      Your trial is that of survival -- by any means necessary.
+<ce>
+<ce>            Nevertheless, you were never left without aid.
+<ce>    There is a small chance per day that you find a random potion
+<ce>         among your belongings that was not there previously.
+<ce>            Very rarely, a new enchanted item would appear
+<ce>               for your use. A paltry compensation for
+<ce>               living under Mephala's shadow, perhaps,
+<ce>             but they've saved your life more than once.
+<ce>
+<ce>             The question is, how long will you survive?
+
+Message:  1012
+<ce>                 As though you were marked by magic,
+<ce>       eyes widen and people gasp as you enter the settlement.
+<ce>           You are not welcome here, nor ever will you be.
+
+QBN:
+
+Person _merch_ faction The_Merchants
+Person _db_ faction The_Dark_Brotherhood
+Person _fg_ faction The_Fighters_Guild
+Person _tg_ faction The_Thieves_Guild
+Person _mg_ faction The_Mages_Guild
+
+Clock _delay_ 0:05
+
+--	Quest start-up:
+    say 1011
+    legal repute -200
+    change repute with _merch_ by -200
+    change repute with _db_ by +200
+    change repute with _fg_ by -200
+    change repute with _tg_ by -200
+    change repute with _mg_ by -200
+    start quest IRCM2
+
+_travelstop_ task:
+    when pc enters village
+    when pc enters hamlet
+    when pc enters city
+    say 1012
+    setplayercrime Criminal_Conspiracy
+    spawncityguards immediate
+    start timer _delay_
+
+_delay_ task:
+    end quest

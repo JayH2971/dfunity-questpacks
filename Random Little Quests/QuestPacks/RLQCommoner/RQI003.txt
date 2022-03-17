@@ -1,4 +1,4 @@
-Quest: JHIM024
+Quest: RQI003
 DisplayName: Math Magic
 -- Message panels
 QRC:
@@ -81,8 +81,6 @@ Message:  1016
 QBN:
 
 Item _reward_ gold range 75 to 110
-
-Person _qgiver_ group Questor
 
 --	Quest start-up:
     prompt 1011 yes _step2_ no _fail_

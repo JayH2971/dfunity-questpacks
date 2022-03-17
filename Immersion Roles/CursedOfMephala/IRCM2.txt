@@ -1,0 +1,170 @@
+Quest: IRCM2
+DisplayName: Cursed of Mephala Forever
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>            Your pack seems a little heavier. You check it
+<ce>            and find a new potion has appeared within it.
+
+Message:  1012
+<ce>                  Your pack seems a little heavier.
+<ce>             You look inside and find an enchanted _item_
+<ce>                       has been placed within.
+
+QBN:
+
+Item _item_ magic_item
+Item _p1_ potion key 221871
+Item _p2_ potion key 239524
+Item _p3_ potion key 4975678
+Item _p4_ potion key 5017404
+Item _p5_ potion key 5188896
+Item _p6_ potion key 111516185
+Item _p7_ potion key 4826108
+Item _p8_ potion key 216843
+Item _p9_ potion key 224588
+Item _p10_ potion key 220192
+Item _p11_ potion key 240081
+Item _p12_ potion key 4937012
+Item _p13_ potion key 228890
+Item _p14_ potion key 221117
+Item _p15_ potion key 4870452
+Item _p16_ potion key 5361377
+Item _p17_ potion key 112080144
+Item _p18_ potion key 4842851
+Item _p19_ potion key 4815872
+Item _p20_ potion key 2031019196
+
+Clock _timer_ 23:30 1.00:30
+
+Person _merch_ faction The_Merchants
+Person _fg_ faction The_Fighters_Guild
+Person _tg_ faction The_Thieves_Guild
+Person _mg_ faction The_Mages_Guild
+
+--	Quest start-up:
+    legal repute -200
+    change repute with _merch_ by -200
+    change repute with _fg_ by -200
+    change repute with _tg_ by -200
+    change repute with _mg_ by -200
+    start quest IRCM2
+
+_daily_ task:
+    daily from 0:01 to 1:59
+    start task _pick_
+
+_pick_ task:
+    pick one of _mag_ _pot_
+    start timer _timer_
+
+variable _dud_
+
+_mag_ task:
+    pick one of _dud_ _dud_ _mag2_ _dud_
+
+_mag2_ task:
+    pick one of _dud_ _dud_ _mag3_ _dud_ _dud_
+
+_mag3_ task:
+    say 1012
+    get item _item_
+    make _item_ permanent
+
+_timer_ task:
+    start quest IRCM2
+    end quest
+
+_pot_ task:
+    pick one of _dud_ _pota_ _dud_
+
+_pota_ task:
+    pick one of _potb_ _potc_
+    say 1011
+
+_potb_ task:
+    pick one of _getpot1_ _getpot2_ _getpot3_ _getpot4_ _getpot5_ _getpot6_ _getpot7_ _getpot8_ _getpot9_ _getpot10_
+
+_potc_ task:
+    pick one of _getpot11_ _getpot12_ _getpot13_ _getpot14_ _getpot15_ _getpot16_ _getpot17_ _getpot18_ _getpot19_ _getpot20_
+
+_getpot1_ task:
+    get item _p1_
+    make _p1_ permanent
+
+_getpot2_ task:
+    get item _p2_
+    make _p2_ permanent
+
+_getpot3_ task:
+    get item _p3_
+    make _p3_ permanent
+
+_getpot4_ task:
+    get item _p4_
+    make _p4_ permanent
+
+_getpot5_ task:
+    get item _p5_
+    make _p5_ permanent
+
+_getpot6_ task:
+    get item _p6_
+    make _p6_ permanent
+
+_getpot7_ task:
+    get item _p7_
+    make _p7_ permanent
+
+_getpot8_ task:
+    get item _p8_
+    make _p8_ permanent
+
+_getpot9_ task:
+    get item _p9_
+    make _p9_ permanent
+
+_getpot10_ task:
+    get item _p10_
+    make _p10_ permanent
+
+_getpot11_ task:
+    get item _p11_
+    make _p11_ permanent
+
+_getpot12_ task:
+    get item _p12_
+    make _p12_ permanent
+
+_getpot13_ task:
+    get item _p13_
+    make _p13_ permanent
+
+_getpot14_ task:
+    get item _p14_
+    make _p14_ permanent
+
+_getpot15_ task:
+    get item _p15_
+    make _p15_ permanent
+
+_getpot16_ task:
+    get item _p16_
+    make _p16_ permanent
+
+_getpot17_ task:
+    get item _p17_
+    make _p17_ permanent
+
+_getpot18_ task:
+    get item _p18_
+    make _p18_ permanent
+
+_getpot19_ task:
+    get item _p19_
+    make _p19_ permanent
+
+_getpot20_ task:
+    get item _p20_
+    make _p20_ permanent
