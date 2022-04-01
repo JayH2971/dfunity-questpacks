@@ -1,0 +1,14 @@
+Quest: JHCAPA01prelude
+DisplayName: The Werewolf Hunt Prelude
+-- Message panels
+QRC:
+
+
+QBN:
+
+--	Quest start-up:
+
+_begin_ task:
+    when pc enters city
+    start quest JHCAPA01
+    end quest

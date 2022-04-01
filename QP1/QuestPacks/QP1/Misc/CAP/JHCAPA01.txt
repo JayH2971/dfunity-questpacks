@@ -1,0 +1,572 @@
+Quest: JHCAPA01
+DisplayName: The Werewolf Hunt
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>                  You request the immediate payment.
+<ce>                In addition to a hefty sack of money,
+<ce>              you have earned the villagers' admiration.
+<ce>             You expect you'll be spoken well of in %crn
+<ce>                         for quite some time.
+
+Message:  1010
+<ce>   As you enter ___tavern_, you see a piece of brittle posterboard.
+<ce>                It has an advertisement of some kind.
+<ce>
+<ce>       "WANTED: Hunter for ravenous werewolf. Has been stealing
+<ce>            local herdlife in the night time. Gold reward.
+<ce>               Find _aldman_ at _tavern_ if interested.
+<ce>     If no takers in 3 days, will seek mercenary in other town."
+<ce>
+<ce>                You note down the information, in case
+<ce>                 you decide to take up their request.
+
+Message:  1011
+%qdt:
+ The people of ___tavern_ are suffering loss
+ of livestock at the hands of a werewolf.
+ I can speak to _aldman_ at _tavern_
+ to offer my help within the next =entry_ days,
+ should I so desire.
+
+Message:  1012
+<ce>         _aldman_ seems lost in thought and quite anguished.
+<ce>          Your approach is scarcely noticed until you speak.
+<ce>
+<ce>      "Oh! Hi. Hi, yes, I'm the one you want to talk to, right?
+<ce>      About the werewolf? Well, I'm glad someone's taken it up.
+<ce>            Town guard are useless about this, as always.
+<ce>  They don't patrol at night, which is when the werewolf comes out.
+<ce>  Kind of pointless if you ask me. We're suffering significant loss
+<ce>    of animals of all kinds, all livestock: cows, sheep, chicken,
+<ce>     you name it. We keep asking the local enforcer, _enforcer_,
+<ce>  for some help tracking it down, but all we see are dragging feet.
+<ce>                   Makes me wonder why I pay taxes.
+<ce>
+<ce>          "If you can find and kill this werewolf that keeps
+<ce>      attacking ___tavern_, our gratitude would know no bounds.
+<ce>      And of course there would be gold in it for you, enough to
+<ce>               compensate your travels, I assure you."
+
+Message:  1013
+_enforcer_ tends to spend time in _tavern2_.
+<--->
+_enforcer_'s the enforcer in ___tavern_. Very good fellow. Hangs out in _tavern2_.
+
+Message:  1014
+%qdt:
+ _aldman_ of ___tavern_ told me that the town guard
+ are of no help disposing of the werewolf that hunts
+ animals inside the city. All the killings happen at night,
+ when the town guard do not patrol. _enforcer_
+ is the local enforcer for the town, and could be useful.
+
+Message:  1015
+<ce>       _enforcer_ lazily looks at you while sipping from a mug.
+<ce>       His expression of relaxation and ease seems contagious.
+<ce>
+<ce>    "Let me guess. You wanna talk about the werewolf, am I right?
+<ce>     Of course. I keep this forsaken city safe from every single
+<ce>     danger on Tamriel, but when a single werewolf starts feeding
+<ce> on farm animals, the sky starts falling. Yes, I know about the problem.
+<ce>         No, I don't have a solution to it. The %t refuses to
+<ce>        send our watchmen weaponry that can kill lycanthropes,
+<ce>      so unless you want us to pound it with clubs or something,
+<ce>               I don't foresee us doing much about it.
+<ce>
+<ce>   "Listen, you can still get your reward. Make a good faith effort
+<ce> to get to the bottom of this, and maybe they'll pay you. I'll help you out.
+<ce>            Go talk to _farmer_, one of the local farmers;
+<ce>       %g1 just reported another lost animal to me last night.
+<ce>   Go talk to %g2 and see what %g1 has to say. That's the best lead
+<ce>    I can give you... unless you want to go out at night and hunt
+<ce>         the beast yourself, and if you do, all power to you.
+<ce>            But I'm honestly beyond caring at this point.
+<ce>        If someone wants to get rid of this lupe, they should
+<ce>          start financing our town guard better, not whining
+<ce>                   about problems on posterboards."
+
+Message:  1016
+%qdt:
+_enforcer_, the enforcer for ___tavern_,
+told me that the town guard are too poorly
+equipped to handle a werewolf due to
+the %t's negligence. He suggested that I could still claim
+my reward from _aldman_,
+even if I fail to eliminate the beast,  with some due diligence
+into the matter. I can talk to _farmer_
+about a recent animal that %g1 lost, to start.
+
+Message:  1017
+<ce>           _farmer_ stares at you with hollow, baggy eyes.
+<ce>    You can't imagine %g1 has slept in a week, from how %g1 looks.
+<ce>
+<ce> "Hi. You're investigating the werewolf? Glad someone's doing something,
+<ce> unlike that useless enforcer. I've heard of people killing dozens of
+<ce> werewolves before. I don't think there's anything special about this
+<ce>         one, other than being really smart and really quiet.
+<ce>    I was outside last night, trying to watch for it, but somehow
+<ce>   it snuck past me and tore my cow to shreds with hardly a sound.
+<ce>           The filthy thing must be getting fat off of us,
+<ce>             incompetent as we are at defending the town.
+<ce>
+<ce> "If you're serious about killing this thing, you should know something.
+<ce>   There's an apothecary over in ___apoc_ who's had some experience
+<ce>        with weres before. If you can get over there, look for
+<ce>       _merch_ in _apoc_. Last letter I got from %g2 said that
+<ce> there are certain tricks you can use to uncover the wolf's identity.
+<ce>         Told me that it'd cost 1260 gold to make it happen.
+<ce> I regret not paying it sooner, because I'm down to my last cow now.
+<ce>     Don't know how I'll make ends meet if that one's killed too.
+<ce>    If you head over there and pay _merch_, you'll get compensated
+<ce>       for it, I promise. We need help. Please, do something."
+
+Message:  1018
+%qdt:
+_farmer_, a farmer who lost a cow to the werewolf,
+told me about an alchemist named _merch_
+who stays at _apoc_ in ___apoc_,
+having some kind of special trick to lure out
+the beast. It'll cost 1260 gold, but
+the villagers assure me my pay will be worth it.
+
+Message:  1019
+<ce>     You approach _merch_ and say you come on behalf of _farmer_.
+<ce>
+<ce>        "Ahh, yes! The problem with the wolfie, yes. You have
+<ce>              the money, yes? Gold first, chat second."
+<ce>
+<ce>        You produce the necessary money. _merch_ counts it out
+<ce>                  and shows a rather repulsive grin.
+<ce>
+<ce>   "Good, good. Let's talk werewolves. As you know, lycan-anythings
+<ce>           are normal people with a bit of a curse on them.
+<ce>       Most wish they could do away with it. Some have accepted
+<ce>          their new life, and carve out a place in life with
+<ce>      their newfound abilities, so to speak, yes. It's rare that
+<ce>     one wolf would stay in the same settlement for so long, yes,
+<ce>          but if it meets no resistance, it would make sense
+<ce>         to take advantage of a weakened prey, would it not?
+<ce>
+<ce>      "Yes, yes, I am able to help you find this werewolf. Well,
+<ce>          I will be able to. The gold you just paid me will
+<ce>    cover the cost of all ingredients for my cocktail except one,
+<ce>       and that, because you cannot buy it! There's a supply of
+<ce>     snake venom in _dungeon_ that is of exquisite quality, yes,
+<ce>               very necessary for the effect you seek.
+<ce>             I cannot go for it myself due to commitments
+<ce>       I must fulfill, but if you bring it, I shall create the
+<ce>            mixture you seek to bring out the inner beast.
+<ce>      Now go then, yes, before more cows and sheep are killed!"
+
+Message:  1020
+<ce>        This snake venom shines brilliantly in the dim light.
+<ce>                 If _merch_ wanted a special variety,
+<ce>                         you hope this is it.
+
+Message:  1021
+<ce>      _merch_'s eyes light up once you produce the snake venom.
+<ce>
+<ce>      "Yes! Very good, very good! Yes, this is it. You're lucky
+<ce>           you only had to procure it yourself, my chosen!
+<ce>    Had you paid for it, the cost would exceed four figures, yes!
+<ce>         In your absence I gathered the other ingredients and
+<ce>         prepared the mix. Now watch a master at work, yes!"
+<ce>
+<ce>         You give %g2 space to work. _merch_ furiously begins
+<ce>             beating, smoothing, humidifying, and drying
+<ce>        a series of exotic ingredients, some of which are kept
+<ce>       from your view. The greedy merchant must want to protect
+<ce>         %g3 trade secrets. The process doesn't take long but
+<ce>                          is very intricate.
+<ce>
+<ce>    "Hah! Huzzah, there it is! We have it, we have it indeed, yes!
+<ce>          When you return to ___tavern_, place this mixture
+<ce>        on your hands and bring them close to a person's face.
+<ce>       If that person is a werewolf in disguise, you will know!
+<ce>                You will find out quite quickly, yes!
+<ce>      A thousand good suns to you and your people of ___tavern_,
+<ce>                       my good customer! Yes!"
+<ce>
+<ce>                You are given a dry, clay-like mixture
+<ce>                with a tag that says "Werewolf blood."
+<ce>     It clearly isn't blood, but that's the name _merch_ gave it.
+<ce>
+<ce>                 Before waving you off, %g1 mentions,
+<ce>    "By the way, if you're a were-whatever, it won't work on you.
+<ce>        You've been breathing in an antidote while you waited.
+<ce>           So if that's your secret, keep it to yourself."
+
+Message:  1022
+<ce>           You rub the "werewolf blood" across your hands.
+<ce>           The scent is quite strong, even from a distance.
+
+Message:  1023
+<ce>           You wave your hands in front of _aldman_'s face.
+<ce>                You are quite skilled at annoying %g2.
+<ce>
+<ce>              "Is there something wrong with you, %ra?"
+
+Message:  1024
+<ce>           You wave your hands in front of _farmer_'s face,
+<ce>                and get nothing but disgust in return.
+<ce>
+<ce>                 "That smell makes me want to vomit.
+<ce>                What in %god's name is wrong with you?
+<ce>           Go find that werewolf and stop messing around."
+
+Message:  1025
+<ce>              _enforcer_ begins to shudder and tremble.
+<ce>                          "Hurk-HURKKKKK!!"
+<ce>       He breathes erratically, trying hard to keep composure.
+
+Message:  1026
+<ce>       You scarcely need to extend your hands toward _enforcer_
+<ce>           before a violent reaction starts to take place.
+<ce>             His eyes bulge, and his muscles flex wildly.
+<ce>         Unable to resist the smell, he finds himself forced
+<ce>           into a transformation -- into his werewolf form.
+<ce>         He howls into the sky, burning with shame and fury.
+<ce>
+<ce>  As you ready for battle, you hear a voice coming from behind you.
+<ce>               A woman is trying to get your attention.
+<ce>
+<ce>          "No! No, please, for %god's life, don't kill him!
+<ce>     He's my husband! I-I didn't know! We'll move away from here,
+<ce>        we'll start a new life in the Imperial City, anything!
+<ce>                 Just please don't kill my husband!"
+<ce>
+<ce>           _enforcer_ restrains himself long enough for you
+<ce>            to make a decision. Will you attack him (YES)
+<ce>                or let him escape with his wife (NO)?
+
+Message:  1027
+<ce>       The woman cries out in anguish and leaves the building.
+<ce>        _enforcer_ gives in to his base instincts and attacks.
+
+Message:  1028
+<ce>    You step aside and let _enforcer_ go. Before he loses control
+<ce>      of himself, he rushes outside, and his wife follows after.
+<ce>             You are left without even a word of thanks.
+<ce>
+<ce>       Meanwhile, _aldman_ enters the tavern, attracted by the
+<ce>         cries of the tavern folk. You need not tell %g3 that
+<ce>        the werewolf yet lives; %g1 is well aware of the fact.
+<ce>
+<ce>      "You rid us of our wolf, yes, but not much more than that.
+<ce>          We wanted him dead -- we wanted vengeance, proof.
+<ce>          Perhaps someone else will suffer for what you have
+<ce>                        failed to do this day.
+<ce>
+<ce>       "We'll work with the %t about procuring better weaponry
+<ce>        for the city watch. That way, we won't have to rely on
+<ce>                 unsteady mercenaries in the future."
+<ce>
+<ce>               _aldman_ gives you =smallreward_ coins,
+<ce>         enough to cover your expenses, and departs abruptly.
+
+Message:  1029
+<ce>         The whole tavern raises a cheer as _enforcer_ falls.
+<ce>      You're considered quite a hero for taking on the werewolf
+<ce>              without their aid. Soon, _aldman_ enters,
+<ce>               having been informed by fleeing peasants
+<ce>               that the werewolf was in this building.
+<ce>
+<ce>            "What a surprise! _enforcer_ was the werewolf?
+<ce>              He had me and the entire town fooled, wow!
+<ce>               You're worth a lot more than this money.
+<ce>         Maybe we'll have to look for you again in the future
+<ce>                   when things start going wrong."
+<ce>
+<ce>                _aldman_ then explains that there are
+<ce>    two ways you can receive payment: a lump sum of approximately
+<ce>       3,000 gold right now, or a perpetual weekly delivery of
+<ce>          a couple hundred gold as long as their farms last.
+<ce>               Do you take the immediate payment (YES)
+<ce>                     or the passive income (NO)?
+
+Message:  1030
+<ce>                   You request the passive income.
+<ce>             _aldman_ nods and says, "I can respect that.
+<ce>           We'll try to keep tabs on you, wherever you are,
+<ce>   and make sure it's delivered to whatever city you're staying at.
+<ce>      That's the surest thing we can do to show our appreciation
+<ce>              for saving our farms. Safe travels, %pcf."
+
+Message:  1031
+<ce>                   A seasoned courier atop a horse
+<ce>            rides toward you with a letter and a package.
+<ce>
+<ce>                 "%pcf? Delivery for you. Farewell."
+<ce>
+<ce>             You open the letter and read the following.
+<ce>
+"Dear %pcn,
+<ce>
+  I cannot thank you enough for sparing my life.
+ The opulence with which I lived in ___tavern_ clouded
+ my view of things. With the help of my wife, I will
+ soon have a cure for my lycanthropic curse. The gods
+ have a special place in their hearts for the deliberately
+ merciful, I am sure.
+<ce>
+  I managed to obtain an enchanted _magic_ recently,
+ which I have no use for. I pray that your exceeding
+ wisdom will find some good purpose for it.
+<ce>
+            Gratitude abounding,
+            _enforcer_"
+
+Message:  1032
+<ce>             The telltale snarl of a werewolf approaches.
+<ce>                        You are being hunted.
+
+Message:  1033
+<ce>          Upon suffering injury, the werewolf howls angrily
+<ce>          and sprints away, jumping onto rooftops to escape.
+
+Message:  1034
+<ce>                  You flee from _tavern_. _enforcer_
+<ce>         takes the opportunity to escape by a different way.
+<ce>             The townspeople make an uproar, furious that
+<ce>            you have lost the one opportunity they had to
+<ce>                           dispose of him.
+
+Message:  1035
+<ce>     You approach _merch_ and say you come on behalf of _farmer_.
+<ce>
+<ce>        "Ahh, yes! The problem with the wolfie, yes. You have
+<ce>              the money, yes? Gold first, chat second."
+<ce>
+<ce>         You search for the necessary money, but do not have
+<ce>            the necessary coins. _merch_ shakes %g3 head.
+<ce>
+<ce>         "Bring me 1260 coins. Otherwise, I cannot help you."
+
+Message:  1036
+<ce>          Somewhere in here hides the snake venom you need.
+
+Message:  1037
+%qdt:
+ The apothecary in ___apoc_ gave me a mixture
+ called "Werewolf's Blood" that's designed to
+ expose who the werewolf is. I should apply it to my hands,
+ and then bring them close to anyone I suspect.
+
+Message:  1038
+%qdt:
+The apothecary _merch_ in ___apoc_
+told me to go to ___dungeon_
+and find some special Snake Venom
+required for the werewolf identification mixture.
+
+QBN:
+Place _dung_ permanent DaggerfallCastle
+Place _dung2_ permanent SentinelCastle
+Place _dung3_ permanent WayrestCastle
+Place _tavern_ local tavern
+Place _tavern2_ local tavern
+Place _nowhere_ remote dungeon
+Place _dungeon_ remote dungeon6
+Place _apoc_ remote apothecary
+Place _farmhome_ local house
+
+Clock _entry_ 3.00:00
+Clock _mercydelay_ 35.00:00 50.00:00
+Clock _failsafe_ 180.00:00
+
+Item _venom_ snake_venom
+Item _blood_ werewolf_blood
+Item _magic_ item class 4 subclass 6
+Item _reward_ gold range 2900 to 3200
+Item _smallreward_ gold range 1400 to 1600
+
+Person _aldman_ faction The_Merchants
+Person _enforcer_ faction Fighter_Equippers male anyInfo 1013 rumors 1013
+Person _farmer_ faction Apothecaries_of_Z'en
+Person _merch_ faction Binders_of_Arkay
+
+Foe _nightwolf_ is Werewolf
+Foe _werewolf_ is Werewolf
+
+--	Quest start-up:
+    pc at _dung_ set _inside1_
+    pc at _dung2_ set _inside2_
+    pc at _dung3_ set _inside3_
+    pc at any fighters set _fightered_
+    pc at any tavern set _taverned_
+    pc at any house set _homed_
+    pc at any shop set _shopped_
+    pc at any magery set _maged_
+    pc at any temple set _templed_
+    pc at any palace set _palaced_
+    start timer _entry_
+    start timer _failsafe_
+    say 1010
+    log 1011 step 0
+    place npc _aldman_ at _tavern_
+    place npc _enforcer_ at _nowhere_
+    hide npc _farmer_
+    place npc _farmer_ at _nowhere_
+    start task _nowolf_
+
+_daytime_ task:
+    daily from 6:00 to 18:00
+
+_entry_ task:
+    end quest
+
+_clickaldman_ task:
+    clicked npc _aldman_
+    stop timer _entry_
+    place npc _enforcer_ at _tavern2_
+    say 1012
+    log 1014 step 0
+    clear _nowolf_
+
+variable _nowolf_
+
+_spawnwolf_ task:
+    when _clickenforcer_ and not _daytime_ and not _donotspawn_ and not _nowolf_ and not _wolfblood_
+    start task _spawn_
+
+_spawn_ task:
+    say 1032
+    create foe _nightwolf_ every 0 minutes 1 times with 100% success
+
+_inj_ task:
+    injured _nightwolf_
+    say 1033
+    remove foe _nightwolf_
+
+_clickenforcer_ task:
+    clicked npc _enforcer_
+
+_clickenf1_ task:
+    when _clickenforcer_ and not _wolfblood_
+    say 1015
+    log 1016 step 1
+    place npc _farmer_ at _farmhome_
+    restore _farmer_
+
+_clickfarmer_ task:
+    clicked npc _farmer_
+    say 1017
+    log 1018 step 2
+    place npc _merch_ at _apoc_
+    start task _nowolf_
+    hide npc _aldman_
+
+_clickmerch_ task:
+    clicked npc _merch_
+    pay 1260 money do _reveal_ otherwise do _nomoney_
+--this may not be taking money? not sure, needs testing
+
+_nomoney_ task:
+    say 1035
+    clear _clickmerch_ _nomoney_
+
+_reveal_ task:
+    say 1019
+    reveal _dungeon_
+    place item _venom_ at _dungeon_
+    pc at _dungeon_ do _inside_
+    log 1038 step 2
+
+_inside_ task:
+    say 1036
+
+_clickvenom_ task:
+    clicked item _venom_
+    say 1020
+
+_delivervenom_ task:
+    toting _venom_ and _merch_ clicked
+    say 1021
+    get item _blood_
+    _blood_ used do _wolfblood_
+    restore _aldman_
+    log 1037 step 1
+    remove log step 2
+
+_wolfblood_ task:
+    say 1022
+    take _blood_ from pc
+    clear _clickaldman_
+    clear _clickenforcer_
+    clear _clickfarmer_
+    pc at _tavern2_ do _disgust_
+
+_annoyfarm_ task:
+    when _clickfarmer_ and _wolfblood_
+    say 1024
+
+_annoyald_ task:
+    when _clickaldman_ and _wolfblood_
+    say 1023
+
+_disgust_ task:
+    say 1025
+
+_expose_ task:
+    when _clickenforcer_ and _wolfblood_
+    hide npc _enforcer_
+    prompt 1026 yes _attack_ no _mercy_
+
+_attack_ task:
+    say 1027
+    place foe _werewolf_ at _tavern2_
+    change foe _werewolf_ infighting true
+
+_coward_ task:
+    when _attack_ and not _disgust_
+    say 1034
+    end quest
+
+_slain_ task:
+    killed _werewolf_
+    legal repute +20
+    prompt 1029 yes _immediate_ no _passive_
+
+_immediate_ task:
+    give pc _reward_
+    end quest
+
+_passive_ task:
+    say 1030
+    start quest JHCAPA01passive
+    end quest
+
+_mercy_ task:
+    say 1028
+    get item _smallreward_
+    make _smallreward_ permanent
+    remove log step 0
+    remove log step 1
+    remove log step 2
+    start timer _mercydelay_
+    stop timer _failsafe_
+
+_mercydelay_ task:
+    say 1031
+    get item _magic_
+    make _magic_ permanent
+    end quest
+
+variable _inside1_
+variable _inside2_
+variable _inside3_
+variable _fightered_
+variable _taverned_
+variable _homed_
+variable _shopped_
+variable _maged_
+variable _templed_
+variable _palaced_
+
+_donotspawn_ task:
+    when _inside1_ or _inside2_ or _inside3_ or _fightered_ or _taverned_ or _homed_ or _shopped_ or _maged_ or _templed_ or _palaced_
+
+_failsafe_ task:
+    end quest

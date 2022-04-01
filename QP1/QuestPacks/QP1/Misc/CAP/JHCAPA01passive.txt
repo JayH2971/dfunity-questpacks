@@ -1,0 +1,63 @@
+Quest: JHCAPpassive
+DisplayName: The Werewolf Hunt Passive Income
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>         A messenger arrives, bringing you a sack with coins.
+<ce>        Your passive income from the werewolf job has arrived.
+                                     <--->
+<ce>         A messenger arrives, bringing you a sack with coins.
+<ce>        You find a note of gratitude for slaying the werewolf,
+<ce>                    and your share for this week.
+                                     <--->
+<ce>                A messenger gives you a sack of coins.
+<ce>       Your passive income from the werewolf hunt has arrived.
+                                     <--->
+<ce>          A courier identifies you and gives you some coins.
+<ce>       You are told that it's the money promised by the farmers
+<ce>                      for killing the werewolf.
+                                     <--->
+<ce>                A courier hands you a bag with coins.
+<ce>             The farmers have sent you your weekly share.
+
+Message:  1010
+<ce>         A courier arrives with no more than a note. It says:
+<ce>
+%pcn
+<ce>
+Our sincerest apologies. We tried our hardest, but the farms
+are underwater. We've gone bankrupt. We thank you for slaying
+the werewolf but can no longer pay you dividends.
+
+QBN:
+Item _reward_ gold range 100 to 250
+Item _faker_ mineral
+
+Clock _timer_ 7.00:00
+
+--	Quest start-up:
+    start timer _timer_
+
+_timer_ task:
+    give pc _faker_ notify 1011
+    have _faker_ set _givereward_
+    pick one of _good_ _good_ _good_ _bad_ _good_
+--1011 on purpose, to not show a message
+
+_bad_ task:
+    pick one of _good_ _good_ _good_ _good_ _fatal_ _good_ _good_ _good_ _good_
+
+variable _good_
+
+_givereward_ task:
+    take _faker_ from pc
+    give pc _reward_
+    start quest JHCAPA01passive
+    end quest
+
+variable _fatal_
+_endchain_ task:
+    when _fatal_ and _givereward_
+    say 1010
+    end quest

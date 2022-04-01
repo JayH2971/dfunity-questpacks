@@ -25,7 +25,6 @@ Message:  1011
 QBN:
 
 Clock _init_ 0:00
-Clock _timer_ 0:00
 
 --   Quest start-up:
     start timer _init_
@@ -35,27 +34,34 @@ _init_ task:
     prompt 1011 yes _accept_ no _reject_
 
 _accept_ task:
-    start timer _timer_
     pick one of _q1_ _q2_ _q3_
 
 variable _reject_
-_level_ task:
+_level3_ task:
     level 3 completed
 
 variable _q1_
 variable _q2_
 variable _q3_
 _p1_ task:
-    when _q1_ and not _level_
+    when _q1_ and not _level3_
     start quest JHPQB01
 
 _p2_ task:
-    when _q2_ and not _level_
+    when _q2_ and not _level3_
     start quest JHPQB02
 
 _p3_ task:
-    when _q3_ and not _level_
+    when _q3_ and not _level3_
     start quest JHPQB03
 
-_timer_ task:
+_level4_ task:
+    level 4 completed
+    start task _tier1quest_
+
+_tier1quest_ task:
+    pick one of _werewolfhunt_
+
+_werewolfhunt_ task:
+    start quest JHCAPA01prelude
     end quest
