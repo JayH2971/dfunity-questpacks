@@ -164,6 +164,11 @@ Message:  1027
 <ce>                       _qgiver_ is not pleased,
 <ce>           but you are permitted to abdicate all the same.
 
+Message:  1028
+<ce>           Within this residence you hear weak groaning and
+<ce>                    the telltale growl of an imp.
+<ce>                Whatever is afoot here can't be good.
+
 Message:  1030
 %qdt:
  I have been assigned to bring _mage_
@@ -213,6 +218,7 @@ Item _reward_ magic_item
 
 _inside_ task:
     cast Shield spell on _imp_
+    say 1028
 
 _conv_ task:
     clicked npc _mage_
@@ -247,7 +253,7 @@ _slain_ task:
     killed 1 _imp_
 
 _skilled_ task:
-    when skill Impish is at least 50
+    when skill Impish is at least 40
 
 _killedimp1_ task:
     when _slain_ and _flee_
