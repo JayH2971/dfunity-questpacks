@@ -13,7 +13,6 @@ JHMG001, MagesGuild, M, 0, 0, a quest to slay a shapeshifting mage in a dungeon
 JHMG002, MagesGuild, M, 3, 1, a quest to convince a scholar to leave a dungeon via quiz
 JHMG003, MagesGuild, M, 4, 0, a quest to slay a necromancer in a residence
 JHMG004, MagesGuild, M, 5, 1, a quest to resolve a daedric mental battle
--JHMG005, MagesGuild, M, 4, 1,
 JHMG006, MagesGuild, M, 1, 1, a quest to take an unidentifiable magical item to a scholar in a dungeon
 JHMG007, MagesGuild, M, 2, 1, a quest to get teleported to a dungeon to find a criminal
 JHMG008, MagesGuild, M, 0, 0, a quest to retrieve a scholar's stolen notes

@@ -9,4 +9,5 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHMG022, MagesGuild, M, 2, 1, a retrieve a trapped trinket
+JHMG005, MagesGuild, M, 4, 1, a quest to speak to a mage from the east
+JHMG022, MagesGuild, M, 2, 1, a quest to retrieve a trapped trinket

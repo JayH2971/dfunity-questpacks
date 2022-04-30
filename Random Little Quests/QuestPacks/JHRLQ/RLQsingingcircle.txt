@@ -1,0 +1,63 @@
+Quest: RLQsingingcircle
+DisplayName: Random Little Quest Singing Circle
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  (ATTRIBUTE CHECK PASSED: PERSONALITY)
+<ce>
+<ce>  When it's your turn, your voice captivates the audience.
+<ce>  They all pause and seem to freeze in time,
+<ce>  held in suspense as you glide from one note to another.
+<ce>  Your performance feels all too short, for once it's over,
+<ce>  they throw coins at your feet with loud yells of appreciation.
+<ce>  Some cheering ensues before the next singer begins,
+<ce>  and you slip out of the crowd after gathering your gains.
+
+Message:  1010
+<ce>  Some of the peasantry here in ___town_
+<ce>  have organized a singing circle, attempting to gain some
+<ce>  merriment for a day. Anyone who feels so inclined can
+<ce>  enter the circle and sing a chosen song.
+<ce>  While their standards don't seem exceptionally high,
+<ce>  no one has met them yet.
+<ce>  Do you attempt to join the circle?
+
+Message:  1011
+<ce>  Merriment and singing are all well and good,
+<ce>  but you have other things to be doing.
+
+Message:  1012
+<ce>  (ATTRIBUTE CHECK FAILED: PERSONALITY)
+<ce> 
+<ce>  You take your place on the edge of the crowd
+<ce>  and prepare to sing. You try your best, but
+<ce>  the crowd is not impressed. Some fair-minded
+<ce>  folks block the various objects hurled at you
+<ce>  in displeasure, and soon you take the hint and leave.
+
+QBN:
+
+Item _reward_ gold range 75 to 111
+Place _town_ local anywhere
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when attribute Personality is at least 65
+
+variable _accept_
+_finalwin_ task:
+    when _accept_ and _qualified_
+    give pc _reward_
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    say 1012
+    end quest

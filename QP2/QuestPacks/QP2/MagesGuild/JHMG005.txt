@@ -1,0 +1,129 @@
+Quest: JHMG005
+DisplayName: Nordic Magic
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>    Ah! If you have some time to spare, there's a
+<ce>  special invitation we received from a Nord mage,
+<ce>  arrived from the east. Came to share some magical
+<ce>  knowledge, in return for some knowledge of our own.
+<ce>  I'd rather not bother some of our more intensive
+<ce>  scholars with the task, so if you're fit for travel,
+<ce>  perhaps you could meet with him or her.
+
+RefuseQuest:  [1001]
+<ce>         Hmm. I hope we can send someone worthy
+<ce>  of the Mages Guild's reputation.
+<ce>   You would've been a good choice.
+
+AcceptQuest:  [1002]
+<ce>   Ah, what a joy! Well, that relieves me greatly.
+<ce>  For this person to arrive in the Iliac Bay and
+<ce>  find no competent spellcasters would have
+<ce>  shamed the entire Council.
+<ce>  I forgot to write down the name, but
+<ce>  this person is waiting in _tav_
+<ce>  at ___tav_. Look for someone who sticks out
+<ce>  among the crowd, some =mage_.
+<ce>  I don't know how much we'll be able to pay you,
+<ce>  but we'll try to scrounge up your traveling expenses
+<ce>  by the time you return, at least.
+<ce>  And remember, %pct, to find joy in the journey.
+<ce>  Sometimes the very experience is all the reward we get.
+<ce>  Be sure to arrive within =timer_ days, lest
+<ce>  this mage depart and we lose a good opportunity for fellowship.
+
+QuestFail:  [1003]
+<ce>   The =mage_ of ___tav_ will have left by now.
+
+QuestComplete:   [1004]
+<ce>  At least you gained quite a bit of knowledge from this.
+
+Message:  1010
+<ce>    %pcn! How was your journey? Did you learn something
+<ce>  from the mysterious traveler? I'll have you know,
+<ce>  I was dutiful in begging every single person to come through
+<ce>  our doors for some pittance to pay you with,
+<ce>  while on your errand to build the guild's reputation.
+<ce>  You may not be duly impressed with the =reward_ gold pieces
+<ce>  I gathered, but they are yours nonetheless.
+<ce>  Our thanks to you, %pct. The Council will
+<ce>  receive a letter detailing your exploits,
+<ce>  with my exceeding approbation.
+
+Message:  1011
+<ce>  This =mage_ squints at you, trying to perceive your intent.
+<ce>  You introduce yourself as the ambassador of the Mages Guild.
+<ce>  
+<ce>  "Ah! Finely met, my associate. I feared that no one would
+<ce>  answer my call. Perhaps you'll forgive me for taking your time,
+<ce>  but I fully intend to pull from your mind all that I can
+<ce>  while you still stand. And you are free to take from me what my breath imparts."
+<ce>  
+<ce>  The din of the tavern seems to fade as %g1 asks several direct,
+<ce>  probing questions concerning principles of magic. Owing to %g3 distinct
+<ce>  schooling, you find yourself approaching the schools of magic
+<ce>  from various unexpected directions. New insights seem to jump
+<ce>  out at you which should have been obvious. Hours pass, during which
+<ce>  %g1 never seems to tire.
+<ce>  
+<ce>  Finally, %g1 yawns and says, "A shame we don't have days to pass here.
+<ce>  I'm headed southward soon, and must gather provisions for the journey.
+<ce>  My thanks to you for generously imparting a few hours to this foolish
+<ce>  vagrant; I pray that your time was as well spent as mine."
+<ce>  
+<ce>  With a reverent bow and a wave, your newfound friend bids you depart.
+<ce>  You feel your mind filled with fascinating new concepts
+<ce>  that you wouldn't have learned otherwise.
+
+Message:  1030
+%qdt:
+ _questgiver_ asked me to represent
+ the Mages Guild with a traveling scholar,
+ a =mage_ staying in _tav_
+ at ___tav_. I should meet %g2 within
+ =timer_ days, after which I suppose
+ I may return to ___questgiver_ at my leisure.
+
+QBN:
+Item _reward_ gold range 100 to 120
+
+Person _questgiver_ group Questor male
+Person _mage_ faction The_Travelers_League
+
+Place _tav_ remote tavern
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    pc at _tav_ do _inside_
+
+_inside_ task:
+    place npc _mage_ at _tav_
+
+_conv_ task:
+    clicked npc _mage_
+    say 1011
+    train pc Mysticism
+    train pc Alteration
+    hide npc _mage_
+
+_pcgetsgold_ task:
+    when _qgclicked_ and _conv_
+    say 1010
+    give pc _reward_
+    end quest
+
+_qgclicked_ task:
+	clicked npc _questgiver_
+
+_clearclick_ task:
+	when _qgclicked_ and not _conv_
+	clear _qgclicked_ _clearclick_
+
+_timer_ task:
+    say 1003
+    end quest

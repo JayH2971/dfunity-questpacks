@@ -237,7 +237,7 @@ _fogday_ task:
     start task _stopevents_
 
 _fogdayevents_ task:
-    pick one of _etiquettelesson_ _freepotion_ _batnest_ _buydrug_ _defendtown_ _guardweapon_
+    pick one of _etiquettelesson_ _freepotion_ _batnest_ _buydrug_ _defendtown_ _guardweapon_ _fogsteal_
 
 _freepotion_ task:
     start quest RLQfreepotion
@@ -250,6 +250,9 @@ _defendtown_ task:
 
 _guardweapon_ task:
     start quest RLQguardweapon
+
+_fogsteal_ task:
+    start quest RLQfogsteal
 
 _fognight_ task:
     when not _daylight_ and _foggy_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -274,7 +277,7 @@ _rainday_ task:
     start task _stopevents_
 
 _raindayevents_ task:
-    pick one of _chokingchild_ _fightersguild_ _payraintaxes_ _killrats_ _returnbook_
+    pick one of _chokingchild_ _fightersguild_ _payraintaxes_ _killrats_ _returnbook_ _dungeoncaptive_
 
 _chokingchild_ task:
     start quest RLQchokingchild
@@ -299,6 +302,9 @@ _raintaxes2_ task:
 
 _raintaxes3_ task:
     start quest RLQraintaxes3
+
+_dungeoncaptive_ task:
+    start quest RLQdungeoncaptive
 
 _rainnight_ task:
     when not _daylight_ and _rainy_ and _smalldelay_ and not _donotspawn_ and not _stopevents_

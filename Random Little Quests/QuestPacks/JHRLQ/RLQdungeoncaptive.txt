@@ -1,0 +1,89 @@
+Quest: RLQdungeoncaptive
+DisplayName: Random Little Quests A Dungeon Captive
+-- Message panels
+QRC:
+
+QuestFail:   [1003]
+<ce>  In spite of your intentions,
+<ce>  _captive_ will have no doubt succumbed
+<ce>  to the dangers of ___dung_ by now.
+
+QuestComplete:  [1004]
+<ce>   _captive_ is thoroughly relieved to breathe fresh air.
+<ce>   
+<ce>   "Thank you, thank you, thank you! These labyrinths
+<ce>   are awful! I don't know how anyone gets out of them!
+<ce>   I'll make sure everyone knows what you did for me,
+<ce>   from the tavern owner to the %rt! %god bless you!"
+<ce>   
+<ce>   Capable of making %g3 way from here, %g1 departs.
+
+Message:  1010
+<ce>   A piece of cardboard paper near your feet details
+<ce>  a request to find _captive_, who went
+<ce>  spelunking several days past and has not returned.
+<ce>  Will you pick up the posting?
+
+Message:  1011
+<ce>  You grab the posting and read it carefully.
+<ce>  
+<ce>  "Name: _captive_
+<ce>  Description: =captive_
+<ce>  Last known whereabouts: ___dung_
+<ce>  Fame and good name to the one who finds %g2 and
+<ce>  rescues %g2 from the pit."
+<ce>  
+<ce>  It looks like the posting is good for the next =timer_ days.
+
+Message:  1012
+<ce>  This person matches the description of _captive_.
+<ce>  Upon seeing you, %g1 cries for joy.
+<ce>  
+<ce>  "Finally, someone came to find me!
+<ce>  Please get me out of here!"
+
+Message:  1030
+%qdt:
+ I picked up a request to find _captive_,
+ described as one =captive_ in ___dung_.
+ The request is good for the next =timer_ days.
+
+QBN:
+
+Person _captive_ faction Dancers
+
+Place _dung_ remote dungeon
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _quit_
+
+_quit_ task:
+    say 1012
+    end quest
+
+_accept_ task:
+    say 1011
+    start timer _timer_
+    log 1030 step 0
+    place npc _captive_ at _dung_
+    pc at _dung_ do _inside_
+    reveal _dung_
+
+variable _inside_
+_begin_ task:
+    clicked npc _captive_
+    say 1010
+    hide npc _captive_
+    add _captive_ face
+
+_transform_ task:
+    when _begin_ and not _inside_
+    give pc nothing
+    legal repute +10
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest
