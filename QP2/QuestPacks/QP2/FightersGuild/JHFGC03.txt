@@ -1,0 +1,47 @@
+Quest: JHFGC03
+DisplayName: Fighters Guild Consequence Quest 3
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  "Are you %pcf?"
+<ce>  
+<ce>  You're surprised by someone in heavy armor with a solemn voice.
+<ce>  
+<ce>  "That vampire you slew for the Fighters Guild
+<ce>  was my sister. I followed you all the way here.
+<ce>  I must avenge her, for honor."
+<ce>  
+<ce>  Your assailant takes a reverent bow before unsheathing a weapon.
+
+QBN:
+Clock _spawn_ 12:00
+Clock _delay_ 0:01
+
+Foe _enemy1_ is Knight
+
+--	Quest start-up:
+    pc at any fighters set _maged_
+
+variable _maged_
+
+_begin_ task:
+    when not _maged_
+    create foe _enemy1_ every 60 minutes 1 times with 10% success msg 1010
+    change foe _enemy1_ infighting true
+    change foe _enemy1_ team 0
+    start timer _spawn_
+
+_injured_ task:
+    injured _enemy1_
+    start timer _delay_
+    cast Shield spell on _enemy1_
+    cast Balyna's_Balm spell on _enemy1_
+    cast Orc_Strength spell on _enemy1_
+    cast Feet_of_Notorgo spell on _enemy1_
+
+_delay_ task:
+	end quest
+
+_spawn_ task:
+    end quest

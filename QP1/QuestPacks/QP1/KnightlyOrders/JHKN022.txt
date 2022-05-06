@@ -12,8 +12,8 @@ QuestorOffer:  [1000]
 <ce>             any who enter. Will you be the needed hero?
                                      <--->
 <ce>           A forlorn labyrinth in the wilderness has become
-<ce>             the home of a witch who will trap within all
-<ce>               who enters its halls. We need a champion
+<ce>             the home of a witch that will trap within
+<ce>               those who enter its halls. We need a champion
 <ce>             capable of slaying her to release the curse.
 <ce>               Will you volunteer for this heroic act?
 

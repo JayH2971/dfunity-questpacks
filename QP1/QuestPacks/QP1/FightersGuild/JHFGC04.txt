@@ -1,0 +1,25 @@
+Quest: JHFGC04
+DisplayName: Fighters Guild Consequence Quest 4
+-- Message panels
+QRC:
+
+Message:  1010
+<ce> A soft, but firm, voice sounds in your head.
+<ce> 
+<ce> "%ra. Do not interfere with the Necromancers further.
+<ce> Leave our graveyards to us.
+<ce> 
+<ce> "This is your last warning."
+<ce> 
+<ce> With no further explanation, the voice ceases speaking.
+
+
+QBN:
+Clock _spawn_ 1:00 12:00
+
+--	Quest start-up:
+    start timer _spawn_
+
+_spawn_ task:
+    say 1010
+    end quest

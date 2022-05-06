@@ -1,0 +1,46 @@
+Quest: JHFGC02
+DisplayName: Fighters Guild Consequence Quest 2
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  You're surprised by the sound of teleportation.
+<ce>  A hooded mage glares at you.
+<ce>  
+<ce>  "The Mages Guild does not easily forgive murder!  Die!"
+<ce>  
+<ce>  She waves her hand and invokes several beasts
+<ce>  before warping away.
+
+QBN:
+Clock _spawn_ 0:02
+Clock _delay_ 0:05
+
+Foe _enemy1_ is Sabretooth_tiger
+Foe _enemy2_ is Spriggan
+Foe _enemy3_ is Harpy
+
+--	Quest start-up:
+    pc at any fighters set _maged_
+
+variable _maged_
+
+_begin_ task:
+    when not _maged_
+    start timer _spawn_
+
+_spawn_ task:
+    say 1010
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    create foe _enemy3_ every 0 minutes 1 times with 100% success
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    change foe _enemy3_ infighting true
+    change foe _enemy1_ team 0
+    change foe _enemy2_ team 0
+    change foe _enemy3_ team 0
+    start timer _delay_
+
+_delay_ task:
+	end quest

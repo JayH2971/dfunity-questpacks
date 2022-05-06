@@ -1,5 +1,5 @@
 Quest: JHFG006
-DisplayName: The Bodyguard
+DisplayName: Guarding a Living Body
 -- Message panels
 QRC:
 

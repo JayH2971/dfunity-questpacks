@@ -113,6 +113,7 @@ _clearclick_ task:
 _pcreward_ task:
 	when _qgclicked_ and _slain_
 	give pc _gold_
+	start quest JHFGC02
 	end quest
 
 _2res_ task:

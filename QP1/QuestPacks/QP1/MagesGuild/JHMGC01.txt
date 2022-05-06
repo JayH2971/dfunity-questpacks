@@ -1,0 +1,111 @@
+Quest: JHMGC01
+DisplayName: Mages Guild Consequence Quest 1
+-- Message panels
+QRC:
+
+QuestFail:   [1003]
+<ce>  You agreed to slay the atronach
+<ce>  inside _res_ by now.
+
+RumorsPostSuccess:   [1007]
+Been slaying some atronach in _res_, am I right? Of course I know.
+
+Message:  1010
+<ce>  As you exit the guild hall, a merchant waits nearby.
+<ce>  She speaks at you nervously.
+<ce>  
+<ce>  "Excuse me, you're with the mages, aren't you?
+<ce>  There's an atronach in my mother's house,
+<ce>  and no one is willing to fight it for us.
+<ce>  Please come and help!"
+<ce>  
+<ce>  Conspicuously absent is any promise of material gain.
+<ce>  Will you accept nonetheless?
+
+Message:  1011
+<ce>      The merchant writes down _res_
+<ce>  on a piece of parchment. "It isn't far from here.
+<ce>  It's %di, you'll find it before long.
+<ce>  Please destroy the golem before this time tomorrow."
+<ce>  She then parts ways from you.
+
+Message:  1012
+<ce>  Magical energy buzzes around you.
+<ce>  There's no question an atronach has been here.
+
+Message:  1013
+<ce>  The enemy is slain.
+
+Message:  1014
+<ce>  The merchant awaits outside, already well aware of your deed.
+<ce>  
+<ce>  "Thank you, kind %ra! %god bless you. I'll tell my merchant
+<ce>  friends all about you and your generosity. I have no money
+<ce>  to pay you, but I'll make sure my friends give you
+<ce>  good deals in the future."
+<ce>  
+<ce>  She then enters the house, presumably to clean
+<ce>  up the atronach remnants.
+
+Message:  1015
+<ce>  Looking quite miffed, the merchant woman departs in silence.
+
+Message:  1030
+%qdt:
+ A merchant woman in ___res_
+ has asked me to dispose of a
+ hostile atronach within _res_.
+ If I intend to do so, I should
+ have it done within 24 hours.
+
+QBN:
+Person _asker_ faction The_Merchants
+
+Place _res_ local house
+
+Clock _timer_ 1.00:00
+
+Foe _enemy_ is Iron_atronach
+
+--	Quest start-up:
+    pc at any magery set _maged_
+    pc at _res_ set _inside_
+
+variable _maged_
+
+_begin_ task:
+    when not _maged_
+    prompt 1010 yes _accept_ no _reject_
+
+_accept_ task:
+    say 1011
+    log 1030 step 0
+    place foe _enemy_ at _res_
+    start timer _timer_
+
+_reject_ task:
+    say 1015
+    end quest
+
+_inside_ task:
+    stop timer _timer_
+    say 1012
+
+_begintimer_ task:
+    when not _inside_
+    start timer _timer_
+
+_killed_ task:
+    killed _enemy_
+    say 1013
+    remove log step 0
+
+_victory_ task:
+    when not _inside_ and _killed_
+    say 1014
+    change repute with _asker_ by +10
+    end quest
+
+_timer_ task:
+	say 1003
+	end quest

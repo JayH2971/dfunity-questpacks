@@ -1,0 +1,43 @@
+Quest: JHFGC01
+DisplayName: Fighters Guild Consequence Quest 1
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  As you enter the tavern, the air is heavy.
+<ce>  Two figures don hoods and stand up.
+<ce>  
+<ce>  "Them fighters think they can just kill
+<ce>  off the Thieves Guild, eh? Try this on for size!"
+<ce>  
+<ce>  They brandish weapons and ready for battle.
+
+QBN:
+
+Foe _enemy1_ is Thief
+Foe _enemy2_ is Thief
+
+Clock _delay_ 0:05
+Clock _duration_ 6:00
+
+--	Quest start-up:
+	pc at any tavern do _inside_
+    start timer _duration_
+
+_inside_ task:
+    start task _spawn_
+
+_spawn_ task:
+    say 1010
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+	change foe _enemy1_ infighting true
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+	change foe _enemy2_ infighting true
+    start timer _delay_
+    stop timer _duration_
+
+_delay_ task:
+    end quest
+
+_duration_ task:
+    end quest
