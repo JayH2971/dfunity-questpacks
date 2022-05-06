@@ -1,0 +1,70 @@
+Quest: RQI002
+DisplayName: Master of Mysticism
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              "Hi there. I recently picked up this book
+<ce>        about some of that magic, Mysticism. I've been turning
+<ce>       the pages and trying to understand it, but don't really
+<ce>         get the whole picture. Are you the kind who'd teach
+<ce>                      me about some Mysticism?"
+<ce>
+<ce>                    (SKILL CHECK: Mysticism, high)
+
+RefuseQuest:  [1001]
+<ce>                    "That's okay. Take care now."
+
+AcceptQuest:  [1002]
+<ce>               You offer to help. You open the book and
+<ce>                  try to read the content together.
+
+QuestComplete:  [1004]
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>             The book is more advanced than you expected,
+<ce>            but still well within your field of expertise.
+<ce>      This =qgiver_ is quite entertained with your explanations.
+<ce>           Previously mysterious concepts become lucid with
+<ce>             your explanations. It takes awhile, but you
+<ce>                manage to answer all of %g3 questions.
+<ce>
+<ce>              "Well I'll be. This was quite a surprise!
+<ce>           I'm sorry I don't have more to pay you with, but
+<ce>        I sure am glad you took the time. Have a bit of coin!"
+
+QuestorPostSuccess:  [1008]
+Lookie here, the Master of Mysticism! What a surprise!
+
+Message:  1011
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>     The book is quite advanced, more than you expected it to be.
+<ce>         Talk of teleportation, conjuration, obfuscation, and
+<ce>       many other subjects are outside your ability to explain.
+<ce>         The =qgiver_ is disappointed that you don't seem to
+<ce>             know the material any better than %g1 does.
+<ce>                A few frustrating minutes pass before
+<ce>               %g1 decides it isn't worth the trouble.
+
+QBN:
+
+Item _reward_ gold range 110 to 250
+
+Person _qgiver_ group Questor
+
+--	Quest start-up:
+
+_qualified_ task:
+    when skill Mysticism is at least 70
+
+_finalwin_ task:
+    when _qualified_
+    give pc _reward_
+    train pc Mysticism
+    end quest
+
+_finalfail_ task:
+    when not _qualified_
+    say 1011
+    end quest
