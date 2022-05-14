@@ -6,7 +6,7 @@ QRC:
 Message:  1010
 <ce> A soft, but firm, voice sounds in your head.
 <ce> 
-<ce> "%ra. Do not interfere with the Necromancers further.
+<ce> "%pcf. Do not interfere with the Necromancers further.
 <ce> Leave our graveyards to us.
 <ce> 
 <ce> "This is your last warning."

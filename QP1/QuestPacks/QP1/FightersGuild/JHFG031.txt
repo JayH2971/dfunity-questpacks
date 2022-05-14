@@ -224,6 +224,7 @@ _badreward_ task:
 
 _pcgetsgold_ task:
     when _qgclicked_ and _kidclick_ and not _badweapon_
+    start quest JHFGC05
     say 1018
     give pc _reward_
     end quest

@@ -1,164 +1,164 @@
 Quest: JHFG037
-DisplayName: Marching Atronachs
+DisplayName: Repaying the Dark Brotherhood
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-<ce>          Some idiot mage has been hiding somewhere in town,
-<ce>        creating atronachs that hurt people. The %t is making
-<ce>        a big fuss to find the misanthrope, but it isn't easy.
-<ce>        There's a contract paying good gold if you're willing
-<ce>              to head out into the streets and smash any
-<ce>                 of the atronachs you see out there.
+<ce>    Okay, so, this one. It's for killing a person,
+<ce>  but let me give you the background first.
+<ce>  The old lady who's paying us is a widow
+<ce>  with only one son... well, HAD one son.
+<ce>  The Dark Brotherhood got him, and now that
+<ce>  she's destitute, she's using
+<ce>  her savings for vengeance. That motivate you?
 
 RefuseQuest:  [1001]
-<ce>       Well, if you're headed out into the streets, stay safe.
-<ce>                Hopefully they catch this moron soon.
+<ce>           I guess it takes the right kind of person.
 
 AcceptQuest:  [1002]
-<ce>                Great! I knew we'd find someone soon.
-<ce>            Just step outside. Explore the town, go around
-<ce>         the streets. As long as you're outside, they should
-<ce>              make themselves known one way or another.
-<ce>                 And if you kill them, maybe they'll
-<ce>     figure you for a threat and stop attacking the townspeople.
-<ce>          Best case scenario, right? Anyway, enough from me.
-<ce>    Destroy them until they stop appearing, that's all I can say.
-<ce>     I don't know how long it's gonna take, but you've got 7 days
-<ce>     to clear the streets of them. That's plenty of time, I say.
-<ce>             I'll pay you =reward_ gold when you're back.
+<ce>       Okay, well, watch your back. The Dark Brotherhood
+<ce> ain't known for selling flowers or doing chores.
+<ce> You're gonna find the perp in ___res_.
+<ce> Ask around until you find _res_, and get it done.
+<ce> When you're finished, come back to ___tav_
+<ce> and find _woman_ at _tav_.
+<ce> That's where she's living 'til her savings run out.
+<ce> Go pick up your =gold_ gold pieces from her before =timer_ days,
+<ce> that's the limit on this contract. Stay safe.
 
 QuestFail:  [1003]
-<ce>          Seven days are up, and you let too many atronachs
-<ce>         slip through ___questgiver_. Your reward is forfeit.
+<ce>      Your contract for the widow at _tav_,
+<ce>  _woman_, has expired.
 
 QuestComplete:  [1004]
-<ce>          Good news, %pcf. They caught the imbecile who was
-<ce>     creating the atronachs. That's why they stopped showing up.
-<ce>             Have your gold with ___questgiver_'s thanks.
+<ce>       _woman_ is overjoyed that justice has been done.
 
-Message:  1030
+Message:  1010
 %qdt:
- It seems all-out war has broken
- out between the forces of
- %crn and some renegade
- group of knight pretenders
- called the Knights of the _gem_
- in the city of ___palace_.
- I must defend the town as well
- as I can for my own part.
+ The Fighters Guild of
+ ___tav_ has sent me to
+ ___res_ to slay a Dark Brotherhood member
+ in _res_. Afterwards, I am to claim my
+ =reward_ gold pieces from _woman_, who
+ stays at _tav_ here in ___tav_.
+ The contract is void after =timer_ days.
 
-Message:  1031
-%qdt:
- The guards have told me to hurry
- to the _palace_ in ___palace_,
- as it appears the invaders
- have entered it.
+Message:  1011
+<ce>      (ATTRIBUTE CHECK FAILED: AGILITY)
+<ce>  
+<ce>  Paranoia and precaution go hand in hand with the Brotherhood.
+<ce>  There's a trap guarding the entrance to this house,
+<ce>  and you're too clumsy to avoid it.
+<ce>  Painful barbs dig into your skin,
+<ce>  coated with a dark liquid.
 
-Message:  1099
-<ce>                      Protect ___palace_, %pcf!
-<ce>                       They are nearly upon us!
+Message:  1012
+<ce>     The widow has been avenged.
+
+Message:  1013
+<ce>      (ATTRIBUTE CHECK PASSED: AGILITY)
+<ce>  
+<ce>  Paranoia and precaution go hand in hand with the Brotherhood.
+<ce>  There's a trap guarding the entrance to this house,
+<ce>  but you artfully dodge it.
+<ce>  It's a good thing, too; those spiked barbs would have
+<ce>  done real damage to your neck.
+
+Message:  1014
+<ce>  You introduce yourself to _woman_
+<ce>  and detail how you disposed of her son's assassin.
+<ce>  Relief washes over her.
+<ce>  
+<ce>  "Oh, thank you, thank you, %ra.
+<ce>  To think I'll be able to pass on without burdens to carry!
+<ce>  The Fighters Guild are champions of us
+<ce>  common folk. Here, let me get that gold for you."
+<ce>  
+<ce>  She begins rummaging for your =reward_ gold pieces.
+<ce>  Knowing that she's destitute and likely on her last
+<ce>  few coins, you could tell her to keep the money instead.
+<ce>  Will you accept her payment?
+
+Message:  1015
+<ce>  You take the money she offers you.
+<ce>  The guild isn't a charity, and lowering your price
+<ce>  could impair other members' possibilities to make a living.
+<ce>  Besides, you worked for this money.
+
+Message:  1016
+<ce>  You tell _woman_ that the money won't be necessary.
+<ce>  She blinks in confusion, and then tries to hide her tears
+<ce>  of gratitude. Without further explanation, she merely smiles
+<ce>  at you and puts the coins back in her purse, saying,
+<ce>  
+<ce>  "I still have some connections to the merchants here in %crn.
+<ce>  They'll be hearing about you and your kindness."
 
 QBN:
-Item _gem_ gem
+Item _reward_ gold range 300 to 400
 
-Person _questgiver_ group Questor male
+Person _woman_ faction The_Sisters_of_Kykos female
+Person _merch_ faction The_Merchants
+Person _db_ faction The_Dark_Brotherhood
 
-Place _palace_ local palace
+Place _res_ remote house1
+Place _tav_ local tavern
 
-Clock _timer_ 02:00
-Clock _delay_ 00:01
-Clock _delay2_ 00:02
-Clock _delay3_ 00:01
-Clock _outdoors_ 00:18
+Clock _timer_ 00:00 0 flag 17 range 0 2
 
-Foe _warr_ is Warrior
-Foe _barb_ is Knight
-Foe _kni_ is 2 Barbarian
-Foe _spells_ is Spellsword
-
---changed warrior and barbarian around since outdoor spawns need to be on the same team
+Foe _enemy_ is Nightblade
 
 --	Quest start-up:
-    start timer _timer_
-    start timer _delay_
-    log 1030 step 0
-    pc at _palace_ set _inside_
-    pc at any fighters set _fightered_
-    pc at any tavern set _taverned_
-    pc at any house set _homed_
-    pc at any shop set _shopped_
-    pc at any magery set _maged_
-    pc at any temple set _templed_
+	start timer _timer_
+	log 1010 step 0
+	place foe _enemy_ at _res_
+	change foe _enemy_ infighting true
+    pc at _res_ do _inside_
 
-variable _fightered_
-variable _taverned_
-variable _homed_
-variable _shopped_
-variable _maged_
-variable _templed_
-
-_day_ task:
-    daily from 00:00 to 23:59
-    change foe _warr_ infighting true
-    change foe _barb_ infighting true
-    change foe _kni_ infighting true
-    change foe _spells_ infighting true
-    change foe _spells_ team 1
-    clear _day_
-
-_delay_ task:
-    say 1010
-    start timer _delay2_
-
-variable _delay2_
-
-_spawnout_ task:
-    when _delay2_ and not _slain_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_
-    start timer _outdoors_
-    create foe _warr_ every 1 minutes indefinitely with 50% success
-    create foe _barb_ every 1 minutes indefinitely with 50% success
-    create foe _spells_ every 1 minutes indefinitely with 65% success msg 1012
-
-_msg_ task:
-    killed 1 _warr_
-    killed 1 _barb_
-    say 1011
-
-variable _outdoors_
-_slain_ task:
-    killed 8 _warr_
-    killed 7 _barb_
-
-_finish1_ task:
-    when _outdoors_ and _slain_
-    say 1020
-    log 1031 step 1
+_will_ task:
+	when attribute Agility is at least 35
 
 variable _inside_
-_spawnin_ task:
-    when _inside_ and _finish1_
-    create foe _kni_ every 0 minutes 1 times with 100% success
-    create foe _kni_ every 3 minutes 1 times with 100% success
-    create foe _kni_ every 6 minutes 1 times with 100% success
 
-_victory_ task:
-    killed 6 _kni_
-    start timer _delay3_
+_passwill_ task:
+	when _inside_ and _will_
+    say 1013
 
-_delay3_ task:
-    give pc nothing
-    legal repute +6
-    end quest
+_failwill_ task:
+	when _inside_ and not _will_
+	say 1011
+    reduce player health by 25
+	make pc ill with Witches'_Pox
+
+_slain_ task:
+	killed _enemy_
+	say 1012
+    place npc _woman_ at _tav_
+    change repute with _db_ by -20
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _slain_
+    prompt 1014 yes _accept_ no _refuse_
+    start quest JHFGC06
 
 _qgclicked_ task:
-    clicked npc _questgiver_
-
-_timer_ task:
-    say 1024
-    end quest
+	clicked npc _woman_
 
 _clearclick_ task:
-    when _qgclicked_ and not _slain_
-    say 1099
-    clear _qgclicked_ _clearclick_
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_
+
+_accept_ task:
+    say 1015
+    give pc _reward_
+    end quest
+
+_refuse_ task:
+    say 1016
+    change repute with _merch_ by +10
+    give pc nothing
+    end quest
+
+_timer_ task:
+	say 1003
+	end quest

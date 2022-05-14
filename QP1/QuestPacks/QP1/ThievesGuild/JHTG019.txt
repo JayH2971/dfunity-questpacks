@@ -18,7 +18,7 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce>             Then it's yours. Hope you can live up to it.
 <ce>        Look for _thief_ in ___dungeon_. We got %g3 messenger
-<ce>       pigeon with a note that %g3's too afraid to open it up.
+<ce>       bird with a note that %g3's too afraid to open it up.
 <ce>         Ugly-looking powder around the door frame, %g1 says.
 <ce>          Smart people keep away from that unless they know
 <ce>          what they're doing. The note said %g1's gonna wait

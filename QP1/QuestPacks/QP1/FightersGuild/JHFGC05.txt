@@ -1,0 +1,33 @@
+Quest: JHFGC05
+DisplayName: Fighters Guild Consequence Quest 5
+-- Message panels
+QRC:
+
+Message:  1010
+<ce> Inside the guild hall, you are given a letter.
+<ce> You open it at once. The crude writing is that of a child:
+<ce> 
+"hello
+<ce> 
+"thank you for saving me from that cave and those bad people.
+im going to join the fiters guld when i grow up just
+like you and kill lots of crimanols. my mom wont let
+me swing a sword yet but i wont tell her."
+<ce> 
+<ce> The child apparently forgot to sign the letter.
+<ce> You have become a role model for someone, it seems.
+
+QBN:
+Clock _delay_ 10:00 12:00
+
+--	Quest start-up:
+    start timer _delay_
+    pc at any fighters do _inside_
+
+variable _delay_
+variable _inside_
+
+_giveletter_ task:
+    when _delay_ and _inside_
+    say 1010
+    end quest

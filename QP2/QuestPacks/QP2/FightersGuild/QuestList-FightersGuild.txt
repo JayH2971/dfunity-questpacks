@@ -21,5 +21,5 @@ JHFG025, FightersGuild, M, 0, 0, a quest to help find someone from the Mages Gui
 JHFG034, FightersGuild, M, 2, 0, a quest to kill a fire atronach in a palace
 JHFG035, FightersGuild, M, 0, 0, a quest to kill two skeletons in a house
 JHFG036, FightersGuild, M, 1, 0, a quest to kill a conjurer in a dungeon
---JHFG037, FightersGuild, M, 2, 1, kill wandering atronachs, not yet finished
+JHFG037, FightersGuild, M, 2, 1, a quest to kill a Dark Brotherhood member for a widow
 JHFG038, FightersGuild, M, 0, 1, a quest to kill a thief in a local shop

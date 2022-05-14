@@ -1,0 +1,65 @@
+Quest: JHFGC06
+DisplayName: Fighters Guild Consequence Quest 6
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  All of a sudden, flaming letters appear in the ground in front of you.
+<ce>  
+<ce>  "THE DARK BROTHERHOOD IS NOT AMUSED, FIGHTERS CHILD."
+<ce>  
+<ce>  The letters soon fade out, though you realize you're not alone.
+
+QBN:
+
+Foe _enemy1_ is Assassin
+Foe _enemy2_ is Assassin
+
+Place _dung_ permanent DaggerfallCastle
+Place _dung2_ permanent SentinelCastle
+Place _dung3_ permanent WayrestCastle
+
+Clock _delay_ 0:05
+
+--	Quest start-up:
+    pc at _dung_ set _inside1_
+    pc at _dung2_ set _inside2_
+    pc at _dung3_ set _inside3_
+    pc at any fighters set _fightered_
+    pc at any tavern set _taverned_
+    pc at any house set _homed_
+    pc at any shop set _shopped_
+    pc at any magery set _maged_
+    pc at any temple set _templed_
+    pc at any palace set _palaced_
+
+variable _inside1_
+variable _inside2_
+variable _inside3_
+variable _fightered_
+variable _taverned_
+variable _homed_
+variable _shopped_
+variable _maged_
+variable _templed_
+variable _palaced_
+
+_donotspawn_ task:
+    when _inside1_ or _inside2_ or _inside3_ or _fightered_ or _taverned_ or _homed_ or _shopped_ or _maged_ or _templed_ or _palaced_
+
+_daytime_ task:
+    daily from 4:00 to 20:00
+
+_spawn_ task:
+    when not _donotspawn_ and not _daytime_
+    say 1010
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+	change foe _enemy1_ infighting true
+    cast Feet_of_Notorgo spell on _enemy1_
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+	change foe _enemy2_ infighting true
+    cast Feet_of_Notorgo spell on _enemy2_
+    start timer _delay_
+
+_delay_ task:
+    end quest
