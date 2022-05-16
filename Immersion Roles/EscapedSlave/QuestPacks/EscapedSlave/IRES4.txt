@@ -10,13 +10,8 @@ Message:  1011
 <ce>                         you in the process.
 
 Message:  1012
-<ce>             The gem you took from your assailaints seems
-<ce>              to carry the same design and magical power
-<ce>            as the one that teleported you from the ship.
-<ce>              If you use this one, you assume it'll send
-<ce>                        you to their new lair.
-<ce>
-<ce>          You'll make sure not to use it until you're ready.
+<ce>             So soon as you touch this _gem_,
+<ce>  you feel yourself get conveyed...
 
 Message:  1013
 %qdt:
@@ -63,6 +58,7 @@ _instigate_ task:
 
 _kill_ task:
     killed _enemy3_
+    say 1014
 
 _advance_ task:
     say 1012
