@@ -16,7 +16,6 @@ QuestComplete:  [1004]
 <ce>                        (QUEST LINE COMPLETE!)
 
 Message:  1011
-<ce>     You activate the gem and feel yourself go underground again.
 <ce>                  Darkness surrounds you once more.
 <ce>        As you steady your footing, you hear a piece of paper
 <ce>             under your foot. You reach down and grab it.
