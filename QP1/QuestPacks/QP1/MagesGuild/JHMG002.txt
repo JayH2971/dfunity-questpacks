@@ -306,6 +306,7 @@ _success_ task:
 _pcgetsgold_ task:
 	when _qgclicked_ and _success_
 	give pc _reward_
+	start quest JHMGC02
 	end quest
 
 _badend_ task:

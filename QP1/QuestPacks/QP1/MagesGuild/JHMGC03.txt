@@ -1,0 +1,40 @@
+Quest: JHMGC03
+DisplayName: Mages Guild Consequence Quest 3
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  Entering the tavern, you garner the attention
+<ce>  of a merry-looking patron. He swaggers over toward
+<ce>  you, raises a mug, and says,
+<ce>  
+<ce>  "This one 'ere, this one's from them Mages Guild!
+<ce>  A good %ra, this one is! Take some gold from my
+<ce>  las' expedition, an' be keeping us all safe, ya hear?"
+<ce>  
+<ce>  A small bag of gold is placed into your hands.
+<ce>  You don't know to what to owe this gift,
+<ce>  as your benefactor exits the tavern without further comment.
+<--->
+<ce>  Entering the tavern, you garner the attention
+<ce>  of a merry-looking patron. She swaggers over toward
+<ce>  you, raises a mug, and says,
+<ce>  
+<ce>  "This one 'ere, this one's from them Mages Guild!
+<ce>  A good %ra, this one is! Take some gold from my
+<ce>  las' expedition, an' be keeping us all safe, ya hear?"
+<ce>  
+<ce>  A small bag of gold is placed into your hands.
+<ce>  You don't know to what to owe this gift,
+<ce>  as your benefactor exits the tavern without further comment.
+
+QBN:
+
+Item _gold_ gold range 150 to 200
+
+--	Quest start-up:
+    pc at any tavern do _inside_
+
+_inside_ task:
+    give pc _gold_
+    end quest

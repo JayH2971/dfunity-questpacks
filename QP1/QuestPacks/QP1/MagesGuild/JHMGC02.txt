@@ -1,0 +1,35 @@
+Quest: JHMGC02
+DisplayName: Mages Guild Consequence Quest 2
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>           "Mages Guild newsletter! Take this!"
+<ce>  A courier barks in your ear,
+<ce>  thrusting a piece of paper into your pack.
+<ce>  This edition is dedicated to the guild hall in ___hall_.
+<ce>  
+<ce>  You open the periodical and see various rumors and
+<ce>  tidbits in passing, mostly related to new rules and lab precautions.
+<ce>  One particular commendation goes to you
+<ce>  for an "extraordinary display of intellect"
+<ce>  while retrieving a senior scholar from a cave.
+<ce>  You read nothing else of interest.
+
+QBN:
+
+Place _hall_ local house
+
+Clock _timer_ 3.00:00 8.00:00
+
+Item _dummy_ gem
+
+--	Quest start-up:
+ have _dummy_ set _end_
+
+_timer_ task:
+    give pc _dummy_ notify 1010
+
+_end_ task:
+    take _dummy_ from pc
+    end quest

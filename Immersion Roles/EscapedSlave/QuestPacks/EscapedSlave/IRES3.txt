@@ -36,7 +36,7 @@ Message:  1011
 <ce>          that I can't help more. %god help you come free."
 
 Message:  1012
-<ce>                "There %pg2 is! The one who escaped!"
+<ce>                "There's that %ra! The one who escaped!"
 <ce>
 <ce>         Armed with knives, two thugs rush to apprehend you.
 
