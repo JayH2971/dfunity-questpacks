@@ -1,0 +1,35 @@
+Quest: JHDBC02
+DisplayName: Dark Brotherhood Consequence Quest 2
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  You're surprised to see a small parchment
+<ce>  among your belongings. You reach in to grab it,
+<ce>  and a thin layer of foul-smelling powder
+<ce>  shoots up into the air, enveloping your face.
+<ce>  You take a moment to wipe off the powder,
+<ce>  hoping it has no malicious intent.
+<ce>  The note says as follows:
+<ce>  
+"To the Dark Brotherhood.
+With love,
+           The Thieves Guild."
+
+QBN:
+
+Clock _timer_ 12:00 2.00:00
+
+Item _dummy_ gem
+
+--	Quest start-up:
+    start timer _timer_
+    have _dummy_ set _disease_
+
+_timer_ task:
+    give pc _dummy_ notify 1011
+
+_disease_ task:
+    take _dummy_ from pc
+    make pc ill with Witches'_Pox
+    end quest

@@ -91,6 +91,10 @@ _ith_ task:
     change foe _thief_ infighting true
     give item _letter_ to _thief_
     _letter_ used do _readletter_
+    cast Heal spell on _thief_
+    cast Shield spell on _thief_
+    cast Orc_Strength spell on _thief_
+    cast Troll's_Blood spell on _thief_
 
 _readletter_ task:
     say 1022

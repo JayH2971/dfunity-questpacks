@@ -24,7 +24,7 @@ QuestorOffer:  [1000]
 <ce>            we cannot draw out. The regular identification
 <ce>          spells avail us nothing. This requires the help of
 <ce>            a true expert. Will you take it into the ruins
-<ce>                    to obtain that manner of help?
+<ce>                    to obtain that manner of aid?
 
 RefuseQuest:  [1001]
 <ce>          Even so, we refuse to test it in this guild hall.
