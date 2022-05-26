@@ -46,7 +46,7 @@ Message:  1010
 <ce>       Black boxes are legendary among thieves. To open one up
 <ce>      is a major achievement. Are you sure you want to try this?
 <ce>
-<ce>              (SKILL CHECK: YES: Lockpicking, very high)
+<ce>              (SKILL CHECK: YES: Lockpicking, difficulty very high)
 
 Message:  1011
 <ce>                         (SKILL CHECK PASSED)
@@ -131,7 +131,6 @@ variable _attempt_
 _flee_ task:
     say 1013
     hide npc _thief_
-    give pc nothing
     end quest
 
 _skilled_ task:

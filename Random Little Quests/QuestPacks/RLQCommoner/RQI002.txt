@@ -10,7 +10,7 @@ QuestorOffer:  [1000]
 <ce>         get the whole picture. Are you the kind who'd teach
 <ce>                      me about some Mysticism?"
 <ce>
-<ce>                    (SKILL CHECK: Mysticism, high)
+<ce>                    (SKILL CHECK: Mysticism, difficulty high)
 
 RefuseQuest:  [1001]
 <ce>                    "That's okay. Take care now."

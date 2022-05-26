@@ -63,8 +63,8 @@ Message:  1021
 <ce>              lending to momentary distraction. Will you
 <ce>                   attempt to take it for yourself?
 <ce>
-<ce>                 (SKILL CHECK: YES: Pickpocket, low)
-<ce>                (OR SKILL CHECK: YES: Stealth, medium)
+<ce>                 (SKILL CHECK: YES: Pickpocket, difficulty low)
+<ce>                (OR SKILL CHECK: YES: Stealth, difficulty medium)
 
 Message:  1022
 <ce>                  (STEALTH/PICKPOCKET CHECK PASSED)

@@ -108,7 +108,7 @@ Message:  1013
 <ce>                you could attempt to dampen the magic
 <ce>                      at its source. Do you try?
 <ce>
-<ce>                (SKILL CHECK: YES: Thaumaturgy, high)
+<ce>                (SKILL CHECK: YES: Thaumaturgy, difficulty high)
 
 Message:  1014
 <ce>                         (SKILL CHECK PASSED)

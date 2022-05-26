@@ -68,7 +68,7 @@ Message:  1010
 <ce>                 Do you attempt it (yes) or fight off
 <ce>                    the mercenaries instead (no)?
 <ce>
-<ce>                  (SKILL CHECK: YES: Illusion, low)
+<ce>                  (SKILL CHECK: YES: Illusion, difficulty low)
 
 Message:  1011
 <ce>       You hear no more shouting. Hopefully these are the last

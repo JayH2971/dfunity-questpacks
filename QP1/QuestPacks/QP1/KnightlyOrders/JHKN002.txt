@@ -61,7 +61,7 @@ Message:  1020
 <ce>                   to get the whereabouts of these
 <ce>                   members of the Dark Brotherhood?
 <ce>
-<ce>                  (SKILL CHECK: YES: Etiquette, low)
+<ce>                  (SKILL CHECK: YES: Etiquette, difficulty low)
 
 Message:  1021
 <ce>                         (SKILL CHECK FAILED)

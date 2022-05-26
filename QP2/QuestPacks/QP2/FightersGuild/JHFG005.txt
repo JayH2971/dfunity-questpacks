@@ -55,7 +55,7 @@ Message:  1010
 <ce>                 ask them to help you kill your prey.
 <ce>      Do you ask for their help (yes) or do it on your own (no)?
 <ce>
-<ce>                  (SKILL CHECK: YES: Spriggan, low)
+<ce>                  (SKILL CHECK: YES: Spriggan, difficulty low)
 
 Message:  1011
 <ce>                         (SKILL CHECK PASSED)
@@ -63,7 +63,7 @@ Message:  1011
 <ce>           You explain to the spriggans that these animals
 <ce>             are harming the cycle of nature by attacking
 <ce>               humans, the caretakers of this property.
-<ce>           They see the beasts' violent nature at work and
+<ce>           They see the beasts' violent disposition at work and
 <ce>                      march toward you to help.
 
 Message:  1012

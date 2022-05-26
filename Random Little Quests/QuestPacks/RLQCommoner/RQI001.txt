@@ -9,7 +9,7 @@ QuestorOffer:  [1000]
 <ce>         and we're trying to see who's the fastest of us all.
 <ce>                              Want in?"
 <ce>
-<ce>                  (SKILL CHECK: Short Blade, medium)
+<ce>                  (SKILL CHECK: Short Blade, difficulty medium)
 
 RefuseQuest:  [1001]
 <ce>            "All right then! Have yourself a blessed day!"

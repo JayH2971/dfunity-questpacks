@@ -27,6 +27,7 @@ JHTG016, GeneralPopulace, M, 0, 0, a moderate daily heist
 JHTG017, GeneralPopulace, M, 0, 0, a large daily heist
 JHTG018, GeneralPopulace, M, 0, 1, a quest to kidnap a child from a tavern
 JHTG019, GeneralPopulace, M, 7, 1, a quest to open a trapped black box
+JHTG020, GeneralPopulace, M, 3, 1, a quest to open a noble's box in a tavern
 JHTGX00, GeneralPopulace, M, 6, 1, a quest invitation from a guild member
 JHTGX01, GeneralPopulace, P, 0, X, offered via JHTG00X
 JHTGX02, GeneralPopulace, P, 0, X, offered via JHTG01X

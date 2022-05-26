@@ -109,7 +109,7 @@ Message:  1029
 <ce>              you could try to interfere with the lich's
 <ce>                       summoning spell. Do you?
 <ce>
-<ce>               (SKILL CHECK: YES: Mysticism, very high)
+<ce>               (SKILL CHECK: YES: Mysticism, difficulty very high)
 
 Message:  1030
 %qdt:

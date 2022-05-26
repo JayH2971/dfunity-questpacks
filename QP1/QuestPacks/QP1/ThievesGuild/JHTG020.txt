@@ -1,0 +1,152 @@
+Quest: JHTG020
+DisplayName: A Noble's Lock
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>    Got a guild member here in town who managed to
+<ce>  score big with a break-in. Stole a box with
+<ce>  some really valuable stuff inside, apparently,
+<ce>  but needs a locksmith to open it up.
+<ce>  This ain't gonna be a world-class challenge,
+<ce>  but you better know about picking hard locks
+<ce>  if you're gonna take this one.
+
+RefuseQuest:  [1001]
+<ce>             Good. Don't pretend to be nothing you ain't.
+
+AcceptQuest:  [1002]
+<ce>       Go to _tav_ and look for _thief_.
+<ce>  We told %g2 not to bring the box here,
+<ce>  just in case something goes wrong.
+<ce>  We don't need no city guards marching in here.
+<ce>  If you get it open, you'll get guild credit,
+<ce>  just like for any other job. _thief_'s
+<ce>  gonna pay the guild fee, so whatever %g1
+<ce>  gives you is gonna be yours. Don't take more
+<ce>  than a day to get there, %g1 can't wait forever.
+
+QuestFail:  [1003]
+<ce>         _thief_ has given up waiting for you in _tav_.
+
+QuestComplete:  [1004]
+<ce>        (SKILL CHECK PASSED: LOCKPICKING)
+<ce>  
+<ce>   Your skills were made for times like these.
+<ce>  You sit down in front of the box and get to work.
+<ce>  There are a few surprises that make you
+<ce>  worry momentarily, but you deal with them
+<ce>  and clear the deadbolt. _thief_ exhales loudly
+<ce>  when the box opens.
+<ce>  
+<ce>  "Very nice. Lemme take a look...
+<ce>  The money's in bundles, that's good.
+<ce>  Let me take out the guild's share, and
+<ce>  you get =reward_. And what's this?
+<ce>  A couple of enchanted items.
+<ce>  I'm taking mine, so you get the other one.
+<ce>  Nice knowing you."
+<ce>  
+<ce>  _thief_ quickly bundles up %g3 share
+<ce>  and hurries out the door.
+
+Message:  1010
+<ce>   "About time they got someone. This thing's armed to the teeth,
+<ce>  so you better know what you're doing. I'll step back
+<ce>  and watch, just in case."
+<ce>  
+<ce>  The lock is well-build and ornate, but nothing out of the ordinary.
+<ce>  It'd be a cinch for a mid-level thief, from the looks of it.
+<ce>  If that sounds too hard, you can still back out before things get worse.
+<ce>  Do you attempt to unlock the box?
+<ce>
+<ce>              (SKILL CHECK: YES: Lockpicking, difficulty medium)
+
+Message:  1012
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>     You sit down in front of the box and get to work.
+<ce>  You're surprised by what you feel inside the lock.
+<ce>  Things aren't in their usual places, and you're
+<ce>  getting resistance where you don't expect to.
+<ce>  You get a bad feeling about this, and just as you're about
+<ce>  to withdraw your pick, you hear a loud snap come from within the box.
+<ce>  Steam starts shooting out of the top, and a loud whistling noise
+<ce>  fills the tavern. You can't quiet it down.
+<ce>  
+<ce>  "MORON! THE GUARDS ARE GONNA HEAR THAT! RUN!!"
+<ce>  
+<ce>  _thief_ grabs the box and flees.
+<ce>  Now you'll have to live with the consequences.
+
+Message:  1013
+<ce>            "Really? Oh well. I'm glad you're smart
+<ce>  enough to back out when you know it's beyond you.
+<ce>  Some of those morons in the guild would keep
+<ce>  bashing a box like this 'til their wrist breaks.
+<ce>  I'll tell _qgiver_ to send someone else. Later."
+<ce>
+<ce>            _thief_ takes the box to another corner
+<ce>  of the tavern to avoid suspicion.
+
+Message:  1030
+%qdt:
+ I signed up to open a locked box
+ in _tav_, held by _thief_
+ of the Thieves Guild, ___tav_.
+ I should get there within
+ 24 hours to open it up.
+
+QBN:
+Item _gold_ gold range 500 to 700
+Item _reward_ magic_item
+
+Place _tav_ local tavern
+
+Person _thief_ faction The_Thieves_Guild
+Person _qgiver_ group Questor
+
+Clock _timer_ 1.00:00
+Clock _delay_ 0:03
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    place npc _thief_ at _tav_
+
+_found_ task:
+    clicked npc _thief_
+    prompt 1010 yes _attempt_ no _flee_
+
+variable _attempt_
+_flee_ task:
+    say 1013
+    hide npc _thief_
+    end quest
+
+_skilled_ task:
+    when skill Lockpicking is at least 40
+
+_victory_ task:
+    when _attempt_ and _skilled_
+    get item _gold_
+    make _gold_ permanent
+    give pc _reward_
+    hide npc _thief_
+    end quest
+
+_bigfail_ task:
+    when _attempt_ and not _skilled_
+    say 1012
+    hide npc _thief_
+    remove log step 0
+    setplayercrime Burglary
+    spawncityguards immediate
+    start timer _delay_
+
+_delay_ task:
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest

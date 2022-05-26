@@ -48,7 +48,7 @@ Message:  1020
 <ce>                  Do you try to talk to it (yes) or
 <ce>                        try to avoid it (no)?
 <ce>
-<ce>                  (SKILL CHECK: YES: Spriggan, low)
+<ce>                  (SKILL CHECK: YES: Spriggan, difficulty low)
 
 Message:  1021
 <ce>                         (SKILL CHECK PASSED)

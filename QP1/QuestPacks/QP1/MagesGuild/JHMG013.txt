@@ -70,7 +70,7 @@ Message:  1010
 <ce>           benefit, to attract it to you. Do you try (yes)
 <ce>                 or wait for it to come to you (no)?
 <ce>
-<ce>                  (SKILL CHECK: YES: Mysticism, low)
+<ce>                  (SKILL CHECK: YES: Mysticism, difficulty low)
 
 Message:  1011
 <ce>                         (SKILL CHECK PASSED)

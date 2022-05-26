@@ -58,7 +58,7 @@ Message:  1012
 <ce>      Your mind races. Do you attempt to lie (yes) or surrender
 <ce>                     the child to the guard (no)?
 <ce>
-<ce>               (SKILL CHECK: YES: Streetwise, very low)
+<ce>               (SKILL CHECK: YES: Streetwise, difficulty very low)
 
 Message:  1013
 <ce>                       (SKILL CHECK SUCCEEDED)

@@ -50,7 +50,7 @@ Message:  1011
 <ce>
 <ce>            Do you try to teach _kid_ about using a sword?
 <ce>
-<ce>                (SKILL CHECK: YES: Long Blade, medium)
+<ce>                (SKILL CHECK: YES: Long Blade, difficulty medium)
 
 Message:  1012
 <ce>                       (SKILL CHECK SUCCEEDED)

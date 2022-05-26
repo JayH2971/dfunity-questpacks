@@ -132,7 +132,7 @@ Message:  1023
 <ce>                 some control words to make it stop.
 <ce>                  Do you try to gain control of it?
 <ce>
-<ce>                  (SKILL CHECK: YES: Impish, medium)
+<ce>                  (SKILL CHECK: YES: Impish, difficulty medium)
 
 Message:  1024
 <ce>                         (SKILL CHECK PASSED)

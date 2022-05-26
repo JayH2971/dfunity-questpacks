@@ -67,7 +67,7 @@ Message:  1011
 <ce>             you're going to have to unlock it yourself.
 <ce>                      Do you attempt to open it?
 <ce>
-<ce>                (SKILL CHECK: YES: Lockpicking, high)
+<ce>                (SKILL CHECK: YES: Lockpicking, difficulty high)
 
 Message:  1012
 <ce>                         (SKILL CHECK PASSED)

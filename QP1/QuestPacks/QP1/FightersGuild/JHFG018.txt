@@ -55,7 +55,7 @@ Message:  1011
 <ce>   with magic of your own. Do you try to stop the enchantment (yes)
 <ce>             or fight the skeletons after they form (no)?
 <ce>
-<ce>                 (SKILL CHECK: YES: Mysticism, high)
+<ce>                 (SKILL CHECK: YES: Mysticism, difficulty high)
 
 Message:  1012
 <ce>        The dark magic giving power to these bodies runs out.
