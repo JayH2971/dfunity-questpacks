@@ -30,19 +30,18 @@ QuestFail:  [1003]
 <ce>         _thief_ has given up waiting for you in _tav_.
 
 QuestComplete:  [1004]
-<ce>        (SKILL CHECK PASSED: LOCKPICKING)
+<ce>        (SKILL CHECK PASSED)
 <ce>  
 <ce>   Your skills were made for times like these.
 <ce>  You sit down in front of the box and get to work.
-<ce>  There are a few surprises that make you
-<ce>  worry momentarily, but you deal with them
-<ce>  and clear the deadbolt. _thief_ exhales loudly
-<ce>  when the box opens.
+<ce>  There are a few surprises that try to worry you,
+<ce>  but you deal with them and clear the deadbolt.
+<ce>  _thief_ exhales loudly when the box opens.
 <ce>  
 <ce>  "Very nice. Lemme take a look...
 <ce>  The money's in bundles, that's good.
 <ce>  Let me take out the guild's share, and
-<ce>  you get =reward_. And what's this?
+<ce>  you get =gold_. And what's this?
 <ce>  A couple of enchanted items.
 <ce>  I'm taking mine, so you get the other one.
 <ce>  Nice knowing you."
@@ -51,13 +50,13 @@ QuestComplete:  [1004]
 <ce>  and hurries out the door.
 
 Message:  1010
-<ce>   "About time they got someone. This thing's armed to the teeth,
+<ce>   "About time they got someone. This thing freaks me out,
 <ce>  so you better know what you're doing. I'll step back
 <ce>  and watch, just in case."
 <ce>  
-<ce>  The lock is well-build and ornate, but nothing out of the ordinary.
+<ce>  The lock is well-built and ornate, but nothing out of the ordinary.
 <ce>  It'd be a cinch for a mid-level thief, from the looks of it.
-<ce>  If that sounds too hard, you can still back out before things get worse.
+<ce>  You can still back out if you're unsure.
 <ce>  Do you attempt to unlock the box?
 <ce>
 <ce>              (SKILL CHECK: YES: Lockpicking, difficulty medium)
@@ -140,9 +139,10 @@ _bigfail_ task:
     say 1012
     hide npc _thief_
     remove log step 0
-    setplayercrime Burglary
+    setplayercrime Theft
     spawncityguards immediate
     start timer _delay_
+    stop timer _timer_
 
 _delay_ task:
     end quest
