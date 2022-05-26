@@ -4,7 +4,7 @@ DisplayName: Daedric Submission
 QRC:
 
 QuestorOffer:  [1000]
-<ce>                Contrary to our urging, a guild member
+<ce>                Contrary to our vehement urging, a guild member
 <ce>                has taken to seclusion in a foul hole,
 <ce>               attempting to control a powerful daedra.
 <ce>               This kind of ritual is always dangerous

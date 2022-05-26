@@ -40,8 +40,6 @@ Message:  1012
 <ce>
 <ce>         Armed with knives, two thugs rush to apprehend you.
 
-%pg2
-
 Message:  1013
 %qdt:
  The slavers put a rune under my skin that tells them
