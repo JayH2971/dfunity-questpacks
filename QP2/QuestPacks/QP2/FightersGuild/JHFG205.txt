@@ -48,7 +48,7 @@ QuestComplete:  [1004]
 <ce>                              Take this.
 
 Message:  1010
-<ce>      As you approach the property, you notice pair of spriggans
+<ce>      As you approach the property, you notice a pair of spriggans
 <ce>          a ways off. They seem to be watching the creatures
 <ce>        move across the property, neither interfering with nor
 <ce>         helping them. If you knew how to, perhaps you could

@@ -1,0 +1,126 @@
+Quest: JHKN201
+DisplayName: A Lone Necromancer
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  A lodge in %crn is suffering from
+<ce>  the instigation of a necromancer,
+<ce>  a conjurer of the undead.
+<ce>  We need someone who does not fear
+<ce>  the disembodied or the night time.
+
+RefuseQuest:  [1001]
+<ce>   This kind of invasion is quite common.
+<ce>   You'll see this kind of request a lot.
+
+AcceptQuest:  [1002]
+<ce>  We know not where the villain hides,
+<ce>  for we have searched every home
+<ce>  in __tavernhome_. What remains now
+<ce>  is to stay on the streets at night,
+<ce>  when the hauntings occur,
+<ce>  and destroy every spirit that appears.
+<ce>  Sooner or later the necromancer will
+<ce>  appear, and then you must strike.
+<ce>  Have this done within =timer_ days,
+<ce>  for honor's sake.
+
+QuestFail:  [1003]
+<ce>  __qgiver_ assigned you to slay
+<ce>  the Necromancer of __tavernhome_ by now.
+
+QuestComplete:  [1004]
+<ce>  With the mage defeated, the remaining spirits fade away.
+<ce>  The townspeople part their doors to look outside.
+<ce>  The danger is gone, and they cheer exultantly for you.
+<ce>  Though no monetary reward is forthcoming,
+<ce>  your name will not be quickly forgotten here.
+
+Message:  1010
+<ce>  This is the right place, but there's too much sunlight.
+<ce>  You'll need to be outside when it's later at night.
+
+Message:  1011
+<ce>  You see no necromancer as yet, but spirits have
+<ce>  begun to haunt the streets of __tavernhome_.
+
+Message:  1012
+<ce>  "You! You are the knave who stops my work!"
+<ce>  
+<ce>  It appears you've earned the necromancer's attention.
+
+Message:  1030
+%qdt:
+ __qgiver_ of ___qgiver_
+ assigned me to get rid of
+ a necromancer who haunts
+ __tavernhome_ with spirits
+ at night. I need to destroy
+ the ghosts and the mage
+ within =timer_ days.
+
+QBN:
+
+Place _tavernhome_ remote tavernhome
+
+Person _qgiver_ group Questor
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _spawn_ 4:00 6:00
+
+Foe _vampman_ is Battle_mage
+Foe _vamw1_ is Ghost
+Foe _vamw2_ is Wraith
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+	pc at _tavernhome_ set _outside_
+
+_day_ task:
+    daily from 6:00 to 18:00
+
+variable _outside_
+
+_dayarrive_ task:
+    when _outside_ and _day_
+    say 1010
+
+_nightarrive_ task:
+    when _outside_ and not _day_
+    start timer _spawn_
+    stop timer _timer_
+    create foe _vamw1_ every 25 minutes indefinitely with 25% success msg 1011
+    create foe _vamw2_ every 17 minutes indefinitely with 21% success msg 1011
+
+_stoptimer_ task:
+    when not _nightarrive_
+    stop timer _spawn_
+    start timer _timer_
+
+_infighting_ task:
+    daily from 0:00 to 23:59
+    change foe _vamw1_ infighting true
+    change foe _vamw2_ infighting true
+    clear _infighting_
+
+_spawn_ task:
+    create foe _vampman_ every 0 minutes 1 times with 100% success msg 1012
+    change foe _vampman_ infighting true
+    change foe _vampman_ team 13
+    cast Feet_of_Notorgo spell on _vampman_
+    cast Shield spell on _vampman_
+    cast Spell_Resistance spell on _vampman_
+
+_victory_ task:
+    killed _vampman_
+    remove foe _vamw1_
+    remove foe _vamw2_
+    give pc nothing
+    legal repute +4
+    end quest
+
+_timer_ task:
+	say 1003
+	end quest

@@ -1,0 +1,161 @@
+Quest: JHFG203
+DisplayName: Rangers and Tigers and Bears Oh My
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>    Property dispute. A noble here in %crn
+<ce>  wants to expand his mansion, and some
+<ce>  rangers in the nearby wilderness are
+<ce>  gettin' real testy about it.
+<ce>  They're threatening to go ballistic on his
+<ce>  place unless he stops his plans.
+<ce>  I don't think there's a diplomatic solution
+<ce>  to this one, you're gonna have to knock 'em down.
+<ce>  Is this your kind of job?
+<--->
+<ce>    Property dispute. A noble here in %crn
+<ce>  wants to expand her mansion, and some
+<ce>  rangers in the nearby wilderness are
+<ce>  gettin' real testy about it.
+<ce>  They're threatening to go ballistic on her
+<ce>  place unless she stops her plans.
+<ce>  I don't think there's a diplomatic solution
+<ce>  to this one, you're gonna have to knock 'em down.
+<ce>  Is this your kind of job?
+
+RefuseQuest:  [1001]
+<ce>     Well, all right, I'll put that one away.
+
+AcceptQuest:  [1002]
+<ce>     The place is ___manor_. I know it'll look tiny,
+<ce>  and that's how the rangers want to keep it.
+<ce>  They've got power to charm critters,
+<ce>  so expect some humans and some animals.
+<ce>  Once all the baddies are dead,
+<ce>  you'll be paid on the spot.
+<ce>  Just make sure you get this done before =timer_ days
+<ce>  are up, that place won't last forever.
+
+QuestFail:  [1003]
+<ce>                 The Fighters Guild sent you to clean
+<ce>                        out ___manor_ by now.
+
+QuestComplete:  [1004]
+<ce>    The servant bows graciously before you and departs.
+<ce>  
+<ce>  "So shall it be done."
+
+Message:  1010
+<ce>    There's no hiding your approach to ___manor_.
+<ce>  The furious rangers see you coming from afar.
+<ce>  
+<ce>  "Nature's servants shall do Her bidding!"
+<ce>  
+<ce>  They split up and try to surround you,
+<ce>  calling for aid from some wild animals.
+
+Message:  1011
+<ce>  A servant exits the house and surveys the wreckage.
+<ce>  After ensuring the danger is gone, he approaches
+<ce>  to speak to you.
+<ce>  
+<ce>  "Hail, great warrior. My master's thanks to you
+<ce>  for ridding us of our persecutors.
+<ce>  I am authorized to give you these =reward_ gold pieces,
+<ce>  but should you so desire, we could instead
+<ce>  spread your fame abroad in %crn to give you
+<ce>  a better name in the eyes of the law."
+<ce>  
+<ce>  Do you choose the gold (yes) or the reward of fame (no)?
+<--->
+<ce>  A servant exits the house and surveys the wreckage.
+<ce>  After ensuring the danger is gone, she approaches
+<ce>  to speak to you.
+<ce>  
+<ce>  "Hail, great warrior. My master's thanks to you
+<ce>  for ridding us of our persecutors.
+<ce>  I am authorized to give you these =reward_ gold pieces,
+<ce>  but should you so desire, we could instead
+<ce>  spread your fame abroad in %crn to give you
+<ce>  a better name in the eyes of the law."
+<ce>  
+<ce>  Do you choose the gold (yes) or the reward of fame (no)?
+
+Message:  1030
+%qdt:
+ On behalf of the Fighters Guild,
+ I'm headed to ___manor_
+ of ____manor_ to get rid of
+ some angry rangers who threaten
+ the property. I'll be paid in gold
+ once they're dead, if I finish
+ within =timer_ days.
+
+QBN:
+Item _reward_ gold range 600 to 800
+
+Place _manor_ remote poorhome
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _delay_ 0:01
+
+Foe _bear_ is Grizzley_bear
+Foe _tiger_ is Sabretooth_tiger
+Foe _ranger1_ is Ranger
+Foe _ranger2_ is Ranger
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+	pc at _manor_ set _outside_
+
+_outside_ task:
+    start task _spawn_
+
+_spawn_ task:
+    say 1010
+    create foe _bear_ every 0 minutes 1 times with 100% success
+    create foe _tiger_ every 0 minutes 1 times with 100% success
+    create foe _ranger1_ every 0 minutes 1 times with 100% success
+    create foe _ranger2_ every 0 minutes 1 times with 100% success
+    change foe _bear_ infighting true
+    change foe _tiger_ infighting true
+    change foe _ranger1_ infighting true
+    change foe _ranger2_ infighting true
+    change foe _bear_ team 0
+    change foe _tiger_ team 0
+    change foe _ranger1_ team 0
+    change foe _ranger2_ team 0
+
+_killed1_ task:
+    killed _tiger_
+
+_killed2_ task:
+    killed _bear_
+
+_killed3_ task:
+    killed _ranger1_
+
+_killed4_ task:
+    killed _ranger2_
+
+_countdown_ task:
+    when _killed1_ and _killed2_ and _killed3_ and _killed4_
+    start timer _delay_
+
+_delay_ task:
+    prompt 1011 yes _givegold_ no _giverep_
+
+_givegold_ task:
+    give pc _reward_
+    end quest
+
+_giverep_ task:
+    legal repute +10
+    give pc nothing
+    end quest
+
+_timer_ task:
+	say 1003
+	end quest
