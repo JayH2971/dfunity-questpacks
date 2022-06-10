@@ -1,0 +1,106 @@
+Quest: JHIM117
+DisplayName: Trick or Treat
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  Hey %ra, do you think the King of Worms
+<ce>  is real? And would you be willing to take
+<ce>  some fool like me to meet him for money?
+
+RefuseQuest:  [1001]
+<ce>  Yeah? Go jump in a lake then.
+
+AcceptQuest:  [1002]
+<ce>  Oh yeah! I told my buddies this would happen!
+<ce>  %oth, I'm excited. I've got =reward_ gold here
+<ce>  for you when we meet him. They say the place
+<ce>  is called Scourg Barrow, in the Dragontail
+<ce>  Mountains. I can't believe I'm gonna meet
+<ce>  the King of Worms face to face! Boy howdy!
+<ce>  You do know how to get there, right? If not,
+<ce>  ya wanna ask people around town. Maybe one
+<ce>  of them's gonna know. I sure don't.
+
+QuestFail:  [1003]
+<ce>  "Hey, to be honest, I don't know if you
+<ce>  know what you're doing. I'm gonna give you
+<ce>  these =lesser_ gold coins for travel
+<ce>  expenses, but I've got to get moving on."
+<ce>  
+<ce>  _questgiver_ departs.
+
+QuestComplete:  [1004]
+<ce>  _questgiver_, not entirely sure
+<ce>  what to do, shouts for joy and then bows
+<ce>  down to worship the King of Worms.
+<ce>  The shrouded figure stares and smirks
+<ce>  at your employer's antics. He then
+<ce>  reaches his hand toward %g2.
+<ce>  Before %g1 can get up, he speaks.
+<ce>  
+<ce>  "No, that position is perfect. Hold still."
+<ce>  
+<ce>  A burst of light enshrouds _questgiver_,
+<ce>  and %g3 body is consumed instantly. You only
+<ce>  find %g3 clothes and the few effects %g1
+<ce>  brought to this journey, among them
+<ce>  the gold you were promised. You take what
+<ce>  belongs to you. The King of Worms says,
+<ce>  
+<ce>  "I would normally loathe such an interruption,
+<ce>  but I can make use of occasional sacrifices.
+<ce>  Go with my esteem, %ra."
+
+Message:  1010
+Scourg Barrow? That's an empty castle in the Dragontail Mountains, ain't it?
+<--->
+Ya wanna get to Scourg Barrow? Just a tourist trap.
+<--->
+Scourg Barrow? Go to Bleeding Soul of Arkay in the Dragontail Mountains. Head straight south. It's a long walk.
+<--->
+Ha ha ha! You got a death wish, %ra? Don't go there!
+<--->
+They say it's below Vartom Court and above Makehda. No idea about the longitude.
+
+Message:  1030
+%qdt:
+ _questgiver_ of
+ ___questgiver_, ____questgiver_
+ has hired me to guide %g2 to Scourg
+ Barrow to meet the King of Worms.
+ I will be paid =reward_ gold for doing so.
+ Though %g1 doesn't know where it is,
+ I can ask other townspeople whether they
+ know of its location.
+
+QBN:
+Person _questgiver_ group Questor
+Person _kow_ named King_of_Worms atHome anyInfo 1010
+
+Place _sb_ permanent ScourgBarrow2
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Item _reward_ gold range 601 to 799
+Item _lesser_ gold range 131 to 219
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+    hide npc _questgiver_
+    add _questgiver_ face
+
+_victory_ task:
+    clicked npc _kow_
+    change repute with _kow_ by +5
+    drop _questgiver_ face
+    give pc _reward_
+    destroy _questgiver_
+    add dialog for location _sb_
+    end quest
+
+_timer_ task:
+    say 1003
+    get item _lesser_
+	end quest

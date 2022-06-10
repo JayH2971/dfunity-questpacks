@@ -1,0 +1,119 @@
+Quest: JHDB121
+DisplayName: To Kill an Ambassador
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                Certain works can only be entrusted to
+<ce>              one of your rank. We have a task of great
+<ce>              importance to Tamriel's future, but there
+<ce>                will only be one chance to execute it.
+<ce>              Fail, and the consequences will be severe.
+<ce>               But your success will bring great glory
+<ce>                   to yourself and the Brotherhood.
+<ce>                  Will you take it up at this time?
+
+RefuseQuest:  [1001]
+<ce>                 If I find someone capable first, it
+<ce>              will go to them. We will not wait forever.
+
+AcceptQuest:  [1002]
+<ce>                Then swear to me that you will tell no
+<ce>              being, living or dead, what I now impart.
+<ce>
+<ce>               An ambassador from the Imperial City has
+<ce>                 traveled to the court of Wayrest to
+<ce>               "discuss the future of the Orcish race."
+<ce>             Populous as the greenskins are, the Emperor
+<ce>             commands armies sufficient to eradicate them
+<ce>            in their current state. That may come to pass
+<ce>            sooner rather than later at the instigation of
+<ce>          this agent, who must be slain. This petition comes
+<ce>                   from Gortwog, lord of the orcs.
+<ce>
+<ce>          The Brotherhood has no stake in this matter other
+<ce>          than that we have been hired for it. Your partner
+<ce>          will be a magician, another of our highest-ranking
+<ce>                members in %crn. She has gone ahead to
+<ce>                the court of Wayrest and has orders to
+<ce>                  await you there for =timer_ days.
+<ce>              Look for someone inside Wayrest Palace who
+<ce>               asks, "How long will the Septims reign?"
+<ce>                   Answer, "Every year they must."
+<ce>                 Then press your thumb into her palm.
+<ce>                    She will guide you from there.
+
+QuestFail:  [1003]
+<ce>                        Off to Wayrest, %pcf.
+
+QuestComplete:  [1004]
+<ce>                   She smiles and leans in closer.
+
+Message:  1010
+<ce>       The Dark Brotherhood's magician will be somewhere here.
+
+Message:  1011
+<ce>          "Hello there. I haven't seen you in these parts."
+<ce>
+<ce>           You are surprised by a voice behind you. Turning
+<ce>            around, you meet the piercing gaze of a woman.
+<ce>
+<ce>               "It's so hard to find even one %ra loyal
+<ce>             to the Empire. What think you? How long will
+<ce>                         the Septims reign?"
+<ce>
+<ce>              Do you give the answer _qgiver_ told you?
+
+Message:  1012
+<ce>    "Well, I must be going. Enjoy your stay in Wayrest, stranger."
+<ce>
+<ce>          She leaves you alone and attends to other duties.
+<ce>               You are no longer involved in this plot.
+
+Message:  1030
+%qdt:
+ The Dark Brotherhood has sent me to
+ Wayrest to meet a magician somewhere
+ in the court of Wayrest for a task
+ of great importance. I have =timer_ days
+ to find her.
+
+QBN:
+Place _wayr_ permanent WayrestCastle
+
+Person _qgiver_ group Questor
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _delay_ 00:03 00:05
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    pc at _wayr_ do _inside_
+
+_inside_ task:
+    start timer _delay_
+    say 1010
+
+_notinside_ task:
+    when not _inside_
+    stop timer _delay_
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+    say 1003
+
+_timer_ task:
+    end quest
+
+_delay_ task:
+    prompt 1011 yes _begin_ no _fail_
+
+_fail_ task:
+    say 1012
+    end quest
+
+_begin_ task:
+    start quest JHDB121a
+    give pc nothing
+    end quest

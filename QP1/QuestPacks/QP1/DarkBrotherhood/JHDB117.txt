@@ -1,0 +1,173 @@
+Quest: JHDB117
+DisplayName: Researching Notes
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>           For some reason there's an incessant demand for
+<ce>           research notes related to the mundane sciences.
+<ce>         Our client demands that these notes be gathered for
+<ce>          an undisclosed purpose, and the Brotherhood is to
+<ce>          obtain them by any means necessary. Where bribery
+<ce>         fails, we send one such as yourself. Your task will
+<ce>       be to kill the courier and take the Mages Guild's notes.
+
+RefuseQuest:  [1001]
+<ce>                           What a surprise.
+
+AcceptQuest:  [1002]
+<ce>         Then the contract is yours. Your obligation is both
+<ce>          the murder of the courier and the delivery of the
+<ce>          document, for we wish to show the end of those who
+<ce>           resist our generous offers. Seek out _dummymg_,
+<ce>           wherever %g1 may be, and bring the research here
+<ce>        within =timer_ days' time. Glory to the Night Mother.
+
+QuestFail:  [1003]
+<ce>              _qgiver_ wanted the research notes by now.
+
+QuestComplete:  [1004]
+<ce>               Let me see the document. Hmm. Very well.
+<ce>             I remain ignorant of the urgency our patron
+<ce>           feels for these essays, but such concerns exceed
+<ce>            my capacity to care. Your work is done, %pct.
+
+Message:  1010
+<ce>                    Hey! No! Someone help! Please!
+                                     <--->
+<ce>                      No! I'm dying! Help! Help!
+
+Message:  1011
+<ce>          This paper contains the research _qgiver_ wanted.
+
+Message:  1012
+That darn fool's always running around ___place_.
+<--->
+_courier_'s wasting %g3 life, I say.
+<--->
+_courier_? Who's that?
+
+Message:  1013
+The manner by which the diastolic pressure
+ of any two scarce commodities (creating a
+ type of propulsion with no moving parts
+ and virtual silence) has been postulated
+ by thyrionic mathematicians for many years.
+ In conventional thinking, the default
+ parameters of any formula (objectively
+ speaking, it is essential to remember that
+ objectivity is indeed subjective) will
+ always return to what Mornthaur called the
+ "back medium." However, starting with a
+ grid of complex numbers that more than covers
+ the unit circle and three cube roots of one,
+ we can backtrace, by uptracking the negative
+ "half numbers," and create an infinite basin
+ with dual natures of blackness and whiteness.
+ The rate of adiabatic cooling or warming in
+ unsaturated air can thus be made directly
+ proportional to the fourth power of its
+ absolute temperature.
+
+Message:  1014
+<ce>               A fellow in nondescript clothing presses
+<ce>                  a note into your hand and departs.
+
+Message:  1015
+%ra in the service of the Dark Brotherhood
+ 
+ I greet you in the name of the King of Worms.
+ We appear to have a common interest in the notes
+ held by the scholar _dummymg_.
+ Your loyalty to the Dark Brotherhood is admirable,
+ but remember that such things have their end.
+ The time will come that they turn to slay you as
+ they do all their useful pawns. You may save yourself
+ from your blind loyalty bringing the research to
+ me in exchange for =reward_ gold pieces. One as
+ cunning as yourself can see the balance is well
+ in favor of a pact between us. Bring me what I want
+ and earn the favor of the Lord of Death itself.
+ 
+                _nech_
+                ___nech_
+
+Message:  1016
+<ce>        Will you give the research notes to the Necromancers?
+
+Message:  1017
+<ce>             A smart choice, %ra. Have your money. I will
+<ce>             spread the word concerning your prudence and
+<ce>            values. I assure you, having the Necromancers
+<ce>                 for friends is not to be regretted.
+
+Message:  1030
+%qdt:
+ The Dark Brotherhood of ___qgiver_
+ has assigned me to obtain research
+ notes held by one _dummymg_,
+ who must also die in the process.
+ I have =timer_ days to return.
+
+QBN:
+Person _qgiver_ group Questor male
+Person _dummymg_ faction The_Mages_Guild anyInfo 1012
+Person _nec_ faction The_Necromancers
+
+Place _place_ remote random
+Place _nech_ remote house
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _offer_ 0:01 0:10
+
+Foe _courier_ is Mage
+
+Item _notes_ letter used 1013
+Item _reward_ gold
+Item _letter_ letter used 1015
+
+--	Quest start-up:
+    start timer _timer_
+    place foe _courier_ at _place_
+    place npc _dummymg_ at _place_
+    hide npc _dummymg_
+    log 1030 step 0
+    have _notes_ set _notice_
+    restrain foe _courier_
+
+_ipr_ task:
+    injured _courier_
+    say 1010
+    give item _notes_ to _courier_
+
+_slain_ task:
+    killed 1 _courier_
+    change repute with _dummymg_ by -10
+    start timer _offer_
+
+_offer_ task:
+    give pc _letter_ notify 1014
+    place npc _nec_ at _nech_
+
+_necask_ task:
+    clicked npc _nec_
+    prompt 1016 yes _necreward_ no _dud_
+
+_necreward_ task:
+    say 1017
+    get item _reward_
+    take _notes_ from pc
+    end quest
+
+variable _dud_
+
+_notice_ task:
+    say 1011
+
+_timer_ task:
+    end quest
+
+_pcreward_ task:
+    toting _notes_ and _qgiver_ clicked
+    give pc nothing
+    end quest

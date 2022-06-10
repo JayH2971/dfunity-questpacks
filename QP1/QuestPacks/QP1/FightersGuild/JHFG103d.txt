@@ -1,0 +1,53 @@
+Quest: JHFG103d
+DisplayName: The Thieves Strike Back
+
+QRC:
+
+Message:  1010
+<ce>                "Behold, good citizenry! This pathetic
+<ce>             wretch named %pcf will now fall to the might
+<ce>            of the Thieves Guild, who has slain one of our
+<ce>                   number without cause! Die, cur!"
+<ce>
+<ce>             Some assassins have gotten the sneak on you
+<ce>          and wish to make a public example of you, perhaps
+<ce>                 to avenge their friend in ___dung_.
+
+QBN:
+
+Place _dung_ local dungeon
+
+Clock _delay_ 5.00:00 7.00:00
+Clock _ending_ 2.00:00
+
+Foe _enemy_ is Nightblade
+
+---- Quest startup
+    start timer _delay_
+
+_enter_ task:
+    when pc enters city
+    clear _noenter_
+
+_noenter_ task:
+    when pc exits city
+    clear _enter_
+
+variable _delay_
+
+_spawn_ task:
+    when _enter_ and _delay_
+    start task _dospawn_
+
+_dospawn_ task:
+    say 1010
+    create foe _enemy_ every 0 minutes 3 times with 100% success
+    start timer _ending_
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy_ infighting true
+    clear _infight_
+
+_ending_ task:
+    end quest

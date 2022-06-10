@@ -1,0 +1,240 @@
+Quest: JHFG205
+DisplayName: Pack of Beasts
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                     ___rural_'s been having this
+<ce>               problem with wildlife on their property
+<ce>                trying to eat people at night. During
+<ce>                the day the things are hibernating or
+<ce>                something and they can do their work,
+<ce>                but anyone outside the premises after
+<ce>              dark is in for a big surprise. It's paying
+<ce>                  =reward_ gold pieces and you get a
+<ce>                 change of scenery. What do you say?
+                                     <--->
+<ce>            It's kind of a sad story, but we end up being
+<ce>            sort of the city guard for those far-off farm
+<ce>                    homes when the %t doesn't care
+<ce>                  enough to help them out. You wanna
+<ce>               head out to ___rural_ and kill off some
+<ce>              wild beasts that are bothering the place?
+
+RefuseQuest:  [1001]
+<ce>                 Someone else is getting paid, then.
+
+AcceptQuest:  [1002]
+<ce>                  Good. Head out there to ___rural_,
+<ce>                sit down on the dirt or something when
+<ce>              it's night, and you'll probably pick up a
+<ce>              bunch of these beasts fast. Take 'em down
+<ce>           and come back here for your payment. You'll know
+<ce>          when you're done. Be back in =timer_ days or less.
+
+QuestFail:  [1003]
+<ce>                 The Fighters Guild sent you to clean
+<ce>                        out ___rural_ by now.
+
+QuestComplete:  [1004]
+<ce>               Good money, good trip, good experience.
+<ce>                 I hope you enjoy these things, %pcf.
+<ce>                 Stop and smell the roses some time.
+<ce>                  Here's your _reward_ gold pieces.
+                                     <--->
+<ce>              How was the trip? Too many of our members
+<ce>                just want to stay local and kill rats.
+<ce>               Good to see some initiative out of you.
+<ce>                              Take this.
+
+Message:  1010
+<ce>      As you approach the property, you notice pair of spriggans
+<ce>          a ways off. They seem to be watching the creatures
+<ce>        move across the property, neither interfering with nor
+<ce>         helping them. If you knew how to, perhaps you could
+<ce>                 ask them to help you kill your prey.
+<ce>      Do you ask for their help (yes) or do it on your own (no)?
+<ce>
+<ce>                  (SKILL CHECK: YES: Spriggan, difficulty low)
+
+Message:  1011
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>           You explain to the spriggans that these animals
+<ce>             are harming the cycle of nature by attacking
+<ce>               humans, the caretakers of this property.
+<ce>           They see the beasts' violent disposition at work and
+<ce>                      march toward you to help.
+
+Message:  1012
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>        You call out to the spriggans and try to convince them
+<ce>     to attack the beasts. You attract their attention but don't
+<ce>      have the words to explain yourself. They take your shouts
+<ce>               to be taunts and step in to attack you.
+
+Message:  1013
+<ce>      You'd rather not introduce another unknown into this mess.
+<ce>    The spriggans idly watch for a few minutes, and then pass by.
+
+Message:  1020
+<ce>              Your work is finished here. You trust the
+<ce>           property owners will take care of the clean-up.
+
+Message:  1021
+<ce>                    (ATTRIBUTE CHECK PASSED: LUCK)
+<ce>
+<ce>             You approach the property and see the bears
+<ce>      you have to dispose of. As luck would have it, you notice
+<ce>    a team of hunters also stalking them. Before you can approach,
+<ce>   they rush forward and slay the bears, skinning and gutting them
+<ce>              for their own gain. They pay you no heed.
+<ce>
+<ce>            The bears are dead and you expended no effort.
+<ce>             The Fighters Guild can't complain, can they?
+                                     <--->
+<ce>                    (ATTRIBUTE CHECK PASSED: LUCK)
+<ce>
+<ce>             You approach the property and see the tigers
+<ce>      you have to dispose of. As luck would have it, you notice
+<ce>    a team of hunters also stalking them. Before you can approach,
+<ce>   they rush forward and slay the tigers, skinning and gutting them
+<ce>              for their own gain. They pay you no heed.
+<ce>
+<ce>           The tigers are dead and you expended no effort.
+<ce>             The Fighters Guild can't complain, can they?
+
+Message:  1030
+%qdt:
+ ___rural_ is
+ under attack each night
+ by some pack of beasts.
+ The Fighters Guild will pay
+ me _reward_ gold if I kill
+ the animals and get back
+ to ___questgiver_ in
+ =timer_ days or less.
+
+QBN:
+Item _reward_ gold
+
+Person _questgiver_ group Questor male
+
+Place _rural_ remote farmhome
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _bear_ is Grizzley_bear
+Foe _tiger_ is Sabretooth_tiger
+Foe _spriggan1_ is Spriggan
+Foe _spriggan2_ is Spriggan
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+	pc at _rural_ set _outside_
+	pick one of _B.01_ _T.01_
+
+_luck_ task:
+	when attribute Luck is at least 85
+	pick one of _lucky_ _unlucky_ _unlucky_
+
+variable _unlucky_
+variable _lucky_
+
+_skilled_ task:
+	when skill Spriggan is at least 25
+
+variable _outside_
+
+_day_ task:
+	daily from 5:30 to 18:30
+
+_luckywin_ task:
+	when _lucky_ and _outside_
+	say 1021
+	start task _slain_
+
+variable _B.01_
+_bears_ task:
+	when _outside_ and not _day_ and not _slain_ and _B.01_ and not _lucky_
+	create foe _bear_ every 3 minutes indefinitely with 65% success
+	create foe _bear_ every 1 minutes indefinitely with 20% success
+	prompt 1010 yes _recruit_ no _flee_
+
+variable _T.01_
+_tigers_ task:
+	when _outside_ and not _day_ and not _slain_ and _T.01_
+	create foe _tiger_ every 1 minutes indefinitely with 20% success
+	create foe _tiger_ every 3 minutes indefinitely with 65% success
+	prompt 1010 yes _recruit_ no _flee_
+
+variable _recruit_
+
+_easywin_ task:
+	when _recruit_ and _skilled_
+	say 1011
+	create foe _spriggan1_ every 0 minutes 1 times with 100% success
+	create foe _spriggan2_ every 0 minutes 1 times with 100% success
+	change foe _spriggan1_ infighting true
+	change foe _spriggan2_ infighting true
+	change foe _spriggan1_ team 1
+	change foe _spriggan2_ team 1
+
+_bigfail_ task:
+	when _recruit_ and not _skilled_
+	say 1012
+	create foe _spriggan1_ every 0 minutes 1 times with 100% success
+	create foe _spriggan2_ every 0 minutes 1 times with 100% success
+	change foe _spriggan1_ infighting true
+	change foe _spriggan2_ infighting true
+
+_allybears_ task:
+	when _bigfail_ and _B.01_
+	change foe _spriggan1_ team 4
+	change foe _spriggan2_ team 4
+
+_allytigers_ task:
+	when _bigfail_ and _T.01_
+	change foe _spriggan1_ team 5
+	change foe _spriggan2_ team 5
+
+_flee_ task:
+	say 1013
+
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _tiger_ infighting true
+	change foe _bear_ infighting true
+	clear _infight_
+
+_kill4_ task:
+	killed 3 _bear_
+	killed 3 _tiger_
+	pick one of _continue_ _slain_
+
+_kill5_ task:
+	killed 4 _bear_
+	killed 4 _tiger_
+	start task _slain_
+
+variable _continue_
+_slain_ task:
+	say 1020
+
+_qgclicked_ task:
+	clicked npc _questgiver_
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_
+
+_pcreward_ task:
+	when _qgclicked_ and _slain_
+	give pc _reward_
+	end quest
+
+_timer_ task:
+	say 1003
+	end quest

@@ -1,0 +1,155 @@
+Quest: JHTP102
+DisplayName: Donation Drive
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>               Ah, it's good that you're here. We need
+<ce>                    to send someone trustworthy to
+<ce>                  ___res_ to receive a donation and
+<ce>               bring it here. Will you do this for us?
+
+RefuseQuest:  [1001]
+<ce>               That's fine. Don't mind me. I'll just be
+<ce>                starving over here with everyone else.
+
+AcceptQuest:  [1002]
+<ce>              Very good. I will warn you to return here
+<ce>               quickly. A few of our couriers over the
+<ce>             years have told tales of armed assault once
+<ce>                the money is in their hands. Escape or
+<ce>            defend yourself as you choose. Find our donor,
+<ce>                          _donor_, in _res_.
+<ce>                  Give %g2 this code phrase: "_pw_."
+<ce>             We will need the money here in =timer_ days.
+
+QuestFail:  [1003]
+<ce>                  The temple expected you to return
+<ce>                      to ___questgiver_ by now.
+
+QuestComplete:  [1004]
+<ce>               Neither the temptation to steal from nor
+<ce>                   to sell _donor_'s donation could
+<ce>                shake you. You have a future among us,
+<ce>                  %pcf. Take this for your expenses.
+
+QuestorPostFailure:  [1009]
+We trusted you with a simple donation, and you bungled it.
+
+Message:  1020
+<ce>                     Yes, "_pw_," very good. I've
+<ce>                  enclosed the donation in this bag.
+<ce>                   Send my regards to _questgiver_.
+<ce>                We've been friends for several years.
+<ce>                  I'll have to catch up with %g2 the
+<ce>                   next time I'm in ___questgiver_.
+<ce>                        Be careful out there.
+
+Message:  1025
+<ce>                    Stop, %ra. We know that money
+<ce>                will go to greedy priests in an ornate
+<ce>                  temple. Give it to us, that we may
+<ce>                 take it to those who truly need it.
+
+Message:  1026
+<ce>             Be that as it may, we still need the money.
+<ce>             Lay your weapons down so we don't get hurt.
+
+Message:  1027
+<ce>               Thank you. I assure you we represent the
+<ce>                voiceless and the defenseless of %crn.
+<ce>                Should we speak again, it will be with
+<ce>                  great honor on our part. Farewell.
+
+Message:  1028
+<ce>        The bag is not sealed in any meaningful way. You could
+<ce>        easily undo the knot and take the money for yourself.
+<ce>                  Will you divert _donor_'s donation
+<ce>                       to your own money pouch?
+
+Message:  1029
+<ce>                 Inside you find =steal_ gold pieces.
+
+Message:  1030
+%qdt:
+ _questgiver_ has sent me
+ to ___res_ to pick up a
+ donation from _donor_,
+ who should be in _res_. I must
+ guard it safely and return to
+ ___questgiver_ in =timer_ days.
+
+Message:  1031
+<ce>                 __questgiver_ must trust you a great
+<ce>             deal to let you handle such money unguarded.
+<ce>            You close the bag back up and forget about it.
+
+QBN:
+Item _money_ large_sack
+Item _pw_ small_plant
+Item _reward_ gold range 40 to 60
+Item _steal_ gold range 600 to 800
+
+Person _questgiver_ group Questor
+Person _donor_ group Noble
+
+Place _res_ remote random
+
+Foe _enemy_ is 2 Thief
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _delay_ 00:05 00:09
+
+--	Quest start-up:
+  start timer _timer_
+  log 1030 step 0
+  place npc _donor_ at _res_
+
+_receive_ task:
+  clicked npc _donor_
+  say 1020
+  get item _money_
+  start timer _delay_
+  _money_ used do _question_
+
+_question_ task:
+  prompt 1028 yes _thief_ no _dud_
+
+_thief_ task:
+  say 1029
+  get item _steal_
+  make _steal_ permanent
+  take _money_ from pc
+  change repute with _questgiver_ by -3
+  end quest
+
+_dud_ task:
+  say 1031
+
+_delay_ task:
+  create foe _enemy_ every 300 minutes 3 times with 25% success
+
+_choice_ task:
+  injured _enemy_
+  prompt 1025 yes _altend_ no _refuse_
+
+_altend_ task:
+  say 1027
+  restrain foe _enemy_
+  remove foe _enemy_
+  take _money_ from pc
+-  start quest ????
+  end quest
+
+_refuse_ task:
+  say 1026
+
+_victory_ task:
+  toting _money_ and _questgiver_ clicked
+  take _money_ from pc
+  give pc _reward_
+  end quest
+
+_timer_ task:
+  say 1003
+  end quest

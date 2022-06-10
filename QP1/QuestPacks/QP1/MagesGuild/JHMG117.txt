@@ -1,0 +1,152 @@
+Quest: JHMG117
+DisplayName: The Novice Odylic
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                    %pct, have you any ability to
+<ce>                 identify objects? Your spellcasting
+<ce>                ability would really help us out here.
+                                     <--->
+<ce>              We have someone in another city possessing
+<ce>                 an object that needs identification.
+<ce>             Are you able and willing to cast the spell?
+
+RefuseQuest:  [1001]
+<ce>         Well, it's certainly not a matter of life and death.
+
+AcceptQuest:  [1002]
+<ce>                 Delightful, %pcf. Poor _client_ has
+<ce>         been patient with us but business must be transacted
+<ce>                sooner or later. Find %g2 in ___res_.
+<ce>         The object to be identified is said to be of minimal
+<ce>           difficulty, which is why we have not asked it to
+<ce>           be taken to a guild hall. Apparently our client
+<ce>        is so busy that merely stepping outside %g3 residence
+<ce>            supposes a ponderous burden. The agreed sum is
+<ce>     =reward_ gold, which you are free to pocket as compensation.
+<ce>         I do merely ask that you arrive within =2res_ days.
+<ce>    That is what we promised, you see, and the guild's reputation
+<ce>          must not be tarnished. Safe travels, my good %pct.
+
+QuestFail:  [1003]
+<ce>                 _questgiver_ needed you to identify
+<ce>                     _client_'s document by now.
+
+QuestComplete:  [1004]
+<ce>        Once you have cast the spell, the surface of the page
+<ce>          begins to blur. Previously undecipherable letters
+<ce>   take their proper place, and the meaning soon becomes apparent.
+<ce>
+<ce>         "%oth, must this be so? It is my mother's recipe for
+<ce>         gorgon snake soup. What a shame. Nevertheless, lest
+<ce>       I be treated as a pariah by you and yours, I will grant
+<ce>           you your money. Take it. Thank you in any case."
+                                     <--->
+<ce>        Once you have cast the spell, the surface of the page
+<ce>          begins to blur. Previously undecipherable letters
+<ce>            take their proper place, and the meaning soon
+<ce>       becomes apparent. _client_'s eyes quickly scan the page.
+<ce>    Suddenly %g1 turns pale and races to pull it from your sight.
+<ce>
+<ce>        "That's quite enough! Not all things are meant for all
+<ce>       eyes, you see. That is private property. Take your money
+<ce>                   and go. Leave me to my musings."
+                                     <--->
+<ce>        Once you have cast the spell, the surface of the page
+<ce>          begins to blur. Previously undecipherable letters
+<ce>   take their proper place, and the meaning soon becomes apparent.
+<ce>
+<ce>       "My word, this is the first love letter my parents ever
+<ce>    shared. Can you see this? They wrote one paragraph at a time,
+<ce>       sending it back and forth by a courier. What a treasure!
+<ce>        This is well worth the payment. Thank you, good mage."
+                                     <--->
+<ce>        Once you have cast the spell, the surface of the page
+<ce>          begins to blur. Previously undecipherable letters
+<ce>   take their proper place, and the meaning soon becomes apparent.
+<ce>
+<ce> "A recipe for a potion of Free Action. Well, this is a disappointment.
+<ce>  I bet you have one of these waiting in your wagon, now don't you?
+<ce>    But we agreed on a payment, and that you shall have. Take it."
+                                     <--->
+<ce>        Once you have cast the spell, the surface of the page
+<ce>          begins to blur. Previously undecipherable letters
+<ce>            take their proper place, and the meaning soon
+<ce>              becomes apparent. _client_'s brow furrows.
+<ce>
+<ce>"A very primitive incantation to dispel a daedra. Some of these words
+<ce>    are actually made up. This looks entirely useless, I believe.
+<ce>     Nevertheless, I will pay you as we agreed. Fare thee well."
+                                     <--->
+<ce>        Once you have cast the spell, the surface of the page
+<ce>          begins to blur. Previously undecipherable letters
+<ce>            take their proper place, and the meaning soon
+<ce>           becomes apparent. _client_ begins to read aloud.
+<ce>
+<ce>     "'The Dark Brotherhood has been watching you. You have slain
+<ce>     without sanction several times. You must now join us, or be
+<ce>   counted as our foe.' Well, this answers some of my long-standing
+<ce>       questions about my father. What a sorry state of things.
+<ce>     But I do thank you for coming out here. Take your payment."
+
+Message:  1010
+<ce>          _client_ ignores you for several moments, clearly
+<ce>    caught up in other work. You wait until %g3 attention shifts.
+<ce>
+<ce>       "Yes? Oh, from the Mages Guild, I see. Well, here it is.
+<ce>     This is a document I've held in storage for quite some time.
+<ce>    It carries an enchantment that mixes its letters, rendering it
+<ce>     unreadable. I need to have it legible and at my disposition.
+<ce>       When you are ready, cast the spell and I will read it."
+                                     <--->
+<ce>           _client_ is slightly startled by your approach,
+<ce>         but soon gives you the attention your visit merits.
+<ce>
+<ce>       "Yes? Oh, from the Mages Guild, I see. Well, here it is.
+<ce>     This is a document I've held in storage for quite some time.
+<ce>    It carries an enchantment that mixes its letters, rendering it
+<ce>     unreadable. I need to have it legible and at my disposition.
+<ce>       When you are ready, cast the spell and I will read it."
+
+Message:  1030
+%qdt:
+ _questgiver_ of the
+ Mages Guild has sent me to ___res_
+ to find _client_, who possesses
+ an object that needs to be identified
+ via magical means. I am granted
+ =2res_ days to get there and cast the spell.
+
+QBN:
+Item _reward_ gold
+
+Person _questgiver_ group Questor male
+Person _client_ faction The_Mages_Guild
+
+Place _res_ remote house
+
+Clock _2res_ 00:00 0 flag 2 range 0 2
+
+--	Quest start-up:
+    start timer _2res_
+    place npc _client_ at _res_
+    log 1030 step 0
+    pc at _res_ do _inside_
+
+variable _inside_
+_conv_ task:
+    clicked npc _client_
+    say 1010
+    cast Identify effect do _ident_
+
+variable _ident_
+
+_pcgetsgold_ task:
+    when _inside_ and _ident_
+    give pc _reward_
+    end quest
+
+_2res_ task:
+    say 1003
+    end quest

@@ -1,0 +1,151 @@
+Quest: JHTG122
+DisplayName: The Mage's Pockets
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  Some cad over in the Mages Guild's gone over the line,
+<ce>  and we need to send a message. It involves stealing something
+<ce>  from someone's coat without them noticing.
+<ce>  If you're gonna take this one, make sure you're good at it.
+
+RefuseQuest:  [1001]
+<ce>   Well, making wizards mad can be a bad idea.
+
+AcceptQuest:  [1002]
+<ce>  Bloke's name is _mage_. Hangs out in
+<ce>  the Mages Guild here in ___magery_ most of the time.
+<ce>  Go in during normal hours and look for him.
+<ce>  Rumor has it he looks like some =mage_.
+<ce>  Somewhere in his belongings is some enchanted _reward_.
+<ce>  Grab it, make sure he doesn't see you,
+<ce>  and keep it for your reward. The Thieves Guild
+<ce>  will make sure he knows why it's gone.
+<ce>  Get it done before this time tomorrow.
+
+QuestFail:  [1003]
+<ce>  You had to steal the enchanted _reward_
+<ce>  from the mage in ___magery_ by now.
+
+QuestComplete:  [1004]
+<ce>  (SKILL CHECK PASSED)
+<ce>  
+<ce>  Feigning ignorance, you ask where the exit is.
+<ce>  _mage_ looks distraught, and points
+<ce>  down the hall. He is distracted long enough
+<ce>  for you to steal the _reward_.
+<ce>  You thank him and he returns to his studies.
+<ce>  
+<ce>  The Thieves Guild comes out on top today.
+
+QuestorPostSuccess:   [1008]
+Say hi to the Mages Guild for me next time you're over there.
+
+QuestorPostFailure:   [1009]
+You signed up to be a pickpocket and failed. That's on you.
+
+Message:  1010
+<ce>  _mage_, the =mage_, is in here somewhere.
+
+Message:  1011
+<ce>  Before you can get the jump on _mage_,
+<ce>  he turns and gazes at you.
+<ce>  
+<ce>  "Yes? Can I help you?"
+<ce>  
+<ce>  With his attention on you, you won't have
+<ce>  an easy time stealing the _reward_.
+<ce>  But if you're going to do it, now's your chance.
+<ce>  Will you attempt it?
+<ce>
+<ce>              (SKILL CHECK: YES: Pickpocket, difficulty medium)
+
+Message:  1012
+<ce>              (SKILL CHECK FAILED)
+<ce>
+<ce>  Knowing he has the _reward_ is one thing,
+<ce>  but actually making the theft is another.
+<ce>  You stall for time and make _mage_ suspicious.
+<ce>  Soon he's teleporting to a safe location,
+<ce>  while guardians appear nearby.
+
+Message:  1013
+<ce>  This is just a little too much pressure for now.
+<ce>  You ignore him and leave this task behind.
+
+Message:  1030
+%qdt:
+ _mage_ is some =mage_,
+ a mage over in _magery_
+ of ___magery_ who needs to learn a lesson.
+ He's carrying some magical _reward_
+ that needs to get stolen.
+ I have 24 hours to do this
+ to earn favor with the Thieves Guild.
+
+QBN:
+Item _reward_ magic_item
+
+Place _magery_ local magery
+
+Person _mage_ faction The_Mages_Guild male remote
+
+Foe _atr1_ is Iron_atronach
+Foe _atr2_ is Flesh_atronach
+
+Clock _timer_ 1.00:00
+Clock _delay_ 0:02
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    pc at _magery_ do _inside_
+
+_skilled_ task:
+    when skill Pickpocket is at least 45
+
+variable _inside_
+
+_daily_ task:
+    daily from 11:00 to 23:00
+
+_placenpc_ task:
+    when _inside_ and _daily_
+    say 1010
+    place npc _mage_ at _magery_
+
+_talk_ task:
+    clicked npc _mage_
+    prompt 1011 yes _attempt_ no _flee_
+
+_flee_ task:
+    say 1013
+    end quest
+
+variable _attempt_
+
+_theft_ task:
+    when _attempt_ and _skilled_
+    give pc _reward_
+    change repute with _mage_ by -10
+    end quest
+
+_bigfail_ task:
+    when _attempt_ and not _skilled_
+    say 1012
+    hide npc _mage_
+    remove log step 0
+    stop timer _timer_
+    create foe _atr1_ every 0 minutes 1 times with 100% success
+    create foe _atr2_ every 0 minutes 1 times with 100% success
+    change repute with _mage_ by -5
+    change foe _atr1_ infighting true
+    change foe _atr2_ infighting true
+    start timer _delay_
+
+_delay_ task:
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest

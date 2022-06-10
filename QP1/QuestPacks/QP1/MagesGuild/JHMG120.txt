@@ -1,0 +1,278 @@
+Quest: JHMG120
+DisplayName: Halls of the Lich
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              %pct, we grow increasingly concerned about
+<ce>             the threats being made against you. You must
+<ce>            understand that an organization as prestigious
+<ce>             as the Mages Guild, and wielding such power,
+<ce>             attracts all manner of nefarious attention.
+<ce>               Will you not hear me? Some of the rumors
+<ce>                     truly speak to grave danger.
+
+RefuseQuest:  [1001]
+<ce>              That is truly dreadful, but I cannot force
+<ce>             my will upon one whose rank exceeds my own.
+
+AcceptQuest:  [1002]
+<ce>              Thank you! At least hear me, my good %pcf.
+<ce>          I do not know your upbringing or past experiences
+<ce>         prior to joining the guild, but you must understand
+<ce>         the attention your actions have garnered. We hear of
+<ce>         abductions, interrogations, mind control, and every
+<ce>          kind of horrid fairy tale turned perverse against
+<ce>              our highest members. Please, be cautious!
+<ce>           I do not know what the coming days portend, but
+<ce>             my sincerest desire is that all these things
+<ce>            are as vapor, never to materialize. We will do
+<ce>             our best to watch for you while you tarry in
+<ce>              ___qgiver_, but I entreat you to exercise
+<ce>              caution when outside these halls. Be safe.
+
+QuestFail:  [1003]
+
+QuestComplete:  [1004]
+<ce>         My word! What has become of you? Please, tell me the
+<ce>       whole matter. There is nothing more important than this.
+<ce>
+<ce>             By %god. These threats were indeed credible,
+<ce>            and to think they would stalk about ___qgiver_
+<ce>           to take you captive is the stuff of nightmares.
+<ce>            We here at the guild hall are elated for your
+<ce>              return. Nevertheless, I have one worrying
+<ce>            detail to relate. You said the foe behind the
+<ce>          arcane mechanism was named Jhuldarn, did you not?
+<ce>            My dear %pcf, that was not him, I assure you.
+<ce>        The lich Jhuldarn possesses power superior to that of
+<ce>         fifty of the best living magicians in the Iliac Bay.
+<ce>           No, this was merely a lich taking on Jhuldarn's
+<ce>            name to inspire fear. I am troubled that such
+<ce>             power has spread to the lichkind of Tamriel,
+<ce>           but am truly happy that we, in fact, do not have
+<ce>           the return of Jhuldarn on our hands. That would
+<ce>             be the upheaval of all %crn. That is a fact.
+
+Message:  1010
+<ce>        No sooner than you have stepped out of the guild hall,
+<ce>        two robed figures approach you from the side and grab
+<ce>           hold of you. You are unable to react before they
+<ce>         press some sort of enchanted object against the back
+<ce>                of your neck. Everything turns black.
+
+Message:  1011
+<ce>          Now surrounded by darkness, you hear a voice boom
+<ce>                        throughout the depths.
+<ce>
+<ce>               "Welcome, %pcn. Forgive my urging myself
+<ce>             upon your itinerary. I wish to see what the
+<ce>                Mages Guild has to offer these days."
+
+Message:  1012
+<ce>               A lich comes into view, scowling at you.
+<ce>                      The booming voice returns.
+<ce>
+<ce>       "I wish to see what mettle your kind can throw at mine.
+<ce>        See my loyal servant. He and his ilk will appear once
+<ce>            per hour so long as you remain in the depths."
+
+Message:  1013
+<ce>             "What will you do, %pct of the Mages Guild?
+<ce>           Will you run? You will fail. I have sealed this
+<ce>            labyrinth mine. Find and duel me, or perish in
+<ce>                         the depths forever."
+
+Message:  1014
+<ce>               "Suffer! Suffer! Is such a weakling made
+<ce>                to rule over the Council of Archmages?
+<ce>                      Or what is your ambition?"
+
+Message:  1015
+<ce>          "Know that I, Jhuldarn, will not be disappointed.
+<ce>               You will prove the worth of that guild I
+<ce>            sustained with my own hands, or show that I am
+<ce>                now superior to it all. One outcome or
+<ce>                    the other suits my purposes."
+
+Message:  1016
+<ce>                You hear nothing more than a chuckle.
+<ce>              It appears you will have no means to leave
+<ce>            except through this foe that has captured you.
+
+Message:  1017
+<ce>          "Now we shall duel. And what will you do with that
+<ce>           ragged frame of yours? You are worn to the bone.
+<ce>              Just like me. But I tire not. Come, %pct.
+<ce>               Show me what the Mages Guild produces."
+
+Message:  1018
+<ce>                    Having fallen, Jhuldarn grins.
+<ce>
+<ce>                     "It is so. I am satisfied."
+<ce>
+<ce>                         All else is silent.
+
+Message:  1019
+<ce>               It appears you are incapable of leaving.
+<ce>              You will have to find your foe to escape.
+
+Message:  1028
+<ce>            Your Recall spell does not work as it should.
+
+Message:  1030
+%qdt:
+ _qgiver_ has warned me
+ concerning ominous plots against my
+ life made by various factions.
+ He has insisted that I exercise
+ caution when I go out.
+
+Message:  1031
+%qdt:
+ I have been captured by an unknown enemy
+ and teleported into a dark labyrinth.
+
+QBN:
+
+Person _qgiver_ group Questor male
+
+Place _mager_ local magery
+Place _dung_ remote dungeon
+
+Foe _lich_ is Lich
+Foe _lich1_ is Lich
+Foe _jhul_ is Ancient_lich
+
+Item _art1_ artifact Auriels_Bow
+Item _art2_ artifact Auriels_Shield
+Item _art3_ artifact Chrysamere
+Item _art4_ artifact Lords_Mail
+Item _art5_ artifact Necromancers_Amulet
+Item _art6_ artifact Staff_of_Magnus
+Item _art7_ artifact Warlocks_Ring
+
+Clock _delay_ 00:30
+Clock _delay2_ 00:10
+Clock _delay3_ 00:10
+Clock _delay4_ 00:10
+Clock _delay5_ 00:10
+Clock _jt_ 8:00
+Clock _recdelay_ 0:00
+Clock _recdelay2_ 0:00
+
+--	Quest start-up:
+    log 1030 step 0
+    pc at _mager_ do _inm_
+    pc at _dung_ do _ind_
+
+variable _inm_
+_warp_ task:
+    when not _inm_ and not _warp2_
+    say 1010
+    teleport pc to _dung_
+    start task _warp2_
+    log 1031 step 1
+    cast Teleport-Effect effect do _recfail_
+
+_recfail_ task:
+    say 1028
+    start timer _recdelay_
+
+_recdelay_ task:
+    start timer _recdelay2_
+
+_recdelay2_ task:
+    teleport pc to _dung_
+    clear _recfail_ _recdelay_
+
+_warp2_ task:
+    say 1011
+    start timer _delay_
+
+variable _ind_
+_trapped_ task:
+    when _warp2_ and not _inm_ and not _ind_ and not _slain_
+    teleport pc to _dung_
+    say 1019
+
+_delay_ task:
+    say 1012
+    create foe _lich1_ every 0 minutes 1 times with 100% success
+    start timer _delay2_
+    start timer _jt_
+    start task _liches_
+    change foe _lich1_ infighting true
+
+_liches_ task:
+    create foe _lich_ every 60 minutes indefinitely with 100% success
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _lich_ infighting true
+    clear _infight_
+
+_delay2_ task:
+    say 1013
+    start timer _delay3_
+
+_delay3_ task:
+    say 1014
+    start timer _delay4_
+
+_delay4_ task:
+    say 1015
+    start timer _delay5_
+
+_delay5_ task:
+    say 1016
+
+_jt_ task:
+    say 1017
+    create foe _jhul_ every 0 minutes 1 times with 100% success
+    pick one of _a1_ _a2_ _a3_ _a4_ _a5_ _a6_ _a7_
+    clear _liches_
+
+_a1_ task:
+    give item _art1_ to _jhul_
+    make _art1_ permanent
+
+_a2_ task:
+    give item _art2_ to _jhul_
+    make _art2_ permanent
+
+_a3_ task:
+    give item _art3_ to _jhul_
+    make _art3_ permanent
+
+_a4_ task:
+    give item _art4_ to _jhul_
+    make _art4_ permanent
+
+_a5_ task:
+    give item _art5_ to _jhul_
+    make _art5_ permanent
+
+_a6_ task:
+    give item _art6_ to _jhul_
+    make _art6_ permanent
+
+_a7_ task:
+    give item _art7_ to _jhul_
+    make _art7_ permanent
+
+_slain_ task:
+    killed _jhul_
+    say 1018
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
+
+_pcgetsreward_ task:
+    when _qgclicked_ and _slain_
+    give pc nothing
+    end quest

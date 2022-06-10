@@ -1,0 +1,209 @@
+Quest: JHTP110
+DisplayName: Curing a Werewolf
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              A citizen of ___questgiver_ has requested
+<ce>          the temple's aid in curing oneself of lycanthropy,
+<ce>         or werewolfism. We don't know what that will entail,
+<ce>           but we're happy to reduce Tamriel's beast count.
+<ce>           We need to send some combat-ready person to aid.
+<ce>                      Can we count on your help?
+
+RefuseQuest:  [1001]
+<ce>      Very well. We want someone who is certainly ready for it.
+
+AcceptQuest:  [1002]
+<ce>                    Good. Find _person_ in _res_,
+<ce>          to the %di of here. That's our poor infected soul.
+<ce>              Your mission is to rid %g2 of lycanthropy.
+<ce>    You'll get your instructions when you speak to %g2, I suppose.
+<ce>                       %god help your endeavor.
+
+QuestFail:  [1003]
+
+QuestComplete:  [1004]
+<ce>            _person_ will no more suffer from lycanthropy.
+
+RumorsPostSuccess:  [1007]
+_person_ will never stop talking about you.
+<--->
+_person_ donated a ton of money to __questgiver_.
+<--->
+_person_'s cured of werewolfism! It's possible after all!
+
+Message:  1010
+<ce>                 Greetings. __questgiver_? Welcome to
+<ce>          my abode. I've done most of the footwork to find a
+<ce>         cure to my fearsome condition, and now the last step
+<ce>        remains. I lack the courage to do it myself, and need
+<ce>              your help. Let us be off to ___farhouse_.
+<ce>          We must find _kid_, who holds the key to my cure.
+<ce>            That is what the alchemist told me, at least.
+
+Message:  1011
+<ce>                  _person_ leans down and speaks to
+<ce>                this child. "Excuse me, you're _kid_,
+<ce>         aren't you?" The child nods cautiously in response.
+<ce>
+<ce>          _person_ begins unpacking several things from %g3
+<ce>       belongings, including a few weapons and a vial of blood.
+<ce>           "Okay %pcf, this is what we have to do. You get
+<ce>       this kid to drink this," %g1 says, pointing to the vial.
+<ce>      "Then get ready to run, 'cause things are gonna get ugly."
+<ce>
+<ce>     You understand why %g1 kept these details secret until now.
+<ce>       As if to assuage any hesitation on your part, %g1 says,
+<ce>       "You want to know the truth? This kid's a werewolf, just
+<ce>        like me. Sooner or later it's gonna come out and start
+<ce>        murdering people. You can't help it. It needs a cure.
+<ce>        I want that cure, and there's no other way than this.
+<ce>              I've done my research! I've seen it all!"
+<ce>
+<ce>                _kid_ begins crying, hearing the many
+<ce>                  scary words in this conversation.
+<ce>             Do you join _person_ to help %g2 get rid of
+<ce>                           %g3 lycanthropy?
+
+Message:  1012
+<ce>          You agreed to help _person_ get cured, and this is
+<ce>            the price to pay. You send %g2 outside so you
+<ce>             can calm the child down. Convincing _kid_ to
+<ce>        drink the werewolf blood is easier than you expect --
+<ce>      perhaps this talk of latent lycanthropy is true after all.
+<ce>         It doesn't take long before %g1 starts groaning and
+<ce>          writhing, turning into a werewolf in front of you.
+
+Message:  1013
+<ce>        _person_ pops back into the room, sobbing with relief.
+<ce>
+<ce>    "I could feel it! The moment of the transformation, I knew it!
+<ce>            I'm free! By %god, my life is mine once more!
+<ce>      Thank you, %pct! __questgiver_ has my thanks forevermore!"
+<ce>
+<ce>       You gain no reward, but hope the temple has a very firm
+<ce>                 ally in ___questgiver_ from now on.
+
+Message:  1014
+<ce>    "You're not getting in my way. I've come too far and done too
+<ce>             much to stop now. This has to happen, now!"
+<ce>
+<ce>           _kid_ cowers in fear and then runs out the door.
+<ce>        _person_ turns to you, %g3 cowardice consumed in rage.
+<ce>
+<ce>          "I'll find that kid, but I can't let you stop me!
+<ce>           I need to do this, even if I have to kill you!"
+
+Message:  1015
+<ce>               You've spared _kid_ by slaying _person_.
+<ce>            Though __questgiver_ may not have intended it,
+<ce>                  this certainly solves the problem.
+
+Message:  1016
+<ce>         You flee the house. Shortly thereafter, you hear the
+<ce>               screams of a child, which are cut short.
+<ce>         It appears _person_ didn't need your help after all.
+
+Message:  1017
+<ce>           You've taken too long, and _person_ leaves you.
+
+Message:  1018
+<ce>           You find _person_ outside, sobbing with relief.
+<ce>
+<ce>    "I could feel it! The moment of the transformation, I knew it!
+<ce>            I'm free! By %god, my life is mine once more!
+<ce>      Thank you, %pct! __questgiver_ has my thanks forevermore!"
+<ce>
+<ce>       You gain no reward, but hope the temple has a very firm
+<ce>                 ally in ___questgiver_ from now on.
+
+Message:  1030
+%qdt:
+ __questgiver_ has sent me to
+ aid _person_, a local citizen who
+ wants to be cured of lycanthropy.
+ I will receive more details from %g2.
+
+Message:  1031
+%qdt:
+ _person_ says the way to be cured
+ goes through _kid_, who lives in
+ ___farhouse_.
+
+QBN:
+Person _questgiver_ group Questor
+Person _person_ group Resident1
+Person _kid_ faction Children
+
+Foe _spellsword_ is Spellsword
+Foe _kidwolf_ is Werewolf
+
+Place _res_ local house
+Place _farhouse_ remote house
+
+Clock _timer_ 60.00:00
+
+--	Quest start-up:
+    log 1030 step 0
+    start timer _timer_
+    place npc _person_ at _res_
+    pc at _farhouse_ do _inside_
+
+_talkpers_ task:
+    clicked npc _person_
+    say 1010
+    add _person_ face
+    hide npc _person_
+    place npc _kid_ at _farhouse_
+    log 1031 step 1
+
+_talkkid_ task:
+    clicked npc _kid_
+    prompt 1011 yes _help_ no _deny_
+    drop _person_ face
+    hide npc _kid_
+    stop timer _timer_
+
+_help_ task:
+    say 1012
+    place foe _kidwolf_ at _farhouse_
+    legal repute -10
+    change foe _kidwolf_ infighting true
+
+_kill_ task:
+    killed _kidwolf_
+    say 1013
+    give pc nothing
+    legal repute -20
+    end quest
+
+_deny_ task:
+    say 1014
+    place foe _spellsword_ at _farhouse_
+    change foe _spellsword_ infighting true
+
+_killman_ task:
+    killed _spellsword_
+    say 1015
+    give pc nothing
+    end quest
+
+variable _inside_
+_coward_ task:
+    when _deny_ and not _inside_
+    say 1016
+    end quest
+
+_escape_ task:
+    when _help_ and not _inside_
+    say 1018
+    give pc nothing
+    end quest
+
+_endtalk_ task:
+    when _timer_ and _talkpers_
+    say 1017
+
+_timer_ task:
+    end quest

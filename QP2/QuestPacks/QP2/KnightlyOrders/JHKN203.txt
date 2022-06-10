@@ -1,0 +1,200 @@
+Quest: JHKN203
+DisplayName: Hemophiliac Hunted
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                  My name is _qgiver_. The Order has
+<ce>               recently been made aware of a terror of
+<ce>               the night, a vampire of no small renown,
+<ce>                  lurking in a pitiful hole in %crn.
+<ce>               We are the protectorate of this land and
+<ce>             cannot tolerate such a threat to its people.
+<ce>              Will you answer the call and descend into
+<ce>                        the depths of ___dung_
+<ce>                     to slay this undead monster?
+
+RefuseQuest:  [1001]
+<ce>             We could certainly let it consume a few more
+<ce>                innocents and grow more powerful, yes.
+
+AcceptQuest:  [1002]
+<ce>                      Then be going to ___dung_
+<ce>                 to rid us of this evil. You will be
+<ce>                        accompanied by _mage_
+<ce>                    of the Mages Guild, whose main
+<ce>                  purpose will be ensuring the body
+<ce>                  is incapable of rising once more.
+<ce>                Nevertheless, %g1 could have something
+<ce>                    meaningful to offer in combat.
+<ce>              The two of you will return here in =timer_
+<ce>            days with a report of your success. Farewell.
+
+QuestFail:  [1003]
+<ce>           Your deadline to slay the vampire and report to
+<ce>                         _qgiver_ has passed.
+
+QuestComplete:  [1004]
+<ce>                   You are a credit to %crn, %pcf.
+
+RumorsDuringQuest:  [1005]
+The %t's been meeting with the Dark Brotherhood, they says.
+
+Message:  1010
+<ce>               _mage_ recognizes this vampire at once.
+<ce>
+<ce>                 "Ho! =vam1_, your end has at hand!"
+<ce>
+<ce>                 A binding spell follows, which slows
+<ce>                the abomination momentarily. This must
+<ce>               be preparation for the corpse disposal.
+
+Message:  1011
+<ce>               _mage_ recognizes this vampire at once.
+<ce>
+<ce>                 "Ho! =vam2_, your end has at hand!"
+<ce>
+<ce>                 A binding spell follows, which slows
+<ce>                the abomination momentarily. This must
+<ce>               be preparation for the corpse disposal.
+
+Message:  1020
+<ce>                    You have defeated the vampire.
+<ce>                 _mage_ spends some time with fairly
+<ce>            elaborate pyrotechnics and sharp instruments,
+<ce>               the likes of which do not logically lead
+<ce>             to a permanent end to vampirism but against
+<ce>              which you hold no qualm. Soon you are both
+<ce>                           ready to leave.
+                                     <--->
+<ce>                    You have defeated the vampire.
+<ce>                  _mage_ casts several arcane spells
+<ce>                around the corpse which appear to hold
+<ce>                it in place. Whether it will serve the
+<ce>               purpose or not is beyond your knowledge
+<ce>                and responsibility. Soon you are both
+<ce>                           ready to leave.
+
+Message:  1021
+<ce>           This vampire has knowledge of powerful magicks.
+<ce>              A shocking bolt lances out in your general
+<ce>                     direction, and _mage_ falls.
+
+Message:  1022
+<ce>               You have defeated the vampire. You offer
+<ce>                    _mage_ as proper a burial you
+<ce>               can under the circumstances. Surely %g3
+<ce>                      sacrifice will be honored.
+
+Message:  1023
+<ce>                 Hail our slayers of vampires! Such a
+<ce>                   crusade should always merit the
+<ce>                    attention of knights. We will
+<ce>                    speak of your deeds to inspire
+<ce>                    the younger generation to rise
+<ce>                    above their own selves. Surely
+<ce>                   you will tell the Mages Guild of
+<ce>                  %pcf's great service and utility,
+<ce>                      _mage_? I am certain %pg1
+<ce>                preserved your life quite skillfully.
+
+Message:  1024
+<ce>                    Hail %pcn, slayer of vampires!
+<ce>                       What is that? _mage_ was
+<ce>               slain in the battle? This is truly grave
+<ce>               news, though we are pleased that we must
+<ce>              no longer fear the vampire's encroaches on
+<ce>                our land. I thank you for braving the
+<ce>                  depths on such a perilous mission.
+
+Message:  1030
+%qdt:
+ _qgiver_ in the city of
+ ___qgiver_ has sent me
+ to ___dung_
+ to vanquish a vampire with
+ a member of the Mages Guild.
+ I must return in =timer_ days.
+
+QBN:
+Person _qgiver_ group Questor male
+Person _mage_ faction The_Mages_Guild
+
+Place _dung_ remote dungeon8
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _delay_ 00:03 00:05
+
+Foe _vam1_ is Ancient_vampire
+Foe _vam2_ is Vampire
+
+--	Quest start-up:
+	start timer _timer_
+	pick one of _D.01_ _D.02_
+	log 1030 step 0
+	reveal _dung_
+	pick one of _e1_ _e2_
+
+variable _e1_
+variable _e2_
+
+_D.01_ task:
+	place foe _vam1_ at _dung_
+
+_D.02_ task:
+	place foe _vam2_ at _dung_
+
+_inj1_ task:
+	injured _vam1_ saying 1010
+	restrain foe _vam1_
+	start timer _delay_
+	change foe _vam1_ infighting true
+
+_inj2_ task:
+	injured _vam2_ saying 1011
+	restrain foe _vam2_
+	start timer _delay_
+	change foe _vam2_ infighting true
+
+_delay_ task:
+	drop _mage_ face
+	say 1021
+
+_slain_ task:
+	killed 1 _vam1_
+	killed 1 _vam2_
+	stop timer _delay_
+
+_livemage_ task:
+	when _slain_ and not _delay_
+	say 1020
+
+_deadmage_ task:
+	when _slain_ and _delay_
+	say 1022
+
+_qgclicked_ task:
+	clicked npc _qgiver_
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _livemage_
+	say 1023
+	change repute with _mage_ by +5
+	legal repute +3
+	give pc nothing
+	end quest
+
+_pcgetsnothing_ task:
+	when _qgclicked_ and _deadmage_
+	say 1024
+	legal repute +3
+	give pc nothing
+	end quest
+
+_timer_ task:
+	say 1003
+	end quest
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_

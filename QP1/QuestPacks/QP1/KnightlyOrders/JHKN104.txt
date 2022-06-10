@@ -1,0 +1,224 @@
+Quest: JHKN104
+DisplayName: City Under Siege
+-- Message panels
+QRC:
+
+----todo: add siege sound effects
+
+QuestorOffer:  [1000]
+<ce>          %pcn, I do not know if you have heard the rumors.
+<ce>         Allow me to explain the situation. Some outlaw band
+<ce>         of renegade warriors, the Knights of the _gem_, are
+<ce>        attempting to gain legitimacy for themselves by taking
+<ce>          an entire city by force, that is, ___questgiver_.
+<ce>              The forces of %crn have stomped out a few
+<ce>         their encampments, but they have escaped us, and now
+<ce>       word has come that a full assault will soon be upon us.
+<ce>          Will you stand watch with me to see whether these
+<ce>                     things are so, good knight?
+
+RefuseQuest:  [1001]
+<ce>                Then go quickly, %pcf. I don't want a
+<ce>              coward to die in the impending bloodshed.
+
+AcceptQuest:  [1002]
+<ce>                     Very good. Stand here until
+<ce>                         they bring us word.
+
+QuestFail:  [1003]
+<ce>
+
+QuestComplete:  [1004]
+<ce>                  A page bearing the banner of %crn
+<ce>                    draws near and bows before you
+<ce>                    before reading from a scroll.
+<ce>
+<ce>                 "%pcn, Knight Protectorate of %crn,
+<ce>               we salute the service you have performed
+<ce>            this day, bringing swift justice to renegades
+<ce>            and outlaws who put this city into peril. May
+<ce>                  %god be with you in your endeavors
+<ce>                to preserve justice and civilization."
+<ce>
+<ce>            Others begin to move and clean up the bodies.
+<ce>         The assault is over, and life can resume once more.
+
+RumorsDuringQuest:  [1005]
+Some Dark Elf has been taking loans out from banks and not paying them back. That's worth a hanging.
+
+RumorsPostFailure:  [1006]
+__questgiver_ managed to save ___palace_ from enemy knights.
+
+RumorsPostSuccess:  [1007]
+___palace_ is safe once more, thanks to %pcn.
+<--->
+%pcn, for the __questgiver_, saved ___palace_.
+
+Message:  1010
+<ce>                   A page bearing the crest of %crn
+<ce>                   swiftly approaches _questgiver_
+<ce>             and presents %g2 with a sealed letter, which
+<ce>          %g1 hastily opens, after which %g1 signals to you.
+<ce>
+<ce>               "It's begun! They will soon be upon us!
+<ce>               Go out there and fight off what you can!
+<ce>                         I'll call for aid!"
+
+Message:  1011
+<ce>                  As the first of the outlaws falls,
+<ce>                       you hear a roaring cry.
+<ce>
+<ce>                   "Kill them all! This is the day
+<ce>                       we take back ___palace_!
+<ce>                    For the Knights of the _gem_!"
+
+Message:  1012
+<ce>           A spellsword approaches and shouts a battle cry.
+<ce>
+<ce>             "You're not alone, %pcf! I'm here to help!"
+<ce>
+<ce>          You hear the sound of magic elsewhere in the city.
+<ce>          The spellswords must be here to defend ___palace_.
+                                     <--->
+<ce>           A spellsword approaches and shouts a battle cry.
+<ce>
+<ce>            "We'll do this together, %pcf! I'll help you!"
+<ce>
+<ce>          You hear the sound of magic elsewhere in the city.
+<ce>          The spellswords must be here to defend ___palace_.
+
+Message:  1020
+<ce>                  A guard signals to you and shouts,
+<ce>           "They're in the Palace! Go, quickly! Stop them!"
+<ce>
+<ce>                  Your companions urge you to hurry.
+<ce>                  They'll clean up here, it appears.
+
+Message:  1024
+<ce>           Hiding away will not help ___questgiver_, %pct.
+
+Message:  1030
+%qdt:
+ It seems all-out war has broken
+ out between the forces of
+ %crn and some renegade
+ group of knight pretenders
+ called the Knights of the _gem_
+ in the city of ___palace_.
+ I must defend the town as well
+ as I can for my own part.
+
+Message:  1031
+%qdt:
+ The guards have told me to hurry
+ to the _palace_ in ___palace_,
+ as it appears the invaders
+ have entered it.
+
+Message:  1099
+<ce>                      Protect ___palace_, %pcf!
+<ce>                       They are nearly upon us!
+
+QBN:
+Item _gem_ gem
+
+Person _questgiver_ group Questor male
+
+Place _palace_ local palace
+
+Clock _timer_ 02:00
+Clock _delay_ 00:01
+Clock _delay2_ 00:02
+Clock _delay3_ 00:01
+Clock _outdoors_ 00:18
+
+Foe _warr_ is Warrior
+Foe _barb_ is Knight
+Foe _kni_ is 2 Barbarian
+Foe _spells_ is Spellsword
+
+--changed warrior and barbarian around since outdoor spawns need to be on the same team
+
+--	Quest start-up:
+	start timer _timer_
+	start timer _delay_
+	log 1030 step 0
+	pc at _palace_ set _inside_
+	pc at any fighters set _fightered_
+	pc at any tavern set _taverned_
+	pc at any house set _homed_
+	pc at any shop set _shopped_
+	pc at any magery set _maged_
+	pc at any temple set _templed_
+
+variable _fightered_
+variable _taverned_
+variable _homed_
+variable _shopped_
+variable _maged_
+variable _templed_
+
+_day_ task:
+	daily from 00:00 to 23:59
+	change foe _warr_ infighting true
+	change foe _barb_ infighting true
+	change foe _kni_ infighting true
+	change foe _spells_ infighting true
+	change foe _spells_ team 1
+	clear _day_
+
+_delay_ task:
+	say 1010
+	start timer _delay2_
+
+variable _delay2_
+
+_spawnout_ task:
+	when _delay2_ and not _slain_ and not _taverned_ and not _fightered_ and not _homed_ and not _shopped_ and not _maged_ and not _templed_
+	start timer _outdoors_
+	create foe _warr_ every 1 minutes indefinitely with 50% success
+	create foe _barb_ every 1 minutes indefinitely with 50% success
+	create foe _spells_ every 1 minutes indefinitely with 65% success msg 1012
+
+_msg_ task:
+	killed 1 _warr_
+	killed 1 _barb_
+	say 1011
+
+variable _outdoors_
+_slain_ task:
+	killed 8 _warr_
+	killed 7 _barb_
+
+_finish1_ task:
+	when _outdoors_ and _slain_
+	say 1020
+	log 1031 step 1
+
+variable _inside_
+_spawnin_ task:
+	when _inside_ and _finish1_
+	create foe _kni_ every 0 minutes 1 times with 100% success
+	create foe _kni_ every 3 minutes 1 times with 100% success
+	create foe _kni_ every 6 minutes 1 times with 100% success
+
+_victory_ task:
+	killed 6 _kni_
+	start timer _delay3_
+
+_delay3_ task:
+	give pc nothing
+	legal repute +6
+	end quest
+
+_qgclicked_ task:
+	clicked npc _questgiver_
+
+_timer_ task:
+	say 1024
+	end quest
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_
+	say 1099
+	clear _qgclicked_ _clearclick_

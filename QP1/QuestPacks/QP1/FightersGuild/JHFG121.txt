@@ -1,0 +1,235 @@
+Quest: JHFG121
+DisplayName: Debt Beyond Measure
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>             Someone here in ___qgiver_'s gotten into so
+<ce>            much debt that running away's the only option.
+<ce>             Apparently there are headhunters on the way,
+<ce>          so this might get ugly. Wanna keep this one safe?
+
+RefuseQuest:  [1001]
+<ce>                On second thought, I don't blame you.
+                                     <--->
+<ce>          You know, that's probably a pretty smart decision.
+
+AcceptQuest:  [1002]
+<ce>                   You're gonna find _friend_ over
+<ce>                    in _res_ here in town. You'll
+<ce>              be taking %g2 to %g3 house in another town
+<ce>            first to pick up %g3 things, and then lead %g2
+<ce>             to a hideout, wherever that's gonna be. From
+<ce>             there you'll get paid and you're home free.
+<ce>            So head on over there and see how it'll work.
+
+QuestFail:  [1003]
+<ce>          "Well, you know, we've taken quite awhile and not
+<ce>          gotten to where I needed to be. I think it's fair
+<ce>          to call it off here, wouldn't you say? Good day."
+<ce>
+<ce>               A momentary distraction is enough to let
+<ce>               _friend_ escape. You lose track of %g2.
+
+QuestComplete:  [1004]
+<ce>           You decide against revenge and leave %g2 to %g3
+<ce>              ill-gotten peace. Your hands will not have
+<ce>                          %g3 blood on them.
+
+QuestorPostFailure:  [1009]
+I can't really trust you to keep debtors safe, can I?
+
+Message:  1010
+<ce>           Hi there! You're from the Fighters Guild, then?
+<ce>                  Oh good. _qgiver_ promised me he'd
+<ce>        send someone capable. I guess that's a compliment, huh
+<ce>        friend? Ha ha ha! Well, um, I've just been hiding out
+<ce>          here for awhile. I need to get back to ___farhome_
+<ce>         and pick up my clothes and what little goods I have.
+<ce>           The banks have carted off most of my things, but
+<ce>           they haven't gotten to this last house, I think.
+<ce>                It's called _farhome_. From there I'll
+<ce>           tell you where you'll take me. So then, lead the
+<ce>               way, champion! My life is in your hands!
+
+Message:  1011
+<ce>              Ah, good, my things are here. Let me see.
+<ce>
+<ce>           Well, some of it, at least. My business partners
+<ce>           have apparently raided the house at least once.
+<ce>           Poor sports, or losers, I should say. I'm forced
+<ce>             to work with such scoundrels. Not like you,
+<ce>             eh good buddy? Ha ha ha! Now, let's head on
+<ce>                     to ___farmhome_. I've worked
+<ce>            out a new identity for myself there, and I'll
+<ce>                be quite content to get a fresh start.
+<ce>                     Whenever you're ready, %pcf.
+
+Message:  1012
+<ce>              "Ah, ___farmhome_! What a blissful sight!
+<ce>            I can't wait to start to develop it. The other
+<ce>             co-owners have had some objections, but they
+<ce>           know I'm good for it. I explain that little bit
+<ce>           to you, my dear friend, in the hopes that you'll
+<ce>            understand why I can't pay you for this little
+<ce>           trip. All my assets are in illiquid commodities,
+<ce>          and I can't pull out a simple sum of money to pay
+<ce>            you, at least not for a few years. But I thank
+<ce>           you for your good work. The practice you got on
+<ce>            the way was worth your time, wasn't it? Let's
+<ce>                          leave it at that."
+<ce>
+<ce>                     Do you let _friend_ get away
+<ce>                     with this obvious deception?
+
+Message:  1013
+<ce>               Your insistence that %g1 stop avails you
+<ce>                nothing. You decide there is just one
+<ce>                    way to get what you've earned.
+<ce>
+<ce>                    "Friend? What are you doing?"
+
+Message:  1014
+<ce>                       You have slain _friend_.
+
+Message:  1020
+<ce>                A group of armed enforcers approaches.
+<ce>
+<ce>          "Excuse me %ra, but you seem to be traveling with
+<ce>                some pond scum named _friend_. You'll
+<ce>            want to step aside. We have a warrant for %g3
+<ce>                     capture on behalf of _bank_.
+<ce>          We are authorized to give you =reward_ gold pieces
+<ce>              for your cooperation. Please stand down."
+<ce>
+<ce>            Do you surrender _friend_ to the authorities?
+
+Message:  1021
+<ce>                          "Good choice. Go."
+<ce>
+<ce>               Against _friend_'s bewildered protests,
+<ce>            you deliver %g2 into the hands of %g3 enemies.
+<ce>               One of the mercenaries hands you a pouch
+<ce>                 full of money, and the band departs.
+
+Message:  1022
+<ce>                  The mercenaries nod at one another
+<ce>                       and begin their assault.
+
+Message:  1030
+%qdt:
+ The Fighters Guild in ___qgiver_
+ have assigned me to guard some
+ delinquent debtor named _friend_
+ from mercenaries who hunt %g2.
+ I can find %g2 in _res_
+ of ___res_.
+
+Message:  1031
+%qdt:
+ _friend_ wants to go first
+ to ___farhome_, to pick up
+ %g3 belongings in _farhome_.
+
+Message:  1032
+%qdt:
+ _friend_ will hide away
+ in ___farmhome_ from %g3 creditors.
+
+QBN:
+
+Item _reward_ gold
+Item _loot_ gold
+
+Foe _merc_ is 2 Knight
+Foe _frenemy_ is Bard
+
+Person _qgiver_ group Questor male
+Person _friend_ faction The_Merchants
+
+Place _res_ local house
+Place _bank_ remote bank
+Place _farhome_ remote house
+Place _farmhome_ remote farmhome
+
+Clock _timer_ 00:00 0 flag 1 range 0 2
+Clock _found_ 1.00:00 4.00:00
+Clock _battle_ 08:00
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    place npc _friend_ at _res_
+
+_talk_ task:
+    clicked npc _friend_
+    say 1010
+    hide npc _friend_
+    add _friend_ face
+    start timer _found_
+    pc at _farhome_ do _explain_
+    log 1031 step 1
+
+_explain_ task:
+    say 1011
+    start task _click_
+
+_click_ task:
+    log 1032 step 2
+    pc at _farmhome_ do _final_
+
+_ambush_ task:
+    when _click_ and not _explain_
+    start task _found_
+
+_found_ task:
+    prompt 1020 yes _obey_ no _resist_
+
+_obey_ task:
+    say 1021
+    get item _reward_
+    drop _friend_ face
+    end quest
+
+_resist_ task:
+    say 1022
+    create foe _merc_ every 0 minutes 1 times with 100% success
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _merc_ infighting true
+    clear _infight_
+
+_final_ task:
+    drop _friend_ face
+    stop timer _timer_
+    prompt 1012 yes _escape_ no _confront_
+
+_escape_ task:
+    give pc nothing
+    end quest
+
+_confront_ task:
+    start timer _battle_
+    say 1013
+    create foe _frenemy_ every 0 minutes 1 times with 100% success
+    give item _loot_ to _frenemy_
+    make _loot_ permanent
+    restrain foe _frenemy_
+
+_battle_ task:
+    remove foe _frenemy_
+    start task _escape_
+
+_murder_ task:
+    killed _frenemy_
+    say 1014
+    end quest
+
+_weasel_ task:
+    when _timer_ and _talk_
+    say 1003
+    drop _friend_ face
+
+_timer_ task:
+    end quest

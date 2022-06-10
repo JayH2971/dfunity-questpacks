@@ -9,4 +9,4 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHIM003, Commoners, N, 0, 1, a quest to end a haunting
+JHIM203, Commoners, N, 0, 1, a quest to end a haunting

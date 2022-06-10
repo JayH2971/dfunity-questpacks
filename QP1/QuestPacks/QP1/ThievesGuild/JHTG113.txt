@@ -1,0 +1,145 @@
+Quest: JHTG113
+DisplayName: The Mark of Mastery
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  You've made a name for yourself here
+<ce>  in the guild, %pcf, but you're
+<ce>  still lacking something to be called
+<ce>  a true master. We've got a test that
+<ce>  the greatest of our members pass before
+<ce>  they can consider themselves made.
+<ce>  You can try it any time, but only once,
+<ce>  and the test starts immediately.
+<ce>  Ready to put your life on the line?
+
+RefuseQuest:  [1001]
+<ce>  Take some time to prepare and come back.
+
+AcceptQuest:  [1002]
+<ce>  _questgiver_ reaches for something
+<ce>  that %g1 attaches to your wrist.
+<ce>  You feel yourself being conveyed
+<ce>  elsewhere. As %g1 fades away, you
+<ce>  hear _questgiver_ say,
+<ce>  
+<ce>  "Just survive half an hour. Run as fast as you can."
+
+QuestFail:  [1003]
+<ce>  The bracelet put on you for this test burns.
+<ce>  Your Recall spell fails to work.
+
+QuestComplete:  [1004]
+<ce> You've done it, %pcf. We were watching
+<ce> through the bracelet. Now we can
+<ce> call you %pct in very deed.
+<ce> Those kinds of bragging rights are hard
+<ce> to come by, but we wanted a more
+<ce> tangible reward for you, sort of to
+<ce> say thanks for how you've helped us out.
+
+QuestorPostSuccess:   [1008]
+The true Master Thief. Welcome.
+
+QuestorPostFailure:   [1009]
+I'm glad you're here among the living, but you only get one chance at the Mark of Mastery.
+
+Message:  1010
+<ce> The bracelet put on you dissolves.
+<ce> The vampires fade away into the dark,
+<ce> leaving no trace of their presence.
+
+Message:  1011
+<ce> The bracelet binds itself to your skin.
+<ce> Nearby, you hear a hissing noise.
+<ce> It's time to run.
+<ce>
+<ce>  (Hint: You may be in a location that's impossible to escape from,)
+<ce>                 (like the bottom of a chute. If so,)
+<ce>   (make a save and try the console command "teleport" to get out.)
+
+Message:  1012
+<ce>  It appears you have no means of escaping
+<ce>  until this test is over.
+
+Message:  1030
+%qdt:
+ I've taken a test of mastery
+ for the Thieves Guild. I've been
+ sent into a cave somewhere
+ in %crn and need only to
+ survive for half an hour.
+ Then I can return to ___questgiver_.
+
+QBN:
+Item _reward_ artifact Skeletons_Key
+Item _brac_ bracelet
+
+Person _questgiver_ group Questor male
+
+Place _mondung_ remote dungeon8
+
+Clock _timer_ 120.00:00
+Clock _recdelay_ 0:00
+Clock _recdelay2_ 0:00
+Clock _delay_ 0:30
+
+Foe _vamp_ is Ancient_vampire
+
+--	Quest start-up:
+	start timer _timer_
+    start timer _delay_ 
+	log 1030 step 0 
+    teleport pc to _mondung_
+    start task _spawn_
+    get item _brac_
+	pc at _mondung_ set _inside_
+
+variable _inside_
+_spawn_ task:
+    create foe _vamp_ every 1 minutes indefinitely with 100% success
+    create foe _vamp_ every 0 minutes 1 times with 100% success
+	cast Teleport-Effect effect do _recfail_
+	say 1011
+
+_teleport_ task:
+	when _spawn_ and not _inside_
+	teleport pc to _mondung_
+	say 1012
+	start task _clearing_
+
+_clearing_ task:
+	clear _teleport_ _clearing_
+
+_recfail_ task:
+	say QuestFail
+	start timer _recdelay_
+
+_recdelay_ task:
+	start timer _recdelay2_
+
+_recdelay2_ task:
+	teleport pc to _mondung_
+	clear _recfail_ _recdelay_
+
+_delay_ task:
+    clear _spawn_
+    say 1010
+    take _brac_ from pc
+	remove foe _vamp_
+
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_finish_ task:
+	when _delay_ and _qgclicked_
+	give pc _reward_
+	end quest 
+
+_timer_ task:
+	end quest 
+
+_clearclick_ task:
+	when _qgclicked_ and not _delay_
+	clear _qgclicked_ _clearclick_ 

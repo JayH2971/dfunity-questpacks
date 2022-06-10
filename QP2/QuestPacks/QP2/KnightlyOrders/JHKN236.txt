@@ -1,0 +1,100 @@
+Quest: JHKN236
+DisplayName: Hooves and Spears
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>             A pair of centaurs has been raiding a remote
+<ce>        home in the wilderness of %crn. By our honor, we must
+<ce>                defend the defenseless who live there.
+<ce>             Will you take up our banner for this cause?
+
+RefuseQuest:  [1001]
+<ce>                      I refuse to believe that.
+<ce>                You don't understand their suffering.
+
+AcceptQuest:  [1002]
+<ce>         I'll mark ___place_ on your map. Go there and, with
+<ce>          any luck, you'll find the centaurs somewhere near
+<ce>               the property. Slay them and return here.
+<ce>            Without word of your victory in =timer_ days,
+<ce>         I'll send other, quicker knights to take your place.
+
+QuestFail:  [1003]
+<ce>                _qgiver_ expected word of your slaying
+<ce>                         the centaurs by now.
+
+QuestComplete:  [1004]
+<ce>              Ah, and with proof, even! Well done, %pcf.
+<ce>                 You do us much honor with your work.
+
+Message:  1010
+<ce>              You arrive at ___place_ and find that the
+<ce>           centaurs are camped out on the property, waiting
+<ce>         for hapless prey to appear. It seems they'll settle
+<ce>                           for you instead.
+
+Message:  1011
+<ce>       The centaurs have been slain. You decide to take a tooth
+<ce>          from one of their carcasses as proof of the deed.
+
+Message:  1030
+%qdt:
+ _qgiver_ of __qgiver_ has
+ sent me to a home called ___place_
+ to defeat a pair of centaurs that
+ attack its residents.
+ I am to return to ___qgiver_
+ within =timer_ days.
+
+QBN:
+Person _qgiver_ group Questor male
+
+Place _place_ remote poorhome
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _enemy_ is Centaur
+Foe _enemy2_ is Centaur
+
+Item _item_ item class 20 subclass 2
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    pc at _place_ do _spawn_
+
+_spawn_ task:
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    change foe _enemy_ infighting true
+    change foe _enemy2_ infighting true
+    say 1010
+
+_killed_ task:
+    killed _enemy_
+
+_killed2_ task:
+    killed _enemy2_
+
+_slain_ task:
+    when _killed_ and _killed2_
+    say 1011
+    get item _item_
+
+_timer_ task:
+    say 1003
+    end quest
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
+
+_pcreward_ task:
+    when _qgclicked_ and _slain_
+    give pc nothing
+    legal repute +4
+    end quest

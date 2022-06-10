@@ -9,21 +9,21 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHDB006, DarkBrotherHood, M, 0, 0, a quest to kidnap a child for ransom
-JHDB008, DarkBrotherHood, M, 3, X, a quest to slay a teleported noble
-JHDB009, DarkBrotherHood, M, 0, 0, a quest to retrieve a ransomed child
-JHDB010, DarkBrotherHood, M, 1, 0, a quest to hijack a ransom plot
-JHDB012, DarkBrotherHood, M, 2, X, a quest to end a rival assassination organization
-JHDB013, DarkBrotherHood, M, 0, X, a quest to feed a mark to beasts
-JHDB014, DarkBrotherHood, M, 2, X, a quest to slay and deliver the body
-JHDB015, DarkBrotherHood, M, 1, 0, a quest to teleport to slay headhunters
-JHDB016, DarkBrotherHood, M, 0, 0, a quest to poison with a plant
-JHDB017, DarkBrotherHood, M, 1, X, a quest to steal Mages Guild research notes
-JHDB018, DarkBrotherHood, M, 3, X, a quest to slay a debtor
-JHDB019, DarkBrotherHood, M, 5, 0, a quest to solve a puzzle to find a mark
-JHDB020, DarkBrotherHood, M, 6, 1, a quest to help the Mages Guild end a rogue summoner
-JHDB021, DarkBrotherHood, M, 9, 1, an artifact quest to slay an ambassador from the Empire
-JHDB021a, DarkBrotherHood, P, 0, 1, an artifact quest to slay an ambassador from the Empire
-JHDB022, DarkBrotherHood, M, 8, 1, an invitation to perform for Quill Circus
-JHDB023, DarkBrotherHood, M, 2, 1, a quest to rescue a relative of a Dark Brotherhood member
-JHDB024, DarkBrotherHood, M, 6, 1, a quest to defend an evil member in a dungeon
+JHDB106, DarkBrotherHood, M, 0, 0, a quest to kidnap a child for ransom
+JHDB108, DarkBrotherHood, M, 3, X, a quest to slay a teleported noble
+JHDB109, DarkBrotherHood, M, 0, 0, a quest to retrieve a ransomed child
+JHDB110, DarkBrotherHood, M, 1, 0, a quest to hijack a ransom plot
+JHDB112, DarkBrotherHood, M, 2, X, a quest to end a rival assassination organization
+JHDB113, DarkBrotherHood, M, 0, X, a quest to feed a mark to beasts
+JHDB114, DarkBrotherHood, M, 2, X, a quest to slay and deliver the body
+JHDB115, DarkBrotherHood, M, 1, 0, a quest to teleport to slay headhunters
+JHDB116, DarkBrotherHood, M, 0, 0, a quest to poison with a plant
+JHDB117, DarkBrotherHood, M, 1, X, a quest to steal Mages Guild research notes
+JHDB118, DarkBrotherHood, M, 3, X, a quest to slay a debtor
+JHDB119, DarkBrotherHood, M, 5, 0, a quest to solve a puzzle to find a mark
+JHDB120, DarkBrotherHood, M, 6, 1, a quest to help the Mages Guild end a rogue summoner
+JHDB121, DarkBrotherHood, M, 9, 1, an artifact quest to slay an ambassador from the Empire
+JHDB121a, DarkBrotherHood, P, 0, 1, an artifact quest to slay an ambassador from the Empire
+JHDB122, DarkBrotherHood, M, 8, 1, an invitation to perform for Quill Circus
+JHDB123, DarkBrotherHood, M, 2, 1, a quest to rescue a relative of a Dark Brotherhood member
+JHDB124, DarkBrotherHood, M, 6, 1, a quest to defend an evil member in a dungeon

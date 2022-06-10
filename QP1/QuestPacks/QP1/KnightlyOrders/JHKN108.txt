@@ -1,0 +1,263 @@
+Quest: JHKN108
+DisplayName: Orcish Skirmish
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                  A recent raid on an orc encampment
+<ce>                      in ___dung_ proved timely.
+<ce>                 We are informed that the brutes have
+<ce>               planned an assassination attempt against
+<ce>                  _noble_, a noble within the region
+<ce>                  of %crn. We must prevent this work
+<ce>               of destabilization, and the time is far
+<ce>                too short to rally the host of knights
+<ce>                this matter deserves. Will you go and
+<ce>                    do the work of an army, %pct?
+
+RefuseQuest:  [1001]
+<ce>                    If you hear of _noble_'s death
+<ce>               in the next few weeks, you'll be able to
+<ce>             tell your friends you knew of it beforehand.
+
+AcceptQuest:  [1002]
+<ce>                 Move quickly. _noble_ will be at the
+<ce>                 palace in ___palace_. We expect the
+<ce>                attack to occur in the night hours in
+<ce>          =2palace_ days. Tell me the tale when you return.
+
+QuestFail:  [1003]
+<ce>                 Loud screams emanate from within the
+<ce>             palace, followed by a joyful roar. You need
+<ce>                 not look to know what has happened.
+
+QuestComplete:  [1004]
+<ce>                        _noble_ is led away by
+<ce>                 armed guards. A page speaks to you.
+<ce>
+<ce>                "%pcn, if all knights in %crn are like
+<ce>             yourself, we have no further need for fear.
+<ce>          Perhaps next they will send you to capture Gortwog
+<ce>            himself. Your name will be had in open renown
+<ce>          across the land if you remain faithful to the %t."
+
+Message:  1010
+<ce>               Two palace servants spy you from across
+<ce>             the hall and duck out of view. No doubt they
+<ce>               will have some well-planned escape route
+<ce>               in case their fears are brought to pass.
+
+Message:  1011
+<ce>                     (SKILL CHECK PASSED: ORCISH)
+<ce>
+<ce>            You hear the orcs begin to enter the building.
+<ce>                Deepening your voice, you roar at them
+<ce>           to cease the attack and flee. Mistaking you for
+<ce>          one of their leaders, the orcs abandon their plan
+<ce>                    and scurry out of ___palace_.
+<ce>               Nearby servants stare in wonder at your
+<ce>                   mastery of the Orcish language.
+
+Message:  1015
+<ce>                 You hear savage roaring from within
+<ce>              the palace. The attack has already begun.
+
+Message:  1018
+<ce>              This is the night the orcs plan to attack
+<ce>                      the palace in ___palace_.
+
+Message:  1020
+<ce>              You step into the palace and are met by a
+<ce>                 frightful servant. The air is tense.
+<ce>
+<ce>               "The report was false! We are deceived!
+<ce>                  They have taken my master _noble_!
+<ce>               The court magician says they are headed
+<ce>                   for ___dung2_. Please help %g2!"
+
+Message:  1021
+<ce>            Please! Save me from these horrible creatures!
+<ce>                        %oth, how I hate orcs!
+                                     <--->
+<ce>          %god be praised! Free me from this place, please!
+
+Message:  1022
+<ce>                   _noble_ suddenly bends over and
+<ce>        retches. Out of respect you look away until it's over.
+<ce>
+<ce>                "%oth, forgive me. This hole is doing
+<ce>          worse things unto me by the minute. Please, get me
+<ce>         out of here. I don't think I can last a couple more
+<ce>       hours before my condition will become life-threatening."
+
+Message:  1023
+<ce>                _noble_ suddenly drops to the ground.
+<ce>          Your best attempts to resuscitate %g2 are in vain.
+<ce>                 The filthiness within ___dung2_ has
+<ce>                            overcome %g2.
+
+Message:  1030
+%qdt:
+ I must hurry to ___palace_
+ to thwart an orcish attack to
+ occur in =2palace_ days. I should wait
+ in the palace during the night hours
+ to prevent an attack on
+ _noble_, who waits inside.
+
+Message:  1031
+%qdt:
+ The servants of the palace at
+ ___palace_ informed me that
+ _noble_ has been taken
+ away to ___dung2_ by the orcs.
+ I should find %g2 and return %g2
+ to the palace.
+
+Message:  1035
+<ce>                     Abdicating _noble_ when %g1
+<ce>               most needed you will reflect very poorly
+<ce>                  on yourself and the other knights.
+
+QBN:
+Person _noble_ faction Random_Noble
+
+Place _palace_ remote palace
+
+Clock _2palace_ 00:00 0 flag 17 range 0 2
+Clock _death_ 00:23
+Clock _victory_ 00:01
+Clock _failsafe_ 60.00:00
+Clock _sickdelay_ 0:02
+Clock _sickdeath_ 2:00 4:00
+
+Place _dung_ remote dungeon
+Place _dung2_ remote dungeon
+
+Foe _orc1_ is 2 Orc_sergeant
+Foe _orc2_ is Orc
+Foe _orc3_ is Orc_sergeant
+Foe _orc4_ is Orc_warlord
+Foe _orc5_ is Orc_shaman
+
+--	Quest start-up:
+	start timer _2palace_
+	start timer _failsafe_
+	log 1030 step 0
+	pc at _palace_ set _inside_
+	pc at _dung2_ set _orcs_
+	pick one of _real_ _false_
+
+_skill_ task:
+	when skill Orcish is at least 70
+
+variable _real_
+_false_ task:
+	pick one of _sick_ _ok_
+
+_night_ task:
+	daily from 2:00 to 5:00
+
+variable _inside_
+_notice_ task:
+	when _inside_ and _real_
+	say 1010
+
+_2palace_ task:
+	say 1018
+
+_spawn_ task:
+	when _timeup_ and _inside_ and _real_ and not _skill_
+	create foe _orc1_ every 3 minutes 2 times with 100% success
+	start timer _death_
+	say 1015
+
+_easywin_ task:
+	when _timeup_ and _inside_ and _real_ and _skill_
+	say 1011
+	start task _victory_
+
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _orc1_ infighting true
+	change foe _orc2_ infighting true
+	change foe _orc3_ infighting true
+	change foe _orc4_ infighting true
+	change foe _orc5_ infighting true
+	clear _infight_
+
+_final_ task:
+	when _2palace_ and _night_
+	start task _timeup_
+
+variable _timeup_
+_failout_ task:
+	when _timeup_ and not _inside_ and not _night_ and _real_
+	say 1035
+	end quest
+
+_success_ task:
+	killed 4 _orc1_
+	stop timer _death_
+	start timer _victory_
+
+_victory_ task:
+	give pc nothing
+	legal repute +8
+	end quest
+
+variable _death_
+_death2_ task:
+	when _death_ and _inside_
+	say 1003
+	end quest
+
+_death3_ task:
+	when _death_ and not _inside_
+	say 1035
+	end quest
+
+_capture_ task:
+	when _inside_ and _false_
+	stop timer _2palace_
+	say 1020
+	reveal _dung2_
+	place npc _noble_ at _dung2_
+	log 1031 step 1
+
+_orcs_ task:
+	create foe _orc2_ every 29 minutes indefinitely with 11% success
+	create foe _orc3_ every 22 minutes indefinitely with 4% success
+	create foe _orc4_ every 45 minutes indefinitely with 3% success
+	create foe _orc5_ every 29 minutes indefinitely with 3% success
+
+_rescue_ task:
+	clicked npc _noble_
+	say 1021
+	add _noble_ face
+	hide npc _noble_
+
+variable _ok_
+variable _sick_
+_dis_ task:
+	when _rescue_ and _sick_
+	start timer _sickdelay_
+
+variable _sickdelay_
+_getsick_ task:
+	when _orcs_ and _sickdelay_
+	say 1022
+	start timer _sickdeath_
+
+variable _sickdeath_
+_nobledie_ task:
+	when _orcs_ and _sickdeath_
+	say 1023
+	end quest
+
+_win_ task:
+	when _inside_ and _rescue_
+	start timer _victory_
+
+_failsafe_ task:
+	end quest

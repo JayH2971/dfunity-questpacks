@@ -1,0 +1,229 @@
+Quest: JHTG115
+DisplayName: Daily Heist, Small
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          One of the benefits of being in the Thieves Guild
+<ce>    is knowing where money is in the city, free for the grabbing.
+<ce>        There's a house here in ___qgiver_ that's got a couple
+<ce>     hundred gold in it. If you're good at sneaking, you can try
+<ce>    to nab it for yourself. Want me to reserve the house for you?
+                                     <--->
+<ce>         Every day here in ___qgiver_, people hide away their
+<ce>    savings in their houses. Some do it good, others do it sloppy.
+<ce>     We got a tip on a house that's carrying a few hundred gold.
+<ce>       If you want, I can mark it down for you. Won't earn you
+<ce>        any points with the guild, but you'll get some money.
+<ce>                            You takin' it?
+
+RefuseQuest:  [1001]
+<ce>         No loss. Can't be overfeeding in this city, anyway.
+                                     <--->
+<ce>           This one's gonna be gone next hour, I swear it.
+
+AcceptQuest:  [1002]
+<ce>         All right then. It's called _house_, %di from here.
+<ce>      I dunno how much is in there, but you're not gonna retire
+<ce>               off of it. Likewise, it's not gonna take
+<ce>       a master Khajiit to get in and out of there undetected.
+<ce>     Low risk, low reward. I don't think you'll get more than two
+<ce>            days before it's spent or moved, so hurry on.
+<ce>        And remember that if you get caught, whoever tipped us
+<ce>      off on the house is gonna suffer for it. Don't get caught.
+                                     <--->
+<ce>                       _house_ has your money,
+<ce>                  off that way, %di. You've seen it.
+<ce>         Can't be more than a couple hundred gold, but that's
+<ce>           the nature of it. Won't nab much if you're just
+<ce>             stealing from houses. But don't get caught.
+<ce>            Whoever told us about that house would suffer
+<ce>         for it. Money like that gets spent in a couple days,
+<ce>             so don't dally on it. And don't get caught.
+
+QuestFail:  [1003]
+<ce>                        (STEALTH CHECK FAILED)
+<ce>
+<ce>          You know a little about sneaking, but not enough.
+<ce>     Someone knows you're here, and they're shouting up a storm.
+
+QuestComplete:  [1004]
+<ce>     Looks like you're in the clear. The money is yours to spend.
+
+QuestorPostFailure:  [1009]
+Remember, you owe us for the money in _house_. Take some jobs and pay us back.
+
+Message:  1010
+%qdt:
+ The Thieves Guild tipped me off
+ about a house here in ___qgiver_
+ that should be holding a few hundred
+ gold somewhere inside,
+ called _house_.
+ If I can find the money in the next
+ couple of days, it's mine.
+
+Message:  1011
+<ce>         You find the chest and see it has a very formidable
+<ce>                lock on it. If you want what's inside,
+<ce>             you're going to have to unlock it yourself.
+<ce>                      Do you attempt to open it?
+<ce>
+<ce>                (SKILL CHECK: YES: Lockpicking, difficulty high)
+
+Message:  1012
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>          Knowing you don't have much time, you get working.
+<ce>        It doesn't take more than a few seconds before the lid
+<ce>           flies open. You grab the contents for yourself.
+
+Message:  1013
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>          Knowing you don't have much time, you get working.
+<ce>      You dig in deep and trigger something you shouldn't have.
+<ce>               A loud siren rings throughout the house.
+<ce>                        You're in it deep now.
+
+Message:  1014
+<ce>    Looking at the lock, you start to second-guess your abilities.
+<ce>            You can still get out without causing a major
+<ce>      screw-up, you tell yourself. You leave the chest. No sense
+<ce>       carrying around a big red flag if you can't get it open.
+
+Message:  1015
+<ce>             This is the right house. You've got to find
+<ce>                     a chest somewhere inside it.
+
+QBN:
+Item _item_ item class 1 subclass 8
+Item _reward_ gold range 150 to 275
+
+Place _house_ local house
+
+Person _qgiver_ group Questor
+
+Clock _danger_ 00:02 00:05
+Clock _ending_ 2.00:00 2.12:00
+
+--	Quest start-up:
+    start timer _ending_
+    log 1010 step 0
+    place item _item_ at _house_
+    pc at _house_ do _inside_
+    pick one of _seeskill1_ _seeskill2_ _seeskill3_
+
+_inside_ task:
+    start timer _danger_
+    stop timer _ending_
+    say 1015
+
+_notinside_ task:
+    when not _inside_
+    stop timer _danger_
+    start timer _ending_
+
+_danger_ task:
+    pick one of _go1_ _go2_ _go3_
+
+_check1_ task:
+    when skill Stealth is at least 20
+
+_check2_ task:
+    when skill Stealth is at least 30
+
+_check3_ task:
+    when skill Stealth is at least 40
+
+variable _go1_
+variable _go2_
+variable _go3_
+
+_c1_ task:
+    when _check1_ and _go1_
+
+_c2_ task:
+    when _check2_ and _go2_
+
+_c3_ task:
+    when _check3_ and _go3_
+
+_d1_ task:
+    when not _check1_ and _go1_
+    start task _fail_
+
+_d2_ task:
+    when not _check2_ and _go2_
+    start task _fail_
+
+_d3_ task:
+    when not _check3_ and _go3_
+    start task _fail_
+
+_pick1_ task:
+    when skill Lockpicking is at least 10
+
+_pick2_ task:
+    when skill Lockpicking is at least 15
+
+_pick3_ task:
+    when skill Lockpicking is at least 20
+
+_e1_ task:
+    when not _pick1_ and _seeskill1_
+    start task _skillfail_
+
+_e2_ task:
+    when not _pick2_ and _seeskill2_
+    start task _skillfail_
+
+_e3_ task:
+    when not _pick3_ and _seeskill3_
+    start task _skillfail_
+
+variable _skillfail_
+
+_fail_ task:
+    setplayercrime Trespassing
+    spawncityguards immediate
+    say 1003
+    change repute with _qgiver_ by -1
+    end quest
+
+_grab_ task:
+    clicked item _item_
+    prompt 1011 yes _attempt_ no _flee_
+    take _item_ from pc
+
+variable _attempt_
+variable _seeskill1_
+variable _seeskill2_
+variable _seeskill3_
+
+_flee_ task:
+    say 1014
+
+_bigfail_ task:
+    when _attempt_ and _skillfail_
+    setplayercrime Theft
+    spawncityguards immediate
+    say 1013
+    change repute with _qgiver_ by -1
+    end quest
+
+_victory_ task:
+    when _attempt_ and not _skillfail_
+    get item _reward_
+    make _reward_ permanent
+    say 1012
+
+_escape_ task:
+    when _grab_ and _notinside_
+    say 1004
+    change repute with _qgiver_ by +2
+    end quest
+
+_ending_ task:
+    change repute with _qgiver_ by +2
+    end quest

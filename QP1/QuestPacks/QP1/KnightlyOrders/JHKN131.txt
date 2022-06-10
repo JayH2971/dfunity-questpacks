@@ -1,0 +1,170 @@
+Quest: JHKN131
+DisplayName: Plague Knight
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  A pest infestation has taken hold of
+<ce>  a palace in %crn, and the %t
+<ce>  has delegated to us the task of finding
+<ce>  someone clever enough to end it.
+<ce>  This will not require combat, %pct.
+<ce>  We wish to send you on a manhunt
+<ce>  of the civilized kind.
+
+RefuseQuest:  [1001]
+<ce>  Surely we can find a task more adventuresome
+<ce>  for one of your skill set.
+
+AcceptQuest:  [1002]
+<ce>  This will be a simple task, good knight,
+<ce>  at least in theory. You must merely find
+<ce>  an expert in bat extermination. Do not
+<ce>  bother trying to slay them yourself.
+<ce>  The %t has sent enough warriors to
+<ce>  prove that the problem is serious.
+<ce>  Ask around among the people to find
+<ce>  someone qualified enough, and inform
+<ce>  him or her that there will be payment.
+<ce>  Surely you can have this problem
+<ce>  solved, and your report in this hall,
+<ce>  within =timer_ days.
+
+QuestFail:  [1003]
+<ce>  If you are here, why do I continue to
+<ce>  hear about rodents infesting the
+<ce>  palace of ___palace_?
+
+QuestComplete:  [1004]
+<ce>  How was the expedition, %pct?
+<ce>  Feel pride in having served your
+<ce>  fellow citizens. That is the great
+<ce>  ideal of the __questgiver_.
+
+Message:  1010
+A real shame, isn't it? The %t takes our money but can't keep a palace clean.
+<--->
+They say no one's better for bats than _ext_.
+<--->
+If ya gotta kill bats, ya head on over to ___exthouse_, knight. Ask for _ext_ there.
+<--->
+Bat problem? You want _ext_. Stays in _exthouse_ in ___exthouse_.
+
+Message:  1011
+<ce> What? Oh, bother. You're lucky the %t
+<ce> pays well. I'd rather cover your face
+<ce> in hemlock if this weren't worth my time.
+<ce> Very well, lead the way.
+
+Message:  1012
+<ce> _ext_'s reputation is well earned.
+<ce> Recognizing the problem in short order,
+<ce> %g1 sets about cutting small holes around the
+<ce> palace and placing poisonous herbs within
+<ce> them. As %g1 makes a full sweep of the
+<ce> building, you notice one fledgling rodent chew
+<ce> on the toxic plants and almost immediately
+<ce> cease breathing. A potent mix, to be sure.
+<ce> 
+<ce> When the project is finished, a dapper servant
+<ce> approaches and praises _ext_'s work.
+<ce> 
+<ce> "Oh, what a blessing to have found you!
+<ce> It's been utterly insufferable in here
+<ce> with these beasts terrorizing us.
+<ce> We have set apart these =dummy_ gold pieces
+<ce> for you, which we hope will be compensation
+<ce> sufficient to the task."
+<ce> 
+<ce> _ext_ curtly accepts the reward
+<ce> and departs without so much as a goodbye.
+<ce> _questgiver_ will want your report.
+
+Message:  1013
+<ce> Your nose and ears have no difficulty
+<ce> picking up on the presence of bats
+<ce> in this palace.
+
+Message:  1014
+<ce> They do appear to be endless.
+<ce> Nearby attendants thank you for
+<ce> relieving their suffering, even if
+<ce> it is temporary.
+
+Message:  1030
+%qdt:
+ _questgiver_ has asked me to
+ find a bat exterminator skilled
+ enough to clean the palace of
+ ___palace_. Perhaps the
+ townspeople would know of
+ someone suitable to the task.
+ I should return to __questgiver_
+ in ___questgiver_ before
+ =timer_ days have passed.
+
+Message:  1031
+%qdt:
+ I am leading _ext_ to the
+ palace of ___palace_ to resolve
+ its bat infestation.
+
+QBN:
+Person _questgiver_ group Questor male
+Person _ext_ faction The_Thieves_Guild
+
+Place _palace_ remote palace anyInfo 1010
+Place _exthouse_ remote random
+
+Item _dummy_ gold range 1400 to 2300
+
+Clock _timer_ 00:00 0 flag 1 range 0 2
+
+Foe _bat_ is Giant_bat
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+	pc at _palace_ set _inside_
+    place npc _ext_ at _exthouse_
+
+variable _inside_
+_warn_ task:
+    when _inside_ and not _talk_
+    say 1013
+    create foe _bat_ every 2 minutes indefinitely with 100% success
+
+_killer_ task:
+    killed 6 _bat_
+    say 1014
+
+_talk_ task:
+    clicked npc _ext_
+    say 1011
+    hide npc _ext_
+    add _ext_ face
+    log 1031 step 1
+
+_arrival_ task:
+    when _inside_ and _talk_
+    drop _ext_ face
+    say 1012
+    start task _victory_
+
+variable _victory_
+_qgclicked_ task:
+	clicked npc _questgiver_ 
+
+_timer_ task:
+	end quest 
+
+_clearclick_ task:
+	when _qgclicked_ and not _victory_ 
+  say 1003
+	clear _qgclicked_ _clearclick_ 
+
+_pcgetsnothing_ task:
+    when _qgclicked_ and _victory_
+    give pc nothing
+    legal repute +3
+    end quest

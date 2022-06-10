@@ -1,0 +1,78 @@
+Quest: JHTG206
+DisplayName: Payment for Notes
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> There's a big reward being offered
+<ce> for research notes by some wizard
+<ce> named _dummy_. I guess
+<ce> it's 'cause %g1's a member of the
+<ce> Mages Guild. If you're not worried
+<ce> about making enemies with them, you
+<ce> can head over to ___res_
+<ce> and bring some papers back here.
+
+RefuseQuest:  [1001]
+<ce> Don't want =reward_ gold? Oh well.
+
+AcceptQuest:  [1002]
+<ce> I don't know how long there's gonna be
+<ce> a market for this particular scholar's work,
+<ce> so get back here by, say, =timer_ days from now.
+<ce> I'll have your cut here. I don't think the
+<ce> place is guarded, so just find it and
+<ce> come on back. Oh yeah, it's in a place
+<ce> called _res_ in ___res_.
+<ce> Almost forgot to mention that.
+
+QuestFail:  [1003]
+<ce> _questgiver_ wanted you
+<ce> to deliver the notes by now.
+
+QuestComplete:  [1004]
+<ce> Looks like the real deal. Not like
+<ce> I could tell anyway. Here's your cut.
+
+Message: 1021
+<ce> You pick up _dummy_'s notes.
+
+Message:  1030
+%qdt:
+ If I bring some researcher's notes
+ from ___res_ back to ___questgiver_
+ within =timer_ days' time, _questgiver_'s
+ willing to pay me for them. %g1 told me
+ they're in _res_.
+
+QBN:
+
+Person _questgiver_ group Questor male
+Person _dummymg_ faction The_Mages_Guild
+Person _dummy_ group Local_3.1
+
+Item _reward_ gold
+Item _notes_ letter
+
+Place _res_ remote random
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+-- Quest start-up:
+ start timer _timer_
+ log 1030 step 0
+ place item _notes_ at _res_
+
+_got_ task:
+ clicked item _notes_
+ say 1021
+ change repute with _dummymg_ by -10
+
+_victory_ task:
+  toting _notes_ and _questgiver_ clicked
+  give pc _reward_
+  end quest
+ 
+_timer_ task:
+  say 1003
+  end quest

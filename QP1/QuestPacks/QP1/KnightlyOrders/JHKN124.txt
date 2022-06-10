@@ -1,0 +1,213 @@
+Quest: JHKN124
+DisplayName: Washing Brains
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>         A knave in the region has been usurping the minds of
+<ce>          some of %crn's womenfolk, washing their brains and
+<ce>         forcing them to do his bidding. Will you stop this?
+
+RefuseQuest:  [1001]
+<ce>                   Why? Is this not urgent enough?
+
+AcceptQuest:  [1002]
+<ce>          We do not know where the man hides, but we presume
+<ce>         his ensorcelled maidens do. One such affected damsel
+<ce>                   is _maid_ of ___maidh_. You will
+<ce>      want the Mages Guild's aid in this matter. Go to ___mager_
+<ce>             and look for a magician named _mage_ in the
+<ce>       guild hall. We are informed that %g1 will have a trinket
+<ce>        with power to temporarily suspend the charm spell, and
+<ce>         hopefully you will be able to extract his resorting
+<ce>         place during that lapse. Have done with this matter
+<ce>                within =timer_ days, for %crn's honor.
+
+QuestFail:  [1003]
+<ce>     Your quest to stop the enchanter of ____mager_ has expired.
+
+QuestComplete:  [1004]
+<ce>        Fine work, %pcf. I have already received word that the
+<ce>           man's subjects have been freed from their curse.
+<ce>          I do not doubt they will hold your name in honor.
+
+Message:  1010
+<ce>    Good day, %pct. Such troubling times we live in, are they not?
+<ce>    Take this _tri_. It will have power to suspend the enchantment
+<ce>     on these women for a few moments. Ask your questions quickly
+<ce>       at the time you use it. With any luck they will despise
+<ce>      being controlled and give you the information you desire.
+<ce>          Well met, %ra, and I wish you luck on your quest.
+                                     <--->
+<ce>    Well met. Take this _tri_, which will suspend the enchantment
+<ce>     on these women for a few moments. Ask your questions quickly
+<ce>       at the time you use it. With any luck they will despise
+<ce>      being controlled and give you the information you desire.
+<ce>             Please do %crn justice, good %ra. Farewell.
+
+Message:  1011
+<ce>               _maid_ shrieks and trembles at thin air.
+<ce>         She stares at you with maddened eyes, wanting to say
+<ce>      something but restrained by magical forces from doing so.
+                                     <--->
+<ce>          _maid_ struggles to speak but is kept in silence.
+<ce>     She looks around, clearly afraid of something you can't see.
+
+Message:  1012
+<ce>          A wave of magical power disperses from the _tri_,
+<ce>    providing a momentary schism in the enchantment. You scarcely
+<ce>    need to ask the question, as the maiden is quite forthcoming.
+<ce>
+<ce>                    "_capt_! Kill h-him! Pleeease!
+<ce>                   In, in ___farm_! Help me! I..."
+<ce>
+<ce>     Within moments her eyes glaze over and the ability to speak
+<ce>    departs. You now have the name and location of the enchanter.
+                                     <--->
+<ce>          A wave of magical power disperses from the _tri_,
+<ce>    providing a momentary schism in the enchantment. You scarcely
+<ce>    need to ask the question, as the maiden is quite forthcoming.
+<ce>
+<ce>                "He's in ___farm_! His name is _capt_!
+<ce>                    Please, if you can do any..."
+<ce>
+<ce>     Within moments her eyes glaze over and the ability to speak
+<ce>    departs. You now have the name and location of the enchanter.
+
+Message:  1013
+<ce>                  You immediately spot _capt_, whose
+<ce>             appearance gives him away. He casts a brief
+<ce>              incantation to teleport for the advantage.
+
+Message:  1014
+<ce>        You have defeated a powerful magician. Hopefully that
+<ce>          will be enough to end the curse. You should report
+<ce>                back to _qgiver_ on your proceedings.
+
+Message:  1020
+<ce>                      (THAUMATURGY CHECK PASSED)
+<ce>
+<ce>    Your knowledge of Thaumaturgy is enough to give you the edge.
+<ce> You cast a quick cantrip which causes the vampire temporary immobility.
+
+Message:  1021
+<ce>                        (STEALTH CHECK PASSED)
+<ce>
+<ce>       Vampires are experts at stealth, but you can do better.
+<ce>             You manage to evade this vampire's tracking.
+
+Message:  1030
+%qdt:
+ _qgiver_ of ___qgiver_
+ has given me orders to find an
+ enchanter in ____qgiver_ who has
+ ensorcelled several women to do his
+ bidding. I am to get a trinket from
+ _mage_ of the Mages Guild in
+ ___mager_ and take it to a woman
+ named _maid_ in ___maidh_.
+ I have =timer_ days to defeat
+ the man behind the scheme.
+
+Message:  1031
+%qdt:
+ _maid_ was able to speak
+ long enough to tell me that the enchanter's
+ name is _capt_, and that he hides
+ away in ___farm_.
+
+QBN:
+Foe _q1_ is Ancient_vampire
+
+Person _qgiver_ group Questor male
+Person _maid_ faction Dancers female
+Person _mage_ faction The_Mages_Guild
+Person _capt_ group Local_4.1 male
+
+Place _maidh_ remote house1
+Place _farm_ remote poorhome
+Place _mager_ remote magery
+
+Item _tri_ trinket
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+--	Quest start-up:
+  start timer _timer_
+  log 1030 step 0
+  place npc _mage_ at _mager_
+  place npc _maid_ at _maidh_
+  pc at _maidh_ do _inside_
+  pc at _farm_ do _spawn_
+
+_talk1_ task:
+  clicked npc _mage_
+  say 1010
+  get item _tri_
+
+_talk2_ task:
+  clicked npc _maid_
+  say 1011
+  _tri_ used do _effect_
+
+variable _inside_
+variable _effect_
+_talk3_ task:
+  when _inside_ and _effect_
+  start task _go_
+  say 1012
+  log 1031 step 1
+  take _tri_ from pc
+  reveal _farm_
+
+variable _go_
+variable _spawn_
+_spawn2_ task:
+  when _go_ and _spawn_ and not _slain_
+  say 1013
+  create foe _q1_ every 0 minutes 1 times with 100% success
+  change foe _q1_ infighting true
+  start task _ch1_
+
+_thau_ task:
+  when skill Thaumaturgy is at least 50
+
+variable _ch1_
+_e1_ task:
+  when _ch1_ and _thau_
+  say 1020
+  restrain foe _q1_
+
+_e1b_ task:
+  when _ch1_ and not _thau_
+  start task _ch2_
+
+_stealth_ task:
+  when skill Stealth is at least 70
+
+variable _ch2_
+_e2_ task:
+  when _ch2_ and _stealth_
+  say 1021
+  restrain foe _q1_
+
+_slain_ task:
+  killed _q1_
+  say 1014
+
+_qgclicked_ task:
+  clicked npc _qgiver_
+
+_victory_ task:
+  when _qgclicked_ and _slain_
+  give pc nothing
+  legal repute +8
+  end quest
+
+_clearclick_ task:
+  when _qgclicked_ and not _slain_
+  clear _qgclicked_ _clearclick_
+
+_timer_ task:
+  say 1003
+  end quest

@@ -1,0 +1,126 @@
+Quest: JHFG217
+DisplayName: Wickedness in High Places
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>         The %t's commissioned us to knock off a Necromancer
+<ce>           who also happens to be a high-ranking member of
+<ce>          the Mages Guild. Wanna get this one off our backs?
+
+RefuseQuest:  [1001]
+<ce>                  %oth. Well, someone's gotta do it.
+
+AcceptQuest:  [1002]
+<ce>         Cool, cool. Well, not much else to say. Necromancers
+<ce>       are usually the Mages Guild's responsibility but they're
+<ce>       denying this one outright. Probably a matter of utility
+<ce>          than loyalty, knowing them. But I'll stop talking.
+<ce>                 Head out to ___poorhome_. Get ready
+<ce>        to fight some undead while you're there. They told us
+<ce>         to have this done in =timer_ days, so get back here
+<ce>                       by then for your money.
+
+QuestFail:  [1003]
+<ce>            The %t needed to know that the Necromancer of
+<ce>                 ___poorhome_ had been slain by now.
+
+QuestComplete:  [1004]
+<ce>             Hey, glad to see you back. Necromancers can
+<ce>             be tough, but the Fighters Guild is tougher.
+<ce>               Thanks for being such a great example of
+<ce>                        what we do. Take this.
+
+Message:  1010
+<ce>              Your instrusion to the property is noted.
+<ce>            The tenant, meditating outside, stands up and
+<ce>               begins to chant in a discordant tongue.
+
+Message:  1011
+<ce>                   The Necromancer has been slain.
+<ce>             _qgiver_ needs to report the act to the %t.
+
+Message:  1012
+<ce>                    (ATTRIBUTE CHECK PASSED: LUCK)
+<ce>
+<ce>               The Necromancer's summoning spells fail.
+<ce>                    "W-why?! What is happening?!"
+<ce>
+<ce>                   Sometimes luck is on your side.
+
+Message:  1030
+%qdt:
+ The Fighters Guild of ___qgiver_
+ assigned me to slay a Necromancer,
+ member of the Mages Guild, living in
+ ___poorhome_. I have =timer_
+ days to report on it.
+
+QBN:
+Foe _q1_ is Skeletal_warrior
+Foe _q2_ is Zombie
+Foe _mage_ is Mage
+
+Item _reward_ gold
+
+Person _qgiver_ group Questor male
+Person _dummymg_ faction The_Mages_Guild
+
+Place _poorhome_ remote poorhome
+
+Clock _timer_ 00:00 0 flag 1 range 0 2
+
+--	Quest start-up:
+  start timer _timer_
+  log 1030 step 0
+  pc at _poorhome_ do _inside_
+
+_luck_ task:
+  when attribute Luck is at least 85
+  pick one of _lucky_ _unlucky_ _unlucky_
+
+variable _unlucky_
+variable _lucky_
+
+variable _inside_
+_spawn_ task:
+  when _inside_ and not _slain_ and not _lucky_
+  say 1010
+  create foe _mage_ every 0 minutes 1 times with 100% success
+  change foe _mage_ team 13
+  create foe _q1_ every 1 minutes indefinitely with 75% success
+  create foe _q2_ every 1 minutes indefinitely with 50% success
+
+_luckyspawn_ task:
+  when _inside_ and _lucky_
+  say 1010
+  create foe _mage_ every 0 minutes 1 times with 100% success
+  say 1012
+
+_infight_ task:
+  daily from 0:00 to 23:59
+  change foe _mage_ infighting true
+  change foe _q1_ infighting true
+  change foe _q2_ infighting true
+  clear _infight_
+
+_slain_ task:
+  killed _mage_
+  say 1011
+  change repute with _dummymg_ by -10
+
+_victory_ task:
+  when _qgclicked_ and _slain_
+  give pc _reward_
+  end quest
+
+_qgclicked_ task:
+  clicked npc _qgiver_
+
+_clearclick_ task:
+  when _qgclicked_ and not _slain_
+  clear _qgclicked_ _clearclick_
+
+_timer_ task:
+  say 1003
+  end quest

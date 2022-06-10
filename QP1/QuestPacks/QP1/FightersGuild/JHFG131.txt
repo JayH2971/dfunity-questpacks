@@ -1,0 +1,241 @@
+Quest: JHFG131
+DisplayName: The Young Dungeoneer
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>            Some band of rabblerousers stole a kid and are
+<ce>                 expecting a ransom from the family.
+<ce>           The town guard or some knight usually intervenes
+<ce>           in these cases, but the kid's parents can't wait
+<ce>              around for some charity case to help out.
+<ce>               They're paying money to have their child
+<ce>               returned to them. You in on this, %pcf?
+
+RefuseQuest:  [1001]
+<ce>                 %oth. I hope someone gets this fast.
+<ce>                    The guild needs a reputation.
+
+AcceptQuest:  [1002]
+<ce>                Let me show you ___dung_ on your map.
+<ce>                  Head there, find the kid, get out.
+<ce>                Name is _kid_. You can bring %g2 back
+<ce>                here and we'll take care of the rest.
+<ce>                Make sure you're here in =timer_ days.
+<ce>            They have good money on us not taking forever.
+
+QuestFail:  [1003]
+<ce>               The family expected you to deliver _kid_
+<ce>                    to the Fighters Guild by now.
+<ce>                       Your reward is forfeit.
+
+QuestComplete:  [1004]
+<ce>                  You take the gold they offer you.
+
+RumorsDuringQuest:  [1005]
+I have it on really good authority that the %t is a vampire.
+
+Message:  1010
+<ce>           "Hi! You look different from the bad people who
+<ce>                brought me here. Where are we going?"
+<ce>
+<ce>            You answer to ____questgiver_, and _kid_ nods.
+<ce>               "Yep, that's home! Let's go, I'm ready!"
+
+Message:  1011
+<ce>            "By the way, I found this wicked-looking sword
+<ce>       down here! It's got ridges in the blade and everything!
+<ce>        Do you know anything about swords? Could you teach me
+<ce>                          how to swing it?"
+<ce>
+<ce>            Do you try to teach _kid_ about using a sword?
+<ce>
+<ce>                (SKILL CHECK: YES: Long Blade, difficulty medium)
+
+Message:  1012
+<ce>                       (SKILL CHECK SUCCEEDED)
+<ce>
+<ce>       You carefully show %g2 how to properly hold the pommel,
+<ce>               swing the sword, and deliver a full cut.
+<ce>            You hope %g3 parents won't criticize the guild
+<ce>           for this, but it's a dangerous world out there.
+<ce>                 Perhaps if _kid_ knew this already,
+<ce>                      you wouldn't be down here.
+
+Message:  1013
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>            With your encouragement, _kid_ starts swinging
+<ce>           the blade around wildly. Once %g1 loses a proper
+<ce>         posture, %g1 ends up falling onto the blade, slicing
+<ce>               %g3 shoulder. You wince and help %g2 up.
+<ce>
+<ce>         "I guess I'll have to wait 'til I'm older," %g1 says
+<ce>              as you apply a makeshift bandage. Then %g1
+<ce>                   drops the sword and follows you.
+
+Message:  1014
+<ce>        "I guess I'll have to wait 'til I'm older," %g1 says,
+<ce>           disappointed. You convince %g2 to drop the sword
+<ce>                         and come after you.
+
+Message:  1015
+<ce>                     As you breathe in fresh air,
+<ce>               you become aware of two figures nearby.
+<ce>
+<ce>          "Show's over, %ra. Let the kid go or you're dead."
+<ce>
+<ce>                        You brace for combat.
+
+Message:  1016
+<ce>              While their eyes are on you, _kid_ sneaks
+<ce>           up behind them and delivers a nasty slice to one
+<ce>           of the thugs' legs. He shrieks in pain and drops
+<ce>              to one knee, fleeing pitifully. The other,
+<ce>         finding himself in an adverse two-on-one situation,
+<ce>                      helps his friend run away.
+<ce>
+<ce>           "THAT WAS AWESOME! I'm gonna be a real fighter!
+<ce>              This is the coolest thing I've ever done!"
+<ce>      _kid_ dances around, clattering the sword onto the ground.
+<ce>           You'll have to see whether %g1 tells %g3 parents
+<ce>                           about that part.
+
+Message:  1017
+<ce>                  Somewhere in this labyrinth, _kid_
+<ce>                         awaits your rescue.
+
+Message:  1018
+<ce>           You present the child to _questgiver_, and hear
+<ce>                  the parents come down the stairs.
+<ce>                They smother _kid_ in hugs and kisses,
+<ce>                      happy to see %g2 unharmed.
+<ce>            "What a wonderful job the Fighters Guild does!
+<ce>           I wonder if they can get rid of those rats we've
+<ce>                      been fussing about, too."
+<ce>
+<ce>        They then turn to you and deliver a large bag of gold.
+<ce>          "The best investment we've ever made. Thank you!"
+<ce>             The intact family then leaves the building,
+<ce>            and _questgiver_ gives you a pat on the back.
+
+Message:  1019
+<ce>           You present the child to _questgiver_, and hear
+<ce>                  the parents come down the stairs.
+<ce>                They smother _kid_ in hugs and kisses,
+<ce>             trying to hide their worry at the large gash
+<ce>                on %g3 shoulder. Then %g1 blurts out,
+<ce>      "Don't worry about my arm. This %ra and I were practicing
+<ce>           sword fighting down in the cave, and I got hurt.
+<ce>                        But I'm fine, really!"
+<ce>
+<ce>                 The parents pause and glare at you.
+<ce>            They thank you for bringing their child back,
+<ce>          and give you a reward, albeit lesser than they had
+<ce>                 originally planned. Then they leave
+<ce>                     the building, ignoring you.
+
+Message:  1030
+%qdt:
+ A family in ___questgiver_ is paying
+ the Fighters Guild to rescue their
+ kidnapped child in ___dung_.
+ I need to find the child and
+ return in =timer_ days.
+
+QBN:
+Item _reward_ gold range 300 to 500
+Item _smallreward_ gold range 50 to 99
+
+Place _dung_ remote dungeon0
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Person _kid_ faction Children
+Person _questgiver_ group Questor
+
+Foe _asn_ is 2 Assassin
+
+--	Quest start-up:
+    start timer _timer_
+    pc at _dung_ set _inside_
+    log 1030 step 0
+    reveal _dung_
+    pc at any fighters set _fginside_
+    place npc _kid_ at _dung_
+
+_inside_ task:
+    say 1017
+
+variable _fginside_
+
+_kidclick_ task:
+    clicked npc _kid_
+    say 1010
+    hide npc _kid_
+    add _kid_ face
+    start task _prompt_
+
+_prompt_ task:
+    prompt 1011 yes _train_ no _ignore_
+
+_ignore_ task:
+    say 1014
+
+_skilled_ task:
+    when skill LongBlade is at least 50
+
+variable _train_
+
+_yestrain_ task:
+    when _skilled_ and _train_
+    say 1012
+    start task _ready_
+
+variable _ready_
+
+_notrain_ task:
+    when not _skilled_ and _train_
+    say 1013
+    start task _badweapon_
+
+variable _badweapon_
+
+_leavedungeon_ task:
+    when _kidclick_ and not _inside_
+    say 1015
+    start task _ambush_
+
+variable _ambush_
+
+_easyend_ task:
+    when _ambush_ and _ready_
+    say 1016
+
+_hardend_ task:
+    when _ambush_ and not _ready_
+    create foe _asn_ every 0 minutes 1 times with 100% success
+
+_badreward_ task:
+    when _qgclicked_ and _kidclick_ and _badweapon_
+    say 1019
+    give pc _smallreward_
+    end quest
+
+_pcgetsgold_ task:
+    when _qgclicked_ and _kidclick_ and not _badweapon_
+    start quest JHFGC05
+    say 1018
+    give pc _reward_
+    end quest
+
+_qgclicked_ task:
+    clicked npc _questgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _kidclick_
+    clear _qgclicked_ _clearclick_
+
+_timer_ task:
+    say 1003
+    end quest

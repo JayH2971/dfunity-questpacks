@@ -9,17 +9,17 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHFG001, FightersGuild, M, 3, 0, a quest to slay a vampire in another town
-JHFG002, FightersGuild, M, 6, X, a quest to slay a daedra in a dungeon
-JHFG005, FightersGuild, M, 1, 0, a quest to slay a pack of beasts at a rural farmhome
-JHFG010, FightersGuild, M, 3, 0, a quest to rid a city's streets of poisonous critters
-JHFG012, FightersGuild, M, 4, 1, a quest to slay a Mages Guild member in a city
-JHFG014, FightersGuild, M, 0, 1, a quest to slay a zombie in a house
-JHFG016, FightersGuild, M, 4, 1, a quest to get rid of a bad guild member
-JHFG017, FightersGuild, M, 4, 0, a quest to slay a high-ranking Mages Guild Necromancer
-JHFG025, FightersGuild, M, 0, 0, a quest to help find someone from the Mages Guild
-JHFG034, FightersGuild, M, 2, 0, a quest to kill a fire atronach in a palace
-JHFG035, FightersGuild, M, 0, 0, a quest to kill two skeletons in a house
-JHFG036, FightersGuild, M, 1, 0, a quest to kill a conjurer in a dungeon
-JHFG037, FightersGuild, M, 2, 1, a quest to kill a Dark Brotherhood member for a widow
-JHFG038, FightersGuild, M, 0, 1, a quest to kill a thief in a local shop
+JHFG201, FightersGuild, M, 3, 0, a quest to slay a vampire in another town
+JHFG202, FightersGuild, M, 6, X, a quest to slay a daedra in a dungeon
+JHFG205, FightersGuild, M, 1, 0, a quest to slay a pack of beasts at a rural farmhome
+JHFG210, FightersGuild, M, 3, 0, a quest to rid a city's streets of poisonous critters
+JHFG212, FightersGuild, M, 4, 1, a quest to slay a Mages Guild member in a city
+JHFG214, FightersGuild, M, 0, 1, a quest to slay a zombie in a house
+JHFG216, FightersGuild, M, 4, 1, a quest to get rid of a bad guild member
+JHFG217, FightersGuild, M, 4, 0, a quest to slay a high-ranking Mages Guild Necromancer
+JHFG225, FightersGuild, M, 0, 0, a quest to help find someone from the Mages Guild
+JHFG234, FightersGuild, M, 2, 0, a quest to kill a fire atronach in a palace
+JHFG235, FightersGuild, M, 0, 0, a quest to kill two skeletons in a house
+JHFG236, FightersGuild, M, 1, 0, a quest to kill a conjurer in a dungeon
+JHFG237, FightersGuild, M, 2, 1, a quest to kill a Dark Brotherhood member for a widow
+JHFG238, FightersGuild, M, 0, 1, a quest to kill a thief in a local shop

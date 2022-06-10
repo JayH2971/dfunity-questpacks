@@ -1,0 +1,186 @@
+Quest: JHKN115
+DisplayName: Nature's Wrath
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                  Sparse regions of %crn complain of
+<ce>                spriggans attacking their homesteads.
+<ce>                  Evidence suggests the cause may be
+<ce>                         within ___dung_. Can
+<ce>                 we rely on you to stop this problem?
+
+RefuseQuest:  [1001]
+<ce>                   Now you're looking for a simple
+<ce>                     problem to solve, I suppose?
+
+AcceptQuest:  [1002]
+<ce>                  So often when this happens, it is
+<ce>                some fool who has let power get to his
+<ce>                  head and starts trying to display
+<ce>                   that power to the world. We wish
+<ce>                  such could enlist to a noble cause
+<ce>                    and put their zeal toward good
+<ce>                    purposes, but some are simply
+<ce>                    too obstinate. Do your best to
+<ce>                    defend against the spriggans.
+<ce>                 Perhaps if you speak their language
+<ce>               you'll make some headway in some manner
+<ce>                 or another. Resolve the cause within
+<ce>                   =2dung_ days, and then return to
+<ce>                     report at your leisure. %god
+<ce>                      go with you into ___dung_.
+
+QuestFail:  [1003]
+<ce>                   You were to resolve the cause of
+<ce>                   the attacking spriggans by now.
+
+QuestComplete:  [1004]
+<ce>                 Resourceful, skilled, and diligent.
+<ce>                  A model for knights of this order.
+
+Message:  1020
+<ce>                  A spriggan shambles its way toward
+<ce>                 you, only half conscious of its own
+<ce>                      actions. You could try to
+<ce>                talk to it, to see if you can find out
+<ce>                    anything that could help you.
+<ce>                  Do you try to talk to it (yes) or
+<ce>                        try to avoid it (no)?
+<ce>
+<ce>                  (SKILL CHECK: YES: Spriggan, difficulty low)
+
+Message:  1021
+<ce>                         (SKILL CHECK PASSED)
+<ce>
+<ce>               You catch the creature's attention with
+<ce>              a greeting and tell it you intend no harm.
+<ce>        It responds, in broken language, that its kind suffers
+<ce>          a burning agony beyond their control. It promises
+<ce>              to inform its kin that you are no danger.
+<ce>              You hope it can make good on that promise.
+<ce>              You dismiss it, and it wanders elsewhere.
+
+Message:  1022
+<ce>                         (SKILL CHECK FAILED)
+<ce>
+<ce>              Whatever you know of the Spriggan language
+<ce>          is not enough. Your speech incenses the creature,
+<ce>                    and it wanders off in a rage.
+<ce>
+<ce>           If spriggans are as communal as the stories say,
+<ce>            this bodes poorly for your visit to ___dung_.
+
+Message:  1023
+<ce>                This sorceror, reeking of green herbs,
+<ce>                  appears to have been the cause of
+<ce>                       the spriggans' madness.
+
+Message:  1024
+<ce>              The poor creature hobbles about in agony.
+<ce>          It looks at you momentarily, and then turns about
+<ce>            and departs. Perhaps you could have helped it,
+<ce>                 but spriggans can be temperamental.
+
+Message:  1025
+<ce>             As soon as you cross the threshold, you hear
+<ce>                   the angry groaning of spriggans.
+<ce>               You hope they won't harass you too much
+<ce>           while you search for the source of the problem.
+
+Message:  1030
+%qdt:
+ _qgiver_ tasked me
+with slaying some disturbance in
+ ___dung_ which is causing
+ spriggans to appear throughout %crn.
+ The foe must be downed within =2dung_ days.
+ I can report to ___qgiver_ thereafter.
+
+QBN:
+Person _qgiver_ group Questor male
+
+Place _dung_ remote dungeon6
+
+Clock _2dung_ 00:00 0 flag 1 range 0 2
+Clock _spawn_ 1:00 6:00
+Clock _failsafe_ 120.00:00
+
+Foe _mage_ is Sorceror
+Foe _sprig_ is Spriggan
+
+--	Quest start-up:
+  log 1030 step 0
+  start timer _spawn_
+  start timer _2dung_
+  start timer _failsafe_
+  reveal _dung_
+  place foe _mage_ at _dung_
+  pc at _dung_ do _inside_
+
+variable _inside_
+
+_spawn_ task:
+  prompt 1020 yes _attempt_ no _flee_
+
+variable _attempt_
+
+_bigwin_ task:
+  when _attempt_ and _skilled_
+  say 1021
+
+_bigfail_ task:
+  when _attempt_ and not _skilled_
+  say 1022
+
+_flee_ task:
+  say 1024
+
+_smallspawn_ task:
+  when _flee_ and _inside_ and not _slain_
+  say 1025
+  create foe _sprig_ every 15 minutes indefinitely with 5% success
+
+_bigspawn_ task:
+  when _bigfail_ and _inside_ and not _slain_
+  say 1025
+  create foe _sprig_ every 15 minutes indefinitely with 10% success
+  create foe _sprig_ every 0 minutes 1 times with 100% success
+
+_skilled_ task:
+  when skill Spriggan is at least 20
+
+_infight_ task:
+  daily from 0:00 to 23:59
+  change foe _sprig_ infighting true
+  clear _infight_
+
+_inj_ task:
+  injured _mage_
+  change foe _mage_ infighting true
+  change foe _mage_ team 3
+
+_slain_ task:
+  killed _mage_
+  say 1023
+  stop timer _2dung_
+
+_qgclicked_ task:
+  clicked npc _qgiver_
+
+_clearclick_ task:
+  when _qgclicked_ and not _slain_
+  clear _qgclicked_ _clearclick_
+
+_victory_ task:
+  when _qgclicked_ and _slain_
+  give pc nothing
+  legal repute +3
+  end quest
+
+_2dung_ task:
+  say 1003
+  end quest
+
+_failsafe_ task:
+  end quest

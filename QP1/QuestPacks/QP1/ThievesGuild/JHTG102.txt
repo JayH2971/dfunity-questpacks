@@ -1,0 +1,130 @@
+Quest: JHTG102
+DisplayName: Personal Transport
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                   %pcf, we're working out a plan.
+<ce>               We're usually in the business of moving
+<ce>                jewels, powders, and money around, but
+<ce>                 right now we want to move a person.
+<ce>                          Wanna help us out?
+
+RefuseQuest:  [1001]
+<ce>                  You weren't gonna pick 'im up and
+<ce>                 carry him in your arms, halfwit. The
+<ce>                   guild needs this kind of money.
+
+AcceptQuest:  [1002]
+<ce>              All right then. What you're gonna have to
+<ce>                     do is head over to ___res_.
+<ce>                The kid's gonna be waiting inside some
+<ce>                      place called _res_. Name's
+<ce>                       _kid_. Grab %g2 fast and
+<ce>                     get moving to __dung_. We'll
+<ce>                 have someone inside waiting to take
+<ce>                 %g2 off your hands. You'll get your
+<ce>                    reward then. Get moving, %pcf.
+<ce>                       You've got =timer_ days.
+
+QuestFail:  [1003]
+<ce>                By now the city guard will have caught
+<ce>                 on to the guild's kidnapping scheme.
+
+QuestComplete:  [1004]
+<ce>                A man in a grey tunic motions to you.
+<ce>
+<ce>                  "Thieves Guild, right? Good. I'll
+<ce>                       take _kid_ from here. We
+<ce>                  need to find a place to hide until
+<ce>                   we get the ransom money. Here's
+<ce>                   your take. Now leave us alone."
+
+Message:  1020
+<ce>                    The house is quiet. It appears
+<ce>                     no one suspected your entry.
+
+Message:  1021
+<ce>                     _kid_ stares at you in fear.
+<ce>                    "Who are you? Where's Daddy?"
+<ce>
+<ce>                    You gag %g2 and cover %g2 with
+<ce>                 a heavy cloak nearby. Now to deliver
+<ce>                           %g2 to __dung_.
+                                     <--->
+<ce>                    _kid_ stares at you in terror.
+<ce>                  "Who are you? No, leave me alone!"
+<ce>
+<ce>                    You gag %g2 and cover %g2 with
+<ce>                 a heavy cloak nearby. Now to deliver
+<ce>                           %g2 to ___dung_.
+
+Message:  1025
+<ce>              You hear the floor creak. Someone shouts,
+<ce>                     "Is there somebody there?!"
+
+Message:  1030
+%qdt:
+ The Thieves Guild has sent me
+ to kidnap _kid_, a child
+ in _res_ at ___res_.
+ I then need to take %g2 to
+ __dung_. I have =timer_ days.
+
+Message:  1099
+<ce>                     Take the kid from ___res_ to
+<ce>                   ___dung_. You'll get paid then.
+
+QBN:
+Person _questgiver_ group Questor male
+Person _kid_ faction Children
+
+Place _dung_ remote dungeon
+Place _res_ remote house
+
+Clock _timer_ 30.00:00
+Clock _found_ 00:04 00:09
+
+Item _reward_ gold range 201 to 399
+
+Foe _enemy_ is Knight
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+	place npc _kid_ at _res_
+	pc at _dung_ set _idun_
+	pc at _res_ set _ires_
+	reveal _dung_
+
+_ires_ task:
+	start timer _found_
+	say 1020
+
+variable _found_
+_combat_ task:
+	when _ires_ and _found_
+	say 1025
+	create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_kclicked_ task:
+	clicked npc _kid_
+	say 1021
+	hide npc _kid_
+	add _kid_ face
+
+variable _idun_
+_victory_ task:
+	when _kclicked_ and _idun_
+	drop _kid_ face
+	give pc _reward_
+	end quest
+
+_qgclicked_ task:
+	clicked npc _questgiver_
+	say 1099
+	clear _qgclicked_
+
+_timer_ task:
+	say 1003
+	end quest

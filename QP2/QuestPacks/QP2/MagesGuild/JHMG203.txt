@@ -1,0 +1,172 @@
+Quest: JHMG203
+DisplayName: The Dark Artist
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                      %pct, %crn grants us great
+<ce>                  autonomy concerning our methods of
+<ce>               research, our purposes, our disciplinary
+<ce>             pursuits, and so forth, provided we promote
+<ce>              the "common good" with our scholarly work.
+<ce>              A fascinating term, that. In exchange, we
+<ce>               have something of an unspoken agreement,
+<ce>            if you will, that when students of the magical
+<ce>               arts become a menace to society, we are
+<ce>             the first to remove the threat. Please help
+<ce>                 us to fulfill that agreement, %pcf.
+                                     <--->
+<ce>            Great scandals surround the Mages Guild, many
+<ce>             of which are started by those envious of the
+<ce>          power we wield. To ensure a spark does not become
+<ce>             a wildfire, we must stamp out any cause for
+<ce>             suspicion with haste. A knave in fellowship
+<ce>              with this honorable institution has taken
+<ce>            advantage of our good name to conduct work of
+<ce>             the foulest kind, putting us all in jeopardy
+<ce>                of disrepute. Will you dispose of this
+<ce>               renegade and help us maintain our image?
+
+RefuseQuest:  [1001]
+<ce>             I assure you, %pct, had you permitted me to
+<ce>              explain more, you would not have refused.
+
+AcceptQuest:  [1002]
+<ce>               A worthy response. This duty falls upon
+<ce>              every member of the guild in its due time.
+<ce>                     We will send you to ___res_.
+<ce>                  A guild member in the city, highly
+<ce>                   trustworthy, informs us that the
+<ce>                    errant magician, _necr_, hides
+<ce>                       and practices in _res_.
+<ce>                 I certainly hope necromancy inspires
+<ce>                 no fear in you, for that is what you
+<ce>                    have agreed to quash this day.
+<ce>                  Make this rogue magician one with
+<ce>                  the death that so fascinates %g2.
+<ce>               We must know it is done in =timer_ days.
+<ce>                        Courage, good friend.
+
+QuestFail:  [1003]
+<ce>                 The Mages Guild has waited for your
+<ce>                   announcement of _necr_'s death,
+<ce>                     and the time has now passed.
+
+QuestComplete:  [1004]
+<ce>                   Splendidly done, %pct. This work
+<ce>                 ensures the general public lends the
+<ce>                proper confidence to the Mages Guild.
+<ce>                  Would a _diam_ be a proper reward
+<ce>                  for this task, in your estimation?
+<ce>                    I pray you put it to good use.
+
+Message:  1010
+<ce>                  (SKILL CHECK PASSED: DESTRUCTION)
+<ce>
+<ce>                  The necromancer activates a trap,
+<ce>                sending a bolt of magic flying at you.
+<ce>           Your quick reflexes and knowledge of Destruction
+<ce>        magic allow you to halt the bolt in midair and return
+<ce>               it to its caster. "OW!" your foe winces.
+
+Message:  1011
+<ce>                  (SKILL CHECK FAILED: DESTRUCTION)
+<ce>
+<ce>                  The necromancer activates a trap,
+<ce>                sending a bolt of magic flying at you.
+<ce>              Someone more skilled in Destruction magic
+<ce>            might have avoided it one way or another, but
+<ce>                      you suffer injury instead.
+
+Message:  1020
+<ce>                  "How pathetic. Why will you fools
+<ce>                   continue to resist the power and
+<ce>                   beauty of the art of necromancy?
+<ce>                   Do you not see the hypocrisy in
+<ce>                  slaying me? But if you so insist,
+<ce>                 we will have our duel. Have at you."
+
+Message:  1022
+<ce>                 The necromancer falls to the ground.
+<ce>                       Your duty is fulfilled.
+
+Message:  1030
+%qdt:
+ I must dispatch a necromancer
+ hiding in the city of ___res_
+ for the Mages Guild, who will
+ be in _res_.
+ I have =timer_ days to report
+ in ___questgiver_.
+
+QBN:
+
+Person _questgiver_ group Questor male
+Person _necr_ group Spellcaster
+
+Item _diam_ diamond
+
+Place _res_ remote house
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _enemy_ is Mage
+Foe _und1_ is Ghost
+Foe _und2_ is Wraith
+
+-- Quest start-up:
+  start timer _timer_
+  log 1030 step 0
+  place npc _necr_ at _res_
+  pc at _res_ set _inside_
+
+variable _inside_
+
+_skilled_ task:
+  when skill Destruction is at least 40
+
+_trapdamage_ task:
+  when _skilled_ and _spawn_
+  say 1010
+  cast Wizard's_Fire spell on _enemy_
+
+_suffertrap_ task:
+  when _spawn_ and not _skilled_
+  say 1011
+  reduce player health by 18
+
+_conv_ task:
+  clicked npc _necr_
+  say 1020
+  hide npc _necr_
+  place foe _enemy_ at _res_
+  change foe _enemy_ infighting true
+  change foe _enemy_ team 13
+
+_spawn_ task:
+  when _inside_ and _conv_ and not _slain_
+  create foe _und1_ every 0 minutes 1 times with 10% success
+  create foe _und2_ every 0 minutes 1 times with 10% success
+  change foe _und1_ infighting true
+  change foe _und2_ infighting true
+
+_slain_ task:
+  killed _enemy_
+  say 1022
+  remove foe _und1_
+  remove foe _und2_
+
+_victory_ task:
+  when _qgclicked_ and _slain_
+  give pc _diam_
+  end quest
+
+_qgclicked_ task:
+  clicked npc _questgiver_
+
+_clearclick_ task:
+  when _qgclicked_ and not _slain_
+  clear _qgclicked_ _clearclick_
+
+_timer_ task:
+  end quest

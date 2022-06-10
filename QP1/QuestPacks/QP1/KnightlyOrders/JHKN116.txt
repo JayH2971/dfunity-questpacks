@@ -1,0 +1,195 @@
+Quest: JHKN116
+DisplayName: Interview with an Orc
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                The orcs are brutal creatures, as all
+<ce>                 %crn will agree. Very rarely one or
+<ce>               another rises up with a brain surpassing
+<ce>                 the size of a grapefruit, wishing to
+<ce>                 negotiate for a peaceful concession
+<ce>                of lands or other territories in which
+<ce>                  its people may live. Such requests
+<ce>                are always suspect, but we entrust one
+<ce>                of them to you. Perhaps you may find a
+<ce>                way to do some good on this occasion.
+
+RefuseQuest:  [1001]
+<ce>                           Or perhaps not.
+
+AcceptQuest:  [1002]
+<ce>                   The creature has been allocated
+<ce>                          _res_ in ___res_.
+<ce>                You should arrive within =2res_ days,
+<ce>                 but it goes without saying that the
+<ce>                  family that owns the house wishes
+<ce>                the matter to be resolved immediately.
+<ce>                 No matter what happens, do not slay
+<ce>                 the orc within. They may be a filthy
+<ce>                 and cunning race of beasts, but they
+<ce>                   will use a death of their own to
+<ce>                   further their barbarous causes.
+<ce>                   Present this _trink_, which was
+<ce>                   previously agreed to be the sign
+<ce>                   for our negotiator. What happens
+<ce>                    from there will be your matter
+<ce>                              to handle.
+
+QuestFail:  [1003]
+<ce>               The orc warlord lies dead at your feet.
+<ce>                Its tribe now has even greater reason
+<ce>                      to raid the local region.
+
+QuestComplete:  [1004]
+<ce>                Well done, %pct. You have found peace
+<ce>               amidst tension. Remember that to prevent
+<ce>                    war is nobler than to wage it.
+
+Message:  1019
+<ce>                  You hear deep, throaty chuckling.
+<ce>                The orc is inside and waiting for you.
+
+Message:  1021
+<ce>                        (ORCISH CHECK PASSED)
+<ce>
+<ce>                    You present the _trink_ to the
+<ce>                 orc. It takes it and crushes it with
+<ce>                 one hand, tossing its remains to the
+<ce>             floor. The green warrior then begins to ask
+<ce>              questions. You answer vaguely, making sure
+<ce>                 not to promise anything the %t would
+<ce>                  not grant. It makes several brusk
+<ce>                 accusations concerning the %t, %crn,
+<ce>              and the filthy %ra in its presence before
+<ce>                  gradually calming down. Seeing no
+<ce>              opportunity to make headway, the creature
+<ce>                 ceases speaking and waves you away.
+<ce>                 You suppose this counts as success.
+
+Message:  1023
+<ce>                        (ORCISH CHECK FAILED)
+<ce>
+<ce>                    You present the _trink_ to the
+<ce>                orc, not sure how to proceed. It takes
+<ce>               it and crushes it with one hand, tossing
+<ce>              its remains to the floor. The warrior then
+<ce>             begins to ask questions, first roughly, then
+<ce>                mockingly. Once it realizes you speak
+<ce>            very little of its language, it pulls out its
+<ce>            weapon and decides to take a chance for sport.
+
+Message:  1024
+<ce>           The orc is perplexed at your insistence against
+<ce>               fighting. It shouts several confused and
+<ce>             incomprehensible statements, getting worked
+<ce>             up before gradually calming down. It appears
+<ce>               to feel guilty about fighting a foe who
+<ce>                refuses to raise a defense. Seeing no
+<ce>              opportunity to make headway, the creature
+<ce>                 ceases speaking and waves you away.
+<ce>                 You suppose this counts as success.
+
+Message:  1025
+<ce>             You hear the orc erupt into booming laughter
+<ce>          within the residence, and then dragging footsteps
+<ce>           lead away in a different direction. Whatever you
+<ce>       were supposed to negotiate appears not to have happened.
+
+Message:  1030
+%qdt:
+ _qgiver_ has sent me
+ to speak with an orc in
+ _res_ of ___res_
+ concerning some negotiation of
+ something or other. I have been
+ given a _trink_ which acts
+ as a sign of my authority.
+ I must find a peaceful resolution
+ and not slay the orc. I have
+ =2res_ days to finish the task
+ and return to ___qgiver_.
+
+QBN:
+Item _trink_ trinket
+
+Person _qgiver_ group Questor male
+
+Place _res_ remote house1
+
+Foe _orc_ is Orc_warlord
+
+Clock _2res_ 00:00 0 flag 1 range 0 2
+Clock _fight_ 00:09 00:12
+Clock _failsafe_ 120.00:00
+
+--	Quest start-up:
+  log 1030 step 0
+  start timer _2res_
+  start timer _failsafe_
+  get item _trink_
+  pc at _res_ set _inside_
+
+_inside_ task:
+  say 1019
+  take _trink_ from pc
+  create foe _orc_ every 0 minutes 1 times with 100% success
+
+_easy_ task:
+  when _inside_ and _skilled_
+  restrain foe _orc_
+  say 1021
+  start task _easywin_
+
+variable _easywin_
+_attack_ task:
+  when _inside_ and not _skilled_
+  say 1023
+  start timer _fight_
+  start task _wicked_
+
+variable _wicked_
+_fail1_ task:
+  when _wicked_ and not _inside_ and not _fight_
+  play sound pounding every 0 minutes 1 times
+  say 1025
+  end quest
+
+_fight_ task:
+  restrain foe _orc_
+  say 1024
+
+_fail2_ task:
+  killed _orc_
+  say 1003
+  end quest
+
+_skilled_ task:
+  when skill Orcish is at least 20
+
+_qgclicked_ task:
+  clicked npc _qgiver_
+
+_clearclick_ task:
+  when _qgclicked_ and not _fight_ and not _easywin_
+  clear _qgclicked_ _clearclick_
+
+_victory1_ task:
+  when _qgclicked_ and _fight_
+  start task _final_
+
+_victory2_ task:
+  when _qgclicked_ and _easywin_
+  start task _final_
+
+_final_ task:
+  give pc nothing
+  legal repute +3
+  end quest
+
+_2res_ task:
+  say 1003
+  end quest
+
+_failsafe_ task:
+  end quest

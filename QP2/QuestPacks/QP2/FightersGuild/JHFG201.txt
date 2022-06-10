@@ -1,0 +1,107 @@
+Quest: JHFG201
+DisplayName: Domestic Vampire
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          We've got a job for someone experienced like you,
+<ce>            %pcf, but I'm not gonna blame you for turning
+<ce>          it down. It involves one vampire and no sunlight.
+<ce>             You think you can fix that kind of problem?
+<ce>                 There's =reward_ gold in it for you.
+                                     <--->
+<ce>         Ever killed a vampire before, %pcf? Not one of them
+<ce>       ancients. We've got a request here to floor some simple
+<ce>                vampire in a house over in ___place_.
+<ce>               Take this one if you feel ready for it.
+
+RefuseQuest:  [1001]
+<ce>                   I'll look for someone else then.
+
+AcceptQuest:  [1002]
+<ce>            So here's the deal. You're headed to  _place_.
+<ce>               That'll be in ___place_. Slay the beast
+<ce>        and get back here so I can get you your =reward_ gold.
+<ce>         I'm giving you =timer_ days before I send for backup
+<ce>             from a temple or something. Good luck, %pcf.
+
+QuestFail:  [1003]
+<ce>                  You needed to return from slaying
+<ce>                   the vampire in ___place_ by now.
+
+QuestComplete:  [1004]
+<ce>                  Excellent work, %pcf. This is why
+<ce>                   we count on you. Have your gold.
+
+Message:  1010
+%qdt:
+ The Fighters Guild of
+ ___qgiver_ has sent me to
+ ___place_ to slay a vampire
+ in _place_.  I've got to
+ to be back in =timer_ days
+ or they'll call for the temple.
+
+Message:  1011
+<ce>                      "No!" The vampire shrieks
+<ce>                    before crumpling to the floor.
+
+Message:  1012
+<ce>                 (ATTRIBUTE CHECK FAILED: WILLPOWER)
+<ce>
+<ce>           The vampire raises her arms and shrieks, casting
+<ce>       a spell in self-defense. It only stuns you for a moment,
+<ce>    but it's enough for her to invoke multiple empowering spells.
+<ce>                     This fight just got harder.
+
+QBN:
+Item _reward_ gold range 300 to 400
+
+Person _qgiver_ group Questor male
+
+Place _place_ remote house1
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _enemy_ is Vampire
+
+--	Quest start-up:
+	start timer _timer_
+	log 1010 step 0
+	place foe _enemy_ at _place_
+	change foe _enemy_ infighting true
+
+_will_ task:
+	when attribute Willpower is at least 35
+
+_inj_ task:
+	injured _enemy_
+
+_failwill_ task:
+	when _inj_ and not _will_
+	say 1012
+	cast Heal spell on _enemy_
+	cast Feet_of_Notorgo spell on _enemy_
+	cast Orc_Strength spell on _enemy_
+	cast Shield spell on _enemy_
+	cast Shalidor's_Mirror spell on _enemy_
+
+_slain_ task:
+	killed _enemy_
+	say 1011
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _slain_
+	give pc _reward_
+	end quest
+
+_qgclicked_ task:
+	clicked npc _qgiver_
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_
+
+_timer_ task:
+	say 1003
+	end quest

@@ -1,0 +1,422 @@
+Quest: JHTP111
+DisplayName: A Cohort of the Daedra
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>         Rumors spread of a daedric cohort in ___questgiver_,
+<ce>      one who wishes to bring Oblivion's influence into Tamriel.
+<ce>       We cannot abide this, and wish to send someone to settle
+<ce>          this matter. Will you do some fact-finding for us?
+
+RefuseQuest:  [1001]
+<ce>            No problem. I presume it will be an easy task.
+
+AcceptQuest:  [1002]
+<ce>           "Because we think two minds surpass one, we have
+<ce>           taken on another investigator to accompany you.
+<ce>                  %pcn, meet _friend_. You two will
+<ce>             search the city for any clues about _cohort_
+<ce>    and the daedra. Have finished with this in three days' time."
+<ce>
+<ce>                _friend_ enthusiastically shakes your
+<ce>        hand and begins to follow you. "We'll figure this out,
+<ce>                     yes we will! Let's go %pcf!"
+<ce>
+<ce>              Before you leave, _questgiver_ speaks up.
+<ce>              "%pcf, you have the authority to make the
+<ce>             final decision here, being the higher rank.
+<ce>           _friend_'s job is only to assist you. Farewell."
+
+QuestFail:  [1003]
+
+QuestComplete:  [1004]
+<ce>                You hope you made the right decision.
+
+RumorsDuringQuest:  [1005]
+__questgiver_'s looking out for us common folk. Good for them!
+<--->
+A couple investigators from the temple are looking for daedra.
+
+Message:  1010
+<ce>                _friend_ speaks up, "Well, we can ask
+<ce>        people around town if they know anything. Once we get
+<ce>             some evidence, we can ask _cohort_ about it.
+<ce>               I know %g1's the owner of _coshop_, and
+<ce>               stays there most of the time. Now then,
+<ce>                   I'll follow you. Lead the way!"
+
+Message:  1011
+<ce>                  _friend_ steps forward. "_cohort_,
+<ce>           we come from __questgiver_ on rumors that you're
+<ce>               working with the daedra. Is that true?"
+<ce>
+<ce>        _cohort_ looks a little shocked but recovers quickly.
+<ce>        "Why, no, not at all! I'm a sworn enemy of the daedra.
+<ce>        I wish nothing but their banishment from all Tamriel!
+<ce>          Feel free to look around. I have nothing to hide."
+<ce>
+<ce>                       _friend_ shrugs at you.
+
+Message:  1012
+<ce>                Ooh! You're them investigators sent by
+<ce>              __questgiver_, right? I'll talk! I'll say
+<ce>             anything you want! Just give me 100 gold and
+<ce>                  I'll squawk like a birdie, I will!
+
+Message:  1013
+<ce>                  "100! That's the stuff! Yeah, so,
+<ce>              I can tell you lots of stuff. _cohort_ has
+<ce>             had a fascination with daedra since %g1 was
+<ce>              a young'un, I'm sure. Powerful creatures!
+<ce>       The kind of stuff a kid would love to dabble in. And I'm
+<ce>        a living, breathing witness! I hear whispering coming
+<ce>       way out of that house all the way to mine, every night!
+<ce>                     That, my friends, is proof!"
+<ce>
+<ce>             As excitable as _neighbor_ is, this is still
+<ce>                      evidence to follow up on.
+
+Message:  1014
+<ce>        Then I can't help y'all, gruel brains. Git outta here.
+
+Message:  1015
+<ce>                      No money? I'll wait here.
+
+Message:  1016
+<ce>                    _friend_ recoils at the sight.
+<ce>                "This is blood! Human blood, isn't it?
+<ce>            And look at the name written in it: _cohort_!
+<ce>             Why, this is proof positive! What else could
+<ce>                  it mean than that %g1 is guilty?"
+<ce>
+<ce>               This is something to ask _cohort_ about.
+
+Message:  1017
+<ce>            You find a letter here, which _friend_ reads.
+<ce>
+<ce>               "Our dear friend _cohort_, we thank thee
+<ce>               with fulsome hearts for thy benevolence.
+<ce>      Thou hast done much good with thy kin in ____questgiver_,
+<ce>             speaking well of us and pacifying our foes.
+<ce>            Visit us any time for a hospitality far beyond
+<ce>                   that of the peoples of Tamriel.
+<ce>
+                             Thy sisters forever,
+                             The Glenmoril Coven"
+<ce>
+<ce>    "Cohorting with witches. That's what a daedra lover would do!"
+<ce>           _friend_ shouts. "Let's show this to _cohort_!"
+
+Message:  1018
+<ce>           Suddenly, an ear-shattering boom splits the air.
+<ce>          The ground quakes slightly, and as you look at the
+<ce>        force's origin, you see a creature from another plane.
+<ce>                       It laughs and advances.
+
+Message:  1019
+<ce>          "This is terrifying! I'm never doing this again!"
+<ce>                _friend_ screams. "Let's be done with
+<ce>              this! That attack is evidence! _cohort_ is
+<ce>                     trying to stop us! Come on!"
+
+Message:  1020
+<ce>          You tell _cohort_ about _neighbor_'s accusations.
+<ce>
+<ce>          "Whisperings coming from my house? That is a lie!
+<ce>       How can you even hear whispering from another building?
+<ce>               _neighbor_ has hated me for years, ever
+<ce>          since I slept with the wrong person in %g3 family.
+<ce>         It was wrong and I've made amends, but %g1 will not
+<ce>                    forgive me! Do not trust %g2!"
+
+Message:  1021
+<ce>            You show _cohort_ the letter from the witches.
+<ce>
+<ce>            "Yes, that letter is from the Glenmoril Coven.
+<ce>       Years ago they healed my eye when the gods of the Empire
+<ce>     abandoned me. These sisters have power, and I wish everyone
+<ce>       could benefit from it. But to summon daedra? No, never!
+<ce>            I hate the daedra, same as anyone else here!"
+
+Message:  1022
+<ce>         You tell _cohort_ you saw %g3 name written in blood.
+<ce>
+<ce>  "That's impossible! I haven't been to that place this week, even!
+<ce>    I do not know anything about this, and have no idea who could
+<ce>     be setting me up! And besides, since when do the daedra ask
+<ce>       you to write your own name in blood? This has nothing to
+<ce>                        do with me, I swear!"
+
+Message:  1023
+<ce>         You tell _cohort_ that the daedra have attacked you.
+<ce>
+<ce>          "You're trying to blame that on me? What did I do
+<ce>       to deserve this? I have nothing to do with any of this!
+<ce>              I'm glad the monster is gone! I'm serious,
+<ce>                      I'm completely innocent!"
+
+Message:  1024
+<ce>                        _friend_ turns to you.
+<ce>             "Well, it looks like we've done work enough.
+<ce>           _questgiver_ says the decision is yours to make.
+<ce>             They'll want an answer soon. So what is it?
+<ce>                 Is _cohort_ a friend of the daedra?"
+
+Message:  1025
+<ce>                 "I agree! I'll go grab some guards!"
+<ce>
+<ce>            _friend_ sprints off and returns with a squad
+<ce>             of the city guard. They burst into _coshop_
+<ce>              and soon emerge with _cohort_ in manacles.
+<ce>             You hear %g2 cry, "No, please! I'm innocent!
+<ce>              %oth, you can't do this! Please, no, no!"
+<ce>             They carry %g2 off to fulfil your decision.
+
+Message:  1026
+<ce>        "Well, I don't like it, but I'll follow. I agree that
+<ce>      the evidence isn't perfect... I just we had more to go on.
+<ce>      The decision is yours, and you'll have to live with that."
+<ce>
+<ce>        _friend_ shakes your hand half-heartedly and departs.
+<ce>       _cohort_, if guilty, is now free to flee ___questgiver_
+<ce>                    and its remaining suspicions.
+
+Message:  1030
+%qdt:
+ __questgiver_ has paired me with
+ a fellow temple member named _friend_
+ to investigate rumors of a cohort of the daedra
+ in ___questgiver_ named _cohort_.
+ We should ask around about evidence against
+ %g2 and show them to %g2 in _coshop_.
+
+Message:  1031
+%qdt:
+ We received some rather excited testimony
+ from a neighbor of _cohort_ named
+ _neighbor_. We should take this
+ evidence to _cohort_.
+
+Message:  1032
+%qdt:
+ _cohort_ told us this neighbor
+ has a vendetta against %g2 and
+ should not be trusted.
+
+Message:  1033
+%qdt:
+ We found _cohort_'s name written in blood
+ in _cohouse_, %g3 other residence.
+
+Message:  1034
+%qdt:
+ _cohort_ claims %g1 hasn't visited the
+ other residence for days, and questioned
+ the purpose of %g3 own name being written
+ in blood.
+
+Message:  1035
+%qdt:
+ We found a letter from some witches
+ in _otherres_ explaining that
+ _cohort_ has a long history with them.
+
+Message:  1036
+%qdt: 
+ _cohort_ confessed to spending time with
+ witches, but only for their healing arts,
+ and not to summon daedra.
+
+Message:  1037
+%qdt:
+ _friend_ and I were attacked by
+ one of the daedra while investigating
+ _cohort_'s case. Perhaps this
+ is also evidence against %g2.
+
+Message:  1038
+%qdt:
+ _cohort_ told us %g1 hates
+ the daedra and is glad the
+ creature is gone.
+
+Message:  1039
+<ce>              __questgiver_ gave you three days to judge
+<ce>            _cohort_'s case. Your time is up, and judgment
+<ce>                      will be given to another.
+
+Message:  1055
+_cohort_ has a neighbor named _neighbor_, spends %g3 time at _tavern_. Talks a lot, you know?
+<--->
+_cohort_ stays in _coshop_ but lives elsewhere, in _cohouse_.
+<--->
+_cohort_ pays to store some old belongings in _otherres_.
+
+QBN:
+Person _questgiver_ group Questor
+Person _friend_ group Resident1
+Person _neighbor_ faction The_Thieves_Guild
+Person _cohort_ faction The_Merchants anyInfo 1055
+
+Place _cohouse_ local generalstore
+Place _otherres_ local tavern
+Place _tavern_ local tavern
+Place _coshop_ local pawnshop
+
+Item _blood_ werewolf_blood
+Item _blood2_ werewolf_blood
+Item _letter_ letter
+
+Clock _timer_ 3.00:00
+Clock _introd_ 0:02
+Clock _flee_ 0:10
+
+Foe _daed_ is Frost_daedra
+
+--	Quest start-up:
+    log 1030 step 0
+    start timer _timer_
+    start timer _introd_
+    add _friend_ face
+    place npc _cohort_ at _coshop_
+    place npc _neighbor_ at _tavern_
+    place item _blood_ at _cohouse_
+    place item _letter_ at _otherres_
+    pc at _coshop_ do _inside_
+
+_introd_ task:
+    say 1010
+
+_talkco_ task:
+    clicked npc _cohort_
+    start task _zeroevid_
+
+_zeroevid_ task:
+    say 1011
+
+variable _inside_
+
+_talkneighbor_ task:
+    clicked npc _neighbor_
+
+_neighb1_ task:
+    when _talkneighbor_ and not _nomoney_
+    prompt 1012 yes _pay_ no _refusepay_
+
+_refusepay_ task:
+    say 1014
+
+_pay_ task:
+    pay 100 money do _squeal_ otherwise do _nomoney_
+
+_nomoney_ task:
+    say 1015
+    clear _talkneighbor_
+
+_recurse_ task:
+    when _talkneighbor_ and _nomoney_
+    prompt 1012 yes _pay_ no _refusepay_
+
+_squeal_ task:
+    say 1013
+    log 1031 step 1
+    clear _talkco_
+
+_deliverrumor_ task:
+    when _talkco_ and _squeal_
+    say 1020
+    log 1032 step 2
+    start task _evid1_
+
+variable _evid1_
+
+_findletter_ task:
+    clicked item _letter_
+    clear _talkco_
+    say 1017
+    log 1035 step 3
+
+_deliverletter_ task:
+    when _talkco_ and _findletter_
+    say 1021
+    start task _evid2_
+    take _letter_ from pc
+    log 1036 step 4
+
+variable _evid2_
+
+_findblood_ task:
+    clicked item _blood_
+    say 1016
+    take _blood_ from pc
+    place item _blood2_ at _cohouse_
+    clear _talkco_
+    log 1033 step 5
+
+_deliverblood_ task:
+    when _talkco_ and _findblood_
+    say 1022
+    start task _evid3_
+    log 1034 step 6
+
+variable _evid3_
+_mix1_ task:
+    when _evid1_ and _evid2_
+    when _evid3_ and _evid2_
+    when _evid1_ and _evid3_
+
+_attack_ task:
+    when _mix1_ and not _inside_ and not _mix2_
+    start task _atk_
+
+_atk_ task:
+    say 1018
+    create foe _daed_ every 0 minutes 1 times with 100% success
+    change foe _daed_ infighting true
+    start timer _flee_
+
+_flee_ task:
+    start task _daedgone_
+    remove foe _daed_
+
+_kill_ task:
+    killed _daed_
+    start task _daedgone_
+
+_daedgone_ task:
+    say 1019
+    clear _talkco_
+    log 1037 step 7
+
+_talkdaed_ task:
+    when _talkco_ and _daedgone_
+    say 1023
+    start task _evid4_
+    log 1038 step 8
+
+variable _evid4_
+
+_mix2_ task:
+    when _evid1_ and _evid2_ and _evid3_
+    when _evid2_ and _evid3_ and _evid4_
+    when _evid1_ and _evid2_ and _evid4_
+    when _evid1_ and _evid3_ and _evid4_
+
+_final_ task:
+    when _mix2_ and not _inside_
+    prompt 1024 yes _judge_ no _release_
+
+_judge_ task:
+    say 1025
+    give pc nothing
+    end quest
+
+_release_ task:
+    say 1026
+    give pc nothing
+    end quest
+
+_timer_ task:
+    say 1039
+    end quest

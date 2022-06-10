@@ -1,0 +1,117 @@
+Quest: JHDB126
+DisplayName: Culling the Fighters
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>       It seems the Fighters Guild of late has begun
+<ce>  accepting contracts to slay civilized people.
+<ce>  We have no qualms when they kill harpies and spriggans,
+<ce>  but murder is Mephala's domain, and we will remove interlopers.
+<ce>  Your reward for killing three Fighters Guild members
+<ce>  will be an object enchanted with the power of levitation.
+
+RefuseQuest:  [1001]
+<ce>        You seem to love the Fighters Guild more
+<ce>  than the Brotherhood. This concerns me deeply.
+
+AcceptQuest:  [1002]
+<ce>     The manner of execution doesn't matter, so long as
+<ce>  the fear of the Brotherhood runs deep afterward.
+<ce>  Find them in _res_, to the %di.
+<ce>  You have two days to count the tale of their murder.
+
+QuestFail:  [1003]
+<ce>           All three are not dead, %pct.
+
+QuestComplete:  [1004]
+<ce>     Hmm. The city feels a little quieter with those barbarians dead.
+<ce>  Mephala enjoys silence, they say. As for you, take your _reward_,
+<ce> which will let you soar like a hawk. May it aid you in
+<ce> your service to the Night Mother.
+
+Message:  1010
+<ce>  This is the right house. Now you need to find
+<ce>  the Fighters Guild members within.
+
+Message:  1011
+<ce>  "Th-the Dark Brotherhood! Hey everyone!
+<ce>  Wake up! We got a fight on our hands!!"
+
+Message:  1012
+<ce>  The Brotherhood's foes are dead.
+
+Message:  1030
+%qdt:
+ The Dark Brotherhood of ___questgiver_
+ will give me an object empowered with
+ levitation if I kill three members of
+ the Fighters Guild who have engaged
+ in unsanctioned murder. They stay at
+ _res_ in the same town. I must
+ report my success within =timer_ days.
+
+QBN:
+Person _questgiver_ group Questor male
+Person _fgperson_ faction The_Fighters_Guild remote
+
+Place _res_ local house
+
+Clock _timer_ 2.00:00
+
+Item _reward_ item class 4 subclass 10
+
+Foe _enemy_ is Barbarian
+Foe _dae1_ is Warrior
+Foe _dae2_ is Archer
+
+--	Quest start-up:
+    start timer _timer_
+    place npc _fgperson_ at _res_
+    log 1030 step 0
+    pc at _res_ do _inside_
+
+_inside_ task:
+    say 1010
+    place npc _fgperson_ at _res_
+
+_talk_ task:
+    clicked npc _fgperson_
+    say 1011
+    place foe _enemy_ at _res_
+    create foe _dae1_ every 0 minutes 1 times with 100% success
+    create foe _dae2_ every 0 minutes 1 times with 100% success
+    hide npc _fgperson_
+
+_kill1_ task:
+    killed _enemy_
+    change repute with _fgperson_ by -10
+
+_kill2_ task:
+    killed _dae1_
+    change repute with _fgperson_ by -10
+
+_kill3_ task:
+    killed _dae2_
+    change repute with _fgperson_ by -10
+
+_victory_ task:
+    when _kill1_ and _kill2_ and _kill3_
+    say 1012
+
+_qgclicked_ task:
+    clicked npc _questgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _victory_
+    say 1003
+    clear _qgclicked_ _clearclick_
+    
+_pcgetsgold_ task:
+    when _qgclicked_ and _victory_
+    give pc _reward_
+    start quest JHDBC01
+    end quest
+
+_timer_ task:
+    end quest

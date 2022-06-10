@@ -1,0 +1,444 @@
+Quest: JHFG122
+DisplayName: Bouncer
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>             Hey, you have the time, %pcf? I've got a job
+<ce>      here for a tavern in town, but I'm not supposed to give it
+<ce>      out after 9 PM. They're gonna have a get-together of some
+<ce>         kind and they're worried about drunks, fights, that
+<ce>       kinda thing. It's paying standard fare, if you want it.
+
+RefuseQuest:  [1001]
+<ce>      It sounds like pretty tame stuff. Sure you don't want it?
+
+AcceptQuest:  [1002]
+<ce>       All right, but if it's after 9 right now it's your fault
+<ce>          for not catching me on it. The party's gonna be at
+<ce>                _tav_ here in town. You'll stay there
+<ce>           from 9 to sunrise or whenever they dismiss you,
+<ce>           whichever comes first. Keep the people safe and
+<ce>            you'll get paid your =reward_ gold. Report to
+<ce>                      _prop_ when you get there.
+
+QuestFail:  [1003]
+<ce>                    The party at _tav_ has begun,
+<ce>                   but you are nowhere to be found.
+
+QuestComplete:  [1004]
+<ce>                    _prop_ comes looking for you.
+<ce>
+<ce>           "The Fighters Guild's reputation is well earned.
+<ce>          We'll call for you next time we do one of these."
+
+QuestorPostFailure:  [1009]
+_prop_ keeps telling everyone about how bad you were for _tav_.
+
+Message:  1010
+<ce>                      _prop_ is waiting for you.
+<ce>
+<ce>              "Fighters Guild? All right. Stay here and
+<ce>                 make sure things stay under control.
+<ce>               I'll come for you when your shift's up."
+
+Message:  1011
+<ce>        The abundant alcohol in the tavern reduces some of the
+<ce>        patrons' inhibitions. One decides to run home to bring
+<ce>           a pet spider in to impress the others, but acute
+<ce>         arachnophobia takes them over, and the loud shouting
+<ce>        makes the creature panic. Soon it starts attacking all
+<ce>                 nearby living beings, including you.
+
+Message:  1012
+<ce>                  The spider's owner sobs bitterly,
+<ce>                 but _prop_ nods to you in approval.
+
+Message:  1013
+<ce>              "I heard there was a party going on here!
+<ce>                   Who's got the money bag, huh?!"
+<ce>
+<ce>             A group of scoundrels enters the tavern and
+<ce>               begins to shake the people down. _prop_
+<ce>             yells that they have a bodyguard and points
+<ce>              to you, leading the criminals toward you.
+
+Message:  1014
+<ce>        The drunken haze of the party makes some in attendance
+<ce>         believe this was all staged for their entertainment.
+<ce>           Once the smell of blood becomes apparent they'll
+<ce>                     probably change their minds.
+
+Message:  1015
+<ce>        An impromptu lottery game starts up among the patrons.
+<ce>        The winner will receive a sum of =smallg_ gold pieces
+<ce>       based on the donations of others. You are informed that,
+<ce>    as the night watch for the party, you can participate without
+<ce>            paying the entry fee. Do you join the lottery?
+
+Message:  1016
+<ce>            Names are put into a hat, and one is selected.
+<ce>
+<ce>                    "_dummy_, come get your gold!"
+<ce>
+<ce>         You return to your duties as the diversion subsides.
+
+Message:  1017
+<ce>            Names are put into a hat, and one is selected.
+<ce>
+<ce>                     "%pcn, come get your gold!"
+<ce>
+<ce>       Someone does you the favor of delivering the money, but
+<ce>           one malcontent gets suspicious of your victory.
+<ce>        A mix of alcohol and bravado leads to a confrontation.
+<ce>         _prop_ signals that self-defense is justified here.
+
+Message:  1018
+<ce>   Fortunately, your assailant wasn't known to any of the patrons.
+<ce>          Likely just a citizen of ___tav_ who wandered in.
+
+Message:  1019
+<ce>      A patron slumps down, and the tavern lights up with alarm.
+<ce>                         _prop_ runs to you.
+<ce>
+<ce>        "Alcohol poisoning. You're the most sober person here.
+<ce>                   Can you get this one to _temp_?
+<ce>        He's got family over there who can cure him for free.
+<ce>           Make sure it's the right temple. Please hurry."
+<ce>
+<ce>                  The inert body is brought to you.
+<ce>                This fellow's life now depends on you.
+
+Message:  1020
+<ce>        So soon as you enter the temple, the nearby attendant
+<ce>      turns pale and runs for help. Soon a bevy of helpers takes
+<ce>      the body from you for curing, which occurs without delay.
+<ce>       The first attendant promptly informs you of the success.
+
+Message:  1021
+<ce>              Curiously, you notice nearby a bag of gold
+<ce>              which appears to be out of everyone else's
+<ce>                sight. The adrenaline rush of today's
+<ce>               events may have worn them out too much,
+<ce>              lending to momentary distraction. Will you
+<ce>                   attempt to take it for yourself?
+
+Message:  1022
+<ce>                  (STEALTH/PICKPOCKET CHECK PASSED)
+<ce>
+<ce>           This is all too easy for one of your skill set.
+<ce>               The bag of money is now yours, adding an
+<ce>            additional =stealg_ gold pieces to your count.
+
+Message:  1023
+<ce>                  (STEALTH/PICKPOCKET CHECK FAILED)
+<ce>
+<ce>           Your movement while grabbing the coin bag is too
+<ce>           obvious. Someone peering over sees that you have
+<ce>          your hand on property which is clearly not yours.
+<ce>           The night hours are shattered by a shrill yell.
+<ce>
+<ce>             "THIEF! The Fighters Guild sent us a thief!
+<ce>                            Someone help!"
+<ce>
+<ce>             Something tells you they will not be paying
+<ce>              for your guard service. Perhaps you should
+<ce>              work on your thieving skills before trying
+<ce>                       to rip off your clients.
+                                     <--->
+<ce>           Your movement while grabbing the coin bag is too
+<ce>           obvious. Someone peering over sees that you have
+<ce>          your hand on property which is clearly not yours.
+<ce>           The night hours are shattered by a shrill yell.
+<ce>
+<ce>           "Help! We have a thief in the tavern! Help us!"
+<ce>
+<ce>             Something tells you they will not be paying
+<ce>              for your guard service. Perhaps you should
+<ce>              work on your thieving skills before trying
+<ce>                       to rip off your clients.
+
+Message:  1026
+<ce>   The crowd breaks out in an impromptu song, entirely out of key.
+
+Message:  1027
+<ce> "Oh yeah? You wanna fight about it? Come over here, I'll teach ya!"
+<ce>
+<ce>                       A fight fails to start.
+
+Message:  1029
+<ce>         "How's about we see if we throw bottles at that %ra
+<ce>           patrolling the tavern, see who hits %pg2 first?
+<ce>                              Ha ha ha!"
+<ce>
+<ce>         _prop_ rolls %g3 eyes and slaps the offender's head.
+
+Message:  1030
+%qdt:
+ The Fighters Guild in ___questgiver_ has assigned
+ me to guard _tav_ during a party tonight.
+ I have to be there by 21:00 and stand guard until
+ I am dismissed.
+
+Message:  1031
+<ce>         "Hey, I got an idea! How's about we take that scroll
+<ce>       you took from the Mages Guild and read it out together?"
+<ce>
+<ce>       Before anyone has sense enough to stop them, two drunks
+<ce>      read out what they presume to be the words on the scroll.
+<ce>        A creature with no allegiance appears out of thin air.
+
+Message:  1032
+<ce>          The people hoot and holler at your combat prowess.
+
+Message:  1033
+<ce>     "See this trick? I've got me a pet dragon! Watch, you all!"
+<ce>
+<ce>        A flash of light then bursts forth, and a small, scaly
+<ce>               creature begins flapping about. _prop_,
+<ce>       familiar with this trick, insists that you not kill it.
+
+Message:  1034
+<ce>                  "That filthy %ra killed my dragon!
+<ce>                  What's wrong with you, ingrate?!"
+<ce>
+<ce>                _prop_ tries to calm the rowing crowd,
+<ce>            but this is a bit too much for %g2 to handle.
+<ce>            Apparently you won't be getting paid for this.
+
+Message:  1035
+ %qdt:
+_prop_ needs me to take a drunk
+to _temp_ in town.
+
+Message:  1036
+<ce>             The drunk has stopped breathing altogether.
+<ce>              It took you far too long to get to _temp_.
+<ce>             _prop_, too irate for words, refuses to pay.
+
+Message:  1037
+<ce>           The dragon is pulled back into a small runed box
+<ce>     held by one of the patrons, and they all roar with laughter.
+
+QBN:
+Item _reward_ gold
+Item _stealg_ gold
+Item _smallg_ gold range 150 to 350
+
+Person _questgiver_ group Questor male
+Person _prop_ group Local_3.0
+Person _dummy_ group Local_3.1
+
+Place _tav_ local tavern
+Place _temp_ local temple
+
+Clock _t1_ 0:45
+Clock _t2_ 0:45
+Clock _t3_ 0:45
+Clock _t4_ 0:45
+Clock _t5_ 0:45
+Clock _t6_ 0:45
+Clock _t7_ 0:45
+Clock _t8_ 0:45
+Clock _victory_ 0:45
+Clock _drunk_ 2:00
+Clock _draglife_ 0:05
+Clock _delay_ 00:00
+
+Foe _rob_ is 3 Thief
+Foe _bard_ is Bard
+Foe _spid_ is Spider
+Foe _firat_ is Fire_atronach
+Foe _iceat_ is Ice_atronach
+Foe _drag_ is Dragonling_souless
+
+--	Quest start-up:
+    log 1030 step 0
+    pc at _tav_ set _inside_
+
+_arriv_ task:
+    daily from 21:00 to 21:59
+
+_duty_ task:
+    daily from 6:00 to 22:00
+
+_fail_ task:
+    when not _duty_ and not _inside_ and not _e4_
+    say 1003
+    end quest
+
+variable _dud_
+_inside_ task:
+    play sound talking_loud every 0 minutes 100 times
+
+_start_ task:
+    when _inside_ and _arriv_
+    say 1010
+    start timer _t1_
+
+_t1_ task:
+    pick one of _e1_ _e2_ _e3_ _e5_ _e8_ _e9_ _e11_ _e12_ _e13_ _dud_ _dud_ _dud_ _dud_ _dud_ _dud_
+    start timer _t2_
+
+_t2_ task:
+    pick one of _e1_ _e2_ _e3_ _e5_ _e8_ _e9_ _e11_ _e12_ _e13_ _dud_ _dud_ _dud_ _dud_ _dud_ _dud_
+    start timer _t3_
+
+_t3_ task:
+    pick one of _e1_ _e2_ _e3_ _e5_ _e8_ _e9_ _e11_ _e12_ _e13_ _dud_ _dud_ _dud_ _dud_ _dud_ _dud_
+    start timer _t4_
+
+_t4_ task:
+    pick one of _e1_ _e2_ _e3_ _e5_ _e8_ _e9_ _e11_ _e12_ _e13_ _dud_ _dud_ _dud_ _dud_ _dud_ _dud_
+    start timer _t5_
+
+_t5_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e8_ _e9_ _e11_ _e12_ _e13_ _dud_ _dud_ _dud_ _dud_ _dud_ _dud_
+    start timer _t6_
+
+_t6_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e8_ _e9_ _e11_ _e12_ _e13_ _dud_ _dud_ _dud_ _dud_ _dud_ _dud_
+    start timer _t7_
+
+_t7_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e8_ _e9_ _e11_ _e12_ _e13_ _dud_ _dud_ _dud_ _dud_ _dud_ _dud_
+    start timer _t8_
+
+_t8_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e8_ _e9_ _e11_ _e12_ _e13_ _dud_ _dud_ _dud_ _dud_ _dud_ _dud_
+    start timer _victory_
+
+_e1_ task:
+    say 1011
+    create foe _spid_ every 0 minutes 1 times with 100% success
+    change foe _spid_ infighting true
+
+_e1a_ task:
+    killed _spid_
+    say 1012
+
+_e2_ task:
+    say 1013
+    create foe _rob_ every 0 minutes 1 times with 100% success
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _rob_ infighting true
+    clear _infight_
+
+_e2a_ task:
+    killed 3 _rob_
+    say 1014
+
+_e3_ task:
+    prompt 1015 yes _entry_ no _refuse_
+
+variable _refuse_
+_entry_ task:
+    pick one of _loser_ _loser_ _winner_
+
+_loser_ task:
+    say 1016
+
+_winner_ task:
+    say 1017
+    create foe _bard_ every 0 minutes 1 times with 100% success
+
+_e3a_ task:
+    killed _bard_
+    say 1018
+
+_e4_ task:
+    say 1019
+    start timer _drunk_
+    pc at _temp_ set _cure_
+    log 1035 step 1
+    stop timer _t1_
+    stop timer _t2_
+    stop timer _t3_
+    stop timer _t4_
+    stop timer _t5_
+    stop timer _t6_
+    stop timer _t7_
+    stop timer _t8_
+
+_drunk_ task:
+    say 1036
+    end quest
+
+_cure_ task:
+    say 1020
+    start timer _delay_
+
+_delay_ task:
+    start task _victory_
+
+_e5_ task:
+    prompt 1021 yes _st1_ no _refuse_
+
+variable _st1_
+_st2_ task:
+    when _st1_ and _skill_
+    say 1022
+    get item _stealg_
+
+_stfail_ task:
+    when _st1_ and not _skill_
+    say 1023
+    get item _stealg_
+    end quest
+
+_stealth_ task:
+    when skill Stealth is at least 75
+    start task _skill_
+
+_pickpocket_ task:
+    when skill Pickpocket is at least 45
+    start task _skill_
+
+variable _skill_
+
+_e8_ task:
+    say 1026
+
+_e9_ task:
+    say 1027
+
+_e11_ task:
+    say 1029
+
+_e12_ task:
+    say 1031
+    pick one of _sum1_ _sum2_
+
+_sum1_ task:
+    create foe _firat_ every 0 minutes 1 times with 100% success
+    change foe _firat_ infighting true
+
+_sum2_ task:
+    create foe _iceat_ every 0 minutes 1 times with 100% success
+    change foe _iceat_ infighting true
+
+_killsum_ task:
+    killed _firat_
+    killed _iceat_
+    say 1032
+
+_e13_ task:
+    say 1033
+    create foe _drag_ every 0 minutes 1 times with 100% success
+    restrain foe _drag_
+    start timer _draglife_
+
+_e13a_ task:
+    killed _drag_
+    say 1034
+    end quest
+
+_draglife_ task:
+    remove foe _drag_
+    say 1037
+
+_victory_ task:
+    give pc _reward_
+    end quest

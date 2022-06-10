@@ -9,31 +9,31 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHFG003, FightersGuild, M, 5, 0, a quest to slay a criminal in a dungeon
-JHFG003a, FightersGuild, P, 0, 0, consequences of FG003
-JHFG003b, FightersGuild, P, 0, 0, consequences of FG003
-JHFG003c, FightersGuild, P, 0, 0, consequences of FG003
-JHFG003d, FightersGuild, P, 0, 0, consequences of FG003
-JHFG004, FightersGuild, M, 0, 0, a quest to guard a residence from intruders
-JHFG006, FightersGuild, M, 2, 0, a quest to stop an assassination inside a home
-JHFG007, FightersGuild, M, 1, 1, courier work + ambush in a house
-JHFG008, FightersGuild, M, 5, 1, a quest to defend a vampire in a palace
-JHFG009, FightersGuild, M, 2, 0, expert werewolf hunting
-JHFG011, FightersGuild, M, 8, 1, an artifact quest to invade a vampire cult
-JHFG013, FightersGuild, M, 1, 0, a quest to get a giant out of a house
-JHFG015, FightersGuild, M, 0, 0, a quest to fight in a dungeon with a partner
-JHFG018, FightersGuild, M, 2, 1, a quest to destroy skeletons in a cemetery
-JHFG019, FightersGuild, M, 6, 0, a quest to defend the city against appearing monsters
-JHFG020, FightersGuild, M, 1, 0, a quest to persuade a guild member to start again
-JHFG021, FightersGuild, M, 1, 0, a quest to escort a debtor
-JHFG022, FightersGuild, M, 1, 0, a quest to guard a tavern
-JHFG024, FightersGuild, M, 4, 1, a contest to kill bats
-JHFG026, FightersGuild, M, 1, 0, a quest to interrupt thieves' plan to destroy evidence
-JHFG027, FightersGuild, M, 4, 1, a quest to help someone fleeing the Dark Brotherhood
-JHFG027a, FightersGuild, P, 4, 1, a quest to help someone fleeing the Dark Brotherhood
-JHFG028, FightersGuild, M, 8, 1, a quest to supposedly escort someone
-JHFG029, FightersGuild, M, 7, 1, a quest to meet a mysterious dueler
-JHFG030, FightersGuild, M, 3, 1, a quest to help clear a cemetery of its guardian
-JHFG031, FightersGuild, M, 2, 1, a quest to rescue a child from a dungeon
-JHFG032, FightersGuild, M, 10, 1, a quest to destroy a conducting atronach in a house
-JHFG033, FightersGuild, M, 1, 1, a quest to deliver a bag of gold across town
+JHFG103, FightersGuild, M, 5, 0, a quest to slay a criminal in a dungeon
+JHFG103a, FightersGuild, P, 0, 0, consequences of FG003
+JHFG103b, FightersGuild, P, 0, 0, consequences of FG003
+JHFG103c, FightersGuild, P, 0, 0, consequences of FG003
+JHFG103d, FightersGuild, P, 0, 0, consequences of FG003
+JHFG104, FightersGuild, M, 0, 0, a quest to guard a residence from intruders
+JHFG106, FightersGuild, M, 2, 0, a quest to stop an assassination inside a home
+JHFG107, FightersGuild, M, 1, 1, courier work + ambush in a house
+JHFG108, FightersGuild, M, 5, 1, a quest to defend a vampire in a palace
+JHFG109, FightersGuild, M, 2, 0, expert werewolf hunting
+JHFG111, FightersGuild, M, 8, 1, an artifact quest to invade a vampire cult
+JHFG113, FightersGuild, M, 1, 0, a quest to get a giant out of a house
+JHFG115, FightersGuild, M, 0, 0, a quest to fight in a dungeon with a partner
+JHFG118, FightersGuild, M, 2, 1, a quest to destroy skeletons in a cemetery
+JHFG119, FightersGuild, M, 6, 0, a quest to defend the city against appearing monsters
+JHFG120, FightersGuild, M, 1, 0, a quest to persuade a guild member to start again
+JHFG121, FightersGuild, M, 1, 0, a quest to escort a debtor
+JHFG122, FightersGuild, M, 1, 0, a quest to guard a tavern
+JHFG124, FightersGuild, M, 4, 1, a contest to kill bats
+JHFG126, FightersGuild, M, 1, 0, a quest to interrupt thieves' plan to destroy evidence
+JHFG127, FightersGuild, M, 4, 1, a quest to help someone fleeing the Dark Brotherhood
+JHFG127a, FightersGuild, P, 4, 1, a quest to help someone fleeing the Dark Brotherhood
+JHFG128, FightersGuild, M, 8, 1, a quest to supposedly escort someone
+JHFG129, FightersGuild, M, 7, 1, a quest to meet a mysterious dueler
+JHFG130, FightersGuild, M, 3, 1, a quest to help clear a cemetery of its guardian
+JHFG131, FightersGuild, M, 2, 1, a quest to rescue a child from a dungeon
+JHFG132, FightersGuild, M, 10, 1, a quest to destroy a conducting atronach in a house
+JHFG133, FightersGuild, M, 1, 1, a quest to deliver a bag of gold across town

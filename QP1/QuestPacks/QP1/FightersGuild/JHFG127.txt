@@ -1,0 +1,47 @@
+Quest: JHFG127
+DisplayName: Dark Sayings
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> Hey, this is kind of weird to say, but I've
+<ce> got a letter here with the Dark Brotherhood's seal
+<ce> on it, and your name too. Is this something
+<ce> that could actually be meant for you?
+
+RefuseQuest:  [1001]
+<ce> And I'm already tearing it up. Don't
+<ce> want that around here, no sirree.
+
+AcceptQuest:  [1002]
+<ce> All right, but just a favor I'm gonna ask,
+<ce> try to keep that stuff out of here, all right?
+<ce> A lot of our people are decent folk.
+<ce> I mean, I trust you for your work, but
+<ce> we've got a reputation to maintain here.
+
+QuestFail:  [1003]
+<ce> You discard the Dark Brotherhood letter,
+<ce> having never read its contents.
+
+QBN:
+Item _letter_ letter
+
+Person _fg_ faction The_Fighters_Guild
+
+Clock _timer_ 6.00:00
+
+--	Quest start-up:
+	start timer _timer_ 
+	get item _letter_
+	_letter_ used do _advance_
+
+_advance_ task:
+	start quest JHFG127a
+	change repute with _fg_ by +2
+	end quest
+
+_timer_ task:
+    say 1003
+	change repute with _fg_ by +2
+	end quest 

@@ -1,0 +1,123 @@
+Quest: JHTP105
+DisplayName: Pacification Rite
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> There's an unusual number of requests regarding
+<ce> the undead this season. One available task is
+<ce> to go to ___res_ and calm a
+<ce> restless spirit in _res_.
+<ce> Are you in the mood for it?
+
+RefuseQuest:  [1001]
+<ce> Feeling a bit more adventurous then?
+
+AcceptQuest:  [1002]
+<ce> We have been specifically asked not
+<ce> to dispel the spirit by any means.
+<ce> If you harm it, you will answer to me.
+<ce> Get as close as you comfortably can
+<ce> and activate this _holy_.
+<ce> This normally wouldn't work, but the
+<ce> patron making the request has informed
+<ce> us of particular circumstances that
+<ce> raise the possibility of a pacification.
+<ce> Once this is done, return the _holy_
+<ce> to me and report on the matter.
+<ce> I will see you here in =timer_ days.
+
+QuestFail:  [1003]
+<ce> _qgiver_ wanted a report on
+<ce> the ghost of ___res_ by today.
+
+QuestComplete:  [1004]
+<ce> Was it so simple? Good work, %pct.
+<ce> I'll take the _holy_ back now.
+
+RumorsDuringQuest:  [1005]
+I think a zombie or a mummy started walking around _res_ in ___res_.
+
+RumorsPostfailure:  [1006]
+They say Lysandus showed up over in ___res_ and fought someone from a temple.
+
+QuestorPostfailure:  [1009]
+Sometimes I wonder if you're really cut out for this.
+<--->
+I haven't forgotten about the ghost of ___res_.
+
+Message: 1020
+<ce> The spirit's face contorts in agony.
+<ce> It emits indistinct whispers incapable
+<ce> of forming coherent statements.
+
+Message: 1021
+<ce> The _holy_ begins to glow softly, and the
+<ce> ghost's movements slow. Its features soften,
+<ce> and soon it hovers in tranquility.
+<ce> _qgiver_ will want to know of this.
+
+Message: 1022
+<ce> You have slain the ghost of ___res_.
+<ce> This action reflects poorly on the temple.
+
+Message:  1030
+%qdt:
+ _qgiver_ of ___qgiver_
+ has tasked me with pacifying a restless
+ spirit in _res_ at ___res_.
+ A _holy_ I have been given will
+ do the work for me. I should get
+ as close as I can and activate it.
+ I have =timer_ days to return to
+ report on the matter.
+
+QBN:
+Item _holy_ Holy_relic
+
+Person _qgiver_ group Questor
+
+Place _res_ remote house
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _ghost_ is Ghost
+
+--	Quest start-up:
+	log 1030 step 0 
+  get item _holy_
+  start timer _timer_
+  pc at _res_ set _inside_
+  place foe _ghost_ at _res_
+
+_talk_ task:
+  injured _ghost_
+  say 1020 
+
+_inside_ task:
+  _holy_ used do _persuade_
+
+_slain_ task:
+  killed _ghost_
+  say 1022
+  end quest
+
+_persuade_ task:
+	say 1021
+  restrain foe _ghost_
+
+_qgclicked_ task:
+  clicked npc _qgiver_
+
+_clearclick_ task:
+  when _qgclicked_ and not _persuade_
+  clear _qgclicked_ _clearclick_
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _persuade_
+	give pc nothing
+	end quest
+ 
+_timer_ task:
+  say 1003
+  end quest

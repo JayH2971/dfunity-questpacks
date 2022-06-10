@@ -1,0 +1,327 @@
+Quest: JHTP109
+DisplayName: Purge
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>           Have you any ability to dispel the undead, %pct?
+<ce>          Any variant of the spell will do. It just requires
+<ce>         that you cast it yourself. Bit of nefarious dealings
+<ce>       with the Necromancers that we've been asked to clean up.
+
+RefuseQuest:  [1001]
+<ce>       I may have to send out to the Mages Guild for this one.
+
+AcceptQuest:  [1002]
+<ce>       I'll take your word for it. We were quite surprised when
+<ce>        the %t sent us word that a local couple had lent their
+<ce>         house to the Necromancers for several dark rituals.
+<ce>      They've since had a change of heart and asked us for help
+<ce>      in removing the influence of the undead from their abode.
+<ce>
+<ce>      Lest you think this will be a normal trip to slay a mummy,
+<ce>            I forewarn you that it will not be. Find some
+<ce>          comfortable place in the house to cast the dispel
+<ce>        effect and then remain in the building. If you leave,
+<ce>     things will get much worse. Your life force will sustain the
+<ce>      divine influence while you remain there. I suspect it will
+<ce>       take about twenty-four hours for the purge to complete.
+<ce>             Such is the power of the wicked Necromancers
+<ce>             once you let them wield a little influence.
+<ce>           I'll expect you to arrive by this time tomorrow.
+<ce>                 Look for _res_ here near in ___res_.
+<ce>                 I will await your successful report.
+
+QuestFail:  [1003]
+<ce>              _questgiver_ needed you to begin removing
+<ce>                 the dark influence of _res_ by now.
+
+QuestComplete:  [1004]
+<ce>    The difference in ___res_ is palpable, even from here. I need
+<ce>     no further proof of your doings. Darkness has fled a little
+<ce>             this day. Fine work, %pcf. Take this _tri_.
+
+Message:  1010
+<ce>       This is clearly the right building. The residents should
+<ce>             feel relief to see you, but are disturbed by
+<ce>                       the malignant influence.
+
+Message:  1011
+<ce>                           "No... No! NO!"
+<ce>
+<ce>        The Necromancers have bound a spirit here to maintain
+<ce>           their influence. This will be a long day indeed.
+
+Message:  1012
+<ce>                   The spirit that lingers here has
+<ce>           been given power to materialize multiple times.
+<ce>          The Necromancers' power is not to be trifled with.
+
+Message:  1013
+<ce>         "Begone... Begone... Begone... Begone... Begone..."
+
+Message:  1014
+<ce>                    "Death comes for you, %ra..."
+
+Message:  1015
+<ce>                 "How long will I endure this pain?"
+
+Message:  1016
+<ce>                 "Please, stop, stop, stop, stop..."
+
+Message:  1017
+<ce>          "Are you my missing child? Come to me, sweetie..."
+
+Message:  1018
+<ce>        "Cease... this... incantation... for... my... pain..."
+
+Message:  1019
+<ce>                 "Release me from undeath! Free me!"
+
+Message:  1020
+<ce>           "You will regret challenging the Necromancers!"
+
+Message:  1021
+<ce>           "Darkness will always devour the light, mortal."
+
+Message:  1022
+<ce>           "Quickly, leave this place... I will give in..."
+
+Message:  1023
+<ce>             "I'm almost free! Please, leave the building
+<ce>                      and cast the spell anew!"
+
+Message:  1024
+<ce>                   "Give in and become as we are!"
+
+Message:  1025
+<ce>    The effect has taken permanent hold. The spirit bound to this
+<ce>    home dissipates, impotent to work further in the mortal realm.
+<ce>                 _questgiver_ will await your report.
+
+Message:  1030
+%qdt:
+ _questgiver_ has sent me to purify
+ _res_, a local home, from
+ the Necromancers' influence.
+ I am to cast any spell to dispel the undead
+ within and then remain inside for twenty-four
+ hours. I should begin before a day has passed.
+
+Message:  1031
+<ce>           You leave the residence and suddenly hear a loud
+<ce>      whooping sound come from within, then above, the building.
+<ce>       The malignant influence you were trapping and nullifying
+<ce>    springs free of its confines and rushes out into the open air.
+<ce>        Soon it will be under the control of the Necromancers
+<ce>                  for yet another villainous scheme.
+
+QBN:
+Item _tri_ trinket
+
+Person _questgiver_ group Questor male
+Person _dummynec_ faction The_Necromancers
+
+Foe _ghost_ is Ghost
+Foe _wraith_ is Wraith
+
+Place _res_ local house
+
+Clock _timer_ 1.00:00
+Clock _t1_ 0:56 1:26
+Clock _t2_ 0:56 1:26
+Clock _t3_ 0:56 1:26
+Clock _t4_ 0:56 1:26
+Clock _t5_ 0:56 1:26
+Clock _t6_ 0:56 1:26
+Clock _t7_ 0:56 1:26
+Clock _t8_ 0:56 1:26
+Clock _t9_ 0:56 1:26
+Clock _t10_ 0:56 1:26
+Clock _t11_ 0:56 1:26
+Clock _t12_ 0:56 1:26
+Clock _t13_ 0:56 1:26
+Clock _t14_ 0:56 1:26
+Clock _t15_ 0:56 1:26
+Clock _t16_ 0:56 1:26
+Clock _t17_ 0:56 1:26
+Clock _t18_ 0:56 1:26
+Clock _t19_ 0:56 1:26
+Clock _victory_ 1.00:00
+
+--	Quest start-up:
+    log 1030 step 0
+    pc at _res_ set _inside_
+    start timer _timer_
+
+_inside_ task:
+    say 1010
+    cast Dispel-Undead effect do _cast_
+
+_sound1_ task:
+    when _inside_ and not _cast_
+    play sound Ghost_1 every 2 minutes 100 times
+
+_cast_ task:
+    say 1011
+    stop timer _timer_
+    start timer _victory_
+    start timer _t1_
+
+_fail_ task:
+    when _cast_ and not _inside_ and not _victory_
+    say 1031
+    end quest
+
+_sound2_ task:
+    when _cast_ and _inside_ and not _victory_
+    play sound whisting_wind_4 every 2 minutes 100 times
+
+_spawn_ task:
+    when _cast_ and not _victory_
+    create foe _ghost_ every 23 minutes indefinitely with 8% success
+    create foe _wraith_ every 41 minutes indefinitely with 11% success
+
+_slain_ task:
+    killed _ghost_
+    killed _wraith_
+    say 1012
+
+_t1_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t2_
+
+_t2_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t3_
+
+_t3_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t4_
+
+_t4_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t5_
+
+_t5_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t6_
+
+_t6_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t7_
+
+_t7_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t8_
+
+_t8_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t9_
+
+_t9_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t10_
+
+_t10_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t11_
+
+_t11_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t12_
+
+_t12_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t13_
+
+_t13_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t14_
+
+_t14_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t15_
+
+_t15_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t16_
+
+_t16_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t17_
+
+_t17_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t18_
+
+_t18_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+    start timer _t19_
+
+_t19_ task:
+    pick one of _e1_ _e2_ _e3_ _e4_ _e5_ _e6_ _e7_ _e8_ _e9_ _e10_ _e11_ _e12_
+
+_e1_ task:
+    say 1013
+
+_e2_ task:
+    say 1014
+
+_e3_ task:
+    say 1015
+
+_e4_ task:
+    say 1016
+
+_e5_ task:
+    say 1017
+
+_e6_ task:
+    say 1018
+
+_e7_ task:
+    say 1019
+
+_e8_ task:
+    say 1020
+
+_e9_ task:
+    say 1021
+
+_e10_ task:
+    say 1022
+
+_e11_ task:
+    say 1023
+
+_e12_ task:
+    say 1024
+
+_victory_ task:
+    say 1025
+    stop timer _t12_
+    stop timer _t13_
+    stop timer _t14_
+    stop timer _t15_
+    stop timer _t16_
+    stop timer _t17_
+    stop timer _t18_
+    stop timer _t19_
+--    change repute with _dummynec_ by -5
+
+_pcgetsgold_ task:
+    when _qgclicked_ and _victory_
+    give pc _tri_
+    end quest
+
+_qgclicked_ task:
+    clicked npc _questgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _victory_
+    clear _qgclicked_ _clearclick_
+
+_timer_ task:
+    say 1003
+    end quest

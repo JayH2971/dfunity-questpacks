@@ -1,0 +1,168 @@
+Quest: JHKN120
+DisplayName: Subterfuge
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>    A regional city needs to root out some problematic criminals.
+<ce>     They need someone to go in from the outside. Are you willing
+<ce>                  to be an accomplice to the scheme?
+
+RefuseQuest:  [1001]
+<ce>               And why not? What repulses you about it?
+
+AcceptQuest:  [1002]
+<ce>     That's the spirit. Take this paper. It has some sort of code
+<ce>     statement that will make the criminals believe you a friend.
+<ce>        Speak those words in a populated part of ___captive_.
+<ce>        Then do what you must to find their place of meeting.
+<ce>            Your mission is to end this band's existence,
+<ce>            and we will expect your return after you have
+<ce>         slain the ringleader, no sooner. Fair travels, %pct.
+<ce>                         You have one month.
+
+QuestFail:  [1003]
+<ce>                 _qgiver_ tasked you with finding and
+<ce>             slaying the criminals of ___captive_ by now.
+
+QuestComplete:  [1004]
+<ce>            I knew we had put the matter into good hands.
+<ce>              No doubt ___captive_ will spring back into
+<ce>                form in little time. Fine work, %pcf.
+
+Message:  1021
+<ce>       You read the lengthy tract aloud. Before you finish, you
+<ce>          notice a hooded figure standing nearby, apparently
+<ce>              waiting for you to strike a conversation.
+
+Message:  1022
+<ce>                 Having gained the first strike, you
+<ce>                    catch the scoundrel off guard.
+<ce>
+<ce>                "No, wait! My life isn't worth this!"
+<ce>
+<ce>          A terse interrogation follows, in which you learn
+<ce>                 the band makes its home in ___dung_.
+<ce>             Your hapless informant pleads to be spared.
+                                     <--->
+<ce>                 Having gained the first strike, you
+<ce>                    catch the scoundrel off guard.
+<ce>
+<ce>                        "No, stop! I'll talk!"
+<ce>
+<ce>          A terse interrogation follows, in which you learn
+<ce>                 the band makes its home in ___dung_.
+<ce>             Your hapless informant pleads to be spared.
+
+Message:  1023
+<ce>           This appears to have been the ringleader of the
+<ce>             band. Counting all the others you have slain
+<ce>                  here, it is easy to conclude that
+<ce>                    ___captive_'s threat is over.
+
+Message:  1026
+<ce>               A hostile guard notices your arrival at
+<ce>                         ___dung_ and begins
+<ce>              to shout alarums to the rest of the band.
+
+Message:  1030
+%qdt:
+ _qgiver_ in ___qgiver_ has sent me
+ to ___captive_ to root out a persistent and
+ dangerous criminal band hiding in it.
+ I have a piece of paper that should attract
+ someone's attention, from whom I may
+ be able to get more information. I have
+ two months to slay the criminal group.
+
+Message:  1031
+%qdt:
+ I have learned that ___captive_'s invaders
+ work out of ___dung_ in ____dung_.
+
+QBN:
+Item _magic_ magic_item
+Item _letter_ letter
+
+Person _qgiver_ group Questor male
+
+Place _captive_ remote tavernhome
+Place _dung_ remote farmhome
+
+Clock _timer_ 30.00:00
+
+Foe _enemy1_ is Burglar
+Foe _enemy2_ is Thief
+Foe _enemy4_ is Nightblade
+Foe _meet_ is Thief
+
+--	Quest start-up:
+  start timer _timer_
+  log 1030 step 0
+  pc at _captive_ set _city_
+  pc at _dung_ set _pres_
+  _letter_ used do _read_
+  get item _letter_
+
+_city_ task:
+  _letter_ used do _read_
+
+_read_ task:
+  say 1021
+  create foe _meet_ every 0 minutes 1 times with 100% success
+  restrain foe _meet_
+
+-variable _safe_
+-_found_ task:
+-  when _safe_ and _read_
+-  say 1021
+-  create foe _meet_ every 0 minutes 1 times with 100% success
+-  restrain foe _meet_
+
+_inj_ task:
+  injured _meet_
+  say 1022
+  give item _magic_ to _meet_
+  make _magic_ permanent
+  restrain foe _meet_
+  log 1031 step 1
+
+variable _pres_
+_spawn_ task:
+  when _pres_ and not _first_
+  say 1026
+  create foe _enemy2_ every 0 minutes 1 times with 100% success
+  create foe _enemy1_ every 1 minutes indefinitely with 30% success
+  create foe _enemy2_ every 1 minutes indefinitely with 45% success
+
+_first_ task:
+  killed 3 _enemy1_
+  killed 3 _enemy2_
+  create foe _enemy4_ every 0 minutes 1 times with 100% success
+
+_infight_ task:
+  daily from 0:00 to 23:59
+  change foe _enemy1_ infighting true
+  change foe _enemy2_ infighting true
+  clear _infight_
+
+_slain_ task:
+  killed _enemy4_
+  say 1023
+
+_qgclicked_ task:
+  clicked npc _qgiver_
+
+_clearclick_ task:
+  when _qgclicked_ and not _slain_
+  clear _qgclicked_ _clearclick_
+
+_pcreward_ task:
+  when _qgclicked_ and _slain_
+  give pc nothing
+  legal repute +5
+  end quest
+
+_timer_ task:
+  say 1003
+  end quest

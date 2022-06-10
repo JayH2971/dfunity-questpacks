@@ -1,0 +1,128 @@
+Quest: JHFG124
+DisplayName: Box of Bats
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>              Ah, perfect. I bet you'd be right for this
+<ce>               one thing. We've got a bet running that
+<ce>              no one can survive a swarm of fifty bats.
+<ce>                     You wanna prove them wrong?
+
+RefuseQuest:  [1001]
+<ce>                 Man, I've got money riding on this.
+<ce>                          Who's gonna do it?
+
+AcceptQuest:  [1002]
+<ce>           Awesome! I'm with ya. People here are absolutely
+<ce>          convinced that fifty is too many, but we're gonna
+<ce>               prove 'em wrong. You'll need this chest.
+<ce>       Go to one of them shrines out in the middle of nowhere,
+<ce>         the ones called "Shrine of This" or "Monument That."
+<ce>         Open it up there. Do it anywhere else and the bet's
+<ce>           off. Once they start showing up the bats're just
+<ce>          gonna attack you, so don't worry about the shrine
+<ce>      attendant. You just survive and come back here, all right?
+<ce>               And no running away. We'll be watching.
+
+QuestFail:  [1003]
+<ce>                        "Hey, no! Not there!"
+<ce>
+<ce>              The chest disappears with a puff of smoke.
+
+QuestComplete:  [1004]
+<ce>               That's how we do it, buddy. Great work.
+<ce>               I took the time to turn your share into
+<ce>                  something more useful than money.
+
+RumorsDuringQuest:  [1005]
+Some spellsword is getting rich from defending the Mages Guild from intruders.
+
+Message:  1010
+<ce>                      You hear _qgiver_'s voice
+<ce>               come from the wood siding of the chest.
+<ce>
+<ce>             "Okay, this place is good. Don't go too far
+<ce>             from the shrine. Open it when you're ready."
+
+Message:  1011
+<ce>                   The last bat dies, and you hear
+<ce>                    _qgiver_ erupt into laughter.
+<ce>
+<ce>              "All right suckers, you saw it yourselves!
+<ce>                Hand it here! Hey %pcf, I've got your
+<ce>                share when you get back. Travel safe."
+<ce>
+<ce>           The chest finally disappears in a puff of smoke.
+
+Message:  1013
+<ce>          You put the chest on the ground and open the lid.
+<ce>         Apparitions of winged creatures start to swarm out,
+<ce>                      all trained to attack you.
+
+Message:  1030
+%qdt:
+ I'm trying to fulfill a bet
+ _qgiver_ of __qgiver_
+ made about killing fifty bats.
+ He gave me a chest that I need
+ to open near one of the remote
+ shrines in the countryside.
+ If I kill the bats and survive,
+ I can return to ___qgiver_
+ for my share of the bet.
+
+QBN:
+Person _qgiver_ group Questor male
+
+Item _chest_ item class 1 subclass 8
+Item _reward_ magic_item
+
+Foe _bat_ is Giant_bat
+
+--	Quest start-up:
+	log 1030 step 0
+	get item _chest_
+	_chest_ used do _open_
+
+_there_ task:
+	when pc enters cult
+	say 1010
+	clear _notthere_
+
+_notthere_ task:
+	when pc exits cult
+	clear _there_
+
+variable _open_
+_begin_ task:
+	when _open_ and _there_ and not _slain_
+	say 1013
+	create foe _bat_ every 0 minutes 50 times with 100% success
+	take _chest_ from pc
+
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _bat_ infighting true
+	clear _infight_
+
+_fail_ task:
+	when _open_ and not _there_ and not _slain_
+	remove foe _bat_
+	say 1003
+	end quest
+
+_slain_ task:
+	killed 45 _bat_ saying 1011
+
+_qgclicked_ task:
+	clicked npc _qgiver_
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_
+
+_pcreward_ task:
+	when _qgclicked_ and _slain_
+	give pc _reward_
+	end quest

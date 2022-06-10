@@ -1,0 +1,420 @@
+Quest: JHDB119
+DisplayName: Headscratcher
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>             Where the art of killing excels, the art of
+<ce>              defense must also rise in potency. We have
+<ce>               received an accounting that will involve
+<ce>             a studious mind as well as a lethal strike.
+<ce>              I have confidence that you will solve the
+<ce>                      puzzle and slay the mark.
+
+RefuseQuest:  [1001]
+<ce>              I do misplace my confidence occasionally.
+
+AcceptQuest:  [1002]
+<ce>                   Your task will take you to _res_
+<ce>                  of ___res_. To be short in words,
+<ce>               you must undo a spell cast by a magician
+<ce>               which keeps your mark from all kinds of
+<ce>                  detection, a sort of stasis effect
+<ce>              touching both time and space. Our attempts
+<ce>             to extract the magician ended his life, and
+<ce>                now we only have his belongings left.
+<ce>              One of these three enchanted objects will
+<ce>              undo the stasis effect, and the other two
+<ce>             will unleash curses on you: a pearl, a bell,
+<ce>               and a cloth amulet. The mage left behind
+<ce>             a glyph for his apprentices to transmit what
+<ce>            they would need to undo the spell. I will now
+<ce>            copy it into your journal. Study it and ensure
+<ce>            that you understand which of the three objects
+<ce>           is the key to the puzzle. With that explanation
+<ce>              given, you will have =timer_ days to slay
+<ce>                       your target and return.
+
+QuestFail:  [1003]
+<ce>                   You needed to resolve the puzzle
+<ce>                      and the accounting by now.
+
+QuestComplete:  [1004]
+<ce>           The Brotherhood prides itself in the quality of
+<ce>         its members. Your activities are proof that our work
+<ce>       cannot be hindered. The Night Mother prevails once more.
+
+Message:  1010
+<ce>                            This is _res_.
+<ce>                The solution must be in your journal.
+
+Message:  1011
+<ce>            You hold up the cloth amulet. A magical field
+<ce>              within the house reacts to its enchantment
+<ce>             and a massive hole opens up under your feet.
+<ce>               Before you can react, it sucks you into
+<ce>                  an entirely different environment.
+
+Message:  1012
+<ce>                You hold up the pearl. A magical field
+<ce>              within the house reacts to its enchantment
+<ce>               and invokes a rush of freezing cold air.
+<ce>                You are surrounded by hostile figures.
+
+Message:  1013
+<ce>                You hold up the bell. A magical field
+<ce>              within the house reacts to its enchantment
+<ce>                and begins to dissipate. Seemingly out
+<ce>               of thin air a person drops to the floor.
+<ce>              This must be the mark you're looking for.
+
+Message:  1015
+<ce>                You hold up the bell. A magical field
+<ce>              within the house reacts to its enchantment
+<ce>             and a massive hole opens up under your feet.
+<ce>               Before you can react, it sucks you into
+<ce>                  an entirely different environment.
+
+Message:  1016
+<ce>            You hold up the cloth amulet. A magical field
+<ce>              within the house reacts to its enchantment
+<ce>               and invokes a rush of freezing cold air.
+<ce>                You are surrounded by hostile figures.
+
+Message:  1017
+<ce>                You hold up the pearl. A magical field
+<ce>              within the house reacts to its enchantment
+<ce>                and begins to dissipate. Seemingly out
+<ce>               of thin air a person drops to the floor.
+<ce>              This must be the mark you're looking for.
+
+Message:  1019
+<ce>                You hold up the pearl. A magical field
+<ce>              within the house reacts to its enchantment
+<ce>             and a massive hole opens up under your feet.
+<ce>               Before you can react, it sucks you into
+<ce>                  an entirely different environment.
+
+Message:  1020
+<ce>                You hold up the bell. A magical field
+<ce>              within the house reacts to its enchantment
+<ce>               and invokes a rush of freezing cold air.
+<ce>                You are surrounded by hostile figures.
+
+Message:  1021
+<ce>            You hold up the cloth amulet. A magical field
+<ce>              within the house reacts to its enchantment
+<ce>                and begins to dissipate. Seemingly out
+<ce>               of thin air a person drops to the floor.
+<ce>              This must be the mark you're looking for.
+
+Message:  1023
+<ce>                             "No! How?!"
+<ce>
+<ce>                        This mark is no more.
+                                     <--->
+<ce>                            "%oth! Why--"
+<ce>
+<ce>                        This mark is no more.
+
+Message:  1030
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+pbiuuusomitkjnjnasndaw
+<--->
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+ xcvxcvjksfclothlkjalskj
+<--->
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+ jmiisoaurowhitewiueowieou
+<--->
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+owfjalejuravoidzznxvccxv
+<--->
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+lakwejrwkjelrignoreskehrkser
+
+Message:  1031
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+Lysandus, hero of the realm of DAGGERFALL
+<--->
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+Magic resistance, pierced by IMP
+<--->
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+Gold, pay for a SLAVE
+<--->
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+Murder, committed by the ARCHER
+<--->
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+Merchant, ever seeking QUOTA
+
+Message:  1032
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+CXQKF VJGUG VYQ CV CNN EQUVU
+<--->
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+RGCTN JCU RQYGT VQ QRGP C ICVGYCA
+<--->
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+DGNN YKNN OCMG FGCVJ KOOKPGPV
+<--->
+%qdt:
+ _qgiver_ of the Dark Brotherhood,
+ ___qgiver_, has tasked me with going to
+ _res_ of ___res_ to
+ slay someone with a stasis enchantment.
+ I have been given a bell, a pearl, and a
+ cloth amulet, only one of which will undo the spell
+ and make the mark vulnerable. The mage left behind a
+ sigil which will describe the solution,
+ as copied into my journal below:
+<ce>
+TGOCKPKPI QPG KU VJG MGA
+
+QBN:
+Person _qgiver_ group Questor male
+
+Item _pearl_ pearl
+Item _bell_ bell
+Item _amu_ cloth_amulet
+
+Place _res_ remote house
+Place _dung_ remote dungeon16
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _enemy_ is Knight
+Foe _q1_ is Wraith
+
+--	Quest start-up:
+    start timer _timer_
+    get item _pearl_
+    get item _bell_
+    get item _amu_
+    pick one of _e1_ _e2_ _e3_
+    pc at _res_ do _inside_
+
+_e1_ task:
+    log 1030 step 0
+
+_e2_ task:
+    log 1031 step 0
+
+_e3_ task:
+    log 1032 step 0
+
+_inside_ task:
+    say 1010
+
+_act1_ task:
+    when _e1_ and _inside_
+    _amu_ used do _trapa_
+    _pearl_ used do _trapb_
+    _bell_ used do _wina_
+
+_act2_ task:
+    when _e2_ and _inside_
+    _bell_ used do _trapc_
+    _amu_ used do _trapd_
+    _pearl_ used do _winb_
+
+_act3_ task:
+    when _e3_ and _inside_
+    _pearl_ used do _trape_
+    _bell_ used do _trapf_
+    _amu_ used do _winc_
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _q1_ infighting true
+    change foe _enemy_ infighting true
+    clear _infight_
+
+_trapa_ task:
+    say 1011
+    teleport pc to _dung_
+    make pc ill with Plague
+
+_trapb_ task:
+    say 1012
+    create foe _q1_ every 0 minutes 6 times with 100% success
+
+_wina_ task:
+    say 1013
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_trapc_ task:
+    say 1015
+    teleport pc to _dung_
+    make pc ill with Plague
+
+_trapd_ task:
+    say 1016
+    create foe _q1_ every 0 minutes 6 times with 100% success
+
+_winb_ task:
+    say 1017
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_trape_ task:
+    say 1019
+    teleport pc to _dung_
+    make pc ill with Plague
+
+_trapf_ task:
+    say 1020
+    create foe _q1_ every 0 minutes 6 times with 100% success
+
+_winc_ task:
+    say 1021
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_slain_ task:
+    killed 1 _enemy_
+    say 1023
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
+
+_pcreward_ task:
+    when _qgclicked_ and _slain_
+    give pc nothing
+    end quest
+
+_timer_ task:
+    end quest

@@ -1,0 +1,84 @@
+Quest: JHTP101
+DisplayName: Ecclesiastes, or The Preacher
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>            %pct, regardless of your past accomplishments
+<ce>           and your history, all must carry their weight in
+<ce>           this temple. Will you take some of our teachings
+<ce>                  to a potential convert in ___res_?
+
+RefuseQuest:  [1001]
+<ce>            Do you have no interest at all in your duties?
+
+AcceptQuest:  [1002]
+<ce>                Be going then. You will find _convert_
+<ce>               to be in _res_. We do not expect you to
+<ce>             preach to %g2. We instead have this written
+<ce>           package you may deliver, which we will consider
+<ce>              success on your part. The task is simple.
+<ce>         Return here within =timer_ days to curry our favor.
+<ce>                  A safe journey to ___res_ for you.
+
+QuestFail:  [1003]
+<ce>                  The temple expected you to return
+<ce>                        to ___qgiver_ by now.
+
+QuestComplete:  [1004]
+<ce>                Very well. Continue in like manner and
+<ce>                you will soon find yourself inundated
+<ce>                with the greater works of the temple.
+
+Message:  1020
+<ce>                   Ah, this is that tract __qgiver_
+<ce>                   had promised me. Thank you, %ra.
+<ce>              Would you be willing to tell me more about
+<ce>              its contents? Ah, well, I'm sure you won't
+<ce>               be the last messenger they send me. I'll
+<ce>             spend a few days considering this material.
+<ce>                Give the regular preachers my regards.
+
+Message:  1030
+%qdt:
+ I must deliver a religious tract
+ to _convert_ in ___res_.
+ _qgiver_ will expect me
+ back in ___qgiver_ in =timer_ days' time.
+
+QBN:
+Item _tract_ letter
+
+Person _qgiver_ group Questor
+Person _convert_ group Local_4.0
+
+Place _res_ remote house
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+	place npc _convert_ at _res_
+	get item _tract_
+
+_deliver_ task:
+	toting _tract_ and _convert_ clicked
+	say 1020
+	take _tract_ from pc
+
+_victory_ task:
+	when _qgclicked_ and _deliver_
+	give pc nothing
+	end quest
+
+_qgclicked_ task:
+	clicked npc _qgiver_
+
+_clearclick_ task:
+	when _qgclicked_ and not _deliver_
+	clear _qgclicked_ _clearclick_
+
+_timer_ task:
+	say 1003
+	end quest

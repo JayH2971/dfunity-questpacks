@@ -1,0 +1,142 @@
+Quest: JHFG107
+DisplayName: Courier Work
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                We have a job here that doesn't really
+<ce>               fit the bill for what the Fighters Guild
+<ce>                 was made for, but it still pays. Do
+<ce>                     ya wanna go over to ___res_
+<ce>                  and bring some _pick_ someone left
+<ce>                over there? Sounds like easy pickin's.
+                                     <--->
+<ce>                We've got a request here to go over to
+<ce>                    ___res_ and pick up something
+<ce>                that got left over there by accident.
+<ce>                   Sounds simple enough. Wanna take
+<ce>                           this one, %pcf?
+
+RefuseQuest:  [1001]
+<ce>           Man, are you just here to smash skulls or what?
+
+AcceptQuest:  [1002]
+<ce>                 All right, get going then. ___res_,
+<ce>                        _res_. You're looking
+<ce>                  for some _pick_ that they said is
+<ce>               gonna be on the floor. Just grab it and
+<ce>                 there should be some instructions on
+<ce>                 where you take it. That's what they
+<ce>                      told me, at least. _culp_
+<ce>               should give you your reward after that.
+<ce>               I'm giving you =timer_ days to do this.
+
+QuestFail:  [1003]
+<ce>                _questgiver_ expected you to return to
+<ce>                ___questgiver_ with the _pick_ by now.
+
+QuestComplete:  [1004]
+<ce>               This again? %oth. Hey, I'm really sorry
+<ce>           about this. We told the %t and everyone's doing
+<ce>             everything they can to find who's behind it.
+<ce>       But look, I'm not gonna let you walk away empty-handed.
+<ce>             Keep that _pick_ you got from them and sell
+<ce>           it if you want, and I'll give you =reward_ gold
+<ce>               out of my own pocket. It's not that much
+<ce>            but it's literally all I've got left over from
+<ce>               last week. Just know that we appreciate
+<ce>               how there are members like you watching
+<ce>                       out for the rest of us.
+
+RumorsDuringQuest:  [1005]
+Some moron bard attacked the %t in open court this week, they say.
+
+Message:  1020
+<ce>                      You hear a faint snicker.
+
+Message:  1023
+<ce>                      "Th-that's... im-mposs..."
+<ce>                      The ringleader collapses.
+
+Message:  1025
+<ce>                 This month we're paying =bigsum_ for
+<ce>                 every Fighters Guild bozo. Remember:
+<ce>               priorities are eyes, hearts, and lungs.
+<ce>                   Partials mean less pay for you.
+<ce>
+                             K.
+
+Message:  1030
+%qdt:
+ The Fighters Guild has given
+ me a task which apparently
+ doesn't involve fighting. I'm headed
+ to ___res_ to pick up
+ some _pick_ inside a building,
+ _res_. They'll tell
+ me where to take it after that.
+ I should be back in ___questgiver_
+ in =timer_ or fewer days.
+
+Message:  1031
+%qdt:
+ I was set up and violently ambushed.
+ I should head back to ___questgiver_ and
+ tell _questgiver_ about it.
+
+QBN:
+
+Person _questgiver_ group Questor male
+Person _culp_ group Local_3.0
+
+Item _pick_ mineral
+Item _reward_ gold range 60 to 140
+Item _bigsum_ gold range 1235 to 1399
+Item _letter_ letter used 1025
+
+Place _res_ remote house
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _enemy_ is 5 Thief
+Foe _perp_ is Nightblade
+
+--   Quest start-up:
+   start timer _timer_
+   log 1030 step 0
+   place item _pick_ at _res_
+   give item _letter_ to _perp_
+
+_got_ task:
+   clicked item _pick_
+   say 1020
+   create foe _enemy_ every 0 minutes 1 times with 100% success
+   create foe _perp_ every 0 minutes 1 times with 20% success
+
+_infight_ task:
+   daily from 0:00 to 23:59
+   change foe _enemy_ infighting true
+   change foe _perp_ infighting true
+   clear _infight_
+
+_slain_ task:
+   killed _perp_
+   say 1023
+   log 1031 step 1
+
+_victory_ task:
+   when _qgclicked_ and _got_
+   make _pick_ permanent
+   give pc _reward_
+   end quest
+
+_qgclicked_ task:
+   clicked npc _questgiver_
+
+_clearclick_ task:
+   when _qgclicked_ and not _got_
+   clear _qgclicked_ _clearclick_
+
+_timer_ task:
+   say 1003
+   end quest

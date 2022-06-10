@@ -9,32 +9,32 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHTG001, GeneralPopulace, M, 2, 1, a quest to evade combat while getting a treasure
-JHTG002, GeneralPopulace, M, 1, 0, a quest to kidnap a child for ransom
-JHTG003, GeneralPopulace, M, 0, 0, a quest to take a land deed by force
-JHTG004, GeneralPopulace, M, 1, 0, a quest to steal a criminal confession
-JHTG005, GeneralPopulace, M, 0, 0, a quest to lift a guarded gem
-JHTG007, GeneralPopulace, M, 1, X, a quest to persuade a ransom target
-JHTG008, GeneralPopulace, M, 2, 0, a quest to steal a gem belonging to the ruling family
-JHTG009, GeneralPopulace, M, 8, 0, an artifact quest to take a bag to a client
-JHTG010, GeneralPopulace, M, 4, 0, a quest to get a sealed bag from a trapped dungeon
-JHTG011, GeneralPopulace, M, 2, 1, a quest to bribe a servant to free a guild member
-JHTG012, GeneralPopulace, M, 1, 0, a quest to retrieve a sealed treasure from a dungeon
-JHTG013, GeneralPopulace, M, 9, 1, a capstone quest to evade combat
-JHTG014, GeneralPopulace, M, 3, 0, a quest to participate in a gang war
-JHTG015, GeneralPopulace, M, 0, 0, a small daily heist
-JHTG016, GeneralPopulace, M, 0, 0, a moderate daily heist
-JHTG017, GeneralPopulace, M, 0, 0, a large daily heist
-JHTG018, GeneralPopulace, M, 0, 1, a quest to kidnap a child from a tavern
-JHTG019, GeneralPopulace, M, 7, 1, a quest to open a trapped black box
-JHTG020, GeneralPopulace, M, 3, 1, a quest to open a noble's box in a tavern
-JHTG021, GeneralPopulace, M, 1, 1, a quest to pickpocket a paper from a chin-scarred man
-JHTG022, GeneralPopulace, M, 3, 1, a quest to pickpocket a magical item from the Mages Guild
+JHTG101, GeneralPopulace, M, 2, 1, a quest to evade combat while getting a treasure
+JHTG102, GeneralPopulace, M, 1, 0, a quest to kidnap a child for ransom
+JHTG103, GeneralPopulace, M, 0, 0, a quest to take a land deed by force
+JHTG104, GeneralPopulace, M, 1, 0, a quest to steal a criminal confession
+JHTG105, GeneralPopulace, M, 0, 0, a quest to lift a guarded gem
+JHTG107, GeneralPopulace, M, 1, X, a quest to persuade a ransom target
+JHTG108, GeneralPopulace, M, 2, 0, a quest to steal a gem belonging to the ruling family
+JHTG109, GeneralPopulace, M, 8, 0, an artifact quest to take a bag to a client
+JHTG110, GeneralPopulace, M, 4, 0, a quest to get a sealed bag from a trapped dungeon
+JHTG111, GeneralPopulace, M, 2, 1, a quest to bribe a servant to free a guild member
+JHTG112, GeneralPopulace, M, 1, 0, a quest to retrieve a sealed treasure from a dungeon
+JHTG113, GeneralPopulace, M, 9, 1, a capstone quest to evade combat
+JHTG114, GeneralPopulace, M, 3, 0, a quest to participate in a gang war
+JHTG115, GeneralPopulace, M, 0, 0, a small daily heist
+JHTG116, GeneralPopulace, M, 0, 0, a moderate daily heist
+JHTG117, GeneralPopulace, M, 0, 0, a large daily heist
+JHTG118, GeneralPopulace, M, 0, 1, a quest to kidnap a child from a tavern
+JHTG119, GeneralPopulace, M, 7, 1, a quest to open a trapped black box
+JHTG120, GeneralPopulace, M, 3, 1, a quest to open a noble's box in a tavern
+JHTG121, GeneralPopulace, M, 1, 1, a quest to pickpocket a paper from a chin-scarred man
+JHTG122, GeneralPopulace, M, 3, 1, a quest to pickpocket a magical item from the Mages Guild
 JHTGX00, GeneralPopulace, M, 6, 1, a quest invitation from The Crow
-JHTGX01, GeneralPopulace, P, 0, X, offered via JHTG00X
-JHTGX02, GeneralPopulace, P, 0, X, offered via JHTG01X
-JHTGX03, GeneralPopulace, P, 0, X, offered via JHTG02X
-JHTGX04, GeneralPopulace, P, 0, X, offered via JHTG03X
-JHTGX05, GeneralPopulace, P, 0, X, offered via JHTG04X
-JHTGX06, GeneralPopulace, P, 0, X, offered via JHTG05X
-JHTGX07, GeneralPopulace, P, 0, X, offered via JHTG06X
+JHTGX01, GeneralPopulace, P, 0, X, offered via JHTG10X
+JHTGX02, GeneralPopulace, P, 0, X, offered via JHTG11X
+JHTGX03, GeneralPopulace, P, 0, X, offered via JHTG12X
+JHTGX04, GeneralPopulace, P, 0, X, offered via JHTG13X
+JHTGX05, GeneralPopulace, P, 0, X, offered via JHTG14X
+JHTGX06, GeneralPopulace, P, 0, X, offered via JHTG15X
+JHTGX07, GeneralPopulace, P, 0, X, offered via JHTG16X

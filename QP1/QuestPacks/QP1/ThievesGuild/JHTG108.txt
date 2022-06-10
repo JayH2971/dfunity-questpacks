@@ -1,0 +1,72 @@
+Quest: JHTG108
+DisplayName: No Simple Theft
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> We need a good thief. Or maybe just a tough one.
+<ce> There's a gem over in ___place_ that
+<ce> belongs to some relative of the %t. We're paying
+<ce> an enchanted =reward_ in exchange for bringing it
+<ce> back in =timer_ days. You want in?
+
+RefuseQuest:  [1001]
+<ce> I'll look for a good thief then.
+
+AcceptQuest:  [1002]
+<ce> So here's the deal. It's off in _place_,
+<ce> which to me is suspicious. Be ready for anything that
+<ce> could happen. You're on your own 'til you get here.
+<ce> You've got =timer_ days before that _gem_ has to
+<ce> to be over here. Take care of yourself.
+
+QuestFail:  [1003]
+<ce> _questgiver_ wanted the %t's family _gem_ by now.
+
+QuestComplete:  [1004]
+<ce> So tell me how it went. Yeah, you look like you've been
+<ce> through a lot. I won't ask any more. Take your _reward_.
+
+Message:  1020
+<ce> So soon as you touch it, the _gem_ emits
+<ce> a puff of dark smoke. You start to feel ill.
+
+Message:  1030
+%qdt:
+ The %t's family has a _gem_
+ stored up in ___place_,
+ at _place_, that I
+ can take to _questgiver_
+ in ___questgiver_ for a
+ reward in =timer_ days.
+
+QBN:
+
+Person _questgiver_ group Questor male
+
+Item _gem_ gem
+Item _reward_ magic_item
+
+Place _place_ remote tavern
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+-- Quest start-up:
+ start timer _timer_
+ log 1030 step 0
+ place item _gem_ at _place_
+
+_got_ task:
+ clicked item _gem_
+- play sound spell_firestorm every 1 minutes 1 times
+ make pc ill with Plague
+ say 1020
+
+_victory_ task:
+  toting _gem_ and _questgiver_ clicked
+  give pc _reward_
+  end quest
+
+_timer_ task:
+  say 1003
+  end quest

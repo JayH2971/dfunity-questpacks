@@ -1,0 +1,99 @@
+Quest: JHFG214
+DisplayName: Training Battle, Zombie
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>         Got a simple bounty here for one zombie in a house.
+<ce>            Just gotta slay it and come for your payment,
+<ce>       and you'll have a little help too. Can you handle that?
+
+RefuseQuest:  [1001]
+<ce>                  Zombies are right pests, I agree.
+
+AcceptQuest:  [1002]
+<ce>      Take this talisman. If at any point in the fight you feel
+<ce>       like it's about to take you, wrap your hands around this
+<ce>         trinket and press it tight. The zombie should freeze
+<ce>              up and let you get ready for more battle.
+<ce>      It'll still fight back, but you should get some breathing
+<ce>     room from it. Problem is, a talisman only works once before
+<ce>    it needs recharging. Come back when the thing's dead and we'll
+<ce>            get you a payment, all right? It's in _house_
+<ce>          here in town. I want to see you here in 24 hours.
+<ce>                          Fight careful now.
+
+QuestFail:  [1003]
+<ce>                 Your twenty-four hours to report on
+<ce>                   the zombie's death have expired.
+
+QuestComplete:  [1004]
+<ce>         Well done! Those things scare most people to death.
+<ce>        You've got a future with us, I think. Let me take back
+<ce>                 that talisman, and here's your gold.
+
+RumorsDuringQuest:  [1005]
+Someone hatched a harpy around ___house_, but no one can find it.
+
+QuestorPostSuccess:  [1008]
+Now that you've slain that zombie, you're officially ready for the big stuff. What can I get you?
+
+QuestorPostFailure:  [1009]
+Hey, don't feel too bad about that zombie. Tough sons of Oblivion, they are.
+
+Message:  1010
+%qdt:
+ A zombie has invaded _house_
+ in ___house_, and I need to kill
+ it and return within 24 hours. I've been
+ given a talisman which can stop it from moving,
+ in case the battle gets too tough.
+
+Message:  1011
+<ce>                The zombie is dead, and you are alive.
+<ce>                Time to return to the Fighters Guild.
+
+QBN:
+Item _reward_ gold range 101 to 199
+Item _tali_ talisman
+
+Person _qgiver_ group Questor male
+
+Place _house_ local house
+
+Clock _timer_ 1.00:00
+
+Foe _enemy_ is Zombie
+
+--	Quest start-up:
+    start timer _timer_
+    log 1010 step 0
+    place foe _enemy_ at _house_
+    get item _tali_
+    _tali_ used do _halt_
+    change foe _enemy_ infighting true
+
+_halt_ task:
+    restrain foe _enemy_
+    clear _halt_
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
+
+_pcgetsgold_ task:
+    when _qgclicked_ and _slain_
+    take _tali_ from pc
+    give pc _reward_
+    end quest
+
+_slain_ task:
+    killed _enemy_
+    say 1011
+
+_timer_ task:
+    say 1003
+    end quest

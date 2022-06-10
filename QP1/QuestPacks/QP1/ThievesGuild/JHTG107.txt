@@ -1,0 +1,114 @@
+Quest: JHTG107
+DisplayName: Twisting the Arm
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                 Kidnapping means we need everything
+<ce>              set up for the big payoff. The hostage is
+<ce>                tied up, the family is desperate, the
+<ce>                %t is clueless or paid off, and so on.
+<ce>               But every once in a while we get a case
+<ce>               like this one, where the family doesn't
+<ce>                 actually believe us. Help us out by
+<ce>                     showing them we're serious.
+
+RefuseQuest:  [1001]
+<ce>               Well, something's gotta give eventually
+<ce>               I guess. Hope we don't have to bury him.
+
+AcceptQuest:  [1002]
+<ce>                      The stubborn one is _fam_,
+<ce>                  one of the wealthier folks over in
+<ce>                  ___res_. Doesn't seem to fear the
+<ce>               name "Thieves Guild," but %g1'll learn.
+<ce>                  Take this finger over there if %g1
+<ce>                 thinks %g1's too high and mighty for
+<ce>                 a payment. That usually sends these
+<ce>                 people over the edge. Get the money
+<ce>                    back here in =timer_ days, and
+<ce>                      try to be quiet about it.
+
+QuestFail:  [1003]
+<ce>                     _qgiver_ told you to get the
+<ce>                ransom payment to ___qgiver_ by today.
+
+QuestComplete:  [1004]
+<ce>              Lemme open it up. Yep, looks about right.
+<ce>               I'll have to weigh it to make sure, but
+<ce>              it's looking good. I'll send the word now.
+<ce>                            Have your cut.
+
+RumorsDuringQuest:  [1005]
+_fam_ seems awfully distraught about something.
+
+Message:  1020
+<ce>            Pathetic %ra, you make me sick. Why shouldn't
+<ce>              I kill you now? I've already told the %t.
+<ce>               In fact, they've probably already found
+<ce>            %g2. Tell me, why should I give you anything?
+
+Message:  1021
+<ce>                         _fam_ looks sick as
+<ce>                       %g1 inspects the finger.
+<ce>
+<ce>               "By %god. You can't be serious. You..."
+<ce>
+<ce>                Defeated, %g1 pulls a cloth sack from
+<ce>               a cabinet and fills it with various gems
+<ce>                 before throwing it to you. %g1 then
+<ce>                    slumps down, shaking slightly.
+<ce>                   You take your leave in silence.
+
+Message:  1030
+%qdt:
+ A ransom plot based in ___res_
+ needs a morale boost. I need
+ to talk to _fam_ and
+ see if I can convince %g2
+ to pay the fee. If not,
+ _qgiver_ gave me a
+ cut-off finger for motivation. I
+ need to get the payment to the
+ Thieves Guild in ___qgiver_
+ in =timer_ days' time.
+
+QBN:
+Item _reward_ gold
+Item _finger_ finger
+Item _pay_ large_sack
+
+Person _qgiver_ group Questor male
+Person _fam_ faction Dancers
+
+Place _res_ remote house
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+--	Quest start-up:
+  log 1030 step 0
+  get item _finger_
+  start timer _timer_
+  pc at _res_ set _inside_
+  place npc _fam_ at _res_
+
+_talk_ task:
+  clicked npc _fam_
+  say 1020
+  _finger_ used do _persuade_
+
+variable _inside_
+variable _persuade_
+_finish_ task:
+  when _inside_ and _persuade_
+  take _finger_ from pc saying 1021
+  get item _pay_
+
+_pcgetsgold_ task:
+  toting _pay_ and _qgiver_ clicked
+  give pc _reward_
+  end quest
+
+_timer_ task:
+  say 1003
+  end quest

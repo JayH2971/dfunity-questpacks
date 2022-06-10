@@ -1,0 +1,104 @@
+Quest: JHKN117
+DisplayName: Graveyard Plot
+
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          We have a problem with scoundrels consorting about
+<ce>       a forlorn graveyard. Passing townspeople have mentioned
+<ce>     numerous incidents of small groups of armed people entering,
+<ce>        leaving, camping, and so on, all without noble intent.
+<ce>         Will you protect the sanctity of the resting place?
+
+RefuseQuest:  [1001]
+<ce>  Ah, but if they were your own, perhaps you would feel differently.
+
+AcceptQuest:  [1002]
+<ce>           You are tasked with guarding ___graveyard_ here
+<ce>          in %crn. As this is a frequent problem, I presume
+<ce>            you can stop by any time and start to apply a
+<ce>         solution. It shouldn't take multiple weeks but I do
+<ce>          expect you'll be there for awhile. Perhaps you may
+<ce>        take a book you'd like to read. From this day an edict
+<ce>        will go forth to keep away from the grounds, so anyone
+<ce>            who enters will be subject to your punishment.
+<ce>        Exact a judgment on all who appear. Return to me when
+<ce>            you have left a clear message. %god watch over
+<ce>                  you while you guard the deceased.
+
+QuestFail:  [1003]
+<ce>
+
+QuestComplete:  [1004]
+<ce>     Welcome back, good %pct. Fine work. I trust in your judgment
+<ce>     and dedication. We ordinarily do not pass around rewards in
+<ce>       this order, but I supposed your noble sacrifice at least
+<ce>    merited a little material compensation. Take it and feel pride
+<ce>                    in defending the defenseless.
+
+Message:  1019
+<ce>                    If this site is ___graveyard_,
+<ce>              sooner or later the criminals will arrive.
+
+Message:  1020
+<ce>         Presumably this is enough bodies to send a message.
+
+Message:  1040
+%qdt:
+ ___graveyard_ in
+ %crn has been desecrated
+ by disreputable people sufficient
+ to merit my standing watch.
+ I am authorized to fight off any
+ who enter it until I have made it
+ clear that the grounds are to be left
+ alone. I may then return to
+ _questgiver_ in ___questgiver_
+ to report my deed.
+
+QBN:
+
+Item _reward_ weapon
+
+Person _questgiver_ group Questor male
+
+Place _graveyard_ remote graveyard
+
+Clock _timeLimit_ 90.00:00
+
+Foe _en1_ is 2 Sorceror
+
+--	Quest start-up:
+	start timer _timeLimit_
+	reveal _graveyard_
+	pc at _graveyard_ set _onsite_
+	log 1040 step 0
+
+_timeLimit_ task:
+	end quest
+
+_onsite_ task:
+	say 1019
+	create foe _en1_ every 20 minutes indefinitely with 9% success
+
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _en1_ infighting true
+	clear _infight_
+
+_slain_ task:
+	killed 6 _en1_
+	say 1020
+
+_questorClicked_ task:
+	clicked npc _questgiver_
+
+_clearclick_ task:
+	when _questorClicked_ and not _slain_
+	clear _questorClicked_ _clearclick_
+
+_rewardPlayer_ task:
+	when _questorClicked_ and _slain_
+	give pc _reward_
+	legal repute +5
+	end quest

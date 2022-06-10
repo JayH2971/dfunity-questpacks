@@ -1,0 +1,195 @@
+Quest: JHFG115
+DisplayName: Third Wheel
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          We've got someone looking for a fighting partner,
+<ce>           wanting to go down into some cave, smash up some
+<ce>          bandits, and split the loot. Talks about offering
+<ce>            some enchanted item for it. Wanna take it up?
+
+RefuseQuest:  [1001]
+<ce>                        Prefer working alone?
+
+AcceptQuest:  [1002]
+<ce>            "Well then, I'll introduce you two. Hold on."
+<ce>
+<ce>                  _questgiver_ hollers at the door.
+<ce>                 Soon your client enters to meet you.
+<ce>
+<ce>                     "Hello there! %pcn, you say?
+<ce>                         My name is _friend_.
+<ce>                  A pleasure. Let us go to ___dung_.
+<ce>            I know a band of criminals is taking up refuge
+<ce>           there, and we would spend our time well clearing
+<ce>            it out. I'll give you this magic _reward_ once
+<ce>               we're all finished. Let's be off, then!"
+
+QuestFail:  [1003]
+<ce>
+
+QuestComplete:  [1004]
+<ce>                     You consider your job done.
+
+Message:  1019
+<ce>                         _friend_ speaks up.
+<ce>
+<ce>              "So my _reward_ for your fighting, right?
+<ce>                This place should be lucrative enough
+<ce>                to pay for that, I assume. We'll split
+<ce>                 the items we find on the criminals."
+<ce>
+<ce>            The words leave some doubt for %g3 sincerity.
+
+Message:  1020
+<ce>            "Well, I'm satisfied. I think we both came out
+<ce>          much richer than we expected. Take your _reward_.
+<ce>             Maybe I'll see you again in ___questgiver_."
+<ce>
+<ce>                     _friend_ tosses you the item
+<ce>                      and disappears from view.
+
+Message:  1021
+<ce>                         _friend_ speaks up.
+<ce>
+<ce>                  "Listen, I know we agreed on this,
+<ce>              but you've been taking way too much here!
+<ce>             I'm not even sure I can turn a profit today.
+<ce>             To me it's fair that we both just walk away
+<ce>              with what we have on hand and forget about
+<ce>               this whole deal. Thanks for your help."
+<ce>
+<ce>           It appears %g1 is about to leave. If you wanted,
+<ce>                 you could slay %g2 to get %g3 item.
+<ce>                      Will you let %g2 go free?
+
+Message:  1022
+<ce>             As %g1 disappears, you know you've at least
+<ce>             held on to your honor, to say nothing of the
+<ce>            Fighters Guild's reputation. Someone else will
+<ce>               have to teach %g2 not to break %g3 word.
+
+Message:  1023
+<ce>                            "Wait, what?"
+<ce>
+<ce>              Your attack comes as a complete surprise.
+
+Message:  1025
+<ce>                  Hey %pcf, have you seen _friend_?
+<ce>             'Cause %g1 was headed right here after your
+<ce>                        romp down in ___dung_.
+<ce>
+<ce>                 Dead? Oh, come on, that's not right.
+<ce>                 That's not what the guild works for.
+<ce>             Listen, do me a favor and keep it a secret.
+<ce>               ___questgiver_ needs the Fighters Guild,
+<ce>                and if word starts to spread that some
+<ce>                  moron takes people to their deaths
+<ce>                    in random caves the %t's gonna
+<ce>                  run us out of here. Let's pretend
+<ce>                   this never happened, all right?
+
+Message:  1030
+%qdt:
+ The Fighters Guild of ___questgiver_
+ has signed me on with _friend_,
+ another warrior, to fight bandits for
+ treasure inside ___dung_.
+ I am to be paid an enchanted _reward_
+ when we are finished.
+
+QBN:
+Item _reward_ magic_item
+
+Person _questgiver_ group Questor male
+Person _friend_ faction Generic_Knightly_Order
+Person _fg_ faction The_Fighters_Guild
+
+Place _dung_ remote dungeon3
+
+Clock _timer_ 75.00:00
+Clock _dungtime_ 20:00 2.00:00
+
+Foe _enemy1_ is Burglar
+Foe _enemy2_ is Thief
+Foe _frenemy_ is Warrior
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    reveal _dung_
+    add _friend_ face
+    pc at _dung_ do _inside_
+    pick one of _e1_ _e2_
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    clear _infight_
+
+_inside_ task:
+    say 1019
+    create foe _enemy1_ every 46 minutes indefinitely with 23% success
+    create foe _enemy2_ every 35 minutes indefinitely with 11% success
+    start timer _dungtime_
+
+_notinside_ task:
+    when not _inside_
+    stop timer _dungtime_
+
+_dungtime_ task:
+    start task _victory_
+
+_slain_ task:
+    killed 3 _enemy1_
+    killed 3 _enemy2_
+    start task _victory_
+
+variable _e1_
+variable _victory_
+_true_ task:
+    when _victory_ and _e1_
+    say 1020
+    drop _friend_ face
+    give pc _reward_
+    end quest
+
+variable _e2_
+_trick_ task:
+    when _victory_ and _e2_
+    prompt 1021 yes _mercy_ no _kill_
+
+_mercy_ task:
+    say 1022
+    give pc nothing
+    end quest
+
+_kill_ task:
+    drop _friend_ face
+    say 1023
+    create foe _frenemy_ every 0 minutes 1 times with 100% success
+    give item _reward_ to _frenemy_
+    change foe _frenemy_ infighting true
+    make _reward_ permanent
+
+_kill2_ task:
+    killed _frenemy_
+
+_qgclicked_ task:
+    clicked npc _questgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _kill2_
+    clear _qgclicked_ _clearclick_
+
+_question_ task:
+    when _qgclicked_ and _kill2_
+    say 1025
+    change repute with _fg_ by +3
+    end quest
+-+3 is intentional, not +2.
+
+_timer_ task:
+    end quest

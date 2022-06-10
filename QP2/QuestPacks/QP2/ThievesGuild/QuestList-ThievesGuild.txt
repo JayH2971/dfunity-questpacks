@@ -9,4 +9,4 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
-JHTG006, GeneralPopulace, M, 0, 0, a quest to steal research notes
+JHTG206, GeneralPopulace, M, 0, 0, a quest to steal research notes
