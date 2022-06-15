@@ -319,7 +319,7 @@ Message:  1035
 <ce>  The ambassador has returned to
 <ce>  the Imperial City. We can't do this."
 <ce>  Without much of a goodbye, she
-<ce>  departs, following some instruction
+<ce>  departs to follow some instruction
 <ce>  that you were excluded from hearing.
 
 QBN:
