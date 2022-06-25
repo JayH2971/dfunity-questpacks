@@ -321,7 +321,7 @@ _recurse_ task:
 _squeal_ task:
     say 1013
     log 1031 step 1
-    clear _talkco_
+    clear _talkco_ _pay_
 
 _deliverrumor_ task:
     when _talkco_ and _squeal_
