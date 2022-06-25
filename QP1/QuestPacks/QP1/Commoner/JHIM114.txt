@@ -20,6 +20,9 @@ AcceptQuest:  [1002]
 QuestComplete:  [1004]
 <ce>                   It looks like this is the stash.
 
+QuestorPostSuccess:   [1008]
+Don't lead the authorities back to me.
+
 Message:  1010
 <ce>                 200 gold, yessirree. I'll take that,
 <ce>                         thank you very much.

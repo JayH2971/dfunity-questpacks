@@ -49,6 +49,9 @@ QuestComplete:  [1004]
 <ce>  outside, _questgiver_ hands you
 <ce>  the promised reward and thanks you.
 
+QuestorPostSuccess:   [1008]
+You can keep a secret. That's good.
+
 Message:  1010
 <ce>  Yes, I'm _friend_.
 <ce>  How can I help you?

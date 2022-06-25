@@ -34,6 +34,9 @@ QuestComplete:  [1004]
 <ce>        simple beating could solve my problem! Thank you, %ra.
 <ce>         Here is the book I promised. May it serve you well.
 
+QuestorPostSuccess:   [1008]
+If I need someone beaten again, I know who to ask!
+
 Message:  1020
 <ce>            Now _questgiver_ hires bullies to torture me!
 <ce>     Fine then, I take it back! Leave me alone! Out with you now!

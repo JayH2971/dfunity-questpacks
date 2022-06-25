@@ -48,6 +48,9 @@ QuestFail:  [1003]
 QuestComplete:  [1004]
 <ce>  Hey, not bad %ra. Take this money.
 
+QuestorPostSuccess:   [1008]
+Good memory comes with a good mind! You have both!
+
 Message:  1010
 <ce>  First question: the Argonian left 
 <ce>  1200 gold in the temple's coffers.

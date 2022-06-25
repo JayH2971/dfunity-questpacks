@@ -34,6 +34,9 @@ QuestFail:  [1003]
 QuestComplete:  [1004]
 <ce>               This appears to be the fabled treasure.
 
+QuestorPostSuccess:   [1008]
+I presume the treasure hunt was successful. We both won, %ra.
+
 Message:  1020
 <ce>             Very good, thank you for waiting. I'll take
 <ce>                     your 200 gold. That's good.

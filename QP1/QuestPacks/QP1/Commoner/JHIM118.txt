@@ -40,6 +40,9 @@ QuestComplete:  [1004]
 <ce>
 <ce>                    Then %g1 leads the foals away.
 
+QuestorPostSuccess:   [1008]
+Those centaurs sold quite well. We could make a good business of this.
+
 Message:  1010
 <ce>              _qgiver_ whispers, "All right, this is how
 <ce>    it's going to work. I'm going to call out for these creatures,

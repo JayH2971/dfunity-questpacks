@@ -31,6 +31,9 @@ QuestComplete:  [1004]
 <ce>      gratitude to you for keeping me safe. Have these =reward_
 <ce>      gold pieces. I would feel guilty holding on to them now."
 
+QuestorPostSuccess:   [1008]
+I'm grateful for your protection. I should choose my enemies more carefully, though.
+
 Message:  1017
 <ce>                     You sense something moving.
 

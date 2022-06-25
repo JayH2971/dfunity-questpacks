@@ -40,6 +40,9 @@ QuestComplete:  [1004]
 <ce>  _qgiver_ pulls some money out and
 <ce>  gives it to you, insistent on rewarding you.
 
+QuestorPostSuccess:   [1008]
+I have a bad habit of talking people's ears off. You were kind, though.
+
 Message:  1010
 <ce> You wouldn't even believe how it started.
 <ce> I was meant for fame and fortune, %ra!

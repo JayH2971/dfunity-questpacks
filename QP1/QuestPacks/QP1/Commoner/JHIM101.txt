@@ -24,6 +24,11 @@ QuestComplete:  [1004]
 <ce>           %oth, you've actually done it.
 <ce>           Take this gold and my praise.
 
+QuestorPostSuccess:   [1008]
+A walking library, you are!
+<--->
+You're a smart one, you know that?
+
 Message:  1035
 <ce>                                  Let's get started, then.
 <ce>

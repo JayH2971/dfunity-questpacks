@@ -20,6 +20,9 @@ AcceptQuest:  [1002]
 QuestComplete:  [1004]
 <ce>                   It looks like this is the stash.
 
+QuestorPostSuccess:   [1008]
+Don't tell nobody how you found that money in _res_.
+
 Message:  1010
 <ce>                 400 gold, yessirree. I'll take that,
 <ce>                         thank you very much.

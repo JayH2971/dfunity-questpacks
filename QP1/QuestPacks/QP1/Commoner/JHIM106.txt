@@ -40,6 +40,8 @@ QuestComplete:  [1004]
 <ce>                   The curse is now over. You feel
 <ce>                satisfaction as you take your reward.
 
+QuestorPostSuccess:   [1008]
+
 Message:  1010
 <ce>                  "Thank you, %ra. With that _relig_
 <ce>                removed, the curse is now almost over.
@@ -153,6 +155,7 @@ _path2_ task:
 _path2a_ task:
     say 1013
     give pc _reward_
+    destroy _questgiver_
     end quest
 
 _path2b_ task:
@@ -161,6 +164,7 @@ _path2b_ task:
 
 _death_ task:
     say 1012
+    destroy _questgiver_
     end quest
 
 _timer_ task:

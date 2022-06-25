@@ -24,6 +24,9 @@ QuestComplete:  [1004]
 <ce>                       %oth!
 <ce>      Take this gold before I change my mind!
 
+QuestorPostSuccess:   [1008]
+Got a lot of knowledge, you do.
+
 Message:  1031
 <ce>                                     Let's begin.
 <ce>

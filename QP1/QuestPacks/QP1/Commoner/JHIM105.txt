@@ -34,13 +34,16 @@ QuestFail:  [1003]
 QuestComplete:  [1004]
 <ce>             You take the money that is rightfully yours.
 
+QuestorPostSuccess:   [1008]
+Half-siblings are always trouble, believe it.
+
 Message:  1010
 <ce>                "Hi %pcf, thanks for going with me. I
 <ce>              don't need a lot of help or anything, but
 <ce>               a little back up doesn't hurt, does it?"
 <ce>
 <ce>                        _family_ packs a blade
-<ce>                for the fight and stands close to you.
+<ce>                for the fight and follows you.
 
 Message:  1011
 <ce>                 As soon as you enter the tavern, two

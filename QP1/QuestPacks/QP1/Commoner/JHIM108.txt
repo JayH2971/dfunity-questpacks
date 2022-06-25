@@ -39,6 +39,11 @@ QuestComplete:  [1004]
 <ce>          you are truly an honorable %ra! Take all the gold
 <ce>          I saved for this journey, and my blessing."
 
+QuestorPostSuccess:   [1008]
+My savior! I live because of you!
+<--->
+Never again will I trifle with witches! I owe you my life!
+
 Message:  1010
 <ce>       Ah, the fool _questgiver_. Tell me, what hast
 <ce>       thou come to accuse us of this time? Or will it be

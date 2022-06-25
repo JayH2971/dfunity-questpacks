@@ -32,6 +32,9 @@ QuestComplete:  [1004]
 <ce>          If it helps, I have this money set aside for you.
 <ce>                 I hope it compensates your trouble.
 
+QuestorPostSuccess:   [1008]
+No more dusty trinkets for me! And hopefully for you.
+
 Message:  1010
 <ce>        The _item_ has already crumbled to pieces. All you can
 <ce>          do now is to get out alive and return to _qgiver_.

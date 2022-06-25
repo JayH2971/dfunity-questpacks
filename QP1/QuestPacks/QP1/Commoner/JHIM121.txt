@@ -174,12 +174,14 @@ _mercyvic_ task:
     say 1015
     remove foe _flfoe_
     give pc _reward_
+    destroy _questgiver_
     end quest
 
 _wipeout_ task:
     when _talk_ and _killedbr_ and _killedfl_
     say 1017
     give pc _reward_
+    destroy _questgiver_
     end quest
 
 _timer_ task:
@@ -190,6 +192,7 @@ _flee_ task:
     when _talk_ and not _inside_
     say 1016
     give pc nothing
+    destroy _questgiver_
     end quest
 
 _failsafe_ task:
