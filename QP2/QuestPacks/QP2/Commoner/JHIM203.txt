@@ -35,7 +35,8 @@ Message:  1030
 %qdt:
  _questgiver_, of
  ___questgiver_, has
- a ghost haunting %g3 house.
+ a ghost haunting %g3 house,
+ called _ghostres_.
  I should destroy it in one day.
 
 Message:  1099
