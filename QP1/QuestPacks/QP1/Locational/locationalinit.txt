@@ -1,4 +1,4 @@
-Quest: LocationalINIT
+Quest: locationalinit
 DisplayName: Locational Events Creator
 -- Message panels
 QRC:
@@ -13,11 +13,9 @@ Clock _timer_ 7.00:00 8.00:00
 
 _bats_ task:
     start quest locationalbats
-    end quest
 
 _rats_ task:
     start quest locationalrats
-    end quest
 
 _level3_ task:
     level 3 completed
@@ -27,35 +25,30 @@ variable _ghosts_
 _ghostspawn_ task:
     when _level3_ and _ghosts_
     start quest locationalghosts
-    end quest
 
 variable _werewolves_
 
 _werewolfspawn_ task:
     when _level3_ and _werewolves_
     start quest locationalwerewolves
-    end quest
 
 variable _orcs_
 
 _orcspawn_ task:
     when _level3_ and _orcs_
     start quest locationalorcs
-    end quest
 
 variable _atronachs_
 
 _atronachspawn_ task:
     when _level3_ and _atronachs_
     start quest locationalatronachs
-    end quest
 
 variable _bandits_
 
 _banditspawn_ task:
     when _level3_ and _bandits_
     start quest locationalbandits
-    end quest
 
 _level6_ task:
     level 6 completed
@@ -65,21 +58,18 @@ variable _vampires_
 _vampirespawn_ task:
     when _level6_ and _vampires_
     start quest locationalvampires
-    end quest
 
 variable _zombies_
 
 _zombiespawn_ task:
     when _level6_ and _zombies_
     start quest locationalzombies
-    end quest
 
 variable _harpies_
 
 _harpyspawn_ task:
     when _level6_ and _harpies_
     start quest locationalharpies
-    end quest
 
 _level9_ task:
     level 9 completed
@@ -89,8 +79,7 @@ variable _daedra_
 _daedraspawn_ task:
     when _level9_ and _daedra_
     start quest locationaldaedra
-    end quest
 
 _timer_ task:
-    start quest LocationalINIT
+    start quest locationalinit
     end quest
