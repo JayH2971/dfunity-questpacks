@@ -42,3 +42,12 @@ JHKN133, KnightlyOrder, M, 1, 1, a quest to help a hunter kill tigers
 JHKN134, KnightlyOrder, M, 3, 1, a quest to persuade a noble to prevent a marriage
 JHKN135, KnightlyOrder, M, 1, 1, a quest to find a missing youth in a dungeon
 JHKN138, KnightlyOrder, M, 0, 1, a quest to escort a suspicious man across town
+JHKN201, KnightlyOrder, M, 1, 1, a quest to slay a necromancer haunting a tavernhome
+JHKN202, KnightlyOrder, M, 1, 1, a quest to prevent a mage from summoning daedra
+JHKN203, KnightlyOrder, M, 6, 1, a quest to slay a vampire or vampire ancient in a dungeon
+JHKN209, KnightlyOrder, M, 2, 1, a quest to end a cult of necromancer giants
+JHKN210, KnightlyOrder, M, 0, 1, a quest to take a weapon to a fellow knight
+JHKN212, KnightlyOrder, M, 0, 1, a quest to execute a local criminal
+JHKN225, KnightlyOrder, M, 1, 1, a quest to protect a rural shrine
+JHKN236, KnightlyOrder, M, 0, 1, a quest to slay a pair of centaurs
+JHKN237, KnightlyOrder, M, 1, 1, a quest to slay an ice atronach

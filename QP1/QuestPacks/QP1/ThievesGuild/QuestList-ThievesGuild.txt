@@ -38,3 +38,4 @@ JHTGX04, GeneralPopulace, P, 0, X, offered via JHTG13X
 JHTGX05, GeneralPopulace, P, 0, X, offered via JHTG14X
 JHTGX06, GeneralPopulace, P, 0, X, offered via JHTG15X
 JHTGX07, GeneralPopulace, P, 0, X, offered via JHTG16X
+JHTG206, GeneralPopulace, M, 0, 0, a quest to steal research notes
