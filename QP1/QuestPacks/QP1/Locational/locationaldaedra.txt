@@ -1,0 +1,67 @@
+Quest: locationaldaedra
+DisplayName: Locational Daedra from QP1
+-- Message panels
+QRC:
+
+RumorsDuringQuest:   [1005]
+___city_'s having problems with daedra these days.
+<--->
+%god have mercy on ___city_, suffering from a daedra attack.
+<--->
+___city_'s got problems with daedra.
+<--->
+___city_'s filled with daedra.
+
+RumorsPostFailure:   [1006]
+The %rt cleared those daedra out of ___city_.
+<--->
+The %rt had to hire an army to get those daedra out of ___city_.
+
+Message:  1010
+<ce> You see a warning sign on a post as you approach ___city_.
+<ce> 
+<ce>  "Travelers to ___city_,
+<ce>  An amateur daedra summoner opened a portal to Oblivion,
+<ce>  and demons have been spotted in the city ever since.
+<ce>  The threat they pose cannot be overstated.
+<ce>  Stay indoors whenever possible.
+<ce>  I am rallying forces to slay them even now.
+<ce>  Dutifully,
+<ce>  The %rt, %rn."
+<--->
+<ce> Someone has posted a warning outside ___city_.
+<ce> 
+<ce> "Rogue mage has summoned daedra against this city.
+<ce> They will attack anyone in sight. Flee or defend yourself
+<ce> as best suits you. The %rt will soon send aid.
+<ce> Stay indoors until further word arrives."
+
+QBN:
+
+Place _city_ remote city
+
+Clock _timer_ 5.00:00 6.00:00
+
+Foe _enemy_ is Fire_daedra
+Foe _enemy2_ is Daedroth
+Foe _enemy3_ is Frost_daedra
+
+--	Quest start-up:
+	start timer _timer_
+    pc at _city_ do _inside_
+
+_inside_ task:
+    say 1010
+    send _enemy_ every 13 minutes with 7% success
+    send _enemy2_ every 17 minutes with 9% success
+    send _enemy3_ every 11 minutes with 5% success
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy_ infighting true
+    change foe _enemy2_ infighting true
+    change foe _enemy3_ infighting true
+    clear _daily_
+
+_timer_ task:
+    end quest

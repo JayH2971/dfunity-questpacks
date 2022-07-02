@@ -1,0 +1,72 @@
+Quest: locationalghosts
+DisplayName: Locational Ghosts from QP1
+-- Message panels
+QRC:
+
+RumorsDuringQuest:   [1005]
+___city_'s having problems with ghosts these days.
+<--->
+The %rt's trying to get rid of the ghosts in ___city_.
+<--->
+The %rt promised to send more forces to clear out the ghosts in ___city_.
+<--->
+___city_'s got problems with ghosts again.
+<--->
+___city_'s haunted by ghosts.
+
+RumorsPostFailure:   [1006]
+The %rt cleared those ghosts out of ___city_.
+<--->
+___city_ got over its ghost problem!
+<--->
+The %rt had to get an army of clerics to get those ghosts out of ___city_.
+
+Message:  1010
+<ce> You see a warning sign on a post as you approach ___city_.
+<ce> 
+<ce>  "WARNING! City haunted by ghosts. Stay indoors!
+<ce>  Consult the priests for protection!
+<ce>  The %rt does NOT need help from adventurers
+<ce>  to destroy them!"
+<--->
+<ce> Someone has posted a warning outside ___city_.
+<ce> 
+<ce> "Beware of ghosts! City haunted! Stay indoors!
+<ce> The %rt now consults with priests to rid
+<ce> the evil spirits from the city.
+<ce> Care for your families and leave no one
+<ce> unattended in the streets!"
+<--->
+<ce> You see someone has posted a warning outside ___city_.
+<ce> 
+<ce> "___city_ has been targeted by necromancers who
+<ce> plague it with evil spirits. The %rt, %rn,
+<ce> is informed and will soon send relief.
+<ce> Take all necessary precautions for your life."
+
+QBN:
+
+Place _city_ remote city
+
+Clock _timer_ 5.00:00 6.00:00
+
+Foe _enemy_ is Ghost
+Foe _enemy2_ is Wraith
+
+--	Quest start-up:
+	start timer _timer_
+    pc at _city_ do _inside_
+
+_inside_ task:
+    say 1010
+    send _enemy_ every 13 minutes with 10% success
+    send _enemy2_ every 17 minutes with 14% success
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy_ infighting true
+    change foe _enemy2_ infighting true
+    clear _daily_
+
+_timer_ task:
+    end quest

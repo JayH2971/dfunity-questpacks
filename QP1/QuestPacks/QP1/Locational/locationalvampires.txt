@@ -1,0 +1,77 @@
+Quest: locationalvampires
+DisplayName: Locational Vampires from QP1
+-- Message panels
+QRC:
+
+RumorsDuringQuest:   [1005]
+___city_'s having problems with vampires these days.
+<--->
+The %rt's trying to get rid of the vampires in ___city_.
+<--->
+The %rt promised to send more forces to clear out the vampires in ___city_.
+<--->
+___city_'s got problems with vampires again.
+<--->
+___city_'s haunted by vampires.
+
+RumorsPostFailure:   [1006]
+The %rt cleared those vampires out of ___city_.
+<--->
+___city_ got over its vampire problem!
+<--->
+The %rt had to hire an army to get those vampires out of ___city_.
+
+Message:  1010
+<ce> You see a warning sign on a post as you approach ___city_.
+<ce> 
+<ce>  "Fair citizens of ___city_,
+<ce>  The ongoing vampire problem will soon be resolved.
+<ce>  I have paid for mercenaries who are renowned for
+<ce>  this kind of work. If they are not gone within
+<ce>  one week, this whole city gets a month-long
+<ce>  tax holiday. I have sworn it.
+<ce>  Until then, stay indoors at night.
+<ce>  Your %rt, %rn."
+<--->
+<ce> Someone has posted a warning outside ___city_.
+<ce> 
+<ce> "Beware of vampires! Do not venture out at night!
+<ce> The %rt will send forces to slay them.
+<ce> Carry weapons and defend yourselves as necessary!"
+<--->
+<ce> You see someone has posted a warning outside ___city_.
+<ce> 
+<ce> "Travelers be warned that ___city_ harbors vampires at night.
+<ce> Stay indoors after the sun goes down.
+<ce> No one will be able to help you.
+<ce> The %rt promises to dispose of them soon."
+
+QBN:
+
+Place _city_ remote city
+
+Clock _timer_ 5.00:00 6.00:00
+
+Foe _enemy_ is Vampire
+
+--	Quest start-up:
+	start timer _timer_
+    pc at _city_ do _inside_
+
+_night_ task:
+    daily from 18:30 to 5:30
+
+_inside_ task:
+    say 1010
+
+_spawn_ task:
+    when _night_ and _inside_
+    send _enemy_ every 13 minutes with 10% success
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy_ infighting true
+    clear _daily_
+
+_timer_ task:
+    end quest

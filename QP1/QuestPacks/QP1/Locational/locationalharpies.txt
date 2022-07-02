@@ -1,0 +1,70 @@
+Quest: locationalharpies
+DisplayName: Locational Harpies from QP1
+-- Message panels
+QRC:
+
+RumorsDuringQuest:   [1005]
+___city_'s having problems with harpies these days.
+<--->
+The %rt's trying to get rid of the harpies in ___city_.
+<--->
+The %rt promised to send more forces to clear out the harpies in ___city_.
+<--->
+___city_'s got problems with harpies again.
+<--->
+___city_'s infested with harpies.
+
+RumorsPostFailure:   [1006]
+The %rt cleared those harpies out of ___city_.
+<--->
+___city_ got over its harpy problem!
+<--->
+The %rt had to pay a fortune to get those harpies out of ___city_.
+
+Message:  1010
+<ce> You see a warning sign on a post as you approach ___city_.
+<ce> 
+<ce>  "WARNING! City infested with harpies. Stay indoors
+<ce>  when possible! Limit travel! Carry weapons!
+<ce>  The %rt does NOT need help from adventurers
+<ce>  to kill them!"
+<--->
+<ce> Someone has posted a warning outside ___city_.
+<ce> 
+<ce> "Beware of harpies! City infested! Stay indoors and
+<ce> allow them no food! The %rt will
+<ce> soon send experts to dispose of them,
+<ce> your tax coins at work! Adventurers need not apply!"
+<--->
+<ce> You see someone has posted a warning outside ___city_.
+<ce> 
+<ce> "Message from %rn, the %rt:
+<ce> Some idiot citizen allowed harpy eggs to lay and hatch in
+<ce> their abandoned house, and now the city suffers from their
+<ce> presence. You'll most likely be safe if you stay indoors.
+<ce> Please be responsible and keep your homes clean to prevent this!
+<ce> Your tax coins are spent for this effort!"
+
+QBN:
+
+Place _city_ remote city
+
+Clock _timer_ 5.00:00 6.00:00
+
+Foe _enemy_ is Harpy
+
+--	Quest start-up:
+	start timer _timer_
+    pc at _city_ do _inside_
+
+_inside_ task:
+    say 1010
+    send _enemy_ every 13 minutes with 10% success
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy_ infighting true
+    clear _daily_
+
+_timer_ task:
+    end quest

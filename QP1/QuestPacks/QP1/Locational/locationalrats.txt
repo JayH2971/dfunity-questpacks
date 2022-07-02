@@ -1,0 +1,69 @@
+Quest: locationalrats
+DisplayName: Locational Rats from QP1
+-- Message panels
+QRC:
+
+RumorsDuringQuest:   [1005]
+___city_'s having problems with rats these days.
+<--->
+The %rt's trying to get rid of the rats in ___city_.
+<--->
+The %rt promised to send more forces to clear out the rats in ___city_.
+<--->
+___city_'s got problems with rats again.
+<--->
+___city_'s infested with rats.
+
+RumorsPostFailure:   [1006]
+The %rt cleared those rats out of ___city_.
+<--->
+___city_ got over its rat problem!
+<--->
+The %rt had to pay a fortune to get those rats out of ___city_.
+
+Message:  1010
+<ce> You see a warning sign on a post as you approach ___city_.
+<ce> 
+<ce>  "WARNING! City infested with rats. Stay indoors
+<ce>  when possible! Limit travel! Carry weapons!
+<ce>  The %rt does NOT need help from adventurers
+<ce>  to kill them!"
+<--->
+<ce> Someone has posted a warning outside ___city_.
+<ce> 
+<ce> "Beware of rats! City infested! Stay indoors and
+<ce> burn trash as quickly as possible! The %rt will
+<ce> soon send experts to dispose of them,
+<ce> your tax coins at work! Adventurers need not apply!"
+<--->
+<ce> You see someone has posted a warning outside ___city_.
+<ce> 
+<ce> "Due to poor hygiene by its citizens,
+<ce>  ___city_ currently suffers from a rat infestation.
+<ce>  The noble %rt, %rn, will soon send troops to wipe them out.
+<ce> Please remain indoors as much as possible and
+<ce> burn refuse of all kinds for your own safety."
+
+QBN:
+
+Place _city_ remote city
+
+Clock _timer_ 5.00:00 6.00:00
+
+Foe _enemy_ is Giant_rat
+
+--	Quest start-up:
+	start timer _timer_
+    pc at _city_ do _inside_
+
+_inside_ task:
+    say 1010
+    send _enemy_ every 13 minutes with 10% success
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy_ infighting true
+    clear _daily_
+
+_timer_ task:
+    end quest

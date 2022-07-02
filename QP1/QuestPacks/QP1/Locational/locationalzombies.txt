@@ -1,0 +1,75 @@
+Quest: locationalzombies
+DisplayName: Locational Zombies from QP1
+-- Message panels
+QRC:
+
+RumorsDuringQuest:   [1005]
+___city_'s having problems with the living dead these days.
+<--->
+The %rt's trying to get rid of the zombies in ___city_.
+<--->
+The %rt promised to send more forces to clear out the shambling hordes in ___city_.
+<--->
+___city_'s got problems with walking corpses again.
+<--->
+___city_'s haunted by zombies.
+
+RumorsPostFailure:   [1006]
+The %rt cleared those zombies out of ___city_.
+<--->
+___city_ got over its zombie problem!
+<--->
+The %rt had to hire an army to get the undead out of ___city_.
+
+Message:  1010
+<ce> You see a warning sign on a post as you approach ___city_.
+<ce> 
+<ce>  "From the %rt, rn:
+<ce>  I am aware of the current nocturnal zombie problem in this town
+<ce>  and will soon have them disposed of. Some renegade
+<ce>  necromancer is hiding in this city. Once we find him or her,
+<ce>  the problem will end. Please inform the local authorities
+<ce>  as to any signs of his/her activity."
+<--->
+<ce> Someone has posted a warning outside ___city_.
+<ce> 
+<ce> "Beware of zombies! Do not venture out at night!
+<ce> The %rt will consults even now with priests for a solution.
+<ce> Travel in groups at night or stay indoors!"
+<--->
+<ce> You see someone has posted a warning outside ___city_.
+<ce> 
+<ce> "Travelers be warned that many citizens have seen
+<ce> corpses walking around the city streets at night.
+<ce> They are considered dangerous.
+<ce> The %rt promises to dispose of them soon."
+
+QBN:
+
+Place _city_ remote city
+
+Clock _timer_ 5.00:00 6.00:00
+
+Foe _enemy_ is Zombie
+
+--	Quest start-up:
+	start timer _timer_
+    pc at _city_ do _inside_
+
+_night_ task:
+    daily from 18:30 to 5:30
+
+_inside_ task:
+    say 1010
+
+_spawn_ task:
+    when _night_ and _inside_
+    send _enemy_ every 13 minutes with 10% success
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy_ infighting true
+    clear _daily_
+
+_timer_ task:
+    end quest

@@ -1,0 +1,63 @@
+Quest: locationalwerewolves
+DisplayName: Locational werewolves from QP1
+-- Message panels
+QRC:
+
+RumorsDuringQuest:   [1005]
+___city_'s having problems with werewolves these days.
+<--->
+The %rt's trying to get rid of the werewolves in ___city_.
+<--->
+___city_'s got problems with werewolves again.
+
+RumorsPostFailure:   [1006]
+The %rt cleared those werewolves out of ___city_.
+<--->
+___city_ no longer has problems with werewolves!
+<--->
+The %rt had to hire an army to get those werewolves out of ___city_.
+
+Message:  1010
+<ce> You see a warning sign on a post as you approach ___city_.
+<ce> 
+<ce>  "Warning to all travelers:
+<ce>  This city faces unusually high numbers of werewolves.
+<ce>  Cause not known. The %rt has sworn to wipe them out
+<ce>  by any means necessary. Stay indoors. Protect yourself."
+<--->
+<ce> Someone has posted a warning outside ___city_.
+<ce> 
+<ce> "Werewolves abound in this city. Dangerous to common folk.
+<ce> Carry silver. The %rt will have the problem solved within
+<ce> one week. Report signs of werewolves to guards."
+<--->
+<ce> You see someone has posted a warning outside ___city_.
+<ce> 
+<ce> "WARNING: werewolves frequently invade this city.
+<ce> Stay indoors whenever possible.
+<ce> Use silver weapons if you wish to defend yourself.
+<ce> The %rt estimates they will be slain within one week's time."
+
+QBN:
+
+Place _city_ remote city
+
+Clock _timer_ 5.00:00 6.00:00
+
+Foe _enemy_ is Werewolf
+
+--	Quest start-up:
+	start timer _timer_
+    pc at _city_ do _inside_
+
+_inside_ task:
+    say 1010
+    send _enemy_ every 13 minutes with 10% success
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy_ infighting true
+    clear _daily_
+
+_timer_ task:
+    end quest

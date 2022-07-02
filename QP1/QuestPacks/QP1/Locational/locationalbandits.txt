@@ -1,0 +1,76 @@
+Quest: locationalbandits
+DisplayName: Locational Bandits from QP1
+-- Message panels
+QRC:
+
+RumorsDuringQuest:   [1005]
+___city_'s having problems with bandits these days.
+<--->
+The %rt's trying to get rid of the robbers in ___city_.
+<--->
+The %rt promised to send more forces to clear out the criminals in ___city_.
+<--->
+___city_'s got problems with bandits again.
+<--->
+___city_'s filled with robbers.
+
+RumorsPostFailure:   [1006]
+The %rt cleared those miscreants out of ___city_.
+<--->
+___city_ got over its bandit problem!
+<--->
+The %rt had to hire an army to get those criminals out of ___city_.
+
+Message:  1010
+<ce> You see a warning sign on a post as you approach ___city_.
+<ce> 
+<ce>  "WARNING! City filled with bandits. Stay indoors!
+<ce>  Report any illegal activity to authorities!
+<ce>  The %rt does NOT need help from adventurers
+<ce>  to destroy them!"
+<--->
+<ce> Someone has posted a warning outside ___city_.
+<ce> 
+<ce> "Beware of bandits! Stay indoors!
+<ce> The %rt will send forces to slay them.
+<ce> Carry weapons and defend yourselves as necessary!"
+<--->
+<ce> You see someone has posted a warning outside ___city_.
+<ce> 
+<ce> "Due to unwise practices by some citizens,
+<ce> ___city_ has a severe crime problem. Street fights are common.
+<ce> The %rt has sworn to root them out, and requires no help.
+<ce> Take all necessary precautions for your life."
+
+QBN:
+
+Place _city_ remote city
+
+Clock _timer_ 5.00:00 6.00:00
+
+Foe _enemy_ is Thief
+Foe _enemy2_ is Rogue
+Foe _enemy3_ is Acrobat
+Foe _enemy4_ is Burglar
+
+--	Quest start-up:
+	start timer _timer_
+    pc at _city_ do _inside_
+
+_inside_ task:
+    say 1010
+    send _enemy_ every 13 minutes with 7% success
+    send _enemy2_ every 17 minutes with 9% success
+    send _enemy3_ every 11 minutes with 5% success
+    send _enemy4_ every 19 minutes with 15% success
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy_ infighting true
+    change foe _enemy2_ infighting true
+    change foe _enemy3_ infighting true
+    change foe _enemy4_ infighting true
+    clear _daily_
+
+_timer_ task:
+    end quest
