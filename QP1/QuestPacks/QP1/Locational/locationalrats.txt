@@ -38,7 +38,7 @@ Message:  1010
 <--->
 <ce> You see someone has posted a warning outside ___city_.
 <ce> 
-<ce> "Due to poor hygiene by its citizens,
+<ce> "Due to the poor hygiene of its citizens,
 <ce>  ___city_ currently suffers from a rat infestation.
 <ce>  The noble %rt, %rn, will soon send troops to wipe them out.
 <ce> Please remain indoors as much as possible and

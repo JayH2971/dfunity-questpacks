@@ -26,12 +26,6 @@ _ghostspawn_ task:
     when _level3_ and _ghosts_
     start quest locationalghosts
 
-variable _werewolves_
-
-_werewolfspawn_ task:
-    when _level3_ and _werewolves_
-    start quest locationalwerewolves
-
 variable _orcs_
 
 _orcspawn_ task:
@@ -52,6 +46,12 @@ _banditspawn_ task:
 
 _level6_ task:
     level 6 completed
+
+variable _werewolves_
+
+_werewolfspawn_ task:
+    when _level6_ and _werewolves_
+    start quest locationalwerewolves
 
 variable _vampires_
 
