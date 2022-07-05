@@ -75,7 +75,7 @@ _sunnyday_ task:
     start task _stopevents_
 
 _sunnydayevents_ task:
-    pick one of _potionsale_ _alms_ _weaponfind_ _mysticismlesson_ _medicaltraining_ _buyreligious_ _fireatronach_ _immortal_
+    pick one of _potionsale_ _alms_ _weaponfind_ _mysticismlesson_ _medicaltraining_ _buyreligious_ _escapedatronach_ _immortal_
 
 _batnest_ task:
     start quest RLQbatnest
@@ -131,8 +131,8 @@ _medicaltraining_ task:
 _buyreligious_ task:
     start quest RLQbuyreligious
 
-_fireatronach_ task:
-    start quest RLQfireatronach
+_escapedatronach_ task:
+    start quest RLQescapedatronach
 
 _immortal_ task:
     start quest RLQimmortal

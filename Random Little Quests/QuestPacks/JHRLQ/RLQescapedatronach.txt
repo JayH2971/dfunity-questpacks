@@ -1,11 +1,11 @@
-Quest: RLQfireatronach
-DisplayName: Random Little Quest Fire Atronach
+Quest: RLQescapedatronach
+DisplayName: Random Little Quest Escaped Atronach
 -- Message panels
 QRC:
 
 Message:  1010
-<ce>               Shouts for help sound nearby. It seems a
-<ce>           fire atronach, feeding off the sun's warm rays,
+<ce>               Shouts for help sound nearby. It seems an
+<ce>           escaped atronach, feeding off the sun's warm rays,
 <ce>        has lost control and is attacking townspeople.
 <ce>                    Will you try to stop it?
 
@@ -19,7 +19,7 @@ Message:  1011
 Message:  1012
 <ce>            You hear cheering and applause as you destroy
 <ce>        the creature. A few people nearby, including a member
-<ce>  of the city watch, thank you for your help.
+<ce>             of the city watch, thank you for your help.
 
 Message:  1013
 <ce>          The city guard hurry to strike the creature down,
@@ -29,7 +29,9 @@ QBN:
 
 Clock _clock_ 1:00
 
-Foe _monster_ is Fire_atronach
+Foe _monster1_ is Fire_atronach
+Foe _monster2_ is Flesh_atronach
+Foe _monster3_ is Iron_atronach
 
 --	Quest start-up:
     prompt 1010 yes _bat_ no _ignore_
@@ -40,16 +42,31 @@ _ignore_ task:
 
 _bat_ task:
     say 1011
-    create foe _monster_ every 0 minutes 1 times with 100% success
-    change foe _monster_ infighting true
+    pick one of _spawn1_ _spawn2_ _spawn3_
     start timer _clock_
 
+_spawn1_ task:
+    create foe _monster1_ every 0 minutes 1 times with 100% success
+    change foe _monster1_ infighting true
+
+_spawn2_ task:
+    create foe _monster2_ every 0 minutes 1 times with 100% success
+    change foe _monster2_ infighting true
+
+_spawn3_ task:
+    create foe _monster3_ every 0 minutes 1 times with 100% success
+    change foe _monster3_ infighting true
+
 _gold_ task:
-    killed _monster_
+    killed _monster1_
+    killed _monster2_
+    killed _monster3_
     say 1012
     legal repute +4
     end quest
 
 _clock_ task:
-    remove foe _monster_
+    remove foe _monster1_
+    remove foe _monster2_
+    remove foe _monster3_
     end quest
