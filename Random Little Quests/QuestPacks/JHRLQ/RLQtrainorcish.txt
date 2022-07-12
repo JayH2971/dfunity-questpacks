@@ -3,6 +3,14 @@ DisplayName: Random Little Quest An Orcish Lesson
 -- Message panels
 QRC:
 
+QuestComplete:   [1004]
+<ce>            After feeding in 250 gold pieces, you sit down
+<ce>                 and survey the contents of the book.
+<ce>          It has useful suggestions for pronunciation in the
+<ce>            Orcish language, and some tables for grammar.
+<ce>         Your three hours are well spent, at the end of which
+<ce>         the book disappears entirely, along with the pouch.
+
 Message:  1010
 <ce>             You notice a book chained to a nearby wall,
 <ce>             replete with magical seals. Next to it hangs
@@ -28,14 +36,6 @@ Message:  1012
 <ce>  moments you look back by chance and notice that
 <ce>  the book and pouch are no longer visible.
 
-Message:  1013
-<ce>            After feeding in 250 gold pieces, you sit down
-<ce>                 and survey the contents of the book.
-<ce>          It has useful suggestions for pronunciation in the
-<ce>            Orcish language, and some tables for grammar.
-<ce>         Your three hours are well spent, at the end of which
-<ce>         the book disappears entirely, along with the pouch.
-
 QBN:
 
 --	Quest start-up:
@@ -51,7 +51,6 @@ _payhim_ task:
     pay 250 money do _given_ otherwise do _nomoney_
 
 _given_ task:
-    say 1013
     train pc Orcish
     end quest
 
