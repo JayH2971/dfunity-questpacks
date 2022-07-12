@@ -1,0 +1,85 @@
+Quest: couriercycle
+DisplayName: The Courier's Daily Cycle
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  Do you wish to give up courier work?
+
+Message:  1012
+<ce>  You decide to hold on to the chest.
+<ce>  You can always decide again tomorrow.
+
+Message:  1013
+<ce>  You lay the chest on the ground.
+<ce>  It suddenly sprouts a note,
+<ce>  identical to the one you saw when
+<ce>  you picked it up. So the cycle continues,
+<ce>  and a new courier will be born.
+
+Message:  1014
+%qdt:
+ I have taken up courier work.
+ I can always dispose of this chest
+ if I change my mind.
+
+QBN:
+
+Item _chest_ item class 1 subclass 8
+
+Clock _smalldelay_ 0:01 0:04
+Clock _timer_ 1.00:00 1.04:00
+
+Place _dung_ permanent DaggerfallCastle
+Place _dung2_ permanent SentinelCastle
+Place _dung3_ permanent WayrestCastle
+
+--	Quest start-up:
+    log 1014 step 0
+    pc at _dung_ set _inside1_
+    pc at _dung2_ set _inside2_
+    pc at _dung3_ set _inside3_
+    _chest_ used do _giveup_
+    get item _chest_
+
+_giveup_ task:
+    prompt 1011 yes _final_ no _refuse_
+
+_refuse_ task:
+    say 1012
+
+_final_ task:
+    say 1013
+    end quest
+
+variable _inside1_
+variable _inside2_
+variable _inside3_
+
+_eventstart_ task:
+    when pc enters city
+    when pc enters hamlet
+    when pc enters village
+    start timer _timer_
+    start timer _smalldelay_
+
+_smalldelay_ task:
+    pick one of _one_ _dud_ _one_ _dud_ _two_ _dud_ _three_
+
+variable _dud_
+
+_one_ task:
+    start quest courierdelivery
+
+_two_ task:
+    start quest courierdelivery
+    start quest courierdelivery
+
+_three_ task:
+    start quest courierdelivery
+    start quest courierdelivery
+    start quest courierdelivery
+
+_timer_ task:
+    start quest couriercycle
+    end quest

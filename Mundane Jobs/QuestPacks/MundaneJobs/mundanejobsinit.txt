@@ -1,0 +1,54 @@
+Quest: mundanejobsinit
+DisplayName: Mundane Jobs Starter
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  You notice a small chest on the ground with a hopeful note.
+<ce>  
+<ce>  "Courier wanted! Deliver letters to persons as you travel.
+<ce>  Pay between 25 and 75 gold per letter delivered.
+<ce>  Letters will appear in this box and must be hand-delivered
+<ce>  to the recipient, who will tender payment."
+<ce>  
+<ce>  No one else seems to pay the container any mind.
+<ce>  If you're looking for a way to earn some money,
+<ce>  this seems like a simple start. Do you take it?
+
+Message:  1012
+<ce>  You leave the chest alone. Someone else will
+<ce>  have to make couriership their duty.
+
+Message:  1013
+<ce>  You pick up the chest and look inside.
+<ce>  It's empty right now, but once the owner
+<ce>  realizes that you've taken up the task,
+<ce>  letters will presumably show up within.
+<ce>  
+<ce>  (NOTE: To give up this job,
+<ce>  activate the "Use" command on this chest
+<ce>  in your inventory.)
+
+QBN:
+
+Clock _smalldelay_ 0:01 0:02
+
+--	Quest start-up:
+
+_eventstart_ task:
+    when pc enters city
+    when pc enters hamlet
+    when pc enters village
+    start timer _smalldelay_
+
+_smalldelay_ task:
+    prompt 1011 yes _accept_ no _refuse_
+
+_refuse_ task:
+    say 1012
+    end quest
+
+_accept_ task:
+    say 1013
+    start quest couriercycle
+    end quest

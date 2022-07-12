@@ -1,0 +1,184 @@
+Quest: courierdelivery
+DisplayName: A Courier's Life, Delivery
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  Oh! You startled me. A letter? For me?
+<ce>  Um, okay. Delivery fee of =reward_ gold.
+<ce>  Well, here you go. Be safe.
+<--->
+<ce>  Hello! Yes, I've been expecting that letter.
+<ce>  I'll take that, and you take this.
+<--->
+<ce>  A letter? I'm not expecting any letter.
+<ce>  This better not be a trick.
+<ce>  Take your money and go.
+<--->
+<ce>  Oh my! This must be about my mother.
+<ce>  I've been worried sick!
+<ce>  Thank you, and take this money.
+<--->
+<ce>  Finally, some news from my beloved!
+<ce>  Take your money, this means so much to me.
+<--->
+<ce>  Oh dear, another debt collection notice.
+<ce>  Take this money and tell no one you saw me.
+<--->
+<ce>  A letter. This better be important.
+<ce>  Fighters Guild recruitment?
+<ce>  Are they so desperate that they send letters now?
+<ce>  Well, I'll get reimbursement for this delivery.
+<ce>  You take your =reward_ gold.
+<--->
+<ce>  A letter for me? Wait, let me see what it says.
+<ce>  
+ "_person_,
+    You are a thief. Do not
+ try to deny it, you have
+ been seen in the act. There
+ is honor among thieves.
+ Either join the guild or
+ face the consequences."
+<ce>   
+<ce>  Oh dear. Go now. Now. Take your money and hurry on.
+<--->
+<ce>  Oh no, I've been expecting this letter. Oh dear.
+<ce>  Yes, my grandfather has passed away.
+<ce>  It's time to tie up loose ends.
+<ce>  Thank you. Take your fee.
+<--->
+<ce>  A delivery for me? What?
+<ce>  This is just an advertisement
+<ce>  for a blacksmith up the way.
+<ce>  I'll pay you, but I'm going to raise
+<ce>  Oblivion with these devils for wasting
+<ce>  my time and money like this. Get going, now.
+<--->
+<ce>  A letter for me? Oh wow! A birthday party!
+<ce>  This sounds like fun! I'll get my things in
+<ce>  order and make the trip. Thank you!
+<ce>  Here, this is yours.
+<--->
+<ce>  Oh, the letter arrived! My sister is
+<ce>  doing so well with the Mages Guild,
+<ce>  I get so excited to hear how she's doing.
+<ce>  I can't wait to read it! Here, take
+<ce>  your money and get going.
+<--->
+<ce>  Oh, wonderful! It's this month's letter.
+<ce>  My brother works for the %rt
+<ce>  and has so many fascinating stories to tell.
+<ce>  Here, take what's yours and let me read.
+<--->
+<ce>  Another cursed letter from my estranged family.
+<ce>  I'll pay your fee, but they need to get their act together.
+<ce>  Might find an axe in their door one of these days.
+<ce>  Go on, scram.
+<--->
+<ce>  Oh, thank you! This is from my sister. She's traveling
+<ce>  across the Bay and wanted me to know she made it safely.
+<ce>  What a relief! Here, take your fee.
+<--->
+<ce>  Oh, dear. My mother has passed away, and it seems
+<ce>  we need to get our family business in order.
+<ce>  It'll be quite messy, I can say that much.
+<ce>  Here, take your gold.
+
+
+Message:  1011
+<ce>  A letter has shown up inside the chest.
+<ce>  
+<ce>  "To: _person_ of ___random_.
+<ce>  Expected delivery fee of =reward_ gold.
+<ce>  Please deliver before 24 hours have passed."
+<--->
+<ce>  A letter has appeared inside the chest.
+<ce>
+<ce>  "Delivery for _person_ in your current town.
+<ce>  Payment of =reward_ gold on delivery.
+<ce>  Ensure delivery within 24 hours."
+<--->
+<ce>  A letter has arrived inside the courier chest.
+<ce>  
+<ce>  "Please deliver to _person_ of _random_
+<ce>  before 24 hours have passed. On receipt,
+<ce>  %g1 will proffer =reward_ gold."
+<--->
+<ce>  A letter has been sent inside the courier chest.
+<ce>  
+<ce>  "Missive for _person_, a =person_
+<ce>  living in ___random_. Please deliver
+<ce>  within 24 hours for =reward_ gold."
+<--->
+<ce>  A small parchment has been placed in your courier chest.
+<ce>  
+<ce>  "Urgent letter for _person_,
+<ce>  usual whereabouts _random_ of ___random_.
+<ce>  =reward_ gold pieces upon delivery."
+<--->
+<ce>  A piece of paper has appeared in your courier chest.
+<ce>  
+<ce>  "Delivery to: _person_
+<ce>  Contents PRIVATE, do NOT open
+<ce>  Delivery fee of =reward_ gold pieces on arrival"
+<--->
+<ce>  A parchment has shown up in your courier chest.
+<ce>  
+<ce>  " =reward_ gold pieces for delivery to
+<ce>  _person_, a =person_ in ___random_.
+<ce>  Current whereabouts unknown.
+<ce>  Please ensure prompt delivery,
+<ce>  within 24 hours."
+<--->
+<ce>  A parchment has shown up in your courier chest.
+<ce>  
+<ce>  "For _person_'s eyes ONLY.
+<ce>  If open, delivery fee of =reward_ gold pieces void.
+<ce>  DO NOT OPEN, COURIER!
+<ce>  Deliver within 24 hours!!"
+
+
+Message:  1012
+<ce>  This letter is someone else's private property.
+<ce>  It would be obvious if you opened and read it.
+<ce>  On your courier's honor, you put it away.
+
+Message:  1013
+<ce>  You are overdue on letter delivery.
+<ce>  The letter disappears from your pack,
+<ce>  apparently recalled to its sender.
+
+Message:  1014
+%qdt:
+ I have a letter to deliver
+ to _person_ of ___random_
+ for =reward_ gold pieces.
+
+QBN:
+
+Item _letter_ letter used 1012
+Item _reward_ gold range 25 to 75
+
+Person _person_ faction The_Fighters_Guild remote
+
+Place _random_ local anywhere
+
+Clock _timer_ 1.00:00
+
+--	Quest start-up:
+    say 1011
+    get item _letter_
+    place npc _person_ at _random_
+    start timer _timer_
+    log 1014 step 0
+
+_delivery_ task:
+    toting _letter_ and _person_ clicked
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    say 1013
+    take _letter_ from pc
+    end quest
