@@ -71,7 +71,7 @@ _accept_ task:
     log 1014 step 0
 
 _finalwin_ task:
-    toting _relig_ and _person_ clicked
+    toting _relig_ and _recep_ clicked
     give pc _reward_
     end quest
 
