@@ -42,6 +42,9 @@ Message:  1012
 <ce>  "Finally, someone came to find me!
 <ce>  Please get me out of here!"
 
+Message:  1013
+<ce>  Surely someone else will take up this rescue matter.
+
 Message:  1030
 %qdt:
  I picked up a request to find _captive_,
@@ -60,7 +63,7 @@ Clock _timer_ 00:00 0 flag 17 range 0 2
     prompt 1010 yes _accept_ no _quit_
 
 _quit_ task:
-    say 1012
+    say 1013
     end quest
 
 _accept_ task:
@@ -74,7 +77,7 @@ _accept_ task:
 variable _inside_
 _begin_ task:
     clicked npc _captive_
-    say 1010
+    say 1012
     hide npc _captive_
     add _captive_ face
 
