@@ -1,4 +1,4 @@
-Quest: JHDB127
+Quest: JHDB227
 DisplayName: No Thieves Allowed
 -- Message panels
 QRC:

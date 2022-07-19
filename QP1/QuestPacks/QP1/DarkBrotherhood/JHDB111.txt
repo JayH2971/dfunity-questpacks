@@ -1,0 +1,147 @@
+Quest: JHDB111
+DisplayName: To Meddle with Mages
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>        Have you ever heard of an Archmagister, %pct?
+<ce>  It is the highest known public office of the Mages Guild.
+<ce>  Whether there is one Archmagister or many is beyond
+<ce>  my concern; we have a demand here for his culling,
+<ce>   with a powerful enchanted _reward_ as a reward.
+<ce>  Would you like to wield it?
+
+RefuseQuest:  [1001]
+<ce>   We should screen our initiates for Mages Guild membership.
+
+AcceptQuest:  [1002]
+<ce>      This Archmagister, whoever he is, is conducting
+<ce>  a visit to the guild hall in ___mg_.
+<ce>  Look for someone under the alias "_archm_."
+<ce>  For this contract, you must eschew all subtlety.
+<ce>  Go boldly in the name of Mephala and slay him.
+<ce>  Whoever else stands in your way does so at their own peril.
+<ce>  Your license to kill is absolute.
+<ce>  
+<ce>  Return here within =timer_ days,
+<ce>  and your _reward_ will await you.
+
+QuestFail:  [1003]
+<ce>    Your time to claim the reward for the Archmagister's death has passed.
+
+QuestComplete:  [1004]
+<ce>        It must have been quite a battle,
+<ce>  from the rumors the Spymaster's been getting.
+<ce>  All the more glory to the Night Mother.
+<ce>  No one is exempt from the Brotherhood's reach.
+<ce>  No one.
+<ce>  
+<ce>  I hope you enjoy this.
+
+RumorsPostSuccess:   [1007]
+The Archmagister was attacked in ___mg_... but they say it was a body double.
+<--->
+The Dark Brotherhood tried to kill the Archmagister, visiting ___mg_, but it was a fake.
+<--->
+The Dark Brotherhood tries to kill the Archmagister. No one's safe, after all.
+
+Message:  1011
+<ce>  "Yes? Can I help you?"
+<ce>  
+<ce>  Subtlety would make this a lot easier,
+<ce>  but you have no such option today.
+<ce>  You inform him that this
+<ce>  is the day of his death.
+<ce>  He shouts loud and fearfully.
+<ce>  
+<ce>  "The Dark Brotherhood is in our halls!
+<ce>  Everyone, defend yourselves!!"
+
+Message:  1012
+<ce>  "This-- this cannot be!! No!"
+<ce>  
+<ce>  The Archmage expires.
+
+Message:  1030
+%qdt:
+ "An" Archmagister, or "the" Archmagister,
+ of the Mages Guild is visiting
+ their hall at ___mg_.
+ The Brotherhood requires me to slay him
+ and return to ___questgiver_
+ within =timer_ days for a powerful enchanted _reward_.
+
+QBN:
+Person _questgiver_ group Questor male
+Person _dummymg_ faction The_Mages_Guild
+Person _archm_ faction The_Archmagister male
+
+Place _mg_ remote magery
+
+Item _reward_ item class 4 subclass 33
+
+Clock _timer_ 00:00 0 flag 1 range 0 2
+
+Foe _archmag_ is Mage
+Foe _enemy1_ is Battle_mage
+Foe _enemy2_ is Spellsword
+Foe _enemy3_ is Iron_atronach
+Foe _enemy4_ is Flesh_atronach
+
+--	Quest start-up:
+    start timer _timer_
+    place npc _archm_ at _mg_
+    log 1030 step 0
+    pc at _mg_ set _inside_
+
+variable _inside_
+
+_ith_ task:
+    clicked npc _archm_
+    say 1011
+    hide npc _archm_
+    place foe _archmag_ at _mg_
+    change foe _archmag_ infighting true
+    cast Shield spell on _archmag_
+    cast Troll's_Blood spell on _archmag_
+    cast Shalidor's_Mirror spell on _archmag_
+    cast Spell_Shield spell on _archmag_
+    cast Spell_Absorption spell on _archmag_
+    create foe _enemy3_ every 0 minutes 1 times with 100% success
+    create foe _enemy4_ every 0 minutes 1 times with 100% success
+    change foe _enemy3_ infighting true
+    change foe _enemy4_ infighting true
+    change foe _enemy3_ team 19
+    change foe _enemy4_ team 19
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    clear _daily_
+
+_spawn_ task:
+    when _ith_ and _inside_
+    create foe _enemy1_ every 1 minutes indefinitely with 33% success
+    create foe _enemy2_ every 2 minutes indefinitely with 66% success
+
+_slain_ task:
+    killed 1 _archmag_ saying 1012
+    change repute with _dummymg_ by -70
+
+_qgclicked_ task:
+    clicked npc _questgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
+
+_pcreward_ task:
+    when _qgclicked_ and _slain_
+    give pc _reward_
+    start quest JHDBC03
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest

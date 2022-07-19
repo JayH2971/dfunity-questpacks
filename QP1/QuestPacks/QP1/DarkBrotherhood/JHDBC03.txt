@@ -1,0 +1,47 @@
+Quest: JHDBC03
+DisplayName: Dark Brotherhood Consequence Quest 3
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  An inhuman shriek brings you up sharp.
+<ce>  
+<ce>  "%pcn! Your time has come!"
+<ce>  
+<ce>  A lone hooded mage holds a small trinket in his hand.
+<ce>  He throws it to the ground, and with a bright flash,
+<ce>  several foes take shape.
+<ce>  
+<ce>  "For the Archmagister! Die, dog!"
+<ce>  
+<ce>  The mage teleports away.
+
+QBN:
+
+Clock _delay_ 0:02
+
+Item _dummy_ letter
+
+Foe _enemy1_ is Fire_daedra
+Foe _enemy2_ is Fire_daedra
+Foe _enemy3_ is Fire_atronach
+Foe _enemy4_ is Fire_atronach
+
+--	Quest start-up:
+    have _dummy_ set _spawn_
+    give pc _dummy_ notify 1011
+
+_spawn_ task:
+    take _dummy_ from pc
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    change foe _enemy1_ infighting true
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    change foe _enemy2_ infighting true
+    create foe _enemy3_ every 0 minutes 1 times with 100% success
+    change foe _enemy3_ infighting true
+    create foe _enemy4_ every 0 minutes 1 times with 100% success
+    change foe _enemy4_ infighting true
+    start timer _delay_
+
+_delay_ task:
+    end quest

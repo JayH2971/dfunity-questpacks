@@ -1,4 +1,4 @@
-Quest: JHDB102
+Quest: JHDB202
 DisplayName: Slay a Knight
 -- Message panels
 QRC:

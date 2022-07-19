@@ -1,0 +1,127 @@
+Quest: JHIM122
+DisplayName: To Curse the Thieves Guild
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>     Hey, you! I'm in a bad mood and I need
+<ce>  vengeance on the Thieves Guild.
+<ce>  They raided my house last night, and now
+<ce>  they're gonna get what's theirs.
+<ce>  I'll pay you =reward_ gold for
+<ce>  a little help with it.
+
+RefuseQuest:  [1001]
+<ce>          Oh. Then by %god, don't tell them about me.
+
+AcceptQuest:  [1002]
+<ce>      Okay, take this _trink_. I got it enchanted
+<ce>   with something real special. It's gonna make
+<ce>   one of them fire atronachs appear where you
+<ce>   use it. If I'm lucky, the building's gonna
+<ce>   burn down or something! Just go inside
+<ce>   _res_ to the %di, that's where some
+<ce>   of the Thieves Guild stay.
+<ce>   Use that _trink_ and get out of there.
+<ce>   I'll pay you when it's done.
+<ce>   But don't take longer than a day, yeah?
+<ce>   Don't want them catching wind of me.
+
+QuestFail:  [1003]
+<ce>      You've taken longer than a day to
+<ce>   place the atronach at _res_,
+<ce>   and _questgiver_ will refuse to pay you.
+
+QuestComplete:  [1004]
+<ce>      Ha ha! Sweet, isn't it? Bunch of filthy robbers
+<ce>   get what's coming to them. They deserve it,
+<ce>   don't feel bad for them. I got your =reward_ gold here.
+
+RumorsPostSuccess:   [1007]
+Some idiot committed vandalism against the Thieves Guild.
+
+QuestorPostFailure:   [1009]
+Don't even talk to me. You'd screw up the simplest job.
+
+Message:  1010
+<ce>  This must be the right house.
+
+Message:  1011
+<ce>  The _trink_ must be used within _res_.
+
+Message:  1012
+<ce>  You activate the _trink_.
+<ce>  A rushing of wind precedes the formation of
+<ce>  an atronach nearby.
+
+Message:  1013
+<ce>  You inexplicably killed the atronach you summoned.
+<ce>  Some minds really aren't meant for crime.
+
+Message:  1030
+%qdt:
+ _questgiver_ will pay me =reward_ gold to
+ summon an atronach inside _res_
+ of ___res_ using an enchanted _trink_.
+ I need to do so and return within one day.
+
+QBN:
+Person _questgiver_ group Questor
+Person _tg_ faction The_Thieves_Guild remote
+
+Place _res_ local house
+
+Clock _timer_ 1.00:00
+
+Item _reward_ gold range 101 to 249
+Item _trink_ trinket
+
+Foe _flfoe_ is Fire_atronach
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    pc at _res_ do _inside_
+    _trink_ used do _activate_
+    get item _trink_
+
+variable _activate_
+_notyet_ task:
+    when _activate_ and not _inside_ and not _victory_
+    say 1011
+    clear _activate_ _notyet_
+
+_inside_ task:
+    say 1010
+
+_summon_ task:
+    when _activate_ and _inside_
+    say 1012
+    take _trink_ from pc
+    create foe _flfoe_ every 0 minutes 1 times with 100% success
+    change foe _flfoe_ infighting true
+    start task _victory_
+    change repute with _tg_ by -10
+
+variable _victory_
+
+_attack_ task:
+    killed _flfoe_
+    say 1013
+    end quest
+
+_timer_ task:
+    say QuestFail
+    end quest
+
+_clickqgiver_ task:
+    clicked npc _questgiver_
+
+_noreward_ task:
+    when _clickqgiver_ and not _victory_
+    clear _noreward_ _clickqgiver_
+
+_reward_ task:
+    when _clickqgiver_ and _victory_
+    give pc _reward_
+    end quest

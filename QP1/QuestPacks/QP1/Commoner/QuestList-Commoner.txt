@@ -29,4 +29,5 @@ JHIM118, Commoners, N, 0, 1, a quest to capture centaurs
 JHIM119, Commoners, N, 0, 1, a quest to walk a bear
 JHIM120, Commoners, N, 0, 1, a quest to cure an incurable disease
 JHIM121, Commoners, M, 0, 1, a quest to aid in revenge on adultery
+JHIM122, Commoners, M, 0, 1, a quest to vandalize a Thieves Guild house
 JHIM203, Commoners, N, 0, 1, a quest to end a haunting

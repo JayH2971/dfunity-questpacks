@@ -22,7 +22,7 @@ JHKN114, KnightlyOrder, M, 0, 1, a quest to resolve in-laws' debts
 JHKN115, KnightlyOrder, M, 1, 1, a quest to stop the cause of attacking spriggans
 JHKN116, KnightlyOrder, M, 3, 1, a quest to negotiate peace with an orc
 JHKN117, KnightlyOrder, M, 1, 0, a quest to defend a graveyard from intruders
--JHKN118, KnightlyOrder, M, 1, 0,
+JHKN118, KnightlyOrder, M, 1, 0, a quest to execute a Fighters Guild member
 -JHKN119, KnightlyOrder, M, 9, 1,
 JHKN120, KnightlyOrder, M, 1, 0, a quest to draw out an attacking band
 JHKN121, KnightlyOrder, M, 5, 0, a quest to apprehend a witch

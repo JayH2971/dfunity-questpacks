@@ -1,4 +1,4 @@
-Quest: JHDB105
+Quest: JHDB205
 DisplayName: Slay a Barbarian
 -- Message panels
 QRC:

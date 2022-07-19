@@ -1,0 +1,26 @@
+Quest: JHKNC01
+DisplayName: Knightly Order Consequence Quest 1
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  The air is very heavy when you enter the guild hall.
+<ce>  No friendly faces are here to greet you.
+<ce>  
+<ce>  Perhaps killing a member of the guild
+<ce>  gave you a bit of a bad name?
+
+QBN:
+
+Clock _endtimer_ 60.00:00
+
+--	Quest start-up:
+    pc at any fighters do _inside_
+    start timer _endtimer_
+
+_inside_ task:
+    say 1004
+    end quest
+
+_endtimer_ task:
+    end quest

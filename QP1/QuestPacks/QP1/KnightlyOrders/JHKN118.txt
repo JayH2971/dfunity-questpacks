@@ -1,0 +1,108 @@
+Quest: JHKN118
+DisplayName: Fighters, Keepers
+
+QRC:
+
+QuestorOffer:  [1000]
+<ce>    A member of the Fighters Guild has become infamous in another town,
+<ce>  requiring an intervention by the %rt on behalf of execution.
+<ce>  We need you to go and slay this scoundrel.
+<ce>  The Fighters Guild will not be impressed with you,
+<ce>  but you must put aside your fears.
+<ce>  Be brave and serve, good knight.
+
+RefuseQuest:  [1001]
+<ce>  Bravery seems ever in short supply.
+
+AcceptQuest:  [1002]
+<ce>    Travel to ___tav_ and find a place called
+<ce>  _tav_. The lawless fighter is known
+<ce>  to stay there. Look for someone heavily armed.
+<ce>  Yours is the privilege to make the first strike,
+<ce>  for the law sustains you.
+<ce>  Report the knave's death to me within =timer_ days,
+<ce>  and I will have a special reward for you.
+
+QuestFail:  [1003]
+<ce>  _questgiver_ of __questgiver_ requested
+<ce>  to know the death of the fighter by now.
+
+QuestComplete:  [1004]
+<ce>     Very good. Your loyalty to the order and the %rt
+<ce>  will not be questioned. Continue faithful,
+<ce>  my friend.
+<ce>  
+<ce>  As you seek to protect %crn,
+<ce>  I have a gift that will protect you in turn.
+<ce>  Wield it with honor.
+
+Message:  1011
+<ce>  "Hrah! I won't be dying this day, lackey!"
+
+Message:  1012
+<ce>      The rule of law in %crn is honored today,
+<ce>  for this fool is slain.
+
+Message:  1030
+%qdt:
+ _questgiver_ of __questgiver_
+ in ___questgiver_ has sent me
+ to a place called ___tav_
+ in search of a lawbreaking
+ Fighters Guild member,
+ staying at _tav_.
+ I must carry out an execution and
+ return within =timer_ days.
+
+QBN:
+
+Item _reward_ item class 4 subclass 15
+
+Person _questgiver_ group Questor male
+Person _dummyfg_ faction The_Fighters_Guild remote
+
+Place _tav_ remote tavern
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _en1_ is Barbarian
+
+--	Quest start-up:
+	start timer _timer_
+	place foe _en1_ at _tav_
+	restrain foe _en1_
+	change foe _en1_ infighting true
+	log 1030 step 0
+
+_timer_ task:
+	say 1003
+	end quest
+
+_inj_ task:
+	injured _en1_
+	say 1011
+	change foe _en1_ infighting true
+
+_click_ task:
+	clicked foe _en1_
+	unrestrain foe _en1_
+	say 1011
+
+_slain_ task:
+	killed _en1_
+	say 1012
+	change repute with _dummyfg_ by -15
+	start quest JHKNC01
+
+_questorClicked_ task:
+	clicked npc _questgiver_
+
+_clearclick_ task:
+	when _questorClicked_ and not _slain_
+	clear _questorClicked_ _clearclick_
+
+_rewardPlayer_ task:
+	when _questorClicked_ and _slain_
+	give pc _reward_
+	legal repute +3
+	end quest

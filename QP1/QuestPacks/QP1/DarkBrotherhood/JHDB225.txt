@@ -1,4 +1,4 @@
-Quest: JHDB125
+Quest: JHDB225
 DisplayName: A Fighter Astray
 -- Message panels
 QRC:

@@ -13,6 +13,7 @@ JHDB106, DarkBrotherHood, M, 0, 0, a quest to kidnap a child for ransom
 JHDB108, DarkBrotherHood, M, 3, X, a quest to slay a teleported noble
 JHDB109, DarkBrotherHood, M, 0, 0, a quest to retrieve a ransomed child
 JHDB110, DarkBrotherHood, M, 1, 0, a quest to hijack a ransom plot
+JHDB111, DarkBrotherHood, M, 7, 1, a quest to kill the Archmagister
 JHDB112, DarkBrotherHood, M, 2, X, a quest to end a rival assassination organization
 JHDB113, DarkBrotherHood, M, 0, X, a quest to feed a mark to beasts
 JHDB114, DarkBrotherHood, M, 2, X, a quest to slay and deliver the body
