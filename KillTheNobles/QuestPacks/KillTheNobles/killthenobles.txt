@@ -1,0 +1,506 @@
+Quest: killthenobles
+DisplayName: You Can Kill the Nobles
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  King Gothryd scoffs at you.
+<ce>  He beat King Camaron in single combat;
+<ce>  you aren't worth his time.
+<ce>  
+<ce>  (You must be level 10 to fight Gothryd.)
+
+Message:  1011
+<ce>  Do you wish to duel King Gothryd?
+
+Message:  1012
+<ce>  "Well then, have at you! Daggerfall shall reign supreme!"
+<ce>  
+<ce>  Gothryd leaps away from his throne and arms himself for battle.
+
+Message:  1013
+<ce>  The royal court gasps in disbelief as Gothryd falls shamefully.
+<ce>  They cry and wail. The future of Daggerfall is now in jeopardy.
+
+Message:  1020
+<ce>  Queen Aubk-i pretends not to notice you.
+<ce>  She refuses to even consider a duel with you.
+<ce>  
+<ce>  (You must be level 10 to fight Aubk-i.)
+
+Message:  1021
+<ce>  Do you wish to duel Queen Aubk-i?
+
+Message:  1022
+<ce>  "Only a fool would challenge a Redguard queen!
+<ce>  Fight and die!"
+<ce>  
+<ce>  Aubk-i grabs a weapon and prepares for battle.
+
+Message:  1023
+<ce>  The court shrieks as Aubk-i falls dead.
+<ce>  You have dealt a blow to Daggerfall's future
+<ce>  which will cost them decades, even generations.
+
+Message:  1030
+<ce>  Queen Akorithi rolls her eyes as you approach.
+<ce>  She requires a more worthy opponent for a duel.
+<ce>  
+<ce>  (You must be level 10 to fight Akorithi.)
+
+Message:  1031
+<ce>  Do you wish to duel Queen Akorithi?
+
+Message:  1032
+<ce>  The old queen snarls and grabs a weapon.
+<ce>  With surprising agility,
+<ce>  she unsheathes her weapon and moves to defend herself.
+
+Message:  1033
+<ce>  Queen Akorithi falls, and silence reigns.
+<ce>  The stunned court fails to muster a single word.
+<ce>  Their beloved queen has been taken from them forever.
+
+Message:  1040
+<ce>  King Eadwyre simply laughs at you.
+<ce>  He makes no effort to even form words.
+<ce>  
+<ce>  (You must be level 10 to duel Eadwyre.)
+
+Message:  1041
+<ce>  Do you wish to duel King Eadwyre?
+
+Message:  1042
+<ce>  Eadwyre tosses off his royal coat,
+<ce>  revealing a set of armor beneath.
+<ce>  His age belies his skill;
+<ce>  he is ready to fight.
+
+Message:  1043
+<ce>  "NOOOOOOO!!" Morgiah shrieks as the king falls.
+<ce>  The court of Wayrest stares, dumbfounded,
+<ce>  at the king's fresh corpse. Messengers rush out
+<ce>  into the town to inform the world
+<ce>  of the monarch's death.
+
+Message:  1050
+<ce>  Queen Barenziah's face twists into a condescending grin.
+<ce>  
+<ce>  "Come back when you learn how to fight, okay child?"
+<ce>  
+<ce>  (You must be level 10 to duel Barenziah.)
+
+Message:  1051
+<ce>  Do you wish to duel Queen Barenziah?
+
+Message:  1052
+<ce>  The queen scowls as she tosses off her royal robe.
+<ce>  She casts a spell and grabs a staff,
+<ce>  preparing for battle.
+
+Message:  1053
+<ce>  Helseth and Morgiah watch in disbelief
+<ce>  as their beloved mother succumbs to her injuries.
+<ce>  The court of Wayrest glares at you with cold fury.
+
+Message:  1060
+<ce>  Nulfaga chuckles and smiles kindly.
+<ce>  
+<ce>  "Now, now, child, not so hasty into battle.
+<ce>  There will be a time and a place for all these things."
+<ce>  
+<ce>  (You must be level 12 to duel Nulfaga.)
+
+Message:  1061
+<ce>  Do you wish to duel Nulfaga?
+
+Message:  1062
+<ce>  A motherly, tender smile crosses her face.
+<ce>  
+<ce>  "Well then, if you're so insistent, I can't turn you down.
+<ce>  But let me cast a spell first, why don't you?"
+<ce>  
+<ce>  She cackles and changes form into something more worthy
+<ce>  of battle. Then she teleports away a short distance
+<ce>  to begin the duel.
+
+Message:  1063
+<ce>  Nulfaga wheezes and sputters, unable to recover.
+<ce>  Slowly, quietly, the life ebbs out of her.
+<ce>  Her transformed body lies inert on the floor.
+
+Message:  1070
+<ce>  Madame Medora looks you up and down and shakes her head.
+<ce>  
+<ce>  "No, not now. Killing you would bring me no satisfaction."
+<ce>  
+<ce>  (You must be level 12 to duel Medora Direnni.)
+
+Message:  1071
+<ce>  Do you wish to duel Medora Direnni?
+
+Message:  1072
+<ce>  She sighs in a mix of contempt and pity.
+<ce>  
+<ce>  "If this is the only thing that will satisfy you,
+<ce>  I can't keep it from you forever."
+<ce>  
+<ce>  She casts a spell, changing form before your eyes.
+<ce>  The duel has begun.
+
+Message:  1073
+<ce>  Lady Direnni shrieks in disbelief.
+<ce>  She has been bested in single combat,
+<ce>  and her life is at an end.
+<ce>  Her eyes close for the last time.
+
+Message:  1080
+<ce>  The King of Worms' laughter booms throughout the chamber,
+<ce>  and his servants join in.
+<ce>  
+<ce>  "No, fool! Don't throw your life away!
+<ce>  Come back after you've gained strength.
+<ce>  A powerful corpse makes for a worthy champion."
+<ce>
+<ce>  (You must be level 15 to duel the King of Worms.)
+
+Message:  1081
+<ce>  Do you wish to duel the King of Worms?
+
+Message:  1082
+<ce>  The King of Worms sighs pleasurably.
+<ce>  
+<ce>  "Ah, it's been too long since I had a good fight!
+<ce>  May our battle satisfy us!"
+<ce>  
+<ce>  He tosses off his robe and casts a spell.
+<ce>  Whether this is his natural form or
+<ce>  an illusion is just one of his many
+<ce>  secrets, never to be divulged.
+
+Message:  1083
+<ce>  His form battered beyond function,
+<ce>  the King of Worms topples to the floor.
+<ce>  He lets out a long, airy chuckle.
+<ce>  
+<ce>  "A good battle...
+<ce>  I will be back, though I know not how long it will take.
+<ce>  The King of Worms will never truly die.
+<ce>  I concede my honor and the Necromancer's Amulet,
+<ce>  if you will take it."
+
+QBN:
+
+Clock _timer_ 1.00:00
+
+Item _item1_ artifact Auriels_Shield
+Item _item2_ artifact Auriels_Bow
+Item _item3_ artifact Chrysamere
+Item _item4_ artifact Lords_Mail
+Item _item5_ gold range 25000 to 25000
+Item _item6_ artifact Warlocks_Ring
+Item _item7_ artifact Staff_of_Magnus
+Item _item8_ artifact Necromancers_Amulet
+
+Person _goth_ named King_Gothryd atHome
+Person _aubk_ named Queen_Aubk-i atHome
+Person _akor_ named Queen_Akorithi atHome
+Person _ead_ named King_Eadwyre atHome
+Person _baren_ named Queen_Barenziah atHome
+Person _nulf_ named Nulfaga atHome
+Person _medo_ named Medora atHome
+Person _kow_ named King_of_Worms atHome
+
+Foe _enemy1_ is Knight
+Foe _enemy2_ is Knight
+Foe _enemy3_ is Warrior
+Foe _enemy4_ is Knight
+Foe _enemy5_ is Warrior
+Foe _enemy6_ is Ancient_vampire
+Foe _enemy7_ is Daedra_seducer
+Foe _enemy8_ is Ancient_lich
+
+--	Quest start-up:
+    start timer _timer_
+
+_level10_ task:
+    level 10 completed
+
+_level12_ task:
+    level 12 completed
+
+_level15_ task:
+    level 15 completed
+
+_click1_ task:
+    clicked npc _goth_
+
+variable _dud_
+
+_fail1_ task:
+    when _click1_ and not _level10_
+    say 1010
+    clear _click1_ _fail1_
+
+_begin1_ task:
+    when _click1_ and _level10_
+    prompt 1011 yes _duelgoth_ no _dud_
+
+_duelgoth_ task:
+    say 1012
+    hide npc _goth_
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    cast Troll's_Blood spell on _enemy1_
+    cast Shield spell on _enemy1_
+    cast Orc_Strength spell on _enemy1_
+    cast Feet_of_Notorgo spell on _enemy1_
+    cast Spell_Shield spell on _enemy1_
+    cast Free_Action spell on _enemy1_
+    give item _item1_ to _enemy1_
+    make _item1_ permanent
+
+_killgoth_ task:
+    killed _enemy1_
+    say 1013
+    setplayercrime High_Treason
+    legal repute -200
+    destroy _goth_
+
+_click2_ task:
+    clicked npc _aubk_
+
+_fail2_ task:
+    when _click2_ and not _level10_
+    say 1020
+    clear _click2_ _fail2_
+
+_begin2_ task:
+    when _click2_ and _level10_
+    prompt 1021 yes _duelaubk_ no _dud_
+
+_duelaubk_ task:
+    say 1022
+    hide npc _aubk_
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    cast Troll's_Blood spell on _enemy2_
+    cast Shield spell on _enemy2_
+    cast Orc_Strength spell on _enemy2_
+    cast Feet_of_Notorgo spell on _enemy2_
+    cast Spell_Absorption spell on _enemy2_
+    cast Free_Action spell on _enemy2_
+    give item _item2_ to _enemy2_
+    make _item2_ permanent
+
+_killaubk_ task:
+    killed _enemy2_
+    say 1023
+    setplayercrime High_Treason
+    legal repute -200
+    destroy _aubk_
+
+_click3_ task:
+    clicked npc _akor_
+
+_fail3_ task:
+    when _click3_ and not _level10_
+    say 1030
+    clear _click3_ _fail3_
+
+_begin3_ task:
+    when _click3_ and _level10_
+    prompt 1031 yes _duelakor_ no _dud_
+
+_duelakor_ task:
+    say 1032
+    hide npc _akor_
+    create foe _enemy3_ every 0 minutes 1 times with 100% success
+    cast Troll's_Blood spell on _enemy3_
+    cast Shield spell on _enemy3_
+    cast Orc_Strength spell on _enemy3_
+    cast Feet_of_Notorgo spell on _enemy3_
+    cast Shalidor's_Mirror spell on _enemy3_
+    cast Free_Action spell on _enemy3_
+    give item _item3_ to _enemy3_
+    make _item3_ permanent
+
+_killakor_ task:
+    killed _enemy3_
+    say 1033
+    setplayercrime High_Treason
+    legal repute -200
+    destroy _akor_
+
+_click4_ task:
+    clicked npc _ead_
+
+_fail4_ task:
+    when _click4_ and not _level10_
+    say 1040
+    clear _click4_ _fail4_
+
+_begin4_ task:
+    when _click4_ and _level10_
+    prompt 1041 yes _duelead_ no _dud_
+
+_duelead_ task:
+    say 1042
+    hide npc _ead_
+    create foe _enemy4_ every 0 minutes 1 times with 100% success
+    cast Troll's_Blood spell on _enemy4_
+    cast Shield spell on _enemy4_
+    cast Orc_Strength spell on _enemy4_
+    cast Feet_of_Notorgo spell on _enemy4_
+    cast Spell_Resistance spell on _enemy4_
+    cast Spell_Reflection spell on _enemy4_
+    cast Free_Action spell on _enemy4_
+    cast Nimbleness spell on _enemy4_
+    give item _item4_ to _enemy4_
+    make _item4_ permanent
+
+_killead_ task:
+    killed _enemy4_
+    say 1043
+    setplayercrime High_Treason
+    legal repute -200
+    destroy _ead_
+
+_click5_ task:
+    clicked npc _baren_
+
+_fail5_ task:
+    when _click5_ and not _level10_
+    say 1050
+    clear _click5_ _fail5_
+
+_begin5_ task:
+    when _click5_ and _level10_
+    prompt 1051 yes _duelbar_ no _dud_
+
+_duelbar_ task:
+    say 1052
+    hide npc _baren_
+    create foe _enemy5_ every 0 minutes 1 times with 100% success
+    cast Troll's_Blood spell on _enemy5_
+    cast Shield spell on _enemy5_
+    cast Orc_Strength spell on _enemy5_
+    cast Feet_of_Notorgo spell on _enemy5_
+    cast Spell_Resistance spell on _enemy5_
+    cast Spell_Reflection spell on _enemy5_
+    cast Free_Action spell on _enemy5_
+    cast Iron_Will spell on _enemy5_
+    give item _item5_ to _enemy5_
+    make _item5_ permanent
+
+_killbar_ task:
+    killed _enemy5_
+    say 1053
+    setplayercrime High_Treason
+    legal repute -200
+    destroy _baren_
+
+_click6_ task:
+    clicked npc _nulf_
+
+_fail6_ task:
+    when _click6_ and not _level12_
+    say 1060
+    clear _click6_ _fail6_
+
+_begin6_ task:
+    when _click6_ and _level12_
+    prompt 1061 yes _duelnulf_ no _dud_
+
+_duelnulf_ task:
+    say 1062
+    hide npc _nulf_
+    create foe _enemy6_ every 0 minutes 1 times with 100% success
+    cast Troll's_Blood spell on _enemy6_
+    cast Shield spell on _enemy6_
+    cast Orc_Strength spell on _enemy6_
+    cast Feet_of_Notorgo spell on _enemy6_
+    cast Spell_Resistance spell on _enemy6_
+    cast Spell_Reflection spell on _enemy6_
+    cast Free_Action spell on _enemy6_
+    give item _item6_ to _enemy6_
+    make _item6_ permanent
+
+_killnulf_ task:
+    killed _enemy6_
+    say 1063
+    destroy _nulf_
+
+_click7_ task:
+    clicked npc _medo_
+
+_fail7_ task:
+    when _click7_ and not _level12_
+    say 1070
+    clear _click7_ _fail7_
+
+_begin7_ task:
+    when _click7_ and _level12_
+    prompt 1071 yes _duelmedo_ no _dud_
+
+_duelmedo_ task:
+    say 1072
+    hide npc _medo_
+    create foe _enemy7_ every 0 minutes 1 times with 100% success
+    cast Troll's_Blood spell on _enemy7_
+    cast Shield spell on _enemy7_
+    cast Orc_Strength spell on _enemy7_
+    cast Feet_of_Notorgo spell on _enemy7_
+    cast Spell_Resistance spell on _enemy7_
+    cast Spell_Reflection spell on _enemy7_
+    cast Free_Action spell on _enemy7_
+    give item _item7_ to _enemy7_
+    make _item7_ permanent
+
+_killmedo_ task:
+    killed _enemy7_
+    say 1073
+    destroy _medo_
+
+_click8_ task:
+    clicked npc _kow_
+
+_fail8_ task:
+    when _click8_ and not _level15_
+    say 1080
+    clear _click8_ _fail8_
+
+_begin8_ task:
+    when _click8_ and _level15_
+    prompt 1081 yes _duelkow_ no _dud_
+
+_duelkow_ task:
+    say 1082
+    hide npc _kow_
+    create foe _enemy8_ every 0 minutes 1 times with 100% success
+    cast Troll's_Blood spell on _enemy8_
+    cast Shield spell on _enemy8_
+    cast Orc_Strength spell on _enemy8_
+    cast Feet_of_Notorgo spell on _enemy8_
+    cast Spell_Resistance spell on _enemy8_
+    cast Spell_Reflection spell on _enemy8_
+    cast Shalidor's_Mirror spell on _enemy8_
+    cast Resist_Fire spell on _enemy8_
+    cast Resist_Cold spell on _enemy8_
+    cast Resist_Poison spell on _enemy8_
+    cast Resist_Shock spell on _enemy8_
+    cast Spell_Shield spell on _enemy8_
+    cast Spell_Absorption spell on _enemy8_
+    cast Free_Action spell on _enemy8_
+    cast Nimbleness spell on _enemy8_
+    cast Iron_Will spell on _enemy8_
+    cast Wisdom spell on _enemy8_
+    give item _item8_ to _enemy8_
+    make _item8_ permanent
+
+_killkow_ task:
+    killed _enemy8_
+    say 1083
+    destroy _kow_
+
+_timer_ task:
+    start quest killthenobles
+    end quest
