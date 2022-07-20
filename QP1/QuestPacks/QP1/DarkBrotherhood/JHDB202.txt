@@ -1,3 +1,5 @@
+--Unused quest for now
+
 Quest: JHDB202
 DisplayName: Slay a Knight
 -- Message panels

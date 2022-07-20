@@ -1,0 +1,103 @@
+Quest: JHTG106
+DisplayName: Fall Guys
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  One of our members is pulling in a real haul,
+<ce>  making a lot of money for the guild.
+<ce>  Problem is, the locals are starting to figure him
+<ce>  out and they're starting to get suspicious.
+<ce>  We need someone to take a fall for him,
+<ce>  get framed so they let their guard back down.
+<ce>  Your reputation in %crn's gonna take a hit,
+<ce>  but we've got a good reward for you this time.
+
+RefuseQuest:  [1001]
+<ce>  I'm telling you, you want this reward.
+<ce>  I'll hold onto it for awhile,
+<ce>  but you're missing out.
+
+AcceptQuest:  [1002]
+<ce> Good. You won't regret this.
+<ce> The town guard's got him figured out, that he's
+<ce> going to hit _res_ next, in ___res_.
+<ce> That's where you need to be.
+<ce> Find something valuable in that house and take it.
+<ce> You might get caught,
+<ce> you'll probably get a bad rep, but that's gravy.
+<ce> When I see you again,
+<ce> I'll have your enchanted _reward_ here.
+<ce> And it ain't no ordinary thing, it's just what a thief wants.
+
+QuestComplete:  [1004]
+<ce>  Life's gonna be tough with a bad rep,
+<ce>  I know. We've all been there.
+<ce>  If you decide to head off someplace else,
+<ce>  you might be doing yourself a favor.
+<ce>  But an even bigger favor is taking this thing,
+<ce>  your _reward_. Got an enchantment
+<ce>  on it to unlock doors. Use it wisely,
+<ce>  it's gonna wear out pretty fast.
+
+Message: 1011
+<ce>  A watchman catches you in the act.
+<ce>  
+<ce>  "Hey! We found %pg2! The thief of ___res_!"
+<ce>  
+<ce>  Looks like the plan is working out just fine.
+
+Message:  1030
+%qdt:
+ In exchange for some good enchanted reward,
+ _qgiver_ of ___qgiver_ is sending me
+ to steal anything valuable I can find in
+ _res_, ___res_. Once I get caught,
+ I can return for my reward.
+
+QBN:
+Item _item_ gem
+Item _reward_ item class 4 subclass 6
+
+Place _res_ remote house
+
+Clock _failsafe_ 180.00:00
+
+Person _qgiver_ group Questor male
+
+--	Quest start-up:
+    start timer _failsafe_
+    log 1030 step 0
+    place item _item_ at _res_
+
+_begin_ task:
+    clicked item _item_
+    say 1011
+    legal repute -15
+    setplayercrime Theft
+    spawncityguards immediate
+    start task _halt_
+    start task _victory_
+
+variable _victory_
+
+_halt_ task:
+    play sound halt every 0 minutes 1 times
+    clear _halt_
+
+_clickqgiver_ task:
+    clicked npc _qgiver_
+
+_notyet_ task:
+    when _clickqgiver_ and not _victory_
+    clear _clickqgiver_ _notyet_
+
+_pcgetsgold_ task:
+    when _clickqgiver_ and _victory_
+    make _item_ permanent
+    give pc _reward_
+    end quest
+
+_failsafe_ task:
+    make _item_ permanent
+    end quest

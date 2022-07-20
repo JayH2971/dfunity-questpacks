@@ -1,3 +1,5 @@
+--Unused quest for now
+
 Quest: JHDB204
 DisplayName: Slay a Priest
 -- Message panels

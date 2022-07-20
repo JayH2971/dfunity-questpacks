@@ -29,11 +29,7 @@ JHDB122, DarkBrotherHood, M, 8, 1, an invitation to perform for Quill Circus
 JHDB123, DarkBrotherHood, M, 2, 1, a quest to rescue a relative of a Dark Brotherhood member
 JHDB124, DarkBrotherHood, M, 6, 1, a quest to defend an evil member in a dungeon
 JHDB201, DarkBrotherHood, M, 0, 0, a quest to slay a hermit causing animal attacks
-JHDB202, DarkBrotherHood, M, 0, 1, a quest to slay a knight inside the same town
-JHDB203, DarkBrotherHood, M, 0, 1, a quest to slay a thief inside the same town
-JHDB204, DarkBrotherHood, M, 0, 1, a quest to slay a priest inside the same town
-JHDB205, DarkBrotherHood, M, 0, 1, a quest to slay a barbarian inside the same town
 JHDB207, DarkBrotherHood, M, 0, X, a quest to slay a mark over a bodyguard's objection
-JHDB225, DarkBrotherHood, M, 3, 1, a quest to slay a member of the Fighers Guild
-JHDB226, DarkBrotherHood, M, 1, 1, a quest to kill three Fighters Guild members
-JHDB227, DarkBrotherHood, M, 1, 1, a quest to kill a Thieves Guild member
+JHDB225, DarkBrotherHood, M, 1, 1, a quest to slay a member of the Fighters Guild
+JHDB226, DarkBrotherHood, M, 3, 1, a quest to kill three Fighters Guild members
+JHDB227, DarkBrotherHood, M, 0, 1, a quest to kill a Thieves Guild member

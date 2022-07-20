@@ -1,3 +1,5 @@
+--Unused quest for now
+
 Quest: JHDB205
 DisplayName: Slay a Barbarian
 -- Message panels

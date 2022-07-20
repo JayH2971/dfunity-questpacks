@@ -1,3 +1,5 @@
+--Unused quest for now
+
 Quest: JHDB203
 DisplayName: Slay a Thief
 -- Message panels
