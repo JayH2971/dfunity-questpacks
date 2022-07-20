@@ -23,7 +23,7 @@ AcceptQuest:  [1002]
 <ce> When you're finished, come back to ___tav_
 <ce> and find _woman_ at _tav_.
 <ce> That's where she's living 'til her savings run out.
-<ce> Go pick up your =gold_ gold pieces from her before =timer_ days,
+<ce> Go pick up your =reward_ gold pieces from her before =timer_ days,
 <ce> that's the limit on this contract. Stay safe.
 
 QuestFail:  [1003]
