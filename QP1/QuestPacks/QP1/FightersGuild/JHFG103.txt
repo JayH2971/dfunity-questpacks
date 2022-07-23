@@ -11,8 +11,8 @@ QuestorOffer:  [1000]
 <ce>            paying =reward_ gold. Is that enough for you?
                                      <--->
 <ce>             So the Fighters Guild just kills spiders and
-<ce>               bears all day, right? Not quite. The %t
-<ce>              sometimes tries to get us to pick off some
+<ce>               bears all day, right? Not quite.
+<ce>              The %t sometimes tries to get us to pick off some
 <ce>               dangerous criminal that they can't catch
 <ce>            themselves. It still pays though, in this case
 <ce>                =reward_ gold. Does that work for you?

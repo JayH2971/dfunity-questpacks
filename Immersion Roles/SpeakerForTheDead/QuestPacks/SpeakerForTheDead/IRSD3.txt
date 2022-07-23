@@ -1,0 +1,24 @@
+Quest: IRSD3
+DisplayName: Speaker for the Dead Step 3
+-- Message panels
+QRC:
+
+Message:  1011
+%qdt:
+ The spirits tell me nothing for now.
+ I'll have to see when they speak again.
+
+Message:  1012
+<ce>  
+
+
+QBN:
+
+
+--	Quest start-up:
+    log 1011 step 0
+
+_level2_ task:
+    level 2 completed
+    start quest IRSD3
+    end quest

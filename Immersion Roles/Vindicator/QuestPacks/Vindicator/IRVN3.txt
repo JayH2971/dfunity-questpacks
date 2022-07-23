@@ -1,0 +1,66 @@
+Quest: IRVN3
+DisplayName: Vindicator Step 3
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  You're here, but without any further clues,
+<ce>  searching the whole city would take a great
+<ce>  deal of time. Even doing so doesn't actually
+<ce>  guarantee you'll find the culprit, or
+<ce>  anything of worth.
+<ce>  
+<ce>  You can search as you might, but
+<ce>  hopefully you'll get outside help
+<ce>  to find your purpose in this town.
+
+Message:  1013
+%qdt:
+ I am searching for the killer of Old Lysyna's husband,
+ with the promise of what remains of her estate
+ once I deliver justice. I've been guided to the
+ city of ___tav_, but have no further leads.
+ It may be a while before I progress this case further.
+
+Message:  1014
+<ce>  A swift-moving page says curtly,
+<ce>  "You're %pcn, right? Letter for you."
+<ce>  It's scarcely in your hands before you
+<ce>  lose sight of the messenger.
+
+Message:  1015
+To %pcn
+<ce>  
+  Please meet me at _tav_
+in ___tav_. Be discreet.
+I am in danger.
+Look for a =pers_.
+
+QBN:
+
+Place _tav_ local anywhere
+
+Person _pers_ faction The_Merchants remote
+
+Item _letter_ letter used 1015
+
+--	Quest start-up:
+    say 1011
+    log 1013 step 0
+
+_level3_ task:
+    level 3 completed
+    place npc _pers_ at _tav_
+    give pc _letter_ notify 1014
+
+_clicky_ task:
+    clicked npc _pers_
+
+_noclick_ task:
+    when _clicky_ and not _level3_
+    clear _noclick_ _clicky_
+
+_progress_ task:
+    when _clicky_ and _level3_
+    start quest IRVN4
+    end quest

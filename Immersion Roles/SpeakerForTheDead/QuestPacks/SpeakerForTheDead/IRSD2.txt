@@ -1,0 +1,127 @@
+Quest: IRSD2
+DisplayName: Speaker for the Dead Step 2
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You search through the trove.
+
+Message:  1010
+<ce>  As you exit the house, the voice speaks again.
+<ce>  
+<ce>  "Thank you. A gift to you. The ground, look."
+<ce>  
+<ce>  You look at the earth and see a small, shallow trove beside you.
+<ce>  Apparently this family keeps its treasures here -- and you're
+<ce>  invited to take a share. Surely the living won't mind.
+
+Message:  1011
+%qdt:
+ The spirits tell me nothing for now.
+ I'll have to see when they speak again.
+
+Message:  1012
+<ce>  A harsh, but determined, voice speaks to you.
+<ce>  
+<ce>  "Come to ___cem_. Intruders. Must disperse."
+<ce>  
+<ce>  Only silence follows.
+
+Message:  1013
+%qdt:
+ Someone's telling me to go
+ to ___cem_ in ____cem_.
+
+Message:  1014
+<ce>  The voice speaks again as you enter _cem_.
+<ce>
+<ce>  "No longer here. Wait. They will return."
+
+Message:  1015
+<ce>  "There they are. Thieves. Stop them."
+<ce>
+<ce>  You wouldn't have noticed it, but some thugs
+<ce>  are sneaking through the underbrush.
+<ce>  You aren't sure what to say to them.
+<ce>  However, you feel words welling up
+<ce>  within you, and you speak.
+<ce>  
+<ce>  "Stop! Steal no more from the dead!
+<ce>  Their wrath will not be contained!"
+<ce>  
+<ce>  One of the two thieves drops everything and flees,
+<ce>  and the other scoffs and pulls a weapon.
+<ce>  It looks like you'll have to defend yourself.
+
+Message:  1016
+<ce>  The voice speaks again.
+<ce>  
+<ce>  "Disrespect, cannot abide. Their goods, yours.
+<ce>  My reward. Safe remains."
+
+QBN:
+
+Item _dummy_ letter
+Item _reward1_ gold range 150 to 200
+Item _reward2_ potion key 5361377
+Item _reward3_ potion key 224588
+Item _reward4_ gold range 800 to 1000
+Item _reward5_ map
+Item _reward6_ map
+Item _reward7_ potion key 228890
+Item _reward8_ potion key 4815872
+
+Place _cem_ remote graveyard
+
+Clock _delay_ 4:00 6:00
+
+Foe _thief_ is Thief
+
+--	Quest start-up:
+    say 1010
+    give pc _reward1_
+    give pc _reward2_
+    give pc _reward3_
+    log 1011 step 0
+
+_level2_ task:
+    level 2 completed
+    give pc _dummy_ notify 1012
+    have _dummy_ set _remove_
+
+_remove_ task:
+    take _dummy_ from pc
+    start task _begin_
+
+_begin_ task:
+    pc at _cem_ do _inside_
+    log 1013 step 0
+    reveal _cem_
+
+_inside_ task:
+    say 1014
+    start timer _delay_
+
+_notinside_ task:
+    when not _inside_
+    stop timer _delay_
+
+_delay_ task:
+    say 1015
+    create foe _thief_ every 0 minutes 1 times with 100% success
+    give item _reward4_ to _thief_
+    give item _reward5_ to _thief_
+    give item _reward6_ to _thief_
+    give item _reward7_ to _thief_
+    give item _reward8_ to _thief_
+    make _reward4_ permanent
+    make _reward5_ permanent
+    make _reward6_ permanent
+    make _reward7_ permanent
+    make _reward8_ permanent
+
+_kill_ task:
+    killed _thief_
+    say 1016
+    start quest IRSD3
+    end quest

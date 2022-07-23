@@ -1,0 +1,68 @@
+Quest: VNBackBone
+DisplayName: Backbone for Vindicator Immersion Role
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  Your quest for justice has pulled you out
+<ce>  of your own tiny world, and into one filled
+<ce>  with peril and mystery. Your adventure
+<ce>  has given you new life, and pushes
+<ce>  you on relentlessly.
+
+--level 2
+
+Message:  1012
+<ce>  Your adventure has honed your skills considerably.
+<ce>  The matter of Old Lysyna's husband was only
+<ce>  a beginning, the opening of a door.
+<ce>  What's behind that door has put you into
+<ce>  danger beyond what you ever imagined possible...
+<ce>  but you wouldn't trade for your old life.
+
+--level 4
+
+Message:  1013
+<ce>  Mere survival is beneath you now.
+<ce>  Your work has become so much more than the
+<ce>  search for one assassin. One small decision
+<ce>  has led to so much more -- unlocking
+<ce>  potential you never knew you had.
+
+--level 6
+
+Message:  1014
+<ce>  You still remember Old Lysyna's pitiable face light up
+<ce>  when you told her you'd find her husband's killer.
+<ce>  She didn't promise much more than her eternal gratitude.
+<ce>  Of even greater worth than her estate was the growth
+<ce>  you've had, springing from that decision.
+<ce>  
+<ce>  Maybe someday you'll meet Old Lysyna on the other side.
+<ce>  Until then, you just have to keep surviving, fighting,
+<ce>  succeeding.
+
+--level 8
+
+QBN:
+
+
+--	Quest start-up:
+    start quest IRVN1
+
+_level2_ task:
+    level 2 completed
+    say 1011
+
+_level4_ task:
+    level 4 completed
+    say 1012
+
+_level6_ task:
+    level 6 completed
+    say 1013
+
+_level8_ task:
+    level 8 completed
+    say 1014
+    end quest

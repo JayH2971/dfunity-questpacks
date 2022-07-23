@@ -1,0 +1,68 @@
+Quest: IRVN2
+DisplayName: Vindicator Step 2
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  %pcf. Welcome back. What did you find?
+<ce>  
+<ce>  Ah, interesting mark. What to you is
+<ce>  a circle and three lines is to me
+<ce>  a compass with coordinates. Give me a minute.
+<ce>  
+<ce>  ___city_. That's what the carving translates to.
+<ce>  The whole thing is roughly a map of %crn,
+<ce>  but I won't explain the science to you.
+<ce>  If you're looking for your murderer,
+<ce>  head over there first. No telling how long
+<ce>  he or she will be there.
+
+Message:  1011
+<ce>  You've made it back to ___tav_.
+<ce>  The justice agent for this part of
+<ce>  ____tav_, _pers_, is probably
+<ce>  hanging out in _tav_, which,
+<ce>  if you recall correctly, is %di.
+<ce>  Finding %g2 will probably save
+<ce>  you a lot of trouble.
+
+Message:  1013
+%qdt:
+ I am searching for the killer of Old Lysyna's husband,
+ with the promise of what remains of her estate
+ once I deliver justice. I found an insignia
+ of a circle with three lines carved in
+ the killer's hideout. I need to find
+ _pers_ in ___tav_ and see
+ if %g1 can help to decipher its meaning.
+
+Message:  1014
+%qdt:
+ I am searching for the killer of Old Lysyna's husband.
+ _pers_ told me to look for the killer in
+ ___city_ in this same region.
+
+QBN:
+
+Place _tav_ local anywhere
+Place _city_ remote city
+
+Person _pers_ faction The_Fighters_Guild remote
+
+--	Quest start-up:
+    say 1011
+    place npc _pers_ at _tav_
+    log 1013 step 0
+    pc at _city_ do _arrive_
+
+_clicky_ task:
+    clicked npc _pers_
+    give pc nothing
+    log 1014 step 0
+
+variable _arrive_
+
+_nextstep_ task:
+    when _clicky_ and _arrive_
+    start quest IRVN3
+    end quest

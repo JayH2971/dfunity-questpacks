@@ -1,0 +1,84 @@
+Quest: IRVN1
+DisplayName: Vindicator Step 1
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>                         YOUR ROLE IS: VINDICATOR
+<ce>
+<ce>             Your prey shall not escape.
+<ce>
+<ce>  Deep in this hole, you search for clues regarding
+<ce>  the murderer of ___town_ -- the killer of
+<ce>  Old Lysyna's husband. The trail had gone cold and
+<ce>  the authorities had given up the chase, but not you.
+<ce>  Though Old Lysyna passed away at the start of this
+<ce>  year, she was gratified to hear you promise to
+<ce>  administer justice. Now her estate hangs in the balance.
+<ce>  You will inherit what little belonged to her
+<ce>  if you can provide proof of her husband's killer's death.
+<ce>  
+<ce>  The search has led you to here, where you found 
+<ce>  an unusual carving: a circle with
+<ce>  three lines scratched into the wall.
+<ce>  You don't know what it means, but hopefully your
+<ce>  contact in ___town_ will know. This trail must not end here.
+
+Message:  1012
+<ce>      Being on the trail of a murderer can be frightening.
+<ce>   You wonder if any of the people in this settlement
+<ce>   could be the one, waiting to kill you or anyone else.
+<ce>   Better to get this case solved as soon as possible.
+
+
+Message:  1013
+%qdt:
+ I am searching for the killer of Old Lysyna's husband,
+ with the promise of what remains of her estate
+ once I deliver justice. I found an insignia
+ of a circle with three lines carved in
+ the killer's hideout. I need to return
+ to ___town_ and see if I can find help
+ to decipher its meaning.
+
+QBN:
+
+Item _weapon3_ religious
+Item _gold_ gold range 100 to 200
+Item _armor1_ potion key 4870452
+Item _armor2_ potion key 224588
+Item _armor3_ potion key 4937012
+Item _armor4_ potion key 4815872
+
+Place _town_ remote city
+Place _bank_ remote bank
+
+--	Quest start-up:
+    say 1011
+    get item _weapon3_
+    get item _gold_
+    get item _armor1_
+    get item _armor2_
+    get item _armor3_
+    get item _armor4_
+    make _weapon3_ permanent
+    make _gold_ permanent
+    make _armor1_ permanent
+    make _armor2_ permanent
+    make _armor3_ permanent
+    make _armor4_ permanent
+    pc at _town_ do _nextstep_
+    log 1013 step 0
+
+_travelstop_ task:
+    when pc enters village
+    when pc enters hamlet
+    when pc enters city
+
+_flavor_ task:
+    when _travelstop_ and not _nextstep_
+    say 1012
+
+_nextstep_ task:
+    start quest IRVN2
+    end quest

@@ -1,0 +1,83 @@
+Quest: IRSD1
+DisplayName: Speaker for the Dead Step 1
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>                         YOUR ROLE IS: SPEAKER FOR THE DEAD
+<ce>
+<ce>             For many, death is an ending. But not to you.
+<ce>
+<ce>  From your earliest days, you felt impressions from a far away place.
+<ce>  You heard talk of people dying, of being gone forever,
+<ce>  but the thought is silly. You know that far out there
+<ce>  is another abode for those who have passed on...
+<ce>  for you have heard them. Just for short moments, but
+<ce>  long and real enough to convince anyone.
+<ce>  
+<ce>  Being in the city too long drowns out your connection
+<ce>  to the "far away place." You came here to meditate,
+<ce>  to listen, to see if they want to say anything.
+<ce>  
+<ce>  And then the whisper comes.
+<ce>  "Go to ___house_.
+<ce>  Find _pers_.
+<ce>  My beloved."
+
+Message:  1012
+<ce>   Though cities provide safety, you know it'll be harder
+<ce>   to hear the spirits here. You have a message to deliver,
+<ce>   and passed-on persons to soothe.
+
+Message:  1013
+%qdt:
+ My meditations have opened my ears.
+ One of the deceased asked me to
+ visit _pers_ in ___house_.
+
+Message:  1014
+<ce>  "Yes, I'm _pers_. What is it?"
+<ce>  
+<ce>  You're left without words. You don't know what to say.
+<ce>  Then you close your eyes. After an awkward pause,
+<ce>  the words come. _pers_ gasps and listens to you:
+<ce>  
+<ce>  "My sweet, please don't blame yourself.
+<ce>  The illness that took me couldn't be cured.
+<ce>  Please live, live for yourself and
+<ce>  our children. I love you."
+<ce>  
+<ce>  Choking up a little, %g1 nods, wiping a
+<ce>  tear from %g3 eye. You decide to go;
+<ce>  there's nothing more to be said.
+
+QBN:
+
+Item _weapon3_ religious
+
+Place _house_ remote house
+
+Person _pers_ group Local_3.0
+
+--	Quest start-up:
+    say 1011
+    get item _weapon3_
+    log 1013 step 0
+    place npc _pers_ at _house_
+    pc at _house_ do _inside_
+
+_travelstop_ task:
+    when pc enters village
+    when pc enters hamlet
+    when pc enters city
+
+variable _inside_
+
+_clicky_ task:
+    clicked npc _pers_
+    say 1014
+
+_next_ task:
+    when _clicky_ and not _inside_
+    start quest IRSD2
+    end quest

@@ -1,0 +1,81 @@
+Quest: SDBackBone
+DisplayName: Backbone for Speaker for the Dead Role
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  The ability to hear from beyond the grave
+<ce>  raises many questions in you.
+<ce>  Will there be someone to speak for you,
+<ce>  when the time comes? Is there anyone out there
+<ce>  with this same gift? And if you abandoned it...
+<ce>  would there be consequences?
+<ce>  
+<ce>  Hopefully you'll never find out.
+
+--level 2
+
+Message:  1012
+<ce>  Communing with the dead has brought you a sense of peace.
+<ce>  It's true that many have fallen by your hand,
+<ce>  but you sense that there's a greater purpose at work.
+<ce>  Thoughts of choice and destiny
+<ce>  frequently pass through your mind.
+<ce>  Are you an instrument, a mastermind,
+<ce>  or merely a stray fragment of chance?
+<ce>  Or are there even any answers out there?
+<ce>  You have no idea, for the spirits
+<ce>  are concerned with their problems, not yours.
+
+--level 4
+
+Message:  1013
+<ce>  You're amazed to not have found others with
+<ce>  a connection to the afterlife like you have.
+<ce>  Or perhaps there have been? You keep your power
+<ce>  a closely-guarded secret; wouldn't they, as well?
+<ce>  If it's true that your ability is rare, you'll be
+<ce>  in demand for quite some time. Perhaps the
+<ce>  deceased will lend you aid in time of need, then.
+<ce>  Or perhaps not. They seem to only speak when they
+<ce>  require help.
+<ce>  
+<ce>  And if they stop speaking, maybe they've
+<ce>  found a more capable vessel for a time.
+
+--level 6
+
+Message:  1014
+<ce>  Listening, working, serving...
+<ce>  An endless cycle. Your trials continue to build you.
+<ce>  Danger has lashed out at you with its many heads,
+<ce>  but you have no cause for concern.
+<ce>  You're certain that, whatever waits beyond
+<ce>  your current life, there'll be something,
+<ce>  perhaps someone, on the other end.
+<ce>  You hope your reception will be a warm one.
+
+--level 8
+
+QBN:
+
+
+--	Quest start-up:
+    start quest IRVN1
+
+_level2_ task:
+    level 2 completed
+    say 1011
+
+_level4_ task:
+    level 4 completed
+    say 1012
+
+_level6_ task:
+    level 6 completed
+    say 1013
+
+_level8_ task:
+    level 8 completed
+    say 1014
+    end quest

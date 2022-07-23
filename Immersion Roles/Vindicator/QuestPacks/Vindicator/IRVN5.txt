@@ -1,0 +1,86 @@
+Quest: IRVN5
+DisplayName: Vindicator Step 5
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You rummage through the things left to you by Old Lysyna.
+
+Message:  1013
+<ce>  Your quest has finished; the murderer
+<ce>  of the widow Lysyna's husband has
+<ce>  been put to rest. On the body
+<ce>  you find a list of intended future targets.
+<ce>  Hopefully this will be proof enough
+<ce>  to close the case. You take it with you.
+<ce>  
+<ce>  You were told that Lysyna's estate was
+<ce>  being handled by someone named _pers_
+<ce>  at _bank_, ___bank_.
+<ce>  You'll need to take the proof
+<ce>  there to finish the matter.
+
+Message:  1014
+<ce>  This paper has a list of potential targets
+<ce>  by the now-deceased murderer in Lysyna's case.
+
+Message:  1015
+%qdt:
+ I have found and avenged the killer of Old Lysyna's husband.
+ I collected proof of the murderer's deeds, and
+ must deliver it to _pers_
+ at _bank_, ___bank_.
+
+Message:  1016
+<ce>  "Hello! How may I help you?"
+<ce>  
+<ce>  You present your proof of killing the assassin
+<ce>  of Old Lysyna's husband. The clerk looks up
+<ce>  the account and searches through some documentation.
+<ce>  Finding the matching wording, he then summons
+<ce>  a litany of witnesses and scribes.
+<ce>  They furiously go about updating and signing
+<ce>  the papers related to the estate, filling
+<ce>  your name into several blank spaces.
+<ce>  The whirlwind of movement leaves you feeling drained.
+<ce>  After it's all over, _pers_ speaks again.
+<ce>  
+<ce>  "Excellent. As the representative for the estate
+<ce>  of our dear 'old' Lysyna, testator, I bequeath
+<ce>  to you what few things she owned
+<ce>  at the time of her death. A safe journey to you,
+<ce>  and please consider doing business with
+<ce>  _bank_ when in financial need!"
+<ce>  
+<ce>  (QUESTLINE COMPLETE!)
+
+QBN:
+
+Place _bank_ remote bank
+
+Person _pers_ faction Dancers male
+
+Item _letter_ letter used 1014
+Item _reward1_ magic_item
+Item _reward2_ magic_item
+Item _reward3_ gold range 1500 to 2500
+Item _reward4_ religious
+Item _reward5_ item class 8 subclass 18
+Item _reward6_ map
+
+--	Quest start-up:
+    say 1013
+    get item _letter_
+    place npc _pers_ at _bank_
+    log 1015 step 0
+
+_clicky_ task:
+    toting _letter_ and _pers_ clicked
+    say 1016
+    give pc _reward1_
+    give pc _reward2_
+    give pc _reward3_
+    give pc _reward4_
+    give pc _reward5_
+    give pc _reward6_
+    end quest

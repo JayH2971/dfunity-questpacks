@@ -1,0 +1,65 @@
+Quest: IRVN4
+DisplayName: Vindicator Step 4
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You rummage through the things left to you by Old Lysyna.
+
+Message:  1010
+<ce>  You're %pcn? Thank %god.
+<ce>  I can't rest. Every moment I fear
+<ce>  that my cursed sibling will
+<ce>  come to kill me, as with so many others.
+<ce>  We speak of insanity, senseless violence.
+<ce>  Old Lysyna's husband was killed for no reason at all.
+<ce>  You're on the trail of a psychopath!
+<ce>  
+<ce>  I'll be leaving after our meeting here.
+<ce>  Just head to ___dung_.
+<ce>  Get this matter over with. I won't have
+<ce>  to fear for my life after you do the deed.
+<ce>  Oh, had I been braver, the old man would
+<ce>  still be alive... and others, too.
+<ce>  But now the task is yours.
+<ce>  Be strong, %ra. Not like me.
+
+Message:  1011
+%qdt:
+ I am searching for the killer of Old Lysyna's husband,
+ with the promise of what remains of her estate
+ once I deliver justice.
+ A mysterious benefactor, and relative
+ of the murderer in the Lysyna case,
+ has directed me to ___dung_ in
+ the region of ____dung_.
+ Apparently there the killer has fled.
+
+Message:  1012
+<ce>  "A murderer! That's what you are!
+<ce>  Just like me! Just like Lysyna and everyone else!
+<ce>  And I'll kill them all! Every last one of them!"
+<ce>  
+<ce>  Your search for the murderer ends here.
+
+QBN:
+
+Place _dung_ remote dungeon6
+
+Foe _killer_ is Assassin
+
+--	Quest start-up:
+    say 1010
+    log 1011 step 0
+    place foe _killer_ at _dung_
+    reveal _dung_
+
+_inj_ task:
+    injured _killer_
+    say 1012
+    change foe _killer_ infighting true
+
+_killed_ task:
+    killed _killer_
+    start quest IRVN5
+    end quest
