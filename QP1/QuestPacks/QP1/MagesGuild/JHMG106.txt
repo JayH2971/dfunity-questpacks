@@ -81,8 +81,8 @@ Message:  1010
 <ce>    you unsettled. Once your eyes adjust, you see a very different
 <ce>                      demeanor on _npc_'s face.
 <ce>
-<ce>          "%oth! Filthy cur, this day you meet your end! For
-<ce>     Oblivion and its ten thousand chanting godly servants! Die!"
+<ce>          "%oth! Filthy cur, this day you meet your end!
+<ce>     For Oblivion and its ten thousand chanting godly servants! Die!"
 
 Message:  1011
 <ce>           _npc_ lies dead. You put the _tri_ in your pack.
