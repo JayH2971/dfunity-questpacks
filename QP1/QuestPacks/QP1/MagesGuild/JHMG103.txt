@@ -1,0 +1,158 @@
+Quest: JHMG103
+DisplayName: Psijic Intruder
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>           Have you ever heard of the Psijic Order, %pct?
+<ce>   Few of our members would have. They tend to stay
+<ce>   in the shadows, letting things transpire naturally...
+<ce>   until they don't. One of their kind has stolen from us
+<ce>   and taken refuge in a cave, for Oblivion knows
+<ce>   what reason. Go and bring back our book.
+<ce>   You are authorized to kill.
+
+RefuseQuest:  [1001]
+<ce>    Well, I suppose a coward wouldn't want
+<ce>   to face a rival order's wrath.
+
+AcceptQuest:  [1002]
+<ce>       Good. If we allow this to happen, we open the door
+<ce>  to more theft and loss. Whatever you decide to do
+<ce>  to this Psijic thief is your own choice.
+<ce>  The book will be needed in around =timer_ days' time,
+<ce>  so be certain to not dally. ___dung_ is
+<ce>  off %di from here. I'll mark it on your map
+<ce>  and wish you safe travels.
+
+QuestFail:  [1003]
+<ce>      You needed to take the book back from
+<ce>  the Psijic Order by now.
+
+QuestComplete:  [1004]
+<ce>     Very fine work. I trust you encountered no
+<ce>   great danger in ___dung_? Not for
+<ce>   one of your prowess, in any case.
+<ce>  
+<ce>  I was trying to scrounge up an acceptable
+<ce>  reward while you were out. Perhaps this
+<ce>  _reward_ will be of use to you?
+<ce>  Very fruitful for enchantments,
+<ce>  they are. Give it a try, why don't you?
+
+QuestorPostSuccess:   [1008]
+The Psijic Order must be allowed to gain no ground here.
+
+Message:  1010
+<ce>     "The book is mine! Begone!"
+<ce>  
+<ce>  The Psijic begins casting a spell.
+
+Message:  1011
+<ce>  Your foe is dead, but the spell is finishing now.
+<ce>  With a loud roar, a portal begins to open nearby.
+<ce>  
+<ce>  If you were confident in your Mysticism ability,
+<ce>  you could attempt to close the portal before
+<ce>  anything comes through. Meddling with it
+<ce>  without the proper knowledge could make
+<ce>  the situation even more dangerous, though.
+<ce>  
+<ce>  (SKILL CHECK: Mysticism: difficulty very high)
+
+Message:  1012
+<ce>                 (SKILL CHECK PASSED!)
+<ce>  
+<ce>  The Psijics may know something about Mysticism,
+<ce>  but so do you. You take hold of the portal and begin
+<ce>  reducing its power. A clawed hand tries to reach through,
+<ce>  but too late -- the connection to Oblivion has been severed.
+<ce>  Whatever danger you could have faced is now past. 
+
+Message:  1013
+<ce>                (SKILL CHECK FAILED)
+<ce>  
+<ce>  You begin focusing on the portal to close it.
+<ce>  Whether it's power or knowledge you lack, you don't know;
+<ce>  but your attempts to close it give it a little
+<ce>  more energy, enough to help a couple more
+<ce>  demons pass through than was originally intended.
+<ce>  With a loud bang, the portal finally pops out
+<ce>  of existence, leaving you with some new guests.
+
+Message:  1014
+<ce>  Rather than mess with a Psijic's portal,
+<ce>  you brace yourself for whatever's about to come through.
+<ce>  A fire daedra confidently steps through as
+<ce>  the portal runs out of power.
+
+Message:  1030
+%qdt:
+ I must descend into
+ ___dung_ to take back a book
+ that the Psijic Order has stolen
+ from the Mages Guild in ___qgiver_.
+ _qgiver_ needs it returned in =timer_ days.
+
+QBN:
+Item _item_ book
+Item _reward_ diamond
+
+Person _qgiver_ group Questor male
+
+Place _dung_ remote dungeon5
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _mage_ is Mage
+Foe _daedra1_ is Fire_daedra
+Foe _daedra2_ is Fire_daedra
+Foe _daedra3_ is Fire_daedra
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+    place foe _mage_ at _dung_
+    give item _item_ to _mage_
+	reveal _dung_
+
+_inj_ task:
+    injured _mage_ saying 1010
+    change foe _mage_ infighting true
+
+_killed_ task:
+    killed _mage_
+	prompt 1011 yes _attempt_ no _flee_
+
+variable _attempt_
+
+_skilled_ task:
+	when skill Mysticism is at least 85
+
+_easywin_ task:
+	when _attempt_ and _skilled_
+	say 1012
+
+_bigfail_ task:
+	when _attempt_ and not _skilled_
+	say 1013
+    create foe _daedra1_ every 0 minutes 1 times with 100% success
+    change foe _daedra1_ infighting true
+    create foe _daedra2_ every 0 minutes 1 times with 100% success
+    change foe _daedra2_ infighting true
+    create foe _daedra3_ every 0 minutes 1 times with 100% success
+    change foe _daedra3_ infighting true
+
+_flee_ task:
+    say 1014
+    create foe _daedra1_ every 0 minutes 1 times with 100% success
+    change foe _daedra1_ infighting true
+
+_pcgetsgold_ task:
+	toting _item_ and _qgiver_ clicked
+	give pc _reward_
+	end quest
+
+_timer_ task:
+	say 1003
+	end quest

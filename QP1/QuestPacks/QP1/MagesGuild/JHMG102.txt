@@ -75,7 +75,7 @@ Message:  1010
 <ce>         test to save yourself time and prove your intellect.
 <ce>     Do you make the suggestion (yes) or submit to the quiz (no)?
 <ce>
-<ce>           (ATTRIBUTE CHECK: YES: Intelligence, very high)
+<ce>           (ATTRIBUTE CHECK: YES: Intelligence, difficulty very high)
 
 Message:  1011
 <ce>                       (ATTRIBUTE CHECK PASSED)
