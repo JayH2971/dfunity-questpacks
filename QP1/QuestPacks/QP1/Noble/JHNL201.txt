@@ -97,9 +97,9 @@ _infight_ task:
 	clear _infight_
 
 _first_ task:
-	killed 6 _enemy1_ saying 1020
-	killed 7 _enemy2_ saying 1020
-	killed 7 _enemy3_ saying 1020
+	killed 3 _enemy1_ saying 1020
+	killed 3 _enemy2_ saying 1020
+	killed 2 _enemy3_ saying 1020
 	create foe _enemy4_ every 0 minutes 1 times with 100% success
 	change foe _enemy4_ infighting true
 

@@ -203,5 +203,4 @@ _clearclick_ task:
   clear _qgclicked_ _clearclick_
 
 _timer_ task:
-  say 1003
   end quest
