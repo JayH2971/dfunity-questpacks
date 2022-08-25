@@ -3,7 +3,7 @@ RESOLVED
 Blood_Spider
 Boar
 Bounty_Hunter
-Dark_Slader
+Dark_Slayer
 Dog
 Dremora_Churl
 Druid
@@ -34,8 +34,11 @@ Royal_Knight
 Snow_Wolf
 Stone_Golem
 Thief_Rider
-Troll       (WARNING: will revive)
-Vengeful_King_Lysandus    (not recommended)
-Will-o'-wisp_ or Will_o__wisp_ or Will_o_wisp_
+Troll                                           (WARNING: will revive)
+Vengeful_King_Lysandus                          (not recommended)
 Witch_Defender
 Wolf
+
+UNRESOLVED
+
+Will-o'-wisp
