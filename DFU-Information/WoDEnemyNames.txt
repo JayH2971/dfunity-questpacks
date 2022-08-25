@@ -1,29 +1,43 @@
 RESOLVED
 
+Blood_Spider
 Boar
 Bounty_Hunter
+Dark_Slader
 Dog
+Dremora_Churl
 Druid
+Faded_Ghost
 Fire_Daemon
 Ghoul
+Gloom_Wraith
 Goblin
 Hell_Hound
 Homunculus
 Ice_Golem
 Iron_Golem
+Knight_Rider
 Land_Dreugh
 Lizard_Man
+Lizard_Warrior
 Medusa
 Minotaur
 Mountain_Lion
 Mudcrab
 Necromancer_Acolyte
+Necromancer_Assassin
+Necromancer_Glaivier
 Ogre
 Rogue_Druid
+Rogue_Rider
 Royal_Knight
 Snow_Wolf
 Stone_Golem
+Thief_Rider
 Troll       (WARNING: will revive)
+Vengeful_King_Lysandus    (not recommended)
+Will-o'-wisp_ or Will_o__wisp_ or Will_o_wisp_
+Witch_Defender
 Wolf
 
 NOT RESOLVED
