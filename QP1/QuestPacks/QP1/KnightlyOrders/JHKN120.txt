@@ -126,6 +126,8 @@ _inj_ task:
   make _magic_ permanent
   restrain foe _meet_
   log 1031 step 1
+--got a report on 2022.08.05 that this restrain foe is not working.
+--maybe has to do with repetition from _read_ task?
 
 variable _pres_
 _spawn_ task:

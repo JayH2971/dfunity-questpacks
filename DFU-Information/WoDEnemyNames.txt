@@ -1,0 +1,41 @@
+RESOLVED
+
+Boar
+Bounty_Hunter
+Dog
+Druid
+Fire_Daemon
+Ghoul
+Goblin
+Hell_Hound
+Homunculus
+Ice_Golem
+Iron_Golem
+Land_Dreugh
+Lizard_Man
+Medusa
+Minotaur
+Mountain_Lion
+Mudcrab
+Necromancer_Acolyte
+Ogre
+Rogue_Druid
+Royal_Knight
+Snow_Wolf
+Stone_Golem
+Troll       (WARNING: will revive)
+Wolf
+
+NOT RESOLVED
+
+Dark Brotherhood Male
+Dremora
+Ghost (Arena)
+HorseRiders
+KingLysandus
+LizardMan Armored
+Necromancer Male
+Spiders
+Wil-O'-Wisp
+Witches
+Wraith (Arena)
