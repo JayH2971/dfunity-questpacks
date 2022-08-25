@@ -12,6 +12,7 @@ Fire_Daemon
 Ghoul
 Gloom_Wraith
 Goblin
+Grotesque
 Hell_Hound
 Homunculus
 Ice_Golem
