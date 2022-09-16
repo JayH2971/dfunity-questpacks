@@ -9,4 +9,4 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
--JHKN101, KnightlyOrder, M, 1, 1, a quest to protect a dragonling in a dungeon
+JHEEKN01, KnightlyOrder, M, 3, 1, a quest to slay ogres harassing a poor home

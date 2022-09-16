@@ -1,0 +1,96 @@
+Quest: RLQhousehunt
+DisplayName: Random Little Quest House Hunting
+-- Message panels
+QRC:
+
+QuestFail:   [1003]
+<ce>  Thirty minutes are up, and the rat is not dead.
+
+QuestComplete:  [1004]
+<ce>    You find the jester waiting for you outside.
+<ce>  
+<ce>  "Oh, joy! Wasn't that golly good fun?
+<ce>  Here, take your money! It was worth my while!"
+
+RumorsDuringQuest:   [1005]
+Some moron stashed a rat in _house_.
+<--->
+Yeah, some rat got into _house_. I live near it.
+
+Message:  1011
+<ce>   A jester ambles up to you, bearing a jolly grin.
+<ce>  
+<ce>  "Hello there! Looking for some fun? I hid a filthy, vicious
+<ce>  rat in a building here in town. I won't tell you where,
+<ce>  but if you can kill it in 30 minutes, you'll earn
+<ce>  =reward_ fabulous gold pieces! Wanna try?"
+
+Message:  1012
+<ce>    The entertainer's countenance falls.
+<ce>   
+<ce>   "Oh, phooey. You're raining on my parade!
+<ce>   Go about your business, then!"
+
+Message:  1013
+<ce>   He cheers, raising both hands in the air.
+<ce>  
+<ce>  "Good! Well, go, get going then! 30 minutes
+<ce>  is all you get, starting now! Maybe ask around
+<ce>  and see if any of the local peasants have heard
+<ce>  any news? Good luck!"
+
+Message:  1014
+<ce>    You can faintly hear a rat inside this building.
+
+Message:  1016
+%qdt:
+ A jester in ___house_ challenged me
+ to find a rat in some building in
+ the town and kill it in less than
+ 30 minutes. If I manage that,
+ I'll earn =reward_ gold.
+ I was told to ask peasants
+ for news, in case they've seen the rat.
+
+QBN:
+
+Foe _monster_ is Giant_rat
+
+Clock _timer_ 0:30
+
+Place _house_ local tavern
+
+Item _reward_ gold range 101 to 125
+
+--	Quest start-up:
+    prompt 1011 yes _accept_ no _reject_
+    start timer _timer_
+
+_reject_ task:
+    say 1012
+    end quest
+
+_accept_ task:
+    say 1013
+    log 1016 step 0
+    pc at _house_ set _inside_
+    place foe _monster_ at _house_
+
+_inside_ task:
+    say 1014
+
+_killed_ task:
+    killed _monster_
+    start task _victory_
+    stop timer _timer_
+
+variable _victory_
+
+_getgold_ task:
+    when _victory_ and not _inside_
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest

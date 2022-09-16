@@ -1,0 +1,73 @@
+Quest: RLQtempleescort
+DisplayName: Random Little Quest Escort to the Temple
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>      The elderly man sighs with relief upon entering the temple.
+<ce>  "Blessings upon you, %ra. I cannot pay you, but
+<ce>  I pray %god will."
+<ce>  
+<ce>  He then hobbles in.
+
+Message:  1010
+<ce>      An elderly man accosts you.
+<ce>  
+<ce>  "Excuse me, I need to get to _temple_
+<ce>  to ask some alms, and my leg acts up on days like this.
+<ce>  Could you lead me there? I don't have any money,
+<ce>  so I ask from the kindness of your heart."
+
+Message:  1011
+<ce>  "That's so kind of you. Rare to find folk
+<ce>  like that nowadays. I want to be there within
+<ce>  an hour's time, if you don't mind.
+<ce>  I can make it there with your help.
+<ce>  I think we go %di."
+
+Message:  1012
+<ce>  The old man moves on without you.
+<ce>  
+<ce>  "Sorry, but I really must get to the temple."
+
+Message:  1013
+<ce>     "Oh. O-okay, sorry to bother you."
+<ce>  
+<ce>          He hobbles off alone.
+
+Message:  1014
+%qdt:
+ I have agreed to help an elderly resident of ___temple_
+ get to _temple_ within one hour's time.
+
+QBN:
+
+Clock _timer_ 1:00
+
+Person _person_ faction The_Merchants male
+
+Place _temple_ local temple
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1013
+    end quest
+
+_accept_ task:
+    say 1011
+    start timer _timer_
+    log 1014 step 0
+    add _person_ face
+    pc at _temple_ do _finalwin_
+
+_finalwin_ task:
+    give pc nothing
+    drop _person_ face
+    legal repute +1
+    end quest
+
+_timer_ task:
+    say 1012
+    end quest
