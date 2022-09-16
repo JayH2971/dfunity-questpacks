@@ -1,0 +1,108 @@
+Quest: RLQtavernfight
+DisplayName: Random Little Quest A Tavern Fight
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  "Worthless city guard, ain't they? Makes us talk about
+<ce>  withholding our taxes this year, make 'em listen for a change.
+<ce>  This is yours."
+
+Message:  1010
+<ce>  A worried-looking youth approaches you.
+<ce>  
+<ce>  "Excuse me, we have a bit of a problem in our tavern.
+<ce>  Some barbarian is making a mess of things and refuses
+<ce>  to leave. Could you go and pitch this fellow out?"
+
+Message:  1011
+<ce>  The boy takes on a discouraged look,
+<ce>  but he continues importuning aid from others.
+
+Message:  1012
+<ce>  (SKILL CHECK FAILED: STREETWISE)
+<ce>
+<ce>  The buffoon is not hard to find. However,
+<ce>  no amount of talking will help alleviate the situation.
+<ce>  Your attempts only provoke the fool to anger, and
+<ce>  soon a weapon is drawn.
+
+Message:  1013
+<ce>  His face washes over with relief.
+<ce> 
+<ce> "Oh, my! I was worried no one would help us.
+<ce>  If you'll kindly head to _tavern_,
+<ce>  off that way, %di, you'll find
+<ce>  the bipedal monster inside.
+<ce>  Do whatever you need to for the sake of
+<ce>  peace, will you? Thanks!"
+<ce>  
+<ce>  He then departs on another errand.
+
+Message:  1014
+<ce>  "OW! Fine! I'll get going! You're not worth it anyway!"
+<ce>  
+<ce>  The barbarian storms out, and soon the youth enters.
+<ce>  He bows before you, payment in hand.
+
+Message:  1015
+%qdt:
+ I agreed to get rid of some troublesome
+ barbarian in _tavern_ of ___tavern_.
+
+Message:  1016
+<ce>  (SKILL CHECK PASSED: STREETWISE)
+<ce>
+<ce>  The buffoon is not hard to find. However,
+<ce>  not even a barbarian can withstand your persuasion.
+<ce>  The oaf takes the hint and moves out of the tavern before things get worse.
+<ce>  Soon the boy enters and bows before you.
+
+QBN:
+
+Foe _enemy_ is Barbarian
+
+Item _reward_ gold range 75 to 111
+Place _tavern_ local tavern
+Clock _timer_ 12:00
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when skill Streetwise is at least 200
+
+_accept_ task:
+    pc at _tavern_ do _inside_
+    log 1015 step 0
+    start timer _timer_
+    say 1013
+
+variable _inside_
+
+_finalwin_ task:
+    when _inside_ and _qualified_
+    say 1016
+    give pc _reward_
+    end quest
+
+_finalfail_ task:
+    when _inside_ and not _qualified_
+    say 1012
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+    change foe _enemy_ infighting true
+
+_injured_ task:
+    injured _enemy_
+    remove foe _enemy_
+    say 1014
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    remove foe _enemy_
+    end quest

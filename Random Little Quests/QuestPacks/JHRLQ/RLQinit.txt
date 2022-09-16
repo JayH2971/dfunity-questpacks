@@ -76,7 +76,7 @@ _sunnyday_ task:
     start task _stopevents_
 
 _sunnydayevents_ task:
-    pick one of _potionsale_ _alms_ _weaponfind_ _mysticismlesson_ _medicaltraining_ _buyreligious_ _escapedatronach_ _immortal_ _templeescort_
+    pick one of _potionsale_ _alms_ _weaponfind_ _mysticismlesson_ _medicaltraining_ _buyreligious_ _escapedatronach_ _immortal_ _templeescort_ _tavernfight_
 
 _batnest_ task:
     start quest RLQbatnest
@@ -141,6 +141,9 @@ _immortal_ task:
 _templeescort_ task:
     start quest RLQtempleescort
 
+_tavernfight_ task:
+    start quest RLQtavernfight
+
 _sunnynight_ task:
     when not _daylight_ and _sunning_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
     pick one of _sunnynightevents_ _dud_
@@ -164,7 +167,7 @@ _vampireencounter_ task:
 -    start task _stopevents_
 
 _cloudydayevents_ task:
-    pick one of _changebandage_ _loanpick_ _angrypick_ _buyrandomweapon_ _orcencounter_ _longbladefight_ _tavernrace_
+    pick one of _changebandage_ _loanpick_ _angrypick_ _buyrandomweapon_ _orcencounter_ _longbladefight_ _tavernrace_ _punchblock_
 
 _changebandage_ task:
     start quest RLQchangebandage
@@ -183,6 +186,9 @@ _longbladefight_ task:
 
 _tavernrace_ task:
     start quest RLQtavernrace
+
+_punchblock_ task:
+    start quest RLQpunchblock
 
 -_cloudynight_ task:
 -    when not _daylight_ and _clouded_ and _smalldelay_ and not _donotspawn_ and not _stopevents_

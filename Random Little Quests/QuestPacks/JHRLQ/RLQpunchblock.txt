@@ -1,0 +1,74 @@
+Quest: RLQpunchblock
+DisplayName: Random Little Quest Punch a Block
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  (SKILL CHECK PASSED!)
+<ce>  
+<ce>  When your turn comes, you stand before the peddler
+<ce>  and ready your stance. You summon up all your confidence
+<ce>  and throw your hand forward, shattering the steel block
+<ce>  into pieces. The crowd roars with approval, and the
+<ce>  showman offers you the somewhat paltry reward.
+
+Message:  1010
+<ce>  A sly-looking huckster displays a brick
+<ce>  and calls out at passers by, apparently
+<ce>  in the middle of a multi-stage attraction.
+<ce>  
+<ce>       "Ho there! I have here a slab
+<ce>  of solid steel, impervious to weaponry!
+<ce>  But I'm convinced that someone here
+<ce>  is capable of punching right through it!
+<ce>  You there! Or you! Which of you wants
+<ce>  to give it a try?"
+<ce>  
+<ce>  He proffers a small bag of gold for the
+<ce>  one who can break the block. Will you try?
+<ce>  
+<ce>  (SKILL CHECK: Hand-to-Hand, medium difficulty)
+
+Message:  1011
+<ce>  You could make quite a spectacle of yourself
+<ce>  if the challenge went badly for you.
+<ce>  Others take your place, injuring their
+<ce>  appendages quite seriously.
+
+Message:  1012
+<ce>  (SKILL CHECK FAILED!)
+<ce>  
+<ce>  When your turn comes, you stand before the peddler
+<ce>  and ready your stance. You summon up all your confidence
+<ce>  and throw your hand forward, earning a loud cracking sound
+<ce>  and a deep, reverberating pain. Various reactions of
+<ce>  amusement and pity run through the spectators
+<ce>  as you shamefully withdraw, your pride wounded even
+<ce>  more than your hand.
+
+QBN:
+
+Item _reward_ gold range 89 to 135
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when skill HandToHand is at least 40
+
+variable _accept_
+
+_finalwin_ task:
+    when _accept_ and _qualified_
+    give pc _reward_
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    say 1012
+    reduce player health by 20
+    end quest
