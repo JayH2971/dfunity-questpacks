@@ -83,13 +83,17 @@ Foe _man_ is Nightblade
     reveal _dung_
     place foe _sed_ at _dung_
     place foe _man_ at _dung_
+    change foe _man_ team 17
 
 _inj1_ task:
-    injured _man_ saying 1011
+    injured _man_
+    clicked foe _man_
+    say 1011
     change foe _sed_ infighting true
 
 _inj2_ task:
     injured _sed_
+    clicked foe _sed_
     change foe _sed_ infighting true
 
 _injd_ task:

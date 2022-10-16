@@ -168,7 +168,9 @@ _send_ task:
     start timer _timer_
 
 _inj_ task:
-    injured _enemy_ saying 1022
+    injured _enemy_
+    clicked foe _enemy_
+    say 1022
     create foe _undead_ every 0 minutes 1 times with 100% success
     change foe _enemy_ infighting true
     change foe _undead_ infighting true

@@ -31,6 +31,8 @@ JHTG119, GeneralPopulace, M, 7, 1, a quest to open a trapped black box
 JHTG120, GeneralPopulace, M, 3, 1, a quest to open a noble's box in a tavern
 JHTG121, GeneralPopulace, M, 1, 1, a quest to pickpocket a paper from a chin-scarred man
 JHTG122, GeneralPopulace, M, 3, 1, a quest to pickpocket a magical item from the Mages Guild
+JHTG123, GeneralPopulace, M, 1, 0, a quest to retrieve drugs from a dungeon
+JHTG123, GeneralPopulace, M, 5, 1, a quest to protect Viljas' magical skull
 JHTGX00, GeneralPopulace, M, 6, 1, a quest invitation from The Crow
 JHTGX01, GeneralPopulace, P, 0, X, offered via JHTG10X
 JHTGX02, GeneralPopulace, P, 0, X, offered via JHTG11X

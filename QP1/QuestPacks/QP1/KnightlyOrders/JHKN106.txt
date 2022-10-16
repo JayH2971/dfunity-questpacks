@@ -129,6 +129,7 @@ variable _e1_
 variable _e2_
 _inj_ task:
 	injured _enemy_
+	clicked foe _enemy_
 	give item _weapon_ to _enemy_
 	change foe _enemy_ infighting true
 

@@ -179,6 +179,7 @@ _infight_ task:
 
 _msg_ task:
     injured _enemy_
+    clicked foe _enemy_
     prompt 1011 yes _deliver_ no _ignore_
 
 _deliver_ task:

@@ -119,6 +119,7 @@ _spawn_ task:
 
 _injured_ task:
 	injured _enemy_
+	clicked foe _enemy_
 	change foe _enemy_ infighting true
 	change foe _enemy_ team 0
 

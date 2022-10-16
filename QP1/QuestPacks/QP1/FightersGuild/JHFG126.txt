@@ -88,6 +88,7 @@ Foe _nme3_ is Thief
 
 _inj_ task:
     injured _nme_
+    clicked foe _nme_
     say 1010
     create foe _nme2_ every 0 minutes 1 times with 100% success
     create foe _nme3_ every 0 minutes 1 times with 100% success

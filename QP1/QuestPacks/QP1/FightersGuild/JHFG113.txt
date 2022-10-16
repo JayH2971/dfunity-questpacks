@@ -142,6 +142,7 @@ Foe _giant_ is Giant
 
 _injur_ task:
     injured _giant_
+    clicked foe _giant_
     say 1020
     change foe _giant_ infighting true
 

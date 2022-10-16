@@ -117,7 +117,9 @@ Foe _daedra3_ is Fire_daedra
 	reveal _dung_
 
 _inj_ task:
-    injured _mage_ saying 1010
+    injured _mage_
+    clicked foe _mage_
+    say 1010
     change foe _mage_ infighting true
 
 _killed_ task:

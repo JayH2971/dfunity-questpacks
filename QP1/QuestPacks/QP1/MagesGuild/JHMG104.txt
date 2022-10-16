@@ -230,11 +230,11 @@ _injtext2_ task:
 
 _injm_ task:
     injured _sorc_
+    clicked foe _sorc_
     stop timer _t1_
     stop timer _t2_
     stop timer _t3_
     stop timer _t4_
-    say 1016
     remove foe _sorc_
     unrestrain foe _daed_
     change foe _daed_ infighting true

@@ -50,7 +50,7 @@ _payhim_ task:
     pay 250 money do _given_ otherwise do _nomoney_
 
 _given_ task:
-    train pc Etiquette
+    train pc Climbing
     end quest
 
 _nomoney_ task:

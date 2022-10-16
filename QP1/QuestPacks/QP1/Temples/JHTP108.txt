@@ -193,6 +193,7 @@ _lose_ task:
 
 _inj_ task:
     injured _thief_
+     clicked foe _thief_
     say 1016
     get item _tri_
     restrain foe _thief_

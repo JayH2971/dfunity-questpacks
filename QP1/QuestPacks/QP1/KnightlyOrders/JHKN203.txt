@@ -146,12 +146,14 @@ _D.02_ task:
 
 _inj1_ task:
 	injured _vam1_ saying 1010
+	clicked foe _vam1_
 	restrain foe _vam1_
 	start timer _delay_
 	change foe _vam1_ infighting true
 
 _inj2_ task:
 	injured _vam2_ saying 1011
+	clicked foe _vam2_
 	restrain foe _vam2_
 	start timer _delay_
 	change foe _vam2_ infighting true

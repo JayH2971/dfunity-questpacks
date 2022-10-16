@@ -130,6 +130,7 @@ _talk_ task:
 
 _inj_ task:
     injured _enemy_
+    clicked foe _enemy_
     say 1011
     create foe _dae1_ every 0 minutes 1 times with 100% success
     create foe _dae2_ every 0 minutes 1 times with 100% success

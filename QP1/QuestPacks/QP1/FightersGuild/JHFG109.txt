@@ -86,6 +86,7 @@ _starthunt_ task:
 
 _inj_ task:
 	injured _enemy1_
+	clicked foe _enemy1_
 	change foe _enemy1_ infighting true
 
 _slain_ task:

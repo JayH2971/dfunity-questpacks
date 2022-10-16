@@ -138,6 +138,7 @@ _click_ task:
 
 _inj_ task:
     injured _nme_
+    clicked foe _nme_
     say 1012
     change foe _nme_ infighting true
 

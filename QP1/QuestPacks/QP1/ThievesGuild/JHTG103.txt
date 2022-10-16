@@ -164,6 +164,7 @@ _spawn2_ task:
 
 _steal_ task:
   injured _mark_
+  clicked foe _mark_
   say 1020
   get item _deed_
 

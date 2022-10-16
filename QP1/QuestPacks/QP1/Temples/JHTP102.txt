@@ -131,6 +131,7 @@ _delay_ task:
 
 _choice_ task:
   injured _enemy_
+  clicked foe _enemy_
   prompt 1025 yes _altend_ no _refuse_
 
 _altend_ task:

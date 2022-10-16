@@ -87,6 +87,7 @@ Foe _thief_ is Warrior
 
 _ith_ task:
     injured _thief_
+    clicked foe _thief_
     say 1021
     change foe _thief_ infighting true
     give item _letter_ to _thief_

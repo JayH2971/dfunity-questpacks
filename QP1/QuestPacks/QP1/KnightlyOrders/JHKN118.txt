@@ -80,6 +80,7 @@ _timer_ task:
 
 _inj_ task:
 	injured _en1_
+	clicked foe _en1_
 	say 1011
 	change foe _en1_ infighting true
 

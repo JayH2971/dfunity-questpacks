@@ -166,7 +166,9 @@ _fight_ task:
     create foe _hnt_ every 0 minutes 1 times with 100% success
 
 _inj_ task:
-    injured _hnt_ saying 1016
+    injured _hnt_
+    clicked foe _hnt_
+    say 1016
     remove foe _hnt_
     give pc nothing
     end quest

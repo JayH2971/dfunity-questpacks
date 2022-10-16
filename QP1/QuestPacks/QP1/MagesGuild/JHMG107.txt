@@ -171,6 +171,7 @@ _bigfail_ task:
 
 _inj_ task:
 	injured _enemy_
+    clicked foe _enemy_
 	change foe _enemy_ infighting true
 
 _slain_ task:

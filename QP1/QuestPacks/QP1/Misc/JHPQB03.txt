@@ -99,6 +99,7 @@ _inside_ task:
 
 _inj_ task:
   injured _enemy_
+  clicked foe _enemy_
   say 1013
   change foe _enemy_ infighting true
 

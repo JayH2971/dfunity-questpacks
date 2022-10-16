@@ -89,6 +89,7 @@ _sick_ task:
 
 _inj_ task:
   injured _zombie_
+  clicked foe _zombie_
   change foe _zombie_ infighting true
 
 _slain_ task:

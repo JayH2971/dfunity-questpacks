@@ -1,0 +1,131 @@
+Quest: JHTG123
+DisplayName: Retrieving the Stash
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> We've got another bail-out situation.
+<ce> One of the idiots here in ___qgiver_
+<ce> is storing some _drug_ down in a cave,
+<ce> and the guards got wind of it.
+<ce> They've got a guard posted inside,
+<ce> and we need someone to go grab the stash.
+
+RefuseQuest:  [1001]
+<ce> Not willing to stick your neck out?
+<ce> Guild's full of cowards.
+
+AcceptQuest:  [1002]
+<ce> Hurry over to ___dung_, is what it's called.
+<ce> I'll mark it on your map if it's not already there.
+<ce> You're looking for some _drug_. Addictive little thing,
+<ce> it's a kind of drug if you don't know.
+<ce> Now, I told you there's a guard at the entrance,
+<ce> and you can't kill whoever it is.
+<ce> At least, you shouldn't. Nobody's gonna
+<ce> break your neck for doing it,
+<ce> but you don't want a bad rep, not in %crn.
+<ce> Bring the drug back here in =timer_ days,
+<ce> 'cause we've got a deal to get it
+<ce> transferred to another town pretty soon.
+
+QuestFail:  [1003]
+<ce> _qgiver_ wanted you
+<ce> to deliver the _drug_ by now.
+
+QuestComplete:  [1004]
+<ce> Here's your money, drug %ra.
+
+Message:  1011
+<ce>  There's the _drug_. I'll be taking that.
+<ce>  Word already got out that
+<ce>  you murdered the guard in ___dung_.
+<ce>  Not a good look for you or the guild, but we'll get by.
+<ce>  Just be more careful about these things, all right?
+
+Message:  1012
+<ce>  Ah, the _drug_. Good work.
+<ce>  The guard that they posted in ___dung_
+<ce>  sent word that the place was robbed by
+<ce>  an "unknown assailant," and needs to be abandoned.
+<ce>  You know what we call that? That's a "success" in our book.
+
+Message:  1013
+<ce>  This is the _drug_ you were sent to find.
+
+Message:  1014
+<ce>  A sentry notices your entry to ___dung_.
+<ce>  
+<ce>  "Halt! This structure is under investigation!
+<ce>  Leave immediately or face the consequences!"
+
+Message:  1015
+<ce>  With this guard slain, you'll be able to explore
+<ce>  this place in peace.
+
+Message:  1030
+%qdt:
+ _qgiver_ of ___qgiver_ sent me to
+ pick up some forgotten _drug_
+ in a place called ___dung_, ____dung_.
+ It needs to be in %g3 hands
+ within =timer_ days.
+ A guard is posted at the entrance to
+ the cave, and I'm advised not to kill
+ whoever it is.
+
+QBN:
+
+Person _qgiver_ group Questor male
+
+Item _reward_ gold range 350 to 400
+Item _drug_ drug
+
+Foe _enemy_ is Knight
+
+Place _dung_ remote dungeon
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+-- Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    place item _drug_ at _dung_
+    reveal _dung_
+    pc at _dung_ set _spawner_
+
+_spawner_ task:
+    start task _spawn_
+
+_slain_ task:
+    killed _enemy_
+    say 1015
+    legal repute -10
+
+_spawn_ task:
+    say 1014
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+
+_got_ task:
+    clicked item _drug_
+    say 1013
+
+_victory_ task:
+    toting _drug_ and _qgiver_ clicked
+
+_badend_ task:
+    when _victory_ and _slain_
+    say 1011
+    give pc _reward_
+    end quest
+ 
+_goodend_ task:
+    when _victory_ and not _slain_
+    say 1012
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    say 1003
+    make _drug_ permanent
+    end quest

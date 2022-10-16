@@ -157,6 +157,7 @@ _infight_ task:
 
 _inj_ task:
   injured _mage_
+  clicked foe _mage_
   change foe _mage_ infighting true
   change foe _mage_ team 3
 

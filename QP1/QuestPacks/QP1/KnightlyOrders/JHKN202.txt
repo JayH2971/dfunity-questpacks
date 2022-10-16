@@ -85,6 +85,7 @@ _daily_ task:
 
 _inj_ task:
     injured _mage_
+	clicked foe _mage_
     say 1011
     change foe _mage_ infighting true
     change foe _mage_ team 16

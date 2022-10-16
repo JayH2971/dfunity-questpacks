@@ -82,6 +82,8 @@ _will_ task:
 _inj_ task:
     injured _enemy1_
     injured _enemy2_
+    clicked foe _enemy1_
+    clicked foe _enemy2_
 
 _badwill_ task:
     when _inj_ and not _will_

@@ -121,6 +121,7 @@ _read_ task:
 
 _inj_ task:
   injured _meet_
+  clicked foe _meet_
   say 1022
   give item _magic_ to _meet_
   make _magic_ permanent

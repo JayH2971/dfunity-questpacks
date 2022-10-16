@@ -151,6 +151,11 @@ _inj_ task:
 	injured _enemy3_
 	injured _enemy4_
 	injured _enemy5_
+	clicked foe _enemy1_
+	clicked foe _enemy2_
+	clicked foe _enemy3_
+	clicked foe _enemy4_
+	clicked foe _enemy5_
 	change foe _enemy1_ infighting true
 	change foe _enemy2_ infighting true
 	change foe _enemy3_ infighting true

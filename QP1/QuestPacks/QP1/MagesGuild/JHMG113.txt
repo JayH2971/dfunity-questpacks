@@ -189,6 +189,7 @@ _fail_ task:
 
 _stun_ task:
     injured _atr_
+    clicked foe _atr_
     say 1013
     remove foe _atr_
 

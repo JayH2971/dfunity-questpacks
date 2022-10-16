@@ -434,6 +434,7 @@ _spawnwolf_ task:
 _spawn_ task:
     say 1032
     create foe _nightwolf_ every 0 minutes 1 times with 100% success
+    change foe _nightwolf_ infighting true
 
 _inj_ task:
     injured _nightwolf_

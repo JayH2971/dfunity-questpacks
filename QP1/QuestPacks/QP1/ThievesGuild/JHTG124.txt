@@ -1,0 +1,248 @@
+Quest: JHTG124
+DisplayName: An Explosion of Action
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>    We need someone experienced, mature, and sensible to
+<ce>    help out two very idiotic recruits to the guild.
+<ce>    They found something they probably should've left alone,
+<ce>    and I think it's dangerous. There's a real risk
+<ce>    to this one, I'm warning you.
+
+RefuseQuest:  [1001]
+<ce>    They might die. Then again, I might not care.
+
+AcceptQuest:  [1002]
+<ce>    They got a few days' lead on you, headed to ___dung_.
+<ce>    If you hurry, you might catch up to them.
+<ce>    You're looking for _pers_,
+<ce>    the only =pers_ you're gonna find down there,
+<ce>    and his friend Viljas.
+<ce>    They found a magical skull of some kind, with some
+<ce>    real genuine powers to it. I really want
+<ce>    it to end up in more seasoned hands than theirs.
+<ce>    If at all possible, get it from them.
+<ce>    I don't care if you give it to the
+<ce>    guild or hold on to it for yourself,
+<ce>    I just don't want them having it.
+<ce>    If you can't do that, then whatever.
+<ce>    Meet me here again in =timer_ days
+<ce>    so I can be at peace.
+
+QuestFail:  [1003]
+<ce>    _qgiver_ wanted you
+<ce>    to report on the enchanted skull by now.
+
+QuestComplete:  [1004]
+<ce>    They got away with it? By %god.
+<ce>    No, I don't blame you, not if what you're telling me is true.
+<ce>    They're gonna be mass murderers at this rate.
+<ce>    Maybe they already are.
+<ce>    I'll tell the Mages Guild, or the %t, or someone.
+<ce>    I don't know. Here, take this and let me
+<ce>    figure out what I'm gonna do. This is bad.
+
+Message:  1011
+<ce>    "Hey! Oh, wow! You startled me! Thieves Guild?
+<ce>    Good, good, good, good! Oh, %oth, I've got this
+<ce>    skull in my hands and it's getting warm. I'm just about--"
+<ce>    
+<ce>    _pers_ is interrupted by a man,
+<ce>    shouting and rapidly approaching. He yells,
+<ce>    
+<ce>    "Bad news! Bad news bad news bad news, they've found us!
+<ce>    The people looking for that skull, they're almost here!
+<ce>    They're right on our tail, they're gonna kill us!"
+<ce>    
+<ce>    _pers_ shouts back, "Viljas! You idiot, you led them to us?!"
+<ce>    
+<ce>    Viljas answers, "They already knew! They know about the skull!
+<ce>    We can't hide it anymore! We're dead! We're all dead!"
+<ce>    Then he asks you, "Who are you?"
+<ce>    
+<ce>    "Our savior, that's who," _pers_ answers. He hands the skull
+<ce>    to Viljas and says, "Hey, neither of us are meant for fighting,
+<ce>    so you're gonna keep us safe, okay? I know you don't know what's going on,
+<ce>    but please, just fend them off until I say, okay? Please? Please?"
+<ce>    
+<ce>    Even as he speaks, you hear shouting and many plated boots beating the floor.
+<ce>    There's no hiding now. The battle is almost upon you.
+<ce>    
+<ce>    "One thing, we need to stay underground until it's ready," Viljas mentions.
+<ce>    "This thing's going to be useless otherwise. Just keep us safe for a little
+<ce>    bit. It'll be worth it, okay?!"
+
+Message:  1012
+<ce>  Viljas shouts in pain as the skull gets searingly hot.
+<ce>  He holds on tight, keeping it away from your many foes.
+
+Message:  1013
+<ce>  "AHH! I can't take it anymore!!" Viljas screams.
+<ce>  The skull glows brightly, and then shoots out a force wave.
+
+Message:  1014
+<ce>  "VILJAS!! Do that again!" _pers_ screams.
+<ce>  
+<ce>  "Calm your mouth, this thing hurts like blazes!!" Viljas yells back.
+<ce>  The skull begins to glow again.
+
+Message:  1015
+<ce>  All your foes are dead. Your two companions pant heavily, exhausted from
+<ce>  the tumult of battle. Then they give each other a high-five.
+<ce>  "HA HA! Amazing stuff! What a story that was!"
+<ce>  They laugh and celebrate as Viljas puts the skull away.
+<ce>  Then he starts running. Before you can catch him,
+<ce>  _pers_ checks you with a shoulder tackle, sending you to the ground.
+<ce>  By the time you recover your footing, they're both long gone.
+<ce>  
+<ce>  "Finders keepers, dumb %ra!" Viljas' voice echoes from afar.
+<ce>  
+<ce>  This will be quite the tale to tell _qgiver_.
+
+Message:  1016
+<ce>  _pers_ and Viljas' jaws drop with disbelief.
+<ce>  They begin to yell at you.
+<ce>  "IDIOT! We told you to stay underground until this thing was ready!
+<ce>  Now it's useless!" They throw the skull at the ground, shattering it.
+<ce>  They then stomp off without further discussion.
+
+Message:  1017
+<ce>  Viljas yells as the skull shoots out another force wave.
+
+Message:  1030
+%qdt:
+ _qgiver_ of ___qgiver_ sent me to
+ ___dung_ to find a pair of
+ guild newcomers. They found
+ something dangerous, and
+ shouldn't be left alone with it.
+ If I can, I need to get it from them
+ and deliver it to _qgiver_,
+ or at least tell %g2 about it
+ within =timer_ days' time.
+
+Message:  1031
+%qdt:
+ The two fools are holding an enchanted skull
+ with some kind of power. We're being pursued by
+ an armed band, and I have to keep us safe
+ by one means or another until the skull
+ is "ready." However, we can't leave
+ ___dung_ until that happens.
+
+QBN:
+
+Person _qgiver_ group Questor male
+Person _pers_ faction The_Thieves_Guild male
+Person _vilj_ faction The_Thieves_Guild male
+
+Item _reward_ magic_item
+
+Foe _enemy1_ is Knight
+Foe _enemy2_ is Knight
+Foe _enemy3_ is Warrior
+
+Place _dung_ remote dungeon
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _battle1_ 0:05
+Clock _battle2_ 0:02
+Clock _battle3_ 0:01
+Clock _battle4_ 0:01
+Clock _battle5_ 0:01
+Clock _finish_ 0:01
+
+-- Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    place npc _pers_ at _dung_
+    reveal _dung_
+    pc at _dung_ do _inside_
+
+variable _inside_
+
+_begin_ task:
+    clicked npc _pers_
+    say 1011
+    hide npc _pers_
+    add _pers_ face
+    add _vilj_ face
+    start task _spawn1_
+    start task _spawn2_
+    start timer _battle1_
+    log 1031 step 1
+
+_spawn1_ task:
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    create foe _enemy1_ every 1 minutes indefinitely with 100% success
+
+_spawn2_ task:
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    create foe _enemy2_ every 1 minutes indefinitely with 100% success
+
+_spawn3_ task:
+    create foe _enemy3_ every 0 minutes 1 times with 100% success
+    create foe _enemy3_ every 1 minutes indefinitely with 100% success
+
+_battle1_ task:
+    say 1012
+    start task _spawn3_
+    start timer _battle2_
+
+_battle2_ task:
+    say 1013
+    kill foe _enemy1_
+    clear _spawn1_
+    start timer _battle3_
+    start task _magicsound_
+
+_magicsound_ task:
+    play sound magic_savingthrow every 1 minutes 1 times
+    clear _magicsound_
+
+_battle3_ task:
+    say 1014
+    start timer _battle4_
+
+_battle4_ task:
+    say 1017
+    kill foe _enemy2_
+    clear _spawn2_
+    start task _magicsound_
+    start timer _battle5_
+
+_battle5_ task:
+    kill foe _enemy3_
+    clear _spawn3_
+    start task _magicsound_
+    start timer _finish_
+
+_finish_ task:
+    say 1015
+    drop _pers_ face
+    drop _vilj_ face
+    remove log step 1
+
+_failure_ task:
+    when _begin_ and not _inside_ and not _finish_
+    say 1016
+    drop _pers_ face
+    drop _vilj_ face
+    end quest
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _finish_
+    clear _qgclicked_ _clearclick_
+
+_pcgetsgold_ task:
+    when _qgclicked_ and _finish_
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest

@@ -370,6 +370,7 @@ _bt2_ task:
 
 _inj_ task:
     injured _e12_
+    clicked foe _e12_
     say 1013
     restrain foe _e12_
     log 1019 step 3
