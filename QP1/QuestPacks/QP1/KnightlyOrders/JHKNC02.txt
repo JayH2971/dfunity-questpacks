@@ -1,0 +1,188 @@
+Quest: JHKNC02
+DisplayName: Enigma Wrapped in an Escort
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  _witch_ and _friend_ embrace joyfully.
+<ce>  They turn to you and bow.
+<ce>  
+<ce>  "I'm sorry that I kept the truth from you,
+<ce>  %pcf. It is true -- I am a witch.
+<ce>  The guards had a lawful pursuit against me.
+<ce>  But I couldn't let them take my life!
+<ce>  You would've done the same thing in my place!"
+<ce>  _witch_ exclaims.
+<ce>  
+<ce>  _friend_ puts %g3 hand on her shoulder.
+<ce>  "It is time for us to go. I pray this
+<ce>  token is worthy thanks to you,
+<ce>  for doing the right thing,"
+<ce>  %g1 says. As you inspect your reward,
+<ce>  the two disappear from view.
+
+Message:  1010
+<ce>    A dark-feathered bird of a rather strange form
+<ce>    drops a letter at your feet and flutters away.
+
+Message:  1011
+%pct, knight of ____home_
+<ce>
+  I turn to you in desperation, for I hear you are a knight of honor.
+I am hiding in ___home_, within _home_.
+Please escort me out of here. My life is in grave danger.
+You will do the right thing, please.
+I can only wait =timer_ days.
+<ce>
+                   _witch_
+
+Message:  1012
+<ce>  %oth! You came! You're here!
+<ce>  Oh, by Mephala's tears, there is hope after all.
+<ce>  I am being pursued by evil and conspiring men
+<ce>  who wish to take my life. Please, do what you can
+<ce>  to keep me hidden. I have friends in a place
+<ce>  called ___dest_ who can protect me,
+<ce>  if you can get me to _dest_ within =2dest_ days.
+<ce>  I'm ready to leave now, knight.
+
+Message:  1013
+<ce>  Scarcely free of _home_, you are
+<ce>  seen by an alarmed member of the city watch.
+<ce>  
+<ce>  "Halt! That woman is wanted for witchcraft and
+<ce>  consorting with daedrakind. You will surrender her immediately
+<ce>  and provide no resistance to her arrest!"
+<ce>  
+<ce>  _witch_ whispers, "These are the men
+<ce>  who will kill me! Please, get us out of here!"
+<ce>  
+<ce>  The watchman readies his axe.
+<ce>  Do you surrender _witch_ to him?
+
+Message:  1014
+<ce>  Seeing your resistance, the guardsman runs and calls for help.
+<ce>  You hear much movement in the nearby area.
+
+Message:  1015
+<ce>  You step back and allow the guardsman to grab _witch_.
+<ce>  She starts to cast a spell, but his gauntlet smashes her face
+<ce>  and knocks her unconscious. He binds her hands.
+<ce>  
+<ce>  "You made the right choice, knight.
+<ce>  These hags are too dangerous for civilization.
+<ce>  We'll make sure she burns before she awakens."
+<ce>  
+<ce>  You watch him carry her inert body away.
+
+Message:  1016
+<ce>  "Good! We're here! Just help me find _friend_
+<ce>  here in the residence," _witch_ says.
+<ce>  "Look for a =friend_."
+
+Message:  1018
+<ce>  You are spotted by a member of the city watch.
+<ce>  He begins to sound the alarm.
+<ce>  
+<ce>  "Halt! The witch's consort is here!
+<ce>  Surrender immediately and face
+<ce>  justice for your crimes!"
+
+Message:  1019
+<ce>  You're surprised to realize _witch_
+<ce>  has disappeared altogether.
+<ce>  No trace of her remains.
+
+Message:  1030
+%qdt:
+ I am escorting a woman named _witch_
+ to ___dest_, _dest_. She is apparently
+ in fear for her life, and asks me to
+ keep her safe from anyone who comes to hunt her.
+ Her protectors will wait =2dest_ days.
+
+QBN:
+Item _letter_ letter used 1011
+Item _reward_ magic_item
+
+Person _witch_ faction Anticlere female
+Person _friend_ faction The_Glenmoril_Witches
+
+Place _home_ remote house
+
+Clock _timer_ 00:00 0 flag 1 range 0 2
+
+Place _dest_ remote house
+
+Clock _2dest_ 00:00 0 flag 1 range 0 2
+
+Clock _delay_ 00:01
+
+--	Quest start-up:
+	pc at _home_ set _inside_
+	pc at _dest_ set _inside2_
+    give pc _letter_ notify 1010
+    hide npc _witch_
+    hide npc _friend_
+    start timer _timer_
+
+_timer_ task:
+	end quest
+
+_inside_ task:
+    place npc _witch_ at _home_
+    restore _witch_
+
+_1sttalk_ task:
+    clicked npc _witch_
+    say 1012
+    hide npc _witch_
+    add _witch_ face
+    log 1030 step 0
+    stop timer _timer_
+    start timer _2dest_
+
+_ambush_ task:
+    when _1sttalk_ and not _inside_
+    prompt 1013 yes _surrender_ no _resist_
+
+_surrender_ task:
+    drop _friend_ face
+    say 1015
+    legal repute +10
+    start quest JHKNC02a
+    end quest
+
+_resist_ task:
+    say 1014
+    setplayercrime Criminal_Conspiracy
+    spawncityguards immediate
+
+_inside2_ task:
+    say 1016
+    place npc _friend_ at _dest_
+    restore _friend_
+
+_finish_ task:
+    clicked npc _friend_
+    give pc _reward_
+    drop _witch_ face
+    remove log step 0
+    stop timer _2dest_
+    legal repute -10
+    hide npc _friend_
+
+_2ndambush_ task:
+    when _finish_ and not _inside2_
+    say 1018
+    setplayercrime Criminal_Conspiracy
+    spawncityguards immediate
+    start timer _delay_
+
+_delay_ task:
+    end quest
+
+_2dest_ task:
+    say 1019
+    end quest
+

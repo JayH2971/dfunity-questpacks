@@ -1,0 +1,140 @@
+Quest: JHMG122
+DisplayName: To Slay the Immortal
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>         We have a most unusual request from the %t.
+<ce>  A truly immortal being, a criminal of a most suspect class,
+<ce>  has taken up residence in a cave in %crn.
+<ce>  The Fighters Guild, the City Watch, mercenaries,
+<ce>  and all others have failed to kill this foe.
+<ce>  They turn to us in their desperation,
+<ce>  offering ten thousand gold coins
+<ce>  for the successful dispatching of this foe.
+<ce>  Creativity and tenacity must be yours
+<ce>  if you intend to claim this prize, %pct.
+
+RefuseQuest:  [1001]
+<ce>      I wonder who will ever stop this scourge upon Tamriel.
+
+AcceptQuest:  [1002]
+<ce>        I wouldn't believe the reports of immortality,
+<ce>  save for the abundance of eyewitness testimony to the effect.
+<ce>  Where these powers came from, I cannot say, but this is
+<ce>  an enemy of a most unique class. Look for a steel-clad warrior
+<ce>  in ___mondung_. With any luck, your foe will be the only sapient
+<ce>  being in the hole. Rather easy to find, I suppose.
+<ce>  "Korilus" is the monicker this foe has taken on, so perhaps
+<ce>  you'll get some response to that name.
+<ce>  Kill this immortal fighter and return here
+<ce>  within =timer_ days, and the gold shall be yours.
+
+QuestFail:  [1003]
+<ce>  You were to report on Korilus' death by now.
+
+QuestComplete:  [1004]
+<ce>  A couple of burly servants of the %t approach you
+<ce>  and give respectful nods. After hurling two large bags of gold
+<ce>  at your feet, they depart without a word.
+
+Message:  1010
+<ce>      Somewhere in this cave is the lair of Korilus,
+<ce>  the so-called immortal warrior.
+
+Message:  1011
+<ce>      This foe has the appearance of a normal warrior,
+<ce>  but something else is afoot. You feel immense power
+<ce>  radiating out toward you, as if to knock you over.
+<ce>  Your foe's eyes betray no mercy. The battle commences.
+
+Message:  1012
+<ce>       "I... die?"
+<ce>  
+<ce>  Korilus can scarcely believe what is happening.
+<ce>  But all of a sudden, it is over. All life is gone.
+<ce>  You have a reward to claim, and fame to boot.
+
+Message:  1013
+<ce>     Oh, this is a tale not to be forgotten.
+<ce>  No hack-and-slash barbarian is capable of doing what
+<ce>  you have now accomplished! I'll send a missive
+<ce>  requesting your reward. They didn't seriously think
+<ce>  you would be able to accomplish it, so they don't
+<ce>  have the money available yet. Just wait around
+<ce>  ___questgiver_ for a day or so, and it should
+<ce>  arrive, I expect.
+<ce>  
+<ce>  What a story, %pcf!
+
+Message:  1030
+%qdt:
+ The Mages Guild of ___questgiver_ has sent me to find
+ some way to slay an "immortal" warrior
+ named Korilus, who resides in ___mondung_.
+ If I can do so and return within =timer_ days,
+ I am to be rewarded ten thousand gold coins.
+
+Message:  1031
+%qdt:
+ No one actually believed I could kill Korilus,
+ so my reward is not yet ready. I should stay
+ around ___questgiver_ until I am paid.
+
+QBN:
+Item _reward_ gold range 10000 to 10000
+
+Person _questgiver_ group Questor male
+
+Place _mondung_ remote dungeon6
+
+Clock _timer_ 00:00 0 flag 1 range 0 2
+Clock _delay_ 8:00 12:00
+
+Foe _boss_ is Warrior
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+	pc at _mondung_ set _inside_
+	place foe _boss_ at _mondung_
+	reveal _mondung_
+
+_inside_ task:
+    say 1010
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    cast Heal spell on _boss_
+    cast Shield spell on _boss_
+    clear _daily_
+
+_inj_ task:
+    clicked foe _boss_
+    injured _boss_
+    say 1011
+    change foe _boss_ infighting true
+
+_slain_ task:
+    killed _boss_
+    say 1012
+
+_qgclicked_ task:
+	clicked npc _questgiver_
+
+_finish_ task:
+	when _slain_ and _qgclicked_
+    say 1013
+    log 1031 step 0
+    start timer _delay_
+
+_delay_ task:
+	give pc _reward_
+	end quest
+
+_timer_ task:
+	end quest
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_

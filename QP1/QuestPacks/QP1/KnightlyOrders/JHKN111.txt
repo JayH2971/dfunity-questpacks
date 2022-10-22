@@ -142,6 +142,7 @@ _talkkni_ task:
 	stop timer _death_
 	hide npc _kni_
 	add _kni_ face
+	start quest JHKNC02
 
 _victory1_ task:
 	when _qgclicked_ and _talkkni_

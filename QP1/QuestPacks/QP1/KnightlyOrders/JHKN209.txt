@@ -82,7 +82,7 @@ Foe _enemy1_ is Wraith
 variable _inside_
 _giants_ task:
 	when _inside_ and not _slain_
-	create foe _enemy_ every 8 minutes indefinitely with 66% success
+	create foe _enemy_ every 28 minutes indefinitely with 66% success
 
 _injured_ task:
 	injured _enemy_
