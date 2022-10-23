@@ -1,0 +1,237 @@
+Quest: JHKN119
+DisplayName: Rite of Vampire Dispelling
+
+QRC:
+
+QuestorOffer:  [1000]
+<ce>    For too long, we have allowed vampires to maintain
+<ce>    dominion over one of %crn's cemeteries. We have enlisted
+<ce>    one of the local priests for a powerful rite that will
+<ce>    slay them all. A knight must provide protection
+<ce>    while the rite is invoked. Will you prove your fearlessness?
+
+RefuseQuest:  [1001]
+<ce>    We cannot delay in removing these parasites.
+
+AcceptQuest:  [1002]
+<ce>     I knew you would not turn us down. You are to find
+<ce>    the priest, a =priest_ named _priest_,
+<ce>    in _temple_ here in the city. Together, journey toward
+<ce>    ___graveyard_ and allow %g2 to do %g3 work.
+<ce>    The rite can only happen at night, to have maximum
+<ce>    effect upon the hemophiles. Keep _priest_ safe,
+<ce>    and whatever spoils you gain from the vampires are yours.
+<ce>    Do not delay more than =timer_ days in arriving.
+<ce>    %god keep you safe from their grasp. 
+
+QuestFail:  [1003]
+<ce>    _priest_ looks thoroughly disappointed.
+<ce>    
+<ce>    "We are well past the time appointed to dispatch the vampires!
+<ce>    I cannot be a part of this!"
+<ce>    
+<ce>    After the outburst, %g1 marches off alone.
+
+QuestComplete:  [1004]
+<ce>     Suddenly, a beam of light shoots from _priest_'s body
+<ce>    up into the sky. It begins to expand outward,
+<ce>    gradually covering the area. You hear the vampires shrieking
+<ce>    and attempting to cover themselves, but it's too late.
+<ce>    Soon they collapse into inert heaps, unable to withstand
+<ce>    the holy power.
+<ce>   
+<ce>   "We've done it!" _priest_ shouts, collapsing
+<ce>   into an exhausted heap on the ground.
+<ce>   You watch %g2 rest a few moments  before %g1 regains his footing.
+<ce>   "Yes, we've slain all of them. This hive of nightcrawlers
+<ce>   is done with! I can make my way back to ___temple_ on my own.
+<ce>   Take your spoils from among their belongings.
+<ce>   Let that, with %god's praise, be your reward."
+<ce>   
+<ce>   The loot is yours. However, it seems the bodies will decay soon.
+<ce>   You won't want to waste time collecting any goods you wish to take.
+
+Message:  1010
+<ce>    Hello! %oth, I've been terribly nervous about all this.
+<ce>    Haven't slept in two days, just thinking about what
+<ce>    we have to do. Vampires, of all things! %god keep us safe,
+<ce>    for no one else can. The rite has to begin near the hours
+<ce>    of midnight, so if we arrive too soon or too late,
+<ce>    we'll need to camp inside ___graveyard_.
+<ce>    You lead the way, and I'll follow at a safe distance.
+
+Message:  1011
+<ce>    This is ___graveyard_, but you'll have to wait
+<ce>   until closer to midnight to perform the rite.
+<ce>   
+<ce>   "We can camp here," _priest_ says.
+<ce>   "The vampires won't assault us until
+<ce>   we pose a threat to them... I think."
+
+Message:  1012
+<ce>   "Yes! We can begin now," _priest_ says.
+<ce>   "Just make absolutely sure that you do not leave
+<ce>   the cemetery grounds under any circumstances.
+<ce>   This will take a while, and both our lives are
+<ce>   in your hands. Pray to %god for our survival!"
+<ce>   
+<ce>   With that, %g1 kneels on the floor and begins
+<ce>   chanting and calling. Sensing the mounting danger,
+<ce>   vampires begin to crawl out to stop you.
+
+Message:  1013
+<ce>   _priest_'s body begins to glow.
+<ce>   The rite is starting to take effect.
+<ce>   Sensing the danger, more vampires begin to arrive.
+
+Message:  1014
+<ce>   Some of the vampires have begun to succumb
+<ce>   to the effects of _priest_'s spell.
+<ce>   The intensity of the rite continues to mount.
+
+Message:  1015
+<ce>   "We're almost there! Keep at it!"
+<ce>   _priest_ shouts, %g3 body glowing brightly.
+
+Message:  1016
+<ce>   You have strayed too far from ___graveyard_,
+<ce>   leaving _priest_ without protection.
+<ce>   The vampires mercilessly descend on %g2 and
+<ce>   shred %g2 to pieces.
+
+Message:  1030
+%qdt:
+ __questgiver_ of ___questgiver_
+ assigned me to escort a priest named _priest_, staying at
+ _temple_, to a graveyard called ___graveyard_
+ to eliminate a clan of vampires hiding there.
+ The rite will take place at night, and must be done
+ within =timer_ days.
+
+
+
+QBN:
+
+Person _questgiver_ group Questor
+Person _priest_ faction Generic_Temple
+
+Place _temple_ local temple
+Place _graveyard_ remote graveyard
+
+Clock _timer_ 00:00 0 flag 1 range 0 2
+Clock _combat1_ 0:05
+Clock _combat2_ 0:05
+Clock _combat3_ 0:05
+Clock _combat4_ 0:05
+Clock _delay_ 0:20
+
+Foe _enemy1_ is Vampire
+Foe _enemy2_ is Vampire
+Foe _enemy3_ is Vampire
+Foe _enemy4_ is Vampire
+Foe _enemy5_ is Ancient_vampire
+Foe _enemy6_ is Ancient_vampire
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+    place npc _priest_ at _temple_
+
+_clicky_ task:
+    clicked npc _priest_
+    say 1010
+	reveal _graveyard_
+	pc at _graveyard_ set _onsite_
+    hide npc _priest_
+    add _priest_ face
+
+_midnight_ task:
+    daily from 3:00 to 22:00
+
+variable _onsite_
+
+_timer_ task:
+	end quest
+
+_priestleaves_ task:
+    when _timer_ and _clicky_
+    say 1003
+
+_notyet_ task:
+    when _clicky_ and _onsite_ and _midnight_
+    say 1011
+
+_begin_ task:
+    when _clicky_ and _onsite_ and not _midnight_
+    say 1012
+    start timer _combat1_
+    start task _spawn1_
+    start task _hasbegun_
+    stop timer _timer_
+
+variable _hasbegun_
+
+_abandon_ task:
+    when _hasbegun_ and not _onsite_ and not _combat4_
+    drop _priest_ face
+    say 1016
+    end quest
+
+_spawn1_ task:
+    create foe _enemy1_ every 2 minutes indefinitely with 100% success
+
+_combat1_ task:
+    say 1013
+    start timer _combat2_
+    start task _spawn2_
+
+_spawn2_ task:
+    create foe _enemy2_ every 2 minutes indefinitely with 100% success
+
+_combat2_ task:
+    say 1014
+    start timer _combat3_
+    start task _spawn3_
+    kill foe _enemy2_
+
+_spawn3_ task:
+    create foe _enemy3_ every 3 minutes indefinitely with 100% success
+    clear _spawn2_
+
+_combat3_ task:
+    say 1015
+    start timer _combat4_
+    start task _spawn4_
+    kill foe _enemy1_
+    kill foe _enemy4_
+    kill foe _enemy6_
+--this is intentional for dramatic effect
+
+_spawn4_ task:
+    create foe _enemy4_ every 2 minutes indefinitely with 100% success
+    create foe _enemy5_ every 2 minutes indefinitely with 100% success
+    create foe _enemy6_ every 3 minutes indefinitely with 100% success
+
+_combat4_ task:
+    kill foe _enemy3_
+    kill foe _enemy5_
+    clear _spawn1_
+    clear _spawn2_
+    clear _spawn3_
+    clear _spawn4_
+    give pc nothing
+	legal repute +8
+    start timer _delay_
+    drop _priest_ face
+    remove log step 0
+
+_delay_ task:
+    end quest
+
+_infight_ task:
+	daily from 0:00 to 23:59
+	change foe _enemy1_ infighting true
+	change foe _enemy2_ infighting true
+	change foe _enemy3_ infighting true
+	change foe _enemy4_ infighting true
+	change foe _enemy5_ infighting true

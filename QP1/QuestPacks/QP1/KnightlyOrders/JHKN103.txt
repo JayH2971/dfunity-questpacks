@@ -1,0 +1,112 @@
+Quest: JHKN103
+DisplayName: Shambling Bones
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          Have you any skill at slaying the undead, %pct?
+<ce>  We're receiving many concerning reports of vicious skeletons
+<ce>  outside the city walls, who attack innocent travelers.
+<ce>  If you could slay several of them, you would be doing
+<ce>  our fair city a service.
+
+RefuseQuest:  [1001]
+<ce>       %oth. They're a lot easier if you use blunt weaponry.
+
+AcceptQuest:  [1002]
+<ce>      On rare occasions they venture into the city, so I suppose
+<ce>  you could stay nearby and destroy whatever crosses our borders.
+<ce>  But the real danger is out in the wilderness, where you should go.
+<ce>  Defeat a half-dozen or so of them, and imagine that each one down
+<ce>  is a life you've saved. Let that motivate you. Return to me
+<ce>  with the deed done, and your name shall gain honor in this hall.
+<ce>  Failure to report within one week will mean abdication on your part.
+
+QuestComplete:  [1004]
+<ce>  Fine work, %pct. This is our daily labor.
+<ce>      The land of %crn is a little safer because of you.
+<ce>  We feel pride in what you have done.
+
+Message:  1010
+<ce>    With a mighty roar, a wandering skeleton charges for you.
+
+Message:  1011
+<ce>    That should be enough skeletons, for now.
+<ce>    The roads should be a little safer.
+
+Message:  1030
+%qdt:
+ _qgiver_ of __qgiver_ has
+ ordered me out into the wilderness to
+ dispose of rogue skeletons that assault passers by. If I can
+ destroy six or so and return to ___qgiver_
+ within a week's time, I will gain prestige within the order.
+
+QBN:
+Person _qgiver_ group Questor male
+
+Clock _timer_ 7.00:00
+
+Foe _enemy_ is Skeletal_warrior
+
+Place _dung_ permanent DaggerfallCastle
+Place _dung2_ permanent SentinelCastle
+Place _dung3_ permanent WayrestCastle
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    pc at _dung_ set _inside1_
+    pc at _dung2_ set _inside2_
+    pc at _dung3_ set _inside3_
+    pc at any fighters set _fightered_
+    pc at any tavern set _taverned_
+    pc at any house set _homed_
+    pc at any shop set _shopped_
+    pc at any magery set _maged_
+    pc at any temple set _templed_
+    pc at any palace set _palaced_
+    start timer _timer_
+
+variable _inside1_
+variable _inside2_
+variable _inside3_
+variable _fightered_
+variable _taverned_
+variable _homed_
+variable _shopped_
+variable _maged_
+variable _templed_
+variable _palaced_
+
+_donotspawn_ task:
+    when _inside1_ or _inside2_ or _inside3_ or _fightered_ or _taverned_ or _homed_ or _shopped_ or _maged_ or _templed_ or _palaced_
+
+_spawner_ task:
+    when not _donotspawn_
+    create foe _enemy_ every 13 minutes indefinitely with 5% success msg 1010
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy_ infighting true
+    clear _daily_
+
+_slain_ task:
+    killed 6 _enemy_
+    say 1011
+
+_qgclicked_ task:
+  clicked npc _qgiver_
+
+_clearclick_ task:
+  when _qgclicked_ and not _slain_
+  clear _qgclicked_ _clearclick_
+
+_pcreward_ task:
+    when _qgclicked_ and _slain_
+    give pc nothing
+    legal repute +2
+    end quest
+
+_timer_ task:
+    end quest

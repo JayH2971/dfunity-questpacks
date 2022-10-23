@@ -11,6 +11,7 @@ schema: *name, group, membership, minReq, flag, notes
 
 JHKN101, KnightlyOrder, M, 1, 1, a quest to protect a dragonling in a dungeon
 JHKN102, KnightlyOrder, M, 0, 1, a quest to slay criminals who have taken a farm captive
+JHKN103, KnightlyOrder, M, 0, 0, a quest to fight skeletal warriors in the wilderness
 JHKN104, KnightlyOrder, M, 2, 1, a quest to defend a city from an invasion of knights
 JHKN105, KnightlyOrder, M, 0, 0, a quest to retrieve and deliver evidence of a murder
 JHKN106, KnightlyOrder, M, 3, 0, a quest to retrieve a weapon from a murderer in a dungeon
@@ -23,7 +24,7 @@ JHKN115, KnightlyOrder, M, 1, 1, a quest to stop the cause of attacking spriggan
 JHKN116, KnightlyOrder, M, 3, 1, a quest to negotiate peace with an orc
 JHKN117, KnightlyOrder, M, 1, 0, a quest to defend a graveyard from intruders
 JHKN118, KnightlyOrder, M, 1, 0, a quest to execute a Fighters Guild member
--JHKN119, KnightlyOrder, M, 9, 1,
+JHKN119, KnightlyOrder, M, 6, 1, a quest to dispel a clan of vampires in a graveyard
 JHKN120, KnightlyOrder, M, 1, 0, a quest to draw out an attacking band
 JHKN121, KnightlyOrder, M, 5, 0, a quest to apprehend a witch
 JHKN122, KnightlyOrder, M, 7, 0, a quest to free a sealed dungeon

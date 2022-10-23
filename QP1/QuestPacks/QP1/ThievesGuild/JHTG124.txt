@@ -140,7 +140,7 @@ Person _vilj_ faction The_Thieves_Guild male
 Item _reward_ magic_item
 
 Foe _enemy1_ is Knight
-Foe _enemy2_ is Knight
+Foe _enemy2_ is Sabretooth_tiger
 Foe _enemy3_ is Warrior
 
 Place _dung_ remote dungeon
@@ -175,15 +175,25 @@ _begin_ task:
 
 _spawn1_ task:
     create foe _enemy1_ every 0 minutes 1 times with 100% success
-    create foe _enemy1_ every 1 minutes indefinitely with 100% success
+    create foe _enemy1_ every 2 minutes indefinitely with 100% success
 
 _spawn2_ task:
     create foe _enemy2_ every 0 minutes 1 times with 100% success
-    create foe _enemy2_ every 1 minutes indefinitely with 100% success
+    create foe _enemy2_ every 3 minutes indefinitely with 100% success
 
 _spawn3_ task:
     create foe _enemy3_ every 0 minutes 1 times with 100% success
-    create foe _enemy3_ every 1 minutes indefinitely with 100% success
+    create foe _enemy3_ every 3 minutes indefinitely with 100% success
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    change foe _enemy3_ infighting true
+    change foe _enemy1_ team 0
+    change foe _enemy2_ team 0
+    change foe _enemy3_ team 0
+    clear _daily_
 
 _battle1_ task:
     say 1012
