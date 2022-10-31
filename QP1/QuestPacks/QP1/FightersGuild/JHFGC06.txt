@@ -6,7 +6,7 @@ QRC:
 Message:  1010
 <ce>  All of a sudden, flaming letters appear in the ground in front of you.
 <ce>  
-<ce>  "THE DARK BROTHERHOOD IS NOT AMUSED, FIGHTERS CHILD."
+<ce>  "THE DARK BROTHERHOOD IS NOT AMUSED, FIGHTERS CHILD"
 <ce>  
 <ce>  The letters soon fade out, though you realize you're not alone.
 
@@ -19,7 +19,7 @@ Place _dung_ permanent DaggerfallCastle
 Place _dung2_ permanent SentinelCastle
 Place _dung3_ permanent WayrestCastle
 
-Clock _delay_ 0:05
+Clock _delay_ 1:00
 
 --	Quest start-up:
     pc at _dung_ set _inside1_
