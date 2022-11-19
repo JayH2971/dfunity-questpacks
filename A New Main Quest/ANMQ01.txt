@@ -242,14 +242,14 @@ _noorc_ task:
     create foe _orc1_ every 0 minutes 1 times with 100% success
     create foe _orc2_ every 0 minutes 1 times with 100% success
     create foe _orc3_ every 0 minutes 1 times with 100% success
-    prompt 1011 yes _orcpath_ no _ukpath_
+    prompt 1011 yes _orcpath_ no _orcpath_
 
 _goorc_ task:
     when _delay_ and _skilled_
     create foe _orc1_ every 0 minutes 1 times with 100% success
     create foe _orc2_ every 0 minutes 1 times with 100% success
     create foe _orc3_ every 0 minutes 1 times with 100% success
-    prompt 1012 yes _orcpath_ no _ukpath_
+    prompt 1012 yes _orcpath_ no _orcpath_
 
 _ukpath_ task:
     say 1013
