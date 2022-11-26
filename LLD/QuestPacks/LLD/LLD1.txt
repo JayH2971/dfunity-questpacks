@@ -1,0 +1,71 @@
+Quest: LLD1
+DisplayName: League of Legendary Dogooders 1
+
+QRC:
+
+Message:  1011
+<ce>        A page, riding on horseback, shouts at no one in particular.
+<ce>  
+<ce>  "The League of Legendary Dogooders has taken employ in
+<ce>  the province of Daggerfall! Speak to Lord Bridwell
+<ce>  in Castle Daggerfall within the next 90 days if
+<ce>  you wish to spread mighty justice throughout the land!
+<ce>  Hurrah! Hurrah!"
+
+Message:  1012
+%qdt: 
+ A page has announced that something called
+ the League of Legendary Dogooders has set
+ up in the province of Daggerfall.
+ Lord Bridwell is the contact for this
+ organization.
+ (I will erase this note in 3 days' time.)
+
+Message:  1013
+<ce>  Yes? Oh, bother. Another for that condemned League of whatever.
+<ce>  The King put me in charge of this, and it's been an unceasing headache
+<ce>  for the past two weeks. If you want to join this group of crusaders
+<ce>  or whatever it is, go find _pers_ at _tavern_ here in town.
+<ce>  That's who you need to talk to. I'm no more than a figurehead.
+<ce>  
+<ce>  Now go on, get out of here.
+
+QBN:
+
+Item _dud_ trinket
+
+Clock _erase_ 3.00:00
+Clock _timer_ 90.00:00
+
+Person _brid_ named Lord_Bridwell atHome
+
+--Quest Startup
+    give pc _dud_ notify 1011
+    have _dud_ set _init_
+
+_init_ task:
+    take _dud_ from pc
+    log 1012 step 0
+    start timer _erase_
+    start timer _timer_
+    start task _ready_
+
+_erase_ task:
+    remove log step 0
+
+variable _ready_
+
+_clearclick_ task:
+    when _clickbrid_ and not _ready_
+    clear _clearclick_ _clickbrid_
+
+_clickbrid_ task:
+    clicked npc _brid_
+
+_advance_ task:
+    when _clickbrid_ and _ready_
+    start quest LLD2
+    end quest
+
+_timer_ task:
+    end quest

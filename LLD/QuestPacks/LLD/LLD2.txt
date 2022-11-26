@@ -1,0 +1,212 @@
+Quest: LLD2
+DisplayName: League of Legendary Dogooders 2
+
+QRC:
+
+Message:  1011
+<ce>  Yes? Oh, bother. Another for that condemned league of whatever.
+<ce>  The King put me in charge of this, and it's been an unceasing headache
+<ce>  for the past two weeks. If you want to join this group of crusaders
+<ce>  or whatever it is, go find _pers_ at _fg_ here in town.
+<ce>  That's who you need to talk to. I'm no more than a figurehead.
+<ce>  
+<ce>  Now go on, get out of here.
+
+Message:  1012
+%qdt:
+ Lord Bridwell told me that the actual recruiter for the
+ League of Legendary Dogooders is found in _fg_
+ here in the city of ___fg_, named _pers_.
+
+Message:  1013
+<ce>  _pers_ is quite excited already, and lights up
+<ce>  even more upon your introduction.
+<ce>  
+<ce>  "Hello! Hurrah! Yes, I am _pers_ of the
+<ce>  Legendary League of Dogooders! Are you here to join?"
+
+Message:  1014
+<ce>  "Wonderful! Now, we have a minimal requirement of being able
+<ce>  to do combat in our order. We must be able to stop evil
+<ce>  by any manner necessary; we prefer to do it with words,
+<ce>  but when words fail, we must defend ourselves and others!
+<ce>  Are you capable of combat?"
+
+Message:  1015
+<ce>  "Oh, that is good. I'm very happy to hear it!
+<ce>  But we must be certain. We wouldn't want you to overestimate
+<ce>  your ability, after all! Let me call over a squire to spar with you."
+<ce>  
+<ce>  _pers_ excuses %g2self and calls for a nearby warrior.
+<ce>  
+<ce>  "Now, have at it! Let me see your skill. I highly doubt you'll
+<ce>  be able to kill each other, so don't hold back!
+<ce>  (Though really, avoid the instant death magicks, would you?)"
+
+Message:  1016
+<ce>  _pers_ cries in terror upon seeing the squire die.
+<ce>  
+<ce>  "No no no no no! You are unfit for our order!
+<ce>  Begone from here! Guards! Someone help!"
+
+Message:  1017
+<ce>  "That's good enough," _pers_ calls out.
+<ce>  The squire bows and then leaves the building.
+<ce>  
+<ce>  "Well, you seem fit to do combat. I think you'll be okay.
+<ce>  Come over here and I'll ask you some questions,
+<ce>  and we'll see whether you will work out in our league."
+
+Message:  1018
+<ce>  "Okay. First question: Will you swear to do good,
+<ce>   defend the defenseless, and administer justice?"
+
+Message:  1019
+<ce>  "Will you swear to use violence only as necessary
+<ce>  to defend yourself and others while laboring in our tasks?"
+
+Message:  1020
+<ce>  "Will you refrain from blaspheming the eight divine Gods,
+<ce>  as well as the gods of the orcs and of every other
+<ce>  conscious being?"
+
+Message:  1021
+<ce>  "Will you ensure all your acts are in harmony with
+<ce>  civilized law, your conscience, and the name of
+<ce>  the League of Legendary Dogooders?"
+
+Message:  1022
+<ce>  "Do you happen to like cats?"
+
+Message:  1023
+<ce>  "Sorry, I just like to throw that last one in for fun.
+<ce>  I find you a fit candidate! And I'm actually going
+<ce>  to submit your name for early leadership.
+<ce>  You seem to be more experienced than the ordinary
+<ce>  recruit. You'll still begin as a footsoldier,
+<ce>  but I'll make sure Master Greenham at least
+<ce>  sees your name in the next few days.
+<ce>  Distinguish yourself, and do us proud!
+<ce>  
+<ce>  "We'll call on your services as needed. I don't know
+<ce>  when the next occasion will be, but stay within
+<ce>  the province of ____fg_, would you?
+<ce>  I hear word that there's going to be a raid
+<ce>  on some criminal lair soon, and you won't want to miss it."
+
+Message:  1024
+<ce>  "Ehm, to be honest, I wasn't expecting a 'no.'
+<ce>  A good candidate will uphold all our norms, and swear to it.
+<ce>  But it's better to be honest now than to cause us grief
+<ce>  on the battlefield. Good day to you!"
+<ce>  
+<ce>  _pers_ bows and then excuses %g2self.
+
+Message:  1025
+<ce>  "Oh. Well, I do enjoy a good chat, but I'm being paid for this.
+<ce>  I must make sure I attend to my business. Farewell!"
+
+Message:  1026
+<ce>  You flee the duel, and lose your opportunity to prove
+<ce>  yourself to the League of Legendary Dogooders.
+<ce>  Oh well.
+
+Message:  1027
+%qdt:
+ I have been officially inducted into the League of
+ Legendary Dogooders as a footsoldier. _pers_
+ recommended that I stay around the region of
+ ____fg_ in preparation for a raid
+ on a criminal lair in the next few days.
+
+QBN:
+
+Clock _timer_ 14.00:00
+Clock _duelled_ 0:02
+
+Person _pers_ faction Generic_Knightly_Order
+
+Place _fg_ local fighters
+
+Foe _foe_ is Warrior
+
+--Quest Startup
+    say 1011
+    log 1012 step 0
+    place npc _pers_ at _fg_
+    start timer _timer_
+    pc at _fg_ do _inside_
+
+variable _inside_
+
+_click_ task:
+    clicked npc _pers_
+
+_step0_ task:
+    when _click_ and not _duelled_
+    prompt 1013 yes _step1_ no _quit_
+
+_quit_ task:
+    say 1025
+    end quest
+
+_step1_ task:
+    prompt 1014 yes _combat_ no _quit2_
+
+_quit2_ task:
+    say 1024
+    end quest
+
+_combat_ task:
+    say 1015
+    create foe _foe_ every 0 minutes 1 times with 100% success
+    change foe _foe_ infighting true
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    cast Heal spell on _foe_
+    clear _daily_
+
+_inj_ task:
+    injured _foe_
+    start timer _duelled_
+
+_duelled_ task:
+    say 1017
+    remove foe _foe_
+    clear _click_
+
+_quiz_ task:
+    when _click_ and _duelled_
+    prompt 1018 yes _quiz2_ no _quit2_
+
+_quiz2_ task:
+    prompt 1019 yes _quiz3_ no _quit2_
+
+_quiz3_ task:
+    prompt 1020 yes _quiz4_ no _quit2_
+
+_quiz4_ task:
+    prompt 1021 yes _quiz5_ no _quit2_
+
+_quiz5_ task:
+    prompt 1022 yes _quiz6_ no _quit2_
+
+_quiz6_ task:
+    say 1023
+
+_murder_ task:
+    killed _foe_
+    say 1016
+    hide npc _pers_
+    setplayercrime Murder
+    spawncityguards immediate
+    end quest
+
+_timer_ task:
+    end quest
+
+_quitter_ task:
+    when _combat_ and not _inside_
+    say 1026
+    end quest

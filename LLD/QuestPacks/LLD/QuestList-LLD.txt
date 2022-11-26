@@ -1,0 +1,3 @@
+schema: *name, group, membership, minReq, flag, notes
+
+LLDinit, InitAtGameStart, P, 0, 0, begins the League of Legendary Dogooders questline

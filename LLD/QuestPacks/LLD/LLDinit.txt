@@ -1,0 +1,12 @@
+Quest: LLDinit
+DisplayName: League of Legendary Dogooders Initialization
+-- Message panels
+QRC:
+
+QBN:
+
+--   Quest start-up:
+_level5_ task:
+    level 5 completed
+    start quest LLD1
+    end quest
