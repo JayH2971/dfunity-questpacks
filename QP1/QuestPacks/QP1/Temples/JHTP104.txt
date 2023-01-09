@@ -125,7 +125,7 @@ Person _rescue_ group Resident1
 Place _dung_ remote dungeon4
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
-Clock _begin_ 1:00 2.00:00
+Clock _begin_ 1:00 1.12:00
 
 Foe _enemy_ is Zombie
 
