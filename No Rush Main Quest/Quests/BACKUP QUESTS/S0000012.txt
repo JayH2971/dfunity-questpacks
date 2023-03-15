@@ -3,7 +3,7 @@
 -- QuestId: 12
 Messages: 22
 Quest: S0000012
-DisplayName: NR The Emperor's Courier
+DisplayName: The Emperor's Courier
 -- Message panels
 QRC:
 
@@ -87,7 +87,7 @@ Message:  1011
  Mynisera's signet ring bought the trust of
  _dispatcher_. %g told me that _messenger_
  would be in __palace_ at
- _palace_.
+ _palace_ in =2palace_ days time.
 
 Message:  1015
 <ce>              The letter from the Emperor? Actually %pcf
@@ -122,7 +122,7 @@ Message:  1020
 <ce>             However, I am loyal to Queen Mynisera. I also
 <ce>                   know that _messenger_ disembowled
 <ce>               the last person that tried to ambush %g2.
-<ce>             Soon %g is due to be at _palace_
+<ce>             In =2palace_ days %g is due to be at _palace_
 <ce>                     in __palace_. Try %g2 there.
 
 Message:  1021
@@ -176,6 +176,9 @@ Person _aubki_ named Queen_Aubk-i atHome
 Place _location_ remote random
 Place _palace_ remote palace
 
+Clock _2palace_ 00:00 0 flag 1 range 0 2
+Clock _S.07_ 2.00:00 0 flag 1 range 0 1
+
 Foe _F.00_ is Nightblade
 
 --	Quest start-up:
@@ -201,15 +204,27 @@ _no_ task:
 
 _S.03_ task:
 	clicked npc _dispatcher_ 
+	start timer _2palace_ 
 	log 1011 step 1 
 	say 1020 
+
+_2palace_ task:
+	start timer _S.07_ 
 	place npc _messenger_ at _palace_ 
 
 _S.05_ task:
 	toting signetRing and _messenger_ clicked 
+	stop timer _S.07_ 
 	get item _jewelry_ 
 	get item signetRing 
 	say 1021 
+
+variable _S.06_
+_S.07_ task:
+	drop _aubki_ as questor 
+	drop _Mynisera_ as questor 
+	end quest 
+	destroy _messenger_ 
 
 _S.08_ task:
 	clicked npc _aubki_ 

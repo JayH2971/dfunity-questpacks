@@ -127,7 +127,6 @@ variable _victory_
 _getgold_ task:
     when _victory_ and not _inside_
     give pc _reward_
-    end quest
 
 _timer_ task:
     end quest

@@ -3,7 +3,7 @@
 -- QuestId: 18
 Messages: 31
 Quest: S0000018
-DisplayName: NR Dust of Restful Death
+DisplayName: Dust of Restful Death
 -- Message panels
 QRC:
 
@@ -90,7 +90,10 @@ This is indeed the Dust of Restful Death.
  my revenge, but first I must find out why
  Eadwyre would risk this.
  
- Give me a moment to prepare the Dust.
+ I will need a month to prepare the Dust.
+ Come back to me at that time and I will
+ give it to you, along with instructions
+ for its use.
 
 
 -- Symbols used in the QRC file:
@@ -110,7 +113,7 @@ Place _crypt_ remote dungeon0
 
 Clock _delay_ 00:02 0 flag 1 range 0 1
 Clock _S.01_ 00:02 0 flag 1 range 0 1
-Clock _S.06_ 1.00:00 0 flag 1 range 0 1
+Clock _S.06_ 30.00:00 0 flag 1 range 0 1
 
 Foe _mummy_ is Mummy
 

@@ -3,7 +3,7 @@
 -- QuestId: 6
 Messages: 31
 Quest: S0000006
-DisplayName: NR Elysana's Robe
+DisplayName: Elysana's Robe
 -- Message panels
 QRC:
 
@@ -34,7 +34,10 @@ AcceptQuest:  [1002]
 <ce>               be too hard to find, just ask around for
 <ce>                   him or for _casfort_ and give him
 <ce>                the robe. I do really appreciate this,
-<ce>                       %pcf. I'll see you soon.
+<ce>                       %pcf. It really shouldn't
+<ce>              take you longer than =queston_ days to get
+<ce>                      to ___casfort_ and back, so
+<ce>                          I'll see you then.
 
 QuestFail:  [1003]
 <ce>                I know Lord Castellian doesn't have his
@@ -86,7 +89,8 @@ QuestLogEntry:  [1010]
  robe to the elder member of the Wayrest
  Elder Council, Lord Castellian at his
  manor in ___casfort_, _casfort_.
- I need to then return to Castle Wayrest.
+ I need to be back at Castle Wayrest
+ in =queston_ days.
 
 Message:  1020
 <ce>                     Fool! Some enterprising soul
@@ -151,6 +155,7 @@ Person Castellian face 1 named Lord_Castellian anyInfo 1030
 Place _casfort_ remote house1
 
 Clock _S.04_ 04:00 01:40
+Clock _queston_ 00:00 0 flag 17 range 0 2
 Clock _S.16_ 1.00:00 0 flag 1 range 0 1
 
 Foe _F.00_ is Daedra_seducer
@@ -200,6 +205,7 @@ ElysannaSatisfied _S.07_
 
 yes task:
 	_I.00_ used do _S.02_ 
+	start timer _queston_ 
 	log 1010 step 0 
 	get item _I.00_ 
 	say AcceptQuest 

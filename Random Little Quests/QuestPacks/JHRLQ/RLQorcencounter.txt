@@ -67,7 +67,6 @@ _gold_ task:
     remove foe _ally1_
     remove foe _ally2_
     legal repute +2
-    end quest
 
 _clock_ task:
     remove foe _monster_

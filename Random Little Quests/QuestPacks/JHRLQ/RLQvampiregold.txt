@@ -77,7 +77,6 @@ _delay_ task:
 _kill_ task:
     killed _vamp_
     legal repute +2
-    end quest
 
 _reject_ task:
     say 1011

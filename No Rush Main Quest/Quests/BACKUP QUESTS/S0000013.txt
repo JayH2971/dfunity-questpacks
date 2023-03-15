@@ -3,7 +3,7 @@
 -- QuestId: 13
 Messages: 21
 Quest: S0000013
-DisplayName: NR Mynisera's Letters
+DisplayName: Mynisera's Letters
 -- Message panels
 QRC:
 
@@ -41,10 +41,13 @@ AcceptQuest:  [1002]
 <ce>                     you to do is go to ___myndung_
 <ce>                 and find that parcel of letters or any
 <ce>                 other information about her activities
-<ce>                  there. Good luck.
+<ce>                  there. Mynisera will be returning in
+<ce>               =2myndung_ days. You cannot have any more
+<ce>                   time than that, I fear. Good luck.
 
 QuestFail:  [1003]
-<ce>                     I need some kind of evidence, %pcf.
+<ce>                     I need some kind of evidence
+<ce>                   in =2myndung_ days or less, %pcf.
 
 QuestComplete:  [1004]
 <ce>                How very sad. To be honest, this is not
@@ -114,8 +117,8 @@ Message:  1011
  the dowager queen of Daggerfall, to her fortress,
  ___myndung_ to see what becomes of the parcels of
  paper old Mynisera has been bringing there. I have
- to present Aubk-i with the letters. She has promised
- me more information in return for this.
+ only =2myndung_ days to get back to Aubk-i with the
+ letters. She has promised me more information in return for this.
 
 Message:  1015
 <ce>             A stalwart young woman wearing the livery of
@@ -153,11 +156,17 @@ Person _mynisera_ face 184 named Mynisera
 
 Place _myndung_ permanent Castle_Necromoghan
 
-Clock _S.04_ 1.00:00
+Clock _2myndung_ 00:00 0 flag 17 range 0 2
+Clock _S.04_ 10.00:00 20.00:00
+
 
 --	Quest start-up:
 	start timer _S.04_ 
 	add _aubki_ as questor 
+
+_2myndung_ task:
+	drop _aubki_ as questor 
+	end quest 
 
 _pcgetsgold_ task:
 	toting _treasure_ and _aubki_ clicked 
@@ -179,6 +188,7 @@ until _S.04_ performed:
 
 yes task:
 	place item _treasure_ at _myndung_ anymarker
+	start timer _2myndung_ 
 	reveal _myndung_ 
 	log 1011 step 0 
 	say AcceptQuest 

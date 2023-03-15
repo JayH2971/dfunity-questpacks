@@ -65,7 +65,6 @@ _notlevel_ task:
 _slain_ task:
     killed _angrybat_
     give pc nothing
-    end quest
 
 _ending_ task:
     remove foe _angrybat_

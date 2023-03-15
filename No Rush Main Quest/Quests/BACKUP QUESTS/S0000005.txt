@@ -3,7 +3,7 @@
 -- QuestId: 5
 Messages: 12
 Quest: S0000005
-DisplayName: NR Concern for Nulfaga
+DisplayName: Concern for Nulfaga
 -- Message panels
 QRC:
 
@@ -28,10 +28,11 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce>                    %oth, I am glad to have found a
 <ce>                  champion. The name of her castle is
-<ce>                Shedungent in the Wrothgarian Mountains.
-<ce>              If she is insane, Shedungent may be a very
-<ce>               dangerous place indeed. Be very careful.
-<ce>                  May Kynareth and Mara protect you.
+<ce>                Shedungent, and it should not take you
+<ce>              longer than =2shedungent_ days to go there
+<ce>              and return. If she is insane, Shedungent
+<ce>               may be a very dangerous place indeed.
+<ce>           Be very careful. May Kynareth and Mara protect you.
 
 QuestFail:  [1003]
 <ce>                  Until you have spoken with Nulfaga,
@@ -71,7 +72,7 @@ QuestLogEntry:  [1010]
  grandmother-in-law, Nulfaga. I am to go
  to Nulfaga's castle, Shedungent of Wrothgaria,
  and talk to her to see if she is well.
- I have to report her condition
+ I have =2shedungent_ days to report her condition
  to Aubk-i and get my reward.
 
 Message:  1011
@@ -133,10 +134,17 @@ Person _aubki_ named Queen_Aubk-i atHome
 
 Place _huntstart_ permanent Shedungent2
 
+Clock _2shedungent_ 150.00:00 0 flag 1 range 0 1
+
 
 --	Quest start-up:
+	start timer _2shedungent_ 
 	log 1010 step 0 
 	prompt QuestorOffer yes yes no _no_ 
+
+_2shedungent_ task:
+	drop _aubki_ as questor 
+	end quest 
 
 _S.01_ task:
 	clicked npc _nulfaga_ 
@@ -146,6 +154,7 @@ _pcgetsgold_ task:
 	when _S.03_ and _S.01_ 
 	give pc _magicitem_ 
 	start quest 107 107 
+	stop timer _2shedungent_ 
 	repute with _aubki_ exceeds 15 do _S.11_ 
 	change repute with _aubki_ by +10 
 	mute npc _aubki_ 

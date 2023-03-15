@@ -3,7 +3,7 @@
 -- QuestId: 4
 Messages: 16
 Quest: S0000004
-DisplayName: NR Morgiah's Wedding
+DisplayName: Morgiah's Wedding
 -- Message panels
 QRC:
 
@@ -35,8 +35,9 @@ AcceptQuest:  [1002]
 <ce>              have delivered the letter, they would feel
 <ce>                no need to guarantee your safety. It is
 <ce>                their way. I need the letter delivered
-<ce>                     and a response from _necs_.
-<ce>                        The risks are very high,
+<ce>                     and a response from _necs_ in
+<ce>              my hand one month from now at the absolute
+<ce>                   latest. The risks are very high,
 <ce>                       %pcf, please do not fail.
 
 QuestFail:  [1003]
@@ -114,7 +115,7 @@ Message:  1012
  Mountains. She said to avoid the rift,
  whatever that is. If I see it, I have
  gone too far. She wants a reply back
- as well.
+ in a month.
 
 Message:  1013
 Princess Morgiah has left Wayrest for Sumurset Isle and the King of Firsthold.
@@ -169,11 +170,16 @@ Person _necs_ named King_of_Worms atHome
 
 Place _scourgbarrow_ permanent ScourgBarrow1
 
+Clock _2ndgo_ 30.00:00 0 flag 1 range 0 1
 Clock _S.01_ 7.00:00 14.00:00
 Clock _letterdelay_ 1.00:00
 
 --	Quest start-up:
 	prompt QuestorOffer yes yes no _no_ 
+
+_2ndgo_ task:
+	drop _morgiah_ as questor 
+	end quest 
 
 _S.01_ task:
 	repute with _morgiah_ exceeds 10 do _S.07_ 
@@ -187,6 +193,7 @@ _S.02_ task:
 	toting letter13 and _morgiah_ clicked 
 	give pc _reward_ 
 	start timer _S.01_ 
+	stop timer _2ndgo_ 
 	remove log step 0 
 	start task _S.08_ 
 	change repute with _morgiah_ by +10 
@@ -199,6 +206,7 @@ _S.03_ task:
 
 variable _S.04_
 yes task:
+	start timer _2ndgo_ 
 	log 1012 step 0 
 	get item letter44 
 	reveal _scourgbarrow_ in province 1 at 450958 

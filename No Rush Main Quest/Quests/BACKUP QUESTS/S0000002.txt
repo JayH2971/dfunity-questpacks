@@ -3,7 +3,7 @@
 -- QuestId: 2
 Messages: 51
 Quest: S0000002
-DisplayName: NR Blackmailing Prince Helseth
+DisplayName: Blackmailing Prince Helseth
 -- Message panels
 QRC:
 
@@ -158,7 +158,8 @@ Message:  1020
  to Lord Castellian, leader of the elder
  council of Wayrest, in his holiday manor,
  _castfort_ in __castfort_.
- I have to deliver the letter and return.
+ I have =1stparton_ days to deliver the letter and
+ return.
 
 Message:  1024
 Prince Helseth,
@@ -180,7 +181,7 @@ My Dear Lord Castellian,
  would have been impolitic to approach you
  at the palace with this potential problem.
  Unfortunately, your much deserved vacation
- will have to be temporarily suspended until
+ will have to temporarily suspended until
  this matter is settled.
  
       I refer to your sister, Lady Pasipha.
@@ -224,8 +225,9 @@ Message:  1027
 <ce>           letter. It is to be given to Lord Castellian, the
 <ce>            head of the elder council, who is currently at
 <ce>                 his house _castfort_ in __castfort_.
-<ce>             I need the letter delivered and you back here.
-<ce>                   Like I mentioned before, Lord
+<ce>             I need the letter delivered and you back here
+<ce>             in no later than =1stparton_ days -- that is
+<ce>               essential. Like I mentioned before, Lord
 <ce>              Castellian values his privacy to an excess.
 <ce>                Be prepared for some resistance at your
 <ce>                  arrival in _castfort_. I would ask
@@ -295,7 +297,8 @@ Person Eadwyre face 80 named King_Eadwyre atHome
 
 Place _castfort_ remote house1
 
-Clock _S.00_ 1.00:00
+Clock _S.00_ 1.00:00 0 flag 1 range 0 1
+Clock _1stparton_ 00:00 0 flag 17 range 0 2
 Clock _S.15_ 3.00:00 7.00:00
 
 Foe _F.00_ is Knight
@@ -320,7 +323,8 @@ _S.02_ task:
 
 _S.03_ task:
 	when _S.01_ and _S.00_ 
-	add dialog for person Castellian
+	add dialog for person Castellian 
+	start timer _1stparton_ 
 	log 1020 step 1 
 	remove log step 0 
 	say 1027 
@@ -379,7 +383,12 @@ _S.15_ task:
 	make _I.06_ permanent 
 	drop Eadwyre as questor 
 	drop _helseth_ as questor 
-	end quest
+	end quest 
+
+_1stparton_ task:
+	drop Eadwyre as questor 
+	drop _helseth_ as questor 
+	end quest 
 
 _S.17_ task:
 	when _S.04_ and _S.06_ 

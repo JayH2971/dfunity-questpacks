@@ -3,7 +3,7 @@
 -- QuestId: 10
 Messages: 23
 Quest: S0000010
-DisplayName: NR Stronghold of the Blades
+DisplayName: Stronghold of the Blades
 -- Message panels
 QRC:
 
@@ -33,7 +33,7 @@ AcceptQuest:  [1002]
 <ce>             has reason to not wish harm upon the Blades.
 <ce>               We want you to infiltrate Castle Llugwych
 <ce>                  in Ykalon and remove the _reward_.
-<ce>             Please have this done if
+<ce>             Please have this done in =itemindung_ days if
 <ce>                 you want your information and reward.
 
 QuestFail:  [1003]
@@ -80,7 +80,7 @@ QuestorPostsuccess:  [1008]
  An agent of the Underking has sent me to
  Castle Llugwych in Ykalon to find a certain
  _reward_ the Necromancers stole from
- the Underking. I have to find
+ the Underking. I have =itemindung_ days to find
  and return the _reward_.
 
 QuestLogEntry:  [1010]
@@ -112,7 +112,7 @@ Dear %pcn,
  tales and consider the Underking the ultimate force of
  evil, we apologize for misjudging you. Otherwise, we
  need your help. You can find me at _agentplace_
- of __agentplace_ in Sentinel.
+ of __agentplace_ in Sentinel. I will wait one month.
  
  
 <ce>                             -- _agentuk_
@@ -145,7 +145,8 @@ Place _llugwych_ permanent LlugwychCastle
 Place _agentplace_ remote house2
 Place _lysandustomb_ permanent LysandusTomb2
 
-Clock _S.04_ 1.00:00
+Clock _S.04_ 6.23:20 0 flag 1 range 0 1
+Clock _itemindung_ 00:00 0 flag 17 range 0 2
 
 Foe _F.00_ is Wraith
 
@@ -165,6 +166,7 @@ _S.01_ task:
 
 yes task:
 	place item _reward_ at _llugwych_ marker 0
+	start timer _itemindung_ 
 	log 1008 step 0 
 	reveal _llugwych_ in province 40 at 26340 
 	say AcceptQuest 
@@ -194,3 +196,6 @@ _S.08_ task:
 _S.09_ task:
 	when _S.07_ and _S.08_ 
 	start timer _S.04_ 
+
+_itemindung_ task:
+	end quest 

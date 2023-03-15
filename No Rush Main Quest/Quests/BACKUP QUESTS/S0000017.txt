@@ -3,7 +3,7 @@
 -- QuestId: 17
 Messages: 23
 Quest: S0000017
-DisplayName: NR Wayrest Painting
+DisplayName: Wayrest Painting
 -- Message panels
 QRC:
 
@@ -45,7 +45,8 @@ QuestLogEntry:  [1010]
 Message:  1011
 Dear %pcn,
  
- Your presence in our court is desired.
+ Your presence in our court is desired
+ before the end of the next season.
  Prince Lhotun has recommended you with
  high praise. I await your arrival.
  
@@ -110,7 +111,8 @@ Person _Akorithi_ named Queen_Akorithi atHome
 
 Place _wayrest_ permanent WayrestCastle
 
-Clock _2letter_ 1.00:00
+Clock _2letter_ 7.00:00 14.00:00
+
 
 --	Quest start-up:
 	dialog link for item _item_ 

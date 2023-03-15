@@ -3,7 +3,7 @@
 -- QuestId: 7
 Messages: 37
 Quest: S0000007
-DisplayName: NR The Werebeast
+DisplayName: The Werebeast
 -- Message panels
 QRC:
 
@@ -34,7 +34,9 @@ AcceptQuest:  [1002]
 <ce>               hole called Tristore Laboratory, off the
 <ce>                    coast over Betony way. I can't
 <ce>           tell you why, but it's important to me that that
-<ce>          werewolf gets put outta its misery.
+<ce>          werewolf gets put outta its misery. I'll wait here
+<ce>             for =2mondung_ days for you -- that oughta be
+<ce>                            plenty of time.
 
 QuestFail:  [1003]
 <ce>                     You think I'm an idiot, %pcn?
@@ -222,6 +224,7 @@ Message:  1023
  for some reason. She can only pay me in
  information, and has promised to reveal
  what she knows of the Emperor's letter.
+ I have =2mondung_ days to do this deed.
 
 Message:  1024
 <ce>                    The body of the werewolf begins
@@ -342,6 +345,7 @@ Place _tavern_ remote tavern
 Place _npc2_ local dungeon
 Place glenmorilCoven permanent BluffCoven
 
+Clock _2mondung_ 00:00 0 flag 17 range 0 2
 Clock _2ndparton_ 00:00 0 flag 17 range 0 2
 Clock _delay_ 02:12 1.00:17
 Clock _S.27_ 00:01 00:01
@@ -357,6 +361,7 @@ Foe boar is Wereboar
 	dialog link for person _P.05_ 
 	dialog link for item _relic_ 
 	dialog link for person _barmaid_ 
+	start timer _2mondung_ 
 	prompt QuestorOffer yes yes no _no_ 
 	repute with _P.05_ exceeds 4 do _S.11_ 
 	repute with _P.03_ exceeds 4 do _S.11_ 
@@ -364,6 +369,10 @@ Foe boar is Wereboar
 	pc at glenmorilCoven set _S.30_ 
 	pc at _mondung_ set _S.14_ 
 	_I.01_ used do _S.34_ 
+
+_2mondung_ task:
+	drop _cyndassa_ as questor 
+	end quest 
 
 variable _2ndparton_
 _S.02_ task:
@@ -514,6 +523,7 @@ _S.33_ task:
 _S.34_ task:
 	add dialog for person _barmaid_ 
 	start timer _2ndparton_ 
+	stop timer _2mondung_ 
 	log 1016 step 1 
 	place npc _barmaid_ at _tavern_ 
 
@@ -579,8 +589,7 @@ _S.44_ task:
 
 _S.45_ task:
 	give item _relic_ to talisman 
-	make pc ill with Caliron's_Curse
-	say 1027 
+	make pc ill with Caliron's_Curse saying 1027 
 	unset _S.06_ _S.33_ 
 	unset _S.08_ _delay_ 
 
