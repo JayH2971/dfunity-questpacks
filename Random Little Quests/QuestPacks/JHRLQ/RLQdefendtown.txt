@@ -111,13 +111,11 @@ _goodend_ task:
     say 1014
     remove foe _monster_
     legal repute +2
-    end quest
 
 _badend_ task:
     when _killall_ and _rangerdead_
     say 1012
     legal repute +2
-    end quest
 
 _timer_ task:
     end quest

@@ -63,7 +63,6 @@ _gold_ task:
     killed _monster3_
     say 1012
     legal repute +4
-    end quest
 
 _clock_ task:
     remove foe _monster1_

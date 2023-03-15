@@ -81,12 +81,10 @@ _kill_ task:
 _finalwin_ task:
     when _kill_ and _rewarding_
     give pc _reward_
-    end quest
 
 _finalfail_ task:
     when _kill_ and not _rewarding_
     say 1013
-    end quest
 
 _timer_ task:
     end quest
