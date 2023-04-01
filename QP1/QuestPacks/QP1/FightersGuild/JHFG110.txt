@@ -1,0 +1,94 @@
+Quest: JHFG110
+DisplayName: An Animal's Treasure
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>      Some idiot knight went down into a hole
+<ce>   to kill some tigers, and one of them was too tough.
+<ce>   Not only did the knight run away like a wimp,
+<ce>   but he lost an important personal possession
+<ce>   to it, too. He's paying gold if someone can bring
+<ce>   it back to me. You in on this one?
+
+RefuseQuest:  [1001]
+<ce>     Well, tigers can be vicious, I guess.
+
+AcceptQuest:  [1002]
+<ce>      The place is called ___dung_. I'll mark it on your map.
+<ce>   Apparently most of the tigers were wiped out, or so
+<ce>   the guy said. I dunno what you're gonna find in there,
+<ce>   but your job is to bring back some _trinket_
+<ce>   that he accidentally dropped during the scuffle.
+<ce>   It might be wrapped in a bag.
+<ce>   If you can have it back to me in =timer_ days,
+<ce>   he'll have =reward_ gold for you in return.
+<ce>   The tiger itself doesn't matter. If it's that tough,
+<ce>   I'd rather see it die of old age than claim
+<ce>   one of our guild members.
+
+QuestFail:  [1003]
+<ce>   Your time to return the knight's heirloom
+<ce>   to __qg_ has passed.
+
+QuestComplete:  [1004]
+<ce>     I knew you'd do it! I even told that knight
+<ce>   to bring me the money ahead of time, that's
+<ce>   how sure I was of you. So, your money's here.
+<ce>   Enjoy it.
+
+QuestorPostSuccess:   [1008]
+Fighters will always win against knights, eh %pcf?
+
+Message:  1010
+<ce>  This bag is rather conspicuous. You grab and open it,
+<ce>  and find the _trinket_ inside. This must belong
+<ce>  to the knight.
+
+Message:  1025
+%qdt:
+ __qg_ of ___qg_ has sent me to 
+ a cave called ___dung_ to retrieve an
+ heirloom belonging to a knight who
+ tried adventuring inside.
+ There might be a tiger guarding it, but
+ what matters is delivering the
+ _trinket_ to _qg_ within =timer_
+ days' time. It may be wrapped in a bag.
+
+QBN:
+
+Person _qg_ group Questor male
+
+Item _reward_ gold range 400 to 500
+Item _sack_ large_sack
+Item _trinket_ trinket
+
+Place _dung_ remote dungeon6
+
+Clock _timer_ 00:00 flag 17 range 0 2
+
+Foe _tiger_ is Sabretooth_tiger
+
+--   Quest start-up:
+  start timer _timer_
+  log 1025 step 0
+  place foe _tiger_ at _dung_
+  place item _sack_ at _dung_
+  reveal _dung_
+
+_grabitem_ task:
+    clicked item _sack_
+    say 1010
+    take _sack_ from pc
+    get item _trinket_
+
+_timer_ task:
+  say 1003
+  make _trinket_ permanent
+  end quest
+
+_pcgetsgold_ task:
+    toting _trinket_ and _qg_ clicked
+    give pc _reward_
+    end quest

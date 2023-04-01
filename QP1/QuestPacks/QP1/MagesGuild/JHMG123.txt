@@ -1,0 +1,93 @@
+Quest: JHMG123
+DisplayName: A Swift Recovery
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  Ah! If you're the kind of %pct who's fleet of foot,
+<ce>  yes, there is something for which you might prove quite useful.
+<ce>  The town guard, as brutish as they are, arrested one of our members
+<ce>  on suspicion of stealing a _gem_ while in another city.
+<ce>  We need that _gem_, quite urgently, in fact.
+<ce>  A substitute will not do. Are you brave, quick, and able to
+<ce>  avoid an embarrassing confrontation with the city watch?
+
+RefuseQuest:  [1001]
+<ce>  Sigh. We need some younger candidates to join this hall.
+
+AcceptQuest:  [1002]
+<ce> Spiffing! My praises to you for not allowing your fears to
+<ce>  overcome you! It's almost certain that you'll be accosted
+<ce> by the city watch once it enters your possession. Whatever
+<ce> you do, don't be caught. I won't say any more than that.
+<ce> The gem is in the _pal_ of ___pal_. If you can have it
+<ce> here in =timer_ days, the reward of =reward_ gold
+<ce> pieces will be yours. Notorgo's Feet be upon you, %pct!
+
+QuestFail:  [1003]
+<ce>  The Mages Guild needed the recovered _gem_ by now.
+
+QuestComplete:  [1004]
+<ce>  Oh dear. It's been scratched up a bit... I wonder if that will
+<ce> reduce its viability. No matter. I'm sure it was those ogrish
+<ce> town guards who did it. You wouldn't be so foolish as to
+<ce> damage goods belonging to the guild, of course!
+<ce> Your well-earned payment is here.
+<--->
+<ce>  Wonderful! The _gem_ is here ahead of schedule, even!
+<ce>  Have no concern for the city watch. If they show up here,
+<ce>  we will turn them away or incinerate them, whichever
+<ce>  suits us better. Take your reward, %pct. 
+
+Message:  1010
+<ce>  So soon as you touch the _gem_, an alarm sounds.
+<ce> It's in your possession now.
+
+Message:  1011
+<ce>  The _gem_ belonging to the Mages Guild is somewhere in here.
+
+Message:  1030
+%qdt:
+ _qgiver_ of the Mages Guild
+ has assigned me to recover a small
+ _gem_ that was erroneously confiscated
+ by the city watch of ___pal_.
+ It will be within the palace.
+ I must deliver it to the guild in
+ ___qgiver_ before =timer_ days
+ have passed, for a reward of =reward_ gold.
+
+QBN:
+Item _gem_ gem
+Item _reward_ gold range 200 to 350
+
+Place _pal_ remote palace
+
+Clock _timer_ 00:00 0 flag 1 range 0 2
+
+Person _qgiver_ group Questor male
+
+--	Quest start-up:
+ start timer _timer_
+ log 1030 step 0
+ place item _gem_ at _pal_
+ pc at _pal_ do _inside_
+
+_inside_ task:
+    say 1011
+
+_begin_ task:
+ clicked item _gem_
+ say 1010
+  play sound halt every 0 minutes 1 times
+  setplayercrime Theft
+  spawncityguards immediate
+
+_pcgetsgold_ task:
+  toting _gem_ and _qgiver_ clicked
+  give pc _reward_
+  end quest
+
+_timer_ task:
+  say 1003
+  end quest

@@ -20,6 +20,7 @@ JHFG106, FightersGuild, M, 2, 0, a quest to stop an assassination inside a home
 JHFG107, FightersGuild, M, 1, 1, courier work + ambush in a house
 JHFG108, FightersGuild, M, 5, 1, a quest to defend a vampire in a palace
 JHFG109, FightersGuild, M, 2, 0, expert werewolf hunting
+JHFG110, FightersGuild, M, 0, 0, a quest to retrieve an heirloom from a dungeon tiger
 JHFG111, FightersGuild, M, 8, 1, an artifact quest to invade a vampire cult
 JHFG113, FightersGuild, M, 1, 0, a quest to get a giant out of a house
 JHFG115, FightersGuild, M, 0, 0, a quest to fight in a dungeon with a partner
