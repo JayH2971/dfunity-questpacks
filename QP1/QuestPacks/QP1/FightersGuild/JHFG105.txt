@@ -1,0 +1,128 @@
+Quest: JHFG105
+DisplayName: Thinking With Portals
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>      Ever fought a daedroth before, %pcf?
+<ce>   They hit hard, but as long as you can hurt one,
+<ce>   they fall pretty fast. I'm hoping you can make that happen
+<ce>   in this case. Would you be willing to take a journey out
+<ce>   of town to clean up a failed summoning? 
+
+RefuseQuest:  [1001]
+<ce>         That's kinda disappointing.
+
+AcceptQuest:  [1002]
+<ce>         Okay, great. The case is that some newly-minted
+<ce>   mage over in ___house_ got to thinking he'd like
+<ce>   a pet imp, and decided to open a portal to
+<ce>   who-knows-where. Apparently imps and daedra are about
+<ce>   as common out in the outer realms, or so I'm told.
+<ce>   A daedroth jumped right through and started wreaking
+<ce>   havoc all over the house. You've got to get to
+<ce>   _house_ in ___house_. Kill the monster
+<ce>   and tell me about it in =timer_ days' time.
+<ce>   I'll have a nice _reward_ waiting for you here.
+
+QuestFail:  [1003]
+<ce>                     _qgiver_ told you to return
+<ce>                    to ___qgiver_ by today to tell %g2
+<ce>                     about slaying the daedroth.
+
+QuestComplete:  [1004]
+<ce>  All right, it's yours then.
+
+Message:  1010
+<ce>       This building is filled with magical contamination.
+<ce>   The daedroth must be within.
+
+Message:  1011
+<ce>  (AGILITY CHECK FAILED)
+<ce>   
+<ce>   This daedroth definitely knows how to wield an axe.
+<ce>   It laughs at your slow, clumsy movements,
+<ce>   and gets in a free swipe at you.
+
+Message:  1012
+<ce>  This daedroth is no more.
+
+Message:  1013
+<ce>   Nice work. I tell you what, a daedroth getting out
+<ce>   into the streets is very bad business. Sometimes even the
+<ce>   town guard don't have weapons for that kinda thing.
+<ce>   I told you I had this _reward_ for you, and I do,
+<ce>   but I wanted to see if you'd prefer this _reward2_.
+<ce>   Which one do you wanna pick?
+<ce>   
+<ce>   (YES: _reward_. NO: _reward2_.)
+
+Message:  1030
+%qdt:
+ _qgiver_ of ___qgiver_
+ assigned me to destroy a daedroth
+ that was summoned into _house_
+ of ___house_. I have to return
+ within =timer_ days to be paid
+ with some _reward_.
+
+QBN:
+Item _reward_ trinket
+Item _reward2_ Holy_relic
+
+Person _qgiver_ group Questor male
+
+Place _house_ remote house
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _giant_ is Daedroth
+
+--	Quest start-up:
+    log 1030 step 0
+    start timer _timer_
+    pc at _house_ set _inside_
+    place foe _giant_ at _house_
+
+_inside_ task:
+    say 1010
+
+_click_ task:
+    clicked foe _giant_
+    injured _giant_
+
+_lucky_ task:
+    when attribute Agility is at least 40
+
+_notlucky_ task:
+    when _click_ and not _lucky_
+    say 1011
+    reduce player health by 20
+
+variable _check_
+_slain_ task:
+    killed _giant_
+    say 1012
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
+
+_victory1_ task:
+    when _qgclicked_ and _slain_
+    prompt 1013 yes _original_ no _alternate_
+
+_original_ task:
+    give pc _reward_
+    end quest
+
+_alternate_ task:
+    give pc _reward2_
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest

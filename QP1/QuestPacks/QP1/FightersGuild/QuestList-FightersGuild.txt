@@ -15,6 +15,7 @@ JHFG103b, FightersGuild, P, 0, 0, consequences of FG003
 JHFG103c, FightersGuild, P, 0, 0, consequences of FG003
 JHFG103d, FightersGuild, P, 0, 0, consequences of FG003
 JHFG104, FightersGuild, M, 0, 0, a quest to guard a residence from intruders
+JHFG105, FightersGuild, M, 5, 0, a quest to kill a house-dwelling daedroth
 JHFG106, FightersGuild, M, 2, 0, a quest to stop an assassination inside a home
 JHFG107, FightersGuild, M, 1, 1, courier work + ambush in a house
 JHFG108, FightersGuild, M, 5, 1, a quest to defend a vampire in a palace
