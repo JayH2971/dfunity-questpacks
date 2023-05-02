@@ -1,5 +1,5 @@
-Quest: mundanejobsinit
-DisplayName: Mundane Jobs Starter
+Quest: courierinit
+DisplayName: Courier Starter
 -- Message panels
 QRC:
 

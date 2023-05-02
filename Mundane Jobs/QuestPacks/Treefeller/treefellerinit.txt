@@ -1,0 +1,48 @@
+Quest: treefellerinit
+DisplayName: Treefeller Starter
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  You notice an axe on the ground. It seems to be made for woodcutting,
+<ce>  though if you were really desperate, it could also serve as a weapon.
+<ce>  If you felt any confidence in lumberwork, you could take it with you.
+<ce>  Do you take it?
+
+Message:  1012
+<ce>  You leave the axe alone. Someone else will
+<ce>  make gainful employ with it.
+
+Message:  1013
+<ce>  You pick up the axe and inspect it.
+<ce>  It looks fine enough for the job.
+<ce>  As long as you're in any place with trees nearby,
+<ce>  it should provide you with a reasonable income.
+<ce>  
+<ce>  (NOTE: To use the axe,
+<ce>  activate the "Use" command on it
+<ce>  in your inventory.)
+
+QBN:
+
+Clock _smalldelay_ 0:01 0:02
+
+--	Quest start-up:
+
+_eventstart_ task:
+    when pc enters city
+    when pc enters hamlet
+    when pc enters village
+    start timer _smalldelay_
+
+_smalldelay_ task:
+    prompt 1011 yes _accept_ no _refuse_
+
+_refuse_ task:
+    say 1012
+    end quest
+
+_accept_ task:
+    say 1013
+    start quest treefellercycle
+    end quest

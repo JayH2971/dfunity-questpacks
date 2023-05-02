@@ -1,0 +1,242 @@
+Quest: treefellercycle
+DisplayName: The Treefeller's Job
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>  Do you wish to cut some wood (ACCEPT),
+<ce>  give up the axe permanently (DELETE),
+<ce>  or cancel this prompt (CANCEL)?
+
+Message:  1012
+<ce>  You put the axe away.
+
+Message:  1013
+<ce>  You discard the axe.
+<ce>  Perhaps someone else will need it
+<ce>  for gainful employ.
+
+Message:  1014
+ I carry a lumberer's axe with me.
+ I can use it to cut wood for pay.
+
+Message:  1015
+<ce>  You should at least be outdoors if you hope to gather wood.
+
+Message:  1016
+<ce>  For one reason or another, the lumberer's axe
+<ce>  is no longer in your possession. You'll have to
+<ce>  find some other means of gainful employ.
+
+Message:  1017
+<ce>  There is little wood available in the desert.
+<ce>  Your poor workmanship with the axe, and the lack
+<ce>  of lumber nearby, make for slow progress.
+<ce>  By the time you have found a willing client,
+<ce>  you sell the lumber for _desertreward1_ gold pieces.
+<ce>  
+<ce>  You must wait three hours between your attempts to chop wood.
+
+Message:  1018
+<ce>  There is little wood available in the desert.
+<ce>  You're fairly skilled with the axe, but you don't
+<ce>  have much supply out here. By the time you have found
+<ce>  a willing purchaser, you sell the lumber
+<ce>  for _desertreward2_ gold pieces.
+<ce>  
+<ce>  You must wait three hours between your attempts to chop wood.
+
+Message:  1019
+<ce>  There is little wood available in the desert.
+<ce>  You're quite skilled with the axe, and you make quick work
+<ce>  of the limited supply available. By the time you have found
+<ce>  a willing buyer, you sell the lumber
+<ce>  for _desertreward3_ gold pieces.
+<ce>  
+<ce>  You must wait three hours between your attempts to chop wood.
+
+Message:  1020
+<ce>  There is little wood available in the desert.
+<ce>  You're very skilled with the axe, shredding the little
+<ce>  lumber you can find. You sell your stockpiled lumber
+<ce>  to the first client you see for _desertreward4_ gold pieces.
+<ce>  
+<ce>  You must wait three hours between your attempts to chop wood.
+
+Message:  1021
+<ce>  There are plenty of trees nearby to harvest.
+<ce>  Your poor skill with the axe makes for slow progress.
+<ce>  By the time you have found a willing client,
+<ce>  you sell the lumber for _reward1_ gold pieces.
+<ce>  
+<ce>  You must wait three hours between your attempts to chop wood.
+
+Message:  1022
+<ce>  There are plenty of trees nearby to harvest.
+<ce>  You're fairly skilled with the axe, and make good progress.
+<ce>  By the time you have found a willing purchaser,
+<ce>  you sell the lumber for _reward2_ gold pieces.
+<ce>  
+<ce>  You must wait three hours between your attempts to chop wood.
+
+Message:  1023
+<ce>  There are plenty of trees nearby to harvest.
+<ce>  You're quite skilled with the axe, and quickly build
+<ce>  a formidable pile of wood.
+<ce>  By the time you have found a willing purchaser,
+<ce>  you sell the lumber for _reward3_ gold pieces.
+<ce>  
+<ce>  You must wait three hours between your attempts to chop wood.
+
+Message:  1024
+<ce>  There are plenty of trees nearby to harvest.
+<ce>  You're highly skilled with the axe, and quickly
+<ce>  create a mountain of fallen wood.
+<ce>  By the time you have found a willing purchaser,
+<ce>  you sell the lumber for _reward4_ gold pieces.
+<ce>  
+<ce>  You must wait three hours between your attempts to chop wood.
+
+QBN:
+
+Item _axe_ item class 3 subclass 14
+Item _desertreward1_ gold range 9 to 20
+Item _desertreward2_ gold range 15 to 25
+Item _desertreward3_ gold range 20 to 30
+Item _desertreward4_ gold range 30 to 40
+Item _reward1_ gold range 15 to 25
+Item _reward2_ gold range 20 to 35
+Item _reward3_ gold range 40 to 55
+Item _reward4_ gold range 65 to 75
+
+Place _dung_ permanent DaggerfallCastle
+Place _dung2_ permanent SentinelCastle
+Place _dung3_ permanent WayrestCastle
+
+Clock _wait_ 3:00
+
+--	Quest start-up:
+    log 1014 step 0
+    get item _axe_
+    pc at _dung_ set _inside1_
+    pc at _dung2_ set _inside2_
+    pc at _dung3_ set _inside3_
+    pc at any fighters set _fightered_
+    pc at any tavern set _taverned_
+    pc at any house set _homed_
+    pc at any shop set _shopped_
+    pc at any magery set _maged_
+    pc at any temple set _templed_
+    pc at any palace set _palaced_
+    _axe_ used do _trigger_
+    have _axe_ set _possessaxe_
+
+_trigger_ task:
+    promptmulti 1011 0:cutwood _attempt_ 9:giveup _endquest_ 2:cancel _cancel_
+
+variable _attempt_
+
+_cancel_ task:
+    say 1012
+    start task _renewquest_
+
+_endquest_ task:
+    say 1013
+    end quest
+
+_noeffect_ task:
+    when _inside1_ or _inside2_ or _inside3_ or _fightered_ or _taverned_ or _homed_ or _shopped_ or _maged_ or _templed_ or _palaced_
+
+_notoutdoors_ task:
+    when _noeffect_ and _attempt_
+    say 1015
+    start task _renewquest_
+
+_begincut_ task:
+    when _attempt_ and not _noeffect_
+
+_renewquest_ task:
+    start quest treefellercycle
+    end quest
+
+_desertoutcome1_ task:
+    when _desert_ and _begincut_ and not _skill1_
+    say 1017
+    get item _desertreward1_
+    start timer _wait_
+
+_desertoutcome2_ task:
+    when _desert_ and _begincut_ and _skill1_ and not _skill2_
+    say 1018
+    get item _desertreward2_
+    start timer _wait_
+
+_desertoutcome3_ task:
+    when _desert_ and _begincut_ and _skill2_ and not _skill3_
+    say 1019
+    get item _desertreward3_
+    start timer _wait_
+
+_desertoutcome4_ task:
+    when _desert_ and _begincut_ and _skill3_
+    say 1020
+    get item _desertreward4_
+    start timer _wait_
+
+_normaloutcome1_ task:
+    when not _desert_ and _begincut_ and not _skill1_
+    say 1021
+    get item _reward1_
+    start timer _wait_
+
+_normaloutcome2_ task:
+    when not _desert_ and _begincut_ and _skill1_ and not _skill2_
+    say 1022
+    get item _reward2_
+    start timer _wait_
+
+_normaloutcome3_ task:
+    when not _desert_ and _begincut_ and _skill2_ and not _skill3_
+    say 1023
+    get item _reward3_
+    start timer _wait_
+
+_normaloutcome4_ task:
+    when not _desert_ and _begincut_ and _skill3_
+    say 1024
+    get item _reward4_
+    start timer _wait_
+
+_wait_ task:
+    start task _renewquest_
+
+_skill1_ task:
+    when skill Axe is at least 15
+
+_skill2_ task:
+    when skill Axe is at least 30
+
+_skill3_ task:
+    when skill Axe is at least 45
+
+_desert_ task:
+    climate base desert
+
+variable _possessaxe_
+
+_noaxe_ task:
+    when not _possessaxe_
+    say 1016
+    end quest
+
+variable _inside1_
+variable _inside2_
+variable _inside3_
+variable _fightered_
+variable _taverned_
+variable _homed_
+variable _shopped_
+variable _maged_
+variable _templed_
+variable _palaced_
+
