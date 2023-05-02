@@ -84,6 +84,53 @@ QuestComplete:   [1004]
 <ce>  we need to get our family business in order.
 <ce>  It'll be quite messy, I can say that much.
 <ce>  Here, take your gold.
+<--->
+<ce>  Oh! This must be that cooking recipe I ordered
+<ce>  last week. How nice of them! Thank you.
+<ce>  Here is your gold.
+<--->
+<ce>  Ah, I need these instructions for a potion
+<ce>  I'm making! How kind of you.
+<ce>  Here's your payment.
+<--->
+<ce>  Oh, good! These are instructions for an
+<ce>  insecticide I need to make. The house
+<ce>  is just riddled with bugs, you see.
+<ce>  Here, your money, now.
+<--->
+<ce>  This letter? It's dated from last year.
+<ce>  I'm amazed I'm even expected to pay
+<ce>  for this, but I will. Now get out of here.
+<--->
+<ce>  Oh, my lottery ticket! I sure hope
+<ce>  I win this time. I'd buy some nice
+<ce>  new furniture with it! Here,
+<ce>  be off with your payment.
+<--->
+<ce>  Yes, this is the lottery ticket
+<ce>  I ordered! Good. I'll be buying
+<ce>  a big, new chimney with it if I win!
+<ce>  Here, this is your payment.
+<--->
+<ce>  A letter from my... father?
+<ce>  I thought he was dead! Wow, what news!
+<ce>  Yes, give me that! Here, your money.
+<ce>  Now let me read.
+<--->
+<ce>  A letter from my nephew! How wonderful!
+<ce>  Let me get caught up... Oh yes, your
+<ce>  payment. Here, take it. Farewell.
+<--->
+<ce>  This is... my niece is pregnant?
+<ce>  What news! Oh, my! I should
+<ce>  head over there this month.
+<ce>  Oh, such joy you've brought me!
+<ce>  Here, take your payment.
+<--->
+<ce>  A court summons for... vagrancy?
+<ce>  What does that even mean?
+<ce>  Foul %rt. I'll see this all in court.
+<ce>  Take your payment, %ra.
 
 
 Message:  1011
