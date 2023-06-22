@@ -1,0 +1,28 @@
+Quest: JHMGC06
+DisplayName: Mages Guild Consequence Quest 6
+-- Message panels
+--used in MG122
+QRC:
+
+QuestComplete:   [1004]
+<ce>  Your foot bumps into a sack of coins
+<ce>  outside the guild hall. It has a simple note.
+<ce>  
+<ce>  "To %pcn. Thank you."
+<ce>  
+<ce>  Nothing identifies the gift's provenance.
+<ce>  The gold is yours to take.
+
+QBN:
+
+Item _item_ gold range 300 to 500
+
+--	Quest start-up:
+    pc at any magery set _maged_
+
+variable _maged_
+
+_begin_ task:
+    when not _maged_
+    give pc _item_
+	end quest

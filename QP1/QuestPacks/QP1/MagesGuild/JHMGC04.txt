@@ -1,0 +1,38 @@
+Quest: JHMGC04
+DisplayName: Mages Guild Consequence Quest 4
+-- Message panels
+--used in MG118
+QRC:
+
+Message:  1010
+<ce>  Once you exit the guild hall, you see a pair of hooded figures.
+<ce>  They make no effort to hide themselves.
+<ce>  
+<ce>  "Mages got good treasures, ain't they?
+<ce>  Let's see what's poppin' taday!"
+<ce>  
+<ce>  Out come the knives, and they advance.
+
+QBN:
+
+Foe _enemy1_ is Thief
+Foe _enemy2_ is Thief
+
+Clock _timer_ 0:01
+
+--	Quest start-up:
+    pc at any magery set _maged_
+
+variable _maged_
+
+_begin_ task:
+    when not _maged_
+    say 1010
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    start timer _timer_
+
+_timer_ task:
+	end quest

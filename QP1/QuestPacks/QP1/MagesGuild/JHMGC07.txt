@@ -1,0 +1,28 @@
+Quest: JHMGC07
+DisplayName: Mages Guild Consequence Quest 7
+-- Message panels
+--used in MG110
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You become aware that an unfamiliar _item_
+<ce>  has suddenly appeared among your belongings.
+<ce>  A note is attached:
+<ce>  
+<ce>  "To %pcn, a token of our esteem.
+<ce>  The Mages Guild."
+<ce>  
+<ce>  The _item_ appears to contain an enchantment.
+
+QBN:
+
+Clock _timer_ 10:00 2.00:00
+
+Item _item_ magic_item
+
+--	Quest start-up:
+    start timer _timer_
+
+_timer_ task:
+    give pc _item_
+	end quest

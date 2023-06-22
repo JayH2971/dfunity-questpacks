@@ -1,6 +1,7 @@
 Quest: JHKNC02
 DisplayName: Enigma Wrapped in an Escort
 -- Message panels
+--used in KN111
 QRC:
 
 QuestComplete:   [1004]

@@ -1,0 +1,32 @@
+Quest: JHKNC03
+DisplayName: Knightly Order Consequence Quest 3
+-- Message panels
+--used in KN210
+QRC:
+
+QuestComplete:   [1004]
+<ce>  A barmaid smiles at you approvingly.
+<ce>  
+<ce>  "Hey, yer one of them knights, right?
+<ce>  Come on in! We've got a room waitin' for ya!"
+<--->
+<ce>  A serving girl smiles at you.
+<ce>  
+<ce>  "One of the knights here, eh?
+<ce>  Glad to have ya! Hope you enjoy
+<ce>  your night here!"
+
+QBN:
+
+Clock _endtimer_ 2.00:00
+
+--	Quest start-up:
+    pc at any tavern do _inside_
+    start timer _endtimer_
+
+_inside_ task:
+    say 1004
+    end quest
+
+_endtimer_ task:
+    end quest

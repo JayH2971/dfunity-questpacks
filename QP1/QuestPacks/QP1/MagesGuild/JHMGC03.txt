@@ -1,6 +1,7 @@
 Quest: JHMGC03
 DisplayName: Mages Guild Consequence Quest 3
 -- Message panels
+--used in MG104
 QRC:
 
 QuestComplete:   [1004]

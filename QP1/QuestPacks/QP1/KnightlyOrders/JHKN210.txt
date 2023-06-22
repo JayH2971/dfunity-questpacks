@@ -126,6 +126,7 @@ _victory1_ task:
   when _qgclicked_ and _deliver_
   say 1021
   give pc nothing
+  start quest JHKNC03
   end quest
 
 _e2_ task:
@@ -152,6 +153,7 @@ _victory2_ task:
   when _qgclicked_ and _slain_
   say 1025
   give pc nothing
+  start quest JHKNC03
   end quest
 
 _qgclicked_ task:

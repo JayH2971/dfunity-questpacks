@@ -131,6 +131,7 @@ _pcgetsgold_ task:
 	when _qgclicked_ and _ident_
     take _glass_ from pc
     give pc _reward_
+    start quest JHMGC04
     end quest
 
 _humor_ task:

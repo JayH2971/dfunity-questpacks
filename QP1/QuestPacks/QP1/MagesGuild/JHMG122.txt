@@ -38,6 +38,13 @@ QuestComplete:  [1004]
 <ce>  and give respectful nods. After hurling two large bags of gold
 <ce>  at your feet, they depart without a word.
 
+RumorsPostSuccess:   [1007]
+The legendary warrior Korilus was slain. I can scarcely believe it!
+<--->
+Korilus has been sent to Aetherius.  What next, will gods die?
+<--->
+Korilus' reign of terror has ended!
+
 Message:  1010
 <ce>      Somewhere in this cave is the lair of Korilus,
 <ce>  the so-called immortal warrior.

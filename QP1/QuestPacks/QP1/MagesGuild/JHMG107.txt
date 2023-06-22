@@ -182,6 +182,7 @@ _slain_ task:
 _pcgetsgold_ task:
 	when _qgclicked_ and _slain_
 	give pc _reward_
+	start quest JHMGC01
 	end quest
 
 _qgclicked_ task:

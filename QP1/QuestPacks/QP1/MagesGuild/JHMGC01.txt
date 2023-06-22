@@ -1,6 +1,7 @@
 Quest: JHMGC01
 DisplayName: Mages Guild Consequence Quest 1
 -- Message panels
+--used in MG107
 QRC:
 
 QuestFail:   [1003]

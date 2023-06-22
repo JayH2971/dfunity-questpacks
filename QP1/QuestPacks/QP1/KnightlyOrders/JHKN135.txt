@@ -92,6 +92,7 @@ _pcgetsgold_ task:
     when _victory_ and _qgclicked_
     give pc nothing
     legal repute +5
+    start quest JHKNC05
     end quest
 
 _S.04_ task:

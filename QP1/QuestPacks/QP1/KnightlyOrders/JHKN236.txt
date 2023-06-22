@@ -97,4 +97,5 @@ _pcreward_ task:
     when _qgclicked_ and _slain_
     give pc nothing
     legal repute +4
+    start quest JHKNC04
     end quest

@@ -1,6 +1,7 @@
 Quest: JHMGC02
 DisplayName: Mages Guild Consequence Quest 2
 -- Message panels
+--used in MG102
 QRC:
 
 Message:  1010

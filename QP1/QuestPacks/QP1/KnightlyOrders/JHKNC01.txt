@@ -1,6 +1,7 @@
 Quest: JHKNC01
 DisplayName: Knightly Order Consequence Quest 1
 -- Message panels
+--used in KN118
 QRC:
 
 QuestComplete:   [1004]

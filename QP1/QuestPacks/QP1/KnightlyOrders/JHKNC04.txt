@@ -1,0 +1,29 @@
+Quest: JHKNC04
+DisplayName: Knightly Order Consequence Quest 4
+-- Message panels
+--used in KN236
+QRC:
+
+QuestComplete:   [1004]
+<ce>  A pair of rowdy patrons recognize you
+<ce>  as you enter the tavern.
+<ce>  
+<ce>  "Havin' fun killin' centaurs, %ra?
+<ce>  Try doin' something heroic some day!"
+<ce>  
+<ce>  They burst into laughter and disperse.
+
+QBN:
+
+Clock _endtimer_ 2.00:00
+
+--	Quest start-up:
+    pc at any tavern do _inside_
+    start timer _endtimer_
+
+_inside_ task:
+    say 1004
+    end quest
+
+_endtimer_ task:
+    end quest

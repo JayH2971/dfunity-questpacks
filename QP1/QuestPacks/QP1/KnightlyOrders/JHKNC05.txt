@@ -1,0 +1,22 @@
+Quest: JHKNC05
+DisplayName: Knightly Order Consequence Quest 5
+-- Message panels
+--used in KN135
+QRC:
+
+QuestComplete:   [1004]
+<ce>  A man and woman, busy with some chores,
+<ce>  take the time to bow to you reverently
+<ce>  before departing. Such is the respect
+<ce>  shown to knights in %crn.
+
+QBN:
+
+Clock _endtimer_ 1:00 6:00
+
+--	Quest start-up:
+    start timer _endtimer_
+
+_endtimer_ task:
+    say 1004
+    end quest

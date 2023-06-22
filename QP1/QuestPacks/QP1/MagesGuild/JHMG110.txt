@@ -186,6 +186,7 @@ _pcgetsgold_ task:
     when _qgclicked_ and _slain_
     give pc _reward_
     change repute with _mark_ by +5
+    start quest JHMGC07
     end quest
 
 _clearclick_ task:

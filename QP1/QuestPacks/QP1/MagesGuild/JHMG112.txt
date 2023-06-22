@@ -206,6 +206,7 @@ _clearclick_ task:
 _pcgetsgold_ task:
         when _qgclicked_ and _slain_
         give pc _reward_
+        start quest JHMGC05
         end quest
 
 _2res_ task:

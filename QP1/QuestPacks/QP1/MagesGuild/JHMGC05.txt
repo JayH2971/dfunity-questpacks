@@ -1,0 +1,32 @@
+Quest: JHMGC05
+DisplayName: Mages Guild Consequence Quest 5
+-- Message panels
+--used in MG112
+QRC:
+
+Message:  1010
+<ce>  You're not sure whom you have offended, but
+<ce>  the consequences are upon you. A large,
+<ce>  living gargoyle awaits you outside the
+<ce>  guild hall, and attacks you without delay.
+
+QBN:
+
+Foe _enemy1_ is Gargoyle
+
+Clock _timer_ 0:01
+
+--	Quest start-up:
+    pc at any magery set _maged_
+
+variable _maged_
+
+_begin_ task:
+    when not _maged_
+    say 1010
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    change foe _enemy1_ infighting true
+    start timer _timer_
+
+_timer_ task:
+	end quest
