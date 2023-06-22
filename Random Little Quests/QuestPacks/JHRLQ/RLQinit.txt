@@ -24,6 +24,7 @@ Place _dung3_ permanent WayrestCastle
     pc at any temple set _templed_
     pc at any palace set _palaced_
 
+variable _dud_
 variable _inside1_
 variable _inside2_
 variable _inside3_
@@ -426,5 +427,3 @@ _potlevitate_ task:
 
 _potstamina_ task:
     start quest RLQpotstamina
-
-variable _dud_
