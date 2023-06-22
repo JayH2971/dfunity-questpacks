@@ -148,7 +148,7 @@ _noeffect_ task:
     when _inside1_ or _inside2_ or _inside3_ or _fightered_ or _taverned_ or _homed_ or _shopped_ or _maged_ or _templed_ or _palaced_
 
 _notoutdoors_ task:
-    when _noeffect_ and _attempt_
+    when _noeffect_ and _attempt_ and not _sold_
     say 1015
     start task _renewquest_
 
@@ -159,53 +159,63 @@ _renewquest_ task:
     start quest treefellercycle
     end quest
 
+variable _sold_
+
 _desertoutcome1_ task:
     when _desert_ and _begincut_ and not _skill1_
     say 1017
     get item _desertreward1_
     start timer _wait_
+    start task _sold_
 
 _desertoutcome2_ task:
     when _desert_ and _begincut_ and _skill1_ and not _skill2_
     say 1018
     get item _desertreward2_
     start timer _wait_
+    start task _sold_
 
 _desertoutcome3_ task:
     when _desert_ and _begincut_ and _skill2_ and not _skill3_
     say 1019
     get item _desertreward3_
     start timer _wait_
+    start task _sold_
 
 _desertoutcome4_ task:
     when _desert_ and _begincut_ and _skill3_
     say 1020
     get item _desertreward4_
     start timer _wait_
+    start task _sold_
 
 _normaloutcome1_ task:
     when not _desert_ and _begincut_ and not _skill1_
     say 1021
     get item _reward1_
     start timer _wait_
+    start task _sold_
 
 _normaloutcome2_ task:
     when not _desert_ and _begincut_ and _skill1_ and not _skill2_
     say 1022
     get item _reward2_
     start timer _wait_
+    start task _sold_
 
 _normaloutcome3_ task:
     when not _desert_ and _begincut_ and _skill2_ and not _skill3_
     say 1023
     get item _reward3_
     start timer _wait_
+    start task _sold_
 
 _normaloutcome4_ task:
     when not _desert_ and _begincut_ and _skill3_
     say 1024
     get item _reward4_
     start timer _wait_
+    start task _sold_
 
 _wait_ task:
     start task _renewquest_

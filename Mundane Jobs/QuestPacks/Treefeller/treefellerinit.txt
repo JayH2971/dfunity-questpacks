@@ -25,7 +25,7 @@ Message:  1013
 
 QBN:
 
-Clock _smalldelay_ 0:01 0:02
+Clock _smalldelay_ 0:01 0:04
 
 --	Quest start-up:
 
