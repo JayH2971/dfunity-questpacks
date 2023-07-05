@@ -1,0 +1,30 @@
+Quest: JHTGC02
+DisplayName: Thieves Guild Consequence Quest 2
+-- Message panels
+--used in TG106
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You receive a small unsigned note. It reads,
+<ce>  
+<ce>  "Heard about your heroic sacrifice for me.
+<ce>  I did some finagling and got your crime
+<ce>  'expunged.' Long as you aren't banished anywhere,
+<ce>  people should look the other way around here."
+<ce>  
+<ce>  It is only signed, "A fellow thief."
+
+QBN:
+
+Clock _endtimer_ 1:00 5:00
+
+Place _any_ remote house
+
+--	Quest start-up:
+    start timer _endtimer_
+
+_endtimer_ task:
+    legal repute -200
+    say 1004
+    legal repute +100
+    end quest

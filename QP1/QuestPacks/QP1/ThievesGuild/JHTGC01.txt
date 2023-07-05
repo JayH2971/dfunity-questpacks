@@ -1,0 +1,28 @@
+Quest: JHTGC01
+DisplayName: Thieves Guild Consequence Quest 1
+-- Message panels
+--used in TG104, repeatable
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You happen upon a leaflet carrying a rough
+<ce>  sketch of you. It contains the following request:
+<ce>  
+<ce>  "Wanted: %ra responsible for stealing
+<ce>  valuable document from a palace in ____any_.
+<ce>  Turn over to the guards upon sight!"
+<ce>  
+<ce>  With any luck, people will ignore it, or you.
+
+QBN:
+
+Clock _endtimer_ 1:00 5:00
+
+Place _any_ remote house
+
+--	Quest start-up:
+    start timer _endtimer_
+
+_endtimer_ task:
+    say 1004
+    end quest

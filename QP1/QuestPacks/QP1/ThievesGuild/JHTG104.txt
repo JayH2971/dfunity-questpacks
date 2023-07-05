@@ -102,6 +102,10 @@ Foe _knight_ is 2 Knight
  get item _trinket_
  pc at _pal_ do _inside_
 
+variable _dud_
+_consequence_ task:
+  start quest JHTGC01
+
 _begin_ task:
  clicked item _item_
  _trinket_ used do _send_
@@ -130,6 +134,7 @@ _send_ task:
 
 _pcgetsgold_ task:
   toting _item_ and _qgiver_ clicked
+  pick one of _dud_ _consequence_ _dud_
   give pc _reward_
   end quest
 

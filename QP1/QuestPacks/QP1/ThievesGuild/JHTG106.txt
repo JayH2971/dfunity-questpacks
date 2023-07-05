@@ -94,6 +94,7 @@ _notyet_ task:
 
 _pcgetsgold_ task:
     when _clickqgiver_ and _victory_
+    start quest JHTGC02
     make _item_ permanent
     give pc _reward_
     end quest

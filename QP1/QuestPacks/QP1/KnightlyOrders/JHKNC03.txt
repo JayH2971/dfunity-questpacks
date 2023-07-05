@@ -5,7 +5,7 @@ DisplayName: Knightly Order Consequence Quest 3
 QRC:
 
 QuestComplete:   [1004]
-<ce>  A barmaid smiles at you approvingly.
+<ce>  A barmaid smiles at you.
 <ce>  
 <ce>  "Hey, yer one of them knights, right?
 <ce>  Come on in! We've got a room waitin' for ya!"
