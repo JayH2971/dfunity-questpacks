@@ -1,0 +1,96 @@
+Quest: JH_CGK1
+DisplayName: Chronicle of the Great Knight, Part 1
+QRC:
+
+QuestComplete:   [1004]
+<ce>  "First of all, I have to thank you for coming.
+<ce>  Whether you accept or not, I know this was a sacrifice on your part.
+<ce>  I hope this compensates your travel expenses, more or less."
+<ce>  He hands you some coins.
+
+Message:  1010
+<ce>  A very conspicuous courier approaches and hands
+<ce>  you a letter. You recognize the seal of the imperial court.
+
+Message:  1011
+Greetings, I seek an audience with %pcn.
+If this letter reaches you, I will travel
+to the Great Palace of Sentinel and there
+wait for =timer_ days. The Emperor has sent me to
+investigate a great danger, and your reputation
+bespeaks reliability.
+<ce>
+Together, we can save a great many people.
+<ce>
+        Lord Magnessen
+        A knight in the service of Emperor Septim
+
+Message:  1012
+<ce> Lord Magnessen must be somewhere in here.
+
+Message:  1013
+<ce> You suddenly feel a strong hand on your shoulder.
+<ce> Before you can react, its owner enters your view.
+<ce>
+<ce>  "Ha! A bit slow on the reflexes, are you?
+<ce> Don't think that I can't sneak around when needed.
+<ce> They call me a knight, but I'm more than that."
+<ce>
+<ce> Before you stands Lord Magnessen, head of the Blades.
+<ce> His calm smile is tempered by his
+<ce> sense of the grim mission before him.
+
+Message:  1014
+<ce>  "Now, the task before me will require capable aid.
+<ce>  I have to be sure that you know how to fight, and are
+<ce>  able to destroying the worst kinds of living dead.
+<ce>  If both of those are true, are you willing to aid me?"
+
+Message:  1015
+<ce>  "I'm surprised, but I must accept your answer.
+<ce>  A knight will fulfill his duty, even to the very end.
+<ce>  If you're in a temple any time soon, pray for me.
+<ce>  I'll need the help of any god who will listen."
+<ce>
+<ce>  Lord Magnessen bows before you and departs to fulfill his mission.
+
+QBN:
+
+Item _letter_ letter used 1011
+Item _gold_ gold range 250 to 300
+
+Place _res_ permanent SentinelCastle
+
+Clock _timer_ 40.00:00
+Clock _delay_ 0:02
+
+--	Quest start-up:
+
+_level12_ task:
+    level 12 completed
+    give pc _letter_ notify 1010
+    _letter_ used do _appear_
+
+_appear_ task:
+    pc at _res_ do _inside_
+    start timer _timer_
+
+_inside_ task:
+    start timer _delay_
+    say 1012
+
+_delay_ task:
+    say 1013
+    give pc _gold_
+    prompt 1014 yes _accept_ no _refuse_
+
+_refuse_ task:
+    say 1015
+    end quest
+
+_accept_ task:
+    start quest JH_CGK2
+    end quest
+
+_timer_ task:
+    end quest

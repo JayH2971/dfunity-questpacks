@@ -1,0 +1,124 @@
+Quest: JH_CGK9
+DisplayName: Chronicle of the Great Knight, Part 9
+QRC:
+
+Message:  1010
+<ce>  You hurry to tell King Gothryd what has happened. He is filled with alarm,
+<ce>  and immediately congregates his advisors. Popudax is happy to see you alive
+<ce>  still, though under such dire circumstances.
+<ce>  
+<ce>  "This being, whatever it is, is a grave threat to the kingdom," Gothryd declares.
+<ce>  "Popudax, make one of those anti-life charms that the Blades give around."
+<ce>  
+<ce>  "It is futile," the wizard answers.
+<ce>  "%pcf here already tried that, and the being's power continues on."
+<ce>  
+<ce>  They continue discussing the matter.
+<ce>  Soon, the priests arrive from the city's temple, at Gothryd's request.
+<ce>  
+<ce>  "If anti-life won't work, we need anti-death.
+<ce>  Priests, show us what you have," the king demands.
+<ce>  
+<ce>  The high priest goes into a side room, looking into the castle's treasury.
+<ce>  He returns with a large charm. "My Lord, this is all we can offer.
+<ce>  If %pcf will use this on the possessed Lord Magnessen, the matter will be finished."
+<ce>  
+<ce>  Gothryd examines it and asks, "What does it do?"
+<ce>  
+<ce>  The high priest hesitates before saying,
+<ce>  "It is not powerful enough to destroy the spirit, lord.
+<ce>  But it will seal it away for several decades -- it's hard to say,
+<ce>  but it could last for a century, or even more."
+<ce>  
+<ce>  Popudax muses, "Or less. What if it comes back in ten years?"
+<ce>  
+<ce>  The priest grimaces and answers, "Y-yes, perhaps so.
+<ce>  But our people will be safe, and, um, that will be a problem for another day,
+<ce>  and perhaps other people."
+<ce>  
+<ce>  Gothryd rolls his eyes. "Incompetent. Fine. If it does come back,
+<ce>  you people BETTER make sure we have something more useful than this."
+<ce>  He hands the charm to you. "Now that you made it here,
+<ce>  Ganlas is going to know something is afoot.
+<ce>  You'll have to head out of civilization, where there aren't armies waiting to fight it.
+<ce>  Travel to one of those wilderness shrines, where you're all alone.
+<ce>  That's when it'll attack you. Then, use this, and..."
+<ce>  He shrugs, and turns to more important matters.
+
+Message:  1011
+<ce>  It doesn't take long for the possessed Magnessen to find you.
+<ce>  Ganlas tries to make him march forward, but Magnessen resists,
+<ce>  throwing himself to the ground. He shouts,
+<ce>  "%pcf! Listen! I know that charm... You can end this!
+<ce>  Don't use it, break it! It'll open a portal to Oblivion.
+<ce>  Push my body through and let the portal close. Ganlas will be gone forever!"
+<ce>  
+<ce>  A shriek comes from Magnessen's mouth. "NO! We'll spend an eternity-- NO!"
+<ce>  
+<ce>  The Great Knight gains control long enough to say,
+<ce>  "You have to! %pcf, I can do this! Send me there! Don't risk any more lives!"
+<ce>  
+<ce>  Ganlas-Magnessen is starting to regain his footing. The decision is yours.
+<ce>  
+<ce>  Will you:
+<ce>  [YES] Use the charm, sealing away Ganlas' spirit for a future generation to fight; or
+<ce>  [NO] Break the charm, sending Magnessen's possessed body into Oblivion?
+
+Message:  1012
+<ce>  You point the charm at Magnessen, and a beam shoots through his body.
+<ce>  He screams in agony, collapsing to the ground. The malignant spirit
+<ce>  rises from it, and then sinks into the earth, burning a large,
+<ce>  dark spot into the ground. The charm worked.
+<ce>  
+<ce>  Magnessen's exhausted voice is barely a whisper."You saved my life...
+<ce>  but... would I have had more honor in Oblivion? A knight's life
+<ce>  is his to sacrifice..." He passes out, sapped completely
+<ce>  by the ordeal of the last several days.
+<ce>  
+<ce>  You speak to the shrine attendant,
+<ce>  who promises to watch over him until Daggerfall's forces arrive.
+<ce>  Lord Magnessen will be out of commission for a long time,
+<ce>  but he will recover -- to serve the Emperor once more.
+
+Message:  1013
+<ce>  You smash the charm to pieces and toss them a short ways off.
+<ce>  A small and unstable portal to Oblivion opens underneath them --
+<ce>  not strong enough to bring anything in,
+<ce>  only to send something there. Before Ganlas-Magnessen can regain his footing,
+<ce>  you deliver a kick to his sternum, sending him tumbling toward the portal.
+<ce>  Ganlas shrieks, "NOOOO!!"
+<ce>  
+<ce>  As his body enters a different plane,
+<ce>  Magnessen calls out to you. "For the Emperor -- serve him alwa..."
+<ce>  The portal closes, cutting off his words.
+<ce>  
+<ce>  Tamriel today has lost a great hero, but is also saved from a great danger.
+
+Message:  1015
+%qdt:
+ With the sealing charm in hand, I am ready to confront Ganlas
+ and bring an end to this matter. I must go to some place to fight alone.
+ Any wilderness cult shrine should be a private enough place for this affair.
+
+QBN:
+
+Item _gem_ common_symbol
+
+--	Quest start-up:
+    say 1010
+    log 1015 step 0
+    get item _gem_
+
+_arrive_ task:
+    when pc enters cult
+    prompt 1011 yes _sealing_ no _oblivion_
+
+_sealing_ task:
+    say 1012
+    start quest JH_CGK10a
+    end quest
+
+_oblivion_ task:
+    say 1013
+    start quest JH_CGK10b
+    end quest

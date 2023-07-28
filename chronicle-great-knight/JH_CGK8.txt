@@ -1,0 +1,57 @@
+Quest: JH_CGK8
+DisplayName: Chronicle of the Great Knight, Part 8
+QRC:
+
+Message:  1013
+<ce>  Lord Magnessen chases after you. "This %ra will DIE!" his body screams.
+<--->
+<ce>  Lord Magnessen charges. "ARKAY BRING YOU DEATH!"
+<--->
+<ce>  "I'LL KILL YOU IF IT'S THE LAST THING I DO!" The Great Knight's possessed body shrieks.
+
+Message:  1015
+%qdt:
+ I must hurry to Castle ___dagg_ and enlist the help of King Gothryd,
+ to end Ganlas' existence once and for all.
+
+Message:  1016
+<ce>  The Great Knight falls, but it's no use. He returns to life effortlessly.
+<ce>  The only way to stop this is to get the help of the King of Daggerfall.
+
+QBN:
+
+Place _dagg_ permanent DaggerfallCity1
+
+Foe _tgk_ is Knight
+
+Person _talk_ named King_Gothryd atHome
+
+Clock _timer_ 12:00 1.12:00
+
+--	Quest start-up:
+    create foe _tgk_ every 0 minutes 1 times with 100% success msg 1013
+    change foe _tgk_ infighting true
+    start timer _timer_
+    log 1015 step 0
+
+_timer_ task:
+    remove foe _tgk_
+    start quest JH_CGK8
+    end quest
+
+_king_ task:
+    clicked npc _talk_
+    remove foe _tgk_
+    start quest JH_CGK9
+    end quest
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    cast Heal spell on _tgk_
+    clear _daily_
+
+_tgkfall_ task:
+    killed _tgk_
+    say 1016
+    start quest JH_CGK8
+    end quest

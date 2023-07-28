@@ -1,0 +1,68 @@
+Quest: JH_CGK10b
+DisplayName: Chronicle of the Great Knight, Part 10b
+QRC:
+
+QuestComplete:   [1004]
+<ce>  A small pouch accompanies the letter, which has
+<ce>  a dimension-warping enchantment placed on it.
+<ce>  The actual sum of gold is more than was obvious from the outset.
+
+Message:  1010
+<ce>  You receive a letter. It carries a unique seal, containing the word "MAGNESSEN" in stylized print.
+
+Message:  1011
+Dear %pcf,
+<ce>
+Our correspondence with Castle Daggerfall over the
+past few weeks has revealed much concerning the matter of Ganlas to us.
+Popudax knew about the charm, but he was too moralistic
+to even suggest opening a portal with it.
+My brother had too much knowledge for his own good.
+I miss him, terribly.
+<ce>
+The Emperor wept for hours upon hearing that his
+Great Knight had been sent to the outer realms.
+He knew that was precisely what his champion would have wanted.
+The foe is defeated, and cannot return.
+At least, we hope nobody figures out how to open portals from Oblivion.
+Pray that never happens. A great funeral was held for Lord Magnessen,
+and the Emperor gave the finest eulogy I've ever heard.
+I never even knew my brother spent two years in Black Marsh!
+What else had he been keeping from me?
+<ce>
+I apologize for the casual spirit of this letter.
+The Emperor gathered up what gold he could to reward
+you. He holds you in very high esteem, and should you
+ever come by the Imperial City, do make a visit
+to the palace. The door will be open to you.
+<ce>
+            Brisienna.
+
+Message:  1012
+<ce>  Congratulations! This is Ending B of "The Chronicle of the Great Knight."
+<ce>  Take a screenshot of this message and send it to the mod author.
+<ce>  Contact information can be found in the readme inside the questpack folder.
+
+QBN:
+
+Item _gem_ letter
+Item _reward1_ gold range 20000 to 25000
+Item _reward2_ gold range 20000 to 25000
+Item _reward3_ gold range 20000 to 25000
+
+Clock _timer_ 15.00:00 22.00:00
+
+--	Quest start-up:
+    start timer _timer_
+
+_timer_ task:
+    give pc _gem_ notify 1010
+    _gem_ used do _final_
+
+_final_ task:
+    say 1011
+    give pc _reward1_
+    give pc _reward2_
+    give pc _reward3_
+    say 1012
+    end quest

@@ -1,0 +1,150 @@
+Quest: JH_CGK4
+DisplayName: Chronicle of the Great Knight, Part 4
+QRC:
+
+Message:  1010
+<ce>  The Great Knight is waiting in the lobby for you.
+<ce>  "Ah, you're safe and sound! Did you find it?"
+<ce>  You deliver the object to him, and he nods.
+<ce>  "Okay, there's a secret art that I learned from Ocato a few years ago...
+<ce>  with the Emperor's permission, of course.
+<ce>  Don't repeat what I'm about to do, okay?"
+<ce>  Even if you wanted to, it would be nearly impossible to replicate
+<ce>  Magnessen's enchantment. He merges the two pieces together.
+<ce>  
+<ce>  "There it is. A beautiful little thing, this is," he says,
+<ce>  admiring his own work. "This has the power to kill any living thing,
+<ce>  with one charge. We'd need another primed emerald and relic to do this again,
+<ce>  so don't think you could go on some killing spree across Tamriel with
+<ce>  what you just heard me do.
+<ce>  
+<ce>  "Well, now I have some bad news. While we were gone, Ganlas escaped the palace.
+<ce>  We can rejoice that no one was harmed on the way out. For one reason or another,
+<ce>  the priest went to Castle Necromoghan in the region of Daggerfall. I'll mark it on your map.
+<ce>  I have a few short errands to run on the Emperor's behalf before I leave Sentinel, so we'll part
+<ce>  ways here, but I'll make sure I'm at Necromoghan before you are. Safe journey, %pcf."
+
+Message:  1011
+<ce>  True to his word, Lord Magnessen is already waiting for you.
+<ce>  
+<ce>  "No letting your guard down, now.
+<ce>  I'll hold onto the relic until it's time to use it.
+<ce>  Then you'll have the honor."
+
+Message:  1012
+<ce>  At last you have found Ganlas, who looks even more disturbed than before.
+<ce>  "Enemies! Enemies approach! I-- wuh..."
+<ce>
+<ce>  The Great Knight prepares for battle. "The relic is yours. Use it whenever you're ready."
+<ce>  He hands you the merged artifact and gets ready to defend himself.
+
+Message:  1013
+<ce>  With a pained groan, Ganlas falls. All movement ceases.
+<ce>  "Ha! Works like a charm," Lord Magnessen says. "Well, I have to thank you for your help.
+<ce>  Going to both castles would have been a real pain in the--"
+<ce>  
+<ce>  "Arkaaaaay," a voice rises from Ganlas' body. "Arkay, help me..."
+<ce>  
+<ce>  You and Lord Magnessen ready defensive positions.
+<ce>  The priest begins to rise, but in a very different form.
+<ce>  
+<ce>  The Great Knight shouts, "Halt! Who are you?"
+<ce>  
+<ce>  Ganlas' body yells, "I am a follower of Arkay!
+<ce>  My years were spent contemplating the misery of life and the calm of the grave.
+<ce>  Arkay, Arkay told me to bring peace to the world -- death! This world, its people,
+<ce>  they are a mistake! He never approved the creation!
+<ce>  Tamriel, Aetherius, it is all WRONG!!"
+
+Message:  1014
+<ce>  You barely dodge a ray of lightning that shoots at you.
+<ce>  
+<ce>  Lord Magnessen grabs you and says, "Run! Now! Find Popudax,
+<ce>  the master wizard in Daggerfall Castle. This is beyond you or me.
+<ce>  I'll stall it as long as I can!"
+<ce>  
+<ce>  Spirits of the dead begin to emerge.
+<ce>  Ganlas roars, "Arkay, he loves the empty!
+<ce>  The dead, the silent! All will return to peace!!"
+
+Message:  1015
+%qdt:
+ With the Great Knight's help, I am to find the mad priest Ganlas
+ inside ___res_, and bring an end to this menace.
+
+Message:  1016
+%qdt:
+ Ganlas' power is still beyond ours.
+ Lord Magnessen will try to stop the lich, while
+ I seek the help of Popudax, court wizard of Daggerfall Castle.
+
+Message:  1017
+<ce> You wait and wait, but the Great Knight doesn't emerge from the ruin.
+<ce> Time passes, long and unnerving. But he fails to appear.
+<ce> 
+<ce>  Eventually, you have no choice but to move on.
+<ce>  He said to find Popudax inside Castle Daggerfall.
+<ce>  That's the best you can do for now.
+
+
+QBN:
+
+Person _knight_ named The_Great_Knight
+
+Foe _ganlas_ is Healer
+Foe _tgk_ is Knight
+Foe _ganlas2_ is Lich
+Foe _ghost1_ is Wraith
+Foe _ghost2_ is Ghost
+
+Item _gem_ Holy_relic
+
+Place _res_ permanent Castle_Necromoghan
+
+--	Quest start-up:
+    say 1010
+    place foe _ganlas_ at _res_ marker 0
+    reveal _res_
+    pc at _res_ do _inside_
+    log 1015 step 0
+
+_activate_ task:
+    player within 3 units of foe _ganlas_
+    injured _ganlas_
+    get item _gem_
+    say 1012
+    _gem_ used do _lichtime_
+    create foe _tgk_ every 0 minutes 1 times with 100% success
+    change foe _tgk_ infighting true
+    change foe _tgk_ team 01
+    drop _knight_ face
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    cast Heal spell on _ganlas_
+    cast Heal spell on _ganlas2_
+    cast Heal spell on _tgk_
+    change foe _ghost1_ infighting true
+    change foe _ghost2_ infighting true
+    clear _daily_
+ 
+_inside_ task:
+    say 1011
+    add _knight_ face
+
+_lichtime_ task:
+    kill foe _ganlas_
+    say 1013
+    say 1014
+    place foe _ganlas2_ at _res_ marker 0
+    change foe _ganlas2_ infighting true
+    create foe _ghost1_ every 0 minutes 2 times with 100% success
+    create foe _ghost1_ every 1 minutes indefinitely with 100% success
+    create foe _ghost2_ every 1 minutes indefinitely with 100% success
+    log 1016 step 0
+
+_exit_ task:
+    when _lichtime_ and not _inside_
+    say 1017
+    start quest JH_CGK5
+    end quest

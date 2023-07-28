@@ -1,0 +1,146 @@
+Quest: JH_CGK2
+DisplayName: Chronicle of the Great Knight, Part 2
+QRC:
+
+Message:  1010
+<ce>  "Oh, %god be praised. If you had declined,
+<ce>  I really would have been in dire straits.
+<ce>  You will have the gratitude of the Emperor himself
+<ce>  after this is finished... Well, more gratitude,
+<ce>  depending on how you've dealt with him. He doesn't
+<ce>  tell me about every friend he has.
+<ce>  
+<ce>  "We're here in the palace of Sentinel for a reason.
+<ce>  The royal maids have complained about some kind of presence
+<ce>  that's deep within the dungeons. People never like to go under
+<ce>  this palace unless absolutely necessary; I'm sure you understand.
+<ce>  There's something afoot here, and together, we'll figure out what it is.
+<ce>  You take point. Lead us into the dungeons,
+<ce>  and we'll see what the problem is."
+
+Message:  1011
+<ce>  From the outset, it's easy to tell this is no ordinary priest,
+<ce>  having a gaze that is sullen and cold.
+<ce>  "Who are you? Arkay? Is that you?"
+<ce>  
+<ce>  "Halt, stranger," the Great Knight calls out. "Speak your name."
+<ce>  
+<ce>  "I... I am... Ganlas," the priest says. "Arkay has sent me messengers.
+<ce>  He speaks to me finally! Tell me, how will I ascend to the highest plane?"
+<ce>  
+<ce>  Lord Magnessen answers, "Slow yourself, Ganlas.
+<ce>  We've been sent by the Emperor. How long have you--"
+<ce>  
+<ce>  Upon hearing mention of Uriel Septim, Ganlas' expression worsens.
+<ce>  "No! Not Septim! He's... he's tbe enemy! He must perish, and all his followers!
+<ce>  Arkay, Arkay will show me how!"
+<ce>  
+<ce>  Lord Magnessen readies his weapon and says, "Stay yourself!
+<ce>  Don't make me use this!" But it's too late.
+<ce>  The priest advances, shouting with no sense of coherence.
+
+Message:  1012
+<ce> No matter how you fight, Ganlas refuses to fall, or even tire.
+<ce> Lord Magnessen shouts to you,
+<ce> "S-something's wrong! Away from here!
+<ce> You return to the city! I'll follow you afterward!"
+<ce> 
+<ce> Ganlas' voice is raw and low: "Arkay... Give me strength, Arkay!!"
+
+Message:  1013
+<ce> "Haa, I will not be slain so easily,"
+<ce> Ganlas yells, returning to the fray.
+
+Message:  1014
+<ce>  You don't have to wait long for
+<ce>  the Great Knight. He seems fully out of breath.
+<ce>  
+<ce>  "Oblivion be cursed. We're a bit short on supplies
+<ce>  for this one. I told the royal guards to bar the way
+<ce>  into the dungeons, but I doubt Ganlas is in any hurry to escape.
+<ce>  That priest will just keep waiting for
+<ce>  Arkay to speak, until... who knows what.
+<ce>  But it is clear we have to get this matter done with, quickly.
+<ce>  
+<ce>  "There's something we can put together to get the upper hand.
+<ce>  It requires two parts. Here in Sentinel,
+<ce>  there are two repositories of such parts as we need.
+<ce>  If you go to one, I'll go to the other.
+<ce>  One is the Fortress of Fhojum, which is overrun
+<ce>  with animals this time of the year,
+<ce>  and the other is Castle Faallem,
+<ce>  which will have a lot of undead to contend with.
+<ce>  Which one do you want?"
+<ce>  
+<ce>  [YES: Fhojum; NO: Faallem]
+
+
+Message:  1015
+<ce>  Lord Magnessen collapses, but gets back up.
+<ce>  "I... I can do this!"
+
+QBN:
+
+Person _knight_ named The_Great_Knight
+
+Foe _ganlas_ is Healer
+Foe _tgk_ is Knight
+
+Place _res_ permanent SentinelCastle
+
+Clock _delay_ 0:07
+
+--	Quest start-up:
+    say 1010
+    place foe _ganlas_ at _res_ marker 1
+    pc at _res_ set _inside_
+    add _knight_ face
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    cast Heal spell on _ganlas_
+    cast Shalidor's_Mirror spell on _ganlas_
+    cast Heal spell on _tgk_
+    clear _daily_
+
+_approach_ task:
+    player within 5 units of foe _ganlas_
+    injured _ganlas_
+    clicked foe _ganlas_
+    drop _knight_ face
+    say 1011
+    create foe _tgk_ every 0 minutes 1 times with 100% success
+    change foe _ganlas_ infighting true
+    change foe _tgk_ infighting true
+    change foe _tgk_ team 01
+    start timer _delay_
+
+_delay_ task:
+    say 1012
+
+_tgkfall_ task:
+    killed _tgk_
+    say 1015
+    create foe _tgk_ every 0 minutes 1 times with 100% success
+    change foe _tgk_ infighting true
+    change foe _tgk_ team 01
+
+_ganlasfall_ task:
+    killed _ganlas_
+    say 1013
+    create foe _ganlas_ every 0 minutes 1 times with 100% success
+    change foe _ganlas_ infighting true
+
+variable _inside_
+
+_branch_ task:
+    when _delay_ and not _inside_
+    prompt 1014 yes _animals_ no _undead_
+
+_animals_ task:
+    start quest JH_CGK3a
+    end quest
+
+_undead_ task:
+    start quest JH_CGK3b
+    end quest

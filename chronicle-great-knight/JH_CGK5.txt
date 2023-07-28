@@ -1,0 +1,85 @@
+Quest: JH_CGK5
+DisplayName: Chronicle of the Great Knight, Part 5
+QRC:
+
+Message:  1010
+<ce>  Popudax, the court wizard of Daggerfall, puts aside some minor experiments.
+<ce>  "Hello! What can I help you with?" he asks.
+<ce>  
+<ce>  As you relate the story of Ganlas, Popudax looks very troubled.
+<ce>  He half-listens and half-thinks while you tell him everything you can.
+<ce>  
+<ce>  "Oh, this is grievous indeed. I can tell right from the start
+<ce>  that this is a deception -- Arkay neither speaks to mortals
+<ce>  nor grants them power, much less to raise the dead or become undead.
+<ce>  That much, I'm certain of. Madness grips this priest... in whatever form, now.
+<ce>  
+<ce> "Well, it is clear that an anti-life charm like Magnessen used will be of
+<ce>  no worth against Ganlas. Now that your enemy is undead, you'll need something else.
+<ce>  It's going to be a bit of a journey, but you need to go to Castle Llugwych,
+<ce>  far to the north in Ykalon. The Blades used to store all manner of reagents there.
+<ce>  I don't know what state you'll find the castle in, but you need to look for a
+<ce>  crystallized daedra heart. It's very rare, which makes me think that only in
+<ce>  Llugwych will you find such an item. I can use it for an enchantment you'll need
+<ce>  against this Ganlas lich, at no cost. We have to make sure this villain is put down
+<ce>  before reaching Daggerfall's royal family, or anyone else we can."
+
+Message:  1011
+<ce>  This daedra heart is quite old and brittle.
+<ce>  This must be the crystallized one that Popudax requested.
+
+Message:  1012
+<ce>  "Ah, splendid! Yes, this is probably the best specimen of a crystallized daedra heart
+<ce>  I've seen yet. Fine work. Now, I can use this for one of two enchantments.
+<ce>  The one will prevent Ganlas from casting any spells.
+<ce>  The other will prevent any attempts at self-resurrection. Both will be useful to you,
+<ce>  but I can only provide you with one. Which will it be?"
+<ce>  
+<ce>  (YES: Muting effect; NO: anti-resurrection)
+
+
+Message:  1015
+%qdt:
+ Ganlas' power is still beyond ours.
+ Lord Magnessen will try to stop the lich, while
+ I seek the help of Popudax, court wizard of ___dagg_ Castle.
+
+Message:  1016
+%qdt:
+ Popudax has sent me to ___res_ in Ykalon, to find
+ a crystallized daedra heart. Once I deliver it to him, he will
+ grant me an enchantment to help me fight Ganlas the lich.
+
+QBN:
+
+Person _popu_ named Popudax atHome
+
+Item _gem_ daedra_heart
+
+Place _dagg_ permanent DaggerfallCity1
+Place _res_ permanent LlugwychCastle
+
+--	Quest start-up:
+    log 1015 step 0
+
+_clicktalk_ task:
+    clicked npc _popu_
+    say 1010
+    reveal _res_
+    place item _gem_ at _res_ marker 2
+    log 1016 step 0
+
+_activate_ task:
+    clicked item _gem_ say 1011
+
+_deliver_ task:
+    toting _gem_ and _popu_ clicked
+    prompt 1012 yes _muting_ no _antirez_
+
+_muting_ task:
+    start quest JH_CGK6a
+    end quest
+
+_antirez_ task:
+    start quest JH_CGK6b
+    end quest

@@ -1,0 +1,118 @@
+Quest: JH_CGK6b
+DisplayName: Chronicle of the Great Knight, Part 6b
+QRC:
+
+Message:  1010
+<ce>  "Very well, I shall attempt it, then."
+<ce>  Popudax closes his eyes and begins a drawn-out enchantment.
+<ce>  Magical energy flies all over as the intensity builds.
+<ce>  Finally, quite exhausted, he hands a wand to you.
+<ce>  "Use this when you face the lich. It'll cast the enchantment,
+<ce>  and, hopefully, it will give you an upper hand. I..."
+<ce>  He leans back, too tired to talk. He simply waves you goodbye.
+
+Message:  1011
+<ce>  As soon as you enter the ruins, you hear someone whisper to you.
+<ce>  "Shh! Hey! It's me, over here!" Lord Magnessen is hiding near the entrance.
+<ce>  "I've been fighting back the undead while you were gone.
+<ce>  It's a rough world down here, but I've kept them from the surface, for now.
+<ce>  Did Popudax have anything to offer?" You explain the aid you got from the wizard,
+<ce>  and the Knight's countenance brightens. "Good! Okay, I'll follow you then.
+<ce>  I'm a bit tired from all this fighting, but I can still... walk, at least.
+<ce>  Lead the way."
+
+Message:  1012
+<ce>  Ganlas' lich roars at the sight of you.
+<ce>  "Meddlers! Arkay is calling, and you will not hear! Find peace in death!"
+<ce>  
+<ce>  Magnessen readies once more for battle.
+<ce>  "You've got the wand ready? Any time now!" he whispers.
+<ce>  Some spirits coalesce around their master.
+
+Message:  1013
+<ce>  The lich looks deeply stricken by the wand's enchantment.
+<ce>  "Ha, weren't expecting that, were you?" The Great Knight shouts.
+<ce>  "Come on, we'll send you to Arkay right now!"
+
+Message:  1014
+<ce>  Lord Magnessen collapses, but gets back up.
+<ce>  "I... I can do this!"
+
+Message:  1015
+%qdt:
+ Popudax has given me a wand that will prevent Ganlas from casting any spells.
+ I should use it at close range. It's time to return to ___res_.
+
+QBN:
+
+Person _knight_ named The_Great_Knight
+
+Foe _tgk_ is Knight
+Foe _ganlas2_ is Lich
+Foe _ghost1_ is Wraith
+Foe _ghost2_ is Ghost
+Foe _ghost3_ is Wraith
+Foe _ghost4_ is Ghost
+
+Item _gem_ wand
+
+Place _res_ permanent Castle_Necromoghan
+
+--	Quest start-up:
+    log 1015 step 0
+    say 1010
+    reveal _res_
+    pc at _res_ set _inside_
+    place foe _ganlas2_ at _res_ marker 0
+    get item _gem_
+
+_inside_ task:
+    say 1011
+    add _knight_ face
+
+_meetlich_ task:
+    player within 5 units of foe _ganlas2_
+    injured _ganlas2_
+    _gem_ used do _charm_
+    say 1012
+    create foe _ghost1_ every 0 minutes 1 times with 100% success
+    create foe _ghost2_ every 0 minutes 1 times with 100% success
+    create foe _ghost3_ every 0 minutes 1 times with 100% success
+    create foe _ghost4_ every 0 minutes 1 times with 100% success
+    change foe _ghost1_ infighting true
+    change foe _ghost2_ infighting true
+    change foe _ghost3_ infighting true
+    change foe _ghost4_ infighting true
+    change foe _ganlas2_ infighting true
+    create foe _tgk_ every 0 minutes 1 times with 100% success
+    change foe _tgk_ infighting true
+    change foe _tgk_ team 01
+    change foe _ganlas2_ infighting true
+    cast Troll's_Blood spell on _ganlas2_
+    cast Shield spell on _ganlas2_
+    cast Shalidor's_Mirror spell on _ganlas2_
+
+_daily_ task:
+    daily from 0:00 to 23:59
+    cast Heal spell on _tgk_
+    clear _daily_
+
+_tgkfall_ task:
+    killed _tgk_
+    say 1014
+    create foe _tgk_ every 0 minutes 1 times with 100% success
+    change foe _tgk_ infighting true
+    change foe _tgk_ team 01
+
+_charm_ task:
+    say 1013
+
+_lichkill_ task:
+    killed 1 _ganlas2_
+    remove foe _ghost1_
+    remove foe _ghost2_
+    remove foe _ghost3_
+    remove foe _ghost4_
+    remove foe _tgk_
+    start quest JH_CGK7
+    end quest

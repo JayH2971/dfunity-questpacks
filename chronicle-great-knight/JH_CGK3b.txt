@@ -1,0 +1,59 @@
+Quest: JH_CGK3b
+DisplayName: Chronicle of the Great Knight, Part 3b
+QRC:
+
+
+Message:  1010
+<ce>  "I can't say I blame you. The undead are a right scourge,
+<ce>  and I'll give Fhojum a thrashing before I'm finished with it.
+<ce>  The animals are the real problem in Faallem. It's on an island north of here.
+<ce>  I'll mark it on your map. You'll be looking for an emerald.
+<ce>  There's a particular kind that the enchanters used to use over there,
+<ce>  and you'll know which one it is when you touch it.
+<ce>  It'll have a bit of magical charge left in it. When you find it,
+<ce>  bring it back here and we'll take care of this Ganlas."
+
+Message:  1011
+<ce>  This relic releases some sparks when you pick it up.
+<ce>  This must be what the Great Knight wanted.
+
+Message:  1012
+%qdt:
+ Lord Magnessen needs me to go to ___castle_
+ in Sentinel region to find an empowered holy relic. Once I find
+ it, he'll be waiting in the palace of Sentinel again.
+
+Message:  1013
+<ce> The smell of filthy animals permeates Castle Faallem.
+
+QBN:
+
+Foe _enemy1_ is Blood_Spider
+Foe _enemy2_ is Mountain_Lion
+Foe _enemy3_ is Land_Dreugh
+
+Item _gem_ Holy_relic
+
+Place _res_ permanent SentinelCastle
+Place _castle_ permanent Castle_Faallem
+
+--	Quest start-up:
+    say 1010
+    place item _gem_ at _castle_ marker 0
+    reveal _castle_
+    log 1012 step 0
+    pc at _castle_ set _hun_
+
+_hun_ task:
+    say 1013
+    create foe _enemy1_ every 17 minutes indefinitely with 3% success
+    create foe _enemy2_ every 19 minutes indefinitely with 4% success
+    create foe _enemy3_ every 20 minutes indefinitely with 5% success
+
+_take_ task:
+    clicked item _gem_ say 1011
+    pc at _res_ set _inside_
+
+_inside_ task:
+    start quest JH_CGK4
+    end quest
