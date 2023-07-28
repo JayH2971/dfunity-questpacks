@@ -12,6 +12,10 @@
     teamchange/infighting change, haven't yet identified other methods to do so. "pc at" doesn't work unless
     you're using "spam spawning" like in Death's Embrace.
 
+
+    **player within 3 units of item _tri_**
+    
+
     MOBILE, TEAM, AND ENTITY NUMBER
 
     Rat: Vermin 0
