@@ -1,0 +1,77 @@
+Quest: JHKN109
+DisplayName: Call of the Dead
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  Ah, we have a quest for you. There are reports of a wraith
+<ce>  at the ruins of ___dung_. Find the spirit and seal its soul.
+<ce>  This task is crucial to the safety of the tomb.
+
+RefuseQuest:  [1001]
+<ce>        I can't doubt you have more important things to do.
+
+AcceptQuest:  [1002]
+<ce>  ___dung_ is off that way, %di. It is now marked on your map.
+<ce>  Return within =timer_ days or a replacement will be sought.
+<ce>  Remember that this is a powerful kind of spirit, and take with you
+<ce>  a suitable weapon.
+
+QuestFail:  [1003]
+<ce>  You were to report the destroyed wraith to __questgiver_ by now.
+
+QuestComplete:  [1004]
+<ce>  Excellent! It's always a treat when one such %pct returns from quests with good news.
+<ce>  The spirit has been destroyed, and those of us still with flesh
+<ce>  can sleep safe tonight knowing it will not return to trouble us.
+
+Message:  1010
+<ce>    "Begone! My days are not yet fulfilled!"
+
+Message:  1011
+<ce>  This gloom wraith will return no more.
+
+Message:  1030
+%qdt:
+ __questgiver_ has assigned
+ me to destroy a wraith haunting ___dung_.
+ I am to return to ___questgiver_ and report my success
+ within =timer_ days. 
+
+QBN:
+Person _questgiver_ group Questor male
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Place _dung_ remote dungeon6
+
+Foe _enemy_ is Wraith
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+	reveal _dung_
+    place foe _enemy_ at _dung_
+
+_inj_ task:
+    clicked foe _enemy_
+    injured _enemy_
+    say 1010
+    change foe _enemy_ infighting true
+
+_slain_ task:
+    killed _enemy_
+    say 1011
+
+_victory_ task:
+	when _qgclicked_ and _slain_
+	give pc nothing
+	legal repute +4
+	end quest
+
+_qgclicked_ task:
+	clicked npc _questgiver_
+
+_timer_ task:
+    say 1003
+	end quest

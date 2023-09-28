@@ -29,7 +29,7 @@ AcceptQuest:  [1002]
 <ce>                by 11:00 tonight. _hunt_ will conduct
 <ce>         their meeting, and you will bring %g3 report to me.
 <ce>           Do not return without it, and do not arrive late
-<ce>              to the residence. Farewell, and good luck,
+<ce>              to the residence. Farewell, and good luck.
 
 QuestFail:  [1003]
 <ce>                     You were to arrive at _res_

@@ -17,6 +17,7 @@ JHKN105, KnightlyOrder, M, 0, 0, a quest to retrieve and deliver evidence of a m
 JHKN106, KnightlyOrder, M, 3, 0, a quest to retrieve a weapon from a murderer in a dungeon
 JHKN107, KnightlyOrder, M, 6, 1, a quest to resolve a mysterious murder spree near a local shop
 JHKN108, KnightlyOrder, M, 3, 1, a quest to stop an assassination attempt by orcs in a palace
+JHKN109, KnightlyOrder, M, 0, 0, a quest to destroy a wraith in a cave
 JHKN111, KnightlyOrder, M, 4, 1, a quest to find a missing knight
 JHKN113, KnightlyOrder, M, 1, 0, a quest to defend a townsperson from atronachs
 JHKN114, KnightlyOrder, M, 0, 1, a quest to resolve in-laws' debts
