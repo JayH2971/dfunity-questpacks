@@ -34,7 +34,7 @@ Message:  1012
 
 QBN:
 
-Item _reward_ gem
+Item _reward_ item class 3 subclass 14
 
 Clock _delay_ 00:10
 
