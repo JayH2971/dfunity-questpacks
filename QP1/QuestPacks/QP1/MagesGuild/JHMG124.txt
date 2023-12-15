@@ -1,0 +1,162 @@
+Quest: JHMG124
+DisplayName: Lab Cleanup
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>   The great %rt of %crn has outlawed the production, sale, trade, use, transportation,
+<ce>   or even possession of the forbidden substance known as sursum. Naturally, some idiot novice
+<ce>   of this guild hall became something of an aficionado of the stuff. The ruling class blames
+<ce>   us for "fomenting" the event, whatever that means, and requires us to clean the
+<ce>   building of the substance within 24 hours' time. The residence is not far from here.
+<ce>   The Guild is offering =reward_ gold for its total destruction. Would you take this one up, %pct?
+
+RefuseQuest:  [1001]
+<ce>   Oh, you must be too important for a task like this.
+
+AcceptQuest:  [1002]
+<ce>  Many thanks to you, %pct. Look for _res_, %di. The stuff should be obvious once you enter.
+<ce>  Destroy everything inside and all the tools for making it, and return here.
+<ce>  No doubt a simple task. Bring word to me before this time tomorrow.
+
+QuestFail:  [1003]
+<ce> You were to report the destruction of the drug lab in _res_ by now.
+
+QuestComplete:  [1004]
+<ce>  Keep ever dedicated to the work of the guild, %pct.
+
+Message:  1011
+<ce>  As _qgiver_ said, the evidence of sursum here is overwhelming.
+<ce>  Fumes waft through the air, and quickly envelop you. You could
+<ce>  attempt to clean it all up quickly if you felt you could withstand
+<ce>  the fumes, or slowly to make sure you're not overwhelmed.
+<ce>  Will you try to get it all done at once?
+<ce>  
+<ce>  (ATTRIBUTE CHECK: Endurance: difficulty medium)
+
+Message:  1012
+<ce>                 (ATTRIBUTE CHECK PASSED!)
+<ce>  
+<ce>  It takes some strength of will, but your constitution holds out.
+<ce>  You find every last beaker and stove, and crush them.
+<ce>  The cheap material breaks easily with every blow.
+<ce>  It hardly takes you a few minutes to be done with it all.
+
+Message:  1013
+<ce>                (ATTRIBUTE CHECK FAILED)
+<ce>  
+<ce>  You hurry to the task and try to break as much as you can, but there's
+<ce>  just too much to do. Your vision grows blurry and your mind slows.
+<ce>  You awaken a short while later, slumped against the wall. When you look
+<ce>  around, much of the equipment is gone. A note is left by your feet:
+<ce>  "Too slow, moron."
+<ce>  
+<ce>  It appears this opportunity has gone through your fingers.
+
+Message:  1014
+<ce>  You err on the side of caution and do the work slowly, taking frequent
+<ce>  breaks to prevent being overtaken by the airborne substances.
+<ce>  Just as you're finishing, you hear two voices. They're upset that
+<ce>  their equipment is destroyed, and want to make you suffer for it.
+
+Message:  1015
+<ce>  Ah, you failed at the task! That would explain the abundance
+<ce>  of reports concerning sursum-making equipment being seen around town.
+<ce>  Perhaps a bit of judgment on your part will avoid this kind of mistake
+<ce>  in the future, %pct. I will record the task completed, but offer
+<ce>  you no gold reward. We'll have enough trouble on our hands when
+<ce>  the %rt's envoys arrive to question us.
+
+Message:  1016
+<ce>  Distinguished work, %pct. The town guard were watching from outside,
+<ce>  and recorded your effort as satisfactory. The errant novice has already
+<ce>  been expelled, much to my delight. As for you, there's gold to be had.
+<ce>  Let's see, I'll count it out...
+
+
+Message:  1030
+%qdt:
+ __qgiver_ asked me to clean out a sursum lab
+in a house called _res_ in ___res_. I am to report
+the task done within 24 hours' time for =reward_
+gold pieces.
+
+Message:  1031
+%qdt:
+I was overcome by the sursum's airs and fell asleep,
+during which time the lab equipment was rescued
+by its owners. I have no choice but to report
+failure to _qgiver_.
+
+QBN:
+Item _reward_ gold range 150 to 250
+
+Person _qgiver_ group Questor male
+Person _mg_ faction The_Mages_Guild
+
+Place _res_ local house
+
+Clock _timer_ 1.00:00
+
+Foe _e1_ is Burglar
+Foe _e2_ is Rogue
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+    pc at _res_ do _inside_
+
+_inside_ task:
+    start task _begin_
+
+_begin_ task:
+    prompt 1011 yes _attempt_ no _flee_
+
+variable _attempt_
+
+_skilled_ task:
+	when attribute Endurance is at least 50
+
+_easywin_ task:
+	when _attempt_ and _skilled_
+	say 1012
+    start task _success_
+
+_bigfail_ task:
+	when _attempt_ and not _skilled_
+	say 1013
+    log 1031 step 0
+
+_flee_ task:
+    say 1014
+    create foe _e1_ every 0 minutes 1 times with 100% success
+    change foe _e1_ infighting true
+    create foe _e2_ every 0 minutes 1 times with 100% success
+    change foe _e2_ infighting true
+    start task _success_
+
+variable _success_
+
+_qgclicked_ task:
+	clicked npc _qgiver_
+
+_badending_ task:
+	when _bigfail_ and _qgclicked_
+    say 1015
+    change repute with _mg_ by -3
+    give pc nothing
+    end quest
+
+_goodending_ task:
+	when _success_ and _qgclicked_
+    say 1016
+    give pc _reward_
+    end quest
+
+_clearclick_ task:
+	when _qgclicked_ and not _attempt_
+	clear _qgclicked_ _clearclick_
+
+_timer_ task:
+	say 1003
+	end quest

@@ -32,5 +32,6 @@ JHMG119, MagesGuild, M, 2, 0, a quest to root out a necromancer
 JHMG121, MagesGuild, M, 95, 1, a quest to investigate an ancient lich
 JHMG122, MagesGuild, M, 8, 1, a quest to slay an immortal warrior
 JHMG123, MagesGuild, M, 1, 0, a quest to retrieve a confiscated gem
+JHMG124, MagesGuild, M, 3, 1, a quest to clean a drug lab
 JHMG203, MagesGuild, M, 4, 0, a quest to slay a necromancer in a residence
 JHMG222, MagesGuild, M, 2, 1, a quest to retrieve a trapped trinket
