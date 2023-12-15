@@ -110,16 +110,16 @@ _win_ task:
     end quest
 
 _selection1_ task:
-    pick one of _lose_ _lose_ _lose_ _lose_ _lose_ _lose_ _egg_ _lose_ _lose_ _lose_
+    pick one of _lose_ _egg_ _lose_ _lose_ _lose_
 
 _selection2_ task:
-    pick one of _lose_ _lose_ _egg_ _lose_ _lose_ _lose_ _lose_
+    pick one of _lose_ _lose_ _egg_ _lose_
 
 _selection3_ task:
-    pick one of _lose_ _lose_ _egg_ _lose_ _lose_
+    pick one of _lose_ _egg_ _lose_
 
 _selection4_ task:
-    pick one of _lose_ _lose_ _win_
+    pick one of _lose_ _win_
 
 _egg_ task:
-    pick one of _lose_ _lose_ _lose_ _lose_ _lose_ _win_ _lose_ _lose_ _lose_ _lose_
+    pick one of _lose_ _win_ _lose_ _lose_

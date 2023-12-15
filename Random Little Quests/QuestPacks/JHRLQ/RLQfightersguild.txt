@@ -15,13 +15,13 @@ Message:  1010
 <ce>  "Hold it!"
 <ce>  
 <ce>  A shrill voice calls out to you. You turn around and see
-<ce>  an hooded figure staring at you.
+<ce>  an hooded figure staring at you amid the pouring rain.
 <ce>  
 <ce>  "You, %ra! Are you one of those Fighters Guild people?"
 
 Message:  1011
 <ce>  "Worthless pieces of garbage! I was evicted from my
-<ce>  home because you couldn't even clean out the bats!
+<ce>  home because you people couldn't even clean out the bats!
 <ce>  Take this!"
 <ce>  
 <ce>  Whatever happened, you are now the target of

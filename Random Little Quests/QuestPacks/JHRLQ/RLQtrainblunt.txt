@@ -1,29 +1,28 @@
-Quest: RLQtrainlongblade
-DisplayName: Random Little Quest Long Blade Training
+Quest: RLQtrainblunt
+DisplayName: Random Little Quest Blunt Weapon Training
 -- Message panels
 QRC:
 
 QuestComplete:  [1004]
 <ce>               You step forward and present the money.
-<ce>             After counting out the coins, the armsmaster
-<ce>             smiles broadly and takes a fighting stance.
+<ce>             Under the peals of thunder overhead, the armsmaster
+<ce>             concentrates and takes a fighting stance.
 <ce>              You enjoy three hours of arduous practice,
 <ce>         with some villagers pausing to watch your sparring.
-<ce>              After the session ends, the weaponsmaster bows deeply
-<ce>            and thanks you for your patronage before heading home.
+<ce>              When session ends, the weaponsmaster bows to you and departs.
 
 Message:  1010
-<ce>              An elderly, but agile, weaponsmaster shows
-<ce>            some clever attacks and techniques nearby for
-<ce>         anyone interested in gaining skill with long blades.
+<ce>              A hulking weaponsmaster wields a large hammer,
+<ce>           showing some clever attacks and techniques nearby for
+<ce>         anyone interested in gaining skill with blunt weaponry.
 <ce>       For 250 gold, you can learn from him to fight better
 <ce>         for three hours. Do you purchase a session?
 <--->
-<ce>              An elderly, but agile, weaponsmaster shows
-<ce>            some clever attacks and techniques nearby for
-<ce>         anyone interested in gaining skill with long blades.
-<ce>          For 250 gold, you can learn from her for three hours
-<ce>            to fight better. Do you purchase a session?
+<ce>              A hulking weaponsmaster wields a large hammer,
+<ce>           showing some clever attacks and techniques nearby for
+<ce>         anyone interested in gaining skill with blunt weaponry.
+<ce>       For 250 gold, you can learn from her to fight better
+<ce>         for three hours. Do you purchase a session?
 
 Message:  1011
 <ce>         Though there is much to learn here, the lesson will
@@ -51,7 +50,7 @@ _payhim_ task:
     pay 250 money do _given_ otherwise do _nomoney_
 
 _given_ task:
-    train pc LongBlade
+    train pc BluntWeapon
     end quest
 
 _nomoney_ task:
