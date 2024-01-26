@@ -1,0 +1,106 @@
+Quest: UQN0B00Y04
+DisplayName: UQ Retrieve an Ingredient
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                       We need you to get a rare
+<ce>                       ingredient that is hidden
+<ce>                       away in a nearby dungeon.
+<ce>                        You will get a finder's
+<ce>                       fee of _gold_ gold pieces.
+<ce>                          Are you interested?
+                                     <--->
+<ce>                  One of our more brilliant students
+<ce>                    is absolutely mad for something
+<ce>                          called _ingredient_,
+<ce>                   which we haven't had much call for
+<ce>                   before. Would you, if it's not too
+<ce>                    much of a bother, scurry on over
+<ce>                     to this particular locale and
+<ce>                           grab some for us?
+
+RefuseQuest:  [1001]
+<ce>                     Humph. I hope the next guild
+<ce>                        member is more helpful.
+
+AcceptQuest:  [1002]
+<ce>                         An excellent attitude
+<ce>                         %pcf. You are looking
+<ce>                        for _ingredient_, which
+<ce>                      can be found in ___dungeon_.
+<ce>                     You have =traveltime_ days to
+<ce>                             bring it back.
+
+QuestComplete:  [1004]
+<ce>                        I suppose this will do.
+<ce>                       Couldn't you have brought
+<ce>                       back a fresher sample? The
+<ce>                        quality of guild members
+<ce>                       just isn't what it used to
+<ce>                         be. Well, here is your
+<ce>                          finder's fee, %pcf.
+
+RumorsPostfailure:  [1006]
+_qgiver_ has been complaining about the quality of Mages Guildmembers.
+
+QuestorPostsuccess:  [1008]
+Well, after getting that _ingredient_, how can I not be happy to see you?
+
+QuestorPostfailure:  [1009]
+<ce>                  We really needed that _ingredient_.
+<ce>                I guess we know better now than to trust
+<ce>                   you with any important assignment.
+
+QuestLogEntry:  [1010]
+%qdt:
+ I was asked to find a sample of
+ _ingredient_ that is
+ supposed to be hidden away
+ in ___dungeon_.
+ _qgiver_ of the Mages
+ Guild of ___qgiver_
+ gave me =traveltime_ days to get
+ it back to %g2.
+
+Message:  1040
+<ce>                   This looks like the _ingredient_
+<ce>                            _qgiver_ wanted.
+
+QuestTimeLapse:  [1045]
+<ce>                      You suddenly remember that
+<ce>                       _qgiver_ had asked you to
+<ce>                      bring him a _ingredient_ by
+<ce>                      today.  %g will no doubt be
+<ce>                             disappointed.
+
+QBN:
+Item _ingredient_ organs
+Item _gold_ gold range 100 to 200
+
+Person _qgiver_ group Questor male
+
+Place _dungeon_ remote dungeon5
+
+Clock _traveltime_ 00:00 0 flag 17 range 0 2
+
+
+--	Quest start-up:
+	place item _ingredient_ at _dungeon_ 
+	start timer _traveltime_ 
+	reveal _dungeon_ 
+	log 1010 step 0 
+
+_traveltime_ task:
+	make _ingredient_ permanent
+    say 1045 
+	end quest 
+
+_S.01_ task:
+	clicked item _ingredient_ 
+	say 1040 
+
+_questdone_ task:
+	toting _ingredient_ and _qgiver_ clicked 
+	give pc _gold_ 
+	end quest 

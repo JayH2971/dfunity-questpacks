@@ -1,0 +1,17 @@
+Quest: _TUTOR__
+-- Message panels
+QRC:
+
+QuestLogEntry:  [1010]
+<ce>   This hostile world is more than ready for you.
+<ce>   You will find no tutorial to aid you here...
+<ce>   
+<ce>   (Unleveled World activated.)
+
+
+QBN:
+
+--	Quest start-up:
+	say 1010 
+	start quest 977 977 
+	end quest 

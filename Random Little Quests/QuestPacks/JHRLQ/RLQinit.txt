@@ -186,7 +186,7 @@ _snowyday_ task:
     start task _stopevents_
 
 _snowydayevents_ task:
-    pick one of _axechop_ _snowmap_ _paysnowtaxes_ _climbingtraining_ _giantencounter_
+    pick one of _axechop_ _snowmap_ _paysnowtaxes_ _climbingtraining_ _giantencounter_ _traindestruction_
 
 _angrypick_ task:
     start quest RLQangrypick
@@ -433,6 +433,9 @@ _potlevitate_ task:
 
 _potstamina_ task:
     start quest RLQpotstamina
+
+_traindestruction_ task:
+    start quest RLQtraindestruction
 
 _timer_ task:
     start quest RLQinit
