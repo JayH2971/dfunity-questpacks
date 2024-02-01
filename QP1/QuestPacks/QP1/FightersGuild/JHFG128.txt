@@ -107,7 +107,7 @@ Place _home_ remote house
 Item _reward_ gold
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
-Clock _delay_ 00:05
+Clock _delay_ 00:15
 
 Foe _n1_ is Daedroth
 Foe _n2_ is Fire_daedra
