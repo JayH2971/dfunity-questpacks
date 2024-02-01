@@ -107,6 +107,7 @@ Place _home_ remote house
 Item _reward_ gold
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _delay_ 00:05
 
 Foe _n1_ is Daedroth
 Foe _n2_ is Fire_daedra
@@ -151,6 +152,10 @@ _slain3_ task:
 _victory_ task:
     when _slain1_ and _slain2_ and _slain3_
     say 1013
+    remove log step 0
+    start timer _delay_
+
+_delay_ task:
     end quest
 
 variable _inside_
