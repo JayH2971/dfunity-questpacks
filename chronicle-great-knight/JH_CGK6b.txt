@@ -40,7 +40,7 @@ Message:  1014
 
 Message:  1015
 %qdt:
- Popudax has given me a wand that will prevent Ganlas from casting any spells.
+ Popudax has given me a wand that will prevent Ganlas' body from resurrecting.
  I should use it at close range. It's time to return to ___res_.
 
 QBN:
