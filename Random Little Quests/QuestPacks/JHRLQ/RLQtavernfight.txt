@@ -74,7 +74,7 @@ _reject_ task:
     end quest
 
 _qualified_ task:
-    when skill Streetwise is at least 200
+    when skill Streetwise is at least 20
 
 _accept_ task:
     pc at _tavern_ do _inside_
