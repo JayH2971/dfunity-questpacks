@@ -1,0 +1,81 @@
+Quest: JHFG101
+DisplayName: Bandage Delivery
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>             Okay, got one here that's dead simple, and 
+<ce>   the pay is bad enough to match it. The trainer upstairs
+<ce>   is running out of bandages, and we need someone to get some
+<ce>   more. Doesn't matter where, just bandages in good shape.
+<ce>   You wanna grab this one?
+
+RefuseQuest:  [1001]
+<ce>           I don't blame you. Nobody's gonna get rich doing that.
+
+AcceptQuest:  [1002]
+<ce>                 Okay then, I'm a little surprised. But anyway,
+<ce>   it's real simple. Five bandages. General stores, pawn shops,
+<ce>   dead bandits, I don't care where they come from. We're gonna
+<ce>   run out in two days, so make sure you're back here before then.
+<ce>   The pay's lousy like I told you, but it'll get you points with us.
+<ce>   Sound worth it? Time will tell, I guess. Stay safe out there.
+
+QuestFail:  [1003]
+<ce>                _questgiver_ expected you to return to
+<ce>                ___questgiver_ with five bandages by now.
+
+QuestComplete:  [1004]
+<ce>               One two... five, yep, you got it. Nice job.
+<ce>     You know, it's little things like this that make us
+<ce>     trust you. When you're out there massacring daedra
+<ce>     and liches, remember this humble little guild hall, and
+<ce>     the good you've done us. Anyway, no more babbling.
+<ce>     Here's your hard-earned lucre.
+
+Message:  1010
+<ce>    You now have five bandages, deliverable to the Fighters Guild.
+
+Message:  1011
+<ce>    I don't see five bandages with you, partner. I can't give you the gold without 'em.
+
+Message:  1030
+ %qdt:
+__questgiver_ of ___questgiver_ needs five ordinary
+bandages before =timer_ days have passed. It doesn't
+matter where I get them from as long as they're usable.
+I was told I could find some in general stores and pawn shops.
+
+QBN:
+
+Person _questgiver_ group Questor male
+
+Item _reward_ gold range 25 to 40
+
+Clock _timer_ 2.00:00
+
+--   Quest start-up:
+   start timer _timer_
+   log 1030 step 0
+
+_got_ task:
+   player possesses 5 items class 9 subclass 249
+   say 1010
+
+_qgclicked_ task:
+   clicked npc _questgiver_
+
+_clearclick_ task:
+   when _qgclicked_ and not _got_
+   say 1011
+   clear _qgclicked_ _clearclick_
+
+_victory_ task:
+    when _qgclicked_ and _got_
+    player handsover 5 items class 9 subclass 249
+    give pc _reward_
+    end quest
+
+_timer_ task:
+   say 1003
+   end quest

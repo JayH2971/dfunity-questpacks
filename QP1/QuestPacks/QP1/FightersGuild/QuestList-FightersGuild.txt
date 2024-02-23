@@ -9,6 +9,7 @@
 
 schema: *name, group, membership, minReq, flag, notes
 
+JHFG101, FightersGuild, M, 0, 1, a quest to deliver bandages
 JHFG103, FightersGuild, M, 5, 0, a quest to slay a criminal in a dungeon
 JHFG103a, FightersGuild, P, 0, 0, consequences of FG003
 JHFG103b, FightersGuild, P, 0, 0, consequences of FG003
