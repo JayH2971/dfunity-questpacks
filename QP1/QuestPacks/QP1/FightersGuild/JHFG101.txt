@@ -61,6 +61,7 @@ Clock _timer_ 2.00:00
 _got_ task:
    player possesses 5 items class 9 subclass 249
    say 1010
+--uses templateindex. see Interkarma/daggerfall-unity/blob/master/Assets/Scripts/Game/Items/ItemEnums.cs
 
 _qgclicked_ task:
    clicked npc _questgiver_
