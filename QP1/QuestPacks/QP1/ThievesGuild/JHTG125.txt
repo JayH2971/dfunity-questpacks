@@ -1,0 +1,68 @@
+Quest: JHTG125
+DisplayName: The Cursed Tome
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  Got any heat on you, %pct? Any one out to get you, or
+<ce>  a mercenary wanting your head? If you do, don't take this next job.
+<ce>  It'll only be dangerous if you're wanted... or if you melt
+<ce>  under the sunlight or something.. Otherwise, it's a free
+<ce>  pile of gold for you. Want to do a simple delivery?
+
+RefuseQuest:  [1001]
+<ce>    Fine. Someone's gonna get rich from this.
+
+AcceptQuest:  [1002]
+<ce>  Here. Take this tome. And don't tell me I didn't warn you.
+<ce>  Until you hand it off to _person_ in ___place_,
+<ce>  you're gonna feel real bad. That's part of the risk,
+<ce>  but I'm sure =reward_ gold pieces is gonna wipe that frown
+<ce>  right off your face. Once this is over, anyway.
+<ce>  Get it over there before =timer_ days are up,
+<ce>  or else that book's gonna burn right up on you.
+
+QuestFail:  [1003]
+<ce>   _person_ expected the tome by now.
+
+QuestComplete:   [1004]
+<ce>  %oth, I wished I never had to handle one of these.
+<ce>  I've got a long night ahead of me. Money? Fine.
+<ce>  Take this. Leave me alone, I'm about to have a really bad headache.
+
+Message:  1030
+%qdt:
+  __questgiver_ in ___questgiver_ gave me
+ a cursed tome and told me to get it to _person_,
+ who's in ___place_. I don't know what's wrong with
+ the tome, but it causes real harm. I've got =timer_ days.
+
+QBN:
+Item _reward_ gold range 600 to 900
+Item _tome_ item class 10 subclass 12
+
+Person _questgiver_ group Questor male
+Person _person_ faction The_Thieves_Guild
+
+Place _place_ remote tavern
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    get item _tome_
+    place npc _person_ at _place_
+
+_holding_ task:
+    player possesses 1 items class 10 subclass 271
+    reduce player health by 20 every 1 seconds
+
+_pcgetsgold_ task:
+    toting _tome_ and _person_ clicked
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest

@@ -1,0 +1,88 @@
+Quest: JHMG125
+DisplayName: Amid the Beasts
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  We do have a request from a member of the archcouncil,
+<ce>  one that should not be undertaken lightly. The reward is
+<ce>  a magical item capable of protecting you with a barrier,
+<ce>  as well as several thousand gold. But this task will keep
+<ce>  you continually at the edge of death. Please choose wisely.
+
+RefuseQuest:  [1001]
+<ce>    Well, a hesitant %pct is better than a dead one.
+
+AcceptQuest:  [1002]
+<ce>  A cave called ___dung_ is the storehouse of an ancient
+<ce>  and powerful tome. It needs to be brought here for our study.
+<ce>  The great difficulty is that the discoverer of the tome,
+<ce>  mere weeks ago, told us that the cave is rigged to drain the
+<ce>  life right out of any person who enters it. I hope for your sake
+<ce>  that you are skilled in the invisibility magicks, for restoration
+<ce>  will do you no favors.
+<ce>  
+<ce>  If you can bring the tome here within =timer_ days, I will have
+<ce>  the reward set aside for you. Any longer than that, and I must
+<ce>  submit it to other, swifter applicants. Safe journey, %pct.
+
+QuestFail:  [1003]
+<ce>   __questgiver_ expected the tome from the cave by now.
+
+QuestComplete:   [1004]
+<ce>  Hmm, this tome is in poorer condition than I expected.
+<ce>  Only %god knows how long it was in there. Ah, but enough talk from me.
+<ce>  You want money, don't you? Lucre, of course, here it is. I have =gold_
+<ce>  gold pieces, which I give you directly. And see here this _reward_,
+<ce>  enchanted to protect your body in future escapades. Fine work, %pct.
+
+Message:  1010
+<ce>  You immediately sense the damaging force that __questgiver_ warned you about.
+<ce>  This cave will be fraught with danger because of it.
+
+Message:  1011
+<ce>  You have found the tome for the Mages Guild.
+
+Message:  1030
+%qdt:
+ A tome of great age and value is lying in ___dung_.
+ __questgiver_ of ___questgiver_ has sent me
+ to recover and deliver it within =timer_ days.
+ The cave will cause me some kind of harm while I am inside.
+
+QBN:
+Item _gold_ gold range 3000 to 4000
+Item _reward_ item class 4 subclass 15
+Item _tome_ item class 10 subclass 12
+
+Person _questgiver_ group Questor male
+
+Place _dung_ remote dungeon6
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    place item _tome_ at _dung_
+    pc at _dung_ do _inside_
+    reveal _dung_
+
+_inside_ task:
+    say 1010
+    reduce player health by 2 every 5 seconds
+
+_conv_ task:
+    clicked item _tome_
+    say 1011
+
+_pcgetsgold_ task:
+    toting _tome_ and _questgiver_ clicked
+    get item _gold_
+    make _gold_ permanent
+    give pc _reward_
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest

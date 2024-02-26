@@ -33,6 +33,8 @@ JHTG121, GeneralPopulace, M, 1, 1, a quest to pickpocket a paper from a chin-sca
 JHTG122, GeneralPopulace, M, 3, 1, a quest to pickpocket a magical item from the Mages Guild
 JHTG123, GeneralPopulace, M, 1, 0, a quest to retrieve drugs from a dungeon
 JHTG124, GeneralPopulace, M, 5, 1, a quest to protect Viljas' magical skull
+JHTG125, GeneralPopulace, M, 3, 1, a quest to deliver a cursed tome that drains life
+JHTG206, GeneralPopulace, M, 0, 0, a quest to steal research notes
 JHTGX00, GeneralPopulace, M, 6, 1, a quest invitation from The Crow
 JHTGX01, GeneralPopulace, P, 0, X, offered via JHTG10X
 JHTGX02, GeneralPopulace, P, 0, X, offered via JHTG11X
@@ -41,4 +43,3 @@ JHTGX04, GeneralPopulace, P, 0, X, offered via JHTG13X
 JHTGX05, GeneralPopulace, P, 0, X, offered via JHTG14X
 JHTGX06, GeneralPopulace, P, 0, X, offered via JHTG15X
 JHTGX07, GeneralPopulace, P, 0, X, offered via JHTG16X
-JHTG206, GeneralPopulace, M, 0, 0, a quest to steal research notes
