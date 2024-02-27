@@ -36,6 +36,33 @@ JHTG124, GeneralPopulace, M, 5, 1, a quest to protect Viljas' magical skull
 JHTG125, GeneralPopulace, M, 3, 1, a quest to deliver a cursed tome that drains life
 JHTG206, GeneralPopulace, M, 0, 0, a quest to steal research notes
 JHTGX00, GeneralPopulace, M, 6, 1, a quest invitation from The Crow
+JHTG101, GeneralPopulace, M, 2, 1, a quest to evade combat while getting a treasure
+JHTG102, GeneralPopulace, M, 1, 0, a quest to kidnap a child for ransom
+JHTG103, GeneralPopulace, M, 0, 0, a quest to take a land deed by force
+JHTG104, GeneralPopulace, M, 1, 0, a quest to steal a criminal confession
+JHTG105, GeneralPopulace, M, 0, 0, a quest to lift a guarded gem
+JHTG106, GeneralPopulace, M, 0, 1, a quest to get framed for someone else's theft
+JHTG107, GeneralPopulace, M, 1, X, a quest to persuade a ransom target
+JHTG108, GeneralPopulace, M, 2, 0, a quest to steal a gem belonging to the ruling family
+JHTG109, GeneralPopulace, M, 8, 0, an artifact quest to take a bag to a client
+JHTG110, GeneralPopulace, M, 4, 0, a quest to get a sealed bag from a trapped dungeon
+JHTG111, GeneralPopulace, M, 2, 1, a quest to bribe a servant to free a guild member
+JHTG112, GeneralPopulace, M, 1, 0, a quest to retrieve a sealed treasure from a dungeon
+JHTG113, GeneralPopulace, M, 9, 1, a capstone quest to evade combat
+JHTG114, GeneralPopulace, M, 3, 0, a quest to participate in a gang war
+JHTG115, GeneralPopulace, M, 0, 0, a small daily heist
+JHTG116, GeneralPopulace, M, 0, 0, a moderate daily heist
+JHTG117, GeneralPopulace, M, 0, 0, a large daily heist
+JHTG118, GeneralPopulace, M, 0, 1, a quest to kidnap a child from a tavern
+JHTG119, GeneralPopulace, M, 7, 1, a quest to open a trapped black box
+JHTG120, GeneralPopulace, M, 3, 1, a quest to open a noble's box in a tavern
+JHTG121, GeneralPopulace, M, 1, 1, a quest to pickpocket a paper from a chin-scarred man
+JHTG122, GeneralPopulace, M, 3, 1, a quest to pickpocket a magical item from the Mages Guild
+JHTG123, GeneralPopulace, M, 1, 0, a quest to retrieve drugs from a dungeon
+JHTG124, GeneralPopulace, M, 5, 1, a quest to protect Viljas' magical skull
+JHTG125, GeneralPopulace, M, 3, 1, a quest to deliver a cursed tome that drains life
+JHTG206, GeneralPopulace, M, 0, 0, a quest to steal research notes
+JHTGX00, GeneralPopulace, M, 6, 1, a quest invitation from The Crow
 JHTGX01, GeneralPopulace, P, 0, X, offered via JHTG10X
 JHTGX02, GeneralPopulace, P, 0, X, offered via JHTG11X
 JHTGX03, GeneralPopulace, P, 0, X, offered via JHTG12X
