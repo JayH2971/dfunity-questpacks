@@ -14,7 +14,7 @@ JHMG102, MagesGuild, M, 3, 1, a quest to convince a scholar to leave a dungeon v
 JHMG103, MagesGuild, M, 7, 1, a quest to take a book back from the Psijic Order
 JHMG104, MagesGuild, M, 5, 1, a quest to resolve a daedric mental battle
 JHMG105, MagesGuild, M, 4, 1, a quest to speak to a mage from the east
-JHMG106, MagesGuild, M, 1, 1, a quest to take an unidentifiable magical item to a scholar in a dungeon
+JHMG106, MagesGuild, M, 2, 1, a quest to take an unidentifiable magical item to a scholar in a dungeon
 JHMG107, MagesGuild, M, 2, 1, a quest to get teleported to a dungeon to find a criminal
 JHMG108, MagesGuild, M, 0, 0, a quest to retrieve a scholar's stolen notes
 JHMG109, MagesGuild, M, 0, 0, a quest to deliver a manuscript after certain days
