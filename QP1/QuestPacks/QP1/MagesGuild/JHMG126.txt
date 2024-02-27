@@ -1,0 +1,166 @@
+Quest: JHMG126
+DisplayName: The Missing Emerald
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>      In fact, I just recently lost an emerald that would have been
+<ce>    quite useful in an upcoming experiment. Quite untimely, to be honest.
+<ce>    What would you say to scrounging one up, from any given source?
+
+RefuseQuest:  [1001]
+<ce>           A shame. I'll go rustle up the apprentices to come help.
+
+AcceptQuest:  [1002]
+<ce>      You will? How delightful! Any emerald will do. So long as it's green,
+<ce>    and translucent, and useful for alchemy, you may bring it here for some
+<ce>    reasonable compensation. Does =reward_ gold pieces sound fair?
+<ce>    I would advise you not to buy one from the stores due to the cost,
+<ce>    but whatever your method of procurement will suffice.
+<ce>    I would really get this underway within a week's time, so
+<ce>    let your steps be swift, if you would, %pct.
+
+QuestFail:  [1003]
+<ce>                _questgiver_ expected you to return to
+<ce>                __questgiver_ with an emerald by now.
+
+QuestComplete:  [1004]
+<ce>      Ah, delightful! I must say, this is the kind of enthusiasm we
+<ce>    wish for at all levels of the guild. This reward is rather paltry,
+<ce>    I admit, but you'll be credited within the guild's records as having
+<ce>    served with distinction. Salutations to you, %pct.
+
+Message:  1010
+<ce>    You now have an emerald you can deliver to the Mages Guild.
+
+Message:  1011
+<ce>    Yes? Do you have an emerald you can give? Not yet, perhaps. I shall await your return.
+
+Message:  1012
+<ce>   "Hey there. You looking for an emerald?"
+<ce>   
+<ce>   Nearby is a hooded figure, leaning carelessly while looking at you
+<ce>   and holding an emerald aloft.
+<ce>   
+<ce>   "Seems old _questgiver_ at the Mages Guild lost one of these.
+<ce>   A real shame. I'd be happy to give this one up for 200 gold,
+<ce>   if you've got coins on you."
+<ce>   
+<ce>   Will you buy the emerald from this thief?
+
+Message:  1013
+<ce>   The thief shrugs. "I'll be around here a little longer, if you change your mind."
+
+Message:  1014
+<ce>   "I see your want, but not your wallet. I need 200 coins, no letters of credit."
+<ce>   The thief pockets the emerald. "I'll be here a little longer."
+
+Message:  1015
+<ce>   "Good deal. Thanks for helping the local economy out a bit."
+<ce>   
+<ce>   The thief pockets your money and ambles away.
+
+Message:  1016
+<ce>   "Nope, I need coins. Real money. 200. No fooling around."
+
+Message:  1017
+<ce>  "What in %god's name are you doing?! Shove off!"
+
+Message:  1030
+ %qdt:
+__questgiver_ of ___questgiver_ needs an emerald of any origin before
+=timer_ days have passed. I could get one from a shop, or find one through some other means.
+
+QBN:
+
+Person _questgiver_ group Questor male
+Person _tg_ faction The_Thieves_Guild
+
+Foe _thief_ is Thief
+
+Item _reward_ gold range 150 to 200
+Item _emerald_ emerald
+
+Clock _timer_ 7.00:00
+Clock _findthief_ 1:00 2.00:00
+
+--   Quest start-up:
+   start timer _timer_
+   start timer _findthief_
+   log 1030 step 0
+   pc at any magery set _inside_
+   hide npc _tg_
+
+variable _inside_
+variable _findthief_
+_encounterthief_ task:
+    when _findthief_ and not _inside_ and not _got_
+    prompt 1012 yes _paygold_ no _refuse_
+
+_refuse_ task:
+    say 1013
+    create foe _thief_ every 0 minutes 1 times with 100% success
+    restrain foe _thief_
+
+_paygold_ task:
+    pay 200 money do _purchase_ otherwise do _nomoney_
+
+_nomoney_ task:
+    say 1014
+    create foe _thief_ every 0 minutes 1 times with 100% success
+    restrain foe _thief_
+
+_purchase_ task:
+    clear _paygold_
+    get item _emerald_
+    make _emerald_ permanent
+    say 1015
+    remove foe _thief_
+
+_click_ task:
+    clicked foe _thief_
+
+_secondtry_ task:
+    when _click_ and not _inj_
+    start task _paygold2_
+    clear _click_ _secondtry_
+
+_paygold2_ task:
+    pay 200 money do _purchase_ otherwise do _nomoney2_
+
+_nomoney2_ task:
+    say 1016
+    clear _click_ _nomoney2_ _paygold2_
+
+_inj_ task:
+    injured _thief_ saying 1017
+    give item _emerald_ to _thief_
+    make _emerald_ permanent
+    change repute with _tg_ by -3
+
+_slain_ task:
+    killed _thief_
+    change repute with _tg_ by -7
+
+_got_ task:
+   player possesses 1 items class 14 subclass 1
+   say 1010
+--uses templateindex. see Interkarma/daggerfall-unity/blob/master/Assets/Scripts/Game/Items/ItemEnums.cs
+
+_qgclicked_ task:
+   clicked npc _questgiver_
+
+_clearclick_ task:
+   when _qgclicked_ and not _got_ and not _victory_
+   say 1011
+   clear _qgclicked_ _clearclick_
+
+_victory_ task:
+    when _qgclicked_ and _got_
+    player handsover 1 items class 14 subclass 1
+    give pc _reward_
+    end quest
+
+_timer_ task:
+   say 1003
+   end quest
