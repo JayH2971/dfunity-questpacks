@@ -49,7 +49,7 @@ QuestFail:  [1003]
 QuestComplete:  [1004]
 <ce>                  Oh, what a hero! _dummy_ will know
 <ce>                about your work and praise your name,
-<ce>                  once she's able to think straight.
+<ce>                  once %g1 is able to think straight.
 <ce>                You have truly saved a life this day.
 <ce>                Take this magnificent book, =reward_,
 <ce>         as my heartfelt thanks for protecting the innocent.
