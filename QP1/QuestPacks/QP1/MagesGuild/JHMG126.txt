@@ -137,6 +137,7 @@ _inj_ task:
     give item _emerald_ to _thief_
     make _emerald_ permanent
     change repute with _tg_ by -3
+    change foe _thief_ infighting true
 
 _slain_ task:
     killed _thief_
