@@ -113,7 +113,7 @@ Message:  1030
 
 QBN:
 Item _tri_ trinket
-Item _pay_ gold range 1100 to 1700
+Item _pay_ gold range 4100 to 5700
 Item _mclo_ mens_clothing
 Item _fclo_ womens_robe
 Item _ring_ ring
