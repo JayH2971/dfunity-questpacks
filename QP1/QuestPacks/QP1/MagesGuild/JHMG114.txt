@@ -76,7 +76,7 @@ Message:  1013
 <ce>                for the last few who attempted to help
 <ce>                      in matters of vampirism."
 <ce>
-<ce>          You hear %g3 voice shakes. Apparently %g3 troubled
+<ce>          You hear %g3 voice shake. Apparently %g3 troubled
 <ce>             demeanor is the result of experience rather
 <ce>                          than temperament.
 
@@ -88,14 +88,11 @@ Message:  1014
 Message:  1015
 <ce>                      _schol_ titters nervously.
 <ce>
-<ce>                   "It's gone? Oh, drat. All I can
-<ce>                   think of is to ask around to see
-<ce>                   if any rumors abound concerning
-<ce>               vampires in the region. I lack any more
-<ce>                  efficacious idea than that. I will
-<ce>                 get to it right away and inform you
-<ce>                   if I learn more. %god will that
-<ce>                  they have greater purpose for that
+<ce>                   "It's gone? Oh, drat. Umm...
+<ce>                 What do we do now? We can't just
+<ce>           leave things like this... But there's nothing left!
+<ce>       I will start talking to certain friends of mine and inform you
+<ce>       if I learn more. %god will that they have greater purpose for that
 <ce>                     report than to destroy it."
 <ce>
 <ce>               Taking a deep breath, %g1 stumbles away.
@@ -133,10 +130,8 @@ Message:  1032
  We were waylaid by vampires
  in _res_, and the
  report has gone missing.
- _schol_ suggested we ask
- among the townspeople to
- know where vampires congregate
- in ____res_.
+ _schol_ intends to find out more,
+ and will tell me if anything turns up.
 
 Message:  1050
 <ce>              A scraggly-looking page with flowing robes
