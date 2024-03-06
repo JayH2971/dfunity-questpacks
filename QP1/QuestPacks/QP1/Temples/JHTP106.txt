@@ -66,7 +66,7 @@ Message:  1028
 <ce>
 <ce>           "Don't you 'sweetheart' me! Acting nice in front
 <ce>            of a complete stranger, that is just like you!
-<ce>              Why don't you ask %g2self what the temple
+<ce>              Why don't you ask %pg2 what the temple
 <ce>            does to people who cheat on their spouse with
 <ce>                   one of the locals at _tavern_?!"
 <ce>
