@@ -189,7 +189,7 @@ Place _vampres_ remote house
 
 Clock _failsafe_ 60.00:00
 Clock _scholdead_ 00:05
-Clock _lettersend_ 6.00:00 9.00:00
+Clock _lettersend_ 4.00:00 6.00:00
 
 Foe _vamp_ is Vampire
 Foe _vamp2_ is Vampire
