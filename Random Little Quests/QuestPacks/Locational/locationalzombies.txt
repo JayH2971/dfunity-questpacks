@@ -1,5 +1,5 @@
 Quest: locationalzombies
-DisplayName: Locational Zombies from QP1
+DisplayName: Locational Zombies from Random Little Quests
 -- Message panels
 QRC:
 

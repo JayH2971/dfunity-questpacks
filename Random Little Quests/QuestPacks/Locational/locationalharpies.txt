@@ -1,5 +1,5 @@
 Quest: locationalharpies
-DisplayName: Locational Harpies from QP1
+DisplayName: Locational Harpies from Random Little Quests
 -- Message panels
 QRC:
 

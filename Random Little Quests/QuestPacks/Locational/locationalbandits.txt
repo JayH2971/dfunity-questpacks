@@ -1,5 +1,5 @@
 Quest: locationalbandits
-DisplayName: Locational Bandits from QP1
+DisplayName: Locational Bandits from Random Little Quests
 -- Message panels
 QRC:
 

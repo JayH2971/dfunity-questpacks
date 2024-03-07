@@ -1,5 +1,5 @@
 Quest: locationalvampires
-DisplayName: Locational Vampires from QP1
+DisplayName: Locational Vampires from Random Little Quests
 -- Message panels
 QRC:
 

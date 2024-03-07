@@ -1,5 +1,5 @@
 Quest: locationalrats
-DisplayName: Locational Rats from QP1
+DisplayName: Locational Rats from Random Little Quests
 -- Message panels
 QRC:
 

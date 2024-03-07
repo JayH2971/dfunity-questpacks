@@ -1,5 +1,5 @@
 Quest: locationalghosts
-DisplayName: Locational Ghosts from QP1
+DisplayName: Locational Ghosts from Random Little Quests
 -- Message panels
 QRC:
 

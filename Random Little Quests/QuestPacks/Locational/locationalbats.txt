@@ -1,5 +1,5 @@
 Quest: locationalbats
-DisplayName: Locational Bats from QP1
+DisplayName: Locational Bats from Random Little Quests
 -- Message panels
 QRC:
 

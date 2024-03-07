@@ -1,5 +1,5 @@
 Quest: locationalorcs
-DisplayName: Locational Orcs from QP1
+DisplayName: Locational Orcs from Random Little Quests
 -- Message panels
 QRC:
 

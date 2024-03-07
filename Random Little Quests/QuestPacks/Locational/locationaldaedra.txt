@@ -1,5 +1,5 @@
 Quest: locationaldaedra
-DisplayName: Locational Daedra from QP1
+DisplayName: Locational Daedra from Random Little Quests
 -- Message panels
 QRC:
 

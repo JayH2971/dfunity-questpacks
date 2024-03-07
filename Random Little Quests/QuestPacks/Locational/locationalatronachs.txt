@@ -1,5 +1,5 @@
 Quest: locationalatronachs
-DisplayName: Locational Atronachs from QP1
+DisplayName: Locational Atronachs from Random Little Quests
 -- Message panels
 QRC:
 
