@@ -153,7 +153,7 @@ Message:  1019
 <ce>          I will be able to. The gold you just paid me will
 <ce>    cover the cost of all ingredients for my cocktail except one,
 <ce>       and that, because you cannot buy it! There's a supply of
-<ce>     snake venom in _dungeon_ that is of exquisite quality, yes,
+<ce>     snake venom in ___dungeon_ that is of exquisite quality, yes,
 <ce>               very necessary for the effect you seek.
 <ce>             I cannot go for it myself due to commitments
 <ce>       I must fulfill, but if you bring it, I shall create the
