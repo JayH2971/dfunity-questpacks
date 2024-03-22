@@ -37,7 +37,7 @@ QuestComplete:  [1004]
 Message:  1011
 <ce>           You find a mostly-devoured body here, with signs
 <ce>          of death suggesting several days, perhaps a week,
-<ce>               of time from decedence to your arrival.
+<ce>               of time from death to your arrival.
 <ce>            You take time to memorize the youth's features
 <ce>                 and consider the cause of his death.
 <ce>             Then you dispose of the body appropriately.

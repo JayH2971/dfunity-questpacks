@@ -18,7 +18,7 @@ AcceptQuest:  [1002]
 <ce>                     All right. The kid's name is
 <ce>              _kid_. Every day %g3 parents leave %g2 in
 <ce>                  _tavern_ while they work, and then
-<ce>             a relative comes and picks %g3 up later on.
+<ce>             a relative comes and picks %g2 up later on.
 <ce>               Whatever excuse you wanna come up with,
 <ce>            that's your job, but you need to get this kid
 <ce>                   out of the tavern and into _res_
