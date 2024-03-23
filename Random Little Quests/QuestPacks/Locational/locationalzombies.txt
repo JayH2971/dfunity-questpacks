@@ -34,7 +34,7 @@ Message:  1010
 <ce> Someone has posted a warning outside ___city_.
 <ce> 
 <ce> "Beware of zombies! Do not venture out at night!
-<ce> The %rt will consults even now with priests for a solution.
+<ce> The %rt will consult even now with priests for a solution.
 <ce> Travel in groups at night or stay indoors!"
 <--->
 <ce> You see someone has posted a warning outside ___city_.
