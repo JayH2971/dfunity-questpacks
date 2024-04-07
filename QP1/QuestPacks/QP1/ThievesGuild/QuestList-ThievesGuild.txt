@@ -26,7 +26,7 @@ JHTG114, GeneralPopulace, M, 3, 0, a quest to participate in a gang war
 JHTG115, GeneralPopulace, M, 0, 0, a small daily heist
 JHTG116, GeneralPopulace, M, 0, 0, a moderate daily heist
 JHTG117, GeneralPopulace, M, 0, 0, a large daily heist
-JHTG118, GeneralPopulace, M, 0, 1, a quest to kidnap a child from a tavern
+JHTG118, GeneralPopulace, M, 1, 1, a quest to kidnap a child from a tavern
 JHTG119, GeneralPopulace, M, 7, 1, a quest to open a trapped black box
 JHTG120, GeneralPopulace, M, 3, 1, a quest to open a noble's box in a tavern
 JHTG121, GeneralPopulace, M, 1, 1, a quest to pickpocket a paper from a chin-scarred man

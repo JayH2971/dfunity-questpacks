@@ -47,11 +47,10 @@ QuestComplete:  [1004]
 <ce>           fields. Combat in general is something of a weak
 <ce>            spot for us. We would enjoy counting you among
 <ce>       our allies. If that sounds agreeable, perhaps someday we
-<ce>         could send you occasional missives according to our
-<ce>            needs. I assure you we will compensate you for
-<ce>           the work we do together. Oh, the things we could
-<ce>          accomplish with your skill! But for now, farewell.
-<ce>           Thank you for listening to me with such respect.
+<ce>         could seek you out according to our needs.
+<ce>             Oh, the things we could accomplish with your skill!
+<ce>           But for now, farewell.
+<ce>           Thank you for listening to me.
 
 Message:  1011
 <ce>        "Thank you for coming. Please, tell me your full name.
@@ -149,7 +148,7 @@ Message:  1050
 <ce>                leave your carcass nailed to a wall!"
 
 QBN:
-Item _reward_ gold range 1000 to 1000
+Item _reward_ gold range 3000 to 4000
 
 Place _res_ local house
 
@@ -189,10 +188,6 @@ _begin_ task:
 
 _f0_ task:
        hide npc _pers_
--       start task _f_
--
--_f_ task:
--       create foe _rat_ every 0 minutes 1 times with 100% success
        place foe _rat_ at _res_
        change foe _rat_ infighting true
 

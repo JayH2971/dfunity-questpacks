@@ -27,7 +27,7 @@ QuestFail:  [1003]
 
 QuestComplete:  [1004]
 <ce>               Ah, got the money, have you? Reliable as
-<ce>         ever, the Fighters Guild is. Take a bit of the pot.
+<ce>         ever, the Fighters Guild is. Take a bit of our recent haul.
 <ce>
 <ce>                 By the way, the Thieves Guild prizes
 <ce>              people who show discretion. Remember that.
@@ -57,7 +57,7 @@ Message:  1011
 
 Message:  1012
 <ce>              You decline, and she cries out mournfully,
-<ce>                 hobbling off into another direction.
+<ce>                 hobbling off in another direction.
 <ce>
 <ce>               You need to deliver this money to _res_.
 
@@ -84,7 +84,7 @@ Message:  1030
  I have 24 hours to do it.
 
 QBN:
-Item _reward_ gold range 20 to 50
+Item _reward_ item class 2 subclass 1
 Item _sack_ small_sack
 
 Person _qgiver_ group Questor male
@@ -100,6 +100,7 @@ Clock _timer_ 1.00:00
     pc at any fighters do _inside_
     get item _sack_
     place npc _pers_ at _res_
+    update-quest-item _reward_ set-material Dwarven
 
 variable _inside_
 

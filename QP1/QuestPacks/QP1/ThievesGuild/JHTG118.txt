@@ -106,7 +106,7 @@ Place _res_ local house
 Clock _timer_ 1.00:00
 Clock _delay_ 0:05
 
-Item _reward_ gold range 201 to 399
+Item _reward_ gold range 401 to 599
 
 --	Quest start-up:
     start timer _timer_

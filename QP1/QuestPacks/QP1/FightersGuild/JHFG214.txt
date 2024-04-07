@@ -28,9 +28,8 @@ QuestFail:  [1003]
 <ce>                   the zombie's death have expired.
 
 QuestComplete:  [1004]
-<ce>         Well done! Those things scare most people to death.
-<ce>        You've got a future with us, I think. Let me take back
-<ce>                 that talisman, and here's your gold.
+<ce>  Here you go then. Silver will knock down any skeleton suckers
+<ce>  you face. Believe it!
 
 RumorsDuringQuest:  [1005]
 Someone hatched a harpy around ___house_, but no one can find it.
@@ -53,8 +52,17 @@ Message:  1011
 <ce>                The zombie is dead, and you are alive.
 <ce>                Time to return to the Fighters Guild.
 
+Message:  1012
+<ce>         Well done! Those things scare most people to death.
+<ce>        You've got a future with us, I think. Let me take back
+<ce>                 that talisman. Now, are you more the kind to fight with
+<ce>                     a mace, or with a longsword?
+<ce>     
+<ce>     (YES: Mace; NO: Longsword)
+
 QBN:
-Item _reward_ gold range 101 to 199
+Item _reward1_ item class 3 subclass 7
+Item _reward2_ item class 3 subclass 11
 Item _tali_ talisman
 
 Person _qgiver_ group Questor male
@@ -72,10 +80,11 @@ Foe _enemy_ is Zombie
     get item _tali_
     _tali_ used do _halt_
     change foe _enemy_ infighting true
+    update-quest-item _reward1_ set-material Silver
+    update-quest-item _reward2_ set-material Silver
 
 _halt_ task:
     restrain foe _enemy_
-    clear _halt_
 
 _qgclicked_ task:
     clicked npc _qgiver_
@@ -87,7 +96,14 @@ _clearclick_ task:
 _pcgetsgold_ task:
     when _qgclicked_ and _slain_
     take _tali_ from pc
-    give pc _reward_
+    prompt 1012 yes _mace_ no _sword_
+
+_mace_ task:
+    give pc _reward2_
+    end quest
+
+_sword_ task:
+    give pc _reward1_
     end quest
 
 _slain_ task:

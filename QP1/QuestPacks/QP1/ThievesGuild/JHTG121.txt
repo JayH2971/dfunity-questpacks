@@ -20,6 +20,7 @@ AcceptQuest:  [1002]
 <ce>  a piece of paper with some important information on it.
 <ce>  What that is, you don't need to know.
 <ce>  Get it here before one day's up.
+<ce>  There's =gold_ gold riding on this.
 
 QuestFail:  [1003]
 <ce>         The Thieves Guild needed you to steal and
@@ -75,9 +76,10 @@ is in _tav_, holding a paper of worth
 to the Thieves Guild. I need to liberate
 it and deliver it to _qgiver_ here
 in ___tav_ before one day passes.
+My reward will be =gold_ gold pieces.
 
 QBN:
-Item _gold_ gold range 150 to 200
+Item _gold_ gold range 450 to 600
 Item _letter_ letter used 1011
 
 Place _tav_ local tavern
@@ -119,7 +121,7 @@ _bigfail_ task:
     say 1012
     remove log step 0
     stop timer _timer_
-    reduce player health by 5
+    reduce player health by 10
 
 _outside_ task:
     when _bigfail_ and not _inside_
