@@ -109,7 +109,7 @@ Message:  1030
  help open it.
 
 QBN:
-Item _reward_ gold range 4400 to 6000
+Item _reward_ gold range 7400 to 8000
 
 Place _dungeon_ remote dungeon6
 

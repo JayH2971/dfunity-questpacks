@@ -78,7 +78,7 @@ QBN:
 
 Person _qgiver_ group Questor male
 
-Item _reward_ gold range 350 to 400
+Item _reward_ gold range 600 to 850
 Item _drug_ drug
 
 Foe _enemy_ is Knight

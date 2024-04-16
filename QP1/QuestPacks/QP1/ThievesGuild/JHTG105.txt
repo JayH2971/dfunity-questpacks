@@ -58,7 +58,7 @@ QBN:
 Person _questgiver_ group Questor male
 Person _dummyfg_ faction The_Fighters_Guild
 
-Item _reward_ gold
+Item _reward_ gold range 200 to 299
 Item _gem_ gem
 
 Place _res_ remote house

@@ -26,7 +26,7 @@ AcceptQuest:  [1002]
 <ce>                   crypt, place called ___mondung_.
 <ce>             The spell won't last forever, so get on back
 <ce>             here in =timer_ days with the chest in hand.
-<ce>              You'll be getting this enchanted _reward_
+<ce>              You'll be getting =reward_ gold
 <ce>                    if you do it. Take care now."
 
 QuestFail:  [1003]
@@ -37,7 +37,7 @@ QuestComplete:  [1004]
 <ce>          That was a thrill to watch. A bunch of us gathered
 <ce>             around and shared some mead, made some bets.
 <ce>                Wish we could do it more often. Here's
-<ce>               your _reward_. Hope it serves you well.
+<ce>               your gold. Hope it serves you well.
 
 QuestLogEntry:  [1010]
 %qdt:
@@ -61,7 +61,7 @@ Message:  1013
 <ce>          You can already hear the faint chittering of bats.
 
 QBN:
-Item _reward_ magic_item
+Item _reward_ gold range 2300 to 3000
 Item _chest_ item class 1 subclass 10
 
 Person _questgiver_ group Questor male

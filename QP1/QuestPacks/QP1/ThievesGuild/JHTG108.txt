@@ -7,7 +7,7 @@ QuestorOffer:  [1000]
 <ce> We need a good thief. Or maybe just a tough one.
 <ce> There's a gem over in ___place_ that
 <ce> belongs to some relative of the %t. We're paying
-<ce> an enchanted =reward_ in exchange for bringing it
+<ce> precisely =reward_ gold in exchange for bringing it
 <ce> back in =timer_ days. You want in?
 
 RefuseQuest:  [1001]
@@ -25,7 +25,7 @@ QuestFail:  [1003]
 
 QuestComplete:  [1004]
 <ce> So tell me how it went. Yeah, you look like you've been
-<ce> through a lot. I won't ask any more. Take your _reward_.
+<ce> through a lot. I won't ask any more. Take your gold.
 
 Message:  1020
 <ce> So soon as you touch it, the _gem_ emits
@@ -45,7 +45,7 @@ QBN:
 Person _questgiver_ group Questor male
 
 Item _gem_ gem
-Item _reward_ magic_item
+Item _reward_ gold range 3500 to 4000
 
 Place _place_ remote tavern
 

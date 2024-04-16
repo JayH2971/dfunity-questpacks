@@ -95,7 +95,8 @@ Message:  1016
 <ce>  They'll be hearing about you and your kindness."
 
 QBN:
-Item _reward_ gold range 300 to 400
+Item _reward_ gold range 800 to 1000
+Item _bow_ item class 3 subclass 17
 
 Person _woman_ faction The_Sisters_of_Kykos female
 Person _merch_ faction The_Merchants
@@ -113,7 +114,10 @@ Foe _enemy_ is Nightblade
 	log 1010 step 0
 	place foe _enemy_ at _res_
 	change foe _enemy_ infighting true
+	give item _bow_ to _enemy_
     pc at _res_ do _inside_
+    update-quest-item _bow_ set-material Mithril
+	make _bow_ permanent
 
 _will_ task:
 	when attribute Agility is at least 35
@@ -156,6 +160,7 @@ _accept_ task:
 _refuse_ task:
     say 1016
     change repute with _merch_ by +10
+	legal repute +10
     give pc nothing
     end quest
 

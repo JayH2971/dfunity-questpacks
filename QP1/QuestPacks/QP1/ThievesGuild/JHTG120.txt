@@ -97,7 +97,7 @@ Message:  1030
  24 hours to open it up.
 
 QBN:
-Item _gold_ gold range 500 to 700
+Item _gold_ gold range 1200 to 1400
 Item _reward_ magic_item
 
 Place _tav_ local tavern

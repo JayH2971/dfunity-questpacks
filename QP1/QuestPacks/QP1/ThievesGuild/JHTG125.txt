@@ -38,7 +38,7 @@ Message:  1030
  the tome, but it causes real harm. I've got =timer_ days.
 
 QBN:
-Item _reward_ gold range 600 to 900
+Item _reward_ gold range 1600 to 1900
 Item _tome_ item class 10 subclass 12
 
 Person _questgiver_ group Questor male

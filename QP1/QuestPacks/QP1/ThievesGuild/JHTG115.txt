@@ -98,7 +98,7 @@ Message:  1015
 
 QBN:
 Item _item_ item class 1 subclass 8
-Item _reward_ gold range 150 to 275
+Item _reward_ gold range 300 to 475
 
 Place _house_ local house
 

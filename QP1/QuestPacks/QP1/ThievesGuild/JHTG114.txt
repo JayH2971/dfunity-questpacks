@@ -75,7 +75,7 @@ Place _templehome_ remote templehome
 Clock _timer_ 180.00:00
 Clock _battle_ 1.00:00
 Clock _delay_ 00:01
-Clock _afterbattle_ 1:00
+Clock _afterbattle_ 2:00
 
 Foe _arch_ is Rogue
 Foe _spells_ is Spellsword

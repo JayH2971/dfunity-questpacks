@@ -137,7 +137,7 @@ Person _qgiver_ group Questor male
 Person _pers_ faction The_Thieves_Guild male
 Person _vilj_ faction The_Thieves_Guild male
 
-Item _reward_ magic_item
+Item _reward_ gold range 2500 to 3100
 
 Foe _enemy1_ is Knight
 Foe _enemy2_ is Sabretooth_tiger

@@ -69,9 +69,10 @@ Message:  1014
 <ce>                         (SKILL CHECK PASSED)
 <ce>
 <ce>              You concentrate and try to read the forces
-<ce>            at work. You perceive enough to see what keeps
-<ce>        the enchantment going, and cast a spell to disrupt it.
+<ce>            at work. You see the source of necromantic magic
+<ce>           a few meters away, and cast a spell to disrupt it.
 <ce>       Once the cycle fails to renew itself, the magick stops.
+<ce>                  You can now return for your reward.
 
 Message:  1015
 <ce>                         (SKILL CHECK FAILED)
@@ -90,7 +91,7 @@ Message:  1015
 <ce>                      has gained a complication.
 
 QBN:
-Item _reward_ gold range 300 to 500
+Item _reward_ gold range 600 to 700
 
 Place _cemetery_ remote graveyard
 

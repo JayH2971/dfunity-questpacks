@@ -85,7 +85,7 @@ Place _res_ remote house
 Clock _timer_ 30.00:00
 Clock _found_ 00:04 00:09
 
-Item _reward_ gold range 201 to 399
+Item _reward_ gold range 301 to 499
 
 Foe _enemy_ is Knight
 
@@ -105,7 +105,7 @@ variable _found_
 _combat_ task:
 	when _ires_ and _found_
 	say 1025
-	create foe _enemy_ every 0 minutes 1 times with 100% success
+	create foe _enemy_ every 0 minutes 2 times with 100% success
 
 _kclicked_ task:
 	clicked npc _kid_

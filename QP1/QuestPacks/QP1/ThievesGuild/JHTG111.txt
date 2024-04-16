@@ -102,7 +102,7 @@ Person _questgiver_ group Questor male
 Person _kni_ faction Random_Knight
 
 Item _gem_ gem
-Item _reward_ gold
+Item _reward_ gold range 3600 to 4100
 
 Place _knitown_ remote house
 Place _jewel_ remote jewelryshop

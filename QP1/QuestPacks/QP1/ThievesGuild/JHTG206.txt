@@ -51,7 +51,7 @@ Person _questgiver_ group Questor male
 Person _dummymg_ faction The_Mages_Guild
 Person _dummy_ group Local_3.1
 
-Item _reward_ gold
+Item _reward_ gold range 150 to 200
 Item _notes_ letter
 
 Place _res_ remote random

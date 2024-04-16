@@ -36,20 +36,26 @@ QuestFail:  [1003]
 <ce>                ___questgiver_ with the _pick_ by now.
 
 QuestComplete:  [1004]
+<ce>  Here you go then.
+<ce>  Give those vultures something to remember if you see 'em again.
+
+RumorsDuringQuest:  [1005]
+Some moron bard attacked the %t in open court this week, they say.
+
+Message:  1011
 <ce>               This again? %oth. Hey, I'm really sorry
 <ce>           about this. We told the %t and everyone's doing
 <ce>             everything they can to find who's behind it.
 <ce>       But look, I'm not gonna let you walk away empty-handed.
 <ce>             Keep that _pick_ you got from them and sell
-<ce>           it if you want, and I'll give you =reward_ gold
-<ce>               out of my own pocket. It's not that much
-<ce>            but it's literally all I've got left over from
-<ce>               last week. Just know that we appreciate
-<ce>               how there are members like you watching
-<ce>                       out for the rest of us.
-
-RumorsDuringQuest:  [1005]
-Some moron bard attacked the %t in open court this week, they say.
+<ce>           it if you want, and I'll give you some equipment
+<ce>                  that got abandoned here last month.
+<ce>             Just know that we appreciate how there are
+<ce>             members like you watching out for the rest of us.
+<ce>   
+<ce>              Now, you want a two-handed axe or a claymore?
+<ce>   
+<ce>                   (YES: Axe, NO: Claymore)
 
 Message:  1020
 <ce>                      You hear a faint snicker.
@@ -90,7 +96,10 @@ Person _questgiver_ group Questor male
 Person _culp_ group Local_3.0
 
 Item _pick_ mineral
-Item _reward_ gold range 60 to 140
+Item _reward1_ item class 3 subclass 9
+Item _reward2_ item class 3 subclass 15
+Item _helm_ item class 2 subclass 5
+
 Item _bigsum_ gold range 1235 to 1399
 Item _letter_ letter used 1025
 
@@ -106,12 +115,19 @@ Foe _perp_ is Nightblade
    log 1030 step 0
    place item _pick_ at _res_
    give item _letter_ to _perp_
+   update-quest-item _reward1_ set-material Dwarven
+   update-quest-item _reward2_ set-material Dwarven
+   update-quest-item _helm_ set-material Elven
 
 _got_ task:
    clicked item _pick_
    say 1020
    create foe _enemy_ every 0 minutes 1 times with 100% success
    create foe _perp_ every 0 minutes 1 times with 20% success
+   cast Shield spell on _perp_
+   cast Troll's_Blood spell on _perp_
+   give item _helm_ to _perp_
+   make _helm_ permanent
 
 _infight_ task:
    daily from 0:00 to 23:59
@@ -127,8 +143,15 @@ _slain_ task:
 _victory_ task:
    when _qgclicked_ and _got_
    make _pick_ permanent
-   give pc _reward_
-   end quest
+   prompt 1011 yes _axe_ no _sword_
+
+_axe_ task:
+    give pc _reward2_
+    end quest
+
+_sword_ task:
+    give pc _reward1_
+    end quest
 
 _qgclicked_ task:
    clicked npc _questgiver_

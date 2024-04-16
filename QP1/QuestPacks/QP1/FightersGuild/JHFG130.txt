@@ -27,7 +27,7 @@ AcceptQuest:  [1002]
 QuestFail:  [1003]
 
 QuestComplete:  [1004]
-<ce>                      You take your gold reward.
+<ce>                      You take your reward.
 
 RumorsDuringQuest:  [1005]
 Lots of werewolves been out and about in the night.
@@ -64,7 +64,7 @@ Message:  1014
 <ce>                  _fighter_ sighs. "I'm glad you saw
 <ce>          things my way. Monsters like this shouldn't exist.
 <ce>          I'll have to come back here with my cart so we can
-<ce>          start looting this place. Here, take your money."
+<ce>          start looting this place. Here, take this from the beast."
 
 Message:  1015
 <ce>     The vampire bows. "Your respect for the dead is commendable.
@@ -90,6 +90,7 @@ Message:  1018
 <ce>              I didn't want to tell the guild the truth,
 <ce>               so I made up stuff about a shapeshifter.
 <ce>                          Now stop talking."
+<ce>
 <ce>          Then %g1 shouts at the vampire, "You will die now,
 <ce>                         as my friends died!"
 <ce>
@@ -108,12 +109,13 @@ Message:  1030
  get there in =timer_ days.
 
 QBN:
-Item _reward_ gold range 300 to 500
+Item _reward_ gold range 500 to 600
+Item _dagger_ item class 3 subclass 1
+Item _sword_ item class 3 subclass 8
 
 Place _cemetery_ remote graveyard
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
-Clock _delay_ 4:00
 
 Person _fighter_ group Resident1
 Person _questgiver_ group Questor
@@ -136,6 +138,8 @@ Foe _vmp_ is Vampire
     log 1030 step 0
     add _fighter_ face
     reveal _cemetery_
+    update-quest-item _dagger_ set-material Ebony
+    update-quest-item _sword_ set-material Silver
 
 _daytime_ task:
     daily from 6:00 to 18:00
@@ -147,7 +151,7 @@ _notyet_ task:
     say 1010
 
 _nowspawn_ task:
-    when _inside_ and not _daytime_
+    when _inside_ and not _daytime_ and not _endfight_
     say 1011
     prompt 1018 yes _helpfight_ no _helpvamp_
     create foe _fgt_ every 0 minutes 1 times with 100% success
@@ -155,21 +159,25 @@ _nowspawn_ task:
     change foe _fgt_ infighting true
     change foe _vmp_ infighting true
     drop _fighter_ face
+    give item _dagger_ to _vmp_
+    give item _sword_ to _fgt_
+    make _dagger_ permanent
+    make _sword_ permanent
 
 _helpfight_ task:
     say 1013
-    cast Shield spell on _fgt_
-    cast Orc_Strength spell on _fgt_
-    cast Feet_of_Notorgo spell on _fgt_
-    cast Free_Action spell on _fgt_
-    change foe _fgt_ team 1
-
-_helpvamp_ task:
-    say 1012
     cast Shield spell on _vmp_
     cast Orc_Strength spell on _vmp_
     cast Feet_of_Notorgo spell on _vmp_
     cast Free_Action spell on _vmp_
+    change foe _fgt_ team 1
+
+_helpvamp_ task:
+    say 1012
+    cast Shield spell on _fgt_
+    cast Orc_Strength spell on _fgt_
+    cast Feet_of_Notorgo spell on _fgt_
+    cast Free_Action spell on _fgt_
     change foe _vmp_ team 1
 
 _killfight_ task:
@@ -185,25 +193,6 @@ _vampvict_ task:
     start task _endfight_
     stop timer _timer_
     start timer _delay_
-    remove log step 0
-
-_fightvict_ task:
-    when _helpfight_ and _killvamp_ and not _killfight_
-    say 1014
-    give pc _reward_
-    end quest
-
-_nend1_ task:
-    when _killvamp_ and _killfight_ and not _endfight_
-    say 1016
-    give pc _reward_
-    end quest
-
-variable _endfight_
-
-_vamprep_ task:
-    when _delay_ and not _killvamp_
-    remove foe _vmp_
     change repute with _vamp1_ by +5
     change repute with _vamp2_ by +5
     change repute with _vamp3_ by +5
@@ -213,8 +202,26 @@ _vamprep_ task:
     change repute with _vamp7_ by +5
     change repute with _vamp8_ by +5
     change repute with _vamp9_ by +5
+    remove foe _vmp_
+
+_fightvict_ task:
+    when _helpfight_ and _killvamp_ and not _killfight_
+    say 1014
+    give pc _reward_
+    remove foe _fgt_
+    start task _endfight_
+
+_nend1_ task:
+    when _killvamp_ and _killfight_
+    say 1016
+    give pc _reward_
+    start task _endfight_
+
+_endfight_ task:
+    remove log step 0
 
 _delay_ task:
+    when _endfight_ and not _inside_
     end quest
 
 _timertext_ task:

@@ -74,7 +74,7 @@ Message:  1030
  in =timer_ days' time.
 
 QBN:
-Item _reward_ gold
+Item _reward_ gold range 250 to 350
 Item _finger_ finger
 Item _pay_ large_sack
 

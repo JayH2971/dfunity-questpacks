@@ -9,7 +9,7 @@ QuestorOffer:  [1000]
 <ce>           The town guard or some knight usually intervenes
 <ce>           in these cases, but the kid's parents can't wait
 <ce>              around for some charity case to help out.
-<ce>               They're paying money to have their child
+<ce>               They're paying to have their child
 <ce>               returned to them. You in on this, %pcf?
 
 RefuseQuest:  [1001]
@@ -22,7 +22,7 @@ AcceptQuest:  [1002]
 <ce>                Name is _kid_. You can bring %g2 back
 <ce>                here and we'll take care of the rest.
 <ce>                Make sure you're here in =timer_ days.
-<ce>            They have good money on us not taking forever.
+<ce>            They're waiting on pins and needles.
 
 QuestFail:  [1003]
 <ce>               The family expected you to deliver _kid_
@@ -30,7 +30,7 @@ QuestFail:  [1003]
 <ce>                       Your reward is forfeit.
 
 QuestComplete:  [1004]
-<ce>                  You take the gold they offer you.
+<ce>                  You take the reward they offer you.
 
 RumorsDuringQuest:  [1005]
 I have it on really good authority that the %t is a vampire.
@@ -39,7 +39,7 @@ Message:  1010
 <ce>           "Hi! You look different from the bad people who
 <ce>                brought me here. Where are we going?"
 <ce>
-<ce>            You answer to ____questgiver_, and _kid_ nods.
+<ce>            You answer to ___questgiver_, and _kid_ nods.
 <ce>               "Yep, that's home! Let's go, I'm ready!"
 
 Message:  1011
@@ -114,7 +114,7 @@ Message:  1018
 <ce>           I wonder if they can get rid of those rats we've
 <ce>                      been fussing about, too."
 <ce>
-<ce>        They then turn to you and deliver a large bag of gold.
+<ce>        They then turn to you and deliver an heirloom.
 <ce>          "The best investment we've ever made. Thank you!"
 <ce>             The intact family then leaves the building,
 <ce>            and _questgiver_ gives you a pat on the back.
@@ -144,7 +144,7 @@ Message:  1030
  return in =timer_ days.
 
 QBN:
-Item _reward_ gold range 300 to 500
+Item _reward_ item class 3 subclass 5
 Item _smallreward_ gold range 50 to 99
 
 Place _dung_ remote dungeon0
@@ -224,6 +224,7 @@ _badreward_ task:
 
 _pcgetsgold_ task:
     when _qgclicked_ and _kidclick_ and not _badweapon_
+    update-quest-item _reward_ set-material Mithril
     start quest JHFGC05
     say 1018
     give pc _reward_

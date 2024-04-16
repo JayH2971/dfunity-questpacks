@@ -16,34 +16,7 @@ QuestFail:  [1003]
 <ce>                          ERROR 1003 JHFG127a
 
 QuestComplete:  [1004]
-<ce>                      _helpdb_ embraces _tele_,
-<ce>         the wizard who is able to cast the conveyance spell.
-<ce>          They spend only a few minutes catching up on what
-<ce>                 has happened since _helpdb_ enlisted
-<ce>            your help, both knowing the underlying urgency
-<ce>               at hand. Finally, your ward turns to you
-<ce>               and bows deeply, taking the _tri_ back.
-<ce>
-<ce>                   "_tele_, before you send me off,
-<ce>                  could you please warp this trinket
-<ce>             into some pit in the Wrothgarian Mountains?
-<ce>            It needs to never see the light of day again."
-<ce>
-<ce>              The old man complies with a smile, and the
-<ce>                object disappears with a small flash.
-<ce>
-<ce>              "%pcf, how could I ever thank you enough?
-<ce>          I fear this will be the last time I ever speak to
-<ce>        you, for all elements of my past life must be forever
-<ce>      forgotten. But please, for your troubles, take this bit of
-<ce>    money. I can at least spare this much as a show of my unending
-<ce>   gratitude. Take it, and know that I will remember you forever."
-<ce>               _helpdb_ tosses you a bag full of money.
-<ce>
-<ce>       The incantation begins and ends swiftly, and before you
-<ce>        even realize it, the young runaway is gone. The wizard
-<ce>         tips his hat to you kindly and makes his way out of
-<ce>                   the building, leaving you alone.
+<ce>   You examine your reward.
 
 RumorsDuringQuest:  [1005]
 I saw a company of Mages Guild recruits headed to a farm earlier.
@@ -174,7 +147,7 @@ Message:  1019
 <ce>       there who can ferry me off to another party of the Iliac
 <ce>           Bay without a trace. I can finally start my new
 <ce>           life in the blink of an eye. I am anxious to go,
-<ce>                    but we will follow your plan.
+<ce>                    but we will follow your plan."
 
 Message:  1022
 <ce>                  _helpdb_ snaps to attention as %g1
@@ -189,17 +162,16 @@ Message:  1023
 <ce>
 <ce>               "Now this is interesting. The famed %ra
 <ce>            who has been escorting my momentarily confused
-<ce>           child, now in my very presence. The Night Mother
-<ce>                   has dealt kindly with me, I see.
+<ce>           child, now in my very presence.
+<ce>                  Mephala has dealt kindly with me, I see.
 <ce>
 <ce>            "Here is the simplest way for everyone to win.
-<ce>       I have no material reward, but in exchange for bringing
-<ce>          one of my errant heirs back into my grasp, I will
-<ce>          hold you in high esteem among the Brotherhood and
-<ce>           speak well of you to the appropriate people. The
-<ce>          favor of the Night Mother's children is something
+<ce>     In exchange for bringing one of my errant heirs back into my grasp,
+<ce>          I will hold you in high esteem among the Brotherhood.
+<ce>       I also have a minor material reward, an ebony wakazashi.
+<ce>         The favor of the Night Mother's children is something
 <ce>            no wise man takes lightly. All you must do is
-<ce>            tell me your name and give me my child back."
+<ce>            tell me your name and give me my child."
 <ce>
 <ce>                  _helpdb_ is sweating and quaking.
 <ce>            This moment could define the rest of %g3 life.
@@ -228,7 +200,7 @@ Message:  1024
 <ce>                    Satisfied, he reaches into his
 <ce>                 cloak and pulls out a small gem. He
 <ce>                     and _helpdb_ are consumed in
-<ce>             a burst of darkness, and you are left alone.
+<ce>             a burst of darkness, and you spy your promised weapon.
 
 Message:  1025
 <ce>                        _db_'s arms hang limp.
@@ -259,6 +231,36 @@ Message:  1026
 <ce>                   conveys him far away, though you
 <ce>                 hear him sobbing as it takes effect.
 
+Message:  1027
+<ce>                      _helpdb_ embraces _tele_,
+<ce>         the wizard who is able to cast the conveyance spell.
+<ce>          They spend only a few minutes catching up on what
+<ce>                 has happened since _helpdb_ enlisted
+<ce>            your help, both knowing the underlying urgency
+<ce>               at hand. Finally, your ward turns to you
+<ce>               and bows deeply, taking the _tri_ back.
+<ce>
+<ce>                   "_tele_, before you send me off,
+<ce>                  could you please warp this trinket
+<ce>             into some pit in the Wrothgarian Mountains?
+<ce>            It needs to never see the light of day again."
+<ce>
+<ce>              The old man complies with a smile, and the
+<ce>                object disappears with a small flash.
+<ce>
+<ce>              "%pcf, how could I ever thank you enough?
+<ce>          I fear this will be the last time I ever speak to
+<ce>        you, for all elements of my past life must be forever
+<ce>      forgotten. But please, for your troubles, take this bit of
+<ce>    money. I can at least spare this much as a show of my unending
+<ce>   gratitude. Take it, and know that I will remember you forever."
+<ce>               _helpdb_ hands you an embroidered cuirass.
+<ce>
+<ce>       The incantation begins and ends swiftly, and before you
+<ce>        even realize it, the young runaway is gone. The wizard
+<ce>         tips his hat to you kindly and makes his way out of
+<ce>                   the building, leaving you alone.
+
 Message:  1030
 %qdt:
  A member of the Dark Brotherhood
@@ -283,16 +285,22 @@ Message:  1032
 %qdt:
  _helpdb_ next needs
  to pick up %g3 remaining belongings
- in _temp_ at ___temp_.
+ in _temp_ at ___temp_. I have been
+ given a _tri_ which I should return
+ to _helpdb_ should I
+ ever decide to part ways with %g2.
 
 Message:  1033
 %qdt:
  _helpdb_'s friend was slain,
  and we were attacked while in _temp_.
  The last destination is _leave_,
- a house in ___leave_.
+ a house in ___leave_, for
  %g1 will be able to leave %crn
  without a trace if %g1 makes it there.
+  I have been given a _tri_ which I should return
+ to _helpdb_ should I
+ ever decide to part ways with %g2.
 
 Message:  1075
 Be very quiet about that. _db_ is staying in ___dbtown_.
@@ -369,6 +377,8 @@ Item _reward_ gold range 1001 to 1499
 Item _body_ dead_body
 Item _warning_ letter used 1018
 Item _dummytimer_ gold range 6 to 15
+Item _waka_ item class 3 subclass 4
+Item _cuirass_ item class 2 subclass 0
 
 Foe _helpdb1_ is Rogue
 Foe _ambush_ is 3 Thief
@@ -454,7 +464,7 @@ _strike_ task:
 _thieftalk_ task:
     clicked npc _thief_
     say 1015
-    log 1032 step 2
+    log 1032 step 1
     place item _body_ at _temp_
 
 _attemple_ task:
@@ -470,13 +480,15 @@ _bodytalk_ task:
 _nextturn_ task:
     when _bodytalk_ and not _attemple_
     say 1019
-    log 1033 step 3
+    log 1033 step 1
     place npc _tele_ at _leave_
 
 _victory_ task:
     clicked npc _tele_
+    update-quest-item _cuirass_ set-material Dwarven
     take _tri_ from pc
-    give pc _reward_
+    say 1027
+    give pc _cuirass_
     change repute with _gendb_ by -15
     hide npc _tele_
     end quest
@@ -495,10 +507,12 @@ _dbconv_ task:
     prompt 1023 yes _allin_ no _poorly_
 
 _allin_ task:
+    update-quest-item _waka_ set-material Ebony
     say 1024
     change repute with _gendb_ by +10
     hide npc _db_
     make _tri_ permanent
+    give pc _waka_
     end quest
 
 _poorly_ task:

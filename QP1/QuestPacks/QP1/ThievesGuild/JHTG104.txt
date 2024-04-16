@@ -79,7 +79,7 @@ Message: 1050
 QBN:
 Item _item_ letter
 Item _trinket_ trinket
-Item _reward_ gold range 500 to 800
+Item _reward_ gold range 400 to 700
 
 Place _dung_ remote dungeon
 Place _pal_ remote palace

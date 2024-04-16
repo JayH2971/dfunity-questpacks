@@ -79,7 +79,7 @@ in ___tav_ before one day passes.
 My reward will be =gold_ gold pieces.
 
 QBN:
-Item _gold_ gold range 450 to 600
+Item _gold_ gold range 850 to 1000
 Item _letter_ letter used 1011
 
 Place _tav_ local tavern
