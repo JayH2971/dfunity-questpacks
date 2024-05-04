@@ -98,7 +98,7 @@ Foe _ally_ is Ancient_vampire
 
 Person _noble_ factiontype Vampire_Clan male
 
-Item _reward_ gold range 400 to 600
+Item _reward_ gold range 4000 to 6000
 
 --	Quest start-up:
     start timer _timer_

@@ -192,7 +192,6 @@ _vampvict_ task:
     give pc _reward_
     start task _endfight_
     stop timer _timer_
-    start timer _delay_
     change repute with _vamp1_ by +5
     change repute with _vamp2_ by +5
     change repute with _vamp3_ by +5

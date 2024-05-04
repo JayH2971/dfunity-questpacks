@@ -8,7 +8,8 @@ QuestorOffer:  [1000]
 <ce>                 to go off some fellow wreaking havoc
 <ce>               around the city. Apparently some member
 <ce>                 of the Mages Guild who's on _drug_,
-<ce>               or so they say. It's paying =gold_ gold.
+<ce>                             or so they say.
+<ce>                 It's paying out a dwarven right pauldron.
 <ce>                            Wanna take it?
 
 RefuseQuest:  [1001]
@@ -31,7 +32,7 @@ QuestFail:  [1003]
 
 QuestComplete:  [1004]
 <ce>                  Hey, welcome back. Good to see you
-<ce>                   in one piece. Here's your gold.
+<ce>                   in one piece. Here's your pauldron.
 
 RumorsDuringQuest:  [1005]
 The Fighters Guild failed to save some kid from an abandoned prison. Shame on them.
@@ -45,8 +46,8 @@ Message:  1010
 <ce>                           It hurts a lot.
 
 Message:  1022
-<ce>                      Fool! How dare you attack
-<ce>                     a member of the Mages Guild!
+<ce>                      "Fool! How dare you attack
+<ce>                     a member of the Mages Guild!"
 
 Message:  1023
 <ce>                Your task complete, you may return to
@@ -55,8 +56,7 @@ Message:  1023
 Message:  1032
 %qdt:
  _questgiver_ of the Fighters Guild
- has contracted me to slay someone
- named _dummy_ in ___res_
+ has contracted me to slay some mage  in ___res_
  on behalf of the city. I have
  =2res_ days to do it, and can
  get my reward in ___questgiver_
@@ -71,7 +71,7 @@ Place _res_ remote house
 Clock _2res_ 00:00 0 flag 1 range 0 2
 Clock _failsafe_ 180.00:00
 
-Item _gold_ gold
+Item _reward_ item class 2 subclass 4
 Item _drug_ drug
 
 Foe _mage_ is Spellsword
@@ -84,6 +84,7 @@ Foe _mage_ is Spellsword
 	hide npc _dummy_
 	log 1032 step 0
 	change foe _mage_ infighting true
+	update-quest-item _reward_ set-material Dwarven
 
 _ipr_ task:
 	injured _mage_
@@ -95,7 +96,7 @@ _agi_ task:
 _badagi_ task:
 	when _ipr_ and not _agi_
 	say 1010
-	reduce player health by 30
+	reduce player health by 18
 
 _slain_ task:
 	killed 1 _mage_
@@ -112,7 +113,7 @@ _clearclick_ task:
 
 _pcreward_ task:
 	when _qgclicked_ and _slain_
-	give pc _gold_
+	give pc _reward_
 	start quest JHFGC02
 	end quest
 

@@ -7,7 +7,7 @@ QuestorOffer:  [1000]
 <ce>    A vampire lord took over a private cemetery
 <ce>  with his two wives. Got some kind of harem thing
 <ce>  going on, I dunno. I'm not a vampire, don't ask me.
-<ce>  The property owner is paying over a thousand gold
+<ce>  The property owner is paying an ebony broadsword
 <ce>  to whoever gets rid of them.
 
 RefuseQuest:  [1001]
@@ -56,7 +56,7 @@ Message:  1030
  to be rewarded.
 
 QBN:
-Item _reward_ gold range 1100 to 1300
+Item _reward_ item class 3 subclass 5
 
 Place _cem_ remote graveyard
 
@@ -73,6 +73,7 @@ Foe _vamw2_ is Vampire
 	log 1030 step 0
 	pc at _cem_ set _outside_
     reveal _cem_
+    update-quest-item _reward_ set-material Ebony
 
 _day_ task:
     daily from 5:00 to 19:00

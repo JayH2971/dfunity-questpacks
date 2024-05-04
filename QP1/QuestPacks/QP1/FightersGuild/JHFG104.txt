@@ -60,8 +60,9 @@ Message:  1021
 <ce>              which appears to be out of everyone else's
 <ce>                sight. The adrenaline rush of today's
 <ce>               events may have worn them out too much,
-<ce>              lending to momentary distraction. Will you
-<ce>                   attempt to take it for yourself?
+<ce>              lending to momentary distraction. 
+<ce>        There's roughly a thousand gold pieces.
+<ce>        Will you attempt to take it for yourself?
 <ce>
 <ce>                 (SKILL CHECK: YES: Pickpocket, difficulty low)
 <ce>                (OR SKILL CHECK: YES: Stealth, difficulty medium)
@@ -115,8 +116,8 @@ Message:  1030
  otherwise, probably at dawn.
 
 QBN:
-Item _reward_ gold
-Item _stealg_ gold
+Item _reward_ gold range 300 to 600
+Item _stealg_ gold range 900 to 1200
 
 Place _res_ local house
 

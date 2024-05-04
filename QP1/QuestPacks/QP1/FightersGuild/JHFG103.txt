@@ -151,7 +151,7 @@ Message:  1065
 <ce>          your mark. Surely vampires can be outlaws as well.
 
 QBN:
-Item _reward_ gold
+Item _reward_ gold range 600 to 800
 Item _survivegold_ gold range 2301 to 2600
 Item _body_ dead_body
 Item _magic_ magic_item

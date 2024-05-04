@@ -60,7 +60,7 @@ QBN:
 
 Person _qg_ group Questor male
 
-Item _reward_ gold range 400 to 500
+Item _reward_ gold range 200 to 300
 Item _sack_ large_sack
 Item _trinket_ trinket
 

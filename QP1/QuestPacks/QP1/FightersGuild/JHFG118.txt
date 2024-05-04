@@ -19,8 +19,8 @@ AcceptQuest:  [1002]
 <ce>           It's called ___cemetery_, quite a way out there.
 <ce>              People can't properly visit their dead for
 <ce>              the skeletons roaming around, so make sure
-<ce>           they're gone. The contract needs you to be back
-<ce>          by =timer_ days, and they're paying =reward_ gold.
+<ce>           they're gone. The contract needs you to be back by =timer_ days,
+<ce>          and they're paying out some dwarven greaves.
 <ce>                            Safe travels.
 
 QuestFail:  [1003]
@@ -91,7 +91,7 @@ Message:  1015
 <ce>                      has gained a complication.
 
 QBN:
-Item _reward_ gold range 600 to 700
+Item _reward_ item class 2 subclass 2
 
 Place _cemetery_ remote graveyard
 
@@ -107,6 +107,7 @@ Foe _lich_ is Lich
     pc at _cemetery_ set _inside_
     log 1010 step 0
     reveal _cemetery_
+    update-quest-item _reward_ set-material Dwarven
 
 variable _inside_
 _spawn_ task:

@@ -41,7 +41,7 @@ Message:  1011
 <ce>  (AGILITY CHECK FAILED)
 <ce>   
 <ce>   This daedroth definitely knows how to wield an axe.
-<ce>   It laughs at your slow, clumsy movements,
+<ce>   It laughs at your clumsy movements,
 <ce>   and gets in a free swipe at you.
 
 Message:  1012
@@ -97,9 +97,8 @@ _lucky_ task:
 _notlucky_ task:
     when _click_ and not _lucky_
     say 1011
-    reduce player health by 20
+    reduce player health by 25
 
-variable _check_
 _slain_ task:
     killed _giant_
     say 1012

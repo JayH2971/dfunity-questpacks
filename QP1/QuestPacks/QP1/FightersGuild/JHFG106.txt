@@ -152,7 +152,7 @@ Message:  1043
 <ce>                  Word of this will reach _qgiver_.
 
 QBN:
-Item _reward_ gold
+Item _reward_ gold range 500 to 700
 
 Person _qgiver_ group Questor male
 Person _escort_ group Local_3.1 male

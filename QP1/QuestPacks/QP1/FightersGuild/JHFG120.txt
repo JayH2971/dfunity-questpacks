@@ -59,8 +59,7 @@ Message:  1010
 <ce>                        trauma, it'll be this.
 
 Message:  1011
-<ce>                         _guy_ starts shaking
-<ce>                    involuntarily once you enter.
+<ce>                         _guy_ starts shaking once you enter.
 <ce>
 <ce>                "You know what? Fighting's all yours.
 <ce>            I'm not doing a thing 'til I see you survive."
@@ -126,7 +125,7 @@ Place _dung_ remote dungeon2
 Clock _timer_ 00:00 0 flag 1 range 0 2
 Clock _indung_ 4:00 6:00
 
-Item _reward_ gold
+Item _reward_ gold range 300 to 500
 
 --	Quest start-up:
   start timer _timer_

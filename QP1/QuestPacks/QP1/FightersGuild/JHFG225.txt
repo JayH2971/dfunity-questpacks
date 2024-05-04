@@ -89,7 +89,7 @@ Message:  1030
  back in =timer_ days.
 
 QBN:
-Item _reward_ gold
+Item _reward_ gold range 500 to 700
 Item _dummy_ organs
 
 Person _qgiver_ group Questor male

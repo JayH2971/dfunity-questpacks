@@ -122,7 +122,7 @@ Message:  1030
 
 QBN:
 Item _ing_ small_plant
-Item _reward_ gold
+Item _reward_ gold range 150 to 200
 
 Person _qgiver_ group Questor male
 

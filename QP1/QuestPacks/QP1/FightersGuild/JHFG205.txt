@@ -11,7 +11,7 @@ QuestorOffer:  [1000]
 <ce>                something and they can do their work,
 <ce>                but anyone outside the premises after
 <ce>              dark is in for a big surprise. It's paying
-<ce>                  =reward_ gold pieces and you get a
+<ce>                  an elven dai-katana and you get a
 <ce>                 change of scenery. What do you say?
                                      <--->
 <ce>            It's kind of a sad story, but we end up being
@@ -48,10 +48,10 @@ QuestComplete:  [1004]
 <ce>                              Take this.
 
 Message:  1010
-<ce>      As you approach the property, you notice a pair of spriggans
-<ce>          a ways off. They seem to be watching the creatures
-<ce>        move across the property, neither interfering with nor
-<ce>         helping them. If you knew how to, perhaps you could
+<ce>      As the beasts approach the property, you notice a pair of spriggans
+<ce>          a ways off. They seem to be watching the creatures,
+<ce>        neither interfering with nor helping them.
+<ce>         If you knew how to, perhaps you could
 <ce>                 ask them to help you kill your prey.
 <ce>      Do you ask for their help (yes) or do it on your own (no)?
 <ce>
@@ -63,7 +63,7 @@ Message:  1011
 <ce>           You explain to the spriggans that these animals
 <ce>             are harming the cycle of nature by attacking
 <ce>               humans, the caretakers of this property.
-<ce>           They see the beasts' violent disposition at work and
+<ce>           They see the beasts' violent disposition and
 <ce>                      march toward you to help.
 
 Message:  1012
@@ -111,13 +111,13 @@ Message:  1030
  under attack each night
  by some pack of beasts.
  The Fighters Guild will pay
- me _reward_ gold if I kill
+ me an =reward_ if I kill
  the animals and get back
  to ___questgiver_ in
  =timer_ days or less.
 
 QBN:
-Item _reward_ gold
+Item _reward_ item class 3 subclass 10
 
 Person _questgiver_ group Questor male
 
@@ -135,13 +135,10 @@ Foe _spriggan2_ is Spriggan
 	log 1030 step 0
 	pc at _rural_ set _outside_
 	pick one of _B.01_ _T.01_
+	update-quest-item _reward_ set-material Elven
 
 _luck_ task:
 	when attribute Luck is at least 85
-	pick one of _lucky_ _unlucky_ _unlucky_
-
-variable _unlucky_
-variable _lucky_
 
 _skilled_ task:
 	when skill Spriggan is at least 25
@@ -152,13 +149,13 @@ _day_ task:
 	daily from 5:30 to 18:30
 
 _luckywin_ task:
-	when _lucky_ and _outside_
+	when _luck_ and _outside_
 	say 1021
 	start task _slain_
 
 variable _B.01_
 _bears_ task:
-	when _outside_ and not _day_ and not _slain_ and _B.01_ and not _lucky_
+	when _outside_ and not _day_ and not _slain_ and _B.01_ and not _luck_
 	create foe _bear_ every 3 minutes indefinitely with 65% success
 	create foe _bear_ every 1 minutes indefinitely with 20% success
 	prompt 1010 yes _recruit_ no _flee_

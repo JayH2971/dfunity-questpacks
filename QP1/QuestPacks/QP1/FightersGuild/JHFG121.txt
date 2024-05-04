@@ -111,6 +111,7 @@ Message:  1021
 <ce>            you deliver %g2 into the hands of %g3 enemies.
 <ce>               One of the mercenaries hands you a pouch
 <ce>                 full of money, and the band departs.
+<ce>                 You count out =reward_ gold pieces.
 
 Message:  1022
 <ce>                  The mercenaries nod at one another
@@ -138,8 +139,8 @@ Message:  1032
 
 QBN:
 
-Item _reward_ gold
-Item _loot_ gold
+Item _reward_ gold range 300 to 500
+Item _loot_ gold range 2000 to 3000
 
 Foe _merc_ is 2 Knight
 Foe _frenemy_ is Bard
@@ -188,6 +189,7 @@ _found_ task:
 _obey_ task:
     say 1021
     get item _reward_
+    make _reward_ permanent
     drop _friend_ face
     end quest
 

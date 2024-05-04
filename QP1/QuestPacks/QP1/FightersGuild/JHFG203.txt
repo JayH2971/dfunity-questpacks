@@ -42,7 +42,7 @@ QuestFail:  [1003]
 <ce>                        out ___manor_ by now.
 
 QuestComplete:  [1004]
-<ce>    The servant bows graciously before you and departs.
+<ce>    The servant bows before you and departs.
 <ce>  
 <ce>  "So shall it be done."
 
@@ -93,7 +93,7 @@ Message:  1030
  within =timer_ days.
 
 QBN:
-Item _reward_ gold range 600 to 800
+Item _reward_ gold range 1400 to 1500
 
 Place _manor_ remote poorhome
 

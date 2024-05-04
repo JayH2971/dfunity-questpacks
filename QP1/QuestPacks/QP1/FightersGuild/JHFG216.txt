@@ -24,7 +24,7 @@ AcceptQuest:  [1002]
 <ce>             former friend in the guild hall over there.
 <ce>           Just be done with it quickly and come back here.
 <ce>          This is an official guild job so you're gonna get
-<ce>        paid =reward_ gold, but we do some complicated writing
+<ce>        paid a Dwarven Warhammer, but we do some complicated writing
 <ce>             to make sure you're free of blame. Come back
 <ce>                  in =timer_ days when you're done.
 
@@ -51,7 +51,7 @@ Message:  1030
  within =timer_ days' time.
 
 QBN:
-Item _reward_ gold
+Item _reward_ item class 3 subclass 13
 Item _drug_ drug
 
 Person _qgiver_ group Questor male
@@ -69,6 +69,7 @@ Foe _enemy_ is Warrior
 	give item _drug_ to _enemy_
 	make _drug_ permanent
 	change foe _enemy_ infighting true
+	update-quest-item _reward_ set-material Dwarven
 
 _pcgetsgold_ task:
 	when _qgclicked_ and _slain_

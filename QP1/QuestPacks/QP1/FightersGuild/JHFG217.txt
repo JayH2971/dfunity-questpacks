@@ -61,7 +61,7 @@ Foe _q1_ is Skeletal_warrior
 Foe _q2_ is Zombie
 Foe _mage_ is Mage
 
-Item _reward_ gold
+Item _reward_ gold range 1200 to 1600
 
 Person _qgiver_ group Questor male
 Person _dummymg_ faction The_Mages_Guild

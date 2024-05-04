@@ -120,8 +120,9 @@ Message:  1021
 <ce>              which appears to be out of everyone else's
 <ce>                sight. The adrenaline rush of today's
 <ce>               events may have worn them out too much,
-<ce>              lending to momentary distraction. Will you
-<ce>                   attempt to take it for yourself?
+<ce>              lending to momentary distraction.
+<ce>             The bag appears to hold more than a thousand gold.
+<ce>                 Will you attempt to take it for yourself?
 
 Message:  1022
 <ce>                  (STEALTH/PICKPOCKET CHECK PASSED)
@@ -146,6 +147,8 @@ Message:  1023
 <ce>              work on your thieving skills before trying
 <ce>                       to rip off your clients.
                                      <--->
+<ce>                  (STEALTH/PICKPOCKET CHECK FAILED)
+<ce>
 <ce>           Your movement while grabbing the coin bag is too
 <ce>           obvious. Someone peering over sees that you have
 <ce>          your hand on property which is clearly not yours.
@@ -221,8 +224,8 @@ Message:  1037
 <ce>     held by one of the patrons, and they all roar with laughter.
 
 QBN:
-Item _reward_ gold
-Item _stealg_ gold
+Item _reward_ gold range 500 to 700
+Item _stealg_ gold range 1100 to 1200
 Item _smallg_ gold range 150 to 350
 
 Person _questgiver_ group Questor male

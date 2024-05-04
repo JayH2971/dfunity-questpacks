@@ -112,9 +112,10 @@ Message:  1031
  to ___qgiver_.
 
 QBN:
-Item _reward_ gold range 150 to 250
+Item _reward_ gold range 250 to 450
 
 Person _qgiver_ group Questor male
+Person _mg_ faction The_Mages_Guild
 
 Place _house_ remote house
 
@@ -128,6 +129,7 @@ Foe _nme_ is Iron_atronach
     place foe _nme_ at _house_
     restrain foe _nme_
     pc at _house_ do _inside_
+    hide npc _mg_
 
 _inside_ task:
     say 1010
@@ -151,6 +153,7 @@ _exit_ task:
     say 1014
     remove foe _nme_
     legal repute +10
+    change repute with _mg_ by +10
     log 1031 step 1
 
 _pcgetsgold_ task:
