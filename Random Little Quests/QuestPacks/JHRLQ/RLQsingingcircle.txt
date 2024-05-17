@@ -33,8 +33,8 @@ Message:  1012
 <ce>  You take your place on the edge of the crowd
 <ce>  and prepare to sing. You try your best, but
 <ce>  the crowd is not impressed. Some fair-minded
-<ce>  folks block the various objects hurled at you
-<ce>  in displeasure, and soon you take the hint and leave.
+<ce>  folks block the various objects hurled at you,
+<ce>  and soon you take the hint and leave.
 
 QBN:
 

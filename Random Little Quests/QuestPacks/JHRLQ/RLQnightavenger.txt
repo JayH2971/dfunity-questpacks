@@ -66,6 +66,10 @@ _attack_ task:
     say 1011
     create foe _monster_ every 0 minutes 1 times with 100% success
     change foe _monster_ infighting true
+    cast Shield spell on _monster_
+    cast Orc_Strength spell on _monster_
+    cast Feet_of_Notorgo spell on _monster_
+    cast Free_Action spell on _monster_
     start timer _delay_
 
 _delay_ task:
