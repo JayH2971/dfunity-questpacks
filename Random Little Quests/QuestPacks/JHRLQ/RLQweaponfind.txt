@@ -31,7 +31,7 @@ Message:  1012
 <ce>  calls for the city watch.
 
 Message:  1013
-<ce>  "That's right, you get back now!"
+<ce>  "That's right, you git back now!"
 <ce>  
 <ce>  You back off and let the situation
 <ce>  alone. You could get into a lot of
@@ -52,6 +52,7 @@ QBN:
 Item _weapon_ weapon
 
 --	Quest start-up:
+    update-quest-item _weapon_ set-material Silver
     prompt 1010 yes _pick_ no _ignore_
 
 _pick_ task:

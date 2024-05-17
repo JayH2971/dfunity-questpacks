@@ -1,0 +1,72 @@
+Quest: RLQnightavenger
+DisplayName: Random Little Quest Night Avenger
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  "You! Stop right there!"
+<ce>  
+<ce>  An armed figure stands in the darkness.
+<ce>  
+<ce>  "Ah, you're no harm. I'm just watching out for
+<ce>  any thugs. If ya see one, play it safe!"
+<ce>  
+<ce>  Without waiting for an answer, the knight marches away.
+<--->
+<ce>  "You! Stop right there!"
+<ce>  
+<ce>  An armed figure stands in the darkness.
+<ce>  
+<ce>  "Oh, you're nothing to worry about. I'm just watching for any
+<ce>  criminals on the streets. Safe night to you."
+<ce>  
+<ce>  Without waiting for an answer, the knight marches away.
+
+Message:  1011
+<ce>  "You! Stop right there!"
+<ce>  
+<ce>  An armed figure stands in the darkness.
+<ce>  
+<ce>  "Ah! %pcf, %pcn! A wanted criminal! Now you pay for your crimes!"
+<ce>  
+<ce>  It appears this vigilante will listen to no reason.
+<--->
+<ce>  "You! Stop right there!"
+<ce>  
+<ce>  An armed figure stands in the darkness.
+<ce>  
+<ce>  "You're %pcn! Get outta here or I'll make you get outta here!"
+<ce>  
+<ce>  It appears this vigilante will listen to no reason.
+
+
+QBN:
+
+
+Foe _monster_ is Knight
+
+Clock _timer_ 0:02
+Clock _delay_ 3:00
+
+--	Quest start-up:
+    start timer _timer_
+
+variable _timer_
+
+_goodrep_ task:
+    player legal-repute is higher than -10
+
+_friendly_ task:
+    when _goodrep_ and _timer_
+    say 1010
+    end quest
+
+_attack_ task:
+    when _timer_ and not _goodrep_
+    say 1011
+    create foe _monster_ every 0 minutes 1 times with 100% success
+    change foe _monster_ infighting true
+    start timer _delay_
+
+_delay_ task:
+    end quest

@@ -36,8 +36,14 @@ variable _maged_
 variable _templed_
 variable _palaced_
 
+_resting_ task:
+    player current-state is resting
+
+_loitering_ task:
+    player current-state is loitering
+
 _donotspawn_ task:
-    when _inside1_ or _inside2_ or _inside3_ or _fightered_ or _taverned_ or _homed_ or _shopped_ or _maged_ or _templed_ or _palaced_
+    when _inside1_ or _inside2_ or _inside3_ or _fightered_ or _taverned_ or _homed_ or _shopped_ or _maged_ or _templed_ or _palaced_ or _resting_ or _loitering_
 
 _eventstart_ task:
     when pc enters city
@@ -130,7 +136,7 @@ _overcastnight_ task:
     start task _stopevents_
 
 _overcastnightevents_ task:
-    pick one of _pickpocket_ _nightguard_ _vampiregold_
+    pick one of _pickpocket_ _nightguard_ _vampiregold_ _nightavenger_
 
 _fogday_ task:
     when _daylight_ and _foggy_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -187,6 +193,9 @@ _snowyday_ task:
 
 _snowydayevents_ task:
     pick one of _axechop_ _snowmap_ _paysnowtaxes_ _climbingtraining_ _giantencounter_ _traindestruction_
+
+_nightavenger_ task:
+    start quest RLQnightavenger
 
 _angrypick_ task:
     start quest RLQangrypick
