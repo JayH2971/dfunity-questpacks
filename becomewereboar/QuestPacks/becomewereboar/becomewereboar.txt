@@ -8,7 +8,7 @@ Message:  1010
 
 Message:  1011
 <ce>  Once you reach level 2, your character will be
-<ce>  infected with lycanthropy. Enjoy!
+<ce>  infected with wereboarism. Enjoy!
 
 Message:  1012
 <ce>  Perhaps next time. Enjoy!

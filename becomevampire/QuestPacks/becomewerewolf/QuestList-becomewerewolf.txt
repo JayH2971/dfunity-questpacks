@@ -1,3 +1,0 @@
-schema: *name, group, membership, minReq, flag, notes
-
-becomewerewolf, InitAtGameStart, P, 0, 0, start game as werewolf

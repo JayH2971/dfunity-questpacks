@@ -1,14 +1,14 @@
-Quest: becomewerewolf
-DisplayName: Become a Werewolf
+Quest: becomevampire
+DisplayName: Become a Vampire
 -- Message panels
 QRC:
 
 Message:  1010
-<ce> Will this character be a werewolf?
+<ce> Will this character be a vampire?
 
 Message:  1011
 <ce>  Once you reach level 2, your character will be
-<ce>  infected with lycanthropy. Enjoy!
+<ce>  infected with vampirism. Enjoy!
 
 Message:  1012
 <ce>  Perhaps next time. Enjoy!
@@ -23,7 +23,7 @@ _accept_ task:
 
 _level2_ task:
     level 2 completed
-    infect player as werewolf
+    infect player as vampire
     end quest
 
 _reject_ task:
