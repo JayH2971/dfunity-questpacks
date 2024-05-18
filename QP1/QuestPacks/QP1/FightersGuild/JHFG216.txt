@@ -34,7 +34,7 @@ QuestFail:  [1003]
 QuestComplete:  [1004]
 <ce>                 Anyone over there put up a fuss? No?
 <ce>                 Proof's in the pudding, as they say.
-<ce>                Here's your gold. Your secret's safe.
+<ce>                Here's your reward. Your secret's safe.
 
 RumorsDuringQuest:  [1005]
 The merchants are going to strike if the %t increases their taxes again.

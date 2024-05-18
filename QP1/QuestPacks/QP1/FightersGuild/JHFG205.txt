@@ -40,7 +40,7 @@ QuestComplete:  [1004]
 <ce>               Good money, good trip, good experience.
 <ce>                 I hope you enjoy these things, %pcf.
 <ce>                 Stop and smell the roses some time.
-<ce>                  Here's your _reward_ gold pieces.
+<ce>                  Here's your _reward_.
                                      <--->
 <ce>              How was the trip? Too many of our members
 <ce>                just want to stay local and kill rats.
