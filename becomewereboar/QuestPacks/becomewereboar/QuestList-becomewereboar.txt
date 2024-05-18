@@ -1,0 +1,3 @@
+schema: *name, group, membership, minReq, flag, notes
+
+becomewereboar, InitAtGameStart, P, 0, 0, start game as becomewereboar

@@ -17,12 +17,12 @@ Message:  1011
 <ce>         "Got some merchandise here. Shipment of weapons that
 <ce>        never made it to its destination. Poor sods they were,
 <ce>     but this stuff needs to get sold off to recoup their losses.
-<ce>          For 50 gold, you get a random piece of equipment."
+<ce>          For 200 gold, you get a random piece of equipment."
 <ce>
 <ce>         The equipment is held in various sacks, so you can't
 <ce>            tell what is being sold. If you pay the price,
 <ce>             you'll be given one of the sacks at random.
-<ce>                   Buy a random weapon for 50 gold?
+<ce>                   Buy a random weapon for 200 gold?
 <--->
 <ce>            A figure waits in the shadows, trying to speak
 <ce>        to passers by. Most ignore her, keeping a distance.
@@ -31,19 +31,19 @@ Message:  1011
 <ce>         "Got some merchandise here. Shipment of weapons that
 <ce>        never made it to its destination. Poor sods they were,
 <ce>     but this stuff needs to get sold off to recoup their losses.
-<ce>          For 50 gold, you get a random piece of equipment."
+<ce>          For 200 gold, you get a random piece of equipment."
 <ce>
 <ce>         The equipment is held in various sacks, so you can't
 <ce>            tell what is being sold. If you pay the price,
 <ce>             you'll be given one of the sacks at random.
-<ce>                   Buy a random weapon for 50 gold?
+<ce>                   Buy a random weapon for 200 gold?
 
 Message:  1012
 <ce>           The vendor looks for other potential customers,
 <ce>                  spending no further words on you.
 
 Message:  1014
-<ce>         You reach into your pockets but do not find 50 gold.
+<ce>         You reach into your pockets but do not find 200 gold.
 <ce>         The merchant starts packing up, looking for a better
 <ce>               location with more potential customers.
 
@@ -52,7 +52,15 @@ QBN:
 Item _weapon_ weapon
 
 --	Quest start-up:
+    pick one of _iron_ _silver_ _dwarven_
     prompt 1011 yes _pay_ no _reject_
+
+variable _iron_
+_silver_ task:
+    update-quest-item _weapon_ set-material Silver
+
+_dwarven_ task:
+    update-quest-item _weapon_ set-material Dwarven
 
 _reject_ task:
     say 1012
@@ -62,7 +70,7 @@ variable _pay_
 
 _payhim_ task:
     when _pay_ and not _given_
-    pay 50 money do _given_ otherwise do _nomoney_
+    pay 200 money do _given_ otherwise do _nomoney_
 
 _nomoney_ task:
     say 1014

@@ -135,7 +135,7 @@ _fogday_ task:
     start task _stopevents_
 
 _fogdayevents_ task:
-    pick one of _etiquettelesson_ _freepotion_ _batnest_ _buydrug_ _defendtown_ _guardweapon_ _fogsteal_ _traindaedric_
+    pick one of _etiquettelesson_ _freepotion_ _batnest_ _buydrug_ _defendtown_ _guardweapon_ _fogsteal_ _traindaedric_ _thievesmember_
 
 _fognight_ task:
     when not _daylight_ and _foggy_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -185,11 +185,8 @@ _snowyday_ task:
 _snowydayevents_ task:
     pick one of _axechop_ _snowmap_ _paysnowtaxes_ _climbingtraining_ _giantencounter_ _traindestruction_
 
-_singingcircle_ task:
-    start quest RLQsingingcircle
-
-_nightavenger_ task:
-    start quest RLQnightavenger
+_alms_ task:
+    start quest RLQalms
 
 _angrypick_ task:
     start quest RLQangrypick
@@ -199,6 +196,15 @@ _buygem_ task:
 
 _buyrandomweapon_ task:
     start quest RLQbuyrandomweapon
+
+_nightavenger_ task:
+    start quest RLQnightavenger
+
+_singingcircle_ task:
+    start quest RLQsingingcircle
+
+_thievesmember_ task:
+    start quest RLQthievesmember
 
 _changebandage_ task:
     start quest RLQchangebandage
@@ -322,9 +328,6 @@ _trainnymph_ task:
 
 _batnest_ task:
     start quest RLQbatnest
-
-_alms_ task:
-    start quest RLQalms
 
 _loanpick_ task:
     pick one of _loan1_ _loan2_ _loan3_ _loan4_ _loan5_ _loan6_ _loan7_ _loan8_ _loan9_ _loan10_

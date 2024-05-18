@@ -1,0 +1,92 @@
+Quest: JHTGY00
+DisplayName: Thieves' Reputation Restoration
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> A good thief shouldn't need this, but whatever.
+<ce> Got a scribe in from another town who's good
+<ce> with %rt's folk. Got access to the legal
+<ce> records and all that. For a fee, you can get
+<ce> your bad name wiped out from %crn.
+<ce> If you want, we can give you the location
+<ce> and look up the fee for you.
+
+RefuseQuest:  [1001]
+<ce> Yeah, let's get back to work.
+
+AcceptQuest:  [1002]
+<ce> "All right, hold on. Let me look for
+<ce> someone around here, this'll just take
+<ce> a minute."
+
+QuestFail:  [1003]
+<ce> ERROR JHTG126
+
+Message:  1010
+<ce>  "You have no outstanding issues
+<ce>  with the law in %crn.
+<ce>  Suffering from paranoia, %pct?"
+
+QBN:
+
+Person _tg_ faction The_Thieves_Guild
+
+Clock _timer_ 0:00
+
+--	Quest start-up:
+    start timer _timer_
+
+variable _timer_
+
+_legalrepute0_ task:
+    when not _legalrepute1_ and not _legalrepute2_ and not _legalrepute3_ and not _legalrepute4_ and not _legalrepute5_
+
+_legalrepute1_ task:
+    player legal-repute is lower than -5
+
+_legalrepute2_ task:
+    player legal-repute is lower than -20
+
+_legalrepute3_ task:
+    player legal-repute is lower than -40
+
+_legalrepute4_ task:
+    player legal-repute is lower than -60
+
+_legalrepute5_ task:
+    player legal-repute is lower than -80
+
+_nooutcome_ task:
+    when _legalrepute0_ and _timer_
+    say 1010
+    start task _normalend_
+
+_redirect1_ task:
+    when _legalrepute1_ and not _legalrepute2_ and _timer_
+    start quest JHrepchange1
+    start task _normalend_
+
+_redirect2_ task:
+    when _legalrepute2_ and not _legalrepute3_ and _timer_
+    start quest JHrepchange2
+    start task _normalend_
+
+_redirect3_ task:
+    when _legalrepute3_ and not _legalrepute4_ and _timer_
+    start quest JHrepchange3
+    start task _normalend_
+
+_redirect4_ task:
+    when _legalrepute4_ and not _legalrepute5_ and _timer_
+    start quest JHrepchange4
+    start task _normalend_
+
+_redirect5_ task:
+    when _legalrepute5_
+    start quest JHrepchange5
+    start task _normalend_
+
+_normalend_ task:
+    change repute with _tg_ by +2
+    end quest

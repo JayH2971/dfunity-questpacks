@@ -1,0 +1,90 @@
+Quest: JHDBY00
+DisplayName: Brotherhood's Reputation Restoration
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> One of the advantages of being in the Brotherhood's
+<ce> good graces is possessing influence in every known sphere.
+<ce> We have earned the favor of a less-than-loyal
+<ce> scribe of the %t, who is willing to turn back time on
+<ce> crimes that our members have commited... for a price.
+<ce> Should you have need, we can make the inquiry
+<ce> concerning what cost it would incur.
+
+RefuseQuest:  [1001]
+<ce> Then make the day matter.
+
+AcceptQuest:  [1002]
+<ce> "Then I shall make the request."
+
+QuestFail:  [1003]
+<ce> ERROR JHDBY00
+
+Message:  1010
+<ce>  "You have no outstanding issues
+<ce>  with the law in %crn.
+<ce>  Suffering from paranoia, %pct?"
+
+QBN:
+
+Person _tg_ faction The_Dark_Brotherhood
+
+Clock _timer_ 0:00
+
+--	Quest start-up:
+    start timer _timer_
+
+variable _timer_
+
+_legalrepute0_ task:
+    when not _legalrepute1_ and not _legalrepute2_ and not _legalrepute3_ and not _legalrepute4_ and not _legalrepute5_
+
+_legalrepute1_ task:
+    player legal-repute is lower than -5
+
+_legalrepute2_ task:
+    player legal-repute is lower than -20
+
+_legalrepute3_ task:
+    player legal-repute is lower than -40
+
+_legalrepute4_ task:
+    player legal-repute is lower than -60
+
+_legalrepute5_ task:
+    player legal-repute is lower than -80
+
+_nooutcome_ task:
+    when _legalrepute0_ and _timer_
+    say 1010
+    start task _normalend_
+
+_redirect1_ task:
+    when _legalrepute1_ and not _legalrepute2_ and _timer_
+    start quest JHrepchange1
+    start task _normalend_
+
+_redirect2_ task:
+    when _legalrepute2_ and not _legalrepute3_ and _timer_
+    start quest JHrepchange2
+    start task _normalend_
+
+_redirect3_ task:
+    when _legalrepute3_ and not _legalrepute4_ and _timer_
+    start quest JHrepchange3
+    start task _normalend_
+
+_redirect4_ task:
+    when _legalrepute4_ and not _legalrepute5_ and _timer_
+    start quest JHrepchange4
+    start task _normalend_
+
+_redirect5_ task:
+    when _legalrepute5_
+    start quest JHrepchange5
+    start task _normalend_
+
+_normalend_ task:
+    change repute with _tg_ by +2
+    end quest

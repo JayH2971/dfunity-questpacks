@@ -1,0 +1,31 @@
+Quest: becomewereboar
+DisplayName: Become a Wereboar
+-- Message panels
+QRC:
+
+Message:  1010
+<ce> Will this character be a wereboar?
+
+Message:  1011
+<ce>  Once you reach level 2, your character will be
+<ce>  infected with lycanthropy. Enjoy!
+
+Message:  1012
+<ce>  Perhaps next time. Enjoy!
+
+QBN:
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_accept_ task:
+    say 1011
+
+_level2_ task:
+    level 2 completed
+    infect player as wereboar
+    end quest
+
+_reject_ task:
+    say 1012
+    end quest

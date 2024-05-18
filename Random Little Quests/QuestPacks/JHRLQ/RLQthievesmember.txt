@@ -1,1 +1,45 @@
-TODO: make a quest based on you being TG member. Small reward.
+Quest: RLQthievesmember
+DisplayName: Random Little Quest A Meeting of Thieves
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>      You suddenly realize someone is beside you.
+<ce>    Before you can react, you get handed a coin bag.
+<ce>    
+<ce>    "Being in the guild is amazing. This place is loaded.
+<ce>    Thieves before all."
+<ce>    
+<ce>    Your new friend then departs to find someone to steal from.
+
+QBN:
+
+Clock _delay_ 0:00
+
+Item _gold1_ gold range 200 to 300
+Item _gold2_ gold range 900 to 1100
+
+--	Quest start-up:
+    start timer _delay_
+
+variable _delay_
+
+_rank3_ task:
+    player guild rank in GeneralPopulace at least 3
+
+_rank7_ task:
+    player guild rank in GeneralPopulace at least 7
+
+_quit_ task:
+    when _delay_ and not _rank3_
+    end quest
+
+_smallbenefit_ task:
+    when _delay_ and _rank3_ and not _rank7_
+    give pc _gold1_
+    end quest
+
+_bigbenefit_ task:
+    when _delay_ and _rank7_
+    give pc _gold2_
+    end quest

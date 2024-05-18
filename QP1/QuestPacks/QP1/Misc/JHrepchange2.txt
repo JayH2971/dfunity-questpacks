@@ -1,0 +1,87 @@
+Quest: JHrepchange2
+DisplayName: Reputation Restoration Stage 2
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> ERROR 1000 JHrepchange2
+
+RefuseQuest:  [1001]
+<ce> ERROR 1001 JHrepchange2
+
+AcceptQuest:  [1002]
+<ce> ERROR 1002 JHrepchange2
+
+QuestFail:  [1003]
+<ce> ERROR 1003 JHrepchange2
+
+QuestComplete:  [1004]
+<ce> Yes? Yes, %pcn. The account is for
+<ce> 3,500 gold pieces. I'll take that...
+<ce>  The change should become apparent
+<ce>  before you know it. Stay out of trouble.
+
+Message:  1010
+<ce>  After some discussion, a figure from another
+<ce>  room approaches and studies your background.
+<ce>  
+<ce>  "Let's see, %pcn. Yep, you're making a name for yourself,
+<ce>  Gotta be more careful about that. _tg_'s gonna
+<ce>  ask for 3,500 gold to get you cleared.
+<ce>  Head to _res_, and don't take more than
+<ce>  two days on it. That's %di here in town.
+<ce>  
+<ce>  "A warning that this can't overturn banishment,
+<ce>  which is decided by each city. This'll just get
+<ce>  your name cleared with %crn's lawmen."
+
+Message:  1011
+<ce> Hello? %pcn? I was told your account is for
+<ce> 3,500 gold pieces. I don't see that money on hand,
+<ce> and I will not act without it.
+
+Message:  1030
+%qdt:
+ A traveling recordkeeper can clear my legal
+ reputation in ____res_ for a fee
+ of 3,500 gold. I can find this _tg_
+ in _res_ of ___res_ for the
+ next two days.
+
+QBN:
+
+Person _tg_ faction Dancers
+
+Place _res_ local anywhere
+
+Clock _initial_ 2.00:00
+
+--	Quest start-up:
+	start timer _initial_
+  say 1010
+  place npc _tg_ at _res_
+  log 1030 step 0
+
+_initial_ task:
+  end quest
+
+_begin_ task:
+  clicked npc _tg_
+  start task _pay_
+
+_pay_ task:
+    pay 3500 money do _remit_ otherwise do _nomoney_
+
+_remit_ task:
+    clear _pay_
+    legal repute -200
+    start task _remit2_
+
+_remit2_ task:
+    legal repute +100
+    give pc nothing
+    end quest
+
+_nomoney_ task:
+    say 1011
+    clear _begin_ _pay_

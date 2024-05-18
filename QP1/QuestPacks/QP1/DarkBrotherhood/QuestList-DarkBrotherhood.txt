@@ -33,3 +33,4 @@ JHDB207, DarkBrotherHood, M, 0, X, a quest to slay a mark over a bodyguard's obj
 JHDB225, DarkBrotherHood, M, 1, 1, a quest to slay a member of the Fighters Guild
 JHDB226, DarkBrotherHood, M, 3, 1, a quest to kill three Fighters Guild members
 JHDB227, DarkBrotherHood, M, 0, 1, a quest to kill a Thieves Guild member
+JHDBY00, DarkBrotherHood, M, 0, 0, recurring ability to restore legal reputation
