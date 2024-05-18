@@ -20,8 +20,7 @@ AcceptQuest:  [1002]
 <ce>  they show up. Make sure they're absolutely
 <ce>  dead, or whatever the equivalent of dead
 <ce>  is for vampires, and I'll have your
-<ce>  money waiting here. It's paying =reward_
-<ce>  gold if you're back within =timer_ days.
+<ce>  sword if you're back within =timer_ days.
 
 QuestFail:  [1003]
 <ce>                 The Fighters Guild sent you to clean
@@ -48,7 +47,7 @@ Message:  1012
 Message:  1030
 %qdt:
  __qgiver_ of ___qgiver_
- will pay me =reward_ gold if I
+ will pay me an ebony sword if I
  slay a vampire lord and two
  female vampires that have
  taken over ___cem_ of ____cem_.
