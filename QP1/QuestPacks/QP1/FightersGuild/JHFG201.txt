@@ -21,7 +21,7 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce>            So here's the deal. You're headed to  _place_.
 <ce>               That'll be in ___place_. Slay the beast
-<ce>        and get back here so I can get you your =reward_ gold.
+<ce>        and get back here so I can get you your reward.
 <ce>         I'm giving you =timer_ days before I send for backup
 <ce>             from a temple or something. Good luck, %pcf.
 
