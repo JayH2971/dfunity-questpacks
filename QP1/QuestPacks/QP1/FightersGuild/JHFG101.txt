@@ -27,8 +27,8 @@ QuestFail:  [1003]
 
 QuestComplete:  [1004]
 <ce>               One two... five, yep, you got it. Nice job.
-<ce>     You know, it's little things like this that make us
-<ce>     trust you. When you're out there massacring daedra
+<ce>     You know, it's little things like this that earn
+<ce>     you points. When you're out there massacring daedra
 <ce>     and liches, remember this humble little guild hall, and
 <ce>     the good you've done us. Anyway, no more babbling.
 <ce>     Here's your hard-earned lucre.
@@ -67,15 +67,18 @@ _qgclicked_ task:
    clicked npc _questgiver_
 
 _clearclick_ task:
-   when _qgclicked_ and not _got_
+   when _qgclicked_ and not _got_ and not _finished_
    say 1011
    clear _qgclicked_ _clearclick_
 
 _victory_ task:
     when _qgclicked_ and _got_
+    start task _finished_
     player handsover 5 items class 9 subclass 249
     give pc _reward_
     end quest
+
+variable _finished_
 
 _timer_ task:
    say 1003

@@ -19,7 +19,7 @@ JHFG108, FightersGuild, M, 5, 1, a quest to defend a vampire in a palace
 JHFG109, FightersGuild, M, 2, 0, expert werewolf hunting
 JHFG110, FightersGuild, M, 0, 0, a quest to retrieve an heirloom from a dungeon tiger
 JHFG111, FightersGuild, M, 8, 1, an artifact quest to invade a vampire cult
-JHFG113, FightersGuild, M, 1, 0, a quest to get a giant out of a house
+JHFG113, FightersGuild, M, 1, 1, a quest to get a giant out of a house
 JHFG115, FightersGuild, M, 0, 0, a quest to fight in a dungeon with a partner
 JHFG118, FightersGuild, M, 3, 1, a quest to destroy skeletons in a cemetery
 JHFG119, FightersGuild, M, 6, 0, a quest to defend the city against appearing monsters
