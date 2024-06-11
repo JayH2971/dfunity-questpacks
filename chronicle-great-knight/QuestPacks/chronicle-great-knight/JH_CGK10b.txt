@@ -41,7 +41,7 @@ to the palace. The door will be open to you.
 Message:  1012
 <ce>  Congratulations! This is Ending B of "The Chronicle of the Great Knight."
 <ce>  Take a screenshot of this message and send it to the mod author.
-<ce>  Contact information can be found in the readme inside the questpack folder.
+<ce>  Contact information can be found on the mod page.
 
 QBN:
 

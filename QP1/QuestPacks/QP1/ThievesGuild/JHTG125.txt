@@ -4,10 +4,10 @@ DisplayName: The Cursed Tome
 QRC:
 
 QuestorOffer:  [1000]
-<ce>  Got any heat on you, %pct? Any one out to get you, or
+<ce>  Got any heat on you, %pct? Anyone out to get you, or
 <ce>  a mercenary wanting your head? If you do, don't take this next job.
 <ce>  It'll only be dangerous if you're wanted... or if you melt
-<ce>  under the sunlight or something.. Otherwise, it's a free
+<ce>  under the sunlight or something. Otherwise, it's a free
 <ce>  pile of gold for you. Want to do a simple delivery?
 
 RefuseQuest:  [1001]
