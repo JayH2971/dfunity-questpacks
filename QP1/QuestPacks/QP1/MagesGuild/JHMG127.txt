@@ -28,9 +28,8 @@ AcceptQuest:  [1002]
 <ce>     You will be searching for a =scholar_.
 
 QuestFail:  [1003]
-<ce>        What are you doing here?
-<ce>     _scholar_ is staying in ___tavern_
-<ce>     and we need those funds.
+<ce>     The time to report on ___tavern_'s
+<ce>     missing funds has passed.
 
 QuestComplete:  [1004]
 <ce>            Hmph. _scholar_ is merely a Journeyman,
@@ -132,7 +131,7 @@ Message:  1032
  him within the town.
 
 QBN:
-Item _reward_ gold range 400 to 500
+Item _reward_ gold range 150 to 250
 
 Person _qgiver_ group Questor male
 Person _scholar_ faction The_Mages_Guild male

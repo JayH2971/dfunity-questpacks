@@ -1,0 +1,193 @@
+Quest: JHMG128
+DisplayName: A Dance with Death
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce> The Order of the Black Worm has stirred from their
+<ce> underground lair and brought their necromantic
+<ce> rituals to the surface. They're raising ancient dead
+<ce> and have begun terrorizing the land. The Mages Guild
+<ce> has taken note of their resurgence as a threat, and
+<ce> we've determined that taking out their leader will
+<ce> slow them down enough to allow the Order to be
+<ce> defeated. The leader of the Order is based out of
+<ce> an ancient crypt, so could you please
+<ce> track him down and destroy him?
+
+RefuseQuest:  [1001]
+<ce>  (sigh) I suppose I'll have to wait for the brave ones to arrive.
+
+AcceptQuest:  [1002]
+<ce>   Stellar, %pct! Now, I said "him" but I really have no idea.
+<ce>   We have no information about the identity of said worm leader.
+<ce>   In fact, calling them an order is rather excessive.
+<ce>   But nonetheless, you are to enter into ___dungeon_
+<ce>   and seek out the nightblade in there. It's useful to dispose
+<ce>   of other mages, but they yet learn from their leader.
+<ce>   Cut off the head and the body will perish!
+<ce>   You have =timer_ days to return here for =reward_ gold pieces.
+
+QuestFail:  [1003]
+<ce>     _qgiver_ expected you to destroy the leader
+<ce>     of the Order of the Black Worm by now.
+
+QuestComplete:  [1004]
+<ce>     I wager you had quite an adventure down there!
+<ce>     Thrilling memories to treasure up, when
+<ce>     one day you'll be old, decrepit, and writing books
+<ce>     on alchemy for a living. Ah, how depressing.
+<ce>     We're not there yet, %pct! Instead, enjoy
+<ce>     your reward.
+
+Message:  1010
+<ce>    The magical attunement here is obvious. It hits you like
+<ce>    a wall once you enter, and seems to be thick throughout
+<ce>    the environment. A skilled mage could turn the enchantment
+<ce>    to your benefit, but it would take some time and
+<ce>    provoke additional danger if you fail.
+<ce>    
+<ce>    Do you attempt to make the Order's minions your own?
+<ce>
+<ce>           (SKILL CHECK: YES: Mysticism, difficulty high)
+
+Message:  1011
+<ce>                       (SKILL CHECK PASSED)
+<ce>        
+<ce>        It takes a bit of time and drains you. However, you're
+<ce>        more skilled than the Order's leader. You reverse the flow
+<ce>        of magicka, turning it in your favor.
+<ce>        
+<ce>        Many of the undead minions here will now obey you.
+
+Message:  1012
+<ce>                       (SKILL CHECK FAILED)
+<ce>        
+<ce>        It takes a bit of time and drains you. However, your efforts
+<ce>        only strengthen the flow of magicka, and the power that resurrects
+<ce>        the undead minions grows stronger. Using the magic flow as a bridge,
+<ce>        you hear laughter from the Order's leader.
+<ce>        
+<ce>        "Well done, imbecile! I don't mind having more control!"
+
+Message:  1013
+<ce>         "No, you won't stop me now! Not you, not anyone!"
+<ce>      The Order's leader snarls at you.
+
+Message:  1014
+<ce>      With the leader dead, the minions stop rising.
+<ce>      This group will lose all power soon.
+
+Message:  1015
+<ce>  You choose to traverse ___dungeon_ on its own terms.
+<ce>  Who knows what kinds of problems could come from
+<ce>  interfering with this spell.
+
+Message:  1016
+<ce>   One of the shambling undead approaches you.
+<ce>  It makes an awkward bowing motion and howls,
+<ce>  "The Order... will pay!"
+
+Message:  1030
+%qdt:
+ __qgiver_ of ___qgiver_ has sent me to
+ ___dungeon_ to dispose of
+ the Order of the Black Worm.
+ I must find their nightblade leader
+ and end the menace, then return
+ within =timer_ days for =reward_ gold.
+
+QBN:
+Item _reward_ gold range 800 to 1000
+
+Person _qgiver_ group Questor male
+
+Place _dungeon_ remote dungeon
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _enemy_ is Nightblade
+Foe _enemy1_ is Zombie
+Foe _enemy2_ is Skeletal_warrior
+Foe _enemy3_ is Zombie
+Foe _enemy4_ is Skeletal_warrior
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    reveal _dungeon_
+    pc at _dungeon_ set _inside_
+    place foe _enemy_ at _dungeon_
+
+_inside_ task:
+    prompt 1010 yes _attempt_ no _avoid_
+    change foe _enemy_ team 13
+
+_avoid_ task:
+    say 1015
+
+variable _attempt_
+
+_skilled_ task:
+	when skill Mysticism is at least 65
+
+_bigwin_ task:
+	when _attempt_ and _skilled_
+    reduce player fatigue by 20
+    reduce player magicka by 20
+	say 1011
+
+_bigfail_ task:
+	when _attempt_ and not _skilled_
+    reduce player fatigue by 20
+    reduce player magicka by 20
+	say 1012
+
+_badspawn_ task:
+    when _bigfail_ and _inside_ and not _slain_
+    create foe _enemy1_ every 120 minutes indefinitely with 25% success
+    create foe _enemy2_ every 81 minutes indefinitely with 20% success
+
+_goodspawn_ task:
+    when _bigwin_ and _inside_ and not _slain_
+    create foe _enemy3_ every 120 minutes indefinitely with 25% success msg 1016
+    create foe _enemy4_ every 81 minutes indefinitely with 20% success msg 1016
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    change foe _enemy3_ infighting true
+    change foe _enemy3_ team 1
+    change foe _enemy4_ infighting true
+    change foe _enemy4_ team 1
+    restrain foe _enemy3_
+    restrain foe _enemy4_
+    clear _infight_
+
+_inj_ task:
+    clicked foe _enemy_
+    injured _enemy_
+    say 1013
+    change foe _enemy_ infighting true
+
+_slain_ task:
+    killed _enemy_
+    say 1014
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _slain_
+	give pc _reward_
+	end quest
+
+_qgclicked_ task:
+	clicked npc _qgiver_
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_
+    say 1015
+	clear _qgclicked_ _clearclick_
+
+_timer_ task:
+    say 1003
+    end quest
