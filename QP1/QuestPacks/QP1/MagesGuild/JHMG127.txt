@@ -1,0 +1,215 @@
+Quest: JHMG127
+DisplayName: Guild Dues
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>   One of our fellow mages has been sent to collect
+<ce>   the dues from the people of ___tavern_.
+<ce>   Unfortunately, he has not yet returned
+<ce>   and it is believed that some vile creature
+<ce>   or another has gotten the better of him.
+<ce>   It is most embarrassing for us, but worse yet,
+<ce>   he is carrying all our dues with him.
+<ce>   Would you be willing to search the town for him
+<ce>   and retrieve the funds?
+
+RefuseQuest:  [1001]
+<ce>         Magic is important, but so is money, %pct.
+
+AcceptQuest:  [1002]
+<ce>           Very good. In ___tavern_, _scholar_ was
+<ce>     planning to stay in _tavern_. This should have been
+<ce>     a routine collection visit but he has taken far too
+<ce>     long to return, and sent no information regarding
+<ce>     the delay. Please travel there and ensure that
+<ce>     he is forthcoming. And alive, if you please.
+<ce>     Be here in =timer_ days for =reward_ gold pieces.
+<ce>     You will be searching for a =scholar_.
+
+QuestFail:  [1003]
+<ce>        What are you doing here?
+<ce>     _scholar_ is staying in ___tavern_
+<ce>     and we need those funds.
+
+QuestComplete:  [1004]
+<ce>            Hmph. _scholar_ is merely a Journeyman,
+<ce>     and is likely to remain so for some time.
+<ce>     We keep records of who does their work properly,
+<ce>     and we rarely forget such carelessness.
+<ce>     Make a note of that, %pcf. But the matter
+<ce>     is resolved, and you get full credit.
+
+Message:  1010
+<ce>        "_scholar_? Nope, no one here by that name.
+<ce>     Nuh-uh. Might wanna head back to your mages and
+<ce>     tell 'em that. I know all these people and
+<ce>     _scholar_ ain't one of 'em."
+<ce>     
+<ce>     A bit of charming magic might reveal something
+<ce>     more here. Do you make an attempt at rearranging
+<ce>     this patron's mind? If you are caught, the
+<ce>     consequence could be serious.
+<ce>
+<ce>           (SKILL CHECK: YES: Thaumaturgy, difficulty low)
+
+Message:  1011
+<ce>                       (SKILL CHECK PASSED)
+<ce>
+<ce>      This person's eyes close slowly as you quietly cast a spell.
+<ce>      When they open again, you see a very different demeanor.
+<ce>      
+<ce>      "You know what? I need some more alcohol.
+<ce>      Been a long day. Sorry for the way I've been
+<ce>      treating you. _scholar_ has been in and out of
+<ce>      here all day. Said the last few dues have been resistant
+<ce>      but didn't want to tell them mages until it was all
+<ce>      together. Wait here for a few minutes and you'll see him."
+
+Message:  1012
+<ce>                       (SKILL CHECK FAILED)
+<ce>
+<ce>      You attempt a charming effect, but this patron
+<ce>      resists it. Angry shouting ensues.
+<ce>      
+<ce>      "GUARDS! This %ra's tryin' ta hypnotize me!
+<ce>      An evil person this one is! Someone help!"
+<ce>      
+<ce>      A hasty escape ensues, and the city watch
+<ce>      are on their way.
+
+Message:  1013
+<ce>      With no apparent help within the tavern, 
+<ce>      the best you can do is remain here in ___tavern_
+<ce>      and search. Surely something will come up
+<ce>      to send you in the right direction.
+
+Message:  1014
+<ce>      You are approached by a =scholar_ with a rather
+<ce>      displeased expression.
+<ce>      
+<ce>      "They sent someone to check on me! Those moronic cads!
+<ce>      I almost have the money put together, and now they
+<ce>      waste your time as well!"
+<ce>      
+<ce>      _scholar_ frowns and shows you a fairly large bag containing gold.
+<ce>      
+<ce>      "I have a Recall spell ready and I'll be at ___qgiver_
+<ce>      when I have the last one collected. I might even
+<ce>      be there sooner than you. Tell them to get off my back
+<ce>      and be more grateful for doing their legwork."
+<ce>      
+<ce>      Without a goodbye, he then leaves to finish the task.
+
+Message:  1015
+<ce>        What are you doing here?
+<ce>     The mage carrying those funds is staying
+<ce>     in ___tavern_!
+
+Message:  1016
+<ce>     This patron then leaves,
+<ce>     looking for someone more pleasant to talk to.
+
+Message:  1030
+%qdt:
+ Someone named _scholar_ has gone to ___tavern_
+ to gather guild dues, but has not returned on time
+ or sent any information regarding the task.
+ I am to travel there, look in _tavern_, and
+ ensure the funds arrive in ___qgiver_
+ within =timer_ days. I'm looking for a =scholar_.
+ My reward will be =reward_ gold pieces.
+
+Message:  1031
+%qdt:
+ I have made contact with _scholar_ and was promised
+ that the funds will arrive in ___qgiver_ soon.
+
+Message:  1032
+%qdt:
+ I didn't find _scholar_ in the tavern.
+ I'll have to find some way to locate
+ him within the town.
+
+QBN:
+Item _reward_ gold range 400 to 500
+
+Person _qgiver_ group Questor male
+Person _scholar_ faction The_Mages_Guild male
+Person _friend_ faction The_Thieves_Guild
+
+Place _tavern_ remote tavern
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+Clock _shortcut_ 0:01 0:04
+Clock _longcut_ 6:00 8:00
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+	place npc _friend_ at _tavern_
+    pc at _tavern_ set _inside_
+
+_begin_ task:
+	clicked npc _friend_
+	prompt 1010 yes _attempt_ no _avoid_
+
+_avoid_ task:
+    say 1016
+    hide npc _friend_
+
+variable _attempt_
+
+_skilled_ task:
+	when skill Thaumaturgy is at least 25
+
+_easywin_ task:
+	when _attempt_ and _skilled_
+	say 1011
+    start timer _shortcut_
+
+_shortcut_ task:
+    start task _success_
+
+_bigfail_ task:
+	when _attempt_ and not _skilled_
+	say 1012
+	setplayercrime Assault
+    spawncityguards immediate
+    hide npc _friend_
+
+_inside_ task:
+    start task _setwire_
+
+variable _setwire_
+
+_reminder_ task:
+    when _setwire_ and not _inside_ and not _easywin_
+    say 1013
+    start timer _longcut_
+    hide npc _friend_
+    log 1032 step 1
+
+_longcut_ task:
+    start task _success_
+
+_success_ task:
+	say 1014
+    log 1031 step 1
+
+_pcgetsgold_ task:
+	when _qgclicked_ and _success_
+	give pc _reward_
+	end quest
+
+_qgclicked_ task:
+	clicked npc _qgiver_
+
+_clearclick_ task:
+	when _qgclicked_ and not _success_
+    say 1015
+	clear _qgclicked_ _clearclick_
+
+_timer_ task:
+	say 1003
+	end quest
