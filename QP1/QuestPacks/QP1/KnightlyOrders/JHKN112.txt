@@ -1,0 +1,154 @@
+Quest: JHKN112
+DisplayName: The Lich's Curse
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>  The %t rarely offers a reward for our tasks,
+<ce>  much less a monetary one. Nevertheless, one knight
+<ce>  stands to gain ten thousand gold coins for a
+<ce>  death-defying dive into some depths.
+<ce>  An ancient lich must be destroyed, and it has cursed
+<ce>  its lair to slay any intruder who has spent
+<ce>  twelve hours within. Your skill must only be exceeded
+<ce>  by your speed if you will undertake this, %pct.
+
+RefuseQuest:  [1001]
+<ce>  I much prefer my knights to be alive. A good choice.
+
+AcceptQuest:  [1002]
+<ce>  I will mark ___dung_ on your map. Find the foe within.
+<ce>  If you must rest, do so outside the cave. Should you spend
+<ce>  twelve hours within, you will fall with no hope of restoration.
+<ce>  The %t will reclaim the reward after =timer_ days have passed,
+<ce>  so you must be certain of your travel. Return alive, please.
+
+QuestFail:  [1003]
+<ce>  You were to destroy the lich and return to __questgiver_ by now.
+
+QuestComplete:  [1004]
+<ce>  Upon hearing of your success,
+<ce>  _questgiver_ claps %g3 hands, and ten thousand gold coins
+<ce>  are presented to you. A moment of congratulatory silence passes.
+<ce>  
+<ce>  "I can say nothing more. You are truly a knight worth honoring.
+<ce>  Your name merits great praise."
+
+Message:  1010
+<ce>    The lich continues channeling its curse, but nevertheless turns to fight you.
+
+Message:  1011
+<ce>  The undead mage finally falls, and all the energy surrounding you dissipates.
+<ce>  You are free of its curse, as is this cave.
+
+Message:  1012
+<ce>  Dark whisperings fill your ears. The lich must be hard at work.
+<ce>  You feel a corrosive energy bind to you, slowly but surely.
+
+Message:  1013
+<ce>  The air around you continues accumulating miasma of some kind.
+<ce>  Breathing becomes difficult, and occasionally your sight is blurry.
+<ce>  You have spent four hours inside ___dung_.
+
+Message:  1014
+<ce>  Your joints ache and your muscles burn. Everything is a chore now.
+<ce>  You have spent eight hours inside ___dung_. Some adventurers
+<ce>  would question whether to continue this pursuit.
+
+Message:  1015
+<ce>  All of a sudden, a tiny shift happens.
+<ce>  All the miasma that surrounded you converges.
+<ce>  It invades your body and forces everything to stop,
+<ce>  including your heart, brain, and lungs.
+<ce>  Your death is instantaneous and painless.
+
+Message:  1016
+<ce>  While outside the depths, you can still feel the energy
+<ce>  upon you, but it isn't increasing. You can rest safely out here.
+
+Message:  1030
+%qdt:
+ I am to be paid ten thousand gold coins
+ through __questgiver_ if I can defeat the ancient lich
+ that haunts ___dung_. I must return to
+ ___questgiver_ and report my success within =timer_ days. 
+
+QBN:
+Person _questgiver_ group Questor male
+
+Clock _timer_ 00:00 0 flag 1 range 0 2
+Clock _timer1_ 4:00
+Clock _timer2_ 8:00
+Clock _timer3_ 12:00
+
+Place _dung_ remote dungeon
+
+Foe _enemy_ is Ancient_lich
+
+Item _reward_ gold range 10000 to 10000
+
+--	Quest start-up:
+	start timer _timer_
+	log 1030 step 0
+	reveal _dung_
+    place foe _enemy_ at _dung_
+    pc at _dung_ set _inside_
+
+_inside_ task:
+    say 1012
+    start task _message_
+
+variable _message_
+
+_killtimer_ task:
+    when _inside_ and not _slain_
+    start timer _timer1_
+    start timer _timer2_
+    start timer _timer3_
+
+_notinside_ task:
+    when _message_ and not _inside_ and not _slain_
+    say 1016
+    stop timer _timer1_
+    stop timer _timer2_
+    stop timer _timer3_
+    
+_timer1_ task:
+    say 1013
+    
+_timer2_ task:
+    say 1014
+    
+_timer3_ task:
+    say 1015
+    reduce player health by 100 every 1 seconds can kill
+
+_inj_ task:
+    clicked foe _enemy_
+    injured _enemy_
+    say 1010
+    change foe _enemy_ infighting true
+
+_slain_ task:
+    killed _enemy_
+    say 1011
+    stop timer _timer1_
+    stop timer _timer2_
+    stop timer _timer3_
+
+_victory_ task:
+	when _qgclicked_ and _slain_
+	give pc _reward_
+	legal repute +5
+	end quest
+
+_qgclicked_ task:
+	clicked npc _questgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _slain_
+    clear _qgclicked_ _clearclick_
+
+_timer_ task:
+    say 1003
+	end quest
