@@ -1,0 +1,129 @@
+Quest: JHTG126
+DisplayName: Toxic Delivery
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>         Some fools over in ___house_ need a lesson taught to them.
+<ce>         They've been messing with our operations over there.
+<ce>         Someone's gotta deliver a warning chest over to 'em, and
+<ce>         if that's you, it's gonna be =reward_ gold pieces
+<ce>         in hand for you.
+
+RefuseQuest:  [1001]
+<ce>         Fine. Job's simple enough that an animal could do it.
+
+
+AcceptQuest:  [1002]
+<ce>             So this chest here, it won't kill anyone. Might make 'em
+<ce>         suffer real bad, but we ain't the Dark Brotherhood.
+<ce>         It needs to go inside _house_.
+<ce>         Just drop it inside and the rest will take care of itself.
+<ce>         You've got =timer_ days to get back here for your gold.
+
+QuestFail:  [1003]
+<ce>         You were to report on the sabotage chest to ___house_ by now.
+
+QuestComplete:  [1004]
+<ce>            Did the chest mess you up a bit? %oth. It's still
+<ce>            kind of a new science. Not intentional, I promise.
+<ce>            If we wanted you dead, you wouldn't be here right now.
+<ce>            Have your gold, and forget about what happened over there.
+
+QuestorPostsuccess:  [1008]
+If I know of any more "special deliveries," I'll tell you 'bout 'em.
+
+QuestLogEntry:  [1010]
+%qdt:
+ _qgiver_ of ___qgiver_ has given me
+ a chest of some kind that needs to be put inside
+ _house_ of ___house_.
+ I'll be paid =reward_ gold if I do it and
+ return in =timer_ days.
+
+Message:  1011
+<ce>  This appears to be _house_.
+
+Message:  1012
+<ce>          You place the chest on the floor.
+<ce>          Once it touches the ground,
+<ce>          it begins emitting some kind of gas
+<ce>          with a low hiss. You'd probably
+<ce>          better get out of here.
+
+Message:  1013
+<ce>          Now outside the residence, you feel
+<ce>          the effects of the toxic gas.
+<ce>          You didn't breathe in a lot of it,
+<ce>          but it was enough to affect you.
+<ce>          
+<ce>          You are also met by two unhappy visitors.
+<ce>          
+<ce>          "The Thieves Guild again. %oth!"
+<ce>          
+<ce>          They ready their weapons to
+<ce>          punish you for ruining their hideout.
+
+Message:  1014
+<ce>  You deliver that box yet %pcf?
+
+QBN:
+Item _box_ item class 1 subclass 8
+Item _reward_ gold range 1001 to 1200
+
+Person _qgiver_ group Questor male
+
+Place _house_ remote house
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+Foe _enemy1_ is Rogue
+Foe _enemy2_ is Burglar
+
+--	Quest start-up:
+	start timer _timer_ 
+	log 1010 step 0
+	pc at _house_ set _inside_
+    get item _box_
+
+_inside_ task:
+    say 1011
+
+_dropped_ task:
+    dropped _box_ at _house_ saying 1012
+
+_healthtick_ task:
+    when inside_ and _dropped_
+    reduce player health by 3 every 2 seconds
+
+_ambush_ task:
+    when _dropped_ and not _inside_
+    start task _outer_
+
+_outer_ task:
+    say 1013
+    reduce player fatigue by 33
+    reduce player health by 20
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    change foe _enemy1_ team 0
+    change foe _enemy2_ team 0
+
+_qgclicked_ task:
+	clicked npc _qgiver_
+
+_questdone_ task:
+	when _dropped_ and _qgclicked_
+	give pc _reward_ 
+	end quest 
+
+_clearclick_ task:
+	when _qgclicked_ and not _dropped_
+    say 1014
+	clear _clearclick_ _qgclicked_
+
+_timer_ task:
+    say 1003
+	end quest 

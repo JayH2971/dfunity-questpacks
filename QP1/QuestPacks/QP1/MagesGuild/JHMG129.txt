@@ -1,0 +1,122 @@
+Quest: JHTG129
+DisplayName: Overdue Book
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>         Something to do? Oh! Oh my, yes, it's kind of a trivial
+<ce>         matter, but I will record it in the guild register
+<ce>         nonetheless if you will lend a helping hand.
+<ce>         This object, this silly little book here, must be
+<ce>         returned to _house_ off to the %di
+<ce>         in a most expeditious manner.
+<ce>         As in, ehm, the next two hours. Have you a good
+<ce>         pair of walking legs, %pct?
+
+RefuseQuest:  [1001]
+<ce>         Oh dear. I don't want to go all the way over there myself.
+
+AcceptQuest:  [1002]
+<ce>         Ah, delightful! A most sporting answer. Yes, you will rise
+<ce>         far and quickly, most certainly, I can easily predict!
+<ce>         Well then, have this book. _book_ is the title.
+<ce>         I, erm, have held on to it for too long and must
+<ce>         now divest myself of it before my good friend
+<ce>         returns home in a few hours' time.
+<ce>         I don't care where you leave it, so long as the book
+<ce>         is inside _house_. A safe return to you!
+
+QuestFail:  [1003]
+<ce>         You were to report on the book's return to _house_ by now.
+
+QuestComplete:  [1004]
+<ce>         Monsters?! %oth, that is worrying indeed!
+<ce>         Did you-- I apologize, I was about to ask if you survived,
+<ce>         but... I'm sorry, this brain of mine is not quite so agile.
+<ce>         I sincerely hope the town guard or someone will have
+<ce>         disposed of what you could not. Please keep this matter
+<ce>         "under wraps," as the trending speech goes. Yes? Please?
+
+QuestorPostsuccess:  [1008]
+Ah, a fine day to you %pct!
+
+QuestLogEntry:  [1010]
+%qdt:
+ _qgiver_ of ___qgiver_ has given me
+ a book, _book_, that needs to be put inside
+ _house_ of ___house_.
+ I have but two hours to report back to __qgiver_.
+
+Message:  1011
+<ce>  Something is afoot within _house_.
+<ce>  You hear the noise of something feral and dangerous,
+<ce>  and it appears to be loose.
+
+Message:  1012
+<ce>      You place the book inside the residence.
+<ce>      Now it's time to return to __qgiver_.
+
+Message:  1013
+<ce>      You escape _house_ and hear
+<ce>      something else nearby. It appears your entry into the
+<ce>      house stirred up a second creature,
+<ce>      and it begins to defend its territory.
+
+Message:  1014
+<ce>  Yes? _house_ is off that way, %di.
+<ce>  Please deliver the book within two hours' time.
+
+QBN:
+Item _book_ book
+
+Person _qgiver_ group Questor male
+
+Place _house_ local house
+
+Clock _timer_ 2:00
+
+Foe _enemy1_ is Ice_atronach
+Foe _enemy2_ is Fire_atronach
+
+--	Quest start-up:
+	start timer _timer_ 
+	log 1010 step 0
+	pc at _house_ set _inside_
+    get item _book_
+
+_inside_ task:
+    say 1011
+    start task _spawn1_
+
+_spawn1_ task:
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    change foe _enemy1_ infighting true
+
+_dropped_ task:
+    dropped _book_ at _house_ saying 1012
+
+_outside_ task:
+    when _dropped_ and not _inside_
+    start task _spawn2_
+
+_spawn2_ task:
+    say 1013
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    change foe _enemy2_ infighting true
+
+_qgclicked_ task:
+	clicked npc _qgiver_
+
+_questdone_ task:
+	when _dropped_ and _qgclicked_
+	give pc nothing 
+	end quest 
+
+_clearclick_ task:
+	when _qgclicked_ and not _dropped_
+    say 1014
+	clear _clearclick_ _qgclicked_
+
+_timer_ task:
+    say 1003
+	end quest 

@@ -63,7 +63,7 @@ Message:  1015
 <ce>  Your death is instantaneous and painless.
 
 Message:  1016
-<ce>  While outside the depths, you can still feel the energy
+<ce>  While outside, you can still feel the energy
 <ce>  upon you, but it isn't increasing. You can rest safely out here.
 
 Message:  1030
@@ -71,12 +71,13 @@ Message:  1030
  I am to be paid ten thousand gold coins
  through __questgiver_ if I can defeat the ancient lich
  that haunts ___dung_. I must return to
- ___questgiver_ and report my success within =timer_ days. 
+ ___questgiver_ and report my success within =timer_ days.
+ I can only spend twelve hours within the depths.
 
 QBN:
 Person _questgiver_ group Questor male
 
-Clock _timer_ 00:00 0 flag 1 range 0 2
+Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _timer1_ 4:00
 Clock _timer2_ 8:00
 Clock _timer3_ 12:00

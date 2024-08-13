@@ -9,7 +9,7 @@ QuestorOffer:  [1000]
 <ce>           There's a treasure chest in a crypt around here
 <ce>         that's infested with bats. If you can find the chest
 <ce>           and bring it back here without killing any bats,
-<ce>                you get something enchanted. Want in?
+<ce>                you get =reward_ gold. Want in?
 
 RefuseQuest:  [1001]
 <ce>                  We'll see if you change your mind.
