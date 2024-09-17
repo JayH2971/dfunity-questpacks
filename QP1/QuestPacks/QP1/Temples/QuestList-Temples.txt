@@ -20,6 +20,7 @@ JHTP108, HolyOrder, M, 1, 0, a quest to recharge a curing trinket
 JHTP109, HolyOrder, M, 7, 1, a quest to remove the Necromancers' influence from a home
 JHTP110, HolyOrder, M, 2, 1, a quest to cure a citizen's lycanthropy
 JHTP111, HolyOrder, M, 4, 1, a quest to investigate a daedric cohort
+JHTP112, HolyOrder, M, 0, 0, a quest to retrieve an adventurer's corpse
 JHTPA01, HolyOrder, A, 3, 1, a Stendarr quest to escort a vampire
 JHTPA01a, HolyOrder, P, 9, 1,
 JHTPA02, HolyOrder, J, 2, 1, a Julianos quest to rescue a stolen adherent

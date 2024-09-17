@@ -1,0 +1,129 @@
+Quest: JHTP112
+DisplayName: Corpse Retrieval
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>        We've received word of some spelunker who
+<ce>        went too deep and didn't make it out alive. 
+<ce>        The family wants to know that the corpse
+<ce>        has been properly attended to. If you take
+<ce>        this task, you're allowed to keep whatever
+<ce>        you find on the remains.
+
+RefuseQuest:  [1001]
+<ce>        Let me see if I have anything for pacifists.
+
+AcceptQuest:  [1002]
+<ce>        You're looking for the corpse of _pers_
+<ce>        within the depths of ___dung_.
+<ce>        No one knows how %g2 died, except that
+<ce>        the Fighters Guild sent %g3 in =num_ days ago,
+<ce>        and that's far too long to be good.
+<ce>        Ensure that the body receives proper care,
+<ce>        and return here. The request was that
+<ce>        it be finished within =timer_ days.
+
+QuestFail:  [1003]
+<ce>                  __questgiver_ expected you to return
+<ce>                      to ___questgiver_ by now.
+
+QuestComplete:  [1004]
+<ce>        This body shows much more age and decay than the
+<ce>        others within ___dung_. You do what
+<ce>        you can for it. Most of _pers_'s belongings
+<ce>        are worthless or ruined, but a weapon
+<ce>        is still in good shape.
+
+QuestorPostSuccess:  [1008]
+_pers_'s family will be relieved that you cared for the body.
+
+Message:  1010
+<ce>   Thank you for finding _pers_'s remains. I'll tell the family
+<ce>   and have it annotated on your membership record.
+<ce>   May %god stay with you.
+
+Message:  1011
+<ce>  Mm? Any bodies to report on, %pcf?
+
+Message:  1030
+%qdt:
+ Someone named _pers_ has died within
+ ___dung_, and the family asked
+ __questgiver_ to attend to the corpse.
+ I can keep anything I find on the body.
+ I have =timer_ days.
+
+QBN:
+Item _num_ gold range 25 to 60
+Item _body_ dead_body
+Item _weapon1_ item class 3 subclass 8
+Item _weapon2_ item class 3 subclass 9
+Item _weapon3_ item class 3 subclass 12
+Item _weapon4_ item class 3 subclass 14
+
+Person _questgiver_ group Questor
+Person _pers_ group Local_3.0
+
+Place _dung_ remote dungeon6
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+--	Quest start-up:
+  start timer _timer_
+  log 1030 step 0
+  place item _body_ at _dung_
+  reveal _dung_
+  update-quest-item _weapon1_ set-material Dwarven
+  update-quest-item _weapon2_ set-material Dwarven
+  update-quest-item _weapon3_ set-material Dwarven
+  update-quest-item _weapon4_ set-material Dwarven
+  pick one of _w1_ _w2_ _w3_ _w4_ 
+  have _body_ set _dropbody_
+
+_dropbody_ task:
+    take _body_ from pc
+
+_receive_ task:
+  clicked item _body_
+
+_reward1_ task:
+    when _receive_ and _w1_
+    give pc _weapon1_
+
+_reward2_ task:
+    when _receive_ and _w2_
+    give pc _weapon2_
+
+_reward3_ task:
+    when _receive_ and _w3_
+    give pc _weapon3_
+
+_reward4_ task:
+    when _receive_ and _w4_
+    give pc _weapon4_
+  
+_notify_ task:
+    when _timer_ and not _receive_
+    say 1003
+
+_victory_ task:
+	when _qgclicked_ and _receive_
+	say 1010
+	end quest
+
+_qgclicked_ task:
+	clicked npc _questgiver_
+
+_clearclick_ task:
+	when _qgclicked_ and not _receive_
+    say 1011
+	clear _qgclicked_ _clearclick_
+
+variable _w1_
+variable _w2_
+variable _w3_
+variable _w4_
+
+_timer_ task:
+  end quest
