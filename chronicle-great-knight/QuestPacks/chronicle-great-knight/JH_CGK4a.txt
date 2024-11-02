@@ -1,0 +1,33 @@
+Quest: JH_CGK4a
+DisplayName: Chronicle of the Great Knight, Part 4a
+QRC:
+
+QBN:
+
+Foe _ganlas2_ is Lich
+Foe _ghost1_ is Wraith
+Foe _ghost2_ is Ghost
+
+Place _res_ permanent Castle_Necromoghan
+
+--	Quest start-up:
+    pc at _res_ do _inside_
+    create foe _ganlas2_ every 0 minutes 1 times with 100% success
+    change foe _ganlas2_ infighting true
+    create foe _ghost1_ every 0 minutes 2 times with 100% success
+    create foe _ghost1_ every 1 minutes indefinitely with 100% success
+    create foe _ghost2_ every 1 minutes indefinitely with 100% success
+
+_daily2_ task:
+    daily from 0:00 to 23:59
+    cast Heal spell on _ganlas2_
+    cast Shield spell on _ganlas2_
+    change foe _ghost1_ infighting true
+    change foe _ghost2_ infighting true
+    clear _daily2_
+ 
+variable _inside_
+
+_exit_ task:
+    when not _inside_
+    end quest
