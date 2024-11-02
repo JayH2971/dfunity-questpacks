@@ -1,0 +1,35 @@
+Quest: JHBADREPGENERAL
+DisplayName: Bad Reputation Marker
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>      You hear the chatter of some peasants nearby.
+<ce>      
+<ce>      "I hear the guards are looking for someone
+<ce>      named %pcf lately. One of those lawless folk
+<ce>      staying 'round here."
+<--->
+<ce>      You hear the chatter of some peasants nearby.
+<ce>      
+<ce>      "Wait, is that... That's %pcf!
+<ce>      That criminal! Quick, tell the guards!"
+<ce>      
+<ce>      You turn to see who spoke, but the
+<ce>      people have already dispersed.
+
+
+QBN:
+
+Item _dummy_ gem
+
+--	Quest start-up:
+
+_badrep_ task:
+    player legal-repute is lower than -15
+    give pc _dummy_ notify 1010
+    start task _end_
+
+_end_ task:
+    take _dummy_ from pc
+    end quest

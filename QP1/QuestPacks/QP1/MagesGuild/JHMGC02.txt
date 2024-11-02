@@ -26,6 +26,7 @@ Clock _timer_ 3.00:00 8.00:00
 Item _dummy_ gem
 
 --	Quest start-up:
+start timer _timer_
  have _dummy_ set _end_
 
 _timer_ task:

@@ -1,0 +1,29 @@
+Quest: test
+DisplayName: Weapon Test
+-- Message panels
+QRC:
+
+Message:  1011
+<ce>               _reward_
+
+QBN:
+
+Item _reward_ weapon
+
+Clock _timer_ 00:10
+
+--   Quest start-up:
+    say 1011
+   start timer _timer_
+   get item _reward_
+   have _reward_ set _haveitem_
+
+_haveitem_ task:
+   start task _enchant_
+
+_enchant_ task:
+   update-quest-item _reward_ add-enchantment type IncreasedWeightAllowance spell 1
+   clear _enchant_
+   
+_timer_ task:
+   end quest

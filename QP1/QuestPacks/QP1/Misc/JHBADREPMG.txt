@@ -1,0 +1,39 @@
+Quest: JHBADREPMG
+DisplayName: Mages Guild Bad Reputation Marker
+-- Message panels
+--used in MG117
+QRC:
+
+Message:  1010
+<ce>      You're surprised to find a letter put
+<ce>      into your belongings, with no sign
+<ce>      of a courier. You open it.
+<ce>      
+"%pcn,
+ 
+  "Please ensure your actions bring no disrepute
+  to the Mages Guild. It is unfit for the supreme
+  wizardry association in the Iliac Bay to
+  associate with known criminals."
+
+
+QBN:
+
+Item _dummy_ gem
+
+--	Quest start-up:
+
+_badrep_ task:
+    player legal-repute is lower than -15
+
+_guildrank_ task:
+    player guild rank in MagesGuild at least 3
+
+_reaction_ task:
+    when _badrep_ and _guildrank_
+    give pc _dummy_ notify 1010
+    start task _end_
+
+_end_ task:
+    take _dummy_ from pc
+    end quest

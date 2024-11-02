@@ -5,7 +5,7 @@ QRC:
 
 QuestorOffer:  [1000]
 <ce>           Really basic one here, I say. It won't pay much,
-<ce>         but it's still an official contract. Someone dropped
+<ce>         but it's still a proper job. Someone dropped
 <ce>            off a bag of money here with a note, saying it
 <ce>     needs to get across town. You'll be paid a bit for doing it.
 <ce>                Wanna have a nice walk across ___res_?
