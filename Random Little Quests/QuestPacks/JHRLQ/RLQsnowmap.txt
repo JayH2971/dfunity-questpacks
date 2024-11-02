@@ -6,7 +6,7 @@ QRC:
 Message:  1010
 <ce>  There's something crunchy in the snow here.
 <ce>  You search among the powder and find a
-<ce>  crumbled map, still intact.
+<ce>  crumpled map, still intact.
 <ce>  It shows the way to ___dung_
 <ce>  in this region. You make sure to
 <ce>  jot it down.
@@ -15,7 +15,7 @@ Message:  1010
 <ce>  A short search produces a faded map
 <ce>  leading to ___dung_ in
 <ce>  this region. You make sure to mark it down
-<ce>  just in case it's useful.
+<ce>  in case it's useful.
 
 QBN:
 
