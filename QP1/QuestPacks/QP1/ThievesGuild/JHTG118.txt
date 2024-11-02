@@ -109,12 +109,12 @@ Clock _delay_ 0:05
 Item _reward_ gold range 401 to 599
 
 --	Quest start-up:
+    start quest JHTGBADREP
     start timer _timer_
     log 1030 step 0
     place npc _kid_ at _tavern_
     pc at _tavern_ set _idun_
     pc at _res_ set _ires_
-    start timer _timer_
 
 variable _ires_
 _idun_ task:
