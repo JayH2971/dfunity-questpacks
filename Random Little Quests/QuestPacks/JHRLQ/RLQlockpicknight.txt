@@ -1,0 +1,78 @@
+Quest: RLQlockpicknight
+DisplayName: Random Little Quest Lockpick at Night
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>                   (SKILL CHECK PASSED: Lockpicking)
+<ce>
+<ce>      You quietly approach and offer assistance. They're startled,
+<ce>      but take your word and step aside. You feel the lock out
+<ce>      and turn it apart from the inside. They whisper with wonder
+<ce>      and pull out some documents and receipts, useless to you
+<ce>      but valuable to their employer. One of them hands
+<ce>      you a Potion of Invisibility and promises to put in
+<ce>      a good word with the Thieves Guild.
+
+Message:  1010
+<ce>      Quiet movement nearby breaks the still of the night.
+<ce>      You see some figures hunched over an object, unaware
+<ce>      someone observes them. They seem to have gotten
+<ce>      a locked chest from a nearby house, but
+<ce>      their burglar bailed on them. If you're confident in
+<ce>      your lockpicking skill, perhaps you could earn a reward.
+
+Message:  1011
+<ce>  You refuse to get involved. There are no town guards to call for,
+<ce>      and doing business with strangers can be tricky.
+
+Message:  1012
+<ce>                   (SKILL CHECK FAILED: Lockpicking)
+<ce>
+<ce>      You quietly approach and offer assistance. They're startled,
+<ce>      but take your word and step aside. Your best efforts
+<ce>      are beaten by the lock, and they grow restless.
+<ce>      
+<ce>      "Hey, this is a set up, innit? We're about ta ambushed!"
+<ce>      
+<ce>      One of the thieves is overcome by fear and runs away with the chest.
+<ce>      The other pulls out a knife to cut you down.
+
+QBN:
+
+Item _mitem_ potion key 4815872
+
+Person _tg_ faction The_Thieves_Guild
+
+Clock _cooldown_ 3:00
+
+Foe _thief_ is Thief
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when skill Lockpicking is at least 1
+
+variable _accept_
+_finalwin_ task:
+    when _accept_ and _qualified_
+    give pc _mitem_
+    change repute with _tg_ by +3
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    say 1012
+    reduce player fatigue by 10
+    raise time by 0:10
+    create foe _thief_ every 0 minutes 1 times with 100% success
+    change foe _thief_ infighting true
+    start timer _cooldown_
+
+_cooldown_ task:
+    end quest

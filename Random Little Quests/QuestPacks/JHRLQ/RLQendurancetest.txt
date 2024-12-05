@@ -1,0 +1,62 @@
+Quest: RLQendurancetest
+DisplayName: Random Little Quest An Endurance Test
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>                   (ATTRIBUTE CHECK PASSED: Endurance)
+<ce>
+<ce>       You and the other contestants grab hold of the ropes
+<ce>       above. Minutes pass, with all others falling.
+<ce>     You maintain your grip with ease, earning whispered
+<ce>     praise from several of the bystanders, as well
+<ce>     as a potion for curing poisons.
+
+Message:  1010
+<ce>         Seeking entertainment, some of the local villagers have
+<ce>      set up a competitive game nearby. Several poles rise in
+<ce>      the air with ropes between them, and contestants will
+<ce>      hold on as long as they can withstand.
+<ce>      The last one to let go will receive
+<ce>      a Potion of Cure Poison. One spot remains,
+<ce>      if you want to join in.
+
+Message:  1011
+<ce>  This would appear to take a while, and you prefer not to spend the time.
+
+Message:  1012
+<ce>                   (ATTRIBUTE CHECK FAILED: Endurance)
+<ce>
+<ce>        You and the other contestants grab hold of the ropes
+<ce>       above. Minutes pass, with several people falling.
+<ce>       Your burning arms fail you, causing you to hit the ground with
+<ce>       a thud. The potion will go to someone else today.
+
+QBN:
+
+Item _mitem_ potion key 5361377
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when attribute Endurance is at least 75
+
+_accept_ task:
+    raise time by 0:20
+
+_finalwin_ task:
+    when _accept_ and _qualified_
+    reduce player fatigue by 15
+    give pc _mitem_
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    reduce player fatigue by 35
+    say 1012
+    end quest

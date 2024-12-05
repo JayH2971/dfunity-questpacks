@@ -1,0 +1,70 @@
+Quest: RLQclimbmagic
+DisplayName: Random Little Quest Climb for Magic Item
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>                   (SKILL CHECK PASSED: Climbing)
+<ce>
+<ce>         Predictably, this is no ordinary climbing pole.
+<ce>    Your hands meet the first few rungs, slickened with oil.
+<ce>    A lesser climber would fall immediately, but your skill
+<ce>    prevails. The shyster's face twists with disgust
+<ce>    as you light off the pole with your new _mitem_.
+
+Message:  1010
+<ce>         A huckster shows up and plants some kind of climbing pole
+<ce>         into the wet ground, with an enchanted _mitem_ at the top.
+<ce>         He claims that anyone with the ability to reach it
+<ce>         will be its new owner, but will only allow one attempt
+<ce>         per person. The rain will likely make the climb
+<ce>         more difficult than usual. Will you try?
+<--->
+<ce>         A huckster shows up and plants some kind of climbing pole
+<ce>         into the wet ground, with an enchanted _mitem_ at the top.
+<ce>         She claims that anyone with the ability to reach it
+<ce>         will be its new owner, but will only allow one attempt
+<ce>         per person. The rain will likely make the climb
+<ce>         more difficult than usual. Will you try?
+
+Message:  1011
+<ce>  You move on and ignore the diversion. Shortly after,
+<ce>  the nearby crowd roars as a contestant claims the _mitem_.
+<--->
+<ce>  You move on and ignore the diversion.
+
+Message:  1012
+<ce>                   (SKILL CHECK FAILED: Climbing)
+<ce>
+<ce>         Predictably, this is no ordinary climbing pole.
+<ce>    Your hands meet the first few rungs, slickened with oil.
+<ce>    In spite of your best efforts, you fall flat on your back
+<ce>    and suffer minor injuries. When other contestants fail to appear,
+<ce>     the charlatan picks up the pole and hurries off
+<ce>    to somewhere more populated.
+
+QBN:
+
+Item _mitem_ magic_item
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when skill Climbing is at least 40
+
+variable _accept_
+_finalwin_ task:
+    when _accept_ and _qualified_
+    give pc _mitem_
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    say 1012
+    reduce player health by 20
+    end quest

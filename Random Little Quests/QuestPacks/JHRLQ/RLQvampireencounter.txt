@@ -13,7 +13,7 @@ Message:  1011
 <ce>                and she gladly closes in on you.
 
 Message:  1012
-<ce>           The vampire falls, and her belongings are yours
+<ce>           The vampire falls, her belongings yours
 <ce>          to take. A member of the city watch approaches and
 <ce>   gives you thanks and praise for keeping the town safe.
 

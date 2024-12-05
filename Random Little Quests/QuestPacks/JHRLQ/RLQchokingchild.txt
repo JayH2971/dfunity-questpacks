@@ -18,9 +18,9 @@ QuestComplete:   [1004]
 <ce>  out of her pack to pay you.
 
 Message:  1010
-<ce>  A woman cries out in a shrill tone, begging for help.
-<ce>  Her young child is choking and she doesn't understand
-<ce>  how to help. They need a physician. Will you try?
+<ce>  A nearby woman cries out in a shrill tone.
+<ce>  Her young child is choking and they need a physician.
+<ce>  Will you try?
 
 Message:  1011
 <ce>  You refuse to intervene. Thankfully, it doesn't take

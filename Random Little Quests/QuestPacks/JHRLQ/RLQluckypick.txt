@@ -1,0 +1,92 @@
+Quest: RLQluckypick
+DisplayName: Random Little Quest A Lucky Pick
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You collect the gold.
+
+Message:  1010
+<ce>  A pair of well-dressed showmen place a table in the ground
+<ce>  and set six cards on it. They invite people to attempt,
+<ce>  at a fee of 100 gold, to pick the one with the highest value.
+<ce>  The reward is =reward_ gold.
+<ce>  You could give it a try, if you feel lucky.
+
+Message:  1011
+<ce>  Others may wish to try their luck, but you will not.
+<ce>  You continue on.
+
+Message:  1012
+<ce>     You pay the fee and pick one card at random.
+<ce>  They flip it over, showing that the winning value was
+<ce>  elsewhere on the table. Others clamor to attempt it,
+<ce>  leaving you without.
+
+Message:  1013
+<ce>  You dig in your belongings for 100 gold, but cannot find
+<ce>  such a sum. You'll have to try some other day.
+
+Message:  1014
+<ce>  (ATTRIBUTE CHECK PASSED: Luck)
+<ce>  
+<ce>  You get ahead of the crowd to pay the fee.
+<ce>  The cards seem to be in your favor today, for you
+<ce>  choose the one that seems most likely and win the prize.
+<ce>  The showmen glower at you before pushing you away.
+
+Message:  1015
+<ce>     You pay the fee and pick one card at random.
+<ce>  They flip it over, showing that the winning value is yours.
+<ce>  The showmen shrug, pay your reward, and call for others
+<ce>  to take your place.
+
+
+QBN:
+
+Item _reward_ gold range 550 to 650
+
+--	Quest start-up:
+    prompt 1010 yes _pay_ no _refuse_
+
+_refuse_ task:
+    say 1011
+    end quest
+
+_luck85_ task:
+    when attribute Luck is at least 85
+
+_pay_ task:
+    pay 100 money do _try_ otherwise do _nomoney_
+
+_nomoney_ task:
+    say 1013
+    end quest
+
+_try_ task:
+    clear _pay_
+
+_notlucky_ task:
+    when _try_ and not _luck85_
+    start task _selection_
+
+_lucky_ task:
+    when _try_ and _luck85_
+    start task _win2_
+
+_selection_ task:
+    pick one of _lose_ _win1_ _lose_ _lose_ _lose_ _lose_
+
+_lose_ task:
+    say 1012
+    end quest
+
+_win1_ task:
+    say 1015
+    give pc _reward_
+    end quest
+
+_win2_ task:
+    say 1014
+    give pc _reward_
+    end quest

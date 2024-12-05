@@ -30,7 +30,7 @@ Message:  1012
 
 QBN:
 
-Item _reward_ gold range 3000 to 5000
+Item _reward_ gold range 1000 to 2000
 
 Foe _angrybat_ is Barbarian
 

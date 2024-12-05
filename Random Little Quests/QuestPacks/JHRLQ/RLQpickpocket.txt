@@ -34,12 +34,10 @@ Message:  1014
 
 QBN:
 
-Person _person_ faction The_Thieves_Guild
-
 --	Quest start-up:
-    repute with _person_ exceeds 30 do _rep_
 
 _rep_ task:
+    player guild rank in GeneralPopulace at least 1
     say 1014
     end quest
 

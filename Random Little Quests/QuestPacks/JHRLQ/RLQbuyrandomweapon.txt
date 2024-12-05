@@ -39,13 +39,13 @@ Message:  1011
 <ce>                   Buy a random weapon for 200 gold?
 
 Message:  1012
-<ce>           The vendor looks for other potential customers,
+<ce>           The vendor looks for potential customers,
 <ce>                  spending no further words on you.
 
 Message:  1014
 <ce>         You reach into your pockets but do not find 200 gold.
 <ce>         The merchant starts packing up, looking for a better
-<ce>               location with more potential customers.
+<ce>               location with more customers.
 
 QBN:
 

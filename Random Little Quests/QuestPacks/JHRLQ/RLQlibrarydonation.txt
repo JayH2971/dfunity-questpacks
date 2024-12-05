@@ -20,14 +20,14 @@ Message:  1011
 <ce>  
 <ce>  "Good day %ra, I have an offer and
 <ce>  an opportunity for you. I'm here to collect donations
-<ce>  to keep %crn's libraries open. 35 gold to relieve your
+<ce>  to keep %crn's libraries open. 75 gold to relieve your
 <ce>  conscience and keep their doors open, that is all.
 <ce>  Not only that, you get to randomly choose a bead from
 <ce>  this jar. If your bead is green, you get a book as
 <ce>  a free gift the next time you visit a library.
 <ce>  Swell, isn't it?"
 <ce>  
-<ce>  Do you donate 35 gold pieces?
+<ce>  Do you donate 75 gold pieces?
 
 Message:  1012
 <ce>  "No, I understand. Poverty strikes us all
@@ -45,7 +45,7 @@ Message:  1012
 <ce>  The official departs in search of donors.
 
 Message:  1013
-<ce>  You offer up 35 gold pieces and the official
+<ce>  You offer up 75 gold pieces and the official
 <ce>  receives them with glee.
 <ce>  
 <ce>  "Now then, go ahead and pick out a bead!
@@ -56,7 +56,7 @@ Message:  1013
 <ce>  but thanks you for the donation
 <ce>  and moves on to other townspeople.
 <--->
-<ce>  You offer up 35 gold pieces and the official
+<ce>  You offer up 75 gold pieces and the official
 <ce>  receives them with glee.
 <ce>  
 <ce>  "Now then, go ahead and pick out a bead!
@@ -67,7 +67,7 @@ Message:  1013
 <ce>  but thanks you for the donation
 <ce>  and moves on to other townspeople.
 <--->
-<ce>  You offer up 35 gold pieces and the official
+<ce>  You offer up 75 gold pieces and the official
 <ce>  receives them with glee.
 <ce>  
 <ce>  "Now then, go ahead and pick out a bead!
@@ -78,7 +78,7 @@ Message:  1013
 <ce>  but thanks you for the donation
 <ce>  and moves on to other townspeople.
 <--->
-<ce>  You offer up 35 gold pieces and the official
+<ce>  You offer up 75 gold pieces and the official
 <ce>  receives them with glee.
 <ce>  
 <ce>  "Now then, go ahead and pick out a bead!
@@ -89,7 +89,7 @@ Message:  1013
 <ce>  but thanks you for the donation
 <ce>  and moves on to other townspeople.
 <--->
-<ce>  You offer up 35 gold pieces and the official
+<ce>  You offer up 75 gold pieces and the official
 <ce>  receives them with glee.
 <ce>  
 <ce>  "Now then, go ahead and pick out a bead!
@@ -102,12 +102,12 @@ Message:  1013
 
 Message:  1014
 <ce>  You thumb around your things but do not find
-<ce>  35 gold pieces ready at hand. The official
+<ce>  75 gold pieces ready at hand. The official
 <ce>  politely thanks you for the thought
 <ce>  and moves on to search for other people.
 
 Message:  1015
-<ce>  You offer up 35 gold pieces and the official
+<ce>  You offer up 75 gold pieces and the official
 <ce>  receives them with glee.
 <ce>  
 <ce>  "Now then, go ahead and pick out a bead!
@@ -127,7 +127,7 @@ Message:  1015
 <ce>  The voucher is so small, you need not
 <ce>  make place for it among your things.
 <--->
-<ce>  You offer up 35 gold pieces and the official
+<ce>  You offer up 75 gold pieces and the official
 <ce>  receives them with glee.
 <ce>  
 <ce>  "Now then, go ahead and pick out a bead!
@@ -167,7 +167,7 @@ variable _pay_
 
 _payhim_ task:
     when _pay_ and not _given_
-    pay 35 money do _given_ otherwise do _nomoney_
+    pay 75 money do _given_ otherwise do _nomoney_
 
 _nomoney_ task:
     say 1014

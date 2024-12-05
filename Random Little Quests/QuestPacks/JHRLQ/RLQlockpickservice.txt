@@ -1,0 +1,61 @@
+Quest: RLQlockpickservice
+DisplayName: Random Little Quest A Lockpick Service
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>                   (SKILL CHECK PASSED: Lockpicking)
+<ce>
+<ce>      You offer to give it a try, and they hesitantly step aside.
+<ce>      The magic wards on the box resist the Open spell, so you
+<ce>      jimmy it open. Though they're slightly suspicious about how
+<ce>      you obtained such skills, they put aside their concerns
+<ce>      and offer you a Cure Disease potion from their own bag.
+
+Message:  1010
+<ce>      A pair of the %rt's servants are inspecting a locked box
+<ce>      a few paces away. They mutter to each other about seized evidence,
+<ce>      magic shielding, and an upcoming court trial,
+<ce>      but can't get the thing open. If you lend a hand,
+<ce>      perhaps a reward would be yours. Do you try to unlock it?
+
+Message:  1011
+<ce>  Even if you unlocked it, you could suffer false accusation.
+<ce>  You give these government officials a wide berth.
+
+Message:  1012
+<ce>                   (SKILL CHECK FAILED: Lockpicking)
+<ce>
+<ce>      You offer to give it a try, and they hesitantly step aside.
+<ce>      The magic wards on the box resist the Open spell, so you attempt
+<ce>      to jimmy it open. Seconds turn to minutes. Their patience
+<ce>      wears thin. They take the box back and bark at you
+<ce>      to head elsewhere.
+
+QBN:
+
+Item _mitem_ potion key 224588
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when skill Lockpicking is at least 35
+
+_accept_ task:
+
+_finalwin_ task:
+    when _accept_ and _qualified_
+    give pc _mitem_
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    reduce player fatigue by 10
+    raise time by 0:10
+    say 1012
+    end quest
