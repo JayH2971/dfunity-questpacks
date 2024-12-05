@@ -62,11 +62,27 @@ _payhim2_ task:
 _nomoney_ task:
     end quest
 
-_skill1_ task:
-    when skill Pickpocket is at least 10
+variable _skill1_
 
-_skill2_ task:
+variable _skill2_
+
+_skill1a_ task:
+    when attribute Agility is at least 70
+    start task _skill1_
+
+_skill1b_ task:
+    when skill Pickpocket is at least 10
+    start task _skill1_
+
+_skill2a_ task:
+    when attribute Agility is at least 85
+    start task _skill2_
+
+_skill2b_ task:
     when skill Pickpocket is at least 25
+    start task _skill2_
+
+
 
 variable _given_
 _alert_ task:
