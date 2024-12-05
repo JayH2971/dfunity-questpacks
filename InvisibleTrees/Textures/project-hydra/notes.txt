@@ -1,0 +1,194 @@
+The opening movie can be replaced.
+
+Uriel explains that the Iliac Bay is on the verge of collapse.
+The death of Lysandus, unrest among the nobility, and rumors of ancient power have created chaos.
+He offers only partial truths, leaving the player to uncover the full scope of the danger.
+
+
+The Ghost of Lysandus:
+
+Early in the story, the player witnesses Lysandus' ghost haunting the streets of Daggerfall.
+The encounter is dramatic: Lysandus speaks directly to the player, begging for justice and revealing a cryptic warning about the Totem.
+
+
+
+First Faction Encounter:
+
+The player's initial investigation leads to an unexpected meeting with a faction leader (Lady Brisienna).
+This NPC provides context for the larger stakes of the story. Shows urgency and enthusiasm.
+
+
+Emperor: Include a letter in the player's journal at the start of the game. It will explain where to meet Brisienna, and insists on trusting her.
+    Totem risk: create a super-empire across Tamriel or even the entire world.
+    Brisienna: High-ranking Blades member and ambassador to Daggerfall. Disguised as servant of Mynisera. overly helpful near the beginning,
+    unusually intelligent. Betrayal near endgame. She's been promised a seat on the Elder Council if she can deliver the Totem to Emperor.
+
+
+Lysandus: allied to orcs
+    King Mogref: agreed to vassal Betony to Daggerfall for protection. Made Sentinel angry and caused the War of Betony.
+
+Gortwog: allied to Lysandus. Shrewd and intelligent but unused to the civilized ways.
+    Totem risk: His resentment for the civilized races suggests he'd destroy them all, against his assurances.
+    Totem bribe: Powerful Orcish weapon with multiple enchantments
+
+Eadwyre: Extremely wealthy. Will continually bribe the player. Gives very good rewards even for menial things. Give early horse and cart?
+    Player won't speak to him directly in the early story, will be given gifts by servants and third parties (Helseth or Woodborne?).
+    Never once mentions Helseth or Morgiah in any of his dialogues, and only his wife without using her name.
+    Totem risk: Would hand it over to Woodborne, believing it only has limited power, to use it to establish Wayrest's perpetual sovereignty.
+    Totem bribe: +200 legal rep in Wayrest and 500,000 gold, presumed to be for a house.
+
+KOW:
+    Totem risk: Obvious
+    Totem bribe: Infinite tome of training in a magic school
+
+Underking:
+    Totem risk: mystery
+    Totem bribe: An artifact that casts cure disease, cure poison, and free action, to represent his desire to be healed
+
+Popudax: Knows a lot about the Totem but keeps quiet. Knows Gothryd is extremely dangerous and plots with Woodborne. Can secretly
+    give lore hints via letters hidden throughout the region of Daggerfall. Believes he'll be executed if he helps a third party.
+    Player can meet him outside the Castle for a tiny exposition, but he will still be afraid.
+    Try using proximity trigger on him to show a message?
+
+
+Step 1: Introducing the Letter from the Emperor
+The player's initial inventory contains a letter that:
+
+Establishes their mission to meet Brisienna.
+Provides minimal context about why they're needed, emphasizing urgency and the Emperor's trust.
+Draft of the Letter:
+To [Player's Name],
+By the hand of Uriel Septim VII, Emperor of Tamriel
+
+You are to travel to the city of Daggerfall and seek out Lady Brisienna, my trusted ambassador to this volatile region. She will aid you in untangling a grave matter involving the late King Lysandus and the fractured state of the Iliac Bay.
+
+Time is of the essence. Seek her counsel in Daggerfall Castle. The fate of the Bay—and perhaps Tamriel itself—rests upon this mission.
+
+In trust and haste,
+Uriel Septim VII
+
+
+
+Step 2: First Meeting with Brisienna
+Setting: The meeting with Brisienna takes place in a neutral but atmospheric location, such as a hidden chamber in the Daggerfall castle, an abandoned building, or a remote noble estate.
+
+Tone: Brisienna should come across as sharp, competent, and loyal to the Emperor. Her intelligence and charm immediately make her a reliable ally for the player.
+
+Dialogue Ideas:
+
+Initial Information Dump: Brisienna provides a clear summary of the two-pronged plot:
+The unrest caused by King Lysandus' haunting.
+The rumors of a powerful artifact (the Numidium) resurfacing.
+Tactical Advice: She advises the player to:
+Investigate Lysandus' murder through Daggerfall's court.
+Look into factions rumored to be connected to the Numidium.
+Hints at Her Ambition (Subtle Foreshadowing):
+She speaks highly of Uriel Septim, almost reverently.
+Comments like, “It is a rare honor to serve the Emperor directly” hint at her personal stakes.
+
+
+
+
+
+Step 3: Brisienna’s Secret Plot
+Brisienna’s betrayal must feel organic, with hints scattered throughout the early game. Here’s how to seed it:
+
+Clues to Brisienna’s Motivations:
+Her High Ambitions:
+
+In conversations, Brisienna occasionally mentions the Elder Council, perhaps lamenting its corruption or stating how much influence it wields.
+She downplays her own ambitions when asked directly, but these comments should later feel suspicious in hindsight.
+Interactions with Factions:
+
+When the player deals with factions like Wayrest or Sentinel, they might encounter rumors that Brisienna is pressuring them to align with the Empire.
+An NPC could hint that Brisienna’s loyalty to the Emperor might overshadow her loyalty to the player.
+Optional Documents:
+
+The player can find correspondence or records implicating Brisienna. For example:
+A letter from the Emperor promising her a seat on the Elder Council.
+A hidden journal entry where she wrestles with her decision but ultimately commits to betraying the player.
+
+
+Exposition NPCs: Popudax, Charvek-si, Helseth, all court nobles except K'avar, (anyone missing from Famous Faces?), Karethys
+
+
+
+Brisienna's Betrayal:
+    By the end of the story, she is berserk and uncontrollable. She arrives with a large number of soldiers. Recall is disabled,
+    magicka is reduced. Player can flee or fight the soldiers. In either outcome, Brisienna will disappear forever.
+    Player has disobeyed multiple direct orders from her (player is not under her orders, she is just insane with power).
+        Orders player to only speak to specific people within the courts of Daggerfall and Wayrest, and not travel to Sentinel.
+        If player is a werewolf or vampire, threaten to tell Emperor and ruin your name and future.
+    Megalomaniacal, pretends that her orders are the same as the Emperor's.
+
+
+Lysandus: Was ignorant of the Numidium to the end. He was about to discover it, as a subordinate gave him a letter and bade him
+        to read it, about a weapon that could turn the tide of the war. When Lysandus heard about "mass murder" of the enemy
+        soldiers, he threw the letter into the bonfire at the military camp. Wayrest soldiers murdered him to prevent him
+        from acting on the letter, not knowing he never read it. Gortwog sent a protection contingent to Lysandus by coincidence
+        that night but had no intel on the Totem. Once Gothryd became king, Lysandus' subordinates hid all information about
+        the Totem, because they assumed Gothryd would use it to enslave his own people.
+    
+Woodborne: Ironically, one of the player's first contacts via Brisienna. Will accompany the player to a dungeon
+        and cast healing/stamina rejuv spells when player gets low. Pretends he can't fight (or maybe he can't?)
+        Brisienna knows she can't trust Gothryd and wants a contact in Wayrest, and as Woodborne has been rising in
+        power, she eyed him as a possible inroad to the country. Woodborne heard rumors about the Totem and
+        went with assassins to kill Lysandus to grant him time to find the Totem first. Was present at Cryngaine Field when
+        Lysandus was murdered.
+    
+Eadwyre: Was a friend to the Emperor a long time ago, but has lax contact in recent years. Sees Woodborne as a worthy heir,
+        approves of his marriage to Elysana. Prefers Woodborne over Emperor, not knowing Woodborne is a villain. Would
+        not give the totem to Emperor under any circumstances, fears losing his reign to a super-empire.
+            After first visit to Wayrest castle, Brisienna becomes incensed. Arrives at the castle and "asks" player to
+            accompany her. Exposition visit, she'll be the voice of the player. (Totem stage?)
+
+Helseth: feigns obedience to his stepfather, but doubts his future in this kingdom due to Elysana's existence.
+        Really listens to his mother. Serves as a pawn of Barenziah, accompanies the player on a mission.
+        Background character, his days are yet to come.
+
+Barenziah: Is only married to Eadwyre for personal security. Has no interest in Wayrest. Is currently
+        testing the waters in Wayrest and Morrowind, waiting out the period in Morrowind in case she or Helseth can become monarch there.
+        The Queen was considered a loyal vassal throughout the era, and sided against Uriel Septim III and
+        Queen Potema during the War of the Red Diamond circa 3E 120. However, circa 3E 391, she went into exile
+        due to unrest in her province. Symmachus was killed in a riot, and she was forced to abdicate her throne to
+        her uncle Athyn Llethan. Of all her adventures, she is most well-known for going on to help thwart the impostor
+        Jagar Tharn and bring about an end to the Imperial Simulacrum by 3E 399. She married King Eadwyre of Wayrest,
+        who she had forged a bond with while working to defeat Tharn and free the captive Emperor Uriel Septim VII.
+        Background character, her days are behind her.
+
+Cyndassa: Her brother was the page who delivered the Totem letter to Lysandus. She received a large bribe from someone
+        to have him killed (not Woodborne, who wanted the secret of the Numidium, not bury it. Brisienna?). Once Lysandus
+        was murdered, he fled 
+
+Direnni: Ignorant of the Totem. Angry when she finds out Lysandus squandered it. Key to the Dust of Restful Death, which reveals
+        Lysandus' unbroken message. He tells that Woodborne murdered him.
+
+Nulfaga: Driven mad by Lysandus' death. Prophesied that the war would cause ruin to Daggerfall. Caused the storm that wrecked
+        the player's ship. (Foresaw thet the player would cause the Numidium to rise?).
+
+
+Charvek-si: A little absent-minded and ignorant, but useful at her craft. Accompanies the player to a destination? (subterfuge?).
+        Could heal the player from a recurring illness/trap. Likely trusts Woodborne.
+    
+
+Mantella Crux: As time passes within, send messages from Tamriel via ethereal speech. People's hidden thoughts filter through.
+        Some last-minute conversations and revelations. Use a proximity spawning-message-removal method to cause semi-random ordering.
+
+Castellian: Will still die, but his death has to mean something. Accompanies the player to a far-off location, dies upon returning.
+        Head of the Wayrest Elder Council. Perhaps shows the player the location of Woodborne Hall and is slain as retribution.
+        Since Woodborne is a young noble and a recent addition to the Elder Council, Castellian sees the danger in him.
+        Player could be framed for his murder?
+
+Woodborne Hall: Instead of fighting Woodborne, his notes are stored in the two quest locations. Player must retrieve them to find
+        out what the Totem is. Contains a cypher to reading a paper deep within Wayrest palace describing the Totem's location in Daggerfall Castle.
+
+Totem:  Stored in Daggerfall vault as an obviously powerful artifact, but Gothryd doesn't know it's the Totem. Popudax withheld this
+        knowledge from him.
+
+Totem to Emperor: To avoid excessive branching paths, Brisienna makes player an offer: carry a receptable that will send the Totem
+        directly to the Emperor when it is picked up. If refused, go down "Brisienna mad" path. She ambushes player in the Daggerfall vault
+        with multple Blades and a powerful trap. Warns player is putting the Empire at risk and committing treason against Emperor.
+        She sends a letter several weeks later recalling the player to the Imperial City immediately and to cease and desist on all matters.
+
+The bribes: Accepting anyone's bribe and then not giving the totem to them will incur -200 reputation and permanent negative effects.
+        Use global vars for this.
