@@ -7,50 +7,52 @@ add dialogue: action
     If this is in your quest, the indicated conversation topic will be hidden at the start of the quest, and will only be enabled
     when this action activates. "add dialogue for person _wyrmna_" formatting etc.
 
-add face: action
+add X face: action
     This adds the little follower face on the left side of the screen, commonly used when a quest NPC "follows" you. Direnni also uses it
     in her "vision" when the Dust of Restful Death is revealed. Unique NPCs have big and detailed portraits, as seen in "Soul of a Lich" in DFU.
 
-cast effect do: condition
-    I have never used this, as cast spell do has all the function I need.
+cast effect X do: condition
+    I have never used this, as "cast spell do" has all the function I need.
 
-cast spell do: condition
+cast spell X do: condition
     This functions based on spell effects, rather than the specific name of the spell indicated. A quest that requires "Open" will not require
     the store-bought Open spell, for any Open spell will suffice.
 
-cast spell on foe: action
+cast spell X on foe: action
     Unlike the previous event, this is an action, not a condition. Use this to cast useful effects on enemies: heal, shield, spell reflection, etc.
+    If you have multiple foes under one definition, it'll cast the spell on one of them only.
 
-change foe infighting: action
+change foe X infighting true: action
     Without this, quest foes will ignore (and be ignored by) all other entities in the game. I usually activate it when hit OR when clicked by the
     player. If you do it too soon, your quest foe will die far away from the player. Language Skills Overhaul (as of 2024) has a bug that overrides
     normal behavior, making all quest enemies permanently infightable. There are some occasions when you want a foe to not infight enemies,
     such as in QP1's shapeshifted victim MG quest. If the player does not have enemy infighting enabled in their DFU settings, this does nothing.
 
-change foe team: action
+change foe X team Y: action
     This only matters for infighting. Until this is invoked, a foe will be on its own natural team. Use it to set multiple foes on believable teams;
     ie: if a Mage summoned an Imp, set the Imp onto the Mage's team so they don't fight each other. Team 0 is Player Enemy. Team 1 is Player Ally.
     Each time this fires, it affects one entity, so if you're going to spawn multiple entities that need a team change, use the "daily" glitch seen below.
+    You can use numbers or team names to define this Y.
 
-change repute with: action
+change repute with X by Y: action
     Use this to alter the player's reputation with a faction you define in the QBN. You can increase or decrease by up to 200 points. Make sure to
     aim at the correct faction; if you want the player to gain points with the Thieves Guild but the questor is part of the questor subfaction,
     don't increase faction with the questor. For temples, it's your reputation with the god that determines rank, not with the temple.
 
-clicked foe: condition
+clicked foe X: condition
     This is pretty rarely used. See the QP1 FG quest "Gentle Giant" for an idea of how to use it: clicking means you don't try attacking it, to make
     some alternate method of progression.
 
-clear: action
+clear X: action
     Use this to deactivate an activated condition. For instance, you might have an NPC with a conversation early in the quest; after a certain part of the
     quest has progressed, use a "clear" action to ensure the NPC doesn't trigger their new action in an inappropriate place or time, before they
     become relevant again. Using "clear" properly is key to creating complex quests that don't trip over themselves.
 
-create npc: action
+create npc X: action
     DFU does not use this. All NPCs are generated at the start of the quest. If you're concerned about an NPC showing up in the game world at the
     wrong place or time, you can use the "hide" action, or move them to some place where they'll probably never be seen.
 
-create npc at: action
+create npc X at Y: action
     See above, same.
 
 create foe: action
@@ -81,7 +83,7 @@ daily from: condition
     This action governs everything related to time of day. The times can be from 0:00 to 23:59; Daggerfall allowed until 24:00 but that's not in DFU.
     If you want an effect that repeats many times, you can make this condition clear itself, and the game will be in a constant struggle to activate and
     deactivate it. Avoid using it for multiple purposes in one quest, as the game will have to choose between one or the other and may not always
-    keep both toggles happening; ie: your immortal foe may not their immortality and could die because the game was busy repeating some other trigger.
+    keep both toggles happening; ie: your immortal foe may not have their immortality and could die because the game was busy repeating some other trigger.
         _heal_ task:
         daily from 0:00 to 23:59
         cast Heal spell on _angrybat_
@@ -97,13 +99,13 @@ dialogue link: action
     Y topic will be revealed in the player talk options. It has its uses, but I don't experiment much with Daggerfall talk quests since I don't find them
     fun or flexible.
 
-drop as questor: action
+drop X as questor: action
     See above for "add questor", I know of no benefit this provides.
 
-drop face: action
+drop X face: action
     The counterpart to "add face", this is how you remove a face from the screen.
 
-dropped item at place: condition
+dropped X at Y: condition
     This is the action that enables quests such as "the Switcheroo" and so on. Normally quest items can never be dropped, but if you enable this for
     X item in Y location, then the game will specifically allow dropping X item inside Y location, and nowhere else.
 
