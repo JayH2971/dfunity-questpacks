@@ -1,0 +1,235 @@
+* denotes a capability added by Jagget's Quest Actions Extension.
+
+add as questor: action
+    Unnecessary and I have never used it. I don't know of any value this brings to the player.
+
+add dialogue: action
+    If this is in your quest, the indicated conversation topic will be hidden at the start of the quest, and will only be enabled
+    when this action activates. "add dialogue for person _wyrmna_" formatting etc.
+
+add face: action
+    This adds the little follower face on the left side of the screen, commonly used when a quest NPC "follows" you. Direnni also uses it
+    in her "vision" when the Dust of Restful Death is revealed. Unique NPCs have big and detailed portraits, as seen in "Soul of a Lich" in DFU.
+
+cast effect do: condition
+    I have never used this, as cast spell do has all the function I need.
+
+cast spell do: condition
+    This functions based on spell effects, rather than the specific name of the spell indicated. A quest that requires "Open" will not require
+    the store-bought Open spell, for any Open spell will suffice.
+
+cast spell on foe: action
+    Unlike the previous event, this is an action, not a condition. Use this to cast useful effects on enemies: heal, shield, spell reflection, etc.
+
+change foe infighting: action
+    Without this, quest foes will ignore (and be ignored by) all other entities in the game. I usually activate it when hit OR when clicked by the
+    player. If you do it too soon, your quest foe will die far away from the player. Language Skills Overhaul (as of 2024) has a bug that overrides
+    normal behavior, making all quest enemies permanently infightable. There are some occasions when you want a foe to not infight enemies,
+    such as in QP1's shapeshifted victim MG quest. If the player does not have enemy infighting enabled in their DFU settings, this does nothing.
+
+change foe team: action
+    This only matters for infighting. Until this is invoked, a foe will be on its own natural team. Use it to set multiple foes on believable teams;
+    ie: if a Mage summoned an Imp, set the Imp onto the Mage's team so they don't fight each other. Team 0 is Player Enemy. Team 1 is Player Ally.
+    Each time this fires, it affects one entity, so if you're going to spawn multiple entities that need a team change, use the "daily" glitch seen below.
+
+change repute with: action
+    Use this to alter the player's reputation with a faction you define in the QBN. You can increase or decrease by up to 200 points. Make sure to
+    aim at the correct faction; if you want the player to gain points with the Thieves Guild but the questor is part of the questor subfaction,
+    don't increase faction with the questor. For temples, it's your reputation with the god that determines rank, not with the temple.
+
+clicked foe: condition
+    This is pretty rarely used. See the QP1 FG quest "Gentle Giant" for an idea of how to use it: clicking means you don't try attacking it, to make
+    some alternate method of progression.
+
+clear: action
+    Use this to deactivate an activated condition. For instance, you might have an NPC with a conversation early in the quest; after a certain part of the
+    quest has progressed, use a "clear" action to ensure the NPC doesn't trigger their new action in an inappropriate place or time, before they
+    become relevant again. Using "clear" properly is key to creating complex quests that don't trip over themselves.
+
+create npc: action
+    DFU does not use this. All NPCs are generated at the start of the quest. If you're concerned about an NPC showing up in the game world at the
+    wrong place or time, you can use the "hide" action, or move them to some place where they'll probably never be seen.
+
+create npc at: action
+    See above, same.
+
+create foe: action
+    This has a few variants:
+        create foe _foe_ every nn minutes indefinitely with nn% success
+        create foe _foe_ every nn minutes indefinitely with nn% success msg messageID
+        create foe _foe_ every nn minutes nn times with nn% success
+        create foe _foe_ every nn minutes nn times with nn% success msg messageID
+    If you define it with a message ID, this will display that message the first time one of the defined enemies spawns.
+    If you use "indefinitely," the quest enemies will spawn infinitely while its conditions are met.
+    The % success parameter is to define the likelihood of an enemy spawning every X minutes. For instance, if you invoke a foe to spawn
+    every 5 minutes at 20% success, every 5 minutes the game will roll a 100-sided die, and if it's 20 or less, it'll spawn the foe.
+    If it fails the spawn test, it'll just skip it and try again in five minutes.
+    When it says "minutes," those are in-game minutes, or in other words, each Daggerfall minute is five IRL seconds.
+    This action uses the ordinary spawn mechanism in DFU, which will place them out of the player's sight when they are created, usually
+    behind them. Therefore, try to avoid using this in likely cramped places like houses, as the game may have serious problems spawning an enemy
+    at all under such circumstances.
+    Be lenient with the chance and time mechanism inside dungeons. Most characters need to rest at least 6 hours at a time, so if you do
+    something like "create foe X every 11 minutes with 30% success", they're going to get interrupted almost every hour, making the
+    quest nearly impossible to complete. Maybe that's your angle, but keep that precaution in mind.
+    Setting it to "every 0 minutes" will cause enormous enemy spam.
+
+cure pc disease: action
+    This is probably only used for curing a disease you inflict on the player. There could be some potential use of casting a "cure all diseases" effect by
+    piling a bunch of these into one task, all aimed at the different diseases in the game.
+
+daily from: condition
+    This action governs everything related to time of day. The times can be from 0:00 to 23:59; Daggerfall allowed until 24:00 but that's not in DFU.
+    If you want an effect that repeats many times, you can make this condition clear itself, and the game will be in a constant struggle to activate and
+    deactivate it. Avoid using it for multiple purposes in one quest, as the game will have to choose between one or the other and may not always
+    keep both toggles happening; ie: your immortal foe may not their immortality and could die because the game was busy repeating some other trigger.
+        _heal_ task:
+        daily from 0:00 to 23:59
+        cast Heal spell on _angrybat_
+        clear _heal_
+    
+destroy NPC: action
+    This deletes an NPC from your quest, removing them for its duration. In Daggerfall this would actually annihilate the NPC from the game and replace
+    any reference to them with "blank." The NPC would never return again, so you could delete shopkeepers or other NPCs by using this. DFU plays
+    it safer by not allowing that. Really the same as "hide" in a practical sense, and I would prefer "hide" to avoid unknowns.
+
+dialogue link: action
+    This is something I very rarely use or understand. Apparently you link one topic to another, so that when you ask about X topic and it comes up in conversation,
+    Y topic will be revealed in the player talk options. It has its uses, but I don't experiment much with Daggerfall talk quests since I don't find them
+    fun or flexible.
+
+drop as questor: action
+    See above for "add questor", I know of no benefit this provides.
+
+drop face: action
+    The counterpart to "add face", this is how you remove a face from the screen.
+
+dropped item at place: condition
+    This is the action that enables quests such as "the Switcheroo" and so on. Normally quest items can never be dropped, but if you enable this for
+    X item in Y location, then the game will specifically allow dropping X item inside Y location, and nowhere else.
+
+end quest: action
+    This is the single way to shut down a Daggerfall quest. If you have used "give pc X" or "give pc nothing", which both invoke message 1004,
+    the quest will end as a success. Under any other circumstance, the quest will end without success. Be sure to have proper quest ends set in 
+    every possibility, since quests will stay around forever unless they're programmed to end.
+
+enemies: action
+    I have never used this. I assume Hazelnut added it to provide the needed functionality for the Mountain Rumors quest. It looks like it could be
+    useful for certain scenarios, but I don't have examples of my own.
+
+get item: action
+    This will place a quest item directly into the player's inventory, bypassing any pickup screen. This will not trigger a victory condition
+    as explained in "end quest."
+
+give item: action
+    This allows you to plant a quest item onto an enemy. Usually used for progression items like narrative proofs and so on, but you can also use
+    it to add bonus rewards to enemies the player kills. Beware adding an item to an enemy that is repeated multiple times, like giving it to
+    "3 Barbarians", as each Barbarian will have a copy of the item. In that case, you'd prefer to split the Barbarians into three separate entities.
+
+give pc: action
+    This will offer the PC a quest item through the inventory window, invoking message 1004. Can also be "give player nothing" if you want the 1004
+    without giving them any item (see the documentation for "end quest".) After this is used, any ending to the quest will be a success, giving
+    bonus reputation to the quest giver (if any) and related factions.
+
+give pc X notify Y: action
+    Despite its name, this is similar to "get item," and it invokes a message that you define. It's effectively "get item" and "say" combined into one.
+    This action will not invoke quest success.
+
+have X set Y: condition
+    As long as the character has X in their inventory, Y task will remain active. You usually put this at the front of your quest so it's always active.
+    If you put this inside a task, and that task isn't active, this will fail to activate even if the player possesses the item.
+
+hide npc: action
+    Makes an NPC's sprite invisible, and impossible to interact with. Try to avoid overusing this; hiding and restoring the same NPC multiple
+    times can be buggy, and fail to restore them after multiple uses.
+
+injured foe: condition
+    This gets activated when the quest NPC you define suffers any amount of damage. Try to make it mutually exclusive with "killed foe", since
+    the tasks will otherwise fire simultaneously, which is usually weird narration. If you want to use specific numbers,
+    QAE has the conditions "enemy <aFoe> health is lower than <highLimit>%" and "enemy <aFoe> health is lower than <highLimit>% and higher than <lowLimit>%".
+
+item used do: condition
+    This activates Y task when X item is "used" in the inventory screen (IE: "use" mode, click on item). You'll want to strategically place this inside
+    your quest. If you want it to always be available, put it at the start. If you want it only to be possible while inside X location, put it inside
+    the "when pc at" task. If you place this inside a task that is currently deactivated, the action will fail to fire (which can be a useful limitation).
+
+journal note: action
+    I don't know what this is and have never used it.
+
+kill foe: action
+    This will kill the defined enemy, or all of the defined enemies if multiple. They will leave a corpse like normal. This was created by Hazelnut to expand
+    DFU's quest capabilities a bit.
+
+killed foe: condition
+    Not to be confused with the previous entry. This tracks when the defined foe has been killed, and activates the task it's within.
+
+legal repute: action
+    This has a range of -200 to +200. When invoked, it will change the player's legal reputation ("pond scum, common citizen, revered") in the current region.
+    There is no way to invoke legal repute for a remote region.
+
+level nn completed: condition
+    This condition will activate the task it's within once the player reaches X level with their character.
+
+log messageID step nn: action
+    This is how you write messages into the player's quest\ journal. The normal format is to add a %qdt at the front.
+    The steps go in order from 0 ascending. 0 is seen first in the player's journal, then 1, 2, etc. If you define multiple messages with the same step,
+    the most recent one will overwrite the previous one. A simple quest won't need more than a single step, but if it becomes long and complex,
+    having multiple messages could be useful to the player.
+    Placing _location_ locations inside your log messages allows the player to fast travel to them by clicking on them. This is hindered if you place
+    multiple _location_s inside the same message, so you could write in the quest start at step 0, then the quest return at step 1, to give
+    them something separate to click on. Make sure to include the questgiver's town and building so the player knows where to return.
+
+make _item_ permanent: action
+    Whenever a quest item is added to your inventory (with one exception, which is "give pc X"), it will have a green background and be impossible to remove
+    from the inventory. This command removes the green background, makes it possible to drop, and makes it useless for the quest system to detect.
+    Effectively, the item is ejected from the quest system altogether, and behaves like a normal item. If you do not use this, quest items will be removed
+    from the player's inventory when the quest ends, no exceptions.
+
+make pc ill with: action
+    Choose an illness, and inflict it on the player. If the player is immune to disease, this action will fail, but anyone else will suffer the effect.
+
+mute npc: action
+    I have never used this. Apparently it's for ensuring an NPC can't speak when you click on them, but we already have enough problems with NPCs
+    who are supposed to talk and fail to, with no feedback to the player. Use Hide NPC if you really want them out of the picture, or set up your
+    quest conditions to the person will speak only under certain circumstances. Avoid using this.
+
+pc at X set Y: condition
+    While PC is inside X place, activate Y task. There are some non-interior locations like Daggerfall City that can be detected with this action,
+    but I mostly define it as "whole locations only," as it avoids confusion. For instance, inside MQ dungeons there are multiple quest markers,
+    so a questwriter might be tempted to try using them as an "area detection" condition, but none of these react to "pc at place".
+    Only the entire dungeon will activate this condition, not any subsection of it. In addition to interiors like houses and shops,
+    you can also define a remote town using this, and it'll remain active while you're on the streets.
+
+pay X money: action
+    This draws from your gold coins or letters of credit. Highly preferable over "clicked NPC and at least X gold" mechanic, which only recognizes coins.
+    I had an adverse reaction to this when it originally came out, since it would continually drain your money by X amount while the task was active,
+    but I think(?) Hazelnut fixed that. In any case, I always clear a task containing this action after it fires, just to be safe.
+
+pick one of: action
+    As of 2024, I've tested this with 80 variables on a single line, and the quest engine handles this fine. I don't know how far the limit is,
+    but 80 should be more than enough for anyone on one line. Just split it into a previous "pick one of" if you somehow need more than 80 variables.
+
+place foe X at Y: action
+    This can be used to place a single enemy at a random quest marker in the location. Most civilized locations will only have one quest marker
+    per interior, but dungeons can have multiple. This action has a subtype, "place foe _foe_ at _place_ marker nn", in case you really knew
+    specific locations and wanted to define their placement (ie: re-using main quest dungeons and adding things to them).
+    This action does not follow the usual DFU spawning rules, and can place an enemy in the player's view. Until a quest enemy is placed
+    in the world, it will not exist anywhere. If you use this on multiple locations in the world, a new copy of the enemy will be placed there.
+    
+place item X at Y: action
+    This follows the same rules as the above entry. The item will be placed on the ground with a predefined sprite, and clicking on it
+    will add it to the player's inventory with a green background. Be aware that many items have strange sprites in the game world,
+    and some are totally invisible. Any time you place a quest item for the first time, preview it in the game world to make
+    sure it's clickable. Swords and other equipment often have bad sprites.
+    You can circumvent this shortcoming by placing a treasure chest or a bag, and combining it with a "have X do Y" condition to remove
+    the bag/chest from the player inventory and replace it with the real quest item, "get item X". Until a quest item is placed
+    in the world, it will not exist anywhere.
+
+place npc X at Y: action
+    Unlike with the other two "place" actions, a quest NPC is created immediately upon quest start and placed in a random marker somewhere
+    in the world. Their natural placement will depend on their faction type; for instance, creating an NPC who is an alchemist will
+    normally put them inside an apothecary as their creation point. Use this action to move the NPC to a new location. The same NPC
+    will get moved around each time, with their identity persisting across locations, in contrast to the reoeat spawning method
+    used by "place foe". In other words, you won't be leaving phantom copies of the NPC in previous locations when you use this action.
+
+teleport: action
+    This can only be used to dungeons. Trying to teleport a player to any other location will put them into the void.

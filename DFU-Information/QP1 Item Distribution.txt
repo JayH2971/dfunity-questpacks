@@ -1,0 +1,68 @@
+
+
+CWU Silence 4, 0
+CWH Wisdom 4, 1 JHTPA02a
+CWU Wildfire 4, 2
+CWU Force Bolt 4, 3
+CWU Light 4, 4
+CWU Wizard Lock 4, 5
+CWU Open 4, 6   JHCAPA01
+CWU Cure Poison 4, 7
+Vampiric effect when strikes 4,8
+CWU Wizard's Fire 4, 9
+CWU Levitate 4, 10 ("Leaping item") JHDB226
+CWH Water Walking 4, 11
+Absorbs spells 4, 12 ("item of Magicka")
+CWU Stamina 4, 13 ("Never Tiring item")
+CWU Slowfalling 4, 14 (item of Featherweight")
+CWU Shield 4, 15 (item, the Protector")
+CWU Shock 4, 16
+CWS Paralysis 4, 17 ("material Cursing item")
+CWU Far Silence 4, 18
+Enhances skill Dragonish 4, 19 ("item of Venom Spitting")
+CWU Fireball 4, 20 ("Blazing item of Fireballs")
+CWU Ice Storms 4, 21 ("Frosty item of Ice Storms")
+CWU Lightning 4, 22
+CWU Fire Storm 4, 23 ("Deadman's item")
+CWU Heal 4, 24
+CWH Orc Strength 4, 25 ("item of the Orc Lord")
+CWU Free Action 4, 26 ("Unrestrainable item")   JHMG222
+CWH Iron Will 4, 27
+CWH Nimbleness 4, 28
+CWH Feet of Notorgo 4, 29 ("Torgo's item")  JHDB227
+CWH Fortitude 4, 30
+CWH Charisma 4, 31 ("item of Friendship")
+CWH Jack of Trades 4, 32 ("item of Good Luck")
+CWS Sphere of Negation 4, 33 ("item of Oblivion") JHDB111
+CWU Toxic Cloud 4, 34
+CWU Medusa's Gaze 4, 35 ("item of Paralysis")   JHDB225
+
+Equipment:
+
+Rank 0, FG214: Silver Longsword or Mace
+Rank 1, FG107: Dwarven Claymore or 2H Axe, Elven helm
+Rank 1, FG133: Dwarven Gauntlets
+Rank 1, FG205: Elven Dai-Katana
+Rank 2, FG131: Mithril Broadsword
+Rank 2, FG237: Mithril Shortbow
+Rank 3, FG118: Dwarven Greaves
+Rank 3, FG130: Ebony tanto, Silver katana
+Rank 3, FG201: Dwarven Left Pauldron
+Rank 4, FG127: Dwarven cuirass, Ebony wakazashi
+Rank 4, FG212: Dwarven right pauldron
+Rank 4, FG216: Dwarven Warhammer
+Rank 5, FG204: Ebony Broadsword
+
+Magical Items:
+
+Automatic quest JHCAPA01, CWU Open
+
+Rank 2 Julianos, JHTPA02, CWH Wisdom
+
+Rank 2, JHMG222: CWU Free Action
+
+Rank 7, JHDB111; CWS Sphere of Negation
+Rank 1, JHDB225; CWU Medusa's Gaze
+Rank 3, JHDB226; CWU Levitate
+Rank 0, JHDB227; CWH Feet of Notorgo
+
