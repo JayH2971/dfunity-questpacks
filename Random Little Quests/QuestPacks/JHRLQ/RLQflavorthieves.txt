@@ -1,0 +1,38 @@
+Quest: RLQflavorthieves
+DisplayName: Random Little Quest Thieves Guild Flavor
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>   A note gets passed into your hand. It's small enough to
+<ce>   read without attracting attention.
+<ce>   
+<ce>   "This tavern's safe for thieves. Rest here."
+<--->
+<ce>   A pair of the town guard speak with the tavern owner.
+<ce>   
+<ce>   "You're sure no one from the Thieves Guild is staying here?
+<ce>   Fine. We're leaving."
+<ce>   
+<ce>   They pass by you, leaving you pleased to remain undiscovered.
+
+QBN:
+
+Clock _timer_ 7:00
+
+--	Quest start-up:
+    start timer _timer_
+    pc at any tavern set _taverny_
+
+_member_ task:
+    player guild rank in GeneralPopulace at least 1
+
+variable _taverny_
+
+_tavgreet_ task:
+    when _member_ and _taverny_
+    give pc nothing
+    end quest
+
+_timer_ task:
+    end quest

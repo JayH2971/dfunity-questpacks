@@ -26,6 +26,8 @@ Message:  1011
 <ce>                       You ignore the axe.
 
 Message:  1012
+<ce>            (SKILL CHECK FAILED: Pickpocketing)
+<ce>            
 <ce>            You lay your hands on the axe and try to pull.
 <ce>             Your pickpocketing skills come up short, as
 <ce>              your obvious movements attract attention.
@@ -46,13 +48,14 @@ _reject_ task:
     end quest
 
 _accept_ task:
+    update-quest-item _reward_ set-material Steel
     pick one of _go1_ _go2_
 
 _skill1_ task:
-    when skill Pickpocket is at least 15
+    when skill Pickpocket is at least 20
 
 _skill2_ task:
-    when skill Pickpocket is at least 20
+    when skill Pickpocket is at least 25
 
 variable _go1_
 variable _go2_

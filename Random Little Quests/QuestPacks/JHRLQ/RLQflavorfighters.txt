@@ -1,0 +1,61 @@
+Quest: RLQflavorfighters
+DisplayName: Random Little Quest Fighters Guild Flavor
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>   Your presence in the guild hall earns you a nod.
+<ce>   
+<ce>   "Welcome home. We've got plenty for you to do."
+<--->
+<ce>   A fellow member of the Fighters Guild greets you.
+<ce> 
+<ce>   "Welcome back. You here for repairs, training, or just work?"
+
+Message:  1010
+<ce>  As you enter the tavern, you see a pair of worn
+<ce>   fighters. They wave at you as they leave.
+<ce>   
+<ce>   "Good to see another member of the guild.
+<ce>   Don't make a mess in here!"
+<--->
+<ce>  As you enter the tavern, you see a pair of weary
+<ce>   archers. They wave at you as they leave.
+<ce>   
+<ce>   "More Fighters Guild! Always better!"
+<--->
+<ce>  As you enter the tavern, you see a pair of tired
+<ce>   warriors. They wave at you as they leave.
+<ce>   
+<ce>   "We're headed to the Fighters Guild for
+<ce>   some work. Maybe we'll see you there."
+
+QBN:
+
+Clock _timer_ 7:00
+
+--	Quest start-up:
+    start timer _timer_
+    pc at any tavern set _taverny_
+    pc at any fighters set _fightery_
+
+_member_ task:
+    player guild rank in FightersGuild at least 1
+
+_daytime_ task:
+    daily from 11:00 to 23:00
+
+variable _taverny_
+
+_tavgreet_ task:
+    when _member_ and _taverny_
+    say 1010
+
+variable _fightery_
+
+_fggreet_ task:
+    when _member_ and _daytime_ and _fightery_
+    give pc nothing
+
+_timer_ task:
+    end quest

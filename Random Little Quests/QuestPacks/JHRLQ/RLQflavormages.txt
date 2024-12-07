@@ -1,0 +1,59 @@
+Quest: RLQflavormages
+DisplayName: Random Little Quest Mages Guild Flavor
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>   Your feet pass over the floor of the guild hall,
+<ce>   activating invisible runes. Written words begin to glow.
+<ce>   
+<ce>   "Known. Accepted. Member."
+<--->
+<ce>   A warding trap has been placed here, but it deactivates
+<ce>   upon recognizing a member in the Mages Guild.
+<ce>   You step over it with ease.
+
+Message:  1010
+<ce>  The bored shopkeeper livens a little upon seeing you,
+<ce>  taking the customary place in the shop.
+<ce>  
+<ce>  "Hello, welcome! The best prices for members
+<ce>  of the Mages Guild, yes indeed!"
+<--->
+<ce>  You pass by a fellow member of the Mages Guild who is leaving.
+<ce>  
+<ce>  "If you ask me, this shop has nothing. You'd be better off
+<ce>  finding stingers right on the scorpions themselves."
+
+QBN:
+
+Clock _timer_ 7:00
+
+--	Quest start-up:
+    start timer _timer_
+    pc at any apothecary set _taverny_
+    pc at any magery set _fightery_
+
+_member_ task:
+    player guild rank in MagesGuild at least 1
+
+_daytime_ task:
+    daily from 11:00 to 23:00
+
+_daytime2_ task:
+    daily from 7:00 to 22:00
+
+variable _taverny_
+
+_tavgreet_ task:
+    when _member_ and _taverny_ and _daytime2_
+    say 1010
+
+variable _fightery_
+
+_fggreet_ task:
+    when _member_ and _daytime_ and _fightery_
+    give pc nothing
+
+_timer_ task:
+    end quest

@@ -5,11 +5,11 @@ QRC:
 
 QuestComplete:  [1004]
 <ce>          Your foot bumps into something hard in the ground.
-<ce>    You look down and see that a potion is submerged in the earth.
-<ce>           You dig it out and look around to see if anyone
+<ce>    You look down in the fog and see that a potion is submerged in the earth.
+<ce>           Digging it out, you look around to see if anyone
 <ce>             would claim it for themselves, but no one does.
 <ce>   Its label is ancient, and it was obviously lost and forgotten.
-<ce>           You gingerly pocket the concoction for yourself,
+<ce>           You pocket the concoction for yourself,
 <ce>        certain that if it mattered to anyone else, they would
 <ce>                    have spoken for it already.
 

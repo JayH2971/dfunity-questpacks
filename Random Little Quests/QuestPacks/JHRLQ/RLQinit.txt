@@ -88,10 +88,10 @@ _sunnyday_ task:
 --sunnyday should have many more events since it can happen year-round
 
 _sunnydayevents1_ task:
-    pick one of _potionsale_ _alms_ _weaponfind_ _trainmysticism_ _trainmedical_ _buyreligious_ _escapedatron_
+    pick one of _potionsale_ _alms_ _weaponfind_ _trainmysticism_ _trainmedical_ _buyreligious_ _escapedatron_ _flavorfighters_ _flavorknights_
 
 _sunnydayevents2_ task:
-    pick one of _immortal_ _templeescort_ _tavernfight_ _singingcircle_ _luckypick_ _endurancetest_
+    pick one of _immortal_ _templeescort_ _tavernfight_ _singingcircle_ _luckypick_ _endurancetest_ _flavorthieves_
 
 _sunnynight_ task:
     when not _daylight_ and _sunning_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -107,7 +107,7 @@ _overcastday_ task:
     start task _stopevents_
 
 _cloudydayevents_ task:
-    pick one of _angrypick_ _buyrandomweapon_ _changebandage_ _loanpick_ _longbladefight_ _orcencounter_ _punchblock_ _tavernrace_ _traincentaurian_
+    pick one of _angrypick_ _buyrandomweapon_ _changebandage_ _loanpick_ _longbladefight_ _orcencounter_ _punchblock_ _tavernrace_ _traincentaurian_ _flavorfighters_
 --picked simultaneous with overcastday
 
 _overcastdayevents_ task:
@@ -128,7 +128,7 @@ _fogday_ task:
     start task _stopevents_
 
 _fogdayevents_ task:
-    pick one of _trainetiquette_ _freepotion_ _batnest_ _buydrug_ _defendtown_ _guardweapon_ _fogsteal_ _traindaedric_ _thievesmember_ _lockpickservice_
+    pick one of _trainetiquette_ _freepotion_ _batnest_ _buydrug_ _defendtown_ _guardweapon_ _fogsteal_ _traindaedric_ _thievesmember_ _lockpickservice_ _flavorfighters_ _flavorknights_
 
 _fognight_ task:
     when not _daylight_ and _foggy_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -144,7 +144,7 @@ _rainday_ task:
     start task _stopevents_
 
 _raindayevents_ task:
-    pick one of _chokingchild_ _fightersguild_ _payraintaxes_ _killrats_ _returnbook_ _dungeoncaptive_ _trainnymph_ _climbmagic_
+    pick one of _chokingchild_ _fightersguild_ _payraintaxes_ _killrats_ _returnbook_ _dungeoncaptive_ _trainnymph_ _climbmagic_ _flavorknights_ _flavormages_
 
 _rainnight_ task:
     when not _daylight_ and _rainy_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -176,7 +176,7 @@ _snowyday_ task:
     start task _stopevents_
 
 _snowydayevents_ task:
-    pick one of _axechop_ _snowmap_ _paysnowtaxes_ _trainclimbing_ _giantencounter_ _traindestruction_
+    pick one of _axechop_ _snowmap_ _paysnowtaxes_ _trainclimbing_ _giantencounter_ _traindestruction_ _flavormages_
 
 _snowynight_ task:
     when not _daylight_ and _snowy_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -239,6 +239,18 @@ _escapedatron_ task:
 
 _fightersguild_ task:
     start quest RLQfightersguild
+
+_flavorfighters_ task:
+    start quest RLQflavorfighters
+
+_flavorknights_ task:
+    start quest RLQflavorknights
+
+_flavormages_ task:
+    start quest RLQflavormages
+
+_flavorthieves_ task:
+    start quest RLQflavorthieves
 
 _fogsteal_ task:
     start quest RLQfogsteal

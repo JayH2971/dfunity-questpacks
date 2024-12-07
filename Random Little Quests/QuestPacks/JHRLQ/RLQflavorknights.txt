@@ -1,0 +1,60 @@
+Quest: RLQflavorknights
+DisplayName: Random Little Quest Knightly Order Flavor
+-- Message panels
+QRC:
+
+QuestComplete:  [1004]
+<ce>   Your presence in the shop is noticed
+<ce>  by the owner, who shuffles by.
+<ce>   
+<ce>   "Welcome, knight! Come for some new equipment?
+<ce>   I would love to hear of your exploits!"
+<--->
+<ce>   A pair of villagers exit the shop.
+<ce>   When they realize you're a knight, they bow respectfully.
+
+Message:  1010
+<ce>  The tavern's owner sweeps the floor as you enter.
+<ce>   
+<ce>   "A knight? That makes me feel safer. Stay with us, please."
+<--->
+<ce>  A pair of ruffians were making a stir in the tavern,
+<ce>  but they quiet down once they see you.
+<ce>   
+<ce>   "We don't want no trouble, see? We're calming down already.
+<ce>   We don't brawl with knights, we don't."
+<--->
+<ce>  As you enter the tavern, a heavily armored figure
+<ce>  approaches and bows before exiting.
+<ce>   
+<ce>   "A fellow knight is always honored. %god protect you."
+
+QBN:
+
+Clock _timer_ 7:00
+
+--	Quest start-up:
+    start timer _timer_
+    pc at any tavern set _taverny_
+    pc at any weaponstore set _fightery_
+
+_member_ task:
+    player guild rank in KnightlyOrder at least 1
+
+_daytime_ task:
+    daily from 9:00 to 20:00
+
+variable _taverny_
+
+_tavgreet_ task:
+    when _member_ and _taverny_
+    say 1010
+
+variable _fightery_
+
+_fggreet_ task:
+    when _member_ and _daytime_ and _fightery_
+    give pc nothing
+
+_timer_ task:
+    end quest

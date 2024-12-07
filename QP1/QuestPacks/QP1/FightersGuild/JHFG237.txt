@@ -96,7 +96,7 @@ Message:  1016
 
 QBN:
 Item _reward_ gold range 800 to 1000
-Item _bow_ item class 3 subclass 17
+Item _bow_ item class 3 subclass 16
 
 Person _woman_ faction The_Sisters_of_Kykos female
 Person _merch_ faction The_Merchants

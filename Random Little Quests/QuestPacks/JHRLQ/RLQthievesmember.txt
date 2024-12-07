@@ -4,6 +4,33 @@ DisplayName: Random Little Quest A Meeting of Thieves
 QRC:
 
 QuestComplete:  [1004]
+<ce>        A hooded figure approaches and keeps pace with you.
+<ce>   Then he leans in and whispers, "Good to see another
+<ce>   member of the guild. This town's been working
+<ce>   out for me. Here, have a share."
+<ce>   
+<ce>   You're handed a bag of gold, and he departs.
+<--->
+<ce>        A hooded figure approaches and keeps pace with you.
+<ce>   Then she whispers, "Good to see more Thieves Guild here.
+<ce>   This town's been working out for me. Here, have a share."
+<ce>   
+<ce>   You're handed a bag of gold, and she departs.
+<--->
+<ce>        A hooded figure approaches and keeps pace with you.
+<ce>   Then she leans in and speaks, "This place is perfect
+<ce>   for the Thieves Guild. I could stay here for years.
+<ce>   Check out some of my latest take."
+<ce>   
+<ce>   You're handed a bag of gold, and she departs.
+<--->
+<ce>        A hooded figure approaches and keeps pace with you.
+<ce>   Then he speaks, "Folks here have no
+<ce>   idea how to keep their stuff locked up. The guild
+<ce>   loves this town. Have a piece of my latest."
+<ce>   
+<ce>   You're handed a bag of gold, and he departs.
+<--->
 <ce>      You suddenly realize someone is beside you.
 <ce>    Before you can react, you get handed a coin bag.
 <ce>    
@@ -16,8 +43,8 @@ QBN:
 
 Clock _delay_ 0:00
 
-Item _gold1_ gold range 200 to 300
-Item _gold2_ gold range 900 to 1100
+Item _gold1_ gold range 75 to 125
+Item _gold2_ gold range 300 to 400
 
 --	Quest start-up:
     start timer _delay_

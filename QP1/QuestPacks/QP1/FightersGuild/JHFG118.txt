@@ -34,9 +34,6 @@ QuestComplete:  [1004]
 <ce>            whole bone. I'm just glad you're back, anyway.
 <ce>       Take your reward, and see what else we've got available.
 
-RumorsDuringQuest:  [1005]
-The good harvest this year means food prices are getting real low.
-
 Message:  1010
 %qdt:
  The Fighters Guild will pay me
@@ -78,7 +75,7 @@ Message:  1015
 <ce>                         (SKILL CHECK FAILED)
 <ce>
 <ce>              You concentrate and try to read the forces
-<ce>              at work. You reach a conclusion and try to
+<ce>              at work. You reach a conclusion and attempt to
 <ce>        disrupt the spell. Too late, you realize that this is
 <ce>       far beyond you. Some bones begin to rise from the earth,
 <ce>        but far more smoothly than with the ordinary skeleton.

@@ -42,7 +42,7 @@ JHFG204, FightersGuild, M, 5, 1, a quest to slay a vampire lord and two vampires
 JHFG205, FightersGuild, M, 1, 1, a quest to slay a pack of beasts at a rural farmhome
 JHFG210, FightersGuild, M, 2, 0, a quest to rid a city's streets of poisonous critters
 JHFG212, FightersGuild, M, 4, 1, a quest to slay a Mages Guild member in a city
-JHFG214, FightersGuild, M, 0, 1, a quest to slay a zombie in a house (silver weapon reward)
+JHFG214, FightersGuild, M, 0, 1, a quest to slay a zombie in a house
 JHFG216, FightersGuild, M, 4, 1, a quest to get rid of a bad guild member
 JHFG217, FightersGuild, M, 4, 0, a quest to slay a high-ranking Mages Guild Necromancer
 JHFG225, FightersGuild, M, 0, 0, a quest to help find someone from the Mages Guild

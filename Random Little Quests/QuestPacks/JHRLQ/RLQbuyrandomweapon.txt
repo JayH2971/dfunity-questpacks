@@ -17,7 +17,7 @@ Message:  1011
 <ce>         "Got some merchandise here. Shipment of weapons that
 <ce>        never made it to its destination. Poor sods they were,
 <ce>     but this stuff needs to get sold off to recoup their losses.
-<ce>          For 200 gold, you get a random piece of equipment."
+<ce>          For 200 gold, you get a random weapon."
 <ce>
 <ce>         The equipment is held in various sacks, so you can't
 <ce>            tell what is being sold. If you pay the price,
@@ -31,7 +31,7 @@ Message:  1011
 <ce>         "Got some merchandise here. Shipment of weapons that
 <ce>        never made it to its destination. Poor sods they were,
 <ce>     but this stuff needs to get sold off to recoup their losses.
-<ce>          For 200 gold, you get a random piece of equipment."
+<ce>          For 200 gold, you get a random weapon."
 <ce>
 <ce>         The equipment is held in various sacks, so you can't
 <ce>            tell what is being sold. If you pay the price,
