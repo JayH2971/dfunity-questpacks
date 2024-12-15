@@ -1,0 +1,155 @@
+Quest: JHIM123
+DisplayName: Your Mix-Up
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          Wait a minute. Are you %pcf, that one %ra?
+<--->
+<ce>      I'm looking for some %ra named %pcf. Is that you?
+
+RefuseQuest:  [1001]
+<ce>           I could've sworn...
+
+AcceptQuest:  [1002]
+<ce>        "I knew it! Thief! Guards, we have a thief here!"
+<ce>      
+<ce>      You scarecely have a chance to react before multiple
+<ce>      armed figures surround you. One of them holds up
+<ce>      a roll of paper.
+<ce>      
+<ce>      "Your reputation in %crn is forfeit! We have a list
+<ce>      of your crimes, right here!"
+
+QuestComplete:  [1004]
+<ce>                "Hey, you're a really good actor!
+<ce>      Might wanna look up a theatre troupe or something.
+<ce>      Here, have some money for your wasted time."
+<ce>     
+<ce>     The armored figures leave, and everyone resumes their business.
+
+QuestorPostSuccess:   [1008]
+Oh come on, it was all in good fun.
+
+Message:  1010
+<ce>      One count of larceny for the Thieves Guild!
+<ce>      Cats are meant to be pets, not stolen as merchandise!
+<ce>      Expected sentence: _num1_ months!
+<--->
+<ce>      One count of breaking and entering into a Fighters Guild hall!
+<ce>      Sleeping inside during inappropriate hours
+<ce>      and making a loud noise of it!
+<ce>      Expected sentence: _num1_ months!
+
+Message:  1011
+<ce>      Two counts of speaking with a member of the Dark Brotherhood!
+<ce>      Guilt by association, there is no defense against it!
+<ce>      Expected sentence: _num2_ months!
+<--->
+<ce>      Four counts of sleeping inside multiple taverns in the
+<ce>      same day, a heinous crime against hygiene!
+<ce>      Expected sentence: _num2_ months!
+
+Message:  1012
+<ce>      219 counts of selling goods belonging to dead persons!
+<ce>      Filthy lucre won't save your soul!
+<ce>      Expected sentence: _num3_ years!
+<--->
+<ce>      18 counts of grave robbery among the various regional cemeteries!
+<ce>      Expected sentence: _num3_ years!
+
+Message:  1013
+<ce>      9 counts of entering a Temple of %god without wiping your feet!
+<ce>      Expected sentence: _num4_ days!
+<--->
+<ce>      7 counts of carrying more gold than the regional legal limit!
+<ce>      Expected sentence: _num4_ days!
+
+Message:  1014
+<ce>      3 counts of consuming a potion found in a dungeon or
+<ce>      in the possession of an outlaw or a witch!
+<ce>      Expected sentence: _num5_ years!
+<--->
+<ce>      One count of possessing an Ebony Dagger in this
+<ce>      life or in a previous one!
+<ce>      Expected sentence: _num5_ years!
+
+Message:  1015
+<ce>  Laughs and chuckles start to break the illusion
+<ce>      as the spokesman fails to keep the act together.
+<ce>      
+<ce>      "And one act... of eating a barbecued rat under a full moon while..."
+<ce>      
+<ce>      The facade fails, and everyone bursts into laughter.
+<ce>      
+<ce>      "We're so sorry! This is just a thing we like to do. 
+<ce>      Think of it as a 'you fell for it' kinda gimmick,
+<ce>      using real people in the world. It's a lot of fun!"
+<--->
+<ce>  Laughs and chuckles start to break the illusion as the spokesman
+<ce>      fails to keep the act together.
+<ce>      
+<ce>      "And one act... of eating off of a table made from spriggan lumber while..."
+<ce>      
+<ce>      The facade fails, and everyone bursts into laughter.
+<ce>      
+<ce>      "We're so sorry! This is just a thing we like to do. 
+<ce>      Think of it as a 'you fell for it' kinda gimmick,
+<ce>      using real people in the world. It's a lot of fun!"
+
+QBN:
+Item _reward_ gold range 100 to 300
+Item _num1_ gold range 3 to 7
+Item _num2_ gold range 8 to 12
+Item _num3_ gold range 4 to 9
+Item _num4_ gold range 13 to 17
+Item _num5_ gold range 20 to 35
+
+Clock _failsafe_ 0:05
+
+--	Quest start-up:
+	start timer _failsafe_
+    start task _S1_
+
+_S1_ task:
+	say 1010
+    play sound halt every 0 minutes 1 times
+    start task _S2_
+
+_S2_ task:
+	say 1011
+    start task _S3_
+    play sound halt every 0 minutes 1 times
+    clear _S1_
+
+_S3_ task:
+	say 1012
+    start task _S4_
+    play sound halt every 0 minutes 1 times
+    clear _S2_
+
+_S4_ task:
+	say 1013
+    start task _S5_
+    play sound halt every 0 minutes 1 times
+    clear _S3_
+
+_S5_ task:
+	say 1014
+    start task _S6_
+    play sound halt every 0 minutes 1 times
+    clear _S4_
+
+_S6_ task:
+	say 1015
+    start task _S7_
+    play sound laughter_loud every 0 minutes 1 times
+    clear _S5_
+
+_S7_ task:
+    give pc _reward_
+    clear _S6_
+    end quest
+
+_failsafe_ task:
+	end quest
