@@ -35,6 +35,7 @@ JHTG123, GeneralPopulace, M, 1, 0, a quest to retrieve drugs from a dungeon
 JHTG124, GeneralPopulace, M, 5, 1, a quest to protect Viljas' magical skull
 JHTG125, GeneralPopulace, M, 3, 1, a quest to deliver a cursed tome that drains life
 JHTG126, GeneralPopulace, M, 2, 1, a quest to leave a toxic chest inside a residence
+JHTG127, GeneralPopulace, M, 10, 1, a quest to take a diamond from a wizard at night
 JHTG206, GeneralPopulace, M, 0, 0, a quest to steal research notes
 JHTGX00, GeneralPopulace, M, 6, 1, a quest invitation from The Crow
 JHTGY00, GeneralPopulace, M, 0, 0, recurring ability to restore legal reputation

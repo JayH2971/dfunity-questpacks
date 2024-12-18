@@ -1,0 +1,188 @@
+Quest: JHFG134
+DisplayName: To Deliver Justice
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>        Just got this one in today, actually.
+<ce>       The %rt posted a bounty for someone
+<ce>       hiding out in another town.
+<ce>       A few hundred gold and I don't think
+<ce>       the fight's gonna be very tough.
+<ce>       Wanna handle it?
+
+RefuseQuest:  [1001]
+<ce>     Ah, well. Maybe the %rt should pay better.
+
+AcceptQuest:  [1002]
+<ce>           Good, good. So this outlaw's name is Faustinus,
+<ce>       I guess. Code words, second names, whatever these things are.
+<ce>       Go find this Faustinus in ___house_, %di.
+<ce>       The order mentions looking in "_house_."
+<ce>       The pay is =reward_ gold and you have to
+<ce>       return here in =timer_ days. Keep safe, all right?
+
+QuestFail:  [1003]
+<ce>           You needed to slay Faustinus and report by now.
+
+QuestComplete:  [1004]
+<ce>        Done, back, and safe. Always good to hear a job well done.
+<ce>                 Count out your gold... here you go.
+
+Message:  1011
+<ce>        As you leave the guild hall, you're aware of a note
+<ce>       that's pressed into your hand. You didn't see the messenger.
+<ce>
+<ce>             "%ra, Faustinus is innocent.
+<ce>       Please come to _tavern_ here in town.
+<ce>       
+<ce>                _pers_"
+<ce>
+<ce>                What happens now is your choice.
+
+Message:  1012
+<ce>       You're that %ra from the Fighters Guild?
+<ce>    Thank %god, and %god alone.
+<ce>    Please listen to me. The %rt has no idea who "Faustinus" is.
+<ce>    The whole kill order was sent because of a grudge,
+<ce>   someone in the lower courts who can't handle a rival.
+<ce>    Please, you're going to kill an innocent bard.
+<ce>    If this were legitimate, they'd call for the city watch!
+<ce>    They'd do a trial! You need to change your mind.
+<ce>    I'll even give you this Mithril Shortsword.
+<ce>    Please, tell me you won't kill my friend.
+
+Message:  1013
+<ce>       You're making a mistake. A huge mistake.
+<ce>    
+<ce>    I won't forget this. If I get there first,
+<ce>    we'll both be gone. Your name will 
+<ce>    be hated for generations.
+
+Message:  1014
+%ra, Faustinus is innocent.
+Please come to _tavern_ here in town.
+<ce>       
+                    _pers_
+
+Message:  1015
+<ce>   No! They found me!
+<ce>    I'll... I'll fight to the death!
+
+Message:  1016
+<ce>   Faustinus is dead.
+<ce>  Your reward is with the Fighters Guild.
+
+Message:  1017
+<ce>   You're back already? What is it?
+<ce>   
+<ce>   Are you out of your mind?
+<ce>   Betrayals, fraud, a false kill order?
+<ce>   %pcf, I don't know what's gotten into you,
+<ce>   but the Fighters Guild is a professional
+<ce>   organization. We take our job and we do it.
+<ce>   No getting into the gritty details of things.
+<ce>   This order's legitimate, all right?
+<ce>   With what you've done, Faustinus will
+<ce>   probably be in another town soon,
+<ce>   and the %rt's gonna blame us.
+<ce>   
+<ce>   If you don't wanna do a job, just don't take it, okay?
+
+Message:  1018
+<ce>   Thank you. %oth, thank you.
+<ce>   I could not believe that someone would trust me,
+<ce>   much less a stranger, but this means the world to me.
+<ce>   If I ever cross paths with you again, any favor
+<ce>   you ask will be yours. Take the shortsword.
+<ce>   Please, be safe and well.
+
+Message:  1030
+%qdt:
+ __qgiver_ received a bounty to kill
+ someone named Faustinus in ___house_,
+ inside _house_. I have to return
+ to ___qgiver_ in =timer_ days for =reward_ gold.
+
+Message:  1031
+%qdt:
+ I believed a friend of Faustinus,
+ who told me the bounty was a fraud.
+ I can report my decision to
+ __qgiver_.
+
+QBN:
+Item _shortsword_ item class 3 subclass 3
+Item _reward_ gold range 200 to 300
+Item _parch_ letter used 1014
+
+Person _qgiver_ group Questor male
+Person _pers_ faction The_Thieves_Guild female
+
+Foe _bard_ is Bard
+
+Place _house_ remote house
+Place _tavern_ local tavern
+
+Clock _timer_ 00:00 0 flag 17 range 0 2
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    pc at any fighters do _inside_
+    place foe _bard_ at _house_
+    change foe _bard_ infighting true
+    place npc _pers_ at _tavern_
+    restrain foe _bard_
+    update-quest-item _shortsword_ set-material Mithril
+
+variable _inside_
+
+_confront_ task:
+    when not _inside_
+    say 1011
+    get item _parch_
+
+_talk_ task:
+    clicked npc _pers_
+    prompt 1012 yes _give_ no _refuse_
+
+_give_ task:
+    say 1018
+    get item _shortsword_
+    make _shortsword_ permanent
+    hide npc _pers_
+    remove foe _bard_
+    log 1031 step 1
+
+_refuse_ task:
+    say 1013
+    hide npc _pers_
+
+_inj_ task:
+    injured _bard_ saying 1015
+
+_slain_ task:
+    killed _bard_
+    say 1016
+
+_pcgetsgold_ task:
+    when _clickqg_ and _slain_
+    give pc _reward_
+    end quest
+
+_avoid_ task:
+    when _clickqg_ and _give_
+    say 1017
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest
+
+_clickqg_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _clickqg_ and not _give_ and not _slain_
+    clear _clearclick_ _clickqg_

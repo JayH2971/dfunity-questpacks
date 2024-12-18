@@ -62,7 +62,7 @@ Message:  1012
 <ce>               You need to deliver this money to _res_.
 
 Message:  1013
-<ce>            She doesn't have proof, but you don't need it.
+<ce>            She doesn't have proof, but you don't need any.
 <ce>               You place the coin sack into her hands.
 <ce>           She bows before you as much as her ancient frame
 <ce>                   can handle and closes her eyes.

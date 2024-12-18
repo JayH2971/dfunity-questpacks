@@ -42,6 +42,7 @@ Equipment:
 Rank 0, FG214: Silver Longsword or Mace
 Rank 1, FG107: Dwarven Claymore or 2H Axe, Elven helm
 Rank 1, FG133: Dwarven Gauntlets
+Rank 1, FG134: Mithril Shortsword
 Rank 1, FG205: Elven Dai-Katana
 Rank 2, FG131: Mithril Broadsword
 Rank 2, FG237: Mithril Shortbow

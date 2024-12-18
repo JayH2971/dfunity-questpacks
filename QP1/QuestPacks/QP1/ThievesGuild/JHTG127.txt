@@ -1,0 +1,166 @@
+Quest: JHTG127
+DisplayName: A Mage's Prize
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>                Word is that a diamond is being held
+<ce>                    by some wizard here in town.
+<ce>         It's got some enchantment properties or
+<ce>         whatever for some Mages Guild experiment.
+<ce>         What matters is we're being hired to pick it up.
+<ce>         Sounds simple enough to me, if you want it.
+
+RefuseQuest:  [1001]
+<ce>              I guess stealing isn't for every thief.
+
+AcceptQuest:  [1002]
+<ce>             Head on over to _res_, %di.
+<ce>          But don't go in during the day.
+<ce>          It's only stored there at night.
+<ce>          Bring it back to me and you'll
+<ce>          be =reward_ gold richer.
+<ce>          This is a 24-hour job,
+<ce>          'cause that diamond's
+<ce>          gonna get used up the day after.
+
+QuestFail:  [1003]
+<ce>        You were to deliver the diamond
+<ce>          to _questgiver_ by now.
+
+QuestComplete:  [1004]
+<ce>             Fine job. The nages lose today.
+<ce>          Here's your =reward_ gold.
+
+Message:  1010
+<ce>        You enter _res_ during the daytime,
+<ce>        Hissing smoke and warm energy roll across the floor,
+<ce>        and you hear guards clamoring outside.
+<ce>        It appears your entry has been spotted.
+
+Message:  1011
+<ce>        You grab the gem, and by sheer luck,
+<ce>        the mage who lives here happens to arrive.
+<ce>        You receive a harsh glare.
+<ce>        
+<ce>        "You would dare steal from me?
+<ce>        The Mages Guild is not an enemy
+<ce>        worth threatening. They will know of this!"
+<ce>        
+<ce>        If you surrender the gem, perhaps
+<ce>        you can still get out of this clean.
+<ce>        Do you offer it to the mage?
+
+Message:  1012
+<ce>        You enter _res_ in the dark.
+<ce>        No one seems to have spotted you.
+
+Message:  1014
+<ce>        The wizard is somewhat surprised,
+<ce>        and his features soften.
+<ce>        
+<ce>        "A wise choice. I will tell no one of this...
+<ce>        but do not believe you can continue to steal.
+<ce>        Next time, I will exercise no restraint."
+<ce>     
+<ce>        He then takes the diamond elsewhere for safekeeping.
+<ce>        The gem is lost, but you won't make a guild angry today.
+
+Message:  1015
+<ce>        (ATTRIBUTE CHECK PASSED: Luck)
+<ce>        
+<ce>        You grab the gem, and by sheer happenstance,
+<ce>        the mage who lives here happens to arrive.
+<ce>        But greater luck is yours, for the wizard
+<ce>        is too busy reading a document to notice
+<ce>        your presence.
+<ce>        
+<ce>        "Hmm, yes... azimuthal vectors should certainly
+<ce>        be a priority for... but what's this?"
+<ce>        
+<ce>        Spotting a grievous error in the text, the wizard
+<ce>        turns and exits the house in a rage.
+<ce>        You ought to get out of here before
+<ce>        your fortune runs out.
+
+Message:  1016
+<ce>        "You will regret this! The Mages Guild
+<ce>        is not to be underestimated!"
+<ce>        
+<ce>        He then casts a spell. Whether it's invisibility
+<ce>        or teleportation you can't tell, but
+<ce>        he clearly believed his life was in danger.
+<ce>        The diamond is yours.
+
+Message:  1030
+%qdt:
+ _questgiver_ needs me to get
+ a _gem_ from some mage in _res_
+ ___res_ and bring it back to
+ __questgiver_ in 24 hours.
+ I should only go during the night.
+
+QBN:
+
+Person _questgiver_ group Questor male
+Person _dummymg_ faction The_Mages_Guild
+
+Item _reward_ gold range 300 to 399
+Item _gem_ diamond
+
+Place _res_ local house
+
+Clock _timer_ 1.00:00
+
+-- Quest start-up:
+  start timer _timer_
+  log 1030 step 0
+  pc at _res_ do _inside_
+
+variable _inside_
+
+_daytime_ task:
+    daily from 6:00 to 18:00
+
+_caught_ task:
+    when _inside_ and _daytime_
+    say 1010
+    play sound halt every 2 minutes 1 times
+    setplayercrime Trespassing
+    spawncityguards
+
+_easy_ task:
+    when _inside_ and not _daytime_
+    say 1012
+    place item _gem_ at _res_
+
+_got_ task:
+  clicked item _gem_
+
+_lucky_ task:
+    when attribute Luck is at least 70
+
+_luckysave_ task:
+    when _got_ and _lucky_
+    say 1015
+
+_noluckysave_ task:
+    when _got_ and not _lucky_
+    prompt 1011 yes _surrender_ no _steal_
+
+_surrender_ task:
+    say 1014
+    end quest
+
+_steal_ task:
+    say 1016
+    change repute with _dummymg_ by -10
+
+_victory_ task:
+  toting _gem_ and _questgiver_ clicked
+  give pc _reward_
+  end quest
+
+_timer_ task:
+  say 1003
+  end quest

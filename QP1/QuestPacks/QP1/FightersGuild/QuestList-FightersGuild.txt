@@ -33,8 +33,9 @@ JHFG128, FightersGuild, M, 8, 1, a quest to supposedly escort someone
 -JHFG129, FightersGuild, M, 7, 1, shapeshifter quest, better removed for now
 JHFG130, FightersGuild, M, 3, 1, a quest to help clear a cemetery of its guardian
 JHFG131, FightersGuild, M, 2, 1, a quest to rescue a child from a dungeon
-JHFG132, FightersGuild, M, 10, 1, a quest to destroy a conducting atronach in a house
+JHFG132, FightersGuild, M, 15, 1, a quest to destroy a conducting atronach in a house
 JHFG133, FightersGuild, M, 1, 1, a quest to deliver a bag of gold across town
+JHFG134, FightersGuild, M, 1, 1, a quest to slay Faustinus the outlaw
 JHFG201, FightersGuild, M, 3, 1, a quest to slay a vampire in another town
 JHFG202, FightersGuild, M, 6, X, a quest to slay a daedra in a dungeon
 JHFG203, FightersGuild, M, 1, 1, a quest to slay angry rangers and their pets
