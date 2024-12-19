@@ -1,5 +1,5 @@
-Quest: RLQlottery
-DisplayName: Random Little Quest A Lottery
+Quest: RLQtestluck
+DisplayName: Random Little Quest Test Luck
 -- Message panels
 QRC:
 

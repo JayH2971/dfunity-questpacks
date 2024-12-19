@@ -1,5 +1,5 @@
-Quest: RLQlockpicknight
-DisplayName: Random Little Quest Lockpick at Night
+Quest: RLQtestlockpick
+DisplayName: Random Little Quest Test Lockpick
 -- Message panels
 QRC:
 

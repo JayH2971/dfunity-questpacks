@@ -1,5 +1,5 @@
-Quest: RLQorcencounter
-DisplayName: Random Little Quest An Orc Encounter
+Quest: RLQfoeorc
+DisplayName: Random Little Quest Foe Orc
 -- Message panels
 QRC:
 

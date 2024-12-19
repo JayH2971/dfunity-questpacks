@@ -67,7 +67,7 @@ Message:  1014
 <ce>        The gem is lost, but you won't make a guild angry today.
 
 Message:  1015
-<ce>        (ATTRIBUTE CHECK PASSED: Luck)
+<ce>        (ATTRIBUTE CHECK PASSED: LUCK)
 <ce>        
 <ce>        You grab the gem, and by sheer happenstance,
 <ce>        the mage who lives here happens to arrive.

@@ -1,5 +1,5 @@
-Quest: RLQleprosyheal
-DisplayName: Random Little Quest Heal Leprosy
+Quest: RLQtestmedical3
+DisplayName: Random Little Quest Test Medical III
 -- Message panels
 QRC:
 

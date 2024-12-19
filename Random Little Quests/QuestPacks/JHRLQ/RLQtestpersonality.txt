@@ -1,5 +1,5 @@
-Quest: RLQsingingcircle
-DisplayName: Random Little Quest Singing Circle
+Quest: RLQtestpersonality
+DisplayName: Random Little Quest Test Personality
 -- Message panels
 QRC:
 

@@ -1,5 +1,5 @@
-Quest: RLQgiantencounter
-DisplayName: Random Little Quest Giant Encounter
+Quest: RLQfoegiant
+DisplayName: Random Little Quest Foe Giant
 -- Message panels
 QRC:
 

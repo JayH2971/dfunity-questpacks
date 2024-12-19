@@ -1,5 +1,5 @@
-Quest: RLQrunningthief
-DisplayName: Random Little Quest A Running Thief
+Quest: RLQfoethief
+DisplayName: Random Little Quest Foe Thief
 -- Message panels
 QRC:
 

@@ -17,7 +17,7 @@ Message:  1011
 <ce>             want to go in and clean the rest, I'll split
 <ce>                    the reward with you. You in?"
                                      <--->
-<ce>         A warrior spattered with blood all around hails you.
+<ce>         A warrior spattered with blood hails you.
 <ce>
 <ce>         "Hail. I have an assignment from the Fighters Guild
 <ce>         to kill a few rats in a local house, but they're tougher

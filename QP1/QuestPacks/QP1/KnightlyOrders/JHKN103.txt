@@ -84,7 +84,7 @@ _donotspawn_ task:
 
 _spawner_ task:
     when not _donotspawn_
-    create foe _enemy_ every 13 minutes indefinitely with 5% success msg 1010
+    create foe _enemy_ every 13 minutes indefinitely with 15% success msg 1010
 
 _daily_ task:
     daily from 0:00 to 23:59

@@ -1,5 +1,5 @@
-Quest: RLQaxechop
-DisplayName: Random Little Quest Axe Chop
+Quest: RLQteststrength
+DisplayName: Random Little Quest Test Strength
 -- Message panels
 QRC:
 
@@ -85,4 +85,5 @@ _finalwin_ task:
 _finalfail_ task:
     when _accept_ and not _qualified_
     say 1012
+    reduce player fatigue by 15
     end quest

@@ -1,0 +1,63 @@
+Quest: RLQtestpickpocket2
+DisplayName: Random Little Quest Test Pickpocket II
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  (SKILL CHECK PASSED)
+<ce>  
+<ce>  You keep a short distance, make sure the fog
+<ce>  covers you well, and lean in for a quick swipe
+<ce>  as the villager's foot falls. He utterly
+<ce>  failed to notice the loss of his _gem_.
+<ce>  It's all yours now.
+
+Message:  1010
+<ce>  Not far in the distance, a well-dressed villager
+<ce>  reads a document while walking in the daylight.
+<ce>  He has carelessly left a bag of coins on
+<ce>  his person, which a skilled thief could liberate.
+<ce>  It looks risky without the cover of night or fog,
+<ce>  but the bag appears to carry more than 300 gold pieces.
+<ce>  Do you make the attempt?
+<ce>  
+<ce>  (SKILL CHECK: Pickpocket, difficulty: medium)
+
+Message:  1011
+<ce>  You keep back, letting the villager depart.
+
+Message:  1012
+<ce>  (SKILL CHECK FAILED)
+<ce>  
+<ce>  You try to make an inconsipcuous effort of it,
+<ce>  and your movement is barely too obvious.
+<ce>  The villager secures the bag, shouts in a panic,
+<ce>  and flees. The town guards quickly clue in
+<ce>  to your attempt.
+
+QBN:
+
+Item _gem_ gold range 300 to 399
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when skill Pickpocket is at least 45
+
+variable _accept_
+_finalwin_ task:
+    when _accept_ and _qualified_
+    give pc _gem_
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    say 1012
+    setplayercrime Theft
+    spawncityguards immediate
+    end quest

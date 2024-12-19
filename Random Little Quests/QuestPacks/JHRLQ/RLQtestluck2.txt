@@ -1,5 +1,5 @@
-Quest: RLQluckypick
-DisplayName: Random Little Quest A Lucky Pick
+Quest: RLQtestluck2
+DisplayName: Random Little Quest Test Luck II
 -- Message panels
 QRC:
 

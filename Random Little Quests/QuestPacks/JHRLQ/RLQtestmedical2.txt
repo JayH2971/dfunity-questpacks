@@ -1,5 +1,5 @@
-Quest: RLQchokingchild
-DisplayName: Random Little Quest A Choking Child
+Quest: RLQtestmedical2
+DisplayName: Random Little Quest Test Medical II
 -- Message panels
 QRC:
 
@@ -55,7 +55,7 @@ _reject_ task:
     end quest
 
 _qualified_ task:
-    when skill Medical is at least 55
+    when skill Medical is at least 45
 
 variable _accept_
 _finalwin_ task:
@@ -68,4 +68,5 @@ _finalfail_ task:
     when _accept_ and not _qualified_
     say 1012
     legal repute -1
+    reduce player fatigue by 10
     end quest

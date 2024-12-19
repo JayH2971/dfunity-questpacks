@@ -1,10 +1,10 @@
-Quest: RLQendurancetest
-DisplayName: Random Little Quest An Endurance Test
+Quest: RLQtestendurance
+DisplayName: Random Little Quest Test Endurance
 -- Message panels
 QRC:
 
 QuestComplete:  [1004]
-<ce>                   (ATTRIBUTE CHECK PASSED: Endurance)
+<ce>                   (ATTRIBUTE CHECK PASSED: ENDURANCE)
 <ce>
 <ce>       You and the other contestants grab hold of the ropes
 <ce>       above. Minutes pass, with all others falling.
@@ -25,7 +25,7 @@ Message:  1011
 <ce>  This would appear to take a while, and you prefer not to spend the time.
 
 Message:  1012
-<ce>                   (ATTRIBUTE CHECK FAILED: Endurance)
+<ce>                   (ATTRIBUTE CHECK FAILED: ENDURANCE)
 <ce>
 <ce>        You and the other contestants grab hold of the ropes
 <ce>       above. Minutes pass, with several people falling.

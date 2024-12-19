@@ -1,5 +1,5 @@
-Quest: RLQdefendtown
-DisplayName: Random Little Quest Defend the Town
+Quest: RLQfoethugs
+DisplayName: Random Little Quest Foe Thugs
 -- Message panels
 QRC:
 

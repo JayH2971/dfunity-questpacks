@@ -1,0 +1,72 @@
+Quest: RLQtestrestoration
+DisplayName: Random Little Quest Test Restoration
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>        (SKILL CHECK PASSED)
+<ce>  
+<ce>      You hail the farmer and offer your aid.
+<ce>      Your skill shines through, and the animal
+<ce>      responds rapidly to the healing spell.
+<ce>      Her owner cheers loudly and promises to tell
+<ce>      the townspeople of your good character.
+<ce>      You don't receive a material reward, but
+<ce>      a charitable word on your behalf can go far.
+
+Message:  1010
+<ce>      A farmer with a rather sickly-looking cow
+<ce>      trudges along, mentioning to a nearby friend that
+<ce>      the animal has taken a rather serious illness
+<ce>      and needs help. The cause appears to be unnatural
+<ce>      which he blames on daedra, witches, his mother-in-law,
+<ce>      and sundry other sources.
+<ce>      If you knew what you were doing, perhaps a
+<ce>      quick spell could resolve the cow's affliction.
+<ce>      Do you attempt it?
+<ce>      
+<ce>      (SKILL CHECK: RESTORATION, medium)
+
+Message:  1011
+<ce>  You keep aside and let the farmer pursue a cure.
+
+Message:  1012
+<ce>               (SKILL CHECK FAILED)
+<ce>  
+<ce>      You hail the farmer and offer your aid.
+<ce>      You attempt with your knowledge
+<ce>      of restoration magic, causing the cow to
+<ce>      feel sleepy and sluggish. Her owner pushes
+<ce>      you aside and threatens to call the town watch
+<ce>      if you try something like that again.
+<ce>      He leads her away in a huff.
+
+QBN:
+
+Person _dummy_ faction The_Merchants
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when skill Restoration is at least 40
+
+variable _accept_
+
+_finalwin_ task:
+    when _accept_ and _qualified_
+    reduce player magicka by 10
+    legal repute +3
+    change repute with _dummy_ by +5
+    give pc nothing
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    say 1012
+    reduce player magicka by 30
+    end quest

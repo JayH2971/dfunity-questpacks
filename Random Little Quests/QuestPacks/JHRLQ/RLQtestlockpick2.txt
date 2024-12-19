@@ -1,5 +1,5 @@
-Quest: RLQlockpickservice
-DisplayName: Random Little Quest A Lockpick Service
+Quest: RLQtestlockpick2
+DisplayName: Random Little Quest Test Lockpick II
 -- Message panels
 QRC:
 

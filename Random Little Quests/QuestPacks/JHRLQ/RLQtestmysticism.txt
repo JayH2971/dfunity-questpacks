@@ -1,0 +1,80 @@
+Quest: RLQtestmysticism
+DisplayName: Random Little Quest Test Mysticism
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  (SKILL CHECK PASSED)
+<ce>  
+<ce>      You lean in and make a cursory attempt.
+<ce>      The issue turns out to be elementary,
+<ce>      and dispelling the effect takes no effort
+<ce>      on your part. The cat mewls loudly, provoking
+<ce>      a relieved hug from its young owner.
+<ce>      Lacking a proper payment, the young man
+<ce>      offers you a few alchemical ingredients
+<ce>      from the family storage before departing.
+
+Message:  1010
+<ce>      A youth approaches, explaining that he
+<ce>      made a minor mistake with a spellcrafting assignment,
+<ce>      and now the family cat is silenced. The feline rests
+<ce>      in his arms, hoping for a rapid cure to its ailment.
+<ce>      Some latent magicka still persists, and you
+<ce>      could try to alter the enchantment if
+<ce>      you knew about the subject. Will you try?
+<ce>      
+<ce>      (SKILL CHECK: MYSTICISM, medium)
+
+Message:  1011
+<ce>  You refuse, washing your hands of it.
+<ce>  Surely there are doctors or magicians for this.
+
+Message:  1012
+<ce>               (SKILL CHECK FAILED)
+<ce>  
+<ce>      You lean in and make a cursory attempt.
+<ce>      Whatever you tried was not well-guided,
+<ce>      for the cat teleports several feet from you.
+<ce>      The young man glares at you and tells you to go away
+<ce>      before departing with his prized pet.
+
+QBN:
+
+Item _reward1_ small_plant
+Item _reward2_ small_plant
+Item _reward3_ large_plant
+Item _reward4_ large_plant
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when skill Mysticism is at least 40
+
+variable _accept_
+
+_finalwin_ task:
+    when _accept_ and _qualified_
+    reduce player magicka by 10
+    get item _reward1_
+    make _reward1_ permanent
+    get item _reward2_
+    make _reward2_ permanent
+    give pc nothing
+    get item _reward3_
+    make _reward3_ permanent
+    get item _reward4_
+    make _reward4_ permanent
+    give pc nothing
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    say 1012
+    reduce player magicka by 30
+    end quest

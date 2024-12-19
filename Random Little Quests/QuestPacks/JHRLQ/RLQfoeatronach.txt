@@ -1,5 +1,5 @@
-Quest: RLQescapedatronach
-DisplayName: Random Little Quest Escaped Atronach
+Quest: RLQfoeatronach
+DisplayName: Random Little Quest Foe Atronach
 -- Message panels
 QRC:
 

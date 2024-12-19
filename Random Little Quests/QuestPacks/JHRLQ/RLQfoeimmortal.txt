@@ -1,5 +1,5 @@
-Quest: RLQimmortal
-DisplayName: Random Little Quest Immortal Foe
+Quest: RLQfoeimmortal
+DisplayName: Random Little Quest Foe Immortal
 -- Message panels
 QRC:
 
@@ -64,6 +64,7 @@ _notlevel_ task:
 
 _slain_ task:
     killed _angrybat_
+    legal repute +6
     give pc nothing
 
 _ending_ task:

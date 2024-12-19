@@ -1,0 +1,98 @@
+Quest: RLQtestintelligence2
+DisplayName: Random Little Quest Test Intelligence II
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  (ATTRIBUTE CHECK PASSED)
+<ce>  
+<ce>  You come close and offer some assistance to the mage,
+<ce>  who gratefully accepts it. Decoding the message
+<ce>  is quite difficult, but you lead the way and
+<ce>  show the result: your momentary companion
+<ce>  is being promoted to a new rank upon
+<ce>  reading the message.
+<ce>
+<ce>  "Eureka! A thousand thanks to you, %ra.
+<ce>  Do you know the Mages Guild? I'll tell them
+<ce>  about you when I return to the hall.
+<ce>  Surely you'd have a place with them."
+<--->
+<ce>  (ATTRIBUTE CHECK PASSED)
+<ce>  
+<ce>  You come close and offer some assistance to the mage,
+<ce>  who gratefully accepts it. Decoding the message
+<ce>  is quite difficult, but you lead the way and
+<ce>  show the result: your momentary companion
+<ce>  is being promoted to a new rank upon
+<ce>  reading the message.
+<ce>
+<ce> "At last! A hundred thanks, %ra.
+<ce> Are you familiar with the Mages Guild?
+<ce>   I'll be sure to mention you
+<ce> to them when I get back to the hall.
+<ce> You'd certainly find a place among them."
+
+Message:  1010
+<ce>  A middle-aged figure wearing well-pressed robes
+<ce>  reads a parchment, not far from you.
+<ce>  He appears to have difficulty decoding a message
+<ce>  given to him by the Mages Guild, for the reason
+<ce>  that they intentionally withheld the cypher.
+<ce>  He seems to be in over his head.
+<ce>  Do you try to help him out?
+<ce>  
+<ce>  (ATTRIBUTE CHECK: INTELLIGENCE, very high)
+<--->
+<ce>  A middle-aged figure wearing well-pressed robes
+<ce>  reads a parchment, not far from you.
+<ce>  She appears to have difficulty decoding a message
+<ce>  given to her by the Mages Guild, for the reason
+<ce>  that they intentionally withheld the cypher.
+<ce>  She seems to be in over her head.
+<ce>  Do you try to help her out?
+<ce>  
+<ce>  (ATTRIBUTE CHECK: INTELLIGENCE, very high)
+
+Message:  1011
+<ce>  This would likely require time that you don't have.
+<ce>  You move on.
+
+Message:  1015
+<ce>  (ATTRIBUTE CHECK FAILED)
+<ce>  
+<ce>  You come close and offer some assistance to the mage,
+<ce>  who gratefully accepts it. Decoding the message
+<ce>  is quite difficult, more than you expected.
+<ce>  You spend thirty minutes working on it and
+<ce>  fail to unravel anything meaningful.
+<ce>  The mage is polite but frank, telling you
+<ce>  there's no time to waste with mere good intentions.
+
+QBN:
+
+Person _mg_ faction The_Mages_Guild
+
+--	Quest start-up:
+    prompt 1010 yes _given_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+variable _given_
+_int90_ task:
+    when attribute Intelligence is at least 90
+
+_bigwin_ task:
+    when _given_ and _int90_
+    raise time by 0:05
+    change repute with _mg_ by +3
+    give pc nothing
+    end quest
+
+_fail_ task:
+    when _given_ and not _int90_
+    raise time by 0:30
+    say 1015
+    end quest

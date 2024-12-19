@@ -1,5 +1,5 @@
-Quest: RLQlongbladefight
-DisplayName: Random Little Quest Long Blade Fight
+Quest: RLQtestlongblade
+DisplayName: Random Little Quest Test Long Blade
 -- Message panels
 QRC:
 

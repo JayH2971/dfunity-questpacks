@@ -1,0 +1,88 @@
+Quest: RLQteststrength2
+DisplayName: Random Little Quest Test Strength II
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  (ATTRIBUTE CHECK PASSED)
+<ce>  
+<ce>  Murmurs and chuckles rise from a few rubberneckers
+<ce>  who see you advance. You place two hands
+<ce>  under the wagon's frame, lift with your legs,
+<ce>  and astonish the sparse crowd with
+<ce>  a display of well-trained strength.
+<ce>  Cheers and applause rise, and the very grateful
+<ce>  merchant offers you a pair of potions from
+<ce>  his stock to compensate your effort.
+<--->
+<ce>  (ATTRIBUTE CHECK PASSED)
+<ce>  
+<ce>  Murmurs and chuckles rise from a few rubberneckers
+<ce>  who see you advance. You place two hands
+<ce>  under the wagon's frame, lift with your legs,
+<ce>  and astonish the sparse crowd with
+<ce>  a display of well-trained strength.
+<ce>  Cheers and applause rise, and the very grateful
+<ce>  merchant offers you a pair of potions from
+<ce>  her stock to compensate your effort.
+
+Message:  1010
+<ce>      A loud neigh grabs the attention of
+<ce>      the passers by. Rain has turned dirt to mud,
+<ce>      sinking one merchant's wagon in the deep.
+<ce>      Several villagers attempt to help it out,
+<ce>      but soon tire and leave. You can try
+<ce>      to pull it out, though you would do so alone.
+<ce>      Do you make the attempt?
+<ce>      
+<ce>      (ATTRIBUTE CHECK: STRENGTH, very high)
+
+Message:  1011
+<ce>  If you fell short, the result could be quite embarrassing.
+<ce>  Surely someone else can figure this out.
+
+Message:  1012
+<ce>  (ATTRIBUTE CHECK FAILED)
+<ce>  
+<ce>  Murmurs and chuckles rise from a few rubberneckers
+<ce>  who see you advance. You place two hands
+<ce>  under the wagon's frame, lift with your legs,
+<ce>  and feel a wrenching pain roll through your back.
+<ce>  Your arms and legs burn, and the
+<ce>  wagon fails to lift by even a millimeter.
+<ce>  The laughter turns raucuous. You depart
+<ce>  before anything more humiliating occurs.
+
+QBN:
+
+Item _reward1_ potion
+Item _reward2_ potion
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_reject_ task:
+    say 1011
+    end quest
+
+_qualified_ task:
+    when attribute Strength is at least 90
+
+variable _accept_
+
+_finalwin_ task:
+    when _accept_ and _qualified_
+    reduce player fatigue by 8
+    get item _reward1_
+    make _reward1_ permanent
+    get item _reward2_
+    make _reward2_ permanent
+    give pc nothing
+    end quest
+
+_finalfail_ task:
+    when _accept_ and not _qualified_
+    say 1012
+    reduce player fatigue by 20
+    reduce player health by 18
+    end quest

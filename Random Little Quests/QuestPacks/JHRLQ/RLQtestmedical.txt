@@ -1,5 +1,5 @@
-Quest: RLQchangebandage
-DisplayName: Random Little Quest Change a Bandage
+Quest: RLQtestmedical
+DisplayName: Random Little Quest Test Medical
 -- Message panels
 QRC:
 

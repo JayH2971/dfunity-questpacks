@@ -88,10 +88,10 @@ _sunnyday_ task:
 --sunnyday should have many more events since it can happen year-round
 
 _sunnydayevents1_ task:
-    pick one of _potionsale_ _alms_ _weaponfind_ _trainmysticism_ _trainmedical_ _buyreligious_ _escapedatron_ _flavorfighters_ _flavorknights_
+    pick one of _potionsale_ _alms_ _weaponfind_ _trainmysticism_ _trainmedical_ _buyreligious_ _foeatronach_ _flavorfighters_ _flavorknights_ _testrestoration_ _testintelligence2_
 
 _sunnydayevents2_ task:
-    pick one of _immortal_ _templeescort_ _tavernfight_ _singingcircle_ _luckypick_ _endurancetest_ _flavorthieves_
+    pick one of _foeimmortal_ _templeescort_ _tavernfight_ _testpersonality_ _testluck2_ _testendurance_ _flavorthieves_ _testpickpocket2_ _testmysticism_
 
 _sunnynight_ task:
     when not _daylight_ and _sunning_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -99,7 +99,7 @@ _sunnynight_ task:
     start task _stopevents_
 
 _sunnynightevents_ task:
-    pick one of _nightguard_ _nightrat_ _nightflavor_ _vampireencounter_ _lockpicknight_ _improvereputation_
+    pick one of _nightguard_ _nightrat_ _nightflavor_ _vampireencounter_ _testlockpick_ _improvereputation_
 
 _overcastday_ task:
     when _daylight_ and _overcasty_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -107,11 +107,11 @@ _overcastday_ task:
     start task _stopevents_
 
 _cloudydayevents_ task:
-    pick one of _angrypick_ _buyrandomweapon_ _changebandage_ _loanpick_ _longbladefight_ _orcencounter_ _punchblock_ _tavernrace_ _traincentaurian_ _flavorfighters_
+    pick one of _angrypick_ _buyrandomweapon_ _testmedical_ _loanpick_ _testlongblade_ _foeorc_ _testhandtohand_ _tavernrace_ _traincentaurian_ _flavorfighters_
 --picked simultaneous with overcastday
 
 _overcastdayevents_ task:
-    pick one of _buygem_ _househunt_ _leprosyheal_ _lottery_ _meddeliver_ _trainorcish_ _trainrestoration_ _runningthief_ _librarydonation_
+    pick one of _buygem_ _househunt_ _testmedical3_ _testluck_ _meddeliver_ _trainorcish_ _trainrestoration_ _foethief_ _librarydonation_
 --picked simultaneous with cloudyday
 
 _overcastnight_ task:
@@ -120,7 +120,7 @@ _overcastnight_ task:
     start task _stopevents_
 
 _overcastnightevents_ task:
-    pick one of _pickpocket_ _nightguard_ _vampiregold_ _nightavenger_
+    pick one of _losemoney_ _nightguard_ _vampiregold_ _nightavenger_
 
 _fogday_ task:
     when _daylight_ and _foggy_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -128,7 +128,7 @@ _fogday_ task:
     start task _stopevents_
 
 _fogdayevents_ task:
-    pick one of _trainetiquette_ _freepotion_ _batnest_ _buydrug_ _defendtown_ _guardweapon_ _fogsteal_ _traindaedric_ _thievesmember_ _lockpickservice_ _flavorfighters_ _flavorknights_
+    pick one of _trainetiquette_ _freepotion_ _batnest_ _buydrug_ _foethugs_ _guardweapon_ _fogsteal_ _traindaedric_ _thievesmember_ _testlockpick2_ _flavorfighters_ _flavorknights_ _testpickpocket_
 
 _fognight_ task:
     when not _daylight_ and _foggy_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -136,7 +136,7 @@ _fognight_ task:
     start task _stopevents_
 
 _fognightevents_ task:
-    pick one of _drugdeliver_ _pickpocket_ _yousteal_ _nightflavorfog_ _improvereputation_
+    pick one of _drugdeliver_ _losemoney_ _yousteal_ _nightflavorfog_ _improvereputation_
 
 _rainday_ task:
     when _daylight_ and _rainy_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -144,7 +144,7 @@ _rainday_ task:
     start task _stopevents_
 
 _raindayevents_ task:
-    pick one of _chokingchild_ _fightersguild_ _payraintaxes_ _killrats_ _returnbook_ _dungeoncaptive_ _trainnymph_ _climbmagic_ _flavorknights_ _flavormages_
+    pick one of _testmedical2_ _fightersguild_ _payraintaxes_ _killrats_ _returnbook_ _dungeoncaptive_ _trainnymph_ _testclimbing_ _flavorknights_ _flavormages_ _teststrength2_
 
 _rainnight_ task:
     when not _daylight_ and _rainy_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -152,7 +152,7 @@ _rainnight_ task:
     start task _stopevents_
 
 _rainnightevents_ task:
-    pick one of _pickpocket_ _nightflavor_ _improvereputation_
+    pick one of _losemoney_ _nightflavor_ _improvereputation_
 
 _thundday_ task:
     when _daylight_ and _thundered_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -160,7 +160,7 @@ _thundday_ task:
     start task _stopevents_
 
 _thunddayevents_ task:
-    pick one of _magesguild_ _buymagicitem_ _maze_ _templedelivery_ _trainblunt_
+    pick one of _magesguild_ _buymagicitem_ _testintelligence_ _templedelivery_ _trainblunt_
 
 _thundnight_ task:
     when not _daylight_ and _thundered_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -176,7 +176,7 @@ _snowyday_ task:
     start task _stopevents_
 
 _snowydayevents_ task:
-    pick one of _axechop_ _snowmap_ _paysnowtaxes_ _trainclimbing_ _giantencounter_ _traindestruction_ _flavormages_
+    pick one of _teststrength_ _snowmap_ _paysnowtaxes_ _trainclimbing_ _foegiant_ _traindestruction_ _flavormages_ _trainarchery_
 
 _snowynight_ task:
     when not _daylight_ and _snowy_ and _smalldelay_ and not _donotspawn_ and not _stopevents_
@@ -184,16 +184,13 @@ _snowynight_ task:
     start task _stopevents_
 
 _snowynightevents_ task:
-    pick one of _improvereputation_ _nightflavor_
+    pick one of _improvereputation_ _nightflavor_ _dud_
 
 _alms_ task:
     start quest RLQalms
 
 _angrypick_ task:
     start quest RLQangrypick
-
-_axechop_ task:
-    start quest RLQaxechop
 
 _batnest_ task:
     start quest RLQbatnest
@@ -213,29 +210,11 @@ _buyrandomweapon_ task:
 _buyreligious_ task:
     start quest RLQbuyreligious
 
-_changebandage_ task:
-    start quest RLQchangebandage
-
-_chokingchild_ task:
-    start quest RLQchokingchild
-
-_climbmagic_ task:
-    start quest RLQclimbmagic
-
-_defendtown_ task:
-    start quest RLQdefendtown
-
 _drugdeliver_ task:
     start quest RLQdrugdeliver
 
 _dungeoncaptive_ task:
     start quest RLQdungeoncaptive
-
-_endurancetest_ task:
-    start quest RLQendurancetest
-
-_escapedatron_ task:
-    start quest RLQescapedatronach
 
 _fightersguild_ task:
     start quest RLQfightersguild
@@ -252,14 +231,29 @@ _flavormages_ task:
 _flavorthieves_ task:
     start quest RLQflavorthieves
 
+_foeatronach_ task:
+    start quest RLQfoeatronach
+
+_foegiant_ task:
+    start quest RLQfoegiant
+
+_foeimmortal_ task:
+    start quest RLQfoeimmortal
+
+_foeorc_ task:
+    start quest RLQfoeorc
+
+_foethief_ task:
+    start quest RLQfoethief
+
+_foethugs_ task:
+    start quest RLQfoethugs
+
 _fogsteal_ task:
     start quest RLQfogsteal
 
 _freepotion_ task:
     start quest RLQfreepotion
-
-_giantencounter_ task:
-    start quest RLQgiantencounter
 
 _guardweapon_ task:
     start quest RLQguardweapon
@@ -267,17 +261,11 @@ _guardweapon_ task:
 _househunt_ task:
     start quest RLQhousehunt
 
-_immortal_ task:
-    start quest RLQimmortal
-
 _improvereputation_ task:
     start quest RLQimprovereputation
 
 _killrats_ task:
     start quest RLQkillrats
-
-_leprosyheal_ task:
-    start quest RLQleprosyheal
 
 _librarydonation_ task:
     start quest RLQlibrarydonation
@@ -315,26 +303,11 @@ _loan9_ task:
 _loan10_ task:
     start quest RLQloan10
 
-_longbladefight_ task:
-    start quest RLQlongbladefight
-
-_lottery_ task:
-    start quest RLQlottery
-
-_lockpicknight_ task:
-    start quest RLQlockpicknight
-
-_lockpickservice_ task:
-    start quest RLQlockpickservice
-
-_luckypick_ task:
-    start quest RLQluckypick
+_losemoney_ task:
+    start quest RLQlosemoney
 
 _magesguild_ task:
     start quest RLQmagesguild
-
-_maze_ task:
-    start quest RLQmaze
 
 _meddeliver_ task:
     start quest RLQmeddeliver
@@ -357,17 +330,11 @@ _nightmug_ task:
 _nightrat_ task:
     start quest RLQnightrat
 
-_orcencounter_ task:
-    start quest RLQorcencounter
-
 _payraintaxes_ task:
     pick one of _raintaxes1_ _raintaxes2_ _raintaxes3_
 
 _paysnowtaxes_ task:
     pick one of _snowtaxes1_ _snowtaxes2_ _snowtaxes3_
-
-_pickpocket_ task:
-    start quest RLQpickpocket
 
 _potionsale_ task:
     pick one of _potcuredisease_ _potcurepoison_ _potfreeaction_ _pothealing_ _potinvis_ _potlevitate_ _potstamina_
@@ -393,9 +360,6 @@ _potlevitate_ task:
 _potstamina_ task:
     start quest RLQpotstamina
 
-_punchblock_ task:
-    start quest RLQpunchblock
-
 _raintaxes1_ task:
     start quest RLQraintaxes1
 
@@ -407,12 +371,6 @@ _raintaxes3_ task:
 
 _returnbook_ task:
     start quest RLQreturnbook
-
-_runningthief_ task:
-    start quest RLQrunningthief
-
-_singingcircle_ task:
-    start quest RLQsingingcircle
 
 _snowmap_ task:
     start quest RLQsnowmap
@@ -438,8 +396,71 @@ _templedelivery_ task:
 _templeescort_ task:
     start quest RLQtempleescort
 
+_testclimbing_ task:
+    start quest RLQtestclimbing
+
+_testendurance_ task:
+    start quest RLQtestendurance
+
+_testhandtohand_ task:
+    start quest RLQtesthandtohand
+
+_testintelligence_ task:
+    start quest RLQtestintelligence
+
+_testintelligence2_ task:
+    start quest RLQtestintelligence2
+
+_testlockpick_ task:
+    start quest RLQtestlockpick
+
+_testlockpick2_ task:
+    start quest RLQtestlockpick2
+
+_testlongblade_ task:
+    start quest RLQtestlongblade
+
+_testluck_ task:
+    start quest RLQtestluck
+
+_testluck2_ task:
+    start quest RLQtestluck2
+
+_testmedical_ task:
+    start quest RLQtestmedical
+
+_testmedical2_ task:
+    start quest RLQtestmedical2
+
+_testmedical3_ task:
+    start quest RLQtestmedical3
+
+_testmysticism_ task:
+    start quest RLQtestmysticism
+
+_testpersonality_ task:
+    start quest RLQtestpersonality
+
+_testpickpocket_ task:
+    start quest RLQtestpickpocket
+
+_testpickpocket2_ task:
+    start quest RLQtestpickpocket2
+
+_testrestoration_ task:
+    start quest RLQtestrestoration
+
+_teststrength_ task:
+    start quest RLQteststrength
+
+_teststrength2_ task:
+    start quest RLQteststrength2
+
 _thievesmember_ task:
     start quest RLQthievesmember
+
+_trainarchery_ task:
+    start quest RLQtrainarchery
 
 _trainblunt_ task:
     start quest RLQtrainblunt

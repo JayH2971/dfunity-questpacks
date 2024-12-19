@@ -1,5 +1,5 @@
-Quest: RLQpickpocket
-DisplayName: Random Little Quest Pickpocket
+Quest: RLQlosemoney
+DisplayName: Random Little Quest Lose Money
 -- Message panels
 QRC:
 

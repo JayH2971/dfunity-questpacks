@@ -1,10 +1,10 @@
-Quest: RLQclimbmagic
-DisplayName: Random Little Quest Climb for Magic Item
+Quest: RLQtestclimbing
+DisplayName: Random Little Quest Test Climbing
 -- Message panels
 QRC:
 
 QuestComplete:  [1004]
-<ce>                   (SKILL CHECK PASSED: Climbing)
+<ce>                   (SKILL CHECK PASSED: CLIMBING)
 <ce>
 <ce>         Predictably, this is no ordinary climbing pole.
 <ce>    Your hands meet the first few rungs, slickened with oil.
@@ -34,7 +34,7 @@ Message:  1011
 <ce>  You move on and ignore the diversion.
 
 Message:  1012
-<ce>                   (SKILL CHECK FAILED: Climbing)
+<ce>                   (SKILL CHECK FAILED: CLIMBING)
 <ce>
 <ce>         Predictably, this is no ordinary climbing pole.
 <ce>    Your hands meet the first few rungs, slickened with oil.

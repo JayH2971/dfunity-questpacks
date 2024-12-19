@@ -183,7 +183,7 @@ _unluckypick_ task:
 
 _luckypick_ task:
     when _given_ and _lucky_
-    pick one of _success_ _success_ _failure_
+    pick one of _success_ _success_ _success_ _success_ _failure_
 
 _success_ task:
     say 1015

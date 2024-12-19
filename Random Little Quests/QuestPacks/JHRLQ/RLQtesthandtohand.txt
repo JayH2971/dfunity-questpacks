@@ -1,5 +1,5 @@
-Quest: RLQpunchblock
-DisplayName: Random Little Quest Punch a Block
+Quest: RLQtesthandtohand
+DisplayName: Random Little Quest Test Hand to Hand
 -- Message panels
 QRC:
 
@@ -36,7 +36,7 @@ Message:  1011
 <ce>  appendages quite seriously.
 
 Message:  1012
-<ce>  (SKILL CHECK FAILED!)
+<ce>  (SKILL CHECK FAILED)
 <ce>  
 <ce>  When your turn comes, you stand before the peddler
 <ce>  and ready your stance. You summon up all your confidence
