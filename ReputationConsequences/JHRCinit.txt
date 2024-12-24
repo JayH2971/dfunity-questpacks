@@ -1,0 +1,34 @@
+Quest: JHRCinit
+DisplayName: Reputation Consequences Init
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+
+QBN:
+
+_badrep_ task:
+    player legal-repute is lower than -15
+    start quest JHBADREPGENERAL
+
+_mgrank_ task:
+    player guild rank in MagesGuild at least 3
+
+_badmg_ task:
+    when _badrep_ and _mgrank_
+    start task _badmg2_
+
+_badmg2_ task:
+    start quest JHBADREPMG
+
+_knrank_ task:
+    player guild rank in KnightlyOrder at least 3
+
+_badkn_ task:
+    when _badrep_ and _KNrank_
+    start task _badkn2_
+
+_badkn2_ task:
+    start quest JHBADREPKN
+
+_dbrep_ task:

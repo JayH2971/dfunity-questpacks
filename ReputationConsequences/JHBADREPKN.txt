@@ -1,0 +1,45 @@
+Quest: JHBADREPKN
+DisplayName: Knightly Order Bad Reputation Marker
+-- Message panels
+--used in KN210
+QRC:
+
+Message:  1010
+<ce>      A stern courier bearing a familiar banner
+<ce>      approaches you and gives you a notelet.
+<ce>      It reads as follows.
+<ce>      
+"%pcn,
+ 
+  "It is grossly inappropriate for a knight to
+  engage in criminal activity. Turn your ways. Now."
+<--->
+<ce>      A stern courier bearing a familiar banner
+<ce>      approaches you and gives you a notelet.
+<ce>      It reads as follows.
+<ce>      
+"%pcn,
+ 
+  "Knights and criminals cannot coexist, much less
+  within the same person. You must change immediately."
+
+QBN:
+
+Item _dummy_ gem
+
+--	Quest start-up:
+
+_badrep_ task:
+    player legal-repute is lower than -15
+
+_guildrank_ task:
+    player guild rank in KnightlyOrder at least 3
+
+_reaction_ task:
+    when _badrep_ and _guildrank_
+    give pc _dummy_ notify 1010
+    start task _end_
+
+_end_ task:
+    take _dummy_ from pc
+    end quest
