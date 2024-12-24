@@ -248,4 +248,6 @@ Message:  1090
 QBN:
 
 --   Quest start-up:
-   add _person_ face
+   
+   _trigg_ task:
+      when repute with _fg_ is at least -90

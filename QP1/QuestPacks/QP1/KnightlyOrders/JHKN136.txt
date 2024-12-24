@@ -1,0 +1,242 @@
+Quest: JHKN136
+DisplayName: Destroy the Dark Brotherhood
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>          We have received a directive from the very %rt
+<ce>          to wipe out the Dark Brotherhood from
+<ce>          our fair %crn. We are sending out many
+<ce>          knights on this task, and if you wish to
+<ce>          take part, you will be considered
+<ce>          a hero of this land.
+
+RefuseQuest:  [1001]
+<ce>          There's... no particular reason for
+<ce>          your refusal, is there %pct?
+
+AcceptQuest:  [1002]
+<ce>        A fine answer. When you return within =timer_ days'
+<ce>          time, a letter signed by my hand will be sent
+<ce>          to the %rt's court and will be read aloud.
+<ce>          We are aware of the danger this task presents,
+<ce>          and wish only for our greatest knights to embark upon it.
+<ce>          
+<ce>          You are assigned to the village of ___dung_.
+<ce>          A few trustworthy citizens of the area, allying with
+<ce>          our cause, will have information regarding the
+<ce>          Brotherhood's hideout in the town.
+<ce>          Ask the townspeople concerning "_gem_".
+<ce>          Those who know this code word will lead you aright.
+<ce>          Destroy our foes and return here for well-deserved fame.
+
+QuestFail:  [1003]
+<ce>             The deadline to return to __qgiver_ has passed.
+
+QuestComplete:  [1004]
+<ce>              Finest work, %pct. You'll soon find that the people of
+<ce>              %crn will pay great deference to you. Or at least,
+<ce>              any with a mind to appreciate the protection of their
+<ce>              lives. Our salute to you.
+
+QuestorPostSuccess:   [1008]
+One who faces the Dark Brotherhood without fear merits great respect.
+
+QuestorPostFailure:   [1009]
+The Dark Brotherhood will continue their evil reign due to efforts like yours.
+
+Message:  1010
+_gem_? Shh... yes, they're in a shop. Look for _dung_.
+<--->
+_gem_, yes, please help us. They're in _dung_.
+<--->
+You want some _gem_? They don't sell none of that around here.
+<--->
+No _gem_ around here mate. You'd find that in an abandoned castle or somesuch.
+
+Message:  1011
+<ce>   However the Dark Brotherhood knew of your arrival,
+<ce>   they didn't take any chances. A metal hook flies out
+<ce>   from the wall, and though your neck evades it,
+<ce>   your arm doesn't. You find yourself wedged to the
+<ce>   door with a makeshift handcuff.
+<ce>   
+<ce>   "Who is it?! Say your name!"
+<ce>   
+<ce>   The denizens of this hideout approach.
+<ce>   You're running out of time. Do you attempt
+<ce>   to yank the the restraint out of the wall
+<ce>   before they arrive? A failed attempt
+<ce>   could be quite painful.
+<ce>   
+<ce>   (ATTRIBUTE CHECK: STRENGTH, DIFFICULTY: VERY HIGH)
+
+Message:  1012
+<ce>  (ATTRIBUTE CHECK PASSED!)
+<ce>  
+<ce>  It takes a burst of effort, but arms like yours
+<ce>  cannot be restrained. You yank your wrist free,
+<ce>  taking the metal restraint and a chunk of the wall
+<ce>  with it. Once you shake it off, you are free
+<ce>  to engage the rapidly approaching Brotherhood.
+<ce>  
+<ce>  If you leave without killing them, they will escape
+<ce>  and your mission will be in vain.
+
+Message:  1013
+<ce>  (ATTRIBUTE CHECK FAILED)
+<ce>  
+<ce>  You brace yourself, flex hard, and slam your arm forward
+<ce>  in an attempt to pull the restraint out of the wall,
+<ce>  then hold back an agonized cry as the metal refuses
+<ce>  to give way, causing a deep injury to your forearm.
+<ce>  After a few more attempts, you yank the cuff
+<ce>  out of the wall and free yourself, barely dodging some
+<ce>  darts that shoot out of the wall.
+<ce>  
+<ce>  If you leave without killing the Dark Brotherhood,
+<ce>  they will escape and your mission will be in vain.
+
+Message:  1014
+<ce>  You decide not to risk injury to your arm,
+<ce>  and instead work to hastily undo the restraint.
+<ce>  Footsteps approach as you pull and pry. Though you
+<ce>  manage to free yourself and toss the metal cuff
+<ce>  to the ground, you happen to get shot by a dart
+<ce>  trap on the opposite wall during your labor.
+<ce>  
+<ce>  If you leave without killing the Dark Brotherhood,
+<ce>  they will escape and your mission will be in vain.
+
+Message:  1015
+<ce>  The shop goes silent. None remain within.
+
+Message:  1016
+<ce>  Once you exit, two armed figures take place a short
+<ce>  distance from you. These must be the last of
+<ce>  the Dark Brotherhood in ___dung_.
+
+Message:  1017
+<ce>  Your mission is complete. The %rt has sent a
+<ce>  strong message to the Dark Brotherhood
+<ce>  by your hand.
+
+Message:  1018
+<ce>  You exit the Brotherhood hideout,
+<ce>  sparing foes within. They flee
+<ce>  the shop by any means necessary.
+<ce>  Now that they have escaped,
+<ce>  your task is frustrated.
+
+Message:  1030
+%qdt:
+ __qgiver_ have sent me to
+ ___dung_ to slay all members of the
+ Dark Brotherhood hiding therein.
+ I am to ask the townspeople there
+ concerning "_gem_."
+ Within =timer_ days' time I must return
+ to the order hall in ___qgiver_.
+
+QBN:
+
+Person _qgiver_ group Questor male
+Person _dummydb_ faction The_Dark_Brotherhood
+
+Place _dung_ remote apothecary
+
+Clock _timer_ 00:00 0 flag 1 range 0 2
+
+Foe _enemy1_ is Assassin
+Foe _enemy2_ is Nightblade
+Foe _enemy3_ is Assassin
+
+Item _gem_ organs anyInfo 1010
+
+--	Quest start-up:
+    start timer _timer_
+    log 1030 step 0
+    add dialog for item _gem_
+    pc at _dung_ do _inside_
+
+variable _inside_
+
+_spawner_ task:
+    when _inside_ and not _slain_
+    prompt 1011 yes _attempt_ no _refuse_
+    create foe _enemy1_ every 0 minutes 2 times with 30% success
+    create foe _enemy2_ every 0 minutes 2 times with 30% success
+    start task _hidden_
+
+variable _hidden_
+
+_refuse_ task:
+    say 1014
+    reduce player health by 20
+
+_attempt_ task:
+    reduce player fatigue by 15
+
+_will_ task:
+  when attribute Strength is at least 90
+
+_goodwill_ task:
+  when _will_ and _attempt_
+  say 1012
+  reduce player health by 5
+
+_badwill_ task:
+  when not _will_ and _attempt_
+  say 1013
+  reduce player health by 45
+  
+_obj1_ task:
+    killed 2 _enemy1_
+    change repute with _dummydb_ by -15
+  
+_obj2_ task:
+    killed 2 _enemy2_
+    change repute with _dummydb_ by -15
+
+_slain_ task:
+    when _obj1_ and _obj2_
+    say 1015
+
+_outside_ task:
+    when _slain_ and not _inside_
+    say 1016
+    create foe _enemy3_ every 0 minutes 2 times with 100% success
+
+_fleefail_ task:
+    when _hidden_ and not _inside_ and not _slain_
+    say 1018
+    end quest
+
+_slain2_ task:
+    killed 2 _enemy3_
+    change repute with _dummydb_ by -20
+    say 1017
+
+_infight_ task:
+    daily from 0:00 to 23:59
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    change foe _enemy3_ infighting true
+    clear _infight_
+
+_qgclicked_ task:
+    clicked npc _qgiver_
+
+_clearclick_ task:
+    when _qgclicked_ and not _slain2_
+    clear _qgclicked_ _clearclick_
+
+_pcgetsgold_ task:
+    when _qgclicked_ and _slain2_
+    give pc nothing
+    legal repute +20
+    end quest
+
+_timer_ task:
+    say 1003
+    end quest

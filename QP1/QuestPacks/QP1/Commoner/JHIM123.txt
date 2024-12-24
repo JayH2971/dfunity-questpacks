@@ -14,7 +14,7 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce>        "I knew it! Thief! Guards, we have a thief here!"
 <ce>      
-<ce>      You scarecely have a chance to react before multiple
+<ce>      You hardly have a chance to react before multiple
 <ce>      armed figures surround you. One of them holds up
 <ce>      a roll of paper.
 <ce>      
@@ -78,7 +78,7 @@ Message:  1015
 <ce>  Laughs and chuckles start to break the illusion
 <ce>      as the spokesman fails to keep the act together.
 <ce>      
-<ce>      "And one act... of eating a barbecued rat under a full moon while..."
+<ce>      "And one count... of eating a barbecued rat under a full moon while..."
 <ce>      
 <ce>      The facade fails, and everyone bursts into laughter.
 <ce>      
@@ -89,7 +89,7 @@ Message:  1015
 <ce>  Laughs and chuckles start to break the illusion as the spokesman
 <ce>      fails to keep the act together.
 <ce>      
-<ce>      "And one act... of eating off of a table made from spriggan lumber while..."
+<ce>      "And one count... of eating off of a table made from spriggan lumber while..."
 <ce>      
 <ce>      The facade fails, and everyone bursts into laughter.
 <ce>      

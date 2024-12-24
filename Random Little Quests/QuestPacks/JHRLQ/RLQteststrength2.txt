@@ -35,7 +35,7 @@ Message:  1010
 <ce>      to pull it out, though you would do so alone.
 <ce>      Do you make the attempt?
 <ce>      
-<ce>      (ATTRIBUTE CHECK: STRENGTH, very high)
+<ce>      (ATTRIBUTE CHECK: STRENGTH, difficulty: very high)
 
 Message:  1011
 <ce>  If you fell short, the result could be quite embarrassing.

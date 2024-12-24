@@ -42,7 +42,7 @@ Message:  1010
 <ce>  He seems to be in over his head.
 <ce>  Do you try to help him out?
 <ce>  
-<ce>  (ATTRIBUTE CHECK: INTELLIGENCE, very high)
+<ce>  (ATTRIBUTE CHECK: INTELLIGENCE, difficulty: very high)
 <--->
 <ce>  A middle-aged figure wearing well-pressed robes
 <ce>  reads a parchment, not far from you.
@@ -52,7 +52,7 @@ Message:  1010
 <ce>  She seems to be in over her head.
 <ce>  Do you try to help her out?
 <ce>  
-<ce>  (ATTRIBUTE CHECK: INTELLIGENCE, very high)
+<ce>  (ATTRIBUTE CHECK: INTELLIGENCE, difficulty: very high)
 
 Message:  1011
 <ce>  This would likely require time that you don't have.

@@ -25,7 +25,7 @@ Message:  1010
 <ce>      quick spell could resolve the cow's affliction.
 <ce>      Do you attempt it?
 <ce>      
-<ce>      (SKILL CHECK: RESTORATION, medium)
+<ce>      (SKILL CHECK: RESTORATION, difficulty: medium)
 
 Message:  1011
 <ce>  You keep aside and let the farmer pursue a cure.

@@ -24,7 +24,7 @@ Message:  1010
 <ce>      could try to alter the enchantment if
 <ce>      you knew about the subject. Will you try?
 <ce>      
-<ce>      (SKILL CHECK: MYSTICISM, medium)
+<ce>      (SKILL CHECK: MYSTICISM, difficulty: medium)
 
 Message:  1011
 <ce>  You refuse, washing your hands of it.

@@ -68,6 +68,8 @@ _tier1quest_ task:
 _werewolfhunt_ task:
     start quest JHCAPA01prelude
 
+
+
 _badrep_ task:
     player legal-repute is lower than -15
     start quest JHBADREPGENERAL
@@ -91,4 +93,3 @@ _badkn_ task:
 
 _badkn2_ task:
     start quest JHBADREPKN
-

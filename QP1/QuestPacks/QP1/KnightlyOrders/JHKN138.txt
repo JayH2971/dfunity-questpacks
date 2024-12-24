@@ -25,7 +25,7 @@ AcceptQuest:  [1002]
 <ce>                       Godspeed and farewell."
 
 QuestFail:  [1003]
-<ce>            Six hours have past, and _npc_ grows restless.
+<ce>            Six hours have passed, and _npc_ grows restless.
 <ce>                     He wanders off without you.
 
 QuestComplete:  [1004]

@@ -27,7 +27,7 @@ Message:  1010
 <ce>  He proffers a small bag of gold for the
 <ce>  one who can break the block. Will you try?
 <ce>  
-<ce>  (SKILL CHECK: Hand-to-Hand, medium difficulty)
+<ce>  (SKILL CHECK: Hand-to-Hand, difficulty: medium)
 
 Message:  1011
 <ce>  You could make quite a spectacle of yourself
