@@ -1,0 +1,3 @@
+schema: *name, group, membership, minReq, flag, notes
+
+MQrepfix, GeneralPopulace, P, 0, 0,

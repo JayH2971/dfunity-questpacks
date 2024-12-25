@@ -1,0 +1,39 @@
+Quest: MQrepfix
+DisplayName: Main Quest Reputation Fix
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  Your reputation with all main quest questgivers
+<ce>  has increased by 20 or more. Repeat as needed.
+
+QBN:
+
+Person _akorithi_ named Queen_Akorithi atHome
+Person _aubki_ named Queen_Aubk-i atHome
+Person _barenziah_ named Queen_Barenziah atHome
+Person _cyndassa_ named Cyndassa atHome
+Person _direnni_ named Medora atHome
+Person _elysana_ named Princess_Elysana atHome
+Person _helseth_ named Prince_Helseth atHome
+Person _kingofworms_ named King_of_Worms atHome
+Person _lhotun_ named Prince_Lhotun atHome
+Person _morgiah_ named Princess_Morgiah atHome
+Person _mynisera_ named Mynisera atHome
+Person _nulfaga_ named Nulfaga atHome
+
+--	Quest start-up:
+    change repute with _akorithi_ by +20
+    change repute with _aubki_ by +20
+    change repute with _barenziah_ by +20
+    change repute with _cyndassa_ by +20
+    change repute with _direnni_ by +20
+    change repute with _elysana_ by +20
+    change repute with _helseth_ by +20
+    change repute with _kingofworms_ by +20
+    change repute with _lhotun_ by +20
+    change repute with _morgiah_ by +20
+    change repute with _mynisera_ by +20
+    change repute with _nulfaga_ by +20
+    give pc nothing
+    end quest
