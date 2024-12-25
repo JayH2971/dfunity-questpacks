@@ -1,0 +1,4 @@
+schema: *name, group, membership, minReq, flag, notes
+
+JHdisease, GeneralPopulace, P, 0, 0,
+JHpoison, GeneralPopulace, P, 0, 0,

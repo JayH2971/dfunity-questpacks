@@ -1,0 +1,15 @@
+Quest: JHdisease
+DisplayName: Get A Cure Disease Potion
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  This will cure your illnesses.
+
+QBN:
+
+Item _potion_ potion key 224588
+
+--	Quest start-up:
+    give pc _potion_
+    end quest

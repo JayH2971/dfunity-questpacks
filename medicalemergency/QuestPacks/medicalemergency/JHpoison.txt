@@ -1,0 +1,15 @@
+Quest: JHpoison
+DisplayName: Get A Cure Poison Potion
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You will no longer feel somewhat bad.
+
+QBN:
+
+Item _potion_ potion key 5361377
+
+--	Quest start-up:
+    give pc _potion_
+    end quest
