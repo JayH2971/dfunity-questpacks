@@ -68,8 +68,6 @@ _tier1quest_ task:
 _werewolfhunt_ task:
     start quest JHCAPA01prelude
 
-
-
 _badrep_ task:
     player legal-repute is lower than -15
     start quest JHBADREPGENERAL
@@ -88,7 +86,7 @@ _knrank_ task:
     player guild rank in KnightlyOrder at least 3
 
 _badkn_ task:
-    when _badrep_ and _KNrank_
+    when _badrep_ and _knrank_
     start task _badkn2_
 
 _badkn2_ task:

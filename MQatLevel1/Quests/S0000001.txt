@@ -3,7 +3,7 @@
 -- QuestId: 1
 Messages: 41
 Quest: S0000001
-DisplayName: Missing Prince
+DisplayName: Missing Prince at Level 1
 -- Message panels
 QRC:
 

@@ -3,7 +3,7 @@
 -- QuestId: 10
 Messages: 23
 Quest: S0000010
-DisplayName: Stronghold of the Blades
+DisplayName: Stronghold of the Blades at Level 1
 -- Message panels
 QRC:
 
