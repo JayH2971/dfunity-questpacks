@@ -151,7 +151,7 @@ _S.03_ task:
 variable _S.04_
 _S.05_ task:
 	repute with _medora_ exceeds 0 do _S.04_ 
-	level 10 completed 
+	level 1 completed 
 
 variable _S.06_
 _S.07_ task:
