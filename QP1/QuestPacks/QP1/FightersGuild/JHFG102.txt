@@ -1,0 +1,127 @@
+Quest: JHFG102
+DisplayName: Experiment Clean-Up
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>           One of those "open secrets" 'round here
+<ce>           is that the Mages Guild uses some of the caves
+<ce>           out in the wild for their experiments.
+<ce>           Sometimes it's just rogue mages out there,
+<ce>           but one or two of those hideouts is
+<ce>           actually official territory. Well, they've
+<ce>           gone too far and we've got a contract
+<ce>           to clean one of them out.
+<ce>           If you're not a fan of the Mages Guild,
+<ce>           we've got a pretty good Claymore
+<ce>           here if you can finish this.
+
+RefuseQuest:  [1001]
+<ce>            I dunno what it is, but nobody wants
+<ce>           to cross the Mages Guild anymore.
+
+AcceptQuest:  [1002]
+<ce>           Good to hear. Head on into ___dung_,
+<ce>           %di. It's got atronachs and gargoyles,
+<ce>           and you'll have to kill a bunch of 'em
+<ce>           before the mages get the hint.
+<ce>           I'm not expecting you clean out the whole
+<ce>           place, just enough to bring their 
+
+QuestFail:  [1003]
+<ce>                    Your contract to slay _dummy_
+<ce>                        in ___res_ ends today.
+
+QuestComplete:  [1004]
+<ce>                  Hey, welcome back. Good to see you
+<ce>                   in one piece. Here's your pauldron.
+
+RumorsDuringQuest:  [1005]
+The Fighters Guild failed to save some kid from an abandoned prison. Shame on them.
+
+Message:  1010
+<ce>                  (ATTRIBUTE CHECK FAILED: AGILITY)
+<ce>
+<ce>             Your drug-addled foe is in a frenzy, willing
+<ce>          to try anything. Up comes a swift roundhouse kick
+<ce>      to your face, which anyone more agile might have avoided.
+<ce>                           It hurts a lot.
+
+Message:  1022
+<ce>                      "Fool! How dare you attack
+<ce>                     a member of the Mages Guild!"
+
+Message:  1023
+<ce>                Your task complete, you may return to
+<ce>                _questgiver_ with your head held high.
+
+Message:  1032
+%qdt:
+ _questgiver_ of the Fighters Guild
+ has contracted me to slay some mage  in ___res_
+ on behalf of the city. I have
+ =2res_ days to do it, and can
+ get my reward in ___questgiver_
+ any time after that.
+
+QBN:
+Person _questgiver_ group Questor male
+Person _dummy_ faction The_Mages_Guild
+
+Place _res_ remote house
+
+Clock _2res_ 00:00 0 flag 1 range 0 2
+Clock _failsafe_ 180.00:00
+
+Item _reward_ item class 2 subclass 4
+Item _drug_ drug
+
+Foe _mage_ is Spellsword
+
+--	Quest start-up:
+	start timer _2res_
+	start timer _failsafe_
+	place foe _mage_ at _res_
+	place npc _dummy_ at _res_
+	hide npc _dummy_
+	log 1032 step 0
+	change foe _mage_ infighting true
+	update-quest-item _reward_ set-material Adamantium
+
+_ipr_ task:
+	injured _mage_
+	say 1022
+
+_agi_ task:
+	when attribute Agility is at least 35
+
+_badagi_ task:
+	when _ipr_ and not _agi_
+	say 1010
+	reduce player health by 18
+
+_slain_ task:
+	killed 1 _mage_
+	change repute with _dummy_ by -10
+	stop timer _2res_
+	say 1023
+
+_qgclicked_ task:
+	clicked npc _questgiver_
+
+_clearclick_ task:
+	when _qgclicked_ and not _slain_
+	clear _qgclicked_ _clearclick_
+
+_pcreward_ task:
+	when _qgclicked_ and _slain_
+	give pc _reward_
+	start quest JHFGC02
+	end quest
+
+_2res_ task:
+	say 1003
+	end quest
+
+_failsafe_ task:
+	end quest
