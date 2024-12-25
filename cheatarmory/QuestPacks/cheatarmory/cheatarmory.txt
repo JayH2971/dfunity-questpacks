@@ -1,0 +1,50 @@
+Quest: cheatarmory
+DisplayName: The Cheater's Armory
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  You now have a full set of Daedric equipment.
+
+QBN:
+
+Item _p1_ item class 3 subclass 10
+Item _p2_ item class 3 subclass 13
+Item _p3_ item class 2 subclass 0
+Item _p4_ item class 2 subclass 1
+Item _p5_ item class 2 subclass 2
+Item _p6_ item class 2 subclass 3
+Item _p7_ item class 2 subclass 4
+Item _p8_ item class 2 subclass 5
+Item _p9_ item class 2 subclass 6
+
+--	Quest start-up:
+    get item _p1_
+    get item _p2_
+    get item _p3_
+    get item _p4_
+    get item _p5_
+    get item _p6_
+    get item _p7_
+    get item _p8_
+    get item _p9_
+    update-quest-item _p1_ set-material Daedric
+    update-quest-item _p2_ set-material Orcish
+    update-quest-item _p3_ set-material Daedric
+    update-quest-item _p4_ set-material Daedric
+    update-quest-item _p5_ set-material Daedric
+    update-quest-item _p6_ set-material Daedric
+    update-quest-item _p7_ set-material Daedric
+    update-quest-item _p8_ set-material Daedric
+    update-quest-item _p9_ set-material Daedric
+    make _p1_ permanent
+    make _p2_ permanent
+    make _p3_ permanent
+    make _p4_ permanent
+    make _p5_ permanent
+    make _p6_ permanent
+    make _p7_ permanent
+    make _p8_ permanent
+    make _p9_ permanent
+    give pc nothing
+    end quest

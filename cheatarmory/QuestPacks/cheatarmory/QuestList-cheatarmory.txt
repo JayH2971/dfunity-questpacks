@@ -1,0 +1,3 @@
+schema: *name, group, membership, minReq, flag, notes
+
+cheatarmory, InitAtGameStart, P, 0, 0,
