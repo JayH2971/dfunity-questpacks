@@ -1,0 +1,79 @@
+Quest: JHFGattack2
+DisplayName: Fighters Guild Attack 2
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  Armed opponents make a formation around you,
+<ce>  and they aren't subtle. The Fighters Guild
+<ce>  may not be the smartest or the quietest
+<ce>  source of adventurers, but they are good at killing.
+<ce>  Today, you're the target.
+<--->
+<ce>  "%pcf! Stop right there!"
+<ce>  
+<ce>  You're brought up straight by the approach
+<ce>  of a few armed figures. They ready their weapons.
+<ce>  
+<ce>  "Should've left the Fighters Guild alone.
+<ce>  Now you'll pay!"
+
+QBN:
+
+Item _dummy_ gem
+
+Foe _enemy1_ is Warrior
+Foe _enemy2_ is Knight
+Foe _enemy3_ is Spellsword
+
+Clock _timer_ 1:00
+Clock _longterm_ 21.00:00 35.00:00
+
+--	Quest start-up:
+    start timer _longterm_
+    have _dummy_ set _clocker_
+
+_longterm_ task:
+    pick one of _happen_ _nothappen_
+
+variable _nothappen_
+_happen_ task:
+    give pc _dummy_ notify 1010
+
+_clocker_ task:
+    start task _spawner_
+
+_spawner_ task:
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    create foe _enemy3_ every 0 minutes 1 times with 100% success
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    change foe _enemy3_ infighting true
+    cast Troll's_Blood spell on _enemy1_
+    cast Shield spell on _enemy1_
+    cast Orc_Strength spell on _enemy1_
+    cast Spell_Reflection spell on _enemy1_
+    cast Troll's_Blood spell on _enemy2_
+    cast Shield spell on _enemy2_
+    cast Orc_Strength spell on _enemy2_
+    cast Spell_Reflection spell on _enemy2_
+    cast Troll's_Blood spell on _enemy3_
+    cast Shield spell on _enemy3_
+    cast Orc_Strength spell on _enemy3_
+    cast Spell_Reflection spell on _enemy3_
+    start timer _timer_
+    take _dummy_ from pc
+
+variable _timer_
+_majorFGrep_ task:
+    player faction-repute with-faction-id 41 is lower than -69
+
+_reset_ task:
+    when _nothappen_ or _timer_ and _majorFGrep_
+    start quest JHFGattack2
+    end quest
+
+_endthisquest_ task:
+    when _nothappen_ or _timer_ and not _majorFGrep_
+    end quest

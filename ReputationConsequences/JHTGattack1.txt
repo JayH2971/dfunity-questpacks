@@ -1,0 +1,84 @@
+Quest: JHTGattack1
+DisplayName: Thieves Guild Attack 1
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  A short distance from you, a concerned-looking
+<ce>  citizen talks to a member of the town guard.
+<ce>  There's some pointing at you, and a nod.
+<ce>  
+<ce>  "Thief! Halt! Do not resist!"
+<ce>  
+<ce>  Once out of the guard's sight, the townsperson
+<ce>  grins and escapes. As the city watch coalesce
+<ce>  around you, you find a minor trinket among
+<ce>  your belongings. Tied around it is a note:
+<ce>  "The Thieves Guild never fights fair."
+<ce>  
+<ce>  You toss out the stolen object, but it's
+<ce>  not enough to dissuade the guardsmen.
+<ce>  You'd better find some place to hide.
+<--->
+<ce>  A member of the city watch leers at you.
+<ce>  Then another joins in, and a few of them
+<ce>  huddle for a talk. Soon they break formation
+<ce>  and begin shouting at you.
+<ce>  
+<ce>  "Halt! Stop, thief!"
+<ce>  
+<ce>  At first you're certain they can't be talking about
+<ce>  you, but then you find a trinket of sentimental
+<ce>  value among your belongings. A note is beside it:
+<ce>  "Payback from the Thieves Guild."
+<ce>  
+<ce>  Though you dispose of the planted evidence,
+<ce>  the framing persists. You'd better hide somewhere.
+
+QBN:
+
+Item _dummy_ gem
+
+Clock _timer_ 1:00
+Clock _longterm_ 21.00:00 35.00:00
+
+--	Quest start-up:
+    start timer _longterm_
+    have _dummy_ set _clocker_
+
+_longterm_ task:
+    pick one of _happen_ _nothappen_
+    
+variable _nothappen_
+_happen_ task:
+    give pc _dummy_ notify 1010
+
+_clocker_ task:
+    start task _spawner_
+
+_spawner_ task:
+    setplayercrime Theft
+    spawncityguards immediate
+    start timer _timer_
+    take _dummy_ from pc
+
+variable _timer_
+
+_mediumTGrep_ task:
+    player faction-repute with-faction-id 42 is lower than -39
+
+_majorTGrep_ task:
+    player faction-repute with-faction-id 42 is lower than -69
+
+_reset_ task:
+    when _nothappen_ or _timer_ and _mediumTGrep_ and not _majorTGrep_
+    start quest JHTGattack1
+    end quest
+
+_endthisquest_ task:
+    when _nothappen_ or _timer_ and not _mediumTGrep_
+    end quest
+
+_escalate_ task:
+    when _nothappen_ or _timer_ and _majorTGrep_
+    end quest

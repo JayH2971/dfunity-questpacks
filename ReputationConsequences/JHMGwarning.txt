@@ -1,0 +1,55 @@
+Quest: JHMGwarning
+DisplayName: Mages Guild Warning
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  You're aware of a harrier flying near you,
+<ce>  driven by an unspoken purpose. Upon descent,
+<ce>  it careens past you, planting
+<ce>  a sealed letter among your belongings.
+<ce>  It then soars away without a sound.
+<ce>  
+<ce>  The paper looks disposable.
+<ce>  You'll get rid of it in a day or two.
+
+Message:  1011
+To %pcn
+<ce>  
+The Mages Guild, Correspondence Chamber =gold_
+<ce>  
+   We have grown aware of certain grievous actions
+   against the Mages Guild taken by someone matching
+   your name and description. We must demand
+   that this errant behavior cease immediately.
+   Repair to a guild hall and curry our favor through
+   some of our lesser tasks, lest you gain intimate knowledge
+   of what is deemed "arcane wrath" by the conscientious.
+<ce>  
+      Attentively,
+      _person_, Council Scribe
+      Dictated by the Archmagister
+
+QBN:
+
+Person _person_ faction The_Mages_Guild
+
+Item _gold_ gold range 9 to 34
+Item _dummy_ letter used 1011
+
+Clock _timer_ 1.00:00
+Clock _delay_ 1.00:00 3.00:00
+
+--	Quest start-up:
+    have _dummy_ set _clocker_
+    start timer _delay_
+
+_delay_ task:
+    give pc _dummy_ notify 1010
+
+_clocker_ task:
+    start timer _timer_
+
+_timer_ task:
+    take _dummy_ from pc
+    end quest

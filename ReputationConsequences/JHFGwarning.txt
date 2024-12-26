@@ -1,0 +1,41 @@
+Quest: JHFGwarning
+DisplayName: Fighters Guild Warning
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  A pair of figures, clad in heavy armor,
+<ce>  make their way toward you. Neither one
+<ce>  looks exceptionally happy.
+<ce>  
+<ce>  "You're %pcf, huh? Got a message from the,
+<ce>  uh, the Fighters Guild. Message is..."
+<ce>  
+<ce>  The first tries to remember the wording, and
+<ce>  the other butts in with a scowl.
+<ce>  
+<ce>  "Message is, you keep messin' with the
+<ce>  Fighters Guild, you'll get what's comin'
+<ce>  to ya. Ya hear that, %ra? Huh?!"
+<ce>  
+<ce>  He pulls out an axe and starts showing the
+<ce>  blade to you. His companion pulls him back
+<ce>  and calls out as they depart.
+<ce>  
+<ce>  "Stop by a Fighters Guild and do some
+<ce>  favors to pay us back. Or else!!"
+
+QBN:
+Item _dummy_ gem
+Clock _delay_ 1.00:00 3.00:00
+
+--	Quest start-up:
+    have _dummy_ set _clocker_
+    start timer _delay_
+
+_delay_ task:
+    give pc _dummy_ notify 1010
+
+_clocker_ task:
+    take _dummy_ from pc
+    end quest

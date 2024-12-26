@@ -1,0 +1,46 @@
+Quest: JHTGwarning
+DisplayName: Thieves Guild Warning
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  By chance, you look among your belongings
+<ce>  and find a new paper stuffed therein.
+<ce>  You have no idea how it got there,
+<ce>  nor when any messenger approached.
+<ce>  
+<ce>  The paper looks disposable.
+<ce>  You'll get rid of it in a day or two.
+
+Message:  1011
+%pcf
+<ce>  
+   There are some people who live long lives
+   full of happiness. Most of those people
+   don't cross the Thieves Guild. Message
+   is simple: quit messing with us.
+   We're not fighters but we can make your
+   life a new plane of Oblivion if we choose
+   to. Think, then act.
+<ce>  
+      Don't doubt us.
+
+QBN:
+Item _dummy_ letter used 1011
+
+Clock _timer_ 1.00:00
+Clock _delay_ 1.00:00 3.00:00
+
+--	Quest start-up:
+    have _dummy_ set _clocker_
+    start timer _delay_
+
+_delay_ task:
+    give pc _dummy_ notify 1010
+
+_clocker_ task:
+    start timer _timer_
+
+_timer_ task:
+    take _dummy_ from pc
+    end quest

@@ -1,0 +1,136 @@
+Quest: JHRCinit
+DisplayName: Reputation Consequences Init
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+
+QBN:
+
+_badrep_ task:
+    player legal-repute is lower than -15
+    start quest JHBADREPGENERAL
+
+_mgrank_ task:
+    player guild rank in MagesGuild at least 3
+
+_badmg_ task:
+    when _badrep_ and _mgrank_
+    start task _badmg2_
+
+_badmg2_ task:
+    start quest JHBADREPMG
+
+_knrank_ task:
+    player guild rank in KnightlyOrder at least 3
+
+_badkn_ task:
+    when _badrep_ and _knrank_
+    start task _badkn2_
+
+_badkn2_ task:
+    start quest JHBADREPKN
+
+_minorMGrep_ task:
+    player faction-repute with-faction-id 40 is lower than -19
+
+_mediumMGrep_ task:
+    player faction-repute with-faction-id 40 is lower than -39
+
+_majorMGrep_ task:
+    player faction-repute with-faction-id 40 is lower than -69
+
+_minorFGrep_ task:
+    player faction-repute with-faction-id 41 is lower than -19
+
+_mediumFGrep_ task:
+    player faction-repute with-faction-id 41 is lower than -39
+
+_majorFGrep_ task:
+    player faction-repute with-faction-id 41 is lower than -69
+
+_minorTGrep_ task:
+    player faction-repute with-faction-id 42 is lower than -19
+
+_mediumTGrep_ task:
+    player faction-repute with-faction-id 42 is lower than -39
+
+_majorTGrep_ task:
+    player faction-repute with-faction-id 42 is lower than -69
+
+_minorDBrep_ task:
+    player faction-repute with-faction-id 108 is lower than -19
+
+_mediumDBrep_ task:
+    player faction-repute with-faction-id 108 is lower than -39
+
+_majorDBrep_ task:
+    player faction-repute with-faction-id 108 is lower than -69
+
+_mgstep0_ task:
+    when _minorMGrep_ and not _mediumMGrep_
+    start task _sendmgletter_
+
+_sendmgletter_ task:
+    start quest JHMGwarning
+
+_mgstep1_ task:
+    when _mediumMGrep_ and not _majorMGrep_
+    start quest JHMGattack1
+    clear _mgstep2_
+
+_mgstep2_ task:
+    when _majorMGrep_
+    start quest JHMGattack2
+    clear _mgstep1_
+
+_fgstep0_ task:
+    when _minorFGrep_ and not _mediumFGrep_
+    start task _sendfgletter_
+
+_sendfgletter_ task:
+    start quest JHFGwarning
+
+_fgstep1_ task:
+    when _mediumFGrep_ and not _majorFGrep_
+    start quest JHFGattack1
+    clear _fgstep2_
+
+_fgstep2_ task:
+    when _majorFGrep_
+    start quest JHFGattack2
+    clear _fgstep1_
+
+_tgstep0_ task:
+    when _minorTGrep_ and not _mediumTGrep_
+    start task _sendtgletter_
+
+_sendtgletter_ task:
+    start quest JHTGwarning
+
+_tgstep1_ task:
+    when _mediumTGrep_ and not _majorTGrep_
+    start quest JHTGattack1
+    clear _tgstep2_
+
+_tgstep2_ task:
+    when _majorTGrep_
+    start quest JHTGattack2
+    clear _tgstep1_
+
+_dbstep0_ task:
+    when _minorDBrep_ and not _mediumDBrep_
+    start task _senddbletter_
+
+_senddbletter_ task:
+    start quest JHDBwarning
+
+_dbstep1_ task:
+    when _mediumDBrep_ and not _majorDBrep_
+    start quest JHDBattack1
+    clear _dbstep2_
+
+_dbstep2_ task:
+    when _majorDBrep_
+    start quest JHDBattack2
+    clear _dbstep1_

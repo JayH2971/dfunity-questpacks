@@ -1,0 +1,50 @@
+Quest: JHDBwarning
+DisplayName: Dark Brotherhood Warning
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  A courier stands in your path, as if knowing
+<ce>  you would come this way soon. She extends
+<ce>  a letter to you with practiced ease.
+<ce>  
+<ce>  "Hello %pcf! Got a letter for you.
+<ce>  Make sure you read it, and stay safe!"
+<ce>  
+<ce>  She departs, and you notice a black lining
+<ce>  under her hood as she pulls it up.
+<ce>  
+<ce>  The paper looks disposable.
+<ce>  You'll get rid of it in a day or two.
+
+Message:  1011
+%pcn
+<ce>  
+   Forgive this grievous imposition on your time.
+   This task is unfortunate but occasionally necessary.
+   A person with such stunning accomplishments as yours,
+   whatever they might be, could perhaps have a
+   great future in %crn, unless you continue to annoy
+   the Dark Brotherhood as you have done thus far.
+<ce>  
+    We remember everything. Tempt fate and be buried.
+
+QBN:
+Item _dummy_ letter used 1011
+
+Clock _timer_ 1.00:00
+Clock _delay_ 1.00:00 3.00:00
+
+--	Quest start-up:
+    have _dummy_ set _clocker_
+    start timer _delay_
+
+_delay_ task:
+    give pc _dummy_ notify 1010
+
+_clocker_ task:
+    start timer _timer_
+
+_timer_ task:
+    take _dummy_ from pc
+    end quest

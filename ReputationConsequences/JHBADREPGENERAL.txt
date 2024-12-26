@@ -18,7 +18,6 @@ Message:  1010
 <ce>      You turn to see who spoke, but the
 <ce>      people have already dispersed.
 
-
 QBN:
 
 Item _dummy_ gem

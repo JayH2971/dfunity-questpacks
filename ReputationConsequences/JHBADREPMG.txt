@@ -21,7 +21,10 @@ QBN:
 
 Item _dummy_ gem
 
+Clock _timer_ 1.00:00 5.00:00
+
 --	Quest start-up:
+start timer _timer_
 
 _badrep_ task:
     player legal-repute is lower than -15
@@ -29,8 +32,10 @@ _badrep_ task:
 _guildrank_ task:
     player guild rank in MagesGuild at least 3
 
+variable _timer_
+
 _reaction_ task:
-    when _badrep_ and _guildrank_
+    when _badrep_ and _guildrank_ and _timer_
     give pc _dummy_ notify 1010
     start task _end_
 

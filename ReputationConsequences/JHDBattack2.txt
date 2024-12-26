@@ -1,0 +1,70 @@
+Quest: JHDBattack2
+DisplayName: Dark Brotherhood Attack 2
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>  A small card is here on the ground.
+<ce>  The text is large enough to read while standing.
+<ce>  
+<ce>  "This is the spot where %pcn dies."
+<ce>  An arrow shoots into your back,
+<ce>  carrying an insignia of the Dark Brotherhood.
+<ce>  
+<--->
+<ce>  You have no idea how, but three opponents have
+<ce>  gotten the jump on you. Their silence is perfect,
+<ce>  the same as their coordination. You have no chance
+<ce>  to turn around before an arrow carrying the
+<ce>  Dark Brotherhood's emblem sinks into your back.
+
+QBN:
+
+Item _dummy_ item class 3 subclass 18
+
+Foe _enemy1_ is Assassin
+Foe _enemy2_ is Assassin
+Foe _enemy3_ is Nightblade
+
+Clock _timer_ 1:00
+Clock _longterm_ 21.00:00 35.00:00
+
+--	Quest start-up:
+    start timer _longterm_
+    have _dummy_ set _clocker_
+
+_longterm_ task:
+    pick one of _happen_ _nothappen_
+
+variable _nothappen_
+_happen_ task:
+    give pc _dummy_ notify 1010
+
+_clocker_ task:
+    start task _spawner_
+
+_spawner_ task:
+    create foe _enemy1_ every 0 minutes 1 times with 100% success
+    create foe _enemy2_ every 0 minutes 1 times with 100% success
+    create foe _enemy3_ every 0 minutes 1 times with 100% success
+    change foe _enemy1_ infighting true
+    change foe _enemy2_ infighting true
+    change foe _enemy3_ infighting true
+    cast Spell_Reflection spell on _enemy3_
+    cast Invisibility spell on _enemy3_
+    reduce player health by 15
+    start timer _timer_
+    make _dummy_ permanent
+
+variable _timer_
+_majorDBrep_ task:
+    player faction-repute with-faction-id 108 is lower than -69
+
+_reset_ task:
+    when _nothappen_ or _timer_ and _majorDBrep_
+    start quest JHDBattack2
+    end quest
+
+_endthisquest_ task:
+    when _nothappen_ or _timer_ and not _majorDBrep_
+    end quest

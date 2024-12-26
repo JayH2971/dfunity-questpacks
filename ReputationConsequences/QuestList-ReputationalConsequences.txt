@@ -1,0 +1,5 @@
+-- Jay_H Reputational Consequences quest pack list
+
+schema: *name, group, membership, minReq, flag, notes
+
+JHRCinit, InitAtGameStart, M, 0, 0, Initializes the Reputational Consequences system

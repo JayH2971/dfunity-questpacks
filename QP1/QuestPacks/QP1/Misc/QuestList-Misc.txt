@@ -1,4 +1,4 @@
--- Jay_H Perpetual quest pack list
+-- Jay_H QP1 initial quest pack list
 
 schema: *name, group, membership, minReq, flag, notes
 
