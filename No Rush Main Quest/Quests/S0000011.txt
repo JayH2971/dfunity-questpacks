@@ -1,7 +1,3 @@
--- Quest: C:\QUESTS\WORKING\S0000011.Qbn.
--- Main story quest.
--- QuestId: 11
-Messages: 62
 Quest: S0000011
 DisplayName: NR Barenziah's Book
 -- Message panels
@@ -240,16 +236,17 @@ Message:  1017
 <ce>                He hands you a letter and disappears as
 <ce>                        quietly as he arrived.
 
-
--- Symbols used in the QRC file:
---
---              %god occurs 1 time.
---              %pcf occurs 7 times.
---              %pcn occurs 3 times.
---              %qdt occurs 2 times.
---               %ra occurs 18 times.
---         _jewelry_ occurs 2 times.
---          _reward_ occurs 7 times.
+Message:  1030
+<ce>                      You may not know this, but
+<ce>                not only is Gortwog the holder of that
+<ce>               letter the Emperor lost some months ago,
+<ce>               but he is also contending for an ancient
+<ce>                relic called the Totem of Tiber Septim.
+<ce>                If that cannibal gets his warted hands
+<ce>                on the Totem, it could mean the end of
+<ce>                Wayrest, and possibly all civilization
+<ce>                on the Iliac Bay. We may need your able
+<ce>                         services again, %pcf.
 
 QBN:
 Item _reward_ gold
@@ -276,9 +273,6 @@ _S.02_ task:
 _S.04_ task:
 	clicked item Chapter6 
 
-_S.05_ task:
-	when _S.08_
-
 yes task:
 	place item Chapter6 at _orsinium_ marker 2
 	log 1010 step 0 
@@ -291,10 +285,12 @@ _no_ task:
 
 _S.08_ task:
 	toting Chapter6 and Barenziah clicked 
-	give pc _reward_ 
 	start task _S.19_ 
+	give pc _reward_ 
 	say 1014 
+	say 1030
 	change repute with Barenziah by +10 
+	end quest
 
 _S.11_ task:
 	give pc letter40 notify 1017 
