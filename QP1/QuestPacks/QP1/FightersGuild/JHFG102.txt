@@ -28,6 +28,8 @@ AcceptQuest:  [1002]
 <ce>           I'm not expecting you clean out the whole
 <ce>           place, just enough to bring their 
 
+--unfinished quest, dialogue reached to this point
+
 QuestFail:  [1003]
 <ce>                    Your contract to slay _dummy_
 <ce>                        in ___res_ ends today.
