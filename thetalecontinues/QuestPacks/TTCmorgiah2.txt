@@ -1,5 +1,5 @@
-Quest: TTCmorgiah4
-DisplayName: Tale of Morgiah 4
+Quest: TTCmorgiah2
+DisplayName: Tale of Morgiah 2
 -- Message panels
 QRC:
 

@@ -7,3 +7,267 @@
 --third step is to do a quest for them in preparation for morgiah.
 --fourth step is to escort morgiah to them and see the vision.
 --receive reward upon returning to castle wayrest
+
+Quest: TTCmorgiah1
+DisplayName: Tale of Morgiah 1
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  
+
+Message:  1010
+<ce>       A strong and tall courier approaches and hands
+<ce>       you a letter bearing the seal of Wayrest
+<ce>       before departing in dignified silence.
+
+Message:  1011
+Dear %pcn,
+ 
+ I thoroughly enjoyed your previous visit to our humble
+court. If you're ever in the area, could you make
+another visit to the castle? I have a favor to ask of you,
+one with a better reward than the last.
+We in Wayrest treasure loyalty.
+<ce>       
+              Yours truly,
+              Princess Morgiah of Wayrest
+
+Message:  1012
+<ce>  %pcf, it is a pleasure to enjoy your presence
+<ce>  once more. I am always thrilled to have
+<ce>  a visitor here, especially one with
+<ce>  a good reputation, and accomplishments to
+<ce>  back it up. Tell me, are you up for an errand?
+<ce>  If not, I'm happy to just say hello
+<ce>  and leave it at that.
+
+Message:  1013
+<ce>  What a delightful answer! Thank you so much for
+<ce>  taking me up on it. We have a great many things
+<ce>  to discuss, but I'd rather not distract my
+<ce>  parents with a long conversation, you understand.
+<ce>  Could you follow me out to the castle entrance?
+<ce>  We can talk there with great liberty.
+
+Message:  1014
+<ce>  Morgiah stretches both arms high into the air.
+<ce>  
+<ce>  "Ahh, this feels nice. It's pretty rare
+<ce>  to talk with a trusted friend. I don't know
+<ce>  what the other courts in Tamriel are like,
+<ce>  but Wayrest is kind of a..."
+<ce>  
+<ce>  She starts looking for the right word,
+<ce>  and then snaps back to reality.
+<ce>  
+<ce>  "Forgive me, that was so rude of me to say.
+<ce>  We're not here so I can complain about Wayrest's
+<ce>  finest bootlickers, are we?"
+<ce>  
+<ce>  She leans against the wall and smiles, crossing her arms.
+<ce>  
+<ce>  "Before I get into the details, I'm going to ask a few questions.
+<ce>  First: are you willing to keep any secret I tell you,
+<ce>  no matter what it is?"
+
+Message:  1016
+<ce>  "Oh, it's good we got that out of the way then.
+<ce>  You're being honest, and I appreciate it.
+<ce>  I'll have to look for someone else to
+<ce>  take up this little errand of mine.
+<ce>  But I hope your stay in Warest is long and pleasant!
+<ce>  I have to return to the court before
+<ce>  my parents start to wonder."
+<ce>  
+<ce>  Morgiah waves at you before she returns to the castle.
+
+Message:  1017
+<ce>  Good! That's a very nice thing to hear.
+<ce>  Well, my last favor sent you to meet
+<ce>  the King of Worms, who was happy to oblige my
+<ce>  request. This time, I need something else,
+<ce>  something a little more neutral.
+<ce>  You'd have to take just a couple of steps
+<ce>  into the occult, to be sure.
+<ce>  Is that something you could do?
+
+Message:  1018
+<ce>  Oh, you're really spoiling me. Okay then.
+<ce>  This is what I'll ask of you. I need witches.
+<ce>  
+<ce>  I think you can tell that the king of Wayrest
+<ce>  is not my father. Mine died when I was barely a girl.
+<ce>  His name was, or is, Symmachus. I'd... like to see him again.
+<ce>  
+<ce>  I can't ask the King of Worms for this favor.
+<ce>  Who knows what kind of price he'd demand for a second favor.
+<ce>  I have an alternative. There are witches in Menevia
+<ce>  to the northwest who I've heard can do something like this.
+<ce>  It's not urgent, but my request is that you find
+<ce>  the witch coven in Menevia and ask them whether
+<ce>  they can channel a deceased spirit.
+<ce>  I'll give you a sack of gold to grease the wheel a bit.
+<ce>  I don't know if witches use gold, but it can't hurt.
+<ce>  
+<ce>  I don't know exactly where the coven is,
+<ce>  but the rumors I've gotten say that it's
+<ce>  west of some place called Hawkton Court,
+<ce>  and a little to the north. Look for an open clearing
+<ce>  without trees, save a large circle around the witches. 
+<ce>  I doubt any roads will lead there, so you may be obliged
+<ce>  to undertake some crosscountry travel.
+<ce>  
+<ce>  If they agree to help, come back and tell me.
+<ce>  I would really, really appreciate a positive
+<ce>  response on their part, if that's possible at all.
+<ce>  A safe journey to you, %pcf.
+
+Message:  1019
+%qdt:
+ Princess Morgiah of Wayrest has asked
+ me to travel to Menevia to find a coven
+ of witches living in the wilderness.
+ She wants to know if they can channel
+ the spirit of her dead father.
+ Their coven may be to the west
+ of Hawkton Court in Menevia,
+ and slightly north as well.
+ It should be in a large clearing,
+ with a circle of trees.
+ She gave me a sack of coins as
+ a gift to the witches.
+
+Message:  1020
+<ce>  Greetings to thee, %ra, and
+<ce>  welcome to our wilderness abode.
+<ce>  Make known thy desire.
+<ce>  
+<ce>  Indeed, we of Tamarilyn can call forth
+<ce>  the deceased. Many can do this, and so
+<ce>  can we. Thy gold we shall take as payment
+<ce>  for the vision, but there remaineth one ingredient
+<ce>  that is wanting: an emerald, unspotted,
+<ce>  clean and whole. If thou wilt bring
+<ce>  to pass the princess' desire, an emerald
+<ce>  of any provenance shall be thy gift to thy sisters.
+
+Message:  1021
+%qdt:
+ The Tamarilyn coven is willing to
+ call forth the spirit of Morgiah's father,
+ but they require an emerald. It doesn't
+ matter where I get it from.
+
+Message:  1022
+<ce>  You now have an emerald to serve the witches' purpose.
+
+Message:  1023
+<ce>  Ah, thou art returned, and thou hast thy
+<ce>  gem with thee. Thy gold shall be spent
+<ce>  obtaining victuals for the rite.
+<ce>  If the princess of Wayrest will see her
+<ce>  desired vision, she shall repair to us
+<ce>  in very person.
+<ce>  
+<ce>  Know thou, %ra, that the dead do not
+<ce>  take well to disturbances. If this
+<ce>  Morgiah will take heed and be wise,
+<ce>  she will not antagonize that which
+<ce>  must be laid to rest. We shall await
+<ce>  the return of ye in coming days.
+
+
+Message:  1025
+%qdt:
+ The witches accepted Morgiah's payment
+ and the emerald I gave them. I can
+ return to them with the princess, and they will
+ carry out their act.
+
+Message:  1026
+<ce>  A finest hello to you then, %pcf.
+<ce>  I hope you always feel welcome in Wayrest,
+<ce>  and that your next journey will
+<ce>  be safe and prosperous.
+<ce>  Thank you for coming by.
+
+Message:  1027
+<ce>  They accepted? Truly? What joy!
+<ce>  Yes, I'm ready to leave. My father
+<ce>  has full confidence in you, and
+<ce>  the journey isn't far. We'll be
+<ce>  back in Wayrest in mere days.
+<ce>  Lead on, %pcf!
+
+QBN:
+Person _morgiah_ named Princess_Morgiah atHome
+
+Place _palace_ permanent WayrestCastle
+
+Clock _letterclock_ 35.00:00 42.00:00
+Clock _destroyletter_ 3.00:00
+
+Item _letter_ letter used 1011
+
+--	Quest start-up:
+	start timer _letterclock_
+    pc at _palace_ set _insidepalace_
+
+_letterclock_ task:
+    give pc _letter_ notify 1010
+    have _letter_ set _startdestroy_
+
+_startdestroy_ task:
+    start timer _destroyletter_
+
+_destroyletter_ task:
+    take _letter_ from pc
+
+_clickmorgiah_ task:
+    clicked npc _morgiah_
+
+_notyet_ task:
+    when _clickmorgiah_ and not _letterclock_
+    clear _clickmorgiah_ _notyet_
+
+_talklhotun_ task:
+    when _clickmorgiah_ and _letterclock_
+    prompt 1012 yes _begin_ no _refuse_
+
+_refuse_ task:
+    say 1026
+    end quest
+
+_begin_ task:
+    say 1013
+    hide npc _morgiah_
+    add _morgiah_ face
+    change repute with _morgiah_ by +10
+
+variable _insidepalace_
+
+_talk1_ task:
+    when _begin_ and not _insidepalace_
+    start task _talk1a_
+
+_talk1a_ task:
+    prompt 1014 yes _secret_ no _quit_
+
+_quit_ task:
+    drop _morgiah_ face
+    restore npc _morgiah_
+    say 1016
+    end quest
+
+_secret_ task:
+    prompt 1017 yes _commit_ no _quit_
+
+_commit_ task:
+    say 1018
+    log 1019 step 0
+
+_continue_ task:
+    give pc nothing
+    start quest TTCmorgiah2
+    end quest
