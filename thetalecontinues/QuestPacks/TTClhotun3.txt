@@ -278,6 +278,7 @@ _ending_ task:
     update-quest-item _reward_ set-material Adamantium
     update-quest-item _reward_ add-enchantment type StrengthensArmor spell -1
     update-quest-item _reward_ add-enchantment type PotentVs spell 2
+    update-quest-item _reward_ add-enchantment type ImprovesTalents spell 2
 
 
 _return_ task:

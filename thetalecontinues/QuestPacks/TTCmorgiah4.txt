@@ -1,0 +1,153 @@
+Quest: TTCmorgiah4
+DisplayName: Tale of Morgiah 4
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>   Safe within Castle Wayrest, Morgiah calmly begins
+<ce>   tying her hair. She speaks.
+<ce>   
+<ce>   "%pcf, you said you could keep a secret.
+<ce>   I believe you. And if you ever tell anyone
+<ce>   what those witches fabricated,
+<ce>   you will die alone and in agony."
+<ce>   
+<ce>   She turns to look you in the eye.
+<ce>   
+<ce>   "Understood?"
+<ce>   
+<ce>   Then she hands you an amulet.
+<ce>   
+<ce>   "Eadwyre gave me this when he married my mother.
+<ce>   He said it was a cherished gift for a cherished daughter,
+<ce>   whatever that means. I don't want it anymore,
+<ce>   and I'm giving it to you. I hope it's more useful
+<ce>   to you than it was to me."
+<ce>   
+<ce>   She takes a few steps toward the royal court,
+<ce>   and then turns back to you.
+<ce>   
+<ce>   "I'm sorry. You saw the worst of me in Menevia.
+<ce>   Please, don't look down on me."
+<ce>   
+<ce>   She closes her eyes, holding back a sob.
+<ce>   
+<ce>   "I miss my father."
+<ce>   
+<ce>   She then turns away and takes her place on the royal dais.
+
+Message:  1010
+<ce>  Morgian crosses her arms and gestures with one hand.
+<ce>  
+<ce>  "Okay. I'm ready. Show me my father."
+<ce>  
+<ce>  The head witch begrudgingly sets various
+<ce>  organs on the floor, as well as the emerald.
+<ce>  They all join together in a slow and
+<ce>  laborious enchantment that makes the
+<ce>  air around you grow warmer. Your eyes
+<ce>  sting and your hair stands up.
+<ce>  
+<ce>  "Come forth... Come forth, Symmachus of Almalexia!
+<ce>  Come forth, Symmachus, son of Morgiah!
+<ce>  Come forth, Symmachus! Come forth!"
+<ce>  
+<ce>  They set the organs ablaze, and an ethereal
+<ce>  figure appears in the smoke. A Dark Elf,
+<ce>  unusually tall and broad, towers over the
+<ce>  gathered crowd. He seems to be wearing
+<ce>  a set of armor with a sheathed sword.
+<ce>  
+<ce>  Morgiah looks up at him, between awe and pain.
+<ce>  You hear a tinge of regret as she speaks.
+<ce>  
+<ce>  "F-Father? It's you. Isn't it? I... I have news for you."
+<ce>  
+<ce>  The apparition pauses, and then clutches its head.
+<ce>  It groans loudly before releasing a roar.
+<ce>  
+<ce>  "Morgiah... Morgian, my daughter, why have
+<ce>  you done it? The firstborn... You have..."
+<ce>  
+<ce>  His daughter looks wounded, and then her eyes
+<ce>  flare up when she recovers.
+<ce>  
+<ce>  "I did exactly what you wanted me to!
+<ce>  I'm going to be a queen! Have you no
+<ce>  understanding of what I'll sacrifice to
+<ce>  meet YOUR vision for ME?"
+<ce>  
+<ce>  The figure of Symmachus wails to the sky.
+<ce>  
+<ce>  "Morgiah, why... how... I never...
+<ce>  You weren't supposed to..."
+<ce>  
+<ce>  The princess raises both arms in exasperation.
+<ce>  
+<ce>  "What, were we supposed to return to Mournhold?!
+<ce>  You think I could ever become a queen there?
+<ce>  You are DELUSIONAL! Our family can't go back
+<ce>  to Morrowind! Ever! Okay?!"
+<ce>  
+<ce>  The image of her father finally reaches a calm.
+<ce>  But the quet is born of regret, not of
+<ce>  reconciliation. With a weeping voice,
+<ce>  he announces,
+<ce>  
+<ce>  "I will have an heir on the throne of Mournhold.
+<ce>  But it will not be you. Go to the far-off land
+<ce>  of Summerset. You have cursed your son.
+<ce>  Misery and obscurity will await you."
+<ce>  
+<ce>  The smoke regains its form, and Symmachus disappears.
+<ce>  Morgiah flies into a rage.
+<ce>  
+<ce>  "What in Oblivion was that?! Is this some kind of trick?"
+<ce>  
+<ce>  She points at the witches as her voice rises.
+<ce>  
+<ce>  "Who of you manipulated that? Who was it? SAY IT!
+<ce>  Tell me who made that false vision of my father!
+<ce>  That was not him! TELL ME!"
+<ce>  
+<ce>  The witches stand in silence, partially for their dignity
+<ce>  and partially for fear of offending the
+<ce>  princess of Wayrest. Finally, the Dark Elf
+<ce>  glowers at them and stands back.
+<ce>  
+<ce>  "You're lucky I don't tell my mother to send
+<ce>  a legion to burn this hovel to the ground.
+<ce>  Nobody should have to put up with the
+<ce>  lies you people spread."
+<ce>  
+<ce>  Lastly, she turns away.
+<ce>  
+<ce>  "%pcf, we have to return to Wayrest.
+<ce>  I long for dignified surroundings once more."
+
+
+QBN:
+Person _morgiah_ named Princess_Morgiah atHome
+
+Place _palace_ permanent WayrestCastle
+
+Item _reward_ item class 25 subclass 0
+
+--	Quest start-up:
+    pc at _palace_ set _insidepalace_
+    hide npc _morgiah_
+    update-quest-item _reward_ add-enchantment type AbsorbsSpells spell -1
+    update-quest-item _reward_ add-enchantment type GoodRepWith spell 3
+    start task _delivered_
+-- dummy placeholder
+
+variable _insidepalace_
+_delivered_ task:
+    say 1010
+
+_ending_ task:
+    when _insidepalace_ and _delivered_
+    restore _morgiah_
+    give pc _reward_
+    change repute with _morgiah_ by +20
+    end quest

@@ -1,0 +1,9 @@
+--morgiah seeks to speak with her dead father. consults with witches, gets
+--a despairing seance. She accuses them of lying to her. Reward is
+--an enchanted necklace that absorbs spells and has good rep with nobility.
+ 
+--first step is a cat-and-mouse conversation to test PC's loyalty and secrecy.
+--second step is sending PC to find the witch coven in Menevia.
+--third step is to do a quest for them in preparation for morgiah.
+--fourth step is to escort morgiah to them and see the vision.
+--receive reward upon returning to castle wayrest
