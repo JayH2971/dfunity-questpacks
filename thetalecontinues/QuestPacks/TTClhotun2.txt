@@ -1,0 +1,165 @@
+Quest: TTClhotun2
+DisplayName: Tale of Lhotun 2
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  Lhotun steps forward onto the grand porch.
+<ce>  
+<ce>  "Ahh, the fresh air once more. My mother
+<ce>  knows it even less than I do. Sometimes
+<ce>  if the prisoner has little freedom,
+<ce>  the jailer has even less.
+<ce>  
+<ce>  "Now then, it took some cajoling and some
+<ce>  third-party requests, but I managed it.
+<ce>  Lead me to ___city_. The sooner
+<ce>  we can do this and return, the better."
+
+Message:  1010
+<ce>   Hello %pcf. I'll be waiting here
+<ce>   whenever you have that
+<ce>   "little something" for me.
+
+Message:  1011
+<ce>   You discreetly give Lhotun the money,
+<ce>   trying not to gain the attention of
+<ce>   the others. He quietly calls for a maid
+<ce>   to take it to his room.
+<ce>   
+<ce>   "%pcf, I'll get to looking immediately.
+<ce>   Do you want to be a part of the search,
+<ce>   or is this where your involvement ends?"
+
+Message:  1012
+<ce>  Thank you. I will send my courier to you
+<ce>  so soon as I get a proper lead.
+<ce>  Your money will be well spent, I swear it.
+
+Message:  1013
+<ce>  It is well. Your courtesy and discretion
+<ce>  truly distinguish you. You would have made
+<ce>  a fine noble... much better than the buffoons
+<ce>  who beat their chests around here.
+<ce>  
+<ce>  %pcf, honor in Sentinel and in all Tamriel.
+<ce>  Go with peace and %god's blessing.
+
+Message:  1014
+%qdt:
+ I gave Prince Lhotun a monetary
+ donation to his cause, and he told
+ me he would send word of any discoveries
+ regarding the mercenaries who kidnapped
+ and killed his eldest brother.
+
+Message:  1015
+<ce>  A familiar-looking courier, carrying
+<ce>  a letter, approaches you and speaks quietly.
+<ce>  
+<ce>  "Lhotun is quite excited. I don't
+<ce>  know what's in this letter,  but he's
+<ce>  anxious for you to read it."
+<ce>  
+<ce>  The young page then departs.
+
+Message:  1016
+%pcf
+<ce>
+  Whenever you're in Sentinel again,
+I have the finest news. My brother will
+know justice.
+<ce>
+              Gratefully yours.
+              Written by my own hand.
+              Prince Lhotun of Sentinel
+
+Message:  1017
+<ce>   Lhotun's eyes light up at the sight of you.
+<ce>   
+<ce>   "I asked the city watch to look for you,
+<ce>   and I knew of your arrival this very day.
+<ce>   What a joy! I already told Mother.
+<ce>   Let's get going, and I'll explain outside."
+
+Message:  1019
+%qdt:
+ Prince Lhotun has asked me to go with
+ him to ___city_ in ____city_.
+
+Message:  1020
+%qdt:
+ Prince Lhotun asked me to raise 5,000
+ gold pieces for his quest to find
+ his deceased brother's kidnappers.
+ He waits in Sentinel Palace.
+
+QBN:
+Person _lhotun_ named Prince_Lhotun atHome
+
+Place _city_ remote city
+Place _palace_ permanent SentinelCastle
+
+Clock _letterclock_ 21.00:00 28.00:00
+Clock _destroyletter_ 3.00:00
+
+Item _letter_ letter used 1016
+
+--	Quest start-up:
+    pc at _palace_ set _insidepalace_
+    log 1020 step 0
+
+variable _insidepalace_
+
+_givelhotun_ task:
+    clicked _lhotun_ and at least 5000 gold otherwise do _nogold_
+    prompt 1011 yes _continue_ no _endquest_
+    change repute with _lhotun_ by +10
+
+_nogold_ task:
+    say 1010
+    clear _nogold_
+
+_endquest_ task:
+    say 1013
+    end quest
+
+_continue_ task:
+    say 1012
+    start timer _letterclock_
+    log 1014 step 0
+
+_letterclock_ task:
+    give pc _letter_ notify 1015
+    have _letter_ set _startdestroy_
+
+_startdestroy_ task:
+    remove log step 0
+    start timer _destroyletter_
+
+_destroyletter_ task:
+    take _letter_ from pc
+
+_notyet_ task:
+    when _clicklhotun_ and not _letterclock_
+    clear _clicklhotun_ _notyet_
+
+_clicklhotun_ task:
+    clicked npc _lhotun_
+
+_talklhotun_ task:
+    when _clicklhotun_ and _letterclock_
+    say 1017
+    hide npc _lhotun_
+    add _lhotun_ face
+
+_exit_ task:
+    when _talklhotun_ and not _insidepalace_
+    give pc nothing
+    log 1019 step 0
+    pc at _city_ set _newtown_
+
+_newtown_ task:
+    drop _lhotun_ face
+    start quest TTClhotun3
+    end quest

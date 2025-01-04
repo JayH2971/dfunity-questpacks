@@ -1,0 +1,288 @@
+Quest: TTClhotun3
+DisplayName: Tale of Lhotun 3
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>   Lhotun is still somber as he crosses the threshold
+<ce>   into the palace. A long pause follows before he speaks.
+<ce>   
+<ce>   "Please forgive me. I should be more grateful.
+<ce>   Of six culprits, one has paid the ultimate
+<ce>   price for my brother's decease.
+<ce>   Who am I to demand justice on the others?
+<ce>   Perhaps disease, exile, misery, and frost
+<ce>   will claim the rest. There are worse
+<ce>   punishments than you or I can mete out.
+<ce>   
+<ce>   "%pcf, it will take me some time to reconcile
+<ce>   with what happened in ___tav_. But my gratitude
+<ce>   to you has no end. Greklith gave me this
+<ce>   at my birthday celebration. He told me...
+<ce>   one day I could grow up to be a great warrior.
+<ce>   If I could call anyone a true warrior, it's you.
+<ce>   
+<ce>   "Please, take it. And come see me here
+<ce>   whenever you visit Sentinel. A prince doesn't have
+<ce>   many friends. you see."
+
+Message:  1010
+<ce>  Lhotun hurries forth to grab the book.
+<ce>  The flame has nearly consumed it
+<ce>  by this point. The charred remains
+<ce>  flit through the air.
+<ce>  
+<ce>  "NO! By all that my fathers worshipped, no!
+<ce>  No, no, no! %oth! %oth!!
+<ce>  %god, why?!"
+<ce>  
+<ce>  He looks at the mercenary's corpse,
+<ce>  the ruined journal, and then the corpse again.
+<ce>  He gives it an effortless kick.
+<ce>  
+<ce>  Then he leans on the nearby wall and
+<ce>  covers his face.
+
+Message:  1011
+<ce>   "%oth. I just wanted one thing, just
+<ce>   one measly request, and this is what
+<ce>   %god gives me. Why? Why does this
+<ce>   have to be so hard?"
+<ce>   
+<ce>   Lhotun slumps onto the ground,
+<ce>   holding back a full breakdown.
+<ce>   
+<ce>   "I... am I just supposed to let them go?
+<ce>   They'll know that Stufyl is dead.
+<ce>   Anyone smart will flee beyond Black Marsh
+<ce>   before the week is over.
+<ce>   
+<ce>   "Why?"
+<ce>   
+<ce>   Several long moments pass.
+<ce>   
+<ce>   Eventually, Lhotun stands up on shaky legs and returns to you.
+<ce>   He doesn't say it, but there's a mutual understanding:
+<ce>   it's time to return to Sentinel Palace.
+
+Message:  1012
+<ce>  Lhotun dons a hood and looks both ways.
+<ce>  
+<ce>  "It's not much of a disguise, but we won't
+<ce>  be in town for long. Let's hope it lasts.
+<ce>  
+<ce>  "Please let me explain. My father hired six
+<ce>  to carry out the kidnapping. One of them organized
+<ce>  the rest, kept order, and so on. 
+<ce>  That paper pusher is called Stufyl.
+<ce>  I don't know whether that's a code name,
+<ce>  but Stufyl lives here in ___tav_,
+<ce>  and often visits _tav_.
+<ce>  
+<ce>  "Let's head there and try to blend with
+<ce>  the locals. All we need is Stufyl's book,
+<ce>  and we'll have our key to finding the other five."
+
+Message:  1013
+%qdt:
+ Lhotun says his brother was kidnapped by six hirelings.
+ We can find Stufyl, their organizer, in _tav_
+ of ___tav_.
+
+Message:  1014
+<ce>  Lhotun whispers to you, pulling his hood tighter.
+<ce>  
+<ce>  "Let's split up to look less suspicious.
+<ce>  Just stay here in the tavern.
+<ce>  I know what Stufyl looks like, so I'll come find you."
+
+Message:  1015
+%qdt:
+ Prince Lhotun told me to wait
+ inside _tav_ until he sees
+ Stufyl.
+
+Message:  1016
+<ce>  A light tap on your shoulder signals
+<ce>  Lhotun's return.
+<ce>  
+<ce>  "Shh. Stufyl's here. Matches the
+<ce>  description really well. Don't move yet,
+<ce>  just another minute. Almost."
+
+Message:  1017
+<ce>  The tavern door opens and shuts.
+<ce>  Stufyl has gone outside.
+<ce>  
+<ce>  "Now. Now now now, let's go, hurry!
+<ce>  We can do this!" Lhotun hisses.
+
+Message:  1018
+<ce>  The night air of ___tav_ matches
+<ce>  Lhotun's icy demeanor. He tries to
+<ce>  keep composure as he advances.
+<ce>  
+<ce>  "Are you Stufyl?" he asks.
+<ce>  
+<ce>  The mercenary freezes in place,
+<ce>  and then turns around.
+<ce>  
+<ce>  "Th-the royal family? How did--"
+<ce>  
+<ce>  The prince takes another step forward.
+<ce>  
+<ce>  "No, no, calm down. I just need some information,
+<ce>  okay? No one knows about this. You're okay, see?"
+<ce>  
+<ce>  But Stufyl takes no chances. One hand goes
+<ce>  for the prized journal, and with a single spell,
+<ce>  it is set ablaze. Lhotun grabs you and screams.
+<ce>  
+<ce>  "NO! We need that book! Get it! Kill Stufyl,
+<ce>  I don't care! We have to get it! NOW!!"
+
+Message:  1019
+%qdt:
+ Our mission to extract the other kidnappers'
+ identities from Stufyl failed. I should
+ return him to the Palace of Sentinel now.
+
+Message:  1020
+<ce>  Lhotun slumps down in disbelief.
+<ce>  
+<ce>  "We... we couldn't stop Stufyl?
+<ce>  How did this happen?"
+<ce>  
+<ce>  He removes his hood.
+<ce>  
+<ce>  "I'll tell the city watch on the way.
+<ce>  It'll be a kill order. The book is gone,
+<ce>  but..."
+<ce>  
+<ce>  He pauses and takes a deep breath.
+<ce>  
+<ce>  "Justice will be done."
+<ce>  
+<ce>  He is resigned to return to Sentinel Palace.
+
+
+QBN:
+Person _lhotun_ named Prince_Lhotun atHome
+
+Place _tav_ local tavern
+Place _palace_ permanent SentinelCastle
+
+Clock _timer1_ 0:01
+Clock _failsafe_ 1.00:00
+Clock _timer3_ 0:01
+
+Item _w1_ item class 2 subclass 0
+Item _w2_ item class 2 subclass 1
+Item _w3_ item class 2 subclass 2
+Item _w4_ item class 2 subclass 3
+Item _w5_ item class 2 subclass 4
+Item _w6_ item class 2 subclass 5
+Item _w7_ item class 2 subclass 6
+Item _w8_ item class 3 subclass 13
+Item _reward_ item class 3 subclass 6
+
+Foe _enemy_ is Spellsword
+
+--	Quest start-up:
+    pc at _palace_ set _insidepalace_
+    pc at _tav_ set _taverned_
+    add _lhotun_ face
+    hide npc _lhotun_
+    say 1012
+    log 1013 step 0
+
+_night_ task:
+    daily from 1:00 to 3:00
+
+variable _insidepalace_
+_taverned_ task:
+    start task _begin_
+
+_begin_ task:
+    say 1014
+    drop _lhotun_ face
+    log 1015 step 0
+    update-quest-item _w1_ set-material Dwarven
+    update-quest-item _w2_ set-material Dwarven
+
+_encounter_ task:
+    when _night_ and _taverned_
+    start timer _timer1_
+    say 1016
+    update-quest-item _w3_ set-material Dwarven
+    update-quest-item _w4_ set-material Dwarven
+
+variable _timer1_
+
+_leaving_ task:
+    when _timer1_ and _taverned_
+    start task _exittime_
+
+_exittime_ task:
+    say 1017
+    update-quest-item _w5_ set-material Dwarven
+    update-quest-item _w6_ set-material Dwarven
+    update-quest-item _w7_ set-material Dwarven
+    update-quest-item _w8_ set-material Dwarven
+    add _lhotun_ face
+
+_confront_ task:
+    when _exittime_ and not _taverned_
+    say 1018
+    start timer _failsafe_
+    create foe _enemy_ every 0 minutes 1 times with 100% success
+    change foe _enemy_ infighting true
+    give item _w1_ to _enemy_
+    give item _w2_ to _enemy_
+    give item _w3_ to _enemy_
+    give item _w4_ to _enemy_
+    give item _w5_ to _enemy_
+    give item _w6_ to _enemy_
+    give item _w7_ to _enemy_
+    give item _w8_ to _enemy_
+    make _w1_ permanent
+    make _w2_ permanent
+    make _w3_ permanent
+    make _w4_ permanent
+    make _w5_ permanent
+    make _w6_ permanent
+    make _w7_ permanent
+    make _w8_ permanent
+    cast Shield spell on _enemy_
+    cast Troll's_Blood spell on _enemy_
+
+_failsafe_ task:
+    remove foe _enemy_
+    say 1020
+    start task _ending_
+
+_slain_ task:
+    killed _enemy_
+    say 1010
+    stop timer _failsafe_
+    start timer _timer3_
+    drop _lhotun_ face
+
+_timer3_ task:
+    say 1011
+    add _lhotun_ face
+    start task _ending_
+
+_ending_ task:
+    log 1019 step 0
+    update-quest-item _reward_ set-material Adamantium
+    update-quest-item _reward_ add-enchantment type StrengthensArmor spell -1
+    update-quest-item _reward_ add-enchantment type PotentVs spell 2
+
+
+_return_ task:
+    when _ending_ and _insidepalace_
+    change repute with _lhotun_ by +25
+    restore npc _lhotun_
+    give pc _reward_
+    end quest

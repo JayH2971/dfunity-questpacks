@@ -1,0 +1,376 @@
+Quest: TTClhotun1
+DisplayName: Tale of Lhotun 1
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  He can't restrain himself from
+<ce>  wrapping you in his arms.
+<ce>  
+<ce>  "It's not a thing that I lightly ask,
+<ce>  but I do want to get started on this.
+<ce>  Thank you. Truly, thank you.
+<ce>  Bring the money to me any time
+<ce>  you have it. I'll be here at the palace
+<ce>  for... you know, the rest of my life."
+<ce>  
+<ce>  He returns to his customary seat
+<ce>  in the palace foyer.
+
+Message:  1010
+<ce>       A young courier, scarcely an adult, approaches
+<ce>       and hands you a letter. It carries
+<ce>       the royal seal of Sentinel.
+
+Message:  1011
+To %pcn
+ 
+ If you're in the area of Sentinel at any future period,
+I would be delighted to spend some time with you,
+both to thank you for helping me answer the question
+of my missing brother, and to get your insight
+concerning some plans I'm making. Your
+input would be much desired.
+ 
+ If you find yourself indisposed, I will take
+no offense at it. I understand there is
+a great world out there, one that I will
+one day see for myself.
+ 
+              Dictated to the royal scribe
+              by Lhotun, a prince of Sentinel
+
+Message:  1012
+<ce>  %pcf! A joy to see you again.
+<ce>  Thank you for coming to see me.
+<ce>  
+<ce>  Actually, I should be more cautious.
+<ce>  You did some to see me specifically,
+<ce>  didn't you? This isn't an errand for
+<ce>  my mother or a chance mistake, am I right?
+
+Message:  1013
+<ce>  Oh, that is good to hear. I've been cooped up
+<ce>  in the palace for weeks, and Mother refuses
+<ce>  to let me outside lately. She says it's
+<ce>  "unbecoming" for a prince to leave without
+<ce>  a guard, and she refuses to dispense of soldiers
+<ce>  to accompany me. But I told her about you,
+<ce>  and she just said "Fine!" Ha ha!
+<ce>  
+<ce>  I'm grateful for your companionship.
+<ce>  Please, let's head outside. It would be
+<ce>  nice to get some fresh air, if I may.
+
+Message:  1014
+<ce>  Ugh, finally, away from all those guards, nobles,
+<ce>  spies, halfwits. I didn't ask to be born a prince,
+<ce>  and I hate living in a rumor mill.
+<ce>  
+<ce>  Forgive me, my complaints shouldn't spend your time
+<ce>  as I now do. Do you know the armorers around the city,
+<ce>  by chance? I would love to look the inside of one,
+<ce>  you see. With my "faithful guard" here,
+<ce>  I'll finally have a chance!
+<ce>  Could we, please?
+
+Message:  1015
+%qdt:
+ Prince Lhotun of Sentinel has asked me to
+ accompany him to any armorsmith in the city.
+
+Message:  1016
+<ce>  The armory is quiet. Its smith
+<ce>  peeks at the door, and then does
+<ce>  a double-take as his eyes focus.
+<ce>  
+<ce>  "Prince Lhotun? Lad, what are you doing
+<ce>  outside the palace?"
+<ce>  
+<ce>  Lhotun laughs modestly and nods.
+<ce>  
+<ce>  "Yes, well, I, um, I've had this
+<ce>  idea for a while about learning
+<ce>  to fight with swords and so on.
+<ce>  My mother insists that Greklith
+<ce>  know combat, but she seems to
+<ce>  forget about her younger son!"
+<ce>
+<ce>  The proprietor approaches.
+<ce>  
+<ce>  "Well, that's no reason to
+<ce>  leave one's skills unattended, now
+<ce>  is it, young man? Here, take a sword.
+<ce>  I'll show you some practice dummies
+<ce>  that are set up out here."
+<ce>  
+<ce>  The two head out, and you
+<ce>  hear Lhotun make a few attempts
+<ce>  on the standing targets.
+
+Message:  1018
+<ce>  After a short bout, the man
+<ce>  laughs and pats Lhotun on the back.
+<ce>  
+<ce>  "You looked really good there!
+<ce>  You made a nice effort of it.
+<ce>  I hope it was fun!"
+<ce>  
+<ce>  He leads the prince back to you.
+<ce>  Lhotun's expression turns serious.
+<ce>  
+<ce>  "Thank you for this. To be honest,
+<ce>  I want to learn swordfighting, for real.
+<ce>  To be a skilled warrior, someone who can
+<ce>  do justice. Tell me, what did you see
+<ce>  in my practice? Do I have a future in it?"
+<ce>  
+<ce>  The proprietor pauses and measures his words.
+<ce>  
+<ce>  "Sir Prince, if you put your mind to it,
+<ce>  I'm sure you can do all kinds of things.
+<ce>  There's a whole wide world out there,
+<ce>  and after some time and more travel,
+<ce>  maybe you'll change your mind about
+<ce>  this swordfighting idea of yours!
+<ce>  Just keep your mind open, okay?"
+<ce>  
+<ce>  Lhotun bows before him, and he
+<ce>  bows much deeper. The prince returns to you.
+<ce>
+<ce>  "Let's, um... let's go walking.
+<ce>  I need a minute."
+
+Message:  1019
+<ce>  Lhotun holds back tears.
+<ce>  
+<ce>  "He said I don't have a chance, didn't he.
+<ce>  That man was kind, but I know what he
+<ce>  meant. I'm..."
+<ce>  
+<ce>  His voice cracks, and he turns away.
+<ce>  
+<ce>  "C-could we go to the library? I prefer
+<ce>  somewhere quieter than a tavern,
+<ce>  and I don't want to go back to
+<ce>  the palace so soon. Please.
+<ce>  It's in the southwest corner,
+<ce>  in front of a pawn shop."
+
+Message:  1020
+%qdt:
+ After visiting the armorer,
+ Lhotun requested that we go to
+ a library.
+
+Message:  1021
+<ce>  Lhotun breathes deep the smell of
+<ce>  parchment and book bindings.
+<ce>  
+<ce>  "Oh, a beautiful scent. I nearly
+<ce>  feel smarter just by osmosis.
+<ce>  
+<ce>  "To be honest, I like being in the library
+<ce>  because no one actually comes here.
+<ce>  Peasantry and books are rather incompatible,
+<ce>  so in my younger years, my father would
+<ce>  leave me here for hours when I wanted
+<ce>  some time out of the palace. With
+<ce>  a guard or two, naturally. He wasn't a fool.
+<ce>  
+<ce>  "I will level with you, %pcf.
+<ce>  My desire for swordfighting and so forth
+<ce>  is rather recent. Your work in discovering
+<ce>  my eldest brother's proof of death,
+<ce>  going and coming as you please, was
+<ce>  a real inspiration to me. Of course
+<ce>  I want to be trained as a swordsman
+<ce>  for royalty's sake; %god forbid I
+<ce>  ever have to be king, but assuming
+<ce>  something should happen to Greklith,
+<ce>  the people would be ashamed to
+<ce>  support a king that can't wield a weapon.
+<ce>  
+<ce>  "But my real reason is... I need justice.
+<ce>  My brother was killed by slimy, filthy hands.
+<ce>  My father bought and paid for those hands,
+<ce>  yes, but I cannot abide it. For the honor
+<ce>  of my deceased brother, of my dear mother,
+<ce>  and even of my own self, knowing about
+<ce>  this and doing nothing for it is an
+<ce>  insult that I will not bear."
+<ce>  
+<ce>  He slumps against the wall and sighs.
+<ce>  
+<ce>  "We in Sentinel are supposed to build
+<ce>  our lives on honor. I will fix what
+<ce>  my father has broken. I must find
+<ce>  those murderers and reciprocate
+<ce>  in kind. And besides, why should
+<ce>  I let headhunters, mercenaries,
+<ce>  run free in this kingdom? We must
+<ce>  not allow freelancers to draw blood,
+<ce>  not while the Order of the Candle
+<ce>  are alive and capable."
+<ce>  
+<ce>  He pauses for a moment, and then
+<ce>  comes to himself once more.
+<ce>  
+<ce>  "I said I wouldn't impose on your time,
+<ce>  and I will make good on that.
+<ce>  If you will return me to the palace,
+<ce>  you will have my dearest gratitude."
+
+Message:  1022
+%qdt:
+ Prince Lhotun requests that I return
+ him to the Palace of Sentinel.
+
+Message:  1023
+<ce>  Within the palace, Prince Lhotun
+<ce>  pauses and thinks. He glances at
+<ce>  you a few times, and then gets
+<ce>  up the courage to voice his question.
+<ce>  
+<ce>  "I have another favor to ask,
+<ce>  and you are fully at liberty to reject
+<ce>  it if you feel unwilling or incapable.
+<ce>  If I had some coin, some that couldn't
+<ce>  be traced by the accountants at our
+<ce>  royal vault, I could start up a search 
+<ce>  for my eldest brother's kidnappers.
+<ce>  I'll say 5,000 gold. If you can
+<ce>  give me that, I could begin.
+<ce>  Again, if this is something
+<ce>  you wish not to involve yourself in,
+<ce>  you are within every right to decline."
+
+Message:  1025
+<ce>  He nods, his expression calm.
+<ce>  
+<ce>  "It is a risky business to get into,
+<ce>  and perhaps not the best use of
+<ce>  a person's money. I will find a way
+<ce>  for it to happen, one way or another.
+<ce>  Once again, my sincerest thanks
+<ce>  for this trip out on the town."
+<ce>  
+<ce>  He returns to his customary seat
+<ce>  in the palace foyer.
+
+Message:  1026
+<ce>  Ah, it is no matter. It is good to see
+<ce>  you again, and I hope your journey goes well.
+
+QBN:
+Person _lhotun_ named Prince_Lhotun atHome
+
+Place _palace_ permanent SentinelCastle
+
+Clock _letterclock_ 7.00:00 14.00:00
+Clock _destroyletter_ 3.00:00
+Clock _timer_ 0:01
+Clock _timer2_ 0:02
+
+Item _letter_ letter used 1011
+
+--	Quest start-up:
+	start timer _letterclock_
+
+_letterclock_ task:
+    give pc _letter_ notify 1010
+    have _letter_ set _startdestroy_
+
+_startdestroy_ task:
+    start timer _destroyletter_
+
+_destroyletter_ task:
+    take _letter_ from pc
+
+_clicklhotun_ task:
+    clicked npc _lhotun_
+
+_notyet_ task:
+    when _clicklhotun_ and not _letterclock_
+    clear _clicklhotun_ _notyet_
+
+_talklhotun_ task:
+    when _clicklhotun_ and _letterclock_
+    prompt 1012 yes _begin_ no _refuse_
+
+_refuse_ task:
+    say 1026
+    end quest
+
+_begin_ task:
+    say 1013
+    hide npc _lhotun_
+    add _lhotun_ face
+    pc at any armory set _insidefg_
+    pc at _palace_ set _insidepalace_
+    change repute with _lhotun_ by +10
+
+variable _insidepalace_
+
+_talk1_ task:
+    when _begin_ and not _insidepalace_ and not _lhotunleaves_
+    say 1014
+    log 1015 step 0
+
+_insidefg_ task:
+    start task _lhotunleaves_
+
+-- this was going to be inside a fighters guild, but
+--(1) sentinel city doesn't have any, and
+--(2) in hammerfell there are no fighters guilds, only
+-- fighters trainers, which I can't detect,
+-- so the idea was moot to begin with.
+-- big sad, sentinel city is a very bad city
+
+_lhotunleaves_ task:
+    say 1016
+    drop _lhotun_ face
+    start timer _timer_
+    start task _soundeffects_
+    change repute with _lhotun_ by +5
+
+_soundeffects_ task:
+    play sound sword_defend_2 every 0 minutes 1 times
+    play sound sword_defend_1 every 0 minutes 1 times
+
+_timer_ task:
+    say 1018
+    clear _soundeffects_
+    add _lhotun_ face
+    start timer _timer2_
+    remove log step 0
+
+variable _timer2_
+
+_talk2_ task:
+    when _timer2_ and not _insidefg_
+    say 1019
+    log 1020 step 0
+    pc at any library set _insidelibr_
+
+_insidelibr_ task:
+    start task _talk3_
+
+_talk3_ task:
+    say 1021
+    log 1022 step 0
+    change repute with _lhotun_ by +5
+
+_return_ task:
+    when _insidepalace_ and _talk3_
+    prompt 1023 yes _continue_ no _endquest_
+    restore npc _lhotun_
+
+_endquest_ task:
+    say 1025
+    end quest
+
+_continue_ task:
+    give pc nothing
+    start quest TTClhotun2
+    end quest
