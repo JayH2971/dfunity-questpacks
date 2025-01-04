@@ -5,26 +5,26 @@ QRC:
 
 QuestComplete:   [1004]
 <ce>   Lhotun is still somber as he crosses the threshold
-<ce>   into the palace. A long pause follows before he speaks.
+<ce>   of the palace. A long pause follows before he speaks.
 <ce>   
 <ce>   "Please forgive me. I should be more grateful.
-<ce>   Of six culprits, one has paid the ultimate
+<ce>   Of four culprits, one has paid the ultimate
 <ce>   price for my brother's decease.
-<ce>   Who am I to demand justice on the others?
+<ce>   Who am I to exert justice on the others?
 <ce>   Perhaps disease, exile, misery, and frost
-<ce>   will claim the rest. There are worse
+<ce>   will claim them. There are worse
 <ce>   punishments than you or I can mete out.
 <ce>   
 <ce>   "%pcf, it will take me some time to reconcile
 <ce>   with what happened in ___tav_. But my gratitude
 <ce>   to you has no end. Greklith gave me this
-<ce>   at my birthday celebration. He told me...
-<ce>   one day I could grow up to be a great warrior.
-<ce>   If I could call anyone a true warrior, it's you.
+<ce>   at my birthday celebration. He told me that...
+<ce>   that one day I could grow up to be a great warrior.
+<ce>   If I could call anyone a great warrior, it's you.
 <ce>   
 <ce>   "Please, take it. And come see me here
 <ce>   whenever you visit Sentinel. A prince doesn't have
-<ce>   many friends. you see."
+<ce>   many friends, you see."
 
 Message:  1010
 <ce>  Lhotun hurries forth to grab the book.
@@ -71,7 +71,7 @@ Message:  1012
 <ce>  "It's not much of a disguise, but we won't
 <ce>  be in town for long. Let's hope it lasts.
 <ce>  
-<ce>  "Please let me explain. My father hired six
+<ce>  "Please let me explain. My father hired four
 <ce>  to carry out the kidnapping. One of them organized
 <ce>  the rest, kept order, and so on. 
 <ce>  That paper pusher is called Stufyl.
@@ -81,11 +81,11 @@ Message:  1012
 <ce>  
 <ce>  "Let's head there and try to blend with
 <ce>  the locals. All we need is Stufyl's book,
-<ce>  and we'll have our key to finding the other five."
+<ce>  and we'll have our key to finding the other three."
 
 Message:  1013
 %qdt:
- Lhotun says his brother was kidnapped by six hirelings.
+ Lhotun says his brother was kidnapped by four hirelings.
  We can find Stufyl, their organizer, in _tav_
  of ___tav_.
 
