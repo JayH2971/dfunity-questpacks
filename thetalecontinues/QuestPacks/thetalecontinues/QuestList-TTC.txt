@@ -1,0 +1,7 @@
+schema: *name, group, membership, minReq, flag, notes
+
+TTClhotun1, GeneralPopulace, P, 0, 0,
+TTClhotun2, GeneralPopulace, P, 0, 0,
+TTClhotun3, GeneralPopulace, P, 0, 0,
+TTCmorgiah1, GeneralPopulace, P, 0, 0,
+TTCmorgiah2, GeneralPopulace, P, 0, 0,

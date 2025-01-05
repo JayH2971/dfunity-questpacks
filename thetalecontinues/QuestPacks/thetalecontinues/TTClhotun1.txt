@@ -267,7 +267,7 @@ Person _lhotun_ named Prince_Lhotun atHome
 
 Place _palace_ permanent SentinelCastle
 
-Clock _letterclock_ 21.00:00 28.00:00
+Clock _letterclock_ 45.00:00 50.00:00
 Clock _destroyletter_ 3.00:00
 Clock _timer_ 0:01
 Clock _timer2_ 0:02

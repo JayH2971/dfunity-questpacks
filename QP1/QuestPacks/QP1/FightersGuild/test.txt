@@ -11,8 +11,5 @@ QBN:
 
 
 --   Quest start-up:
-   
-   _trigg_ task:
-      player faction-repute with-faction-id 108 is lower than -9
+      start quest grofoiaw
       say 1011
-      end quest

@@ -1,20 +1,16 @@
---morgiah seeks to speak with her dead father. consults with witches, gets
---a despairing seance. She accuses them of lying to her. Reward is
---an enchanted necklace that absorbs spells and has good rep with nobility.
- 
---first step is a cat-and-mouse conversation to test PC's loyalty and secrecy.
---second step is sending PC to find the witch coven in Menevia.
---third step is to do a quest for them in preparation for morgiah.
---fourth step is to escort morgiah to them and see the vision.
---receive reward upon returning to castle wayrest
-
+--TODO: emerald still is not taken from player inventory
 Quest: TTCmorgiah1
 DisplayName: Tale of Morgiah 1
 -- Message panels
 QRC:
 
 QuestComplete:   [1004]
-<ce>  
+<ce>  They accepted? Truly? What joy!
+<ce>  Yes, I'm ready to leave. The king
+<ce>  has full confidence in you, and
+<ce>  the journey isn't far. We'll be
+<ce>  back in Wayrest in mere days.
+<ce>  Lead on, %pcf!
 
 Message:  1010
 <ce>       A strong and tall courier approaches and hands
@@ -47,21 +43,21 @@ Message:  1013
 <ce>  taking me up on it. We have a great many things
 <ce>  to discuss, but I'd rather not distract my
 <ce>  parents with a long conversation, you understand.
-<ce>  Could you follow me out to the castle entrance?
+<ce>  Could you follow me outside, to the castle entrance?
 <ce>  We can talk there with great liberty.
 
 Message:  1014
-<ce>  Morgiah stretches both arms high into the air.
+<ce>  Morgiah stretches and raises both arms high in the air.
 <ce>  
 <ce>  "Ahh, this feels nice. It's pretty rare
-<ce>  to talk with a trusted friend. I don't know
+<ce>  to talk with someone in confidence. I don't know
 <ce>  what the other courts in Tamriel are like,
 <ce>  but Wayrest is kind of a..."
 <ce>  
 <ce>  She starts looking for the right word,
 <ce>  and then snaps back to reality.
 <ce>  
-<ce>  "Forgive me, that was so rude of me to say.
+<ce>  "Forgive me, I was about to say something rude.
 <ce>  We're not here so I can complain about Wayrest's
 <ce>  finest bootlickers, are we?"
 <ce>  
@@ -101,7 +97,7 @@ Message:  1018
 <ce>  His name was, or is, Symmachus. I'd... like to see him again.
 <ce>  
 <ce>  I can't ask the King of Worms for this favor.
-<ce>  Who knows what kind of price he'd demand for a second favor.
+<ce>  Who knows what kind of price he'd demand the second time.
 <ce>  I have an alternative. There are witches in Menevia
 <ce>  to the northwest who I've heard can do something like this.
 <ce>  It's not urgent, but my request is that you find
@@ -154,7 +150,7 @@ Message:  1020
 
 Message:  1021
 %qdt:
- The Tamarilyn coven is willing to
+ The Tamarilyn coven of Menevia is willing to
  call forth the spirit of Morgiah's father,
  but they require an emerald. It doesn't
  matter where I get it from.
@@ -163,7 +159,7 @@ Message:  1022
 <ce>  You now have an emerald to serve the witches' purpose.
 
 Message:  1023
-<ce>  Ah, thou art returned, and thou hast thy
+<ce>  Ah, thou art come, and thou hast thy
 <ce>  gem with thee. Thy gold shall be spent
 <ce>  obtaining victuals for the rite.
 <ce>  If the princess of Wayrest will see her
@@ -177,13 +173,12 @@ Message:  1023
 <ce>  must be laid to rest. We shall await
 <ce>  the return of ye in coming days.
 
-
 Message:  1025
 %qdt:
  The witches accepted Morgiah's payment
  and the emerald I gave them. I can
- return to them with the princess, and they will
- carry out their act.
+ return to them in Menevia with the princess,
+ and they will carry out their act.
 
 Message:  1026
 <ce>  A finest hello to you then, %pcf.
@@ -192,23 +187,26 @@ Message:  1026
 <ce>  be safe and prosperous.
 <ce>  Thank you for coming by.
 
-Message:  1027
-<ce>  They accepted? Truly? What joy!
-<ce>  Yes, I'm ready to leave. My father
-<ce>  has full confidence in you, and
-<ce>  the journey isn't far. We'll be
-<ce>  back in Wayrest in mere days.
-<ce>  Lead on, %pcf!
+Message:  1028
+<ce>  A woman's voice surrounds you in the air,
+<ce>  deep and firm and uninterested.
+<ce>  
+<ce>  "Seekest thou the witches of Tamarilyn Coven,
+<ce>  wandering %ra? Thou art not far. Stand forth
+<ce>  before the witch who is head above all
+<ce>  others. There shalt thy desire be heard."
 
 QBN:
 Person _morgiah_ named Princess_Morgiah atHome
 
 Place _palace_ permanent WayrestCastle
+Place _witches_ permanent TamarilynCoven
 
-Clock _letterclock_ 35.00:00 42.00:00
+Clock _letterclock_ 30.00:00 40.00:00
 Clock _destroyletter_ 3.00:00
 
 Item _letter_ letter used 1011
+Item _sack_ small_sack
 
 --	Quest start-up:
 	start timer _letterclock_
@@ -265,9 +263,57 @@ _secret_ task:
 
 _commit_ task:
     say 1018
+    get item _sack_
     log 1019 step 0
+    drop _morgiah_ face
+    restore npc _morgiah_
+    pc at _witches_ set _nearwitches_
+
+_nearwitches_ task:
+    start task _firstfind_
+
+_inposition_ task:
+    player inblock position x 63 y 64 delta 2
+
+_firstwitches_ task:
+    when _inposition_ and _nearwitches_ and _commit_ and not _prerequisite_
+    start task _prerequisite_
+
+_prerequisite_ task:
+    log 1021 step 0
+    say 1020
+    take _sack_ from pc
+
+_firstfind_ task:
+    say 1028
+
+_toting_ task:
+    player possesses 1 items class 14 subclass 1
+
+_emeraldstage_ task:
+    when _toting_ and _prerequisite_
+    say 1022
+    start task _pause_
+
+variable _pause_
+
+_delivery_ task:
+    when _toting_ and _nearwitches_ and _inposition_ and _prerequisite_
+    start task _readyformorgiah_
+    
+_readyformorgiah_ task:
+    clear _pause_ _clickmorgiah_
+    player handsover 1 items class 14 subclass 1
+    say 1023
+    log 1025 step 0
+
+_bringmorgiah_ task:
+    when _clickmorgiah_ and _readyformorgiah_ and not _pause_
+    give pc nothing
+    add _morgiah_ face
+    hide npc _morgiah_
 
 _continue_ task:
-    give pc nothing
+    when _bringmorgiah_ and _nearwitches_ and _inposition_
     start quest TTCmorgiah2
     end quest

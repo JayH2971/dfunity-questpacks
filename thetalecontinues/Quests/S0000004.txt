@@ -210,6 +210,7 @@ MorgiahSatisfied _S.08_
 _S.09_ task:
 	when _S.01_ and not _S.07_
 	start quest 21 21 
+	start quest TTCmorgiah1
 	end quest 
 
 _S.10_ task:
@@ -218,4 +219,5 @@ _S.10_ task:
 
 _letterdelay_ task:
 	start quest 21 21 
+	start quest TTCmorgiah1
 	end quest 

@@ -37,6 +37,12 @@ QuestComplete:   [1004]
 <ce>   She then turns away and takes her place on the royal dais.
 
 Message:  1010
+<ce>  The princess is taken aback by the sight before her.
+<ce>  She takes it all in.
+<ce>  
+<ce>  "Thank you... thank you all for making this
+<ce>  possible for me. I, um, look forward to what will happen."
+<ce>  
 <ce>  Morgian crosses her arms and gestures with one hand.
 <ce>  
 <ce>  "Okay. I'm ready. Show me my father."
@@ -136,6 +142,7 @@ Item _reward_ item class 25 subclass 0
 --	Quest start-up:
     pc at _palace_ set _insidepalace_
     hide npc _morgiah_
+    add _morgiah_ face
     update-quest-item _reward_ add-enchantment type AbsorbsSpells spell -1
     update-quest-item _reward_ add-enchantment type GoodRepWith spell 3
     start task _delivered_
@@ -148,6 +155,7 @@ _delivered_ task:
 _ending_ task:
     when _insidepalace_ and _delivered_
     restore _morgiah_
+    drop _morgiah_ face
     give pc _reward_
     change repute with _morgiah_ by +20
     end quest
