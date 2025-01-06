@@ -7,15 +7,15 @@ QuestComplete:   [1004]
 <ce>  Gortwog chuckles when he sees you
 <ce>  return with Mynisera's certficiate.
 <ce>  
-<ce>  "Ah, the Bretons. More predictable
+<ce>  "Ah, Wayrest. More predictable
 <ce>  than they are sly. I knew they would
 <ce>  refuse. This was a lesson to you,
-<ce>  not to me, %pcf."
+<ce>  not to me, %ra."
 <ce>  
-<ce>  He gestures to a servant, who produces
+<ce>  He calls for a servant, who produces
 <ce>  a well-oiled blade wrapped in a cloth.
 <ce>  
-<ce>  "I will keep the document for myself,
+<ce>  "I will keep the document myself,
 <ce>  for I have hopes for the day when
 <ce>  an orc will enter a Breton city
 <ce>  with the rights of an imperial citizen.
@@ -36,7 +36,6 @@ Message:  1010
 <ce>   "%pcn, right? This is for your eyes only."
 <ce>
 <ce>  He then departs.
-
 
 Message:  1011
 To %pcn
@@ -279,7 +278,7 @@ QBN:
 Person _mynisera_ named Mynisera atHome
 Person _gortwog_ named Gortwog atHome
 
-Clock _letterclock_ 150.00:00
+Clock _letterclock_ 90.00:00
 Clock _destroyletter_ 3.00:00
 
 Item _letter_ letter used 1011
