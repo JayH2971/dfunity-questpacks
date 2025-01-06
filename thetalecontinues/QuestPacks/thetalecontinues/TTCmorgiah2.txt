@@ -131,6 +131,11 @@ Message:  1010
 <ce>  "%pcf, we have to return to Wayrest.
 <ce>  I long for dignified surroundings once more."
 
+Message:  1011
+%qdt:
+ Morgiah has asked me to return her
+ to the castle in ___palace_.
+
 
 QBN:
 Person _morgiah_ named Princess_Morgiah atHome
@@ -151,6 +156,7 @@ Item _reward_ item class 25 subclass 0
 variable _insidepalace_
 _delivered_ task:
     say 1010
+    log 1011 step 0
 
 _ending_ task:
     when _insidepalace_ and _delivered_

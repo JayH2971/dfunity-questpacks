@@ -1,4 +1,3 @@
-Messages: 16
 Quest: S0000004
 DisplayName: NR Morgiah's Wedding
 -- Message panels

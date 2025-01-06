@@ -1,0 +1,388 @@
+Quest: TTCmynisera
+DisplayName: Tale of Mynisera
+-- Message panels
+QRC:
+
+QuestComplete:   [1004]
+<ce>  Gortwog chuckles when he sees you
+<ce>  return with Mynisera's certficiate.
+<ce>  
+<ce>  "Ah, the Bretons. More predictable
+<ce>  than they are sly. I knew they would
+<ce>  refuse. This was a lesson to you,
+<ce>  not to me, %pcf."
+<ce>  
+<ce>  He gestures to a servant, who produces
+<ce>  a well-oiled blade wrapped in a cloth.
+<ce>  
+<ce>  "I will keep the document for myself,
+<ce>  for I have hopes for the day when
+<ce>  an orc will enter a Breton city
+<ce>  with the rights of an imperial citizen.
+<ce>  Perhaps even I would travel to
+<ce>  Daggerfall myself and tell this
+<ce>  dowager queen of my thanks to her.
+<ce>  
+<ce>  "As for you, a reward is meet.
+<ce>  A champion of mine recently fell
+<ce>  in battle, and his kin refuse to
+<ce>  take up his sword. With their
+<ce>  permission, I grant it to you instead."
+
+Message:  1010
+<ce>   A messenger bearing the crest of the
+<ce>   Knights of the Dragon hands you a letter.
+<ce>   
+<ce>   "%pcn, right? This is for your eyes only."
+<ce>
+<ce>  He then departs.
+
+
+Message:  1011
+To %pcn
+<ce> 
+  Forgive my intrusion upon your time. If you
+find yourself engrossed in important matters,
+I understand and will hold nothing against you.
+Were you able to visit Castle Daggerfall,
+I have a favor to ask, one that weighs on
+my soul heavily.
+<ce> 
+              Mynisera
+              Dowager Queen of Daggerfall
+
+Message:  1012
+<ce>  Thank you for coming. I admit I had my doubts
+<ce>  as to whether you would respond, and I feel
+<ce>  great relief in light of that mistake.
+<ce>  
+<ce>  Are you headed east any time soon?
+<ce>  I have a letter that I wish to send to
+<ce>  Orsinium. None of Daggerfall's messengers
+<ce>  are scheduled for that region in this season,
+<ce>  and I feel some urgency regarding it.
+<ce>  Are you able to do this?
+
+Message:  1013
+<ce>  Thank you. Here is the letter. I wish to request...
+<ce>  that Gortwog read it in private. Please do not
+<ce>  misunderstand. I don't distrust you, I merely
+<ce>  wish to leave the past in the past. I pray
+<ce>  that he understand my intention, and
+<ce>  even believe me as well.
+<ce>  
+<ce>  Please deliver it to him intact.
+<ce>  There is no need to return to me or tell
+<ce>  me of the act. I have confidence in you.
+
+Message:  1014
+%qdt:
+ Mynisera, mother of Gothryd, gave me
+ a letter to deliver to Gortwog of ___orsinium_.
+ She couldn't tell me what was in it or
+ what purpose it has.
+
+Message:  1016
+<ce>  "Yes? What purpose has summoned you here?"
+<ce>  
+<ce>  You offer Mynisera's letter to the orc.
+<ce>  He looks at it and pauses.
+<ce>  
+<ce>  "I will know of its contents, but
+<ce>  not read it myself. Shaman."
+<ce>  
+<ce>  One of his servants enters the room
+<ce>  and takes the paper from you.
+<ce>  Breaking the seal and unfurling
+<ce>  the parchment within, the shaman
+<ce>  reads its contents aloud with
+<ce>  surprisingly fluent enunciation.
+<ce>  
+<ce>  "Dear Gortwog, king of the orcs.
+<ce>  Thank you for taking the time to
+<ce>  read this. I pray that its contents
+<ce>  be kept private, for reasons that follow.
+<ce>  
+<ce>  "I do not know to what extent you
+<ce>  remember a Prince Klaius of the Bretons,
+<ce>  several decades past. I know of the many
+<ce>  offenses your people have suffered from
+<ce>  the imperial nations, but surely his acts
+<ce>  stand out among others. Hosts of
+<ce>  orcish peasants, women and children,
+<ce>  were slaughtered by his command.
+<ce>  His barbarism was equaled only by
+<ce>  his gaiety in telling of carcass counts
+<ce>  and smoking huts, of displaced peoples
+<ce>  who did him no harm.
+<ce>  
+<ce>  "My quill shakes as I write this, for
+<ce>  I am grieved to be associated with such
+<ce>  acts. I am his daughter, Mynisera.
+<ce>  I had neither age, wisdom, nor standing
+<ce>  to stop him. But I am an heir to his legacy,
+<ce>  and the misery he inflicted on others
+<ce>  has cast a shadow upon me.
+<ce>  
+<ce>  "The gods refuse to hear my petitions to
+<ce>  absolve my guilt. I have tried long and hard,
+<ce>  and given to more temples than I can count.
+<ce>  If they will not hear me, perhaps I must
+<ce>  put my hand to the plowshare, as we would say.
+<ce>  Enclosed is a certificate for five million gold pieces,
+<ce>  written to the name Gortwog gro-Nagorm.
+<ce>  Please forgive the paltry amount.
+<ce>  I have sold all outstanding properties I possessed,
+<ce>  and resigned myself to living upon the
+<ce>  castle's resources for the remainder of my days.
+<ce>  I would be pained should these moneys
+<ce>  enter the coffers of the current king of Daggerfall.
+<ce>  
+<ce>  "Had I means and health to visit you,
+<ce>  I would do so myself, and seek penance for
+<ce>  that which was, and which must not be.
+<ce>  As you read this, I now send a letter
+<ce>  to my friend, the Emperor Uriel Septim,
+<ce>  formally requesting a council on behalf
+<ce>  of a future orcish nation.
+<ce>  
+<ce>  "What more I can do than this, I do not know.
+<ce>  But if the grave absolves all guilt, I will
+<ce>  welcome it.
+<ce>  
+<ce>  "Mynisera, Dowager Queen, Daggerfall Castle."
+
+Message:  1018
+<ce>  The shaman folds the parchment.
+<ce>  Gortwog allows a respectful pause.
+<ce>  
+<ce>  After several moments, he addresses the shaman.
+<ce>  They speak in the orcish tongue, which you do
+<ce>  not know well enough to interpret.
+<ce>  A couple of minutes pass, and the shaman
+<ce>  withdraws while Gortwog speaks to you.
+<ce>  
+<ce>  "This woman's gift is well received. She
+<ce>  will know of my gratitude in a future day,
+<ce>  in person, were it possible.
+<ce>  
+<ce>  "I have a lesson for you. Take her certificate
+<ce>  to Wayrest. Make an account for
+<ce>  the name Gortwog gro-Nagorm. Put the woman's
+<ce>  money into it, and report to me.
+<ce>  I will await you here."
+
+Message:  1019
+<ce>  The shaman folds the parchment.
+<ce>  Gortwog allows a respectful pause.
+<ce>  
+<ce>  After several moments, he addresses the shaman.
+<ce>  They speak in the orcish tongue, which you
+<ce>  know well enough to interpret.
+<ce>  
+<ce>  "The poor woman. She carries a guilt which is not her own."
+<ce>  
+<ce>  "My lord, that money could do us great good.
+<ce>  We could build up a storehouse
+<ce>  for the destitute. Or perhaps increase our
+<ce>  defenses on the south and the west."
+<ce>  
+<ce>  "A storehouse was my first thought as well.
+<ce>  If Septim refuses our request, we must
+<ce>  prepare for the winters ahead. Our people
+<ce>  need something to raise their spirits."
+<ce>  
+<ce>  The shaman withdraws while Gortwog speaks to you.
+<ce>  
+<ce>  "This woman's gift is well received. She
+<ce>  will know of my gratitude in a future day,
+<ce>  in person, were it possible.
+<ce>  
+<ce>  "I have a lesson for you. Take her certificate
+<ce>  to Wayrest. Make an account for
+<ce>  the name Gortwog gro-Nagorm. Put the woman's
+<ce>  money into it, and report to me.
+<ce>  I will await you here."
+
+Message:  1020
+%qdt:
+ Gortwog's shaman read aloud the
+ contents of Mynisera's letter.
+ It included a cheque for five million
+ gold pieces in the orc king's name.
+ He has sent me to any bank in
+ ___wayrest_ to open an account in
+ that name, to deposit the money.
+
+Message:  1021
+<ce>  You enter the bank and chance upon
+<ce>  the proprietor near the entrance.
+<ce>  
+<ce>  "Hello there! Welcome to the
+<ce>  Bank of Wayrest. What can I do for you?"
+<ce>  
+<ce>  You show him the certificate for
+<ce>  Mynisera's gold and the name of the
+<ce>  account you wish to open. The banker
+<ce>  looks over them, then again, and again.
+<ce>  
+<ce>  "Ha, ha. This is a joke, isn't it?"
+<ce>  
+<ce>  Somewhere between smug and proud,
+<ce>  the banker shakes his head.
+<ce>  
+<ce>  "Let me be clear. We do not do business with orcs."
+<ce>  
+<ce>  He looks you square in the eyes.
+<ce>  
+<ce>  "I'll repeat that. We do not. Do business.
+<ce>  With orcs. No exceptions. Period.
+<ce>  Your certificate is worthless. Goodbye."
+<ce>  
+<ce>  He then returns to his customary place
+<ce>  in the bank lobby.
+
+Message:  1022
+%qdt:
+ My attempt to deliver Mynisera's money
+ to an account in Gortwog's name failed.
+ The banks in Wayrest refuse to deal
+ with ___orsinium_ in any way. If I can do
+ no more, I can return it to the orc king.
+
+Message:  1026
+<ce>  I am disappointed, but I understand.
+<ce>  Already I have imposed upon your time,
+<ce>  and a journey to the land of the orcs
+<ce>  is not to be undertaken lightly.
+<ce>  I hold no offense to your refusal.
+<ce>  Safe journeys to you, %pcf.
+
+Message:  1027
+<ce>  Mynisera's letter is sealed tight,
+<ce>  with no way to look within
+<ce>  without leaving evidence of tampering.
+
+Message:  1028
+Directed to the Bank of Wayrest
+<ce>  
+  Upon receipt of this document, the Bank of Wayrest
+is directed to withdraw five million (5,000,000)
+gold pieces from the Bank of Daggerfall in the name
+of Mynisera, Dowager Queen of the kingdom of Daggerfall,
+to be given to one Gortwog gro-Nagorm.
+<ce>  
+This certificate has been ratified by the regional banking
+authority, and all questions may be directed to Lady Mynisera.
+
+QBN:
+Person _mynisera_ named Mynisera atHome
+Person _gortwog_ named Gortwog atHome
+
+Clock _letterclock_ 150.00:00
+Clock _destroyletter_ 3.00:00
+
+Item _letter_ letter used 1011
+Item _mynisletter_ letter used 1027
+Item _cheque_ letter used 1028
+Item _reward_ item class 3 subclass 9
+
+Place _orsinium_ permanent OrsiniumCastle1
+Place _wayrest_ permanent WayrestCity
+
+--	Quest start-up:
+	start timer _letterclock_
+
+variable _letterclock_
+_level6_ task:
+    level 6 completed
+
+_giveletter_ task:
+    when _letterclock_ and _level6_
+    give pc _letter_ notify 1010
+    have _letter_ set _startdestroy_
+
+_startdestroy_ task:
+    start timer _destroyletter_
+
+_destroyletter_ task:
+    take _letter_ from pc
+
+_clickmynisera_ task:
+    clicked npc _mynisera_
+
+_notyet_ task:
+    when _clickmynisera_ and not _letterclock_
+    clear _clickmynisera_ _notyet_
+
+_talkmynisera_ task:
+    when _clickmynisera_ and _letterclock_
+    prompt 1012 yes _begin_ no _refuse_
+
+_refuse_ task:
+    say 1026
+    end quest
+
+_begin_ task:
+    say 1013
+    log 1014 step 0
+    get item _mynisletter_
+    reveal _orsinium_
+    change repute with _mynisera_ by +15
+
+_deliverletter_ task:
+    toting _mynisletter_ and _gortwog_ clicked
+    say 1016
+    change repute with _mynisera_ by +10
+    change repute with _gortwog_ by +10
+    start task _discussion_
+
+_skilled_ task:
+    when skill Orcish is at least 30
+
+variable _discussion_
+
+_moreexplain_ task:
+    when _skilled_ and _discussion_ and not _gobank_
+    say 1019
+    start task _gobank_
+
+_lessexplain_ task:
+    when not _skilled_ and _discussion_ and not _gobank_
+    say 1018
+    start task _gobank_
+
+_gobank_ task:
+    get item _cheque_
+    log 1020 step 0
+    update-quest-item _reward_ set-material Orcish
+    pc at any bank set _inbank_
+--gobank prevents a duplicate moreexplain if the player levels up their orcish
+
+_inwayrest_ task:
+    player current-region-index is 23
+
+variable _inbank_
+
+_banktalk_ task:
+    when _inbank_ and _inwayrest_
+    say 1021
+    log 1022 step 0
+    update-quest-item _reward_ add-enchantment type CastWhenHeld spell 39
+    start task _refusecheque_
+
+_refusecheque_ task:
+    update-quest-item _reward_ add-enchantment type CastWhenHeld spell 82
+
+_clickgort_ task:
+    clicked npc _gortwog_
+
+_clearclick_ task:
+    when _clickgort_ and not _refusecheque_
+    clear _clearclick_ _clickgort_
+
+_final_ task:
+    when _clickgort_ and _refusecheque_
+    change repute with _gortwog_ by +15
+    give pc _reward_
+    end quest

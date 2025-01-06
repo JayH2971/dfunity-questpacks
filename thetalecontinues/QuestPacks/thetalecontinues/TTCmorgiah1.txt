@@ -106,8 +106,8 @@ Message:  1018
 <ce>  I'll give you a sack of gold to grease the wheel a bit.
 <ce>  I don't know if witches use gold, but it can't hurt.
 <ce>  
-<ce>  I don't know exactly where the coven is,
-<ce>  but the rumors I've gotten say that it's
+<ce>  I don't know exactly where the coven is.
+<ce>  The rumors I've gotten say that it's
 <ce>  west of some place called Hawkton Court,
 <ce>  and a little to the north. Look for an open clearing
 <ce>  without trees, save a large circle around the witches. 

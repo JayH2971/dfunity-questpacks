@@ -145,7 +145,7 @@ Message:  1019
 %qdt:
  Our mission to extract the other kidnappers'
  identities from Stufyl failed. I should
- return him to the Palace of Sentinel now.
+ return him to the Palace of ___palace_ now.
 
 Message:  1020
 <ce>  Lhotun slumps down in disbelief.

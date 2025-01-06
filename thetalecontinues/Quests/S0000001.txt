@@ -1,7 +1,3 @@
--- Quest: C:\QUESTS\WORKING\S0000001.Qbn.
--- Main story quest.
--- QuestId: 1
-Messages: 41
 Quest: S0000001
 DisplayName: Missing Prince
 -- Message panels

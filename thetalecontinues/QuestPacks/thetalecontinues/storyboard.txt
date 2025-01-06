@@ -1,0 +1,49 @@
+-- helseth: meet woodborne, get his help divesting the Wayrest treasury of certain
+-- minor amounts. "a child of the king need not live on a mere allowance". tie it to
+-- MQ backbone, only offer it if Dust has not been obtained yet
+-- akorithi: needs help silencing these false rumors concerning a supposed first son that
+-- people claim existed. go with greklith to various towns across Sentinel and post
+-- refutations and denials for the honor of sentinel. greklith is loyal to his father
+-- and the honor of sentinel, and will not allow ridiculous slander to continue
+-- aubk-i: follow-up on mynisera's letters and the orcs. mynisera is prince klaius' daughter, 
+-- who slaughtered a village of orcs, including children
+-- aubk-i: follow-up on concern for nulfaga
+-- mynisera: 
+-- gothryd: 
+-- nulfaga: nulfaga explains her vision of you and lysandus, and why she had to create
+-- the storm that beached you. invitation letter comes from aubki, explaining that nulfaga expressed
+-- a desire to clear up events but didn't wish to bother you. post-aetherius quest
+-- gortwog: sends a letter to the emperor officially requesting orcish personhood and
+-- sovereignty. recounts the crimes against orsinium, their restraint, and a willingness
+-- to observe Imperial traditions in harmony with Orcish ways. reward is orcish weapon with spell shield. 
+-- gortwog wants the totem and says he will have it one way or another, but it is just one method in
+-- his arsenal, diplomacy being another.
+--
+-- include the nobles and court wizards as auxiliary characters in these stories
+-
+-Mynisera was born in 3E 353, a noblewoman and daughter of Prince Klaius.[3] She was wed to Lysandus, and was Queen of the Kingdom of Daggerfall during his reign as king, and their son, Gothryd, was born in 3E 381.[1][2] The marriage may not have been ideal; it was rumored Mynisera was having an affair with Lord Bridwell, commander of the Knights of the Dragon,[4] and it is known that Lysandus was secretly in love with the court sorceress, Medora Direnni.[1][4]
+-The first part of the letter shows a deeply emotional relationship, likely between Mynisera and another character. It begins with expressions of longing, love, and unfulfilled desires, hinting at a troubled relationship between Mynisera and Lysandus. Her devotion to him seems to be shadowed by his preference for another woman, likely Medora, as the letter mentions "Lysandus' Medora evermore," implying that the king was unfaithful to Mynisera. Mynisera tries to hide the evidence of this betrayal but seems to be consumed by it, conflicted between her loyalty to the king and her own emotional turmoil. This could explain the tragedy of the first few pages — a woman struggling with unreciprocated love and the pain of infidelity.
+-The letter shifts to a darker tone, describing the horrific actions taken by Mynisera’s father. The "stallion orcs" and "mare orcs" likely refer to different groups within the orc tribes, possibly related to their warriors and their weaker counterparts. The violence described — especially the murder of children — seems to suggest a brutal military campaign or a massacre of innocent orcs. Mynisera's father, a prince (perhaps of another region or faction), is presented as a cruel and merciless ruler, who decides not to show mercy to the children of these orcs, deeming them unworthy of life.
+-This passage reveals the complexity of her familial ties: Mynisera's father is responsible for great cruelty, and though she is ashamed of his actions, she remains silent, possibly to protect her family's reputation. The reference to her own shame ("the shame of mine that I didn't say no") suggests a guilt she bears for not opposing the violence or speaking out against it, even though she was a witness.
+-The letter also suggests that Mynisera’s reputation at court is tarnished by the knowledge of her husband’s infidelities and the deeds of her father. Court gossip reveals the complicated relationship between Mynisera and Lysandus, as well as the horrific actions of her father, which she tries to conceal. These details hint at a web of personal, political, and military intrigue, with Mynisera caught in the middle. She is described as loyal to Lysandus, perhaps to the point of self-destruction, even as the king's own loyalty to the emperor is described as "foolish."
+-The letter provides an intricate glimpse into a tragic tale involving Mynisera, her unfaithful husband Lysandus, the brutal actions of her father, and the larger political unrest surrounding them. Mynisera is trapped between her loyalty to a king who prefers another woman, her shame over her father's atrocities, and the ruthless politics of a harsh world. The brutality of the orc massacre, in particular, serves as a grim backdrop to her internal struggle and the eventual breakdown of her personal and public life.
+-The recipient of the letter, likely someone who has witnessed these events firsthand, conveys sympathy for Mynisera's suffering and shame, and the final note hints at the complicated, sometimes dangerous, politics and betrayals at play. This narrative paints a picture of a woman caught in an emotional and political maelstrom, and her tragic efforts to hide or deny the truth lead to her eventual despair.
+-
+- invention: Mynisera didn't seal Direnni into the tower herself, she required Popudax to do it as his
+- first act as court wizard. Direnni didn't object, resigned to the loss of Lysandus and wanting to
+- cause no further disturbances in the court of Daggerfall.
+-
+- could keep quests going after the end of MQ? use NPCs that are unaffected by MQ ending like Direnni and nulfaga
+- Direnni and Mynisera finally reconcile, or at least become lukewarm?
+-
+- mynisera sends a certificate of five million gold pieces to Gortwog as restoration for her father's
+- crimes against his race. because her husband is dead and she has no future, she gives away her fortune
+- to ease her guilt. an orcish scribe reads it aloud with surprisingly good language, as gortwog
+- prefers not to read it himself. gortwod stoically accepts it, but calls it a drop in the ocean.
+- gortwog says he suffered nothing from Klaius' slaughter, and he would send the funds to the affected descendants.
+- "please forgive the paltry amount, but this represents every possession I have hidden from my son the king.
+- if I had more, I would give it. please, I ask your forgiveness for what I failed to prevent." the certificate
+- is written to gortwog, a person of indiscriminate background, since the empire's banks refuse to deal with
+- the orcish nation.
+-
+- Thieves Guild story of how the emperor's letter was stolen
