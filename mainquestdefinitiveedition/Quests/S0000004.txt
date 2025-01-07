@@ -37,9 +37,8 @@ AcceptQuest:  [1002]
 <ce>              have delivered the letter, they would feel
 <ce>                no need to guarantee your safety. It is
 <ce>                their way. I need the letter delivered
-<ce>                     and a response from _necs_ in
-<ce>              my hand one month from now at the absolute
-<ce>                   latest. The risks are very high,
+<ce>                     and a response from _necs_.
+<ce>                        The risks are very high,
 <ce>                       %pcf, please do not fail.
 
 QuestFail:  [1003]
@@ -48,7 +47,7 @@ QuestFail:  [1003]
 
 QuestComplete:  [1004]
 <ce>                It's done! I'll be queen of Firsthold!
-<ce>            Although I'm sure the engagement will be quite
+<ce>            Although I'm sure the _engagementletter_ will be quite
 <ce>            lengthy. Now, I promised you information about
 <ce>                         the Emperor's letter.
 <ce>                                    
@@ -84,7 +83,7 @@ Princess Morgiah is engaged to the King of Firsthold. A miracle of %god indeed.
 <--->
 What could've possessed the King of Firsthold to propose marriage to Morgiah?
 <--->
-Morgiah has a three year engagement! Royals are a strange lot.
+Morgiah has a three year _engagementletter_! Royals are a strange lot.
 
 QuestorPostfailure:  [1009]
 <ce>                  You've failed me, %pcf. I required an answer from _necs_ within one month.
@@ -123,7 +122,7 @@ Message:  1012
  in a month.
 
 Message:  1013
-Princess Morgiah has left Wayrest for Sumurset Isle and the King of Firsthold.
+Princess Morgiah has left Wayrest for Summerset Isle and the King of Firsthold.
 <--->
 Wayrest has cemented relations with the High Elves of Firsthold by marriage.
 <--->
@@ -138,11 +137,11 @@ Message:  1014
 <ce>                           Queen Barenziah,
 <ce>                       Sovereigns of the Kingdom
 <ce>                              of Wayrest
-<ce>                 Are Proud to Announce The Engagement
+<ce>                 Are Proud to Announce The _engagementletter_
 <ce>                   of Morgiah, Princess of Wayrest,
 <ce>                             to Karoodil,
 <ce>                           King of Firsthold
-<ce>                       in the Isle of Sumurset.
+<ce>                       in the Isle of Summerset.
 
 Message:  1015
 <ce>           A young lad with the Rose of Wayrest embroidered
@@ -156,47 +155,25 @@ Message:  1016
 <ce>                       Princess Morgiah please.
 
 QBN:
-Item letter44 letter used 1010
-Item letter13 letter used 1011
+Item _lettertokw_ letter used 1010
+Item _response_ letter used 1011
 Item _reward_ trinket
-Item engagement letter used 1014
+Item _engagementletter_ letter used 1014
 
 Person _morgiah_ named Princess_Morgiah
 Person _necs_ named King_of_Worms atHome
 
 Place _scourgbarrow_ permanent ScourgBarrow1
 
-Clock _S.01_ 7.00:00 14.00:00
+Clock _morgiahtimer_ 7.00:00 14.00:00
 Clock _letterdelay_ 1.00:00
 
 --	Quest start-up:
-	prompt QuestorOffer yes yes no _no_ 
+	prompt QuestorOffer yes _yes_ no _no_ 
 
-_S.01_ task:
-	start task _S.07_ 
-	rumor mill 1013
-
-_S.07_ task:
-	have engagement set _S.10_ 
-	give pc engagement notify 1015 
-
-_S.02_ task:
-	toting letter13 and _morgiah_ clicked 
-	give pc _reward_ 
-	start timer _S.01_ 
-	remove log step 0 
-	start task _S.08_ 
-	change repute with _morgiah_ by +10 
-	drop _morgiah_ as questor 
-
-_S.03_ task:
-	toting letter44 and _necs_ clicked saying 1016 
-	get item letter13 
-	change repute with _necs_ by +10 
-
-yes task:
+_yes_ task:
 	log 1012 step 0 
-	get item letter44 
+	get item _lettertokw_ 
 	reveal _scourgbarrow_ in province 1 at 450958 
 	say AcceptQuest 
 	add _morgiah_ as questor 
@@ -205,15 +182,37 @@ _no_ task:
 	say RefuseQuest 
 	end quest 
 
+_S.03_ task:
+	toting _lettertokw_ and _necs_ clicked saying 1016 
+	get item _response_ 
+	change repute with _necs_ by +10 
+
+_S.02_ task:
+	toting _response_ and _morgiah_ clicked 
+	give pc _reward_ 
+	start timer _morgiahtimer_ 
+	remove log step 0 
+	start task _S.08_ 
+	change repute with _morgiah_ by +10 
+	drop _morgiah_ as questor 
+
 MorgiahSatisfied _S.08_
 _S.09_ task:
-	when _S.01_ and not _S.07_
+	when _morgiahtimer_ and not _morgiahisgone_
 	start quest 21 21 
 	end quest 
 
-_S.10_ task:
+_haveletter_ task:
 	start timer _letterdelay_
 --adding 24-hour delay to allow to read letter. this is a very common bug report
+
+_morgiahtimer_ task:
+	start task _morgiahisgone_ 
+	rumor mill 1013
+
+_morgiahisgone_ task:
+	have _engagementletter_ set _haveletter_ 
+	give pc _engagementletter_ notify 1015 
 
 _letterdelay_ task:
 	start quest 21 21 

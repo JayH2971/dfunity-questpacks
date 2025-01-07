@@ -77,21 +77,21 @@ Message:  1020
 <ce>                                Warl...
 
 Message:  1030
-This is indeed the Dust of Restful Death.
- As for that letter, it was from Gortwog
- to me, though I never got it. I heard from
- him later that his orc warriors were slain
- attempting to ambush the assassins. Gortwog
- and his orcs are not the villains most
- people see them as.
- 
- Eadwyre and the court of Wayrest have never
- been particularly loyal to the empire. To
- assassinate a king is treason. I will have
- my revenge, but first I must find out why
- Eadwyre would risk this.
- 
- Give me a moment to prepare the Dust.
+<ce>    This is indeed the Dust of Restful Death.
+<ce>     As for that letter, it was from Gortwog
+<ce>     to me, though I never got it. I heard from
+<ce>     him later that his orc warriors were slain
+<ce>     attempting to ambush the assassins. Gortwog
+<ce>     and his orcs are not the villains most
+<ce>     people see them as.
+<ce>    
+<ce>     Eadwyre and the court of Wayrest have never
+<ce>     been particularly loyal to the empire. To
+<ce>     assassinate a king is treason. I will have
+<ce>     my revenge, but first I must find out why
+<ce>     Eadwyre would risk this.
+<ce>     
+<ce>     Give me a moment to prepare the Dust.
 
 QBN:
 Item _spider_ lich_dust used 1016

@@ -309,6 +309,7 @@ _S.39_ task:
 _S.40_ task:
 	when _S.00_ and _S.14_ and _S.15_ 
 	start quest 1 1 
+	take _I.00_ from pc
 	unset _S.00_ 
 
 _S.41_ task:
@@ -319,6 +320,7 @@ _S.41_ task:
 _S.42_ task:
 	when _S.03_ and _S.11_ and _S.18_ 
 	start quest 4 4 
+	take _I.01_ from pc
 	unset _S.03_ 
 
 ElysannaSatisfied _S.43_

@@ -41,15 +41,15 @@ QuestLogEntry:  [1010]
  the orc warlord, a letter from her.
 
 Message:  1015
-So, Mynisera seeks to sweet talk me.
- Bah! Her letter is of no value to me
- anymore. She may have it. However, my
- people may not be so lenient toward a
- %ra wandering the halls of Orsinium.
- If you can survive my realm and find
- the letter, you may take it back to
- her. I will also consider you to be
- a worthy %ra.
+<ce>  So, Mynisera seeks to sweet talk me.
+<ce>  Bah! Her letter is of no value to me
+<ce>  anymore. She may have it. However, my
+<ce>   people may not be so lenient toward a
+<ce>   %ra wandering the halls of Orsinium.
+<ce>   If you can survive my realm and find
+<ce>   the letter, you may take it back to
+<ce>   her. I will also consider you to be
+<ce>   a worthy %ra.
 
 Message:  1020
 Lord Gortwog,
