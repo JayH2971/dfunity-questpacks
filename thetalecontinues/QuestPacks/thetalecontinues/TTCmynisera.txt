@@ -98,9 +98,11 @@ Message:  1016
 <ce>  surprisingly fluent enunciation.
 <ce>  
 <ce>  "Dear Gortwog, king of the orcs.
-<ce>  Thank you for taking the time to
-<ce>  read this. I pray that its contents
-<ce>  be kept private, for reasons that follow.
+<ce>  In my previous letter, I indicated I would
+<ce>  support the cause of the orcish nation.
+<ce>  I know Lysandus would have wished for this,
+<ce>  but I have reasons I wish to expound,
+<ce>  now that I bring this matter to its conclusion.
 <ce>  
 <ce>  "I do not know to what extent you
 <ce>  remember a Prince Klaius of the Bretons,
@@ -117,8 +119,8 @@ Message:  1016
 <ce>  
 <ce>  "My quill shakes as I write this, for
 <ce>  I am grieved to be associated with such
-<ce>  acts. I am his daughter, Mynisera.
-<ce>  I had neither age, wisdom, nor standing
+<ce>  acts. He was my father. I had
+<ce>  neither age, wisdom, nor standing
 <ce>  to stop him. But I am an heir to his legacy,
 <ce>  and the misery he inflicted on others
 <ce>  has cast a shadow upon me.
@@ -134,16 +136,13 @@ Message:  1016
 <ce>  I have sold all outstanding properties I possessed,
 <ce>  and resigned myself to living upon the
 <ce>  castle's resources for the remainder of my days.
-<ce>  I would be pained should these moneys
-<ce>  enter the coffers of the current king of Daggerfall.
 <ce>  
 <ce>  "Had I means and health to visit you,
 <ce>  I would do so myself, and seek penance for
 <ce>  that which was, and which must not be.
 <ce>  As you read this, I now send a letter
-<ce>  to my friend, the Emperor Uriel Septim,
-<ce>  formally requesting a council on behalf
-<ce>  of a future orcish nation.
+<ce>  to the Emperor, formally requesting
+<ce>  a council on behalf of a future orcish nation.
 <ce>  
 <ce>  "What more I can do than this, I do not know.
 <ce>  But if the grave absolves all guilt, I will
@@ -179,7 +178,7 @@ Message:  1019
 <ce>  They speak in the orcish tongue, which you
 <ce>  know well enough to interpret.
 <ce>  
-<ce>  "The poor woman. She carries a guilt which is not her own."
+<ce>  "Poor Mynisera. She carries a guilt which is not her own."
 <ce>  
 <ce>  "My lord, that money could do us great good.
 <ce>  We could build up a storehouse
@@ -193,13 +192,13 @@ Message:  1019
 <ce>  
 <ce>  The shaman withdraws while Gortwog speaks to you.
 <ce>  
-<ce>  "This woman's gift is well received. She
+<ce>  "The queen's gift is well received. She
 <ce>  will know of my gratitude in a future day,
 <ce>  in person, were it possible.
 <ce>  
 <ce>  "I have a lesson for you. Take her certificate
 <ce>  to Wayrest. Make an account for
-<ce>  the name Gortwog gro-Nagorm. Put the woman's
+<ce>  the name Gortwog gro-Nagorm. Put her
 <ce>  money into it, and report to me.
 <ce>  I will await you here."
 
