@@ -1,0 +1,324 @@
+Quest: S0000011
+DisplayName: Barenziah's Book [Definitive]
+-- Message panels
+QRC:
+
+QuestorOffer:  [1000]
+<ce>							[MAIN QUEST - OPTIONAL]
+<ce>
+<ce>                Thank you for responding to my letter,
+<ce>                      %pcf. It is very difficult
+<ce>                for a queen of a powerful nation, and a
+<ce>                queen whose home is far away, to trust
+<ce>                any mercenary. That is why when my dear
+<ce>                child Helseth told me about you, I was
+<ce>                 so quick to write. There is a rather
+<ce>                sensitive situation brewing, and I need
+<ce>                  someone I can trust to correct some
+<ce>              wayward revolutionaries. For _reward_ gold
+<ce>                pieces, will you perform such a service
+<ce>                 for me? I am also prepared to reward
+<ce>            you with information as well as _reward_ gold.
+
+RefuseQuest:  [1001]
+<ce>                 That is a pity indeed. Prince Helseth
+<ce>                is usually correct in his assessment of
+<ce>                people, but it would appear that he is
+<ce>                         wrong in this matter.
+<ce>
+<ce>   [Note: you have rejected an optional segment of the main quest.
+<ce>   It provides background on characters and is not required
+<ce>   to beat the game.]
+
+AcceptQuest:  [1002]
+<ce>         I am glad to hear it. Some years ago, a disgruntled,
+<ce>             and possibly deranged, scribe of mine wrote a
+<ce>            biography of me which my worst enemy would call
+<ce>            cruel and defamatory. Because the book was also
+<ce>             excessively critical of the Empire and Septim
+<ce>           Imperial family, it was wisely suppressed and its
+<ce>            author executed. Unfortunately, chapters of the
+<ce>          book resurface from time to time. I have reason to
+<ce>          believe one chapter of the book has been purchased
+<ce>            by the orcs of Orsinium, who are attempting to
+<ce>         publish it. I need it removed from their stronghold,
+<ce>           also named Orsinium. Time is of the essence. I'm
+<ce>         sure Gortwog will not wait long. Once the chapter is
+<ce>           safe, we will talk further about your ambitions.
+
+QuestFail:  [1003]
+<ce>                  I need that book chapter before we
+<ce>                          talk, my dear %pcf.
+
+QuestComplete:  [1004]
+<ce>                         Very well done, %pcf.
+
+RumorsDuringQuest:  [1005]
+Queen Barenziah is supposedly in a bad mood. You can never tell though.
+<--->
+A book's coming out with the real story about the former Queen of Mournhold.
+
+RumorsPostfailure:  [1006]
+The Necromancers supposedly have something they're blackmailing Barenziah with.
+<--->
+Queen Barenziah's men are searching for someone called the King of Worms.
+
+RumorsPostsuccess:  [1007]
+That book about Queen Barenziah apparently never made it as far as the presses.
+<--->
+Queen Barenziah has been singing the praises of some %ra adventurer she hired.
+
+QuestorPostsuccess:  [1008]
+
+
+QuestorPostfailure:  [1009]
+
+
+QuestLogEntry:  [1010]
+%qdt:
+<ce>
+[MAIN QUEST - OPTIONAL]
+<ce>
+ Queen Barenziah has hired
+ me to find a chapter of a libelous book about her
+ that has been circulating around the Bay. She
+ believes it to be in the dungeons of Orsinium,
+ home of the orc warlord Gortwog.
+
+Message:  1014
+<ce>                        Prince Helseth did not
+<ce>                 exaggerate your virtues. Here is the
+<ce>                   _reward_ gold pieces I promised.
+<ce>                                    
+
+Message:  1015
+Chapter 6
+ 
+ "You dance on the edge of a volcano, child," Drelliane
+ scolded, as Barenziah admired the emerald ring her lover
+ had given her to celebrate their one month anniversary.
+ 
+ "How so? We make one another happy. We harm no one.
+ Symmachus bade me to be discriminate and discreet. Who
+ better could I choose? And we've been most discreet. He
+ treats me as a daughter in public." Tiber Septim's
+ nightly visits were made through a secret passage.
+ 
+ "He slavers over you like a dog his dinner. Have you not
+ noticed the coolness of the Empress and her son toward you?"
+ 
+ Barenziah shrugged. Even before she and Septim had
+ become lovers she'd had no more from his family than bare
+ civility. Threadbare civility. "What matter? It is Tiber
+ who holds power."
+ 
+ "It is his son who holds the future. Do not hold his mother
+ up to public scorn, I beg you."
+ 
+ "Can I help it if that dry stick of a woman cannot hold her
+ husband's interest even in conversation at dinner?"
+ 
+ "Have less to say in public. That is all I ask. She matters
+ little, save that her children love her, and you do not
+ want them as enemies. Tiber Septim has not long to live. I
+ mean," Drelliane amended quickly, at Barenziah's scowl,
+ "Humans are all short-lived. Temporary, as we elves say.
+ They come and go as the seasons do, but the families of the
+ powerful live on for a time. You must be a family friend if
+ you would see lasting profit from your relationship. Ah,
+ how can I make you truly see, you who are so young and
+ human-bred as well! If you take care you and Mournhold are
+ like to live to see the fall of Septim's dynasty, if indeed
+ he has founded one, as you have seen its rise. It is the way
+ of human history. They ebb and flow like the tides. Their
+ cities and even their empires bloom like spring flowers,
+ only to wither and die in the summer sun."
+ 
+ Barenziah just laughed. She knew that rumors abounded about
+ her and Tiber Septim. She enjoyed the attention for all save
+ the Empress and her son seemed captivated by her. Bards sang
+ of her dark beauty and her charming ways. She was in fashion
+ and in love and if it was temporary, well, what was not? She
+ was happy for the first time she could remember, each day
+ filled with joy and pleasure, and the nights yet better.
+ 
+ "What is wrong with me?" Barenziah lamented. "Look, not one
+ of my skirts fit? What's become of my waist? Am I getting
+ fat?" Barenziah regarded her thin arms and legs and her
+ undeniably thickened waist in the mirror with displeasure.
+ 
+ Drelliane shrugged. "You appear to be with child, young as
+ you are. Constant pairing with a human has brought you early
+ to fertility. I see no choice but for you to speak with him
+ about it. You are in his power. It would be best, I think,
+ for you to go directly to Mournhold if he will agree, and
+ bear the child there."
+ 
+ "Alone?" Barenziah placed her hands on her swollen belly,
+ tears forming in her eyes. Everything in her yearned to
+ share the fruit of her love with her lover. "He'll ne'er
+ agree to that. He won't be parted from me now. You'll see."
+ 
+ Drelliane shook her gray head. Although she said no more,
+ a look of sympathy and sorrow had replaced her usual cool
+ scorn. That night Barenziah told Tiber Septim of it when he
+ came to her.
+ 
+ "With child?" He looked shocked. Stunned. "You're sure of
+ it? I was told elves do not bear so young."
+ 
+ Barenziah smile uneasily, "How can I be sure? I've never -- "
+ 
+ "I'll fetch my healer."
+ 
+ The healer, a high elf of middle years, confirmed that
+ Barenziah was indeed pregnant and that such a thing had
+ never before been known to happen. It was a testimony to
+ His Excellency's potency, the healer said sycophantically.
+ Tiber Septim snarled at him. "This must not be," he said.
+ "Undo it." 
+ 
+ "Sire," the healer gaped at him. "I cannot--"
+ 
+ "Of course you can," he snapped. "I command you do so."
+ 
+ Barenziah, wide-eyed with sudden terror, sat up in the bed.
+ "No!" she screamed. "No! What are you saying?"
+ 
+ "My dear child," Tiber Septim sat down beside her with his
+ winning smile. "I'm so sorry. Truly. But this cannot be.
+ Your child could be a threat to my son and his sons. I will
+ put it no more plainly than that."
+ 
+ "The child I bear is your child!" she wailed.
+ 
+ "No. It's but a possibility, a might be, not yet gifted
+ with a soul or quickened into life. I will not have it so."
+ He gave the healer another hard stare and the elf began to
+ tremble.
+ 
+ "It is her child. Children are few among elves. No woman
+ conceives more than four and that is very rare. Two is the
+ allotted number. Some bear none, some only one. If I take
+ this one from her, she may not conceive again."
+ 
+ "You told me she would not bear to me. I've little faith in
+ your prognostications."
+ 
+ Barenziah scrambled naked from her bed, and ran for the door,
+ not knowing where she was going, only that she could not
+ stay. She never reached the door for blackness took her.
+ 
+ Barenziah awoke to pain and emptiness. Drelliane was there
+ to soothe the pain and clean the blood that pooled under her
+ legs, but there was nothing to fill the emptiness. Tiber
+ Septim sent gifts and flowers, and came for short visits,
+ always well attended. Barenziah received these visits with
+ pleasure, but he came no more at night nor did she wish for
+ him. After a month, when she was physically recovered, it
+ was announced that Symmachus had requested she come to
+ Mournhold earlier than planned, and that she would leave
+ forthwith. She was given a splendid retinue, a wardrobe
+ befitting a queen and a ceremonial departure from the gates
+ of Imperial City.
+
+Message:  1016
+                                  Castle Wayrest
+ 
+ Dear %pcn,
+ 
+ My beloved son has brought your name to my
+ attention, and suggested that we might have some
+ business to discuss. I understand that we have a
+ mutual interest.
+ Please visit me at Castle Wayrest at your
+ earliest possible convenience.
+ 
+ Yours,
+ 
+<ce>                               Barenziah
+<ce>                    Queen of the Kingdom of Wayrest
+
+Message:  1017
+<ce>               A page wearing the colors and pale yellow
+<ce>            rose of Wayrest appears silently at your side.
+<ce>                He hands you a letter and disappears as
+<ce>                        quietly as he arrived.
+
+Message:  1030
+<ce>                      You may not know this, but
+<ce>                not only is Gortwog the holder of that
+<ce>               letter the Emperor lost some months ago,
+<ce>               but he is also contending for an ancient
+<ce>                relic called the Totem of Tiber Septim.
+<ce>                If that cannibal gets his warted hands
+<ce>                on the Totem, it could mean the end of
+<ce>                Wayrest, and possibly all civilization
+<ce>                on the Iliac Bay. We may need your able
+<ce>                         services again, %pcf.
+
+QBN:
+Item _reward_ gold
+Item Chapter6 letter used 1015
+Item letter40 letter used 1016
+
+Person Barenziah named Queen_Barenziah atHome
+Person _gortwog_ face 84 named Gortwog atHome
+
+Place _orsinium_ permanent OrsiniumCastle4
+
+Clock _S.11_ 1.00:00
+
+--	Quest start-up:
+	add Barenziah as questor 
+	add _gortwog_ as questor 
+	start task _S.02_
+
+_S.00_ task:
+	clicked npc Barenziah 
+
+variable _S.02_
+
+_S.04_ task:
+	clicked item Chapter6 
+
+yes task:
+	place item Chapter6 at _orsinium_ marker 2
+	log 1010 step 0 
+	reveal _orsinium_ in province 26 at 146892 
+	say AcceptQuest 
+
+_no_ task:
+	say RefuseQuest 
+	end quest 
+
+_S.08_ task:
+	toting Chapter6 and Barenziah clicked 
+	start task _S.19_ 
+	give pc _reward_ 
+	say 1014 
+	say 1030
+	change repute with Barenziah by +10 
+	end quest 
+
+_S.11_ task:
+	give pc letter40 notify 1017 
+
+_S.12_ task:
+	when _S.00_ and _S.11_ 
+	prompt QuestorOffer yes yes no _no_ 
+
+until _S.12_ performed:
+	clear _S.00_ 
+
+_S.13_ task:
+	clicked npc _gortwog_ 
+
+BarenziahSatisfied _S.19_
+
+_S.23_ task:
+	level 1 completed 
+
+_S.24_ task:
+	when _S.02_ and _S.23_ 
+	start timer _S.11_ 
