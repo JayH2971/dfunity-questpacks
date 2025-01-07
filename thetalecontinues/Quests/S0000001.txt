@@ -1,9 +1,11 @@
 Quest: S0000001
-DisplayName: Missing Prince
+DisplayName: Missing Prince [Definitive]
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
+<ce>							[MAIN QUEST]
+<ce>
 <ce>                  Welcome to Sentinel, %pcf. I guess
 <ce>         you must have received my letter. I know some things
 <ce>        about Lysandus and why he might be haunting Daggerfall,
@@ -13,6 +15,10 @@ QuestorOffer:  [1000]
 RefuseQuest:  [1001]
 <ce>                         %oth, %pcf, I thought
 <ce>                 you were a hero. I guess I was wrong.
+<ce>   
+<ce>   [NOTE: you have rejected a required segment of the main quest.
+<ce>   You must reload a save file or persist in the doomed world
+<ce>   you have created.]
 
 AcceptQuest:  [1002]
 <ce>               You will? Thank %god. You see, I used to
@@ -221,9 +227,16 @@ Message:  1018
 <ce>            for attempting to pass this cheap counterfeit.
 <ce>           Poor Prince _brother_ died of a fever many, many
 <ce>            years ago. Why can't you let him rest in peace?
+<ce>   
+<ce>   [NOTE: you have failed a required segment of the main quest.
+<ce>   You must reload a save file or persist in the doomed world
+<ce>   you have created.]
 
 Message:  1019
 %qdt:
+<ce>
+[MAIN QUEST]
+<ce>
  Prince Lhotun of Sentinel has asked
  me to investigate the death of his
  brother, _brother_, who was supposedly
@@ -282,21 +295,6 @@ Message:  1040
  the abduction of _brother_. I am supposed
  to check out ___ukcrypt_.
 
-
--- Symbols used in the QRC file:
---
---               %di occurs 4 times.
---              %god occurs 1 time.
---              %oth occurs 1 time.
---              %pcf occurs 6 times.
---              %pcn occurs 3 times.
---              %pct occurs 2 times.
---              %qdt occurs 2 times.
---       ___ukcrypt_ occurs 14 times.
---     __agentplace_ occurs 5 times.
---         _brother_ occurs 24 times.
---       _magicitem_ occurs 1 time.
-
 QBN:
 Item deathCertificate letter used 1010
 Item letter38 letter used 1032
@@ -330,7 +328,7 @@ _S.00_ task:
 	remove log step 1
 --added additional remove log. directions would linger in journal.
 	reveal _dirennitower_ in province 9 at 204718 
-	repute with _akorithi_ exceeds 0 do _S.16_ 
+	start task _akorithirep_ 
 	change repute with _lhotun_ by +15 
 	change repute with _agentuk_ by +25 
 	mute npc _lhotun_ 
@@ -339,10 +337,6 @@ _S.00_ task:
 	mute npc Vhosek 
 	drop _lhotun_ as questor 
 
-variable _S.01_
-variable _S.02_
-variable _queston_
-variable _S.04_
 _S.05_ task:
 	toting deathCertificate and _akorithi_ clicked 
 	toting deathCertificate and Vhosek clicked 
@@ -352,10 +346,6 @@ _S.05_ task:
 	legal repute -20 
 	end quest 
 
-variable _S.06_
-variable _S.07_
-variable _S.08_
-variable _S.09_
 _S.10_ task:
 	clicked item deathCertificate say 1020 
 
@@ -381,15 +371,12 @@ _S.14_ task:
 	log 1040 step 1 
 	say 1035 
 
-_S.15_ task:
-	level 7 completed 
+_levelgate_ task:
+	level 1 completed 
 
-variable _S.16_
+variable _akorithirep_
 _S.17_ task:
-	when _S.16_ and _S.15_ 
+	when _akorithirep_ and _levelgate_ 
 	start quest 17 17 
-	start quest TTClhotun1
+    start quest TTClhotun1
 	end quest 
-
-variable _S.18_
-variable Castellian
