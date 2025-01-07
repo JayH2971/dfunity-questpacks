@@ -1,4 +1,3 @@
---TODO: emerald still is not taken from player inventory
 Quest: TTCmorgiah1
 DisplayName: Tale of Morgiah 1
 -- Message panels

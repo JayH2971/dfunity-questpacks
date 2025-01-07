@@ -1,10 +1,7 @@
 -- helseth: meet woodborne, get his help divesting the Wayrest treasury of certain
 -- minor amounts. "a child of the king need not live on a mere allowance". tie it to
 -- MQ backbone, only offer it if Dust has not been obtained yet
--- akorithi: needs help silencing these false rumors concerning a supposed first son that
--- people claim existed. go with greklith to various towns across Sentinel and post
--- refutations and denials for the honor of sentinel. greklith is loyal to his father
--- and the honor of sentinel, and will not allow ridiculous slander to continue
+-- akorithi: 
 -- aubk-i: follow-up on mynisera's letters and the orcs. mynisera is prince klaius' daughter, 
 -- who slaughtered a village of orcs, including children
 -- aubk-i: follow-up on concern for nulfaga

@@ -48,7 +48,7 @@ Message:  1010
 <ce>  "Okay. I'm ready. Show me my father."
 <ce>  
 <ce>  The head witch begrudgingly sets various
-<ce>  organs on the floor, as well as the emerald.
+<ce>  organs on the ground, as well as the emerald.
 <ce>  They all join together in a slow and
 <ce>  laborious enchantment that makes the
 <ce>  air around you grow warmer. Your eyes
