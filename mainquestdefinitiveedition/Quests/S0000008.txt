@@ -317,26 +317,6 @@ Message:  1070
 <ce>               A cheerful young woman hands you a letter
 <ce>                    and then walks away, whistling.
 
-
--- Symbols used in the QRC file:
---
---              %pcf occurs 7 times.
---              %pcn occurs 9 times.
---              %qdt occurs 2 times.
---               %ra occurs 2 times.
---     ____newplace_ occurs 1 time.
---       ____tavern_ occurs 1 time.
---       ____temple_ occurs 6 times.
---       __newplace_ occurs 1 time.
---         __tavern_ occurs 1 time.
---         __temple_ occurs 1 time.
---       _artifact2_ occurs 1 time.
---       _artifact4_ occurs 1 time.
---        _goldgoth_ occurs 1 time.
---        _newplace_ occurs 1 time.
---          _tavern_ occurs 1 time.
---          _temple_ occurs 6 times.
-
 QBN:
 Item _letter_ letter used 1011
 Item _totem_ totem

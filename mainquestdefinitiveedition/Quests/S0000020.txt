@@ -93,28 +93,21 @@ Queen Mynisera,
 
 Message:  1030
 <ce>                    %pcf, this letter is dangerous.
- Gortwog had undoubtedly sold copies of it
- to everyone from Wayrest to the Underking.
- After all, if the powers of the Iliac Bay
- become embroiled in war over the Totem, he
- stands to gain quite a lot.
- 
- Go now. You have done your job. I am sure
- the Totem will find its way into your life
- somehow. You seem to have a knack for such
- things. Just remember, the only safe master
- of the Totem is the emperor.
+<ce>     Gortwog had undoubtedly sold copies of it
+<ce>     to everyone from Wayrest to the Underking.
+<ce>     After all, if the powers of the Iliac Bay
+<ce>    become embroiled in war over the Totem, he
+<ce>    stands to gain quite a lot.
+<ce>    
+<ce>    Go now. You have done your job. I am sure
+<ce>    the Totem will find its way into your life
+<ce>    somehow. You seem to have a knack for such
+<ce>    things. Just remember, the only safe master
+<ce>    of the Totem is the emperor.
 
 Message:  1040
 <ce>               You still don't know where the Emperor's
 <ce>                letter is. Come back when you know that.
-
-
--- Symbols used in the QRC file:
---
---              %pcf occurs 1 time.
---              %qdt occurs 1 time.
---               %ra occurs 3 times.
 
 QBN:
 Item EmperorsLetter letter used 1021
@@ -124,8 +117,6 @@ Person _Mynisera_ named Mynisera atHome
 Person _gortwog_ face 88 named Gortwog atHome
 
 Place _Orsinium_ permanent OrsiniumCastle1
-
-
 
 --	Quest start-up:
 	add _Mynisera_ as questor 
