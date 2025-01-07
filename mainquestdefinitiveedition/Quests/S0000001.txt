@@ -227,6 +227,10 @@ Message:  1018
 <ce>            for attempting to pass this cheap counterfeit.
 <ce>           Poor Prince _brother_ died of a fever many, many
 <ce>            years ago. Why can't you let him rest in peace?
+<ce>   
+<ce>   [NOTE: you have failed a required segment of the main quest.
+<ce>   You must reload a save file or persist in the doomed world
+<ce>   you have created.]
 
 Message:  1019
 %qdt:
@@ -290,21 +294,6 @@ Message:  1040
  Supposedly the Underking had nothing to do with
  the abduction of _brother_. I am supposed
  to check out ___ukcrypt_.
-
-
--- Symbols used in the QRC file:
---
---               %di occurs 4 times.
---              %god occurs 1 time.
---              %oth occurs 1 time.
---              %pcf occurs 6 times.
---              %pcn occurs 3 times.
---              %pct occurs 2 times.
---              %qdt occurs 2 times.
---       ___ukcrypt_ occurs 14 times.
---     __agentplace_ occurs 5 times.
---         _brother_ occurs 24 times.
---       _magicitem_ occurs 1 time.
 
 QBN:
 Item deathCertificate letter used 1010
