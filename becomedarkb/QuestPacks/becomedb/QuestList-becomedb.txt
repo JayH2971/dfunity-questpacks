@@ -1,0 +1,3 @@
+schema: *name, group, membership, minReq, flag, notes
+
+becomedb, InitAtGameStart, P, 0, 0, get dark brotherhood invite

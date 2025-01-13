@@ -1,0 +1,23 @@
+Quest: becomethieves
+DisplayName: Become a Thieves Guild Member
+-- Message panels
+QRC:
+
+Message:  1010
+<ce> Receive a Thieves Guild invitation?
+
+Message:  1011
+<ce>  You will receive a letter soon. Enjoy!
+
+QBN:
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_accept_ task:
+    say 1011
+    start quest O0A0AL00
+    end quest
+
+_reject_ task:
+    end quest

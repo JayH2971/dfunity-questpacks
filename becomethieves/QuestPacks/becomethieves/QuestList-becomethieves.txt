@@ -1,0 +1,3 @@
+schema: *name, group, membership, minReq, flag, notes
+
+becomethieves, InitAtGameStart, P, 0, 0, get thieves guild invite

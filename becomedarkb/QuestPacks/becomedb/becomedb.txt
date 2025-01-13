@@ -1,0 +1,40 @@
+Quest: becomedb
+DisplayName: Receive a Dark Brotherhood Invite
+-- Message panels
+QRC:
+
+Message:  1010
+<ce> Receive a Dark Brotherhood invitation?
+
+Message:  1011
+<ce>  You will receive a letter soon. Enjoy!
+
+Message:  1012
+<ce>  You are momentarily distracted by a gust of wind.
+<--->
+<ce>  You are momentarily distracted by a ruined parchment nearby.
+
+QBN:
+
+Item _dummy_ gem
+
+Clock _end_ 0:00
+
+--	Quest start-up:
+    prompt 1010 yes _accept_ no _reject_
+
+_accept_ task:
+    say 1011
+    give pc _dummy_ notify 1012
+    have _dummy_ set _send_
+
+_send_ task:
+    start quest L0A01L00
+    start timer _end_
+    take _dummy_ from pc
+
+_end_ task:
+    end quest
+
+_reject_ task:
+    end quest
