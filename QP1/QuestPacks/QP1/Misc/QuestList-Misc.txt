@@ -3,3 +3,4 @@
 schema: *name, group, membership, minReq, flag, notes
 
 JHPFIRST, InitAtGameStart, M, 0, 0, Initializes a few quests
+JHPCART, Commoners, P, 0, 0,
