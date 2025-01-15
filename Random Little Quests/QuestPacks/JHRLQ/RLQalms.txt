@@ -70,6 +70,7 @@ Clock _timer_ 12:00
 
 --	Quest start-up:
     prompt 1011 yes _pay_ no _reject_
+    have _item_ set _grab_
 
 _reject_ task:
     say 1012
@@ -92,18 +93,17 @@ _end_ task:
     say 1013
     end quest
 
+_itemplace_ task:
+    daily from 22:30 to 23:59
+    place item _item_ at _magery_
+    start timer _timer_
+
 _daytime_ task:
     daily from 11:00 to 23:00
 
 _tip_ task:
     say 1015
     log 1010 step 0
-
-_plant_ task:
-    when _tip_ and not _daytime_
-    place item _item_ at _magery_
-    start timer _timer_
-    have _item_ set _grab_
 
 _grab_ task:
     make _item_ permanent
