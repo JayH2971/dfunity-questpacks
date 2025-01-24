@@ -1,0 +1,31 @@
+Quest: JH_CGK11
+DisplayName: Chronicle of the Great Knight, Part 11 Final
+QRC:
+
+QuestComplete:   [1004]
+<ce>  When you enter the bank, your certificate from 
+<ce>  Lady Brisienna is exchanged for gold.
+<ce>  The bank employees spend several minutes
+<ce>  bringing it out to you.
+
+Message:  1010
+<ce>  This certificate is worth an undisclosed
+<ce>  sum of money, redeemable at any standard bank.
+<ce>  It contains Lady Brisienna's signature.
+
+QBN:
+
+Item _gem_ letter used 1010
+Item _reward1_ gold range 20000 to 25000
+Item _reward2_ gold range 20000 to 25000
+Item _reward3_ gold range 20000 to 25000
+
+--	Quest start-up:
+    get item _gem_
+    pc at any bank set _payout_
+
+_payout_ task:
+    give pc _reward1_
+    give pc _reward2_
+    give pc _reward3_
+    end quest

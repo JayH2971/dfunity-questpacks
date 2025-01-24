@@ -2,11 +2,6 @@ Quest: JH_CGK10b
 DisplayName: Chronicle of the Great Knight, Part 10b
 QRC:
 
-QuestComplete:   [1004]
-<ce>  A small pouch accompanies the letter, which has
-<ce>  a dimension-warping enchantment placed on it.
-<ce>  The actual sum of gold is more than was obvious from the outset.
-
 Message:  1010
 <ce>  You receive a letter. It carries a unique seal, containing the word "MAGNESSEN" in stylized print.
 
@@ -36,6 +31,9 @@ you. He holds you in very high esteem, and should you
 ever come by the Imperial City, do make a visit
 to the palace. The door will be open to you.
 <ce>
+Enclosed is a certificate worth a sum of gold.
+You may redeem it at any bank in the Iliac Bay.
+<ce>
             Brisienna.
 
 Message:  1012
@@ -46,9 +44,6 @@ Message:  1012
 QBN:
 
 Item _gem_ letter
-Item _reward1_ gold range 20000 to 25000
-Item _reward2_ gold range 20000 to 25000
-Item _reward3_ gold range 20000 to 25000
 
 Clock _timer_ 15.00:00 22.00:00
 
@@ -61,8 +56,6 @@ _timer_ task:
 
 _final_ task:
     say 1011
-    give pc _reward1_
-    give pc _reward2_
-    give pc _reward3_
     say 1012
+    start quest JH_CGK11
     end quest
