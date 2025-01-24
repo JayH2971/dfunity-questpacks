@@ -97,15 +97,6 @@ Message:  1011
 Message:  1012
 <ce>             The scarab given to you by the King of Worms.
 
-
--- Symbols used in the QRC file:
---
---              %pcf occurs 2 times.
---              %pcn occurs 1 time.
---              %qdt occurs 1 time.
---       _magicitem_ occurs 1 time.
---          _scarab_ occurs 3 times.
-
 QBN:
 Item _scarab_ scarab used 1012
 Item _magicitem_ magic_item
@@ -114,7 +105,6 @@ Person _kingoworms_ named King_of_Worms atHome
 Person _lichface_ face 169 named Lord_Darkworth
 
 Place _sentinel_ permanent SentinelCastle
-
 
 Foe _zombie_ is Zombie
 Foe _lich_ is Lich
@@ -157,6 +147,12 @@ until _S.06_ performed:
 
 _S.07_ task:
 	injured _zombie_ 
+	clicked foe _zombie_
+
+_infight_ task:
+	injured _lich_
+	clicked foe _lich_
+	change foe _lich_ infighting true
 
 _S.08_ task:
 	killed 1 _lich_ 

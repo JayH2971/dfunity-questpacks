@@ -337,8 +337,13 @@ ElysannaSatisfied _S.06_
 
 variable _S.07_
 _S.08_ task:
-	injured _F.00_ saying 1025 
-	injured _battlemage_ saying 1025 
+	injured _F.00_
+	injured _battlemage_
+	clicked foe _F.00_
+	clicked foe _battlemage_
+	change foe _F.00_ infighting true
+	change foe _battlemage_ infighting true
+	say 1025
 
 _clearclick_ task:
 	when _S.01_ and not _S.03_ 

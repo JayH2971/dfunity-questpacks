@@ -400,7 +400,12 @@ _S.16_ task:
 
 _S.17_ task:
 	injured _brother_ 
+	clicked foe _brother_
 	have _relic_ set _S.15_ 
+
+_infight_ task:
+	when _S.17_ and not _S.15_
+	change foe _brother_ infighting true
 
 _S.18_ task:
 	when _S.22_ and _S.17_ 

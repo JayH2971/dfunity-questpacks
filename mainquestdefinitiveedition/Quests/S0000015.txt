@@ -180,11 +180,13 @@ _S.01_ task:
 	log 1018 step 3 
 
 _S.02_ task:
+	clicked foe Woodborne
 	injured Woodborne 
 	say 1040 
 	cast Spell_Reflection spell on Woodborne 
 	cast Heal spell on Woodborne 
 	cast Shield spell on Woodborne 
+	change foe Woodborne infighting true
 
 _S.03_ task:
 	toting WoodborneDiary and Eadwyre clicked 
