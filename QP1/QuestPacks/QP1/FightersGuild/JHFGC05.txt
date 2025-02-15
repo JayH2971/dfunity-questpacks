@@ -10,7 +10,7 @@ Message:  1010
 "hello
 <ce> 
 "thank you for saving me from that cave and those bad people.
-im going to join the fiters guld when i grow up just
+im going to join the fiters gild when i grow up just
 like you and kill lots of crimanols. my mom wont let
 me swing a sword yet but i wont tell her."
 <ce> 
