@@ -4,6 +4,8 @@ DisplayName: Interview with an Orc
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                The orcs are brutal creatures, as all
 <ce>                 %crn will agree. Very rarely one or
 <ce>               another rises up with a brain surpassing

@@ -4,6 +4,8 @@ DisplayName: The Fires of Oblivion
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>          So it turns out there are two kinds of atronachs.
 <ce>           One's the kind that comes from the great beyond,
 <ce>               puppets of daedra and things like that.

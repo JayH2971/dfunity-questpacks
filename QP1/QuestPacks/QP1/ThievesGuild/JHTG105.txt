@@ -4,6 +4,8 @@ DisplayName: Hot Gem
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                There's a hot _gem_ being stored over
 <ce>                    in ___res_, guarded by someone
 <ce>               from the Fighters Guild. We need someone

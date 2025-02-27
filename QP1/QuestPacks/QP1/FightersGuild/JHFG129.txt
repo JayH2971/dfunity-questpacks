@@ -4,6 +4,8 @@ DisplayName: Mirage
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>              There's a fellow in town who keeps comin'
 <ce>              'round demanding a challenger for a fight.
 <ce>               Offers gold and everything. I think it's

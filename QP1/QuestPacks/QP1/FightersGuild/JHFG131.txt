@@ -4,6 +4,8 @@ DisplayName: The Young Dungeoneer
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>            Some band of rabblerousers stole a kid and are
 <ce>                 expecting a ransom from the family.
 <ce>           The town guard or some knight usually intervenes

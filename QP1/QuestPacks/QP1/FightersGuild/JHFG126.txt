@@ -4,6 +4,8 @@ DisplayName: Hide and Go Seek
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>             There's a group of criminals in town who've
 <ce>                 absconded with some pretty important
 <ce>              evidence. Someone needs to go in quick and

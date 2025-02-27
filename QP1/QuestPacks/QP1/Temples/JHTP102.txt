@@ -4,6 +4,8 @@ DisplayName: Donation Drive
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>               Ah, it's good that you're here. We need
 <ce>                    to send someone trustworthy to
 <ce>                  ___res_ to receive a donation and

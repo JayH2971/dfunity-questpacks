@@ -4,6 +4,8 @@ DisplayName: The Unwanted Thief
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>  We've got an order from the %rt telling us to get rid
 <ce>  of some member of the Thieves Guild here in town.
 <ce>  Hangs out in a shop, I guess as a cover story.

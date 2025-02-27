@@ -4,6 +4,8 @@ DisplayName: An Illusory Hunt
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                My dear %pcf, we often tell our newest
 <ce>            inductees to the guild, "Too much power in too
 <ce>               little time has destroyed many." Sadly,
@@ -15,6 +17,8 @@ QuestorOffer:  [1000]
 <ce>                  well-versed in Illusion magic for
 <ce>                           one's own good.
                                      <--->
+[QP1]
+ 
 <ce>               I regret to speak of this matter, but it
 <ce>                is a necessary task. The Mages Guild,
 <ce>                 wielding all the power that it does,

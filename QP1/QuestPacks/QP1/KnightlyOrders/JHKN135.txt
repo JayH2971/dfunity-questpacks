@@ -4,6 +4,8 @@ DisplayName: In Search of the Lost
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                A local family here in ___questgiver_
 <ce>          is worried sick over their son, who descended into
 <ce>             some ruins on some sort of heroic escapade.

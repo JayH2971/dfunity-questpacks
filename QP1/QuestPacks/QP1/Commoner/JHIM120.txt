@@ -4,6 +4,8 @@ DisplayName: Unbreakable Chains
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                    I am _questgiver_, and I need
 <ce>                  an escort. I seem to have taken an
 <ce>               illness no one can cure. Can you help me

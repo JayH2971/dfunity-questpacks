@@ -4,6 +4,8 @@ DisplayName: Kidnapping
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                 There's a kid here in town who needs
 <ce>                 to get abducted and held for ransom.
 <ce>            We need someone who's good with words and can

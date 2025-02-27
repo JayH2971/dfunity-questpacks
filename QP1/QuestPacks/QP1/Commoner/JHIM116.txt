@@ -4,6 +4,8 @@ DisplayName: Concentration
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>  (Yawn) ... I feel awfully bored.
 <ce> If you're looking for something to do,
 <ce> I could test your memory with a fable

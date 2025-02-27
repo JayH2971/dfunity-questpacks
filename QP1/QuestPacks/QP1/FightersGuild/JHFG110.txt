@@ -4,6 +4,8 @@ DisplayName: An Animal's Treasure
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>      Some idiot knight went down into a hole
 <ce>   to kill some tigers, and one of them was too tough.
 <ce>   Not only did the knight run away like a wimp,

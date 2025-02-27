@@ -4,6 +4,8 @@ DisplayName: Bad Element Removal
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>         Hey %pcf, let me tell you about this one in secret.
 <ce>         I wish it didn't come to this, but it's gotta happen
 <ce>        every once in a while. The guild's got a member who's

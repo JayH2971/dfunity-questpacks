@@ -4,6 +4,8 @@ DisplayName: A Word of Encouragement
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>  Excuse me, %ra, do you have some time
 <ce>  to talk? I'm feeling miserable and want
 <ce>  to get something off my chest.

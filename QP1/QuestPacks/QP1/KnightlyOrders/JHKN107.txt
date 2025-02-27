@@ -4,6 +4,8 @@ DisplayName: Master of Disguise
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                  We have reports concerning a shop
 <ce>                        in town, _shop_, of a
 <ce>                tragic kind. For the past several days

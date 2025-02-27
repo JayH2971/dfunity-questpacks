@@ -4,6 +4,8 @@ DisplayName: A Bit of Bribery
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>         One of the family's got a rather vindictive enemy in
 <ce>               %crn's courts. This noble's been hauling
 <ce>        the fellow to jail every few months for petty crimes.

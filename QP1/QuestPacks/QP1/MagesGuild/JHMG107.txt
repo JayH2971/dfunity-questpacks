@@ -4,6 +4,8 @@ DisplayName: Weaponized Teleportation
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>           %pcf, do you like hearing from the %t? I do not.
 <ce>          Most guild members also do not. Our research must
 <ce>          not be interrupted by petty squabbles such as some
@@ -14,6 +16,8 @@ QuestorOffer:  [1000]
 <ce>           we wish to bestow this task upon you for the sum
 <ce>         of =reward_ gold pieces. Are you ready to teleport?
                                      <--->
+[QP1]
+ 
 <ce>              Surely, it must be said that the %t takes
 <ce>      advantage of us at times. It's not as though there aren't
 <ce>         plenty of dashing, youthful adventurers across %crn

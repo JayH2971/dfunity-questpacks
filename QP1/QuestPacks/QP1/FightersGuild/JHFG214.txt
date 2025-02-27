@@ -4,6 +4,8 @@ DisplayName: Training Battle, Zombie
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>         Got a simple bounty here for one zombie in a house.
 <ce>            Just gotta slay it and come for your payment,
 <ce>       and you'll have a little help too. Can you handle that?

@@ -4,6 +4,8 @@ DisplayName: Fall Guys
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>  One of our members is pulling in a real haul,
 <ce>  making a lot of money for the guild.
 <ce>  Problem is, the locals are starting to figure him

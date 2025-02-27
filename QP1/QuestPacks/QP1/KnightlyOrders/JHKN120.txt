@@ -4,6 +4,8 @@ DisplayName: Subterfuge
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>    A regional city needs to root out some problematic criminals.
 <ce>     They need someone to go in from the outside. Are you willing
 <ce>                  to be an accomplice to the scheme?

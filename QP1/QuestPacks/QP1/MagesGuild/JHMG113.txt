@@ -4,12 +4,16 @@ DisplayName: Wandering Atronach
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>            One of our experiments is off wandering around
 <ce>             another city, apparently not doing any harm,
 <ce>             but still in need of someone to lead it back
 <ce>            here. If it's not too much of a bother, would
 <ce>                    you be willing to go find it?
                                      <--->
+[QP1]
+ 
 <ce>              A dolt of a student led an atronach off on
 <ce>              a sight-seeing trip and forgot to cast the
 <ce>               proper binding spell. This is made worse

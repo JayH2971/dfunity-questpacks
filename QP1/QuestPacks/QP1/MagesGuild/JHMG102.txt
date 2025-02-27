@@ -4,6 +4,8 @@ DisplayName: Stubborn Scholar
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>               A few weeks have passed since _scholar_
 <ce>               disappeared into ___dung_ for a research
 <ce>            expedition. We have need for such expertise at
@@ -11,6 +13,8 @@ QuestorOffer:  [1000]
 <ce>         lost track of time and needs to be fished out by one
 <ce>               of our capable members. Will you do so?
                                      <--->
+[QP1]
+ 
 <ce>                      _scholar_, one of our more
 <ce>               talented experts, has taken a temporary
 <ce>                  leave to conduct research in some

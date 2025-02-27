@@ -4,6 +4,8 @@ DisplayName: Payment for Notes
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce> There's a big reward being offered
 <ce> for research notes by some wizard
 <ce> named _dummy_. I guess

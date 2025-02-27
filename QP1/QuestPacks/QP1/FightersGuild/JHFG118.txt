@@ -4,6 +4,8 @@ DisplayName: Rattling Bones
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                  Not your typical cemetery problem:
 <ce>          the bones don't stay underground. Could be because
 <ce>       of necromancer mischief, residual magic, ancient curses,

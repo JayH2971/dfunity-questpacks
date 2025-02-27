@@ -4,6 +4,8 @@ DisplayName: The Clumsy Dark Arts
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>              %pct, I have a few questions. Do you hate
 <ce>           giants, the bumbling, violent kidnappers of farm
 <ce>             animals and unaware townspeople? And do you

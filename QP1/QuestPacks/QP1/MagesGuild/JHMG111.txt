@@ -4,6 +4,8 @@ DisplayName: Travel Guide
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                 Oh, %pcf, perhaps this may interest
 <ce>                  you. One of our instructors needs
 <ce>                  a guide to a few exotic locations
@@ -13,6 +15,8 @@ QuestorOffer:  [1000]
 <ce>                 days the trip will take, you will be
 <ce>                paid =reward_ gold. Feeling up to it?
                                      <--->
+[QP1]
+ 
 <ce>                  %pcf, how was your walk here? And
 <ce>             more to the point, do you like the outdoors?
 <ce>               Occasionally we send out our more feeble

@@ -4,12 +4,16 @@ DisplayName: Domestic Vampire
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>          We've got a job for someone experienced like you,
 <ce>            %pcf, but I'm not gonna blame you for turning
 <ce>          it down. It involves one vampire and no sunlight.
 <ce>             You think you can fix that kind of problem?
 <ce>                 There's a dwarven pauldron in it for you.
                                      <--->
+[QP1]
+ 
 <ce>         Ever killed a vampire before, %pcf? Not one of them
 <ce>       ancients. We've got a request here to floor some simple
 <ce>                vampire in a house over in ___place_.

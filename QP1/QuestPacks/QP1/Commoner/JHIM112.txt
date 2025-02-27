@@ -4,6 +4,8 @@ DisplayName: In Case of Emergency
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                   Hail, %ra. Do you have a minute?
 <ce>             I was cleaning house recently and found this
 <ce>             _item_ with some fairly old runes etched on

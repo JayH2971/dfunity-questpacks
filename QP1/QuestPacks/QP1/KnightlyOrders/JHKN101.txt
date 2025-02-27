@@ -4,6 +4,8 @@ DisplayName: Dragonling Nest
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                  My name is _qgiver_. This morning
 <ce>              we received a courier on behalf of the %t
 <ce>                    requesting aid in ___dungeon_.

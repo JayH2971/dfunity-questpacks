@@ -4,6 +4,8 @@ DisplayName: Debt and Reconciliation
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>           Our help is requested in settling a debt dispute
 <ce>         among family members. It'll take a bit of traveling
 <ce>      and some judgment, but this matter is as important as any

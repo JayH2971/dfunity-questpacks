@@ -4,6 +4,8 @@ DisplayName: Siege from Within
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                  %pcf, sometimes I don't know why I
 <ce>                  continue to sustain some of these
 <ce>                  cities. The guards in ___captive_

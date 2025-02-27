@@ -4,6 +4,8 @@ DisplayName: Pacification Rite
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce> There's an unusual number of requests regarding
 <ce> the undead this season. One available task is
 <ce> to go to ___res_ and calm a

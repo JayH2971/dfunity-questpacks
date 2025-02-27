@@ -4,6 +4,8 @@ DisplayName: The Filthy Pit
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                  %pct, I'm at my wit's end. The %t
 <ce>                has ordered us to cleanse a persistent
 <ce>                      infection in ___dung_ that

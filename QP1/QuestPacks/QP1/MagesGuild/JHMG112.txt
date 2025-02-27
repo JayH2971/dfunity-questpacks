@@ -4,6 +4,8 @@ DisplayName: Turnabout Wizardry
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                 %pcf, we have before us a tale told
 <ce>                far too many times, as you well know.
 <ce>               A member of our guild grows so powerful
@@ -17,6 +19,8 @@ QuestorOffer:  [1000]
 <ce>                 choice. Are you brave enough to face
 <ce>                         this dangerous foe?
                                      <--->
+[QP1]
+ 
 <ce>                 A %pct of great skill has become too
 <ce>               great a danger for %crn. Though sharing
 <ce>                       your rank, _enmage_ has

@@ -4,6 +4,8 @@ DisplayName: Shambling Bones
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>          Have you any skill at slaying the undead, %pct?
 <ce>  We're receiving many concerning reports of vicious skeletons
 <ce>  outside the city walls, who attack innocent travelers.

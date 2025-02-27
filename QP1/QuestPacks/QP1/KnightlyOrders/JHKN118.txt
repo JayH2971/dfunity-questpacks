@@ -4,6 +4,8 @@ DisplayName: Fighters, Keepers
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>    A member of the Fighters Guild has become infamous in another town,
 <ce>  requiring an intervention by the %rt on behalf of execution.
 <ce>  We need you to go and slay this scoundrel.

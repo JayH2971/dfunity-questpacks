@@ -4,6 +4,8 @@ DisplayName: Alchemic Mishap
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce> Occasionally we misplace our trust in certain
 <ce> students, allowing them more latitude with alchemical
 <ce> experiments than they deserve. I have a sample here

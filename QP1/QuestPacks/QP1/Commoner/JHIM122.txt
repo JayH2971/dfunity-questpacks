@@ -4,6 +4,8 @@ DisplayName: To Curse the Thieves Guild
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>     Hey, you! I'm in a bad mood and I need
 <ce>  vengeance on the Thieves Guild.
 <ce>  They raided my house last night, and now

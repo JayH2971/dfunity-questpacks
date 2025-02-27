@@ -4,6 +4,8 @@ DisplayName: Wickedness in High Places
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>         The %t's commissioned us to knock off a Necromancer
 <ce>           who also happens to be a high-ranking member of
 <ce>          the Mages Guild. Wanna get this one off our backs?

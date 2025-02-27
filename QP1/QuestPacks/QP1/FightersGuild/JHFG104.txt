@@ -4,12 +4,16 @@ DisplayName: House Watching
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>               I've got another kind of job here, %pcf,
 <ce>           in case you're tired of killing rats and bears.
 <ce>            There's this house here in town that's afraid
 <ce>             of a break-in tonight and they need a guard.
 <ce>         It's paying =reward_ gold. Is that your kind of job?
                                      <--->
+[QP1]
+ 
 <ce>                   We got a client who needs _res_
 <ce>           to get watched over tonight. Pretty simple job.
 <ce>         Just get there by 11:00 tonight and stay there 'til

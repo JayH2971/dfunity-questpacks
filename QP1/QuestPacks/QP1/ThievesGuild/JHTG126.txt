@@ -4,6 +4,8 @@ DisplayName: Toxic Delivery
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>         Some fools over in ___house_ need a lesson taught to them.
 <ce>         They've been messing with our operations over there.
 <ce>         Someone's gotta deliver a warning chest over to 'em, and

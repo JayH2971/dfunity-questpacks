@@ -4,6 +4,8 @@ DisplayName: Ecclesiastes, or The Preacher
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>            %pct, regardless of your past accomplishments
 <ce>           and your history, all must carry their weight in
 <ce>           this temple. Will you take some of our teachings

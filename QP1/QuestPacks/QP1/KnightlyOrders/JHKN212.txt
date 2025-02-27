@@ -4,6 +4,8 @@ DisplayName: The Punisher
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>   ___qgiver_, against its will, harbors a criminal who refuses to
 <ce>     find some other region to inhabit. The list of crimes would
 <ce>    sooner put me to sleep, albeit for length rather than content.

@@ -4,6 +4,8 @@ DisplayName: Destroy the Dark Brotherhood
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>          We have received a directive from the very %rt
 <ce>          to wipe out the Dark Brotherhood from
 <ce>          our fair %crn. We are sending out many

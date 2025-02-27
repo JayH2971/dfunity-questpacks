@@ -4,6 +4,8 @@ DisplayName: Local Escort
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>               A fellow arrived this morning requesting
 <ce>          sanctuary and an escort across town, providing no
 <ce>            further information. We have reason to assume

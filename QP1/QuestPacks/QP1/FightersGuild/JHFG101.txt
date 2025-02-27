@@ -4,6 +4,8 @@ DisplayName: Bandage Delivery
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>             Okay, got one here that's dead simple, and 
 <ce>   the pay is bad enough to match it. The trainer upstairs
 <ce>   is running out of bandages, and we need someone to get some

@@ -4,6 +4,8 @@ DisplayName: Guarding a Living Body
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                 Hey %pcf, maybe you can help us out.
 <ce>         We've got this fellow who's marked up and down with
 <ce>          death threats. Can't even bear going to his house,
@@ -13,6 +15,8 @@ QuestorOffer:  [1000]
 <ce>           up his stuff. You wanna play bodyguard and take
 <ce>                  him to ___res_ for =reward_ gold?
                                      <--->
+[QP1]
+ 
 <ce>                  %pcf, I'm glad you're here. We've
 <ce>            got this guy who needs help getting back home.
 <ce>           Apparently he's been getting death threats like

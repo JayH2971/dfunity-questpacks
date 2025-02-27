@@ -4,6 +4,8 @@ DisplayName: Nature's Wrath
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                  Sparse regions of %crn complain of
 <ce>                spriggans attacking their homesteads.
 <ce>                  Evidence suggests the cause may be

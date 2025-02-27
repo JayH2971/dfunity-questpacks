@@ -4,6 +4,8 @@ DisplayName: A Shrine of Chaos
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>              A remote shrine in %crn has been suffering
 <ce>          some raucous interruptions by a group of brigands.
 <ce>           The place needs a guard but the attendant can't

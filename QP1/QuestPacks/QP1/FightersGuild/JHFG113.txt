@@ -4,6 +4,8 @@ DisplayName: Gentle Giant
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>             I've got kind a weird request here, I guess.
 <ce>                  Folks over in ___res_ are dealing
 <ce>              with a giant over in their house, but it's

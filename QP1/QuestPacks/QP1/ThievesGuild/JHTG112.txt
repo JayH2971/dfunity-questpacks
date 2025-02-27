@@ -4,6 +4,8 @@ DisplayName: Split Treasure
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>        Got word of some treasure down in the inner depths of
 <ce>           %crn that could use some plundering. Wanna bring
 <ce>                it back here so we can split the loot?

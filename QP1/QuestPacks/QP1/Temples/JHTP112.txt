@@ -4,6 +4,8 @@ DisplayName: Corpse Retrieval
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>        We've received word of some spelunker who
 <ce>        went too deep and didn't make it out alive. 
 <ce>        The family wants to know that the corpse

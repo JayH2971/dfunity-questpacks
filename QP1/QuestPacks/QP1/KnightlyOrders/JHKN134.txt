@@ -4,6 +4,8 @@ DisplayName: Honeyed Words
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>           Few troubles concern a knightly order more than
 <ce>                a noble gone berserk. We mostly avoid
 <ce>      such a problem, but today we come close. One of our knight

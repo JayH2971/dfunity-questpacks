@@ -4,6 +4,8 @@ DisplayName: Call of the Dead
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>  Ah, we have a quest for you. There are reports of a wraith
 <ce>  at the ruins of ___dung_. Find the spirit and seal its soul.
 <ce>  This task is crucial to the safety of the tomb.

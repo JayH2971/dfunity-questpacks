@@ -4,6 +4,8 @@ DisplayName: Eight-Legged Freaks
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                 ___captive_ is having some problems
 <ce>                with venomous critters in its streets.
 <ce>                 Wanna go? It's paying =reward_ gold.

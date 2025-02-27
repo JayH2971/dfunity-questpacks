@@ -4,6 +4,8 @@ DisplayName: Plague Knight
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>  A pest infestation has taken hold of
 <ce>  a palace in %crn, and the %t
 <ce>  has delegated to us the task of finding

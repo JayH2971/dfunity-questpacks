@@ -4,6 +4,8 @@ DisplayName: Child of Ice
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>               Ah, this may suit you. An ice atronach,
 <ce>           a golem-like creature, is attacking residents of
 <ce>       a religious site in %crn. We assured them that we would

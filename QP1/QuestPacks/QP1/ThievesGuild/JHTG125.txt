@@ -4,6 +4,8 @@ DisplayName: The Cursed Tome
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>  Got any heat on you, %pct? Anyone out to get you, or
 <ce>  a mercenary wanting your head? If you do, don't take this next job.
 <ce>  It'll only be dangerous if you're wanted... or if you melt

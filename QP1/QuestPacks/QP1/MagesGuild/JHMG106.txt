@@ -4,6 +4,8 @@ DisplayName: An Obscure Trinket
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>           %pcf, we believe we have a simple task for you.
 <ce>           One of our members brought back this _tri_ that
 <ce>      we consider to have magical properties. However, ordinary
@@ -13,6 +15,8 @@ QuestorOffer:  [1000]
 <ce>           cannot identify, one of our greater experts can.
 <ce>                Please deliver it for identification.
                                      <--->
+[QP1]
+ 
 <ce>             One of the grandiose mysteries of Tamriel is
 <ce>            that there are simply forms of magic and power
 <ce>            we do not yet understand. My sincerest desire

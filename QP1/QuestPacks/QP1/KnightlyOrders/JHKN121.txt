@@ -4,6 +4,8 @@ DisplayName: Witch Hunt
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>            Good day. We were recently informed of a witch
 <ce>             hiding in another city, likely determined to
 <ce>            do no good thing. We need someone to apprehend

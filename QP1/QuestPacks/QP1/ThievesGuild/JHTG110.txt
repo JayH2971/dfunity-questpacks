@@ -4,6 +4,8 @@ DisplayName: Blocking Blackmail
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>      We've got a request here for someone of your skill level.
 <ce>           A sealed bag with some really important contents
 <ce>         was stolen from one of our highest-ranking members.

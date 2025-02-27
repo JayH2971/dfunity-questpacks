@@ -4,6 +4,8 @@ DisplayName: Orcish Skirmish
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                  A recent raid on an orc encampment
 <ce>                      in ___dung_ proved timely.
 <ce>                 We are informed that the brutes have

@@ -4,6 +4,8 @@ DisplayName: My Little Ponies
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                    Hail friend, name's _qgiver_.
 <ce>              Got a business offer for ya, my good %ra.
 <ce>              Did you know centaurs are exceedingly rare

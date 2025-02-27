@@ -4,6 +4,8 @@ DisplayName: The Grounding Element
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                   Used to killing many atronachs?
 <ce>             We've got a job to kill one in another town.
 <ce>             Neighbors are getting freaked out about it,

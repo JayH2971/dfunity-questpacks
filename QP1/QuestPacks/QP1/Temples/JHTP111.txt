@@ -4,6 +4,8 @@ DisplayName: A Cohort of the Daedra
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>         Rumors spread of a daedric cohort in ___questgiver_,
 <ce>      one who wishes to bring Oblivion's influence into Tamriel.
 <ce>       We cannot abide this, and wish to send someone to settle

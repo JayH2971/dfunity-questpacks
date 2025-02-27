@@ -4,6 +4,8 @@ DisplayName: The Mage's Pockets
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>  Some cad over in the Mages Guild's gone over the line,
 <ce>  and we need to send a message. It involves stealing something
 <ce>  from someone's coat without them noticing.

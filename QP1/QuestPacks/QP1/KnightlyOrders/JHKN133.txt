@@ -4,6 +4,8 @@ DisplayName: Stalking the Prey
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                  A streak of tigers has migrated to
 <ce>             a forlorn home in %crn. A hunter wishes for
 <ce>           an honorable knight to help slay the beasts, and

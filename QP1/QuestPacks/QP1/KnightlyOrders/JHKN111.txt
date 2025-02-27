@@ -4,6 +4,8 @@ DisplayName: A Knight's Tale
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                 We've been missing _kni_, one of our
 <ce>         more veteran members, for several weeks now. No one
 <ce>         makes of this order a nanny service, but we know he

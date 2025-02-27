@@ -4,6 +4,8 @@ DisplayName: Momento Retrieval
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>               %pct, it falls upon the knights of this
 <ce>           order to restore honor when it has been stolen.
 <ce>             A complaint has come to our door concerning

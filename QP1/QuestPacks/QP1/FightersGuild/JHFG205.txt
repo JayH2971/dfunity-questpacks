@@ -4,6 +4,8 @@ DisplayName: Pack of Beasts
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                     ___rural_'s been having this
 <ce>               problem with wildlife on their property
 <ce>                trying to eat people at night. During
@@ -14,6 +16,8 @@ QuestorOffer:  [1000]
 <ce>                  an elven dai-katana and you get a
 <ce>                 change of scenery. What do you say?
                                      <--->
+[QP1]
+ 
 <ce>            It's kind of a sad story, but we end up being
 <ce>            sort of the city guard for those far-off farm
 <ce>                    homes when the %t doesn't care

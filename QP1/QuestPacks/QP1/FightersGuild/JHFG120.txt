@@ -4,6 +4,8 @@ DisplayName: Cast Down, but Not Destroyed
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>               Got a guild member who's feeling really
 <ce>              depressed. The fellow's here in town, just
 <ce>              sort of moping around, unable to get back

@@ -4,6 +4,8 @@ DisplayName: Rangers and Tigers and Bears Oh My
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>    Property dispute. A noble here in %crn
 <ce>  wants to expand his mansion, and some
 <ce>  rangers in the nearby wilderness are
@@ -14,6 +16,8 @@ QuestorOffer:  [1000]
 <ce>  to this one, you're gonna have to knock 'em down.
 <ce>  Is this your kind of job?
 <--->
+[QP1]
+ 
 <ce>    Property dispute. A noble here in %crn
 <ce>  wants to expand her mansion, and some
 <ce>  rangers in the nearby wilderness are

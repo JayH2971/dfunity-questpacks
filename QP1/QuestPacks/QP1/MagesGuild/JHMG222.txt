@@ -4,6 +4,8 @@ DisplayName: Scholarly Pursuits
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>           Ah! This one, I think, is just perfect for you.
 <ce>             The Archmage offers an enchanted item to the
 <ce>        person who returns to him a certain stolen belonging.

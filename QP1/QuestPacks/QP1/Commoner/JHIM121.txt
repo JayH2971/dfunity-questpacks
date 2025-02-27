@@ -4,6 +4,8 @@ DisplayName: Of Love and Justice
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>              I have suffered a grievous wrong, and the
 <ce>         law gives me no justice. Join me and right my wrong.
 <ce>                   You will be paid for your help.

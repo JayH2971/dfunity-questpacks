@@ -4,6 +4,8 @@ DisplayName: A Witty Response
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>           Forgive my inattentiveness, %ra. I simply could
 <ce>       not sleep last night. Some imbecile started an argument
 <ce>    with me regarding my ancestors and I could not let it go. Our

@@ -4,6 +4,8 @@ DisplayName: Curing a Werewolf
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>              A citizen of ___questgiver_ has requested
 <ce>          the temple's aid in curing oneself of lycanthropy,
 <ce>         or werewolfism. We don't know what that will entail,

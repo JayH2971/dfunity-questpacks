@@ -4,6 +4,8 @@ DisplayName: Marriage Counseling
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>            Among the many responsibilities we discharge,
 <ce>               such as curing the sick and flooring the
 <ce>             living dead, we have some duty towards more

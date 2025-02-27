@@ -4,6 +4,8 @@ DisplayName: A Noble's Lock
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>    Got a guild member here in town who managed to
 <ce>  score big with a break-in. Stole a box with
 <ce>  some really valuable stuff inside, apparently,

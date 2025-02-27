@@ -4,6 +4,8 @@ DisplayName: Graveyard Plot
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>          We have a problem with scoundrels consorting about
 <ce>       a forlorn graveyard. Passing townspeople have mentioned
 <ce>     numerous incidents of small groups of armed people entering,

@@ -4,6 +4,8 @@ DisplayName: Hemophiliac Hunted
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                  My name is _qgiver_. The Order has
 <ce>               recently been made aware of a terror of
 <ce>               the night, a vampire of no small renown,

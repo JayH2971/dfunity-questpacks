@@ -4,6 +4,8 @@ DisplayName: Rite of Vampire Dispelling
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>    For too long, we have allowed vampires to maintain
 <ce>    dominion over one of %crn's cemeteries. We have enlisted
 <ce>    one of the local priests for a powerful rite that will

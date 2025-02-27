@@ -4,6 +4,8 @@ DisplayName: Thinking With Portals
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>      Ever fought a daedroth before, %pcf?
 <ce>   They hit hard, but as long as you can hurt one,
 <ce>   they fall pretty fast. I'm hoping you can make that happen

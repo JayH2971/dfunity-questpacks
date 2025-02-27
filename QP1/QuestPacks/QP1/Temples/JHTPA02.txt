@@ -4,6 +4,8 @@ DisplayName: Washing the Brain
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>          Our long-running feud with the Mages Guild should
 <ce>         not surprise anyone. They have repeatedly stolen our
 <ce>         work and claimed it as their own, to name the least

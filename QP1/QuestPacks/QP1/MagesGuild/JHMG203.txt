@@ -4,6 +4,8 @@ DisplayName: The Dark Artist
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                      %pct, %crn grants us great
 <ce>                  autonomy concerning our methods of
 <ce>               research, our purposes, our disciplinary
@@ -16,6 +18,8 @@ QuestorOffer:  [1000]
 <ce>             the first to remove the threat. Please help
 <ce>                 us to fulfill that agreement, %pcf.
                                      <--->
+[QP1]
+ 
 <ce>            Great scandals surround the Mages Guild, many
 <ce>             of which are started by those envious of the
 <ce>          power we wield. To ensure a spark does not become

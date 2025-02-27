@@ -4,6 +4,8 @@ DisplayName: Like a Snake
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>         Got a weird one that I'm hoping someone will be able
 <ce>       to sort out. Says a shapeshifter's plodding around some
 <ce>    cemetery, pretending to be a vampire. The request is that you

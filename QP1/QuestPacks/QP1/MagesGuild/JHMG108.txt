@@ -4,6 +4,8 @@ DisplayName: Returning the Research
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>                     Oh, %oth. I had put this one
 <ce>                 in the back of my mind, and here it
 <ce>                 is again. Rid me of this unpleasant
@@ -16,6 +18,8 @@ QuestorOffer:  [1000]
 <ce>                 to. In the face of danger, will you
 <ce>                 stand firm to retrieve the research?
                                      <--->
+[QP1]
+ 
 <ce>                  Oh! How I hate to think upon this.
 <ce>                 Please, %pct, help me find an answer
 <ce>                 to this. Some filthy scoundrel from

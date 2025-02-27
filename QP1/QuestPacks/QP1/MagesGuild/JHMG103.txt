@@ -4,6 +4,8 @@ DisplayName: Psijic Intruder
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>           Have you ever heard of the Psijic Order, %pct?
 <ce>   Few of our members would have. They tend to stay
 <ce>   in the shadows, letting things transpire naturally...

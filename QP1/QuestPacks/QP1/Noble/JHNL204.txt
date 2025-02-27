@@ -4,6 +4,8 @@ DisplayName: Due Reward
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>  A vassal of mine has made egregious
 <ce>  and public mistakes, requiring that
 <ce>  an example be made. I need someone

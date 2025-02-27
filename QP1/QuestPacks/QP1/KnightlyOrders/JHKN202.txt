@@ -4,6 +4,8 @@ DisplayName: The Summoner
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>      We have been advised of some fool
 <ce>  who has holed up to practice summoning daedra.
 <ce>  Regardless of the mage's capability, we must

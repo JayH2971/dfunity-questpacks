@@ -4,6 +4,8 @@ DisplayName: Ritual of Sanctification
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>               My name is _questgiver_. I recently made
 <ce>            the mistake of desecrating a sorceror's grave
 <ce>                 within ___dung_, and I must now pay

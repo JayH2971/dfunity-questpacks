@@ -24,6 +24,8 @@ Message:  1010
 <ce>           A page quietly offers you a letter and departs.
 
 Message:  1011
+[QP1]
+ 
 %pcn, %ra in the service of Uriel Septim VII
  
   Please forgive my indiscretion. The Emperor

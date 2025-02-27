@@ -4,6 +4,8 @@ DisplayName: Only the Best
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>         Yeah, I've got something for you. That is, for YOU.
 <ce>            It ain't gonna be pretty, I can tell you that.
 <ce>        But if you take it, the client's offering one of those

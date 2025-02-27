@@ -4,6 +4,8 @@ DisplayName: Wild Hunt
 QRC:
 
 QuestorOffer:  [1000]
+[QP1]
+ 
 <ce>               Hey there %pcf, I've got something of a
 <ce>           challenge for you, no risk at all. Something of
 <ce>          a vendetta to satisfy. We've got this client who's
