@@ -207,24 +207,24 @@ Person _pop_ named Popudax atHome
 Foe _orc1_ is Orc_shaman
 Foe _orc2_ is Orc
 Foe _orc3_ is Orc
-Foe _atr1_ is Fire_atronach
-Foe _atr2_ is Fire_atronach
+-Foe _atr1_ is Fire_atronach
+-Foe _atr2_ is Fire_atronach
 Foe _uk_ is Nightblade
 
 Clock _delay_ 0:00
 
 Place _tristlab_ permanent Tristore_Laboratory2
 Place _dagg_ permanent DaggerfallCastle
-Place _wayr_ permanent WayrestCastle
+-Place _wayr_ permanent WayrestCastle
 
-Item _bag_ small_sack
+-Item _bag_ small_sack
 Item _empletter_ letter used 1019
 
 --	Quest start-up:
     place npc _ukagent_ at _tristlab_
     pc at _tristlab_ do _inside_
     pc at _dagg_ do _dig_
-    pc at _wayr_ do _wayrestplace_
+    -pc at _wayr_ do _wayrestplace_
     hide npc _pop_
     log 1020 step 0
 
@@ -251,35 +251,37 @@ _goorc_ task:
     create foe _orc3_ every 0 minutes 1 times with 100% success
     prompt 1012 yes _orcpath_ no _orcpath_
 
-_ukpath_ task:
-    say 1013
-    place foe _atr1_ at _tristlab_
-    place foe _atr2_ at _tristlab_
-    change foe _atr1_ infighting true
-    change foe _atr2_ infighting true
-    change foe _atr1_ team 1
-    change foe _atr2_ team 1
-    change foe _orc1_ infighting true
-    change foe _orc2_ infighting true
-    change foe _orc3_ infighting true
-    get item _bag_
-    log 1023 step 0
-
-_pinnote_ task:
-    when _ukpath_ and not _inside_
-    say 1014
-
-_eadwyrerage_ task:
-    toting _bag_ and _ead_ clicked
-    give pc nothing
-
-variable _wayrestplace_
-
-_leave_ task:
-    when _eadwyrerage_ and not _wayrestplace_
-    start quest BNMQ01
-    start quest nowayrest
-    end quest
+-_ukpath_ task:
+-    say 1013
+-    place foe _atr1_ at _tristlab_
+-    place foe _atr2_ at _tristlab_
+-    change foe _atr1_ infighting true
+-    change foe _atr2_ infighting true
+-    change foe _atr1_ team 1
+-    change foe _atr2_ team 1
+-    change foe _orc1_ infighting true
+-    change foe _orc2_ infighting true
+-    change foe _orc3_ infighting true
+-    get item _bag_
+-    log 1023 step 0
+-
+-_pinnote_ task:
+-    when _ukpath_ and not _inside_
+-    say 1014
+-
+-_eadwyrerage_ task:
+-    toting _bag_ and _ead_ clicked
+-    give pc nothing
+-
+-variable _wayrestplace_
+-
+-_leave_ task:
+-    when _eadwyrerage_ and not _wayrestplace_
+-    start quest BNMQ01
+-    start quest nowayrest
+-    end quest
+-
+-- this is the underking path, which i never wrote into the quest. ignore all of this.
 
 _orcpath_ task:
     say 1016
