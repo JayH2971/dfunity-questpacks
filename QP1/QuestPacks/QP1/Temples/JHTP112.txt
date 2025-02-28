@@ -54,7 +54,7 @@ Message:  1030
  ___dung_, and the family asked
  __questgiver_ to attend to the corpse.
  I can keep anything I find on the body.
- I have =timer_ days.
+ I have =timer_ days to return to ___questgiver_.
 
 QBN:
 Item _num_ gold range 25 to 60
