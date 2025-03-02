@@ -1,0 +1,43 @@
+-daughter is Whitka. use her sprite in the world
+-father is Lord Vhosek
+-
+-major story is that Master Dhunek sought to use healing magic for his wife, but the effort of it killed her.
+- he kept the secret from Whitka for years, until she found out about it from another noble.
+- Dhunek continued to lie, even as she uncovered the truth. completely disgusted with him, she fled and
+- has been absent for 3 years. Dhunek appears to be obsessive and deceitful, but he has a regal
+- exterior.
+-
+-step 1: find Dhunek in Kozanset? he asks you to find whitka. he knows a friend of hers is in town,
+-and asks for her help in finding whitka.
+-
+- step2: whitka's friend has an ill baby and the cure is rare dragon scales in a dungeon.
+- she doesn't want to reveal whitka's location, but she will do so for the dragon scales.
+-
+- step3: friend reveals whitka is in Totambu in some city. you find her, whitka immediately denies
+- knowing anything about her father, says she has no father, says she'll move away soon to get away
+- from him. hurry back to father so you can go together.
+-
+- step4: arrive at house, he waits outside. whitka is livid upon hearing her father is near.
+- she storms out. the player exits and finds that they are both outside. she wants to call the town guard
+- on him, but has no crime. she storms away and he reasons that she wouldn't be able to flee town so quickly.
+- ask peasants to know where she is while he waits elsewhere.
+-
+- step5: whitka is staying in an inn. she's still very upset but is willing to talk to you.
+- she says he killed her mother and lied about it ever since, and then brought in many strange
+- women as his consorts after that. she is disgusted with him and refuses to see him.
+-
+- step6: he denies everything she said, and asks you to go to Kozanset for two things:
+- an icon of the deceased mother, and his tome of magicks from a dungeon. he left the
+- tome since its nature is forbidden by the MG. in reality, the spell was supposed to
+- draw out his life force, but it took from hers instead, and she was too weak to withstand it.
+- he lied about it since he assumed it would be easier, but a partner in the MG told whitka anyway.
+- he has lived as a MG trainer ever since.
+-
+- step7: bring the two objects back to Dhunek. finally, he shows her the two objects.
+- she asks for a few moments to look at them herself. she becomes willing to listen.
+- she asks for your side of what you've witnessed. after it's all over, she allows her father into the room.
+- he makes one final case to try to put everything back together. the ultimate decision is the player's:
+- whether Whitka should believe him.
+-
+- believe: get a staff of cure disease and cure poison
+- doubt: get a ring, maybe with recall? or invisibility.

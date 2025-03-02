@@ -1,0 +1,253 @@
+Quest: JH_AFR1
+DisplayName: A Father's Regret, Part 1
+-- Message panels
+QRC:
+
+Message:  1010
+<ce>   Not far from you, there's a worn note in rough scrabble.
+<ce>   It seems to be recent.
+<ce>   
+  "I need help finding my daughter.
+  She has been missing for years and
+  I can't stand it anymore. Please
+  find me in _tav_ within the next
+  three days, before I go looking myself.
+  Master Dhunek."
+
+Message:  1011
+%qdt:
+ I have found a request in ___tav_ that
+ someone named Dhunek wants to find his daughter.
+ He'll be in _tav_ for three days.
+
+Message:  1012
+<ce>  Close to the door, you see a man standing on his own.
+<ce>  Your gaze catches his attention.
+<ce>  
+<ce>  "Hello? Yes, I am Dhunek. I'm not offering training right now,
+<ce>  but perhaps in a few days' time."
+<ce>  
+<ce>  Do you tell him you're here to help find his daughter?
+
+Message:  1013
+<ce>  "You're here to help find Whitka?! Oh, %god be praised!!
+<ce>  My prayers are answered, thank all that is holy!
+<ce>  Please, make yourself comfortable. I'll tell you what I know.
+<ce>  
+<ce>  "Whitka is a bit... irrational. She fled three years ago.
+<ce>  She has some unsubstantiated beliefs about the world, and
+<ce>  sometimes she lashes out at people. Being her father,
+<ce>  I'm patient enough to suffer her attacks,
+<ce>  but she has never been gone this long before. I grow worried.
+<ce>  
+<ce>  "She has an old friend in town named _friend_. The two of them
+<ce>  were quite an item back in the day, though I don't know the girl
+<ce>  well enough to ask for her help. I can't think of anyone who would
+<ce>  better know my daughter's whereabouts. If you could make the attempt
+<ce>  and see what this friend would say, I would most certainly appreciate it.
+<ce>  I understand _friend_ lives in _res_ these days, which is that
+<ce>  way, %di."
+
+Message:  1014
+%qdt:
+ I have offered to help Master Dhunek find his daughter Whitka. 
+ A friend of hers named _friend_
+ lives in _res_ of ___res_,
+ and would likely know where to find her.
+
+Message:  1015
+<ce>  _friend_ looks weary with bloodshot eyes. You can hear a
+<ce>  young child coughing violently in another part of the house.
+<ce>  
+<ce>  "Yes? About Whitka? I'm... no, I can't. I'm sorry.
+<ce>  Her father sent you, didn't he? He's... he's not
+<ce>  the kind of person to..."
+<ce>  
+<ce>  She hears more coughing and looks distressed.
+<ce>  
+<ce>  "Listen to me. Yes, I know where Whitka is.
+<ce>  On any other occasion, I would have you thrown out
+<ce>  for even trying to bring that monster back into her
+<ce>  life. But..."
+<ce>  
+<ce>  Her voice cracks as she tries to bring words together.
+<ce>  
+<ce>  "My son is very ill, and I don't have money to hire help.
+<ce>  There's a hideout that people often recur to in Kozanset
+<ce>  for basilisk's eye, called ___dung_.
+<ce>  It's the only thing that'll cure my son.
+<ce>  He's everything I have. I feel horrible making this kind of
+<ce>  deal, but... I can't lose my son. I can't. Please.
+<ce>  
+<ce>  "Bring me one of the treated eyes from that cave. They have
+<ce>  a special treatment that my son needs. I'll tell you where
+<ce>  Whitka is if you can save my son's life. Nothing else
+<ce>  will sway me."
+
+Message:  1016
+%qdt:
+ _friend_, Whitka's friend in ___res_,
+ needs one of the basilisk's eyes
+ found in ___dung_ to cure her son's illness.
+ They're of a special kind that have been treated beforehand.
+ If I deliver it, she will tell me where to find Whitka.
+
+Message:  1017
+<ce>  This eye exudes a unique smell, a mix
+<ce>  of citrus and smoke. Hopefully this is
+<ce>  the kind of specially treated specimen that _friend_'s son needs.
+
+Message:  1018
+%qdt:
+ I have found a basilisk's eye in ___dung_
+ that I can deliver to Whitka's friend
+ _friend_ in _res_, ___res_.
+
+Message:  1019
+<ce>  You present the eye to _friend_, and she breaks into tears.
+<ce>  She smells it to ensure they're the right kind.
+<ce>  
+<ce>  "Yes! Yes, this is it! Thank you, thank you so much! I'm going
+<ce>  to mix it right now. I... I honestly thought I'd lose him.
+<ce>  
+<ce>  "Whitka is in... (sigh) It hurts to even say this.
+<ce>  She went east, to YYY, in the region of Totambu, because
+<ce>  she hates her father so much. She abandoned her whole life here to escape him.
+<ce>  When she finds out I told you this, she's going to..."
+<ce>  
+<ce>  She looks into the distance, weighing her pain and her regret.
+<ce>  
+<ce>  "Please go. I'm very grateful, I just feel... conflicted. Goodbye."
+
+Message:  1020
+%qdt:
+ _friend_ told me that Whitka is in YYY, a city
+ in Totambu to the east. I can tell Dhunek so we can
+ make the journey together. He is in _tav_.
+
+Message:  1021
+<ce>  Once more Dhunek is close to the tavern entrance.
+<ce>  His face lights up when he sees you.
+<ce>  
+<ce>  If you wish, you can quit this adventure
+<ce>  and allow Dhunek to figure it out himself.
+<ce>  Will you continue?
+
+Message:  1022
+%qdt:
+ Master Dhunek wishes to accompany me to YYY
+ so we can search for his daughter together.
+
+Message:  1023
+<ce>  Dhunek puts on his cloak.
+<ce>  
+<ce>  "I should probably warn you, my daughter has made
+<ce>  some very serious and very false accusations about me
+<ce>  in the past. I'm certain that _friend_'s mind has
+<ce>  been poisoned against me. My luck is exceedingly
+<ce>  great to have someone like you.
+<ce>  I don't know what convincing her required on your part,
+<ce>  but you are truly proving invaluable.
+<ce>  
+<ce>  "Please, don't believe the things Whitka says.
+<ce>  She's... not well. By the time this whole
+<ce>  matter is finished, you'll see why I've said these things."
+
+Message:  1024
+<ce>  Dhunek dismisses you with a wave of his hand.
+<ce>  
+<ce>  "I'm far too busy for now. If you need training,
+<ce>  someone at the Mages Guild can help you."
+<ce>  
+<ce>  He departs from your view.
+
+Message:  1025
+<ce>  "Hello again! You found where my daughter is?
+<ce>  Yes, that's wonderful! Just wonderful!
+<ce>  I told the Mages Guild that I'll be out of town
+<ce>  for several days, so we can leave at your convenience.
+<ce>  Do you know the way to this "YYY" city?
+<ce>  I've never been to Totambu, so we'll, um,
+<ce>  have quite an adventure ahead of ourselves!"
+
+Message:  1026
+<ce>  "You're leaving? This is terrible news.
+<ce>  I may never find my daughter after all."
+<ce>  
+<ce>  Dhunek turns and leaves.
+
+
+QBN:
+Item _alch_ item class 17 subclass 11
+
+Person _friend_ group Local_3.0 female
+Person _dhunek_ named Lord_Vhosek
+
+Place _dung_ remote dungeon7
+Place _tav_ local tavern
+Place _res_ local house
+
+Clock _timer_ 3.00:00
+
+--	Quest start-up:
+-- this will require a precursor quest with the location trigger
+-    player currentmappixel x <xCoord> y <yCoord>
+    say 1010
+    log 1011 step 0
+    start timer _timer_
+    hide npc _dhunek_
+    hide npc _friend_
+    pc at _tav_ do _inside_
+
+_inside_ task:
+    prompt 1012 yes _begin_ no _quit_
+
+_begin_ task:
+    say 1013
+    log 1014 step 0
+    place npc _friend_ at _res_
+    restore _friend_
+    stop timer _timer_
+
+_clickfriend_ task:
+    clicked npc _friend_
+    say 1015
+    log 1016 step 1
+    place item _alch_ at _dung_
+    reveal _dung_
+
+_getscales_ task:
+    clicked item _alch_
+    say 1017
+    log 1018 step 1
+
+_deliverscales_ task:
+    toting _alch_ and _friend_ clicked
+    say 1019
+    log 1020 step 1
+
+_reunion_ task:
+    when _inside_ and _deliverscales_
+    prompt 1021 yes _accompany_ no _quit2_
+
+_convo_ task:
+    when _accompany_ and not _inside_
+    say 1023
+    end quest
+
+_quit_ task:
+    say 1024
+    end quest
+
+_timer_ task:
+  end quest
+
+_accompany_ task:
+    say 1025
+    log 1022 step 0
+    remove log step 1
+    add _dhunek_ face
+
+_quit2_ task:
+    say 1026
+    end quest

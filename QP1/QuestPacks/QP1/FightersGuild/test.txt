@@ -3,13 +3,19 @@ DisplayName: Test
 -- Message panels
 QRC:
 
-Message:  1011
-<ce>  Stay outta the ton bro
+
+
 
 
 QBN:
+Clock _delay_ 0:01
 
+Person _person_ named Lady_Northbridge
 
 --   Quest start-up:
-      start quest grofoiaw
-      say 1011
+      start timer _delay_
+      add _person_ face
+
+_delay_ task:
+      drop _person_ face
+      end quest
