@@ -4,8 +4,6 @@ DisplayName: Twisting the Arm
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                 Kidnapping means we need everything
 <ce>              set up for the big payoff. The hostage is
 <ce>                tied up, the family is desperate, the

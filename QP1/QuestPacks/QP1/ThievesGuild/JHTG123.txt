@@ -4,8 +4,6 @@ DisplayName: Retrieving the Stash
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce> We've got another bail-out situation.
 <ce> One of the idiots here in ___qgiver_
 <ce> is storing some _drug_ down in a cave,

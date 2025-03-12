@@ -4,8 +4,6 @@ DisplayName: To Slay the Immortal
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>         We have a most unusual request from the %t.
 <ce>  A truly immortal being, a criminal of a most suspect class,
 <ce>  has taken up residence in a cave in %crn.

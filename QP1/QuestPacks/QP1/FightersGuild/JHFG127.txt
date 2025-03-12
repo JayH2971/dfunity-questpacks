@@ -4,8 +4,6 @@ DisplayName: Dark Sayings
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce> Hey, this is kind of weird to say, but I've
 <ce> got a letter here with the Dark Brotherhood's seal
 <ce> on it, and your name too. Is this something

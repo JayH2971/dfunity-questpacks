@@ -4,8 +4,6 @@ DisplayName: A Dance with Death
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce> The Order of the Black Worm has stirred from their
 <ce> underground lair and brought their necromantic
 <ce> rituals to the surface. They're raising ancient dead

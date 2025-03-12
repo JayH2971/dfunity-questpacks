@@ -4,8 +4,6 @@ DisplayName: Third Wheel
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>          We've got someone looking for a fighting partner,
 <ce>           wanting to go down into some cave, smash up some
 <ce>          bandits, and split the loot. Talks about offering

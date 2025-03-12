@@ -4,8 +4,6 @@ DisplayName: Payment on Delivery
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>           Really basic one here, I say. It won't pay much,
 <ce>         but it's still a proper job. Someone dropped
 <ce>            off a bag of money here with a note, saying it

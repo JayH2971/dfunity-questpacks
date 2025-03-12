@@ -4,8 +4,6 @@ DisplayName: A Curse to Reverse
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>      Our duty to Stendarr must ascend above all other concerns.
 <ce>                  He, Lord of Mercy, has given us a
 <ce>            decree to save one from undeath -- vampirism.

@@ -5,8 +5,6 @@ DisplayName: Loose Ends
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                    The Dark Brotherhood serves a
 <ce>                  useful and legitimate purpose, so
 <ce>               long as they are not spoken of publicly.

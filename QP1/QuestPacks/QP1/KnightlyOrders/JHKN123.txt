@@ -4,8 +4,6 @@ DisplayName: The Crow Surfaces
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>         The formidable outlaw known as the Crow has surfaced
 <ce>           in %crn. We need someone well-armed to apprehend
 <ce>           him and bring him to trial here. Will you do so?

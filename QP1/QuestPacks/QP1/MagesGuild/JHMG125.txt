@@ -4,8 +4,6 @@ DisplayName: Amid the Beasts
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>  We do have a request from a member of the archcouncil,
 <ce>  one that should not be undertaken lightly. The reward is
 <ce>  a magical item capable of protecting you with a barrier,

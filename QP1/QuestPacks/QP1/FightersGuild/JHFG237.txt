@@ -4,8 +4,6 @@ DisplayName: Repaying the Dark Brotherhood
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>    Okay, so, this one. It's for killing a person,
 <ce>  but let me give you the background first.
 <ce>  The old lady who's paying us is a widow

@@ -4,8 +4,6 @@ DisplayName: Daedric Submission
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                Contrary to our vehement urging, a guild member
 <ce>                has taken to seclusion in a foul hole,
 <ce>               attempting to control a powerful daedra.

@@ -4,8 +4,6 @@ DisplayName: Debt Beyond Measure
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>             Someone here in ___qgiver_'s gotten into so
 <ce>            much debt that running away's the only option.
 <ce>             Apparently there are headhunters on the way,

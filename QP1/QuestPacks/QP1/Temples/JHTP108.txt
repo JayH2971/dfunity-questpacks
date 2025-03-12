@@ -4,8 +4,6 @@ DisplayName: Battery Charge
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>     Not all diseases are made equal. Most require a few earnest
 <ce>         castings of Cure Disease before they are purged, but
 <ce>          we must be prepared for certain special cases that

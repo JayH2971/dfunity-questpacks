@@ -4,8 +4,6 @@ DisplayName: Cult of the Artifact
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>              Hey %pcf, I've got some news you might be
 <ce>         interested in hearing. Turns out in some cave around
 <ce>      here there's an artifact, like the real, ancient, powerful

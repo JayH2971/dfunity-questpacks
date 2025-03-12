@@ -4,8 +4,6 @@ DisplayName: Hooves and Spears
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>             A pair of centaurs has been raiding a remote
 <ce>        home in the wilderness of %crn. By our honor, we must
 <ce>                defend the defenseless who live there.

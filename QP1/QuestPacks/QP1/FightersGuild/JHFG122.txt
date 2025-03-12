@@ -4,8 +4,6 @@ DisplayName: Bouncer
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>             Hey, you have the time, %pcf? I've got a job
 <ce>      here for a tavern in town, but I'm not supposed to give it
 <ce>      out after 9 PM. They're gonna have a get-together of some

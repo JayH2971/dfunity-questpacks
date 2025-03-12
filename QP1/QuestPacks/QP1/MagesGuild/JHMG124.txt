@@ -4,8 +4,6 @@ DisplayName: Lab Cleanup
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>   The great %rt of %crn has outlawed the production, sale, trade, use, transportation,
 <ce>   or even possession of the forbidden substance known as sursum. Naturally, some idiot novice
 <ce>   of this guild hall became something of an aficionado of the stuff. The ruling class blames

@@ -4,8 +4,6 @@ DisplayName: Guild Dues
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>   One of our fellow mages has been sent to collect
 <ce>   the dues from the people of ___tavern_.
 <ce>   Unfortunately, he has not yet returned

@@ -4,8 +4,6 @@ DisplayName: Earning Trust
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>  %pct, we must all engage in the humblest of work. Slaying dragons
 <ce>    and defending nobles are some of our duties, but they are only
 <ce>       some forms of the service we provide. Take this _weapon_

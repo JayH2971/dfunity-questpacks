@@ -4,8 +4,6 @@ DisplayName: Surprise!
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>  Hey, some friends and I are doing a sort of
 <ce>  birthday celebration for a buddy of ours,
 <ce>  and we need someone on the outside.

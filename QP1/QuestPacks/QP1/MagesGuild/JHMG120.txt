@@ -4,8 +4,6 @@ DisplayName: Halls of the Lich
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>              %pct, we grow increasingly concerned about
 <ce>             the threats being made against you. You must
 <ce>            understand that an organization as prestigious

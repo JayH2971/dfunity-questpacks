@@ -4,8 +4,6 @@ DisplayName: One Life for Another
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>              Got an escort mission... I think. This one
 <ce>              gives me the creeps. It's got all kinds of
 <ce>              stuff I don't like about it, but I've got

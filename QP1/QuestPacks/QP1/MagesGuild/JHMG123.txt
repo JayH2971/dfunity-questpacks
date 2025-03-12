@@ -4,8 +4,6 @@ DisplayName: A Swift Recovery
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>  Ah! If you're the kind of %pct who's fleet of foot,
 <ce>  yes, there is something for which you might prove quite useful.
 <ce>  The town guard, as brutish as they are, arrested one of our members

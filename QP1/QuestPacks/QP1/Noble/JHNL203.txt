@@ -5,8 +5,6 @@ DisplayName: Failed Negotiations
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>               %pcf, in this line of work, people must
 <ce>                be held to account. Once word gets out
 <ce>                     that _qgiver_'s a weak-kneed

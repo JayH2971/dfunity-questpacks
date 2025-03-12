@@ -4,8 +4,6 @@ DisplayName: To Deliver Justice
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>        Just got this one in today, actually.
 <ce>       The %rt posted a bounty for someone
 <ce>       hiding out in another town.

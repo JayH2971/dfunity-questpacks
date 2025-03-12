@@ -4,16 +4,12 @@ DisplayName: Daily Heist, Large
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>          One of the benefits of being in the Thieves Guild
 <ce>          is knowing where money is, free for the grabbing.
 <ce>             There's a house in another town that's got a
 <ce>      ton of gold in it. If you're good at sneaking, you can try
 <ce>    to nab it for yourself. Want me to reserve the house for you?
                                      <--->
-[QP1]
- 
 <ce>      Every day, people hide away their savings in their houses.
 <ce>          Some do it good, others do it sloppy. We got a tip
 <ce>        on a house that's carrying around a few thousand gold.

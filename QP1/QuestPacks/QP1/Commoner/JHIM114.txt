@@ -4,8 +4,6 @@ DisplayName: Minor Burglary at its Finest
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                Quiet down. I've got a lead on a house
 <ce>                 in town that's gonna be holding some
 <ce>                 big money overnight. I can tell you

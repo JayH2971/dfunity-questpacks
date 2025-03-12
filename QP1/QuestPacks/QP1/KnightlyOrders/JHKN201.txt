@@ -4,8 +4,6 @@ DisplayName: A Lone Necromancer
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>  A lodge in %crn is suffering from
 <ce>  the instigation of a necromancer,
 <ce>  a conjurer of the undead.

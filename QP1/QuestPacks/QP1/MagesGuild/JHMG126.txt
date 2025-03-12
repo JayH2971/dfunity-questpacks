@@ -4,8 +4,6 @@ DisplayName: The Missing Emerald
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>      In fact, I just recently lost an emerald that would have been
 <ce>    quite useful in an upcoming experiment. Quite untimely, to be honest.
 <ce>    What would you say to scrounging one up, from any given source?

@@ -4,13 +4,9 @@ DisplayName: An Ordinary Haunting
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                   Please, help me! There's a ghost
 <ce>                  in my house! Will you get it out?
                                      <--->
-[QP1]
- 
 <ce>                        _ghostres_ is haunted!
 <ce>                    I need someone's help! Please!
 

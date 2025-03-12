@@ -4,8 +4,6 @@ DisplayName: Trick or Treat
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>  Hey %ra, do you think the King of Worms
 <ce>  is real? And would you be willing to take
 <ce>  some fool like me to meet him for money?

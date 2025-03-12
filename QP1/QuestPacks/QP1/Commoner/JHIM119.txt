@@ -5,8 +5,6 @@ DisplayName: Walk My Bear
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>     If you have a few hours to kill, maybe you can help me out.
 <ce>         I have a pet bear that needs to go for a walk, but I
 <ce>        sprained my ankle. Could you do it for =reward_ gold?

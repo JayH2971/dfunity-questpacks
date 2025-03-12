@@ -4,8 +4,6 @@ DisplayName: Keep Away
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                  If you will hear it, we have a bit
 <ce>               of a difficulty, so to speak. The famed
 <ce>                     researcher _dummy_ has left
@@ -19,8 +17,6 @@ QuestorOffer:  [1000]
 <ce>               Will you escort these papers, knowing of
 <ce>                     the danger surrounding them?
                                      <--->
-[QP1]
- 
 <ce>              We have need of a delivery, but only after
 <ce>                certain days have passed. We have here
 <ce>                    papers from the great _dummy_

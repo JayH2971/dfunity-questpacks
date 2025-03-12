@@ -4,8 +4,6 @@ DisplayName: Box of Bats
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>              Ah, perfect. I bet you'd be right for this
 <ce>               one thing. We've got a bet running that
 <ce>              no one can survive a swarm of fifty bats.

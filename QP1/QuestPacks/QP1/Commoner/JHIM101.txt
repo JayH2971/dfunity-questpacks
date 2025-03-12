@@ -4,8 +4,6 @@ DisplayName: Quiz Time
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>          Hail, %ra. For several weeks I have
 <ce>           run a contest with my patrons, testing their
 <ce>          knowledge concerning royalty among the

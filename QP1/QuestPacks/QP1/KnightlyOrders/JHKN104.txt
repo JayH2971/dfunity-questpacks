@@ -6,8 +6,6 @@ QRC:
 ----todo: add siege sound effects
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>          %pcn, I do not know if you have heard the rumors.
 <ce>         Allow me to explain the situation. Some outlaw band
 <ce>         of renegade warriors, the Knights of the _gem_, are

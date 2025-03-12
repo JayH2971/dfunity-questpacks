@@ -4,8 +4,6 @@ DisplayName: To Save a Vampire
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>             Got a job here to help keep a vampire alive,
 <ce>               err, less dead than could otherwise be.
 <ce>            Man, I don't know how to say it. Can you keep

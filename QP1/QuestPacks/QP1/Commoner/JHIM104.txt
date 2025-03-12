@@ -4,8 +4,6 @@ DisplayName: Season Unending
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>               Hey there! Hello! Fine day to meet you.
 <ce>              I've come looking for some long-term help
 <ce>              with our family farm. We'll pay you money

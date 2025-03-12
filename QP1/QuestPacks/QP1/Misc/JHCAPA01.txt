@@ -11,8 +11,6 @@ QuestComplete:  [1004]
 <ce>                         for quite some time.
 
 Message:  1010
-[QP1]
- 
 <ce>   As you enter ___tavern_, you see a piece of brittle posterboard.
 <ce>                It has an advertisement of some kind.
 <ce>

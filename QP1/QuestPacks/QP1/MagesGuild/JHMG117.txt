@@ -4,14 +4,10 @@ DisplayName: The Novice Odylic
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                    %pct, have you any ability to
 <ce>                 identify objects? Your spellcasting
 <ce>                ability would really help us out here.
                                      <--->
-[QP1]
- 
 <ce>              We have someone in another city possessing
 <ce>                 an object that needs identification.
 <ce>             Are you able and willing to cast the spell?

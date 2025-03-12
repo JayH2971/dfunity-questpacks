@@ -4,8 +4,6 @@ DisplayName: Ransom Payment
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                     A family native to this city
 <ce>                    has informed us of a relative
 <ce>                     who was kidnapped by knaves

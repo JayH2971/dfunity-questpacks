@@ -4,8 +4,6 @@ DisplayName: To Liberate a City
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>  A member of the Necromancers is causing havoc in
 <ce>  one of %crn's cities. The villain is hiding
 <ce>  somewhere inside and the town guard are unable

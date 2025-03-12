@@ -4,8 +4,6 @@ DisplayName: The Caravan
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>               Merchants around %crn have been waylaid
 <ce>           by a band of thieves in their travels. They have
 <ce>          petitioned our order for help in rooting them out.

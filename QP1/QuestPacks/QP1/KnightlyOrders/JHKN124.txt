@@ -4,8 +4,6 @@ DisplayName: Washing Brains
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>         A knave in the region has been usurping the minds of
 <ce>          some of %crn's womenfolk, washing their brains and
 <ce>         forcing them to do his bidding. Will you stop this?

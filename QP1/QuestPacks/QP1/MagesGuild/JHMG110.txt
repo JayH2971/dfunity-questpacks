@@ -4,16 +4,12 @@ DisplayName: Culling the Herd
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>              Shh, %pcf. Speak softly. We have concocted
 <ce>             a mission specifically for you. It involves
 <ce>          some combat, some spelunking, some teleportation,
 <ce>              and absolute loyalty to the guild. Please,
 <ce>               tell me you will help us in this matter.
                                      <--->
-[QP1]
- 
 <ce>             I have a matter of the greatest sensitivity,
 <ce>                %pcf. A guild member of high rank must
 <ce>                be removed by force, and the task will

@@ -4,8 +4,6 @@ DisplayName: Til Death Do Them Part
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>    A vampire lord took over a private cemetery
 <ce>  with his two wives. Got some kind of harem thing
 <ce>  going on, I dunno. I'm not a vampire, don't ask me.

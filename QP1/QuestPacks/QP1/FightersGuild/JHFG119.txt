@@ -4,8 +4,6 @@ DisplayName: Surprise Invasion
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                  Hey %pcf, glad you're around. Just
 <ce>                being straight with ya, but something
 <ce>                weird's going on in the city. I dunno
@@ -16,8 +14,6 @@ QuestorOffer:  [1000]
 <ce>                a few minutes. Want to give us a hand
 <ce>                going around for a few exterminations?
                                      <--->
-[QP1]
- 
 <ce>               %pcf, could you stick around for awhile?
 <ce>              ___questgiver_'s not looking all that hot
 <ce>           right now. Some problem with randomly appearing

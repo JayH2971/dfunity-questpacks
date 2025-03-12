@@ -4,8 +4,6 @@ DisplayName: Petty Theft
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>  You know how to pick pockets, %pct?
 <ce>  We got someone over at a tavern in town
 <ce>  holding something they shouldn't.

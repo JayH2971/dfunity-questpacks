@@ -4,8 +4,6 @@ DisplayName: The Mark of Mastery
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>  You've made a name for yourself here
 <ce>  in the guild, %pcf, but you're
 <ce>  still lacking something to be called

@@ -36,8 +36,6 @@ Message:  1010
 <ce>                     You grab it and pick it up.
 
 Message:  1011
-[QP1]
- 
   The Cartographers' Association of the Iliac Bay
   ____place_ Charter
  

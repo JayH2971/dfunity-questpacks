@@ -4,8 +4,6 @@ DisplayName: The Beguiler
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>  A demon from Oblivion has taken up residence in a ruined castle
 <ce>  and caused great havoc of late to local citizenry. If you have
 <ce>  means of harming daedrakind, we request that you take up this matter.

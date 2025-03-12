@@ -4,8 +4,6 @@ DisplayName: The Lich's Curse
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>  The %t rarely offers a reward for our tasks,
 <ce>  much less a monetary one. Nevertheless, one knight
 <ce>  stands to gain ten thousand gold coins for a

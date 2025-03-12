@@ -4,8 +4,6 @@ DisplayName: A Mage's Prize
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                Word is that a diamond is being held
 <ce>                    by some wizard here in town.
 <ce>         It's got some enchantment properties or

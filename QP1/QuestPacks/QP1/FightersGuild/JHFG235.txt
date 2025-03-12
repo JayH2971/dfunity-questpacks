@@ -4,8 +4,6 @@ DisplayName: Clattering Bones
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                      Some idiot in town thought
 <ce>          he'd try to raise his grandparents from the dead.
 <ce>     I mean, I get the feeling, and we miss our families, right?

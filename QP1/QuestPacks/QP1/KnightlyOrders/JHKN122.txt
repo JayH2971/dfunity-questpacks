@@ -4,8 +4,6 @@ DisplayName: The Trapped Halls
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>               Witches are beings of awesome power who
 <ce>            should never be trifled with. We agree on that
 <ce>                  matter, don't we %pcf? %crn needs
@@ -13,8 +11,6 @@ QuestorOffer:  [1000]
 <ce>              a witch's curse, one that will trap within
 <ce>             any who enter. Will you be the needed hero?
                                      <--->
-[QP1]
- 
 <ce>           A forlorn labyrinth in the wilderness has become
 <ce>             the home of a witch that will trap within
 <ce>               those who enter its halls. We need a champion

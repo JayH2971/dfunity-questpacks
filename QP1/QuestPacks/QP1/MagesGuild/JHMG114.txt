@@ -4,8 +4,6 @@ DisplayName: Darkness Falls
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                 One of our local scholars, _schol_,
 <ce>             has been involved in work to counteract the
 <ce>               effects of vampirism. Later tonight %g1

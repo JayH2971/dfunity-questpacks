@@ -4,8 +4,6 @@ DisplayName: Nordic Magic
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>    Ah! If you have some time to spare, there's a
 <ce>  special invitation we received from a Nord mage,
 <ce>  arrived from the east. Came to share some magical

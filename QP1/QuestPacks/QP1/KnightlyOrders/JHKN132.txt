@@ -4,8 +4,6 @@ DisplayName: Beauty and the Beast
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>              We require a knight of true virtue to slay
 <ce>          a Daedra Seducer, a being of considerable magical
 <ce>               power. Do you consider yourself capable?

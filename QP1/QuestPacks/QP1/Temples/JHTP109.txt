@@ -4,8 +4,6 @@ DisplayName: Purge
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>           Have you any ability to dispel the undead, %pct?
 <ce>          Any variant of the spell will do. It just requires
 <ce>         that you cast it yourself. Bit of nefarious dealings

@@ -4,8 +4,6 @@ DisplayName: Center of Attention
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                     A local townsperson has been
 <ce>              cursed by a wizard with a locating spell.
 <ce>             The cowardly maniac sends magical constructs

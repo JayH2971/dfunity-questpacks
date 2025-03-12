@@ -4,8 +4,6 @@ DisplayName: The Test of Speed
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>         Sometimes in the guild we like to kick back for some
 <ce>        sport. Got an invitation you might want to listen to.
 <ce>           There's a treasure chest in a crypt around here

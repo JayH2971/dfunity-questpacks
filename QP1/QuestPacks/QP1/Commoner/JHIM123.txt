@@ -4,12 +4,8 @@ DisplayName: Your Mix-Up
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>          Wait a minute. Are you %pcf, that one %ra?
 <--->
-[QP1]
- 
 <ce>      I'm looking for some %ra named %pcf. Is that you?
 
 RefuseQuest:  [1001]

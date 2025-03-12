@@ -4,16 +4,12 @@ DisplayName: Well-Intentioned Extremists
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                A band of rabblerousers is attempting
 <ce>             to inflict its own form of perverted justice
 <ce>               on one of %crn's cities. We need someone
 <ce>              to go restore order to a city in turmoil.
 <ce>                          Will that be you?
                                      <--->
-[QP1]
- 
 <ce>               Some scheming citizens in one of %crn's
 <ce>           cities have taken the law into their own hands,
 <ce>              punishing and pursuing whoever they will.

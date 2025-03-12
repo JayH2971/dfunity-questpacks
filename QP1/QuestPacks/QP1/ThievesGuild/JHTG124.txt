@@ -4,8 +4,6 @@ DisplayName: An Explosion of Action
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>    We need someone experienced, mature, and sensible to
 <ce>    help out two very idiotic recruits to the guild.
 <ce>    They found something they probably should've left alone,

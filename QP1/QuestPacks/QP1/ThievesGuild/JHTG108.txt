@@ -4,8 +4,6 @@ DisplayName: No Simple Theft
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce> We need a good thief. Or maybe just a tough one.
 <ce> There's a gem over in ___place_ that
 <ce> belongs to some relative of the %t. We're paying

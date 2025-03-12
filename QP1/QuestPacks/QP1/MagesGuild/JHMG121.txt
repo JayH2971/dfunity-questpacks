@@ -4,8 +4,6 @@ DisplayName: Death's Embrace
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                  %pcf, I must speak in a low voice
 <ce>              regarding this matter. I do not doubt you
 <ce>                have seen and destroyed your share of

@@ -4,8 +4,6 @@ DisplayName: Personal Transport
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                   %pcf, we're working out a plan.
 <ce>               We're usually in the business of moving
 <ce>                jewels, powders, and money around, but

@@ -4,8 +4,6 @@ DisplayName: An Abducted Child
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                The Dark Brotherhood has struck again,
 <ce>                 trapping a child in a remote cave in
 <ce>                    %crn. We need a hero to rescue

@@ -4,8 +4,6 @@ DisplayName: Stop the Experiment
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>           My good %pcf, may I tell you concerning _mage_?
 <ce>             I love _mage_, and I hate %g2. %g1 has done
 <ce>             great work for the Mages Guild in the past,

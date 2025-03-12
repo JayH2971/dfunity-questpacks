@@ -4,8 +4,6 @@ DisplayName: Wizard Amok
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                We've got a request here from ___res_
 <ce>                 to go off some fellow wreaking havoc
 <ce>               around the city. Apparently some member

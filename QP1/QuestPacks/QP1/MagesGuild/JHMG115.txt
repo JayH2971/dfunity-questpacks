@@ -4,8 +4,6 @@ DisplayName: A Victim of Shapeshifting
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>           Actually, we have a matter of immediate import.
 <ce>          I do hope you'll accept this. It's a bit of a long
 <ce>           story, but the short version is that one of our
@@ -16,8 +14,6 @@ QuestorOffer:  [1000]
 <ce>                unaware that %g1 is innocent. Will you
 <ce>                       defend our poor friend?
                                      <--->
-[QP1]
- 
 <ce>           We have something of a rescue mission that needs
 <ce>             an immediate counterpart. A good friend and
 <ce>               member of the Mages Guild, someone named

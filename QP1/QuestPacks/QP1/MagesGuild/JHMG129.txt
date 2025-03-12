@@ -1,11 +1,9 @@
-Quest: JHMG129
+Quest: JHTG129
 DisplayName: Overdue Book
 -- Message panels
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>         Something to do? Oh! Oh my, yes, it's kind of a trivial
 <ce>         matter, but I will record it in the guild register
 <ce>         nonetheless if you will lend a helping hand.

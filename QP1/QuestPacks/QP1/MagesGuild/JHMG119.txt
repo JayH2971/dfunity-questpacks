@@ -4,8 +4,6 @@ DisplayName: Interview with a Necromancer
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>             %pcf, you have earned the Archmage's trust,
 <ce>               and therefore are privvy to some rather
 <ce>              sensitive matters. By regiment of the law,

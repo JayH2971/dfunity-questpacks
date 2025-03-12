@@ -4,8 +4,6 @@ DisplayName: Gang War
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>            Got a bit of a territory war that'll break out
 <ce>              near a temple here in %reg. The Wharf Rats
 <ce>        are getting brave again, and we need some strong arms

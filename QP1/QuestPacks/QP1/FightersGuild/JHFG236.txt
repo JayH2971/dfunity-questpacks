@@ -4,8 +4,6 @@ DisplayName: The Wayward Wizard
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                     Some conjurer took to a cave
 <ce>            and sends out his golems to attack passers by,
 <ce>        delivering him their loot when they die or surrender.

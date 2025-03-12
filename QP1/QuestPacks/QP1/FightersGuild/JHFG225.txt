@@ -4,8 +4,6 @@ DisplayName: Find the Mage
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>                The Mages Guild is looking for someone
 <ce>                to go rescue one of their own that got
 <ce>                lost out in some cave. It'll pay like

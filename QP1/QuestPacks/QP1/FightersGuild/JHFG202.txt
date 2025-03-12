@@ -4,8 +4,6 @@ DisplayName: Daedric Prey
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>           Gotta love some poetic justice. The Mages Guild,
 <ce>            right? All high-and-mighty? They have no idea
 <ce>           what they're doing sometimes. Just got a request
@@ -15,8 +13,6 @@ QuestorOffer:  [1000]
 <ce>                offer you is this _reward_, which I'll
 <ce>                   admit isn't a lot. You in, %pcf?
                                      <--->
-[QP1]
- 
 <ce>             So, funny story. The Mages Guild goes around
 <ce>           all the time with their big, colorful robes and
 <ce>             pompous attitudes all the time talking 'bout

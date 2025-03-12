@@ -4,8 +4,6 @@ DisplayName: The Black Box
 QRC:
 
 QuestorOffer:  [1000]
-[QP1]
- 
 <ce>           Just got a request from one of our guild members
 <ce>        out looking for treasure. Needs a top-tier lockpicker
 <ce>            to help out with something that got uncovered
