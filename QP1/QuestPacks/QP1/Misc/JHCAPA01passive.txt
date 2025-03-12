@@ -1,4 +1,4 @@
-Quest: JHCAPpassive
+Quest: JHCAPA01passive
 DisplayName: The Werewolf Hunt Passive Income
 -- Message panels
 QRC:
@@ -44,6 +44,7 @@ _timer_ task:
     have _faker_ set _givereward_
     pick one of _good_ _good_ _good_ _bad_ _good_
 --1011 on purpose, to not show a message
+--this ensures the message doesn't show up in weird places like a dungeon
 
 _bad_ task:
     pick one of _good_ _good_ _good_ _good_ _fatal_ _good_ _good_ _good_ _good_
