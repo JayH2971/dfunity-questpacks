@@ -31,7 +31,7 @@ are underwater. We've gone bankrupt. We thank you for slaying
 the werewolf but can no longer pay you dividends.
 
 QBN:
-Item _reward_ gold range 100 to 250
+Item _reward_ gold range 400 to 450
 Item _faker_ mineral
 
 Clock _timer_ 7.00:00
