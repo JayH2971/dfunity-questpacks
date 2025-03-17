@@ -207,7 +207,7 @@ _meetladyb_ task:
 	clicked npc ladyBrisienna 
 	start timer _oneday_ 
 	stop timer _invitepc_
-	log 1011 step 1 
+--	log 1011 step 1 
 	start task _S.06_ 
 	say 1015 
 	say 1016 
