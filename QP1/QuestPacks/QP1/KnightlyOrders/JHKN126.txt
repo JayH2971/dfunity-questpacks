@@ -16,7 +16,7 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce>           The deadline for the ransom is in =2dung_ days.
 <ce>                     Please find _child_ by that
-<ce>                    time. %g1 will be in ___dung_.
+<ce>                    time, as %g1 will be in ___dung_.
 <ce>                       Courage and honor, %pct.
 
 QuestFail:  [1003]
@@ -24,7 +24,7 @@ QuestFail:  [1003]
 
 QuestComplete:  [1004]
 <ce>                     Hail, _child_! Have you been
-<ce>            properly introduced to your rescuer? %pg3 name
+<ce>            properly introduced to your rescuer? Well, %pg3 name
 <ce>                  is %pcf, and %pg1 is a true hero.
 <ce>              Your family will be here within the hour,
 <ce>              and these knights here will keep you safe.

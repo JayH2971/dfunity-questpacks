@@ -141,7 +141,7 @@ Message:  1033
 <ce>            The thugs appear to have no identification or
 <ce>              anything else to lead you to their source.
 <ce>             With no lead to go on, your only recourse is
-<ce>                   to return to the Fighters Guild.
+<ce>                   to return to __questgiver_.
 
 Message:  1040
 <ce>                   _questgiver_ looks deeply upset.

@@ -80,6 +80,7 @@ _begin_ task:
     say 1012
     hide npc _captive_
     add _captive_ face
+    stop timer _timer_
 
 _transform_ task:
     when _begin_ and not _inside_
