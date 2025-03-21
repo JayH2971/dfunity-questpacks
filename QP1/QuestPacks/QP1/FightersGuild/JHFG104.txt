@@ -12,7 +12,7 @@ QuestorOffer:  [1000]
                                      <--->
 <ce>                   We got a client who needs _res_
 <ce>           to get watched over tonight. Pretty simple job.
-<ce>         Just get there by 11:00 tonight and stay there 'til
+<ce>         Just get there by 23:00 tonight and stay there 'til
 <ce>      sunlight. It's worth =reward_ gold. Wanna give it a shot?
 
 RefuseQuest:  [1001]
@@ -22,7 +22,7 @@ RefuseQuest:  [1001]
 AcceptQuest:  [1002]
 <ce>                All right, good. Head over in town to
 <ce>                        _res_. Stay there from
-<ce>                11:00 at night to sunup. These people
+<ce>                23:00 at night to sunup. These people
 <ce>               weren't too specific about what threats
 <ce>              they were expecting, but it's not gonna be
 <ce>              vampires or werewolves or something, just
@@ -112,7 +112,7 @@ Message:  1030
  ___res_ has assigned
  me to guard _res_
  tonight. I should be there from
- 11:00 at night until they say
+ 23:00 at night until they say
  otherwise, probably at dawn.
 
 QBN:

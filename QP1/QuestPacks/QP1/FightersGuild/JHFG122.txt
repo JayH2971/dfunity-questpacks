@@ -6,7 +6,7 @@ QRC:
 QuestorOffer:  [1000]
 <ce>             Hey, you have the time, %pcf? I've got a job
 <ce>      here for a tavern in town, but I'm not supposed to give it
-<ce>      out after 9 PM. They're gonna have a get-together of some
+<ce>      out after 21:00 hours. They're gonna have a get-together of some
 <ce>         kind and they're worried about drunks, fights, that
 <ce>       kinda thing. It's paying standard fare, if you want it.
 
@@ -14,7 +14,7 @@ RefuseQuest:  [1001]
 <ce>      It sounds like pretty tame stuff. Sure you don't want it?
 
 AcceptQuest:  [1002]
-<ce>       All right, but if it's after 9 right now it's your fault
+<ce>       All right, but if it's after 21:00 right now it's your fault
 <ce>          for not catching me on it. The party's gonna be at
 <ce>                _tav_ here in town. You'll stay there
 <ce>           from 9 to sunrise or whenever they dismiss you,
