@@ -4,20 +4,28 @@ DisplayName: Lab Cleanup
 QRC:
 
 QuestorOffer:  [1000]
-<ce>   The great %rt of %crn has outlawed the production, sale, trade, use, transportation,
-<ce>   or even possession of the forbidden substance known as sursum. Naturally, some idiot novice
-<ce>   of this guild hall became something of an aficionado of the stuff. The ruling class blames
-<ce>   us for "fomenting" the event, whatever that means, and requires us to clean the
-<ce>   building of the substance within 24 hours' time. The residence is not far from here.
-<ce>   The Guild is offering =reward_ gold for its total destruction. Would you take this one up, %pct?
+<ce>   The great %rt of %crn has outlawed the production,
+<ce>   sale, trade, use, transportation, or even
+<ce>   possession of the forbidden substance known as
+<ce>   sursum. Naturally, some idiot novice of this guild
+<ce>   hall became something of an aficionado of the stuff.
+<ce>   The ruling class blames us for "fomenting" the event,
+<ce>   whatever that means, and requires us to clean the
+<ce>   building of the substance within 24 hours' time.
+<ce>   The residence is not far from here. The Guild is
+<ce>   offering =reward_ gold for its total destruction.
+<ce>   Would you take this one up, %pct?
 
 RefuseQuest:  [1001]
 <ce>   Oh, you must be too important for a task like this.
 
 AcceptQuest:  [1002]
-<ce>  Many thanks to you, %pct. Look for _res_, %di. The stuff should be obvious once you enter.
-<ce>  Destroy everything inside and all the tools for making it, and return here.
-<ce>  No doubt a simple task. Bring word to me before this time tomorrow.
+<ce>  Many thanks to you, %pct. Look for _res_, %di.
+<ce>   The stuff should be obvious once you enter.
+<ce>  Destroy everything inside and all the tools
+<ce>   for making it, and return here.
+<ce>  No doubt a simple task.
+<ce>   Bring word to me before this time tomorrow.
 
 QuestFail:  [1003]
 <ce> You were to report the destruction of the drug lab in _res_ by now.
