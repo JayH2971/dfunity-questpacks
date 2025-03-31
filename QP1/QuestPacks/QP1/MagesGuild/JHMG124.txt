@@ -4,8 +4,9 @@ DisplayName: Lab Cleanup
 QRC:
 
 QuestorOffer:  [1000]
-<ce>   The great %rt of %crn has outlawed the production,
-<ce>   sale, trade, use, transportation, or even
+<ce>   The great %rt of %crn
+<ce>   has outlawed the production, sale,
+<ce>   trade, use, transportation, or even
 <ce>   possession of the forbidden substance known as
 <ce>   sursum. Naturally, some idiot novice of this guild
 <ce>   hall became something of an aficionado of the stuff.
