@@ -11,10 +11,16 @@ QRC:
 QBN:
 Item _boots_ item class 6 subclass 8
 Item _robe_ item class 6 subclass 22
+Item _wboots_ item class 12 subclass 5
+Item _wrobe_ item class 12 subclass 18
 
 --	Quest start-up:
     get item _boots_
     get item _robe_
+    get item _wboots_
+    get item _wrobe_
+    make _wboots_ permanent
+    make _wrobe_ permanent
     make _boots_ permanent
     make _robe_ permanent
     end quest
