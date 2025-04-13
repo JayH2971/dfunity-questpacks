@@ -1,4 +1,5 @@
 Quest: _TUTOR__
+DisplayName: Unleveled Quests Non-Tutorial
 -- Message panels
 QRC:
 
