@@ -93,12 +93,13 @@ Message:  1030
  within =timer_ days.
 
 QBN:
-Item _reward_ gold range 1400 to 1500
+Item _reward_ gold range 700 to 800
 
 Place _manor_ remote poorhome
 
 Clock _timer_ 00:00 0 flag 17 range 0 2
 Clock _delay_ 0:01
+Clock _delay2_ 1:00
 
 Foe _bear_ is Grizzley_bear
 Foe _tiger_ is Sabretooth_tiger
@@ -149,6 +150,9 @@ _delay_ task:
 
 _givegold_ task:
     give pc _reward_
+    start timer _delay2_
+
+_delay2_ task:
     end quest
 
 _giverep_ task:
