@@ -28,10 +28,6 @@ QuestComplete:  [1004]
 <ce>     "Thank you for hearing me out. I have no loyalty to Wayrest,
 <ce>            only the people of Tamriel. I'll try to serve
 <ce>        the highest purpose, whatever it is. Stay safe, %pcf."
-<ce>
-<ce> (NOTE: This version of ANMQ does not contain the King of Worms' sidequest.)
-<ce>                      (It will be added later.)
-<ce>              (Thank you for playing the beta version.)
 
 Message:  1010
 <ce>        "So the great Popudax has sent you to me, is that it?
