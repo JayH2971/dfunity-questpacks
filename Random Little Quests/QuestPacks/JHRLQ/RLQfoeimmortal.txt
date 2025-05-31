@@ -47,6 +47,7 @@ _pick_ task:
     create foe _angrybat_ every 0 minutes 1 times with 100% success
     change foe _angrybat_ infighting true
     give item _reward_ to _angrybat_
+    make _reward_ permanent
     start timer _ending_
 
 _heal_ task:
