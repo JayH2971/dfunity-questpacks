@@ -19,11 +19,8 @@ QuestComplete:  [1004]
 <ce>                               QP1 1004
 
 Message:  1011
-<ce>      Quest Pack 1 now relies on the new Quest Actions Extension mod.
-<ce>                    Please be sure you're using it.
-<ce> 
 <ce>            Do you want to receive an Early Artifact Quest
-<ce>                     as part of Quest Pack 1?
+<ce>                       as part of Quest Pack 1?
 
 QBN:
 
