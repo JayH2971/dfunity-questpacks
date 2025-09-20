@@ -163,6 +163,9 @@ _suffer_ task:
     say 1015
     reduce player health by 30
 
+--the quest bugs out once "suffer" and not inside the dungeon.
+--check other outcomes. disabled until this can be fixed.
+
 _clicky_ task:
     clicked item _tri_
     say 1016
