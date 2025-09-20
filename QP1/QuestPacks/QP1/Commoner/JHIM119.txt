@@ -42,7 +42,7 @@ Sorry, is that a bear following you?
 <--->
 Keep that bear away.
 
-QuestorPostSuccess:   [1008]
+QuestorPostSuccess:  [1008]
 My bear says hello. He's at home.
 
 QuestorPostFailure:  [1009]
@@ -66,8 +66,8 @@ Message:  1012
 
 Message:  1013
 <ce>           The bear starts moving about rather haphazardly.
-<ce>          You see a small gash on one of its paws -- 
-<ce>          perhaps it was diseased by the rats.
+<ce>              You see a small gash on one of its paws --
+<ce>                 perhaps it was diseased by the rats.
 <ce>             There's a small note tucked into its collar.
 <ce>
 <ce>                 "If sick, please deliver to _priest_
@@ -96,14 +96,14 @@ Message:  1016
 Message:  1017
 <ce>            The bear suddenly gets startled by some noise
 <ce>             in the distance. You struggle to hold on to
-<ce>           the leash, but he breaks free.
-<ce>                       In his confusion, he tries to attack you.
+<ce>                    the leash, but he breaks free.
+<ce>              In his confusion, he tries to attack you.
 
 Message:  1018
 <ce>           Slowly coming to his senses, the bear calms down
 <ce>           and lies on the floor. You cautiously attach the
-<ce>               leash to him once more.
-<ce>                        He pretends that nothing ever happened.
+<ce>                       leash to him once more.
+<ce>               He pretends that nothing ever happened.
 
 Message:  1019
 <ce>          The ranger manages to get in a shot while the bear
@@ -124,7 +124,7 @@ Message:  1030
  _questgiver_, who asked
  me to go to _tavern_
  and return. I'll be paid
- =reward_ gold.
+ =reward_ gold at __questgiver_.
 
 Message:  1031
 %qdt:
@@ -225,6 +225,7 @@ _healbear_ task:
     say 1014
     stop timer _disease_
     clear _diseasedbear_
+    remove log step 1
 
 _a2_ task:
     say 1017
