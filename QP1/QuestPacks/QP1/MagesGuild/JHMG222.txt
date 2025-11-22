@@ -174,3 +174,6 @@ _victory_ task:
     toting _tri_ and _qgiver_ clicked
     give pc _magic_
     end quest
+-
+-quest is disabled due to quest engine crash. user described:
+-I picked up this quest from the Mage's Guild called Scholarly Pursuits (JHMG222), that sends me to a dungeon to recover a stolen item. I found the quest item which popped up your skill check mechanic saying the item is behind a trap. After suffering the trap, I picked it up. Immediately upon exiting the dungeon, the entire quest disappeared from the quest log along with the quest item. I loaded a save, picked up the item again which a message box confirmed that I did, checked that it was in my inventory, and also checked to see that I had a lot of time remaining on the quest, 11 days, so it wasn't that. This time, I loaded an earlier save, right at the entrance of the dungeon exterior. I entered the dungeon, and exited out right away, and sure enough the quest disappeared from the quest log. I re-loaded, and while I had the quest, I checked the list of quests in the console (print_quests) and JHMG222 was "Running". When I exited the dungeon, I checked again and JHMG222 was not listed at all (not even Finished/Ended).

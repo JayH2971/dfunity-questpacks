@@ -177,3 +177,5 @@ _victory_ task:
 _timer_ task:
 	change repute with _qgiver_ by +3
 	end quest
+-
+-quest is disabled because item never loses green background. user context: The reward from the quest appear in my inventory with the green background like a quest item, the quest is finished as soon as i picked it up from the ancient vampire corpse so i can't sell the item. Maybe is it because i already have found the artifact in another quest? i tried doing the quest a couple of time and the result is always the same....green background i mean not the same item, it's the same result even if the artifact is another one and even if it's one that i already don't have
